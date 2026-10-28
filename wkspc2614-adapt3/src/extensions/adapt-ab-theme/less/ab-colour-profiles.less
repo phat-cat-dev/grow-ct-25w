@@ -1,0 +1,69 @@
+// CM COLOUR PROFILES — the BASE THEME PROFILE layer (HSL colour-theory).
+// (Abbott, 10 Oct 2026: "dark-blue is the base hsl setting and all the rest
+// pattern off it … colour profiles"; 11 Oct: one of the two profile layers.)
+//
+// TWO PROFILE LAYERS, both off the SINGLE theme hue (--ab-user-h, cm-base):
+//   • THIS one (base theme profiles): one colour → a whole palette by colour
+//     theory. Lightweight — usable on its own for an Adapt job that wants just a
+//     base HSL theme off one colour, no CM curation.
+//   • The CM theme profile layer (ab-schemes: neutrals+accents+light/dark) —
+//     the curated system. A base profile only sets --ab-base-accent, which the CM
+//     system also consumes, so these two are complementary: run a base profile
+//     standalone, OR layer it on the full CM theme.
+//
+// HOW IT WORKS
+//   1. The single theme hue (--ab-user-h/s/l, cm-base) is the root.
+//   2. Companion swatches are that hue ROTATED by the classic harmony angles
+//      (complementary 180, split 150/210, analogous ±30, triadic 120/240), at
+//      the shared companion sat/light dials (--ab-companion-*, cm-base), so the
+//      set reads as a family. Base tint/shade just vary lightness.
+//   3. Named PROFILES each pick companion(s) as --ab-base-accent (/-2/-3). Put a
+//      profile class on a page/menu wrapper or <body>:
+//        <div class="ab-profile-ember"> … this series themed blue + amber … </div>
+//
+// All hsl() values are LESS-escaped (~"…") so LESS emits them verbatim. Hue uses
+// calc() on --ab-user-h; browsers normalise hue mod 360, so +180 etc. are fine.
+
+:root {
+  // ---- derived swatches (the SINGLE theme hue rotated by harmony angles) ----
+  // Base hue/sat/light and the companion sat/light are the cm-base dials
+  // (--ab-user-* and --ab-companion-*) — ONE colour drives the whole set, and
+  // it is the same hue the CM theme uses, so the two profile layers never
+  // disagree. Change --ab-user-h in cm-base and every swatch below rotates.
+  --ab-swatch-base:            ~"hsl(var(--ab-user-h) var(--ab-user-s) var(--ab-user-l))";              // the brand (dark-blue)
+  --ab-swatch-base-tint:       ~"hsl(var(--ab-user-h) var(--ab-user-s) 85%)";                            // pale
+  --ab-swatch-base-shade:      ~"hsl(var(--ab-user-h) var(--ab-user-s) 8%)";                             // near-black
+  --ab-swatch-complementary:   ~"hsl(calc(var(--ab-user-h) + 180) var(--ab-companion-s) var(--ab-companion-l))"; // amber/orange
+  --ab-swatch-split-a:         ~"hsl(calc(var(--ab-user-h) + 150) var(--ab-companion-s) var(--ab-companion-l))"; // rose/red
+  --ab-swatch-split-b:         ~"hsl(calc(var(--ab-user-h) + 210) var(--ab-companion-s) var(--ab-companion-l))"; // gold/yellow-green
+  --ab-swatch-analogous-cool:  ~"hsl(calc(var(--ab-user-h) - 30) var(--ab-companion-s) var(--ab-companion-l))";  // teal
+  --ab-swatch-analogous-warm:  ~"hsl(calc(var(--ab-user-h) + 30) var(--ab-companion-s) var(--ab-companion-l))";  // indigo
+  --ab-swatch-triadic-a:       ~"hsl(calc(var(--ab-user-h) + 120) var(--ab-companion-s) var(--ab-companion-l))"; // magenta/pink
+  --ab-swatch-triadic-b:       ~"hsl(calc(var(--ab-user-h) + 240) var(--ab-companion-s) var(--ab-companion-l))"; // lime/green
+}
+
+// ---- 3. named profiles (designer's first picks — react to these) ----
+// Each re-themes the accent only; the neutral spine and dark-blue primary stay.
+// Harbour  — analogous teal: calm, cohesive, stays in the blue family.
+.ab-profile-harbour { --ab-theme-pf-default-accent: var(--ab-swatch-analogous-cool); }
+// Ember    — complementary amber: classic blue+orange, warm highlight against the deep base.
+.ab-profile-ember   { --ab-theme-pf-default-accent: var(--ab-swatch-complementary); }
+// Orchid   — triadic magenta: modern, confident, a bold but balanced third colour.
+.ab-profile-orchid  { --ab-theme-pf-default-accent: var(--ab-swatch-triadic-a); }
+// Fern     — triadic green: fresh and natural, good for growth/progress framing.
+.ab-profile-fern    { --ab-theme-pf-default-accent: var(--ab-swatch-triadic-b); }
+// Dusk     — analogous indigo: quiet shift toward violet, subtle and premium.
+.ab-profile-dusk    { --ab-theme-pf-default-accent: var(--ab-swatch-analogous-warm); }
+
+// ---- 4. multi-accent profile (sets a coordinated trio at once) ----
+// Studio — a balanced 3-accent palette over the dark-blue primary: a teal main
+// accent, an amber second and a rose third (analogous-cool + complementary +
+// split-a). Components that opt into --ab-accent-2 / --ab-accent-3 (callouts,
+// cards, a series) pick up the second and third; everything that uses the single
+// --ab-base-accent gets the teal. Re-pitch the whole trio by changing --ab-base-h or
+// the companion s/l, or swap any line for another --ab-swatch-*.
+.ab-profile-studio {
+  --ab-theme-pf-default-accent:   var(--ab-swatch-analogous-cool);   // teal — primary accent
+  --ab-accent-2: var(--ab-swatch-complementary);    // amber — secondary
+  --ab-accent-3: var(--ab-swatch-split-a);          // rose — tertiary
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-n13",
+  "slug": "test-n13",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "decidedValue": "Test value",
+          "timestamp": "2026-08-26T00:00:00Z",
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "Gate hardness is soft; fixed-default implies advisory hardness.",
+            "correctedValue": "ai-default-stood",
+            "evidence": "Session log confirms the AI's proposal stood on silence."
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

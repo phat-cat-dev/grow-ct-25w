@@ -1,0 +1,36 @@
+// =============================================================================
+// cm-vanilla-compat.less — interim renderer/adapter (L1/L2) var provision
+// =============================================================================
+// Our components reference vanilla's own box-model + breakpoint LESS @vars
+// (@item-padding, @item-margin, @item-border-radius, @btn-*, @device-width-*).
+// In the current (pre-rename) vanilla those vars are a MIXED bag: some are still
+// defined (e.g. @item-padding), some have been REMOVED (e.g. @item-border-radius)
+// and break `less:compile` with "variable … is undefined".
+//
+// This file defines ALL of them as our own LESS @vars, so the build never depends
+// on whether current vanilla still ships a given one:
+//   • DEAD vars (vanilla no longer defines them) → take the value below.
+//   • LIVE vars (vanilla still defines them) → vanilla WINS: the vanilla theme
+//     compiles LAST (src/theme/* is the final glob group), and LESS uses the last
+//     definition in scope, so vanilla's value overrides ours. No behaviour change
+//     for live vars.
+// They stay LESS @vars (not --ab-* custom properties) because the components use
+// them in compile-time arithmetic (@item-margin / 2, calc(@item-padding + 2px)),
+// which a custom property cannot do without wrapping every use in calc().
+//
+// ARCHITECTURE NOTE: these are L1 (renderer) vars; owning them is really the L2
+// ADAPTER's job (ab-system-architecture.md, section-schemas.md "per-project
+// adapter schema"). This file is the proto-adapter until the phased rename builds
+// the real --ab-base-if-<renderer>-* adapter; it then folds into that.
+// Values match vanilla's defaults where known, and the theme's --ab-base-radius (0.32rem)
+// for the box-model radius dials.
+
+@item-padding:        1rem;
+@item-margin:         1rem;
+@item-border-radius:  0.32rem;   // = --ab-base-radius (dead in current vanilla)
+@btn-padding:         1rem;
+@btn-margin:          1rem;
+@btn-border-radius:   0.32rem;   // = --ab-base-radius
+
+@device-width-small:  32.5rem;   // 520px
+@device-width-medium: 60rem;     // 960px (per the tabs component's own comment)

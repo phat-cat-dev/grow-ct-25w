@@ -1,0 +1,149 @@
+# Lesson page — YAML authoring form
+#
+# The same structure as lesson-page.html, in a compact, human-authored shape.
+# Nesting:  page -> phase (article) -> block -> component
+# Vocabulary matches page-templates.json: skeletonKey, phase, slot, variant, gateAfter.
+# This is a generator INPUT (authoring form), not rendered Adapt course JSON —
+# a generator still mints unique _id / _parentId and course-wide _trackingId.
+
+pageType: lesson
+id: L01                       # data-adapt-id; block ids derive as <id>-b-NN
+title: Your lesson title
+subtitle: Module 1 · Lesson 1
+
+# Universal _grow frontmatter (renders as data-grow-role: lesson), inside .page__body.
+# The lesson's opening prose is overview CONTENT, so it lives here as `body`
+# (-> frontmatter__body) — not `instruction`, which is reserved for directives.
+frontmatter:
+  eyebrow: Before you begin
+  body: >
+    Introduce the topic, explain why it matters, and tell learners what they
+    will do in this lesson.
+  meta:
+    duration: 10 minutes
+    level: Introductory
+  objectivesTitle: "By the end of this lesson, you will be able to:"
+  objectives:
+    - Describe the central idea in your own words.
+    - Apply the idea to a relevant example.
+    - Identify one action to take in your own context.
+  # frontmatter can also show a plain bullet list (distinct from objectives)
+  bulletsTitle: "You'll need:"
+  bullets:
+    - A recent piece of your own written feedback
+    - Ten quiet minutes
+
+# Five-phase spine.  phase: intro | middle | end   section: the article role
+phases:
+  - section: lesson-open
+    phase: intro
+    eyebrow: 01 · Introduction
+    title: Start with a question
+    intro: Connect the lesson to something the learner already knows.
+    blocks:
+      - skeletonKey: orientation
+        title: Think about your experience
+        components:
+          - type: text
+            slot: orientation
+            body: >
+              What do you already know about this topic? Keep one example in
+              mind as you continue.
+
+  - section: lesson-concept
+    phase: middle
+    eyebrow: 02 · Explore
+    title: Understand the idea
+    intro: Introduce the concept, make it concrete, then show how to use it.
+    blocks:
+      - skeletonKey: concept-definition
+        title: The key concept
+        components:
+          - type: text
+            slot: concept-definition
+            body: Define the concept in clear, learner-friendly language.
+      - skeletonKey: concept-context
+        gateAfter: true           # trickle gate — "now see it"
+        title: Your context
+        instruction: Relate the concept to the learner's subject, work, or life.
+        components:
+          - type: text
+            slot: concept-context
+            body: Add a context-specific explanation or example.
+      - skeletonKey: worked-example
+        title: Worked example
+        components:
+          - type: text
+            slot: worked-example
+            body: Walk through an example and explain the decisions made.
+      - skeletonKey: practical-guidance
+        gateAfter: true           # trickle gate — "now prove it"
+        title: Try it yourself
+        components:
+          - type: text
+            slot: practical-guidance
+            body: Give the learner a practical next step to try.
+
+  - section: lesson-formative
+    phase: middle
+    eyebrow: 03 · Check your understanding
+    title: Pause and check
+    intro: Use one question for each lesson outcome to check understanding.
+    blocks:
+      - skeletonKey: check          # repeat once per lesson outcome (×3)
+        title: Check 1 · Key idea
+        components:
+          - type: mcq
+            slot: check
+            stem: Which response best explains the key idea?
+            options:
+              - text: A plausible but incomplete explanation
+              - text: The explanation that connects the idea to its purpose
+                correct: true
+              - text: An unrelated detail
+
+  - section: lesson-reflection
+    phase: end
+    eyebrow: 04 · Reflect
+    title: Connect it to your practice
+    intro: Invite reflection without making it a blocking assessment.
+    blocks:
+      - skeletonKey: reflective-prompt
+        title: Your reflection
+        components:
+          - type: opentext
+            slot: reflective-prompt
+            variant: reflection
+            prompt: What is one idea you will take into your own context?
+
+  - section: lesson-close
+    phase: end
+    eyebrow: 05 · Wrap up
+    title: Take the next step
+    intro: Summarise the key points and point learners to further reading.
+    blocks:
+      - skeletonKey: summary
+        title: Remember
+        components:
+          - type: text
+            slot: summary
+            bullets:                 # a text component may carry prose (body) OR bullets
+              - Restate the first key takeaway.
+              - Restate the second key takeaway.
+              - Give one practical next step.
+      - skeletonKey: lesson-references
+        title: Further reading
+        components:
+          - type: references
+            slot: lesson-references
+            items:
+              - Add a source learners can use to explore further.
+
+navigation:
+  back:
+    label: Back to lesson start
+    href: "#lesson-open"
+  continue:
+    label: Continue
+    href: "#lesson-close"
+    primary: true

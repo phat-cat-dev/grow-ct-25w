@@ -1,0 +1,37 @@
+<svg class="flow-diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 90" role="img" aria-label="Four-step horizontal sequence">
+<style>.flow-diagram {
+  --flow-accent: var(--accent, #326d91);
+  --flow-paper: var(--surface-1, #fafcfd);
+  --flow-ink: var(--ink, #24313b);
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: var(--flow-height, 18rem);
+  overflow: visible;
+}
+.flow-diagram .edge { fill: none; stroke: var(--flow-accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .5; }
+.flow-diagram .node { fill: var(--flow-paper); stroke: var(--flow-accent); stroke-width: 2.5; }
+.flow-diagram .node.key { fill: color-mix(in srgb, var(--flow-accent) 16%, var(--flow-paper)); }
+.flow-diagram .nlabel { fill: var(--flow-ink); font-family: var(--font-ui, system-ui, sans-serif); font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.flow-diagram .runner { fill: var(--flow-accent); opacity: 0; }
+.flow-diagram.is-playing .edge { animation: flow-edge-draw calc(.55s / var(--flow-rate, 1)) ease both; animation-delay: calc(var(--d, 0s) / var(--flow-rate, 1)); }
+.flow-diagram.is-playing .runner { opacity: 1; animation: flow-runner calc(6s / var(--flow-rate, 1)) linear infinite; }
+.flow-diagram.is-paused :is(.edge,.runner) { animation-play-state: paused; }
+@keyframes flow-edge-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes flow-runner { to { offset-distance: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .flow-diagram.is-playing :is(.edge,.runner) { animation: none; }
+  .flow-diagram .runner { opacity: 0 !important; }
+}
+:is(.no-motion,[data-tm-no-motion="true"]) .flow-diagram.is-playing :is(.edge,.runner) { animation: none; }
+:is(.no-motion,[data-tm-no-motion="true"]) .flow-diagram .runner { opacity: 0; }
+</style>
+        <path class="edge" pathLength="1" style="--d:0s"   d="M38 45 L118 45"/>
+        <path class="edge" pathLength="1" style="--d:.15s" d="M118 45 L198 45"/>
+        <path class="edge" pathLength="1" style="--d:.3s"  d="M198 45 L278 45"/>
+        <circle class="node key" cx="38" cy="45" r="18"/><text class="nlabel" x="38" y="45">1</text>
+        <circle class="node" cx="118" cy="45" r="18"/><text class="nlabel" x="118" y="45">2</text>
+        <circle class="node" cx="198" cy="45" r="18"/><text class="nlabel" x="198" y="45">3</text>
+        <circle class="node" cx="278" cy="45" r="18"/><text class="nlabel" x="278" y="45">4</text>
+        <circle class="runner" r="5" style="offset-path:path('M38 45 L278 45')"/>
+      </svg>

@@ -1,0 +1,35 @@
+{
+  "generatedProse": {
+    "concept-context": "In your subject, naming the failure mode is what makes a check possible. An invented reference is a hallucination, an oddly exact figure may be false precision, and a tidy answer that drops the exceptions is oversimplification or omission. Put a name to what feels wrong, and you know exactly what to go and check.",
+    "worked-example": "Consider two psychology students who receive the same AI-written answer: a confident paragraph with a precise statistic, a named source, and a tidy conclusion.\n\n{{learner-a}} reads it, finds nothing obviously wrong, and uses it whole. The exact figure was false precision, the source was a hallucination, and the neat conclusion was an oversimplification that dropped every exception. Because {{learner-a}} could not name these failures, none of them were spotted, and all three went into the work.\n\n{{learner-b}} reads the same paragraph against the failure modes. The oddly exact figure looks like false precision and fails a check; the source cannot be found, which points to hallucination; the conclusion feels too neat, a sign of oversimplification. Little of the paragraph survives, and the work is stronger for it.\n\nBoth saw the same answer. Only {{learner-b}} had names for what was wrong, and so knew exactly what to check.",
+    "summary": "AI output fails in named patterns: hallucination, bias, plausible nonsense, false precision, oversimplification, outdated information, context collapse and omission. Once you can name them, a vague unease about an answer becomes a specific thing to check. You can now name the main failure modes, analyse an answer to see which is at work, and spot the ones most likely to catch you out. The final lesson turns all of this into responsible judgement about when, and whether, to use AI."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "An AI answer for an assignment in {{context}} cites a study you then cannot find anywhere. Which failure mode is this most likely to be?",
+      "items": [
+        {
+          "text": "Hallucination: the tool has invented a real-looking source that does not exist.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Outdated information, because the study is older than the training cut-off.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Context collapse, because the study is from a different field.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Oversimplification, because the answer was too short.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. A cited study you cannot find anywhere is a hallucination, an invented source that looks real.",
+        "incorrectNotFinal": "Not quite. A source that cannot be found at all has most likely been invented, not merely dated or misapplied.",
+        "incorrectFinal": "A cited study you cannot find is a hallucination: a fabricated, real-looking source. Outdated information, context collapse and oversimplification are different failures."
+      }
+    }
+  }
+}

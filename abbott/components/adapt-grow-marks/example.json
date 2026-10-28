@@ -1,0 +1,33 @@
+[
+  {
+    "_id": "c-marks-text-01",
+    "_parentId": "b-20",
+    "_type": "component",
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "What marks can do",
+    "body": "A landscape is built from a <span data-gm-mark=\"underline\" data-gm-color=\"accent\">foreground</span>, a middle ground and a <span data-gm-mark=\"oval\">backdrop</span>. Depth is a <span data-gm-mark=\"highlight\" data-gm-color=\"neutral\">choice</span>, not an accident."
+  },
+  {
+    "_id": "c-marks-mcq-01",
+    "_parentId": "b-20",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Quick check",
+    "body": "Which plane usually carries the main subject?",
+    "_growMarks": {
+      "_feedback": {
+        "_isEnabled": true,
+        "_correct": { "_mark": "tick", "_color": "positive" },
+        "_incorrect": { "_mark": "cross", "_color": "negative" }
+      }
+    },
+    "_items": [
+      { "text": "The foreground", "_shouldBeSelected": true },
+      { "text": "The sky", "_shouldBeSelected": false }
+    ]
+  }
+]

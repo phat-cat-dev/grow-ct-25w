@@ -1,0 +1,47 @@
+{{!--
+  adapt-grow-levels
+  A lead-in + a vertical stack of tiered levels. Each level is a button (badge +
+  title + chevron) with a detail panel (what it allows + an "In practice" advice
+  pop-out). The view opens level 1, and opening a level unlocks the next.
+--}}
+<div class="component__inner growLevels__inner">
+  <div class="levels" data-component="grow-levels">
+
+    {{#if displayTitle}}
+      <div class="levels__title" role="heading" aria-level="3">{{{compile displayTitle}}}</div>
+    {{/if}}
+
+    {{#if body}}
+      <div class="levels__lead">{{{compile body}}}</div>
+    {{/if}}
+
+    {{#if instruction}}
+      <div class="levels__instruction">{{{compile instruction}}}</div>
+    {{/if}}
+
+    <ol class="levels__list">
+      {{#each _items}}
+        <li class="levels__item levels__item--{{#if _tone}}{{_tone}}{{else}}neutral{{/if}}">
+          <button type="button" class="levels__card js-levels-card" aria-expanded="false">
+            <span class="levels__badge" aria-hidden="true"></span>
+            <span class="levels__card-title">{{{compile title}}}</span>
+            <span class="levels__lock" aria-hidden="true"></span>
+            <span class="levels__chevron" aria-hidden="true"></span>
+          </button>
+          <div class="levels__detail" aria-hidden="true">
+            {{#if body}}
+              <div class="levels__body">{{{compile body}}}</div>
+            {{/if}}
+            {{#if advice}}
+              <button type="button" class="levels__advice-toggle js-levels-advice" aria-expanded="false">
+                <span class="levels__advice-icon" aria-hidden="true"></span>In practice
+              </button>
+              <div class="levels__advice" aria-hidden="true">{{{compile advice}}}</div>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+
+  </div>
+</div>

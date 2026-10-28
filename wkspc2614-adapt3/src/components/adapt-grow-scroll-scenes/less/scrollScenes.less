@@ -1,0 +1,339 @@
+// ============================================================================
+//  scrollScenes.less
+//  Port of the scroll-scenes study CSS (scroll-scenes.css + .backgrounds.css)
+//  plus the per-scene teaching extras. Selectors are kept global but scoped by
+//  the .scroll-scenes host class, so the engine markup styles identically to
+//  the study. Changes from the originals:
+//   - `font:` shorthands with a `/` are split into font-family/size/line-height
+//     (LESS would otherwise try to divide across the slash).
+//   - the study's `:is(hostSel, sceneSel)::before` groupings are written as
+//     plain comma selector lists, because LESS 3.x cannot parse a comma inside
+//     :is(). The scene-vs-component override still works: the component-level
+//     selector carries :not([data-scene-bg]), so a scene with its own
+//     background opts out and its own rule wins.
+//   - a thin component wrapper (.scrollScenes__*) is added.
+//
+//  Theming: the token chain reads the GROW runtime tokens first
+//  (--accent / --ink / --surface-1 / --font-ui on :root) and falls back to the
+//  study's own values, so the component retints with the active theme and
+//  dark mode for free. data-scheme (night/warm/dusk) remains an explicit,
+//  author-chosen override.
+// ============================================================================
+
+.scrollScenes {
+  &__widget {
+    // The engine host carries its own spacing; nothing extra needed here.
+  }
+}
+
+// ── Base (was scroll-scenes.css) ────────────────────────────────────────────
+
+.scroll-scenes {
+  --scene-accent: var(--accent, #246b79);
+  --scene-ink: var(--ink, #152b35);
+  --scene-paper: var(--surface-1, #f2f6f3);
+  color: var(--scene-ink);
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.scroll-scenes,
+.scroll-scenes * { box-sizing: border-box; }
+.scroll-scenes .scene-nav { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; padding: .75rem 1rem; }
+.scroll-scenes button { font: inherit; color: inherit; background: transparent; border: 0; padding: .5rem .8rem; cursor: pointer; }
+.scroll-scenes button[aria-current="step"] { color: var(--scene-accent); text-decoration: underline; text-underline-offset: .4em; font-weight: 700; }
+.scroll-scenes :focus-visible { outline: 3px solid var(--scene-accent); outline-offset: 3px; }
+.scroll-scenes progress { inline-size: 6rem; block-size: .4rem; accent-color: var(--scene-accent); margin-inline: auto .5rem; }
+.scroll-scenes .scene-status { font-size: .8rem; }
+.scroll-scenes [data-scroll-viewport] { block-size: ~"min(72svh, 48rem)"; min-block-size: 20rem; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y proximity; background: var(--scene-paper); }
+.scroll-scenes [data-scroll-scene] { min-block-size: 100%; display: grid; align-items: center; scroll-snap-align: start; padding: clamp(1.5rem, 5vw, 5rem); overflow: clip; position: relative; isolation: isolate; }
+.scroll-scenes [data-scroll-scene]::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .22; background: radial-gradient(ellipse at 85% 25%, var(--scene-colour, #44a8ba), transparent 60%), repeating-linear-gradient(135deg, transparent 0 4rem, var(--scene-colour, #44a8ba) 4rem 4.08rem, transparent 4.08rem 8rem); }
+.scroll-scenes [data-scene-content] { max-inline-size: 48rem; transform-origin: left center; }
+.scroll-scenes .scene-number { font-family: ui-monospace, monospace; font-size: .85rem; letter-spacing: .15em; color: var(--scene-accent); }
+.scroll-scenes h2 { font-size: clamp(2rem, 6vw, 5rem); line-height: 1.06; letter-spacing: -.045em; margin-block: 1rem; }
+.scroll-scenes .scene-copy { max-inline-size: 46ch; font-size: clamp(1rem, 2vw, 1.25rem); }
+
+// Per-scene teaching extras (was EXTRA_CSS in scenes.py).
+.scroll-scenes .scene-extra { max-inline-size: 46ch; margin-block: .6rem 0; font-size: .95rem; }
+.scroll-scenes .scene-extra strong { color: var(--scene-accent); }
+.scroll-scenes .scene-cue { font-style: italic; opacity: .85; }
+
+@media print {
+  .scroll-scenes [data-scroll-viewport] { block-size: auto; overflow: visible; }
+  .scroll-scenes [data-scroll-scene] { break-inside: avoid; }
+  .scroll-scenes [data-scene-content] { opacity: 1 !important; translate: none !important; scale: none !important; filter: none !important; }
+}
+
+// ── Colour slots and schemes (was scroll-scenes.backgrounds.css s1) ──────────
+
+.scroll-scenes {
+  --scene-colour-1: #44a8ba;
+  --scene-colour-2: #dbaa45;
+  --scene-colour-3: #ba7dbb;
+  --scene-colour-4: #52a783;
+}
+
+.scroll-scenes [data-scroll-scene]:nth-child(4n + 1) { --scene-colour: var(--scene-colour-1); }
+.scroll-scenes [data-scroll-scene]:nth-child(4n + 2) { --scene-colour: var(--scene-colour-2); }
+.scroll-scenes [data-scroll-scene]:nth-child(4n + 3) { --scene-colour: var(--scene-colour-3); }
+.scroll-scenes [data-scroll-scene]:nth-child(4n)     { --scene-colour: var(--scene-colour-4); }
+
+.scroll-scenes [data-scroll-scene][data-scene-colour="1"] { --scene-colour: var(--scene-colour-1); }
+.scroll-scenes [data-scroll-scene][data-scene-colour="2"] { --scene-colour: var(--scene-colour-2); }
+.scroll-scenes [data-scroll-scene][data-scene-colour="3"] { --scene-colour: var(--scene-colour-3); }
+.scroll-scenes [data-scroll-scene][data-scene-colour="4"] { --scene-colour: var(--scene-colour-4); }
+
+.scroll-scenes[data-scheme="night"] {
+  --scene-paper: #0f1d24;
+  --scene-ink: #e7f0ee;
+  --scene-accent: #6cc3d3;
+  --scene-colour-1: #44a8ba;
+  --scene-colour-2: #dbaa45;
+  --scene-colour-3: #ba7dbb;
+  --scene-colour-4: #52a783;
+}
+.scroll-scenes[data-scheme="warm"] {
+  --scene-paper: #f7f1e8;
+  --scene-ink: #2b2118;
+  --scene-accent: #8a3f17;
+  --scene-colour-1: #d98a4a;
+  --scene-colour-2: #c9a227;
+  --scene-colour-3: #b5547a;
+  --scene-colour-4: #6b8f5a;
+}
+.scroll-scenes[data-scheme="dusk"] {
+  --scene-paper: #f3f0f7;
+  --scene-ink: #231b33;
+  --scene-accent: #5b3f95;
+  --scene-colour-1: #7a62c4;
+  --scene-colour-2: #d8896b;
+  --scene-colour-3: #4aa3a0;
+  --scene-colour-4: #c9b04a;
+}
+
+// ── Derived tokens: the colour formula (s2) ──────────────────────────────────
+
+.scroll-scenes [data-scroll-scene] {
+  --bg-tint:        color-mix(in oklch, var(--scene-colour) 16%, var(--scene-paper));
+  --bg-tint-strong: color-mix(in oklch, var(--scene-colour) 34%, var(--scene-paper));
+  --bg-shade:       color-mix(in oklch, var(--scene-accent) 14%, var(--scene-paper));
+  --bg-line:        color-mix(in oklch, var(--scene-colour) 60%, transparent);
+  --bg-glow:        color-mix(in oklch, var(--scene-colour) 50%, transparent);
+  --bg-vignette:    color-mix(in oklch, var(--scene-ink) 10%, transparent);
+  --scene-eyebrow:  color-mix(in oklch, var(--scene-accent) 75%, var(--scene-ink));
+}
+.scroll-scenes[data-scheme="night"] [data-scroll-scene] {
+  --bg-vignette: color-mix(in oklch, black 30%, transparent);
+}
+
+// ── Pattern layer (s3) ───────────────────────────────────────────────────────
+
+.scroll-scenes [data-scroll-scene]::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: none;
+}
+
+// ── Backgrounds (s4) ─────────────────────────────────────────────────────────
+// Each background pairs a component-level selector (opts a scene out with
+// :not([data-scene-bg])) and a scene-level selector.
+
+// lines: the original look, rebuilt from tokens.
+.scroll-scenes[data-scene-bg="lines"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="lines"]::before {
+  opacity: var(--bg-opacity, .22);
+  background:
+    radial-gradient(ellipse at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%), var(--scene-colour), transparent 60%),
+    repeating-linear-gradient(var(--bg-angle, 135deg),
+      transparent 0 calc(var(--bg-gap, 8rem) / 2),
+      var(--scene-colour) calc(var(--bg-gap, 8rem) / 2) calc(var(--bg-gap, 8rem) / 2 + var(--bg-line-width, .08rem)),
+      transparent calc(var(--bg-gap, 8rem) / 2 + var(--bg-line-width, .08rem)) var(--bg-gap, 8rem));
+}
+
+// aurora: three soft glows, one in the accent.
+.scroll-scenes[data-scene-bg="aurora"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="aurora"]::before {
+  opacity: var(--bg-opacity, .7);
+  background:
+    radial-gradient(55% 60% at 15% 20%, var(--bg-glow), transparent 70%),
+    radial-gradient(50% 55% at 88% 28%, color-mix(in oklch, var(--scene-accent) 38%, transparent), transparent 70%),
+    radial-gradient(65% 45% at 55% 100%, color-mix(in oklch, var(--scene-colour) 32%, transparent), transparent 72%);
+}
+.scroll-scenes[data-scene-bg="aurora"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="aurora"] .scene-number { color: var(--scene-eyebrow); }
+
+// mesh: four corner washes.
+.scroll-scenes[data-scene-bg="mesh"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="mesh"]::before {
+  opacity: var(--bg-opacity, .85);
+  background:
+    radial-gradient(at 0% 0%, var(--bg-tint-strong), transparent 55%),
+    radial-gradient(at 100% 0%, color-mix(in oklch, var(--scene-accent) 22%, transparent), transparent 55%),
+    radial-gradient(at 100% 100%, var(--bg-tint-strong), transparent 55%),
+    radial-gradient(at 0% 100%, var(--bg-shade), transparent 55%);
+}
+.scroll-scenes[data-scene-bg="mesh"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="mesh"] .scene-number { color: var(--scene-eyebrow); }
+
+// dots: a dot grid fading from the focus point, over a wash.
+.scroll-scenes[data-scene-bg="dots"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="dots"]::before {
+  opacity: var(--bg-opacity, 1);
+  background: linear-gradient(var(--bg-angle, 160deg), var(--bg-tint), transparent 65%);
+}
+.scroll-scenes[data-scene-bg="dots"] [data-scroll-scene]:not([data-scene-bg])::after,
+.scroll-scenes [data-scroll-scene][data-scene-bg="dots"]::after {
+  opacity: .55;
+  background-image: radial-gradient(circle, var(--bg-line) 0 var(--bg-dot, 1.5px), transparent calc(var(--bg-dot, 1.5px) + .5px));
+  background-size: var(--bg-gap-sm, 1.75rem) var(--bg-gap-sm, 1.75rem);
+  mask-image: radial-gradient(ellipse at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%), #000 0, transparent 75%);
+}
+.scroll-scenes[data-scene-bg="dots"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="dots"] .scene-number { color: var(--scene-eyebrow); }
+
+// grid: fine square grid.
+.scroll-scenes[data-scene-bg="grid"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="grid"]::before {
+  opacity: var(--bg-opacity, 1);
+  background: linear-gradient(var(--bg-angle, 200deg), var(--bg-tint), transparent 70%);
+}
+.scroll-scenes[data-scene-bg="grid"] [data-scroll-scene]:not([data-scene-bg])::after,
+.scroll-scenes [data-scroll-scene][data-scene-bg="grid"]::after {
+  opacity: .35;
+  background-image:
+    linear-gradient(var(--bg-line) 0 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-line) 0 1px, transparent 1px);
+  background-size: var(--bg-gap-sm, 3rem) var(--bg-gap-sm, 3rem);
+  mask-image: radial-gradient(ellipse at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%), #000 0, transparent 80%);
+}
+.scroll-scenes[data-scene-bg="grid"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="grid"] .scene-number { color: var(--scene-eyebrow); }
+
+// contour: concentric hairline rings around the focus point.
+.scroll-scenes[data-scene-bg="contour"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="contour"]::before {
+  opacity: var(--bg-opacity, 1);
+  background: radial-gradient(ellipse at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%), var(--bg-tint), transparent 65%);
+}
+.scroll-scenes[data-scene-bg="contour"] [data-scroll-scene]:not([data-scene-bg])::after,
+.scroll-scenes [data-scroll-scene][data-scene-bg="contour"]::after {
+  opacity: .5;
+  background-image: repeating-radial-gradient(circle at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%),
+    transparent 0 var(--bg-gap-sm, 1.75rem),
+    var(--bg-line) var(--bg-gap-sm, 1.75rem) calc(var(--bg-gap-sm, 1.75rem) + 1px));
+  mask-image: radial-gradient(ellipse at var(--bg-focus-x, 85%) var(--bg-focus-y, 25%), #000 0, transparent 85%);
+}
+.scroll-scenes[data-scene-bg="contour"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="contour"] .scene-number { color: var(--scene-eyebrow); }
+
+// horizon: tinted bands low in the scene with a small low sun.
+.scroll-scenes[data-scene-bg="horizon"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="horizon"]::before {
+  opacity: var(--bg-opacity, 1);
+  background:
+    radial-gradient(circle at 78% 60%, color-mix(in oklch, var(--scene-colour) 30%, transparent) 0 2.5rem, transparent 4rem),
+    linear-gradient(to bottom,
+      transparent 0 58%,
+      var(--bg-tint) 58% 70%,
+      transparent 70% 72%,
+      var(--bg-tint-strong) 72% 84%,
+      transparent 84% 86%,
+      var(--bg-shade) 86% 100%);
+}
+.scroll-scenes[data-scene-bg="horizon"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="horizon"] .scene-number { color: var(--scene-eyebrow); }
+
+// spotlight: a pool of colour behind the text with an edge vignette.
+.scroll-scenes[data-scene-bg="spotlight"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="spotlight"]::before {
+  opacity: var(--bg-opacity, 1);
+  background:
+    radial-gradient(60% 70% at 28% 50%, color-mix(in oklch, var(--scene-colour) 24%, transparent), transparent 72%),
+    radial-gradient(120% 120% at 50% 50%, transparent 55%, var(--bg-vignette) 100%);
+}
+.scroll-scenes[data-scene-bg="spotlight"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="spotlight"] .scene-number { color: var(--scene-eyebrow); }
+
+// weave: a faint checker fading in from the left, over a wash.
+.scroll-scenes[data-scene-bg="weave"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="weave"]::before {
+  opacity: var(--bg-opacity, 1);
+  background: linear-gradient(var(--bg-angle, 120deg), var(--bg-tint), transparent 60%);
+}
+.scroll-scenes[data-scene-bg="weave"] [data-scroll-scene]:not([data-scene-bg])::after,
+.scroll-scenes [data-scroll-scene][data-scene-bg="weave"]::after {
+  opacity: .14;
+  background-image: repeating-conic-gradient(var(--bg-line) 0 25%, transparent 0 50%);
+  background-size: var(--bg-gap-sm, 2.25rem) var(--bg-gap-sm, 2.25rem);
+  mask-image: linear-gradient(100deg, transparent 25%, #000 95%);
+}
+.scroll-scenes[data-scene-bg="weave"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="weave"] .scene-number { color: var(--scene-eyebrow); }
+
+// wash: a single diagonal gradient from tint to shade. The calmest option.
+.scroll-scenes[data-scene-bg="wash"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="wash"]::before {
+  opacity: var(--bg-opacity, 1);
+  background: linear-gradient(var(--bg-angle, 135deg), var(--bg-tint) 0%, transparent 55%, var(--bg-shade) 100%);
+}
+.scroll-scenes[data-scene-bg="wash"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="wash"] .scene-number { color: var(--scene-eyebrow); }
+
+// plain: no pattern at all.
+.scroll-scenes[data-scene-bg="plain"] [data-scroll-scene]:not([data-scene-bg])::before,
+.scroll-scenes [data-scroll-scene][data-scene-bg="plain"]::before {
+  background: none;
+}
+.scroll-scenes[data-scene-bg="plain"] [data-scroll-scene]:not([data-scene-bg]) .scene-number,
+.scroll-scenes [data-scroll-scene][data-scene-bg="plain"] .scene-number { color: var(--scene-eyebrow); }
+
+// ── Transition models (s5) ───────────────────────────────────────────────────
+// Move [data-scene-content] with transform / clip-path, beside the JS effects
+// (opacity, translate, scale, filter). The driver writes --scene-offset and
+// --scene-distance every frame, so these are live. Pair with effect fade/none.
+
+.scroll-scenes[data-scene-transition="rise"] [data-scene-content] {
+  transform: translateY(calc(var(--scene-offset, 0) * 3.5rem));
+}
+.scroll-scenes[data-scene-transition="drift"] [data-scene-content] {
+  transform: translateX(calc(var(--scene-offset, 0) * -5rem));
+}
+.scroll-scenes[data-scene-transition="tilt"] [data-scene-content] {
+  transform: perspective(70rem) rotateX(calc(var(--scene-offset, 0) * -16deg));
+}
+.scroll-scenes[data-scene-transition="wipe"] [data-scene-content] {
+  clip-path: inset(0 calc(var(--scene-distance, 0) * 45%) 0 0);
+}
+.scroll-scenes[data-scene-transition="stagger"] .scene-number {
+  transform: translateY(calc(var(--scene-offset, 0) * 1rem));
+}
+.scroll-scenes[data-scene-transition="stagger"] h2 {
+  transform: translateY(calc(var(--scene-offset, 0) * 2.5rem));
+}
+.scroll-scenes[data-scene-transition="stagger"] .scene-copy {
+  transform: translateY(calc(var(--scene-offset, 0) * 4rem));
+}
+
+// ── Safety: reduced motion, forced colours, print (s6) ───────────────────────
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-scenes [data-scene-content],
+  .scroll-scenes [data-scene-content] * { transform: none !important; clip-path: none !important; }
+}
+.no-motion .scroll-scenes [data-scene-content],
+.no-motion .scroll-scenes [data-scene-content] *,
+[data-tm-no-motion="true"] .scroll-scenes [data-scene-content],
+[data-tm-no-motion="true"] .scroll-scenes [data-scene-content] * { transform: none !important; clip-path: none !important; }
+
+@media (forced-colors: active) {
+  .scroll-scenes [data-scroll-scene]::before,
+  .scroll-scenes [data-scroll-scene]::after { display: none; }
+}
+@media print {
+  .scroll-scenes [data-scroll-scene]::after { display: none; }
+  .scroll-scenes [data-scene-content],
+  .scroll-scenes [data-scene-content] * { transform: none !important; clip-path: none !important; }
+}

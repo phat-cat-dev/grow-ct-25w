@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "id": "academic-skills-template",
+  "title": "[Title: name the skill and the moment, e.g. 'The two weeks before the deadline']",
+  "intro": "[Intro: WHO it is for (e.g. students managing a substantial assignment), WHAT skill they practise (planning / procrastination / help-seeking / time management), and the honesty line. End with: 'This is demonstration content for discussion, not personalised academic advice.' Keep IDs below; replace all bracketed text.]",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "[Opening title: the situation in a few words]",
+      "body": "[Set the scene concretely: one realistic academic situation with a low-pressure start, so the tension is 'easy to postpone', not 'already a crisis'. 2-4 sentences.]",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "[Decision 1 title: the first self-management choice]",
+      "body": "[State the choice point. Make both options defensible, not obviously right vs wrong. e.g. how to start a big task.]",
+      "prompt": "[Optional: a pre-choice reflection, e.g. 'What usually happens when you face a task this size?' Delete this line if unused.]",
+      "choices": [
+        {
+          "label": "[Option 1: the more skilful habit, phrased without judgement]",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "[Option 2: the common, understandable shortcut]",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "[Consequence 1A title: short, neutral]",
+      "body": "[Show the realistic payoff of option 1. Avoid praise; just let the situation improve plausibly. The task is not magically solved, the next move is clearer.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "[Consequence 1B title: short, neutral]",
+      "body": "[Show the realistic cost of option 2 WITHOUT humiliating the learner. Make it a natural consequence (time lost, task feels bigger), not a telling-off.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "Pause and reflect / 1",
+      "body": "[One or two sentences naming the underlying principle this decision illustrates (e.g. 'Starting is a skill, not a mood').]",
+      "prompt": "[Reflection question tied to the learner's own experience, e.g. 'What made it easier or harder to begin?']",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "[Decision 2 title: a competing demand or trade-off]",
+      "body": "[A new, different self-management tension (not a repeat of decision 1). e.g. protecting planned time against a social or work demand.]",
+      "choices": [
+        {
+          "label": "[Option 1]",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "[Option 2]",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "[Consequence 2A title]",
+      "body": "[Realistic outcome of option 1.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "[Consequence 2B title]",
+      "body": "[Realistic outcome of option 2.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "Pause and reflect / 2",
+      "body": "[Name the principle, e.g. 'Every yes to one thing is a quiet no to another'.]",
+      "prompt": "[Reflection question, e.g. 'Which commitment was easiest to drop, and why?']",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "[Decision 3 title: the help-seeking or recovery choice]",
+      "body": "[A third distinct tension, ideally about getting unstuck or recovering, e.g. ask for help with a precise question vs struggle on alone.]",
+      "choices": [
+        {
+          "label": "[Option 1]",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "[Option 2]",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "[Consequence 3A title]",
+      "body": "[Realistic outcome of option 1.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "[Consequence 3B title]",
+      "body": "[Realistic outcome of option 2.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "Pause and reflect / 3",
+      "body": "[Name the principle, e.g. 'Asking for help early is a planning decision, not an admission of failure'.]",
+      "prompt": "[Reflection question, e.g. 'What stops you asking for help sooner than you do?']",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "[Ending title: frame it as the learner's own route]",
+      "body": "[Debrief: connect the three decisions back to the learning goal. Emphasise that the choices, not more hours, changed the outcome. Do not score or rank the learner.]",
+      "prompt": "[Transfer question: 'What is one thing you will do differently next time?']"
+    }
+  ]
+}

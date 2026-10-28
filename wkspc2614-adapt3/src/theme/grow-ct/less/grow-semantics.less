@@ -1,0 +1,58 @@
+// ============================================================================
+//  grow-semantics.less — the inline semantic cue kit, re-homed from the EXCLUDED
+//  ab-theme (ab-semantics.less) so it renders in the active build.
+//
+//  COLLISION-SAFE: every rule is scoped under a required `.ab-cue` wrapper, so
+//  the bare `.positive` / `.negative` / `.neutral` classes (already used as
+//  compound modifiers by ab-highlight / ab-mark / ab-btn / mejs) are NEVER
+//  re-targeted. This is the deliberate difference from the original ab-theme
+//  version, which gated the bare classes under html.ab-theme instead.
+//
+//  Author inline, anywhere prose renders:
+//    <div class="ab-cue positive advise">…</div>   green cue + lightbulb
+//    <div class="ab-cue negative warn">…</div>      red cue + warning
+//    <div class="ab-cue neutral observe">…</div>    amber cue + eye
+//    <div class="ab-cue positive">…</div>           green cue + default tick
+//  Layer 1 (positive/negative/neutral) sets the colour + default icon; layer 2
+//  (correct/advise/incorrect/warn/observe) swaps the icon, keeping the colour.
+//  Colours reuse the active --ab-success/--ab-danger/--ab-warning tokens.
+// ============================================================================
+
+.ab-cue {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  border-radius: var(--ab-border-radius, 0.375rem);
+  border-left: 0.25rem solid var(--ab-cue-accent, var(--ab-base-hairline, #ccc));
+  background: color-mix(in srgb, var(--ab-cue-accent, #888) 7%, var(--ab-base-surface, #fff));
+  color: var(--ab-base-ink, #1a1a1a);
+
+  &::before {
+    content: var(--ab-cue-icon, "");
+    font-family: 'Material Symbols Outlined';
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    color: var(--ab-cue-accent);
+  }
+
+  > *:last-child { margin-bottom: 0; }
+}
+
+// layer 1 — colour + default icon
+.ab-cue.positive { --ab-cue-accent: var(--ab-success, #2e7d4f); --ab-cue-icon: "check_circle"; }
+.ab-cue.negative { --ab-cue-accent: var(--ab-danger, #b23b3b);  --ab-cue-icon: "cancel"; }
+.ab-cue.neutral  { --ab-cue-accent: var(--ab-warning, #b7791f); --ab-cue-icon: "info"; }
+
+// layer 2 — icon sub-categories (inherit the layer-1 colour)
+.ab-cue.positive.correct { --ab-cue-icon: "check_circle"; }
+.ab-cue.positive.advise  { --ab-cue-icon: "lightbulb"; }
+.ab-cue.negative.incorrect { --ab-cue-icon: "cancel"; }
+.ab-cue.negative.warn      { --ab-cue-icon: "warning"; }
+.ab-cue.neutral.observe    { --ab-cue-icon: "visibility"; }

@@ -1,0 +1,11 @@
+- Held text: the grids were extracted with pdfplumber, cell by cell; the PDFs' line breaks inside words are kept as held ("Unsubstantiate d", "self- organisational", "challen ging"). Spans point into the joined text. The four layout extracts nts held stay beside it.
+- AC3: mark points copied from the PDFs' header rows; level 5's header extraction is irregular (merged cells), but its points are the same as levels 4 and 6 on the page.
+- AC3, `uk`: our reading of each band against UK honours classes and master's outcomes; the issuer labels bands by marks only.
+- AC5, `sameAs`: matched on text with case, spacing and the words is, an, a, the, able, to, be, are ignored; 331 cells, 241 first texts. Near-identical cells with a real difference are kept apart.
+- AC5, `echoes`: a run of seven or more words shared with an FHEQ statement; recorded as a finding, not a claim of the issuer's.
+- AC6: terms found by our lexicons (`ac_terms.py`), matched on whole words; nominalisations count with their verb ("evaluation" under evaluate); "knowledge", "understanding" and "argument" count as objects. Rule (7) asks P2 to check every term at its offset: open.
+- AC6, columns: level 7's 40-49 band is a fail there, but it is counted in the 40-49 column with the undergraduate pass bands.
+- AC8: the issuer's criterion name is its own field (`stated`); the ACPRAC-DAT pathways are ours (`inferred`), from the thirteen named in that project's charter.
+- S4a: the student versions describe what the work shows in that band, in the second person; for fail bands they say what is not yet shown.
+- S1: status, publication date and licence are unknown (D3). The use rules (section 15) are not held.
+- The professional and life skills cells repeat across levels; their versions repeat with them.

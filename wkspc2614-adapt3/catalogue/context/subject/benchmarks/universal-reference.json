@@ -1,0 +1,2111 @@
+{
+  "subjectBenchmarkId": "universal-reference",
+  "subject": {
+    "name": "Universal (shared core of the QAA subject benchmark statements)",
+    "codes": []
+  },
+  "issuer": "QAA (distilled across the subject benchmark statements)",
+  "title": "Universal reference benchmark: the shared core of the QAA subject benchmark statements",
+  "edition": "derived 2026-10-25",
+  "published": "2026-10-25",
+  "status": "draft",
+  "levelsCovered": [
+    "fheq:6"
+  ],
+  "awardsCovered": [
+    "bachelor's with honours"
+  ],
+  "nations": [
+    "UK"
+  ],
+  "source": {
+    "ingestId": "std:ref:qaa-universal-benchmark",
+    "licence": "Distillation across the QAA Subject Benchmark Statements; QAA copyright is held, no issuer text is copied; all wording here is our paraphrase or audience rewrite.",
+    "ingestDoc": {
+      "repo": "wkspc2614-adapt",
+      "path": "source-kb/canon-adp/secondary-data/ingested/standards/ingest-std-qaa-universal-reference-benchmark/ingest-std-qaa-universal-reference-benchmark.md",
+      "note": "The prose reference this structured sibling is derived from."
+    },
+    "derivedFrom": {
+      "method": "Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.",
+      "pathwayMappingBasis": "Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.",
+      "script": "tools/build-universal-benchmark.py",
+      "generated": "2026-10-25",
+      "sourceFiles": 54
+    }
+  },
+  "tierReadings": {
+    "rows": [
+      {
+        "rowId": "u-intro",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "practice": "Begins to apply the subject's basic methods to familiar, well-defined tasks with guidance, works with sources and data they are given, and communicates straightforward findings clearly.",
+        "knowledge": "Knows the core terms, ideas and principles that introduce the subject, and can place them in the wider field.",
+        "identity": "Works honestly and responsibly, follows guidance on ethical and academic conduct, and begins to reflect on their own learning.",
+        "groundingIds": [],
+        "pitchNote": "Pedagogical down-pitch toward the shared core for an introductory (FHEQ level 4) audience. QAA benchmarks define only the honours graduate at level 6, so this reading is ours, not an issuer standard."
+      },
+      {
+        "rowId": "u-int",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "practice": "Applies the subject's methods to questions and problems, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Knows the core content, main theories and debates of the subject, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, reflects on their own learning, and recognises how diversity, sustainability and professional practice bear on the subject.",
+        "groundingIds": []
+      },
+      {
+        "rowId": "u-adv",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "practice": "Designs and critiques enquiry across methods, evaluates evidence and arguments critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Commands the breadth and depth of the subject, its theoretical foundations and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflective, ethical and independent practitioner who weighs what findings mean for wider debate and helps varied audiences act on them.",
+        "groundingIds": []
+      }
+    ],
+    "note": "Benchmarks set standards for the honours graduate (FHEQ level 6); the intermediate and advanced rows synthesise that shared core across the statements. The introductory (FHEQ level 4) row is a pedagogical down-pitch toward the same core, marked with its own pitchNote - the benchmarks do not themselves speak at level 4. Our words, no issuer text.",
+    "source": {
+      "script": "tools/build-universal-benchmark.py",
+      "note": "Universal synthesis, not a per-subject card."
+    }
+  },
+  "themes": [
+    {
+      "id": "theme:accessibility",
+      "role": "carries",
+      "note": "an accessibility sub-section appears in section 1 of all statements"
+    },
+    {
+      "id": "theme:esd",
+      "alias": "sustainability",
+      "role": "carries",
+      "sharedBy": 50,
+      "note": "a sustainability sub-section in all statements; the shared-core sustainability expectation is carried this widely"
+    },
+    {
+      "id": "theme:edi",
+      "role": "carries",
+      "sharedBy": 52,
+      "note": "an EDI sub-section in most statements"
+    },
+    {
+      "id": "theme:enterprise",
+      "role": "carries",
+      "sharedBy": 53,
+      "note": "an enterprise sub-heading in a minority of statements; treated without the heading in the rest"
+    }
+  ],
+  "digest": {
+    "definition": "The shared core of the QAA Subject Benchmark Statements: what an honours graduate is expected to know, do and be on graduating, whatever the subject.",
+    "distinctiveFeatures": [
+      "Subjects differ in the matter their graduates act on, not in the shape of the expectation: the same verbs and rungs recur across the statements.",
+      "At threshold, most subjects ask for the same core: subject knowledge, theories, critical evaluation, analysis, research methods, application, communication, teamwork, independence and ethics.",
+      "The rungs climb by qualifiers, not new verbs: 'critical', 'independent' and 'original' mark the typical and excellent standards above threshold.",
+      "Ethical, professional and digital expectations sit at the threshold: they are baseline, not marks of excellence."
+    ],
+    "standards": {
+      "rungs": [
+        {
+          "rung": "threshold",
+          "award": "bachelor's with honours",
+          "note": "the minimum every honours graduate shows; spine:6"
+        },
+        {
+          "rung": "typical",
+          "note": "what most graduates show"
+        },
+        {
+          "rung": "excellent",
+          "note": "the best performance"
+        }
+      ],
+      "rungBases": "Typical and excellent go beyond threshold by depth and breadth of knowledge, engagement in research and independent study, critical insight, and advanced application of theory and method."
+    }
+  },
+  "statements": [
+    {
+      "id": "qaa-universal/threshold/subject-knowledge-and-understanding",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "subject knowledge and understanding",
+      "strand": "strand:knowledge",
+      "domain": "knowledge",
+      "paraphrase": "Graduates show broad and well-founded knowledge of the subject's core content.",
+      "sharedBy": {
+        "threshold": 54,
+        "typical": 24,
+        "excellent": 26,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Early on, learners equate knowledge with coverage and recall, so they revise lists rather than connections. Build understanding by asking them to link new content to what they already know and to restate ideas in their own words; across the levels the expectation moves from knowing the core to seeing how the parts relate and where the field is unsettled.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You know the core content of your subject well and can show it.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Knowing your subject is more than recalling facts: you can explain the main ideas in your own words and show how they fit together. A good check is whether you could teach a topic to someone on a different course without reading from your notes.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b1",
+        "accounting-2025:4.5.b9",
+        "accounting-2025:4.5.b10",
+        "accounting-2025:4.5.b18"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/analysis-and-problem-solving",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "analysis and problem-solving",
+      "strand": "strand:thinking",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates analyse problems and work towards solutions using the subject's approaches.",
+      "sharedBy": {
+        "threshold": 50,
+        "typical": 22,
+        "excellent": 24,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise as breaking a problem down and working to a solution with the field's methods. Pair with a worked example that shows the steps.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates analyse problems and work towards solutions using the subject's approaches.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Novices jump to an answer and skip the breakdown, so their errors are hard to locate. Teach a repeatable decomposition (what is given, what is asked, what method fits) and insist on visible working; the expectation grows from applying a given method to selecting and defending one.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You break problems down and work out solutions using your subject's methods.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Analysis means breaking a problem into parts you can actually work on, then choosing a method and following it through. You can see it working when you show your steps and reasoning, not only the final answer.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b17",
+        "accounting-2025:4.5.b25",
+        "accounting-2025:4.7.b14",
+        "accounting-2025:4.7.b16"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "applying knowledge to practice or problems",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates apply subject knowledge to practical situations and problems.",
+      "sharedBy": {
+        "threshold": 50,
+        "typical": 24,
+        "excellent": 25,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as using knowledge on real problems and in practical settings. A good anchor for authentic tasks and reflective prompts.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates apply subject knowledge to practical situations and problems.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Transfer is the hard part: students who perform well on set exercises often stall on an unfamiliar real case. Use authentic, slightly messy tasks and ask learners to justify why a given idea applies; the expectation moves from applying knowledge in familiar settings to doing so in current and complex ones.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can use what you know on real problems and in practical settings.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "What you learn is meant to be used, so expect to take ideas from class onto real problems and settings. You can tell it is working when you choose which part of your knowledge a new situation needs, rather than reciting everything you know.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b17",
+        "accounting-2025:4.5.b25",
+        "accounting-2025:4.7.b5",
+        "accounting-2025:4.7.b6"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "critical evaluation of evidence and arguments",
+      "strand": "strand:thinking",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+      "sharedBy": {
+        "threshold": 50,
+        "typical": 25,
+        "excellent": 27,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Students often hear 'critical' as 'negative', or meet it by summarising more sources. The shift to teach is from description to judgement, so scaffold a visible claim, evidence, so-what move and model your own reasoning aloud before asking for theirs; this strand climbs the most across levels, from tentative judgement to sustained, independent critique.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Do not just report what a source says: ask how it knows it, what it leaves out, and whether the conclusion really follows. You are doing this well when your writing weighs one piece of evidence against another and says which you find stronger and why, instead of listing them all as equally true.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b1",
+        "accounting-2025:4.5.b18",
+        "accounting-2025:4.7.b1",
+        "accounting-2025:4.7.b2"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "oral or other communication to audiences",
+      "strand": "strand:communication",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "sharedBy": {
+        "threshold": 50,
+        "typical": 19,
+        "excellent": 21,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Learners tend to present for the marker rather than the audience, and read slides aloud. Give them real audiences and formats and coach adaptation and clarity; the expectation climbs from communicating clearly to tailoring the message and the medium to who is listening.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can explain your subject clearly to different audiences, in more than one form.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "You are expected to explain your subject clearly to different people and in more than one way, not only in writing. You are on track when you adjust how you present something for the audience in front of you and still keep it accurate.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b11",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b36",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b51",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b63"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/research-and-enquiry-methods",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "research and enquiry methods",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates understand and use the subject's methods of research and enquiry.",
+      "sharedBy": {
+        "threshold": 50,
+        "typical": 21,
+        "excellent": 23,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as knowing how enquiry is done in the field and being able to carry one out: supervised at intermediate, designed and critiqued by the learner at advanced.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates understand and use the subject's methods of research and enquiry.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Students often see method as a hoop rather than the thing that makes a claim trustworthy. Teach method alongside the questions it answers, start with supervised enquiry and release responsibility gradually; by the top of the range learners design and critique enquiry, not just carry it out.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You know how research is done in your subject and can carry out an enquiry yourself.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Every subject has its own ways of finding things out, and you are expected to know how yours works and to run a small enquiry yourself. You are doing well when you can say why you chose a method and what its limits are, not just what you found.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.7.b24",
+        "accounting-2025:4.7.b25",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b9",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b11"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/theories",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "theories, concepts and debates",
+      "strand": "strand:knowledge",
+      "domain": "knowledge",
+      "paraphrase": "Graduates understand the subject's main theories and concepts and the debates between them.",
+      "sharedBy": {
+        "threshold": 48,
+        "typical": 22,
+        "excellent": 23,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Have the learner handle the main ideas, theories and the debates between them, and show that disagreement is normal in a field. Do not import a specific discipline's theories at baseline.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates understand the subject's main theories and concepts and the debates between them.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Students tend to want the 'correct' theory and find open disagreement unsettling, so normalise it: present a live debate and show that reasoned people hold different views. Scaffold with paired contrasts before asking for a judgement, and expect the move from naming theories to weighing them as learners progress.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You understand the main ideas and theories in your subject and where people disagree about them.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Theories are the tools your subject uses to explain things, and experts often disagree about which tool fits. You are handling this well when you can set out more than one position on a question and say what each gets right, rather than treating the first explanation you meet as the only one.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b2",
+        "accounting-2025:4.7.b2",
+        "accounting-2025:4.7.b4",
+        "accounting-2025:4.7.b6"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/ethics",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "ethics, integrity and values",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "sharedBy": {
+        "threshold": 47,
+        "typical": 18,
+        "excellent": 21,
+        "any": 53,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Treat this as threshold, not a mark of excellence: it is the floor every graduate stands on, not a distinction. Use real dilemmas from the field rather than abstract rules, and connect academic integrity to professional conduct so it reads as practice, not policing.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You recognise the ethical questions in your subject and act responsibly.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Every subject carries ethical questions and expects you to act with integrity. You are meeting this when you can spot the ethical issue in a situation and act responsibly, including being honest about your own work and sources.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b1",
+        "accounting-2025:4.7.b1",
+        "accounting-2025:4.7.b3",
+        "accounting-2025:4.7.b5"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/history",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "history, context and currency of the field",
+      "strand": "strand:knowledge",
+      "domain": "knowledge",
+      "paraphrase": "Graduates place the subject in its history and context and know where it currently stands.",
+      "sharedBy": {
+        "threshold": 46,
+        "typical": 19,
+        "excellent": 19,
+        "any": 53,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as placing the subject in its history and knowing what is current in it. Keep examples generic; do not date-stamp a particular discipline.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates place the subject in its history and context and know where it currently stands.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Learners often treat the textbook as timeless and miss that knowledge is dated and contested. Anchor topics to their origins and to a current development or controversy; the expectation deepens from placing ideas in context to tracking where the field currently stands and why.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You know how your subject developed, the settings it works in and what is current in it.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Ideas in your subject came from somewhere and are still changing, so it helps to know how a topic developed and what is current now. You are on track when you can say why a method became standard and point to something recent that is shifting it.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b1",
+        "accounting-2025:4.7.b1",
+        "accounting-2025:4.7.b3",
+        "accounting-2025:4.7.b5"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/teamwork-and-collaboration",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "teamwork and collaboration",
+      "strand": "strand:communication",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates work effectively with others.",
+      "sharedBy": {
+        "threshold": 44,
+        "typical": 12,
+        "excellent": 15,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise as working well with others. Use lightly unless the pathway is collaboration-led; do not force group work into solo-study topics.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates work effectively with others.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Group work often rewards the willing few and hides free-riding, which sours students on collaboration. Design interdependent roles and assess process as well as product; use this lightly unless the pathway is collaboration-led, and avoid forcing group work onto genuinely solo tasks.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can work well with other people.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Much of what you will do depends on working well with other people. You can tell it is going well when the group shares the work fairly, handles disagreement openly, and produces something better than any of you would alone.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "anthropology-2024:gs.6.t",
+        "anthropology-2024:ku.15.t",
+        "anthropology-2024:ss.10.t",
+        "archaeology-2022:4.3.b17"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/independent-and-self-directed-learning",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "independent and self-directed learning",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates manage their own learning and work independently.",
+      "sharedBy": {
+        "threshold": 43,
+        "typical": 19,
+        "excellent": 21,
+        "any": 53,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates manage their own learning and work independently.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Independence has to be taught, not assumed; dropping support too fast leaves weaker students stranded. Release responsibility gradually and make planning and self-monitoring visible; this is a clear tier marker, with more autonomy expected at each level.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can manage your own learning and work on your own.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "You are expected to manage your own learning: plan your time, find what you need, and keep going without being told each step. A good sign is that you set your own next task and follow it through before a deadline forces you to.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.7.b24",
+        "accounting-2025:4.7.b25",
+        "accounting-2025:4.7.b26",
+        "accounting-2025:4.7.b27"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/information-and-sources",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "information and sources",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates find, select and use information and sources appropriate to the subject.",
+      "sharedBy": {
+        "threshold": 42,
+        "typical": 17,
+        "excellent": 18,
+        "any": 54,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise as finding, choosing and using the right sources and information. Natural fit for the finding-using-sources and referencing pathways.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates find, select and use information and sources appropriate to the subject.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Students equate searching with a quick web lookup and rarely question authority or relevance. Teach selection and evaluation, not just retrieval, and connect it to referencing and integrity; the expectation deepens from finding suitable sources to using them discerningly within the field's conventions.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can find, choose and use the right sources and information for your subject.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "You are expected to find the right sources, judge how good they are, and use them properly. A good sign is that you choose a few strong, relevant sources and show why they are trustworthy, instead of grabbing whatever comes up first.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "anthropology-2024:ss.3.t",
+        "anthropology-2024:ss.7.t",
+        "archaeology-2022:4.3.b9",
+        "archaeology-2022:4.3.b11"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/data",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "data, numbers and quantitative reasoning",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates handle data and numbers appropriately for the subject.",
+      "sharedBy": {
+        "threshold": 42,
+        "typical": 14,
+        "excellent": 16,
+        "any": 49,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Have the learner work with data and numbers in the way the subject needs; pitch the amount to the pathway, as some carry little quantitative content.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates handle data and numbers appropriately for the subject.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Confidence varies widely and anxiety blocks many capable students, so pitch to the quantitative load your subject actually carries and make the purpose of each technique clear. Scaffold interpretation before calculation; the expectation ranges from reading and using data appropriately to reasoning with it under uncertainty.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can work with data and numbers in the way your subject needs.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Most subjects ask you to handle some numbers or data, even where yours is not a maths-heavy one. You are on track when you can read a figure or dataset, say what it does and does not show, and use it to support a point rather than decorate one.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b5",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b50",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b72",
+        "anthropology-2024:gs.3.t"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/digital-skills",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "digital skills",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates use the digital tools and technologies the subject relies on.",
+      "sharedBy": {
+        "threshold": 41,
+        "typical": 15,
+        "excellent": 16,
+        "any": 52,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as using the digital tools the subject relies on. Keep tool-agnostic at baseline; name no specific software.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates use the digital tools and technologies the subject relies on.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Keep this tool-agnostic at baseline and focus on judgement over button-clicking, since specific software dates quickly. Build from guided use to independent choice of tools, and tie digital practice to the subject's real outputs rather than teaching it as a separate skill.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can use the digital tools your subject depends on.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Your subject relies on particular digital tools, and you are expected to use the ones it depends on competently. You are doing well when you pick the right tool for a task and use it to produce something that meets the subject's standards, not just operate it.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b5",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b11",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b17",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b50"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/sustainability",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "sustainability",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates understand the subject's bearing on sustainability and the environment.",
+      "sharedBy": {
+        "threshold": 37,
+        "typical": 10,
+        "excellent": 14,
+        "any": 50,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as how the subject affects sustainability and the environment. Cross-cutting; weave in rather than teach as a separate unit.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates understand the subject's bearing on sustainability and the environment.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Like EDI, weave this in rather than teaching it as a separate module, and tie it to the subject's own decisions and impacts. Keep it concrete to the discipline so it reads as relevant, not bolted on; it is cross-cutting across the statements.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You understand how your subject affects sustainability and the environment.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Your subject connects to sustainability and the environment in some way, and you are expected to understand how. You are on track when you can point to where your field affects, or is affected by, environmental and social sustainability.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b2",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b1",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b2",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b3"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/professional-practice-and-employability",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "professional practice and employability",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates understand the subject's professional settings and are prepared for work.",
+      "sharedBy": {
+        "threshold": 35,
+        "typical": 12,
+        "excellent": 11,
+        "any": 50,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as understanding how the subject is used at work and being ready for it. Keep settings generic at baseline.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates understand the subject's professional settings and are prepared for work.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Keep settings generic at baseline and avoid narrowing to one career too early. Bring in authentic professional tasks and norms and let learners rehearse them; the expectation moves from understanding professional settings to operating confidently within them.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You understand how your subject is used at work and are ready for it.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Your subject is used in workplaces, and you are expected to understand those settings and be ready for them. You are on track when you can connect what you study to how it is used at work and act in the way the setting expects.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.5.b17",
+        "accounting-2025:4.7.b6",
+        "accounting-2025:4.7.b7",
+        "accounting-2025:4.7.b13"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/written-communication",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "written communication",
+      "strand": "strand:communication",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates write in the forms the subject requires.",
+      "sharedBy": {
+        "threshold": 33,
+        "typical": 11,
+        "excellent": 13,
+        "any": 49,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Have the learner write in the forms their work needs. Shared by fewer subjects (threshold 33/54), so treat as supporting unless the pathway is writing-led.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates write in the forms the subject requires.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Students often transfer one default essay shape to every task, so name the forms your subject actually requires and model each. Give feedback on structure and audience, not only content; this matters most where the pathway is writing-led, and the expectation grows from meeting the form to using it fluently.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can write in the forms your subject needs.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "You are expected to write in the forms your subject uses, whether that is an essay, a report or something else. You can see it working when your structure and style fit the form and a reader can follow your point without effort.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "anthropology-2024:ku.6.t",
+        "anthropology-2024:ss.4.t",
+        "archaeology-2022:4.4.b10",
+        "architecture-2026:4.6.b12"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/reflection-and-personal-development",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "reflection and personal development",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates reflect on their learning and practice and plan their development.",
+      "sharedBy": {
+        "threshold": 32,
+        "typical": 12,
+        "excellent": 13,
+        "any": 53,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Natural anchor for the six-part flow's reflective prompt: reflecting on how one learns and works and planning to improve. Keep questions genuine, with no single right answer.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates reflect on their learning and practice and plan their development.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Reflection easily becomes description or box-ticking, so students report events instead of learning from them. Prompt with genuine, open questions and value honesty about difficulty; this is the natural anchor for the six-part flow's reflective prompt and should keep questions that have no single right answer.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can reflect on how you learn and work, and plan how to improve.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Reflection means looking honestly at how you learn and work so you can plan what to improve. It is working when your reflection names something specific you will do differently, rather than just saying how a task went.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "anthropology-2024:ss.10.t",
+        "archaeology-2022:4.4.b9",
+        "architectural-technology-2022:4.6.b10",
+        "architecture-2026:4.7.b11"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/equality",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "equality, diversity and inclusion",
+      "strand": "strand:autonomy",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates recognise diversity and inclusion as they bear on the subject.",
+      "sharedBy": {
+        "threshold": 30,
+        "typical": 8,
+        "excellent": 7,
+        "any": 52,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Carry as a cross-cutting value woven through, not a bolt-on topic: how diversity and inclusion bear on the subject. Present inclusively.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates recognise diversity and inclusion as they bear on the subject.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Carry this as a value woven through the subject, not a bolt-on unit, and present it inclusively yourself. Draw out how diversity and inclusion bear on the field's own content and practice; model inclusive examples rather than teaching the topic in isolation.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You understand how diversity and inclusion matter in your subject.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Diversity and inclusion matter in how your subject is practised and who it serves. You are doing well when you consider whose perspectives are present or missing in your work and present your material inclusively.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b3",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b4",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b22",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b74"
+      ]
+    },
+    {
+      "id": "qaa-universal/threshold/enterprise-and-creativity",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "level": "fheq:6",
+      "force": "will",
+      "appliesTo": "graduates at the threshold level",
+      "about": "enterprise and creativity",
+      "strand": "strand:application",
+      "domain": "generic-skill",
+      "paraphrase": "Graduates show creativity and enterprise in applying the subject.",
+      "sharedBy": {
+        "threshold": 23,
+        "typical": 15,
+        "excellent": 16,
+        "any": 53,
+        "of": 54
+      },
+      "core": true,
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Frame as being creative and enterprising in applying the subject. Shared by fewer at threshold (23/54); use where the pathway invites it.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates show creativity and enterprise in applying the subject.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Fewer subjects foreground this at threshold, so use it where the pathway invites it rather than forcing it everywhere. Create space for divergent ideas before converging and reward sensible risk-taking; it pairs naturally with application and professional practice.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "You can be creative and enterprising in how you use your subject.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "You are expected to be creative and enterprising in how you use your subject: finding new angles, spotting opportunities and making ideas work. You can see it when you try an original approach and see it through, not just when you have the idea.",
+            "status": "drafted"
+          }
+        }
+      },
+      "groundingSample": [
+        "accounting-2025:4.7.b15",
+        "accounting-2025:4.7.b19",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b59",
+        "agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024:4.2.b60"
+      ]
+    },
+    {
+      "id": "qaa-universal/typical/climb",
+      "statementType": "typical",
+      "rung": "typical",
+      "level": "fheq:6",
+      "about": "the typical standard (most graduates)",
+      "strand": "strand:all",
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise the typical standard as more of the work being critical and independent and the knowledge wider and more current. It is the same tasks done better, not new tasks; pitch to the intermediate tier reading.",
+      "paraphrase": "Typically, more of the graduate's work is critical and independent, and their knowledge is wider and more current.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typically, more of the graduate's work is critical and independent, and their knowledge is wider and more current.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Frame the step up to typical as more of the same qualities, not new content, so students are not chasing extra coverage. Point feedback at where criticality and independence appear and where they lapse; pitch this to the intermediate tier reading.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "At the typical standard, more of what you do is critical and independent, and you know more of what is current.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "Reaching the typical standard is not about doing extra tasks: it is the same work with more of it critical and independent, and your knowledge wider and more current. Aim to show judgement and initiative across a whole piece, not only in one strong paragraph.",
+            "status": "drafted"
+          }
+        }
+      }
+    },
+    {
+      "id": "qaa-universal/excellent/climb",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "level": "fheq:6",
+      "about": "the excellent standard (the successful student)",
+      "strand": "strand:all",
+      "basis": "inferred",
+      "status": "drafted",
+      "agentInstruction": "Realise excellence as sustained criticality and independence with some originality; reserve \"exceptional\" framing for the top. Still the same tasks, carried higher; pitch to the advanced tier reading.",
+      "paraphrase": "At excellent, work is critical and independent throughout, shows some originality, and is described as exceptional.",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At excellent, work is critical and independent throughout, shows some originality, and is described as exceptional.",
+          "status": "drafted",
+          "forEducator": {
+            "text": "Reserve 'exceptional' framing for sustained criticality and independence with genuine originality, carried across the whole piece rather than in flashes. Help strong students take defensible risks and own their judgements; pitch to the advanced tier reading.",
+            "status": "drafted"
+          }
+        },
+        "forBeneficiary": {
+          "text": "At the excellent standard, you are critical and independent throughout, show some original thinking, and your work stands out.",
+          "status": "drafted",
+          "forLearnerGuidance": {
+            "text": "At the excellent standard your work is critical and independent throughout and shows some original thinking, so it stands out. Look for the places where you can push a judgement further or bring an idea of your own, rather than playing safe.",
+            "status": "drafted"
+          }
+        }
+      }
+    }
+  ],
+  "pathwayMapping": {
+    "adapt-starting-progressing-succeeding": {
+      "coverage": {
+        "direct": 1,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Starting, Progressing & Succeeding pathway realises the shared-core expectations of independent and self-directed learning, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-understanding-learning-assessment-feedback": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 3
+      },
+      "summary": {
+        "text": "At baseline, the Understanding Learning, Assessment & Feedback pathway realises the shared-core expectations of subject knowledge and understanding, independent and self-directed learning, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-finding-using-sources": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Finding & Using Sources pathway realises the shared-core expectations of critical evaluation of evidence and arguments, information and sources, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-finding-using-sources",
+          "strength": "direct",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/information-and-sources",
+          "tag": "adapt-finding-using-sources",
+          "strength": "direct",
+          "extract": "Graduates find, select and use information and sources appropriate to the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as finding, choosing and using the right sources and information. Natural fit for the finding-using-sources and referencing pathways.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-finding-using-sources",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-finding-using-sources",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-finding-using-sources",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-finding-using-sources",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-referencing": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Referencing, Citation & Academic Integrity pathway realises the shared-core expectations of ethics, information and sources, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-referencing",
+          "strength": "direct",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/information-and-sources",
+          "tag": "adapt-referencing",
+          "strength": "direct",
+          "extract": "Graduates find, select and use information and sources appropriate to the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as finding, choosing and using the right sources and information. Natural fit for the finding-using-sources and referencing pathways.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-referencing",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-referencing",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-referencing",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-referencing",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-criticality": {
+      "coverage": {
+        "direct": 1,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Criticality pathway realises the shared-core expectations of critical evaluation of evidence and arguments, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-criticality",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-criticality",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-criticality",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-criticality",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-academic-writing": {
+      "coverage": {
+        "direct": 3,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Academic Writing pathway realises the shared-core expectations of critical evaluation of evidence and arguments, information and sources, written communication, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/information-and-sources",
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "Graduates find, select and use information and sources appropriate to the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as finding, choosing and using the right sources and information. Natural fit for the finding-using-sources and referencing pathways.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/written-communication",
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "Graduates write in the forms the subject requires.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Have the learner write in the forms their work needs. Shared by fewer subjects (threshold 33/54), so treat as supporting unless the pathway is writing-led.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-academic-writing",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-academic-writing",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-academic-writing",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-academic-writing",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-presenting": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Presenting pathway realises the shared-core expectations of oral or other communication to audiences, teamwork and collaboration, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/teamwork-and-collaboration",
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "Graduates work effectively with others.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as working well with others. Use lightly unless the pathway is collaboration-led; do not force group work into solo-study topics.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-revising-exams": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Revising & Exams pathway realises the shared-core expectations of subject knowledge and understanding, reflection and personal development, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-revising-exams",
+          "strength": "direct",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
+          "tag": "adapt-revising-exams",
+          "strength": "direct",
+          "extract": "Graduates reflect on their learning and practice and plan their development.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Natural anchor for the six-part flow's reflective prompt: reflecting on how one learns and works and planning to improve. Keep questions genuine, with no single right answer.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-revising-exams",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-revising-exams",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-revising-exams",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-revising-exams",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-researching-research-methods": {
+      "coverage": {
+        "direct": 2,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Researching & Research Methods pathway realises the shared-core expectations of research and enquiry methods, ethics, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/research-and-enquiry-methods",
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "Graduates understand and use the subject's methods of research and enquiry.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as knowing how enquiry is done in the field and being able to carry one out: supervised at intermediate, designed and critiqued by the learner at advanced.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-reflective-practice": {
+      "coverage": {
+        "direct": 3,
+        "indirect": 5
+      },
+      "summary": {
+        "text": "At baseline, the Reflective Practice pathway realises the shared-core expectations of applying knowledge to practice or problems, professional practice and employability, reflection and personal development, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "Graduates apply subject knowledge to practical situations and problems.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as using knowledge on real problems and in practical settings. A good anchor for authentic tasks and reflective prompts.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "Graduates understand the subject's professional settings and are prepared for work.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as understanding how the subject is used at work and being ready for it. Keep settings generic at baseline.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "Graduates reflect on their learning and practice and plan their development.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Natural anchor for the six-part flow's reflective prompt: reflecting on how one learns and works and planning to improve. Keep questions genuine, with no single right answer.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-reflective-practice",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-reflective-practice",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-reflective-practice",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-reflective-practice",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-reflective-practice",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-work-based-experiential-learning": {
+      "coverage": {
+        "direct": 4,
+        "indirect": 4
+      },
+      "summary": {
+        "text": "At baseline, the Work-Based & Experiential Learning pathway realises the shared-core expectations of subject knowledge and understanding, applying knowledge to practice or problems, professional practice and employability, reflection and personal development, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "Graduates apply subject knowledge to practical situations and problems.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as using knowledge on real problems and in practical settings. A good anchor for authentic tasks and reflective prompts.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "Graduates understand the subject's professional settings and are prepared for work.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as understanding how the subject is used at work and being ready for it. Keep settings generic at baseline.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "Graduates reflect on their learning and practice and plan their development.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Natural anchor for the six-part flow's reflective prompt: reflecting on how one learns and works and planning to improve. Keep questions genuine, with no single right answer.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-ai-technology": {
+      "coverage": {
+        "direct": 5,
+        "indirect": 2
+      },
+      "summary": {
+        "text": "At baseline, the AI & Technology (authored / Track B) pathway realises the shared-core expectations of subject knowledge and understanding, applying knowledge to practice or problems, critical evaluation of evidence and arguments, ethics, digital skills, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "Graduates apply subject knowledge to practical situations and problems.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as using knowledge on real problems and in practical settings. A good anchor for authentic tasks and reflective prompts.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/digital-skills",
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "Graduates use the digital tools and technologies the subject relies on.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as using the digital tools the subject relies on. Keep tool-agnostic at baseline; name no specific software.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-ai-technology",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-ai-technology",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    },
+    "adapt-creativity": {
+      "coverage": {
+        "direct": 3,
+        "indirect": 5
+      },
+      "summary": {
+        "text": "At baseline, the Creativity (authored / Track B) pathway realises the shared-core expectations of research and enquiry methods, professional practice and employability, enterprise and creativity, pitched to the tier via tierReadings. Keep examples subject-neutral (the Student A / Student B cast); a real subject benchmark, where one exists, overrides this generic mapping."
+      },
+      "statements": [
+        {
+          "chunkId": "qaa-universal/threshold/research-and-enquiry-methods",
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "Graduates understand and use the subject's methods of research and enquiry.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as knowing how enquiry is done in the field and being able to carry one out: supervised at intermediate, designed and critiqued by the learner at advanced.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "Graduates understand the subject's professional settings and are prepared for work.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as understanding how the subject is used at work and being ready for it. Keep settings generic at baseline.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/enterprise-and-creativity",
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "Graduates show creativity and enterprise in applying the subject.",
+          "orientation": "professional",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as being creative and enterprising in applying the subject. Shared by fewer at threshold (23/54); use where the pathway invites it.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+          "tag": "adapt-creativity",
+          "strength": "indirect",
+          "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Realise as the learner showing well-founded knowledge of their own field's core content. Keep subject-neutral (use 'your subject'); a worked example may use the Student A / Student B cast.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+          "tag": "adapt-creativity",
+          "strength": "indirect",
+          "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as weighing evidence and arguments to a reasoned judgement. This strand climbs most across tiers: at advanced, push to sustained criticality throughout.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
+          "tag": "adapt-creativity",
+          "strength": "indirect",
+          "extract": "Graduates manage their own learning and work independently.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as managing one's own learning and working independently. A tier-climb marker: more independence at higher tiers.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/ethics",
+          "tag": "adapt-creativity",
+          "strength": "indirect",
+          "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as recognising the ethical questions in the field and acting responsibly. This sits at the threshold (baseline), not as a mark of excellence.",
+          "status": "drafted"
+        },
+        {
+          "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+          "tag": "adapt-creativity",
+          "strength": "indirect",
+          "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
+          "orientation": "academic",
+          "blockType": "baseline",
+          "agentInstruction": "Frame as explaining the subject clearly to different audiences and in more than one form. Core to presenting; supports most pathways.",
+          "status": "drafted"
+        }
+      ]
+    }
+  },
+  "mapAgentInstructions": [
+    "Universal baseline reference: pathwayMapping here is generic and subject-neutral (authored from design-kb.pathways.json), not a real per-subject map. Build a baseline pack from the pathway's mapped shared-core expectations plus tierReadings, honouring each expectation's agentInstruction.",
+    "Select, do not cram: pick the expectations whose strand fits the pathway being built (e.g. criticality -> strand:thinking; finding-using-sources -> information and sources; presenting -> communication). Core expectations (sharedBy at least half of the set) carry the framing; low-count ones support.",
+    "Pitch by tier using tierReadings (intermediate vs advanced practice/knowledge/identity) and the pathway's own tier voiceBand / teachingProsePointer in catalogue/pathways/<pathway>.json. Benchmarks speak at the honours-graduate end, so lean on these for intermediate/advanced and pitch down for introductory.",
+    "Invent no subject-specific content at baseline: keep examples neutral (use \"your subject\" and the Student A / Student B cast). A real subject benchmark, where one exists for the subject, overrides this baseline.",
+    "The rungs climb by qualifiers, not new verbs: realise typical/excellent (statements qaa-universal/typical|excellent/climb) as more critical, more independent and some originality, not as different tasks."
+  ]
+}

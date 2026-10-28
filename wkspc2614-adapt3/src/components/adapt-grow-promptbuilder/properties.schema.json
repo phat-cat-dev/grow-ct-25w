@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$anchor": "growPromptBuilder",
+  "type": "object",
+  "title": "Prompt Builder (GROW)",
+  "properties": {
+    "_component": {
+      "type": "string",
+      "const": "growPromptBuilder",
+      "default": "growPromptBuilder",
+      "isObjectId": true,
+      "readOnly": true,
+      "title": "Component type"
+    },
+    "_classes": {
+      "type": "string",
+      "title": "CSS classes",
+      "default": ""
+    },
+    "body": {
+      "type": "string",
+      "title": "Lead-in",
+      "default": ""
+    },
+    "instruction": {
+      "type": "string",
+      "title": "Instruction",
+      "default": "Build your prompt: pick or type a role, a task and some context."
+    },
+    "_assembleTemplate": {
+      "type": "string",
+      "title": "Assembly template",
+      "default": "Act as {role}. {function}. Context: {context}.",
+      "description": "How the parts combine. Use {key} placeholders matching each part's _key."
+    },
+    "_assembledLabel": {
+      "type": "string",
+      "title": "Assembled-prompt label",
+      "default": "Your prompt"
+    },
+    "_copyText": {
+      "type": "string",
+      "title": "Copy button text",
+      "default": "Copy prompt"
+    },
+    "_clearText": {
+      "type": "string",
+      "title": "Clear button text",
+      "default": "Clear"
+    },
+    "_whyText": {
+      "type": "string",
+      "title": "Why-this-works note",
+      "default": ""
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "title": "Completion",
+      "default": "allFilled",
+      "enum": [
+        "allFilled",
+        "inview"
+      ]
+    },
+    "_parts": {
+      "type": "array",
+      "title": "Prompt parts",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "_key",
+          "label"
+        ],
+        "properties": {
+          "_key": {
+            "type": "string",
+            "title": "Key (matches {key} in the template)",
+            "default": ""
+          },
+          "label": {
+            "type": "string",
+            "title": "Part label",
+            "default": ""
+          },
+          "help": {
+            "type": "string",
+            "title": "Short help under the label",
+            "default": ""
+          },
+          "placeholder": {
+            "type": "string",
+            "title": "Input placeholder",
+            "default": ""
+          },
+          "_chips": {
+            "type": "array",
+            "title": "Example chips",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "_type": {
+            "type": "string",
+            "title": "Field type",
+            "enum": ["text", "select"],
+            "default": "text",
+            "help": "\"text\" is an editable box (with optional chips). \"select\" is a dropdown driven by _options."
+          },
+          "_options": {
+            "type": "array",
+            "title": "Dropdown options",
+            "help": "Used when the field is a dropdown. Each option's text is also its value in the assembled prompt.",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "_component",
+    "_parts"
+  ]
+}

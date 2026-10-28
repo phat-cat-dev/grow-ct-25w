@@ -1,0 +1,35 @@
+{
+  "generatedProse": {
+    "concept-context": "In your subject, the same question decides everything: who is doing the thinking? Use AI to understand a concept, test yourself, or get unstuck, and it supports your learning. Let it produce the analysis, the argument or the reflection that the task is meant to build in you, and it has quietly taken your place.",
+    "worked-example": "Consider two sport and exercise science students revising the same difficult theory for an exam.\n\n{{learner-a}} asks a chatbot to explain the theory and summarise the key points, then rereads the summary until it feels familiar. It all makes sense on the screen. In the exam, asked to apply the theory to a new case, {{learner-a}} cannot do it. The tool had done the thinking, and the understanding was never built.\n\n{{learner-b}} uses the same chatbot to explain the theory, then closes it and writes the explanation out from memory in their own words. {{learner-b}} asks the tool what the explanation missed, fixes the gaps, and works through a practice case. The tool helped {{learner-b}} learn without learning in {{learner-b}}'s place.\n\nBoth used AI to revise. Only {{learner-b}} stayed the one doing the thinking, and so could use the theory when it counted.",
+    "summary": "AI can support your learning, but only while you stay the one doing the thinking. Over-reliance quietly hands away the critical thinking and judgement your studies are meant to build. You can now weigh what a tool is doing for a task, place your own habits against the four levels of AI literacy, and judge what AI can and cannot do for you. Next comes the skill that protects all of this: reading AI output critically."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "You have a task in {{context}} that is meant to build your own understanding. How do you decide whether an AI tool is a good fit?",
+      "items": [
+        {
+          "text": "Ask whether the tool would support that understanding or do the thinking for you, and use it only where it supports.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Use it for the whole task, because it saves time in {{context}}.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Avoid AI completely, since it has no place in {{context}}.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Use it only if no one in {{context}} would find out.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. In {{context}}, a tool fits where it supports your understanding, not where it does the thinking the task is meant to build.",
+        "incorrectNotFinal": "Not quite. The test is not time, nor a blanket rule, nor secrecy: it is whether the tool supports your thinking or replaces it.",
+        "incorrectFinal": "You decide by asking whether the tool supports your understanding or does the thinking for you, and using it only where it supports. Time, blanket bans and secrecy are the wrong tests."
+      }
+    }
+  }
+}

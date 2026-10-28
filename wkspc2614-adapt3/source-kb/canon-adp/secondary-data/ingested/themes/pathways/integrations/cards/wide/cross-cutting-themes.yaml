@@ -1,0 +1,140 @@
+# Wide table: practitioner readings and cross-cutting themes (ing N-0148, N-0149)
+# version 0.3.0, 4 October 2026, 15:59 (N-0172: QF-EHEA, the Bologna framework); 0.2.0, 4 October 2026, 15:29 (N-0166: QAA and Advance HE ESD); 0.1.0, 4 October 2026, 13:55
+# A working compilation for ing, never a record. Every mapping below is ing's reading, unruled.
+# Publication (D-std-0014): issuer text stays in the standards runs. Cells hold ids and paraphrase:
+# Advance HE paraphrases are the runs' own; QAA's run holds none, so its cells are ing's paraphrase;
+# Ofqual's are ing's paraphrase of the descriptors, read through a summary of the PDF (check before quoting).
+
+practitioner:
+  # what one does / what one knows / who one is, one reading per row (N-0149)
+  heads: [Practice (what one does), Knowledge (what one knows), Practitioner self-identity (who one is)]
+  rows:
+    F:  [follows set tasks with guidance, the facts and ideas a task needs, a learner preparing to become a student]
+    i1: [recognises the practice in others' work and names its parts, what the practice is and its terms, a newcomer who knows the practice exists]
+    i2: [carries out one set method with support, the steps of that method, a student trying the practice]
+    i3: [checks own work against the method, own strengths and gaps in it, a student beginning to see themself as a practitioner]
+    d1: [compares ways of doing the practice, why the practice works as it does in a discipline, a participant learning the community's ways]
+    d2: [carries out the practice independently and adapts the method to the task, several methods and when each fits, a practitioner taking responsibility for own work]
+    d3: [plans monitors and adjusts own practice, own habits and their effects, a self-regulating practitioner whose values begin to steer choices]
+    e1: [chooses and justifies an approach to an unfamiliar task, criteria for choosing, a practitioner with a voice of own]
+    e2: [practises in complex and unpredictable settings and judges own conduct, how practice and its effects fit together, a practitioner whose practice expresses own values]
+    e3: [examines and changes own practice from its assumptions, own position as a knower, a reflexive practitioner who examines that identity itself]
+    L8: [originates practice that changes a field, a field's knowledge and own part in making it, a practitioner who shapes others' practice and identity]
+
+themes:
+  - key: qaa-ent
+    name: QAA Enterprise and Entrepreneurship Education (2018)
+    run: "std:doc:qaa-enterprise-2018-guidance (7c39b4e150a6)"
+    note: the guidance's learner journey (awareness, mindset, capability, effectiveness); paraphrase ing's
+    rows:
+      F:  ["", "before the journey: meeting enterprising activity for the first time"]
+      i1: [qaa/enterprise-2018/journey.awareness.1, "awareness: knowing what enterprising activity is"]
+      i2: [qaa/enterprise-2018/journey.awareness.2, "awareness: seeing its professional and personal significance"]
+      i3: [qaa/enterprise-2018/journey.mindset.0, "mindset: awareness of own enterprising capabilities, motivation and self-discipline"]
+      d1: [qaa/enterprise-2018/journey.capability.1, "capability: designing a product or service to meet a need"]
+      d2: [qaa/enterprise-2018/journey.capability.3, "capability: performing in a team"]
+      d3: [qaa/enterprise-2018/journey.capability.2, "capability: taking the lead with autonomy"]
+      e1: [qaa/enterprise-2018/journey.effectiveness.1, "effectiveness: moving into work"]
+      e2: [qaa/enterprise-2018/journey.effectiveness.2, "effectiveness: self-directed learning towards career and life goals"]
+      e3: [qaa/enterprise-2018/mindset.b8, "mindset: sensitivity to own values"]
+      L8: ["", "beyond the journey: enterprising practice that changes others' practice"]
+  - key: ahe-ent
+    name: Advance HE Enterprise and Entrepreneurship (2024)
+    run: "std:doc:advancehe-enterprise-entrepreneurship-2024-model (0536fd11fe96)"
+    note: the model's student segments; paraphrase the run's
+    rows:
+      F:  ["", "not placed: the model starts at entry"]
+      i1: [advancehe/enterprise-2024/students.opportunity-recognition-evaluation, "Students learn to notice opportunities and to judge which are worth pursuing."]
+      i2: [advancehe/enterprise-2024/students.creativity-innovation, "Students learn to generate original ideas and new ways of doing things, and to use them to add value."]
+      i3: [advancehe/enterprise-2024/students.reflection-and-action, "Students reflect on their experience, including setbacks, and use what they learn to act differently next time."]
+      d1: [advancehe/enterprise-2024/students.communication-strategy-skills, "Students learn to communicate their ideas to different audiences and to plan a strategy for achieving them."]
+      d2: [advancehe/enterprise-2024/students.implementation-of-ideas, "Students learn to turn an idea into action: to plan it, organise people and resources, and carry it through."]
+      d3: [advancehe/enterprise-2024/students.decision-making-uncertainty, "Students learn to make reasoned decisions when information is incomplete and outcomes are uncertain."]
+      e1: [advancehe/enterprise-2024/students.interpersonal-skills, "Students learn to work with others: to build relationships, collaborate across disciplines and handle differences."]
+      e2: [advancehe/enterprise-2024/students.starting-developing-business, "Students learn what it takes to start and grow a business or other venture, as one possible outcome of being enterprising."]
+      e3: ["", "no segment: the model does not reach reflexivity"]
+      L8: ["", "not placed"]
+  - key: ahe-emp
+    name: Advance HE Embedding Employability (2024)
+    run: "std:doc:advancehe-embedding-employability-2024-model (6191b7085687)"
+    note: the model's student segments; paraphrase the run's; three rows have no segment of their own
+    rows:
+      F:  ["", "not placed: the model starts at entry"]
+      i1: [advancehe/employability-2024/students.situational-knowledge, "Students understand how the norms of different settings vary and how to apply what they know in each."]
+      i2: ["", "no segment of its own"]
+      i3: [advancehe/employability-2024/students.agency-self-awareness, "Students know their strengths, values and interests, and take action to shape their own path."]
+      d1: ["", "no segment of its own"]
+      d2: [advancehe/employability-2024/students.confidence-adaptability, "Students build the confidence to take on unfamiliar situations and to adjust as work, study and circumstances change."]
+      d3: [advancehe/employability-2024/students.emotional-intelligence, "Students develop the ability to recognise and manage their own emotions and to read and respond to those of others, at work and beyond."]
+      e1: [advancehe/employability-2024/students.behaviours-qualities-values, "Students develop the conduct, personal qualities and values that work and civic life call for, and can show them."]
+      e2: ["", "no segment of its own"]
+      e3: [advancehe/employability-2024/students.professional-identity-networks, "Students develop a sense of themselves as members of a profession or field, and build the contacts that help them enter and grow in it."]
+      L8: ["", "not placed"]
+  - key: qaa-esd
+    name: QAA and Advance HE Education for Sustainable Development (2021)
+    run: "std:doc:qaa-advancehe-esd-2021-guidance"
+    note: "the guidance's eight competencies, grouped as ways of thinking (systems, anticipatory, critical), ways of practising (strategic, collaborative, integrated problem-solving) and ways of being (self-awareness, normative); placed by ing so each tier runs thinking, practising, being, as its cards run knowledge, practice and self; paraphrase ing's"
+    rows:
+      F:  ["", "before the competencies: meets sustainability as a topic in set work"]
+      i1: ["qaa-advancehe/esd-2021/competency.systems.b1", "ways of thinking, systems: sees how things are connected and how one part affects another"]
+      i2: ["qaa-advancehe/esd-2021/competency.collaborative.b1", "ways of practising, collaborative: learns from peers and from people inside and outside the university"]
+      i3: ["qaa-advancehe/esd-2021/competency.selfaware.b1", "ways of being, self-awareness: reflects on own values, perceptions and actions"]
+      d1: ["qaa-advancehe/esd-2021/competency.critical.b1", "ways of thinking, critical: questions accepted norms, practices and opinions"]
+      d2: ["qaa-advancehe/esd-2021/competency.problem.b1", "ways of practising, integrated problem-solving: applies different problem-solving frameworks to complex sustainability problems"]
+      d3: ["qaa-advancehe/esd-2021/competency.normative.b1", "ways of being, normative: understands and reflects on the norms and values beneath own actions"]
+      e1: ["qaa-advancehe/esd-2021/competency.anticipatory.b1, qaa-advancehe/esd-2021/competency.anticipatory.b4", "ways of thinking, anticipatory: weighs possible futures and the consequences of actions"]
+      e2: ["qaa-advancehe/esd-2021/competency.strategic.b1", "ways of practising, strategic: designs and carries out innovative action for sustainability, locally and further afield"]
+      e3: ["qaa-advancehe/esd-2021/competency.selfaware.b2, qaa-advancehe/esd-2021/competency.critical.b3", "ways of being, self-awareness and critical: reflects on own role in local and global society and takes a position in the sustainability debate"]
+      L8: ["qaa-advancehe/esd-2021/competency.normative.b2, qaa-advancehe/esd-2021/competency.collaborative.b4", "ways of being and practising: negotiates sustainability values amid conflicts, trade-offs and uncertainty, and facilitates others' participatory problem-solving"]
+  - key: ofqual
+    name: Ofqual occupational competence level descriptors (apprenticeship standards)
+    run: "not ingested: https://skillsengland.education.gov.uk/media/1575/guidance-on-apprenticeship-standard-levels.pdf"
+    note: by each row's indicative level; no separate degree apprenticeship descriptors exist, levels 6 and 7 are the degree levels; paraphrase ing's
+    byLevel: true
+    levels:
+      2: ["ofqual-occ/L2", "knows the facts and procedures of the occupation; completes routine, well-defined tasks; responsible for own tasks under overall direction"]
+      3: ["ofqual-occ/L3", "factual, procedural and some theoretical knowledge; selects methods for complex, non-routine tasks; initiates and completes tasks within limited bounds"]
+      4: ["ofqual-occ/L4", "practical, theoretical and technical knowledge; adapts methods for complex, non-routine work; responsible for courses of action and others' work within well-defined bounds"]
+      5: ["ofqual-occ/L5", "analyses concepts and the reasoning behind perspectives; determines methods for broadly defined problems; plans courses of action, accountable within broad bounds"]
+      6: ["ofqual-occ/L6", "advanced knowledge, critically analysed; refines methods for ill-defined problems; initiates and leads, with broad autonomy (bachelor's degree apprenticeship level)"]
+      7: ["ofqual-occ/L7", "reformulates knowledge for new conceptions; designs research to inform change; leads complex work bringing substantial change (master's degree apprenticeship level)"]
+      8: ["ofqual-occ/L8", "creates new knowledge and extends the field; formulates methodologies; leads as a leading practitioner, responsible for the field's advance"]
+    rowLevel: {F: [2, 3], i1: 3, i2: 4, i3: 5, d1: 4, d2: 5, d3: 6, e1: 5, e2: 6, e3: 7, L8: 8}
+
+# Qualification frameworks (N-0151): built by the builder from META's standards runs, by each row's
+# indicative level; ids and the runs' own paraphrases only (D-std-0014). Threshold, wider-ability and
+# employment statements only (FHEQ's Annex D classification descriptors are left out).
+qualifications:
+  - key: fheq
+    name: FHEQ (England, Wales and Northern Ireland, 2024)
+    run: "std:doc:qaa-fheq-2024-framework"
+    note: "QAA's framework for higher education qualifications; it starts at level 4, so the level 3 rows have no entry"
+    dir: ingest-std-qaa-fheq-2024-framework
+    scheme: fheq
+    dims: [threshold-outcomes, wider-abilities, employment-qualities]
+    rowLevel: {F: [], i1: [], i2: [4], i3: [5], d1: [4], d2: [5], d3: [6], e1: [5], e2: [6], e3: [7], L8: [8]}
+  - key: cqfw
+    name: CQFW (Wales, 2009)
+    run: "std:doc:welsh-government-cqfw-2009-framework"
+    note: "the Credit and Qualifications Framework for Wales level descriptors, entry to level 8"
+    dir: ingest-std-welsh-government-cqfw-2009-framework
+    scheme: cqfw
+    dims: [knowledge-and-understanding, application-and-action, autonomy-and-accountability]
+    rowLevel: {F: [2, 3], i1: [3], i2: [4], i3: [5], d1: [4], d2: [5], d3: [6], e1: [5], e2: [6], e3: [7], L8: [8]}
+  - key: fqheis
+    name: FQHEIS within SCQF (Scotland, 2024)
+    run: "std:doc:qaa-fqheis-2024-framework, with the master's and doctoral statements shared in std:doc:qaa-fheq-2024-framework"
+    note: "QAA's framework for Scottish higher education, SCQF levels 7 to 12; SCQF 7 sits beside FHEQ 4, 8 beside 5, 9 and 10 beside 6, 11 beside 7 and 12 beside 8; SCQF 6 (Highers) is outside it"
+    dir: [ingest-std-qaa-fqheis-2024-framework, ingest-std-qaa-fheq-2024-framework]
+    scheme: fqheis
+    dims: [threshold-outcomes, wider-abilities, employment-qualities]
+    rowLevel: {F: [], i1: [], i2: [7], i3: [8], d1: [7], d2: [8], d3: [9, 10], e1: [8], e2: [9, 10], e3: [11], L8: [12]}
+  - key: qfehea
+    name: QF-EHEA, the Bologna framework (Dublin descriptors)
+    run: "the Framework for Qualifications of the European Higher Education Area, its Dublin descriptors as given in std:doc:qaa-fheq-2024-framework, Annex B"
+    note: "the short, first, second and third cycles of the Bologna Process, placed by each row's indicative level: short cycle beside level 5, first beside 6, second beside 7, third beside 8; it has no cycle at levels 3 and 4"
+    dir: ingest-std-qaa-fheq-2024-framework
+    scheme: qfehea
+    dims: [knowledge-and-understanding, applying-knowledge, making-judgements, communication, learning-skills, wider-contribution]
+    labels: {short: "short cycle (beside FHEQ 5)", 1: "first cycle (beside FHEQ 6)", 2: "second cycle (beside FHEQ 7)", 3: "third cycle (beside FHEQ 8)"}
+    rowLevel: {F: [], i1: [], i2: [], i3: [short], d1: [], d2: [short], d3: [1], e1: [short], e2: [1], e3: [2], L8: [3]}

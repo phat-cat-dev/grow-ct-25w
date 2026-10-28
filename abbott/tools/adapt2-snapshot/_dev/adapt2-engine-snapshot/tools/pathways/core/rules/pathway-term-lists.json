@@ -1,0 +1,684 @@
+{
+  "termListVersion": "1.0",
+  "source": {
+    "project": "QAAVector",
+    "file": "config/pathwayTerms.js",
+    "export": "STRENGTH_TERMS",
+    "commit": "066c17ff9e710e98e70b2a5286ac957d38b4dc1f",
+    "readAt": "2026-09-29",
+    "note": "The QV-TAG-2 part (e) word test that sets tag strength (direct if an evidence quote matches one of a pathway's patterns, indirect if not). Every key checked against catalogue/pathways.json: all 13 match, no mismatch (adp-0193)."
+  },
+  "pathwayIdCheck": {
+    "catalogueIds": [
+      "academic-writing",
+      "ai-technology",
+      "creativity",
+      "criticality",
+      "finding-using-sources",
+      "presenting",
+      "referencing",
+      "reflective-practice",
+      "researching-research-methods",
+      "revising-exams",
+      "starting-progressing-succeeding",
+      "understanding-learning-assessment-feedback",
+      "work-based-experiential-learning"
+    ],
+    "strengthTermIds": [
+      "academic-writing",
+      "ai-technology",
+      "creativity",
+      "criticality",
+      "finding-using-sources",
+      "presenting",
+      "referencing",
+      "reflective-practice",
+      "researching-research-methods",
+      "revising-exams",
+      "starting-progressing-succeeding",
+      "understanding-learning-assessment-feedback",
+      "work-based-experiential-learning"
+    ],
+    "mismatches": []
+  },
+  "pathways": {
+    "starting-progressing-succeeding": [
+      {
+        "pattern": "\\bprogress\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\btransition\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmotivat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmindset\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgoal\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgraduate[\\s-]+identity\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blifelong[\\s-]+learning\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bfurther[\\s-]+study\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bindependent[\\s-]+study\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blevel[\\s-]+4\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blevel[\\s-]+5\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blevel[\\s-]+6\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blevel[\\s-]+7\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgraduat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bemploy\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bprofession\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpostgraduate\\b",
+        "flags": "i"
+      }
+    ],
+    "understanding-learning-assessment-feedback": [
+      {
+        "pattern": "\\bown[\\s-]+learning\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bindependent[\\s-]+learning\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bself[\\s-]+directed[\\s-]+learning\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blearning[\\s-]+outcome\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blearning[\\s-]+theor\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bself[\\s-]+regulat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassessment\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bsummative\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bformative\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bfeedback\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bfeed[\\s-]+forward\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassessment[\\s-]+criteria\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmarking[\\s-]+criteria\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgrading[\\s-]+criteria\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassessment[\\s-]+brief\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassignment[\\s-]+brief\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmarking[\\s-]+scheme\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmark[\\s-]+scheme\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\brubric\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgrade[\\s-]+descriptor\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassessment[\\s-]+task\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassessment[\\s-]+literacy\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmarking\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgrading\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bPBL\\b",
+        "flags": ""
+      },
+      {
+        "pattern": "\\b\\w+[\\s-]+based[\\s-]+learning\\b",
+        "flags": "i"
+      }
+    ],
+    "finding-using-sources": [
+      {
+        "pattern": "\\bliterature\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bliterature[\\s-]+review\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bsource\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bsearch\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bretriev\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdatabase\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\binformation[\\s-]+literacy\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breading\\b",
+        "flags": "i"
+      }
+    ],
+    "referencing": [
+      {
+        "pattern": "\\breferencing\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breferences\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breference[\\s-]+list\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bcitat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bcite\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bcited\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bciting\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bacademic[\\s-]+integrity\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bplagiaris\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\backnowledg\\w*[\\s-]+sources\\b",
+        "flags": "i"
+      }
+    ],
+    "criticality": [
+      {
+        "pattern": "\\bcritical\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bcritique\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bevaluat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\banalys\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\banalyz\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bapprais\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bsynthesi\\w*",
+        "flags": "i"
+      }
+    ],
+    "academic-writing": [
+      {
+        "pattern": "\\bessay\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdissertation\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bwritten[\\s-]+work\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bwriting\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bassignment\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breflective\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+report\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breflective[\\s-]+report\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blab[\\s-]+report\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breport[\\s-]+writing\\b",
+        "flags": "i"
+      }
+    ],
+    "presenting": [
+      {
+        "pattern": "\\bpresentation\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpresent\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpresenting\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpresented\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bposter\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\boral[\\s-]+communication\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgroup[\\s-]+work\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\baudience\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpitch\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpublic[\\s-]+speaking\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdisseminat\\w*",
+        "flags": "i"
+      }
+    ],
+    "revising-exams": [
+      {
+        "pattern": "\\bexamination\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bexam\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bexams\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\brevision\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\brevising[\\s-]+for\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bunseen\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\btimed[\\s-]+assessment\\w*",
+        "flags": "i"
+      }
+    ],
+    "researching-research-methods": [
+      {
+        "pattern": "\\bresearch[\\s-]+method\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+design\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+ethic\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+skill\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+project\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bresearch[\\s-]+question\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmethods[\\s-]+of[\\s-]+enquiry\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bmethods[\\s-]+of[\\s-]+inquiry\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bempirical\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdata[\\s-]+analys\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdata[\\s-]+collection\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bqualitative\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bquantitative\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bhypothes\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdissertation\\w*",
+        "flags": "i"
+      }
+    ],
+    "reflective-practice": [
+      {
+        "pattern": "\\breflect\\w*[\\s-]+on\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breflectiv\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breflection\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breflexiv\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bself[\\s-]+reflect\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bCPD\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bcontinuing[\\s-]+professional[\\s-]+development\\b",
+        "flags": "i"
+      }
+    ],
+    "work-based-experiential-learning": [
+      {
+        "pattern": "\\bplacement\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bfieldwork\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bfield[\\s-]+work\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blab[\\s-]+work\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blaboratory\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bwork[\\s-]+based\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bexperiential\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bwork[\\s-]+experience\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpracticum\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\binternship\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\blive[\\s-]+project\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bapprenticeship\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpractice[\\s-]+based\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breal[\\s-]+world\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\breal[\\s-]+world\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bin[\\s-]+practice\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bapplied[\\s-]+practice\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bpractice[\\s-]+setting\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bprofessional[\\s-]+practice\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bin[\\s-]+the[\\s-]+workplace\\b",
+        "flags": "i"
+      }
+    ],
+    "ai-technology": [
+      {
+        "pattern": "\\bartificial[\\s-]+intelligence\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bAI\\b",
+        "flags": ""
+      },
+      {
+        "pattern": "\\bGenAI\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bgenerative[\\s-]+AI\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\btechnolog\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdigital[\\s-]+skills\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdigital[\\s-]+literacy\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bdigital[\\s-]+tools\\b",
+        "flags": "i"
+      }
+    ],
+    "creativity": [
+      {
+        "pattern": "\\bcreativ\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\binnovat\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bproblem[\\s-]+solving\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bproblem[\\s-]+solving\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\benterprise\\b",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bentrepreneur\\w*",
+        "flags": "i"
+      },
+      {
+        "pattern": "\\bimaginat\\w*",
+        "flags": "i"
+      }
+    ]
+  }
+}

@@ -1,0 +1,121 @@
+:root {
+  --ab-base-pf-default-semantic-s: 55%;
+  --ab-base-pf-default-semantic-l: 42%;
+  --ab-base-semantic-s: var(--ab-theme-pf-default-semantic-s, var(--ab-base-pf-default-semantic-s));
+  --ab-base-semantic-l: var(--ab-theme-pf-default-semantic-l, var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-positive-hue: 145;
+  --ab-base-pf-default-negative-hue: 5;
+  --ab-base-pf-default-neutral-hue: 38;
+  --ab-base-positive-hue: var(--ab-theme-pf-default-positive-hue, var(--ab-base-pf-default-positive-hue));
+  --ab-base-negative-hue: var(--ab-theme-pf-default-negative-hue, var(--ab-base-pf-default-negative-hue));
+  --ab-base-neutral-hue: var(--ab-theme-pf-default-neutral-hue, var(--ab-base-pf-default-neutral-hue));
+}
+:root {
+  --ab-base-pf-default-positive-bg: hsl(var(--ab-base-positive-hue) calc(var(--ab-base-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-positive-border: hsl(var(--ab-base-positive-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-pf-default-positive-ink: hsl(var(--ab-base-positive-hue) var(--ab-base-semantic-s) 28%);
+  --ab-base-pf-default-positive-icon-colour: hsl(var(--ab-base-positive-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-pf-default-negative-bg: hsl(var(--ab-base-negative-hue) calc(var(--ab-base-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-negative-border: hsl(var(--ab-base-negative-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-pf-default-negative-ink: hsl(var(--ab-base-negative-hue) var(--ab-base-semantic-s) 28%);
+  --ab-base-pf-default-negative-icon-colour: hsl(var(--ab-base-negative-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-pf-default-neutral-bg: hsl(var(--ab-base-neutral-hue) calc(var(--ab-base-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-neutral-border: hsl(var(--ab-base-neutral-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-pf-default-neutral-ink: hsl(var(--ab-base-neutral-hue) var(--ab-base-semantic-s) 28%);
+  --ab-base-pf-default-neutral-icon-colour: hsl(var(--ab-base-neutral-hue) var(--ab-base-semantic-s) var(--ab-base-semantic-l));
+  --ab-base-positive-bg: var(--ab-theme-pf-default-positive-bg, var(--ab-base-pf-default-positive-bg));
+  --ab-base-positive-border: var(--ab-theme-pf-default-positive-border, var(--ab-base-pf-default-positive-border));
+  --ab-base-positive-ink: var(--ab-theme-pf-default-positive-ink, var(--ab-base-pf-default-positive-ink));
+  --ab-base-positive-icon-colour: var(--ab-theme-pf-default-positive-icon-colour, var(--ab-base-pf-default-positive-icon-colour));
+  --ab-base-negative-bg: var(--ab-theme-pf-default-negative-bg, var(--ab-base-pf-default-negative-bg));
+  --ab-base-negative-border: var(--ab-theme-pf-default-negative-border, var(--ab-base-pf-default-negative-border));
+  --ab-base-negative-ink: var(--ab-theme-pf-default-negative-ink, var(--ab-base-pf-default-negative-ink));
+  --ab-base-negative-icon-colour: var(--ab-theme-pf-default-negative-icon-colour, var(--ab-base-pf-default-negative-icon-colour));
+  --ab-base-neutral-bg: var(--ab-theme-pf-default-neutral-bg, var(--ab-base-pf-default-neutral-bg));
+  --ab-base-neutral-border: var(--ab-theme-pf-default-neutral-border, var(--ab-base-pf-default-neutral-border));
+  --ab-base-neutral-ink: var(--ab-theme-pf-default-neutral-ink, var(--ab-base-pf-default-neutral-ink));
+  --ab-base-neutral-icon-colour: var(--ab-theme-pf-default-neutral-icon-colour, var(--ab-base-pf-default-neutral-icon-colour));
+}
+:root {
+  --ab-base-pf-default-positive-icon: "check_circle";
+  --ab-base-pf-default-positive-correct-icon: "check_circle";
+  --ab-base-pf-default-positive-advise-icon: "lightbulb";
+  --ab-base-pf-default-negative-icon: "cancel";
+  --ab-base-pf-default-negative-incorrect-icon: "cancel";
+  --ab-base-pf-default-negative-warn-icon: "warning";
+  --ab-base-pf-default-neutral-icon: "info";
+  --ab-base-pf-default-neutral-observe-icon: "visibility";
+}
+:root {
+  --ab-base-positive-icon: var(--ab-theme-pf-default-positive-icon, var(--ab-base-pf-default-positive-icon));
+  --ab-base-positive-correct-icon: var(--ab-theme-pf-default-positive-correct-icon, var(--ab-base-pf-default-positive-correct-icon));
+  --ab-base-positive-advise-icon: var(--ab-theme-pf-default-positive-advise-icon, var(--ab-base-pf-default-positive-advise-icon));
+  --ab-base-negative-icon: var(--ab-theme-pf-default-negative-icon, var(--ab-base-pf-default-negative-icon));
+  --ab-base-negative-incorrect-icon: var(--ab-theme-pf-default-negative-incorrect-icon, var(--ab-base-pf-default-negative-incorrect-icon));
+  --ab-base-negative-warn-icon: var(--ab-theme-pf-default-negative-warn-icon, var(--ab-base-pf-default-negative-warn-icon));
+  --ab-base-neutral-icon: var(--ab-theme-pf-default-neutral-icon, var(--ab-base-pf-default-neutral-icon));
+  --ab-base-neutral-observe-icon: var(--ab-theme-pf-default-neutral-observe-icon, var(--ab-base-pf-default-neutral-observe-icon));
+}
+html.ab-theme .positive,
+html.ab-theme .negative,
+html.ab-theme .neutral {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-radius: var(--ab-base-radius, 0.32rem);
+  border-left: 0.25rem solid var(--ab-sem-border);
+  background: var(--ab-sem-bg);
+  color: var(--ab-sem-ink);
+}
+html.ab-theme .positive::before,
+html.ab-theme .negative::before,
+html.ab-theme .neutral::before {
+  content: var(--ab-sem-icon, "");
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  color: var(--ab-sem-icon-colour);
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+}
+html.ab-theme .positive {
+  --ab-sem-bg: var(--ab-base-positive-bg);
+  --ab-sem-border: var(--ab-base-positive-border);
+  --ab-sem-ink: var(--ab-base-positive-ink);
+  --ab-sem-icon-colour: var(--ab-base-positive-icon-colour);
+  --ab-sem-icon: var(--ab-base-positive-icon);
+}
+html.ab-theme .negative {
+  --ab-sem-bg: var(--ab-base-negative-bg);
+  --ab-sem-border: var(--ab-base-negative-border);
+  --ab-sem-ink: var(--ab-base-negative-ink);
+  --ab-sem-icon-colour: var(--ab-base-negative-icon-colour);
+  --ab-sem-icon: var(--ab-base-negative-icon);
+}
+html.ab-theme .neutral {
+  --ab-sem-bg: var(--ab-base-neutral-bg);
+  --ab-sem-border: var(--ab-base-neutral-border);
+  --ab-sem-ink: var(--ab-base-neutral-ink);
+  --ab-sem-icon-colour: var(--ab-base-neutral-icon-colour);
+  --ab-sem-icon: var(--ab-base-neutral-icon);
+}
+html.ab-theme .positive.correct {
+  --ab-sem-icon: var(--ab-base-positive-correct-icon);
+}
+html.ab-theme .positive.advise {
+  --ab-sem-icon: var(--ab-base-positive-advise-icon);
+}
+html.ab-theme .negative.incorrect {
+  --ab-sem-icon: var(--ab-base-negative-incorrect-icon);
+}
+html.ab-theme .negative.warn {
+  --ab-sem-icon: var(--ab-base-negative-warn-icon);
+}
+html.ab-theme .neutral.observe {
+  --ab-sem-icon: var(--ab-base-neutral-observe-icon);
+}

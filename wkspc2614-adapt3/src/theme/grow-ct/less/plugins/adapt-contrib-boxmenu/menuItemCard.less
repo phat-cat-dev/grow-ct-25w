@@ -1,0 +1,135 @@
+// ============================================================================
+//  menuItemCard.less — GROW card harness for Adapt's boxmenu menu items, using
+//  the card DEPTH / COLOUR system (from tuner.css): a lightness rung + a
+//  hue-tinted elevation shadow, following the live --h and family saturation.
+//  No markup change; card body aligns to .menu-item__body(-inner). Loads after
+//  boxMenuItem.less. Every hsl(var())/slash-alpha value lives in a custom
+//  property so LESS passes it through verbatim (never evaluates it).
+// ============================================================================
+
+// elevation + line + shadow-lightness tokens (ported from the card system)
+:root {
+  --e0: 90%; --e1: 93%; --e2: 95%; --e3: 96.5%; --e4: 98%; --e5: 99%; --e6: 100%;
+  --d-line: 86%;
+  --shL: 24%;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --e0: 8%; --e1: 12%; --e2: 15%; --e3: 18%; --e4: 22%; --e5: 26%; --e6: 31%;
+    --d-line: 24%; --shL: 3%;
+  }
+}
+:root[data-theme="dark"] {
+  --e0: 8%; --e1: 12%; --e2: 15%; --e3: 18%; --e4: 22%; --e5: 26%; --e6: 31%;
+  --d-line: 24%; --shL: 3%;
+}
+// high contrast (theme-manager "contrast" mode): white surfaces, strong border, near-black ink
+:root[data-theme="contrast"] {
+  --e0: 100%; --e1: 100%; --e2: 100%; --e3: 100%; --e4: 100%; --e5: 100%; --e6: 100%;
+  --d-line: 18%;
+  --shL: 24%;
+  --ink: hsl(var(--h) 55% 6%);
+  --ink-soft: hsl(var(--h) 40% 16%);
+  --surface-1: hsl(var(--h) 0% 100%);
+  --surface-2: hsl(var(--h) 0% 98%);
+  --line: hsl(var(--h) 30% 18%);
+}
+
+.boxmenu-item {
+
+  // card shell — grey family, el2 rung + depth shadow (all via custom props)
+  &__inner {
+    --card-s: var(--gs);                                  // family saturation (grey)
+    --card-bg: hsl(var(--h) var(--card-s) var(--e2));
+    --card-line: hsl(var(--h) 16% var(--d-line));
+    --card-shadow: ~"0 2px 3px hsl(var(--h) 40% var(--shL) / 0.14), 0 5px 12px -4px hsl(var(--h) 45% var(--shL) / 0.20)";
+
+    margin: var(--space-xs) var(--space-xs) var(--space-sm);
+    padding: 0;
+    background: var(--card-bg);
+    color: var(--ink);
+    border: 1px solid var(--card-line);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;      // clips the corner mark to the card
+    position: relative;    // anchors the decorative mark
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  // the padded card body (= .cm-body) — above the decorative mark
+  &__details,
+  &__details-inner { position: relative; z-index: 1; }
+  &__details-inner { padding: var(--space-sm) var(--space-md); }   // less top/bottom, same sides
+
+  // card title (= .cm-title)
+  &__title {
+    margin: 0 0 var(--space-2xs);
+    font: 700 var(--fs-lg)/1.25 var(--font-heading, var(--font-ui, system-ui, sans-serif));
+    color: var(--ink);
+  }
+}
+
+// Card title gets its OWN heading size — 30% below the h2 scale. Adapt renders
+// the title as a role="heading" aria-level="2" div, so the global fluid-heading
+// rule (#wrapper [role="heading"][aria-level="2"] → --fs-2xl) would otherwise
+// blow it up to full h2 size. The extra .boxmenu-item ancestor raises
+// specificity above that rule; scaling off --fs-2xl keeps it fluid.
+#wrapper .boxmenu-item .boxmenu-item__title,
+#wrapper .boxmenu-item .boxmenu-item__title [role="heading"] {
+  // 30% below h2, then a further 15% smaller (0.7 × 0.85 = 0.595).
+  font-size: calc(var(--fs-2xl) * 0.595);
+}
+
+.boxmenu-item {
+
+  // card body text — aligned to Adapt's body structure
+  &__body,
+  &__body-inner { color: var(--ink-soft); font-size: var(--fs-base); }
+  &__body { margin: 0 0 var(--space-sm); }
+  &__body p { margin: 0; }
+
+  &__progress { margin-bottom: var(--space-xs); }
+
+  // action row (no divider; the decorative mark fills the corner instead)
+  &__button-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xs);
+  }
+
+  // decorative corner mark — a large, faint Material Symbol, clipped to the card
+  &__inner > .grow-card-mark {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0; // behind the content
+    font: normal 400 var(--mark-size, 8.6rem)/1 "Material Symbols Outlined";
+    font-feature-settings: "liga";                                  // render the ligature (e.g. "rocket_launch") as a glyph
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;  // crisp outlined weight
+    color: var(--accent);
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: bottom right;
+    transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--rot, 0deg));
+  }
+}
+
+// hover: the corner MARK shivers (not the card); the card just lifts its shadow.
+// Keyframes preserve the mark's base offset and wobble the rotation around --rot.
+@keyframes grow-mark-shiver {
+  0%, 100% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(var(--rot,0deg))"; }
+  25% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) - 6deg))"; }
+  55% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) + 6deg))"; }
+  80% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) - 3deg))"; }
+}
+.no-touch .boxmenu-item:not(.is-disabled):hover .boxmenu-item__inner {
+  --card-shadow: ~"0 4px 8px hsl(var(--h) 40% var(--shL) / 0.20), 0 20px 42px -10px hsl(var(--h) 45% var(--shL) / 0.32)";
+}
+.no-touch .boxmenu-item:not(.is-disabled):hover .grow-card-mark {
+  animation: grow-mark-shiver 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .no-touch .boxmenu-item:not(.is-disabled):hover .grow-card-mark { animation: none; }
+}

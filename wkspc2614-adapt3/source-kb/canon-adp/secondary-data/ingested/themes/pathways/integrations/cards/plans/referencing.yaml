@@ -1,0 +1,150 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Referencing, Citation and Academic Integrity
+pathwayNo: 4
+date: 4 October 2026
+time: "12:47"
+note: N-0135
+practiceNoun: referencing and academic integrity
+
+cards:
+  - new: i1
+    old: referencing/c1
+    short: Explain why academic work acknowledges its sources
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+    book:
+      - {element: what referencing is, quote: "referencing refers to the practice of acknowledging where the knowledge you are using in your work comes from"}
+  - new: i2
+    old: referencing/01
+    short: Construct accurate in-text references and a references list in one style
+    knowledge: procedural, one set method
+    qf: [{id: 4.10.b4, extract: "accurately and reliably"}]
+  - new: i3
+    old: referencing/c2
+    short: Record and organise sources as they are found, so every citation can be traced
+    knowledge: metacognitive, beginning (managing one's own working)
+    qf: [{id: l5/autonomy.2, extract: "Exercise autonomy and judgement within broad parameters."}]
+    book:
+      - {element: unintentional plagiarism, quote: "unintentional plagiarism comes about because you're not doing things as efficiently as you should be"}
+  - new: d1
+    old: referencing/02
+    short: Acknowledge quotation and paraphrase correctly, avoiding plagiarism
+    knowledge: conceptual and procedural
+    qf: [{id: l4/application.2, extract: "Identify, adapt and use appropriate methods and skills."}]
+  - new: d2
+    statement: Reference less common source types accurately, such as a chapter in an edited book or a web page with an organisation as author, checking the style's requirements.
+    short: Reference trickier source types accurately
+    knowledge: procedural
+    qf: [{id: l5/application.2, extract: "Determine, adapt and use appropriate methods and skills."}]
+    book:
+      - {element: a chapter in an edited book, quote: "This is a chapter in an edited book."}
+      - {element: checking requirements, quote: "we recommend checking on the requirements for your work"}
+    rows:
+      Verbs: reference, check
+      Measures: accurately; less common
+      Keywords: edited book; book chapter; web page; organisation as author; source types; referencing style
+      Benchmark evidence: not searched (new card).
+      Pedagogy: none recorded
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Intermediate \"handling trickier sources\"."
+  - new: d3
+    old: referencing/c3
+    short: Use citation to show the scope of research and engagement with the discourse
+    knowledge: metacognitive, strategic (what one's references tell a reader)
+    qf: [{id: 4.15.b5, extract: "make use of scholarly reviews and primary sources"}]
+    book:
+      - {element: the references list read first, quote: "many tutors turn to the references list first, to get an impression of the scope of the student's research"}
+  - new: e1
+    old: referencing/03
+    short: Uphold honesty and trust in academic work
+    knowledge: conceptual (values in practice)
+    qf: [{id: 4.12.b8, extract: "the exercise of personal responsibility"}]
+  - new: e2
+    old: referencing/04
+    short: Uphold fairness, respect, responsibility and courage in academic conduct
+    knowledge: conceptual with metacognitive (one's own conduct towards others)
+    qf: [{id: 4.15.b9.1, extract: "the exercise of initiative and personal responsibility"}]
+  - new: e3
+    statement: Carry academic integrity into graduate and professional identity, working in ways that prevent unintentional plagiarism and holding to the values in professional contexts.
+    short: Carry integrity into graduate and professional identity
+    knowledge: metacognitive, self-knowledge
+    qf: [{id: 4.17.b6, extract: "at a professional or equivalent level"}]
+    book:
+      - {element: integrity and graduate identity, quote: "the significance of these values to your graduate identity by considering how they might inform your conduct in professional contexts"}
+    rows:
+      Verbs: carry, work, hold
+      Measures: in professional contexts
+      Keywords: academic integrity; graduate identity; professional conduct; unintentional plagiarism; values
+      Benchmark evidence: not searched (new card). Accounting 2025, 3.10 under e1 (the accountant's position of trust) is the nearest.
+      Pedagogy: "no theory: the values come from ICAI (2021), a framework; W-0026"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced \"integrity as a component of graduate identity carried into professional life\" and goal (\"integrity as scholarly and professional practice\")."
+
+readings:
+  qaa/social-policy-2026/4.10: skill
+  qaa/forensic-science-2022/3.28: skill
+  qaa/music-2025/1.41: theme
+  qaa/archaeology-2022/2.6: theme
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/1.20: theme
+  qaa/finance-2025/2.3: theme
+  qaa/accounting-2025/3.10: skill
+  qaa/education-studies-2025/3.10: skill
+  qaa/history-of-art-architecture-and-design-2026/1.22: theme
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/4.3: skill
+
+vic:
+  qaa/social-policy-2026/4.10: {verbs: [understand, apply], relation: "applying a referencing system accurately in texts and lists, a standard in social policy: i2 in the subject's words"}
+  qaa/forensic-science-2022/3.28: {verbs: [recognise, be aware], relation: "recognising plagiarism as unethical, a standard in forensic science: d1's reason in a discipline bound by evidence"}
+  qaa/music-2025/1.41: {verbs: [detect, recognise], relation: "detecting plagiarism by generative AI among the subject's concerns about technology"}
+  qaa/archaeology-2022/2.6: {verbs: [], relation: "plagiarism named among issues the subject attends to"}
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/1.20: {verbs: [], relation: "trust among the ethics and principles the subject studies"}
+  qaa/finance-2025/2.3: {verbs: [include], relation: "trust among accounting topics: a word match"}
+  qaa/accounting-2025/3.10: {verbs: [equip, recognise, make, provide], relation: "recognising the accountant's position of trust: integrity as a profession's identity, where e3 leads"}
+  qaa/education-studies-2025/3.10: {verbs: [maintain, show, organise, manage, arrange], relation: "respect for others and organised information as professional conduct in education"}
+  qaa/history-of-art-architecture-and-design-2026/1.22: {verbs: [give], relation: "fairness and respect named in guidance on generative AI: values as guidance to students"}
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/4.3: {verbs: [demonstrate, modify, make use of], relation: "respect for others' views and changing position when warranted: respect and courage in the subject's words"}
+
+vicSummary: "What this shows: five of the ten extracts are skill, more than in any pathway so far: applying a referencing system, recognising plagiarism as unethical, the accountant's position of trust, respect for others in professional conduct and in discussion. The benchmarks name integrity's values in professional terms, which is where e3 takes the learner."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says referencing, in-text reference, references list, author-date or Harvard, quotation, paraphrase, plagiarism, intentional and unintentional, and the six ICAI values; the benchmarks say accurate referencing, standard systems, unethical behaviour, intellectual property, position of trust, professional attitude, respect for others' views. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** five of the ten extracts are skill. Where integrity's words appear as themes they are word matches (trust in accounting topics) or concerns about generative AI."
+  - "**Book coverage:** Chapter 10 carries all nine cards, though the guide teaches integrity first and referencing after; the tier map reverses that order on purpose (its note on ordering)."
+  - "**Other authors:** META holds Lave and Wenger only; Hyland, Howard and the ICAI framework are wanted (W-0029, W-0028, W-0026)."
+
+qfIntro: "Neither framework names referencing or plagiarism; they speak of communicating accurately and reliably, of using scholarly sources, and of personal responsibility rising to professional autonomy, which is the frame for integrity."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing what kind of area of study one works in: knowledge that belongs to a community", tier: before Introductory}
+  - {id: 4.10.b4, verbs: "communicate", relation: "communicating accurately and reliably: references that are right", tier: Introductory}
+  - {id: l4/application.2, verbs: "identify, adapt, use", relation: "using the right method for quotation and paraphrase", tier: Introductory}
+  - {id: l5/application.2, verbs: "determine, adapt, use", relation: "adapting the method to less common sources", tier: Intermediate}
+  - {id: l5/autonomy.2, verbs: "exercise", relation: "judgement within broad parameters: organising one's own sources", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "personal responsibility in employment: honesty and trust", tier: Intermediate}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "using scholarly sources, which the references list shows", tier: Advanced}
+  - {id: 4.15.b9.1, verbs: "(none: a noun phrase)", relation: "initiative and personal responsibility: upholding the values", tier: Advanced}
+  - {id: 4.17.b6, verbs: "demonstrate, act", relation: "acting autonomously at a professional level: integrity carried into work", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the parts of a reference and of a references list in one style, and what an in-text reference is.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains why academic work acknowledges where its knowledge comes from, and what plagiarism is.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "References books, journal articles and web pages accurately and consistently.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work, with one style"}
+  - {tier: Introductory, statement: "Keeps a record of sources as they work, so nothing goes unreferenced.", type: metacognitive (beginning), process: apply, change: "managing one's own working appears"}
+  - {tier: Intermediate, statement: "Explains when to quote and when to paraphrase, and why paraphrase is the more skilful act.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Paraphrases and references trickier sources correctly.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Uses citation knowing what it shows a reader: the scope of the research, engagement with the discourse, disciplinary knowledge.", type: metacognitive (strategic), process: evaluate, change: "citation used on purpose, not for compliance"}
+  - {tier: Advanced, statement: "Explains the six ICAI values and what each means in their own work.", type: conceptual, process: understand, analyse}
+  - {tier: Advanced, statement: "Works in ways that prevent unintentional plagiarism and holds others to the values constructively.", type: procedural with metacognitive, process: apply, evaluate}
+  - {tier: Advanced, statement: "Treats integrity as part of who they are as a graduate and professional.", type: metacognitive (self-knowledge), process: evaluate, change: "functioning knowledge: integrity owned"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum, though not evenly: Introductory is declarative and procedural, what referencing is and how to do it, with keeping one's own records as the first metacognitive habit; Intermediate is procedural and strategic, quotation and paraphrase and citation used to show what one has done; Advanced returns to the conceptual, the values, and ends in the self-system, integrity as identity. The map builds from the concrete skill to the culminating \"why\", reversing the guide's order; in Marzano and Kendall's terms the learner moves from the cognitive system to the self-system, where values and identity direct conduct. Mastery is integrity as scholarly and professional practice, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the two agree: referencing at Introductory, citation with quotation, paraphrase and trickier sources at Intermediate, the values, plagiarism and graduate identity at Advanced. The map threads basic plagiarism awareness through Introductory; here it is in i1's explanation and i3's records, with d1 carrying quotation and paraphrase."
+
+qfAdd: "neither framework names referencing, plagiarism or integrity; they name accuracy and reliability (L4), scholarly sources (L6) and personal responsibility rising to professional autonomy (L5 to L7). Integrity's values have no level descriptor of their own; they sit in the responsibility the descriptors assume."
+
+review:
+  - "d2 and e3 are new and proposed (D-ing-0060)."
+  - "e1 and e2 split the six ICAI values four ways between them (honesty and trust; fairness, respect, responsibility and courage); the model's author may prefer them as one card, which would free a place for e3 without a new card elsewhere."
+  - "The referencing style is set by the context a course runs in; i2 and d2 are written for any style."

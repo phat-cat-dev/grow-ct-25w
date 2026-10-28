@@ -1,0 +1,82 @@
+<div id="grow-layer" class="grow-layer" role="region" aria-label="Grow management layer">
+      <div class="grow-footer">
+        <button type="button" class="grow-footer__toggle" aria-expanded="true" aria-controls="grow-studio-panel" tabindex="0" data-a11y-force-focus="true">
+          <span class="grow-footer__dot" aria-hidden="true"></span>
+          <span class="grow-footer__label">Theme</span>
+        </button>
+      </div>
+      <div class="grow-studio grow-submenu tm-scope is-open" id="grow-studio-panel">
+        <div class="grow-studio__mount tm-manager" id="grow-studio-mount" data-tm-mounted="" data-tm-theme="dark" data-tm-no-motion="false" style="--tm-h: 334; --tm-s: 33%; --tm-source: hsl(334 33% 64%); --tm-on-source: #000;" data-tm-button-appearance="inverse" aria-busy="false">
+    <div class="tm-rail tm-control-bar" role="group" aria-label="Theme control-bar">
+      <div class="tm-theme">
+        <button type="button" class="tm-icon" data-action="theme" aria-label="Mode" title="Mode" aria-expanded="false" aria-controls="tm-1-theme"><span class="tm-symbol" aria-hidden="true">contrast</span></button>
+      </div>
+      <div class="tm-source" role="group" aria-label="Active source colour">
+        <button type="button" class="tm-icon" data-action="notifications" aria-label="Notifications" title="Turn notifications off" aria-pressed="true"><span class="tm-symbol" data-notifications-symbol="" aria-hidden="true">notifications</span></button>
+        <button type="button" class="tm-icon" data-action="harmony-lock" aria-label="Lock harmony scheme" title="Lock harmony scheme" aria-pressed="false"><span class="tm-symbol" data-harmony-lock-symbol="" aria-hidden="true">lock_open</span></button>
+        <button type="button" class="tm-icon" data-action="harmony" aria-label="Colour harmony" title="Colour harmony" aria-expanded="false" aria-controls="tm-1-theory"><span class="tm-symbol" aria-hidden="true">palette</span></button>
+        <label class="tm-sr" for="tm-1-colour">Active colour: Enter to apply, Escape to restore</label>
+        <input id="tm-1-colour" data-field="colour" type="text" autocomplete="off" spellcheck="false" aria-describedby="tm-1-status" disabled="">
+        <button type="button" class="tm-icon" data-action="shuffle" aria-label="Randomise source colour" title="Randomise harmony; keep base colour"><span class="tm-symbol" aria-hidden="true">shuffle</span></button>
+        <button type="button" class="tm-icon" data-action="lock" aria-label="Unlock base colour" title="Unlock base colour" aria-pressed="true"><span class="tm-symbol" data-lock-symbol="" aria-hidden="true">lock</span></button>
+      <button type="button" class="tm-icon" data-action="toggle" aria-label="Schemes" title="Schemes" aria-controls="tm-1-tools" aria-expanded="false"><span class="tm-symbol" aria-hidden="true">code</span></button></div>
+      
+    <button type="button" class="tm-icon grow-studio__min" title="Minimise" aria-label="Minimise to pill" tabindex="0" data-a11y-force-focus="true"><span class="tm-symbol" aria-hidden="true">close</span></button></div>
+    <section class="tm-tools tm-mode-panel" id="tm-1-theme" aria-label="Mode" hidden="" data-open="false" inert="" aria-hidden="true">
+      <fieldset class="tm-theme-menu">
+        <div class="tm-mode-options" role="group" aria-label="Preview mode">
+          
+            <button type="button" class="tm-mode-option" data-appearance="light" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">light_mode</span><span>Light</span></button>
+          
+            <button type="button" class="tm-mode-option" data-appearance="dark" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">dark_mode</span><span>Dark</span></button>
+          
+            <button type="button" class="tm-mode-option" data-appearance="contrast" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">contrast</span><span>Contrast</span></button>
+          
+            <button type="button" class="tm-mode-option" data-appearance="system" aria-pressed="true"><span class="tm-symbol" aria-hidden="true">devices</span><span>System</span></button>
+          
+        </div>
+        <div class="tm-mode-footer">
+          <p class="tm-note" id="tm-1-motion-note">No-motion also respects your system's reduced-motion preference.</p>
+          <button type="button" class="tm-icon" data-action="no-motion" aria-label="No-motion" title="No-motion" aria-describedby="tm-1-motion-note" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">motion_photos_off</span></button>
+        </div>
+      </fieldset>
+    </section>
+    <section class="tm-tools tm-theory" id="tm-1-theory" aria-label="Colour harmony" hidden="" data-open="false" inert="" aria-hidden="true">
+      <div class="tm-theory-bar harm-swatches" role="group" aria-label="Harmony swatches"><button type="button" class="hsw" data-harmony-swatch="0" disabled="" style="--swatch-color: hsl(334 33% 64%); --swatch-foreground: #000;" aria-label="Base: 334 degrees. Use as main accent" title="Base: 334 degrees. Use as main accent" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">filter_vintage</span></button><button type="button" class="hsw" data-harmony-swatch="1" disabled="" style="--swatch-color: hsl(154 33% 64%); --swatch-foreground: #000;" aria-label="Colour 2: 154 degrees. Use as main accent" title="Colour 2: 154 degrees. Use as main accent" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">local_florist</span></button><button type="button" class="hsw" data-harmony-swatch="2" disabled="" style="--swatch-color: hsl(154 33% 79%); --swatch-foreground: #000;" aria-label="Colour 3: 154 degrees. Use as main accent" title="Colour 3: 154 degrees. Use as main accent" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">ac_unit</span></button><button type="button" class="hsw" data-harmony-swatch="3" disabled="" style="--swatch-color: hsl(154 33% 49%); --swatch-foreground: #000;" aria-label="Colour 4: 154 degrees. Use as main accent" title="Colour 4: 154 degrees. Use as main accent" aria-pressed="false"><span class="tm-symbol" aria-hidden="true">diamond</span></button></div>
+      <div class="tm-fields tm-theory-settings">
+        <label>Harmony preset<select data-field="harmony-preset"><option value="complementary">complementary</option><option value="analogous">analogous</option><option value="triadic">triadic</option><option value="split">split</option><option value="tetradic">tetradic</option><option value="square">square</option><option value="monochrome">monochrome</option><option value="accented-analogous">accented analogous</option><option value="double-complementary">double complementary</option><option value="mono-tints">mono tints</option><option value="mono-shades">mono shades</option><option value="mono-muted">mono muted</option><option value="mono-pastel">mono pastel</option><option value="mono-contrast">mono contrast</option><option value="mono-ink-wash">mono ink wash</option><option value="analogous-tight">analogous tight</option><option value="analogous-wide">analogous wide</option><option value="split-wide">split wide</option><option value="rectangle">rectangle</option><option value="pentadic">pentadic</option><option value="hexadic">hexadic</option><option value="spectrum">spectrum</option><option value="golden-angle">golden angle</option></select></label>
+        <label>Number of colours<select data-field="harmony-count"><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select></label>
+        <label>Button appearance<select data-field="button-appearance"><option value="inverse">Inverse</option><option value="shaded">Shaded</option><option value="outline">Outline</option><option value="ghost">Ghost</option><option value="soft">Soft</option></select></label>
+      </div>
+      <div class="tm-fields tm-theory-sliders">
+        <label>Base hue<input type="range" min="0" max="360" step="1" data-field="harmony-h" disabled=""><output data-harmony-value="h">334 degrees</output></label>
+        <label>Base saturation<input type="range" min="0" max="100" step="1" data-field="harmony-s" disabled=""><output data-harmony-value="s">33%</output></label>
+        <label>Base lightness<input type="range" min="20" max="80" step="1" data-field="harmony-l" disabled=""><output data-harmony-value="l">64%</output></label>
+      </div>
+      <h2>Colour harmony</h2>
+      <p class="tm-note" data-harmony-note="">Base colour locked. Harmony preset and colour count can change; source controls and accent selection are fixed.</p>
+    </section>
+    <section class="tm-tools" id="tm-1-tools" aria-label="Schemes" hidden="" data-open="false" inert="" aria-hidden="true">
+      <h2>Schemes</h2>
+      <p class="tm-note">Edit and save a scheme here, then build it into a theme. Modes control how the preview is displayed.</p>
+      <div class="tm-fields">
+        <label>Scheme name<input data-field="name" value="workshop-theme" autocomplete="off" pattern="(?:[a-zA-Z0-9_]|-)+"></label>
+        <label>Saved schemes<select data-field="schemes"><option value="">Choose a scheme</option></select></label>
+      </div>
+      <div class="tm-actions">
+        <button type="button" data-action="refresh">Refresh list</button>
+        <button type="button" data-action="load" disabled="">Load</button>
+        <button type="button" data-action="save">Save scheme</button>
+        <button type="button" data-action="build">Save &amp; build</button>
+      </div>
+      <label>Custom scheme CSS<textarea data-field="css" rows="4" spellcheck="false"></textarea></label>
+      <p class="tm-note">Save updates the named scheme on the server. Build saves first, then generates the full studio theme. Custom CSS is included in builds, not injected here. Copy and download refer to the latest build, not unsaved edits.</p>
+      <div class="tm-actions">
+        <button type="button" data-action="copy" disabled="">Copy built CSS</button>
+        <button type="button" data-action="json">Export scheme JSON</button>
+        <label>Import scheme JSON<input data-field="import" type="file" accept=".json,application/json"></label>
+      </div>
+      <div class="tm-downloads" aria-label="Build downloads"></div>
+    </section>
+    <div id="tm-1-status" data-notification-bar="" class="notification-bar" data-visible="false" style="height: 78px;" data-level="error" inert="" aria-hidden="true"><button type="button" class="tm-icon notification-bar__navigation" aria-label="Previous notification" title="Previous notification" disabled=""><span class="tm-symbol" aria-hidden="true">arrow_back</span></button><div class="notification-bar__content" role="status" aria-live="polite" aria-atomic="true" tabindex="0">Theme manager: Studio request failed (404): &lt;!DOCTYPE html&gt;&lt;head&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/&gt; &lt;style&gt; body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; cursor: default; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; } main, aside, section { display: flex; justify-content: center; align-items: center; flex-direction: column; } main { height: 100%; } aside { background: #000; flex-shrink: 1; padding: 30px 20px; } aside p { margin: 0; color: #999999; font-size: 14px; line-height: 24px; } aside a { color: #fff; text-decoration: none; } section span { font-size: 24px; font-weight: 500; display: block; border-bottom: 1px solid #EAEAEA; text-align: center; padding-bottom: 20px; width: 100px; } section p { font-size: 14px; font-weight: 400; } section span + p { margin: 20px 0 0 0; } @media (min-width: 768px) { section { height: 40px; flex-direction: row; } section span, section p { height: 100%; line-height: 40px; } section span { border-bottom: 0; border-right: 1px solid #EAEAEA; padding: 0 20px 0 0; width: auto; } section span + p { margin: 0; padding-left: 20px; } aside { padding: 50px 0; } aside p { max-width: 520px; text-align: center; } } &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;main&gt; &lt;section&gt; &lt;span&gt;404&lt;/span&gt; &lt;p&gt;The requested path could not be found&lt;/p&gt; &lt;/section&gt; &lt;/main&gt;&lt;/body&gt;</div><button type="button" class="tm-icon notification-bar__navigation" aria-label="Next notification" title="Next notification" disabled=""><span class="tm-symbol" aria-hidden="true">arrow_forward</span></button></div></div>
+      </div></div>

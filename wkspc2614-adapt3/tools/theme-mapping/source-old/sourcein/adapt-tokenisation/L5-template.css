@@ -1,0 +1,104 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 5: the theme template  (--ab-theme-pf-default-*)
+ * ---------------------------------------------------------------------------
+ * The authorable contract: every token a theme is allowed to retarget, and
+ * nothing else. Each one, when DEFINED, overrides the matching L4 default
+ * (L3/L4 read it via `var(--ab-theme-pf-default-X, <default>)`), so defining a
+ * handful of seeds re-derives the whole cascade — colours, type, spacing.
+ *
+ * Shipped empty: every line below is commented, so the L4 defaults stand and
+ * the package renders on its own. Two ways to theme:
+ *   1. uncomment and edit lines here directly; or
+ *   2. drop in an L6 user pack (see L6-thm-pink.css) that keeps the brand values
+ *      in its own --ab-thm-* namespace and binds them into these tokens.
+ * The grammar reserves this -pf-/-theme- form for the template layers; a
+ * published user pack uses the shortened --ab-thm-* namespace instead.
+ *
+ * Any token not listed here is NOT part of the theme contract — it is a derived
+ * value (set a seed above it) or a fixed default. Retarget seeds, not outputs.
+ * =========================================================================== */
+:root {
+  /* --- colour anchor: the whole palette derives from this one HSL triple --- */
+  /* --ab-theme-pf-default-user-h: 202; */            /* hue 0–360 */
+  /* --ab-theme-pf-default-user-s: 72%; */            /* saturation */
+  /* --ab-theme-pf-default-user-l: 14%; */            /* lightness of the accent anchor (dark-color-1) */
+  /* --ab-theme-pf-default-accent-l: 14%; */          /* override if the accent should not sit at user-l */
+  /* --ab-theme-pf-default-neutral-h: 202; */         /* hue the greys carry (only visible when neutral-s > 0) */
+  /* --ab-theme-pf-default-neutral-s: 0%; */          /* 0% = pure grey spine; raise to tint the neutrals */
+  /* --ab-theme-pf-default-l-surface: 100%; */        /* lightest surface (light mode) */
+
+  /* --- dark-mode anchors (consumed under [data-theme="dark"] / .ab-dark) --- */
+  /* --ab-theme-pf-default-accent-l-dark: 62%; */
+  /* --ab-theme-pf-default-l-surface-dark: 14%; */
+
+  /* --- box-model --- */
+  /* --ab-theme-pf-default-radius: 0.32rem; */
+  /* --ab-theme-pf-default-border-width: 0.2rem; */
+
+  /* --- breakpoints (bounding clamps; the @media fallbacks live outside the
+         token array — see README) --- */
+  /* --ab-theme-pf-default-bp-sm: 576px; */
+  /* --ab-theme-pf-default-bp-md: 768px; */
+  /* --ab-theme-pf-default-bp-lg: 992px; */
+  /* --ab-theme-pf-default-bp-xl: 1200px; */
+  /* --ab-theme-pf-default-bp-xxl: 1400px; */
+  /* --ab-theme-pf-default-bp-xxxl: 1600px; */
+
+  /* --- container-query band edges --- */
+  /* --ab-theme-pf-default-cq-medium: 30rem; */
+  /* --ab-theme-pf-default-cq-wide: 45rem; */
+
+  /* --- buttons (7 curated knobs; sizes and semantic variants stay derived,
+         not part of this contract — retarget seeds, not outputs) --- */
+  /* --ab-theme-pf-default-btn-radius: 0.32rem; */
+  /* --ab-theme-pf-default-btn-padding-y: 0.375rem; */
+  /* --ab-theme-pf-default-btn-padding-x: 0.75rem; */
+  /* --ab-theme-pf-default-btn-border-width: 0.2rem; */
+  /* --ab-theme-pf-default-btn-focus-shadow-rgb: 10, 42, 61; */
+  /* --ab-theme-pf-default-btn-active-shade: 18%; */
+  /* --ab-theme-pf-default-btn-hover-surface: #ffffff; */
+
+  /* --- motion --- */
+  /* --ab-theme-pf-default-duration-fast: 0.15s; */
+  /* --ab-theme-pf-default-duration-base: 0.2s; */
+
+  /* --- spacing --- */
+  /* --ab-theme-pf-default-measure-max: 98.75rem; */  /* fluid-scale ceiling */
+  /* --ab-theme-pf-default-gutter: 1rem; */           /* phone-base page gutter */
+
+  /* --- typography --- */
+  /* --ab-theme-pf-default-type-ratio: 1.2; */
+  /* --ab-theme-pf-default-font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; */
+  /* --ab-theme-pf-default-font-display: var(--ab-base-pf-default-font-sans); */
+  /* --ab-theme-pf-default-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace; */
+  /* --ab-theme-pf-default-font-heading: var(--ab-base-pf-default-font-display); */
+  /* --ab-theme-pf-default-font-body: var(--ab-base-pf-default-font-sans); */
+  /* --ab-theme-pf-default-weight-heading: 600; */
+  /* --ab-theme-pf-default-weight-body: 400; */
+
+  /* --- icon pack rosters + per-glyph ligatures (override to re-glyph a name) ---
+     --ab-theme-pf-default-academic-practice-iconset: starting, progressing, ... ;
+     --ab-theme-pf-default-icon-writing-academic-practice-outlined: "edit_note";
+     ...one per glyph, same name grammar as L4. */
+
+  /* --- headings (override to recolour a heading level independently) --- */
+  /* --ab-theme-pf-default-h1-color: var(--ab-base-accent); */
+  /* --ab-theme-pf-default-h2-color: var(--ab-base-ink-muted); */
+
+  /* --- surface / ink / accent pivots (override to pin a role to a literal,
+         bypassing the HSL derivation above) --- */
+  /* --ab-theme-pf-default-surface: #ffffff; */
+  /* --ab-theme-pf-default-ink: #1a1a1a; */
+  /* --ab-theme-pf-default-accent: #8e1152; */
+
+  /* --- accent spectrum (L4-accent-spectrum.css) --- */
+  /* The 12-family spectrum + 7 colour-theory sets + companions derive from the
+     colour anchor above. These dials retarget the whole spectrum: */
+  /* --ab-theme-pf-default-accent-s: 78%; */        /* shared chroma for every family (default = user-s) */
+  /* --ab-theme-pf-default-user-l-num: 31; */        /* unitless anchor L; sets the A-v2 shade-offset for all rungs */
+  /* --ab-theme-pf-default-companion-s: 55%; */      /* companion single-colour saturation (§2.5) */
+  /* --ab-theme-pf-default-companion-l: 45%; */      /* companion single-colour lightness */
+  /* A single rung may be PINNED to a house value (named override), e.g.:
+     --ab-theme-pf-default-accent-azure-dark-90: #0a2a3d;
+     an unoverridden rung keeps its derived value. */
+}

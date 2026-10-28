@@ -1,0 +1,84 @@
+{
+  "$anchor": "grow-marks-component",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": { "$ref": "component" },
+    "with": {
+      "properties": {
+        "_growMarks": {
+          "type": "object",
+          "title": "GROW Marks",
+          "description": "Per-component GROW Marks settings. Author-tagged words (data-gm-mark spans) in this component's text draw on automatically; the feedback settings below are opt-in for question components.",
+          "default": {},
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable for this component",
+              "description": "On by default. Set false to suppress all GROW Marks behaviour on this component.",
+              "default": true
+            },
+            "_feedback": {
+              "type": "object",
+              "title": "Right / wrong feedback mark (questions)",
+              "description": "Play a mark when this question is answered. Opt-in so it never fights the question's own feedback.",
+              "default": {},
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "title": "Play a mark on answer",
+                  "description": "Off by default. Turn on to mark this question correct/incorrect.",
+                  "default": false
+                },
+                "_target": {
+                  "type": "string",
+                  "title": "Target selector (optional)",
+                  "description": "A CSS selector inside this component to place the mark on (e.g. an author-tagged word). Defaults to a [data-gm-feedback] element, then the component title.",
+                  "default": ""
+                },
+                "_correct": {
+                  "type": "object",
+                  "title": "Correct",
+                  "default": {},
+                  "properties": {
+                    "_mark": {
+                      "type": "string",
+                      "title": "Mark",
+                      "enum": ["tick", "checkbox", "star", "oval", "underline", "box", "highlight"],
+                      "default": "tick"
+                    },
+                    "_color": {
+                      "type": "string",
+                      "title": "Colour",
+                      "enum": ["positive", "accent", "neutral", "comment"],
+                      "default": "positive"
+                    }
+                  }
+                },
+                "_incorrect": {
+                  "type": "object",
+                  "title": "Incorrect",
+                  "default": {},
+                  "properties": {
+                    "_mark": {
+                      "type": "string",
+                      "title": "Mark",
+                      "enum": ["cross", "strike", "scribble", "underline", "caret", "exclaim"],
+                      "default": "cross"
+                    },
+                    "_color": {
+                      "type": "string",
+                      "title": "Colour",
+                      "enum": ["negative", "neutral", "accent", "comment"],
+                      "default": "negative"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

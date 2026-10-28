@@ -1,0 +1,44 @@
+# header-template.yaml — lesson/page hero header: content + type scale.
+#
+# Matched set in this folder:
+#   header-template.yaml  data + type scale (this)
+#   header-template.jsx   React component over it
+#   header-template.html  rendered reference, with the type-scale CSS
+#
+# Sizes name GROW text tokens (--ab-core-text-clamp-<token>); the CSS/component
+# resolve them (with clamp() fallbacks so it renders un-themed). The frontmatter
+# can carry body (overview prose), meta (key/value), objectives AND bullets.
+
+header:
+  variant: dots                 # asset-hero art variant
+  kicker: Module 1 · Lesson 1   # page__subtitle / hero kicker
+  title: Your lesson title
+
+  frontmatter:
+    eyebrow: Before you begin
+    body: >
+      Introduce the topic, explain why it matters, and tell learners what they
+      will do in this lesson.
+    meta:
+      duration: 10 minutes
+      level: Introductory
+    objectivesTitle: "By the end of this lesson, you will be able to:"
+    objectives:
+      - Describe the central idea in your own words.
+      - Apply the idea to a relevant example.
+      - Identify one action to take in your own context.
+    bulletsTitle: "You'll need:"          # frontmatter can show a plain bullet list
+    bullets:
+      - A recent piece of your own written feedback
+      - Ten quiet minutes
+
+# Type scale — each role maps to a GROW text-clamp token + treatment.
+type:
+  kicker:     { token: 2xs, transform: uppercase, tracking: 0.08em, weight: 700 }
+  title:      { token: 2xl, weight: 800, leading: 1.05 }
+  eyebrow:    { token: 2xs, transform: uppercase, tracking: 0.08em, weight: 700 }
+  body:       { token: md,  leading: 1.6 }
+  metaLabel:  { token: 2xs, transform: uppercase }
+  metaValue:  { token: sm,  weight: 600 }
+  groupTitle: { token: md,  weight: 700 }
+  listItem:   { token: md,  leading: 1.5 }

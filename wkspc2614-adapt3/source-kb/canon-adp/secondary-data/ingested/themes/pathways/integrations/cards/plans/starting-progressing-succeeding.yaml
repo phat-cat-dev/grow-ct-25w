@@ -1,0 +1,151 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Starting, Progressing and Succeeding
+pathwayNo: 1
+date: 4 October 2026
+time: "12:49"
+note: N-0138
+practiceNoun: starting, progressing and succeeding at university
+
+cards:
+  - new: i1
+    statement: Explain what excelling at university means, and how learning there differs from school or college.
+    short: Explain what excelling at university means
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+    book:
+      - {element: excelling, quote: "We're talking about exceeding your expectations, making the most of the learning experience at university, and maximising your potential"}
+    rows:
+      Verbs: explain
+      Measures: none
+      Keywords: excelling; success; school or college; transition to university; expectations
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Student integration (Tinto) (`ing:doc:student-integration-tinto-1975`)"
+      Frameworks: none recorded yet
+      Other authors: "Tinto (1975): students persist when they become integrated, academically and socially, into the institution (`ing:doc:student-integration-tinto-1975`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"what excelling actually means; the shift from school/college to university\"."
+  - new: i2
+    old: starting-progressing-succeeding/c1
+    short: Recognise and follow the conventions of academic practice
+    knowledge: procedural
+    qf: [{id: l4/autonomy.2, extract: "within broad but generally well-defined parameters"}]
+    book:
+      - {element: tutors' unseen expectations, quote: "the expectations of tutors, often unseen, that you need to meet if you're going to excel"}
+  - new: i3
+    old: starting-progressing-succeeding/01
+    short: Adopt a growth mindset towards academic challenge
+    knowledge: metacognitive and self-system (beliefs about one's own ability)
+    qf: [{id: 4.12.b7, extract: "develop existing skills and acquire new competences"}]
+  - new: d1
+    old: starting-progressing-succeeding/03
+    short: Set and sustain mastery-oriented goals
+    knowledge: procedural
+    qf: [{id: l4/autonomy.1, extract: "Take responsibility for courses of action"}]
+  - new: d2
+    old: starting-progressing-succeeding/02
+    short: Build self-efficacy and manage stress and anxiety under pressure
+    knowledge: metacognitive and self-system (managing one's own state)
+    qf: [{id: l5/autonomy.2, extract: "Exercise autonomy and judgement within broad parameters."}]
+  - new: d3
+    old: starting-progressing-succeeding/c2
+    short: Develop an academic voice and the confidence to own one's practice
+    knowledge: metacognitive, self-knowledge
+    qf: [{id: 4.15.b9.1, extract: "the exercise of initiative and personal responsibility"}]
+  - new: e1
+    old: starting-progressing-succeeding/04
+    short: Articulate one's graduate capital for the move from student to graduate
+    knowledge: conceptual and procedural
+    qf: [{id: 4.12.b8, extract: "the qualities and transferable skills necessary for employment"}]
+  - new: e2
+    old: starting-progressing-succeeding/c3
+    short: Direct one's own learning and development, as a lifelong learner
+    knowledge: metacognitive, self-regulation
+    qf: [{id: 4.15.b9.3, extract: "the learning ability needed to undertake appropriate further training"}]
+    book:
+      - {element: lifelong learners, quote: "We should all be lifelong learners, in that we should continually look to engage in personal and professional development."}
+  - new: e3
+    statement: Consolidate a graduate identity, relating what one has learned and practised to who one is becoming in one's field.
+    short: Consolidate a graduate identity
+    knowledge: metacognitive, self-knowledge (identity)
+    qf: [{id: 4.17.b6, extract: "demonstrate self-direction"}, {id: 4.17.b7, extract: "continue to advance their knowledge and understanding"}]
+    book:
+      - {element: a growing sense of graduate identity, quote: "how to relate the literacies we discussed and the experiences of practising each one to your growing sense of graduate identity"}
+    rows:
+      Verbs: consolidate, relate
+      Measures: none
+      Keywords: graduate identity; becoming a graduate; identity capital; professional identity; field
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Baxter Magolda (2001), self-authorship, not yet ingested; W-0063; Tomlinson (2017), not yet ingested; W-0057"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced \"consolidating a graduate identity\"; the guide's own subtitle names graduate identity as its aim."
+
+readings:
+  qaa/early-childhood-studies-2022/1.35: theme
+  qaa/business-and-management-2023/3.10: theme
+  qaa/english-2023/1.5: theme
+  qaa/accounting-2025/1.46: theme
+  qaa/accounting-2025/3.15: skill
+  qaa/business-and-management-2023/3.11: skill
+  qaa/social-work-2026/1.31: theme
+  qaa/accounting-2025/1.9: theme
+  qaa/health-studies-2024/2.30: theme
+  qaa/accounting-2025/2.30: theme
+  qaa/agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024/3.17: theme
+
+vic:
+  qaa/early-childhood-studies-2022/1.35@01: {verbs: [include], relation: "open-mindedness, self-efficacy and resilience in a list of attributes: the dispositions of a growth mindset, named not described"}
+  qaa/early-childhood-studies-2022/1.35@02: {verbs: [include], relation: "self-efficacy and resilience in the same list: named as attributes"}
+  qaa/business-and-management-2023/3.10: {verbs: [], relation: "resilience and well-being among people-management skills"}
+  qaa/english-2023/1.5: {verbs: [show], relation: "resilience and self-management among graduate skills"}
+  qaa/accounting-2025/1.46: {verbs: [develop], relation: "self-efficacy and resilience as enterprise skills"}
+  qaa/accounting-2025/3.15: {verbs: [associate, take responsibility], relation: "self-efficacy tied to self-managed lifelong learning and responsibility for one's own development: d2 and e2 in the subject's words"}
+  qaa/business-and-management-2023/3.11: {verbs: [accept, tolerate, handle, challenge, use], relation: "self-management as development into an independent learner, accepting responsibility and tolerating uncertainty: sustaining one's own goals"}
+  qaa/social-work-2026/1.31: {verbs: [support], relation: "a pedagogy that supports self-directed learning: provision"}
+  qaa/accounting-2025/1.9: {verbs: [], relation: "lifelong and self-directed learning as graduate qualities employers want"}
+  qaa/health-studies-2024/2.30: {verbs: [include], relation: "employability in the remit of an advisory body: a word match"}
+  qaa/accounting-2025/2.30: {verbs: [], relation: "employability in the same kind of remit: a word match"}
+  qaa/agriculture-rural-environmental-sciences-animal-studies-consumer-science-forestry-food-horticulture-and-human-nutrition-2024/3.17: {verbs: [include], relation: "leadership, teamwork and self-management valued for employability: graduate capital named"}
+
+vicSummary: "What this shows: two of the twelve extracts are skill (accounting on self-efficacy and self-managed learning; business on self-management as an independent learner). The rest name the dispositions (resilience, self-efficacy, open-mindedness) in lists of attributes, or employability in a course's remit. The benchmarks value this pathway's dispositions but almost never describe how a learner acquires them."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says excelling, growth and fixed mindset, mastery and performance, self-efficacy, stress and anxiety, graduate identity, graduate capital, lifelong learner; the benchmarks say resilience, self-efficacy, self-management, independent learner, self-directed learning, employability. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** two of the twelve extracts are skill. Dispositions appear in the benchmarks as attributes to list, not practices to describe."
+  - "**Book coverage:** Chapters 1, 2 and 14 carry all nine cards; academic voice (d3) is the least developed in the guide."
+  - "**Other authors:** META holds Pintrich (goal orientation) and Tinto (integration); the strand leads for mindset, self-efficacy, self-authorship and graduate capital are wanted (W-0050, W-0054, W-0063, W-0057)."
+
+qfIntro: "Neither framework names motivation, mindset or identity; they speak of autonomy and responsibility rising from limited parameters (L3) to broad autonomy (L6, L7), and of developing skills and learning ability for further training."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing what kind of place university is: what excelling there means", tier: before Introductory}
+  - {id: l3/autonomy.2, verbs: "exercise", relation: "judgement within limited parameters: following conventions", tier: before Introductory}
+  - {id: l4/autonomy.1, verbs: "take responsibility", relation: "responsibility for one's own courses of action: setting goals", tier: Introductory}
+  - {id: l4/autonomy.2, verbs: "exercise", relation: "judgement within well-defined parameters: the conventions of academic practice", tier: Introductory}
+  - {id: 4.12.b7, verbs: "undertake, develop, acquire, assume", relation: "developing existing skills and acquiring new ones: the growth mindset", tier: Intermediate}
+  - {id: l5/autonomy.2, verbs: "exercise", relation: "judgement within broad parameters: managing oneself under pressure", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "qualities for employment: graduate capital", tier: Intermediate}
+  - {id: 4.15.b9.1, verbs: "(none: a noun phrase)", relation: "initiative and personal responsibility: owning one's practice", tier: Advanced}
+  - {id: 4.15.b9.3, verbs: "undertake", relation: "the learning ability for further training: the lifelong learner", tier: Advanced}
+  - {id: 4.17.b6, verbs: "demonstrate, act", relation: "self-direction and acting autonomously at a professional level: graduate identity", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names growth and fixed mindsets, mastery and performance motivation, and self-efficacy.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains what excelling means and how university differs from school or college.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Sets a goal and breaks it into achievable sub-goals.", type: procedural (one method), process: apply}
+  - {tier: Introductory, statement: "Recognises their own mindset and what motivates them.", type: metacognitive (beginning), process: understand, change: "knowledge of oneself as a learner appears"}
+  - {tier: Intermediate, statement: "Explains how mindset and motivation shape the way one meets setbacks and feedback.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Sustains goals across a course, and seeks support early rather than late.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Manages their own anxiety and perfectionism, and builds belief in their capability.", type: metacognitive and self-system, process: evaluate, change: "managing one's own state and beliefs"}
+  - {tier: Advanced, statement: "Describes their graduate capital: human, social, cultural, identity and psychological.", type: conceptual, process: analyse}
+  - {tier: Advanced, statement: "Directs their own learning and development without being told.", type: metacognitive (self-regulation), process: evaluate}
+  - {tier: Advanced, statement: "Sees themselves as a graduate in their field and carries these dispositions into work.", type: metacognitive (self-knowledge), process: create, change: "functioning knowledge: identity owned"}
+
+mastery: "This pathway lives in Marzano and Kendall's self-system more than any other: beliefs about one's own ability, motivation and emotional response. Across the tiers the weight moves from declarative knowledge of mindset and motivation, with a first recognition of one's own (Introductory), through procedures for sustaining goals and managing oneself under pressure (Intermediate), to self-direction and identity (Advanced). In Anderson and Krathwohl's terms it is metacognitive almost from the start, and the movement is from knowledge about oneself to acting on it unprompted. Mastery is becoming a graduate, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the two agree on the order: finding one's feet (excelling, mindset, motivation, goals) at Introductory, keeping going (setbacks, anxiety, support) at Intermediate, becoming a graduate (independence, identity, transition, lifelong learning) at Advanced. The map places building self-efficacy at Introductory; d2 places it at Intermediate with managing anxiety, as the core's former 02 had it. Seeking support early, in the map's Intermediate text, has no card of its own."
+
+qfAdd: "neither framework names mindset, motivation, anxiety or identity. They name autonomy and responsibility rising level by level, and the learning ability for further training at L6; the self-system, where this pathway mostly lives, is assumed by the descriptors rather than described."
+
+review:
+  - "i1 and e3 are new and proposed (D-ing-0060)."
+  - "Seeking support early and avoiding perfectionism, both in the tier map's Intermediate text, have no card; the model's author may want them folded into d2."
+  - "Pedagogy is thin: Dweck, Bandura, Baxter Magolda, Ivanič and Tomlinson are wanted, not held."

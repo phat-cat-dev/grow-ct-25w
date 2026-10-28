@@ -1,0 +1,45 @@
+.journal-card {
+  --journal-paper: var(--surface-1, #fbfcfd);
+  --journal-ink: var(--ink, #24313b);
+  --journal-muted: var(--ink-soft, #50616e);
+  --journal-rule: var(--line, #cbd5dd);
+  --journal-accent: var(--accent, #326d91);
+  --journal-line-height: 1.9em;
+  --journal-pad: var(--space-sm, 1rem);
+  display: grid;
+  gap: var(--space-2xs, .75rem);
+  padding: var(--journal-pad);
+  background-color: var(--journal-paper);
+  background-image: linear-gradient(to right, transparent 1.5rem, color-mix(in srgb, var(--journal-accent) 35%, transparent) 1.5rem, color-mix(in srgb, var(--journal-accent) 35%, transparent) calc(1.5rem + 1px), transparent calc(1.5rem + 1px));
+  border: 1px solid var(--journal-rule);
+  border-radius: .75rem;
+  color: var(--journal-ink);
+  font: 1rem/1.6 var(--font-body, var(--font-ui, system-ui, sans-serif));
+  padding-inline-start: calc(1.5rem + var(--journal-pad));
+  overflow-wrap: anywhere;
+}
+.journal-card, .journal-card * { box-sizing: border-box; }
+.journal-card .journal-card__kicker { margin: 0 0 .5rem; color: var(--journal-muted); font: .75rem/1.5 var(--font-mono, ui-monospace, monospace); letter-spacing: .08em; text-transform: uppercase; }
+.journal-card .journal-card__title { margin: 0; color: var(--journal-ink); font: 700 1.3rem/1.4 var(--font-heading, inherit); }
+.journal-card .journal-card__field { display: grid; gap: .4rem; }
+.journal-card textarea {
+  inline-size: 100%;
+  min-inline-size: 0;
+  resize: vertical;
+  padding: .55em .75em;
+  border: 1px solid var(--journal-rule);
+  border-radius: .4rem;
+  background-color: var(--journal-paper);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--journal-line-height) - 1px), var(--journal-rule) calc(var(--journal-line-height) - 1px), var(--journal-rule) var(--journal-line-height));
+  background-position: 0 .55em;
+  background-attachment: local;
+  color: var(--journal-ink);
+  font: inherit;
+  line-height: var(--journal-line-height);
+}
+.journal-card .journal-card__footer { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+.journal-card button { min-block-size: 2.75rem; max-inline-size: 100%; padding: .5rem .8rem; border: 1px solid var(--journal-accent); border-radius: .5rem; background: var(--journal-paper); color: var(--journal-accent); font: 600 .9rem/1.5 var(--font-body, system-ui, sans-serif); cursor: pointer; }
+.journal-card :focus-visible { outline: 3px solid var(--journal-accent); outline-offset: 3px; }
+.journal-card .journal-card__status { flex-basis: 100%; min-block-size: 1.5em; }
+.journal-card :is(.journal-card__help,.journal-card__status,.journal-card__privacy) { margin: 0; color: var(--journal-muted); font-size: .85rem; }
+.journal-card [data-error="true"] { border-inline-start: 3px solid currentColor; padding-inline-start: .5rem; font-weight: 700; }

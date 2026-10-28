@@ -1,0 +1,2416 @@
+{
+  "storeId": "pathway-student-facing-benchmarks",
+  "note": "Student, practical-facing ('You...') rewrites of each pathway's capability statements, in the universal-reference forBeneficiary register; subject-neutral. Keyed pathway -> capabilityId so they survive rebuilds of catalogue/context/pathway/*.json. Human-reviewed and approved (register + AI-course content check), 2026-10-27. PROLIFERATED: each pathway now carries 18 (6/tier) -- the confirmed 9 (origin:identified) plus 9 new (origin:proliferated, status:drafted) drawn from each tier's tierProgression.levels skills/understandings (blurryTop on the top rung of each tier).",
+  "register": "second person, plain, practical, one idea, subject-neutral (your subject / a topic / your work)",
+  "source": "rewritten from catalogue/context/pathway/<pathway>.json capabilities[].statement",
+  "status": "mixed (identified=confirmed, proliferated=drafted)",
+  "generated": "2026-10-27",
+  "pathways": {
+    "academic-writing": [
+      {
+        "id": "academic-writing/05",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Interpret an assessment question's steer and keywords before writing.",
+        "studentFacing": "You can read an assessment question before you write, working out its steer and its keywords.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/c1",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Follow the writing cycle to plan and complete a first draft.",
+        "studentFacing": "You can follow the writing cycle to plan and finish a first draft.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/06",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Identify and correct common writing errors through proofreading and editing.",
+        "studentFacing": "You can find and fix errors in your own writing by proofreading and editing it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/02",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Identify and structure the essay and other argued assignments.",
+        "studentFacing": "You can recognise and structure an essay and other argued pieces of writing.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/04",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Construct clear sentences using active voice and effective sentence structure.",
+        "studentFacing": "You can write clear sentences, mostly in the active voice.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/03",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Apply the pillars of effective writing to structure paragraphs and essays.",
+        "studentFacing": "You can use the four pillars of good writing to shape and review your own work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/01",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Recognise how writing conventions vary by discipline.",
+        "studentFacing": "You can recognise how writing conventions change from one subject to another.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "academic-writing/c2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Integrate sources actively, putting one's own point first and using sources to support it.",
+        "studentFacing": "You can bring sources into your writing actively, leading with your own point and using sources to back it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Write with disciplinary self-awareness",
+        "studentFacing": "You write with an awareness of your subject's conventions and how they shape your voice.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see how academic writing is different from the way you write every day.",
+        "academic": "Recognise how academic writing differs from everyday writing.",
+        "groundedIn": "academic writing differs from everyday writing",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can build paragraphs that open with a clear topic sentence.",
+        "academic": "Write paragraphs led by topic sentences.",
+        "groundedIn": "write paragraphs with topic sentences",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You review your own writing against the criteria, and this is making you a more independent writer.",
+        "academic": "Review one's own writing against criteria to grow as an independent writer.",
+        "groundedIn": "for own development: self-review against criteria makes one an independent writer",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that what tutors expect follows conventions you can learn.",
+        "academic": "Understand that tutors' expectations follow learnable conventions.",
+        "groundedIn": "tutors' expectations follow conventions that can be learnt (academic socialisation)",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can adapt how you write to different types of assignment.",
+        "academic": "Adapt writing to different assignment types.",
+        "groundedIn": "adapt to different assignment types",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You can see your writing voice as part of the graduate you are becoming.",
+        "academic": "See one's writing voice as part of one's graduate identity.",
+        "groundedIn": "for own development: one's writing voice is part of one's graduate identity",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can write in your subject's voice and keep one argument going across a whole piece.",
+        "academic": "Write in the subject's voice with a sustained argument.",
+        "groundedIn": "writes in the discipline's voice with a sustained argument",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "knowledge",
+        "studentFacing": "You can see writing as where you work out your authority and your place in your subject.",
+        "academic": "Understand writing as where disciplinary identity and authority are negotiated.",
+        "groundedIn": "writing is where identity and authority in a discipline are negotiated (academic literacies)",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat writing as a professional capability you keep developing beyond your degree.",
+        "academic": "Treat writing as a professional capability to keep developing.",
+        "groundedIn": "for own development: writing is a professional capability one keeps developing",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "ai-technology": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain what generative AI is and is not",
+        "studentFacing": "You can explain what generative AI is, and what it is not.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Check the assessment guidance before using AI",
+        "studentFacing": "You check your assessment guidance before using AI on a task.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Recognise what AI cannot be trusted for, and think first",
+        "studentFacing": "You recognise what AI can't be trusted to do, and think it through yourself first.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "ai-technology/03",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Apply a critical-use workflow treating AI as a critical friend, not a replacement for independent thought.",
+        "studentFacing": "You can use AI as a critical friend within a careful workflow, not as a replacement for your own thinking.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Fact-check AI output and disclose its use",
+        "studentFacing": "You fact-check what AI produces and are open about where you have used it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "ai-technology/01",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Exercise AI literacy through informed, justified decisions about when, and when not, to use AI.",
+        "studentFacing": "You can decide, with clear reasons, when to use AI and when not to.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "ai-technology/02",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Avoid GenAI misconduct risks and never cite GenAI outputs as a source.",
+        "studentFacing": "You avoid the misconduct risks of generative AI, and never cite it as a source.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "ai-technology/06",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Distinguish permitted technological support from an unfair academic advantage.",
+        "studentFacing": "You can tell permitted support from an unfair advantage when using technology.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "ai-technology/05",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Weigh the costs of AI/technology use, including environmental and professional impact, against its benefits.",
+        "studentFacing": "You weigh up the costs and benefits of using AI as a responsible professional, including its wider impact.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "action",
+        "studentFacing": "You can notice when an answer from an AI tool looks wrong.",
+        "academic": "Notice when an AI answer looks wrong.",
+        "groundedIn": "notice when an answer looks wrong",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that AI works by generating likely patterns of text, not by knowing things.",
+        "academic": "Understand generative AI as pattern generation, not knowledge.",
+        "groundedIn": "AI is pattern generation, not knowledge",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You notice that leaning on AI too much can wear away your own voice.",
+        "academic": "Recognise that over-reliance on AI erodes one's own voice.",
+        "groundedIn": "for own development: over-reliance erodes one's voice",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can explain how generative AI produces text, and why it sometimes makes things up.",
+        "academic": "Explain how generative AI produces text and why it fabricates.",
+        "groundedIn": "explain how generative AI produces text and why it fabricates",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that AI only adds to your thinking when your own ideas come first.",
+        "academic": "Understand that AI augments thinking only when one's own thinking leads.",
+        "groundedIn": "AI augments thinking only when one's own thinking comes first",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You can see being a discerning user of AI as part of the graduate you are becoming.",
+        "academic": "See discerning AI use as part of one's graduate identity.",
+        "groundedIn": "for own development: being a discerning AI user is part of graduate identity",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can use AI critically and selectively, bringing it in only where it genuinely helps.",
+        "academic": "Use AI critically and selectively on study tasks.",
+        "groundedIn": "uses AI critically and selectively and discloses it",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "knowledge",
+        "studentFacing": "You can see that using AI with integrity takes judgement, not just following the rules.",
+        "academic": "Understand integrity in AI use as judgement as well as rules.",
+        "groundedIn": "integrity in AI use is a matter of judgement as well as rules",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You adapt the way you use AI to the purpose of each professional setting.",
+        "academic": "Adapt one's AI practice to each professional purpose.",
+        "groundedIn": "for own development: one's AI practice is adapted to each professional purpose",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "creativity": [
+      {
+        "id": "creativity/01",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Recognise creativity as a developable, cross-disciplinary academic skill related to critical thinking.",
+        "studentFacing": "You can see creativity as a skill you can develop, closely tied to critical thinking.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/02",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Apply divergent and convergent thinking at the right stage of a task.",
+        "studentFacing": "You can use open, idea-generating thinking and focused, decision-making thinking at the right stage of a task.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/03",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Overcome creative barriers such as fear of failure and perfectionism.",
+        "studentFacing": "You can work past creative blocks such as fear of failure and perfectionism.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/07",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Draw on established creativity theory to justify a creative approach.",
+        "studentFacing": "You can draw on creativity theory to explain and justify a creative approach.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/04",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Use structured creative problem-solving methods.",
+        "studentFacing": "You can use structured methods to solve problems creatively.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/05",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Exercise cognitive flexibility and learning agility when a strategy is not working.",
+        "studentFacing": "You can change your approach when a strategy is not working.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "creativity/06",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Apply creativity and enterprise thinking to professional and entrepreneurial contexts.",
+        "studentFacing": "You can apply creative and enterprising thinking in professional settings.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Turn ideas into action under uncertainty",
+        "studentFacing": "You can turn ideas into action even when things are uncertain.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Own a creative practice, aware of one's own creative process",
+        "studentFacing": "You own a creative practice, aware of how your own creative process works.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that most questions have more than one good answer.",
+        "academic": "Recognise that most questions have more than one valid answer.",
+        "groundedIn": "there is more than one way to answer most questions",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can name the things that get in the way of your own creativity.",
+        "academic": "Name one's own barriers to creativity.",
+        "groundedIn": "name one's own barriers to creativity",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You can see being flexible as part of how you learn.",
+        "academic": "See flexibility as part of how one learns.",
+        "groundedIn": "for own development: flexibility is part of how one learns",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can bring creative and critical thinking together on the same task.",
+        "academic": "Connect creativity and critical thinking within a task.",
+        "groundedIn": "connect creativity and critical thinking in a task",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that new ideas often come from combining things that already exist.",
+        "academic": "Understand that new ideas often come from combining what exists.",
+        "groundedIn": "new ideas often come from combining what exists",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You can see creativity as part of the graduate you are becoming.",
+        "academic": "See creativity as part of one's graduate identity.",
+        "groundedIn": "for own development: creativity is part of one's graduate identity",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can look at a problem from another angle, or from another subject, to open it up.",
+        "academic": "Reframe a problem from another angle or discipline.",
+        "groundedIn": "reframe a problem from another angle or discipline",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "knowledge",
+        "studentFacing": "You can see that a creative idea needs to be both new and useful, judged within its field.",
+        "academic": "Understand that creativity requires novelty and usefulness, judged in a domain.",
+        "groundedIn": "creativity needs novelty and usefulness, judged in a domain",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You adapt your creative practice to the purpose of each professional setting.",
+        "academic": "Adapt one's creative practice to each professional purpose.",
+        "groundedIn": "for own development: one's creative practice is adapted to each professional purpose",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "criticality": [
+      {
+        "id": "criticality/02",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Map and question the scholarly discourse around a topic.",
+        "studentFacing": "You can map the main ideas, authors and debates around a topic, and begin to question them.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/c1",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Apply critical thought to the choices made when searching, reading and planning.",
+        "studentFacing": "You think critically about the choices you make when searching, reading and planning your work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Treat being critical as a habit of mind, not a switch for assessment",
+        "studentFacing": "You treat being critical as a habit you bring to all your study, not something you switch on only for assignments.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/01",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Recognise critical thinking skills of analysis and evaluation.",
+        "studentFacing": "You can tell analysis and evaluation apart, and spot when a task is asking for each.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/03",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Analyse and evaluate a scholarly interpretation critically.",
+        "studentFacing": "You can take a scholarly interpretation apart and weigh up how convincing it is.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/04",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Critically engage with a journal article's structure and methodology.",
+        "studentFacing": "You read a journal article strategically, using its structure and methods to decide what to take from it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/c2",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Form and justify judgements on the relative importance of factors.",
+        "studentFacing": "You can form a judgement about what matters most and justify it with clear reasons.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "criticality/05",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Write critically, synthesising sources using discipline-specific vocabulary.",
+        "studentFacing": "You write critically, pulling sources together and using the vocabulary of your subject.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Write with authority, aware of how own stance shapes the argument",
+        "studentFacing": "You write with authority, aware of how your own position shapes the argument you make.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that any claim needs evidence to back it up.",
+        "academic": "Recognise that a claim needs evidence.",
+        "groundedIn": "a claim needs evidence",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can use simple theories to make sense of the data and arguments you meet.",
+        "academic": "Interpret data and arguments using basic theories.",
+        "groundedIn": "interpret data and arguments using basic theories",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You notice that your own assumptions shape how you read, and you begin to examine them.",
+        "academic": "Recognise that one's own assumptions shape one's reading, and begin to examine them.",
+        "groundedIn": "for own development: one's own assumptions shape how one reads, and can be examined (Barnett: reflexivity begins)",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can bring critical skills to the way your subject discusses a topic.",
+        "academic": "Apply critical skills within a discipline's discourse.",
+        "groundedIn": "applies critical skills within a discipline's discourse (Barnett: critical skills)",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that interpretations are contested, and shaped by where they come from.",
+        "academic": "Understand that interpretations are contested and situated.",
+        "groundedIn": "interpretations are contested and situated",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You are starting to find an authorial voice of your own, as part of the graduate you are becoming.",
+        "academic": "Recognise an emerging authorial voice as part of one's developing graduate identity.",
+        "groundedIn": "for own development: an authorial voice is part of the graduate one is becoming",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can bring sources into your work to support your own point, not just to report them.",
+        "academic": "Use sources actively in support of one's own point.",
+        "groundedIn": "use sources actively in support of one's own point",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can build and hold an argument of your own using the latest thinking in your subject.",
+        "academic": "Devise and sustain arguments using ideas at the forefront of the discipline.",
+        "groundedIn": "devises and sustains arguments using ideas at the forefront of the discipline (Barnett: reflexivity)",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You carry a critical habit into what you do, not only into what you read.",
+        "academic": "Extend critical being to professional action, not only to texts.",
+        "groundedIn": "for own development: critical being extends to professional action, not only to texts",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "finding-using-sources": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain how academic searching differs from everyday searching",
+        "studentFacing": "You can explain how searching for academic sources differs from everyday searching.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "finding-using-sources/02",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Use library and discovery services effectively to locate scholarly sources.",
+        "studentFacing": "You can use the library discovery service to find scholarly sources.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "finding-using-sources/c1",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Follow a staged search strategy, starting from the reading list and what one already knows.",
+        "studentFacing": "You can follow a staged search, starting from your reading list and what you already know.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Identify keywords and synonyms from the task",
+        "studentFacing": "You can pull the keywords and their synonyms out of a task.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "finding-using-sources/01",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Plan a search strategy using keywords and Boolean operators.",
+        "studentFacing": "You can plan a search using keywords and Boolean operators (AND, OR, NOT).",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Refine a search in cycles, reflecting on the results each time",
+        "studentFacing": "You can refine a search over several rounds, reflecting on the results each time.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "finding-using-sources/04",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Extend a search via citation searching and supplementary scholarly tools.",
+        "studentFacing": "You can widen a search using citation trails, databases and tools like Google Scholar.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "finding-using-sources/03",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Evaluate sources against currency, authority and relevance criteria.",
+        "studentFacing": "You can judge a source on how current, authoritative and relevant it is to your work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Search comprehensively, judging when the discourse is covered",
+        "studentFacing": "You can search thoroughly and judge when you have covered the discussion on a topic.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that not all information is equally reliable.",
+        "academic": "Recognise that not all information is equally reliable.",
+        "groundedIn": "not all information is equally reliable",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can narrow your results using filters and limiters such as date, type and subject.",
+        "academic": "Use limiters to narrow search results.",
+        "groundedIn": "plan a search: keywords, synonyms, Boolean operators, limiters",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You can see that what you already know shapes what counts as relevant, so your searching and your learning grow together.",
+        "academic": "Recognise that one's own knowledge decides relevance, so searching and learning grow together.",
+        "groundedIn": "for own development: one's own knowledge decides what is relevant, so searching and learning grow together",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that academic searching is exploratory and takes effort, and that feeling unsure early on is normal.",
+        "academic": "Understand that academic searching is exploratory and effortful, and early uncertainty is normal.",
+        "groundedIn": "academic searching is exploratory and effortful, and uncertainty early on is normal",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can judge a source against what its type is meant to offer.",
+        "academic": "Evaluate sources against the expectations of each source type.",
+        "groundedIn": "evaluate sources against the expectations of each source type",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You can see that searching with confidence is part of becoming an independent learner.",
+        "academic": "Recognise that confident searching underpins independence as a learner.",
+        "groundedIn": "for own development: confident searching underpins independence as a learner",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that information is produced within a wider discussion, and that authority is built up and depends on context.",
+        "academic": "Understand that information is produced in a discourse and authority is constructed and contextual.",
+        "groundedIn": "information is produced in a discourse, and authority is constructed and contextual",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can design a thorough search for an extended project.",
+        "academic": "Design a comprehensive search for an extended project.",
+        "groundedIn": "design a comprehensive search for an extended project",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat keeping up with your field as part of your professional responsibility.",
+        "academic": "Recognise that keeping up with a field is part of professional responsibility.",
+        "groundedIn": "for own development: keeping up with a field is part of professional responsibility",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "presenting": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain what a presentation tests and read its brief",
+        "studentFacing": "You can explain what a presentation is testing, and read its brief.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/c1",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Build a presentation to a brief through the five steps, with a hook, a main body and a conclusion.",
+        "studentFacing": "You can build a presentation to a brief, with a hook, a main body and a conclusion.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Practise to time and fix what does not work",
+        "studentFacing": "You can practise your presentation to time and fix what is not working.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/01",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Plan and design an effective, accessible presentation using visual aids.",
+        "studentFacing": "You can design clear, accessible visual aids, keeping to 'less is more'.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/03",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Adapt presentation delivery to different assessment formats.",
+        "studentFacing": "You can adapt how you present to different formats.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/02",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Open a presentation engagingly and manage presentation nerves.",
+        "studentFacing": "You can open a presentation in a way that engages people, and manage your own nerves.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/c3",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Present in professional formats: the pitch, the conference poster and the viva-style interview.",
+        "studentFacing": "You can present in professional formats such as a pitch, a conference poster or a viva-style interview.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/04",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Work effectively in a group, exercising leadership and resolving conflict.",
+        "studentFacing": "You can work in a group, taking a lead and resolving conflict when it arises.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "presenting/c2",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Present and defend an argument with an academic voice under questioning.",
+        "studentFacing": "You can present and defend an argument in an academic voice, even under questioning.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that a talk needs a beginning, a middle and an end.",
+        "academic": "Understand that a talk needs a beginning, middle and end.",
+        "groundedIn": "a talk needs a beginning, middle and end",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can read a presentation's marking criteria, so you know what it will be marked on.",
+        "academic": "Read a presentation's marking criteria.",
+        "groundedIn": "read a presentation brief and its marking criteria",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You can see that your confidence grows from preparing well and from finding your own way of presenting.",
+        "academic": "Recognise that confidence grows from preparation and from finding one's own way of presenting.",
+        "groundedIn": "for own development: confidence grows from preparation and from finding one's own way of presenting",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that a presentation tests the same skills as an essay, just delivered out loud.",
+        "academic": "Understand that a presentation tests the same literacies as an essay, delivered orally.",
+        "groundedIn": "a presentation tests the same literacies as an essay, delivered orally",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can offer your own ideas in a group and listen to what others bring.",
+        "academic": "Contribute and listen in a group.",
+        "groundedIn": "contribute and listen in a group",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You are starting to see presenting as how you own and assert what you know.",
+        "academic": "Recognise presenting as how one owns and asserts one's knowledge.",
+        "groundedIn": "for own development: presenting is how one owns and asserts one's knowledge",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that the format, the audience and the medium change what makes a presentation good.",
+        "academic": "Understand that format, audience and medium change what a good presentation is.",
+        "groundedIn": "format, audience and medium change what a good presentation is",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can reflect on how you contribute to a group presentation and work to do it better.",
+        "academic": "Reflect on one's own contribution to group work.",
+        "groundedIn": "lead a group, mediate conflict and reflect on one's contribution",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You adapt how you present and how you lead to each audience and purpose.",
+        "academic": "Adapt one's presenting and leading to each audience and purpose.",
+        "groundedIn": "for own development: one's presenting and leading are adapted to each audience and purpose",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "referencing": [
+      {
+        "id": "referencing/c1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain why academic work acknowledges the sources of its knowledge.",
+        "studentFacing": "You can explain why academic work acknowledges where its ideas come from.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/01",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Construct accurate in-text citations and a references list in a consistent style.",
+        "studentFacing": "You can write accurate in-text references and a references list in a single, consistent style.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/c2",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Record and organise sources as they are found, so that every citation can be traced.",
+        "studentFacing": "You record and organise sources as you find them, so every citation can be traced back.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/02",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Avoid plagiarism by acknowledging quoted and paraphrased material correctly.",
+        "studentFacing": "You can acknowledge quotation and paraphrase correctly, so you avoid plagiarism.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Reference trickier source types accurately",
+        "studentFacing": "You can reference trickier source types accurately.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/c3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Use citation to show the scope of research and engagement with the discourse.",
+        "studentFacing": "You can use citation to show how widely you have read and how you have engaged with the discussion.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/03",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Uphold honesty and trust in academic work.",
+        "studentFacing": "You uphold honesty and trust in your academic work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "referencing/04",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Uphold fairness, respect, responsibility and courage in academic conduct.",
+        "studentFacing": "You act with fairness, respect, responsibility and courage in how you conduct your academic work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Carry integrity into graduate and professional identity",
+        "studentFacing": "You carry academic integrity into your identity as a graduate and professional.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "action",
+        "studentFacing": "You can list the sources you used at the end of a piece of work.",
+        "academic": "List the sources used at the end of a piece of work.",
+        "groundedIn": "list sources at the end of a piece of work",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see how referencing shows where your knowledge comes from and helps you meet the marking criteria.",
+        "academic": "Recognise how referencing shows where knowledge comes from and helps meet marking criteria.",
+        "groundedIn": "referencing shows where knowledge comes from and helps meet marking criteria",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You see your references as showing the reader where your work sits in the wider conversation.",
+        "academic": "See one's references as showing the reader one's place in the wider conversation.",
+        "groundedIn": "for own development: one's references show the reader one's place in the conversation",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can keep your referencing accurate and consistent right across a piece of assessed work.",
+        "academic": "Reference accurately and consistently across a whole piece of assessed work.",
+        "groundedIn": "references accurately and consistently in assessed work",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see how citation practices differ from one subject to another, and help build each subject's knowledge.",
+        "academic": "Recognise how citation practices differ by discipline and construct a subject's knowledge.",
+        "groundedIn": "citation practices differ by discipline and construct its knowledge",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You are starting to treat academic integrity as values you hold, not just rules you follow.",
+        "academic": "Treat academic integrity as values held, not only rules followed.",
+        "groundedIn": "integrity is about values, not only rules",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can manage your references across a long, extended piece of work.",
+        "academic": "Manage references across an extended piece of work.",
+        "groundedIn": "manage references across an extended project",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "knowledge",
+        "studentFacing": "You can see that integrity in research and professional work is a shared responsibility, not just an individual one.",
+        "academic": "Recognise integrity in research and practice as a shared responsibility.",
+        "groundedIn": "integrity in research and practice is a shared responsibility",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "action",
+        "studentFacing": "You can handle reuse, copyright and crediting others' work properly in a professional setting.",
+        "academic": "Handle reuse, copyright and attribution in professional work.",
+        "groundedIn": "handle reuse, copyright and attribution in professional work",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "reflective-practice": [
+      {
+        "id": "reflective-practice/01",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Apply a structured reflective cycle (describe, reflect, take action) to a learning experience.",
+        "studentFacing": "You can work through a simple cycle: describe what happened, reflect on it, then take action.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/02",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Balance positive and negative observations when reflecting on performance.",
+        "studentFacing": "You can balance the positives and the negatives when you reflect on how something went.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Notice what went well and what didn't in your own work",
+        "studentFacing": "You can notice what went well and what did not in your own work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/c1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Reflect critically on own performance rather than describing it.",
+        "studentFacing": "You can reflect critically on your work, rather than just describing it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/c2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Turn reflection into a dated action plan.",
+        "studentFacing": "You can turn a reflection into a dated action plan.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/04",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Reflect on motivation and amend learning strategies that are not working.",
+        "studentFacing": "You can reflect on your motivation and change learning strategies that are not working.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/c3",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Choose and apply a fuller reflective model (Gibbs, Kolb, Johns) to an assessed reflection.",
+        "studentFacing": "You can choose a fuller reflective model (such as Gibbs, Kolb or Johns) and apply it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/03",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Use reflective writing to support continuing professional development and lifelong learning.",
+        "studentFacing": "You can use reflective writing to support your ongoing professional development and lifelong learning.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "reflective-practice/c4",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Examine how own personal identity, values, assumptions and social position shape own reflections, judgements and actions (reflexivity).",
+        "studentFacing": "You can examine how your own identity, values and assumptions shape what you notice and judge.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can explain that reflection means learning from an experience, not just retelling it.",
+        "academic": "Recognise reflection as learning from experience, not only recounting it.",
+        "groundedIn": "reflection is learning from experience, not only recounting it",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can give reasons for why something turned out the way it did, not only describe it.",
+        "academic": "Give reasons for what happened, not only describe it.",
+        "groundedIn": "give reasons for what happened",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You see reflection over time as the way your own growth becomes visible and something you can plan across your course.",
+        "academic": "See reflection over time as making one's growth visible and plannable across a course.",
+        "groundedIn": "for own development: reflection over time makes one's growth visible and plannable across a whole course",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see how reflection is the step in managing your own learning that feeds your next plan.",
+        "academic": "Recognise reflection as the evaluation step of self-regulated learning that feeds the next plan.",
+        "groundedIn": "reflection is part of self-regulated learning: the evaluation that feeds the next plan",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can work out what you need to learn next and act on it without being told to.",
+        "academic": "Identify one's own learning needs and act on them without prompting.",
+        "groundedIn": "identifies own learning needs and acts on them without prompting",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You are beginning to see reflection as a professional duty, something you are held to against standards.",
+        "academic": "Recognise reflection as a professional duty assessed against standards.",
+        "groundedIn": "reflection is a professional duty in many fields, assessed against standards",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can use theory and published work to help explain your own experience.",
+        "academic": "Use theory and literature to explain one's own experience.",
+        "groundedIn": "theory and literature can explain one's experience",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can reflect both in the moment and afterwards while working in a practice setting.",
+        "academic": "Reflect in and on action in a practice setting.",
+        "groundedIn": "reflect in and on action in practice settings",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat reflecting on your progress as a learner and practitioner as something that keeps you developing for life.",
+        "academic": "Treat reflecting on one's progress as a learner and practitioner as lifelong development.",
+        "groundedIn": "for own development: reflecting on one's progress as a learner and practitioner sustains lifelong development and professional recognition",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "researching-research-methods": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain how a research project differs from an essay",
+        "studentFacing": "You can explain how a research project differs from an essay.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/01",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Formulate a research question, rationale, and aims for a research proposal.",
+        "studentFacing": "You can set out a research question, its rationale and its aims.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Narrow a topic to a question one can research",
+        "studentFacing": "You can narrow a broad topic down to a question you can actually research.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/02",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Structure and write a literature review and a research report.",
+        "studentFacing": "You can structure and write a literature review and a research report.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/c1",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Write a research proposal that answers each of its questions.",
+        "studentFacing": "You can write a research proposal that answers each of its questions.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Review the literature as critique, to place own research in it",
+        "studentFacing": "You can review the literature critically, placing your own research within it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/03",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Apply research ethics principles including informed consent and anonymisation.",
+        "studentFacing": "You can apply research ethics, including informed consent and anonymisation.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/c2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Choose and justify a methodology and methods of data collection and analysis for a research question.",
+        "studentFacing": "You can choose a methodology and methods for a question, and justify them.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "researching-research-methods/04",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Plan and scope an extended dissertation-length research project.",
+        "studentFacing": "You can plan and scope a dissertation-length research project.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "action",
+        "studentFacing": "You can ask a question that can actually be investigated.",
+        "academic": "Ask a question that can be investigated.",
+        "groundedIn": "ask a question that can be investigated",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that data has to be interpreted, not just reported.",
+        "academic": "Recognise that data must be interpreted, not only reported.",
+        "groundedIn": "data must be interpreted, not only reported",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You treat what you learn about research methods as sharpening how you judge evidence across all your study.",
+        "academic": "See learning research methods as sharpening one's judgement of evidence across all study.",
+        "groundedIn": "for own development: learning research methods sharpens one's judgement of evidence across all one's study",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can collect and make sense of simple qualitative or quantitative data using set methods.",
+        "academic": "Collect and interpret simple qualitative or quantitative data within set methods.",
+        "groundedIn": "collect and interpret simple qualitative or quantitative data within set methods",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see that different research methods suit different questions, and that each has its limits.",
+        "academic": "Recognise that different methods suit different questions and each has limits.",
+        "groundedIn": "different methods suit different questions; each has limits",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You see running your own project as what builds your independence and confidence as an emerging researcher.",
+        "academic": "See running one's own project as building the independence of an emerging researcher.",
+        "groundedIn": "for own development: running one's own project builds the independence and confidence of an emerging researcher",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can compare different research methods and justify the one you choose.",
+        "academic": "Compare research methods and justify a choice.",
+        "groundedIn": "compare methods and justify a choice",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "knowledge",
+        "studentFacing": "You can see that a methodology rests on assumptions about what counts as knowledge.",
+        "academic": "Recognise that a methodology rests on assumptions about knowledge.",
+        "groundedIn": "methodology rests on assumptions about knowledge",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You see your research ability becoming part of your professional identity and what you offer.",
+        "academic": "See research capability as part of one's professional identity and employability.",
+        "groundedIn": "for own development: research capability becomes part of one's professional identity and employability",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "revising-exams": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain the forms of exam and what each demands",
+        "studentFacing": "You can explain the different forms of exam and what each one asks of you.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Make a simple revision plan from the time available",
+        "studentFacing": "You can make a simple revision plan from the time you have.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "revising-exams/01",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Manage exam anxiety and prepare for exams in an organised way.",
+        "studentFacing": "You can manage exam nerves and prepare in an organised way.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "revising-exams/02",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Convert passive revision into active visual revision techniques.",
+        "studentFacing": "You can turn passive revision into active techniques.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Target revision at the gaps in own knowledge",
+        "studentFacing": "You can aim your revision at the gaps in your own knowledge.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Monitor own revision and change it when it is not working",
+        "studentFacing": "You can keep an eye on your revision and change it when it is not working.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "revising-exams/03",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Use kinaesthetic and role-play revision techniques to deepen engagement with content.",
+        "studentFacing": "You can use hands-on and role-play techniques to engage more deeply with what you are revising.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "revising-exams/04",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Apply time-managed, targeted revision and exam strategy across question formats.",
+        "studentFacing": "You can apply an exam strategy across different question formats and on the day.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Choose techniques by what works, judged by own recall",
+        "studentFacing": "You choose revision techniques by what actually works for you, judged by how well you recall.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can explain that an exam tests what you have learned under set conditions.",
+        "academic": "Understand that exams assess learning under controlled conditions.",
+        "groundedIn": "exams test what has been learned under set conditions",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can plan your revision time across several exams at once.",
+        "academic": "Plan revision time across multiple exams.",
+        "groundedIn": "plan revision time across several exams",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You treat your own revision strategy as something you can test and improve.",
+        "academic": "Treat one's revision strategy as testable and improvable.",
+        "groundedIn": "for own development: one's own strategy can be tested and improved",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see an exam as a learning tool, not only a test.",
+        "academic": "Recognise exams as learning tools.",
+        "groundedIn": "exams are learning tools, and each form asks something different",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can space your revision sessions out over time rather than cramming.",
+        "academic": "Use spaced practice across revision sessions.",
+        "groundedIn": "space sessions and monitor progress against objectives",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You see performing under pressure as a capability you own, not just something that happens to you.",
+        "academic": "Own performing under pressure as a personal capability.",
+        "groundedIn": "for own development: performing under pressure is a capability one owns",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can explain why active revision deepens understanding and helps you recall more.",
+        "academic": "Understand why active revision aids understanding and recall.",
+        "groundedIn": "active revision deepens understanding and aids recall",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can plan and write to time across the sections of an exam.",
+        "academic": "Plan and write to time across exam sections.",
+        "groundedIn": "plan and write to time across sections",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You adapt your own study methods to what each new demand asks of you.",
+        "academic": "Adapt one's study methods to each new assessment demand.",
+        "groundedIn": "for own development: one's study methods are adapted to each demand",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "starting-progressing-succeeding": [
+      {
+        "id": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Explain what excelling at university means",
+        "studentFacing": "You can explain what it means to excel at university.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/c1",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Recognise and follow the conventions of academic practice.",
+        "studentFacing": "You can recognise and follow the conventions of academic practice.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/01",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Adopt a growth mindset towards academic challenge.",
+        "studentFacing": "You can take a growth mindset towards academic challenges.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/03",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Set and sustain mastery-oriented academic goals.",
+        "studentFacing": "You can set goals focused on mastery and keep working at them.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/02",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Build self-efficacy and manage stress or anxiety under academic pressure.",
+        "studentFacing": "You can build your confidence and manage stress and anxiety under pressure.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/c2",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Develop an academic voice, and the confidence and sense of capability to own one's practice within its conventions.",
+        "studentFacing": "You can develop an academic voice and the confidence to own how you work.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/04",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Articulate personal graduate capital for the transition from student to graduate.",
+        "studentFacing": "You can put into words the strengths you are building for the move from student to graduate.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "starting-progressing-succeeding/c3",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Direct one's own academic practice, learning and development independently, as a lifelong learner.",
+        "studentFacing": "You can direct your own learning and development as a lifelong learner.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Consolidate a graduate identity",
+        "studentFacing": "You draw your learning together into a confident graduate identity.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see how your effort and preparation affect your results.",
+        "academic": "Understand that effort and preparation affect outcomes.",
+        "groundedIn": "effort and preparation affect results",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can say what success would look like for a week's tasks.",
+        "academic": "Define what success looks like for a week's work.",
+        "groundedIn": "name what success would look like for a week's tasks",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You treat setbacks as information, and asking for help as part of succeeding.",
+        "academic": "Treat setbacks as information and help-seeking as part of success.",
+        "groundedIn": "for own development: setbacks are information, and asking for help is part of succeeding",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can see that your confidence grows as you overcome challenges and act on feedback.",
+        "academic": "Understand that self-efficacy grows through overcoming challenges and feedback.",
+        "groundedIn": "self-efficacy grows from overcoming challenges and from feedback",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can respond to a disappointing mark by reviewing it, seeking help and resetting your goals.",
+        "academic": "Respond to a poor mark by reviewing, seeking help and resetting goals.",
+        "groundedIn": "respond to a disappointing mark by reviewing, seeking help and resetting goals",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You see the experiences of your degree as evidence of who you are becoming.",
+        "academic": "See degree experiences as evidence of an emerging identity.",
+        "groundedIn": "for own development: the degree's experiences are evidence of who one is becoming",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can recognise how perfectionism and avoidance both hold your progress back.",
+        "academic": "Recognise that perfectionism and avoidance undermine progress.",
+        "groundedIn": "perfectionism and avoidance both undermine progress",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can take stock of the strengths and experiences you are building and back each with evidence.",
+        "academic": "Audit one's graduate capital with evidence.",
+        "groundedIn": "audit own graduate capital with evidence",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat lifelong learning as a disposition you choose and keep up.",
+        "academic": "Adopt lifelong learning as a chosen, sustained disposition.",
+        "groundedIn": "for own development: lifelong learning is a disposition one chooses and sustains",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "understanding-learning-assessment-feedback": [
+      {
+        "id": "understanding-learning-assessment-feedback/01",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Understand how academic learning operates within a discipline's discourse community.",
+        "studentFacing": "You can understand how learning works within a subject's community of scholars.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/04",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Differentiate formative from summative assessment and engage with varied assessment forms.",
+        "studentFacing": "You can tell formative from summative assessment and engage with their different forms.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/02",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Distinguish active, constructivist learning from passive reception of knowledge.",
+        "studentFacing": "You can tell active learning, where you build understanding, from passively receiving information.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/03",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Interpret intended learning outcomes and how learning activities are aligned to them.",
+        "studentFacing": "You can read learning outcomes and see how activities line up with them.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/06",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Use reflective practice to turn feedback into an action plan for improvement.",
+        "studentFacing": "You can turn feedback into an action plan by reflecting on it.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/05",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Apply self-regulated learning cycles to independent study.",
+        "studentFacing": "You can apply cycles of self-regulated learning to your independent study.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/c3",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Adapt to the demands of different types of assessment.",
+        "studentFacing": "You can adapt to the demands of different types of assessment.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/c1",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Assess one's own and peers' work against marking criteria.",
+        "studentFacing": "You can assess your own and others' work against marking criteria.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "understanding-learning-assessment-feedback/c2",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Use feedback diagnostically and in dialogue with tutors to sustain development across a degree.",
+        "studentFacing": "You can use feedback, in dialogue with tutors, to keep developing across your degree.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that marks and comments tell you how well your work meets a standard.",
+        "academic": "Understand that marks and comments indicate how work meets a standard.",
+        "groundedIn": "marks and comments say how well work meets a standard",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can make notes actively, in your own words, rather than copying them down.",
+        "academic": "Make notes actively rather than transcribing.",
+        "groundedIn": "make notes actively rather than transcribing",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You see each piece of feedback as feeding your next plan, so your improvement builds up over time.",
+        "academic": "Treat feedback and evaluation as feeding the next plan, accumulating improvement.",
+        "groundedIn": "for own development: feedback and evaluation feed the next plan, so improvement accumulates",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can tell deep learning, which builds connected understanding, from surface learning that does not last.",
+        "academic": "Distinguish deep from surface learning.",
+        "groundedIn": "deep learning builds connected understanding; surface learning does not last",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can read marking criteria across the bands and apply them to example answers.",
+        "academic": "Apply marking criteria across bands to exemplars.",
+        "groundedIn": "read marking criteria across bands and apply them to exemplars",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You recognise that managing your own reaction to feedback is part of using it well.",
+        "academic": "Recognise managing one's response to feedback as part of using it.",
+        "groundedIn": "for own development: managing one's response to feedback is part of using it",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can explain how self-regulated learning joins planning, strategy and reflection into one cycle.",
+        "academic": "Understand self-regulation as joining planning, strategy and reflection in a cycle.",
+        "groundedIn": "self-regulation joins planning, strategy and reflection in one cycle",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can give useful, specific feedback to your peers on their work.",
+        "academic": "Give useful feedback to peers.",
+        "groundedIn": "give useful feedback to peers",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat learning how you learn as a capability you will keep developing for life.",
+        "academic": "Treat learning how one learns as a lifelong professional capability.",
+        "groundedIn": "for own development: learning how one learns is a lifelong professional capability",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ],
+    "work-based-experiential-learning": [
+      {
+        "id": "work-based-experiential-learning/01",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "academic": "Distinguish types of practice- and work-based learning.",
+        "studentFacing": "You can tell apart the different types of practice- and work-based learning.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "academic": "Explain what learning in practice offers",
+        "studentFacing": "You can explain what learning in a real practice setting offers.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "academic": "Set own learning goals for a practice experience",
+        "studentFacing": "You can set your own learning goals for a placement or practice experience.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "work-based-experiential-learning/c1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "academic": "Conduct oneself as a professional in a practice setting.",
+        "studentFacing": "You can conduct yourself as a professional in a practice setting.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "work-based-experiential-learning/02",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "academic": "Make effective use of a mentoring relationship while on placement.",
+        "studentFacing": "You can make good use of a mentor while on placement.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "work-based-experiential-learning/c2",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "academic": "Test theoretical knowledge by applying it in practice and reflecting on the result.",
+        "studentFacing": "You can test what you have learned in practice and reflect on how it went.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "work-based-experiential-learning/03",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "academic": "Apply an experiential learning cycle to work-based learning.",
+        "studentFacing": "You can apply an experiential learning cycle (such as Kolb's) to work-based learning.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "work-based-experiential-learning/04",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "academic": "Exercise professional judgement and justify decision-making in a work-based setting.",
+        "studentFacing": "You can use professional judgement in a work setting and justify your decisions.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "academic": "Reflect on own developing identity as a practitioner",
+        "studentFacing": "You reflect on your developing identity as a practitioner.",
+        "origin": "identified",
+        "status": "confirmed"
+      },
+      {
+        "id": "x1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "type": "knowledge",
+        "studentFacing": "You can see that real learning happens in the doing, not only in the classroom.",
+        "academic": "Understand that learning happens through doing, not only in the classroom.",
+        "groundedIn": "learning happens in the doing, not only in the classroom",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "type": "action",
+        "studentFacing": "You can ask a mentor for guidance and feedback while you are learning.",
+        "academic": "Ask a mentor for guidance and feedback.",
+        "groundedIn": "ask a mentor for guidance and feedback",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "type": "identity",
+        "studentFacing": "You begin to see yourself as a practitioner, not only a student, while on placement.",
+        "academic": "Begin to see oneself as a practitioner, not only a student.",
+        "groundedIn": "for own development: the placement is where one begins to see oneself as a practitioner, not only a student",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x4",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "type": "knowledge",
+        "studentFacing": "You can recognise that a practice setting has its own community, norms and ways of talking.",
+        "academic": "Recognise that a setting has its own community, norms and language.",
+        "groundedIn": "a setting has its own community, norms and ways of talking",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x5",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "type": "action",
+        "studentFacing": "You can throw yourself into a role and take the initiative within it.",
+        "academic": "Immerse oneself and take initiative within a role.",
+        "groundedIn": "immerse oneself and take initiative within a role",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x6",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "type": "identity",
+        "studentFacing": "You see your readiness for professional practice as something you can judge and back with evidence.",
+        "academic": "Treat professional readiness as judgeable and evidenceable against standards.",
+        "groundedIn": "for own development: one's readiness for professional practice and its standards can be judged and evidenced",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x7",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "type": "knowledge",
+        "studentFacing": "You can see how theory and practice inform and challenge each other.",
+        "academic": "Understand that theory and practice inform and challenge each other.",
+        "groundedIn": "theory and practice inform and challenge each other",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x8",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "type": "action",
+        "studentFacing": "You can evaluate your own performance against a profession's standards.",
+        "academic": "Evaluate one's own performance against a profession's standards.",
+        "groundedIn": "evaluate one's own performance against a profession's standards",
+        "origin": "proliferated",
+        "status": "drafted"
+      },
+      {
+        "id": "x9",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "type": "identity",
+        "studentFacing": "You treat your own practice as something to inquire into and develop across your career.",
+        "academic": "Treat one's practice as a site of inquiry for career-long development.",
+        "groundedIn": "for own development: one's practice becomes a site of inquiry for career-long development",
+        "blurryTop": true,
+        "origin": "proliferated",
+        "status": "drafted"
+      }
+    ]
+  },
+  "proliferatedGenerated": "2026-10-28"
+}

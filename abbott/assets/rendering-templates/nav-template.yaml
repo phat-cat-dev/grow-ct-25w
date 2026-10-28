@@ -1,0 +1,71 @@
+# nav-template.yaml — course navigation bar (data).
+#
+# Matched set in this folder, all describing the SAME nav:
+#   nav-template.yaml  the data (authoring input)
+#   nav-template.jsx   React component over that data
+#   nav-template.html  one rendered result (static reference)
+#
+# This is core Adapt NavigationView. It wires behaviour from the hooks, not the
+# label: `event` -> data-event (the click action), `order` -> data-order
+# (buttons sort left->right), `tooltipId` -> data-tooltip-id, plus `name` and
+# the js-* classes. Runtime-only a11y attributes (tabindex, aria-describedby,
+# data-a11y-force-focus) are added by Adapt at runtime and are not authored here.
+
+nav:
+  classes: [hide-label, show-label-medium, has-label-auto]
+  buttons:
+    - kind: button
+      name: skipButton
+      label: Skip Navigation
+      ariaLabel: Skip Navigation
+      event: skipNavigation
+      order: -100
+      classes: [nav__skip-btn, show-label]     # skip always shows its label
+
+    - kind: status
+      order: 40
+      text: "Lesson title > Lesson Overview"
+      modes:                                    # default view is location; it has no key
+        - { value: alerts, label: alerts, symbol: notifications, side: end }
+      steps:                                    # flank the screen; move between lesson sections
+        - { offset: -1, label: Previous section, symbol: arrow_back }
+        - { offset: 1, label: Next section, symbol: arrow_forward }
+
+    - kind: button
+      name: themeManager
+      label: Theme Manager
+      order: 70
+      panel: theme
+      symbol: palette
+      designOnly: true
+
+    - kind: button
+      name: courseAgent
+      label: Course Agent
+      order: 80
+      panel: agent
+      symbol: assistant
+
+    - kind: button
+      name: pagelevelprogress
+      label: Page sections
+      order: 90
+      tooltipId: pagelevelprogress
+      haspopup: dialog
+      panel: progress
+      icon: true
+      symbol: format_list_bulleted
+      classes: [nav__pagelevelprogress-btn, pagelevelprogress__nav-btn]
+
+    - kind: button
+      name: drawer
+      label: Open course resources.
+      ariaLabel: Open course resources.
+      icon: icon-list                           # named icon class
+      symbol: folder_open
+      event: toggleDrawer
+      order: 100
+      tooltipId: drawer
+      haspopup: dialog
+      panel: resources
+      classes: [nav__drawer-btn, js-nav-drawer-btn, is-position-auto]

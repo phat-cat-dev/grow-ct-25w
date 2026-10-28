@@ -1,0 +1,39 @@
+// ============================================================================
+//  menuItemButton.less — map Adapt's boxmenu button onto the button-tuner
+//  (.bt-button) system: brand fill, 8px radius, 600 weight, flip-on-hover.
+//  Restyles the EXISTING .boxmenu-item__button DOM with GROW tokens (so it
+//  themes with the course) — no markup change. Loads after boxMenuItem.less.
+// ============================================================================
+.boxmenu-item__button {
+  --btn-color: var(--accent);     // = bt --bt-color (brand family)
+  --btn-on: #ffffff;              // = bt --bt-fg  (on-accent text)
+
+  box-sizing: border-box;
+  max-width: 100%;
+  font: 600 var(--fs-base)/1.5 var(--font-ui, system-ui, sans-serif);
+  letter-spacing: 0;
+  padding: var(--space-2xs) var(--space-sm);
+  border: 1px solid var(--btn-color);
+  border-radius: 8px;
+  background: var(--btn-color);
+  color: var(--btn-on);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+  // flip interaction (button-tuner default "flip" mode)
+  .no-touch &:not(.is-disabled):not(.is-locked):hover {
+    background: var(--btn-on);
+    color: var(--btn-color);
+  }
+  html:not(.a11y-disable-focusoutline) &:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 3px;
+  }
+  &:active:not(.is-disabled):not(.is-locked) { filter: brightness(0.85); }
+  &.is-disabled,
+  &.is-locked { opacity: 0.5; cursor: not-allowed; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boxmenu-item__button { transition: none; }
+}

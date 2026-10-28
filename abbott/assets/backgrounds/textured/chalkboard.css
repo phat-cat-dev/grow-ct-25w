@@ -1,0 +1,12 @@
+.textured.ab-chalkboard {
+  --texture-chalk: #eef2ee;
+  --texture-slate: hsl(var(--h, 202) 14% 18%);
+  background-color: var(--texture-slate);
+  background-image: radial-gradient(ellipse at 22% 28%, #ffffff0d, transparent 45%), radial-gradient(ellipse at 78% 72%, #ffffff0a, transparent 45%);
+  color: var(--texture-chalk);
+  border: 1px solid hsl(var(--h, 202) 14% 10%);
+  border-radius: .6rem;
+  padding: var(--texture-pad);
+}
+.textured.ab-chalkboard :is(h1,h2,h3,h4,h5,h6) { color: var(--texture-chalk); }
+.textured.ab-chalkboard .ab-chalk-accent { color: hsl(var(--h, 202) var(--s, 72%) 72%); }

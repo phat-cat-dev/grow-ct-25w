@@ -1,0 +1,9 @@
+<svg data-motion-asset="spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-spin-title svg-motion-spin-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-spin-title">Orbit</title><desc id="svg-motion-spin-desc">A steady rotation for ongoing activity. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="spin"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-spin calc(3s / var(--motion-speed,1)) linear infinite}
+@keyframes motion-spin { to { transform: rotate(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="spin"] .art,svg[data-motion-asset="spin"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="19"/><circle r="7"/><path d="M0-29v7m0 44v7m-29-29h7m44 0h7m-49-20 5 5m30 30 5 5m-40 0 5-5m30-30 5-5"/></g></g></svg>

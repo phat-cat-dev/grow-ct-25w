@@ -1,0 +1,43 @@
+# Table 1 and Annex C, read from the page images (PDF pages 14, 43 to 45; printed 12, 41 to 43) by std. Values copied exactly as printed.
+# Table 1: (qualification, FHEQ level, SCQF level or 'NA', QF-EHEA cycle or None where the cell is shaded)
+T1 = [
+ ('Doctoral degrees (eg PhD/DPhil, EdD, DBA, DClinPsy)', 8, 12, 'third cycle (end of cycle)'),
+ ('Master\'s degrees (eg MPhil, MLitt, MRes, MA, MSc)', 7, 11, 'second cycle (end of cycle)'),
+ ('Integrated master\'s degrees (eg MEng, MChem, MPhys, MPharm)', 7, 11, 'second cycle (end of cycle)'),
+ ('Primary qualifications (or first degrees) in medicine, dentistry and veterinary science', 7, 11, 'second cycle (end of cycle)'),
+ ('Postgraduate diplomas', 7, 11, None),
+ ('Postgraduate Certificate in Education (PGCE) / Postgraduate Diploma in Education (PGDE)', 7, 11, None),
+ ('Postgraduate certificates', 7, 11, None),
+ ('Bachelor\'s degrees with honours (eg BA/BSc Hons)', 6, 10, 'first cycle (end of cycle)'),
+ ('Bachelor\'s degrees', 6, 9, None),
+ ('Professional Graduate Certificate in Education (PGCE) in England, Wales and Northern Ireland', 6, 9, None),
+ ('Graduate diplomas', 6, 9, None),
+ ('Graduate certificates', 6, 9, None),
+ ('Foundation degrees (eg FdA, FdSc)', 5, 'NA', 'short cycle (within or linked to the first cycle)'),
+ ('Diplomas of Higher Education (DipHE)', 5, 8, 'short cycle (within or linked to the first cycle)'),
+ ('Higher National Diplomas (HND) awarded by degree-awarding bodies in England, Wales and Northern Ireland under licence from Pearson', 5, 'NA', 'short cycle (within or linked to the first cycle)'),
+ ('Higher National Certificates (HNC) awarded by degree-awarding bodies in England, Wales and Northern Ireland under licence from Pearson', 4, 'NA', None),
+ ('Certificates of Higher Education (CertHE)', 4, 7, None),
+]
+# Annex C: (qualification, FHEQ, SCQF, England/NI, Scotland, Wales, ECTS)
+AC = [
+ ('PhD/DPhil', 8, 12, 'Not typically credit-rated', 'Not typically credit-rated', 'Not typically credit-rated', 'Not typically credit-rated'),
+ ('Professional doctorates (only if credit-based) (EdD, DBA, DClinPsy)', 8, 12, '540 (360 at FHEQ Level 8)', '540 (420 at SCQF Level 12)', '540 (360 at FHEQ Level 8 and a max of 30 at FHEQ Level 6)', 'Not typically credit-rated'),
+ ('Research master\'s degrees (eg MRes, MPhil)', 7, 11, 'Not typically credit-rated', 'Not typically credit-rated', '180 (150 at FHEQ Level 7 and a max of 30 at FHEQ Level 6)', 'The minimum requirement is 60 ECTS points; however, a range of 90-100 ECTS points is more typical at second-cycle level'),
+ ('Taught master\'s degrees (eg MA, MSc)', 7, 11, '180 (150 at FHEQ Level 7)', '180 (150 at SCQF Level 11)', '180 (150 at FHEQ Level 7 and a max of 30 at FHEQ Level 6)', 'as above'),
+ ('Integrated master\'s degrees (eg MEng, MChem, MPhys, MPharm)', 7, 11, '480 (120 at FHEQ Level 7)', '600c (120 at SCQF Level 11)', '480 (120 at FHEQ Level 7 and a max of 30 at CQFW Level 3)', 'as above'),
+ ('Primary qualifications (or first degrees) in medicine, dentistry and veterinary science', 7, 11, 'Not typically credit-rated', 'Not typically credit-rated', 'Not typically credit-rated', 'as above'),
+ ('Postgraduate diplomas', 7, 11, '120 (90 at FHEQ Level 7)', '120 (90 at SCQF Level 11)', '120 (90 at FHEQ Level 7 and a max of 30 at FHEQ Level 6)', None),
+ ('PGCE in England, Wales and Northern Ireland / PGDE in Scotland', 7, 11, '60 (40 at FHEQ Level 7)', '60 (40 at SCQF Level 11)', '120 (40 at FHEQ Level 7 and a max of 80 at FHEQ Level 6)', None),
+ ('Postgraduate certificates', 7, 11, '60 (40 at FHEQ Level 7)', '60 (40 at SCQF Level 11)', '60 (40 at FHEQ Level 7 and a max of 20 at FHEQ Level 6)', None),
+ ('Bachelor\'s degrees with honours (eg BA/BSc Hons)', 6, 10, '360 (90 at FHEQ Level 6)', '480d (90 at SCQF Level 10)', '360 (90 at FHEQ Level 6 and a max of 30 at CQFW Level 3)', '180-240 ECTS points'),
+ ('Bachelor\'s degrees', 6, 9, '300 (60 at FHEQ Level 6)', '360 (60 at SCQF Level 9)', '300 (60 at FHEQ Level 6 and a max of 30 at CQFW Level 3)', '180-240 ECTS points'),
+ ('Professional Graduate Certificate in Education (PGCE)', 6, 'NA', '60 (40 at FHEQ Level 6)', 'NA', '120 (90 at FHEQ Level 6 and a max of 30 at CQFW Level 3)', None),
+ ('Graduate diplomas', 6, 9, '80 (80 at FHEQ Level 6)', '120 (at SCQF Level 9 or above)', '120 (90 at FHEQ Level 6 and a max of 30 at CQFW Level 3)', None),
+ ('Graduate certificates', 6, 9, '40 (40 at FHEQ Level 6)', '60 at SCQF Level 9 or above', '60 (40 at FHEQ Level 6 and a max of 20 at CQFW Level 3)', None),
+ ('Foundation degrees (eg FdA, FdSc)', 5, 8, '240 (90 at FHEQ Level 5)', 'NA', '240 (90 at FHEQ Level 5 and a max of 30 at CQFW Level 3)', 'Approximately 120 ECTS points'),
+ ('Diplomas of Higher Education (DipHE)', 5, 8, '240 (90 at FHEQ Level 5)', '240 (90 at SCQF Level 8 or above)', '240 (90 at FHEQ Level 5 and a max of 30 at CQFW Level 3)', 'Approximately 120 ECTS points'),
+ ('Higher National Diplomas (HND) awarded by DABs in England, Wales and Northern Ireland under licence from Pearson', 5, 'NA', '240 (90 at FHEQ Level 5)', 'NA', '240 (90 at FHEQ Level 5 and a max of 30 at CQFW Level 3)', 'Approximately 120 ECTS points'),
+ ('Higher National Certificates (HNC) awarded by DABs in England, Wales and Northern Ireland under licence from Pearson', 4, 'NA', '150 (120 at FHEQ Level 4)', 'NA', '150 (30 at FHEQ Level 5 and a max of 30 at CQFW Level 3)', None),
+ ('Certificates of Higher Education (CertHE)', 4, 7, '120 (90 at FHEQ Level 4)', '120 (90 at SCQF Level 7 or above)', '120 (90 at FHEQ Level 4 and a max of 30 at CQFW Level 3)', None),
+]

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-n4",
+  "slug": "test-n4",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": "Test value",
+          "timestamp": "2026-08-26T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [],
+  "sweepEvents": [
+    {
+      "eventId": "SW-001",
+      "timestamp": "2026-08-26T12:00:00Z",
+      "trigger": {
+        "gate": "crs-03_vocabulary",
+        "changeKind": "amended",
+        "oldRecordSeq": 1,
+        "newRecordSeq": 2
+      },
+      "sweep": [
+        {
+          "gate": "crs-02_thematic-scope",
+          "recordSeq": 1,
+          "basis": { "gate": "crs-03_vocabulary", "dependencyClass": "constitutive" },
+          "defaultVerdict": "invalidate",
+          "disposition": {
+            "verdict": "reject",
+            "mode": "confirmed"
+          },
+          "resolution": {
+            "status": "resolved",
+            "supersededBy": 2
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colour study | Interactive lesson assets</title>
+<link rel="stylesheet" href="template-layout.css">
+<link rel="stylesheet" href="../../components/journal-card/journal-card.css">
+<link rel="stylesheet" href="interactivities.css"></head>
+<body><main class="wrap"><nav class="asset-nav" aria-label="Asset navigation"><a href="index.html">All lesson interactivities</a></nav>
+<div class="frame" data-lesson="studio"><section class="tpl" data-tpl="studio" aria-label="Studio template">
+      <div class="page__inner">
+        <header class="page__header"><span class="lesson-kicker">Studio / 03</span><h1>A colour study</h1><p class="lesson-intro">Observe, interpret, then curate — three moves of a studio practice.</p></header>
+        <article class="article"><div class="article__inner"><div class="block"><div class="block__inner grid-2">
+          <div class="component"><figure class="lesson-scene"><div class="scene-art" aria-hidden="true"><span></span><span></span><span></span></div><figcaption>01 / Look closer · media placeholder</figcaption></figure></div>
+          <div class="component"><div class="ab card secondary soft"><div class="card-body"><div class="lesson-comp-title">Studio journal</div></div></div></div>
+        </div></div>
+        <div class="block"><div class="block__inner"><div class="component"><div class="swatch-study" aria-label="Colour study"><span></span><span></span><span></span><span></span></div></div></div></div>
+        </div></article>
+      </div>
+    </section>
+<div class="activity-controls"><label>Study hue <input type="range" min="0" max="360" value="202" data-study-hue></label><output data-study-output>202 degrees</output><p role="status" data-activity-status></p></div>
+<article class="journal-card" data-journal-card="lesson-studio">
+  <header class="journal-card__header">
+    <p class="journal-card__kicker">Work in progress / no perfect answers</p>
+    <h3 class="journal-card__title">Colour study notes</h3>
+  </header>
+  <label class="journal-card__field">
+    Practice notes
+    <textarea rows="5" maxlength="20000" placeholder="Capture a thought, question or next step..." data-journal-text></textarea>
+  </label>
+  <p class="journal-card__help">What if the opposite were true? What would you remove? What would you keep?</p>
+  <footer class="journal-card__footer">
+    <button type="button" data-journal-save>Save notes</button>
+    <button type="button" data-journal-export>Export notes JSON</button>
+    <p class="journal-card__status" data-journal-status role="status"></p>
+  </footer>
+  <p class="journal-card__privacy">Saved only in this browser when you press Save. Nothing is sent to a server. Export a backup before clearing browser data.</p>
+</article>
+</div></main>
+<script src="../../components/journal-card/journal-card.js"></script>
+<script src="interactivities.js"></script></body></html>

@@ -1,0 +1,34 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 6: user pack "blue"  (--ab-thm-*)
+ * ---------------------------------------------------------------------------
+ * The stock dark-blue pack: the shipped L4 default anchor, made explicit and
+ * selectable. Binds exactly the same way as the pink pack — brand values in the
+ * published --ab-thm-* namespace, bound into the L5 template, cascade re-derives.
+ *
+ * Use it instead of pink by pointing ab-theme.css's last @import at this file;
+ * or omit any L6 pack to fall through to the identical L4 default.
+ *
+ * Anchor — the start neutral-dark-color-1 (accent-spectrum.json dark-color-1
+ * default). HSL is the authoritative seed; it resolves to the nominal brand hex
+ * #0a2a3d (rgb(10 42 61)):
+ *   hsl(202 72% 14%)  ~=  #0a2a3d
+ * Neutral spine stays pure grey (neutral-s 0%, the shipped default).
+ * =========================================================================== */
+:root {
+  /* --- the pack's own source of truth (published --ab-thm-* namespace) --- */
+  --ab-thm-blue-dark-neutral-1-h: 202;
+  --ab-thm-blue-dark-neutral-1-s: 72%;
+  --ab-thm-blue-dark-neutral-1-l: 14%;
+  --ab-thm-blue-dark-neutral-1-l-num: 14;   /* unitless L, drives the spectrum shade-offset */
+  /* anchor hex, for reference / renderer fallbacks: #0a2a3d */
+
+  /* --- bind into the L5 template; L4/L3 re-derive from these --- */
+  --ab-theme-pf-default-user-h: var(--ab-thm-blue-dark-neutral-1-h);
+  --ab-theme-pf-default-user-s: var(--ab-thm-blue-dark-neutral-1-s);
+  --ab-theme-pf-default-user-l: var(--ab-thm-blue-dark-neutral-1-l);
+  --ab-theme-pf-default-user-l-num: var(--ab-thm-blue-dark-neutral-1-l-num);
+  --ab-theme-pf-default-neutral-h: var(--ab-thm-blue-dark-neutral-1-h);
+
+  /* lineage metadata — traceable up the stack */
+  --ab-thm-blue-reflects: ab-theme-pf-default;
+}

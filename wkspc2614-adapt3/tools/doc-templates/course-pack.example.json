@@ -1,0 +1,89 @@
+{
+  "_comment": "Illustrative course-spec data for tools/doc-templates/course-pack.template.json. Trivial sample used to prove the render; not a real course. Field names are the proposed course-spec shape (gate-redesign A5); finalised in Round C.",
+  "identity": {
+    "courseName": "Critical Thinking: Introductory",
+    "theme": "Critical Thinking",
+    "pitch": "introductory",
+    "slug": "critical-thinking-introductory"
+  },
+  "contextShell": {
+    "institutional": null,
+    "subject": null,
+    "qualifiers": null,
+    "referencing": null,
+    "externalStandards": null
+  },
+  "thematicScope": {
+    "sourceType": "book-derived",
+    "sectionsInScope": ["Ch 4 §1 Claims and reasons", "Ch 4 §2 Weighing evidence"],
+    "sectionsOutOfScope": ["Ch 4 §5 Formal logic"],
+    "priorExperienceAnchor": "read an academic argument and identify its main claim",
+    "tierWindow": {
+      "goal": "recognise and question a claim",
+      "cognitiveDemand": "understand, apply",
+      "taskComplexity": "single-step, scaffolded",
+      "autonomy": "guided",
+      "voiceBand": "warm, plain, encouraging",
+      "outcomeVerbs": ["identify", "question", "explain"]
+    }
+  },
+  "thematicStrands": [
+    { "id": "ts-01", "label": "Telling a claim from a reason" },
+    { "id": "ts-02", "label": "Asking what would make a claim true" },
+    { "id": "ts-03", "label": "Spotting weak evidence" }
+  ],
+  "courseOutcomes": [
+    {
+      "id": "CO1",
+      "text": "Identify the main claim in a short argument.",
+      "confidenceStatement": { "text": "By the end, you should feel sure you can spot the one thing an argument is trying to get you to accept.", "status": "drafted" },
+      "mcqQuestions": [
+        { "stem": "Which sentence states the author's main claim?" },
+        { "stem": "Which of these is a reason, not the claim itself?" }
+      ]
+    },
+    {
+      "id": "CO2",
+      "text": "Question whether a reason actually supports its claim.",
+      "confidenceStatement": { "text": "You should feel able to ask, of any reason, whether it really does the work it is meant to.", "status": "drafted" },
+      "mcqQuestions": [
+        { "stem": "Which reason fails to support the claim it is attached to?" }
+      ]
+    }
+  ],
+  "lessonMap": {
+    "progression": "The course moves from recognising the parts of an argument, to questioning how well they hold together, to weighing the evidence behind them. Each lesson assumes the one before it.",
+    "lessons": [
+      {
+        "key": "L01",
+        "sequence": 1,
+        "title": "Finding the claim",
+        "topic": "Telling a claim from a reason",
+        "description": "You meet short arguments and learn to point to the one sentence the writer most wants you to accept.",
+        "outcomes": [
+          { "id": "LO1", "text": "Identify the main claim in a short argument." }
+        ]
+      },
+      {
+        "key": "L02",
+        "sequence": 2,
+        "title": "Does the reason hold?",
+        "topic": "Asking what would make a claim true",
+        "description": "You take a claim and its reason and ask whether the reason actually does the work it is meant to.",
+        "outcomes": [
+          { "id": "LO2", "text": "Question whether a reason actually supports its claim." }
+        ]
+      },
+      {
+        "key": "L03",
+        "sequence": 3,
+        "title": "Weighing the evidence",
+        "topic": "Spotting weak evidence",
+        "description": "You look at the evidence behind a reason and judge whether it is strong enough to rely on.",
+        "outcomes": [
+          { "id": "LO3", "text": "Judge whether the evidence given is strong or weak." }
+        ]
+      }
+    ]
+  }
+}

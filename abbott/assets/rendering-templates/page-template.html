@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A reusable learning-page template using Adapt menu, page, article, block and component wrappers.">
+  <title>Learning page template | AB Theme Studio</title>
+  <link rel="stylesheet" href="../../tuner.css">
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    .page-template {
+      --radius: 1rem;
+      --radius-sm: .5rem;
+      --accent-weak: color-mix(in srgb, var(--accent) 10%, var(--surface-1));
+      max-width: 80rem;
+    }
+    .template-intro { margin-bottom: 2rem; }
+    .template-intro h1 { margin-block: 0 .75rem; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; }
+    .template-intro p { max-width: 70ch; }
+    .template-intro a, .template-footer a { color: var(--accent); }
+    .template-skip { position: absolute; inset-block-start: .5rem; inset-inline-start: .5rem; padding: .75rem 1rem; background: var(--surface-1); color: var(--ink); transform: translateY(-200%); }
+    .template-skip:focus { transform: none; }
+    .page-template :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .page-template .adapt-specimen-nav a { padding: .5rem; }
+    .page-template .adapt-specimen h2 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; }
+    .page-template .adapt-specimen h3 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); line-height: 1.3; }
+    .page-template .adapt-specimen h4 { font-size: 1.125rem; }
+    .page-template .adapt-specimen h5 { font-size: 1rem; }
+    .page-template .component__body-inner > :first-child { margin-top: 0; }
+    .page-template .component__body-inner > :last-child { margin-bottom: 0; }
+    .template-footer { margin-top: 2rem; color: var(--ink-soft); }
+  </style>
+</head>
+<body>
+  <a class="template-skip" href="#template-learning-page">Skip to learning content</a>
+  <main class="wrap page-template" id="template-top">
+    <header class="template-intro">
+      <p class="adapt-hook">Reusable HTML / Adapt structure</p>
+      <h1>Learning page template</h1>
+      <p>Replace the example titles and content with your own. Keep the menu, page, article, block and component wrappers so each layer can be themed consistently.</p>
+      <p>This is a static layout, not an Adapt runtime. It does not record progress or completion.</p>
+      <a href="../index.html#structure">View the Adapt structure guide</a>
+    </header>
+
+    <!-- When duplicating this specimen, give every id and data-adapt-id a unique value and update its links. -->
+    <div class="adapt-specimen">
+      <nav class="adapt-specimen-nav" aria-label="Learning page navigation">
+        <a href="#template-course-menu">Course menu</a>
+        <a href="#template-learning-page">Learning page</a>
+        <a href="#template-layout-block">Two-column block</a>
+        <a href="#template-reflection-article">Reflect and continue</a>
+      </nav>
+
+      <div class="menu contentobject boxmenu" id="template-course-menu" data-adapt-id="template-menu" role="region" aria-labelledby="template-menu-title">
+        <div class="menu__inner boxmenu__inner">
+          <div class="menu__header">
+            <div class="menu__header-inner">
+              <p class="adapt-hook">Menu / content object</p>
+              <h2 class="menu__title" id="template-menu-title"><span class="menu__title-inner">Your course title</span></h2>
+              <div class="menu__body">
+                <div class="menu__body-inner">Introduce the course and help learners choose where to begin.</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu__item-container">
+            <a class="adapt-menu-item" href="#template-learning-page">
+              <strong>Explore the topic</strong>
+              <span>Discover the key ideas and work through an example.</span>
+            </a>
+            <a class="adapt-menu-item" href="#template-reflection-article">
+              <strong>Reflect and continue</strong>
+              <span>Review your learning and choose your next step.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="page contentobject" id="template-learning-page" data-adapt-id="template-page" role="region" aria-labelledby="template-page-title">
+        <div class="page__inner">
+          <div class="page__header">
+            <div class="page__header-inner">
+              <p class="adapt-hook">Page / content object</p>
+              <h2 class="page__title" id="template-page-title"><span class="page__title-inner">Your learning page title</span></h2>
+              <div class="page__body">
+                <div class="page__body-inner">Explain what learners will be able to do by the end of this page and why it matters.</div>
+              </div>
+              <div class="page__instruction">
+                <div class="page__instruction-inner">Read the introduction, explore the example, then reflect on how you will apply it.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="article__container">
+            <!-- Duplicate an article for another section; keep full-width backgrounds on its outer wrapper. -->
+            <div class="article" id="template-explore-article" data-adapt-id="template-article-1">
+              <div class="article__inner">
+                <div class="article__header">
+                  <div class="article__header-inner">
+                    <p class="adapt-hook">Article / section 01</p>
+                    <h3 class="article__title"><span class="article__title-inner">1. Explore the topic</span></h3>
+                    <div class="article__body">
+                      <div class="article__body-inner">Introduce one main idea. Use blocks below to group related explanations, examples or activities.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block__container">
+                  <div class="block" id="template-layout-block" data-adapt-id="template-block-1">
+                    <div class="block__inner">
+                      <div class="block__header">
+                        <div class="block__header-inner">
+                          <p class="adapt-hook">Block / two-column layout</p>
+                          <h4 class="block__title"><span class="block__title-inner">The idea and an example</span></h4>
+                          <div class="block__instruction">
+                            <div class="block__instruction-inner">Read the explanation and compare it with the visual. These columns stack on smaller screens.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="component__container">
+                        <div class="component text is-left" data-adapt-id="template-component-1">
+                          <div class="component__inner text__inner">
+                            <div class="component__header text__header">
+                              <p class="adapt-hook">Component / text / left</p>
+                              <h5 class="component__title"><span class="component__title-inner">Explain the key idea</span></h5>
+                              <div class="component__body">
+                                <div class="component__body-inner">
+                                  <p>Replace this text with a concise explanation of your topic.</p>
+                                  <ul>
+                                    <li>Introduce the most important point.</li>
+                                    <li>Show how it applies in a familiar situation.</li>
+                                    <li>Give learners a practical action to try.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="component graphic is-right" data-adapt-id="template-component-2">
+                          <div class="component__inner graphic__inner">
+                            <div class="component__header graphic__header">
+                              <p class="adapt-hook">Component / graphic / right</p>
+                              <h5 class="component__title"><span class="component__title-inner">Show a supporting visual</span></h5>
+                              <div class="component__body">
+                                <div class="component__body-inner">Use a diagram or image that reinforces the explanation, with an appropriate text alternative.</div>
+                              </div>
+                            </div>
+                            <!-- Replace this placeholder with your image or widget, preserving the widget wrapper. -->
+                            <div class="component__widget graphic__widget">
+                              <div class="adapt-graphic" role="img" aria-label="Content hierarchy: an article contains a block, which contains a component.">
+                                <span>Article</span>
+                                <span>Block</span>
+                                <span>Component</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="article bg-tint" id="template-reflection-article" data-adapt-id="template-article-2">
+              <div class="article__inner">
+                <div class="article__header">
+                  <div class="article__header-inner">
+                    <p class="adapt-hook">Article / section 02 / bg-tint</p>
+                    <h3 class="article__title"><span class="article__title-inner">2. Reflect and continue</span></h3>
+                    <div class="article__body">
+                      <div class="article__body-inner">Bring the key ideas together and connect them to the learner's own context.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="block__container">
+                  <div class="block" data-adapt-id="template-block-2">
+                    <div class="block__inner">
+                      <div class="block__header">
+                        <div class="block__header-inner">
+                          <h4 class="block__title"><span class="block__title-inner">Put it into practice</span></h4>
+                        </div>
+                      </div>
+                      <div class="component__container">
+                        <div class="component text is-full is-raised" data-adapt-id="template-component-3">
+                          <div class="component__inner text__inner">
+                            <div class="component__header text__header">
+                              <p class="adapt-hook">Component / text / full-width / is-raised</p>
+                              <h5 class="component__title"><span class="component__title-inner">Choose your next step</span></h5>
+                              <div class="component__body">
+                                <div class="component__body-inner">
+                                  <p>Pause and consider these questions before moving on:</p>
+                                  <ol>
+                                    <li>What is the most useful idea from this section?</li>
+                                    <li>Where could you apply it in your own work?</li>
+                                    <li>What is one action you will take next?</li>
+                                  </ol>
+                                  <p><a href="#template-course-menu">Return to the course menu</a></p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="template-footer">
+      <p>Authoring: duplicate articles for sections, blocks for rows, and components for content. Keep IDs unique and update navigation links when renaming them.</p>
+      <a href="#template-top">Back to top</a>
+    </footer>
+  </main>
+</body>
+</html>

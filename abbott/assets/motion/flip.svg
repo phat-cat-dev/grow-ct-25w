@@ -1,0 +1,9 @@
+<svg data-motion-asset="flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-flip-title svg-motion-flip-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-flip-title">Compass flip</title><desc id="svg-motion-flip-desc">A full three-dimensional turn. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="flip"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-flip calc(3.2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-flip { 70%, 100% { transform: perspective(300px) rotateY(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="flip"] .art,svg[data-motion-asset="flip"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="28"/><path d="m13-16-6 23-20 9 6-23Zm0 0L-7-7M7 7l-20 9"/></g></g></svg>

@@ -1,0 +1,136 @@
+{
+  "name": "adapt-ab-theme",
+  "version": "0.1.0",
+  "description": "Portable, build-free CSS token cascade — one anchor colour and a few seeds derive palette, type scale, spacing, breakpoint clamps, container-query edges and icon rosters at runtime via hsl()/calc()/clamp()/var(). Six layers (L2 adapter → L6 user pack); ships a pink pack.",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workspace26u/wkspc2613-adapt2.git",
+    "directory": "adapt-ab-theme"
+  },
+  "keywords": [
+    "css",
+    "css-variables",
+    "custom-properties",
+    "design-tokens",
+    "theme",
+    "theming",
+    "token-cascade",
+    "hsl",
+    "fluid-typography",
+    "container-queries",
+    "dark-mode",
+    "adapt-learning"
+  ],
+  "type": "module",
+  "style": "ab-theme.css",
+  "main": "ab-theme.css",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": "./ab-theme.css",
+    "./layers/adapter": "./layers/L2-adapter.css",
+    "./layers/pivot": "./layers/L3-pivot.css",
+    "./layers/defaults": "./layers/L4-defaults.css",
+    "./layers/template": "./layers/L5-template.css",
+    "./layers/spectrum-pivot": "./layers/L3-accent-spectrum.css",
+    "./layers/spectrum-defaults": "./layers/L4-accent-spectrum.css",
+    "./layers/semantics-pivot": "./layers/L3-semantics.css",
+    "./layers/semantics-defaults": "./layers/L4-semantics.css",
+    "./packs/pink": "./layers/L6-thm-pink.css",
+    "./packs/blue": "./layers/L6-thm-blue.css",
+    "./packs/cmab-dual": "./layers/L6-thm-cmab-dual.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "ab-theme.css",
+    "cmab-theme-pack.css",
+    "layers/",
+    "README.md",
+    "docs/"
+  ],
+  "ab": {
+    "moduleSpecVersion": 1,
+    "entry": "ab-theme.css",
+    "portabilityLine": "L3",
+    "layers": [
+      { "layer": "L2", "role": "adapter",     "namespace": "--ab-base-if-adapt-*",     "file": "layers/L2-adapter.css",  "portable": false, "note": "Renderer role seam; rewire this one file to port to a non-Adapt renderer." },
+      { "layer": "L3", "role": "pivot",        "namespace": "--ab-base-*",              "file": "layers/L3-pivot.css",    "portable": true,  "note": "The generic read surface; component CSS references these." },
+      { "layer": "L4", "role": "defaults",     "namespace": "--ab-base-pf-default-*",   "file": "layers/L4-defaults.css", "portable": true,  "note": "Shipped defaults (seeds + derived); each overridable by its L5 twin." },
+      { "layer": "L5", "role": "template",     "namespace": "--ab-theme-pf-default-*",  "file": "layers/L5-template.css", "portable": true,  "note": "The authorable theme contract; ships empty (commented) so L4 stands." },
+      { "layer": "L6", "role": "user-pack",    "namespace": "--ab-thm-*",               "file": "layers/L6-thm-pink.css", "portable": true,  "note": "Brand values in their own published namespace, bound into L5. Swap to recolour." }
+    ],
+    "packs": [
+      { "name": "pink", "file": "layers/L6-thm-pink.css", "anchorHsl": "hsl(329 78% 31%)", "nominalHex": "#8e1152", "active": true },
+      { "name": "blue", "file": "layers/L6-thm-blue.css", "anchorHsl": "hsl(202 72% 14%)", "nominalHex": "#0a2a3d", "active": false, "note": "The stock L4 default anchor, made explicit and selectable." },
+      { "name": "cmab-dual", "file": "layers/L6-thm-cmab-dual.css", "anchorHsl": "hsl(202 72% 14%)", "nominalHex": "#0a2a3d", "active": false, "note": "Two-seed pack: dark-blue anchor + a dark-grey (#6d6d6d) pinned as the h2 tier. Own entry point: cmab-theme-pack.css." }
+    ],
+    "accentSpectrum": {
+      "note": "12 named families × dark/light × 9 bands (A-v2 ladder, theme-formula-map §2.8), in 8 formula sets: mono (no marker) + 7 colour-theory rotations. Plus 7 §2.5 companion single colours. Runtime-reactive off the pack anchor: chroma = accent-s (= user-s); shade-offset computed from the anchor lightness via CSS round(). A rotation rotates every family hue by its angle, so a family name denotes the slot, not the rendered hue (complementary-accent-blue is an amber).",
+      "generator": "tools/adapt-ab/ab-gen-accent-spectrum.js",
+      "files": { "L4": "layers/L4-accent-spectrum.css", "L3": "layers/L3-accent-spectrum.css" },
+      "families": ["red", "orange", "amber", "lime", "green", "emerald", "teal", "azure", "blue", "indigo", "violet", "rose"],
+      "formulas": ["mono", "complementary", "split-a", "split-b", "triad-a", "triad-b", "analogous-lo", "analogous-hi"],
+      "bands": [10, 20, 30, 40, 50, 60, 70, 80, 90],
+      "familyTokenCount": 1728,
+      "companions": 7,
+      "requires": "CSS round() + color-mix() (modern browsers)"
+    },
+    "semantics": {
+      "note": "Three HSL-derived cue categories (positive 145 / negative 5 / neutral 38), each with bg/border/ink/icon-colour + a ligature icon; sub-categories reuse the parent colour and set only their own icon. Formula: theme-formula-map §2.6; schema: semantics.json. Category hues are fixed (not the brand anchor). The semantic-neutral category is named 'neutral-cue' (not 'neutral') so its hue seed does not collide with the neutral spine (--ab-base-pf-default-neutral-h/-s).",
+      "files": { "L4": "layers/L4-semantics.css", "L3": "layers/L3-semantics.css" },
+      "categories": ["positive", "negative", "neutral-cue"],
+      "subCategories": { "positive": ["correct", "advise"], "negative": ["incorrect", "warn"], "neutral-cue": ["observe"] }
+    },
+    "activePack": "pink",
+    "anchor": { "hsl": "hsl(329 78% 31%)", "nominalHex": "#8e1152", "resolvesTo": "rgb(141 17 81)", "meaning": "neutral-dark-color-1" },
+    "verified": {
+      "method": "Chromium getComputedStyle over the full L6→L5→L4→L3 chain",
+      "accent": "rgb(141 17 81)",
+      "adapterSeam": "--ab-base-if-adapt-item-color resolves to the same accent",
+      "cssParse": "0 errors (css-tree) across all five layer files"
+    },
+    "docs": {
+      "bundled": [
+        { "path": "README.md",          "role": "Install, usage, layering, theming, provenance." },
+        { "path": "docs/ARCHITECTURE.md", "role": "The six-layer model, override flow, namespace grammar — distilled for this module and citing the repo sources below." }
+      ],
+      "provenance": {
+        "note": "This module is the token layers lifted out of the wider AB theming work. The files below live in the parent repository and are the authoritative sources the module was distilled and folded from; they are NOT bundled (they are repository/CM-coupled and some predate this branch's realised --ab-* cascade). Cited here so the module stays traceable to its origin.",
+        "designDocs": [
+          { "path": "docs/authoring/theming-layers-map.md",    "role": "Canonical six-layer cascade — Part A target (--ab-*), Part B live (--cm-*). The primary source for ARCHITECTURE.md.", "caveat": "Part A was 'not yet in code' at authoring (11 Oct 2026); this branch has since realised the --ab-* cascade Part A specifies." },
+          { "path": "docs/authoring/theme-formula-map.md",     "role": "The default formulas that become L4 defaults, the L5 authorable seeds, and the L6 overrides; namespace grammar in §4." },
+          { "path": "docs/authoring/ab-system-architecture.md","role": "Master blueprint tying the layers, seams and section-schema pick-n-mix together." },
+          { "path": "docs/authoring/user-theme-template.md",   "role": "The user-theme seed/colour model — how an L6 pack is authored." },
+          { "path": "docs/authoring/cm-theme-architecture.md", "role": "Principles only (tokenise down, stay fluid, HSL-derive, vanilla-as-default).", "caveat": "Superseded for naming and layer count (CM-specific)." }
+        ],
+        "tokenSources": {
+          "note": "L3/L4 are the compiled fold of these section schemas.",
+          "tool": "tools/adapt-ab/ab-fold-section-schemas.js",
+          "schemas": [
+            "design-kb/section-schemas/accent-spectrum.json",
+            "design-kb/section-schemas/box-model.json",
+            "design-kb/section-schemas/breakpoints.json",
+            "design-kb/section-schemas/colour.json",
+            "design-kb/section-schemas/container-queries.json",
+            "design-kb/section-schemas/icons.json",
+            "design-kb/section-schemas/motion.json",
+            "design-kb/section-schemas/semantics.json",
+            "design-kb/section-schemas/spacing.json",
+            "design-kb/section-schemas/typography.json"
+          ]
+        },
+        "liveExtension": {
+          "note": "The in-repo Adapt extension this module's layers were extracted from (includes the renderer selector sweep and icon fonts, both out of scope here).",
+          "path": "src/extensions/adapt-ab-theme/less/"
+        },
+        "excluded": [
+          { "path": "docs/authoring/theming-tokens.md",             "why": "--cm-* / CM brand palette; superseded naming." },
+          { "path": "docs/authoring/wrapper-and-portability.md",     "why": "Lesson wrapper / portable-unit authoring — course content, not tokens." },
+          { "path": "docs/authoring/portable-unit-and-shell-format.md", "why": "Lesson shell on disk — course content, not tokens." }
+        ]
+      }
+    }
+  }
+}

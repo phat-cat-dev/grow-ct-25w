@@ -1,0 +1,56 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 6: user pack "cmab-dual"  (--ab-thm-*)
+ * ---------------------------------------------------------------------------
+ * A two-seed pack: one dark neutral colour ("dark-blue", the same anchor as
+ * the stock L6-thm-blue.css) plus its grey equivalent ("dark-grey"), pinned
+ * as the second heading/ink tier. Binds the same way as pink/blue — brand
+ * values in the published --ab-thm-* namespace, bound into the L5 template,
+ * cascade re-derives through L4/L3 — with one addition: this package's L5
+ * contract only exposes a single HSL anchor (one hue drives everything), so
+ * the grey tier is pinned directly as a literal override of h2-color /
+ * ink-muted (the same "override pivots" mechanism L5-template.css documents
+ * at its surface/ink/accent example, lines 78-82), rather than derived from
+ * the neutral spine.
+ *
+ * Mirrors the live extension's cmab-theme-packs.less pack (15 Oct 2026) —
+ * same two colours, same 3 house button values; typography left unset.
+ *
+ * Use it instead of pink by pointing cmab-theme-pack.css's last @import at
+ * this file (already done); or swap it into ab-theme.css to replace pink.
+ *
+ * Anchor — dark-blue, hsl(202 72% 14%) ~= #0a2a3d (rgb(10 42 61)), identical
+ * to L6-thm-blue.css. Grey — dark-grey, #6d6d6d (rgb(109 109 109)), pinned as
+ * a literal since the HSL neutral spine stays pure grey at 0% saturation by
+ * default and tracking the anchor hue is not what a second, UNRELATED grey
+ * tier needs.
+ * =========================================================================== */
+:root {
+  /* --- the pack's own source of truth (published --ab-thm-* namespace) --- */
+  --ab-thm-cmab-dual-dark-colour-h: 202;
+  --ab-thm-cmab-dual-dark-colour-s: 72%;
+  --ab-thm-cmab-dual-dark-colour-l: 14%;
+  --ab-thm-cmab-dual-dark-colour-l-num: 14;   /* unitless L, drives the spectrum shade-offset */
+  --ab-thm-cmab-dual-dark-colour-rgb: 10, 42, 61;   /* anchor hex, for reference: #0a2a3d */
+  --ab-thm-cmab-dual-dark-grey: #6d6d6d;             /* pinned literal, not HSL-derived */
+
+  /* --- bind into the L5 template; L4/L3 re-derive from these --- */
+  --ab-theme-pf-default-user-h: var(--ab-thm-cmab-dual-dark-colour-h);
+  --ab-theme-pf-default-user-s: var(--ab-thm-cmab-dual-dark-colour-s);
+  --ab-theme-pf-default-user-l: var(--ab-thm-cmab-dual-dark-colour-l);
+  --ab-theme-pf-default-user-l-num: var(--ab-thm-cmab-dual-dark-colour-l-num);
+  --ab-theme-pf-default-neutral-h: var(--ab-thm-cmab-dual-dark-colour-h);
+
+  /* grey tier — pinned literal override, bypassing the neutral-spine HSL
+     derivation so this role carries the dual's OWN grey, not a tint of blue */
+  --ab-theme-pf-default-h2-color: var(--ab-thm-cmab-dual-dark-grey);
+
+  /* --- buttons: 3 knobs worth a house value; the other 4 stand at L4 --- */
+  --ab-theme-pf-default-btn-radius: calc(var(--ab-base-pf-default-radius) * 1.4);
+  --ab-theme-pf-default-btn-focus-shadow-rgb: var(--ab-thm-cmab-dual-dark-colour-rgb);
+  --ab-theme-pf-default-btn-hover-surface: var(--ab-base-pf-default-surface-subtle);
+
+  /* typography hooks intentionally NOT set -> L4 defaults in L4-defaults.css stand */
+
+  /* lineage metadata — traceable up the stack */
+  --ab-thm-cmab-dual-reflects: ab-theme-pf-default;
+}

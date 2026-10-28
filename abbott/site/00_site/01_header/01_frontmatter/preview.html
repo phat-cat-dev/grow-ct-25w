@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson front matter panel — preview</title>
+<link rel="stylesheet" href="lesson-frontmatter.css">
+<style>
+  /* A small slice of the real grow-ct runtime tokens, so the preview shows the
+     panel THEMED (and flipping for dark mode) rather than on its fallbacks.
+     Copied from grow-ct/less/_defaults/_grow-tokens.less. */
+  :root {
+    --h: 205; --s: 42%;
+    --page-bg:   hsl(var(--h) 30% 96%);
+    --surface-1: hsl(var(--h) 24% 99%);
+    --ink:       hsl(var(--h) 25% 16%);
+    --ink-soft:  hsl(var(--h) 14% 38%);
+    --line:      hsl(var(--h) 18% 86%);
+    --accent:    hsl(var(--h) var(--s) 42%);
+    --accent-ink:hsl(var(--h) var(--s) 34%);
+    --shadow:    hsl(var(--h) 40% 20% / .16);
+    --font-ui:      "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-heading: var(--font-ui);
+    --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --fs-2xs: clamp(0.75rem, 0.71rem + 0.20vw, 0.85rem);
+    --fs-xs:  clamp(0.80rem, 0.75rem + 0.25vw, 0.92rem);
+    --fs-base: clamp(1.00rem, 0.93rem + 0.35vw, 1.15rem);
+    --fs-md:  clamp(1.15rem, 1.03rem + 0.55vw, 1.35rem);
+    --fs-lg:  clamp(1.30rem, 1.12rem + 0.80vw, 1.60rem);
+    --fs-2xl: clamp(1.85rem, 1.45rem + 1.80vw, 2.60rem);
+    --fs-4xl: clamp(2.60rem, 1.75rem + 3.80vw, 4.40rem);
+    --space-2xs: clamp(0.50rem, 0.45rem + 0.20vw, 0.65rem);
+    --space-xs:  clamp(0.75rem, 0.65rem + 0.40vw, 1.05rem);
+    --space-sm:  clamp(1.00rem, 0.85rem + 0.60vw, 1.50rem);
+    --space-md:  clamp(1.50rem, 1.20rem + 1.20vw, 2.50rem);
+    --space-lg:  clamp(2.25rem, 1.70rem + 2.20vw, 4.00rem);
+    --space-xl:  clamp(3.00rem, 2.10rem + 3.60vw, 6.00rem);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page-bg: hsl(var(--h) 32% 8%); --surface-1: hsl(var(--h) 26% 12%);
+      --ink: hsl(var(--h) 20% 92%); --ink-soft: hsl(var(--h) 14% 66%);
+      --line: hsl(var(--h) 22% 22%);
+      --accent: hsl(var(--h) var(--s) 64%); --accent-ink: hsl(var(--h) var(--s) 78%);
+      --shadow: hsl(var(--h) 60% 2% / .5);
+      color-scheme: dark;
+    }
+  }
+  body {
+    margin: 0;
+    padding: clamp(1rem, 4vw, 3rem);
+    display: grid;
+    gap: 3rem;
+    background: var(--page-bg);
+    font-family: var(--font-ui);
+  }
+  .preview-label {
+    margin: 0 0 .75rem;
+    font: 700 .72rem/1 var(--font-mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  code { font-family: var(--font-mono); font-size: .9em; }
+</style>
+</head>
+<body>
+
+  <section>
+    <p class="preview-label">variant: hero — the full panel (every §4 item)</p>
+    <section class="lesson-fm lesson-fm--hero" data-grow-role="lesson" aria-label="Lesson overview">
+      <header class="lesson-fm__head">
+        <p class="lesson-fm__position">Module 2 · Lesson 3</p>
+        <h1 class="lesson-fm__title">Designing for depth</h1>
+        <p class="lesson-fm__purpose">Consistent courses don't come from matching colours by hand — they come from a system. This lesson is where that idea becomes something you can use.</p>
+        <p class="lesson-fm__overview">You'll explore where colour, type and space come from in a token system, build a block that carries its own metadata, and see how that keeps a course coherent as it grows.</p>
+        <ul class="lesson-fm__meta" aria-label="Lesson details">
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Estimated time</span><span class="lesson-fm__meta-val">12 min</span></li>
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Level</span><span class="lesson-fm__meta-val">Intermediate</span></li>
+        </ul>
+      </header>
+
+      <div class="lesson-fm__group lesson-fm__group--objectives">
+        <p class="lesson-fm__group-title">By the end of this lesson, you will be able to:</p>
+        <ul class="lesson-fm__list">
+          <li class="lesson-fm__item">Explain where colour, type and space come from in a token system.</li>
+          <li class="lesson-fm__item">Build a two-column block with per-column metadata.</li>
+          <li class="lesson-fm__item">Toggle a frontmatter section between visible and metadata-only.</li>
+        </ul>
+      </div>
+
+      <div class="lesson-fm__grid">
+        <section class="lesson-fm__group lesson-fm__group--before">
+          <p class="lesson-fm__group-title">Before you begin</p>
+          <ul class="lesson-fm__list lesson-fm__list--check">
+            <li class="lesson-fm__item">You can read a CSS custom property, e.g. <code>var(--accent)</code>.</li>
+            <li class="lesson-fm__item">You've completed <em>Lesson 2 — The token cascade</em>.</li>
+          </ul>
+        </section>
+        <section class="lesson-fm__group lesson-fm__group--materials">
+          <p class="lesson-fm__group-title">What you'll need</p>
+          <ul class="lesson-fm__list lesson-fm__list--check">
+            <li class="lesson-fm__item">A recent piece of your own written feedback.</li>
+            <li class="lesson-fm__item">Ten quiet minutes.</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="lesson-fm__more">
+        <section class="lesson-fm__group">
+          <p class="lesson-fm__group-title">What to expect</p>
+          <div class="lesson-fm__prose"><p>Three short activities with worked examples, then a two-question checkpoint so you can confirm the idea landed before moving on.</p></div>
+        </section>
+        <section class="lesson-fm__group">
+          <p class="lesson-fm__group-title">Completing this lesson</p>
+          <div class="lesson-fm__prose"><p>Work through each block to the checkpoint at the end. The checkpoint marks the lesson complete.</p></div>
+        </section>
+        <section class="lesson-fm__group">
+          <p class="lesson-fm__group-title">Support &amp; accessibility</p>
+          <div class="lesson-fm__prose"><p>Every example is keyboard-navigable and described in text. Need an adjustment? Use the course help link, or contact your tutor.</p></div>
+        </section>
+      </div>
+    </section>
+  </section>
+
+  <section>
+    <p class="preview-label">variant: compact — opening only (returning view)</p>
+    <section class="lesson-fm lesson-fm--compact" data-grow-role="lesson" aria-label="Lesson overview">
+      <header class="lesson-fm__head">
+        <p class="lesson-fm__position">Module 2 · Lesson 3</p>
+        <h2 class="lesson-fm__title">Designing for depth</h2>
+        <p class="lesson-fm__purpose">Consistent courses come from a system, not from matching by hand.</p>
+        <p class="lesson-fm__overview">You'll see where colour, type and space come from, and build a block that carries its own metadata.</p>
+        <ul class="lesson-fm__meta" aria-label="Lesson details">
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Estimated time</span><span class="lesson-fm__meta-val">12 min</span></li>
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Level</span><span class="lesson-fm__meta-val">Intermediate</span></li>
+        </ul>
+      </header>
+      <div class="lesson-fm__group lesson-fm__group--objectives">
+        <p class="lesson-fm__group-title">By the end of this lesson, you will be able to:</p>
+        <ul class="lesson-fm__list">
+          <li class="lesson-fm__item">Explain where colour, type and space come from.</li>
+          <li class="lesson-fm__item">Build a block with per-column metadata.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <section>
+    <p class="preview-label">variant: plain — no chrome, drops into an existing hero</p>
+    <section class="lesson-fm lesson-fm--plain" data-grow-role="lesson" aria-label="Lesson overview">
+      <header class="lesson-fm__head">
+        <p class="lesson-fm__position">Module 2 · Lesson 3</p>
+        <h2 class="lesson-fm__title">Designing for depth</h2>
+        <p class="lesson-fm__overview">No card chrome of its own — inherits the surrounding page.</p>
+        <ul class="lesson-fm__meta" aria-label="Lesson details">
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Estimated time</span><span class="lesson-fm__meta-val">12 min</span></li>
+          <li class="lesson-fm__meta-item"><span class="lesson-fm__meta-key">Level</span><span class="lesson-fm__meta-val">Intermediate</span></li>
+        </ul>
+      </header>
+      <div class="lesson-fm__group lesson-fm__group--objectives">
+        <p class="lesson-fm__group-title">By the end of this lesson, you will be able to:</p>
+        <ul class="lesson-fm__list">
+          <li class="lesson-fm__item">Explain where colour, type and space come from.</li>
+          <li class="lesson-fm__item">Toggle a frontmatter section between visible and metadata-only.</li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+</body>
+</html>

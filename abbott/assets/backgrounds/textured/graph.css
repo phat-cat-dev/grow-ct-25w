@@ -1,0 +1,4 @@
+.textured.ab-graph {
+  background-color: var(--texture-paper);
+  background-image: repeating-linear-gradient(to right, transparent 0, transparent calc(var(--texture-dot-gap) - 1px), var(--texture-rule) calc(var(--texture-dot-gap) - 1px), var(--texture-rule) var(--texture-dot-gap)), repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--texture-dot-gap) - 1px), var(--texture-rule) calc(var(--texture-dot-gap) - 1px), var(--texture-rule) var(--texture-dot-gap));
+}

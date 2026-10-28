@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SKOS Structure Map</title>
+<style>
+  /* A deliberately different, warmer palette from adapt-dom-map.html:
+     parchment ground + a taxonomy-coloured node set (violet / rose / emerald /
+     ochre / indigo / cyan). Same nesting technique, different scheme. */
+  :root{
+    --bg:#fbf7f0; --panel:#fffdf9; --ink:#2b2622; --muted:#7a6f64; --line:#e9e0d2;
+    --scheme:#7c3aed; --family:#be123c; --concept:#047857;
+    --note:#a16207; --step:#4338ca; --related:#0e7490;
+    --chip-bg:#f3ecdf;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#17130f; --panel:#201a14; --ink:#f0e9df; --muted:#b2a695; --line:#352c22;
+      --scheme:#a78bfa; --family:#fb7185; --concept:#34d399;
+      --note:#fbbf24; --step:#818cf8; --related:#22d3ee;
+      --chip-bg:#2a221a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#17130f; --panel:#201a14; --ink:#f0e9df; --muted:#b2a695; --line:#352c22;
+    --scheme:#a78bfa; --family:#fb7185; --concept:#34d399;
+    --note:#fbbf24; --step:#818cf8; --related:#22d3ee;
+    --chip-bg:#2a221a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:24px 16px 64px;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:1.6rem;margin:0 0 .2em}
+  h2{font-size:1.15rem;margin:2.2em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+  p.lede{color:var(--muted);margin:.2em 0 1.4em}
+  .prov{font-size:.82rem;color:var(--muted);background:var(--chip-bg);border:1px solid var(--line);
+    border-radius:8px;padding:10px 12px;margin:0 0 1.4em}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.2em}
+  .legend span{font-size:.78rem;padding:3px 9px;border-radius:999px;color:#fff;font-weight:600}
+
+  .map{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+  .box{
+    border:1px solid var(--line);border-left-width:4px;border-radius:7px;
+    background:var(--panel);margin:7px 0;padding:8px 10px;
+  }
+  .box > .children{margin:8px 0 0 0;padding-left:14px}
+  .box.scheme{border-left-color:var(--scheme)}
+  .box.family{border-left-color:var(--family)}
+  .box.concept{border-left-color:var(--concept)}
+  .box.note{border-left-color:var(--note);border-style:dashed}
+  .box.step{border-left-color:var(--step)}
+  .box.related{border-left-color:var(--related);border-style:dashed}
+  .tag{font-weight:700}
+  .scheme .tag{color:var(--scheme)} .family .tag{color:var(--family)}
+  .concept .tag{color:var(--concept)} .step .tag{color:var(--step)}
+  .note .tag{color:var(--note);font-weight:600} .related .tag{color:var(--related);font-weight:600}
+  .pred{color:var(--step);font-weight:600}
+  .lit{color:var(--muted)}
+  .cmt{color:var(--muted);font-style:italic;display:block;margin-top:3px;font-family:inherit}
+  .src{font:600 .7rem/1 ui-sans-serif,system-ui;padding:1px 6px;border-radius:5px;margin-left:6px;vertical-align:1px}
+  .src.top{background:#fde2e4;color:#9f1239}
+  .src.leaf{background:#d1fae5;color:#065f46}
+  .src.ext{background:#ede9fe;color:#5b21b6}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .src.top{background:#4c0519;color:#fecdd3}
+    :root:not([data-theme="light"]) .src.leaf{background:#064e3b;color:#a7f3d0}
+    :root:not([data-theme="light"]) .src.ext{background:#2e1065;color:#ddd6fe}}
+  :root[data-theme="dark"] .src.top{background:#4c0519;color:#fecdd3}
+  :root[data-theme="dark"] .src.leaf{background:#064e3b;color:#a7f3d0}
+  :root[data-theme="dark"] .src.ext{background:#2e1065;color:#ddd6fe}
+
+  .callout{border:1px solid var(--line);border-left:4px solid var(--concept);
+    background:var(--panel);border-radius:8px;padding:12px 14px;margin:1.2em 0}
+  .callout h3{margin:0 0 .4em;font-size:1rem}
+  .callout .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+  @media (max-width:640px){.callout .cols{grid-template-columns:1fr}.map{font-size:12px}}
+  .callout h4{margin:.2em 0 .3em;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .callout ul{margin:.1em 0;padding-left:1.1em}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin:.4em 0 1em}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:var(--chip-bg)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--chip-bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+  .key{color:var(--step)}
+  ul{margin:.3em 0 .6em;padding-left:1.2em}
+  .foot{margin-top:2.4em;font-size:.8rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>SKOS structure map &mdash; a concept scheme, read as a page frame</h1>
+  <p class="lede">The same nesting technique as the Adapt DOM map, pointed at meaning instead of markup.
+  A <strong>SKOS concept scheme</strong> is already a tree: one <strong>scheme</strong> holds a few
+  <strong>top concepts</strong>, each gathers <strong>narrower concepts</strong>, and each concept
+  carries a <strong>definition</strong> made of ordered <strong>steps</strong>, plus sideways
+  <strong>related</strong> links. Read that tree top-to-bottom and it tells you how to lay out a page:
+  the hierarchy is the frame; the <code>scopeNote</code> and steps are the content that goes inside it.</p>
+
+  <div class="prov">
+    <strong>Source.</strong> Every label, note and step below is lifted verbatim from
+    <code>academic-processes.skos.jsonld</code> in this folder (<code>skos:ConceptScheme</code>
+    &ldquo;Universal Undergraduate Academic Processes&rdquo;, 3 top concepts, 20 narrower concepts).
+    <span class="src top">top</span> a <code>skos:Concept</code> with no <code>broader</code> &mdash; a family.
+    <span class="src leaf">leaf</span> a <code>skos:Concept</code> with <code>skos:broader</code> into a family.
+    <span class="src ext">out-of-scheme</span> a <code>skos:related</code> target that isn&rsquo;t a
+    concept in <em>this</em> file (CRAAP, RADAR, ROBOT&hellip;) &mdash; legal in SKOS, links may cross schemes.
+  </div>
+
+  <div class="legend">
+    <span style="background:var(--scheme)">skos:ConceptScheme</span>
+    <span style="background:var(--family)">top concept</span>
+    <span style="background:var(--concept)">narrower concept</span>
+    <span style="background:var(--note)">scopeNote</span>
+    <span style="background:var(--step)">ProcessStep</span>
+    <span style="background:var(--related)">skos:related</span>
+  </div>
+
+  <h2>The scheme as a nested structure</h2>
+  <div class="map">
+
+    <div class="box scheme">
+      <span class="tag">skos:ConceptScheme</span> <span class="lit">&ldquo;Universal Undergraduate Academic Processes&rdquo;</span>
+      <span class="cmt">the whole vocabulary &mdash; one scheme is the root every concept declares <span class="pred">skos:inScheme</span></span>
+      <div class="children">
+
+        <!-- FAMILY 1: THINKING -->
+        <div class="box family">
+          <span class="pred">skos:hasTopConcept &rarr;</span> <span class="tag">Intellectual Depth (Thinking)</span> <span class="src top">top</span>
+          <span class="cmt">a top concept: no <span class="pred">skos:broader</span>. Five concepts point up to it.</span>
+          <div class="children">
+
+            <!-- FULLY EXPANDED LEAF -->
+            <div class="box concept">
+              <span class="tag">Critical Analysis</span> <span class="src leaf">leaf</span>
+              <span class="cmt"><span class="pred">skos:broader &rarr;</span> Intellectual Depth &middot;
+              <span class="pred">skos:altLabel</span> &ldquo;Evaluation of Arguments&rdquo;</span>
+              <div class="children">
+                <div class="box note">
+                  <span class="tag">skos:scopeNote</span>
+                  <span class="cmt">&ldquo;Move past summarising to judging a source: test its central claim, its hidden
+                  assumptions, and whether the evidence actually holds.&rdquo;</span>
+                </div>
+                <div class="box">
+                  <span class="pred">skos:definition</span> &rarr; <span class="lit">ProcessSteps</span>
+                  <span class="cmt">an ordered how-to &mdash; five steps, each a <code>step_title</code> + <code>description</code></span>
+                  <div class="children">
+                    <div class="box step"><span class="tag">1 &middot; Identify the core claim</span><span class="cmt">Find the single main point you are being asked to accept. Everything else is scaffolding around it.</span></div>
+                    <div class="box step"><span class="tag">2 &middot; Surface the assumptions</span><span class="cmt">Name the beliefs that must be true for the claim to stand &mdash; especially the ones left unstated.</span></div>
+                    <div class="box step"><span class="tag">3 &middot; Weigh the evidence</span><span class="cmt">Is the support sufficient, relevant and unbiased? Ask what data would contradict the claim.</span></div>
+                    <div class="box step"><span class="tag">4 &middot; Judge the reasoning</span><span class="cmt">Check the step from evidence to claim. A true premise can still carry a broken inference.</span></div>
+                    <div class="box step"><span class="tag">5 &middot; Form your verdict</span><span class="cmt">Decide how far the claim earns your acceptance, and say exactly where it is strong and where it is weak.</span></div>
+                  </div>
+                </div>
+                <div class="box related">
+                  <span class="tag">skos:related</span> &rarr;
+                  <span class="lit">Argument Mapping &middot; Source Evaluation</span>
+                  <span class="cmt">sideways links, not nesting &mdash; these become &ldquo;see also&rdquo;, never children</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- COLLAPSED SIBLINGS -->
+            <div class="box concept"><span class="tag">Argument Mapping</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Critical Analysis, Counter-argumentation</span></div>
+            <div class="box concept"><span class="tag">Problem Decomposition</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Research Design, Time Management</span></div>
+            <div class="box concept"><span class="tag">Hypothesis Generation</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Research Design, Critical Analysis</span></div>
+            <div class="box concept"><span class="tag">Counter-argumentation</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Argument Mapping, Critical Analysis</span></div>
+          </div>
+        </div>
+
+        <!-- FAMILY 2: DOING -->
+        <div class="box family">
+          <span class="pred">skos:hasTopConcept &rarr;</span> <span class="tag">Research &amp; Retrieval (Doing)</span> <span class="src top">top</span>
+          <div class="children">
+
+            <!-- SECOND EXPANDED LEAF: shows altLabel + out-of-scheme related -->
+            <div class="box concept">
+              <span class="tag">Source Evaluation</span> <span class="src leaf">leaf</span>
+              <span class="cmt"><span class="pred">skos:altLabel</span> &ldquo;Source Criticism&rdquo;</span>
+              <div class="children">
+                <div class="box note">
+                  <span class="tag">skos:scopeNote</span>
+                  <span class="cmt">&ldquo;Apply a framework to decide whether a source is trustworthy enough to cite &mdash; before you rely on it.&rdquo;</span>
+                </div>
+                <div class="box"><span class="pred">skos:definition</span> &rarr; <span class="lit">ProcessSteps</span>
+                  <span class="cmt">5 steps: Identify &rarr; Currency &amp; authority &rarr; Accuracy &amp; evidence &rarr; Purpose &amp; bias &rarr; Verdict</span></div>
+                <div class="box related">
+                  <span class="tag">skos:related</span> &rarr;
+                  <span class="lit">Critical Analysis</span> &middot;
+                  <span class="lit">CRAAP</span> <span class="src ext">out-of-scheme</span>
+                  <span class="lit">RADAR</span> <span class="src ext">out-of-scheme</span>
+                  <span class="lit">ROBOT</span> <span class="src ext">out-of-scheme</span>
+                  <span class="cmt">a related target need not be a concept in this scheme &mdash; it can name an external resource</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="box concept"><span class="tag">Literature Reviewing</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Literature Search, Synthesis, Source Evaluation</span></div>
+            <div class="box concept"><span class="tag">Research Design</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Hypothesis Generation, Problem Decomposition</span></div>
+            <div class="box concept"><span class="tag">Data Interpretation &amp; Visualisation</span> <span class="src leaf">leaf</span><span class="cmt">scopeNote + 5 steps &middot; <span class="pred">related &rarr;</span> Research Design, Presentation Storytelling</span></div>
+            <div class="box concept"><span class="tag">Literature Search Strategy</span> <span class="src leaf">leaf</span><span class="cmt"><span class="pred">altLabel</span> &ldquo;Boolean search mastery&rdquo; &middot; scopeNote + 5 steps</span></div>
+          </div>
+        </div>
+
+        <!-- FAMILY 3: APPLYING -->
+        <div class="box family">
+          <span class="pred">skos:hasTopConcept &rarr;</span> <span class="tag">Communication &amp; Reflection (Applying)</span> <span class="src top">top</span>
+          <span class="cmt">the largest family &mdash; ten narrower concepts</span>
+          <div class="children">
+            <div class="box concept"><span class="tag">Academic Writing</span> <span class="src leaf">leaf</span><span class="cmt"><span class="pred">altLabel</span> &ldquo;Structuring an Argument&rdquo;</span></div>
+            <div class="box concept"><span class="tag">Peer Reviewing</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Oral Presentation &amp; Communication</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Synthesis of Diverse Fields</span> <span class="src leaf">leaf</span><span class="cmt"><span class="pred">altLabel</span> &ldquo;Interdisciplinary synthesis&rdquo;</span></div>
+            <div class="box concept"><span class="tag">Self-Directed Learning</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Ethical Reasoning &amp; Integrity</span> <span class="src leaf">leaf</span><span class="cmt"><span class="pred">altLabel</span> &ldquo;Academic integrity&rdquo;</span></div>
+            <div class="box concept"><span class="tag">Time Management &amp; Project Sequencing</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Reflective Practice</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Active Listening (in lectures)</span> <span class="src leaf">leaf</span></div>
+            <div class="box concept"><span class="tag">Presentation Storytelling</span> <span class="src leaf">leaf</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <h3>From SKOS graph to page frame</h3>
+    <div class="cols">
+      <div>
+        <h4>What SKOS gives you (fixed meaning)</h4>
+        <ul>
+          <li>one <code>ConceptScheme</code> &mdash; the vocabulary&rsquo;s identity</li>
+          <li><code>hasTopConcept</code> / <code>broader</code> / <code>narrower</code> &mdash; the containment tree</li>
+          <li><code>prefLabel</code> (one) + <code>altLabel</code> (synonyms)</li>
+          <li><code>scopeNote</code> &mdash; the meaning, in a sentence</li>
+          <li><code>definition &rarr; ProcessSteps</code> &mdash; an <em>ordered</em> how-to</li>
+          <li><code>related</code> &mdash; non-hierarchical, symmetric cross-links</li>
+        </ul>
+      </div>
+      <div>
+        <h4>The page it structures</h4>
+        <ul>
+          <li>the course / site &mdash; and its top-level menu</li>
+          <li>menu order &amp; nesting &mdash; the tree <em>is</em> the navigation</li>
+          <li><code>prefLabel</code> &rarr; the heading; <code>altLabel</code> &rarr; search terms, <code>aria-label</code></li>
+          <li><code>scopeNote</code> &rarr; the lede / intro paragraph under the heading</li>
+          <li>one step &rarr; one ordered component (a numbered block each)</li>
+          <li><code>related</code> &rarr; a &ldquo;see also&rdquo; strip &mdash; links, never nesting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>SKOS construct &rarr; page role</h2>
+  <table>
+    <tr><th>SKOS construct</th><th>In this vocabulary</th><th>Page role it suggests</th></tr>
+    <tr><td><strong style="color:var(--scheme)">skos:ConceptScheme</strong></td><td>&ldquo;Universal Undergraduate Academic Processes&rdquo;</td><td>the whole course / section index + its menu root</td></tr>
+    <tr><td><code>skos:hasTopConcept</code> / <code>topConceptOf</code></td><td>3 families: Thinking, Doing, Applying</td><td>top-level pages or menu groups &mdash; the page spine</td></tr>
+    <tr><td><strong style="color:var(--concept)">skos:Concept</strong> + <code>skos:broader</code></td><td>e.g. <span class="key">Critical Analysis</span> &rarr; Intellectual Depth</td><td>a lesson / block placed under its family page</td></tr>
+    <tr><td><code>skos:prefLabel</code></td><td>one preferred name per concept</td><td>the single <code>&lt;h&gt;</code> heading for that block</td></tr>
+    <tr><td><code>skos:altLabel</code></td><td>&ldquo;Evaluation of Arguments&rdquo;, &ldquo;Boolean search mastery&rdquo;&hellip;</td><td>synonyms for search/filter; <code>aria-label</code>; tags</td></tr>
+    <tr><td><strong style="color:var(--note)">skos:scopeNote</strong></td><td>one-sentence gloss of what the concept covers</td><td>the lede / intro paragraph under the heading</td></tr>
+    <tr><td><code>skos:definition</code> &rarr; <code>ProcessSteps</code></td><td>an ordered list of 5 steps</td><td>an ordered list of 5 step components (the body)</td></tr>
+    <tr><td><code>step_title</code> + <code>description</code></td><td>e.g. &ldquo;Weigh the evidence&rdquo; + its gloss</td><td>each step&rsquo;s sub-heading + its paragraph</td></tr>
+    <tr><td><strong style="color:var(--related)">skos:related</strong></td><td>symmetric links between concepts (and out)</td><td>a &ldquo;see also&rdquo; strip &mdash; cross-nav, not containment</td></tr>
+  </table>
+
+  <h2>The three top concepts &rarr; a three-part page spine</h2>
+  <p class="lede">The top level isn&rsquo;t arbitrary: the three families read as Thinking &rarr; Doing &rarr; Applying,
+  so the scheme hands you a ready-made three-section spine for the course.</p>
+  <table>
+    <tr><th>Top concept</th><th>Stance</th><th>Narrower concepts (count)</th><th>Becomes</th></tr>
+    <tr>
+      <td><strong style="color:var(--family)">Intellectual Depth</strong></td>
+      <td>Thinking</td>
+      <td>Critical Analysis, Argument Mapping, Problem Decomposition, Hypothesis Generation, Counter-argumentation (5)</td>
+      <td>section 1 &mdash; the reasoning lessons</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--family)">Research &amp; Retrieval</strong></td>
+      <td>Doing</td>
+      <td>Literature Reviewing, Source Evaluation, Research Design, Data Interpretation, Literature Search (5)</td>
+      <td>section 2 &mdash; the method lessons</td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--family)">Communication &amp; Reflection</strong></td>
+      <td>Applying</td>
+      <td>Academic Writing, Peer Reviewing, Oral Presentation, Synthesis, Self-Directed Learning, Ethical Reasoning, Time Management, Reflective Practice, Active Listening, Presentation Storytelling (10)</td>
+      <td>section 3 &mdash; the output &amp; reflection lessons</td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <h3>Two rules the SKOS shape enforces on the page</h3>
+    <div class="cols">
+      <div>
+        <h4>Hierarchy is the frame</h4>
+        <ul>
+          <li><code>broader</code>/<code>narrower</code> is a tree &mdash; it decides nesting and menu order</li>
+          <li>a concept sits under exactly the family it declares; no concept floats free of the scheme</li>
+          <li><code>ProcessSteps</code> are <em>ordered</em> &mdash; render them in sequence, numbered</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Related is a link, not a limb</h4>
+        <ul>
+          <li><code>related</code> is symmetric and non-transitive &mdash; never promote it to nesting</li>
+          <li>it may point outside this scheme (CRAAP/RADAR/ROBOT) &mdash; render as an external link, not a page</li>
+          <li>use it for &ldquo;see also&rdquo; / recommended-next, so the tree stays a clean hierarchy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Companion to <code>adapt-dom-map.html</code> (same nesting technique, warmer palette) and
+  <code>academic-processes.skos.jsonld</code> (the source vocabulary). The DOM map shows how the
+  <em>markup</em> nests; this shows how the <em>meaning</em> nests &mdash; and both trees, read top-down,
+  tell you how to lay out the page.</p>
+
+</div>
+</body>
+</html>

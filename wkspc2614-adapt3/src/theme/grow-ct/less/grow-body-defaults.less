@@ -1,0 +1,22 @@
+// ============================================================================
+//  grow-body-defaults.less — tie Adapt's structural body text to GROW's default
+//  body settings (font, size, colour), so page/article/block/component body
+//  copy follows the live theme tokens. Headings are handled by the typography
+//  harness; reading width is controlled by the typography rail. No markup
+//  change. (Plain comma selectors — LESS drops :is() comma-lists.)
+// ============================================================================
+#wrapper .menu__body,
+#wrapper .menu__body-inner,
+#wrapper .page__body,
+#wrapper .page__body-inner,
+#wrapper .article__body,
+#wrapper .article__body-inner,
+#wrapper .block__body,
+#wrapper .block__body-inner,
+#wrapper .component__body,
+#wrapper .component__body-inner {
+  color: var(--ink);
+  font-family: var(--font-body, var(--font-ui, system-ui, sans-serif));
+  font-size: var(--fs-base);
+  line-height: 1.55;
+}

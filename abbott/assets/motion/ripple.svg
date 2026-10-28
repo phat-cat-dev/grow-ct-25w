@@ -1,0 +1,9 @@
+<svg data-motion-asset="ripple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-ripple-title svg-motion-ripple-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-ripple-title">Letter ripple</title><desc id="svg-motion-ripple-desc">Ripple: a wave travels through each letter. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="ripple"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-letter calc(2.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-letter { 15% { transform: translateY(-9px); } 30%, 100% { transform: translateY(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="ripple"] .art,svg[data-motion-asset="ripple"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g fill="currentColor"><g class="art" style="animation-delay:0s"><text x="104" y="76" font-size="38" font-family="monospace" font-weight="700">R</text></g><g class="art" style="animation-delay:0.12s"><text x="126" y="76" font-size="38" font-family="monospace" font-weight="700">i</text></g><g class="art" style="animation-delay:0.24s"><text x="148" y="76" font-size="38" font-family="monospace" font-weight="700">p</text></g><g class="art" style="animation-delay:0.36s"><text x="170" y="76" font-size="38" font-family="monospace" font-weight="700">p</text></g><g class="art" style="animation-delay:0.48s"><text x="192" y="76" font-size="38" font-family="monospace" font-weight="700">l</text></g><g class="art" style="animation-delay:0.6s"><text x="214" y="76" font-size="38" font-family="monospace" font-weight="700">e</text></g></g></svg>

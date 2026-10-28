@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "id": "lesson-[slug]-01",
+  "course_id": "course-[slug]",
+  "parent_id": "course-[slug]",
+  "hierarchy_level": 1,
+  "sequence": 1,
+  "title": "[Lesson title]",
+  "summary": "[The specific idea or skill this lesson develops.]",
+  "version": "0.1.0",
+  "status": "draft",
+  "owner": "[Accountable person or team]",
+  "authors": [],
+  "reviewers": [],
+  "review_due": null,
+  "language": "en-GB",
+  "tags": [],
+  "sources": [],
+  "scope": {
+    "focus": "[The particular part of the course topic taught here.]",
+    "in_scope": [],
+    "out_of_scope": []
+  },
+  "alignment": { "course_outcome_ids": ["CO1"] },
+  "prerequisites": { "knowledge": [], "required_lesson_ids": [] },
+  "learning_outcomes": [
+    { "id": "LO1", "statement": "[Observable lesson outcome.]", "course_outcome_ids": ["CO1"], "evidence": "[What the learner will do to demonstrate this.]" }
+  ],
+  "estimated_duration_minutes": null,
+  "materials_required": [],
+  "activities": [
+    { "id": "ACT1", "purpose": "[What this activity helps the learner understand or practise.]", "lesson_outcome_ids": ["LO1"] }
+  ],
+  "assessment": { "purpose": "formative", "lesson_outcome_ids": ["LO1"] },
+  "review": { "academic_status": "pending", "academic_approved_by": null, "academic_approved_on": null },
+  "frontmatter": {
+    "eyebrow": "Before you begin",
+    "body": "[Explain what you will explore, why it matters and what you will do.]",
+    "meta": { "duration": "[Estimated time]", "level": "[Learner-facing pitch]" },
+    "objectivesTitle": "By the end of this lesson, you will be able to:",
+    "objectives": ["[Learner-facing outcome.]"]
+  }
+}

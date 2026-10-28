@@ -1,0 +1,9 @@
+<svg data-motion-asset="shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shadow-title svg-motion-shadow-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shadow-title">Shadow drift</title><desc id="svg-motion-shadow-desc">Twin coloured shadows drift behind the word. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shadow"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shadow calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-breathe { 50% { transform: scale(1.04); letter-spacing: .04em; } }
+svg[data-motion-asset="shadow"] .echo{animation:echo calc(3s / var(--motion-speed,1)) ease-in-out infinite}svg[data-motion-asset="shadow"] .echo-b{animation-direction:reverse}@keyframes echo{30%{transform:translate(5px,3px)}70%{transform:translate(-5px,-3px)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shadow"] .art,svg[data-motion-asset="shadow"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="echo echo-a" fill="var(--motion-line,#b4c5d0)"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g><g class="echo echo-b" fill="var(--motion-muted,#6a8290)"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g><g fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g></svg>

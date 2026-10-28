@@ -1,0 +1,160 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Criticality
+pathwayNo: 5
+date: 4 October 2026
+time: "12:41"
+note: N-0131
+practiceNoun: criticality
+
+cards:
+  - new: i1
+    old: criticality/02
+    short: Map and question the scholarly discourse around a topic
+    knowledge: factual and conceptual
+    qf: [{id: l3/knowledge.4, extract: "awareness of different perspectives or approaches"}]
+  - new: i2
+    old: criticality/c1
+    short: Apply critical thought to the choices made when searching, reading and planning
+    knowledge: procedural
+    qf: [{id: l4/knowledge.2, extract: "Analyse, interpret and evaluate relevant information and ideas."}]
+    book:
+      - {element: John's search, quote: "John is thinking critically, first and foremost, notably when he is identifying search terms to use"}
+  - new: i3
+    statement: Treat being critical as a habit of mind in own study, noticing the critical choices already being made, not a switch turned on for assessment.
+    short: Treat being critical as a habit of mind, not a switch for assessment
+    knowledge: metacognitive, beginning
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+    book:
+      - {element: being critical as a mindset, quote: "a mindset, a way of thinking and acting that is characteristic of the approach of a successful, self-regulating student to learning"}
+    rows:
+      Verbs: treat, notice
+      Measures: as a habit of mind; not a switch
+      Keywords: being critical; mindset; habit of mind; critical choices; self-regulating student
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Critical being (Barnett) (`ing:doc:critical-being-barnett-1997`); Delphi report (Facione), the dispositions (`ing:doc:delphi-report-facione-1990`)"
+      Frameworks: "Delphi report (1990): dispositions (inquisitive, open-minded) (broader)"
+      Other authors: "Barnett (1997): critical being embraces critical thinking, critical action and critical self-reflection, wider than critical thinking confined to formal knowledge (run above). Facione (1990): the Delphi experts pair the critical thinking skills with dispositions such as inquisitiveness and open-mindedness (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory goal (\"understand criticality as a habit of mind\") and the guide's mindset passage."
+  - new: d1
+    old: criticality/01
+    short: Recognise the critical thinking skills of analysis and evaluation
+    knowledge: conceptual
+    qf: [{id: 4.10.b1, extract: "an ability to evaluate and interpret these"}]
+  - new: d2
+    old: criticality/03
+    short: Analyse and evaluate a scholarly interpretation
+    knowledge: procedural
+    qf: [{id: 4.12.b5, extract: "undertake critical analysis of information"}]
+  - new: d3
+    old: criticality/04
+    short: Read a journal article strategically by its structure and method
+    knowledge: metacognitive, strategic (choosing how to read)
+    qf: [{id: 4.15.b5, extract: "make use of scholarly reviews and primary sources"}, {id: 4.15.b3.2, extract: "describe and comment upon particular aspects of current research"}]
+    note: "placed at d3 as strategic reading, choosing what to read closely and when (the guide's \"savvy approach\"), the most metacognitive of the three Intermediate cards."
+  - new: e1
+    old: criticality/c2
+    short: Form and justify judgements on the relative importance of factors
+    knowledge: procedural, criteria for judging
+    qf: [{id: 4.12.b3, extract: "evaluate critically the appropriateness of different approaches"}]
+    book:
+      - {element: judgement, quote: "A judgement is evaluative because it assesses the relative importance of two factors"}
+  - new: e2
+    old: criticality/05
+    short: Write critically, synthesising sources in the discipline's vocabulary
+    knowledge: procedural with conceptual
+    qf: [{id: 4.15.b3.1, extract: "to devise and sustain arguments"}, {id: l6/knowledge.2, extract: "Critically analyse, interpret and evaluate complex information, concepts and ideas."}]
+  - new: e3
+    statement: Lead with own position in the discourse and write with authority, aware of how own stance shapes the argument.
+    short: Write with authority, aware of how own stance shapes the argument
+    knowledge: metacognitive, self-knowledge
+    qf: [{id: l7/knowledge.2, extract: "to produce modified conceptions"}, {id: 4.17.b4.1, extract: "to evaluate critically current research and advanced scholarship in the discipline"}]
+    book:
+      - {element: the active approach, quote: "John puts his view, the point he's trying to make, first, and then uses the interpretations carefully to develop the discussion and support that point"}
+      - {element: confidence, quote: "students who are capable of writing at this level usually write with confidence"}
+    rows:
+      Verbs: lead, write
+      Measures: with authority; aware of own stance
+      Keywords: active engagement; own position; critical edge; authority; stance; reflexivity
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Critical being (Barnett) (`ing:doc:critical-being-barnett-1997`), the level of reflexivity; Delphi report (Facione), self-regulation (`ing:doc:delphi-report-facione-1990`)"
+      Frameworks: none recorded yet
+      Other authors: "Barnett (1997): criticality rises through four levels, critical skills, reflexivity, refashioning of traditions and transformatory critique, across knowledge, the self and the world; the core places devising and sustaining arguments at the level of reflexivity (run above). Brookfield (1995): critical reflection hunts the assumptions behind one's practice by looking at it through four lenses, set out for teachers but read here for the writer's own stance (`ing:doc:critical-lenses-brookfield-1995`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced goal (\"express critical thought with authority\") and the guide's active approach; it carries the active-against-passive contrast the map puts at Intermediate."
+
+readings:
+  qaa/english-2023/4.2: theme
+  qaa/biomedical-science-and-biomedical-sciences-2023/4.5: skill
+  qaa/biosciences-2023/4.5: skill
+  qaa/english-2023/3.2: theme
+  qaa/architectural-technology-2022/4.6: skill
+  qaa/theology-and-religious-studies-2022/1.11: skill
+  qaa/anthropology-2024/1.21: skill
+  qaa/geography-2022/3.41: theme
+  qaa/music-2025/3.19: theme
+  qaa/art-and-design-2026/3.25: theme
+  qaa/architectural-technology-2022/3.17: theme
+  qaa/social-work-2026/3.3: theme
+  qaa/architectural-technology-2022/4.7: skill
+  qaa/art-and-design-2026/1.6: theme
+
+vic:
+  qaa/english-2023/4.2: {verbs: [engage], relation: "engaging with literature across periods and genres: the object of study, not the scholarly discourse about it"}
+  qaa/biomedical-science-and-biomedical-sciences-2023/4.5: {verbs: [engage, develop], relation: "engaging with the subject's literature to develop insight: mapping and questioning the discourse in a science"}
+  qaa/biosciences-2023/4.5: {verbs: [engage, develop], relation: "as in biomedical science: the discourse engaged to gain insight"}
+  qaa/english-2023/3.2: {verbs: [], relation: "discourse analysis named among approaches in linguistics: a method of the subject, not a student verb"}
+  qaa/architectural-technology-2022/4.6: {verbs: [demonstrate], relation: "analysis and evaluation named among what graduates demonstrate, relative to context: the critical skills in a design discipline"}
+  qaa/theology-and-religious-studies-2022/1.11: {verbs: [understand, analyse, critique], relation: "the desire to analyse and critique religious cultures and beliefs: criticality as the subject's stance towards its object"}
+  qaa/anthropology-2024/1.21: {verbs: [learn, pursue, critically analyse, manage, recognise, create, pay attention, negotiate, network], relation: "students learn to pursue and critically analyse evidence and manage uncertainty: analysis and evaluation in fieldwork"}
+  qaa/geography-2022/3.41: {verbs: [], relation: "article critiques in a list of assessment types"}
+  qaa/music-2025/3.19: {verbs: [], relation: "practice-as-research methodologies in a list of assessment types; no reading of articles"}
+  qaa/art-and-design-2026/3.25: {verbs: [], relation: "critical evaluation and methodologies in a list of assessment evidence"}
+  qaa/architectural-technology-2022/3.17: {verbs: [design, conduct, produce], relation: "designing and conducting a research methodology: research methods, not reading another's method"}
+  qaa/social-work-2026/3.3: {verbs: [], relation: "analysis and synthesis in a list of core skills and behaviours"}
+  qaa/architectural-technology-2022/4.7: {verbs: [demonstrate], relation: "critical awareness of context and underpinning theories as a graduate standard: criticality applied to a field's knowledge"}
+  qaa/art-and-design-2026/1.6: {verbs: [develop], relation: "analysis and synthesis named among the ways the subject develops creative thinking"}
+
+vicSummary: "What this shows: seven of the fifteen extracts are skill (adp-0212 gives architectural technology 2022, 4.6 twice). Where the extract is a skill, the subjects' verbs (engage with literature, critically analyse, critique, demonstrate analysis and evaluation) say what the cards say in the subject's frame; where it is a theme, critical words appear in lists of methods, skills and assessment types and say nothing of the learner's judgement."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says being critical, mindset, mapping the discourse, analysis, evaluation, evaluative steers, judgement, synthesis, the language of criticality, critical edge, active and passive engagement; the benchmarks say engage with literature, critically analyse evidence, critique, critical awareness, analysis and synthesis, article critiques. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** seven of the fifteen extracts are skill and eight theme. Criticality's words (critical, analysis, evaluation) are so common in the benchmarks that the term list holds them as provisional (the core's A10)."
+  - "**Book coverage:** Chapter 8 carries all nine cards: the mindset (i3), John's search (i2), mapping the discourse (i1), the critical skills (d1), Higgins and analysis (d2), the savvy reading of an article (d3), judgement (e1), synthesis and the language of criticality (e2) and the active approach (e3)."
+  - "**Other authors:** META holds Barnett, the Delphi report, Anderson and Krathwohl and Brookfield; Barnett's four levels give the ladder the cards climb."
+
+qfIntro: "Both frameworks name critical analysis and evaluation at every level from L3; what rises is the object and the outcome."
+qf:
+  - {id: l3/knowledge.4, verbs: "have awareness", relation: "knowing that a topic has different perspectives: mapping the discourse", tier: before Introductory}
+  - {id: l4/knowledge.2, verbs: "analyse, interpret, evaluate", relation: "analysing and evaluating information and ideas: the critical skills named", tier: Introductory}
+  - {id: 4.10.b1, verbs: "evaluate, interpret", relation: "evaluating and interpreting the concepts of one's area", tier: Introductory}
+  - {id: 4.10.b2, verbs: "present, evaluate, interpret, develop, make", relation: "developing lines of argument and making sound judgements from evaluated data", tier: Introductory}
+  - {id: 4.12.b3, verbs: "evaluate critically", relation: "judging the appropriateness of different approaches: evaluation as relative value", tier: Intermediate}
+  - {id: 4.12.b5, verbs: "use, initiate, undertake, propose", relation: "undertaking critical analysis of information", tier: Intermediate}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "using refereed research articles and primary sources: reading the journal article", tier: Advanced}
+  - {id: 4.15.b7, verbs: "critically evaluate, make, frame", relation: "critically evaluating arguments and assumptions to make judgements", tier: Advanced}
+  - {id: 4.15.b3.1, verbs: "devise, sustain, solve", relation: "devising and sustaining arguments: synthesis in service of one's own argument", tier: Advanced}
+  - {id: l6/knowledge.2, verbs: "critically analyse, interpret, evaluate", relation: "the critical skills on complex material", tier: Advanced}
+  - {id: l7/knowledge.2, verbs: "critically analyse, interpret, evaluate, produce", relation: "producing modified conceptions: criticality that changes the knower's and the field's understanding", tier: beyond Advanced}
+  - {id: 4.17.b4.1, verbs: "evaluate critically", relation: "evaluating current research and advanced scholarship", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the parts of a discourse: its scope, key works, influential authors, themes and contentious areas.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains being critical as a mindset that starts at the research stage, and how it links to the marking criteria.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Questions the choices made when searching and reading for one topic.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work"}
+  - {tier: Introductory, statement: "Notices the critical choices in their own study.", type: metacognitive (beginning), process: understand, change: "awareness of one's own thinking appears, prompted"}
+  - {tier: Intermediate, statement: "Tells analysis from description, and evaluation from analysis, and recognises evaluative steers (\"To what extent\", \"How far\", \"Assess\").", type: conceptual, process: analyse, change: "the concepts of the critical skills enter"}
+  - {tier: Intermediate, statement: "Analyses and evaluates an interpretation, and reads a journal article by its structure.", type: procedural, process: apply, analyse, change: "the skills used on real sources"}
+  - {tier: Intermediate, statement: "Chooses how to read an article for the task, and engages actively rather than passively with the discourse.", type: metacognitive (strategic), process: evaluate, change: "knowledge of one's own reading strategy, used to change it"}
+  - {tier: Advanced, statement: "Forms judgements on relative importance, with reasons (\"X is more important than Y because\").", type: procedural (criteria for judging), process: evaluate, change: "the criteria for judging become the learner's"}
+  - {tier: Advanced, statement: "Synthesises interpretations in service of their own argument, in the language of criticality and the discipline's vocabulary.", type: procedural with conceptual, process: create}
+  - {tier: Advanced, statement: "Writes with a critical edge and authority, aware of their own stance in the discourse.", type: metacognitive (self-knowledge), process: evaluate, create, change: "functioning knowledge: criticality owned as a way of thinking"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative, what a discourse is and what being critical means, with one procedure (questioning one's own choices) and a first noticing of one's own critical thinking; Intermediate is mostly procedural, analysis and evaluation used on real sources, with strategic knowledge of how to read beginning; Advanced is mostly metacognitive and creative, the learner judging, synthesising and writing from a position they know to be theirs. In Biggs's terms the movement is from knowing about criticality to using it; in Barnett's, from critical skills towards reflexivity; in Marzano and Kendall's, from the cognitive system to metacognition and the self-system. Mastery is criticality as the guide frames it, a mindset rather than a set of skills, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map places active against passive engagement at Intermediate; here the active approach (leading with one's own point) is part of e3 at Advanced, and d3 carries only the strategic reading. Otherwise the two agree: the mindset, the research stage and mapping the discourse at Introductory; analysis, evaluation, evaluative steers and the journal article at Intermediate; judgement, synthesis, the language of criticality and the critical edge at Advanced."
+
+qfAdd: "the frameworks name critical analysis and evaluation at every level; what rises is the object (information and ideas at L4, approaches at L5, arguments and abstract concepts at L6, current research at L7) and the outcome (judgements, then modified conceptions at L7). Neither names criticality as a mindset (i3) or the writer's own stance (e3)."
+
+review:
+  - "i3 and e3 are new and proposed (D-ing-0060); e3 also takes the active-against-passive contrast from the map's Intermediate tier."
+  - "d3 (the journal article) is placed at the top of Intermediate as strategic reading; if the model's author reads it as procedural, d2 and d3 swap."
+  - "adp-0212 gives architectural technology 2022, 4.6 twice, with two extracts of one passage."

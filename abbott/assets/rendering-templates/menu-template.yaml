@@ -1,0 +1,53 @@
+# menu-template.yaml — GROW's own icon-based course menu (data).
+#
+# Matched set in this folder, all describing the SAME menu:
+#   menu-template.yaml  the data (authoring input)
+#   menu-template.jsx   React component over that data (+ our own ProgressMeter)
+#   menu-template.html  one rendered result (generated from the JSX)
+#
+# This is OUR menu, not adapt-contrib-boxMenu. Each item is a lesson/page with an
+# icon, title, optional subtitle, a completion `state`, and a `progress` percent.
+# At runtime these bind to core completion data (adaptModel `_isComplete` /
+# `_isVisited` bubbling); here they're literal so the layout can be designed.
+# The progress ring is OUR meter (menu-template.jsx -> ProgressMeter), sized by
+# us via --meter-size — independent of Adapt's pageLevelProgress markup.
+
+menu:
+  title: Understanding learning, assessment & feedback
+  classes: [menu, grow-menu, grow-menu--icons]
+  meterSize: 44            # px — WE control the meter size, not Adapt
+  items:
+    - id: co-01
+      icon: icon-learning
+      title: Learning at university
+      subtitle: Lesson 1
+      state: complete        # complete | in-progress | not-started | locked
+      progress: 100
+
+    - id: co-02
+      icon: icon-structure
+      title: How university learning is structured
+      subtitle: Lesson 2
+      state: in-progress
+      progress: 40
+
+    - id: co-03
+      icon: icon-assessment
+      title: Assessment at university
+      subtitle: Lesson 3
+      state: not-started
+      progress: 0
+
+    - id: co-04
+      icon: icon-feedback
+      title: Feedback at university
+      subtitle: Lesson 4
+      state: locked
+      progress: 0
+
+    - id: co-05
+      icon: icon-cycle
+      title: The learning, assessment & feedback cycle
+      subtitle: Lesson 5
+      state: locked
+      progress: 0

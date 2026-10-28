@@ -1,0 +1,135 @@
+{
+  "kbVersion": "0.1.0",
+  "gates": [
+    {
+      "id": "crs-01_course-facets",
+      "name": "Context facet set",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "propagationScope": "universal",
+      "dependsOn": [
+        { "gate": "crs-03_vocabulary", "dependencyClass": "substantive" }
+      ]
+    },
+    {
+      "id": "crs-03_vocabulary",
+      "name": "Vocabulary & naming",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none"
+    },
+    {
+      "id": "crs-02_thematic-scope",
+      "name": "Curriculum scope",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none"
+    },
+    {
+      "id": "gates/A3",
+      "name": "Lesson breakdown",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none"
+    },
+    {
+      "id": "les-02_visual-overview",
+      "name": "Visual overview",
+      "phase": "A",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "les-03_context-coupling-plan",
+      "name": "Context-coupling plan",
+      "phase": "A",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "act-02_confidence-activities",
+      "name": "Confidence item set",
+      "phase": "A",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands"
+    },
+    {
+      "id": "gates/A7",
+      "name": "Resources drawer",
+      "phase": "A",
+      "hardness": "advisory",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "gates/B1",
+      "name": "Learning outcomes",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "gates/B2",
+      "name": "Knowledge structure",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands"
+    },
+    {
+      "id": "gates/B3",
+      "name": "Worked-example design",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands"
+    },
+    {
+      "id": "gates/B4",
+      "name": "Check design",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands"
+    },
+    {
+      "id": "gates/B5",
+      "name": "Reflective prompt",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "gates/B6",
+      "name": "Trickle & pacing",
+      "phase": "B",
+      "hardness": "advisory",
+      "defaultType": "none"
+    },
+    {
+      "id": "gates/B7",
+      "name": "Visual assets",
+      "phase": "B",
+      "hardness": "advisory",
+      "defaultType": "none"
+    },
+    {
+      "id": "act-04_summative-activities",
+      "name": "Summative design",
+      "phase": "S",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "gates/W1",
+      "name": "Wrapper content",
+      "phase": "W",
+      "hardness": "soft",
+      "defaultType": "fixed-value"
+    },
+    {
+      "id": "gates/D1",
+      "name": "Context generation",
+      "phase": "D",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands"
+    }
+  ]
+}

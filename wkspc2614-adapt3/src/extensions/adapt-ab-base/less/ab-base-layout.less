@@ -1,0 +1,39 @@
+// adapt-ab-base — .ab.grid layout object (column layouts)
+//
+// A token-based responsive grid, the AB re-expression of the CM Bootstrap
+// 5-9 column navcard layouts (.col-*-15 .. .col-*-19). Those depend on
+// --bs-gutter-x and a .row/.col flexbox grid that this build does not load, so
+// they are replaced here by a single container-level CSS-Grid object: put
+// .ab.grid.cols-N on a wrapper and its children lay out in N columns, with a
+// mobile-first responsive collapse. Gap comes from the --ab-space-* tokens.
+//
+// Breakpoints (rem): 36 ~ 576px, 48 ~ 768px, 62 ~ 992px.
+
+.ab-grid-cols(@sm, @md, @lg) {
+  @media (min-width: 36rem) { grid-template-columns: repeat(@sm, minmax(0, 1fr)); }
+  @media (min-width: 48rem) { grid-template-columns: repeat(@md, minmax(0, 1fr)); }
+  @media (min-width: 62rem) { grid-template-columns: repeat(@lg, minmax(0, 1fr)); }
+}
+
+.ab.grid {
+  display: grid;
+  gap: var(--ab-space-100, 1rem);
+  grid-template-columns: minmax(0, 1fr); // single column on the smallest screens
+}
+
+// explicit column counts (mobile 1 -> sm -> md -> lg N)
+.ab.grid.cols-2 { .ab-grid-cols(2, 2, 2); }
+.ab.grid.cols-3 { .ab-grid-cols(2, 3, 3); }
+.ab.grid.cols-4 { .ab-grid-cols(2, 4, 4); }
+.ab.grid.cols-5 { .ab-grid-cols(2, 3, 5); }
+.ab.grid.cols-6 { .ab-grid-cols(2, 3, 6); }
+.ab.grid.cols-7 { .ab-grid-cols(2, 4, 7); }
+.ab.grid.cols-8 { .ab-grid-cols(2, 4, 8); }
+.ab.grid.cols-9 { .ab-grid-cols(3, 3, 9); }
+
+// auto-fit: let the grid decide the column count from a minimum item width
+.ab.grid.auto { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
+
+// tighter / looser gaps
+.ab.grid.gap-sm { gap: var(--ab-space-050, 0.5rem); }
+.ab.grid.gap-lg { gap: var(--ab-space-200, 2rem); }

@@ -1,0 +1,42 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 2: the renderer adapter  (--ab-base-if-adapt-*)
+ * ---------------------------------------------------------------------------
+ * The interface seam. A renderer's own component CSS (buttons, menus, form
+ * states, validation chrome) references these role tokens — never the L3 pivot
+ * directly — so porting the theme to a different renderer means rewriting ONLY
+ * this one file: repoint each role at whichever pivot that renderer's roles map
+ * to, and every component follows.
+ *
+ * The names mirror the adapt-contrib-vanilla role model (item-color and its
+ * states, the greyDark / greyLight chrome neutrals, font-color, disabled,
+ * hairline, validation). Each role is aliased to the generic L3 pivot it stands
+ * for, so this layer is self-contained: it needs nothing above L3.
+ *
+ * Note on greyDark: vanilla's dark chrome neutral (drawer, notify, tutor) is
+ * painted in the ACCENT here, matching the shipped render — the theme has no
+ * separate dark-neutral-chrome pivot, and the accent is what the live build
+ * uses for this surface. disabled maps to the hairline (the lightest neutral
+ * line); a renderer wanting a distinct disabled fill repoints it here.
+ *
+ * This file carries the role MAP only. The renderer-specific selector sweep
+ * that paints vanilla's component classes with these tokens is NOT part of a
+ * portable package — it lives in the host extension, keyed to that renderer's
+ * class names.
+ * =========================================================================== */
+:root {
+  --ab-base-if-adapt-item-color:          var(--ab-base-accent);
+  --ab-base-if-adapt-item-color-hover:    var(--ab-base-accent-hover);
+  --ab-base-if-adapt-item-color-visited:  var(--ab-base-accent-active);
+  --ab-base-if-adapt-item-color-selected: var(--ab-base-accent-deep);
+  --ab-base-if-adapt-item-color-inverted: var(--ab-base-on-accent);
+  --ab-base-if-adapt-font-color:          var(--ab-base-ink);
+  --ab-base-if-adapt-font-color-strong:   var(--ab-base-ink);
+  --ab-base-if-adapt-font-color-muted:    var(--ab-base-ink-muted);
+  --ab-base-if-adapt-greyDark:            var(--ab-base-accent);
+  --ab-base-if-adapt-greyDark-hover:      var(--ab-base-accent-hover);
+  --ab-base-if-adapt-greyLight:           var(--ab-base-surface-sunken);
+  --ab-base-if-adapt-disabled:            var(--ab-base-hairline);
+  --ab-base-if-adapt-hairline:            var(--ab-base-hairline);
+  --ab-base-if-adapt-validation-success:  var(--ab-base-success);
+  --ab-base-if-adapt-validation-error:    var(--ab-base-danger);
+}

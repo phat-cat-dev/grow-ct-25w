@@ -1,0 +1,162 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Work-Based and Experiential Learning
+pathwayNo: 11
+date: 4 October 2026
+time: "12:50"
+note: N-0139
+practiceNoun: work-based and experiential learning
+
+cards:
+  - new: i1
+    old: work-based-experiential-learning/01
+    short: Distinguish the types of practice- and work-based learning
+    knowledge: factual and conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+  - new: i2
+    statement: Explain what practice- and work-based learning offers, as authentic learning in which classroom theory is applied to practice.
+    short: Explain what learning in practice offers
+    knowledge: conceptual
+    qf: [{id: l4/knowledge.1, extract: "Use practical, theoretical or technical understanding"}]
+    book:
+      - {element: authentic learning, quote: "it offers authentic, real-world learning experiences which open you up to the workplace environment"}
+      - {element: theory applied, quote: "it involves the application of theory or knowledge learnt in classroom settings to the way you do something"}
+    rows:
+      Verbs: explain
+      Measures: authentic; real-world
+      Keywords: practice-based learning; work-based learning; authentic learning; real-world; application of theory
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Situated learning (Lave and Wenger) (`ing:doc:situated-learning-lave-wenger-1991`)"
+      Frameworks: none recorded yet
+      Other authors: "Lave and Wenger (1991): learning as taking part in the practice of a community, moving from the edge towards full membership (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"its value to personal development\" and goal (\"understand the mode of learning and its value\")."
+  - new: i3
+    statement: Set own learning goals for a practice experience, naming the competencies it can develop.
+    short: Set own learning goals for a practice experience
+    knowledge: metacognitive, beginning
+    qf: [{id: l5/autonomy.1, extract: "Take responsibility for planning and developing courses of action"}]
+    book:
+      - {element: developing literacies in practice, quote: "to develop individual literacies, such as communication and critical thought"}
+    rows:
+      Verbs: set, name
+      Measures: own
+      Keywords: learning goals; competencies; personal development; placement; practice experience
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Experiential learning (Kolb) (`ing:doc:experiential-learning-kolb-1984`)"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the guide's account of what practice-based learning develops; the tier map's Introductory tier names its value to personal development."
+  - new: d1
+    old: work-based-experiential-learning/c1
+    short: Conduct oneself as a professional in a practice setting
+    knowledge: procedural
+    qf: [{id: l4/autonomy.1, extract: "Take responsibility for courses of action"}]
+    book:
+      - {element: approaching it as a professional, quote: "Adopt the conduct of someone who is already qualified in that profession."}
+  - new: d2
+    old: work-based-experiential-learning/02
+    short: Make effective use of a mentor on placement
+    knowledge: procedural (learning from others)
+    qf: [{id: l5/application.3, extract: "Use relevant research or development to inform actions."}]
+  - new: d3
+    old: work-based-experiential-learning/c2
+    short: Test theory in practice and reflect on the result
+    knowledge: metacognitive, strategic
+    qf: [{id: l6/application.4, extract: "Evaluate actions, methods and results and their implications."}]
+    book:
+      - {element: testing theory, quote: "Test theoretical knowledge by putting it into practice."}
+  - new: e1
+    old: work-based-experiential-learning/03
+    short: Apply an experiential learning cycle (Kolb) to work-based learning
+    knowledge: procedural (a model)
+    qf: [{id: l5/application.4, extract: "Evaluate actions, methods and results."}]
+  - new: e2
+    old: work-based-experiential-learning/04
+    short: Exercise and justify professional judgement in a work setting
+    knowledge: procedural, criteria for judging
+    qf: [{id: 4.15.b9.2, extract: "decision-making in complex and unpredictable contexts"}]
+  - new: e3
+    statement: Reflect on own practice and developing identity as a practitioner, as a member of the community of practice one has joined.
+    short: Reflect on own developing identity as a practitioner
+    knowledge: metacognitive, self-knowledge
+    qf: [{id: 4.17.b8.2, extract: "decision-making in complex and unpredictable situations"}, {id: l7/autonomy.2, extract: "Exercise broad autonomy and judgement across a significant area of work or study."}]
+    book:
+      - {element: reflection in assessment, quote: "It's by reflecting on these experiences that you gain insights into your own performance and the workplace environment in which you're working."}
+      - {element: a reflective mindset, quote: "Adopt a reflective mindset when taking part in practice- and work-based learning."}
+    rows:
+      Verbs: reflect
+      Measures: own; developing
+      Keywords: reflective practice; practitioner identity; community of practice; professional development; assessment of practice
+      Benchmark evidence: not searched (new card). Early childhood studies 2022, 3.15 under e1 (reflection on practice) is the nearest.
+      Pedagogy: "Situated learning (Lave and Wenger) (`ing:doc:situated-learning-lave-wenger-1991`); The reflective practitioner (Schön) (`ing:doc:reflective-practitioner-schon-1983`)"
+      Frameworks: none recorded yet
+      Other authors: "Lave and Wenger (1991): newcomers change who they are as they move towards full participation (run above). Schön (1983): practitioners reflect in action when practice surprises them (`ing:doc:reflective-practitioner-schon-1983`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced \"reflective assessment of practice\" and goal (\"learn from experience to a professional standard\"); it leans on Reflective Practice's e2 and e3, as the map's cross-link says."
+
+readings:
+  qaa/health-studies-2024/2.30: theme
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/1.16: theme
+  qaa/geography-2022/2.3: theme
+  qaa/art-and-design-2026/1.38: theme
+  qaa/criminology-2022/2.30: theme
+  qaa/early-childhood-studies-2022/4.4: skill
+  qaa/accounting-2025/3.21: theme
+  qaa/early-childhood-studies-2022/3.15: theme
+  qaa/economics-2023/3.7: theme
+  qaa/finance-2025/1.38: theme
+  qaa/accounting-2025/3.10: skill
+  qaa/engineering-2023/1.22: skill
+
+vic:
+  qaa/health-studies-2024/2.30: {verbs: [include], relation: "placements in the remit of an advisory body: a word match"}
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/1.16: {verbs: [], relation: "work placements in vocational settings (museums, archives) as part of a classics degree: a type of work-based learning named"}
+  qaa/geography-2022/2.3: {verbs: [include], relation: "field work and laboratory work in a list of learning settings"}
+  qaa/art-and-design-2026/1.38: {verbs: [offer, reflect], relation: "mentorship schemes, micro-internships and placements as professional engagement in creative careers"}
+  qaa/criminology-2022/2.30: {verbs: [take], relation: "placements and dissertation mentoring among forms of engagement"}
+  qaa/early-childhood-studies-2022/4.4: {verbs: [demonstrate, lead, mentor, facilitate, work], relation: "the graduate as mentor and leader of others: the mentoring relationship seen from the other side"}
+  qaa/accounting-2025/3.21: {verbs: [], relation: "authentic and experiential learning among teaching methods"}
+  qaa/early-childhood-studies-2022/3.15: {verbs: [], relation: "reflection on practice and direct observation among assessment methods"}
+  qaa/economics-2023/3.7: {verbs: [], relation: "experiential learning among teaching methods"}
+  qaa/finance-2025/1.38: {verbs: [], relation: "professional judgement among graduate skills"}
+  qaa/accounting-2025/3.10: {verbs: [discern, make], relation: "discerning risks and making informed professional judgements: e2 in the profession's words"}
+  qaa/engineering-2023/1.22: {verbs: [exercise], relation: "exercising professional judgement on health and safety: e2 as an ethical duty in engineering"}
+
+vicSummary: "What this shows: three of the twelve extracts are skill (early childhood studies on mentoring others; accounting and engineering on professional judgement). The rest list placements, field work and experiential learning as settings or methods. The benchmarks name the modes of this practice often and describe the learner's part in them rarely, except at the professional end."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says practice- and work-based learning, placement, internship, simulation, mentor, experiential learning cycle, experiencing, reflecting, thinking, acting, professional judgement; the benchmarks say work placements, field work, mentorship schemes, experiential learning, reflection on practice, professional judgement. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** three of the twelve extracts are skill, all about judgement or mentoring at the professional end."
+  - "**Book coverage:** Chapter 12 carries all nine cards: the types, the benefits, the five tips (immerse, approach as a professional, exploit the mentor, test theory, adopt a reflective mindset), Kolb's cycle and John on placement."
+  - "**Other authors:** META holds Lave and Wenger, Kolb and Schön; this pathway is where Lave and Wenger's movement from the edge of a community to its centre is most literal."
+
+qfIntro: "Both frameworks speak of applying understanding and taking responsibility in work, rising from limited parameters to decision-making in complex and unpredictable contexts (FHEQ L6, L7)."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing the nature of the area of work", tier: before Introductory}
+  - {id: l4/knowledge.1, verbs: "use, address", relation: "using practical and theoretical understanding: theory applied in practice", tier: Introductory}
+  - {id: l4/autonomy.1, verbs: "take responsibility", relation: "responsibility for one's courses of action: professional conduct", tier: Introductory}
+  - {id: l5/autonomy.1, verbs: "take responsibility, plan, develop", relation: "planning one's own development: learning goals for placement", tier: Intermediate}
+  - {id: l5/application.4, verbs: "evaluate", relation: "evaluating actions and results: the experiential cycle", tier: Intermediate}
+  - {id: l6/application.4, verbs: "evaluate", relation: "evaluating actions and their implications: testing theory in practice", tier: Advanced}
+  - {id: 4.15.b9.2, verbs: "(none: a noun phrase)", relation: "decision-making in complex and unpredictable contexts: professional judgement", tier: Advanced}
+  - {id: 4.17.b8.2, verbs: "(none: a noun phrase)", relation: "decision-making in complex and unpredictable situations, at master's level", tier: beyond Advanced}
+  - {id: l7/autonomy.2, verbs: "exercise", relation: "broad autonomy across a significant area of work: the practitioner's own practice", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the types of practice- and work-based learning: placements, laboratories, studios, fieldwork, simulation, internships, apprenticeships.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains what learning in practice offers and how it applies classroom theory.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Sets out what they want to learn from a placement.", type: metacognitive (beginning), process: apply, change: "one's own learning goals appear"}
+  - {tier: Intermediate, statement: "Conducts themselves as a professional and immerses themselves in the setting.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Uses a mentor's guidance to shape their approach.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Tests theory in practice and reflects on what happened.", type: metacognitive (strategic), process: evaluate, change: "theory and practice checked against each other"}
+  - {tier: Advanced, statement: "Structures reflection on practice by Kolb's cycle.", type: procedural (a model), process: apply, analyse}
+  - {tier: Advanced, statement: "Makes and justifies professional judgements in an uncertain setting.", type: procedural (criteria for judging), process: evaluate}
+  - {tier: Advanced, statement: "Reflects on their own practice and on who they are becoming as a practitioner.", type: metacognitive (self-knowledge), process: evaluate, create, change: "functioning knowledge: the practitioner's identity"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is declarative, the kinds and value of learning in practice, with one's own goals set; Intermediate is procedural, conduct and the mentor, with theory tested against practice; Advanced is procedural at its highest, a model and a judgement, and metacognitive in the practitioner's reflection on their own practice and identity. In Lave and Wenger's terms the learner moves from legitimate peripheral participation towards full membership, and changes who they are as they do. Mastery is learning from experience to a professional standard, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the two agree: the types and value at Introductory; conduct, the mentor and testing theory at Intermediate; Kolb, reflective assessment and professional judgement at Advanced."
+
+qfAdd: "the frameworks describe this practice better than most: applying understanding (L4), taking responsibility (L4, L5) and decision-making in complex and unpredictable contexts (L6, L7). None names identity; e3's practitioner identity sits beyond what the descriptors say."
+
+review:
+  - "i2, i3 and e3 are new and proposed (D-ing-0060)."
+  - "e3 overlaps Reflective Practice's e2 and e3; the tier map's cross-link makes Reflective Practice this pathway's method, to be handled by cross-reference."

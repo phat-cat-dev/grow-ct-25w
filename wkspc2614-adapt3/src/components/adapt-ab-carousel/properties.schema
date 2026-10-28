@@ -1,0 +1,114 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Carousel. Use the previous and next controls to move between slides.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+    "_shouldAutoScroll": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Auto-scroll",
+      "inputType": "Checkbox",
+      "help": "Auto-advance slides. Off by default for accessibility and reliable completion. If enabled, provide a visible pause affordance."
+    },
+    "_canCycle": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Cycle",
+      "inputType": "Checkbox",
+      "help": "Wrap from the last slide back to the first (and vice versa)."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Slides",
+      "help": "Each slide may have an image, a title and a caption.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Item ID",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Stable identifier for this slide. Useful for analytics."
+          },
+          "title": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Slide title",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "caption": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Slide caption",
+            "inputType": "TextArea",
+            "validators": [],
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Slide image",
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Source",
+                "inputType": "Asset:image",
+                "validators": []
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Alt text",
+                "inputType": "Text",
+                "validators": [],
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

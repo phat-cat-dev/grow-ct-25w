@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "id": "study-self-management",
+  "title": "The two weeks before the deadline",
+  "intro": "For students managing a substantial assignment alongside other commitments. Practise planning, protecting study time, handling procrastination and asking for help. Three decisions, delayed consequences and space to reflect. This is demonstration content for discussion, not personalised academic advice.",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "Two weeks, one essay",
+      "body": "A 2,000-word essay is due in two weeks. You also have reading for two other modules, a few part-time shifts, and a weekend you had hoped to keep free. Nothing is urgent yet, which is exactly why it is easy to leave.",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "Where do you start?",
+      "body": "You open the assignment brief for the first time. It is one paragraph long and feels bigger than it reads.",
+      "prompt": "Before you choose: what usually happens when you face a task this size?",
+      "choices": [
+        {
+          "label": "Break it into smaller steps with rough dates",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "Wait until you feel more motivated to begin",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "The task gets smaller",
+      "body": "You list the parts: understand the question, gather a few sources, draft, revise. The reading is clearly the largest piece, so you book one honest hour for it tomorrow. The essay has not shrunk, but your next move has.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "A few days pass",
+      "body": "Motivation does not arrive on schedule. Three days later the essay feels larger, not smaller, and the easy early days are gone. Starting is now more expensive than it would have been.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "Pause and reflect / 1",
+      "body": "Notice what your decision made possible and what it left unresolved. Starting is a skill, not a mood.",
+      "prompt": "What made it easier or harder to begin?",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "A demand on your time",
+      "body": "A friend asks you to cover their shift on the evening you had set aside to write. They would owe you one, and you could use the money.",
+      "choices": [
+        {
+          "label": "Protect the writing block and offer another night",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "Take the shift and plan to catch up later",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "The draft exists",
+      "body": "You keep the block and write badly for an hour, which is what first drafts are for. It is rough, but there is now something to improve instead of a blank page. You still help your friend, two nights later.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "The plan quietly slips",
+      "body": "The shift goes fine and the money is welcome. But 'later' now competes with new reading and a social plan you had forgotten. The writing block did not move to another day; it simply disappeared.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "Pause and reflect / 2",
+      "body": "Every yes to one thing is a quiet no to another. A plan only protects your time if you defend one small part of it.",
+      "prompt": "Which commitment was easiest to drop, and why?",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "You get stuck",
+      "body": "The middle section will not come together. You have reread the same two sources several times and the argument still feels thin. There are four days left.",
+      "choices": [
+        {
+          "label": "Bring one specific question to a tutor or study drop-in",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "Keep rereading alone until it finally clicks",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "A specific question gets a specific answer",
+      "body": "You ask: 'How do I connect these two sources without just summarising them?' The answer is quick and useful, because the question was precise. You leave knowing where to focus the remaining days.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "The problem stays the same size",
+      "body": "Two more evenings pass with the same sources and the same stuck feeling. The deadline pressure has grown, but the argument has not. Asking for help is now harder, because less time remains to act on it.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "Pause and reflect / 3",
+      "body": "Asking for help early is a planning decision, not an admission of failure. A vague request gets a vague answer; a precise one saves days.",
+      "prompt": "What stops you asking for help sooner than you do?",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "Your route to the deadline",
+      "body": "Look back at the three decisions you made: how you started, how you protected your time, and when you reached for help. Each one changed how much pressure the final days carried. None of them required more hours in the week, only earlier and clearer choices within it.",
+      "prompt": "What is one thing you will do differently before your next deadline?"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+.textured.ab-sticky {
+  --texture-sticky: #fff3a8;
+  --texture-sticky-ink: #3a361f;
+  background: var(--texture-sticky);
+  color: var(--texture-sticky-ink);
+  padding: var(--texture-gap);
+  box-shadow: 0 6px 14px -6px #0005;
+  border-radius: 2px;
+  overflow-wrap: anywhere;
+}
+.textured.ab-sticky.pink { --texture-sticky: #ffc7d9; --texture-sticky-ink: #3f2430; }
+.textured.ab-sticky.blue { --texture-sticky: #bfe0ff; --texture-sticky-ink: #1f3346; }
+.textured.ab-sticky.brand { --texture-sticky: color-mix(in srgb, var(--texture-accent) 22%, #fff); --texture-sticky-ink: #202a32; }

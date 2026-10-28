@@ -1,0 +1,230 @@
+/**
+ * Annotated Exemplar Component Styles
+ *
+ * Design refs: AE-A (accessibility), AB-5 (Less)
+ */
+
+// Variables
+// --ab-base-accent (not the old @item-color teal) so this follows the active
+// pack/scheme. darken()/fade() can't take a var() string, so the hover tone
+// and the two fades below use color-mix() directly at their call sites
+// instead of a LESS variable (10 Oct 2026, ab-theme colour migration).
+@annotated-marker-color: var(--ab-base-accent);
+@annotated-note-bg: var(--ab-base-surface, #fff); // was @item-color-inverted (dead vanilla var); surface = light note panel, follows pack/mode
+@annotated-note-border: @annotated-marker-color;
+@annotated-transition-duration: 0.2s;
+
+.annotated {
+
+  // Component inner
+  &__inner {
+    // Standard component layout
+  }
+
+  // Widget container
+  &__widget {
+    padding: @item-padding;
+  }
+
+  // Passage container
+  &__passage {
+    font-size: var(--ab-body-font-size, 1rem); // was @body-size (dead vanilla var); fluid body token
+    line-height: 1.6;
+
+    // Segments flow inline
+    .annotated__segment {
+      // Inline display for continuous prose
+    }
+  }
+
+  // Annotated segment wrapper
+  &__segment--annotated {
+    // Underline the annotated text (never colour alone)
+    .annotated__segment-text {
+      text-decoration: underline;
+      text-decoration-color: @annotated-marker-color;
+      text-underline-offset: 2px;
+    }
+
+    &.is-expanded .annotated__segment-text {
+      background-color: color-mix(in srgb, @annotated-marker-color 15%, transparent);
+    }
+  }
+
+  // Marker button (inline, superscript numeral)
+  &__marker {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 0.25em; // Space after marker before next segment resumes
+    cursor: pointer;
+    vertical-align: super;
+    font-size: 0.75em;
+    line-height: 1;
+    color: @annotated-marker-color;
+    font-weight: bold;
+    position: relative;
+
+    // Visible focus ring (essential for inline buttons)
+    &:focus {
+      outline: 2px solid @annotated-marker-color;
+      outline-offset: 2px;
+    }
+
+    &:hover {
+      color: var(--ab-base-accent-hover);
+    }
+
+    // Visited state
+    &.is-visited {
+      .annotated__marker-number {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  // Screen-reader label (hidden visually)
+  &__marker-label {
+    .visually-hidden();
+  }
+
+  // Visual marker number
+  &__marker-number {
+    display: inline;
+
+    // Make tap target adequate on mobile
+    &::before {
+      content: '[';
+    }
+    &::after {
+      content: ']';
+    }
+  }
+
+  // Note region container
+  &__note-region {
+    margin-top: @item-margin;
+    padding: @item-padding;
+    background: @annotated-note-bg;
+    border-left: 4px solid @annotated-note-border;
+    border-radius: 4px;
+
+    // Transition for opening
+    transition: opacity @annotated-transition-duration ease-in-out;
+
+    &.u-display-none {
+      display: none;
+    }
+
+    // Focus outline when programmatically focused
+    &:focus {
+      outline: 2px solid @annotated-marker-color;
+      outline-offset: 2px;
+    }
+  }
+
+  // Note header
+  &__note-header {
+    margin-bottom: @item-margin / 2;
+  }
+
+  // Note title
+  &__note-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 0.25em 0;
+  }
+
+  // Note referent (quoted span)
+  &__note-referent {
+    font-style: italic;
+    color: var(--ab-base-ink-muted);
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  // Note body
+  &__note-body {
+    margin-top: @item-margin / 2;
+    font-size: var(--ab-body-font-size, 1rem); // was @body-size (dead vanilla var); fluid body token
+    line-height: 1.5;
+
+    // Allow basic HTML formatting
+    p {
+      margin: 0 0 0.5em 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Back-to-passage button
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    margin-top: @item-margin;
+    padding: 0.5em 1em;
+    background: transparent;
+    border: 1px solid @annotated-marker-color;
+    border-radius: 4px;
+    color: @annotated-marker-color;
+    cursor: pointer;
+    font-size: 0.9em;
+
+    &:hover {
+      background: color-mix(in srgb, @annotated-marker-color 10%, transparent);
+    }
+
+    &:focus {
+      outline: 2px solid @annotated-marker-color;
+      outline-offset: 2px;
+    }
+  }
+
+  &__back-icon {
+    font-size: 1.1em;
+  }
+
+  // Completion state
+  &.is-complete {
+    // Optional: add checkmark or styling
+  }
+
+  // Reduced motion
+  &.reduce-motion,
+  .reduce-motion & {
+    .annotated__note-region {
+      transition: none;
+    }
+  }
+
+}
+
+// Responsive: narrow viewport
+@media (max-width: @device-width-small) {
+  .annotated {
+
+    &__passage {
+      max-width: 100%;
+    }
+
+    // Ensure markers remain tappable
+    &__marker {
+      padding: 0.25em;
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: baseline;
+    }
+
+    &__marker-number {
+      font-size: 1em;
+    }
+
+  }
+}

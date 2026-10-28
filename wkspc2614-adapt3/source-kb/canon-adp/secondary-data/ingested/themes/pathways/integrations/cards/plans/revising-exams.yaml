@@ -1,0 +1,185 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Revising and Exams
+pathwayNo: 8
+date: 4 October 2026
+time: "12:52"
+note: N-0140
+practiceNoun: revising and taking exams
+
+cards:
+  - new: i1
+    statement: Explain the forms of exam (essay, multiple-choice, open-book, short-answer, technical) and what each demands, and see exams as learning tools.
+    short: Explain the forms of exam and what each demands
+    knowledge: factual and conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+    book:
+      - {element: forms of exam, quote: "an awareness of the different forms of exams used in higher education"}
+      - {element: agility across forms, quote: "it's important for you to develop the agility to meet the different expectations associated with each one"}
+    rows:
+      Verbs: explain, see
+      Measures: as learning tools
+      Keywords: exams; essay exam; multiple-choice questions; open-book; short-answer; learning tools
+      Benchmark evidence: not searched (new card). Law 2023, 3.11 under e2 names the formats.
+      Pedagogy: none recorded
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"the forms of exam ... and their differing demands\" and \"exams as learning tools\"."
+  - new: i2
+    statement: Make a simple revision plan from the time available before an exam.
+    short: Make a simple revision plan from the time available
+    knowledge: procedural, one set method
+    qf: [{id: l4/autonomy.1, extract: "Take responsibility for courses of action"}]
+    book:
+      - {element: time available, quote: "The first stage in devising the strategy is to identify how much time is available."}
+    rows:
+      Verbs: make
+      Measures: simple; from the time available
+      Keywords: revision plan; time available; revision timetable; time management
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Cepeda and others (2006), spacing, not yet ingested; W-0083"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the first of the guide's five stages; the tier map puts the full strategy at Intermediate (d2, d3)."
+  - new: i3
+    old: revising-exams/01
+    short: Manage exam anxiety and prepare in an organised way
+    knowledge: metacognitive and self-system (managing one's own state)
+    qf: [{id: l5/autonomy.2, extract: "Exercise autonomy and judgement within broad parameters."}]
+  - new: d1
+    old: revising-exams/02
+    statement: Convert passive revision into active revision, reproducing and testing knowledge rather than rereading it.
+    short: Turn passive revision into active revision
+    knowledge: conceptual and procedural
+    qf: [{id: l4/application.2, extract: "Identify, adapt and use appropriate methods and skills."}]
+    note: "moved from extended to developed and its statement widened by ing from \"Convert passive revision into active visual revision techniques\" (D-ing-0060): the tier map puts active against passive learning applied to revision at Intermediate; \"visual\" is dropped because the guide's visual, auditory and kinaesthetic framing matches techniques to learning styles, which the research does not support (the core's Part E)."
+  - new: d2
+    statement: Target revision at the gaps in own knowledge and understanding, allocating time to each area accordingly.
+    short: Target revision at the gaps in own knowledge
+    knowledge: procedural with metacognitive (knowing one's gaps)
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+    book:
+      - {element: gaps in knowledge, quote: "your ability to identify gaps in your knowledge and understanding"}
+      - {element: allocating time, quote: "you can make informed decisions about how much revision time to allocate to each exam"}
+    rows:
+      Verbs: target, allocate
+      Measures: accordingly
+      Keywords: targeted revision; gaps in knowledge; allocating time; revision strategy
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Self-regulated learning and goal orientation (Pintrich) (`ing:doc:self-regulated-learning-goal-orientation-pintrich-2000`)"
+      Frameworks: none recorded yet
+      Other authors: "Pintrich (2000): self-regulation runs through forethought, monitoring, control and reflection (run below)."
+    note: "new, proposed by ing (D-ing-0060), from stages two and three of the guide's five-stage strategy, which the tier map puts at Intermediate."
+  - new: d3
+    statement: Monitor whether own revision is working, by self-testing, and change the technique or the time given when it is not, keeping cognitive resilience.
+    short: Monitor own revision and change it when it is not working
+    knowledge: metacognitive, strategic
+    qf: [{id: l6/application.4, extract: "Evaluate actions, methods and results and their implications."}, {id: 4.15.b5, extract: "the ability to manage their own learning"}]
+    book:
+      - {element: monitoring, quote: "It's important that you constantly monitor the effectiveness of your revision strategy."}
+    rows:
+      Verbs: monitor, change, keep
+      Measures: by self-testing
+      Keywords: monitoring; self-testing; revision strategy; cognitive resilience
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Self-regulated learning and goal orientation (Pintrich) (`ing:doc:self-regulated-learning-goal-orientation-pintrich-2000`); Dunlosky and others (2013), not yet ingested; W-0081"
+      Frameworks: none recorded yet
+      Other authors: "Pintrich (2000): monitoring and control are the middle phases of self-regulation (run below)."
+    note: "new, proposed by ing (D-ing-0060), from the fifth of the guide's stages and the tier map's \"cognitive resilience\"."
+  - new: e1
+    old: revising-exams/03
+    short: Use kinaesthetic and role-play techniques to deepen engagement
+    knowledge: procedural
+    qf: [{id: l5/application.2, extract: "Determine, adapt and use appropriate methods and skills."}]
+    note: "the guide calls these kinaesthetic techniques; the card keeps the techniques (role play, models, movement), not the learning style (the core's Part E)."
+  - new: e2
+    old: revising-exams/04
+    statement: Apply an exam strategy across question formats and on the day, reading the instructions and allocating and writing to time.
+    short: Apply an exam strategy across formats and on the day
+    knowledge: procedural, conditional (by format)
+    qf: [{id: 4.15.b9.2, extract: "decision-making in complex and unpredictable contexts"}]
+    book:
+      - {element: exam-day strategy, quote: "Allocate enough time for each part of the exam paper; include time for basic planning and consideration of each question."}
+    note: "statement narrowed by ing from \"Apply time-managed, targeted revision and exam strategy across question formats\", whose targeted revision now sits in d2 (D-ing-0060)."
+  - new: e3
+    statement: Choose revision techniques to suit the content and the exam, judging them by how well one can recall and use the knowledge, not by preference.
+    short: Choose techniques by what works, judged by own recall
+    knowledge: metacognitive, self-knowledge with conditional
+    qf: [{id: 4.17.b7, extract: "continue to advance their knowledge and understanding"}, {id: l7/application.4, extract: "Critically evaluate actions, methods and results"}]
+    book:
+      - {element: testing oneself, quote: "the creativity she uses in designing different ways of testing herself"}
+    rows:
+      Verbs: choose, judge
+      Measures: by how well one can recall and use the knowledge
+      Keywords: revision techniques; retrieval practice; self-testing; exam type; evidence
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Dunlosky and others (2013), not yet ingested; W-0081; Cepeda and others (2006), not yet ingested; W-0083"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced \"matching techniques to exam type\" and goal (\"optimised, self-monitored performance\"); written to judge techniques by recall, not by learning style."
+
+readings:
+  qaa/architecture-2026/3.35: theme
+  qaa/architecture-2026/3.37: theme
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.17: theme
+  qaa/chemistry-2022/3.16: theme
+  qaa/politics-and-international-relations-2023/3.7: theme
+  qaa/land-construction-real-estate-and-surveying-2024/3.11: theme
+  qaa/public-policy-and-public-administration-2025/3.7: theme
+  qaa/law-2023/3.11: theme
+  qaa/creative-writing-2024/3.26: theme
+
+vic:
+  qaa/architecture-2026/3.35: {verbs: [provoke, raise, result], relation: "the format provoking stress and anxiety, a concern for wellbeing: anxiety as a matter of assessment design, not the learner's management of it"}
+  qaa/architecture-2026/3.37: {verbs: [impact], relation: "the stress of an in-person examination presentation: as above"}
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.17: {verbs: [encourage], relation: "revision for formal examinations in a list of learning activities"}
+  qaa/chemistry-2022/3.16: {verbs: [record], relation: "teaching recorded for later revision: provision"}
+  qaa/politics-and-international-relations-2023/3.7: {verbs: [include], relation: "role play among active teaching methods: role play as teaching, not revision"}
+  qaa/land-construction-real-estate-and-surveying-2024/3.11: {verbs: [incorporate, encourage], relation: "role play among encouraged teaching approaches"}
+  qaa/public-policy-and-public-administration-2025/3.7: {verbs: [], relation: "role plays and simulations in a list of methods"}
+  qaa/law-2023/3.11: {verbs: [require, assess], relation: "essay and multiple-choice exams assessing recall and analysis, with time management named: the formats e2 works across"}
+  qaa/creative-writing-2024/3.26: {verbs: [], relation: "time management among project skills"}
+
+vicSummary: "What this shows: none of the ten extracts is skill (adp-0212 gives law 2023, 3.11 twice). The benchmarks name exams, revision and role play as provision and assessment design, and anxiety as a wellbeing concern; they do not describe how a learner revises."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says revision strategy, active and passive revision, targeted revision, gaps, time management, cognitive resilience, mind maps, flashcards, mnemonics, role play, exam strategy, exam anxiety; the benchmarks say revision for formal examinations, multiple-choice, time management, role play, stress and anxiety. The practice searcher needs the guide's words."
+  - "**Skill against theme:** none of the ten extracts is skill; this is the pathway the benchmarks describe least."
+  - "**Book coverage:** Chapter 13 carries all nine cards: the forms of exam, anxiety, the five-stage strategy, Natalie's and Jess's revision, the active techniques and exam day."
+  - "**Learning styles:** the guide sorts its techniques as visual, auditory and kinaesthetic and the tier map says \"matched to how you learn\"; the research does not support matching techniques to learning styles (the core's Part E). The cards keep the techniques and judge them by recall (e3)."
+  - "**Other authors:** META holds Pintrich only; the research on revision (Dunlosky and others; Cepeda and others) and on test anxiety (Zeidner) is wanted (W-0081, W-0083, W-0084)."
+
+qfIntro: "Neither framework names revision or exams; they speak of responsibility and autonomy in one's own work, of the limits of one's knowledge (L5), of managing one's own learning (L6) and of decision-making in complex conditions."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing what kind of study one is assessed in: the forms of exam", tier: before Introductory}
+  - {id: l4/autonomy.1, verbs: "take responsibility", relation: "taking responsibility for one's own plan", tier: Introductory}
+  - {id: l4/application.2, verbs: "identify, adapt, use", relation: "choosing an active method over a passive one", tier: Introductory}
+  - {id: 4.12.b4, verbs: "(none: a noun phrase)", relation: "the limits of one's knowledge: finding the gaps", tier: Intermediate}
+  - {id: l5/autonomy.2, verbs: "exercise", relation: "judgement within broad parameters: managing anxiety and preparation", tier: Intermediate}
+  - {id: l5/application.2, verbs: "determine, adapt, use", relation: "adapting techniques to the content", tier: Intermediate}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "managing one's own learning: the revision strategy owned", tier: Advanced}
+  - {id: l6/application.4, verbs: "evaluate", relation: "evaluating methods and results: monitoring revision", tier: Advanced}
+  - {id: 4.15.b9.2, verbs: "(none: a noun phrase)", relation: "decision-making in complex contexts: exam-day strategy", tier: Advanced}
+  - {id: l7/application.4, verbs: "critically evaluate", relation: "critically evaluating methods and results: choosing techniques by evidence", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the forms of exam and what each tests.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains why passive revision fails and exams are learning tools.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Plans revision from the time available.", type: procedural (one method), process: apply}
+  - {tier: Introductory, statement: "Notices their own exam anxiety and what triggers it.", type: metacognitive (beginning), process: understand, change: "knowledge of one's own state appears"}
+  - {tier: Intermediate, statement: "Explains how active revision differs from passive, and why targeting gaps works.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Runs the five-stage strategy: time, gaps, allocation, techniques, monitoring.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Monitors whether revision is working and changes it, keeping resilient.", type: metacognitive (strategic), process: evaluate, change: "knowledge of one's own strategy, used to change it"}
+  - {tier: Advanced, statement: "Uses a range of active techniques: mind maps, flashcards, mnemonics, recordings, discussion, role play, models.", type: procedural, process: apply}
+  - {tier: Advanced, statement: "Plans each answer on the day and writes to time across formats.", type: procedural (conditional), process: apply, evaluate}
+  - {tier: Advanced, statement: "Chooses techniques by what they can recall and use, and performs under exam conditions while monitoring themselves.", type: metacognitive (self-knowledge), process: evaluate, change: "functioning knowledge: revision self-directed"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is declarative, the forms of exam and why passive revision fails, with a first plan and a first noticing of one's own anxiety; Intermediate is procedural and strategic, the five-stage strategy run and monitored; Advanced is procedural at its widest, the techniques and exam-day strategy, and metacognitive in choosing techniques by evidence of one's own recall. In Marzano and Kendall's terms anxiety brings the self-system in from the start, as in Presenting. Mastery is optimised, self-monitored performance under exam conditions, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map puts active against passive learning at Intermediate, and d1 sits there; it puts the technique toolkit \"matched to how you learn\" at Advanced, which e1 and e3 keep without the learning-styles matching. It places understanding exam anxiety at Introductory, as i3 does."
+
+qfAdd: "neither framework names revision or exams; the nearest statements are the limits of one's knowledge (L5), managing one's own learning (L6) and decision-making in complex contexts (L6, L7). The pathway's self-monitoring has a home in the descriptors; its anxiety does not."
+
+review:
+  - "i1, i2, d2, d3 and e3 are new; d1 moved from extended and its statement widened; e2's statement narrowed: all proposed (D-ing-0060)."
+  - "The learning-styles conflict stays open (the core's Part E): the cards avoid it, the guide and the tier map do not."
+  - "adp-0212 gives law 2023, 3.11 twice, with two extracts of one passage."

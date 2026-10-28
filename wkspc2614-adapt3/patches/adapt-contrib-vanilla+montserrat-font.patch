@@ -1,0 +1,31 @@
+# Fix: Replace vanilla theme's default Google Font (Open Sans) with Montserrat
+# Date: 2026-10-12
+# Problem: adapt-contrib-vanilla's font config hardcodes Open Sans - both the
+#          Google Fonts @import and the title/body/btn family variables that
+#          every heading, body copy and button in the compiled theme CSS
+#          resolves to. Brand requires Montserrat instead.
+# Solution: Swap the @import URL to request Montserrat (same weights: 300,
+#          400, 400i, 700) and point @title-family/@body-family/@btn-family
+#          at 'Montserrat' instead of 'Open Sans'. These are LESS variables
+#          compiled directly into vanilla's own CSS, so this takes effect at
+#          build time (not a cascade/specificity override) with no !important
+#          needed.
+--- a/src/theme/adapt-contrib-vanilla/less/_defaults/_font-config.less
++++ b/src/theme/adapt-contrib-vanilla/less/_defaults/_font-config.less
+@@ -1,12 +1,12 @@
+ // Font declarations
+ // --------------------------------------------------
+-@import (css) url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
++@import (css) url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700');
+
+ // Font family
+ // --------------------------------------------------
+-@title-family: 'Open Sans', sans-serif;
+-@body-family: 'Open Sans', sans-serif;
+-@btn-family: 'Open Sans', sans-serif;
++@title-family: 'Montserrat', sans-serif;
++@body-family: 'Montserrat', sans-serif;
++@btn-family: 'Montserrat', sans-serif;
+
+ // Font weights
+ // --------------------------------------------------

@@ -1,0 +1,9 @@
+<svg data-motion-asset="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-wave-title svg-motion-wave-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-wave-title">Friendly wave</title><desc id="svg-motion-wave-desc">A wave pivoting from the wrist. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="wave"] .art{transform-box:view-box;transform-origin:163px 90px;animation:motion-wave calc(2.6s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-wave { 10%, 30% { transform: rotate(18deg); } 20%, 40% { transform: rotate(-12deg); } 55%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="wave"] .art,svg[data-motion-asset="wave"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 7-23-6q-3-9 4-9l9 15-5-28q0-8 6-5l7 27-1-32q3-7 7 0l3 30 4-27q4-6 7 1L14-3l7-16q6-4 7 3L22 9c-4 26-30 30-40-2Z"/></g></g></svg>

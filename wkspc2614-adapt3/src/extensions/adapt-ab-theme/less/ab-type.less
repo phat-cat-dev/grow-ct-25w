@@ -1,0 +1,69 @@
+// CM TYPE — the fluid typographic scale (system layer, Abbott 11 Oct 2026).
+// =============================================================================
+// Derives one fluid clamp() ladder from the cm-base dials:
+//   @ab-type-ratio · @ab-type-base-min · @ab-type-base-max · @ab-vw-min/max.
+// Change those in cm-base and the whole ladder re-computes. Every size is a
+// clamp (fluid between vw-min and vw-max), so the type scales continuously with
+// the viewport — no per-breakpoint font rules needed (the old theme.less base
+// clamps and the cm-breakpoints xl/xxl boosts are retired in favour of this).
+//
+// WHY BUILD-TIME: the ratio ladder needs pow(), which CSS lacks, so the maths is
+// done here in LESS (reading cm-base's @vars — both files compile together in
+// the Adapt build) and emitted as the --ab-*-font-size custom props the rules
+// in theme.less consume. hsl-style escaping isn't needed; clamp() passes through.
+//
+// STEP MAP (modular scale, ratio^n): small=r⁻¹ · body=r⁰ · h6=r¹ · h5=r² ·
+// h4=r³ · h3=r⁴ · h2=r⁵ · h1=r⁶. Fonts (family/weight) are NOT here — the font
+// is a cm-base dial; this file is the SCALE, which rarely changes.
+// =============================================================================
+
+// ratio powers (sequential, so r6 = ratio⁶; CSS has no pow())
+@r_1: (1 / @ab-type-ratio);
+@r1:  @ab-type-ratio;
+@r2:  (@ab-type-ratio * @r1);
+@r3:  (@ab-type-ratio * @r2);
+@r4:  (@ab-type-ratio * @r3);
+@r5:  (@ab-type-ratio * @r4);
+@r6:  (@ab-type-ratio * @r5);
+
+// Fluid-clamp mixin: given a min and max size (rem, unitless), emit a clamp()
+// that interpolates between them across the vw-min→vw-max band (Utopia form:
+// clamp(min, yIntercept + slope·100vw, max)). Sets the named custom property.
+.ab-fluid(@prop; @min; @max) {
+  @s: ((@max - @min) / (@ab-vw-max - @ab-vw-min));   // slope (rem per rem-of-vw)
+  @y: (@min - (@s * @ab-vw-min));                    // y-intercept (rem)
+  @c: (@s * 100);                                    // vw coefficient
+  @{prop}: ~"clamp(@{min}rem, @{y}rem + @{c}vw, @{max}rem)";
+}
+
+// Per-band SEGMENTED fluid (Abbott, 12 Oct 2026 — "fluid within the breakpoints").
+// The band-local slice of a token's GLOBAL line: emits clamp(value@lo, <the SAME
+// global y+c·vw>, value@hi) for a band [lo,hi] (rem, viewport). Within that band
+// it reproduces the global value exactly (render-neutral), so it is a FALLBACK
+// layer over the smooth global clamp — add a band only where you want control,
+// then retune its @gmin/@gmax to diverge. Use inside @media (min-width: @ab-bp-X)
+// for viewport bands, or @container with cqi for component bands. This is the
+// Tier-1 "fluid within breakpoints" tool; it applies identically to space and
+// layout tokens (ab-breakpoints.less) — rolled subsystem by subsystem.
+//   @media (min-width: @ab-bp-lg) { :root {
+//     .ab-fluid-seg(--ab-body-font-size; @ab-type-base-min; @ab-type-base-max; 62; 90);
+//   } }
+.ab-fluid-seg(@prop; @gmin; @gmax; @lo; @hi) {
+  @s:   ((@gmax - @gmin) / (@ab-vw-max - @ab-vw-min));  // global slope
+  @y:   (@gmin - (@s * @ab-vw-min));                     // global y-intercept (rem)
+  @c:   (@s * 100);                                      // vw coefficient
+  @vlo: (@gmin + (@s * (@lo - @ab-vw-min)));             // line value at band lo
+  @vhi: (@gmin + (@s * (@hi - @ab-vw-min)));             // line value at band hi
+  @{prop}: ~"clamp(@{vlo}rem, @{y}rem + @{c}vw, @{vhi}rem)";
+}
+
+:root {
+  .ab-fluid(--ab-step-small;      (@ab-type-base-min * @r_1); (@ab-type-base-max * @r_1));  // captions / fine print
+  .ab-fluid(--ab-body-font-size;   @ab-type-base-min;          @ab-type-base-max);          // body / running text
+  .ab-fluid(--ab-h6-font-size;    (@ab-type-base-min * @r1);  (@ab-type-base-max * @r1));
+  .ab-fluid(--ab-h5-font-size;    (@ab-type-base-min * @r2);  (@ab-type-base-max * @r2));
+  .ab-fluid(--ab-h4-font-size;    (@ab-type-base-min * @r3);  (@ab-type-base-max * @r3));
+  .ab-fluid(--ab-h3-font-size;    (@ab-type-base-min * @r4);  (@ab-type-base-max * @r4));
+  .ab-fluid(--ab-h2-font-size;    (@ab-type-base-min * @r5);  (@ab-type-base-max * @r5));
+  .ab-fluid(--ab-h1-font-size;    (@ab-type-base-min * @r6 * 0.92);  (@ab-type-base-max * @r6 * 0.92));  // h1 trimmed ~8% below pure r6 (Claude, 13 Oct 2026) - "a little smaller"
+}

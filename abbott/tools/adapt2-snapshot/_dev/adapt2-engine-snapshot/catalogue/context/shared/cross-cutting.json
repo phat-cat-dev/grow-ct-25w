@@ -1,0 +1,3285 @@
+{
+  "crossCuttingVersion": "1.0.0",
+  "tierModel": {
+    "note": "Our tiers are loosely based on FHEQ levels and overlap on purpose. Introductory runs L3 to the lower end of L5; Intermediate runs the top of L4 to the bottom of L6; Advanced runs the top of L5 to L7. Both axes are kept on every tiered item because both can be useful; the per-row fheqLevel is the single indicative level, the fheqRange is the tier's loose span.",
+    "tiers": [
+      {
+        "tier": "introductory",
+        "rows": [
+          "i1",
+          "i2",
+          "i3"
+        ],
+        "fheqRange": {
+          "min": 3,
+          "max": 5
+        },
+        "note": "L3 to the lower end of L5"
+      },
+      {
+        "tier": "intermediate",
+        "rows": [
+          "d1",
+          "d2",
+          "d3"
+        ],
+        "fheqRange": {
+          "min": 4,
+          "max": 6
+        },
+        "note": "top of L4 to the bottom of L6"
+      },
+      {
+        "tier": "advanced",
+        "rows": [
+          "e1",
+          "e2",
+          "e3"
+        ],
+        "fheqRange": {
+          "min": 5,
+          "max": 7
+        },
+        "note": "top of L5 to L7"
+      }
+    ],
+    "edgeRows": [
+      {
+        "rowId": "F",
+        "role": "foundation / pre-entry (level 3 study)",
+        "fheqLevel": 3
+      },
+      {
+        "rowId": "L8",
+        "role": "beyond the taught degree (doctoral)",
+        "fheqLevel": 8
+      }
+    ],
+    "rows": [
+      {
+        "rowId": "F",
+        "tier": "foundation",
+        "fheqLevel": 3
+      },
+      {
+        "rowId": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3
+      },
+      {
+        "rowId": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4
+      },
+      {
+        "rowId": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5
+      },
+      {
+        "rowId": "d1",
+        "tier": "intermediate",
+        "fheqLevel": 4
+      },
+      {
+        "rowId": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5
+      },
+      {
+        "rowId": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6
+      },
+      {
+        "rowId": "e1",
+        "tier": "advanced",
+        "fheqLevel": 5
+      },
+      {
+        "rowId": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6
+      },
+      {
+        "rowId": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7
+      },
+      {
+        "rowId": "L8",
+        "tier": "beyond",
+        "fheqLevel": 8
+      }
+    ]
+  },
+  "genericLadder": {
+    "heads": [
+      "Practice (what one does)",
+      "Knowledge (what one knows)",
+      "Practitioner self-identity (who one is)"
+    ],
+    "rows": [
+      {
+        "rowId": "F",
+        "tier": "foundation",
+        "fheqLevel": 3,
+        "practice": "follows set tasks with guidance",
+        "knowledge": "the facts and ideas a task needs",
+        "identity": "a learner preparing to become a student"
+      },
+      {
+        "rowId": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "practice": "recognises the practice in others' work and names its parts",
+        "knowledge": "what the practice is and its terms",
+        "identity": "a newcomer who knows the practice exists"
+      },
+      {
+        "rowId": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "practice": "carries out one set method with support",
+        "knowledge": "the steps of that method",
+        "identity": "a student trying the practice"
+      },
+      {
+        "rowId": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "practice": "checks own work against the method",
+        "knowledge": "own strengths and gaps in it",
+        "identity": "a student beginning to see themself as a practitioner"
+      },
+      {
+        "rowId": "d1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "practice": "compares ways of doing the practice",
+        "knowledge": "why the practice works as it does in a discipline",
+        "identity": "a participant learning the community's ways"
+      },
+      {
+        "rowId": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "practice": "carries out the practice independently and adapts the method to the task",
+        "knowledge": "several methods and when each fits",
+        "identity": "a practitioner taking responsibility for own work"
+      },
+      {
+        "rowId": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "practice": "plans monitors and adjusts own practice",
+        "knowledge": "own habits and their effects",
+        "identity": "a self-regulating practitioner whose values begin to steer choices"
+      },
+      {
+        "rowId": "e1",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "practice": "chooses and justifies an approach to an unfamiliar task",
+        "knowledge": "criteria for choosing",
+        "identity": "a practitioner with a voice of own"
+      },
+      {
+        "rowId": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "practice": "practises in complex and unpredictable settings and judges own conduct",
+        "knowledge": "how practice and its effects fit together",
+        "identity": "a practitioner whose practice expresses own values"
+      },
+      {
+        "rowId": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "practice": "examines and changes own practice from its assumptions",
+        "knowledge": "own position as a knower",
+        "identity": "a reflexive practitioner who examines that identity itself"
+      },
+      {
+        "rowId": "L8",
+        "tier": "beyond",
+        "fheqLevel": 8,
+        "practice": "originates practice that changes a field",
+        "knowledge": "a field's knowledge and own part in making it",
+        "identity": "a practitioner who shapes others' practice and identity"
+      }
+    ]
+  },
+  "frameworks": [
+    {
+      "key": "fheq",
+      "name": "FHEQ (England, Wales and Northern Ireland, 2024)",
+      "run": "std:doc:qaa-fheq-2024-framework",
+      "note": "QAA's framework for higher education qualifications; it starts at level 4, so the level 3 rows have no entry",
+      "scheme": "fheq",
+      "dims": [
+        "threshold-outcomes",
+        "wider-abilities",
+        "employment-qualities"
+      ],
+      "rowLevel": {
+        "F": [],
+        "i1": [],
+        "i2": [
+          4
+        ],
+        "i3": [
+          5
+        ],
+        "d1": [
+          4
+        ],
+        "d2": [
+          5
+        ],
+        "d3": [
+          6
+        ],
+        "e1": [
+          5
+        ],
+        "e2": [
+          6
+        ],
+        "e3": [
+          7
+        ],
+        "L8": [
+          8
+        ]
+      }
+    },
+    {
+      "key": "cqfw",
+      "name": "CQFW (Wales, 2009)",
+      "run": "std:doc:welsh-government-cqfw-2009-framework",
+      "note": "the Credit and Qualifications Framework for Wales level descriptors, entry to level 8",
+      "scheme": "cqfw",
+      "dims": [
+        "knowledge-and-understanding",
+        "application-and-action",
+        "autonomy-and-accountability"
+      ],
+      "rowLevel": {
+        "F": [
+          2,
+          3
+        ],
+        "i1": [
+          3
+        ],
+        "i2": [
+          4
+        ],
+        "i3": [
+          5
+        ],
+        "d1": [
+          4
+        ],
+        "d2": [
+          5
+        ],
+        "d3": [
+          6
+        ],
+        "e1": [
+          5
+        ],
+        "e2": [
+          6
+        ],
+        "e3": [
+          7
+        ],
+        "L8": [
+          8
+        ]
+      }
+    },
+    {
+      "key": "fqheis",
+      "name": "FQHEIS within SCQF (Scotland, 2024)",
+      "run": "std:doc:qaa-fqheis-2024-framework, with the master's and doctoral statements shared in std:doc:qaa-fheq-2024-framework",
+      "note": "QAA's framework for Scottish higher education, SCQF levels 7 to 12; SCQF 7 sits beside FHEQ 4, 8 beside 5, 9 and 10 beside 6, 11 beside 7 and 12 beside 8; SCQF 6 (Highers) is outside it",
+      "scheme": "fqheis",
+      "dims": [
+        "threshold-outcomes",
+        "wider-abilities",
+        "employment-qualities"
+      ],
+      "rowLevel": {
+        "F": [],
+        "i1": [],
+        "i2": [
+          7
+        ],
+        "i3": [
+          8
+        ],
+        "d1": [
+          7
+        ],
+        "d2": [
+          8
+        ],
+        "d3": [
+          9,
+          10
+        ],
+        "e1": [
+          8
+        ],
+        "e2": [
+          9,
+          10
+        ],
+        "e3": [
+          11
+        ],
+        "L8": [
+          12
+        ]
+      }
+    },
+    {
+      "key": "qfehea",
+      "name": "QF-EHEA, the Bologna framework (Dublin descriptors)",
+      "run": "the Framework for Qualifications of the European Higher Education Area, its Dublin descriptors as given in std:doc:qaa-fheq-2024-framework, Annex B",
+      "note": "the short, first, second and third cycles of the Bologna Process, placed by each row's indicative level: short cycle beside level 5, first beside 6, second beside 7, third beside 8; it has no cycle at levels 3 and 4",
+      "scheme": "qfehea",
+      "dims": [
+        "knowledge-and-understanding",
+        "applying-knowledge",
+        "making-judgements",
+        "communication",
+        "learning-skills",
+        "wider-contribution"
+      ],
+      "rowLevel": {
+        "F": [],
+        "i1": [],
+        "i2": [],
+        "i3": [
+          "short"
+        ],
+        "d1": [],
+        "d2": [
+          "short"
+        ],
+        "d3": [
+          1
+        ],
+        "e1": [
+          "short"
+        ],
+        "e2": [
+          1
+        ],
+        "e3": [
+          2
+        ],
+        "L8": [
+          3
+        ]
+      },
+      "labels": {
+        "short": "short cycle (beside FHEQ 5)",
+        "1": "first cycle (beside FHEQ 6)",
+        "2": "second cycle (beside FHEQ 7)",
+        "3": "third cycle (beside FHEQ 8)"
+      }
+    }
+  ],
+  "crossCuttingThemes": [
+    {
+      "key": "qaa-ent",
+      "name": "QAA Enterprise and Entrepreneurship Education (2018)",
+      "run": "std:doc:qaa-enterprise-2018-guidance (7c39b4e150a6)",
+      "note": "the guidance's learner journey (awareness, mindset, capability, effectiveness); paraphrase ing's",
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "ids": [],
+          "reading": "before the journey: meeting enterprising activity for the first time"
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "ids": [
+            "qaa/enterprise-2018/journey.awareness.1"
+          ],
+          "reading": "awareness: knowing what enterprising activity is"
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "ids": [
+            "qaa/enterprise-2018/journey.awareness.2"
+          ],
+          "reading": "awareness: seeing its professional and personal significance"
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "ids": [
+            "qaa/enterprise-2018/journey.mindset.0"
+          ],
+          "reading": "mindset: awareness of own enterprising capabilities, motivation and self-discipline"
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "ids": [
+            "qaa/enterprise-2018/journey.capability.1"
+          ],
+          "reading": "capability: designing a product or service to meet a need"
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "ids": [
+            "qaa/enterprise-2018/journey.capability.3"
+          ],
+          "reading": "capability: performing in a team"
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "ids": [
+            "qaa/enterprise-2018/journey.capability.2"
+          ],
+          "reading": "capability: taking the lead with autonomy"
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "ids": [
+            "qaa/enterprise-2018/journey.effectiveness.1"
+          ],
+          "reading": "effectiveness: moving into work"
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "ids": [
+            "qaa/enterprise-2018/journey.effectiveness.2"
+          ],
+          "reading": "effectiveness: self-directed learning towards career and life goals"
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "ids": [
+            "qaa/enterprise-2018/mindset.b8"
+          ],
+          "reading": "mindset: sensitivity to own values"
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "ids": [],
+          "reading": "beyond the journey: enterprising practice that changes others' practice"
+        }
+      ]
+    },
+    {
+      "key": "ahe-ent",
+      "name": "Advance HE Enterprise and Entrepreneurship (2024)",
+      "run": "std:doc:advancehe-enterprise-entrepreneurship-2024-model (0536fd11fe96)",
+      "note": "the model's student segments; paraphrase the run's",
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "ids": [],
+          "reading": "not placed: the model starts at entry"
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "ids": [
+            "advancehe/enterprise-2024/students.opportunity-recognition-evaluation"
+          ],
+          "reading": "Students learn to notice opportunities and to judge which are worth pursuing."
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "ids": [
+            "advancehe/enterprise-2024/students.creativity-innovation"
+          ],
+          "reading": "Students learn to generate original ideas and new ways of doing things, and to use them to add value."
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "ids": [
+            "advancehe/enterprise-2024/students.reflection-and-action"
+          ],
+          "reading": "Students reflect on their experience, including setbacks, and use what they learn to act differently next time."
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "ids": [
+            "advancehe/enterprise-2024/students.communication-strategy-skills"
+          ],
+          "reading": "Students learn to communicate their ideas to different audiences and to plan a strategy for achieving them."
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "ids": [
+            "advancehe/enterprise-2024/students.implementation-of-ideas"
+          ],
+          "reading": "Students learn to turn an idea into action: to plan it, organise people and resources, and carry it through."
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "ids": [
+            "advancehe/enterprise-2024/students.decision-making-uncertainty"
+          ],
+          "reading": "Students learn to make reasoned decisions when information is incomplete and outcomes are uncertain."
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "ids": [
+            "advancehe/enterprise-2024/students.interpersonal-skills"
+          ],
+          "reading": "Students learn to work with others: to build relationships, collaborate across disciplines and handle differences."
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "ids": [
+            "advancehe/enterprise-2024/students.starting-developing-business"
+          ],
+          "reading": "Students learn what it takes to start and grow a business or other venture, as one possible outcome of being enterprising."
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "ids": [],
+          "reading": "no segment: the model does not reach reflexivity"
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "ids": [],
+          "reading": "not placed"
+        }
+      ]
+    },
+    {
+      "key": "ahe-emp",
+      "name": "Advance HE Embedding Employability (2024)",
+      "run": "std:doc:advancehe-embedding-employability-2024-model (6191b7085687)",
+      "note": "the model's student segments; paraphrase the run's; three rows have no segment of their own",
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "ids": [],
+          "reading": "not placed: the model starts at entry"
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "ids": [
+            "advancehe/employability-2024/students.situational-knowledge"
+          ],
+          "reading": "Students understand how the norms of different settings vary and how to apply what they know in each."
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "ids": [],
+          "reading": "no segment of its own"
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "ids": [
+            "advancehe/employability-2024/students.agency-self-awareness"
+          ],
+          "reading": "Students know their strengths, values and interests, and take action to shape their own path."
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "ids": [],
+          "reading": "no segment of its own"
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "ids": [
+            "advancehe/employability-2024/students.confidence-adaptability"
+          ],
+          "reading": "Students build the confidence to take on unfamiliar situations and to adjust as work, study and circumstances change."
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "ids": [
+            "advancehe/employability-2024/students.emotional-intelligence"
+          ],
+          "reading": "Students develop the ability to recognise and manage their own emotions and to read and respond to those of others, at work and beyond."
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "ids": [
+            "advancehe/employability-2024/students.behaviours-qualities-values"
+          ],
+          "reading": "Students develop the conduct, personal qualities and values that work and civic life call for, and can show them."
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "ids": [],
+          "reading": "no segment of its own"
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "ids": [
+            "advancehe/employability-2024/students.professional-identity-networks"
+          ],
+          "reading": "Students develop a sense of themselves as members of a profession or field, and build the contacts that help them enter and grow in it."
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "ids": [],
+          "reading": "not placed"
+        }
+      ]
+    },
+    {
+      "key": "qaa-esd",
+      "name": "QAA and Advance HE Education for Sustainable Development (2021)",
+      "run": "std:doc:qaa-advancehe-esd-2021-guidance",
+      "note": "the guidance's eight competencies, grouped as ways of thinking (systems, anticipatory, critical), ways of practising (strategic, collaborative, integrated problem-solving) and ways of being (self-awareness, normative); placed by ing so each tier runs thinking, practising, being, as its cards run knowledge, practice and self; paraphrase ing's",
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "ids": [],
+          "reading": "before the competencies: meets sustainability as a topic in set work"
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.systems.b1"
+          ],
+          "reading": "ways of thinking, systems: sees how things are connected and how one part affects another"
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.collaborative.b1"
+          ],
+          "reading": "ways of practising, collaborative: learns from peers and from people inside and outside the university"
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.selfaware.b1"
+          ],
+          "reading": "ways of being, self-awareness: reflects on own values, perceptions and actions"
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.critical.b1"
+          ],
+          "reading": "ways of thinking, critical: questions accepted norms, practices and opinions"
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.problem.b1"
+          ],
+          "reading": "ways of practising, integrated problem-solving: applies different problem-solving frameworks to complex sustainability problems"
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.normative.b1"
+          ],
+          "reading": "ways of being, normative: understands and reflects on the norms and values beneath own actions"
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.anticipatory.b1",
+            "qaa-advancehe/esd-2021/competency.anticipatory.b4"
+          ],
+          "reading": "ways of thinking, anticipatory: weighs possible futures and the consequences of actions"
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.strategic.b1"
+          ],
+          "reading": "ways of practising, strategic: designs and carries out innovative action for sustainability, locally and further afield"
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.selfaware.b2",
+            "qaa-advancehe/esd-2021/competency.critical.b3"
+          ],
+          "reading": "ways of being, self-awareness and critical: reflects on own role in local and global society and takes a position in the sustainability debate"
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "ids": [
+            "qaa-advancehe/esd-2021/competency.normative.b2",
+            "qaa-advancehe/esd-2021/competency.collaborative.b4"
+          ],
+          "reading": "ways of being and practising: negotiates sustainability values amid conflicts, trade-offs and uncertainty, and facilitates others' participatory problem-solving"
+        }
+      ]
+    },
+    {
+      "key": "ofqual",
+      "name": "Ofqual occupational competence level descriptors (apprenticeship standards)",
+      "run": "not ingested: https://skillsengland.education.gov.uk/media/1575/guidance-on-apprenticeship-standard-levels.pdf",
+      "note": "by each row's indicative level; no separate degree apprenticeship descriptors exist, levels 6 and 7 are the degree levels; paraphrase ing's",
+      "byLevel": true,
+      "levels": {
+        "2": [
+          "ofqual-occ/L2",
+          "knows the facts and procedures of the occupation; completes routine, well-defined tasks; responsible for own tasks under overall direction"
+        ],
+        "3": [
+          "ofqual-occ/L3",
+          "factual, procedural and some theoretical knowledge; selects methods for complex, non-routine tasks; initiates and completes tasks within limited bounds"
+        ],
+        "4": [
+          "ofqual-occ/L4",
+          "practical, theoretical and technical knowledge; adapts methods for complex, non-routine work; responsible for courses of action and others' work within well-defined bounds"
+        ],
+        "5": [
+          "ofqual-occ/L5",
+          "analyses concepts and the reasoning behind perspectives; determines methods for broadly defined problems; plans courses of action, accountable within broad bounds"
+        ],
+        "6": [
+          "ofqual-occ/L6",
+          "advanced knowledge, critically analysed; refines methods for ill-defined problems; initiates and leads, with broad autonomy (bachelor's degree apprenticeship level)"
+        ],
+        "7": [
+          "ofqual-occ/L7",
+          "reformulates knowledge for new conceptions; designs research to inform change; leads complex work bringing substantial change (master's degree apprenticeship level)"
+        ],
+        "8": [
+          "ofqual-occ/L8",
+          "creates new knowledge and extends the field; formulates methodologies; leads as a leading practitioner, responsible for the field's advance"
+        ]
+      },
+      "rowLevel": {
+        "F": [
+          2,
+          3
+        ],
+        "i1": 3,
+        "i2": 4,
+        "i3": 5,
+        "d1": 4,
+        "d2": 5,
+        "d3": 6,
+        "e1": 5,
+        "e2": 6,
+        "e3": 7,
+        "L8": 8
+      }
+    }
+  ],
+  "developmentModels": [
+    {
+      "key": "barnett",
+      "name": "Barnett: critical being (1997)",
+      "ref": "Barnett, R. (1997) Higher Education: A Critical Business. Buckingham: SRHE and Open University Press; the grid of levels and domains, p. 103; checked against META run ing:doc:critical-being-barnett-1997",
+      "note": "four levels of criticality across three domains: knowledge (critical reason), the self (critical self-reflection) and the world (critical action); placed by ing, level 1 at the Introductory rows, 2 at Intermediate, 3 at the first Advanced rows, 4 at e3 and level 8",
+      "subs": [
+        "Level",
+        "Knowledge: critical reason",
+        "Self: critical self-reflection",
+        "World: critical action"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "before level 1",
+            "accepts what is taught as given",
+            "measures self against others' standards without question",
+            "follows instructions to complete tasks"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "1. Critical skills",
+            "discipline-specific critical thinking skills: the field's permitted critical moves, within given standards",
+            "self-monitoring to given standards and norms",
+            "problem-solving: finding the means to a given end"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "1. Critical skills",
+            "discipline-specific critical thinking skills: the field's permitted critical moves, within given standards",
+            "self-monitoring to given standards and norms",
+            "problem-solving: finding the means to a given end"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "1. Critical skills",
+            "discipline-specific critical thinking skills: the field's permitted critical moves, within given standards",
+            "self-monitoring to given standards and norms",
+            "problem-solving: finding the means to a given end"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "2. Reflexivity",
+            "critical thinking: reflecting on own understanding, treating every knowledge claim, own included, as open to challenge",
+            "self-reflection: reflecting on own projects",
+            "reflective practice: adaptable, flexible action that reflects on itself"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "2. Reflexivity",
+            "critical thinking: reflecting on own understanding, treating every knowledge claim, own included, as open to challenge",
+            "self-reflection: reflecting on own projects",
+            "reflective practice: adaptable, flexible action that reflects on itself"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "2. Reflexivity",
+            "critical thinking: reflecting on own understanding, treating every knowledge claim, own included, as open to challenge",
+            "self-reflection: reflecting on own projects",
+            "reflective practice: adaptable, flexible action that reflects on itself"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "3. Refashioning of traditions",
+            "critical thought: working within a body of thought seen as open, so that practices could be otherwise",
+            "developing a self within the traditions one has joined",
+            "mutual understanding and development of traditions with others"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "3. Refashioning of traditions",
+            "critical thought: working within a body of thought seen as open, so that practices could be otherwise",
+            "developing a self within the traditions one has joined",
+            "mutual understanding and development of traditions with others"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "4. Transformatory critique",
+            "knowledge critique: reframing knowledge, questioning a field's categories and its role in society",
+            "reconstruction of self",
+            "critique-in-action: collective reconstruction of the world"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "4. Transformatory critique",
+            "knowledge critique: reframing knowledge, questioning a field's categories and its role in society",
+            "reconstruction of self",
+            "critique-in-action: collective reconstruction of the world"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "solo",
+      "name": "Biggs and Collis: SOLO taxonomy (1982)",
+      "ref": "Biggs, J.B. and Collis, K.F. (1982) Evaluating the Quality of Learning: The SOLO Taxonomy. New York: Academic Press, pp. 26-28; checked against META run ing:doc:solo-biggs-collis-1982",
+      "note": "the structure of the observed learning outcome: the shape of the work, from one relevant point to an integrated whole and beyond it; placed by ing",
+      "subs": [
+        "Level",
+        "Shape of the work"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "prestructural to unistructural",
+            "misses the point or picks up one relevant aspect, with guidance"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "unistructural",
+            "picks up one relevant aspect: names, identifies, follows a single procedure"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "multistructural",
+            "handles several relevant aspects separately: describes, lists, carries out a method step by step"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "multistructural",
+            "several aspects held side by side, beginning to check them against each other"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "multistructural to relational",
+            "starts to connect the aspects: compares, contrasts, explains why"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "relational",
+            "integrates the aspects into a whole: analyses, applies, relates theory to a case"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "relational",
+            "an integrated whole that is monitored and adjusted"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "relational",
+            "a coherent whole, justified by explicit criteria"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "extended abstract",
+            "takes the whole beyond the case: generalises, hypothesises, applies to new settings"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "extended abstract",
+            "theorises and reflects on the whole and its assumptions"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "extended abstract",
+            "creates new structures of knowledge others work within"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "dreyfus",
+      "name": "Dreyfus and Dreyfus: skill acquisition (1980, 1986)",
+      "ref": "Dreyfus, S.E. and Dreyfus, H.L. (1980) A Five-Stage Model of the Mental Activities Involved in Directed Skill Acquisition. Berkeley: University of California; Dreyfus, H.L. and Dreyfus, S.E. (1986) Mind over Machine. New York: Free Press; applied to nursing in Benner, P. (1984) From Novice to Expert. Menlo Park: Addison-Wesley; unverified (W-0105)",
+      "note": "five stages from rule-following to intuitive expertise; placed by ing, with the expert stage kept for level 8",
+      "subs": [
+        "Stage",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "novice",
+            "follows rules free of context, as given"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "novice",
+            "learns the practice's basic rules and terms and applies them as given"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "novice",
+            "follows a set method step by step, needing the rule to act"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "advanced beginner",
+            "starts to recognise from experience what matters in a situation"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "advanced beginner",
+            "sees the aspects of situations that experience points to, but treats them as equally important"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "competent",
+            "chooses a plan, decides what matters and feels responsible for the outcome"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "competent",
+            "plans deliberately and adjusts when a plan fails"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "competent",
+            "chooses and justifies an approach in an unfamiliar situation"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "proficient",
+            "sees the situation as a whole and what it calls for, then decides how to act"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "proficient",
+            "reads situations holistically and reflects on own judgements"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "expert",
+            "acts fluently from deep experience, without rules, and steps back to analyse when something is new"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "magolda",
+      "name": "Baxter Magolda: self-authorship (1992, 2001)",
+      "ref": "Baxter Magolda, M.B. (1992) Knowing and Reasoning in College. San Francisco: Jossey-Bass; Baxter Magolda, M.B. (2001) Making Their Own Way. Sterling, VA: Stylus; unverified (W-0063)",
+      "note": "the journey to self-authorship (external formulas, the crossroads, becoming the author of one's life, internal foundations) with the earlier ways of knowing (absolute, transitional, independent, contextual) beside it; placed by ing",
+      "subs": [
+        "Phase",
+        "Way of knowing",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "following external formulas",
+            "absolute",
+            "takes knowledge as certain and held by authorities, and follows their plans"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "following external formulas",
+            "absolute",
+            "learns what authorities say the practice is and does what they ask"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "following external formulas",
+            "absolute to transitional",
+            "follows set methods while noticing that some answers are uncertain"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "following external formulas",
+            "transitional",
+            "begins to see that knowing involves judgement, though still looks to others for direction"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "the crossroads",
+            "transitional",
+            "feels the strain between others' expectations and an emerging own view"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "the crossroads",
+            "independent",
+            "treats own view as valid and starts to act on it"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "the crossroads",
+            "independent",
+            "notices how own beliefs shape choices and begins to set own direction"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "becoming the author of one's life",
+            "independent to contextual",
+            "chooses beliefs and approaches and can say why"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "becoming the author of one's life",
+            "contextual",
+            "judges knowledge claims by evidence in context and acts from own values"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "self-authorship",
+            "contextual",
+            "defines own beliefs, identity and relationships from within"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "internal foundations",
+            "contextual",
+            "lives from a settled internal foundation, open to question, and supports others' self-authorship"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lave-wenger",
+      "name": "Lave and Wenger: legitimate peripheral participation (1991)",
+      "ref": "Lave, J. and Wenger, E. (1991) Situated Learning: Legitimate Peripheral Participation. Cambridge: Cambridge University Press; checked against META run ing:doc:situated-learning-lave-wenger-1991",
+      "note": "learning as a newcomer's movement from legitimate peripheral participation towards full participation in a community of practice, and a change of identity; moved from the row readings at N-0164; placed by ing",
+      "subs": [
+        "Participation"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "outside the community, preparing to join"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "legitimate peripheral participation: a newcomer at the edge"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "legitimate peripheral participation: a newcomer at the edge"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "legitimate peripheral participation: a newcomer at the edge"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "increasing participation"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "increasing participation"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "increasing participation"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "towards full participation"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "towards full participation"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "towards full participation"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "full participation that changes the community"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "life-cycle",
+      "name": "Student life cycle: Gale and Parker (2014), Lizzio (2006)",
+      "ref": "Gale, T. and Parker, S. (2014) Navigating change: a typology of student transition in higher education, Studies in Higher Education, 39(5), pp. 734-753; Lizzio, A. (2006) Designing an orientation and transition strategy for commencing students. Brisbane: Griffith University (with Lizzio and Wilson's five senses of success: capability, purpose, resourcefulness, connectedness, culture); unverified (W-0114, W-0115)",
+      "note": "ing's stage of the life cycle (moved from the row readings at N-0164) beside Gale and Parker's three conceptions of transition (induction, development, becoming) and Lizzio's student lifecycle; placed by ing",
+      "subs": [
+        "Stage (ing)",
+        "Gale and Parker",
+        "Lizzio"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "pre-entry: A level, access, foundation year",
+            "before transition",
+            "transition towards"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "transition in: first year",
+            "induction",
+            "transition in"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "transition in: first year",
+            "induction",
+            "transition in"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "transition in: first year",
+            "induction",
+            "transition in"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "progression: second year",
+            "development",
+            "transition through"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "progression: second year",
+            "development",
+            "transition through"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "progression: second year",
+            "development",
+            "transition through"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "transition out: final year, graduate",
+            "becoming",
+            "transition out"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "transition out: final year, graduate",
+            "becoming",
+            "transition out"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "transition out: final year, graduate",
+            "becoming",
+            "transition out"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "postgraduate and professional practice",
+            "becoming",
+            "transition up"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "shulman",
+      "name": "Shulman: signature pedagogies (2005)",
+      "ref": "Shulman, L.S. (2005) Signature pedagogies in the professions, Daedalus, 134(3), pp. 52-59; checked against META run ing:doc:signature-pedagogies-shulman-2005",
+      "note": "a profession forms its members to think, to perform and to act with integrity (head, hand and heart, close to knowledge, practice and self-identity), through a surface, a deep and an implicit structure of teaching; placed by ing, the three dimensions by card position and the structures by tier",
+      "subs": [
+        "Dimension",
+        "Structure",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "before the profession",
+            "generic study",
+            "taught general study habits, not yet any profession's ways"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "to think",
+            "surface",
+            "meets the practice's way of reasoning through its everyday teaching routines"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "to perform",
+            "surface",
+            "practises the practice's routine acts as they are shown and demonstrated"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "to act with integrity",
+            "surface",
+            "picks up the practice's expectations of honesty and care as they are modelled"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "to think",
+            "deep",
+            "learns the assumptions about knowledge that shape how the practice reasons"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "to perform",
+            "deep",
+            "performs the practice knowing why it is taught and done that way"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "to act with integrity",
+            "deep",
+            "begins to hold the practice's values as reasons for own choices"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "to think",
+            "implicit",
+            "reasons as a member, aware of the beliefs built into the community's ways"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "to perform",
+            "implicit",
+            "performs as a practitioner whose conduct carries the profession's attitudes and dispositions"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "to act with integrity",
+            "implicit",
+            "acts with integrity and care and examines the values the practice's teaching passes on"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "all three as one",
+            "what it is not",
+            "thinks, performs and acts with integrity as one, and sees what the practice's teaching leaves out"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kuhlthau",
+      "name": "Kuhlthau: the information search process (1991)",
+      "ref": "Kuhlthau, C.C. (1991) Inside the search process: information seeking from the user's perspective, Journal of the American Society for Information Science, 42(5), pp. 361-371; checked against META run ing:doc:information-search-process-kuhlthau-1991",
+      "note": "six stages of one search, each in three realms: feelings (affective), thoughts (cognitive) and actions (physical), close to self-identity, knowledge and practice; read by ing as an arc of growing hold on the process across the rows, which the model itself does not claim",
+      "subs": [
+        "Stage",
+        "Feelings",
+        "Thoughts",
+        "Actions"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "initiation",
+            "uncertainty and apprehension",
+            "vague thoughts about the task and what one already knows",
+            "talks over possible topics"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "initiation",
+            "uncertainty, recognised as normal",
+            "recognises a need for information",
+            "discusses possible topics and seeks background"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "selection",
+            "optimism once a topic is chosen",
+            "weighs topics against interest, requirements, information and time",
+            "confers with others and skims a first search"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "exploration",
+            "confusion and doubt as sources disagree",
+            "information will not fit what one holds",
+            "reads to become informed and tolerates inconsistency"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "exploration",
+            "doubt, held rather than fled",
+            "compares sources and constructs",
+            "lists descriptors and reads around the topic"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "formulation",
+            "confidence and clarity begin to grow",
+            "forms a focus from what has been found",
+            "narrows the search to the focus"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "formulation",
+            "the turning point: uncertainty falls",
+            "the focus emerges gradually, like a hypothesis",
+            "reflects on and tests the focus"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "collection",
+            "confidence and interest",
+            "defines, extends and supports the focus",
+            "specifies the need to systems and people and takes detailed notes"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "collection",
+            "sustained engagement",
+            "builds the case around the focus",
+            "seeks relevant, focused information"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "presentation",
+            "relief, with satisfaction or disappointment",
+            "a personal synthesis",
+            "a summary search finds rising redundancy, then organises to present"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "the whole process, tacit",
+            "uncertainty welcomed as the start of enquiry",
+            "syntheses that extend a field",
+            "guides others through the process (ing's reading)"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lea-street",
+      "name": "Lea and Street: academic literacies (1998)",
+      "ref": "Lea, M.R. and Street, B.V. (1998) Student writing in higher education: an academic literacies approach, Studies in Higher Education, 23(2), pp. 157-172; checked against META run ing:doc:academic-literacies-lea-street-1998",
+      "note": "three models of student writing (study skills, academic socialisation, academic literacies), which the authors present as nested and hierarchical, each taking in the one before (1998), and later as overlapping (2006); placed by ing one to a tier",
+      "subs": [
+        "Model",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "study skills",
+            "writing as surface correctness: grammar, spelling and format, fixed when wrong"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "study skills",
+            "learns the practice's rules as skills to carry from task to task"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "study skills",
+            "applies those skills to set tasks and corrects the errors found"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "study skills, towards socialisation",
+            "begins to notice that the rules shift with the task and the tutor"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "academic socialisation",
+            "is inducted into the discipline's culture and its ways of reading a task"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "academic socialisation",
+            "takes on the community's approaches to learning and its genres"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "academic socialisation",
+            "orients own learning to the community's expectations"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "academic literacies",
+            "moves between disciplines, modules and tutors with different assumptions about writing and knowledge (course switching)"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "academic literacies",
+            "treats writing and learning as questions of knowledge and identity, not only of skill"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "academic literacies",
+            "sees the institution's demands as discourse and power and places own identity among them"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "academic literacies",
+            "makes and contests the community's literacies, shaping what counts as knowledge"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "finlay",
+      "name": "Finlay: variants of reflexivity (2002)",
+      "ref": "Finlay, L. (2002) Negotiating the swamp: the opportunity and challenge of reflexivity in research practice, Qualitative Research, 2(2), pp. 209-230; and 'Outing' the researcher, Qualitative Health Research, 12(4), pp. 531-545; checked against META run ing:doc:variants-of-reflexivity-finlay-2002",
+      "note": "five variants of reflexivity (introspection, intersubjective reflection, mutual collaboration, social critique, discursive deconstruction), which Finlay presents as alternatives, not levels; ordered by ing by widening scope, from the self to the relationship, the participants, power and language; reflexivity begins at i3",
+      "subs": [
+        "Variant",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "before reflexivity",
+            "reflects on what happened, not yet on oneself"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "before reflexivity",
+            "describes events and what was learned from them"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "before reflexivity",
+            "follows a reflective method on events"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "introspection, beginning",
+            "starts to look at own responses as part of what happened"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "introspection",
+            "examines own experience and responses as evidence"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "intersubjective reflection",
+            "examines how relationships with others shape what emerges"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "intersubjective reflection",
+            "adjusts own part in those relationships"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "mutual collaboration",
+            "reflects together with others as co-enquirers"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "social critique",
+            "analyses power and social position (class, gender, race) at play in own work"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "social critique",
+            "places own position within those relations of power"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "discursive deconstruction",
+            "attends to how meanings, own account included, are constructed in language"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "meyer-land",
+      "name": "Meyer and Land: threshold concepts (2003, 2005)",
+      "ref": "Meyer, J.H.F. and Land, R. (2003) Threshold concepts and troublesome knowledge: linkages to ways of thinking and practising within the disciplines, in Rust, C. (ed.) Improving Student Learning: Ten Years On. Oxford: OCSLD; Meyer, J.H.F. and Land, R. (2005) Higher Education, 49(3), pp. 373-388; unverified (W-0111)",
+      "note": "threshold concepts are transformative, irreversible, integrative, bounded and often troublesome; learners pass from a pre-liminal state through a liminal one (oscillation, mimicry) to a post-liminal one; placed by ing so d3 and e3 are crossings",
+      "subs": [
+        "State",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "pre-liminal",
+            "meets the practice as a set of tasks, unaware of what lies beyond them"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "pre-liminal",
+            "learns the practice's terms without yet seeing how they change one's view"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "pre-liminal",
+            "follows the method as given"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "entering the liminal",
+            "meets troublesome knowledge: the method stops being enough"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "liminal: oscillation",
+            "moves back and forth between old and new understandings"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "liminal: mimicry",
+            "performs the practice before fully understanding it"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "crossing: post-liminal",
+            "the threshold is crossed: a transformed, integrated view that cannot be unlearned"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "post-liminal, a new threshold ahead",
+            "works from the new view and meets the next troublesome ground"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "liminal again",
+            "holds uncertainty about own values and position"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "crossing: post-liminal",
+            "a second crossing: a transformed sense of oneself as a practitioner"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "liminality as a way of working",
+            "seeks out thresholds and helps others cross them"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "sdt",
+      "name": "Ryan and Deci: self-determination theory (2000)",
+      "ref": "Ryan, R.M. and Deci, E.L. (2000) Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being, American Psychologist, 55(1), pp. 68-78; unverified (W-0112)",
+      "note": "a continuum of regulation from external through introjected, identified and integrated to intrinsic motivation, fed by three basic needs (autonomy, competence, relatedness); placed by ing by indicative level, beside the stance ladder (compliance, purpose, investment, ownership, adaptation, flow)",
+      "subs": [
+        "Regulation",
+        "Need stressed",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "external",
+            "competence",
+            "does the work for marks or to avoid trouble"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "external",
+            "competence",
+            "takes up the practice because it is required"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "introjected",
+            "competence",
+            "does it properly to avoid guilt or to look capable"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "identified",
+            "autonomy",
+            "sees the practice's value for own goals"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "introjected to identified",
+            "relatedness",
+            "values the practice as the community does"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "identified",
+            "autonomy",
+            "chooses to do it well because it matters to own work"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "integrated",
+            "autonomy",
+            "the practice fits own values and sense of self"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "identified to integrated",
+            "competence",
+            "applies it confidently because own purpose calls for it"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "integrated",
+            "relatedness",
+            "practises it as part of who one is among others"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "integrated",
+            "autonomy",
+            "owns and adapts the practice as an expression of self"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "intrinsic",
+            "all three",
+            "does the practice for its own sake, in flow, and supports others' motivation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "mezirow",
+      "name": "Mezirow: transformative learning (1991, 2000)",
+      "ref": "Mezirow, J. (1991) Transformative Dimensions of Adult Learning. San Francisco: Jossey-Bass; Mezirow, J. and Associates (2000) Learning as Transformation. San Francisco: Jossey-Bass; unverified (W-0113)",
+      "note": "learning that transforms frames of reference through critical reflection on content, process and premises, often through phases from a disorienting dilemma to reintegration; placed by ing, the reflection by tier and the phases in the Advanced rows",
+      "subs": [
+        "Reflection",
+        "Phase",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "none yet",
+            "before",
+            "takes assumptions as given"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "content",
+            "before",
+            "reflects on what the problem is"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "content",
+            "before",
+            "reflects on what was done"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "content",
+            "before",
+            "notices what went well or badly"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "process",
+            "before",
+            "reflects on how the problem was approached"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "process",
+            "before",
+            "questions the method and its effects"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "process, towards premise",
+            "disorienting dilemma, self-examination",
+            "meets something own frame cannot explain and examines oneself"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "premise",
+            "critical assessment of assumptions",
+            "questions why the problem matters and the assumptions behind it"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "premise",
+            "exploring new roles, planning action",
+            "tries out new ways of seeing and plans to act on them"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "premise",
+            "building competence, reintegration",
+            "takes the new perspective into own life and practice"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "premise, habitual",
+            "beyond",
+            "holds own frames open to question and fosters others' transformation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "anderson-krathwohl",
+      "name": "Anderson and Krathwohl: knowledge and cognitive processes (2001)",
+      "ref": "Anderson, L.W. and Krathwohl, D.R. (eds) (2001) A Taxonomy for Learning, Teaching, and Assessing. New York: Longman, p. 29; checked against META run ing:doc:bloom-anderson-krathwohl-2001",
+      "note": "the knowledge dimension (A factual, B conceptual, C procedural, D metacognitive, with their subtypes) and the cognitive process dimension; formalises the row reading that was 'dominant kind of knowledge'; placed by ing",
+      "subs": [
+        "Knowledge type",
+        "Cognitive process",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "A factual, B conceptual",
+            "remember, understand",
+            "the terms, details and simple ideas a set task needs (Aa, Ab), with a guided procedure"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "A factual, B conceptual",
+            "understand",
+            "the practice's terminology (Aa) and its principles (Bb): what it is and why it matters"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "C procedural",
+            "apply: executing",
+            "the practice's skills and one set method (Ca, Cb), carried out on a familiar task"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "D metacognitive, beginning",
+            "evaluate: checking",
+            "strategic knowledge (Da) of how to check own work, and first self-knowledge (Dc) of own strengths and gaps"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "B conceptual",
+            "understand, analyse",
+            "the practice's theories, models and structures (Bc) and how they work in a discipline"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "C procedural",
+            "apply: implementing",
+            "several methods (Cb) and the criteria for choosing between them (Cc), used on an unfamiliar task"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "D metacognitive, strategic",
+            "evaluate: checking",
+            "strategic knowledge (Da) and knowledge of tasks, contextual and conditional (Db): what works, when and why"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "C procedural with B conceptual",
+            "evaluate: critiquing",
+            "criteria for when to use which procedure (Cc), justified from theory (Bc)"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "C procedural with D metacognitive",
+            "analyse: attributing, evaluate",
+            "procedure joined to knowledge of the task and its context (Db), judging values and intent in own and others' work"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "D metacognitive: self-knowledge",
+            "evaluate, create",
+            "accurate self-knowledge (Dc): own position, strengths and limits as a knower"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "D metacognitive, all three",
+            "create: generating, planning, producing",
+            "knowledge of cognition in general and of own cognition, used to make new knowledge and to teach others"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "marzano-kendall",
+      "name": "Marzano and Kendall: the New Taxonomy (2007)",
+      "ref": "Marzano, R.J. and Kendall, J.S. (2007) The New Taxonomy of Educational Objectives. 2nd edn. Thousand Oaks: Corwin, p. 62; checked against META run ing:doc:new-taxonomy-marzano-kendall-2007",
+      "note": "three systems (self, metacognitive, cognitive) and six levels of processing; each tier's third card reaches the metacognitive system and, at Advanced, the self-system; placed by ing",
+      "subs": [
+        "System",
+        "Level of processing",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "cognitive",
+            "1. Retrieval",
+            "recognises, recalls and executes what a task needs, without yet grasping its structure"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "cognitive",
+            "2. Comprehension: integrating",
+            "picks out the basic structure of the practice and what matters in it"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "cognitive",
+            "1. Retrieval: executing",
+            "carries out a procedure without significant error, not yet knowing how or why it works"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "metacognitive",
+            "5. Metacognition: monitoring clarity and accuracy",
+            "notices what is still unclear and checks whether own work is right"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "cognitive",
+            "3. Analysis: matching, classifying",
+            "compares and sorts the practice's approaches and finds their likenesses and differences"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "cognitive",
+            "4. Knowledge utilisation: problem solving",
+            "uses the practice to get round obstacles in an unfamiliar task"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "metacognitive",
+            "5. Metacognition: specifying goals, process monitoring",
+            "sets own goals and plans and checks how they are going"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "cognitive",
+            "4. Knowledge utilisation: decision making",
+            "chooses among approaches by weighing them against criteria"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "metacognitive with self",
+            "5. Metacognition, 6. self-system",
+            "monitors own conduct and asks whether the work matters and whether one can do it"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "self",
+            "6. Self-system thinking",
+            "examines the importance of the practice to oneself, own efficacy, emotional response and motivation"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "self",
+            "6. Self-system thinking, with 4. investigating",
+            "engages from settled motivation and investigates the field's knowledge to extend it"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "zimmerman",
+      "name": "Zimmerman: levels of self-regulatory skill (2000)",
+      "ref": "Zimmerman, B.J. (2000) Attaining self-regulation: a social cognitive perspective, in Boekaerts, M., Pintrich, P.R. and Zeidner, M. (eds) Handbook of Self-Regulation. San Diego: Academic Press, pp. 13-39; unverified (W-0106)",
+      "note": "four levels by which self-regulatory skill develops (observation, emulation, self-control, self-regulation), each running the cycle of forethought, performance and self-reflection; placed by ing",
+      "subs": [
+        "Level",
+        "Cycle phase stressed",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "observation",
+            "forethought",
+            "learns what a task involves by watching a teacher or model do it"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "observation",
+            "forethought",
+            "sees the practice modelled and recognises its parts"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "emulation",
+            "performance",
+            "imitates the model's method with guidance and feedback"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "emulation",
+            "self-reflection",
+            "compares own attempt with the model and notices the gap"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "self-control",
+            "forethought",
+            "uses the practice independently in structured settings, to standards taken from models"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "self-control",
+            "performance",
+            "carries the method out alone, watching own performance against those standards"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "self-regulation",
+            "self-reflection",
+            "adapts the practice to changing conditions, judging results and adjusting strategy"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "self-regulation",
+            "forethought",
+            "sets own goals and chooses strategies for new settings"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "self-regulation",
+            "performance",
+            "regulates effort, attention and emotion while acting under uncertainty"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "self-regulation",
+            "self-reflection",
+            "judges own performance against own standards and reacts constructively"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "self-regulation, modelling for others",
+            "the whole cycle",
+            "self-motivated and adaptive, and models the practice for newcomers to observe"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "schraw-dennison",
+      "name": "Schraw and Dennison: knowledge and regulation of cognition (1994)",
+      "ref": "Schraw, G. and Dennison, R.S. (1994) Assessing metacognitive awareness, Contemporary Educational Psychology, 19(4), pp. 460-475; unverified (W-0107)",
+      "note": "knowledge of cognition (declarative, procedural, conditional) and regulation of cognition (planning, information management, monitoring, debugging, evaluation), as in the Metacognitive Awareness Inventory; placed by ing, echoing the cards' shape of knowing what, knowing how and knowing when and why",
+      "subs": [
+        "Component",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "knowledge: declarative, little",
+            "knows little yet about own learning, and relies on the task's instructions"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "knowledge: declarative",
+            "knows what the practice is and what kind of learner one is in it"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "knowledge: procedural",
+            "knows how to use a strategy step by step"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "regulation: monitoring",
+            "checks own understanding and work while doing it"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "regulation: information management",
+            "uses strategies to organise, elaborate and summarise what is learned"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "regulation: planning",
+            "plans, sets goals and allocates time and effort before starting"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "regulation: debugging",
+            "spots what is going wrong and changes strategy to fix it"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "knowledge: conditional",
+            "knows when and why to use each strategy"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "regulation: evaluation",
+            "judges own performance and strategy after the work is done"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "knowledge and regulation integrated",
+            "knows and regulates own cognition as a whole, accurately"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "knowledge and regulation, for others",
+            "makes own regulation explicit so others can learn it"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "eef",
+      "name": "Education Endowment Foundation: metacognition and self-regulated learning (2018; 2nd edn 2025)",
+      "ref": "Education Endowment Foundation (2018) Metacognition and Self-Regulated Learning: Guidance Report; 2nd edn, 13 November 2025; the model as recalled from the first edition; unverified (W-0108)",
+      "note": "metacognitive knowledge of self, task and strategies, put to work through a cycle of planning, monitoring and evaluating; seven recommendations, among them explicit teaching and modelling; placed by ing",
+      "subs": [
+        "Element",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "knowledge of the task",
+            "knows what the task is asking for"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "knowledge of the task",
+            "understands what the practice demands and why"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "knowledge of strategies",
+            "knows one strategy and how to use it"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "knowledge of self, monitoring",
+            "notices how own work is going and where own difficulties lie"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "knowledge of strategies",
+            "knows several strategies and how they compare"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "planning",
+            "plans which strategy to use and how before starting"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "monitoring",
+            "checks progress while working and changes course when needed"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "evaluating",
+            "judges whether the strategy worked and what to do next time"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "the whole cycle, self-regulated",
+            "runs planning, monitoring and evaluating unprompted, with motivation and emotion in hand"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "knowledge of self, evaluated",
+            "an accurate view of oneself as a learner, tested against results"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "explicit modelling for others",
+            "teaches and models own metacognition for others"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "efklides",
+      "name": "Efklides: facets and levels of metacognition (2008)",
+      "ref": "Efklides, A. (2008) Metacognition: defining its facets and levels of functioning in relation to self-regulation and co-regulation, European Psychologist, 13(4), pp. 277-287; unverified (W-0109)",
+      "note": "three facets (metacognitive knowledge, experiences and skills) working at the task level, the person level and the social level of co-regulation and shared regulation; placed by ing",
+      "subs": [
+        "Facet",
+        "Level",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "metacognitive experiences, unnoticed",
+            "task",
+            "feels a task's difficulty without yet reading it as information"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "metacognitive knowledge",
+            "task",
+            "knows what kind of task the practice sets and the strategies it calls for"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "metacognitive skills",
+            "task",
+            "uses a strategy on purpose"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "metacognitive experiences",
+            "task",
+            "reads own feelings of difficulty and confidence as signs of how the work is going"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "metacognitive knowledge",
+            "person",
+            "knows own ways of thinking and learning in the practice"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "metacognitive skills: planning",
+            "task",
+            "plans the work deliberately"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "metacognitive skills: monitoring and control",
+            "task",
+            "monitors and controls own thinking while working"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "knowledge and skills together",
+            "task and person",
+            "chooses strategies from knowing both task and self"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "co-regulation",
+            "social",
+            "regulates own and others' thinking while working in a team"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "metacognitive knowledge in the self-concept",
+            "person",
+            "holds an accurate, examined picture of oneself as a thinker"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "shared regulation",
+            "social",
+            "helps a group regulate its thinking together"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "kuhn",
+      "name": "Kuhn: meta-knowing and epistemological understanding (2000)",
+      "ref": "Kuhn, D. (2000) Metacognitive development, Current Directions in Psychological Science, 9(5), pp. 178-181; Kuhn, D., Cheney, R. and Weinstock, M. (2000) The development of epistemological understanding, Cognitive Development, 15(3), pp. 309-328; unverified (W-0110)",
+      "note": "meta-knowing as metacognitive (knowing about knowledge), metastrategic (knowing about strategies) and epistemological (knowing about knowing), with epistemological understanding moving from absolutist to multiplist to evaluativist; sits beside Baxter Magolda; placed by ing",
+      "subs": [
+        "Meta-knowing",
+        "Epistemological level",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "metacognitive",
+            "absolutist",
+            "treats knowledge as certain facts that are right or wrong"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "metacognitive",
+            "absolutist",
+            "knows what the practice is, taking its rules as settled"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "metastrategic",
+            "absolutist",
+            "knows a strategy, taken as the right way to do it"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "metastrategic",
+            "absolutist to multiplist",
+            "begins to see that knowing involves judgement and that strategies differ"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "metacognitive",
+            "multiplist",
+            "sees that the field holds many views, each possibly as good as another"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "metastrategic",
+            "multiplist",
+            "chooses among strategies, with little yet to weigh them by"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "metastrategic",
+            "multiplist to evaluativist",
+            "judges strategies by how well they work and why"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "epistemological",
+            "evaluativist",
+            "weighs claims by evidence and argument rather than taste"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "epistemological",
+            "evaluativist",
+            "holds views that can be defended, and judges between them"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "epistemological",
+            "evaluativist",
+            "examines how own position shapes what one takes as known"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "epistemological",
+            "evaluativist, reflexive",
+            "questions the field's own ways of knowing and argues for changing them"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pcf",
+      "name": "BASW: Professional Capabilities Framework for social work (2018)",
+      "ref": "British Association of Social Workers (2018) Professional Capabilities Framework; nine domains and nine levels as listed by the Kent, Medway and South East Social Work Teaching Partnership's page (read 4 October 2026); not ingested (W-0116)",
+      "note": "nine domains (professionalism; values and ethics; diversity and equality; rights, justice and economic wellbeing; knowledge; critical reflection and analysis; skills and interventions; contexts and organisations; professional leadership) at nine levels from entry to training to strategic social worker; placed by ing",
+      "subs": [
+        "Level",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "point of entry to training",
+            "shows the potential to train: values, motivation and communication"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "point of entry to training",
+            "begins to learn what social work is and its values"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "readiness for practice",
+            "ready to work with people in a supervised setting"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "readiness for practice",
+            "reflects on own values and their effect on others"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "end of first placement",
+            "applies knowledge and skills with close supervision"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "end of first placement",
+            "carries out set work with service users and records it"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "end of first placement",
+            "reflects critically on own practice in supervision"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "end of last placement and completion",
+            "works with growing autonomy across the nine domains"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "end of last placement and completion",
+            "manages complex work and judges own conduct against the profession's values"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "newly qualified social worker",
+            "consolidates practice and professional identity in the assessed first year"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "experienced, advanced and strategic social worker",
+            "leads practice, teaches and shapes the profession"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "benner",
+      "name": "Benner: from novice to expert in nursing (1984)",
+      "ref": "Benner, P. (1984) From Novice to Expert: Excellence and Power in Clinical Nursing Practice. Menlo Park: Addison-Wesley; Dreyfus's five stages applied to nursing; unverified (W-0105)",
+      "note": "five stages of clinical skill: novice, advanced beginner, competent, proficient, expert; the student nurse is a novice, the newly qualified nurse an advanced beginner, competence comes after some years in practice; placed by ing",
+      "subs": [
+        "Stage",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "novice",
+            "no experience of clinical situations, follows rules free of context"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "novice",
+            "learns the rules and measures of care (temperature, pulse, intake) as given"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "novice",
+            "carries out care by the rule, needing the rule to act"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "novice",
+            "notices on placement that the rules do not say what to do when"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "novice",
+            "recognises recurring features of patients' situations with guidance"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "advanced beginner",
+            "notices the meaningful aspects of situations from experience, still needing support to set priorities"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "advanced beginner",
+            "acts on recurring aspects but treats them as equally important"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "advanced beginner",
+            "the newly qualified nurse: safe and marginally acceptable, still supported"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "competent",
+            "plans care deliberately and consciously, with a feeling of mastery and organisation"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "proficient",
+            "sees the patient's situation as a whole and knows what is typical and what is not"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "expert",
+            "grasps situations intuitively from deep experience, and analyses when something is new"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "skills-for-health",
+      "name": "Skills for Health: NHS career framework",
+      "ref": "the NHS career framework (Skills for Health), nine levels as set out by Health Education England's learning disability workforce page (read 4 October 2026); not ingested (W-0119)",
+      "note": "nine levels from entry to director across health care roles; placed by ing with registration as a practitioner (level 5) at e1 and e2, specialist and advanced practice (levels 6 and 7) at e3, and consultant and director (levels 8 and 9) at level 8",
+      "subs": [
+        "Level",
+        "Reading"
+      ],
+      "rows": [
+        {
+          "rowId": "F",
+          "tier": "foundation",
+          "cells": [
+            "1 and 2: entry level, support worker",
+            "straightforward tasks under direct supervision, then duties by protocol on basic factual knowledge"
+          ]
+        },
+        {
+          "rowId": "i1",
+          "tier": "introductory",
+          "cells": [
+            "2: support worker",
+            "duties following established protocols"
+          ]
+        },
+        {
+          "rowId": "i2",
+          "tier": "introductory",
+          "cells": [
+            "3: senior healthcare assistant or technician",
+            "wider responsibilities on knowledge of facts, principles and concepts"
+          ]
+        },
+        {
+          "rowId": "i3",
+          "tier": "introductory",
+          "cells": [
+            "3: senior healthcare assistant or technician",
+            "applies principles to routine care and recognises own limits"
+          ]
+        },
+        {
+          "rowId": "d1",
+          "tier": "intermediate",
+          "cells": [
+            "4: assistant or associate practitioner",
+            "theoretical knowledge, some judgement and possible supervision of others"
+          ]
+        },
+        {
+          "rowId": "d2",
+          "tier": "intermediate",
+          "cells": [
+            "4: assistant or associate practitioner",
+            "makes judgements within a defined scope of practice"
+          ]
+        },
+        {
+          "rowId": "d3",
+          "tier": "intermediate",
+          "cells": [
+            "4: assistant or associate practitioner",
+            "supervises others' work and reviews own practice"
+          ]
+        },
+        {
+          "rowId": "e1",
+          "tier": "advanced",
+          "cells": [
+            "5: practitioner",
+            "comprehensive, specialised factual and theoretical knowledge; creative problem-solving; registration"
+          ]
+        },
+        {
+          "rowId": "e2",
+          "tier": "advanced",
+          "cells": [
+            "5: practitioner",
+            "practises autonomously and accountably as a registered professional"
+          ]
+        },
+        {
+          "rowId": "e3",
+          "tier": "advanced",
+          "cells": [
+            "6 and 7: specialist or senior, advanced practitioner",
+            "critical understanding, management and service development, then innovating and changing practice in complex settings"
+          ]
+        },
+        {
+          "rowId": "L8",
+          "tier": "beyond",
+          "cells": [
+            "8 and 9: consultant, director",
+            "highly specialised knowledge for original thinking and research, then responsibility for services at the level of the organisation"
+          ]
+        }
+      ]
+    }
+  ],
+  "source": {
+    "repo": "wkspc2614-adapt",
+    "files": [
+      "source-kb/canon-adp/secondary-data/ingested/themes/pathways/integrations/cards/wide/cross-cutting-themes.yaml",
+      "source-kb/canon-adp/secondary-data/ingested/themes/pathways/integrations/cards/wide/models-of-development.yaml"
+    ],
+    "note": "ing's own readings, restructured and concept-ordered. No issuer text copied; theme/framework id cells are traceability pointers into the standards runs."
+  }
+}

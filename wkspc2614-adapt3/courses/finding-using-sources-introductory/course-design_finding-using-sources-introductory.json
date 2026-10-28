@@ -1,0 +1,1821 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "finding-using-sources-introductory",
+  "slug": "finding-using-sources-introductory",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "finding-using-sources",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = finding-using-sources",
+              "note": "one of the academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "finding-using-sources",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = finding-using-sources",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "introductory"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory tier (~ FHEQ L3-low L5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Finding & Using Sources",
+            "tierName": "Introductory",
+            "slug": "finding-using-sources-introductory"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = finding-using-sources",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:46.770Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = finding-using-sources",
+              "note": "Layer-1 record: chapter 7, 10 primary tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = finding-using-sources",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory crs-01_sources 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "7 (primary); discovery-service craft, source evaluation and extending searches out of scope for introductory",
+            "sectionsInScope": [
+              "ch7/opening",
+              "ch7/learning-objectives-and-keywords",
+              "ch7/what-is-searching",
+              "ch7/effective-searching-principles",
+              "ch7/planning-your-search",
+              "ch7/identifying-keywords",
+              "ch7/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch7/using-library-discovery-service (discovery-service search box, Boolean operators AND/OR/NOT, wildcards and limiters: search craft, INTERMEDIATE)",
+              "ch7/evaluating-sources (source types and evaluative criteria such as currency, authority and relevance: INTERMEDIATE/ADVANCED)",
+              "ch7/extending-your-search (databases, Google Books and Google Scholar, citation searching: extending and evaluating deeply, ADVANCED)"
+            ],
+            "tierWindow": {
+              "goal": "Understand what academic searching is and treat it as a planned discipline, so you can plan a simple search and identify keywords for it rather than typing a question into the first search box you meet.",
+              "cognitiveDemand": "Recognition, recall, description and guided application (understand and identify).",
+              "taskComplexity": "Well-defined, one idea at a time; settled distinctions such as everyday versus academic searching, and the stages of a planned search.",
+              "autonomy": "High scaffolding; worked examples; feedback confirms and explains; frequent low-stakes checks.",
+              "voiceBand": "Section 16 Beginner (bands 2-4)",
+              "outcomeVerbs": [
+                "define",
+                "describe",
+                "identify",
+                "recognise",
+                "explain",
+                "give an example of",
+                "plan"
+              ]
+            },
+            "priorExperienceAnchor": "No prior experience of searching as an academic discipline is assumed. The learner searches every day with Google and expects to type a question and get an answer; they have not yet met searching as something you plan, with keywords you choose on purpose. Teach from first principles.",
+            "subThemes": [
+              {
+                "id": "what-is-searching",
+                "label": "What academic searching is: looking for information, but exploratory, iterative and strategy-driven rather than a quick lookup"
+              },
+              {
+                "id": "everyday-vs-academic",
+                "label": "Everyday versus academic searching: why typing a question into Google is not the same as searching for your studies"
+              },
+              {
+                "id": "effective-searching-principles",
+                "label": "The principles of effective searching: the stages a good search moves through, drawn from a contrast of two students' practice"
+              },
+              {
+                "id": "searching-as-planned",
+                "label": "Searching as a planned discipline rather than a one-off lookup you repeat when it fails"
+              },
+              {
+                "id": "planning-your-search",
+                "label": "Planning your search: setting an objective and thinking about source type and date before you start"
+              },
+              {
+                "id": "identifying-keywords",
+                "label": "Identifying keywords and synonyms: the words that drive a search, and how changing them changes what you find"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch7/* chunks tagged finding-using-sources",
+              "note": "primary teachable sections for searching as a discipline"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = finding-using-sources",
+              "note": "Layer-1 record: chapter 7; introductory focus 'searching as a discipline' and Beginner voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory calibration and Beginner voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory crs-02_thematic-scope 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Explain what academic searching is and how it differs from everyday searching."
+              },
+              {
+                "id": "co2",
+                "text": "Describe the principles of an effective, planned search."
+              },
+              {
+                "id": "co3",
+                "text": "Plan a simple search and identify keywords for it."
+              },
+              {
+                "id": "co4",
+                "text": "Recognise how what academic searching is, the principles of an effective search, and planning with keywords work together as one searching practice across your studies."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three introductory sub-themes: what academic searching is (and how it differs from everyday searching), what makes a search effective (the planned-stages principle), and the first practical moves of a search (planning it and choosing keywords). No fourth outcome at introductory: the discovery-service craft, source evaluation and extending searches are the intermediate and advanced concerns; the introductory course builds the understanding and the planning habit.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can explain what academic searching is and how it differs from everyday searching.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can describe the principles of an effective, planned search.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can plan a simple search and identify keywords for it.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can recognise how what academic searching is, the principles of an effective search, and planning with keywords work together as one searching practice across my studies.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch7/* chunks tagged finding-using-sources",
+              "note": "co1 from what-is-searching, co2 from effective-searching-principles, co3 from planning-your-search and identifying-keywords"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the introductory understand/identify end"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory crs-03_course-outcomes 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "What academic searching is",
+                "topic": "what searching means at university and how it differs from everyday searching",
+                "description": "What academic searching is - what searching means at university and how it differs from everyday searching.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/opening",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Chapter 7: Research – Developing Effective Search Strategies",
+                    "pages": "95"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/what-is-searching",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "What do we mean by 'searching'?",
+                    "pages": "96-97"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain what 'searching' means in an academic context.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Distinguish academic searching from everyday searching.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Recognise academic searching as exploratory, iterative and strategy-driven.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "The principles of effective searching",
+                "topic": "the stages an effective, planned search moves through",
+                "description": "The principles of effective searching - the stages an effective, planned search moves through.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/effective-searching-principles",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Effective searching: Identifying key principles",
+                    "pages": "97-102"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Describe the stages of an effective search.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Recognise effective searching as a planned process rather than a one-off lookup.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Identify effective search practice in a worked example.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Planning your search and keywords",
+                "topic": "planning a search and identifying keywords for it",
+                "description": "Planning your search and keywords - planning a search and identifying keywords for it.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/planning-your-search",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Planning your search",
+                    "pages": "102-103"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/identifying-keywords",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Identifying keywords",
+                    "pages": "103-104"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Plan a search by setting an objective and considering source type and date.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Identify keywords for a search topic.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Give a synonym for a keyword to broaden a search.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Searching as one practice",
+                "topic": "the three strands of searching as one planned practice you use every time you look for sources",
+                "description": "Bringing together what academic searching is, the principles of an effective search, and planning with keywords into one searching practice you use across your studies.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/opening",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Chapter 7: Research – Developing Effective Search Strategies",
+                    "pages": "95"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/what-is-searching",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "What do we mean by 'searching'?",
+                    "pages": "96-97"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/effective-searching-principles",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Effective searching: Identifying key principles",
+                    "pages": "97-102"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/planning-your-search",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Planning your search",
+                    "pages": "102-103"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch7/identifying-keywords",
+                    "chapter": 7,
+                    "chapterTitle": "Research - Developing Effective Search Strategies",
+                    "heading": "Identifying keywords",
+                    "pages": "103-104"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Recognise how what academic searching is, the principles of an effective search, and planning with keywords connect as one searching practice",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Show the whole searching practice at work in a worked example of finding sources",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Plan one way to use the three together on your next search in {{context}}",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Searching as one planned practice"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch7 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory crs-04_lesson-map 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/finding-using-sources-introductory/adp-course-design-specification_finding-using-sources-introductory.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "finding-using-sources-introductory-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "What academic searching is",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/ab-card: a generic interactive exploration of what sets academic searching apart from everyday searching across four cards. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch7/opening and ch7/what-is-searching (pp.95-97): searching defined, and everyday versus academic framing.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short reflective prompt asking the learner to connect the lesson to their own searching. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch7 (confirmed chunks): opening, what-is-searching (pp.95-97)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-card"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 title/topic/outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory finding-using-sources-introductory-L01-les-01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "finding-using-sources-introductory-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The principles of effective searching",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/gowtimeline: a generic interactive walk through the five stages of an effective search, revealed one stage at a time as a process over time. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch7/effective-searching-principles (pp.97-102): the contrasting worked examples and the five numbered stages of effective searching practice.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short reflective prompt asking the learner to connect the lesson to their own searching. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowtimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch7 (confirmed chunks): effective-searching-principles (pp.97-102)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/gowtimeline"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 title/topic/outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:30:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory finding-using-sources-introductory-L02-les-01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "finding-using-sources-introductory-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Planning your search and keywords",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/keyterm: a generic interactive key-term treatment of the central concept 'keyword', revealed on demand with its definition, example and related terms. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch7/planning-your-search (pp.102-103) and ch7/identifying-keywords (pp.103-104): planning a search, keywords and synonyms.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short reflective prompt asking the learner to connect the lesson to their own searching. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/keyterm",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch7 (confirmed chunks): planning-your-search (pp.102-103), identifying-keywords (pp.103-104)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/keyterm"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 title/topic/outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:40:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory finding-using-sources-introductory-L03-les-01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, what academic searching is: how it differs from the searching you already do every day. Second, the principles of effective searching: the stages a good search moves through. Third, planning and keywords: the first practical moves of a search you plan yourself. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This short course is about finding and using sources at university: what searching really means, and how to do it well. By the end you will be able to explain what academic searching is and how it differs from everyday searching, describe what makes a search effective, and plan a simple search by choosing keywords for it.</p><p>This is not a skill you can skip. Almost every assignment asks you to find and use sources, and the quality of what you find shapes the quality of what you write. Searching well saves you time and leads you to better material than the first result you happen to land on.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: explain what academic searching is, describe the principles of an effective search, plan a simple search and identify keywords.",
+            "practiceConnection": {
+              "academic": "<p>Finding and using sources is the groundwork of academic study. Every essay built on reading, every literature review, every project that rests on evidence begins with a search. Build the habit now and it carries into every module of your degree, and into the research and fact-finding that professional work later asks of you.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:50:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Finding & Using Sources: Intermediate",
+                "Finding & Using Sources: Advanced"
+              ],
+              "horizontal": [
+                "Academic Writing",
+                "Criticality",
+                "Researching & Research Methods"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the intermediate and advanced finding and using sources courses take you into using a library discovery service with Boolean searches, evaluating sources, and extending a search through databases and citation searching. Going wider: the same habits underpin Academic Writing, Criticality and Researching, where you put your sources to work on real tasks.</p>",
+            "summary": "<p>You have reached the end of the course. Finding sources is no longer hit and miss: it is something you can plan and do on purpose. You can explain what academic searching is, exploratory, iterative and strategy-driven, and how it differs from everyday searching. You can describe the stages an effective search moves through. And you can plan a simple search and choose keywords, with synonyms to broaden it. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, searching is something you do in every module. Each assignment that rests on reading, each project that needs evidence, begins with a planned search and well-chosen keywords. It is also a habit that professional life rewards: the ability to find, weigh and use good information travels well beyond your degree.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 95 to 112 of Chapter 7, 'Research: Developing Effective Search Strategies', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:50:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What best describes academic searching, compared with the everyday searching you do online?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these is a feature of academic searching but not usually of everyday searching?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Effective searching is best described as..."
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student runs one search, gets poor results, and gives up. Which principle of effective searching have they missed?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "When planning a search, what should you decide before you start typing?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "One of your keywords is 'car'. Which of these is a synonym you could add to broaden the search?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:50:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can explain what academic searching is and how it differs from everyday searching."
+              },
+              {
+                "rates": "co2",
+                "text": "I can describe the principles of an effective, planned search."
+              },
+              {
+                "rates": "co3",
+                "text": "I can plan a simple search and identify keywords for it."
+              },
+              {
+                "rates": "co4",
+                "text": "I can recognise how what academic searching is, the principles of an effective search, and planning with keywords work together as one searching practice across my studies."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:50:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "finding-using-sources-introductory wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "What academic searching is",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "The principles of effective searching",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowtimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Planning your search and keywords",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/keyterm",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Searching as one practice",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "finding-using-sources-introductory-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

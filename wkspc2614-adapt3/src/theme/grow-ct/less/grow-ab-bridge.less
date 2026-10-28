@@ -1,0 +1,103 @@
+// ============================================================================
+//  grow-ab-bridge.less — re-declare the ab-theme ROLE tokens the abbott
+//  components still consume, now that adapt-ab-theme is excluded.
+//
+//  adapt-ab-base (still in the build) provides the raw --ab-accent / --ab-ink /
+//  component --ab-card/callout/btn tokens, but the accent-ROLE family and a few
+//  palette tokens lived only in adapt-ab-theme (ab-schemes.less / ab-palette.less
+//  / ab-core.less). Without them, several adapt-abbott-* components had
+//  invisible text on filled/feedback states and lost their focus outlines
+//  (WCAG 2.4.7). We map those roles onto GROW's live scheme tokens, so the
+//  components are not just fixed but follow light / dark / contrast.
+// ============================================================================
+:root {
+  // accent-role family (was ab-schemes.less) → GROW scheme accent
+  --ab-base-accent:         var(--accent);
+  --ab-base-accent-hover:   color-mix(in srgb, var(--accent) 86%, #000);
+  --ab-base-accent-deep:    color-mix(in srgb, var(--accent) 68%, #000);
+  --ab-base-accent-active:  color-mix(in srgb, var(--accent) 74%, #000);
+  --ab-base-accent-tint:    color-mix(in srgb, var(--accent) 16%, var(--surface-1));
+  --ab-base-accent-ring:    color-mix(in srgb, var(--accent) 55%, transparent);
+  --ab-base-on-accent:      #ffffff;
+  --ab-base-surface-subtle: var(--surface-2);
+
+  // palette tokens used by the tooltip (was ab-palette.less)
+  --ab-white:     #ffffff;
+  --ab-dark-grey: hsl(var(--h) 12% 26%);   // tooltip bubble fill (dark in both modes)
+
+  // misc orphans
+  --ab-primary:        var(--accent);
+  --ab-space-300:      var(--space-md, 3rem);
+  --ab-body-font-size: var(--fs-base, 1rem);
+  --ab-greys-light-40: hsl(var(--h) var(--gs) 72%);
+  --ab-greys-light-50: hsl(var(--h) var(--gs) 78%);
+
+  // ab-hotgraphic wedge tokens. The wedge fill must CONTRAST with the stage
+  // card (surface-2) the diagram sits on, so a faint accent tint on surface-1,
+  // not surface-2 (which made wedges vanish into the card).
+  --ab-hotgraphic-wedge-fill:       color-mix(in srgb, var(--accent) 8%, var(--surface-1));
+  --ab-hotgraphic-wedge-fill-hover: color-mix(in srgb, var(--accent) 22%, var(--surface-1));
+  --ab-hotgraphic-wedge-ink:        var(--ink);
+}
+
+// ── ab-hotgraphic diagram paint ──────────────────────────────────────────────
+// The component LESS paints .wedge/.label from the tokens above, but the rule
+// (circle outline + spokes) and flow (direction arrows) classes lived only in
+// the excluded adapt-ab-theme, so a generated cycle/timeline showed only its
+// labels. Re-provide themed paint for them (and a visited-state wedge tint).
+.ab-hotgraphic {
+  .rule       { stroke: var(--line); stroke-width: 2; fill: none; }
+  .flow       { stroke: var(--ink-soft); stroke-width: 4; fill: none; stroke-linecap: round; }
+  .flow-head  { fill: var(--ink-soft); }
+  .label-sub  { fill: var(--ink-soft); }
+  .is-visited .wedge { fill: color-mix(in srgb, var(--accent) 16%, var(--surface-1)); }
+}
+
+// .cm.btn — the canonical author/trigger button object. Its RULES lived only in
+// adapt-ab-theme (ab-buttons.less), now excluded, so adapt-abbott-modal's
+// .js-modal-trigger and any author-placed <a class="cm btn ..."> rendered
+// unstyled. Re-provide a GROW version on the bridged tokens, so it follows the
+// live scheme (light / dark / contrast) like the token fixes above.
+.cm.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: var(--ab-border-radius, 0.375rem);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--surface-2);
+  color: var(--ink);
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  .no-touch &:hover {
+    background: color-mix(in srgb, var(--surface-2) 82%, var(--ink));
+  }
+  html:not(.a11y-disable-focusoutline) &:focus-visible {
+    outline: 3px solid var(--ab-base-accent-ring);
+    outline-offset: 2px;
+  }
+  &[disabled],
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // primary / accent variant (adapt-abbott-modal's trigger uses .cm.btn.primary)
+  &.primary,
+  &.dark-blue {
+    background: var(--accent);
+    color: var(--ab-base-on-accent, #fff);
+    border-color: var(--accent);
+
+    .no-touch &:hover {
+      background: var(--ab-base-accent-hover);
+    }
+  }
+}

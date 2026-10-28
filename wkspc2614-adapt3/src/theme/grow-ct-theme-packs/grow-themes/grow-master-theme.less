@@ -1,0 +1,12 @@
+// The coherent theme document: select one settings pack per category.
+// Paths are relative to this file. Missing packs deliberately fail compilation.
+@grow-theme-name: "grow-master";
+@color: "grow-master-packs/grow-master-color/grow-navy-theme.less";
+@spacing: "grow-master-packs/grow-master-spacing/grow-normal-spacing.less";
+@typography: "grow-master-packs/grow-master-typography/grow-normal-typography.less";
+
+@import "@{spacing}";
+@import "@{typography}";
+@import "@{color}";
+
+// Theme-specific declarations can live here, after the imported settings.

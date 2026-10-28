@@ -1,0 +1,165 @@
+// adapt-grow-memory
+//
+// Memory match: a grid of flip tiles. Face down, a tile shows the brand accent
+// and hides its content; turned up it shows a light face with the content
+// scaling in; matched it settles to a positive tint and stays.
+//
+// Tokens: the study's CSS variables are mapped to the component's own
+// --memory-* custom properties, each resolving through a grow -> ab -> literal
+// fallback chain, so there are no hard-coded brand colours and the tiles retint
+// with the live hue and flip for dark mode along with the rest of the theme.
+//
+// LESS note (per the maturation gotchas): no `:is(a, b)` and no bare
+// `min()`/`max()`; `clamp()`, `minmax()` and `aspect-ratio` pass through fine.
+
+.memory {
+
+  &__inner {
+    // Inherits from component__inner.
+  }
+
+  &__widget {
+    position: relative; // anchors the visually-hidden live region
+
+    // ── token map: grow runtime -> grow fallback -> ab theme -> literal ──
+    --memory-accent:         var(--grow-accent, var(--accent, var(--ab-base-accent, #365f80)));
+    --memory-surface:        var(--grow-surface-1, var(--surface-1, var(--ab-base-surface, #ffffff)));
+    --memory-line:           var(--grow-line, var(--line, var(--ab-base-hairline, #d5dde2)));
+    --memory-ink:            var(--grow-ink, var(--ink, var(--ab-base-ink, #1a2a33)));
+    --memory-ink-soft:       var(--grow-ink-soft, var(--ink-soft, #566));
+    --memory-positive:       var(--grow-c-positive, var(--c-positive, #2e7d4f));
+    --memory-positive-weak:  var(--grow-c-positive-weak, var(--c-positive-weak, var(--c-pos-weak, #e3f3ea)));
+    --memory-on-accent:      var(--grow-white, #ffffff);
+    --memory-radius:         12px;
+    --memory-fs-icon:        var(--grow-fs-lg, var(--fs-lg, 1.6rem));
+    --memory-fs-text:        var(--grow-fs-xs, var(--fs-xs, 0.85rem));
+  }
+
+  &__board {
+    display: grid;
+    // Responsive by default: as many ~72px columns as fit. A positive _columns
+    // overrides this with an inline grid-template-columns from the template.
+    grid-template-columns: repeat(auto-fit, minmax(clamp(56px, 18vw, 84px), 1fr));
+    gap: 0.5rem;
+    max-width: 34rem;
+  }
+
+  &__tile {
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    padding: 0.3rem;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: var(--memory-radius);
+    background: var(--memory-accent);
+    color: transparent;
+    font: inherit;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+    &:focus-visible {
+      outline: 3px solid var(--memory-ink);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &[aria-disabled="true"] {
+      cursor: default;
+    }
+
+    // Turned up: light face, content scales in (the kept scale-in reveal).
+    &.is-up {
+      background: var(--memory-surface);
+      border-color: var(--memory-line);
+      color: var(--memory-accent);
+    }
+
+    // Matched: settles to a positive tint and stays revealed.
+    &.is-matched {
+      background: var(--memory-positive-weak);
+      border-color: var(--memory-positive);
+      color: var(--memory-positive);
+      cursor: default;
+    }
+
+    &.is-up .memory__icon,
+    &.is-up .memory__text,
+    &.is-matched .memory__icon,
+    &.is-matched .memory__text {
+      transform: scale(1);
+    }
+  }
+
+  &__face {
+    display: grid;
+    place-items: center;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  &__icon {
+    font-family: 'Material Symbols Outlined'; // self-hosted by the GROW theme
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    font-size: var(--memory-fs-icon);
+    font-feature-settings: 'liga';
+    // Scale-in reveal (held from the source pattern).
+    transform: scale(0);
+    transition: transform 0.25s ease;
+  }
+
+  &__text {
+    font-size: var(--memory-fs-text);
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+    overflow-wrap: anywhere;
+    transform: scale(0);
+    transition: transform 0.25s ease;
+  }
+
+  &__feedback {
+    min-height: 1.4em;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--memory-positive);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.is-visible {
+      opacity: 1;
+    }
+  }
+
+  // Visually hidden, available to screen readers.
+  &__live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+}
+
+// Reduced motion: keep the state swaps instant (no scale-in, no colour fade).
+// The state classes still apply, so turned / matched tiles still read correctly.
+@media (prefers-reduced-motion: reduce) {
+  .memory__tile,
+  .memory__icon,
+  .memory__text,
+  .memory__feedback {
+    transition: none;
+  }
+}

@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="./typing-chat.css">
+<div id="guided-chat"></div>
+<script src="./typing-chat.js"></script>
+<script>
+  TexturedChat.mountTypingChat(document.getElementById('guided-chat'), {
+    messages: [
+      { speaker: 'guide', text: 'What is one idea you want to remember?' },
+      { speaker: 'learner', text: 'A good question makes the next step clearer.' },
+      { speaker: 'guide', text: 'Pin that thought to your notes board. What evidence would help you test it?' }
+    ]
+  });
+</script>

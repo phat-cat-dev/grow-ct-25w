@@ -1,0 +1,36 @@
+{{!--
+  adapt-grow-outcomes
+  Lead-in + an ordered list of outcomes. Every outcome is rendered, but those
+  past the revealed count are hidden (aria-hidden + no .is-revealed); the view
+  reveals them one at a time. The reveal button carries a live counter; once the
+  last outcome shows, the view hides the button and reveals the completion line.
+--}}
+<div class="component__inner growOutcomes__inner">
+  <div class="outcomes" data-component="grow-outcomes">
+
+    {{#if body}}
+      <div class="outcomes__lead">{{{compile body}}}</div>
+    {{/if}}
+
+    {{#if instruction}}
+      <div class="outcomes__instruction">{{{compile instruction}}}</div>
+    {{/if}}
+
+    <ol class="outcomes__list" aria-live="polite">
+      {{#each _items}}
+        <li class="outcomes__item" aria-hidden="true">
+          <span class="outcomes__item-marker" aria-hidden="true"></span>
+          <span class="outcomes__item-text">{{{compile text}}}</span>
+        </li>
+      {{/each}}
+    </ol>
+
+    <div class="outcomes__controls">
+      <button type="button" class="btn-text outcomes__reveal js-outcomes-reveal">
+        <span class="outcomes__reveal-label">{{_revealButtonText}}</span>
+        <span class="outcomes__counter js-outcomes-counter" aria-hidden="true"></span>
+      </button>
+    </div>
+
+  </div>
+</div>

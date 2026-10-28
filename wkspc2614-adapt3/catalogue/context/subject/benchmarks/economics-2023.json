@@ -1,0 +1,4308 @@
+{
+  "subjectBenchmarkId": "economics-2023",
+  "subject": {
+    "name": "Economics",
+    "codes": [
+      {
+        "scheme": "hecos",
+        "code": "100450",
+        "label": "economics"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH15-02-01",
+        "label": "economics"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH15-02",
+        "label": "economics"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH15",
+        "label": "social sciences"
+      },
+      {
+        "scheme": "hecos",
+        "code": "100604",
+        "label": "econometrics"
+      },
+      {
+        "scheme": "hecos",
+        "code": "101401",
+        "label": "microeconomics"
+      },
+      {
+        "scheme": "hecos",
+        "code": "101402",
+        "label": "macroeconomics"
+      },
+      {
+        "scheme": "hecos",
+        "code": "100301",
+        "label": "economic history"
+      },
+      {
+        "scheme": "hecos",
+        "code": "100452",
+        "label": "international economics"
+      },
+      {
+        "scheme": "hecos",
+        "code": "100601",
+        "label": "economic policy"
+      }
+    ]
+  },
+  "issuer": "QAA",
+  "title": "Subject Benchmark Statement Economics",
+  "edition": "March 2023 (fifth edition)",
+  "published": "2023-03",
+  "status": "current",
+  "levelsCovered": [
+    "fheq:6",
+    "fqheis:10"
+  ],
+  "awardsCovered": [
+    "bachelor's with honours"
+  ],
+  "nations": [
+    "England",
+    "Wales",
+    "Scotland",
+    "Northern Ireland"
+  ],
+  "source": {
+    "ingestId": "std:doc:qaa-economics-2023-benchmarks",
+    "ingestDoc": {
+      "repo": "wkspc2614-adapt",
+      "path": "source-kb/canon-adp/secondary-data/ingested/standards/ingest-std-qaa-economics-2023-benchmarks/ingest-std-qaa-economics-2023-benchmarks.md",
+      "note": "QAA Subject Benchmark Statement, ingested. Issuer text is held, never copied; every statement here is our paraphrase or audience rewrite."
+    },
+    "adaptMap": {
+      "status": "pending",
+      "expectedPath": "tools/pathways/core/mapping/economics-2023.adapt-map.json",
+      "note": "No adapt-map for this subject yet; pathwayMapping is empty until one is generated at expectedPath, after which this build picks it up on a re-run."
+    },
+    "licence": "QAA copyright; held for study, never published. No issuer text (the per-statement \"source\" quote) is copied into this file; all statement text here is our own paraphrase or audience rewrite."
+  },
+  "identity": {
+    "issuer": "The Quality Assurance Agency for Higher Education",
+    "title": "Subject Benchmark Statement Economics",
+    "edition": "March 2023 (fifth edition)",
+    "dates": {
+      "published": "2023-03",
+      "other": []
+    },
+    "kind": "subject-benchmark",
+    "jurisdiction": [
+      "UK"
+    ],
+    "authority": "reference: a sector reference point, \"not a regulatory requirement\" (D1, front matter); in England not a sector-recognised standard under the OfS framework; a key reference point in Wales and Scotland; part of the quality arrangements in Northern Ireland (D1, front matter: Relationship to legislation)",
+    "licence": "QAA copyright; the document gives no re-use terms in its text (D1, front matter)",
+    "copyrightNotice": {
+      "text": "© The Quality Assurance Agency for Higher Education 2023",
+      "locator": "D1, index"
+    }
+  },
+  "purpose": {
+    "governs": "the knowledge, understanding and skills expected of an Economics graduate on completing an honours degree, the nature of such degrees and the standards at three rungs (D1, front matter: About this Statement; 1.1; 4.1)",
+    "appliesTo": {
+      "awards": [
+        "bachelor's degrees with honours in Economics, single honours or with Economics as a major component (4.1)",
+        "combined, joint or major-minor routes (2.4; rungs not all expected where Economics is a minor component, 4.1)"
+      ],
+      "levels": [
+        "fheq:6",
+        "fqheis:10"
+      ],
+      "providers": [
+        "UK higher education providers"
+      ]
+    },
+    "whoMustUse": "none-stated; it is a reference point, not a requirement (D1, front matter)",
+    "howUsed": [
+      "design",
+      "approval",
+      "review",
+      "other: external examining; PSRBs; information for prospective students and employers"
+    ],
+    "doesNot": "it is not a national curriculum and does not prescribe teaching, learning or assessment; it carries no statutory or regulatory requirement (D1, front matter)",
+    "beneficiary": "the student",
+    "statedScope": "\"This document sets out benchmark standards for undergraduate degrees in Economics.\" (D1, 1.1)",
+    "statedSubjects": [
+      {
+        "name": "Economics",
+        "locator": "(D1, title; 1.1)",
+        "kind": "subject",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100450",
+            "label": "economics"
+          },
+          {
+            "scheme": "cah",
+            "code": "CAH15-02-01",
+            "label": "economics"
+          }
+        ]
+      },
+      {
+        "name": "a single honours degree in Economics and joint degrees where Economics is a major component",
+        "locator": "(D1, 4.1; 3.1)",
+        "kind": "programme title",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100450",
+            "label": "economics"
+          }
+        ]
+      },
+      {
+        "name": "a combined, joint or major-minor route",
+        "locator": "(D1, 2.4)",
+        "kind": "programme title",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100450",
+            "label": "economics"
+          }
+        ]
+      },
+      {
+        "name": "econometrics",
+        "locator": "(D1, 3.3; 3.5)",
+        "kind": "specialism",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100604",
+            "label": "econometrics"
+          }
+        ]
+      },
+      {
+        "name": "the core fields of micro and macroeconomics",
+        "locator": "(D1, 1.3; 3.5)",
+        "kind": "specialism",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "101401",
+            "label": "microeconomics"
+          },
+          {
+            "scheme": "hecos",
+            "code": "101402",
+            "label": "macroeconomics"
+          }
+        ]
+      },
+      {
+        "name": "economic history and history of economic thought",
+        "locator": "(D1, 2.2; 3.6)",
+        "kind": "specialism",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100301",
+            "label": "economic history"
+          }
+        ]
+      },
+      {
+        "name": "international macroeconomics and finance; international trade and migration",
+        "locator": "(D1, 3.5)",
+        "kind": "specialism",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100452",
+            "label": "international economics"
+          }
+        ]
+      },
+      {
+        "name": "political economy",
+        "locator": "(D1, 3.5)",
+        "kind": "specialism",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100601",
+            "label": "economic policy"
+          }
+        ]
+      },
+      {
+        "name": "behavioural, development, environmental, experimental, health, labour, monetary and public economics; growth; industrial organisation",
+        "locator": "(D1, 3.5)",
+        "kind": "specialism",
+        "codes": []
+      }
+    ],
+    "subjects": "see front matter (subjectScope subjects)"
+  },
+  "statedSubjects": [
+    {
+      "name": "Economics",
+      "locator": "(D1, title; 1.1)",
+      "kind": "subject",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100450",
+          "label": "economics"
+        },
+        {
+          "scheme": "cah",
+          "code": "CAH15-02-01",
+          "label": "economics"
+        }
+      ]
+    },
+    {
+      "name": "a single honours degree in Economics and joint degrees where Economics is a major component",
+      "locator": "(D1, 4.1; 3.1)",
+      "kind": "programme title",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100450",
+          "label": "economics"
+        }
+      ]
+    },
+    {
+      "name": "a combined, joint or major-minor route",
+      "locator": "(D1, 2.4)",
+      "kind": "programme title",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100450",
+          "label": "economics"
+        }
+      ]
+    },
+    {
+      "name": "econometrics",
+      "locator": "(D1, 3.3; 3.5)",
+      "kind": "specialism",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100604",
+          "label": "econometrics"
+        }
+      ]
+    },
+    {
+      "name": "the core fields of micro and macroeconomics",
+      "locator": "(D1, 1.3; 3.5)",
+      "kind": "specialism",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "101401",
+          "label": "microeconomics"
+        },
+        {
+          "scheme": "hecos",
+          "code": "101402",
+          "label": "macroeconomics"
+        }
+      ]
+    },
+    {
+      "name": "economic history and history of economic thought",
+      "locator": "(D1, 2.2; 3.6)",
+      "kind": "specialism",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100301",
+          "label": "economic history"
+        }
+      ]
+    },
+    {
+      "name": "international macroeconomics and finance; international trade and migration",
+      "locator": "(D1, 3.5)",
+      "kind": "specialism",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100452",
+          "label": "international economics"
+        }
+      ]
+    },
+    {
+      "name": "political economy",
+      "locator": "(D1, 3.5)",
+      "kind": "specialism",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100601",
+          "label": "economic policy"
+        }
+      ]
+    },
+    {
+      "name": "behavioural, development, environmental, experimental, health, labour, monetary and public economics; growth; industrial organisation",
+      "locator": "(D1, 3.5)",
+      "kind": "specialism",
+      "codes": []
+    }
+  ],
+  "structure": [
+    {
+      "number": "1.1",
+      "order": 3,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Context and purposes of an Economics degree",
+      "gloss": "what the statement covers: the subject, typical aims, knowledge and skills, learning and assessment and the three rungs"
+    },
+    {
+      "number": "1.2",
+      "order": 4,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Purposes and characteristics of an Economics degree",
+      "gloss": "economics defined: decisions and interaction within institutions and power, allocation of resources, well-being and sustainability (S4 none)"
+    },
+    {
+      "number": "1.3",
+      "order": 5,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Purposes and characteristics of an Economics degree",
+      "gloss": "micro and macro, static and dynamic analysis; contested interpretations call for plural perspectives and evidence (S4: the requirement of understanding)"
+    },
+    {
+      "number": "1.4",
+      "order": 6,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Purposes and characteristics of an Economics degree",
+      "gloss": "a broad social science linked to many disciplines and core to finance, business and accounting"
+    },
+    {
+      "number": "1.5",
+      "order": 7,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Purposes and characteristics of an Economics degree",
+      "gloss": "joint and innovative degrees; employment across sectors; knowing the limits of the tools; responsible citizenship"
+    },
+    {
+      "number": "1.6",
+      "order": 8,
+      "componentType": "stem",
+      "parent": "section 1",
+      "heading": "Purposes and characteristics of an Economics degree",
+      "gloss": "stem: the core intellectual abilities economists need (six items, S4)"
+    },
+    {
+      "number": "1.7",
+      "order": 9,
+      "componentType": "stem",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion (EDI)",
+      "gloss": "the subject studies discrimination and inequality; teachers should foster an inclusive community and embed EDI (S4), with example actions"
+    },
+    {
+      "number": "1.8",
+      "order": 10,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion (EDI)",
+      "gloss": "evidence-based debate on sensitive EDI questions, held inclusively"
+    },
+    {
+      "number": "1.9",
+      "order": 11,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion (EDI)",
+      "gloss": "the profession's narrow make-up and the need for compassionate, inclusive teaching"
+    },
+    {
+      "number": "1.10",
+      "order": 12,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "teaching that answers the needs of the student body through an accessible, inclusive curriculum (S4)"
+    },
+    {
+      "number": "1.11",
+      "order": 13,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "curricula in which a diverse community can recognise itself"
+    },
+    {
+      "number": "1.12",
+      "order": 14,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "blended and online delivery since 2020: chances for inclusion and risks to equal access"
+    },
+    {
+      "number": "1.13",
+      "order": 15,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "digital accessibility of graphs, media, data and software (S4)"
+    },
+    {
+      "number": "1.14",
+      "order": 16,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "digital capability and published examples of accessibility practice"
+    },
+    {
+      "number": "1.15",
+      "order": 17,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Sustainability",
+      "gloss": "sustainability framed by the UN SDGs and Global Compact, defined and woven into concepts and models"
+    },
+    {
+      "number": "1.16",
+      "order": 18,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Sustainability",
+      "gloss": "graduates able to face the planetary crisis; critical and creative capacities beyond set tools (S4)"
+    },
+    {
+      "number": "1.17",
+      "order": 19,
+      "componentType": "stem",
+      "parent": "section 1",
+      "heading": "Sustainability",
+      "gloss": "stem: core skills aligned with the ESD guidance competencies and four named SDGs"
+    },
+    {
+      "number": "1.18",
+      "order": 20,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Sustainability",
+      "gloss": "economics as a basis for sustainable, evidence-informed policy and for communicating it"
+    },
+    {
+      "number": "1.19",
+      "order": 21,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Sustainability",
+      "gloss": "areas of economics that address environmental limits, valuation, market failure and equity"
+    },
+    {
+      "number": "1.20",
+      "order": 22,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "enterprise and entrepreneurship education: what it is and what it offers students"
+    },
+    {
+      "number": "1.21",
+      "order": 23,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "transferable skills relevant to enterprise"
+    },
+    {
+      "number": "1.22",
+      "order": 24,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "data software and data handling skills of graduates"
+    },
+    {
+      "number": "1.23",
+      "order": 25,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "communicating economics to wide audiences in many media"
+    },
+    {
+      "number": "1.24",
+      "order": 26,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "placements and work experience and the attributes they build"
+    },
+    {
+      "number": "1.25",
+      "order": 27,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "real-world, interdisciplinary application and how theory has changed with policy challenges"
+    },
+    {
+      "number": "1.26",
+      "order": 28,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Enterprise and entrepreneurship education",
+      "gloss": "enterprise education beyond employment: a self-directed life and civic contribution"
+    },
+    {
+      "number": "2.1",
+      "order": 30,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "broad, rigorous design; a core of methods and tools applied in field modules"
+    },
+    {
+      "number": "2.2",
+      "order": 31,
+      "componentType": "stem",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "mathematics on entry and support (S4); research-led teaching; stem of eight typical course outcomes (S4)"
+    },
+    {
+      "number": "2.3",
+      "order": 32,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "progression through levels to the threshold skills; readiness for postgraduate study"
+    },
+    {
+      "number": "2.4",
+      "order": 33,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "joint and combined routes reach core skills and add others (S4)"
+    },
+    {
+      "number": "2.5",
+      "order": 34,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "exit awards and four-year Scottish honours; part-time routes"
+    },
+    {
+      "number": "2.6",
+      "order": 35,
+      "componentType": "practice",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "mixed modes of delivery, independent learning and varied materials"
+    },
+    {
+      "number": "2.7",
+      "order": 36,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "degree apprenticeships and placements with outside organisations"
+    },
+    {
+      "number": "2.8",
+      "order": 37,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "widening participation with the Royal Economic Society and others"
+    },
+    {
+      "number": "2.9",
+      "order": 38,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "course monitoring and review, with students taking part (S4)"
+    },
+    {
+      "number": "2.10",
+      "order": 39,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "external reviewers in periodic review (S4)"
+    },
+    {
+      "number": "2.11",
+      "order": 40,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "external examiners and how the statement supports them"
+    },
+    {
+      "number": "2.12",
+      "order": 41,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "accreditation of courses with professional outcomes by professional and regulatory bodies"
+    },
+    {
+      "number": "3.1",
+      "order": 43,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "content adapts to the degree; the statement does not prescribe forms of analysis"
+    },
+    {
+      "number": "3.2",
+      "order": 44,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "stem and area: eight key concepts most courses cover (one item obliges, S4)"
+    },
+    {
+      "number": "3.3",
+      "order": 45,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "data, programming and econometric skills on real data (S4)"
+    },
+    {
+      "number": "3.4",
+      "order": 46,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "selecting and applying tools to applied topics and policy as an essential outcome (S4)"
+    },
+    {
+      "number": "3.5",
+      "order": 47,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "stem and area: fourteen common applied fields"
+    },
+    {
+      "number": "3.6",
+      "order": 48,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "economic history and the history of economic thought as context"
+    },
+    {
+      "number": "3.7",
+      "order": 49,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "growing critical facility and independence; a range of teaching methods"
+    },
+    {
+      "number": "3.8",
+      "order": 50,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "interactive, student-centred and blended learning since the pandemic"
+    },
+    {
+      "number": "3.9",
+      "order": 51,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "resources and organisations that support economics teaching"
+    },
+    {
+      "number": "3.10",
+      "order": 52,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "language, mathematics and study-skills support for diverse cohorts (S4)"
+    },
+    {
+      "number": "3.11",
+      "order": 53,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "pluralist and decolonial approaches supporting inclusion"
+    },
+    {
+      "number": "3.12",
+      "order": 54,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "assessment design at module and course level"
+    },
+    {
+      "number": "3.13",
+      "order": 55,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "assessment that builds problem-solving and higher-order reasoning"
+    },
+    {
+      "number": "3.14",
+      "order": 56,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "a range of assessment forms, including authentic and data-based tasks"
+    },
+    {
+      "number": "3.15",
+      "order": 57,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "formative assessment and scaffolded skills development"
+    },
+    {
+      "number": "4.1",
+      "order": 59,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Introduction",
+      "gloss": "where the rungs apply (single honours and major joint degrees); typical includes threshold"
+    },
+    {
+      "number": "4.2",
+      "order": 60,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Introduction",
+      "gloss": "most students exceed the threshold; providers should use Annex D (S4)"
+    },
+    {
+      "number": "4.3",
+      "order": 61,
+      "componentType": "stem",
+      "parent": "section 4",
+      "heading": "Threshold level",
+      "gloss": "rung lead-in: threshold, eight items"
+    },
+    {
+      "number": "4.4",
+      "order": 62,
+      "componentType": "stem",
+      "parent": "section 4",
+      "heading": "Typical level",
+      "gloss": "rung lead-in: typical, eight items"
+    },
+    {
+      "number": "4.5",
+      "order": 63,
+      "componentType": "stem",
+      "parent": "section 4",
+      "heading": "Excellent level",
+      "gloss": "rung lead-in: excellent, eight items, shown consistently"
+    },
+    {
+      "number": "1",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Context and purposes of an Economics degree",
+      "gloss": "section 1"
+    },
+    {
+      "number": "2",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Distinctive features of an Economics degree",
+      "gloss": "section 2"
+    },
+    {
+      "number": "3",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Content, structure and delivery",
+      "gloss": "section 3"
+    },
+    {
+      "number": "4",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Benchmark standards",
+      "gloss": "section 4"
+    }
+  ],
+  "frameworkAlignment": {
+    "levels": [
+      {
+        "id": "fheq:6",
+        "role": "cites",
+        "locator": "D1, 2.3; 4.2"
+      },
+      {
+        "id": "fqheis:10",
+        "role": "cites",
+        "locator": "D1, 2.3; 4.2"
+      }
+    ],
+    "crosswalks": [
+      {
+        "from": "fheq:6",
+        "to": "fqheis:10",
+        "relation": "equivalent",
+        "basis": "stated (D1, 2.3: \"a degree with honours (FHEQ Level 6; FQHEIS Level 10)\"; 4.2)"
+      }
+    ]
+  },
+  "tierReadings": {
+    "rows": [
+      {
+        "rowId": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "practice": "applies economic reasoning and models to policy questions, gathering and analysing economic data with suitable quantitative methods and computing tools",
+        "knowledge": "the main economic concepts, theories and tools, where economic data come from and the historical, institutional and environmental settings in which analyses are used",
+        "identity": "an economist in training who recognises the limits of their models, accepts that problems admit more than one approach and explains results to non-economists",
+        "groundingIds": [
+          "qaa/economics-2023/4.3.b5",
+          "qaa/economics-2023/4.3.b3",
+          "qaa/economics-2023/4.3.b1",
+          "qaa/economics-2023/4.3.b4",
+          "qaa/economics-2023/4.3.b6",
+          "qaa/economics-2023/4.3.b8",
+          "qaa/economics-2023/1.6.b5",
+          "qaa/economics-2023/1.6.b4"
+        ]
+      },
+      {
+        "rowId": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "practice": "uses theories and models competently in research, applies quantitative and computing methods across varied problems and critically judges policy advice in the light of its methods",
+        "knowledge": "advanced knowledge of specialist fields set in current research literature, with a systematic grasp of competing approaches and where each works or falls short",
+        "identity": "an economist who brings creativity and sound judgement to problems such as the planetary crisis, choosing among approaches with a critical sense of their limits",
+        "groundingIds": [
+          "qaa/economics-2023/4.5.b2",
+          "qaa/economics-2023/4.5.b3",
+          "qaa/economics-2023/4.4.b5",
+          "qaa/economics-2023/2.2.b5",
+          "qaa/economics-2023/4.5.b7",
+          "qaa/economics-2023/4.4.b8",
+          "qaa/economics-2023/4.5.b8",
+          "qaa/economics-2023/1.16"
+        ]
+      }
+    ],
+    "source": {
+      "repo": "wkspc2614-adapt",
+      "path": "source-kb/canon-adp/secondary-data/ingested/themes/pathways/integrations/cards/wide/benchmarks/economics-2023.yaml",
+      "run": "std:doc:qaa-economics-2023-benchmarks",
+      "note": "Subject-benchmark card readings: our own per-tier synthesis of the statements each row cites; no issuer text copied."
+    }
+  },
+  "themes": [
+    {
+      "id": "theme:edi",
+      "role": "carries",
+      "carriedIn": [
+        "1.7",
+        "1.8",
+        "1.9",
+        "1.11",
+        "1.12",
+        "2.7",
+        "2.8",
+        "3.10",
+        "3.11"
+      ]
+    },
+    {
+      "id": "theme:accessibility",
+      "role": "carries",
+      "carriedIn": [
+        "1.7",
+        "1.10",
+        "1.11",
+        "1.12",
+        "1.13",
+        "1.14",
+        "3.11"
+      ]
+    },
+    {
+      "id": "theme:esd",
+      "role": "carries",
+      "carriedIn": [
+        "1.2",
+        "1.3",
+        "1.5",
+        "1.15",
+        "1.16",
+        "1.17",
+        "1.18",
+        "1.19",
+        "3.2"
+      ]
+    },
+    {
+      "id": "theme:enterprise",
+      "role": "carries",
+      "carriedIn": [
+        "1.20",
+        "1.21",
+        "1.22",
+        "1.23",
+        "1.24",
+        "1.25",
+        "1.26",
+        "2.7",
+        "3.7"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "rel": "partOf",
+      "target": "collection: QAA Subject Benchmark Statements",
+      "note": "one of 54 held by stan"
+    },
+    {
+      "rel": "supersedes",
+      "target": "std:doc:qaa-economics-2019-benchmarks (fourth edition, 2019; not yet ingested)",
+      "note": "the back matter names the 2019 fourth edition and the front matter lists key changes from the previous statement"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fheq-2024-framework, Annex D",
+      "note": "the outcome classification descriptions for FHEQ level 6 and FQHEIS level 10 degrees (4.2)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fheq-2024-framework",
+      "note": "FHEQ level 6 (2.3; 4.2)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fqheis-2024-framework",
+      "note": "FQHEIS level 10 (2.3; 4.2)"
+    },
+    {
+      "rel": "cites",
+      "target": "std:doc:qaa-advancehe-esd-2021-guidance",
+      "note": "the Education for Sustainable Development Guidance (Advance HE and QAA, March 2021), with whose learning outcomes the core skills of 1.6 align (1.17)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "QAA Quality Code, Advice and Guidance (not yet ingested)",
+      "note": "front matter"
+    },
+    {
+      "rel": "refersTo",
+      "target": "QAA Glossary (not ingested)",
+      "note": "front matter"
+    }
+  ],
+  "currency": {
+    "published": "2023-03",
+    "lastReviewed": "none-stated",
+    "reviewCycle": "none-stated",
+    "consultation": "none-stated",
+    "replacedBy": "none"
+  },
+  "terminology": {
+    "concepts": [
+      {
+        "slug": "sustainability",
+        "definition": "present and future states, backed by strategies and operations aimed at social goals, centred on preserving resources, upholding human rights and fair labour relations, and reaching equitable welfare (D1, 1.15)",
+        "beneficiaryDefinition": "meeting needs now and later while protecting resources, rights and fairness",
+        "scopeNote": "the statement says it goes beyond climate change",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "enterprise-and-entrepreneurship-education",
+        "definition": "education that builds behaviours, attributes and competencies likely to support successful careers and readiness for change, often through placements and external links (D1, 1.20)",
+        "beneficiaryDefinition": "learning that prepares you to create opportunities and adapt at work",
+        "scopeNote": "abbreviated EED; front matter groups it with employability",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "authentic-assessment",
+        "definition": "assessment whose tasks mirror activities in the wider world, workplaces included, used for applied skills (D1, 3.14)",
+        "beneficiaryDefinition": "tasks like the ones economists do at work",
+        "scopeNote": "research projects and data-based tasks are the examples",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "monitoring-and-evaluation",
+        "definition": "periodic assessment of a course, internal or external, drawing on current and past monitoring to understand achievement or plan the course (D1, 2.9)",
+        "scopeNote": "students should take part (2.9)",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "threshold-standard",
+        "definition": "the minimum standard of achievement for the award, which most students exceed (D1, 4.2, 4.3)",
+        "scopeNote": "with typical and excellent above it (4.4, 4.5)",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "concept": "sustainability",
+        "form": "sustainability",
+        "lang": "en",
+        "partOfSpeech": "noun",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "enterprise-and-entrepreneurship-education",
+        "form": "enterprise and entrepreneurship education",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "enterprise-and-entrepreneurship-education",
+        "form": "EED",
+        "lang": "en",
+        "partOfSpeech": "noun",
+        "termStatus": "admitted",
+        "register": "formal"
+      },
+      {
+        "concept": "authentic-assessment",
+        "form": "authentic assessment",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "monitoring-and-evaluation",
+        "form": "monitoring and evaluation",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "threshold-standard",
+        "form": "threshold level",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "threshold-standard",
+        "form": "minimum threshold standards",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "admitted",
+        "register": "formal"
+      }
+    ]
+  },
+  "digest": {
+    "definition": "A social science of how individuals and groups decide and interact within institutions, power structures and their wider setting, aiming to inform policy through theory and evidence",
+    "distinctiveFeatures": [
+      "A social science of how individuals and groups decide and interact within institutions, power structures and their wider setting, aiming to inform policy through theory and evidence",
+      "Its central question is how resources are allocated, distributed and used, and what follows for well-being and sustainability, past, present and future",
+      "It works at micro and macro levels and in static and dynamic terms; because interpretations are contested, it studies phenomena through several theoretical lenses and in their historical, political, social and environmental settings",
+      "Its characteristic method is abstraction and modelling tested against quantitative and qualitative evidence, with causality to the fore and attention to the limits of its own tools",
+      "It links to politics, geography, history, philosophy, law, data science, psychology and the sciences, and underpins finance, business and accounting",
+      "It names its own narrow make-up (a field that remains predominantly white, male and Western) as an EDI challenge",
+      "Its graduates enter a wide range of sectors, as professional economists and in other careers"
+    ],
+    "themesInSubject": [
+      {
+        "theme": "theme:edi",
+        "inThisSubject": "the subject itself studies discrimination and inequality and debates sensitive questions from evidence; it names its narrow make-up and its concentration in selective universities, and asks for inclusive materials, widening participation, zero tolerance of harassment and closing awarding gaps (D1, 1.7 to 1.9; 2.7; 2.8; 3.11)",
+        "statements": [
+          "qaa/economics-2023/1.7"
+        ]
+      },
+      {
+        "theme": "theme:accessibility",
+        "inThisSubject": "inclusive pedagogy and resources; blended delivery since 2020 and its risks for equal access; digital accessibility of graphs, video, data and specialist software, with sector examples (D1, 1.10 to 1.14; 3.11)",
+        "statements": [
+          "qaa/economics-2023/1.10",
+          "qaa/economics-2023/1.13"
+        ]
+      },
+      {
+        "theme": "theme:esd",
+        "inThisSubject": "headed Sustainability: framed by the UN SDGs and Global Compact, defined in the text and built into concepts and models; graduates able to face the planetary crisis; core skills aligned with the ESD guidance's competencies and with SDGs 8, 9, 10 and 12 (D1, 1.15 to 1.19; 3.2)",
+        "statements": [
+          "qaa/economics-2023/1.16"
+        ]
+      },
+      {
+        "theme": "theme:enterprise",
+        "inThisSubject": "headed Enterprise and entrepreneurship education: transferable skills for careers, data and software fluency, communicating to wide audiences, placements and degree apprenticeships, and civic as well as career value (D1, 1.20 to 1.26; 2.7)",
+        "statements": []
+      }
+    ],
+    "contentAndDelivery": {
+      "areas": [
+        {
+          "component": "3.2",
+          "gloss": "eight key concepts: opportunity cost and scarcity; incentives and biases; strategic thinking; expectations and shocks; marginal considerations; equilibrium and dynamics; mutual gains, conflict and power; markets and market failure"
+        },
+        {
+          "component": "3.5",
+          "gloss": "fourteen common applied fields beside the core micro, macro and econometrics, from behavioural to public economics"
+        },
+        {
+          "component": "3.6",
+          "gloss": "economic history and the history of economic thought, embedded or taught separately"
+        }
+      ],
+      "practices": [
+        {
+          "component": "2.6",
+          "kind": "learning",
+          "gloss": "mixed distance, online and in-person delivery; independent and peer learning; varied materials including code and policy briefs"
+        },
+        {
+          "component": "3.7",
+          "kind": "teaching",
+          "gloss": "lectures, seminars, tutorials, workshops, peer and project-based learning, experiments, games, technology-enabled and experiential learning, practitioners"
+        },
+        {
+          "component": "3.8",
+          "kind": "learning",
+          "gloss": "interactive, student-centred and blended learning since the pandemic"
+        },
+        {
+          "component": "3.9",
+          "kind": "teaching",
+          "gloss": "subject teaching networks and general teaching centres as resources"
+        },
+        {
+          "component": "3.11",
+          "kind": "teaching",
+          "gloss": "pluralist and decolonial approaches"
+        },
+        {
+          "component": "3.12",
+          "kind": "assessment",
+          "gloss": "course-level analysis of assessment design"
+        },
+        {
+          "component": "3.13",
+          "kind": "assessment",
+          "gloss": "assessment that builds problem-solving and higher-order reasoning"
+        },
+        {
+          "component": "3.14",
+          "kind": "assessment",
+          "gloss": "closed and open-book exams, projects, essays, multimedia, group and policy-brief tasks; authentic, data-based assessment"
+        },
+        {
+          "component": "3.15",
+          "kind": "assessment",
+          "gloss": "formative assessment, feedback and scaffolded skills development"
+        }
+      ]
+    },
+    "standards": {
+      "rungs": [
+        {
+          "rung": "threshold",
+          "leadIn": "4.3",
+          "award": "bachelor's with honours",
+          "items": 8
+        },
+        {
+          "rung": "typical",
+          "leadIn": "4.4",
+          "award": "bachelor's with honours",
+          "items": 8
+        },
+        {
+          "rung": "excellent",
+          "leadIn": "4.5",
+          "award": "bachelor's with honours",
+          "items": 8
+        }
+      ],
+      "rungBases": "4.1: the rungs apply to single honours and to joint degrees where economics is a major part, not in full where it is a minor part; reaching typical implies threshold. 4.2: most students exceed the threshold; achievement above it is judged by each provider with Annex D. 4.5 adds 'consistently'.",
+      "outcomeLists": [
+        {
+          "leadIn": "1.6",
+          "gloss": "core intellectual abilities economists need (lead-in uses need, recorded as describes)",
+          "items": 6,
+          "award": [
+            "honours"
+          ]
+        },
+        {
+          "leadIn": "2.2",
+          "gloss": "learning outcomes the typical course is designed to achieve (no modal)",
+          "items": 8,
+          "award": [
+            "honours"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "outcome": "concepts, principles and tools",
+          "threshold": "qaa/economics-2023/4.3.b1",
+          "typical": "qaa/economics-2023/4.4.b1",
+          "excellent": "qaa/economics-2023/4.5.b1",
+          "basis": "inferred",
+          "domain": "understanding",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "theories, interpretations and modelling",
+          "threshold": "qaa/economics-2023/4.3.b2",
+          "typical": "qaa/economics-2023/4.4.b2",
+          "excellent": "qaa/economics-2023/4.5.b2",
+          "basis": "inferred",
+          "domain": "understanding",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "quantitative and qualitative methods and computing",
+          "threshold": "qaa/economics-2023/4.3.b3",
+          "typical": "qaa/economics-2023/4.4.b3",
+          "excellent": "qaa/economics-2023/4.5.b3",
+          "basis": "inferred",
+          "domain": "subject-skill",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "data and evidence",
+          "threshold": "qaa/economics-2023/4.3.b4",
+          "typical": "qaa/economics-2023/4.4.b4",
+          "excellent": "qaa/economics-2023/4.5.b4",
+          "basis": "inferred",
+          "domain": "knowledge",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "economic reasoning applied to policy",
+          "threshold": "qaa/economics-2023/4.3.b5",
+          "typical": "qaa/economics-2023/4.4.b5",
+          "excellent": "qaa/economics-2023/4.5.b5",
+          "basis": "inferred",
+          "domain": "subject-skill",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "the contexts of economic analysis",
+          "threshold": "qaa/economics-2023/4.3.b6",
+          "typical": "qaa/economics-2023/4.4.b6",
+          "excellent": "qaa/economics-2023/4.5.b6",
+          "basis": "inferred",
+          "domain": "knowledge",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "specialised areas and research",
+          "threshold": "qaa/economics-2023/4.3.b7",
+          "typical": "qaa/economics-2023/4.4.b7",
+          "excellent": "qaa/economics-2023/4.5.b7",
+          "basis": "inferred",
+          "domain": "knowledge",
+          "award": "bachelor's with honours"
+        },
+        {
+          "outcome": "alternative approaches and their limits",
+          "threshold": "qaa/economics-2023/4.3.b8",
+          "typical": "qaa/economics-2023/4.4.b8",
+          "excellent": "qaa/economics-2023/4.5.b8",
+          "basis": "inferred",
+          "domain": "understanding",
+          "award": "bachelor's with honours"
+        }
+      ]
+    },
+    "bodies": [
+      {
+        "body": "professional, statutory and regulatory bodies (PSRBs), none named",
+        "says": "the statement supports PSRBs with the academic standards expected (front matter); courses with professional or vocational outcomes may need their evaluation and accreditation, by site visit and desk review (D1, 2.12)",
+        "requirements": "not-applicable-by-design: no body is named (Part E)"
+      },
+      {
+        "body": "Royal Economic Society",
+        "says": "a partner with providers in widening-participation work, which also lets current students work with it (D1, 2.8)",
+        "requirements": "not-applicable-by-design: named as a partner, not as an accrediting body (Part E)"
+      }
+    ],
+    "crossCuttingReferences": {
+      "themes": [
+        {
+          "id": "theme:edi",
+          "named": "Equality, diversity and inclusion (EDI)",
+          "carriedIn": [
+            "1.7",
+            "1.8",
+            "1.9",
+            "1.11",
+            "1.12",
+            "2.7",
+            "2.8",
+            "3.10",
+            "3.11"
+          ],
+          "statements": [
+            "qaa/economics-2023/1.7"
+          ]
+        },
+        {
+          "id": "theme:accessibility",
+          "named": "Accessibility (front matter: accessibility and the needs of disabled students)",
+          "carriedIn": [
+            "1.7",
+            "1.10",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.14",
+            "3.11"
+          ],
+          "statements": [
+            "qaa/economics-2023/1.10",
+            "qaa/economics-2023/1.13"
+          ]
+        },
+        {
+          "id": "theme:esd",
+          "named": "Sustainability (front matter: education for sustainable development)",
+          "carriedIn": [
+            "1.2",
+            "1.3",
+            "1.5",
+            "1.15",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.19",
+            "3.2"
+          ],
+          "statements": [
+            "qaa/economics-2023/1.16"
+          ]
+        },
+        {
+          "id": "theme:enterprise",
+          "named": "Enterprise and entrepreneurship education (EED) (front matter: employability, entrepreneurship and enterprise education)",
+          "carriedIn": [
+            "1.20",
+            "1.21",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.25",
+            "1.26",
+            "2.7",
+            "3.7"
+          ],
+          "statements": []
+        }
+      ],
+      "frameworks": [
+        {
+          "framework": "fheq",
+          "levels": [
+            "fheq:6"
+          ],
+          "citedIn": [
+            "2.3",
+            "4.2"
+          ]
+        },
+        {
+          "framework": "scqf",
+          "levels": [
+            "fqheis:10"
+          ],
+          "citedIn": [
+            "2.3",
+            "4.2"
+          ]
+        }
+      ],
+      "bodies": [
+        {
+          "body": "professional, statutory and regulatory bodies (unnamed)",
+          "citedIn": [
+            "front matter",
+            "2.12"
+          ]
+        },
+        {
+          "body": "Royal Economic Society",
+          "citedIn": [
+            "2.8"
+          ]
+        }
+      ],
+      "sharedDocuments": [
+        {
+          "document": "std:doc:qaa-fheq-2024-framework, Annex D",
+          "named": "Annex D: Outcome classification descriptions for FHEQ Level 6 and FQHEIS Level 10 degrees",
+          "citedIn": [
+            "4.2"
+          ],
+          "role": "descriptions of the four honours classes (1st, 2.1, 2.2, 3rd), to which providers should refer when evidencing achievement above threshold"
+        },
+        {
+          "document": "std:doc:qaa-advancehe-esd-2021-guidance",
+          "named": "Education for Sustainable Development Guidance produced by Advance HE and QAA (March 2021)",
+          "citedIn": [
+            "1.17"
+          ],
+          "role": "its learning outcomes and competencies align with the core skills of 1.6"
+        },
+        {
+          "document": "QAA Quality Code, Advice and Guidance (not yet ingested)",
+          "named": "Advice and Guidance to support the Quality Code",
+          "citedIn": [
+            "front matter"
+          ],
+          "role": "course design, teaching, external expertise, monitoring"
+        },
+        {
+          "document": "QAA Glossary (not ingested)",
+          "named": "QAA's Glossary",
+          "citedIn": [
+            "front matter"
+          ],
+          "role": "explains unfamiliar terms"
+        },
+        {
+          "document": "UN Sustainable Development Goals (external)",
+          "named": "UN Sustainable Development Goals (SDGs)",
+          "citedIn": [
+            "1.15",
+            "1.16",
+            "1.17"
+          ],
+          "role": "frame of the sustainability theme; SDGs 8, 9, 10 and 12 named"
+        },
+        {
+          "document": "UN Global Compact (external)",
+          "named": "UN Global Compact",
+          "citedIn": [
+            "1.15"
+          ],
+          "role": "standard-setting in human rights, labour, environment and anti-corruption, reflected in the discipline"
+        },
+        {
+          "document": "Equality Act 2010 (law)",
+          "named": "the Equality Act 2010",
+          "citedIn": [
+            "1.7"
+          ],
+          "role": "protected characteristics, as a floor that inclusion goes beyond"
+        },
+        {
+          "document": "Jisc (2020) Steps to improve your institution's digital accessibility (external)",
+          "named": "Steps to improve your institution’s digital accessibility",
+          "citedIn": [
+            "1.14"
+          ],
+          "role": "example of digital accessibility guidance"
+        },
+        {
+          "document": "The Open University (2022) Accessibility Statement (external)",
+          "named": "accessibility statements such as that produced by The Open University",
+          "citedIn": [
+            "1.14"
+          ],
+          "role": "example of a provider accessibility statement"
+        }
+      ]
+    },
+    "skills": {
+      "subjectSpecific": [
+        {
+          "id": "qaa/economics-2023/1.6.b1",
+          "text": "As an economist in training, you need to gather evidence and then organise, analyse and judge both numerical and non-numerical data."
+        },
+        {
+          "id": "qaa/economics-2023/1.6.b2",
+          "text": "You need to be able to simplify a messy problem, find what really matters in it and build a model of that."
+        },
+        {
+          "id": "qaa/economics-2023/1.6.b3",
+          "text": "You need to be able to reason in several ways, from theory to case, from cases to general patterns and to the best explanation, using economic tools and existing research."
+        },
+        {
+          "id": "qaa/economics-2023/1.6.b5",
+          "text": "You need to think critically about what your analysis cannot tell you once it is placed in its wider social and economic setting."
+        },
+        {
+          "id": "qaa/economics-2023/1.6.b6",
+          "text": "You need to be able to work out what your analysis means for policy, see what might get in the way of a policy and judge whether it met its aims."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b1",
+          "text": "Your course is usually designed to help you understand, critically, how to establish cause and effect and how economic methods work in theory and with data."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b2",
+          "text": "Your course is usually designed to help you understand how economic ideas grew over time and the different methods economists have used."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b3",
+          "text": "Your course is usually designed to help you understand the history behind today's economic problems and to know the economic history that matters for them."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b4",
+          "text": "Your course is usually designed to help you use economic reasoning and tools on real, applied topics."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b5",
+          "text": "Your course is usually designed to help you judge why experts recommend different policies, by looking at the methods behind each view."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b6",
+          "text": "Your course is usually designed to help you debate and judge government policy and assess how the UK and other economies, and the world economy, are doing."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b7",
+          "text": "Your course is usually designed to help you express economic ideas in words, graphs, maths and statistics, see how these connect and work with data."
+        }
+      ],
+      "transferable": [
+        {
+          "id": "qaa/economics-2023/1.6.b4",
+          "text": "You need to be able to explain your results briefly to different audiences, including people who have never studied economics."
+        },
+        {
+          "id": "qaa/economics-2023/2.2.b8",
+          "text": "Your course is usually designed to help you make and present your arguments, spoken or otherwise, to experts and non-experts, including people with other kinds of expertise."
+        }
+      ]
+    }
+  },
+  "statements": [
+    {
+      "id": "qaa/economics-2023/1.3",
+      "locator": {
+        "number": "1.3",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 9292,
+        "end": 9658
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "requires",
+        "behave",
+        "interact",
+        "required"
+      ],
+      "about": "understanding resource use and economic behaviour at micro and macro levels",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Studying the subject must rest on understanding how resources are used and how households, firms, governments and other bodies behave and interact, at the level of the single actor, of the whole economy and of the link between person and society.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Design the course so that every student builds an understanding of resource use and of how economic actors behave and interact, at both micro and macro level and in how individuals relate to society.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You must come to understand how resources are used and how households, firms, governments and other bodies behave and interact, both one by one and across the whole economy.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b1",
+      "locator": {
+        "number": "1.6.b1",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 12656,
+        "end": 12753
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "gather",
+        "assimilate",
+        "structure",
+        "analyse",
+        "evaluate"
+      ],
+      "about": "gathering evidence and handling data",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to gather evidence and to take in, organise, analyse and judge data of both kinds, qualitative and quantitative.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop students' ability to collect evidence and then absorb, organise, analyse and weigh both numerical and non-numerical data.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "As an economist in training, you need to gather evidence and then organise, analyse and judge both numerical and non-numerical data.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b2",
+      "locator": {
+        "number": "1.6.b2",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 12756,
+        "end": 12833
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "abstract",
+        "simplify",
+        "identify",
+        "model"
+      ],
+      "about": "abstraction and modelling",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to abstract and simplify so as to find and model what lies at the heart of a problem.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Teach students to strip a problem to its essentials through abstraction and simplification, and to model that core.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You need to be able to simplify a messy problem, find what really matters in it and build a model of that.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b3",
+      "locator": {
+        "number": "1.6.b3",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 12836,
+        "end": 12983
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "analyse",
+        "reason",
+        "using"
+      ],
+      "about": "deductive, abductive and inductive reasoning",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to analyse and reason in deductive, abductive and inductive ways, drawing on economic tools and on earlier research inside and outside the subject.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Give students practice in deductive, abductive and inductive reasoning with economic tools and with prior research from economics and other fields.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You need to be able to reason in several ways, from theory to case, from cases to general patterns and to the best explanation, using economic tools and existing research.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b4",
+      "locator": {
+        "number": "1.6.b4",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 12986,
+        "end": 13088
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "communicate"
+      ],
+      "about": "communicating results to varied audiences",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to report their results briefly to many kinds of audience, among them people with no economics background.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Build students' ability to present findings concisely to varied audiences, including people untrained in economics.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You need to be able to explain your results briefly to different audiences, including people who have never studied economics.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b5",
+      "locator": {
+        "number": "1.6.b5",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 13091,
+        "end": 13177
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "think"
+      ],
+      "about": "the limits of analysis in its wider context",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to think critically about where their analysis stops working within its broader social and economic setting.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Teach students to question the limits of their own analysis within its wider socioeconomic setting.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You need to think critically about what your analysis cannot tell you once it is placed in its wider social and economic setting.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.6.b6",
+      "locator": {
+        "number": "1.6.b6",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Purposes and characteristics of an Economics degree"
+        ]
+      },
+      "span": {
+        "start": 13180,
+        "end": 13349
+      },
+      "stem": "1.6",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "describes",
+      "level": "fheq:6",
+      "appliesTo": "economists, and students in training",
+      "addressee": "learner",
+      "verbs": [
+        "draw",
+        "recognise",
+        "evaluate"
+      ],
+      "about": "policy inference, constraints and evaluation",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists need to draw conclusions for policy, see what may limit putting them into practice and judge policy results against the aims set for them.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop students' ability to infer policy implications, identify constraints on implementation and evaluate outcomes against stated objectives.",
+          "rewrite": "light",
+          "force": "describes",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You need to be able to work out what your analysis means for policy, see what might get in the way of a policy and judge whether it met its aims.",
+          "rewrite": "full",
+          "force": "describes",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.7",
+      "locator": {
+        "number": "1.7",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Equality, diversity and inclusion (EDI)"
+        ]
+      },
+      "span": {
+        "start": 13586,
+        "end": 13788
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "teaching staff in economics",
+      "addressee": "provider",
+      "verbs": [
+        "aim",
+        "foster",
+        "consider",
+        "embed"
+      ],
+      "about": "an inclusive learning community and EDI in materials and methods",
+      "themes": [
+        "theme:edi"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Teachers of economics should work towards an inclusive learning community and think about how to build equality, diversity and inclusion into their materials, methods and processes.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Aim to build an inclusive learning community and plan how equality, diversity and inclusion shape your readings, slides, videos, methods and processes; the statement's examples include widening participation, countering under-representation, zero tolerance of harassment, anticipating neurodiverse access and closing awarding gaps.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on teaching staff and the course; the student meets its effect, not a standard to reach",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.10",
+      "locator": {
+        "number": "1.10",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Accessibility"
+        ]
+      },
+      "span": {
+        "start": 16468,
+        "end": 16726
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "none",
+      "appliesTo": "teaching in economics",
+      "addressee": "provider",
+      "verbs": [
+        "reflect",
+        "prioritises"
+      ],
+      "about": "teaching that answers student needs, with accessible resources",
+      "themes": [
+        "theme:accessibility"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Teaching methods will generally respond to what the students in a cohort need, with an inclusive curriculum that puts accessible, fair, suitable and properly resourced materials first.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Expect your teaching approach to respond to the students you actually have, and make an inclusive curriculum with accessible, equitable, fitting and well-resourced materials a priority.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: an expectation on teaching and the curriculum; the student meets its effect",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.13",
+      "locator": {
+        "number": "1.13",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Accessibility"
+        ]
+      },
+      "span": {
+        "start": 17529,
+        "end": 17709
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "economics teaching materials",
+      "addressee": "provider",
+      "verbs": [
+        "pay",
+        "include"
+      ],
+      "about": "digital accessibility of visual materials, media and software",
+      "themes": [
+        "theme:accessibility"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Because economics relies on graphs and other visuals, its digital materials should be accessible, for instance through image descriptions; the paragraph goes on to ask for screen-reader-ready content, captions or transcripts, downloadable formats and accessible alternatives for data, software and coding.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Make graphs and other visuals accessible, for example with image descriptions; check that digital content works with screen readers, has captions or transcripts for audio and video, can be downloaded in different formats, and that data, specialist software and coding tasks have accessible alternatives.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course and its staff; the student meets its effect",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/1.16",
+      "locator": {
+        "number": "1.16",
+        "headingPath": [
+          "Context and purposes of an Economics degree",
+          "Sustainability"
+        ]
+      },
+      "span": {
+        "start": 19994,
+        "end": 20572
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "graduates of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "developed",
+        "cope",
+        "create",
+        "require",
+        "foster"
+      ],
+      "about": "capacities to face the planetary crisis",
+      "themes": [
+        "theme:esd"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A governing aim of the degree is that graduates can cope with, and try to solve, the planetary crisis (a changing climate, lost biodiversity, environmental injustice and the instability these bring); because such problems cross disciplines, change fast and are deeply uncertain, students must develop critical and creative capacities that go past applying familiar tools and models.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Build the course so graduates develop the capacity to cope with and seek solutions to the planetary crisis; these problems must push students past applying familiar tools and models towards critical and creative thinking.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You must develop critical and creative abilities that go beyond applying the usual tools and models, so that you can cope with the planetary crisis, such as a changing climate and lost biodiversity, and help find solutions.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2",
+      "locator": {
+        "number": "2.2",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 26477,
+        "end": 26714
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "must",
+      "level": "none",
+      "appliesTo": "courses admitting students without A level mathematics",
+      "addressee": "provider",
+      "verbs": [
+        "require",
+        "provided",
+        "ensure",
+        "engage"
+      ],
+      "about": "support for quantitative work where mathematics is not an entry condition",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Where entry does not call for A level mathematics, the issuer expects the degree itself to give suitable teaching and support so that students can take on its quantitative parts.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "If you admit students without A level mathematics, provide suitable teaching and support within the degree so they can take on its quantitative content.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: an expectation on the course; the student meets its effect",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b1",
+      "locator": {
+        "number": "2.2.b1",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 26993,
+        "end": 27086
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "causality and analytical methods",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students critically understand causality and analytical methods, in theory and in empirical work.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students critically understand causality and the analytical methods of the subject, both theoretical and empirical.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you understand, critically, how to establish cause and effect and how economic methods work in theory and with data.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b2",
+      "locator": {
+        "number": "2.2.b2",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27089,
+        "end": 27262
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "used"
+      ],
+      "about": "the history of economic ideas and methods",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students appreciate and understand how economic ideas have developed and the different methods economists have used and use now.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students understand the history and development of economic thought and the varied methods economists have used and still use.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you understand how economic ideas grew over time and the different methods economists have used.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b3",
+      "locator": {
+        "number": "2.2.b3",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27265,
+        "end": 27447
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "addressed"
+      ],
+      "about": "historical context and economic history",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students understand the history behind present-day problems that economists tackle, and know economic history as fits the course.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students understand the historical background of current economic problems and know economic history as relevant to the course.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you understand the history behind today's economic problems and to know the economic history that matters for them.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b4",
+      "locator": {
+        "number": "2.2.b4",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27450,
+        "end": 27517
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "applying economic reasoning and tools",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students can use economic reasoning and tools on applied topics.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students apply economic reasoning and tools to applied topics.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you use economic reasoning and tools on real, applied topics.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b5",
+      "locator": {
+        "number": "2.2.b5",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27520,
+        "end": 27641
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "evaluate"
+      ],
+      "about": "evaluating policy advice against its methods",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students can judge critically why policy recommendations differ, in the light of the methods behind them.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students critically evaluate differing policy recommendations against their underlying methodologies.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you judge why experts recommend different policies, by looking at the methods behind each view.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b6",
+      "locator": {
+        "number": "2.2.b6",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27644,
+        "end": 27797
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "discuss",
+        "analyse",
+        "evaluate",
+        "assess"
+      ],
+      "about": "government policy and economic performance",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students can debate, analyse and judge government policy and assess how the UK, other economies and the world economy perform.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students discuss, analyse and evaluate government policy and assess the performance of the UK, other national economies and the global economy.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you debate and judge government policy and assess how the UK and other economies, and the world economy, are doing.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b7",
+      "locator": {
+        "number": "2.2.b7",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 27800,
+        "end": 28100
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "enable"
+      ],
+      "about": "representing economic ideas and handling data",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students understand how economic ideas are expressed in words, graphs, mathematics and econometrics and how these relate, together with suitable techniques for working with and interpreting data.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students understand verbal, graphical, mathematical and econometric forms of economic ideas and how they link, and can use suitable techniques to handle and interpret quantitative and qualitative data.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you express economic ideas in words, graphs, maths and statistics, see how these connect and work with data.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.2.b8",
+      "locator": {
+        "number": "2.2.b8",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 28103,
+        "end": 28322
+      },
+      "stem": "2.2",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:6",
+      "appliesTo": "students on a typical Economics course",
+      "addressee": "learner",
+      "verbs": [
+        "articulate",
+        "communicate",
+        "present"
+      ],
+      "about": "presenting arguments to specialist and general audiences",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A course is usually designed so that students can put their arguments clearly, in speech or other forms, to specialists and non-specialists, including people with other expertise on the question.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Typical course outcome: students articulate, communicate and present arguments verbally or non-verbally to specialist and non-specialist audiences, including experts from other fields.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course is usually designed to help you make and present your arguments, spoken or otherwise, to experts and non-experts, including people with other kinds of expertise.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.4",
+      "locator": {
+        "number": "2.4",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 29366,
+        "end": 29579
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:6",
+      "appliesTo": "students on combined, joint or major-minor routes",
+      "addressee": "learner",
+      "verbs": [
+        "achieve",
+        "add"
+      ],
+      "about": "joint and combined routes: the core skills plus others",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Students on a combined, joint or major-minor route will gain the core subject-specific and generic skills of economics and will add others from the other subjects they take.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "On joint or combined routes, plan for students to reach the core subject-specific and generic skills of economics, alongside the skills their other subject adds.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "If you study economics with another subject, you will gain the core economics skills, both subject-specific and general, and add others from your second subject.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.9",
+      "locator": {
+        "number": "2.9",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Monitoring and review"
+        ]
+      },
+      "span": {
+        "start": 32051,
+        "end": 32288
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "degree-awarding bodies and their partners",
+      "addressee": "provider",
+      "verbs": [
+        "collect",
+        "analyse",
+        "undertake",
+        "form"
+      ],
+      "about": "students taking part in monitoring and review",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Degree-awarding bodies and their partners review courses periodically for their own purposes, and students should take part in that monitoring and review.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Include students in course monitoring and periodic review, alongside the information you collect and the external reference points you use.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the degree-awarding body to involve students; not a standard for the student to reach",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/2.10",
+      "locator": {
+        "number": "2.10",
+        "headingPath": [
+          "Distinctive features of an Economics degree",
+          "Monitoring and review"
+        ]
+      },
+      "span": {
+        "start": 32791,
+        "end": 33016
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "none",
+      "appliesTo": "higher education providers",
+      "addressee": "provider",
+      "verbs": [
+        "use",
+        "gain",
+        "ensure"
+      ],
+      "about": "external reviewers in periodic review",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Providers will bring in external reviewers during periodic review to gain an outside view of proposed changes, make sure threshold standards are met and check that content suits the subject.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Use external reviewers in periodic review to test proposed changes, confirm that threshold standards are achieved and check that content fits the subject.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the provider; the student meets its effect",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/3.2.b5",
+      "locator": {
+        "number": "3.2.b5",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 36211,
+        "end": 36547
+      },
+      "stem": "3.2",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "students of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "trained",
+        "recognise"
+      ],
+      "about": "marginal analysis and its limits",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Economists learn that key decisions often turn on small changes in variables and parameters; students should also know where marginal analysis fails, as with strong threshold effects or discontinuities such as planetary crises.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Teach marginal reasoning, and make sure students also learn where it breaks down, for example where threshold effects or sudden discontinuities, such as those in planetary crises, dominate.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You should know how decisions often turn on small changes, and also where that way of thinking stops working, such as when sudden tipping points occur.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/3.3",
+      "locator": {
+        "number": "3.3",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37956,
+        "end": 38626
+      },
+      "stem": "none",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:6",
+      "appliesTo": "students of the subject and their course",
+      "addressee": "both",
+      "verbs": [
+        "introduced",
+        "learn",
+        "select",
+        "apply"
+      ],
+      "about": "data, programming and econometric skills on real data",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "The degree will introduce the data, programming, visualisation and computing skills the profession needs, with stress on causality and on mathematical, statistical and econometric methods; students will use them on real data with suitable software and will learn about the kinds, sources and uses of data and how to choose methods for it.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Introduce data, programming, visualisation and computing skills, with mathematical, statistical and econometric methods and a focus on causality; give students practice on actual economic, financial or social data in suitable software, and teach the nature and sources of quantitative and qualitative data and how to choose methods.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You will learn data, programming, visualisation and computing skills, including statistics and econometrics, use them on real economic or social data with suitable software, and learn how to choose the right method for the data.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/3.4",
+      "locator": {
+        "number": "3.4",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 38627,
+        "end": 39136
+      },
+      "stem": "none",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "students of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "select",
+        "apply",
+        "learn",
+        "discuss",
+        "analyse",
+        "evaluate"
+      ],
+      "about": "choosing and applying economic tools to applied topics and policy",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "An essential outcome is the judgement and skill to choose and use economic tools, principles and reasoning across applied topics, including how economics can shape and interpret economic, social and environmental policy; students should also learn to talk about and analyse government policy and judge how the UK and other economies have performed.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Make sure students can choose and apply the right economic tools and reasoning to applied fields and to policy design and evaluation, and that they learn to examine government policy and the performance of economies past and present.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You should learn to choose and use the right economic tools and reasoning for real topics, and to examine government policy and how economies, including the UK's, have performed.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/3.10",
+      "locator": {
+        "number": "3.10",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Teaching and learning"
+        ]
+      },
+      "span": {
+        "start": 42027,
+        "end": 42352
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "must",
+      "level": "none",
+      "appliesTo": "course leaders",
+      "addressee": "provider",
+      "verbs": [
+        "think",
+        "deal"
+      ],
+      "about": "support for language, mathematics and study skills",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "none"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Because many cohorts are international and diverse, course leaders need to consider specific help with language, mathematics and study and exam skills, since university economics differs from study at school.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Plan specific support for language, mathematics (which may differ from school maths) and study and exam skills, given international and diverse cohorts and the jump from school-level economics.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: an expectation on course leaders; the student meets its effect",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.2",
+      "locator": {
+        "number": "4.2",
+        "headingPath": [
+          "Benchmark standards",
+          "Introduction"
+        ]
+      },
+      "span": {
+        "start": 45463,
+        "end": 45794
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "higher education providers",
+      "addressee": "provider",
+      "verbs": [
+        "perform",
+        "determining",
+        "refer"
+      ],
+      "about": "achievement above threshold and the use of Annex D",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Most students will do much better than the minimum threshold; each provider decides what evidence shows this and should refer to Annex D, which describes the four honours classes.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Expect most students to exceed the threshold; set your own way of evidencing achievement above it, and refer to the Annex D descriptions of degree classes when doing so.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the provider in judging and classifying achievement",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b1",
+      "locator": {
+        "number": "4.3.b1",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46052,
+        "end": 46112
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "key concepts, principles and tools",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they understand the main ideas, principles and tools that economists work with.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, check that every graduate has shown a working grasp of the discipline's main concepts, principles and analytical tools.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you understand the main ideas, principles and tools of economics.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b2",
+      "locator": {
+        "number": "4.3.b2",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46115,
+        "end": 46195
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "key theories, interpretations and models",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they understand the main economic theories, the ways they are read and the approaches used to model them.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they understand the principal theories of the subject, how they are interpreted and how economists model them.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you understand the main theories in economics, how they are interpreted and how economists build models.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b3",
+      "locator": {
+        "number": "4.3.b3",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46198,
+        "end": 46401
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "quantitative and qualitative methods and computing",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they understand the numerical and non-numerical methods and computing techniques suited to their course, and see where these apply.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they understand the quantitative, qualitative and computing techniques their course uses and the settings where each fits.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you understand the numerical, non-numerical and computing methods your course uses, and when each is the right one.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b4",
+      "locator": {
+        "number": "4.3.b4",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46404,
+        "end": 46566
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "sources and content of economic data and evidence",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they know where economic data and evidence come from and what they contain, and see which methods could suit analysing them.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they know where economic data and evidence originate and what they hold, and which analytical methods fit them.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you know where economic data and evidence come from, what they hold and which methods could be used to analyse them.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b5",
+      "locator": {
+        "number": "4.3.b5",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46569,
+        "end": 46624
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "economic reasoning applied to policy",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they can bring economic reasoning to bear on questions of policy.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they can use economic reasoning on policy questions.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you can use economic reasoning on policy questions.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b6",
+      "locator": {
+        "number": "4.3.b6",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46627,
+        "end": 46797
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "the contexts in which economic analysis is used",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown that they know and are aware of the wider settings (historical, political, institutional, international, social, cultural, environmental) in which particular economic analyses are used.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they know the wider settings, from history and politics to institutions, culture and the environment, in which economic analysis is used.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you know the wider settings, such as history, politics, institutions, society, culture and the environment, in which economic analysis is used.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b7",
+      "locator": {
+        "number": "4.3.b7",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46800,
+        "end": 46920
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [
+        "informed"
+      ],
+      "about": "knowledge of specialised areas, partly drawn from research",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown knowledge of a suitable number of specialist areas of economics, partly grounded in research.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown knowledge of an appropriate range of specialist fields, some of it drawn from research in the subject.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you know several specialist areas of economics, partly through research in those areas.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.3.b8",
+      "locator": {
+        "number": "4.3.b8",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level"
+        ]
+      },
+      "span": {
+        "start": 46923,
+        "end": 47016
+      },
+      "stem": "4.3",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the threshold level",
+      "addressee": "learner",
+      "verbs": [
+        "admit"
+      ],
+      "about": "awareness that problems allow more than one approach",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At threshold, a graduate should have shown awareness that many economic problems can be tackled in more than one way.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates should have shown they recognise that many economic problems can be approached in more than one way.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To reach the threshold standard, you should have shown that you know many economic problems can be tackled in more than one way.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b1",
+      "locator": {
+        "number": "4.4.b1",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47122,
+        "end": 47189
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "systematic grasp of concepts, principles and tools",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b1",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown a systematic, well-organised understanding of economic concepts, principles and tools.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown they understand economic concepts, principles and tools as a connected system, not as separate items.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown that you understand economic ideas, principles and tools as a connected whole.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b2",
+      "locator": {
+        "number": "4.4.b2",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47192,
+        "end": 47316
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "systematic grasp of distinctive theories and models, used competently",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b2",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown a systematic understanding of distinctive economic theories, their readings and modelling approaches, and use them competently.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown a systematic grasp of the subject's distinctive theories, interpretations and models and be able to use them competently.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown a systematic understanding of the distinctive theories and models of economics and that you can use them competently.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b3",
+      "locator": {
+        "number": "4.4.b3",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47319,
+        "end": 47475
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [
+        "use"
+      ],
+      "about": "proficiency in methods and computing across problems",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b3",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown proficiency in quantitative methods and computing and know how to use them well across a range of problems.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown proficiency in quantitative and computing techniques and know how to apply them effectively to varied problems.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown that you are proficient in quantitative and computing methods and can use them well on different kinds of problem.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b4",
+      "locator": {
+        "number": "4.4.b4",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47482,
+        "end": 47649
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "systematic grasp of data, evidence and methods for them",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b4",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown a systematic grasp of where economic data and evidence come from, what they contain and which methods suit their analysis.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown a systematic grasp of where economic data and evidence come from, what they contain and which methods suit their analysis.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown a systematic understanding of economic data and evidence, where they come from and which methods suit them.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b5",
+      "locator": {
+        "number": "4.4.b5",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47652,
+        "end": 47734
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "applying economic reasoning to policy critically",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b5",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown that they know how to bring economic reasoning to policy questions critically.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown they can bring economic reasoning to bear on policy questions critically.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown that you can use economic reasoning on policy questions critically, not only apply it.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b6",
+      "locator": {
+        "number": "4.4.b6",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47737,
+        "end": 47912
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "systematic grasp of the contexts of economic analysis",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b6",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown a systematic grasp of the wider settings (historical, political, institutional, international, social, cultural, environmental) in which particular economic analyses are used.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown a systematic grasp of the wider settings, historical to environmental, in which economic analysis is used.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown a systematic understanding of the wider settings, such as history, politics, institutions, culture and the environment, in which economic analysis is used.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b7",
+      "locator": {
+        "number": "4.4.b7",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 47915,
+        "end": 48045
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "specialised areas and their research literature",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b7",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown knowledge of a suitable number of specialist areas of economics and an appreciation of their research literature.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown knowledge of an appropriate range of specialist fields and an appreciation of the research written in them.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown that you know several specialist areas of economics and appreciate the research written in them.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.4.b8",
+      "locator": {
+        "number": "4.4.b8",
+        "headingPath": [
+          "Benchmark standards",
+          "Typical level"
+        ]
+      },
+      "span": {
+        "start": 48048,
+        "end": 48242
+      },
+      "stem": "4.4",
+      "statementType": "typical",
+      "rung": "typical",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the typical level",
+      "addressee": "learner",
+      "verbs": [
+        "addressing"
+      ],
+      "about": "different approaches and a critical sense of their limits",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.3.b8",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the typical level, a graduate should have shown familiarity with some of the different ways of tackling economic problems and a critical awareness of where each works and where it falls short.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the typical level, graduates should have shown familiarity with several approaches to economic problems and critical awareness of their applicability and limits in particular settings.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the typical level, you should have shown that you know several ways to tackle economic problems and can judge critically where each works and where it falls short.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b1",
+      "locator": {
+        "number": "4.5.b1",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48365,
+        "end": 48431
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "excellent understanding of concepts, principles and tools",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b1",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown an outstanding understanding of economic concepts, principles and tools.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown an outstanding grasp of the subject's concepts, principles and tools.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown an outstanding grasp of economic ideas, principles and tools.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b2",
+      "locator": {
+        "number": "4.5.b2",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48434,
+        "end": 48579
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [],
+      "about": "excellent grasp of theories and models, used competently in research",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b2",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown an outstanding understanding of distinctive economic theories, their readings and models, used competently in a research setting.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown an outstanding grasp of distinctive theories, interpretations and models and use them competently in research.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown an outstanding understanding of distinctive theories and models in economics and used them well in your own research.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b3",
+      "locator": {
+        "number": "4.5.b3",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48582,
+        "end": 48737
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "use"
+      ],
+      "about": "excellence in methods and computing across problems",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b3",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown excellence in quantitative methods and computing and know how to use them well across a range of problems.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown excellence in quantitative and computing techniques and know how to apply them effectively to varied problems.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown excellent quantitative and computing skills and used them well on many kinds of problem.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b4",
+      "locator": {
+        "number": "4.5.b4",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48740,
+        "end": 48898
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "excellent grasp of data, evidence and methods for them",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b4",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown an excellent command of where economic data and evidence come from, what they contain and which methods suit their analysis.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown an excellent command of economic data and evidence and of the methods that suit their analysis.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown an excellent command of economic data and evidence and of the methods that suit them.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b5",
+      "locator": {
+        "number": "4.5.b5",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48901,
+        "end": 48992
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "advanced, critical application of economic reasoning to policy",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b5",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown advanced knowledge of how to bring economic reasoning to policy questions critically.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown advanced, critical use of economic reasoning on policy issues.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown advanced, critical use of economic reasoning on policy questions.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b6",
+      "locator": {
+        "number": "4.5.b6",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 48995,
+        "end": 49169
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "applied"
+      ],
+      "about": "excellent grasp of the contexts of economic analysis",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b6",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown an excellent grasp of the wider settings (historical, political, institutional, international, social, cultural, environmental) in which particular economic analyses are used.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown an excellent grasp of the wider settings, historical to environmental, in which economic analysis is used.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown an excellent understanding of the wider settings in which economic analysis is used, from history and politics to culture and the environment.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b7",
+      "locator": {
+        "number": "4.5.b7",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 49172,
+        "end": 49303
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "embedded"
+      ],
+      "about": "advanced knowledge of specialised areas, set in current research",
+      "themes": [
+        "none"
+      ],
+      "domain": "knowledge",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b7",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown advanced knowledge of a suitable number of specialist areas, grounded in current research literature.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown advanced knowledge of an appropriate range of specialist fields, rooted in current research.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown advanced knowledge of several specialist areas of economics, built on current research.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/economics-2023/4.5.b8",
+      "locator": {
+        "number": "4.5.b8",
+        "headingPath": [
+          "Benchmark standards",
+          "Excellent level"
+        ]
+      },
+      "span": {
+        "start": 49306,
+        "end": 49575
+      },
+      "stem": "4.5",
+      "statementType": "excellent",
+      "rung": "excellent",
+      "force": "should",
+      "level": "fheq:6",
+      "appliesTo": "graduates at the excellent level",
+      "addressee": "learner",
+      "verbs": [
+        "addressing",
+        "demonstrating"
+      ],
+      "about": "excellent judgement across approaches, showing creativity",
+      "themes": [
+        "none"
+      ],
+      "domain": "understanding",
+      "award": [
+        "bachelor's with honours"
+      ],
+      "gradeOf": {
+        "statement": "qaa/economics-2023/4.4.b8",
+        "basis": "inferred"
+      },
+      "paraphrase": "At the excellent level, a graduate should consistently have shown excellent knowledge of different ways of tackling economic problems and an excellent sense of where each works and where it falls short, using them with creativity and sound judgement in varied settings.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At the excellent level, graduates should consistently have shown excellent knowledge of alternative approaches and their applicability and limits, and creative, well-judged use of them across diverse settings.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the excellent level, you should consistently have shown excellent knowledge of different ways to tackle economic problems, where each works and where it fails, and used them creatively and with sound judgement.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    }
+  ],
+  "pathwayMapping": {},
+  "mapAgentInstructions": []
+}

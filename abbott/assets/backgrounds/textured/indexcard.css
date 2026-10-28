@@ -1,0 +1,11 @@
+.textured.ab-indexcard {
+  --texture-index-paper: #fffef9;
+  --texture-index-ink: #26272b;
+  background-color: var(--texture-index-paper);
+  background-image: linear-gradient(to bottom, transparent 2.4rem, #c83c3c73 2.4rem, #c83c3c73 calc(2.4rem + 1px), transparent calc(2.4rem + 1px)), repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), #4678be47 calc(1.6rem - 1px), #4678be47 1.6rem);
+  background-position: 0 .4rem;
+  color: var(--texture-index-ink);
+  border: 1px solid #e4e2d6;
+  border-radius: .4rem;
+  padding: .5rem .9rem .9rem;
+}

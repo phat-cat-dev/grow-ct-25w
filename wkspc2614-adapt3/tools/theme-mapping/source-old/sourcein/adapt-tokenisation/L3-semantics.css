@@ -1,0 +1,37 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 3: semantic cue pivots
+ *   --ab-base-<category>-<token> = var(L5-template, L4-default)
+ * ---------------------------------------------------------------------------
+ * Pivots for the semantic cue sets. Component CSS reads these (e.g. a callout
+ * card reads --ab-base-positive-bg / -border / -ink and sets its icon from
+ * --ab-base-positive-icon). The semantic-neutral category is named `neutral-cue`
+ * (not `neutral`) so its hue seed does not collide with the neutral SPINE
+ * (--ab-base-pf-default-neutral-h/-s). Schema: semantics.json.
+ * =========================================================================== */
+:root {
+  /* positive */
+  --ab-base-positive-bg: var(--ab-theme-pf-default-positive-bg, var(--ab-base-pf-default-positive-bg));
+  --ab-base-positive-border: var(--ab-theme-pf-default-positive-border, var(--ab-base-pf-default-positive-border));
+  --ab-base-positive-ink: var(--ab-theme-pf-default-positive-ink, var(--ab-base-pf-default-positive-ink));
+  --ab-base-positive-icon-colour: var(--ab-theme-pf-default-positive-icon-colour, var(--ab-base-pf-default-positive-icon-colour));
+  --ab-base-positive-icon: var(--ab-theme-pf-default-positive-icon, var(--ab-base-pf-default-positive-icon));
+  --ab-base-positive-correct-icon: var(--ab-theme-pf-default-positive-correct-icon, var(--ab-base-pf-default-positive-correct-icon));
+  --ab-base-positive-advise-icon: var(--ab-theme-pf-default-positive-advise-icon, var(--ab-base-pf-default-positive-advise-icon));
+
+  /* negative */
+  --ab-base-negative-bg: var(--ab-theme-pf-default-negative-bg, var(--ab-base-pf-default-negative-bg));
+  --ab-base-negative-border: var(--ab-theme-pf-default-negative-border, var(--ab-base-pf-default-negative-border));
+  --ab-base-negative-ink: var(--ab-theme-pf-default-negative-ink, var(--ab-base-pf-default-negative-ink));
+  --ab-base-negative-icon-colour: var(--ab-theme-pf-default-negative-icon-colour, var(--ab-base-pf-default-negative-icon-colour));
+  --ab-base-negative-icon: var(--ab-theme-pf-default-negative-icon, var(--ab-base-pf-default-negative-icon));
+  --ab-base-negative-incorrect-icon: var(--ab-theme-pf-default-negative-incorrect-icon, var(--ab-base-pf-default-negative-incorrect-icon));
+  --ab-base-negative-warn-icon: var(--ab-theme-pf-default-negative-warn-icon, var(--ab-base-pf-default-negative-warn-icon));
+
+  /* neutral-cue */
+  --ab-base-neutral-cue-bg: var(--ab-theme-pf-default-neutral-cue-bg, var(--ab-base-pf-default-neutral-cue-bg));
+  --ab-base-neutral-cue-border: var(--ab-theme-pf-default-neutral-cue-border, var(--ab-base-pf-default-neutral-cue-border));
+  --ab-base-neutral-cue-ink: var(--ab-theme-pf-default-neutral-cue-ink, var(--ab-base-pf-default-neutral-cue-ink));
+  --ab-base-neutral-cue-icon-colour: var(--ab-theme-pf-default-neutral-cue-icon-colour, var(--ab-base-pf-default-neutral-cue-icon-colour));
+  --ab-base-neutral-cue-icon: var(--ab-theme-pf-default-neutral-cue-icon, var(--ab-base-pf-default-neutral-cue-icon));
+  --ab-base-neutral-cue-observe-icon: var(--ab-theme-pf-default-neutral-cue-observe-icon, var(--ab-base-pf-default-neutral-cue-observe-icon));
+}

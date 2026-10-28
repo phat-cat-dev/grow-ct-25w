@@ -1,0 +1,59 @@
+// CM LINK SYSTEM — dotted-underline links (Abbott, 10 Oct 2026).
+// Tokens ported from cm-global.css (--ab-link-* block, lines ~5089 / ~11207),
+// which defines them but applies them in the site's base `a` styling (not in
+// that file). The application here is ours.
+//
+// Class is `.ab-link` (single hyphenated class, NOT `.cm.link`) on purpose:
+// `.cm.link` would also match the button-link variant `.cm.btn.link`
+// (element carrying cm + link), so links use their own class to stay clear of
+// the button object.
+//
+// SCOPE: auto-applied (Abbott, 10 Oct 2026). Every prose link inside an Adapt
+// component body (`.component__body a`) gets the treatment, plus the explicit
+// `.ab-link` class for links elsewhere. Buttons written as `<a class="cm btn">`
+// are excluded via `:not(.btn)`; Adapt's own nav/UI links sit outside
+// `.component__body` and are untouched. The explicit `.ab-link` class still
+// works anywhere (e.g. a link in a title or custom markup).
+
+:root {
+  --ab-link-opacity: 1;
+  --ab-link-color: var(--ab-blue);
+  --ab-link-color-rgb: rgba(var(--ab-blue-rgb), var(--ab-link-opacity, 1));
+  --ab-link-border-bottom: 0.05rem dotted var(--ab-link-color-rgb);
+  --ab-link-text-decoration: none;
+  --ab-link-hover-color: var(--ab-dark-blue);
+  --ab-link-hover-color-rgb: rgba(var(--ab-dark-blue-rgb), var(--ab-link-opacity, 1));
+  --ab-link-hover-border-bottom: 0.1rem solid var(--ab-link-hover-color-rgb);
+  --ab-link-hover-text-decoration: none;
+}
+
+// GATED under html.ab-theme (optional-skin switch). The :root tokens above stay
+// global; the link application below applies only when the skin is on, so with
+// `ab-theme` off, prose links fall back to vanilla's own link styling.
+html.ab-theme {
+
+.ab-link,
+.component__body a:not(.btn):not(.ab-link) {
+  color: var(--ab-link-color-rgb);
+  border-bottom: var(--ab-link-border-bottom);
+  text-decoration: var(--ab-link-text-decoration);
+  padding-bottom: 0.05em;      // keep the underline off the baseline a touch
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.ab-link:hover,
+.ab-link:focus,
+.component__body a:not(.btn):not(.ab-link):hover,
+.component__body a:not(.btn):not(.ab-link):focus {
+  color: var(--ab-link-hover-color-rgb);
+  border-bottom: var(--ab-link-hover-border-bottom);
+  text-decoration: var(--ab-link-hover-text-decoration);
+}
+
+.ab-link:focus-visible,
+.component__body a:not(.btn):not(.ab-link):focus-visible {
+  outline: 2px solid var(--ab-primary);
+  outline-offset: 2px;
+}
+
+} // end html.ab-theme gate

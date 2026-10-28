@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="./notes-board.css">
+<div id="my-notes-board"></div>
+<script src="./notes-board.js"></script>
+<script>
+  TexturedNotes.mountNotesBoard(document.getElementById('my-notes-board'), {
+    activity: {
+      id: 'evidence-practice',
+      title: 'From question to evidence',
+      groups: [{ id: 'pool', label: 'Unsorted' }, { id: 'process', label: 'A useful sequence' }],
+      notes: [
+        { id: 'test', text: 'Test an explanation', answer: 'Compare it with the evidence.', group: 'pool', expectedGroup: 'process', expectedOrder: 3 },
+        { id: 'ask', text: 'Ask a question', answer: 'Make the question specific enough to investigate.', group: 'pool', expectedGroup: 'process', expectedOrder: 1 },
+        { id: 'gather', text: 'Gather evidence', answer: 'Check the reliability of each source.', group: 'pool', expectedGroup: 'process', expectedOrder: 2 }
+      ]
+    }
+  });
+</script>

@@ -1,0 +1,493 @@
+<!-- ============================================================================
+     course_frontmatter_spec.html
+     The course frontmatter plan, rendered in the grey skin to match
+     lesson-record.example.html / lesson-frontmatter-data.html. Loads
+     lesson-record.skin.css for presentation and lesson-record.inspect.css / .js
+     for the tools and the depth-by-level markup inspector. Content is the
+     authoring view of course_frontmatter_spec.md, one section per lr-group.
+     ============================================================================ -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course frontmatter · specification</title>
+<link rel="stylesheet" href="lesson-record.skin.css">
+<link rel="stylesheet" href="lesson-record.inspect.css">
+</head>
+<body>
+<article class="lr" data-lr-role="lesson-record" aria-labelledby="lr-title">
+
+  <header class="lr__header">
+    <p class="lr__kicker">Course record · specification</p>
+    <h2 class="lr__title" id="lr-title">Course frontmatter</h2>
+    <p class="lr__summary">The plan for the course record. It extends the Level 0 section of <code class="lr-code">frontmatter_spec.md</code> and keeps its field names where they exist. Nothing here is an enforced schema — it is a proposed convention.</p>
+  </header>
+
+  <div class="lr__bar" role="group" aria-label="Key and tools">
+    <ul class="lr__legend" aria-label="What each treatment means">
+      <li class="lr-key" data-kind="define">Defined per course</li>
+      <li class="lr-key" data-kind="inherit">Inherited (from the lesson spec)</li>
+      <li class="lr-key" data-kind="derive">Derived (automatic)</li>
+      <li class="lr-key" data-kind="internal">Kept internal</li>
+    </ul>
+    <div class="lr__tools" data-lr-tools hidden></div>
+  </div>
+
+  <ol class="lr__groups">
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-orientation" data-group="orientation" data-kind="define" aria-labelledby="lr-h-orientation" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">01</span>
+          <h3 class="lr-group__title" id="lr-h-orientation">Orientation</h3>
+          <span class="lr-badge">Defined per course</span>
+          <span class="lr-group__sum">The course is the Level 0 node</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Understood: the course is the Level 0 node. It is one coherent concept, broken down into lessons. It is also a node in its own right, so the record has to work as a document and as a concept node that other nodes can point at.</p>
+          <div class="lr-panel">
+            <p>This is the plan for the course record. It extends the Level 0 section of <code class="lr-code">frontmatter_spec.md</code> and keeps its field names where they exist. Nothing here is an enforced schema. It is a proposed convention.</p>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-changes" data-group="changes" data-kind="define" aria-labelledby="lr-h-changes" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">02</span>
+          <h3 class="lr-group__title" id="lr-h-changes">What changes between a lesson and a course</h3>
+          <span class="lr-badge">Defined per course</span>
+          <span class="lr-group__sum">Four extra jobs</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">A lesson record says what one lesson teaches. A course record has four extra jobs.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Name the concept</dt><dd>State the one idea the course is about, define it and say what binds the lessons together.</dd></div>
+              <div class="lr-dl__row"><dt>Place the concept</dt><dd>Say where the concept sits among other concepts: what it belongs to, what it needs first, what it is easily confused with.</dd></div>
+              <div class="lr-dl__row"><dt>Decompose it</dt><dd>Map every lesson to the concept: its role, the terms it introduces and the outcomes it serves.</dd></div>
+              <div class="lr-dl__row"><dt>Open the course</dt><dd>Give the learner a front page and a lesson menu without anyone retyping the data.</dd></div>
+            </dl>
+          </div>
+          <div class="lr-panel">
+            <p>Because the course is a node, every field that describes it should be readable on its own, without the document body. A viewer, a graph or a search index should be able to read the front matter and draw the node.</p>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-layers" data-group="layers" data-kind="internal" aria-labelledby="lr-h-layers" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">03</span>
+          <h3 class="lr-group__title" id="lr-h-layers">Four layers</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">Keep these apart, as the lesson spec does</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>1 · Document metadata</dt><dd>Identity, hierarchy, ownership, version, review and rights.</dd></div>
+              <div class="lr-dl__row"><dt>2 · Concept node</dt><dd>The concept, its definition, terms, relations and coherence claim.</dd></div>
+              <div class="lr-dl__row"><dt>3 · Learning design</dt><dd>Audience, scope, outcomes, lesson map, delivery and assessment.</dd></div>
+              <div class="lr-dl__row"><dt>4 · Learner-visible front matter</dt><dd>The course opening and the lesson menu.</dd></div>
+            </dl>
+          </div>
+          <p class="lr-note">Layers 1 to 3 are the authoritative record. Layer 4 is a display view of them. The course manifest stays the source of truth for design decisions, so this record is an authoring view of the manifest, not a competing copy.</p>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-common" data-group="common" data-kind="inherit" aria-labelledby="lr-h-common" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">04</span>
+          <h3 class="lr-group__title" id="lr-h-common">Common document fields</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">From frontmatter_spec.md section 1</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <p>Use the common fields from <code class="lr-code">frontmatter_spec.md</code> section 1 unchanged:</p>
+            <ul class="lr-tags">
+              <li class="lr-tag"><code class="lr-code">id</code></li>
+              <li class="lr-tag"><code class="lr-code">document_type</code></li>
+              <li class="lr-tag"><code class="lr-code">title</code></li>
+              <li class="lr-tag"><code class="lr-code">summary</code></li>
+              <li class="lr-tag"><code class="lr-code">schema_version</code></li>
+              <li class="lr-tag"><code class="lr-code">version</code></li>
+              <li class="lr-tag"><code class="lr-code">status</code></li>
+              <li class="lr-tag"><code class="lr-code">owner</code></li>
+              <li class="lr-tag"><code class="lr-code">authors</code></li>
+              <li class="lr-tag"><code class="lr-code">reviewers</code></li>
+              <li class="lr-tag"><code class="lr-code">created</code></li>
+              <li class="lr-tag"><code class="lr-code">updated</code></li>
+              <li class="lr-tag"><code class="lr-code">review_due</code></li>
+              <li class="lr-tag"><code class="lr-code">language</code></li>
+              <li class="lr-tag"><code class="lr-code">tags</code></li>
+              <li class="lr-tag"><code class="lr-code">sources</code></li>
+              <li class="lr-tag"><code class="lr-code">rights</code></li>
+            </ul>
+          </div>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Document type</dt><dd>For a course, <code class="lr-code">document_type</code> is <code class="lr-code">course-scope</code>.</dd></div>
+              <div class="lr-dl__row"><dt>Hierarchy level</dt><dd><code class="lr-code">hierarchy_level</code> is <code class="lr-code">0</code>.</dd></div>
+            </dl>
+          </div>
+          <p class="lr-note">Keep document status separate from review approval. A draft can have an assigned reviewer without having been approved.</p>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-record" data-group="record" data-kind="define" aria-labelledby="lr-h-record" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">05</span>
+          <h3 class="lr-group__title" id="lr-h-record">The full course record</h3>
+          <span class="lr-badge">Defined per course</span>
+          <span class="lr-group__sum">A copyable starting point</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">This is a copyable starting point. Bracketed values are placeholders.</p>
+          <div class="lr-panel">
+<pre class="lr-yaml">---
+schema_version: "1.0"
+id: "course-[slug]"
+document_type: course-scope
+hierarchy_level: 0
+
+title: "[Course title]"
+summary: "[What the course covers and why it matters.]"
+
+version: "0.1.0"
+status: draft
+owner: "[Accountable person or team]"
+authors: []
+reviewers: []
+created: "2026-10-20"
+updated: "2026-10-20"
+review_due: null
+
+language: en-GB
+tags: []
+rights:
+  holder: null
+  licence: null
+
+# ---- Layer 2: the concept node -------------------------------------------
+concept:
+  node_id: "concept-[slug]"
+  label: "[Preferred label]"
+  alt_labels: []
+  definition: "[One or two sentences saying what the concept is.]"
+  coherence_claim: "[Why these lessons belong together. What binds them.]"
+  through_line: "[The question or idea that runs through every lesson.]"
+  key_terms:
+    - id: T1
+      term: "[Term]"
+      definition: "[Plain definition.]"
+      introduced_in: "lesson-[slug]-01"
+  threshold_concepts: []
+  misconceptions:
+    - id: M1
+      statement: "[A common wrong idea learners arrive with.]"
+      addressed_in: ["lesson-[slug]-01"]
+  relations:
+    - predicate: broader
+      target: "concept-[other-slug]"
+      note: null
+    - predicate: requires
+      target: "concept-[other-slug]"
+      note: null
+    - predicate: contrasts_with
+      target: "concept-[other-slug]"
+      note: null
+  external_refs: []
+
+# ---- Layer 3: learning design --------------------------------------------
+audience:
+  description: "[Who this course is for.]"
+  learner_pitch: introductory
+  prior_knowledge: []
+  prerequisites:
+    knowledge: []
+    required_course_ids: []
+
+scope:
+  central_topic: "[The overarching concept or topic.]"
+  purpose: "[The need the course addresses.]"
+  in_scope: []
+  out_of_scope: []
+  assumptions: []
+
+outcomes:
+  - id: CO1
+    statement: "[Observable course outcome.]"
+    evidence: "[What the learner will do to demonstrate this.]"
+    concept_term_ids: [T1]
+
+lesson_map:
+  - lesson_id: "lesson-[slug]-01"
+    sequence: 1
+    title: "[Lesson title]"
+    role: introduces
+    course_outcome_ids: [CO1]
+    concept_term_ids: [T1]
+    requires_lesson_ids: []
+    estimated_duration_minutes: null
+    status: draft
+
+delivery:
+  mode: self-paced
+  estimated_duration_minutes: null
+  lesson_order: guided
+  materials_required: []
+
+assessment:
+  strategy: "[How achievement of the outcomes will be evidenced.]"
+  purpose: formative
+  course_outcome_ids: [CO1]
+
+support:
+  accessibility_statement: null
+  help_contact: null
+
+conventions:
+  referencing_style: "Harvard (Cite Them Right)"
+  voice_specification: "reference/excelling-voice-specification.md"
+
+inherits_to_lessons:
+  - language
+  - learner_pitch
+  - referencing_style
+  - voice_specification
+  - rights
+
+sources: []
+
+review:
+  academic_status: pending
+  academic_approved_by: null
+  academic_approved_on: null
+
+# ---- Layer 4: learner-visible front matter -------------------------------
+frontmatter:
+  eyebrow: "Welcome"
+  body: >
+    [Explain what the course covers, why it matters and how you will work through it.]
+  meta:
+    duration: "[Estimated time]"
+    level: "[Learner-facing pitch]"
+  objectivesTitle: "By the end of this course, you will be able to:"
+  objectives:
+    - "[Learner-facing outcome.]"
+  menu:
+    title: "Lessons"
+    show: [position, title, duration, outcomes]
+---</pre>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-concept" data-group="concept" data-kind="define" aria-labelledby="lr-h-concept" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">06</span>
+          <h3 class="lr-group__title" id="lr-h-concept">The concept node block</h3>
+          <span class="lr-badge">Defined per course</span>
+          <span class="lr-group__sum">The part a lesson record does not need</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">This is the part a lesson record does not need.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.node_id</code></dt><dd>Stable identifier for the concept. It does not change when the label changes. It is separate from the document <code class="lr-code">id</code>, so one concept can outlive a rewrite of the course.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.label</code>, <code class="lr-code">alt_labels</code></dt><dd>Preferred name and the other names people use for it.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.definition</code></dt><dd>A short definition that stands without the body.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.coherence_claim</code></dt><dd>The reason the lessons form one course. If you cannot write it, the course may be two courses.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.through_line</code></dt><dd>The question that every lesson helps answer. Each lesson summary should connect to it.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.key_terms</code></dt><dd>Terms the course defines, each with the lesson that introduces it. Learners meet a term first in one place.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.threshold_concepts</code></dt><dd>Ideas that change how learners see the whole topic. Leave empty if there are none. Do not invent them.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.misconceptions</code></dt><dd>Common wrong ideas, each tied to the lesson that addresses it.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.relations</code></dt><dd>Typed links to other concept nodes (see below).</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept.external_refs</code></dt><dd>Identifiers or links in outside vocabularies. Use only confirmed ones.</dd></div>
+            </dl>
+          </div>
+
+          <div class="lr-panel">
+            <h4 class="lr-subhead">Relation predicates</h4>
+            <p>Use a small controlled set so the links can be drawn and queried:</p>
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt><code class="lr-code">broader</code></dt><dd>This concept sits inside the target concept.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">narrower</code></dt><dd>The target concept sits inside this one.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">requires</code></dt><dd>Learners need the target concept first.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">related</code></dt><dd>Linked, with no ordering or containment.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">contrasts_with</code></dt><dd>Easily confused with the target. Say how in <code class="lr-code">note</code>.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">applies</code></dt><dd>This concept puts the target concept to use.</dd></div>
+            </dl>
+            <p class="lr-note">State each link once, from the node that owns it. Do not record both directions by hand. A viewer can derive the reverse.</p>
+          </div>
+
+          <div class="lr-panel">
+            <h4 class="lr-subhead">Distinctions</h4>
+            <ul class="lr-list">
+              <li><code class="lr-code">concept.definition</code> says what the idea is. <code class="lr-code">scope</code> says how much of it this course teaches.</li>
+              <li><code class="lr-code">coherence_claim</code> explains why the lessons belong together. <code class="lr-code">lesson_map</code> lists them.</li>
+              <li><code class="lr-code">concept.relations</code> link concepts. <code class="lr-code">audience.prerequisites</code> link courses and knowledge. A course can require a concept without requiring another course.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-map" data-group="lesson-map" data-kind="derive" aria-labelledby="lr-h-map" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">07</span>
+          <h3 class="lr-group__title" id="lr-h-map">The lesson map as the edges</h3>
+          <span class="lr-badge">Derived</span>
+          <span class="lr-group__sum">Each entry joins the course node to a lesson node</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Each entry joins the course node to a lesson node, so give it enough to draw the join.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt><code class="lr-code">lesson_id</code>, <code class="lr-code">sequence</code>, <code class="lr-code">title</code></dt><dd>Which lesson, in what presentation order. Sequence is order, not depth.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">role</code></dt><dd>How the lesson serves the concept: <code class="lr-code">introduces</code>, <code class="lr-code">develops</code>, <code class="lr-code">applies</code>, <code class="lr-code">synthesises</code> or <code class="lr-code">assesses</code>.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">course_outcome_ids</code></dt><dd>Course outcomes the lesson serves.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">concept_term_ids</code></dt><dd>Key terms the lesson teaches.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">requires_lesson_ids</code></dt><dd>Lessons that must come first. This is dependency, which can differ from sequence.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">estimated_duration_minutes</code></dt><dd>Lesson estimate, used to derive the course estimate.</dd></div>
+              <div class="lr-dl__row"><dt><code class="lr-code">status</code></dt><dd>Lesson lifecycle value, so the course view can show what is ready.</dd></div>
+            </dl>
+          </div>
+          <p class="lr-note">Keep the lesson's own record authoritative for its content. The map holds only what the course needs to draw and check the whole.</p>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-learner" data-group="learner-visible" data-kind="derive" aria-labelledby="lr-h-learner" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">08</span>
+          <h3 class="lr-group__title" id="lr-h-learner">What learners should actually see</h3>
+          <span class="lr-badge">Derived</span>
+          <span class="lr-group__sum">Course front page and lesson menu entry</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item"><h4 class="lr-item__id">Title</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Course title</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Lesson title</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Position</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Pathway or programme, if relevant</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Lesson number in the course</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Purpose and relevance</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Why the concept matters</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>One line from the lesson summary</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Overview</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Broad coverage and boundaries</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd><span class="lr-empty">Not shown</span></dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Learning outcomes</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Course outcomes</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd><span class="lr-empty">Not shown</span></dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Estimated time</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Whole-course estimate</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Lesson estimate</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Starting knowledge</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Entry expectations</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Only where a lesson has its own prerequisite</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Materials</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Course-wide requirements</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd><span class="lr-empty">Not shown</span></dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Concept map</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>How the lessons relate to the central concept</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Which terms this lesson introduces</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Completion information</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Verified course requirements</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd>Verified lesson state</dd></div></dl></li>
+              <li class="lr-item"><h4 class="lr-item__id">Support and accessibility</h4><dl class="lr-dl"><div class="lr-dl__row"><dt>Course front page</dt><dd>Main support information</dd></div><div class="lr-dl__row"><dt>Lesson menu entry</dt><dd><span class="lr-empty">Not shown</span></dd></div></dl></li>
+            </ul>
+          </div>
+
+          <div class="lr-panel lr-preview">
+            <p class="lr-preview__eyebrow">Default course header</p>
+            <p><strong>Pathway or course position</strong></p>
+            <p><strong>Course title</strong></p>
+            <p>Short overview explaining the concept and why it matters</p>
+            <p class="lr-preview__meta">Estimated time · Learner pitch</p>
+            <p><strong>By the end of this course, you will be able to…</strong></p>
+            <p><strong>Lessons</strong>, as a menu</p>
+          </div>
+          <p class="lr-note">Assessment detail and support information sit immediately below the menu, not in the header.</p>
+          <p class="lr-note">Do not promise that a lesson is optional, saves answers, unlocks the next lesson or affects completion unless that behaviour has been verified. Recording an intention in <code class="lr-code">lesson_order</code> or <code class="lr-code">status</code> does not configure Adapt or SCORM.</p>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-inherit" data-group="inheritance" data-kind="inherit" aria-labelledby="lr-h-inherit" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">09</span>
+          <h3 class="lr-group__title" id="lr-h-inherit">Inheritance rules</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">Inherit, define, derive, keep internal, keep runtime separate</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Inherit from the course</dt><dd>The fields listed in <code class="lr-code">inherits_to_lessons</code>. A lesson may override one, and the override is visible in its own record.</dd></div>
+              <div class="lr-dl__row"><dt>Define per course</dt><dd>Concept, scope, outcomes, lesson map, assessment strategy and support information.</dd></div>
+              <div class="lr-dl__row"><dt>Derive automatically</dt><dd>Course duration from the lesson estimates, lesson position, the outcome-coverage table, breadcrumbs and the menu itself.</dd></div>
+              <div class="lr-dl__row"><dt>Keep internal</dt><dd>Authorship, approval records, versioning, scope exclusions, assumptions, misconceptions that are not shown to learners and implementation identifiers.</dd></div>
+              <div class="lr-dl__row"><dt>Keep runtime separate</dt><dd>Adapt IDs, tracking IDs, assessment configuration and completion rules.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-coherence" data-group="coherence" data-kind="internal" aria-labelledby="lr-h-coherence" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">10</span>
+          <h3 class="lr-group__title" id="lr-h-coherence">Coherence checks</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">The record can be checked mechanically</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Because the course is one concept, the record can be checked mechanically. A check that fails is a defect in the plan, not a style note.</p>
+          <div class="lr-panel">
+            <ol class="lr-list">
+              <li>Every course outcome is served by at least one lesson.</li>
+              <li>Every lesson serves at least one course outcome.</li>
+              <li>Every key term is introduced in exactly one lesson, and that lesson exists in the map.</li>
+              <li>Every misconception is addressed in at least one existing lesson.</li>
+              <li><code class="lr-code">requires_lesson_ids</code> form no cycle, and no lesson requires a later lesson unless <code class="lr-code">lesson_order</code> allows free order.</li>
+              <li><code class="lr-code">sequence</code> values are unique and run without gaps.</li>
+              <li>Nothing appears in both <code class="lr-code">in_scope</code> and <code class="lr-code">out_of_scope</code>.</li>
+              <li>Every <code class="lr-code">concept.relations</code> target resolves to a known node, or is flagged as external.</li>
+              <li>The course duration equals the sum of its lesson estimates, or the record says why not.</li>
+              <li>Learner-facing duration, level and outcomes match the authoritative fields, or are derived from them.</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-decisions" data-group="decisions" data-kind="internal" aria-labelledby="lr-h-decisions">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">11</span>
+          <h3 class="lr-group__title" id="lr-h-decisions">Decisions to settle before building the menu page</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">Four open questions</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <ol class="lr-list">
+              <li><strong>Concept id.</strong> One <code class="lr-code">concept.node_id</code> per course, or can a course carry more than one concept node? This plan assumes one.</li>
+              <li><strong>Relation vocabulary.</strong> The six predicates above are a starting set. Keep them, or align them to a vocabulary you already use.</li>
+              <li><strong>Lesson roles.</strong> Five roles are proposed. Add or drop to match how you plan courses.</li>
+              <li><strong>Free or guided order.</strong> <code class="lr-code">delivery.lesson_order</code> decides whether the menu can offer any lesson at any time. Confirm what Adapt can enforce before the page implies either.</li>
+            </ol>
+          </div>
+          <div class="lr-panel lr-preview">
+            <p class="lr-preview__eyebrow">Bottom line</p>
+            <p>The course record defines <em>the concept, its place among other concepts and how the lessons break it down</em>. Each lesson record defines <em>its contribution to that concept</em>. The learner-facing front matter and the menu are <em>views of that record</em>, derived from it and never retyped.</p>
+          </div>
+        </div>
+      </details>
+    </li>
+
+  </ol>
+</article>
+
+<script src="lesson-record.inspect.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+{
+  "presets": {
+    "basic": [
+      {
+        "section": "colour",
+        "name": "user-h",
+        "kind": "seed",
+        "label": "Theme hue",
+        "input": "number"
+      },
+      {
+        "section": "colour",
+        "name": "accent",
+        "kind": "token",
+        "label": "Accent colour",
+        "input": "color"
+      },
+      {
+        "section": "typography",
+        "name": "font-heading",
+        "kind": "seed",
+        "label": "Heading font role",
+        "input": "select"
+      },
+      {
+        "section": "typography",
+        "name": "font-body",
+        "kind": "seed",
+        "label": "Body font role",
+        "input": "select"
+      }
+    ],
+    "standard": [
+      {
+        "section": "box-model",
+        "name": "radius",
+        "kind": "seed",
+        "label": "Corner radius",
+        "input": "length"
+      },
+      {
+        "section": "colour",
+        "name": "user-h",
+        "kind": "seed",
+        "label": "Theme hue",
+        "input": "number"
+      },
+      {
+        "section": "colour",
+        "name": "user-s",
+        "kind": "seed",
+        "label": "Theme saturation",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "user-l",
+        "kind": "seed",
+        "label": "Theme lightness",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "surface",
+        "kind": "token",
+        "label": "Page background",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "ink",
+        "kind": "token",
+        "label": "Body text",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "accent",
+        "kind": "token",
+        "label": "Accent colour",
+        "input": "color"
+      },
+      {
+        "section": "icons",
+        "name": "academic-practice-iconset",
+        "kind": "seed",
+        "label": "Academic-practice icon pack",
+        "input": "iconset"
+      },
+      {
+        "section": "icons",
+        "name": "cite-source-iconset",
+        "kind": "seed",
+        "label": "Cite-source icon pack",
+        "input": "iconset"
+      },
+      {
+        "section": "motion",
+        "name": "duration-base",
+        "kind": "seed",
+        "label": "Base transition",
+        "input": "number"
+      },
+      {
+        "section": "typography",
+        "name": "font-sans",
+        "kind": "seed",
+        "label": "Sans family",
+        "input": "font"
+      },
+      {
+        "section": "typography",
+        "name": "font-display",
+        "kind": "seed",
+        "label": "Display/heading family",
+        "input": "font"
+      },
+      {
+        "section": "typography",
+        "name": "font-heading",
+        "kind": "seed",
+        "label": "Heading font role",
+        "input": "select"
+      },
+      {
+        "section": "typography",
+        "name": "font-body",
+        "kind": "seed",
+        "label": "Body font role",
+        "input": "select"
+      }
+    ],
+    "full": [
+      {
+        "section": "box-model",
+        "name": "radius",
+        "kind": "seed",
+        "label": "Corner radius",
+        "input": "length"
+      },
+      {
+        "section": "box-model",
+        "name": "border-width",
+        "kind": "seed",
+        "label": "Border width",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-sm",
+        "kind": "seed",
+        "label": "Breakpoint sm (phone landscape)",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-md",
+        "kind": "seed",
+        "label": "Breakpoint md (tablet)",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-lg",
+        "kind": "seed",
+        "label": "Breakpoint lg (small laptop)",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-xl",
+        "kind": "seed",
+        "label": "Breakpoint xl (desktop)",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-xxl",
+        "kind": "seed",
+        "label": "Breakpoint xxl (large desktop)",
+        "input": "length"
+      },
+      {
+        "section": "breakpoints",
+        "name": "bp-xxxl",
+        "kind": "seed",
+        "label": "Breakpoint xxxl (wide display)",
+        "input": "length"
+      },
+      {
+        "section": "colour",
+        "name": "user-h",
+        "kind": "seed",
+        "label": "Theme hue",
+        "input": "number"
+      },
+      {
+        "section": "colour",
+        "name": "user-s",
+        "kind": "seed",
+        "label": "Theme saturation",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "user-l",
+        "kind": "seed",
+        "label": "Theme lightness",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "neutral-h",
+        "kind": "seed",
+        "label": "Neutral hue (grey tint)",
+        "input": "number"
+      },
+      {
+        "section": "colour",
+        "name": "neutral-s",
+        "kind": "seed",
+        "label": "Neutral saturation",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "l-surface",
+        "kind": "seed",
+        "label": "Page background lightness",
+        "input": "percent"
+      },
+      {
+        "section": "colour",
+        "name": "surface",
+        "kind": "token",
+        "label": "Page background",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "ink",
+        "kind": "token",
+        "label": "Body text",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "accent",
+        "kind": "token",
+        "label": "Accent colour",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "h1-color",
+        "kind": "token",
+        "label": "Heading 1 colour",
+        "input": "color"
+      },
+      {
+        "section": "colour",
+        "name": "h2-color",
+        "kind": "token",
+        "label": "Heading 2 colour",
+        "input": "color"
+      },
+      {
+        "section": "container-queries",
+        "name": "cq-medium",
+        "kind": "seed",
+        "label": "Container band: medium (component leaves narrow)",
+        "input": "length"
+      },
+      {
+        "section": "container-queries",
+        "name": "cq-wide",
+        "kind": "seed",
+        "label": "Container band: wide (component reaches wide)",
+        "input": "length"
+      },
+      {
+        "section": "icons",
+        "name": "academic-practice-iconset",
+        "kind": "seed",
+        "label": "Academic-practice icon pack",
+        "input": "iconset"
+      },
+      {
+        "section": "icons",
+        "name": "cite-source-iconset",
+        "kind": "seed",
+        "label": "Cite-source icon pack",
+        "input": "iconset"
+      },
+      {
+        "section": "motion",
+        "name": "duration-fast",
+        "kind": "seed",
+        "label": "Fast transition",
+        "input": "number"
+      },
+      {
+        "section": "motion",
+        "name": "duration-base",
+        "kind": "seed",
+        "label": "Base transition",
+        "input": "number"
+      },
+      {
+        "section": "spacing",
+        "name": "measure-max",
+        "kind": "seed",
+        "label": "Max content width",
+        "input": "length"
+      },
+      {
+        "section": "typography",
+        "name": "type-ratio",
+        "kind": "seed",
+        "label": "Type scale ratio",
+        "input": "number"
+      },
+      {
+        "section": "typography",
+        "name": "font-sans",
+        "kind": "seed",
+        "label": "Sans family",
+        "input": "font"
+      },
+      {
+        "section": "typography",
+        "name": "font-display",
+        "kind": "seed",
+        "label": "Display/heading family",
+        "input": "font"
+      },
+      {
+        "section": "typography",
+        "name": "font-mono",
+        "kind": "seed",
+        "label": "Mono family",
+        "input": "font"
+      },
+      {
+        "section": "typography",
+        "name": "font-heading",
+        "kind": "seed",
+        "label": "Heading font role",
+        "input": "select"
+      },
+      {
+        "section": "typography",
+        "name": "font-body",
+        "kind": "seed",
+        "label": "Body font role",
+        "input": "select"
+      },
+      {
+        "section": "typography",
+        "name": "weight-heading",
+        "kind": "seed",
+        "label": "Heading weight",
+        "input": "number"
+      },
+      {
+        "section": "typography",
+        "name": "weight-body",
+        "kind": "seed",
+        "label": "Body weight",
+        "input": "number"
+      }
+    ]
+  },
+  "bespokeNote": "a bespoke template names sections (+ optional tokens) to include"
+}

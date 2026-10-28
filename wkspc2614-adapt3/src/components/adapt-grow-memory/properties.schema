@@ -1,0 +1,150 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Memory match game. Select a tile to turn it over, then find its matching pair.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Introduces the interaction to screen reader users at the start of the tile grid.",
+      "translatable": true
+    },
+    "tileLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Tile {{number}}, face down",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible name for a face-down tile. Placeholder: {{number}} (the tile's position in the grid).",
+      "translatable": true
+    },
+    "revealAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "{{label}} revealed.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Announced politely when you turn a tile over. Placeholder: {{label}} (the tile's content).",
+      "translatable": true
+    },
+    "matchAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "Match found. {{found}} of {{total}} pairs found.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Announced politely when a pair matches. Placeholders: {{found}}, {{total}}.",
+      "translatable": true
+    },
+    "noMatchAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "Not a match. Those two tiles will turn back over.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Announced politely when two turned tiles do not match.",
+      "translatable": true
+    },
+    "matchedState": {
+      "type": "string",
+      "required": true,
+      "default": "matched",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Appended to a tile's accessible name once its pair has been matched.",
+      "translatable": true
+    },
+    "winMessage": {
+      "type": "string",
+      "required": true,
+      "default": "Well done. You found all the pairs.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Shown and announced politely once every pair has been found.",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Guidance text displayed below the component body.",
+      "translatable": true
+    },
+    "_isCompletionBearing": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Is completion bearing",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "When true (default), the component completes once every pair has been found. When false, the game is purely formative: finding the pairs still shows the win message but does not contribute to completion, and the component completes on view instead (mark it _isOptional if it must not gate the page)."
+    },
+    "_columns": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Columns",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Fixed number of columns in the tile grid. 0 (default) lays the tiles out responsively, fitting as many columns as the width allows."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Pairs",
+      "help": "Each entry becomes one pair (two matching tiles). Provide an icon, a short text, or both. The deck is built from two of each entry, shuffled on every load.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "icon": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Icon",
+            "inputType": "Text",
+            "validators": [],
+            "help": "A Material Symbols Outlined name, for example 'lightbulb', 'bolt' or 'water_drop'. Leave blank to use text only.",
+            "translatable": false
+          },
+          "text": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Text",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Short text shown on the tile. Keep it brief so it fits. Leave blank to use an icon only.",
+            "translatable": true
+          },
+          "alt": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Accessible label",
+            "inputType": "Text",
+            "validators": [],
+            "help": "What a screen reader should read for this tile when it is turned over. Falls back to the text, then the icon name. Set this when the tile is icon-only.",
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

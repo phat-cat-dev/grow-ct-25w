@@ -1,0 +1,9 @@
+<svg data-motion-asset="tilt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-tilt-title svg-motion-tilt-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-tilt-title">Playful tilt</title><desc id="svg-motion-tilt-desc">A greeting with a springy rotation. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="tilt"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-tilt calc(2.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-tilt { 20% { transform: rotate(-4deg); } 35% { transform: rotate(3deg); } 50%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="tilt"] .art,svg[data-motion-asset="tilt"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Hello!</text></g></svg>

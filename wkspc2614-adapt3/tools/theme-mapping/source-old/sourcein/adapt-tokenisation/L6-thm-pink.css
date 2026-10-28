@@ -1,0 +1,45 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 6: user pack "pink"  (--ab-thm-*)
+ * ---------------------------------------------------------------------------
+ * A worked user pack. It holds the brand values in its own published --ab-thm-*
+ * namespace (the source of truth), then BINDS them into the L5 theme template
+ * (--ab-theme-pf-default-*), which re-derives the whole cascade down through
+ * L4 and L3. Swap this one file for another --ab-thm-* pack and the entire
+ * theme recolours; nothing above L5 knows this pack's name.
+ *
+ * Published namespace grammar (theme-formula-map.md §4): the template layers use
+ * the long --<xx>-theme-pf-<theme>-tmp-<subtheme>-... form; on publish to a user
+ * scheme it shortens to --<xx>-thm-<theme>-<subtheme>-<n>-<formula>-<token>,
+ * dropping -pf- and -tmp-. Here xx=ab, theme=pink, subtheme=dark-neutral, the
+ * single anchor colour is n=1, and the anchor seed carries no colour-theory
+ * formula so <formula> is omitted for it (structural/type tokens omit <n>-<formula>
+ * by the same rule).
+ *
+ * Anchor — "bright dark pink", the start neutral-dark-color-1. The HSL triple
+ * below is the authoritative seed (the whole cascade derives in hsl()); it
+ * resolves to rgb(141 17 81), the ~0.5/255 sRGB rounding of the nominal brand
+ * hex #8e1152 (rgb(142 17 82)) it was taken from:
+ *   hsl(329 78% 31%)  ~=  #8e1152
+ * The neutral spine stays pure grey (neutral-s 0%, the shipped default); set
+ * neutral-s above 0 here to tint the greys toward the pink.
+ * =========================================================================== */
+:root {
+  /* --- the pack's own source of truth (published --ab-thm-* namespace) --- */
+  --ab-thm-pink-dark-neutral-1-h: 329;
+  --ab-thm-pink-dark-neutral-1-s: 78%;
+  --ab-thm-pink-dark-neutral-1-l: 31%;
+  --ab-thm-pink-dark-neutral-1-l-num: 31;   /* unitless L, drives the spectrum shade-offset */
+  /* anchor hex, for reference / renderer fallbacks: #8e1152 */
+
+  /* --- bind into the L5 template; L4/L3 re-derive from these --- */
+  --ab-theme-pf-default-user-h: var(--ab-thm-pink-dark-neutral-1-h);
+  --ab-theme-pf-default-user-s: var(--ab-thm-pink-dark-neutral-1-s);
+  --ab-theme-pf-default-user-l: var(--ab-thm-pink-dark-neutral-1-l);
+  --ab-theme-pf-default-user-l-num: var(--ab-thm-pink-dark-neutral-1-l-num);
+  /* greys carry the pink hue (only visible if neutral-s is raised); spine stays
+     pure grey at the default neutral-s: 0% */
+  --ab-theme-pf-default-neutral-h: var(--ab-thm-pink-dark-neutral-1-h);
+
+  /* lineage metadata — traceable up the stack */
+  --ab-thm-pink-reflects: ab-theme-pf-default;
+}

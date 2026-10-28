@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Individual background washes</title><link rel="stylesheet" href="./washes.css">
+<style>
+:root { --h:202; --s:72%; --surface-1:#fbfcfd; --ink:#24313b; --ink-soft:#526674; --accent:hsl(var(--h) var(--s) 42%); --line:#bdcbd5; }
+:root[data-theme="dark"] { --surface-1:#182934; --ink:#edf2f6; --ink-soft:#b7c8d3; --accent:hsl(var(--h) var(--s) 72%); --line:#4e6574; color-scheme:dark; }
+body { margin:0; padding:1rem; background:var(--surface-1); color:var(--ink); font:1rem/1.6 system-ui,sans-serif; }
+main { max-width:85rem; margin:auto; } .wash-gallery { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1rem; }
+.wash-bg { min-height:12rem; padding:1.25rem; border:1px solid var(--line); border-radius:.75rem; }
+.controls { display:flex; flex-wrap:wrap; gap:1rem; margin-block:1rem; } label { display:grid; } button { font:inherit; min-height:2.75rem; } :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+</style></head><body><main>
+<h1>Individual background washes</h1><p>Static, token-driven backgrounds. Each has its own CSS file and HTML fragment. No animation, fonts or network requests.</p>
+<div class="controls"><label>Intensity <output id="intensity-value">1x</output><input id="intensity" type="range" min=".3" max="2.2" step=".05" value="1"></label><label>Hue <output id="hue-value">202 deg</output><input id="hue" type="range" min="0" max="360" value="202"></label><button id="theme" type="button" aria-pressed="false">Dark theme</button></div>
+<div class="wash-gallery"><section class="wash-bg wash-bg--top"><h2>top</h2><p>Quiet decoration behind your content.</p><a href="./top.html">HTML fragment</a> / <a href="./top.css">CSS</a></section>
+<section class="wash-bg wash-bg--bottom"><h2>bottom</h2><p>Quiet decoration behind your content.</p><a href="./bottom.html">HTML fragment</a> / <a href="./bottom.css">CSS</a></section>
+<section class="wash-bg wash-bg--corner"><h2>corner</h2><p>Quiet decoration behind your content.</p><a href="./corner.html">HTML fragment</a> / <a href="./corner.css">CSS</a></section>
+<section class="wash-bg wash-bg--centre"><h2>centre</h2><p>Quiet decoration behind your content.</p><a href="./centre.html">HTML fragment</a> / <a href="./centre.css">CSS</a></section>
+<section class="wash-bg wash-bg--diagonal"><h2>diagonal</h2><p>Quiet decoration behind your content.</p><a href="./diagonal.html">HTML fragment</a> / <a href="./diagonal.css">CSS</a></section>
+<section class="wash-bg wash-bg--dual"><h2>dual</h2><p>Quiet decoration behind your content.</p><a href="./dual.html">HTML fragment</a> / <a href="./dual.css">CSS</a></section>
+<section class="wash-bg wash-bg--vignette"><h2>vignette</h2><p>Quiet decoration behind your content.</p><a href="./vignette.html">HTML fragment</a> / <a href="./vignette.css">CSS</a></section>
+<section class="wash-bg wash-bg--band"><h2>band</h2><p>Quiet decoration behind your content.</p><a href="./band.html">HTML fragment</a> / <a href="./band.css">CSS</a></section>
+<section class="wash-bg wash-bg--dots"><h2>dots</h2><p>Quiet decoration behind your content.</p><a href="./dots.html">HTML fragment</a> / <a href="./dots.css">CSS</a></section>
+<section class="wash-bg wash-bg--hairlines"><h2>hairlines</h2><p>Quiet decoration behind your content.</p><a href="./hairlines.html">HTML fragment</a> / <a href="./hairlines.css">CSS</a></section>
+<section class="wash-bg wash-bg--crosshatch"><h2>crosshatch</h2><p>Quiet decoration behind your content.</p><a href="./crosshatch.html">HTML fragment</a> / <a href="./crosshatch.css">CSS</a></section>
+<section class="wash-bg wash-bg--microgrid"><h2>microgrid</h2><p>Quiet decoration behind your content.</p><a href="./microgrid.html">HTML fragment</a> / <a href="./microgrid.css">CSS</a></section>
+<section class="wash-bg wash-bg--grain"><h2>grain</h2><p>Quiet decoration behind your content.</p><a href="./grain.html">HTML fragment</a> / <a href="./grain.css">CSS</a></section>
+<section class="wash-bg wash-bg--paper"><h2>paper</h2><p>Quiet decoration behind your content.</p><a href="./paper.html">HTML fragment</a> / <a href="./paper.css">CSS</a></section>
+<section class="wash-bg wash-bg--washgrain"><h2>washgrain</h2><p>Quiet decoration behind your content.</p><a href="./washgrain.html">HTML fragment</a> / <a href="./washgrain.css">CSS</a></section></div></main>
+<script>
+document.getElementById('intensity').addEventListener('input',function(){document.documentElement.style.setProperty('--wash-intensity',this.value);document.getElementById('intensity-value').textContent=this.value+'x';});
+document.getElementById('hue').addEventListener('input',function(){document.documentElement.style.setProperty('--h',this.value);document.getElementById('hue-value').textContent=this.value+' deg';});
+document.getElementById('theme').addEventListener('click',function(){const dark=this.getAttribute('aria-pressed')!=='true';this.setAttribute('aria-pressed',String(dark));document.documentElement.dataset.theme=dark?'dark':'light';});
+</script></body></html>

@@ -1,0 +1,399 @@
+// VANILLA OVERRIDES — vendor adapt-contrib-* components still bake vanilla's
+// teal (@blue #117F93 + darken() steps) and dark-grey (@greyDark #4D4D4D +
+// darken() steps) straight into their compiled CSS. This file forces those
+// surfaces onto the --ab-* token system so they follow --ab-base-accent (pack /
+// scheme / dark-mode reactive) and the ink/surface spine instead.
+//
+// GATED under `html.ab-theme` (Abbott, 11 Oct 2026 — the optional-skin switch).
+// Every selector below is prefixed with the gate class so the whole sweep is
+// INERT unless `ab-theme` is on <html> (config.json _htmlClasses). With the
+// class absent, none of these rules match and vanilla's own compiled CSS shows
+// verbatim = pure vanilla. The prefix form differs by selector: a selector that
+// began `html:not(...)` becomes `html.ab-theme:not(...)` (the gate joins the
+// existing html); every other selector is prefixed `html.ab-theme `. Keep that
+// convention when adding a new family below — add the gate to every selector.
+//
+// WHY !important, and WHY THIS FILE (Abbott, 10 Oct 2026 continuation):
+// grunt/config/less.js globs components/* then extensions/* then theme/*
+// (adapt-contrib-vanilla) LAST, and sortLESSFilePaths is alphanumeric within
+// a folder — so vanilla compiles after this whole extensions/ folder and
+// wins any tie on specificity. !important is therefore structural here, not
+// a convenience. This file is named to sort AFTER theme.less (v > t) so it
+// can refine theme.less's own blanket button !important (see "grey-button
+// family" below) rather than fight it.
+//
+// theme.less's existing instruction still applies and now points here: if any
+// teal or vanilla grey survives a build, grep the built adapt.css for the hex,
+// find its selector in exports/adapt.css, and add it to the matching family
+// below. The eight families mirror vanilla's own state model (base / hover+
+// focus / visited / selected / disabled), so a new selector almost always
+// slots into an existing group.
+//
+// Do NOT add: .bg-color.* / .header-color.* / .comp-header-bg-color.* black-
+// white utilities, a11y high-contrast blocks, #a11y-focuser, MediaElement
+// (.mejs__*) chrome, or anything already a plain --ab-primary via theme.less.
+// Those are either intentional literals or already fixed.
+
+// ===========================================================================
+// L2 ADAPTER (seam 1) — the adapt-vanilla renderer's named roles, each aliased to
+// the generic L3 pivot. The sweep below paints vanilla's selectors with these
+// --ab-base-if-adapt-* tokens, not the pivot directly, so another renderer swaps
+// only this map. Render-neutral: every alias points at exactly the token the sweep
+// used before Phase 2. (aliasMap source: design-kb/section-schemas/adapters/adapt.json.)
+// NOTE: greyDark / greyDark-hover / disabled / font-color currently alias to the
+// live semantic + palette tokens the sweep actually used (--ab-primary /
+// --ab-primary-hover / --ab-light / --ab-dark-grey), NOT yet the aliasMap's eventual
+// pivot targets (e.g. @greyDark -> --ab-base-ink-muted). That re-point waits on the
+// deferred semantic-family reconciliation; doing it now would change the render.
+// ===========================================================================
+:root {
+  --ab-base-if-adapt-item-color:          var(--ab-base-accent);
+  --ab-base-if-adapt-item-color-hover:    var(--ab-base-accent-hover);
+  --ab-base-if-adapt-item-color-visited:  var(--ab-base-accent-active);
+  --ab-base-if-adapt-item-color-selected: var(--ab-base-accent-deep);
+  --ab-base-if-adapt-item-color-inverted: var(--ab-white);
+  --ab-base-if-adapt-font-color:          var(--ab-dark-grey);
+  --ab-base-if-adapt-font-color-strong:   var(--ab-base-ink);
+  --ab-base-if-adapt-font-color-muted:    var(--ab-base-ink-muted);
+  --ab-base-if-adapt-greyDark:            var(--ab-primary);
+  --ab-base-if-adapt-greyDark-hover:      var(--ab-primary-hover);
+  --ab-base-if-adapt-greyLight:           var(--ab-base-surface-sunken);
+  --ab-base-if-adapt-disabled:            var(--ab-light);
+  --ab-base-if-adapt-hairline:            var(--ab-base-hairline);
+  --ab-base-if-adapt-validation-success:  var(--ab-success);
+  --ab-base-if-adapt-validation-error:    var(--ab-danger);
+}
+
+// --ab-base-if-adapt-font-color is a fixed --ab-dark-grey alias (not yet
+// re-pointed at the ink pivot, see note above). On a dark page that reads as
+// grey-on-dark — too low contrast to be the main body-text ink. Flip it to
+// light-grey in dark mode, same wiring pattern as every other dark toggle in
+// this theme.
+:root[data-theme="dark"] { --ab-base-if-adapt-font-color: var(--ab-light-grey); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.ab-force-light) { --ab-base-if-adapt-font-color: var(--ab-light-grey); }
+}
+
+// ===========================================================================
+// 1. Accent base — vanilla's @item-color / @heading-color (#117F93).
+//
+//    Split into three groups because the compiled CSS proves vanilla puts
+//    this colour on three DIFFERENT properties depending on the component
+//    (checked against build/adapt.css, not assumed):
+//    - text-colour headings — no fill, no border, color is correct
+//    - border-only chrome — has its OWN unrelated body text (#4D4D4D); the
+//      earlier single-rule version wrongly forced that text to accent too
+//    - solid-fill buttons/badges/bars — vendor's own text is already #fff;
+//      the earlier version forced color/border-color on these and left the
+//      real teal-carrying property, background-color, untouched (the bug
+//      the computed-style check in the plan's step 4 was written to catch:
+//      .mcq-item__label rendered literal teal-on-teal until this fix)
+// ===========================================================================
+html.ab-theme .boxmenu__title,
+html.ab-theme .boxmenu__subtitle,
+html.ab-theme .page__title,
+html.ab-theme .page__subtitle {
+  color: var(--ab-base-if-adapt-item-color) !important;
+}
+
+html.ab-theme .boxmenu-item__inner,
+html.ab-theme .aside-pull-quote {
+  border-color: var(--ab-base-if-adapt-item-color) !important;
+}
+
+html.ab-theme .accordion-item__btn,
+html.ab-theme .boxmenu-item__button,
+html.ab-theme .confidenceslider .slider__item-input-fill-linked,
+html.ab-theme .gmcq-item__option,
+html.ab-theme .hotgraphic__pin:not(.has-pin-image),
+html.ab-theme .mcq-item__label,
+html.ab-theme .media__transcript-btn,
+html.ab-theme .narrative__controls,
+html.ab-theme .narrative__progress,
+html.ab-theme .narrative__strapline-btn,
+html.ab-theme .slider__number-selection,
+html.ab-theme .slider__number-model-answer,
+html.ab-theme .slider__item-input-fill,
+html.ab-theme .trickle__btn {
+  background-color: var(--ab-base-if-adapt-item-color) !important;
+}
+
+// ===========================================================================
+// 2. Accent hover + focus-visible — darken(@item-color, 10%) (#0c5865/#0e6b7c)
+//    Every rule in this family is a background-color fill in the compiled
+//    CSS (vendor's own hover text stays #fff) — background-color is the only
+//    property forced here.
+// ===========================================================================
+html.ab-theme .no-touch .accordion-item__btn:not(.is-selected):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .accordion-item__btn:focus-visible,
+html.ab-theme .no-touch .boxmenu-item__button:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .boxmenu-item__button:focus-visible,
+html.ab-theme .no-touch .gmcq-item__label:not(.is-disabled):not(.is-selected):hover .gmcq-item__option,
+html.ab-theme:not(.a11y-disable-focusoutline) .gmcq-item__input:focus-visible + .gmcq-item__label .gmcq-item__option,
+html.ab-theme .no-touch .hotgraphic__pin:not(.has-pin-image):not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic__pin:not(.has-pin-image):focus-visible,
+html.ab-theme .no-touch .mcq-item__label:not(.is-disabled):not(.is-selected):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .mcq-item__input:focus-visible + .mcq-item__label,
+html.ab-theme .no-touch .media__transcript-btn:not([aria-expanded="true"]):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .media__transcript-btn:not([aria-expanded="true"]):focus-visible,
+html.ab-theme .no-touch .narrative__controls:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .narrative__controls:focus-visible,
+html.ab-theme .no-touch .narrative__strapline-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .narrative__strapline-btn:focus-visible,
+html.ab-theme .no-touch .trickle__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .trickle__btn:focus-visible {
+  background-color: var(--ab-base-if-adapt-item-color-hover) !important;
+}
+
+// ===========================================================================
+// 3. Accent visited — darken(@item-color, 15%) / @visited (#09444e)
+//    Same background-color-fill pattern as section 2. narrative__progress
+//    keeps its own white border-color (#fff) at this step in the compiled
+//    CSS — vendor's deliberate "visited ring" design, not a teal leak — so
+//    border is left alone here (contrast section 4, where it DOES match).
+// ===========================================================================
+html.ab-theme .accordion-item__btn.is-visited,
+html.ab-theme .hotgraphic__pin:not(.has-pin-image).is-visited,
+html.ab-theme .hotgraphic__pin.has-pin-image .hotgraphic__pin-number,
+html.ab-theme .hotgraphic__pin.has-pin-image.is-visited .icon,
+html.ab-theme .hotgraphic__tile.is-visited .icon,
+html.ab-theme .media.is-complete .media__transcript-btn,
+html.ab-theme .narrative__progress.is-visited,
+html.ab-theme .narrative__strapline-btn.is-visited {
+  background-color: var(--ab-base-if-adapt-item-color-visited) !important;
+}
+
+// ===========================================================================
+// 4. Accent selected / open — darken(@item-color, 20%) / @item-color-selected
+//    (#063038). Background-color fill, as sections 2-3. narrative__progress
+//    is the one selector where vendor's own border-color ALSO turns teal at
+//    this step (#063038, not white) — confirmed in the compiled CSS — so it
+//    gets an extra declaration.
+// ===========================================================================
+html.ab-theme .accordion-item__btn.is-selected,
+html.ab-theme .gmcq-item__label.is-selected .gmcq-item__option,
+html.ab-theme .mcq-item__label.is-selected,
+html.ab-theme .media__transcript-btn[aria-expanded="true"],
+html.ab-theme .narrative__progress.is-selected {
+  background-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+html.ab-theme .narrative__progress.is-selected {
+  border-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+
+// ===========================================================================
+// 5. Grey-button family (@greyDark #4D4D4D base / darken(10%) #333 hover /
+//    @disabled #DDDDDD) — refines theme.less's own blanket button !important
+//    (which currently flattens vanilla's hover/focus/disabled states; this
+//    restores them). Loads after theme.less so it wins the tie.
+// ===========================================================================
+html.ab-theme .no-touch .btn-text:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn-text:focus-visible,
+html.ab-theme .no-touch .btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn-icon:focus-visible,
+html.ab-theme .no-touch .btn__action:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme .no-touch .btn__feedback:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn__action:focus-visible,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn__feedback:focus-visible,
+html.ab-theme .no-touch .nav__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .nav__btn:focus-visible,
+html.ab-theme .no-touch .drawer__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .drawer__btn:focus-visible,
+html.ab-theme .no-touch .notify__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify__btn:focus-visible,
+html.ab-theme .no-touch .notify__btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify__btn-icon:focus-visible,
+html.ab-theme .no-touch .notify-push__close-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify-push__close-btn:focus-visible,
+html.ab-theme .no-touch .assessmentresults__retry-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .assessmentresults__retry-btn:focus-visible,
+html.ab-theme .no-touch .hotgraphic-popup__controls:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme .no-touch .hotgraphic-popup__close:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic-popup__controls:focus-visible,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic-popup__close:focus-visible,
+html.ab-theme .no-touch .languagepicker__language-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .languagepicker__language-btn:focus-visible,
+html.ab-theme .no-touch .tutor__btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor__btn-icon:focus-visible,
+html.ab-theme .no-touch .tutor-type-overlay .tutor__btn:hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor-type-overlay .tutor__btn:focus-visible,
+html.ab-theme .no-touch .tutor-type-overlay .tutor__btn-icon:hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor-type-overlay .tutor__btn-icon:focus-visible {
+  background-color: var(--ab-base-if-adapt-greyDark-hover) !important;
+  border-color: var(--ab-base-if-adapt-greyDark-hover) !important;
+}
+
+html.ab-theme .btn-text.is-disabled,
+html.ab-theme .btn-text.is-locked,
+html.ab-theme .btn-icon.is-disabled,
+html.ab-theme .btn-icon.is-locked,
+html.ab-theme .btn__action.is-disabled,
+html.ab-theme .btn__feedback.is-disabled,
+html.ab-theme .drawer__item-btn.is-locked,
+html.ab-theme .drawer__item-btn.is-disabled,
+html.ab-theme .notify__btn.is-disabled,
+html.ab-theme .assessmentresults__retry-btn.is-disabled,
+html.ab-theme .boxmenu-item__button.is-locked,
+html.ab-theme .gmcq-item__label.is-disabled .gmcq-item__option,
+html.ab-theme .hotgraphic-popup__controls.is-disabled,
+html.ab-theme .hotgraphic-popup__close.is-disabled,
+html.ab-theme .languagepicker__language-btn.is-disabled,
+html.ab-theme .dropdown__btn.is-disabled,
+html.ab-theme .mcq-item__label.is-disabled,
+html.ab-theme .narrative__controls.is-disabled,
+html.ab-theme .textinput__widget.is-disabled .textinput-item__textbox,
+html.ab-theme .trickle__btn.is-disabled,
+html.ab-theme .trickle__btn.is-locked {
+  background-color: var(--ab-base-if-adapt-disabled) !important;
+  border-color: var(--ab-base-if-adapt-disabled) !important;
+  color: var(--ab-base-if-adapt-font-color) !important;
+}
+
+// non-button chrome that shares the @greyDark / darken(10%) family:
+html.ab-theme .drawer,
+html.ab-theme .drawer__btn,
+html.ab-theme .drawer__item-btn,
+html.ab-theme .notify__popup,
+html.ab-theme .notify__title,
+html.ab-theme .notify__btn,
+html.ab-theme .notify__btn-icon,
+html.ab-theme .notify-push,
+html.ab-theme .notify-push__close-btn,
+html.ab-theme .boxmenu-item__inner,
+html.ab-theme .resources__filter-btn,
+html.ab-theme .tutor__btn-icon,
+html.ab-theme .tutor-type-overlay .tutor__inner,
+html.ab-theme .tutor-type-overlay .tutor__btn,
+html.ab-theme .tutor-type-overlay .tutor__btn-icon {
+  background-color: var(--ab-base-if-adapt-greyDark) !important;
+  border-color: var(--ab-base-if-adapt-greyDark) !important;
+  color: var(--ab-base-if-adapt-item-color-inverted) !important;
+}
+html.ab-theme .drawer__item-btn[aria-current="true"],
+html.ab-theme .drawer__item-btn.is-selected,
+html.ab-theme .resources__filter-btn.is-selected {
+  background-color: var(--ab-base-if-adapt-item-color-selected) !important;
+  border-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+
+// ===========================================================================
+// 6. Ink + muted text — @font-color / @greyDark (#4D4D4D) running text;
+//    lighten(@font-color, 25%) (#8d8d8d) muted text. (Links are NOT handled
+//    here — see the note below the first block: theme.less's own "a" rule
+//    now covers them.)
+//
+// Running text below is a LITERAL swap (Abbott, 10 Oct 2026: "keep the
+// neutrals as the literal swap, not role-split") — #4D4D4D -> var(--ab-dark-
+// grey) (#6d6d6d), not the near-black --ab-base-ink (#1a1a1a) used elsewhere in
+// the theme. Deliberate exception to the ink role token for this vendor
+// text; contrast on white drops from 4.69:1 (#4D4D4D) to 3.54:1 (#6d6d6d),
+// below WCAG AA for normal-size text — accepted knowingly, not an oversight.
+// ===========================================================================
+html.ab-theme body,
+html.ab-theme .page__body,
+html.ab-theme .page__instruction,
+html.ab-theme .boxmenu__body,
+html.ab-theme .boxmenu__instruction,
+html.ab-theme .boxmenu-group__body,
+html.ab-theme .boxmenu-group__instruction,
+html.ab-theme .hotgraphic-popup__controls,
+html.ab-theme .hotgraphic-popup__close,
+html.ab-theme .glossary__checkbox-label,
+html.ab-theme .glossary__index-link,
+html.ab-theme .glossary__item-not-found {
+  color: var(--ab-base-if-adapt-font-color) !important;
+}
+
+// NB: no per-component "__body a" / "__instruction a" rules here — they are
+// handled once, universally, by theme.less's own "a, a:visited" !important
+// rule (fixed alongside this file so it now wins the specificity fight it
+// used to lose; see the comment there). Duplicating ~30 selectors here would
+// just be dead weight pointing at the same token.
+
+html.ab-theme .glossary__item-description,
+html.ab-theme .glossary__items-group-header {
+  color: var(--ab-base-if-adapt-font-color-muted) !important;
+}
+
+// progress indicator (@greyDark fill)
+html.ab-theme .pagelevelprogress__indicator,
+html.ab-theme .pagelevelprogress__indicator-bar,
+html.ab-theme .menu-item__progress .pagelevelprogress__indicator,
+html.ab-theme .menu-item__progress .pagelevelprogress__indicator-bar,
+html.ab-theme .pagelevelprogress__nav-btn .pagelevelprogress__indicator-inner,
+html.ab-theme .pagelevelprogress__item-btn:not(.is-disabled) .pagelevelprogress__indicator,
+html.ab-theme .pagelevelprogress__item-btn:not(.is-disabled) .pagelevelprogress__indicator-bar,
+html.ab-theme .header-color.transparent-light.menu .menu__header .pagelevelprogress__indicator,
+html.ab-theme .header-color.header-transparent-light.menu .menu__header .pagelevelprogress__indicator,
+html.ab-theme .header-color.transparent-light.menu .menu__header .pagelevelprogress__indicator-bar,
+html.ab-theme .header-color.header-transparent-light.menu .menu__header .pagelevelprogress__indicator-bar,
+html.ab-theme .comp-header-bg-color.transparent-light .pagelevelprogress__indicator,
+html.ab-theme .comp-header-bg-color.transparent-light .pagelevelprogress__indicator-bar {
+  background-color: var(--ab-base-if-adapt-item-color) !important;
+}
+html.ab-theme .no-touch .pagelevelprogress__nav-btn:hover .pagelevelprogress__indicator-inner,
+html.ab-theme .no-touch .pagelevelprogress__item-btn:not(.is-disabled):hover .pagelevelprogress__indicator,
+html.ab-theme .no-touch .pagelevelprogress__item-btn:not(.is-disabled):hover .pagelevelprogress__indicator-bar {
+  background-color: var(--ab-base-if-adapt-item-color-hover) !important;
+}
+html.ab-theme .pagelevelprogress__item-btn.is-disabled .pagelevelprogress__indicator-inner {
+  background-color: var(--ab-base-if-adapt-disabled) !important;
+}
+html.ab-theme .header-color.transparent-light.menu .menu__title,
+html.ab-theme .header-color.header-transparent-light.menu .menu__title,
+html.ab-theme .comp-header-bg-color.transparent-light .component__header,
+html.ab-theme .comp-header-bg-color.transparent-light .component__title,
+html.ab-theme .comp-header-bg-color.transparent-light .component__body a,
+html.ab-theme .comp-header-bg-color.transparent-light .component__instruction a {
+  color: var(--ab-base-if-adapt-font-color-strong) !important;
+}
+
+// ===========================================================================
+// 7. Surfaces + hairlines — @greyLight #f9f9f9, darken(@grey,5%) #e6e6e6,
+//    @grey/@disabled #DDDDDD
+// ===========================================================================
+// NB: no "surface-subtle" (#f9f9f9) bucket here — every selector that used
+// to carry it (.checklist__item, .confidence__item/-confirmation/-feedback-
+// item/-summary, .flipcard__face--back, .opentext__textarea:disabled,
+// .timeline__detail-content) is a first-party adapt-abbott-* component and
+// is fixed at source instead (no vendor rule competes at its own BEM
+// selector, so no !important is needed there).
+
+html.ab-theme .drawer__toolbar,
+html.ab-theme .resources__header-inner,
+html.ab-theme .glossary__search-container,
+html.ab-theme .glossary__index-container,
+html.ab-theme .glossary__items-group-header,
+html.ab-theme .glossary__item-description,
+html.ab-theme .glossary__item-not-found {
+  background-color: var(--ab-base-if-adapt-greyLight) !important;
+}
+
+html.ab-theme .drawer__item-btn.is-locked,
+html.ab-theme .drawer__item-btn.is-disabled {
+  border-color: var(--ab-base-if-adapt-hairline) !important;
+}
+
+// ===========================================================================
+// 8. Validation — @validation-success #065f28 / @validation-error #dd0000.
+//    Reuse theme.less's existing semantic tokens (authoritative cm-global.css
+//    map); no new tokens needed.
+// ===========================================================================
+html.ab-theme .btn__marking.is-correct,
+html.ab-theme .slider__widget.show-user-answer.is-correct .slider__number-selection,
+html.ab-theme .slider__widget.show-user-answer.is-correct .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-correct .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-correct .slider__number-model-answer {
+  color: var(--ab-base-if-adapt-validation-success) !important;
+  border-color: var(--ab-base-if-adapt-validation-success) !important;
+}
+html.ab-theme .btn__marking.is-incorrect,
+html.ab-theme .narrative__instruction.has-error,
+html.ab-theme .matching__widget:not(.is-complete) .matching-item__select-container.has-error .dropdown__btn,
+html.ab-theme .slider__widget.show-user-answer.is-incorrect .slider__number-selection,
+html.ab-theme .slider__widget.show-user-answer.is-incorrect .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-incorrect .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-incorrect .slider__number-model-answer {
+  color: var(--ab-base-if-adapt-validation-error) !important;
+  border-color: var(--ab-base-if-adapt-validation-error) !important;
+}

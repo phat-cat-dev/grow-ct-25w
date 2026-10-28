@@ -1,0 +1,27 @@
+// ============================================================================
+//  grow-icons.less — self-hosted Material Symbols Outlined (the GROW icon set).
+//
+//  Referenced by font-family across grow-chrome.less (nav home / prev / next)
+//  and menuItemCard.less (menu-card marks). Self-hosted (not a Google Fonts
+//  @import) so icons render offline in the delivered SCORM package, and so the
+//  FULL glyph set is available — ab-theme shipped only a small "academic" subset
+//  whose @font-face (same family name) lacked the nav/menu glyphs.
+//
+//  This declares weight 400 to override that earlier subset @font-face. The full
+//  woff2 (~3.8 MB) is imported whole for now; subset it to the glyphs actually
+//  used as a compile-time optimisation later (see docs/projects/GROW-CT-IMPORT.md).
+//
+//  URL note: Adapt passes url() through literally. adapt.css ships at the build
+//  root and the build copies this theme's fonts/ to build/fonts/, so a package-
+//  root-relative "fonts/<file>" resolves correctly whether the course is served
+//  from the web root OR from a subfolder (e.g. a SCORM package mounted in an LMS).
+//  Do NOT use "../fonts/" here: that only works at the web root (it relies on the
+//  browser clamping ".." above root) and 404s under any subfolder -> tofu glyphs.
+// ============================================================================
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("fonts/material-symbols-outlined.woff2") format('woff2');
+}

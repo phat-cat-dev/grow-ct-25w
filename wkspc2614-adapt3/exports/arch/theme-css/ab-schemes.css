@@ -1,0 +1,187 @@
+:root {
+  --ab-neutral-base: hsl(var(--ab-neutral-h) var(--ab-neutral-s) 50%);
+  --ab-greys-light-10: color-mix(in srgb, var(--ab-neutral-base) 90%, #fff 10%);
+  --ab-greys-light-20: color-mix(in srgb, var(--ab-neutral-base) 80%, #fff 20%);
+  --ab-greys-light-30: color-mix(in srgb, var(--ab-neutral-base) 70%, #fff 30%);
+  --ab-greys-light-40: color-mix(in srgb, var(--ab-neutral-base) 60%, #fff 40%);
+  --ab-greys-light-50: color-mix(in srgb, var(--ab-neutral-base) 50%, #fff 50%);
+  --ab-greys-light-60: color-mix(in srgb, var(--ab-neutral-base) 40%, #fff 60%);
+  --ab-greys-light-70: color-mix(in srgb, var(--ab-neutral-base) 30%, #fff 70%);
+  --ab-greys-light-80: color-mix(in srgb, var(--ab-neutral-base) 20%, #fff 80%);
+  --ab-greys-light-90: color-mix(in srgb, var(--ab-neutral-base) 10%, #fff 90%);
+  --ab-greys-dark-10: color-mix(in srgb, var(--ab-neutral-base) 90%, #000 10%);
+  --ab-greys-dark-20: color-mix(in srgb, var(--ab-neutral-base) 80%, #000 20%);
+  --ab-greys-dark-30: color-mix(in srgb, var(--ab-neutral-base) 70%, #000 30%);
+  --ab-greys-dark-40: color-mix(in srgb, var(--ab-neutral-base) 60%, #000 40%);
+  --ab-greys-dark-50: color-mix(in srgb, var(--ab-neutral-base) 50%, #000 50%);
+  --ab-greys-dark-60: color-mix(in srgb, var(--ab-neutral-base) 40%, #000 60%);
+  --ab-greys-dark-70: color-mix(in srgb, var(--ab-neutral-base) 30%, #000 70%);
+  --ab-greys-dark-80: color-mix(in srgb, var(--ab-neutral-base) 20%, #000 80%);
+  --ab-greys-dark-90: color-mix(in srgb, var(--ab-neutral-base) 10%, #000 90%);
+  --ab-base-pf-default-surface: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-surface));
+  --ab-base-pf-default-surface-subtle: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-surface-subtle));
+  --ab-base-pf-default-surface-sunken: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-surface-sunken));
+  --ab-base-pf-default-ink: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-ink));
+  --ab-base-pf-default-ink-muted: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-ink-muted));
+  --ab-base-pf-default-hairline: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-hairline));
+  --ab-base-pf-default-on-accent: hsl(var(--ab-neutral-h) var(--ab-neutral-s) var(--ab-l-on-accent));
+  --ab-base-pf-default-accent: hsl(var(--ab-user-h) var(--ab-user-s) var(--ab-accent-l));
+  --ab-accent-rgb: var(--ab-primary-rgb);
+  --ab-base-pf-default-accent-hover: hsl(var(--ab-user-h) var(--ab-user-s) calc(var(--ab-accent-l) - 2%));
+  --ab-base-pf-default-accent-active: hsl(var(--ab-user-h) var(--ab-user-s) calc(var(--ab-accent-l) - 4%));
+  --ab-base-pf-default-accent-tint: hsl(var(--ab-user-h) calc(var(--ab-user-s) * 0.5) 95%);
+  --ab-base-pf-default-accent-line: hsl(var(--ab-user-h) var(--ab-user-s) var(--ab-accent-l) / 0.2);
+  --ab-base-pf-default-accent-deep: hsl(var(--ab-user-h) var(--ab-user-s) calc(var(--ab-accent-l) - 6%));
+  --ab-base-pf-default-accent-ring: hsl(var(--ab-user-h) var(--ab-user-s) 55%);
+  --ab-accent-2: var(--ab-base-accent);
+  --ab-accent-2-tint: color-mix(in srgb, var(--ab-accent-2) 8%, var(--ab-base-surface));
+  --ab-accent-2-line: color-mix(in srgb, var(--ab-accent-2) 20%, transparent);
+  --ab-accent-3: var(--ab-base-accent);
+  --ab-accent-3-tint: color-mix(in srgb, var(--ab-accent-3) 8%, var(--ab-base-surface));
+  --ab-accent-3-line: color-mix(in srgb, var(--ab-accent-3) 20%, transparent);
+}
+.ab-scheme-dark-blue {
+  --ab-theme-pf-default-accent: var(--ab-dark-blue);
+  --ab-accent-rgb: var(--ab-dark-blue-rgb);
+}
+.ab-scheme-midnight {
+  --ab-theme-pf-default-accent: var(--ab-midnight);
+  --ab-accent-rgb: var(--ab-midnight-rgb);
+}
+.ab-scheme-blue {
+  --ab-theme-pf-default-accent: var(--ab-blue);
+  --ab-accent-rgb: var(--ab-blue-rgb);
+}
+.ab-scheme-ocean {
+  --ab-theme-pf-default-accent: var(--ab-ocean);
+  --ab-accent-rgb: var(--ab-ocean-rgb);
+}
+.ab-scheme-teal {
+  --ab-theme-pf-default-accent: var(--ab-teal);
+  --ab-accent-rgb: var(--ab-teal-rgb);
+}
+.ab-scheme-aquamarine {
+  --ab-theme-pf-default-accent: var(--ab-aquamarine);
+  --ab-accent-rgb: var(--ab-aquamarine-rgb);
+}
+.ab-scheme-green {
+  --ab-theme-pf-default-accent: var(--ab-green);
+  --ab-accent-rgb: var(--ab-green-rgb);
+}
+.ab-scheme-olive {
+  --ab-theme-pf-default-accent: var(--ab-olive);
+  --ab-accent-rgb: var(--ab-olive-rgb);
+}
+.ab-scheme-khaki {
+  --ab-theme-pf-default-accent: var(--ab-khaki);
+  --ab-accent-rgb: var(--ab-khaki-rgb);
+}
+.ab-scheme-bronze {
+  --ab-theme-pf-default-accent: var(--ab-bronze);
+  --ab-accent-rgb: var(--ab-bronze-rgb);
+}
+.ab-scheme-brown {
+  --ab-theme-pf-default-accent: var(--ab-brown);
+  --ab-accent-rgb: var(--ab-brown-rgb);
+}
+.ab-scheme-sienna {
+  --ab-theme-pf-default-accent: var(--ab-sienna);
+  --ab-accent-rgb: var(--ab-sienna-rgb);
+}
+.ab-scheme-coral {
+  --ab-theme-pf-default-accent: var(--ab-coral);
+  --ab-accent-rgb: var(--ab-coral-rgb);
+}
+.ab-scheme-tomato {
+  --ab-theme-pf-default-accent: var(--ab-tomato);
+  --ab-accent-rgb: var(--ab-tomato-rgb);
+}
+.ab-scheme-jasper {
+  --ab-theme-pf-default-accent: var(--ab-jasper);
+  --ab-accent-rgb: var(--ab-jasper-rgb);
+}
+.ab-scheme-red {
+  --ab-theme-pf-default-accent: var(--ab-red);
+  --ab-accent-rgb: var(--ab-red-rgb);
+}
+.ab-scheme-purple {
+  --ab-theme-pf-default-accent: var(--ab-purple);
+  --ab-accent-rgb: var(--ab-purple-rgb);
+}
+.ab-scheme-amethyst {
+  --ab-theme-pf-default-accent: var(--ab-amethyst);
+  --ab-accent-rgb: var(--ab-amethyst-rgb);
+}
+.ab-scheme-violet {
+  --ab-theme-pf-default-accent: var(--ab-violet);
+  --ab-accent-rgb: var(--ab-violet-rgb);
+}
+.ab-scheme-blossom {
+  --ab-theme-pf-default-accent: var(--ab-blossom);
+  --ab-accent-rgb: var(--ab-blossom-rgb);
+}
+.ab-scheme-pink {
+  --ab-theme-pf-default-accent: var(--ab-pink);
+  --ab-accent-rgb: var(--ab-pink-rgb);
+}
+html.ab-theme body {
+  background-color: var(--ab-base-surface);
+  color: var(--ab-base-ink);
+}
+:root[data-theme="dark"] {
+  --ab-l-surface: 14%;
+  --ab-l-surface-subtle: 18%;
+  --ab-l-surface-sunken: 9%;
+  --ab-l-hairline: 32%;
+  --ab-l-ink-muted: 62%;
+  --ab-l-ink: 92%;
+  --ab-accent-l: 62%;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-l-surface: 14%;
+    --ab-l-surface-subtle: 18%;
+    --ab-l-surface-sunken: 9%;
+    --ab-l-hairline: 32%;
+    --ab-l-ink-muted: 62%;
+    --ab-l-ink: 92%;
+    --ab-accent-l: 62%;
+  }
+}
+/* DARK THEME TEMPORARILY DISABLED (Abbott, commented out "for a bit"). Uncomment to restore; .ab-dark-tokens() above is left defined but unused.
+:root[data-theme="dark"] { .ab-dark-tokens(); }
+
+@media (prefers-color-scheme: dark) {
+  // ab-force-light (config _htmlClasses) blocks OS-driven dark for now;
+  // remove it to restore automatic dark. (Abbott, 10 Oct 2026.)
+  :root:not([data-theme="light"]):not(.ab-force-light) { .ab-dark-tokens(); }
+}
+*/
+:root {
+  --ab-base-accent-active: var(--ab-theme-pf-default-accent-active, var(--ab-base-pf-default-accent-active));
+  --ab-base-accent-deep: var(--ab-theme-pf-default-accent-deep, var(--ab-base-pf-default-accent-deep));
+  --ab-base-accent-hover: var(--ab-theme-pf-default-accent-hover, var(--ab-base-pf-default-accent-hover));
+  --ab-base-accent-tint: var(--ab-theme-pf-default-accent-tint, var(--ab-base-pf-default-accent-tint));
+  --ab-base-accent-line: var(--ab-theme-pf-default-accent-line, var(--ab-base-pf-default-accent-line));
+  --ab-base-accent-ring: var(--ab-theme-pf-default-accent-ring, var(--ab-base-pf-default-accent-ring));
+  --ab-base-accent: var(--ab-theme-pf-default-accent, var(--ab-base-pf-default-accent));
+  --ab-base-surface-subtle: var(--ab-theme-pf-default-surface-subtle, var(--ab-base-pf-default-surface-subtle));
+  --ab-base-surface-sunken: var(--ab-theme-pf-default-surface-sunken, var(--ab-base-pf-default-surface-sunken));
+  --ab-base-surface: var(--ab-theme-pf-default-surface, var(--ab-base-pf-default-surface));
+  --ab-base-ink-muted: var(--ab-theme-pf-default-ink-muted, var(--ab-base-pf-default-ink-muted));
+  --ab-base-ink: var(--ab-theme-pf-default-ink, var(--ab-base-pf-default-ink));
+  --ab-base-hairline: var(--ab-theme-pf-default-hairline, var(--ab-base-pf-default-hairline));
+  --ab-base-on-accent: var(--ab-theme-pf-default-on-accent, var(--ab-base-pf-default-on-accent));
+  --ab-base-radius: var(--ab-theme-pf-default-radius, var(--ab-base-pf-default-radius));
+  --ab-base-border-width: var(--ab-theme-pf-default-border-width, var(--ab-base-pf-default-border-width));
+  --ab-base-measure-max: var(--ab-theme-pf-default-measure-max, var(--ab-base-pf-default-measure-max));
+  --ab-base-gutter: var(--ab-theme-pf-default-gutter, var(--ab-base-pf-default-gutter));
+  --ab-base-pad-y: var(--ab-theme-pf-default-pad-y, var(--ab-base-pf-default-pad-y));
+  --ab-base-page-max: var(--ab-theme-pf-default-page-max, var(--ab-base-pf-default-page-max));
+  --ab-base-h1-color: var(--ab-theme-pf-default-h1-color, var(--ab-base-pf-default-h1-color));
+  --ab-base-h2-color: var(--ab-theme-pf-default-h2-color, var(--ab-base-pf-default-h2-color));
+  --ab-base-h3-color: var(--ab-theme-pf-default-h3-color, var(--ab-base-pf-default-h3-color));
+  --ab-base-h4-color: var(--ab-theme-pf-default-h4-color, var(--ab-base-pf-default-h4-color));
+  --ab-base-h5-color: var(--ab-theme-pf-default-h5-color, var(--ab-base-pf-default-h5-color));
+  --ab-base-h6-color: var(--ab-theme-pf-default-h6-color, var(--ab-base-pf-default-h6-color));
+}

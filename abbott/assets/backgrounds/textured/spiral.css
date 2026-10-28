@@ -1,0 +1,12 @@
+.textured.ab-spiral { position: relative; padding-inline-start: 2.25rem; }
+.textured.ab-spiral::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: .6rem;
+  inset-block: .4rem;
+  inline-size: 12px;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--texture-ink) 30%, transparent) 42%, transparent 46%);
+  background-size: 14px 22px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}

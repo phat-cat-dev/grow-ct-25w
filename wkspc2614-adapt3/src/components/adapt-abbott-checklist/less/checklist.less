@@ -1,0 +1,284 @@
+/**
+ * Checklist Component Styles
+ *
+ * Design refs: CL-A (accessibility), CB-5 (Less)
+ *
+ * Notes on variable choices (Stage 0 recon):
+ * - @item-color-disabled exists (_colors.less:56), used for disabled states
+ * - @font-color-disabled does NOT exist - avoided
+ * - Prefer traced variables over @white/@black where possible
+ */
+
+// Variables - ab-theme tokens (10 Oct 2026 colour migration), not vanilla's
+// teal @item-color chain. darken()/lighten()/fade() can't take a var()
+// string, so the checked-bg tint uses color-mix() directly at its call site.
+@checklist-accent: var(--ab-base-accent);
+@checklist-accent-hover: var(--ab-base-accent-hover);
+@checklist-accent-focus: var(--ab-base-accent-hover);
+@checklist-item-bg: var(--ab-base-surface-subtle);
+@checklist-transition-duration: 0.2s;
+
+.checklist {
+
+  // Component inner
+  &__inner {
+    // Standard component layout
+  }
+
+  // Widget container
+  &__widget {
+    padding: @item-padding;
+  }
+
+  // ── accordion: collapsible, completes on open ───────────────────────────────
+  // The title is a toggle button; the widget is the collapsible region. Collapsed
+  // by default; `.is-open` (set by the view on $el) reveals it and the first open
+  // calls setCompletionStatus() to pass the trickle.
+  &__heading { margin: 0; }
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    font-size: var(--fs-xl); // match the standard component title level (c-35/c-42)
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--line, #d5dde2);
+    border-radius: 10px;
+    background: var(--surface-2, #f1f5f8);
+    color: var(--ink, #1a1a1a);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-radius 0.15s ease;
+    .no-touch &:hover { background: color-mix(in srgb, var(--accent) 8%, var(--surface-2, #f1f5f8)); }
+    html:not(.a11y-disable-focusoutline) &:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  }
+  &__toggle-title { flex: 1 1 auto; }
+  &__toggle-icon::before {
+    font-family: "Material Symbols Outlined";
+    content: "\e5cf"; // expand_more chevron
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--accent);
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  &__intro { margin: 0 0 var(--space-sm, 1rem); color: var(--ink-soft); }
+
+  // Collapsed region: a plain dropdown (instant show/hide, no height animation).
+  // This div is also .checklist__widget, so override its padding when closed.
+  &__region {
+    display: none;
+    padding: 0;
+    border: 0 solid var(--line, #d5dde2);
+    border-radius: 0 0 10px 10px;
+  }
+  &.is-open &__toggle { border-radius: 10px 10px 0 0; }
+  &.is-open &__toggle-icon::before { transform: rotate(180deg); }
+  &.is-open &__region {
+    display: block;
+    padding: @item-padding;
+    border-width: 0 1px 1px 1px;
+  }
+  &.reduce-motion &__toggle-icon::before { transition: none; }
+
+  // Fieldset reset
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Legend (visually hidden but accessible)
+  &__legend {
+    // Uses .aria-label utility class in template
+  }
+
+  // Items container
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: @item-margin;
+  }
+
+  // Individual item row
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    background: @checklist-item-bg;
+    border-radius: 4px;
+    padding: @item-padding;
+    transition: background-color @checklist-transition-duration ease;
+
+    &.is-checked {
+      background: color-mix(in srgb, @checklist-accent 10%, transparent);
+
+      .checklist__label {
+        // Ticked state via weight (not colour alone per CL-A)
+        font-weight: 600;
+      }
+
+      .checklist__text {
+        // Optional: subtle visual feedback for checked items
+        text-decoration: line-through;
+        text-decoration-color: @checklist-accent;
+      }
+
+      .checklist__indicator::after {
+        opacity: 1;
+        // keep the rotate — a bare scale(1) would replace it and leave the tick
+        // unrotated (a sideways "L" instead of a checkmark)
+        transform: rotate(45deg) scale(1);
+      }
+    }
+
+    &.is-visited {
+      // Visited items have reduced opacity marker
+      .checklist__indicator {
+        opacity: 0.85;
+      }
+    }
+  }
+
+  // Native checkbox (visually hidden but accessible)
+  &__input {
+    .visually-hidden();
+    opacity: 0; // Belt-and-braces for focusable input
+
+    // Focus visible on indicator
+    &:focus-visible + .checklist__label .checklist__indicator {
+      outline: 2px solid @checklist-accent-focus;
+      outline-offset: 2px;
+    }
+
+    // Checked state
+    &:checked + .checklist__label .checklist__indicator::after {
+      opacity: 1;
+      transform: rotate(45deg) scale(1);
+    }
+  }
+
+  // Label - acts as the tap target
+  &__label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+    width: 100%;
+    // Generous tap target - at least 44px via padding on parent
+    min-height: 44px;
+    padding: 0.25rem 0;
+  }
+
+  // Custom checkbox indicator
+  &__indicator {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: 2px solid @checklist-accent;
+    border-radius: 4px;
+    background: var(--ab-base-surface, #fff); // was @item-color-inverted (dead vanilla var); surface = unchecked box face
+    position: relative;
+    margin-top: 2px;
+
+    // Checkmark (native mark simulation)
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 7px;
+      width: 6px;
+      height: 12px;
+      border: solid @checklist-accent;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg) scale(0);
+      opacity: 0;
+      transition: transform @checklist-transition-duration ease,
+                  opacity @checklist-transition-duration ease;
+    }
+
+    // Hover state
+    .checklist__label:hover & {
+      border-color: @checklist-accent-hover;
+      background: color-mix(in srgb, @checklist-accent 5%, transparent);
+    }
+  }
+
+  // Item text
+  &__text {
+    font-size: var(--ab-body-font-size, 1rem); // was @body-size (dead vanilla var); fluid body token
+    line-height: 1.5;
+    flex: 1;
+    padding-top: 2px;
+  }
+
+  // Progress count
+  &__progress {
+    margin-top: @item-margin;
+    padding: @item-padding / 2;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--ab-base-ink-muted);
+  }
+
+  &__progress-text {
+    // Neutral, non-evaluative (CL-6)
+  }
+
+  // Completion state. Literal neutral swap (Abbott, 10 Oct 2026: "keep the
+  // neutrals as the literal swap, not role-split") — var(--ab-dark-grey),
+  // not --ab-base-ink, matching vanilla-overrides.less's running-text bucket.
+  &.is-complete {
+    .checklist__progress-text {
+      color: var(--ab-dark-grey);
+      font-weight: 600;
+    }
+  }
+
+  // Reduced motion
+  &.reduce-motion,
+  .reduce-motion & {
+    .checklist__item,
+    .checklist__indicator,
+    .checklist__indicator::after {
+      transition: none;
+    }
+  }
+
+}
+
+// Responsive: narrow viewport (~400px check per CB-5)
+@media (max-width: @device-width-small) {
+  .checklist {
+
+    &__widget {
+      padding: @item-padding / 2;
+    }
+
+    &__item {
+      padding: @item-padding * 0.75;
+    }
+
+    // Ensure tap targets remain adequate at narrow widths
+    &__label {
+      min-height: 44px;
+      gap: 0.5rem;
+    }
+
+    &__indicator {
+      width: 22px;
+      height: 22px;
+
+      &::after {
+        top: 2px;
+        left: 6px;
+        width: 5px;
+        height: 10px;
+      }
+    }
+
+  }
+}

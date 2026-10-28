@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-p5",
+  "slug": "test-p5",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "decidedValue": { "pathwayName": "Test", "tierName": "introductory", "slug": "test" },
+          "timestamp": "2026-08-26T00:00:00Z",
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "Gate hardness is soft; fixed-default implies advisory hardness.",
+            "evidence": "Log search found no deciding-mode narration."
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

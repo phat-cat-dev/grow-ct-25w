@@ -1,0 +1,1056 @@
+{
+  "@context": {
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "grow": "https://grow.local/process/",
+    "ProcessSteps": "grow:ProcessSteps",
+    "step_title": "grow:stepTitle",
+    "description": "grow:stepDescription",
+    "steps": "grow:steps"
+  },
+  "@graph": [
+    {
+      "@id": "grow:scheme/academic-processes",
+      "@type": "skos:ConceptScheme",
+      "skos:prefLabel": "Universal Undergraduate Academic Processes"
+    },
+    {
+      "@id": "https://grow.local/process/intellectual-depth",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Intellectual Depth (Thinking)",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      }
+    },
+    {
+      "@id": "https://grow.local/process/research-retrieval",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Research & Retrieval (Doing)",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      }
+    },
+    {
+      "@id": "https://grow.local/process/communication-reflection",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Communication & Reflection (Applying)",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      }
+    },
+    {
+      "@id": "https://grow.local/process/critical-analysis",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Critical Analysis",
+      "skos:scopeNote": "Move past summarising to judging a source: test its central claim, its hidden assumptions, and whether the evidence actually holds.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/intellectual-depth"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/critical-analysis#step1",
+            "step_title": "Identify the core claim",
+            "description": "Find the single main point you are being asked to accept. Everything else is scaffolding around it."
+          },
+          {
+            "@id": "https://grow.local/process/critical-analysis#step2",
+            "step_title": "Surface the assumptions",
+            "description": "Name the beliefs that must be true for the claim to stand — especially the ones left unstated."
+          },
+          {
+            "@id": "https://grow.local/process/critical-analysis#step3",
+            "step_title": "Weigh the evidence",
+            "description": "Is the support sufficient, relevant and unbiased? Ask what data would contradict the claim."
+          },
+          {
+            "@id": "https://grow.local/process/critical-analysis#step4",
+            "step_title": "Judge the reasoning",
+            "description": "Check the step from evidence to claim. A true premise can still carry a broken inference."
+          },
+          {
+            "@id": "https://grow.local/process/critical-analysis#step5",
+            "step_title": "Form your verdict",
+            "description": "Decide how far the claim earns your acceptance, and say exactly where it is strong and where it is weak."
+          }
+        ]
+      },
+      "skos:altLabel": "Evaluation of Arguments",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/argument-mapping"
+        },
+        {
+          "@id": "https://grow.local/process/source-evaluation"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/argument-mapping",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Argument Mapping",
+      "skos:scopeNote": "Make the shape of an argument visible: separate the thesis, the support beneath it, and the objections that push back.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/intellectual-depth"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/argument-mapping#step1",
+            "step_title": "Find the thesis (the root)",
+            "description": "Pin down the one conclusion the whole argument exists to establish."
+          },
+          {
+            "@id": "https://grow.local/process/argument-mapping#step2",
+            "step_title": "Map the supporting premises",
+            "description": "Branch each reason and piece of evidence beneath the thesis it serves."
+          },
+          {
+            "@id": "https://grow.local/process/argument-mapping#step3",
+            "step_title": "Add the counter-arguments",
+            "description": "Place the strongest objections as conflict nodes against the lines they attack."
+          },
+          {
+            "@id": "https://grow.local/process/argument-mapping#step4",
+            "step_title": "Trace the dependencies",
+            "description": "Draw which premises must hold for the next step to follow — expose the load-bearing links."
+          },
+          {
+            "@id": "https://grow.local/process/argument-mapping#step5",
+            "step_title": "Spot the gaps",
+            "description": "Look for a conclusion with no support, or support with no link. Gaps are where arguments fail."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        },
+        {
+          "@id": "https://grow.local/process/counter-argumentation"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/problem-decomposition",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Problem Decomposition",
+      "skos:scopeNote": "Take a huge, ill-defined problem and break it into manageable, testable sub-components you can actually work on.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/intellectual-depth"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/problem-decomposition#step1",
+            "step_title": "Name the whole problem",
+            "description": "State the big problem plainly, in one sentence, before you cut it up."
+          },
+          {
+            "@id": "https://grow.local/process/problem-decomposition#step2",
+            "step_title": "Split into sub-problems",
+            "description": "Break it into parts that are smaller, clearer and separable from each other."
+          },
+          {
+            "@id": "https://grow.local/process/problem-decomposition#step3",
+            "step_title": "Make each piece testable",
+            "description": "Rewrite each part so progress on it can be checked — vague parts hide the real work."
+          },
+          {
+            "@id": "https://grow.local/process/problem-decomposition#step4",
+            "step_title": "Order by dependency",
+            "description": "Find which pieces must be solved before others, and sequence them accordingly."
+          },
+          {
+            "@id": "https://grow.local/process/problem-decomposition#step5",
+            "step_title": "Pick the first tractable piece",
+            "description": "Choose the smallest part that moves the whole forward, and start there."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/research-design"
+        },
+        {
+          "@id": "https://grow.local/process/time-management"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/hypothesis-generation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Hypothesis Generation",
+      "skos:scopeNote": "Turn an observation or theory into a specific, testable prediction — one that could be shown to be wrong.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/intellectual-depth"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/hypothesis-generation#step1",
+            "step_title": "Observe closely",
+            "description": "Start from a concrete observation or a pattern in existing theory, not a hunch."
+          },
+          {
+            "@id": "https://grow.local/process/hypothesis-generation#step2",
+            "step_title": "State the pattern",
+            "description": "Put the relationship into words: when X happens, Y seems to follow."
+          },
+          {
+            "@id": "https://grow.local/process/hypothesis-generation#step3",
+            "step_title": "Make it a prediction",
+            "description": "Turn the pattern into an if–then statement you could actually test."
+          },
+          {
+            "@id": "https://grow.local/process/hypothesis-generation#step4",
+            "step_title": "Make it falsifiable",
+            "description": "Ensure some possible result would prove it false — unfalsifiable claims are not hypotheses."
+          },
+          {
+            "@id": "https://grow.local/process/hypothesis-generation#step5",
+            "step_title": "Define the disproof",
+            "description": "Say in advance what observation would make you abandon it. That is what makes it science."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/research-design"
+        },
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/counter-argumentation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Counter-argumentation",
+      "skos:scopeNote": "Strengthen your own position by seeking out and answering the best case against it — not the weakest.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/intellectual-depth"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/counter-argumentation#step1",
+            "step_title": "State your thesis",
+            "description": "Write the claim you are defending clearly enough to attack."
+          },
+          {
+            "@id": "https://grow.local/process/counter-argumentation#step2",
+            "step_title": "Build the strongest opposing case",
+            "description": "Steel-man it: make the objection as convincing as its best advocate would."
+          },
+          {
+            "@id": "https://grow.local/process/counter-argumentation#step3",
+            "step_title": "Find its best evidence",
+            "description": "Give the counter-case real support, not a straw version you can knock down."
+          },
+          {
+            "@id": "https://grow.local/process/counter-argumentation#step4",
+            "step_title": "Answer it honestly",
+            "description": "Concede what is right in it, then show why your thesis still holds — or adjust it."
+          },
+          {
+            "@id": "https://grow.local/process/counter-argumentation#step5",
+            "step_title": "Strengthen or revise",
+            "description": "A thesis that survives its best objection is stronger; one that does not should change."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/argument-mapping"
+        },
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/literature-reviewing",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Literature Reviewing",
+      "skos:scopeNote": "Go beyond listing sources: synthesise them, map what is known, and find the gap your work will fill.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/research-retrieval"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/literature-reviewing#step1",
+            "step_title": "Gather the key works",
+            "description": "Collect the sources that actually shape the conversation, not everything you can find."
+          },
+          {
+            "@id": "https://grow.local/process/literature-reviewing#step2",
+            "step_title": "Group by theme or position",
+            "description": "Cluster sources by what they argue or find, so the field has a shape."
+          },
+          {
+            "@id": "https://grow.local/process/literature-reviewing#step3",
+            "step_title": "Synthesise across them",
+            "description": "Write about the debate, not source-by-source — where they agree, clash and build."
+          },
+          {
+            "@id": "https://grow.local/process/literature-reviewing#step4",
+            "step_title": "Find the gap",
+            "description": "Name the question the literature has not yet answered. That gap is your opening."
+          },
+          {
+            "@id": "https://grow.local/process/literature-reviewing#step5",
+            "step_title": "Place your work in the lineage",
+            "description": "Show how your study follows from, and adds to, what came before."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/literature-search"
+        },
+        {
+          "@id": "https://grow.local/process/synthesis"
+        },
+        {
+          "@id": "https://grow.local/process/source-evaluation"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/source-evaluation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Source Evaluation",
+      "skos:scopeNote": "Apply a framework to decide whether a source is trustworthy enough to cite — before you rely on it.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/research-retrieval"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/source-evaluation#step1",
+            "step_title": "Identify the source",
+            "description": "See what you are dealing with: who, where, when, and what kind of thing it is."
+          },
+          {
+            "@id": "https://grow.local/process/source-evaluation#step2",
+            "step_title": "Check currency and authority",
+            "description": "Is it recent enough for the topic, and does the author have credible standing?"
+          },
+          {
+            "@id": "https://grow.local/process/source-evaluation#step3",
+            "step_title": "Test accuracy and evidence",
+            "description": "Can the claims be checked? Look for citations, data and corroboration."
+          },
+          {
+            "@id": "https://grow.local/process/source-evaluation#step4",
+            "step_title": "Read the purpose and bias",
+            "description": "Ask why it was made — to inform, or to persuade and sell. Motive shapes content."
+          },
+          {
+            "@id": "https://grow.local/process/source-evaluation#step5",
+            "step_title": "Reach a verdict",
+            "description": "Weigh the lenses together: relevant is not the same as reliable."
+          }
+        ]
+      },
+      "skos:altLabel": "Source Criticism",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/craap"
+        },
+        {
+          "@id": "https://grow.local/process/radar"
+        },
+        {
+          "@id": "https://grow.local/process/robot"
+        },
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/research-design",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Research Design",
+      "skos:scopeNote": "Move from a vague question to an actionable, testable plan — structured before any data is collected.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/research-retrieval"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/research-design#step1",
+            "step_title": "Define the gap and question",
+            "description": "Turn the gap in the literature into one precise, answerable research question."
+          },
+          {
+            "@id": "https://grow.local/process/research-design#step2",
+            "step_title": "Set the scope",
+            "description": "Decide what can be studied and what must be deliberately left out."
+          },
+          {
+            "@id": "https://grow.local/process/research-design#step3",
+            "step_title": "Choose the methodology",
+            "description": "Pick qualitative, quantitative or mixed methods — justified by the question, not habit."
+          },
+          {
+            "@id": "https://grow.local/process/research-design#step4",
+            "step_title": "Define variables and hypotheses",
+            "description": "Name what you will measure and state your null and alternative hypotheses."
+          },
+          {
+            "@id": "https://grow.local/process/research-design#step5",
+            "step_title": "Design the instruments",
+            "description": "Build the surveys, interviews or experiments that will actually collect the data."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/hypothesis-generation"
+        },
+        {
+          "@id": "https://grow.local/process/problem-decomposition"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/data-interpretation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Data Interpretation & Visualisation",
+      "skos:scopeNote": "Convert raw numbers or qualitative material into a meaningful, honest narrative — with the right picture.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/research-retrieval"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/data-interpretation#step1",
+            "step_title": "Clean and check the data",
+            "description": "Fix errors, note what is missing, and understand how the data was produced."
+          },
+          {
+            "@id": "https://grow.local/process/data-interpretation#step2",
+            "step_title": "Choose the right summary or visual",
+            "description": "Match the chart to the question — the picture should reveal the pattern, not decorate it."
+          },
+          {
+            "@id": "https://grow.local/process/data-interpretation#step3",
+            "step_title": "Read the pattern",
+            "description": "Say what the data shows plainly, distinguishing the signal from the noise."
+          },
+          {
+            "@id": "https://grow.local/process/data-interpretation#step4",
+            "step_title": "State the uncertainty",
+            "description": "Report the limits — variation, sample size, what the data cannot tell you."
+          },
+          {
+            "@id": "https://grow.local/process/data-interpretation#step5",
+            "step_title": "Turn it into a narrative",
+            "description": "Explain what it means for the question, not just what the numbers are."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/research-design"
+        },
+        {
+          "@id": "https://grow.local/process/presentation-storytelling"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/literature-search",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Literature Search Strategy",
+      "skos:scopeNote": "Find the right sources efficiently and ethically — by searching deliberately, not by scrolling.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/research-retrieval"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/literature-search#step1",
+            "step_title": "Break the question into concepts",
+            "description": "Pull out the two or three core ideas your search must combine."
+          },
+          {
+            "@id": "https://grow.local/process/literature-search#step2",
+            "step_title": "Build search strings",
+            "description": "Combine synonyms with OR, concepts with AND, and exclude noise with NOT."
+          },
+          {
+            "@id": "https://grow.local/process/literature-search#step3",
+            "step_title": "Search the right databases",
+            "description": "Choose subject databases and scholarly indexes, not just a general web search."
+          },
+          {
+            "@id": "https://grow.local/process/literature-search#step4",
+            "step_title": "Screen and refine",
+            "description": "Scan titles and abstracts, then tighten keywords and filters based on what you find."
+          },
+          {
+            "@id": "https://grow.local/process/literature-search#step5",
+            "step_title": "Track and cite what you keep",
+            "description": "Record the searches and save references as you go, so the work is reproducible."
+          }
+        ]
+      },
+      "skos:altLabel": "Boolean search mastery",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/literature-reviewing"
+        },
+        {
+          "@id": "https://grow.local/process/source-evaluation"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/academic-writing",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Academic Writing",
+      "skos:scopeNote": "Build a persuasive paper as a whole — from a clear thesis through a structured argument to a defensible conclusion.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/academic-writing#step1",
+            "step_title": "Frame the question",
+            "description": "Open with the problem and why it matters, so the reader knows the stakes."
+          },
+          {
+            "@id": "https://grow.local/process/academic-writing#step2",
+            "step_title": "State your thesis",
+            "description": "Put your central claim up front — the one line the whole paper defends."
+          },
+          {
+            "@id": "https://grow.local/process/academic-writing#step3",
+            "step_title": "Structure the argument",
+            "description": "Order your points so each paragraph earns the next; one idea per paragraph."
+          },
+          {
+            "@id": "https://grow.local/process/academic-writing#step4",
+            "step_title": "Draft with evidence",
+            "description": "Support every claim, and make the link between evidence and point explicit."
+          },
+          {
+            "@id": "https://grow.local/process/academic-writing#step5",
+            "step_title": "Revise for the reader",
+            "description": "Cut what does not serve the thesis; fix the joins so the argument flows."
+          }
+        ]
+      },
+      "skos:altLabel": "Structuring an Argument",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/argument-mapping"
+        },
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/peer-reviewing",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Peer Reviewing",
+      "skos:scopeNote": "Apply your critical thinking to someone else’s work and return feedback that is honest, specific and usable.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/peer-reviewing#step1",
+            "step_title": "Read for the writer’s intent",
+            "description": "Understand what the piece is trying to do before you judge how well it does it."
+          },
+          {
+            "@id": "https://grow.local/process/peer-reviewing#step2",
+            "step_title": "Name genuine strengths",
+            "description": "Say what works and why — precise praise tells the writer what to keep."
+          },
+          {
+            "@id": "https://grow.local/process/peer-reviewing#step3",
+            "step_title": "Locate the key weakness",
+            "description": "Find the one change that would most improve the work, not a list of small ones."
+          },
+          {
+            "@id": "https://grow.local/process/peer-reviewing#step4",
+            "step_title": "Give actionable feed-forward",
+            "description": "Offer a next step the writer can act on, not just a verdict on this draft."
+          },
+          {
+            "@id": "https://grow.local/process/peer-reviewing#step5",
+            "step_title": "Keep it constructive",
+            "description": "Comment on the work, not the person, and a question often beats a correction."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        },
+        {
+          "@id": "https://grow.local/process/marking-feedback"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/oral-presentation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Oral Presentation & Communication",
+      "skos:scopeNote": "Structure complex information so a specific audience can follow it — live, in the time you have.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/oral-presentation#step1",
+            "step_title": "Know your audience",
+            "description": "Decide what they already know, so you can pitch the detail and the jargon right."
+          },
+          {
+            "@id": "https://grow.local/process/oral-presentation#step2",
+            "step_title": "Pick one core message",
+            "description": "Choose the single thing they must remember; shape everything around it."
+          },
+          {
+            "@id": "https://grow.local/process/oral-presentation#step3",
+            "step_title": "Structure with signposts",
+            "description": "Give a clear path — tell them where you are going, and mark each turn."
+          },
+          {
+            "@id": "https://grow.local/process/oral-presentation#step4",
+            "step_title": "Pitch the jargon level",
+            "description": "Translate specialist terms for a mixed audience without dumbing down the ideas."
+          },
+          {
+            "@id": "https://grow.local/process/oral-presentation#step5",
+            "step_title": "Rehearse for time",
+            "description": "Practise aloud and cut to fit — overrunning is a design failure, not bad luck."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/presentation-storytelling"
+        },
+        {
+          "@id": "https://grow.local/process/academic-writing"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/synthesis",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Synthesis of Diverse Fields",
+      "skos:scopeNote": "Connect concepts from different fields to build a novel understanding or solution neither field reaches alone.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/synthesis#step1",
+            "step_title": "Identify two domains",
+            "description": "Name the two distinct fields you are bringing together (Domain A and Domain B)."
+          },
+          {
+            "@id": "https://grow.local/process/synthesis#step2",
+            "step_title": "Find the bridge variable",
+            "description": "Locate the common factor they share — optimisation, feedback, selection, scarcity."
+          },
+          {
+            "@id": "https://grow.local/process/synthesis#step3",
+            "step_title": "Map A onto B",
+            "description": "Carry the core concepts of one domain into the framework of the other through that bridge."
+          },
+          {
+            "@id": "https://grow.local/process/synthesis#step4",
+            "step_title": "Generate novel hypotheses",
+            "description": "Ask what the cross-over predicts that neither field alone would suggest."
+          },
+          {
+            "@id": "https://grow.local/process/synthesis#step5",
+            "step_title": "Test the fit",
+            "description": "Check where the analogy holds and where it breaks — the break is often the insight."
+          }
+        ]
+      },
+      "skos:altLabel": "Interdisciplinary synthesis",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/literature-reviewing"
+        },
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/self-directed-learning",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Self-Directed Learning",
+      "skos:scopeNote": "Diagnose your own knowledge gaps, find resources independently, and structure your own plan to close them.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/self-directed-learning#step1",
+            "step_title": "Map what you know",
+            "description": "Lay out your current understanding honestly, including the fuzzy edges."
+          },
+          {
+            "@id": "https://grow.local/process/self-directed-learning#step2",
+            "step_title": "Name the gap",
+            "description": "Pinpoint what you need to learn and why it matters for the task ahead."
+          },
+          {
+            "@id": "https://grow.local/process/self-directed-learning#step3",
+            "step_title": "Find the right resources",
+            "description": "Choose credible, suitable sources — and judge them (see Source Evaluation)."
+          },
+          {
+            "@id": "https://grow.local/process/self-directed-learning#step4",
+            "step_title": "Make a learning plan",
+            "description": "Set concrete goals and a realistic sequence, not just an intention to study."
+          },
+          {
+            "@id": "https://grow.local/process/self-directed-learning#step5",
+            "step_title": "Check your progress",
+            "description": "Test yourself against the goal and adjust the plan as you learn."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/reflective-practice"
+        },
+        {
+          "@id": "https://grow.local/process/time-management"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/ethical-reasoning",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Ethical Reasoning & Integrity",
+      "skos:scopeNote": "Recognise the moral stakes in how knowledge is produced and used — plagiarism, bias, authorship, consent.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/ethical-reasoning#step1",
+            "step_title": "Spot the ethical stake",
+            "description": "Notice where a choice has a moral dimension, not just a technical one."
+          },
+          {
+            "@id": "https://grow.local/process/ethical-reasoning#step2",
+            "step_title": "Name who is affected",
+            "description": "Identify the people and groups your decision touches, including the unseen ones."
+          },
+          {
+            "@id": "https://grow.local/process/ethical-reasoning#step3",
+            "step_title": "Weigh the principles",
+            "description": "Balance honesty, fairness, harm and respect — say which pull against each other here."
+          },
+          {
+            "@id": "https://grow.local/process/ethical-reasoning#step4",
+            "step_title": "Check your integrity",
+            "description": "Attribute every source, declare bias and funding, and never present others’ work as your own."
+          },
+          {
+            "@id": "https://grow.local/process/ethical-reasoning#step5",
+            "step_title": "Decide and justify",
+            "description": "Make the call and be able to defend it openly — transparency is the test."
+          }
+        ]
+      },
+      "skos:altLabel": "Academic integrity",
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/source-evaluation"
+        },
+        {
+          "@id": "https://grow.local/process/reflective-practice"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/time-management",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Time Management & Project Sequencing",
+      "skos:scopeNote": "Turn a large module into timed, sequential milestones — with slack for when things go wrong.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/time-management#step1",
+            "step_title": "Break into milestones",
+            "description": "Split the work into deliverable chunks with clear done conditions."
+          },
+          {
+            "@id": "https://grow.local/process/time-management#step2",
+            "step_title": "Estimate each honestly",
+            "description": "Guess the time each will really take, then be honest about your optimism."
+          },
+          {
+            "@id": "https://grow.local/process/time-management#step3",
+            "step_title": "Sequence by dependency",
+            "description": "Order milestones so nothing waits on work that has not started."
+          },
+          {
+            "@id": "https://grow.local/process/time-management#step4",
+            "step_title": "Add contingency",
+            "description": "Build in slack for the step that will slip — because one always does."
+          },
+          {
+            "@id": "https://grow.local/process/time-management#step5",
+            "step_title": "Review and adjust",
+            "description": "Check progress against the plan regularly and re-sequence as reality bites."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/problem-decomposition"
+        },
+        {
+          "@id": "https://grow.local/process/self-directed-learning"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/reflective-practice",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Reflective Practice",
+      "skos:scopeNote": "Pause after a task to turn raw experience into formalised, reusable learning — what worked, what failed, and why.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/reflective-practice#step1",
+            "step_title": "Describe what happened",
+            "description": "Set down the events plainly, without judging them yet."
+          },
+          {
+            "@id": "https://grow.local/process/reflective-practice#step2",
+            "step_title": "Examine what worked and failed",
+            "description": "Separate the parts that went well from the parts that did not."
+          },
+          {
+            "@id": "https://grow.local/process/reflective-practice#step3",
+            "step_title": "Ask why",
+            "description": "Dig past the symptom to the cause — reflection is diagnosis, not a diary."
+          },
+          {
+            "@id": "https://grow.local/process/reflective-practice#step4",
+            "step_title": "Extract the lesson",
+            "description": "State the general principle you will carry to the next, different task."
+          },
+          {
+            "@id": "https://grow.local/process/reflective-practice#step5",
+            "step_title": "Plan the change",
+            "description": "Commit to one concrete thing you will do differently, and when."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/self-directed-learning"
+        },
+        {
+          "@id": "https://grow.local/process/peer-reviewing"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/active-listening",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Active Listening (in lectures)",
+      "skos:scopeNote": "Stop transcribing and start listening for structure: catch the lecturer’s shape, emphasis and open questions.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/active-listening#step1",
+            "step_title": "Catch the structure",
+            "description": "Listen for how the talk is organised — the argument, not the sentences."
+          },
+          {
+            "@id": "https://grow.local/process/active-listening#step2",
+            "step_title": "Mark the emphasis",
+            "description": "Note what the lecturer stresses, repeats or signposts as important."
+          },
+          {
+            "@id": "https://grow.local/process/active-listening#step3",
+            "step_title": "Note the open questions",
+            "description": "Write down what is left unresolved — those are your prompts to follow up."
+          },
+          {
+            "@id": "https://grow.local/process/active-listening#step4",
+            "step_title": "Capture meaning, not words",
+            "description": "Record ideas and links in your own words; verbatim notes crowd out thinking."
+          },
+          {
+            "@id": "https://grow.local/process/active-listening#step5",
+            "step_title": "Review and fill gaps",
+            "description": "Soon after, revisit the notes and close the gaps while the talk is fresh."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/critical-analysis"
+        },
+        {
+          "@id": "https://grow.local/process/self-directed-learning"
+        }
+      ]
+    },
+    {
+      "@id": "https://grow.local/process/presentation-storytelling",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Presentation Storytelling",
+      "skos:scopeNote": "Structure data as an unfolding narrative — beginning, tension, and resolution — not a list of facts.",
+      "skos:inScheme": {
+        "@id": "grow:scheme/academic-processes"
+      },
+      "skos:broader": {
+        "@id": "https://grow.local/process/communication-reflection"
+      },
+      "skos:definition": {
+        "@type": "ProcessSteps",
+        "steps": [
+          {
+            "@id": "https://grow.local/process/presentation-storytelling#step1",
+            "step_title": "Set the scene",
+            "description": "Open with the situation and why the audience should care about it."
+          },
+          {
+            "@id": "https://grow.local/process/presentation-storytelling#step2",
+            "step_title": "Introduce the tension",
+            "description": "Name the problem or surprise — the gap that creates the need to know."
+          },
+          {
+            "@id": "https://grow.local/process/presentation-storytelling#step3",
+            "step_title": "Build through the data",
+            "description": "Reveal the evidence as a rising path toward the answer, one step at a time."
+          },
+          {
+            "@id": "https://grow.local/process/presentation-storytelling#step4",
+            "step_title": "Reach the resolution",
+            "description": "Deliver the finding as the pay-off the tension has been building to."
+          },
+          {
+            "@id": "https://grow.local/process/presentation-storytelling#step5",
+            "step_title": "Land the so-what",
+            "description": "Close on what it means and what should change — the reason it mattered."
+          }
+        ]
+      },
+      "skos:related": [
+        {
+          "@id": "https://grow.local/process/oral-presentation"
+        },
+        {
+          "@id": "https://grow.local/process/data-interpretation"
+        }
+      ]
+    }
+  ]
+}

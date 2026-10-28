@@ -1,0 +1,47 @@
+{
+  "_comment": "Illustrative data for lesson-plan.template.json: a lesson's crs-04_lesson-map entry (lesson.*) plus its les-01_lesson-proposal record (teaching / check / generalMcqSet / contextQuestionSlot / activityProposals / coupledSlots). Trivial sample to prove the render; not a real lesson. Shape aligned to les-01's decidedValueShape (design-kb/design-kb.gates.json).",
+  "lesson": {
+    "key": "L01",
+    "sequence": 1,
+    "title": "Finding the claim",
+    "topic": "Telling a claim from a reason",
+    "conceptTitle": "A claim is the one thing an argument asks you to accept",
+    "description": "You meet short arguments and learn to point to the one sentence the writer most wants you to accept.",
+    "servesCourseOutcomes": ["CO1"],
+    "outcomes": [
+      { "id": "LO1", "text": "Identify the main claim in a short argument." },
+      { "id": "LO2", "text": "Tell a claim apart from a reason that supports it." },
+      { "id": "LO3", "text": "Mark the claim in an argument from your own subject." }
+    ],
+    "source": [
+      { "ref": "excelling-at-university", "locator": "Ch 4 §1 Claims and reasons" }
+    ]
+  },
+  "teaching": {
+    "pattern": "example-first explanation",
+    "workedExample": "A short paragraph argues that a town should keep its library open. You work through it line by line and mark the one sentence everything else is there to support.",
+    "pacing": null,
+    "visualAssets": [
+      { "placeholder": "simple diagram: claim at the top, reasons feeding into it" }
+    ]
+  },
+  "check": {
+    "items": [
+      { "tests": "LO1", "coupling": "shell-coupled" },
+      { "tests": "LO2", "coupling": "context-coupled" },
+      { "tests": "LO3", "coupling": "token-substitution", "tokenMode": "cxp-fillable" }
+    ]
+  },
+  "reflectivePrompt": "Think of something you argued recently. What was the one thing you were really trying to get the other person to accept?",
+  "generalMcqSet": { "coupling": "shell-general", "feedbackOnEveryAnswer": true, "status": "drafted" },
+  "contextQuestionSlot": { "specification": "A multiple-choice item whose argument is drawn from the learner's own subject by the context pack." },
+  "activityProposals": [
+    { "component": "sortable", "status": "drafted" },
+    { "component": "opentext", "status": "drafted" },
+    { "component": "branching", "status": "confirmed" }
+  ],
+  "coupledSlots": [
+    { "slot": "worked-example", "variationType": "whole-prose" },
+    { "slot": "check__L01__context", "variationType": "token-substitution" }
+  ]
+}

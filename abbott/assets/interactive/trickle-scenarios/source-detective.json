@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "id": "source-detective",
+  "title": "Can we trust this claim?",
+  "intro": "Trace an attractive claim from a shared message to an evidence-based response. Three decisions, multiple consequences and space to reflect.",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "The situation",
+      "body": "A colleague shares a striking statistic and asks you to use it in tomorrow's workshop. There is no source in the message.",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "Find the origin",
+      "body": "What do you investigate first?",
+      "choices": [
+        {
+          "label": "Locate the original report",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "Use the most repeated version",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "The original report describes a small local sample. The headline in the message removed that context.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "Several sites repeat the same number. Their agreement looks reassuring until you notice that they all cite one unsourced post.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "Pause and reflect / 1",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "Compare the evidence",
+      "body": "A second report gives a different result. How do you respond?",
+      "choices": [
+        {
+          "label": "Compare methods and populations",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "Choose the more dramatic result",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "The reports measure different outcomes in different groups. You can explain why their numbers should not be treated as direct opposites.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "Your slide has a strong opening, but a participant asks whether the samples are comparable. Your notes do not yet answer that question.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "Pause and reflect / 2",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "Communicate uncertainty",
+      "body": "How will you present the evidence?",
+      "choices": [
+        {
+          "label": "State the limits and cite the source",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "Present the number as a universal fact",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "You distinguish what the evidence suggests from what it cannot establish. Participants have a source they can inspect.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "The message is simple, but stronger than the evidence. You need a correction before using it as learning material.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "Pause and reflect / 3",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "Your route, your explanation",
+      "body": "Write the claim you would now feel comfortable sharing. Include its source, limits and a question that remains open.",
+      "prompt": "What would you keep or change next time?"
+    }
+  ]
+}

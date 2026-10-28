@@ -1,0 +1,21 @@
+{
+  "_id": "c-annotate-01",
+  "_parentId": "b-10",
+  "_type": "component",
+  "_component": "annotate",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Read like an editor",
+  "displayTitle": "Read like an editor",
+  "body": "Mark up the paragraph the way you would with a pen.",
+  "instruction": "Choose a tool, then select the words you want to mark. Select a marked word again to remove it.",
+  "passage": "A landscape is built from a [[foreground]], a [[middle ground]] and a [[backdrop|bd]]. Depth is a [[choice]], not an accident — so decide which plane carries the [[idea]] and let the others support it.",
+  "_tools": [
+    { "_id": "idea", "label": "Main idea", "_mark": "oval", "_color": "accent" },
+    { "_id": "evidence", "label": "Evidence", "_mark": "underline", "_color": "positive" },
+    { "_id": "doubt", "label": "Not sure", "_mark": "question", "_color": "neutral" }
+  ],
+  "_minAnnotations": 2,
+  "_showLabels": true,
+  "_allowReset": true
+}

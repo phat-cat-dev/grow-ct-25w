@@ -1,0 +1,863 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "scroll-scenes-content/1",
+  "title": "Scroll scenes content",
+  "description": "Validates the `content` block of scene-content.template.yaml after an agent has filled it. Every property has an x-agent-prompt: the instruction for that field.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "d00",
+    "sets",
+    "recommendation"
+  ],
+  "properties": {
+    "d00": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "topic_id",
+        "topic",
+        "title",
+        "core_move",
+        "real_substeps",
+        "assumptions",
+        "layers_enabled",
+        "language",
+        "presentation"
+      ],
+      "properties": {
+        "topic_id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "x-agent-prompt": "Stable lower case slug for the piece."
+        },
+        "topic": {
+          "type": "string",
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            },
+            {
+              "pattern": "^(?:\\S+\\s+){1,11}\\S+$"
+            }
+          ],
+          "x-agent-prompt": "The topic, process or skill, as given. Do not change it."
+        },
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 40,
+          "pattern": "^[^—–]*$",
+          "x-agent-prompt": "Short title. 40 characters or fewer."
+        },
+        "audience": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            },
+            {
+              "pattern": "^(?:\\S+\\s+){0,19}\\S+$"
+            }
+          ],
+          "x-agent-prompt": "Who this is for. 20 words or fewer. Null means general adult learner."
+        },
+        "learning_aim": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            }
+          ],
+          "x-agent-prompt": "What the learner can do after the last scene. One sentence."
+        },
+        "core_move": {
+          "type": "string",
+          "minLength": 10,
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            }
+          ],
+          "x-agent-prompt": "The one thing a learner does when they do this well. One sentence. Write it before you name any stage."
+        },
+        "real_substeps": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "allOf": [
+              {
+                "pattern": "^[^—–]*$"
+              },
+              {
+                "pattern": "^(?:\\S+\\s+){0,11}\\S+$"
+              }
+            ],
+            "x-agent-prompt": "One real step in practice. 12 words or fewer."
+          },
+          "x-agent-prompt": "The steps people actually take, in order. Set B is built from these."
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "allOf": [
+              {
+                "pattern": "^[^—–]*$"
+              }
+            ]
+          },
+          "x-agent-prompt": "Anything you assumed or could not verify. May be empty."
+        },
+        "contexts": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "x-agent-prompt": "Context ids supplied by the author only."
+        },
+        "layers_enabled": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "question_prompt",
+              "micro_task",
+              "transition_cue",
+              "evidence_cue",
+              "example_case",
+              "misconception",
+              "analogy",
+              "retrieval_check",
+              "tiers",
+              "context_variants",
+              "narration",
+              "plain_summary",
+              "reflection_note",
+              "sources"
+            ]
+          },
+          "uniqueItems": true,
+          "x-agent-prompt": "Set by the author. Fill only these layers."
+        },
+        "language": {
+          "const": "en-GB"
+        },
+        "presentation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "preset": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "scheme": {
+              "enum": [
+                "default",
+                "night",
+                "warm",
+                "dusk",
+                null
+              ]
+            },
+            "background": {
+              "enum": [
+                "lines",
+                "aurora",
+                "mesh",
+                "dots",
+                "grid",
+                "contour",
+                "horizon",
+                "spotlight",
+                "weave",
+                "wash",
+                "plain",
+                null
+              ]
+            },
+            "transition": {
+              "enum": [
+                "rise",
+                "drift",
+                "tilt",
+                "wipe",
+                "stagger",
+                null
+              ]
+            },
+            "effect": {
+              "enum": [
+                "zoom",
+                "blur",
+                "fade",
+                "slide",
+                "none"
+              ]
+            },
+            "snap": {
+              "type": "boolean"
+            }
+          },
+          "x-agent-prompt": "Leave as given. A designer sets presentation."
+        }
+      }
+    },
+    "sets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "A",
+        "B"
+      ],
+      "properties": {
+        "A": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "model",
+            "d01"
+          ],
+          "x-agent-prompt": "Set A applies the fixed OQEA model to this topic. Four scenes in this order. Do not rename the stages.",
+          "properties": {
+            "model": {
+              "const": "oqea"
+            },
+            "d01": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "prefixItems": [
+                {
+                  "$ref": "#/$defs/scene",
+                  "properties": {
+                    "key": {
+                      "const": "observe"
+                    },
+                    "stage_label": {
+                      "const": "Observe"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/$defs/scene",
+                  "properties": {
+                    "key": {
+                      "const": "question"
+                    },
+                    "stage_label": {
+                      "const": "Question"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/$defs/scene",
+                  "properties": {
+                    "key": {
+                      "const": "explore"
+                    },
+                    "stage_label": {
+                      "const": "Explore"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/$defs/scene",
+                  "properties": {
+                    "key": {
+                      "const": "act"
+                    },
+                    "stage_label": {
+                      "const": "Act"
+                    }
+                  }
+                }
+              ],
+              "items": false
+            }
+          }
+        },
+        "B": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "model",
+            "model_name",
+            "derivation",
+            "d01"
+          ],
+          "x-agent-prompt": "Set B is a model you design for this topic from d00.real_substeps. 3 to 7 stages. Do not reuse stage names from the examples.",
+          "properties": {
+            "model": {
+              "const": "custom"
+            },
+            "model_name": {
+              "type": "string",
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,3}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "Name the model in 4 words or fewer."
+            },
+            "derivation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "shows_that_a_hides",
+                "why_not_oqea"
+              ],
+              "properties": {
+                "shows_that_a_hides": {
+                  "type": "string",
+                  "minLength": 20,
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    }
+                  ],
+                  "x-agent-prompt": "What Set B shows that Set A hides."
+                },
+                "why_not_oqea": {
+                  "type": "string",
+                  "minLength": 20,
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    }
+                  ],
+                  "x-agent-prompt": "Why OQEA fits this topic less well. If it fits best, say so plainly."
+                }
+              }
+            },
+            "d01": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 7,
+              "items": {
+                "$ref": "#/$defs/scene"
+              }
+            }
+          }
+        }
+      }
+    },
+    "recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "set",
+        "reason"
+      ],
+      "x-agent-prompt": "Pick A or B and give the reason in 40 words or fewer.",
+      "properties": {
+        "set": {
+          "enum": [
+            "A",
+            "B"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            },
+            {
+              "pattern": "^(?:\\S+\\s+){0,39}\\S+$"
+            }
+          ],
+          "x-agent-prompt": "Why this set serves the learner better for this topic."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "stage_label",
+        "stage_purpose",
+        "heading_lines",
+        "body",
+        "layers"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$",
+          "x-agent-prompt": "Lower case slug. Unique within the set."
+        },
+        "stage_label": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z-]*$",
+          "maxLength": 14,
+          "x-agent-prompt": "One word, 14 characters or fewer. Becomes the nav label, the eyebrow and the section label."
+        },
+        "stage_purpose": {
+          "type": "string",
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            },
+            {
+              "pattern": "^(?:\\S+\\s+){2,24}\\S+$"
+            }
+          ],
+          "x-agent-prompt": "One sentence on what this stage does for the learner."
+        },
+        "heading_lines": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 20,
+            "pattern": "^[^—–]*$"
+          },
+          "x-agent-prompt": "1 or 2 lines, 20 characters or fewer each. Read together they give an instruction or make a promise."
+        },
+        "body": {
+          "type": "string",
+          "allOf": [
+            {
+              "pattern": "^[^—–]*$"
+            },
+            {
+              "pattern": "^(?:\\S+\\s+){17,34}\\S+$"
+            }
+          ],
+          "x-agent-prompt": "18 to 35 words, one paragraph, two sentences at most. The second gives a reason or a test, not a repeat."
+        },
+        "colour_slot": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 4,
+          "x-agent-prompt": "Leave null unless you have a reason to override the position based colour."
+        },
+        "background": {
+          "enum": [
+            "lines",
+            "aurora",
+            "mesh",
+            "dots",
+            "grid",
+            "contour",
+            "horizon",
+            "spotlight",
+            "weave",
+            "wash",
+            "plain",
+            null
+          ],
+          "x-agent-prompt": "Leave null. A designer sets this."
+        },
+        "layers": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "question_prompt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,19}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "Ask the learner one open question they can answer in their head or notes. It must need the topic to answer. 20 words or fewer."
+            },
+            "micro_task": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "instruction",
+                "minutes"
+              ],
+              "properties": {
+                "instruction": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "One action finishable in two minutes with a clear stop. 25 words or fewer."
+                },
+                "minutes": {
+                  "enum": [
+                    1,
+                    2
+                  ]
+                }
+              },
+              "x-agent-prompt": "Give one action the learner can finish in two minutes with a clear stop."
+            },
+            "transition_cue": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,14}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "One line that hands the learner to the next stage. 15 words or fewer. Null on the last scene."
+            },
+            "evidence_cue": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "Name the observable sign that the learner did this stage well. 25 words or fewer."
+            },
+            "example_case": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,59}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "A short concrete case from the topic. Name the person, the situation and the result. No invented statistics. 60 words or fewer."
+            },
+            "misconception": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "myth",
+                "fix"
+              ],
+              "properties": {
+                "myth": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "The wrong move people make at this stage."
+                },
+                "fix": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "The correction."
+                }
+              },
+              "x-agent-prompt": "The wrong move people make at this stage and the correction. 25 words or fewer each."
+            },
+            "analogy": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,29}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "One familiar comparison from everyday life. Say where it breaks down if it does. 30 words or fewer."
+            },
+            "retrieval_check": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "question",
+                "options",
+                "answer_index",
+                "feedback_correct",
+                "feedback_incorrect"
+              ],
+              "properties": {
+                "question": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "The question. 25 words or fewer."
+                },
+                "options": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "string",
+                    "allOf": [
+                      {
+                        "pattern": "^[^—–]*$"
+                      },
+                      {
+                        "pattern": "^(?:\\S+\\s+){0,11}\\S+$"
+                      }
+                    ],
+                    "x-agent-prompt": "One option. Wrong options must be plausible. 12 words or fewer."
+                  }
+                },
+                "answer_index": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 3
+                },
+                "feedback_correct": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,39}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "Explain why the answer is right."
+                },
+                "feedback_incorrect": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){0,39}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "Explain the usual mistake, not just that it is wrong."
+                }
+              },
+              "x-agent-prompt": "One multiple choice item with 3 or 4 options. Feedback explains why."
+            },
+            "tiers": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": false,
+              "required": [
+                "intro",
+                "standard",
+                "advanced"
+              ],
+              "properties": {
+                "intro": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){17,44}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "Everyday words."
+                },
+                "standard": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){17,44}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "Matches the scene body."
+                },
+                "advanced": {
+                  "type": "string",
+                  "allOf": [
+                    {
+                      "pattern": "^[^—–]*$"
+                    },
+                    {
+                      "pattern": "^(?:\\S+\\s+){17,44}\\S+$"
+                    }
+                  ],
+                  "x-agent-prompt": "Adds one nuance or limit."
+                }
+              },
+              "x-agent-prompt": "Rewrite the body at three depths, 18 to 45 words each."
+            },
+            "context_variants": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "additionalProperties": {
+                "type": "string",
+                "allOf": [
+                  {
+                    "pattern": "^[^—–]*$"
+                  },
+                  {
+                    "pattern": "^(?:\\S+\\s+){17,34}\\S+$"
+                  }
+                ],
+                "x-agent-prompt": "Rewrite the body for this context. Change the example, not the stage."
+              },
+              "x-agent-prompt": "One key per context id in d00.contexts, and no others."
+            },
+            "narration": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,44}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "The scene as it should sound read aloud. Spell out symbols. No markup. 45 words or fewer."
+            },
+            "plain_summary": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,14}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "One sentence for a contents list, tooltip or screen reader summary. 15 words or fewer."
+            },
+            "reflection_note": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "allOf": [
+                {
+                  "pattern": "^[^—–]*$"
+                },
+                {
+                  "pattern": "^(?:\\S+\\s+){0,24}\\S+$"
+                }
+              ],
+              "x-agent-prompt": "A prompt for the learner's own notes. It asks about their situation, not the topic in general. 25 words or fewer."
+            },
+            "sources": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "citation",
+                  "url",
+                  "claim_supported"
+                ],
+                "properties": {
+                  "citation": {
+                    "type": "string",
+                    "minLength": 5
+                  },
+                  "url": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "uri"
+                  },
+                  "claim_supported": {
+                    "type": "string",
+                    "minLength": 5
+                  }
+                }
+              },
+              "x-agent-prompt": "Only works you can name accurately. Set the whole layer to null when you cannot. Never guess a URL."
+            }
+          },
+          "x-agent-prompt": "Fill only the layers listed in d00.layers_enabled. Each layer must say something the heading and body do not."
+        },
+        "i18n": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "cy": {
+              "type": "null"
+            }
+          },
+          "x-agent-prompt": "Leave cy null. Welsh goes through professional translation."
+        }
+      }
+    }
+  }
+}

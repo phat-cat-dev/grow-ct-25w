@@ -1,0 +1,584 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix tm: <https://example.org/skos/teaching-meta/> .
+
+# The base URI is a placeholder. Replace it with a namespace your institution controls before publishing.
+
+tm:scheme a skos:ConceptScheme ;
+    dct:title "Teaching meta-processes"@en-GB ;
+    dct:description "The processes that sit under teaching: planning learning, delivering it, evaluating it and reflecting on all three. Written for early career educators."@en-GB ;
+    dct:language "en-GB" ;
+    dct:hasVersion "0.1.0" ;
+    skos:hasTopConcept tm:teaching-cycle ;
+    skos:hasTopConcept tm:planning ;
+    skos:hasTopConcept tm:delivering ;
+    skos:hasTopConcept tm:evaluating ;
+    skos:hasTopConcept tm:reflective-practice .
+
+tm:teaching-cycle
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "TC" ;
+    skos:prefLabel "Teaching cycle"@en-GB ;
+    skos:altLabel "Plan, teach, evaluate, adjust"@en-GB ;
+    skos:definition "The repeating loop in which planning shapes delivery, delivery produces evidence, evaluation interprets that evidence and the result changes the next plan."@en-GB ;
+    skos:scopeNote "Use the term for the whole loop. Use Planning learning, Delivering learning, Evaluating learning or Reflective practice when you mean one part of it."@en-GB ;
+    skos:example "A librarian notices in a workshop that learners cannot find a database, then moves that step earlier in next term's plan."@en-GB ;
+    dct:source "Kolb, D.A. (1984) Experiential learning. Englewood Cliffs: Prentice Hall." ;
+    skos:topConceptOf tm:scheme ;
+    skos:related tm:planning ;
+    skos:related tm:delivering ;
+    skos:related tm:evaluating ;
+    skos:related tm:reflective-practice ;
+    skos:related tm:kolb-cycle .
+
+tm:planning
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL" ;
+    skos:prefLabel "Planning learning"@en-GB ;
+    skos:altLabel "Session design"@en-GB ;
+    skos:altLabel "Lesson planning"@en-GB ;
+    skos:definition "Deciding what learners should be able to do, what evidence will show it and which activities will get them there, before the session starts."@en-GB ;
+    skos:scopeNote "Covers the decisions made before teaching. Decisions made during a session belong to Delivering learning."@en-GB ;
+    skos:example "Writing the outcome, the check for it and the first activity before choosing any slides."@en-GB ;
+    skos:topConceptOf tm:scheme ;
+    skos:narrower tm:learning-outcome ;
+    skos:narrower tm:cognitive-taxonomy ;
+    skos:narrower tm:backward-design ;
+    skos:narrower tm:constructive-alignment ;
+    skos:narrower tm:prior-knowledge ;
+    skos:narrower tm:session-sequencing ;
+    skos:narrower tm:cognitive-load ;
+    skos:narrower tm:scaffolding ;
+    skos:narrower tm:active-learning ;
+    skos:narrower tm:inclusive-design ;
+    skos:related tm:teaching-cycle .
+
+tm:delivering
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL" ;
+    skos:prefLabel "Delivering learning"@en-GB ;
+    skos:altLabel "Teaching a session"@en-GB ;
+    skos:altLabel "Facilitation"@en-GB ;
+    skos:definition "Running a session so that learners meet new material, practise it and show you what they understand, while you adjust to what you see."@en-GB ;
+    skos:scopeNote "Covers what happens in the room or online. It includes the small decisions that no plan can settle in advance."@en-GB ;
+    skos:example "Pausing an explanation to ask learners to write one sentence in their own words."@en-GB ;
+    skos:topConceptOf tm:scheme ;
+    skos:narrower tm:explaining ;
+    skos:narrower tm:questioning ;
+    skos:narrower tm:checking-for-understanding ;
+    skos:narrower tm:retrieval-practice ;
+    skos:narrower tm:responsive-teaching ;
+    skos:narrower tm:learning-climate ;
+    skos:narrower tm:pacing ;
+    skos:related tm:teaching-cycle .
+
+tm:evaluating
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL" ;
+    skos:prefLabel "Evaluating learning"@en-GB ;
+    skos:altLabel "Evaluation"@en-GB ;
+    skos:altLabel "Judging effectiveness"@en-GB ;
+    skos:definition "Gathering evidence about what learners learned and how well the teaching supported it, then judging both against the intended outcomes."@en-GB ;
+    skos:scopeNote "Covers judging learners' work and judging the teaching. The two are linked but they are not the same task."@en-GB ;
+    skos:example "Comparing exit-ticket answers with the session outcome to see which part needs re-teaching."@en-GB ;
+    skos:topConceptOf tm:scheme ;
+    skos:narrower tm:evidence-of-learning ;
+    skos:narrower tm:formative-assessment ;
+    skos:narrower tm:summative-assessment ;
+    skos:narrower tm:assessment-criteria ;
+    skos:narrower tm:feedback ;
+    skos:narrower tm:evaluating-teaching ;
+    skos:related tm:teaching-cycle .
+
+tm:reflective-practice
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP" ;
+    skos:prefLabel "Reflective practice"@en-GB ;
+    skos:altLabel "Reflection"@en-GB ;
+    skos:definition "Thinking deliberately about your own teaching, during and after it, so that what you learn changes what you do next."@en-GB ;
+    skos:scopeNote "Reflection is more than reviewing whether a session went well. It ends in a decision about practice."@en-GB ;
+    skos:example "Writing three sentences after a session that end with one change you will make."@en-GB ;
+    dct:source "Schön, D.A. (1983) The reflective practitioner: how professionals think in action. New York: Basic Books." ;
+    skos:topConceptOf tm:scheme ;
+    skos:narrower tm:reflection-in-action ;
+    skos:narrower tm:reflection-on-action ;
+    skos:narrower tm:reflective-cycle ;
+    skos:related tm:teaching-cycle .
+
+tm:evidence-of-learning
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.01" ;
+    skos:prefLabel "Evidence of learning"@en-GB ;
+    skos:altLabel "Learning evidence"@en-GB ;
+    skos:definition "Anything observable that shows what a learner knows or can do, such as an answer, a draft, a question or a performance."@en-GB ;
+    skos:scopeNote "Evidence is not the same as impressions. A quiet room is not evidence of understanding."@en-GB ;
+    skos:example "A learner's one-sentence summary written at the end of a demonstration."@en-GB ;
+    skos:broader tm:evaluating ;
+    skos:related tm:checking-for-understanding ;
+    skos:related tm:learning-outcome ;
+    skos:related tm:backward-design ;
+    skos:related tm:evaluating-teaching .
+
+tm:learning-outcome
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.01" ;
+    skos:prefLabel "Learning outcome"@en-GB ;
+    skos:altLabel "Intended learning outcome"@en-GB ;
+    skos:altLabel "ILO"@en-GB ;
+    skos:definition "A statement of what a learner will be able to do by the end of a session or course, written so that someone could observe it."@en-GB ;
+    skos:scopeNote "Start with an action verb the learner performs. Avoid verbs such as understand or know, which you cannot observe."@en-GB ;
+    skos:example "Reference a journal article correctly in a short paragraph using the department style."@en-GB ;
+    dct:source "Biggs, J. (1996) Enhancing teaching through constructive alignment. Higher Education, 32(3), pp. 347-364." ;
+    skos:broader tm:planning ;
+    skos:related tm:evidence-of-learning ;
+    skos:related tm:constructive-alignment ;
+    skos:related tm:cognitive-taxonomy ;
+    skos:related tm:assessment-criteria .
+
+tm:cognitive-taxonomy
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.02" ;
+    skos:prefLabel "Cognitive taxonomy"@en-GB ;
+    skos:altLabel "Bloom's taxonomy"@en-GB ;
+    skos:altLabel "Revised taxonomy of educational objectives"@en-GB ;
+    skos:definition "A classification of thinking from remembering and understanding through applying, analysing, evaluating and creating, used to pitch an outcome at the right level."@en-GB ;
+    skos:scopeNote "Use it to check that outcomes and tasks ask for the same kind of thinking. It is a planning aid, not a ladder learners must climb in order."@en-GB ;
+    skos:example "Changing an outcome from describe to compare once learners already know the basic terms."@en-GB ;
+    dct:source "Anderson, L.W. and Krathwohl, D.R. (eds.) (2001) A taxonomy for learning, teaching and assessing. New York: Longman." ;
+    skos:broader tm:planning ;
+    skos:related tm:learning-outcome .
+
+tm:backward-design
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.03" ;
+    skos:prefLabel "Backward design"@en-GB ;
+    skos:altLabel "Understanding by design"@en-GB ;
+    skos:definition "Planning in three steps: identify the intended results, decide what evidence would show them, then choose the activities that lead there."@en-GB ;
+    skos:scopeNote "It reverses the habit of starting from a topic or a favourite activity. The activity comes last."@en-GB ;
+    skos:example "Deciding that learners will draft a search strategy, then planning the practice that prepares them to do it."@en-GB ;
+    dct:source "Wiggins, G. and McTighe, J. (2005) Understanding by design. 2nd edn. Alexandria, VA: ASCD." ;
+    skos:broader tm:planning ;
+    skos:related tm:constructive-alignment ;
+    skos:related tm:evidence-of-learning .
+
+tm:constructive-alignment
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.04" ;
+    skos:prefLabel "Constructive alignment"@en-GB ;
+    skos:altLabel "Alignment"@en-GB ;
+    skos:definition "Designing outcomes, learning activities and assessment so that all three point at the same thing, and learners build understanding by doing the activities."@en-GB ;
+    skos:scopeNote "Check it by asking of each activity and each assessment task which outcome it serves. A mismatch is a design fault, not a learner fault."@en-GB ;
+    skos:example "An outcome asks learners to critique sources, so the activity and the check both require critiquing, not listing."@en-GB ;
+    dct:source "Biggs, J. (1996) Enhancing teaching through constructive alignment. Higher Education, 32(3), pp. 347-364." ;
+    skos:broader tm:planning ;
+    skos:related tm:learning-outcome ;
+    skos:related tm:backward-design ;
+    skos:related tm:assessment-criteria ;
+    skos:related tm:formative-assessment ;
+    skos:related tm:active-learning .
+
+tm:prior-knowledge
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.05" ;
+    skos:prefLabel "Prior knowledge"@en-GB ;
+    skos:altLabel "Starting point"@en-GB ;
+    skos:altLabel "Existing understanding"@en-GB ;
+    skos:definition "What learners already know, believe or can do when the session begins, including ideas that are wrong or incomplete."@en-GB ;
+    skos:scopeNote "Find out before you plan the detail. Prior knowledge decides where you start and how much support you need."@en-GB ;
+    skos:example "A two-question poll before the session showing that half the group has never used a thesaurus search."@en-GB ;
+    dct:source "Ambrose, S.A., Bridges, M.W., DiPietro, M., Lovett, M.C. and Norman, M.K. (2010) How learning works: seven research-based principles for smart teaching. San Francisco: Jossey-Bass." ;
+    skos:broader tm:planning ;
+    skos:related tm:scaffolding ;
+    skos:related tm:checking-for-understanding ;
+    skos:related tm:inclusive-design .
+
+tm:session-sequencing
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.06" ;
+    skos:prefLabel "Session sequencing"@en-GB ;
+    skos:altLabel "Lesson structure"@en-GB ;
+    skos:altLabel "Session flow"@en-GB ;
+    skos:definition "Arranging the parts of a session in an order that builds each step on the one before: review, new material, guided practice, independent practice."@en-GB ;
+    skos:scopeNote "A sequence is a hypothesis about how learners will move. Plan where you will check that it holds."@en-GB ;
+    skos:example "Starting with a short recap question, then a demonstration, then paired practice."@en-GB ;
+    dct:source "Rosenshine, B. (2012) Principles of instruction: research-based strategies that all teachers should know. American Educator, 36(1), pp. 12-19." ;
+    skos:broader tm:planning ;
+    skos:related tm:scaffolding ;
+    skos:related tm:pacing ;
+    skos:related tm:retrieval-practice ;
+    skos:related tm:cognitive-load .
+
+tm:cognitive-load
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.07" ;
+    skos:prefLabel "Cognitive load"@en-GB ;
+    skos:altLabel "Working memory load"@en-GB ;
+    skos:definition "The demand a task places on working memory, which can hold only a few new items at once."@en-GB ;
+    skos:scopeNote "Too much new material, or a confusing layout, leaves no capacity for learning. Cut or split material before you add support."@en-GB ;
+    skos:example "Splitting a seven-step search method into two parts with a practice task between them."@en-GB ;
+    dct:source "Sweller, J. (1988) Cognitive load during problem solving: effects on learning. Cognitive Science, 12(2), pp. 257-285." ;
+    skos:broader tm:planning ;
+    skos:related tm:scaffolding ;
+    skos:related tm:session-sequencing ;
+    skos:related tm:explaining .
+
+tm:scaffolding
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.08" ;
+    skos:prefLabel "Scaffolding"@en-GB ;
+    skos:altLabel "Temporary support"@en-GB ;
+    skos:definition "Temporary support that lets a learner complete a task they could not manage alone, withdrawn as their competence grows."@en-GB ;
+    skos:scopeNote "Plan how and when the support goes. Support that never leaves can stop learners building independence."@en-GB ;
+    skos:example "A sentence starter on the first attempt, a bare prompt on the second, nothing on the third."@en-GB ;
+    dct:source "Wood, D., Bruner, J.S. and Ross, G. (1976) The role of tutoring in problem solving. Journal of Child Psychology and Psychiatry, 17(2), pp. 89-100." ;
+    skos:broader tm:planning ;
+    skos:related tm:prior-knowledge ;
+    skos:related tm:session-sequencing ;
+    skos:related tm:cognitive-load .
+
+tm:active-learning
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.09" ;
+    skos:prefLabel "Active learning"@en-GB ;
+    skos:altLabel "Learning by doing"@en-GB ;
+    skos:definition "Learning in which learners do something with the material, such as solving, explaining, comparing or making, and think about what they are doing."@en-GB ;
+    skos:scopeNote "Being busy is not enough. The task must require the thinking the outcome names."@en-GB ;
+    skos:example "Pairs ranking three search strategies and justifying the order."@en-GB ;
+    dct:source "Freeman, S., Eddy, S.L., McDonough, M., Smith, M.K., Okoroafor, N., Jordt, H. and Wenderoth, M.P. (2014) Active learning increases student performance in science, engineering, and mathematics. Proceedings of the National Academy of Sciences, 111(23), pp. 8410-8415." ;
+    skos:broader tm:planning ;
+    skos:related tm:constructive-alignment ;
+    skos:related tm:questioning .
+
+tm:inclusive-design
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "PL.10" ;
+    skos:prefLabel "Inclusive design"@en-GB ;
+    skos:altLabel "Universal design for learning"@en-GB ;
+    skos:altLabel "UDL"@en-GB ;
+    skos:definition "Planning for the range of learners you are likely to have by offering more than one way to engage with, receive and show learning, instead of adapting after a barrier appears."@en-GB ;
+    skos:scopeNote "Start by asking where a barrier could arise in your plan. Offer choices that all reach the same outcome."@en-GB ;
+    skos:example "Giving key instructions in writing as well as aloud, and allowing a spoken or written answer."@en-GB ;
+    dct:source "CAST (2018) Universal Design for Learning Guidelines version 2.2. Available at: https://udlguidelines.cast.org (Accessed: 20 October 2026)." ;
+    skos:broader tm:planning ;
+    skos:related tm:learning-climate ;
+    skos:related tm:prior-knowledge .
+
+tm:explaining
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.01" ;
+    skos:prefLabel "Explaining"@en-GB ;
+    skos:altLabel "Exposition"@en-GB ;
+    skos:altLabel "Modelling"@en-GB ;
+    skos:definition "Presenting new material in small, ordered steps, often with a worked example, so that learners can follow the reasoning and not only the answer."@en-GB ;
+    skos:scopeNote "Say your thinking aloud. Stop at natural points to check what has landed."@en-GB ;
+    skos:example "Working through one search strategy on screen while naming each decision."@en-GB ;
+    dct:source "Rosenshine, B. (2012) Principles of instruction: research-based strategies that all teachers should know. American Educator, 36(1), pp. 12-19." ;
+    skos:broader tm:delivering ;
+    skos:related tm:cognitive-load ;
+    skos:related tm:checking-for-understanding .
+
+tm:questioning
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.02" ;
+    skos:prefLabel "Questioning"@en-GB ;
+    skos:altLabel "Asking questions"@en-GB ;
+    skos:definition "Using questions to find out what learners think and to make them think, rather than only to test whether they know the answer."@en-GB ;
+    skos:scopeNote "Allow thinking time. Ask every learner to commit to an answer before you take one."@en-GB ;
+    skos:example "Asking everyone to write a prediction before showing the result."@en-GB ;
+    dct:source "Black, P. and Wiliam, D. (1998) Inside the black box: raising standards through classroom assessment. London: King's College London." ;
+    skos:broader tm:delivering ;
+    skos:related tm:active-learning ;
+    skos:related tm:checking-for-understanding ;
+    skos:related tm:learning-climate .
+
+tm:checking-for-understanding
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.03" ;
+    skos:prefLabel "Checking for understanding"@en-GB ;
+    skos:altLabel "Comprehension check"@en-GB ;
+    skos:definition "Gathering quick evidence from all learners during teaching about whether they have grasped the point, so that you know whether to move on."@en-GB ;
+    skos:scopeNote "A check must reach every learner. Asking whether there are any questions rarely does."@en-GB ;
+    skos:example "Mini-whiteboards, a one-question poll or a one-sentence written summary."@en-GB ;
+    dct:source "Wiliam, D. (2011) Embedded formative assessment. Bloomington, IN: Solution Tree Press." ;
+    skos:broader tm:delivering ;
+    skos:related tm:evidence-of-learning ;
+    skos:related tm:prior-knowledge ;
+    skos:related tm:explaining ;
+    skos:related tm:questioning ;
+    skos:related tm:formative-assessment ;
+    skos:related tm:responsive-teaching .
+
+tm:retrieval-practice
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.04" ;
+    skos:prefLabel "Retrieval practice"@en-GB ;
+    skos:altLabel "Testing effect"@en-GB ;
+    skos:definition "Asking learners to recall material from memory instead of rereading it, which strengthens later recall."@en-GB ;
+    skos:scopeNote "Keep it low stakes. Space it out and return to earlier material."@en-GB ;
+    skos:example "Opening a session with three questions about last week's content."@en-GB ;
+    dct:source "Roediger, H.L. and Karpicke, J.D. (2006) Test-enhanced learning: taking memory tests improves long-term retention. Psychological Science, 17(3), pp. 249-255." ;
+    skos:broader tm:delivering ;
+    skos:related tm:session-sequencing ;
+    skos:related tm:formative-assessment .
+
+tm:responsive-teaching
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.05" ;
+    skos:prefLabel "Responsive teaching"@en-GB ;
+    skos:altLabel "Adaptive teaching"@en-GB ;
+    skos:altLabel "Adjusting in the moment"@en-GB ;
+    skos:definition "Changing what you do during a session because of the evidence you have just gathered, for example by re-explaining, speeding up or regrouping learners."@en-GB ;
+    skos:scopeNote "Decide in advance what you will do if a check shows the group has not understood."@en-GB ;
+    skos:example "Replacing a planned task with a second worked example after a poll shows most learners are unsure."@en-GB ;
+    dct:source "Black, P. and Wiliam, D. (2009) Developing the theory of formative assessment. Educational Assessment, Evaluation and Accountability, 21(1), pp. 5-31." ;
+    skos:broader tm:delivering ;
+    skos:related tm:checking-for-understanding ;
+    skos:related tm:reflection-in-action ;
+    skos:related tm:pacing .
+
+tm:learning-climate
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.06" ;
+    skos:prefLabel "Learning climate"@en-GB ;
+    skos:altLabel "Classroom climate"@en-GB ;
+    skos:altLabel "Learning environment"@en-GB ;
+    skos:definition "The conditions in a session that make it likely learners will contribute, make mistakes in the open and ask for help."@en-GB ;
+    skos:scopeNote "Climate is built by routines and responses, such as how you treat a wrong answer. It is not a matter of personality."@en-GB ;
+    skos:example "Saying that a wrong first attempt is useful data and then using it."@en-GB ;
+    dct:source "Ambrose, S.A., Bridges, M.W., DiPietro, M., Lovett, M.C. and Norman, M.K. (2010) How learning works: seven research-based principles for smart teaching. San Francisco: Jossey-Bass." ;
+    skos:broader tm:delivering ;
+    skos:related tm:inclusive-design ;
+    skos:related tm:questioning .
+
+tm:pacing
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "DL.07" ;
+    skos:prefLabel "Pacing"@en-GB ;
+    skos:altLabel "Timing"@en-GB ;
+    skos:altLabel "Managing time"@en-GB ;
+    skos:definition "Managing the time given to each part of a session so that the important parts get the time they need and the session ends with a check."@en-GB ;
+    skos:scopeNote "Mark which parts can shrink and which cannot. Protect the closing check."@en-GB ;
+    skos:example "Cutting a second demonstration to keep ten minutes for independent practice."@en-GB ;
+    skos:broader tm:delivering ;
+    skos:related tm:session-sequencing ;
+    skos:related tm:responsive-teaching .
+
+tm:formative-assessment
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.02" ;
+    skos:prefLabel "Formative assessment"@en-GB ;
+    skos:altLabel "Assessment for learning"@en-GB ;
+    skos:definition "Gathering evidence about learning in order to improve it while there is still time to act, by changing the teaching or giving the learner feedback."@en-GB ;
+    skos:scopeNote "It earns the name only when the evidence is used. Collecting it and filing it is not formative."@en-GB ;
+    skos:example "Reading exit tickets and opening the next session by re-teaching the commonest error."@en-GB ;
+    dct:source "Black, P. and Wiliam, D. (1998) Assessment and classroom learning. Assessment in Education, 5(1), pp. 7-74." ;
+    skos:broader tm:evaluating ;
+    skos:related tm:constructive-alignment ;
+    skos:related tm:checking-for-understanding ;
+    skos:related tm:retrieval-practice ;
+    skos:related tm:feedback ;
+    skos:related tm:summative-assessment .
+
+tm:summative-assessment
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.03" ;
+    skos:prefLabel "Summative assessment"@en-GB ;
+    skos:altLabel "Assessment of learning"@en-GB ;
+    skos:definition "Assessment that judges what a learner has achieved at the end of a period of learning, usually to grade or certify it."@en-GB ;
+    skos:scopeNote "It should test the outcomes taught. Learners need to have met the task type in formative form first."@en-GB ;
+    skos:example "A marked essay at the end of a module."@en-GB ;
+    dct:source "Black, P. and Wiliam, D. (1998) Assessment and classroom learning. Assessment in Education, 5(1), pp. 7-74." ;
+    skos:broader tm:evaluating ;
+    skos:related tm:formative-assessment ;
+    skos:related tm:assessment-criteria .
+
+tm:assessment-criteria
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.04" ;
+    skos:prefLabel "Assessment criteria"@en-GB ;
+    skos:altLabel "Success criteria"@en-GB ;
+    skos:altLabel "Rubric"@en-GB ;
+    skos:definition "The stated qualities that work must show to meet an outcome, written so that both learner and assessor can judge against them."@en-GB ;
+    skos:scopeNote "Share criteria before the task. Describe quality in words learners can use, not only in grades."@en-GB ;
+    skos:example "A three-row rubric covering source choice, accuracy of citation and clarity of argument."@en-GB ;
+    dct:source "Sadler, D.R. (1989) Formative assessment and the design of instructional systems. Instructional Science, 18(2), pp. 119-144." ;
+    skos:broader tm:evaluating ;
+    skos:related tm:learning-outcome ;
+    skos:related tm:constructive-alignment ;
+    skos:related tm:summative-assessment ;
+    skos:related tm:feedback .
+
+tm:feedback
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.05" ;
+    skos:prefLabel "Feedback"@en-GB ;
+    skos:altLabel "Feedback to learners"@en-GB ;
+    skos:definition "Information that tells a learner how their current performance differs from the goal and what to do next, given in time for them to use it."@en-GB ;
+    skos:scopeNote "Good feedback answers three questions: where am I going, how am I doing and where next. Comments the learner cannot act on are commentary, not feedback."@en-GB ;
+    skos:example "Your argument is clear but two claims lack sources. Add one source for each before you resubmit."@en-GB ;
+    dct:source "Hattie, J. and Timperley, H. (2007) The power of feedback. Review of Educational Research, 77(1), pp. 81-112." ;
+    skos:broader tm:evaluating ;
+    skos:related tm:formative-assessment ;
+    skos:related tm:assessment-criteria .
+
+tm:evaluating-teaching
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.06" ;
+    skos:prefLabel "Evaluating teaching"@en-GB ;
+    skos:altLabel "Teaching evaluation"@en-GB ;
+    skos:definition "Using evidence from learners, colleagues and your own records to judge how far the teaching helped learners reach the outcomes."@en-GB ;
+    skos:scopeNote "Judge the teaching by learning evidence as well as by how learners felt. Satisfaction alone is a weak signal."@en-GB ;
+    skos:example "Reading end-of-session answers alongside a short learner survey and a colleague's notes."@en-GB ;
+    dct:source "Brookfield, S.D. (2017) Becoming a critically reflective teacher. 2nd edn. San Francisco: Jossey-Bass." ;
+    skos:broader tm:evaluating ;
+    skos:narrower tm:peer-observation ;
+    skos:related tm:evidence-of-learning ;
+    skos:related tm:reflection-on-action .
+
+tm:peer-observation
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "EL.07" ;
+    skos:prefLabel "Peer observation"@en-GB ;
+    skos:altLabel "Peer review of teaching"@en-GB ;
+    skos:definition "A colleague watches a session, or a recording, and gives you evidence about a focus you agreed beforehand."@en-GB ;
+    skos:scopeNote "Agree a narrow focus first. Observers should describe what they saw before they judge it."@en-GB ;
+    skos:example "Asking a colleague to log how many learners answered each question you asked."@en-GB ;
+    dct:source "Brookfield, S.D. (2017) Becoming a critically reflective teacher. 2nd edn. San Francisco: Jossey-Bass." ;
+    skos:broader tm:evaluating-teaching ;
+    skos:related tm:reflection-on-action .
+
+tm:reflection-in-action
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP.01" ;
+    skos:prefLabel "Reflection-in-action"@en-GB ;
+    skos:altLabel "Thinking on your feet"@en-GB ;
+    skos:definition "Noticing during a session that something is not working and changing course while you are still teaching."@en-GB ;
+    skos:scopeNote "It depends on having clear intentions to notice against. A plan with outcomes makes mismatches visible."@en-GB ;
+    skos:example "Seeing blank looks, stopping and asking learners to explain the step to a neighbour."@en-GB ;
+    dct:source "Schön, D.A. (1983) The reflective practitioner: how professionals think in action. New York: Basic Books." ;
+    skos:broader tm:reflective-practice ;
+    skos:related tm:responsive-teaching ;
+    skos:related tm:reflection-on-action .
+
+tm:reflection-on-action
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP.02" ;
+    skos:prefLabel "Reflection-on-action"@en-GB ;
+    skos:altLabel "Looking back"@en-GB ;
+    skos:definition "Thinking about a session after it has finished to understand what happened and why, and to decide what to change."@en-GB ;
+    skos:scopeNote "Do it soon, while you still remember details, and write it down. End with a decision."@en-GB ;
+    skos:example "Writing a short account of a session the same afternoon."@en-GB ;
+    dct:source "Schön, D.A. (1983) The reflective practitioner: how professionals think in action. New York: Basic Books." ;
+    skos:broader tm:reflective-practice ;
+    skos:related tm:evaluating-teaching ;
+    skos:related tm:peer-observation ;
+    skos:related tm:reflection-in-action ;
+    skos:related tm:reflective-cycle .
+
+tm:reflective-cycle
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP.03" ;
+    skos:prefLabel "Reflective cycle"@en-GB ;
+    skos:altLabel "Reflective model"@en-GB ;
+    skos:definition "A set sequence of prompts that guides reflection from what happened, through what it means, to what you will do differently."@en-GB ;
+    skos:scopeNote "Pick one model and use it consistently. The prompts matter less than reaching a decision."@en-GB ;
+    skos:example "Working through description, feelings, evaluation, analysis, conclusion and action plan after a workshop."@en-GB ;
+    skos:broader tm:reflective-practice ;
+    skos:narrower tm:kolb-cycle ;
+    skos:narrower tm:gibbs-cycle ;
+    skos:related tm:reflection-on-action .
+
+tm:kolb-cycle
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP.04" ;
+    skos:prefLabel "Kolb cycle"@en-GB ;
+    skos:altLabel "Experiential learning cycle"@en-GB ;
+    skos:definition "A four-stage cycle of concrete experience, reflective observation, abstract conceptualisation and active experimentation."@en-GB ;
+    skos:scopeNote "Useful for seeing teaching as a loop. The stages overlap in practice."@en-GB ;
+    skos:example "Teaching a session, reviewing what happened, linking it to a principle and trying the change next week."@en-GB ;
+    dct:source "Kolb, D.A. (1984) Experiential learning. Englewood Cliffs: Prentice Hall." ;
+    skos:broader tm:reflective-cycle ;
+    skos:related tm:gibbs-cycle ;
+    skos:related tm:teaching-cycle .
+
+tm:gibbs-cycle
+    a skos:Concept ;
+    skos:inScheme tm:scheme ;
+    skos:notation "RP.05" ;
+    skos:prefLabel "Gibbs cycle"@en-GB ;
+    skos:altLabel "Gibbs reflective cycle"@en-GB ;
+    skos:definition "A six-stage reflective cycle: description, feelings, evaluation, analysis, conclusion and action plan."@en-GB ;
+    skos:scopeNote "Keep description separate from evaluation. The action plan is the point."@en-GB ;
+    skos:example "Describing exactly what happened in the practice task before judging it."@en-GB ;
+    dct:source "Gibbs, G. (1988) Learning by doing: a guide to teaching and learning methods. Oxford: Further Education Unit, Oxford Polytechnic." ;
+    skos:broader tm:reflective-cycle ;
+    skos:related tm:kolb-cycle .
+
+tm:session-01 a skos:Collection ;
+    skos:prefLabel "Session 1: Teaching as a connected cycle"@en-GB ;
+    dct:identifier "lesson-teaching-meta-01" ;
+    skos:member tm:teaching-cycle, tm:planning, tm:delivering, tm:evaluating, tm:reflective-practice, tm:evidence-of-learning .
+
+tm:session-02 a skos:Collection ;
+    skos:prefLabel "Session 2: Planning backwards"@en-GB ;
+    dct:identifier "lesson-teaching-meta-02" ;
+    skos:member tm:learning-outcome, tm:cognitive-taxonomy, tm:backward-design, tm:constructive-alignment, tm:prior-knowledge .
+
+tm:session-03 a skos:Collection ;
+    skos:prefLabel "Session 3: Designing the session"@en-GB ;
+    dct:identifier "lesson-teaching-meta-03" ;
+    skos:member tm:session-sequencing, tm:cognitive-load, tm:scaffolding, tm:active-learning, tm:inclusive-design .
+
+tm:session-04 a skos:Collection ;
+    skos:prefLabel "Session 4: Delivering and adapting"@en-GB ;
+    dct:identifier "lesson-teaching-meta-04" ;
+    skos:member tm:explaining, tm:questioning, tm:checking-for-understanding, tm:retrieval-practice, tm:responsive-teaching, tm:learning-climate, tm:pacing .
+
+tm:session-05 a skos:Collection ;
+    skos:prefLabel "Session 5: Evaluating learning and teaching"@en-GB ;
+    dct:identifier "lesson-teaching-meta-05" ;
+    skos:member tm:formative-assessment, tm:summative-assessment, tm:assessment-criteria, tm:feedback, tm:evaluating-teaching, tm:peer-observation .
+
+tm:session-06 a skos:Collection ;
+    skos:prefLabel "Session 6: Closing the loop"@en-GB ;
+    dct:identifier "lesson-teaching-meta-06" ;
+    skos:member tm:reflection-in-action, tm:reflection-on-action, tm:reflective-cycle, tm:kolb-cycle, tm:gibbs-cycle .
+
+tm:pack a skos:OrderedCollection ;
+    skos:prefLabel "The processes beneath your teaching"@en-GB ;
+    dct:identifier "course-teaching-meta" ;
+    skos:memberList ( tm:session-01 tm:session-02 tm:session-03 tm:session-04 tm:session-05 tm:session-06 ) .

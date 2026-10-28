@@ -1,0 +1,71 @@
+{{!--
+  key-term / key-term__title / key-term__definition are carried over from
+  congen11's renderers/elesson/components/key-term.njk (where __title holds the
+  *term* text, not a generic component title - preserved as-is for consistency).
+  All other classes here (part-of-speech, pronunciation, extended-definition,
+  example, related-terms) are new: the source renderer never output those
+  fields even though the schema declared them.
+--}}
+<div class="component__inner keyTerm__inner">
+  <div class="key-term{{#if _reveal}} key-term--reveal{{/if}}" data-component="key-term">
+    <h3 class="key-term__title">
+      {{term}}
+      {{#if _partOfSpeech}}<span class="key-term__part-of-speech">{{_partOfSpeech}}</span>{{/if}}
+    </h3>
+    {{#if pronunciation}}
+      <p class="key-term__pronunciation">/{{pronunciation}}/</p>
+    {{/if}}
+    {{#if _reveal}}
+      <div class="key-term__definition key-term__reveal-section" aria-hidden="true" hidden>
+        <p>{{definition}}</p>
+        {{#if extendedDefinition}}
+          <div class="key-term__extended-definition">{{{extendedDefinition}}}</div>
+        {{/if}}
+      </div>
+      {{#if example}}
+        <div class="key-term__example key-term__reveal-section" aria-hidden="true" hidden>
+          <h4 class="key-term__example-title">Example</h4>
+          <p>{{example}}</p>
+        </div>
+      {{/if}}
+      {{#if _relatedTerms.length}}
+        <div class="key-term__related-terms key-term__reveal-section" aria-hidden="true" hidden>
+          <h4 class="key-term__related-terms-title">Related terms</h4>
+          <ul class="key-term__related-terms-list">
+            {{#each _relatedTerms}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      <button type="button" class="key-term__reveal-btn js-keyterm-reveal">
+        <span class="js-keyterm-reveal-label">Reveal definition</span>
+      </button>
+    {{else}}
+      <div class="key-term__definition">
+        <p>{{definition}}</p>
+      </div>
+      {{#if extendedDefinition}}
+        <div class="key-term__extended-definition">
+          {{{extendedDefinition}}}
+        </div>
+      {{/if}}
+      {{#if example}}
+        <div class="key-term__example">
+          <h4 class="key-term__example-title">Example</h4>
+          <p>{{example}}</p>
+        </div>
+      {{/if}}
+      {{#if _relatedTerms.length}}
+        <div class="key-term__related-terms">
+          <h4 class="key-term__related-terms-title">Related terms</h4>
+          <ul class="key-term__related-terms-list">
+            {{#each _relatedTerms}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

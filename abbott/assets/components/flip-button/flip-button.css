@@ -1,0 +1,46 @@
+.flip-button {
+  --flip-accent: var(--accent, #365f80);
+  --flip-paper: var(--surface-1, #f4f7fa);
+  --flip-ink: var(--ink, #172e3a);
+  --flip-duration: 450ms;
+  --flip-radius: .35rem;
+  appearance: none;
+  display: inline-grid;
+  vertical-align: middle;
+  max-inline-size: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: var(--flip-radius);
+  background: transparent;
+  color: var(--flip-ink);
+  font: 600 1rem/1.4 var(--font-ui, system-ui, sans-serif);
+  cursor: pointer;
+  perspective: 40rem;
+}
+.flip-button .flip-face {
+  grid-area: 1 / 1;
+  display: grid;
+  place-items: center;
+  padding: .8em 1.3em;
+  border: 2px solid var(--flip-accent);
+  border-radius: var(--flip-radius);
+  background: var(--flip-paper);
+  overflow-wrap: anywhere;
+  backface-visibility: hidden;
+  transition: transform var(--flip-duration) ease, opacity var(--flip-duration) ease;
+}
+.flip-button .flip-front { transform: rotateX(0); opacity: 1; }
+.flip-button .flip-back { transform: rotateX(-180deg); opacity: 0; background: var(--flip-ink); color: var(--flip-paper); }
+.flip-button:is(:focus-visible, [data-flipped="true"]):not(:disabled) .flip-front { transform: rotateX(180deg); opacity: 0; }
+.flip-button:is(:focus-visible, [data-flipped="true"]):not(:disabled) .flip-back { transform: rotateX(0); opacity: 1; }
+@media (hover: hover) {
+  .flip-button:hover:not(:disabled) .flip-front { transform: rotateX(180deg); opacity: 0; }
+  .flip-button:hover:not(:disabled) .flip-back { transform: rotateX(0); opacity: 1; }
+}
+.flip-button:focus-visible { outline: 3px solid var(--flip-accent); outline-offset: 5px; }
+.flip-button:disabled { cursor: default; opacity: .5; }
+@media (prefers-reduced-motion: reduce) {
+  .flip-button .flip-face { transition: none; }
+}
+.no-motion .flip-button .flip-face,
+[data-tm-no-motion="true"] .flip-button .flip-face { transition: none; }

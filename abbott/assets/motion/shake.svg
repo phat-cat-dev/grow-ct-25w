@@ -1,0 +1,9 @@
+<svg data-motion-asset="shake" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shake-title svg-motion-shake-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shake-title">Nudge</title><desc id="svg-motion-shake-desc">A sideways shake with a rest. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shake"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shake calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-shake { 10%, 30% { transform: translateX(-4px); } 20%, 40% { transform: translateX(4px); } 50%, 100% { transform: translateX(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shake"] .art,svg[data-motion-asset="shake"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m0-26 29 50h-58ZM0-9V7"/><circle cy="15" r="1" fill="currentColor"/></g></g></svg>

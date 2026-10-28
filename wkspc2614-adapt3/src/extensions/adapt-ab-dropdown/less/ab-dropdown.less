@@ -1,0 +1,65 @@
+// adapt-ab-dropdown — restyle seam for the Adapt matching dropdown.
+//
+// Re-themes adapt-contrib-matching's dropdown (.dropdown__btn / .dropdown__list
+// / .dropdown-item) from level-3 --ab-base-dropdown-* tokens, scoped under the
+// .ab-dropdown hook this extension stamps. !important is used to beat vanilla's
+// hard-coded dropdown palette (same rationale as the brand theme's old
+// ab-dropdown.less); the hook scope keeps it contained. Hover/active shades are
+// derived from the fill via color-mix, so no theme-only tokens are required.
+
+:root {
+  --ab-base-dropdown-bg: var(--ab-accent, #2a5db0);
+  --ab-base-dropdown-color: var(--ab-on-accent, #ffffff);
+  --ab-base-dropdown-bg-hover: color-mix(in srgb, var(--ab-base-dropdown-bg) 85%, #000);
+  --ab-base-dropdown-bg-active: color-mix(in srgb, var(--ab-base-dropdown-bg) 72%, #000);
+  --ab-base-dropdown-radius: 0;
+  --ab-base-dropdown-item-padding: var(--ab-space-100, 1rem);
+}
+
+.ab-dropdown {
+
+  // ---- trigger ----
+  .dropdown__btn {
+    background-color: var(--ab-base-dropdown-bg) !important;
+    color: var(--ab-base-dropdown-color) !important;
+    border-radius: var(--ab-base-dropdown-radius) !important;
+
+    &:hover,
+    &:focus { background-color: var(--ab-base-dropdown-bg-hover) !important; }
+    &.is-selected { background-color: var(--ab-base-dropdown-bg-active) !important; }
+    &.is-disabled { opacity: 0.5; }
+  }
+
+  .dropdown__inner,
+  .dropdown__icon,
+  .dropdown__icon .icon {
+    color: var(--ab-base-dropdown-color) !important;
+  }
+
+  // ---- open list ----
+  .dropdown__list {
+    background-color: var(--ab-base-dropdown-bg) !important;
+    border-radius: var(--ab-base-dropdown-radius) !important;
+    border: 1px solid var(--ab-base-dropdown-bg-active) !important;
+  }
+
+  // ---- options ----
+  .dropdown-item {
+    padding: var(--ab-base-dropdown-item-padding) !important;
+    background-color: var(--ab-base-dropdown-bg) !important;
+    color: var(--ab-base-dropdown-color) !important;
+    border-radius: var(--ab-base-dropdown-radius) !important;
+    border-bottom: 1px solid var(--ab-base-dropdown-bg-active) !important;
+
+    .dropdown-item__inner { color: var(--ab-base-dropdown-color) !important; }
+
+    // hovered / keyboard-highlighted / chosen — not colour-only (markup also
+    // carries aria-selected)
+    &:hover,
+    &.is-selected,
+    &[aria-selected],
+    &[selected] { background-color: var(--ab-base-dropdown-bg-active) !important; }
+
+    &:last-child { border-bottom: 0 !important; }
+  }
+}

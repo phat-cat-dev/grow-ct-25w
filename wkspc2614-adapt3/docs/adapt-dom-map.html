@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adapt DOM Map</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#1a2230; --muted:#5b6676; --line:#dfe4ea;
+    --page:#2563eb; --article:#7c3aed; --block:#0d9488; --component:#d97706;
+    --field:#0369a1; --hook:#334155; --note:#64748b; --card:#be123c;
+    --chip-bg:#eef2f7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0d1117; --panel:#151b23; --ink:#e6edf3; --muted:#9aa7b6; --line:#2a323c;
+      --page:#60a5fa; --article:#c084fc; --block:#2dd4bf; --component:#fbbf24;
+      --field:#38bdf8; --hook:#cbd5e1; --note:#8b97a6; --card:#fb7185; --chip-bg:#1f2731;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0d1117; --panel:#151b23; --ink:#e6edf3; --muted:#9aa7b6; --line:#2a323c;
+    --page:#60a5fa; --article:#c084fc; --block:#2dd4bf; --component:#fbbf24;
+    --field:#38bdf8; --hook:#cbd5e1; --note:#8b97a6; --card:#fb7185; --chip-bg:#1f2731;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:24px 16px 64px;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:1.6rem;margin:0 0 .2em}
+  h2{font-size:1.15rem;margin:2.2em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--line)}
+  p.lede{color:var(--muted);margin:.2em 0 1.4em}
+  .prov{font-size:.82rem;color:var(--note);background:var(--chip-bg);border:1px solid var(--line);
+    border-radius:8px;padding:10px 12px;margin:0 0 1.4em}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1.2em}
+  .legend span{font-size:.78rem;padding:3px 9px;border-radius:999px;color:#fff;font-weight:600}
+
+  .map{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+  .box{
+    border:1px solid var(--line);border-left-width:4px;border-radius:7px;
+    background:var(--panel);margin:7px 0;padding:8px 10px;
+  }
+  .box > .children{margin:8px 0 0 0;padding-left:14px}
+  .box.page{border-left-color:var(--page)}
+  .box.article{border-left-color:var(--article)}
+  .box.block{border-left-color:var(--block)}
+  .box.component{border-left-color:var(--component)}
+  .box.field{border-left-color:var(--field);border-style:dashed}
+  .box.card{border-left-color:var(--card)}
+  .tag{font-weight:700}
+  .page .tag{color:var(--page)} .article .tag{color:var(--article)}
+  .block .tag{color:var(--block)} .component .tag{color:var(--component)}
+  .field .tag{color:var(--field);font-weight:600}
+  .card .tag{color:var(--card)}
+  .cls{color:var(--hook)}
+  .attr{color:var(--note)}
+  .cmt{color:var(--note);font-style:italic;display:block;margin-top:3px;font-family:inherit}
+  .src{font:600 .7rem/1 ui-sans-serif,system-ui;padding:1px 6px;border-radius:5px;margin-left:6px;vertical-align:1px}
+  .src.repo{background:#dcfce7;color:#166534}
+  .src.core{background:#fef9c3;color:#854d0e}
+  .src.ex{background:#e0e7ff;color:#3730a3}
+  @media (prefers-color-scheme:dark){
+    .src.repo{background:#14532d;color:#bbf7d0}.src.core{background:#422006;color:#fde68a}
+    .src.ex{background:#312e81;color:#c7d2fe}}
+
+  .callout{border:1px solid var(--line);border-left:4px solid var(--component);
+    background:var(--panel);border-radius:8px;padding:12px 14px;margin:1.2em 0}
+  .callout h3{margin:0 0 .4em;font-size:1rem}
+  .callout .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+  @media (max-width:640px){.callout .cols{grid-template-columns:1fr}.map{font-size:12px}}
+  .callout h4{margin:.2em 0 .3em;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .callout ul{margin:.1em 0;padding-left:1.1em}
+
+  table{border-collapse:collapse;width:100%;font-size:13.5px;margin:.4em 0 1em}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+  th{background:var(--chip-bg)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--chip-bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+  .key{color:var(--field)}
+  ul{margin:.3em 0 .6em;padding-left:1.2em}
+  .foot{margin-top:2.4em;font-size:.8rem;color:var(--note)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Adapt DOM map &mdash; the frame, and two components inside it</h1>
+  <p class="lede">The same <strong>page &rarr; article &rarr; block</strong> frame holds any number of
+  components. Here one block holds two: a <strong>text</strong> component (header partial only) and a
+  <strong>card</strong> component whose widget is a whole <code>.cm.card</code> object. The frame is
+  fixed; the component widget is where you "go mad".</p>
+
+  <div class="prov">
+    <strong>Provenance.</strong>
+    <span class="src repo">repo</span> confirmed from this project (<code>adapt-abbott-theme</code>
+    LESS, <code>ab-cards.less</code>, <code>flipcard.jsx</code>).
+    <span class="src core">core</span> standard <code>adapt-contrib-core</code> v6 inner wrappers /
+    heading nodes, to re-verify against <code>src/core/js</code>.
+    <span class="src ex">example</span> illustrative markup you would author (a card component is one
+    way; the same <code>.cm.card</code> markup can also live in a text component&rsquo;s rich-text body).
+  </div>
+
+  <div class="legend">
+    <span style="background:var(--page)">page</span>
+    <span style="background:var(--article)">article</span>
+    <span style="background:var(--block)">block</span>
+    <span style="background:var(--component)">component frame</span>
+    <span style="background:var(--card)">.cm.card system</span>
+    <span style="background:var(--field)">content field</span>
+  </div>
+
+  <h2>The nested structure</h2>
+  <div class="map">
+
+    <div class="box page">
+      <span class="tag">.page</span> <span class="attr">id="&lt;page _id&gt;"</span> <span class="cls">+ _classes</span> <span class="src repo">repo</span>
+      <div class="children">
+        <div class="box">
+          <span class="cls">.page__header &rarr; .page__header-inner</span> <span class="src repo">repo</span>
+          <span class="cmt">.page__title (aria 1) &middot; .page__subtitle &middot; .page__body &middot; .page__instruction</span>
+        </div>
+        <div class="box">
+          <span class="cls">.page__inner</span> <span class="src repo">repo</span>
+
+          <div class="children">
+            <div class="box article">
+              <span class="tag">.article</span> <span class="cls">+ _classes</span> <span class="src repo">repo</span>
+              <span class="cmt">e.g. article--lesson-concept &mdash; custom article format hook</span>
+              <div class="children">
+                <div class="box">
+                  <span class="cls">.article__header &rarr; .article__header-inner</span> <span class="src repo">repo</span>
+                  <span class="cmt">.article__title (aria 2) &middot; .article__body</span>
+                </div>
+                <div class="box">
+                  <span class="cls">.article__inner</span> <span class="src repo">repo</span>
+
+                  <div class="children">
+                    <div class="box block">
+                      <span class="tag">.block</span> <span class="cls">+ _classes</span> <span class="src repo">repo</span>
+                      <div class="children">
+                        <div class="box">
+                          <span class="cls">.block__header &rarr; .block__header-inner</span> <span class="src core">core</span>
+                          <span class="cmt">.block__title (aria 3) &middot; .block__body &middot; .block__instruction</span>
+                        </div>
+                        <div class="box">
+                          <span class="cls">.block__inner</span> <span class="src repo">repo</span>
+                          <span class="cmt">one block, two components &mdash; both share the same fixed frame below</span>
+
+                          <div class="children">
+
+                            <!-- COMPONENT 1: TEXT -->
+                            <div class="box component">
+                              <span class="tag">.component</span> <span class="cls">text-component + is-&lt;state&gt;</span>
+                              <span class="attr">data-component="text"</span> <span class="cls">+ _classes</span> <span class="src core">core</span>
+                              <span class="cmt">FIXED FRAME (core): .component root + state classes. Your markup starts below.</span>
+                              <div class="children">
+                                <div class="box">
+                                  <span class="cls">.component__inner text__inner</span> <span class="src repo">repo</span>
+                                  <div class="children">
+                                    <div class="box">
+                                      <span class="cls">.component__header &rarr; .component__header-inner</span> <span class="src repo">repo</span>
+                                      <div class="children">
+                                        <div class="box field"><span class="tag">.component__title</span> &rarr; <span class="cls">.js-heading-inner</span> <span class="attr">aria 4</span> <span class="src repo">repo</span></div>
+                                        <div class="box field"><span class="tag">.component__body</span> <span class="src repo">repo</span><span class="cmt">from <span class="key">body</span> &mdash; for text, THIS is the content</span></div>
+                                        <div class="box field"><span class="tag">.component__instruction</span> <span class="src repo">repo</span></div>
+                                      </div>
+                                    </div>
+                                    <div class="box"><span class="cls">.component__widget text__widget</span> <span class="src repo">repo</span><span class="cmt">near-empty for text</span></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- COMPONENT 2: CARD -->
+                            <div class="box component">
+                              <span class="tag">.component</span> <span class="cls">card-component + is-&lt;state&gt;</span>
+                              <span class="attr">data-component="card"</span> <span class="cls">+ _classes</span> <span class="src ex">example</span>
+                              <span class="cmt">SAME fixed frame. The widget below is 100% yours.</span>
+                              <div class="children">
+                                <div class="box">
+                                  <span class="cls">.component__inner card__inner</span> <span class="src ex">example</span>
+                                  <div class="children">
+                                    <div class="box">
+                                      <span class="cls">.component__header &rarr; .component__header-inner</span> <span class="src repo">repo</span>
+                                      <span class="cmt">optional &mdash; title/body/instruction, or skip the header partial entirely</span>
+                                    </div>
+                                    <div class="box">
+                                      <span class="cls">.component__widget card__widget</span> <span class="src ex">example</span>
+                                      <span class="cmt">your template renders whatever you like here &darr;</span>
+
+                                      <div class="children">
+                                        <div class="box card">
+                                          <span class="tag">.cm.card</span> <span class="cls">do</span> <span class="src repo">repo</span>
+                                          <span class="cmt">compound namespace .cm.card + variant (do/dont/advice/action/feedback-pos&hellip;); on --ab-card-* tokens, no Bootstrap dependency</span>
+                                          <div class="children">
+                                            <div class="box card"><span class="tag">.card-img-top</span> <span class="src repo">repo</span></div>
+                                            <div class="box card"><span class="tag">.card-header</span> <span class="src repo">repo</span></div>
+                                            <div class="box card">
+                                              <span class="tag">.card-body</span> <span class="src repo">repo</span>
+                                              <div class="children">
+                                                <div class="box card"><span class="tag">.card-title</span> <span class="src repo">repo</span></div>
+                                                <div class="box card"><span class="tag">.card-subtitle</span> <span class="src repo">repo</span></div>
+                                                <div class="box card"><span class="tag">.card-text</span> <span class="src repo">repo</span></div>
+                                                <div class="box card"><span class="tag">.card-link</span> <span class="src repo">repo</span></div>
+                                              </div>
+                                            </div>
+                                            <div class="box card"><span class="tag">.card-footer</span> <span class="src repo">repo</span></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <h3>The component boundary: unlimited vs the contract</h3>
+    <div class="cols">
+      <div>
+        <h4>Unlimited (below .component__inner)</h4>
+        <ul>
+          <li>any nested divs, any depth</li>
+          <li>as many class hooks as you like (<code>mycomp__*</code>, <code>is-*</code>)</li>
+          <li>any <code>data-*</code>, any ARIA</li>
+          <li>skip the header partial; render your own</li>
+          <li>sub-components; any JS in <code>postRender</code> (React/D3/canvas)</li>
+          <li>any schema fields &rarr; props (e.g. the whole <code>.cm.card</code> object)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fixed / must keep</h4>
+        <ul>
+          <li><code>.component</code> root + state classes (<code>is-complete</code>&hellip;) &mdash; core-owned</li>
+          <li>completion signal (<code>setReadyStatus</code>, inview)</li>
+          <li>a11y: <code>js-heading</code> aria-level, focus, native controls</li>
+          <li><code>trackable()</code> / <code>suspend_data</code> for persisted state</li>
+          <li>namespace hooks; consume <code>--ab-*</code> tokens, no hardcoded palette</li>
+          <li>a component is a leaf &mdash; can&rsquo;t reshape article/block</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2>All hooks, per layer</h2>
+  <table>
+    <tr><th>Layer</th><th>Wrapper / structural hooks</th><th>Content fields (JSON &rarr; node)</th><th>Author hooks</th></tr>
+    <tr>
+      <td><strong style="color:var(--page)">Page</strong></td>
+      <td><code>.page</code> <code>.page__header</code> <code>.page__header-inner</code> <code>.page__inner</code></td>
+      <td><span class="key">title/displayTitle</span>&rarr;<code>.page__title</code>, <span class="key">subtitle</span>&rarr;<code>.page__subtitle</code>, <span class="key">body</span>&rarr;<code>.page__body</code>, <span class="key">instruction</span>&rarr;<code>.page__instruction</code></td>
+      <td><code>_classes</code>, <code>_htmlClasses</code>, <code>id</code></td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--article)">Article</strong></td>
+      <td><code>.article</code> <code>.article__header(-inner)</code> <code>.article__inner</code></td>
+      <td><span class="key">title/displayTitle</span>&rarr;<code>.article__title</code>, <span class="key">body</span>&rarr;<code>.article__body</code>, <span class="key">instruction</span> (supported)</td>
+      <td><code>_classes</code> (<code>article--abbott-x</code>), <code>id</code></td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--block)">Block</strong></td>
+      <td><code>.block</code> <code>.block__header(-inner)</code> <code>.block__inner</code></td>
+      <td><span class="key">title/displayTitle</span>&rarr;<code>.block__title</code>, <span class="key">body</span>&rarr;<code>.block__body</code>, <span class="key">instruction</span>&rarr;<code>.block__instruction</code></td>
+      <td><code>_classes</code> (<code>block--abbott-x</code>), <code>id</code></td>
+    </tr>
+    <tr>
+      <td><strong style="color:var(--component)">Component</strong></td>
+      <td><code>.component</code> + type class + state classes; <code>.component__inner</code> <code>.component__header(-inner)</code> <code>.component__widget</code></td>
+      <td>title/body/instruction (header partial) <strong>+ the component&rsquo;s own fields &rarr; its own markup in <code>.component__widget</code></strong></td>
+      <td><code>_classes</code>, <code>_component</code> (type), full custom template + schema</td>
+    </tr>
+  </table>
+
+  <h2>The <code>.cm.card</code> system hooks (from <code>ab-cards.less</code>)</h2>
+  <p class="lede">A Bootstrap-5.3-shaped card rebuilt on <code>--ab-*</code> tokens, no Bootstrap / <code>--bs-*</code>
+  dependency. Compound namespace <code>.cm.card</code>; the part-classes are scoped under it.</p>
+  <table>
+    <tr><th>Part</th><th>Classes</th></tr>
+    <tr><td>Container</td><td><code>.cm.card</code> (+ variant: palette colour, <code>.accent</code>, functional <code>do</code>/<code>dont</code>/<code>advice</code>/<code>action</code>/<code>starting</code>/<code>feedback-pos</code>/<code>feedback-neg</code>, <code>.with-icon</code>, <code>.hover-animate</code>)</td></tr>
+    <tr><td>Regions</td><td><code>.card-header</code> <code>.card-body</code> <code>.card-footer</code></td></tr>
+    <tr><td>Body content</td><td><code>.card-title</code> <code>.card-subtitle</code> <code>.card-text</code> <code>.card-link</code> <code>.card-icon</code></td></tr>
+    <tr><td>Media</td><td><code>.card-img</code> <code>.card-img-top</code> <code>.card-img-bottom</code> <code>.card-img-overlay</code></td></tr>
+    <tr><td>Grouping</td><td><code>.card-group</code></td></tr>
+    <tr><td>Tokens</td><td><code>--ab-card-bg</code> <code>--ab-card-color</code> <code>--ab-card-border-*</code> <code>--ab-card-cap-bg</code> <code>--ab-card-accent</code> <code>--ab-card-spacer-*</code> &mdash; all mapped to the theme spine (<code>--ab-base-*</code>)</td></tr>
+  </table>
+
+  <p class="foot">Companion to <code>docs/adapt-extensibility-map.md</code> (&sect;6 styling seam, &sect;8 the
+  component boundary). <span class="src repo">repo</span> confirmed here; <span class="src core">core</span>
+  to verify against <code>src/core</code> (adapt-contrib-core v6.77.1); <span class="src ex">example</span>
+  illustrative authored markup.</p>
+
+</div>
+</body>
+</html>

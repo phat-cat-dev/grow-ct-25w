@@ -1,0 +1,16 @@
+.textured {
+  --texture-paper: var(--surface-1, #fafbfc);
+  --texture-ink: var(--ink, #24313b);
+  --texture-rule: var(--line, #ccd5dd);
+  --texture-accent: var(--accent, #326d91);
+  --texture-pad: var(--space-md, 1.5rem);
+  --texture-gap: var(--space-sm, 1rem);
+  --texture-rule-gap: 1.9rem;
+  --texture-dot-gap: 1.25rem;
+  box-sizing: border-box;
+  color: var(--texture-ink);
+  font-family: var(--font-body, var(--font-ui, system-ui, sans-serif));
+  line-height: var(--lh-body, 1.6);
+}
+.textured *, .textured *::before, .textured *::after { box-sizing: border-box; }
+.texture-sample { min-block-size: 10rem; padding: var(--texture-pad); border-radius: .6rem; overflow-wrap: anywhere; }

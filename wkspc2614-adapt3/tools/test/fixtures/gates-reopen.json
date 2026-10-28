@@ -1,0 +1,15 @@
+{
+  "kbVersion": "0.0.1",
+  "gates": [
+    { "id": "cxs-01_institutional-context", "name": "Institutional context", "phase": "CXS", "hardness": "advisory", "defaultType": "none", "sequence": 6, "propagationScope": "universal" },
+    { "id": "crs-02_thematic-scope", "name": "Thematic scope", "phase": "CRS", "hardness": "hard-stop", "defaultType": "ai-proposal-stands", "sequence": 0 },
+    { "id": "crs-03_course-outcomes", "name": "Course outcomes", "phase": "CRS", "hardness": "hard-stop", "defaultType": "ai-proposal-stands", "sequence": 1,
+      "dependsOn": [ { "gate": "crs-02_thematic-scope", "dependencyClass": "constitutive", "note": "fixture edge" } ] },
+    { "id": "wra-04_confidence", "name": "Confidence wrappers", "phase": "WRA", "hardness": "soft", "defaultType": "ai-proposal-stands", "sequence": 2,
+      "dependsOn": [ { "gate": "crs-02_thematic-scope", "dependencyClass": "substantive", "note": "fixture edge" } ] },
+    { "id": "crs-05_course-spec", "name": "Course spec", "phase": "CRS", "hardness": "advisory", "defaultType": "none", "sequence": 3,
+      "dependsOn": [ { "gate": "crs-02_thematic-scope", "dependencyClass": "nominal", "note": "fixture edge" } ] },
+    { "id": "wra-01_wrapper-open", "name": "Wrapper open", "phase": "WRA", "hardness": "soft", "defaultType": "fixed-value", "sequence": 4 },
+    { "id": "cxs-05_external-standards", "name": "Fixture gate with no course-design record", "phase": "CXS", "hardness": "advisory", "defaultType": "fixed-value", "sequence": 5 }
+  ]
+}

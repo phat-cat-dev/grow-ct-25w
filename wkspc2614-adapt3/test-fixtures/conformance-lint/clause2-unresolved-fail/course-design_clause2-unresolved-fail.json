@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "clause2-unresolved-fail",
+  "slug": "clause2-unresolved-fail",
+  "status": "in-development",
+  "facetSet": { "pathway": "Test", "tier": "introductory" },
+  "kbVersions": { "design-kb": "0.1.0" },
+  "gates": [],
+  "phases": [],
+  "instantiations": [],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-08-29T10:00:00Z",
+      "trigger": {
+        "gate": "crs-01_course-facets",
+        "changeKind": "amended",
+        "note": "Facet set changed"
+      },
+      "sweep": [
+        {
+          "gate": "gates/A3",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "flag-for-review",
+          "disposition": {
+            "verdict": "flag-for-review",
+            "mode": "stood"
+          },
+          "resolution": {
+            "status": "open"
+          }
+        }
+      ]
+    }
+  ]
+}

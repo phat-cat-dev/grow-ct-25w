@@ -1,0 +1,47 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 4: semantic cue sets
+ *   --ab-base-pf-default-<category>-<token>
+ * ---------------------------------------------------------------------------
+ * Three HSL-derived cue categories (positive / negative / neutral), each with a
+ * card wash (bg), a border/accent, dark ink for text on the wash, an icon colour
+ * and a ligature icon; sub-categories reuse the parent colour and set only their
+ * own icon. Formula: theme-formula-map §2.6; schema:
+ * design-kb/section-schemas/semantics.json (hand-compiled — fold-tool support
+ * for nested shapes is a follow-up). Category hues are fixed (green/red/amber),
+ * NOT the brand anchor — semantic meaning should not drift with the theme; only
+ * the shared saturation/lightness dials and the hues themselves are themeable.
+ * =========================================================================== */
+:root {
+  /* shared dials */
+  --ab-base-pf-default-semantic-s: var(--ab-theme-pf-default-semantic-s, 55%);
+  --ab-base-pf-default-semantic-l: var(--ab-theme-pf-default-semantic-l, 42%);
+  --ab-base-pf-default-positive-h: var(--ab-theme-pf-default-positive-h, 145);
+  --ab-base-pf-default-negative-h: var(--ab-theme-pf-default-negative-h, 5);
+  --ab-base-pf-default-neutral-cue-h: var(--ab-theme-pf-default-neutral-cue-h, 38);
+
+  /* positive (hue 145) */
+  --ab-base-pf-default-positive-bg: hsl(var(--ab-base-pf-default-positive-h) calc(var(--ab-base-pf-default-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-positive-border: hsl(var(--ab-base-pf-default-positive-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-positive-ink: hsl(var(--ab-base-pf-default-positive-h) var(--ab-base-pf-default-semantic-s) 28%);
+  --ab-base-pf-default-positive-icon-colour: hsl(var(--ab-base-pf-default-positive-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-positive-icon: "check_circle";
+  --ab-base-pf-default-positive-correct-icon: "check_circle";
+  --ab-base-pf-default-positive-advise-icon: "lightbulb";
+
+  /* negative (hue 5) */
+  --ab-base-pf-default-negative-bg: hsl(var(--ab-base-pf-default-negative-h) calc(var(--ab-base-pf-default-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-negative-border: hsl(var(--ab-base-pf-default-negative-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-negative-ink: hsl(var(--ab-base-pf-default-negative-h) var(--ab-base-pf-default-semantic-s) 28%);
+  --ab-base-pf-default-negative-icon-colour: hsl(var(--ab-base-pf-default-negative-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-negative-icon: "cancel";
+  --ab-base-pf-default-negative-incorrect-icon: "cancel";
+  --ab-base-pf-default-negative-warn-icon: "warning";
+
+  /* neutral (hue 38 — amber cue, distinct from the grey spine) */
+  --ab-base-pf-default-neutral-cue-bg: hsl(var(--ab-base-pf-default-neutral-cue-h) calc(var(--ab-base-pf-default-semantic-s) * 0.5) 94%);
+  --ab-base-pf-default-neutral-cue-border: hsl(var(--ab-base-pf-default-neutral-cue-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-neutral-cue-ink: hsl(var(--ab-base-pf-default-neutral-cue-h) var(--ab-base-pf-default-semantic-s) 28%);
+  --ab-base-pf-default-neutral-cue-icon-colour: hsl(var(--ab-base-pf-default-neutral-cue-h) var(--ab-base-pf-default-semantic-s) var(--ab-base-pf-default-semantic-l));
+  --ab-base-pf-default-neutral-cue-icon: "info";
+  --ab-base-pf-default-neutral-cue-observe-icon: "visibility";
+}

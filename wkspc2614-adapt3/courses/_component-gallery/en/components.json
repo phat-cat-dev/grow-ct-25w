@@ -1,0 +1,1983 @@
+[
+  {
+    "_id": "GAL-c-01",
+    "_parentId": "GAL-b-01",
+    "_type": "component",
+    "_component": "ab-card",
+    "_classes": "ab-card--rag",
+    "_layout": "full",
+    "title": "Information cards",
+    "displayTitle": "Key practices",
+    "body": "Review each card to see the practice it describes.",
+    "instruction": "Read through the cards below.",
+    "ariaRegion": "Information cards.",
+    "_variant": "neutral",
+    "_items": [
+      {
+        "_id": "rag-01",
+        "title": "Not yet started",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "rag-02",
+        "title": "In progress",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "rag-03",
+        "title": "Complete",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_component": "flipcard",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Flip cards",
+    "displayTitle": "Turn each card over",
+    "body": "Four quick ideas. Select a card to flip it and read the detail on the back.",
+    "instruction": "Select each card to turn it over.",
+    "_flipBehaviour": "independent",
+    "_items": [
+      {
+        "front": {
+          "title": "First idea"
+        },
+        "back": {
+          "body": "The back of the first card explains the idea in a sentence or two."
+        }
+      },
+      {
+        "front": {
+          "title": "Second idea"
+        },
+        "back": {
+          "body": "The back of the second card gives the detail the front only hints at."
+        }
+      },
+      {
+        "front": {
+          "title": "Third idea"
+        },
+        "back": {
+          "body": "The back of the third card adds the example that makes it concrete."
+        }
+      },
+      {
+        "front": {
+          "title": "Fourth idea"
+        },
+        "back": {
+          "body": "The back of the fourth card sums up why it matters."
+        }
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "GAL-c-02",
+    "_parentId": "GAL-b-02",
+    "_type": "component"
+  },
+  {
+    "_id": "GAL-c-03",
+    "_parentId": "GAL-b-03",
+    "_type": "component",
+    "_component": "ab-carousel",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Carousel example",
+    "displayTitle": "Carousel example",
+    "body": "A short set of slides you can move through.",
+    "instruction": "Use the previous and next controls to move between slides.",
+    "ariaRegion": "Carousel. Use the previous and next controls to move between slides.",
+    "_shouldAutoScroll": false,
+    "_canCycle": true,
+    "_items": [
+      {
+        "_id": "slide-01",
+        "title": "Slide 1",
+        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "_graphic": {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20360%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%20role%3D%22img%22%20aria-label%3D%22Slide%201%22%3E%3Crect%20width%3D%22800%22%20height%3D%22360%22%20fill%3D%22%23cdd6df%22%2F%3E%3Cpath%20d%3D%22M0%200l800%20360M800%200L0%20360%22%20stroke%3D%22%23aab4bf%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2355606c%22%20font-family%3D%22system-ui%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2260%22%20font-weight%3D%22600%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ESlide%201%3C%2Ftext%3E%3C%2Fsvg%3E",
+          "alt": "Placeholder image for slide 1"
+        }
+      },
+      {
+        "_id": "slide-02",
+        "title": "Slide 2",
+        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "_graphic": {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20360%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%20role%3D%22img%22%20aria-label%3D%22Slide%202%22%3E%3Crect%20width%3D%22800%22%20height%3D%22360%22%20fill%3D%22%23cdd6df%22%2F%3E%3Cpath%20d%3D%22M0%200l800%20360M800%200L0%20360%22%20stroke%3D%22%23aab4bf%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2355606c%22%20font-family%3D%22system-ui%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2260%22%20font-weight%3D%22600%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ESlide%202%3C%2Ftext%3E%3C%2Fsvg%3E",
+          "alt": "Placeholder image for slide 2"
+        }
+      },
+      {
+        "_id": "slide-03",
+        "title": "Slide 3",
+        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "_graphic": {
+          "src": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20360%22%20preserveAspectRatio%3D%22xMidYMid%20slice%22%20role%3D%22img%22%20aria-label%3D%22Slide%203%22%3E%3Crect%20width%3D%22800%22%20height%3D%22360%22%20fill%3D%22%23cdd6df%22%2F%3E%3Cpath%20d%3D%22M0%200l800%20360M800%200L0%20360%22%20stroke%3D%22%23aab4bf%22%20stroke-width%3D%222%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2355606c%22%20font-family%3D%22system-ui%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2260%22%20font-weight%3D%22600%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ESlide%203%3C%2Ftext%3E%3C%2Fsvg%3E",
+          "alt": "Placeholder image for slide 3"
+        }
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-04",
+    "_parentId": "GAL-b-04",
+    "_type": "component",
+    "_component": "gowTimeline",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Project milestones",
+    "displayTitle": "Project milestones",
+    "body": "A short history of the key stages in this project.",
+    "instruction": "Scroll through each event to see how the work progressed.",
+    "_direction": "ascending",
+    "_items": [
+      {
+        "dateLabel": "2021",
+        "title": "Project kick-off",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p style=\"margin:0.6em 0 0\"><svg style=\"width:100%;max-width:360px;height:auto;border-radius:4px\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Figure 1\"><rect width=\"360\" height=\"150\" fill=\"#cdd6df\"/><path d=\"M0 0l360 150M360 0L0 150\" stroke=\"#aab4bf\" stroke-width=\"2\"/><text x=\"50%\" y=\"50%\" fill=\"#55606c\" font-family=\"system-ui,Segoe UI,sans-serif\" font-size=\"25\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"middle\">Figure 1</text></svg></p>",
+        "_highlight": false
+      },
+      {
+        "dateLabel": "2022",
+        "title": "First release",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p style=\"margin:0.6em 0 0\"><svg style=\"width:100%;max-width:360px;height:auto;border-radius:4px\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Figure 2\"><rect width=\"360\" height=\"150\" fill=\"#cdd6df\"/><path d=\"M0 0l360 150M360 0L0 150\" stroke=\"#aab4bf\" stroke-width=\"2\"/><text x=\"50%\" y=\"50%\" fill=\"#55606c\" font-family=\"system-ui,Segoe UI,sans-serif\" font-size=\"25\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"middle\">Figure 2</text></svg></p>",
+        "_highlight": true
+      },
+      {
+        "dateLabel": "2023",
+        "title": "Wider rollout",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p style=\"margin:0.6em 0 0\"><svg style=\"width:100%;max-width:360px;height:auto;border-radius:4px\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Figure 3\"><rect width=\"360\" height=\"150\" fill=\"#cdd6df\"/><path d=\"M0 0l360 150M360 0L0 150\" stroke=\"#aab4bf\" stroke-width=\"2\"/><text x=\"50%\" y=\"50%\" fill=\"#55606c\" font-family=\"system-ui,Segoe UI,sans-serif\" font-size=\"25\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"middle\">Figure 3</text></svg></p>",
+        "_highlight": false
+      },
+      {
+        "dateLabel": "Present",
+        "title": "Ongoing improvement",
+        "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p style=\"margin:0.6em 0 0\"><svg style=\"width:100%;max-width:360px;height:auto;border-radius:4px\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" preserveAspectRatio=\"xMidYMid slice\" role=\"img\" aria-label=\"Figure 4\"><rect width=\"360\" height=\"150\" fill=\"#cdd6df\"/><path d=\"M0 0l360 150M360 0L0 150\" stroke=\"#aab4bf\" stroke-width=\"2\"/><text x=\"50%\" y=\"50%\" fill=\"#55606c\" font-family=\"system-ui,Segoe UI,sans-serif\" font-size=\"25\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"middle\">Figure 4</text></svg></p>",
+        "_highlight": false
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_reveal": true
+  },
+  {
+    "_component": "callout",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A quick tip",
+    "body": "Callouts flag a short, self-contained note to the reader without breaking the flow of the main text.",
+    "_calloutType": "tip",
+    "_id": "GAL-c-05",
+    "_parentId": "GAL-b-05",
+    "_type": "component"
+  },
+  {
+    "_component": "keyTerm",
+    "_classes": "",
+    "_layout": "full",
+    "term": "Criticality",
+    "_partOfSpeech": "noun",
+    "pronunciation": "/krɪtɪˈkalɪti/",
+    "definition": "The habit of weighing evidence and argument before accepting a claim.",
+    "extendedDefinition": "At university, criticality means testing what you read against reasons, evidence and alternative views, rather than taking it at face value.",
+    "example": "A critical reader asks who wrote a source, why, and what it leaves out.",
+    "_relatedTerms": [
+      "Analysis",
+      "Evaluation",
+      "Argument"
+    ],
+    "_reveal": true,
+    "_id": "GAL-c-06",
+    "_parentId": "GAL-b-06",
+    "_type": "component"
+  },
+  {
+    "_component": "quoteBlock",
+    "_classes": "",
+    "_layout": "full",
+    "quote": "Education is not the filling of a pail, but the lighting of a fire.",
+    "_attribution": {
+      "name": "W. B. Yeats",
+      "role": "Poet",
+      "source": "Attributed"
+    },
+    "context": "Often cited to contrast active learning with rote memorisation.",
+    "_id": "GAL-c-07",
+    "_parentId": "GAL-b-07",
+    "_type": "component"
+  },
+  {
+    "_component": "statBlock",
+    "_classes": "",
+    "_layout": "full",
+    "title": "At a glance",
+    "_items": [
+      {
+        "value": "3",
+        "label": "Outcomes per lesson",
+        "context": "The GROW lesson model",
+        "source": "Course design"
+      },
+      {
+        "value": "12",
+        "label": "Interactive components",
+        "context": "Available to authors",
+        "source": "Palette"
+      },
+      {
+        "value": "45",
+        "label": "Max words per sentence",
+        "context": "Voice-lint ceiling",
+        "source": "House style"
+      }
+    ],
+    "_id": "GAL-c-08",
+    "_parentId": "GAL-b-08",
+    "_type": "component"
+  },
+  {
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Read like an editor",
+    "displayTitle": "Read like an editor",
+    "body": "Writers signal what they are doing. Find the claim, its evidence, and the hedge.",
+    "instruction": "Choose a tool, then click the word or phrase that plays that role. Mark them all, then Submit.",
+    "ariaRegion": "Annotate. Choose a tool, then select words in the passage to mark their role.",
+    "passage": "Reading your work aloud [[helps]] you catch errors that silent reading skips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. In one recent study, [[nine out of ten]] students found more mistakes when reading aloud, which [[suggests]] the habit is worth building. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. The effect [[may]] not hold for everyone, yet the data [[consistently]] point the same way, though most researchers still [[tend to]] hedge their conclusions.",
+    "_tools": [
+      {
+        "_id": "claim",
+        "label": "Claim",
+        "_mark": "box",
+        "_color": "accent"
+      },
+      {
+        "_id": "evidence",
+        "label": "Evidence",
+        "_mark": "box",
+        "_color": "positive"
+      },
+      {
+        "_id": "hedge",
+        "label": "Hedge",
+        "_mark": "box",
+        "_color": "neutral"
+      },
+      {
+        "_id": "important",
+        "label": "Important!",
+        "_mark": "exclaim",
+        "_color": "comment"
+      }
+    ],
+    "_isQuestion": true,
+    "_answers": [
+      "claim",
+      "evidence",
+      "hedge",
+      "hedge",
+      "evidence",
+      "hedge"
+    ],
+    "_feedback": {
+      "correct": "Exactly - you have spotted the claim, its evidence, and the hedge.",
+      "_incorrect": "Not quite - check the notes below to see which role each word plays."
+    },
+    "_minAnnotations": 6,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "GAL-c-09",
+    "_parentId": "GAL-b-09",
+    "_type": "component"
+  },
+  {
+    "_id": "GAL-c-10",
+    "_parentId": "GAL-b-10",
+    "_type": "component",
+    "_component": "scrollScenes",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A way of working",
+    "displayTitle": "A way of working",
+    "body": "Scroll through the four moves. Each one comes into focus as it reaches the centre.",
+    "instruction": "Scroll inside the panel, or use the scene buttons to jump.",
+    "_preset": "original",
+    "_snap": true,
+    "_showNav": true,
+    "_showProgress": true,
+    "_showStatus": true,
+    "_items": [
+      {
+        "stageLabel": "Observe",
+        "heading": "Start with<br>what you notice.",
+        "body": "Slow down long enough to see the situation clearly. What is happening, and what might you be missing?"
+      },
+      {
+        "stageLabel": "Question",
+        "heading": "Make room for<br>a better question.",
+        "body": "Look beyond your first explanation. Find the assumption that would change your next move if it were wrong."
+      },
+      {
+        "stageLabel": "Explore",
+        "heading": "Try something<br>small and useful.",
+        "body": "Compare possibilities without needing a perfect answer. A modest experiment can reveal more than another round of guessing."
+      },
+      {
+        "stageLabel": "Act",
+        "heading": "Take the learning<br>back with you.",
+        "body": "Choose one action you can explain, test and review. Decide what evidence will tell you whether it helped."
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-11",
+    "_parentId": "GAL-b-11",
+    "_type": "component",
+    "_component": "glossary",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Key terms",
+    "displayTitle": "Key terms",
+    "body": "Read the passage and select the marked terms to see their definitions.",
+    "instruction": "Select each highlighted term to reveal its definition.",
+    "_supportedLayout": "full-width",
+    "_passage": [
+      {
+        "text": "A balanced diet supplies the body with energy and essential "
+      },
+      {
+        "text": "nutrients",
+        "_term": {
+          "term": "nutrient",
+          "definition": "A nutrient is a substance the body uses for energy, growth, and repair. Examples include proteins, fats, and vitamins."
+        }
+      },
+      {
+        "text": " that keep cells working. Many foods also contain "
+      },
+      {
+        "text": "fibre",
+        "_term": {
+          "term": "fibre",
+          "definition": "Fibre is the part of plant foods that the body cannot digest. It supports healthy digestion and steady energy."
+        }
+      },
+      {
+        "text": ", which supports digestion. Drinking enough water helps maintain "
+      },
+      {
+        "text": "hydration",
+        "_term": {
+          "term": "hydration",
+          "definition": "Hydration is the state of having enough water in the body. Good hydration supports concentration and physical performance."
+        }
+      },
+      {
+        "text": " throughout the day."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-12",
+    "_parentId": "GAL-b-12",
+    "_type": "component",
+    "_component": "modal",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Safety briefing",
+    "displayTitle": "Safety briefing",
+    "body": "Open the panel to review the key points before you continue.",
+    "instruction": "Select the button to open the briefing.",
+    "_supportedLayout": "both",
+    "_completion": "trigger",
+    "_trigger": {
+      "text": "Open briefing",
+      "ariaLabel": "Open the safety briefing panel",
+      "_icon": "learning"
+    },
+    "_popup": {
+      "title": "Before you start",
+      "body": "<p>Read each point carefully.</p><ul><li>Wear the correct protective equipment.</li><li>Check the area is clear before you begin.</li><li>Report any faults straight away.</li></ul>",
+      "_classes": "",
+      "_isCancellable": true
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-13",
+    "_parentId": "GAL-b-13",
+    "_type": "component",
+    "_component": "textTagging",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Tag the sentence parts",
+    "displayTitle": "Tag the sentence parts",
+    "body": "Every sentence is built from words that do different jobs.",
+    "instruction": "Choose a category from the palette, then click the matching word in the passage below. Tag every highlighted word, then submit your answer.",
+    "_tagMode": "multi",
+    "_tagCategories": [
+      {
+        "_id": "noun",
+        "label": "Noun",
+        "description": "A person, place, or thing."
+      },
+      {
+        "_id": "verb",
+        "label": "Verb",
+        "description": "An action or state of being."
+      }
+    ],
+    "_passages": [
+      {
+        "_passageId": "p1",
+        "label": "Passage",
+        "text": "The report was finished on time, and the team worked hard.",
+        "_taggableSpans": [
+          {
+            "text": "report",
+            "_tagId": "noun",
+            "feedback": "Correct. 'Report' names a thing, so it is a noun.",
+            "feedbackIncorrect": "\"Report\" names a thing (a document), so it is a noun, not a verb."
+          },
+          {
+            "text": "finished",
+            "_tagId": "verb",
+            "feedback": "Correct. 'Finished' shows an action, so it is a verb.",
+            "feedbackIncorrect": "\"Finished\" describes an action here, so it is a verb, not a noun."
+          },
+          {
+            "text": "team",
+            "_tagId": "noun",
+            "feedback": "Correct. 'Team' names a group, so it is a noun.",
+            "feedbackIncorrect": "\"Team\" names a group of people, so it is a noun, not a verb."
+          }
+        ]
+      }
+    ],
+    "_attempts": 1,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_shouldDisplayAttempts": false,
+    "_recordInteraction": true,
+    "_scoreLabel": "Tags identified",
+    "_showScore": true,
+    "_feedback": {
+      "correct": "Excellent! All tags correct.",
+      "_incorrect": "Not quite. Check the notes below each marked word to see why.",
+      "_partlyCorrect": "Close. Some tags are right - the notes below say which to rethink."
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-14",
+    "_parentId": "GAL-b-14",
+    "_type": "component",
+    "_component": "matching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Matching question",
+    "displayTitle": "Match each item to the correct category",
+    "body": "Choose the correct category for each item below.",
+    "instruction": "Select an option for each item, then select Submit.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "ariaQuestion": "Match each item to the correct category.",
+    "_attempts": 1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_hasItemScoring": false,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_shouldResetAllAnswers": true,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_allowOnlyUniqueAnswers": false,
+    "placeholder": "Select an option",
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Apple",
+        "_options": [
+          {
+            "text": "Fruit",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Vegetable",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Carrot",
+        "_options": [
+          {
+            "text": "Fruit",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Vegetable",
+            "_isCorrect": true,
+            "_score": 1
+          }
+        ]
+      },
+      {
+        "text": "Banana",
+        "_options": [
+          {
+            "text": "Fruit",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Vegetable",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      }
+    ],
+    "_feedback": {
+      "title": "",
+      "correct": "That's right. Each item is in its correct group.",
+      "_incorrect": {
+        "notFinal": "Not quite. Check each item again.",
+        "final": "Apple and banana are fruit; carrot is a vegetable."
+      },
+      "_partlyCorrect": {
+        "notFinal": "Some are right, but not all. Check the rest.",
+        "final": "Apple and banana are fruit; carrot is a vegetable."
+      }
+    }
+  },
+  {
+    "_id": "GAL-c-15",
+    "_parentId": "GAL-b-15",
+    "_type": "component",
+    "_component": "sortable",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Put the steps in order",
+    "displayTitle": "Put the steps in order",
+    "body": "These steps describe how to make a simple cup of tea, but they are out of sequence.",
+    "instruction": "Drag items to reorder, or use the keyboard (Enter to grab, arrows to move, Enter to drop). Then select Submit.",
+    "ariaQuestion": "Put the four steps for making a cup of tea in order, from first to last.",
+    "_attempts": -1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Boil the water in the kettle."
+      },
+      {
+        "text": "Place a tea bag in the mug."
+      },
+      {
+        "text": "Pour the hot water into the mug."
+      },
+      {
+        "text": "Let it steep, then remove the tea bag."
+      }
+    ],
+    "_feedback": {
+      "title": "",
+      "correct": "That is the right order. You boil the water, add the tea bag, pour the water, then let it steep before removing the bag.",
+      "_incorrect": {
+        "notFinal": "Not in order yet. Think about what has to happen first, since you cannot pour water before it has boiled. Try again.",
+        "final": ""
+      },
+      "_partlyCorrect": {
+        "notFinal": "Some steps are in the right place, but not all. Each step depends on the one before it. Try again.",
+        "final": ""
+      }
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-16",
+    "_parentId": "GAL-b-16",
+    "_type": "component",
+    "_component": "slider",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Slider",
+    "displayTitle": "Slider",
+    "body": "How confident are you with this topic?",
+    "instruction": "Drag the slider to make your choice, then select Submit.",
+    "ariaQuestion": "",
+    "ariaScaleName": "Confidence scale from 1 to 5.",
+    "_attempts": 1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "labelStart": "Not confident",
+    "labelEnd": "Very confident",
+    "_scaleStart": 1,
+    "_scaleEnd": 5,
+    "_scaleStep": 1,
+    "scaleStepPrefix": "",
+    "scaleStepSuffix": "",
+    "_correctAnswer": "",
+    "_correctRange": {
+      "_bottom": 4,
+      "_top": 5
+    },
+    "_showNumber": true,
+    "_showScaleIndicator": true,
+    "_showScale": true,
+    "_showScaleNumbers": true,
+    "_feedback": {
+      "title": "Feedback",
+      "altTitle": "",
+      "correct": "Great, you feel confident with this topic.",
+      "_incorrect": {
+        "notFinal": "",
+        "final": "Review the material to build your confidence."
+      }
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_component": "branching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Decision scenario",
+    "displayTitle": "Handling a late delivery",
+    "body": "A customer's order has not arrived. Work through the call - each choice leads somewhere different.",
+    "instruction": "Read the situation and choose a response to see what happens next.",
+    "_supportedLayout": "full-width",
+    "ariaRegion": "Decision scenario. Read each situation and choose a response to see what happens next.",
+    "_scenario": {
+      "_start": "s1",
+      "_nodes": {
+        "s1": {
+          "body": "A client calls because their order has not arrived. They sound annoyed. How do you respond?",
+          "_choices": [
+            {
+              "text": "Apologise and promise a same-day redelivery.",
+              "consequence": "The client calms down - but you have not checked whether same-day delivery is even possible.",
+              "_goto": "s2"
+            },
+            {
+              "text": "Ask for the order number and check what happened.",
+              "consequence": "You get the facts before acting. A steady start.",
+              "_goto": "s3"
+            },
+            {
+              "text": "Explain that deliveries are handled by another team.",
+              "consequence": "The client feels passed around, and more frustrated than before.",
+              "_goto": "poor"
+            }
+          ]
+        },
+        "s2": {
+          "body": "You check and find same-day delivery is not possible. The client is now expecting it. What now?",
+          "_choices": [
+            {
+              "text": "Call back and explain the delay honestly.",
+              "consequence": "Awkward, but being straight starts to rebuild trust.",
+              "_goto": "s3"
+            },
+            {
+              "text": "Send a standard email and hope they do not call.",
+              "consequence": "They call back - angrier - and it becomes a complaint.",
+              "_goto": "poor"
+            }
+          ]
+        },
+        "s3": {
+          "body": "You find the parcel is delayed in transit and will arrive tomorrow. What do you tell the client?",
+          "_choices": [
+            {
+              "text": "Give the real delivery date and offer a small goodwill gesture.",
+              "consequence": "Clear, honest and generous.",
+              "_goto": "good"
+            },
+            {
+              "text": "Tell them it is 'on its way' without a date.",
+              "consequence": "Vague reassurance - they are likely to call again.",
+              "_goto": "neutral"
+            }
+          ]
+        },
+        "good": {
+          "body": "The client thanks you. You kept them informed and set a realistic expectation - that is what rebuilds trust after a slip.",
+          "_outcome": "good"
+        },
+        "neutral": {
+          "body": "The issue is resolved, but the client is left unsure. A clear delivery date would have closed it properly.",
+          "_outcome": "neutral"
+        },
+        "poor": {
+          "body": "The call escalates into a formal complaint. The lesson: check the facts and set honest expectations before you promise anything.",
+          "_outcome": "poor"
+        }
+      }
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "GAL-c-17",
+    "_parentId": "GAL-b-17",
+    "_type": "component"
+  },
+  {
+    "_component": "ab-accordion",
+    "_supportedLayout": "full-width",
+    "title": "",
+    "displayTitle": "Accordion",
+    "body": "",
+    "instruction": "Open each panel.",
+    "_items": [
+      {
+        "_id": "i1",
+        "title": "First panel",
+        "body": "<p>The first panel body.</p>"
+      },
+      {
+        "_id": "i2",
+        "title": "Second panel",
+        "body": "<p>The second panel body.</p>"
+      }
+    ],
+    "_id": "GAL-c-18",
+    "_parentId": "GAL-b-18",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_id": "GAL-c-19",
+    "_parentId": "GAL-b-19",
+    "_type": "component",
+    "_component": "ab-callouts",
+    "_classes": "",
+    "_layout": "full",
+    "title": "What makes a prompt strong",
+    "displayTitle": "What makes a prompt strong",
+    "body": "<p>A strong prompt names three things. Each one makes the answer more useful.</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_variant": "neutral",
+    "_items": [
+      {
+        "title": "Role",
+        "text": "Tell the AI who to be, such as a patient tutor or a critical examiner.",
+        "_variant": "action"
+      },
+      {
+        "title": "Function",
+        "text": "Say exactly what to do, such as explain the method or quiz you on it.",
+        "_variant": "action"
+      },
+      {
+        "title": "Context",
+        "text": "Give your level, your module and the thing you find hard.",
+        "_variant": "action"
+      },
+      {
+        "title": "The one rule",
+        "text": "Ask for the method, not the answer, so the thinking stays yours.",
+        "_variant": "tip"
+      }
+    ]
+  },
+  {
+    "_component": "ab-hero",
+    "_supportedLayout": "full-width",
+    "title": "",
+    "displayTitle": "Hero heading",
+    "body": "<p>A hero banner with a short supporting line.</p>",
+    "instruction": "",
+    "_id": "GAL-c-20",
+    "_parentId": "GAL-b-20",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_id": "GAL-c-21",
+    "_parentId": "GAL-b-21",
+    "_type": "component",
+    "_component": "ab-hotgraphic",
+    "_classes": "",
+    "_layout": "full",
+    "title": "The practice as one cycle",
+    "displayTitle": "The practice as one cycle",
+    "body": "<p>Writing as a member of your discipline works as one continuing cycle, repeated each time you write. Select each part to see what it involves.</p>",
+    "instruction": "Select each part of the cycle.",
+    "_items": [
+      {
+        "_id": "step-1",
+        "title": "Recognise",
+        "body": "<p>Recognise that your field sets its own conventions, rather than following one universal standard.</p>",
+        "_hotspot": {
+          "_id": "step-1",
+          "_action": "popup"
+        }
+      },
+      {
+        "_id": "step-2",
+        "title": "Read",
+        "body": "<p>Read published work in your field as a writer, not only as a reader, to learn those conventions.</p>",
+        "_hotspot": {
+          "_id": "step-2",
+          "_action": "popup"
+        }
+      },
+      {
+        "_id": "step-3",
+        "title": "Draft",
+        "body": "<p>Draft in those conventions, using sources with a critical edge so they serve your own argument.</p>",
+        "_hotspot": {
+          "_id": "step-3",
+          "_action": "popup"
+        }
+      },
+      {
+        "_id": "step-4",
+        "title": "Check and carry",
+        "body": "<p>Check your writing against the work you admire, and carry what you learn into the next piece, so the cycle turns again.</p>",
+        "_hotspot": {
+          "_id": "step-4",
+          "_action": "popup"
+        }
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "_setCompletionOn": "allItems",
+    "_diagram": {
+      "src": "course/en/images/L04-cycle.svg",
+      "title": "Writing as a member of your discipline"
+    }
+  },
+  {
+    "_id": "GAL-c-22",
+    "_parentId": "GAL-b-22",
+    "_type": "component",
+    "_component": "accordion",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Explore the concept",
+    "displayTitle": "Getting started, step by step",
+    "body": "Four moves that take you from a task to a first draft. Open each to see the step.",
+    "instruction": "Select each heading to reveal it. Work through all four.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "title": "Read the steer",
+        "body": "The steer is the instruction word in the task: analyse, discuss, compare, evaluate. It tells you what kind of thinking the question wants. 'Describe' and 'evaluate' ask for very different essays, so the steer shapes everything that follows."
+      },
+      {
+        "title": "Find the keywords",
+        "body": "The keywords fix the topic and its limits: the specific terms, the time period, the place, the scope. Underlining them stops you writing a good essay on the wrong question, a common and costly mistake."
+      },
+      {
+        "title": "Make a rough plan",
+        "body": "A plan is a short map of your main points and the order they come in. It does not need to be neat. Its job is to turn a vague sense of what you want to say into a shape you can write to."
+      },
+      {
+        "title": "Get a draft down",
+        "body": "With a plan in front of you, write a quick first draft that follows it. Do not stop to perfect sentences. The aim is a complete rough version you can then improve, not a finished paragraph you are afraid to change."
+      }
+    ]
+  },
+  {
+    "_component": "annotated",
+    "_supportedLayout": "full-width",
+    "title": "",
+    "displayTitle": "Annotated passage",
+    "body": "",
+    "instruction": "Select a highlighted phrase to read its note.",
+    "_passage": [
+      {
+        "text": "This passage has ",
+        "_note": ""
+      },
+      {
+        "text": "an annotated phrase",
+        "_note": "This is the note attached to the highlighted phrase."
+      },
+      {
+        "text": " followed by ordinary text and ",
+        "_note": ""
+      },
+      {
+        "text": "a second annotation",
+        "_note": "A second note."
+      },
+      {
+        "text": " to finish.",
+        "_note": ""
+      }
+    ],
+    "_id": "GAL-c-23",
+    "_parentId": "GAL-b-23",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_id": "GAL-c-24",
+    "_parentId": "GAL-b-24",
+    "_type": "component",
+    "_component": "assessmentResults",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Results",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_assessmentId": "academic-writing-advanced-SUMM-a-01"
+  },
+  {
+    "_id": "GAL-c-25",
+    "_parentId": "GAL-b-25",
+    "_type": "component",
+    "_component": "blank",
+    "_classes": "",
+    "_isOptional": true,
+    "_layout": "full"
+  },
+  {
+    "_id": "GAL-c-26",
+    "_parentId": "GAL-b-26",
+    "_type": "component",
+    "_component": "checklist",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Reading for conventions",
+    "displayTitle": "How to do it",
+    "body": "Use these questions to characterise the conventions of writing in a field. Try them on a piece in your own discipline.",
+    "instruction": "Tick each item once you have tried it.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "text": "How visible is the writer? Do they argue in their own voice, or stay in the background?"
+      },
+      {
+        "text": "Is the vocabulary technical and spare, or rich and discursive?"
+      },
+      {
+        "text": "Does the structure follow a fixed template, or the logic of an argument?"
+      },
+      {
+        "text": "How closely are claims tied to data, evidence or sources?"
+      },
+      {
+        "text": "What counts as evidence here: results, texts, observation, something else?"
+      },
+      {
+        "text": "Which of these features would read as wrong in a different discipline?"
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-27",
+    "_parentId": "GAL-b-27",
+    "_type": "component",
+    "_component": "confidence",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Confidence check",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "Before you start, rate how confident you feel about each statement. There are no right or wrong answers.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_mode": "pre",
+    "_selfAssessmentGroupId": "academic-writing-advanced",
+    "_scale": {
+      "_labels": [
+        "Not at all confident",
+        "Slightly confident",
+        "Fairly confident",
+        "Confident",
+        "Very confident"
+      ]
+    },
+    "_preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed.",
+    "_items": [
+      {
+        "_id": "co1",
+        "text": "I can explain how writing conventions vary across disciplines and characterise those of my own."
+      },
+      {
+        "_id": "co2",
+        "text": "I can appraise published writing in my discipline to work out its conventions."
+      },
+      {
+        "_id": "co3",
+        "text": "I can integrate sources with a critical edge so that my writing advances my own argument."
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-28",
+    "_parentId": "GAL-b-28",
+    "_type": "component",
+    "_component": "gmcq",
+    "_classes": "",
+    "_layout": "full",
+    "title": "GMCQ",
+    "displayTitle": "GMCQ",
+    "body": "Which of the following options would you consider to be correct?",
+    "instruction": "Choose {{#if _isRadio}}one option{{else}}one or more options{{/if}} then select Submit.",
+    "ariaQuestion": "",
+    "_attempts": 1,
+    "_shouldDisplayAttempts": false,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_columns": 3,
+    "_isRound": false,
+    "_items": [
+      {
+        "text": "This is option 1.",
+        "altText": "",
+        "_shouldBeSelected": true,
+        "_isPartlyCorrect": false,
+        "_graphic": {
+          "alt": "",
+          "attribution": "Copyright © 2019",
+          "large": "course/en/images/gqcq-1-large.gif",
+          "small": "course/en/images/gqcq-1-small.gif"
+        }
+      },
+      {
+        "text": "This is option 2.",
+        "_shouldBeSelected": false,
+        "_isPartlyCorrect": false,
+        "_graphic": {
+          "alt": "",
+          "attribution": "",
+          "large": "course/en/images/gqcq-2-large.gif",
+          "small": "course/en/images/gqcq-2-small.gif"
+        }
+      }
+    ],
+    "_feedback": {
+      "title": "Feedback title",
+      "altTitle": "Alt feedback text",
+      "correct": "Congratulations, this is the correct feedback.",
+      "_incorrect": {
+        "notFinal": "",
+        "final": "Unfortunately this is the incorrect feedback."
+      },
+      "_partlyCorrect": {
+        "notFinal": "",
+        "final": "This is the partly correct feedback."
+      }
+    },
+    "_comment": "You only need to include _buttons if you want to override the button labels that are set in course.json",
+    "_buttons": {
+      "_submit": {
+        "buttonText": "Submit",
+        "ariaLabel": "Select here to submit your answer."
+      },
+      "_reset": {
+        "buttonText": "Reset",
+        "ariaLabel": ""
+      },
+      "_showCorrectAnswer": {
+        "buttonText": "Correct Answer",
+        "ariaLabel": ""
+      },
+      "_hideCorrectAnswer": {
+        "buttonText": "My Answer",
+        "ariaLabel": ""
+      },
+      "_showFeedback": {
+        "buttonText": "Show feedback",
+        "ariaLabel": ""
+      },
+      "remainingAttemptsText": "attempts remaining",
+      "remainingAttemptText": "final attempt"
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    }
+  },
+  {
+    "_id": "GAL-c-29",
+    "_parentId": "GAL-b-29",
+    "_type": "component",
+    "_component": "graphic",
+    "_classes": "",
+    "_layout": "left",
+    "title": "Here is a graphic object",
+    "displayTitle": "Here is a graphic object",
+    "body": "Hi everybody!",
+    "instruction": "",
+    "_graphic": {
+      "alt": "",
+      "longdescription": "",
+      "large": "https://github.com/adaptlearning/documentation/raw/master/04_wiki_assets/adapt_framework/adapt-logo_208x200.gif",
+      "small": "http://minionslovebananas.com/images/check-in-minion.jpg",
+      "attribution": "Copyright © 2019",
+      "_url": "",
+      "_target": "_blank"
+    },
+    "_isScrollable": false,
+    "_defaultScrollPercent": 0,
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    }
+  },
+  {
+    "_id": "GAL-c-30",
+    "_parentId": "GAL-b-30",
+    "_type": "component",
+    "_component": "growCloze",
+    "_classes": "",
+    "_layout": "full",
+    "displayTitle": "Fill the blanks",
+    "body": "<p>Complete the sentence about paragraph structure.</p>",
+    "instruction": "Choose a word for each blank to complete the sentence, then select Check.",
+    "text": "A paragraph usually opens with a [[1]] sentence and ends with a [[2]] that links to the next idea.",
+    "_blanks": [
+      {
+        "_options": [
+          "topic",
+          "concluding"
+        ],
+        "_answer": "topic"
+      },
+      {
+        "_options": [
+          "transition",
+          "quotation"
+        ],
+        "_answer": "transition"
+      }
+    ],
+    "_isCompletionBearing": true
+  },
+  {
+    "_id": "GAL-c-31",
+    "_parentId": "GAL-b-31",
+    "_type": "component",
+    "_component": "growExpandingLinks",
+    "_classes": "",
+    "_layout": "full",
+    "_isCompletionBearing": true,
+    "_completionCriteria": "allStepsComplete",
+    "_labelDisplay": "expandOnActive",
+    "displayTitle": "A short worked sequence",
+    "body": "Work through each step in turn. You can revisit any step at any time.",
+    "instruction": "Select a step to open it, then mark it complete.",
+    "_steps": [
+      {
+        "_icon": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3 11 12 3l9 8M6 10v11h12V10M10 21v-7h4v7\"/></svg>",
+        "label": "Explore",
+        "body": "<h3>Explore the situation</h3><p>Read the scenario and note what stands out to you.</p>"
+      },
+      {
+        "_icon": "edit",
+        "label": "Try",
+        "body": "<h3>Try it yourself</h3><p>Attempt the task using what you have just read.</p>"
+      },
+      {
+        "_icon": "lightbulb",
+        "label": "Reflect",
+        "body": "<h3>Reflect and transfer</h3><p>How would you apply this to your own practice next time?</p>"
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-32",
+    "_parentId": "GAL-b-32",
+    "_type": "component",
+    "_component": "growLevels",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A prompting session, move by move",
+    "displayTitle": "A prompting session, move by move",
+    "body": "<p>A good session is a dialogue, not one question. Open each move to see how it builds on the last.</p>",
+    "instruction": "Open any move to read it. You can keep more than one open at once.",
+    "_setCompletionOn": "allOpened",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "_tone": "neutral",
+        "title": "Move 1: Open with a framed prompt",
+        "body": "<p>Set a role, a clear task and your context, then send your first prompt.</p>",
+        "advice": "In practice: name who the AI should be, what you want it to do, and your level and module. A framed prompt earns a sharper first answer."
+      },
+      {
+        "_tone": "neutral",
+        "title": "Move 2: Ask for the method",
+        "body": "<p>Ask the AI to show the steps or the reasoning, not just the final answer.</p>",
+        "advice": "In practice: add \"show me how to work it out, do not just give the answer\". You learn the method, and you can check each step."
+      },
+      {
+        "_tone": "neutral",
+        "title": "Move 3: Push back",
+        "body": "<p>Challenge a weak point, or ask the AI to critique its own answer.</p>",
+        "advice": "In practice: try \"what is the weakest part of that?\" or \"give me the counter-argument\". Pushing back surfaces gaps and deepens the dialogue."
+      },
+      {
+        "_tone": "neutral",
+        "title": "Move 4: Apply it yourself",
+        "body": "<p>Close the tool and redo the task in your own words to check you have learnt it.</p>",
+        "advice": "In practice: the real test is what you can do with the tool closed. If you cannot, go back a move and work it through again."
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-33",
+    "_parentId": "GAL-b-33",
+    "_type": "component",
+    "_component": "growMemory",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Memory match",
+    "displayTitle": "Match the pairs",
+    "body": "Turn the tiles over two at a time to find the matching pairs.",
+    "instruction": "Select a tile to turn it over, then find its pair. Matched pairs stay face up; a mismatch turns back over so you can try again.",
+    "_isCompletionBearing": true,
+    "_columns": 0,
+    "_items": [
+      {
+        "icon": "lightbulb",
+        "alt": "Idea"
+      },
+      {
+        "icon": "psychology",
+        "alt": "Thinking"
+      },
+      {
+        "text": "Why?",
+        "alt": "Question"
+      },
+      {
+        "icon": "done_all",
+        "text": "Check",
+        "alt": "Review"
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-34",
+    "_parentId": "GAL-b-34",
+    "_type": "component",
+    "_component": "growOutcomes",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Learning outcomes",
+    "displayTitle": "",
+    "body": "<p>By the end of this course, you will be able to:</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "text": "explain how writing conventions vary across disciplines and characterise those of your own"
+      },
+      {
+        "text": "appraise published writing in your discipline to work out its conventions"
+      },
+      {
+        "text": "integrate sources with a critical edge so that your writing advances your own argument."
+      }
+    ],
+    "_revealButtonText": "Reveal next outcome"
+  },
+  {
+    "_id": "GAL-c-35",
+    "_parentId": "GAL-b-35",
+    "_type": "component",
+    "_component": "growPromptBuilder",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Explore the concept",
+    "displayTitle": "Build a learning prompt",
+    "body": "<p>A strong learning prompt names who the AI should be, what it should do, and your own context. Build one below, then copy it and try it in a real AI tool.</p>",
+    "instruction": "Pick a chip, choose from the list, or type your own in each part.",
+    "_assembleTemplate": "Act as {role}. {function}. Context: my level is {level}, I am working on {module}, and I find {difficulty} hard.",
+    "_assembledLabel": "Your prompt",
+    "_copyText": "Copy prompt",
+    "_clearText": "Clear",
+    "_whyText": "A role, a clear task and your own context make the answer specific - and asking for the method, not the answer, keeps the thinking yours.",
+    "_setCompletionOn": "allFilled",
+    "_parts": [
+      {
+        "_key": "role",
+        "label": "Role",
+        "help": "What should the AI act as?",
+        "placeholder": "Act as...",
+        "_chips": [
+          "a supportive tutor for a first-year",
+          "a critical friend who challenges my reasoning",
+          "an expert examiner in my field"
+        ]
+      },
+      {
+        "_key": "function",
+        "label": "Function",
+        "help": "What should it do, exactly?",
+        "placeholder": "Explain / quiz / critique...",
+        "_chips": [
+          "explain the method step by step, not just the answer",
+          "give me a structural checklist, do not write it for me",
+          "quiz me, then tell me what I misunderstood"
+        ]
+      },
+      {
+        "_key": "level",
+        "label": "Your level",
+        "help": "Choose where you are studying.",
+        "placeholder": "Choose your level...",
+        "_type": "select",
+        "_options": [
+          "Level 3: Foundation year",
+          "Level 4: first-year undergraduate",
+          "Level 5: second-year undergraduate",
+          "Level 6: final-year undergraduate",
+          "Level 7: Master's",
+          "Level 8: Doctoral"
+        ]
+      },
+      {
+        "_key": "module",
+        "label": "Module or topic",
+        "help": "The module or topic you are working on.",
+        "placeholder": "e.g. the topic you are revising"
+      },
+      {
+        "_key": "difficulty",
+        "label": "What you find hard",
+        "help": "The specific thing you are stuck on.",
+        "placeholder": "e.g. telling two key terms apart"
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-36",
+    "_parentId": "GAL-b-36",
+    "_type": "component",
+    "_component": "growWizard",
+    "_classes": "",
+    "_layout": "full",
+    "title": "How to plan an essay",
+    "displayTitle": "How to plan an essay",
+    "body": "<p>Work through each step in order. The progress bar fills as you go.</p>",
+    "instruction": "Move through the steps with the Back and Next buttons.",
+    "_isCompletionBearing": true,
+    "_steps": [
+      {
+        "label": "Intro",
+        "body": "<p>Here is what this short guide covers and why it helps you plan before you write.</p>"
+      },
+      {
+        "label": "Explore",
+        "body": "<p>Look at a worked example so you can see the shape of a plan before you build your own.</p>"
+      },
+      {
+        "label": "Practise",
+        "body": "<p>Sketch a quick plan for your own question. Three or four points is plenty to start.</p>"
+      },
+      {
+        "label": "Review",
+        "body": "<p>Check your plan answers the question and that each point earns its place. You are ready to write.</p>"
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-37",
+    "_parentId": "GAL-b-37",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "knowledge-check-question",
+    "_layout": "full",
+    "title": "Formative check: no single academic writing",
+    "displayTitle": "Why is it misleading to talk about 'academic writing' as a single skill?",
+    "body": "",
+    "instruction": "Choose one option and select Submit.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "ariaQuestion": "Why is it misleading to treat academic writing as a single skill?",
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Because each discipline sets its own conventions for style, vocabulary and structure.",
+        "_shouldBeSelected": true,
+        "feedback": "Yes. Writing is situated in a field, and its conventions are local to that field."
+      },
+      {
+        "text": "Because some students write well and others do not, whatever the subject.",
+        "_shouldBeSelected": false,
+        "feedback": "The point is not about individual ability; it is that conventions differ by field."
+      },
+      {
+        "text": "Because academic writing is really just the same as good writing in general.",
+        "_shouldBeSelected": false,
+        "feedback": "That is the assumption the lesson rejects: there is no single standard above every subject."
+      },
+      {
+        "text": "Because only the sciences have strict rules for writing.",
+        "_shouldBeSelected": false,
+        "feedback": "Every discipline has conventions, not only the sciences; they simply differ."
+      }
+    ],
+    "_attempts": 3,
+    "_shouldDisplayAttempts": true,
+    "_isRandom": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_feedback": {
+      "title": "",
+      "correct": "That's right. Academic writing is not monolithic: each field sets its own conventions.",
+      "_incorrect": {
+        "notFinal": "Not quite. Think about what varies between a chemist's writing and a historian's.",
+        "final": "Academic writing is not one skill because each discipline sets its own conventions for style, vocabulary and structure."
+      },
+      "_partlyCorrect": {
+        "notFinal": "",
+        "final": ""
+      }
+    },
+    "_isPartOfAssessment": false
+  },
+  {
+    "_id": "GAL-c-38",
+    "_parentId": "GAL-b-38",
+    "_type": "component",
+    "_component": "media",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Title of the media component",
+    "displayTitle": "Title of the media component",
+    "body": "This is optional body text.",
+    "instruction": "Select the play button to start the video.",
+    "_comment": "_startLanguage = none | en | fr | ...",
+    "_setCompletionOn": "play",
+    "_useClosedCaptions": true,
+    "_allowFullScreen": true,
+    "_pauseWhenOffScreen": false,
+    "_playsinline": false,
+    "_preventForwardScrubbing": false,
+    "_startLanguage": "en",
+    "_showVolumeControl": true,
+    "_startVolume": "80%",
+    "_aspectRatio": "landscape",
+    "_offsetMediaControls": false,
+    "_media": {
+      "mp4": "course/assets/big_buck_bunny.mp4",
+      "ogv": "course/assets/big_buck_bunny.ogv",
+      "poster": "course/assets/big-buck-bunny.jpg",
+      "cc": [
+        {
+          "srclang": "en",
+          "src": "course/en/video/big_buck_bunny_sub.vtt"
+        },
+        {
+          "srclang": "pl",
+          "src": "course/en/video/big_buck_bunny_sub-pl.vtt"
+        }
+      ]
+    },
+    "_transcript": {
+      "_setCompletionOnView": true,
+      "_inlineTranscript": true,
+      "_externalTranscript": false,
+      "inlineTranscriptButton": "Transcript",
+      "inlineTranscriptCloseButton": "Close Transcript",
+      "inlineTranscriptBody": "Transcript body text should go here",
+      "transcriptLinkButton": "Transcript",
+      "transcriptLink": "assets/transcript.pdf"
+    },
+    "_playerOptions": {
+      "poster": "",
+      "showPosterWhenEnded": false,
+      "defaultVideoWidth": 480,
+      "defaultVideoHeight": 270,
+      "videoWidth": -1,
+      "videoHeight": -1,
+      "defaultAudioWidth": 400,
+      "defaultAudioHeight": 30,
+      "defaultSeekBackwardInterval": "(media.duration * 0.05)",
+      "defaultSeekForwardInterval": "(media.duration * 0.05)",
+      "audioWidth": -1,
+      "audioHeight": -1,
+      "startVolume": 0.8,
+      "loop": false,
+      "autoRewind": true,
+      "enableAutosize": true,
+      "alwaysShowHours": false,
+      "showTimecodeFrameCount": false,
+      "framesPerSecond": 25,
+      "autosizeProgress": true,
+      "alwaysShowControls": true,
+      "hideVideoControlsOnLoad": false,
+      "clickToPlayPause": true,
+      "iPadUseNativeControls": false,
+      "iPhoneUseNativeControls": false,
+      "AndroidUseNativeControls": false,
+      "features": [
+        "playpause",
+        "current",
+        "progress",
+        "duration",
+        "tracks",
+        "volume",
+        "fullscreen",
+        "speed",
+        "jumpforward",
+        "skipback"
+      ],
+      "isVideo": true,
+      "enableKeyboard": true,
+      "pauseOtherPlayers": true,
+      "tracksText": "mejs.i18n.t('Captions/Subtitles')",
+      "hideCaptionsButtonWhenEmpty": true,
+      "toggleCaptionsButtonWhenOnlyOne": false,
+      "slidesSelector": ""
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    }
+  },
+  {
+    "_id": "GAL-c-39",
+    "_parentId": "GAL-b-39",
+    "_type": "component",
+    "_component": "narrative",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Narrative",
+    "displayTitle": "Narrative",
+    "body": "This is optional body text.",
+    "instruction": "Select the next and back arrows to find out more.",
+    "mobileInstruction": "Select the plus icon followed by the next arrow to find out more.",
+    "_hasNavigationInTextArea": false,
+    "_comment": "setCompletionOn = inview | allItems",
+    "_setCompletionOn": "allItems",
+    "_isTextBelowImage": false,
+    "_isMobileTextBelowImage": false,
+    "_isStackedOnMobile": false,
+    "_items": [
+      {
+        "title": "Narrative item 1 title",
+        "body": "This is display text 1. If viewing on desktop or tablet, this text will appear to the right of the image. On mobile, you’ll need to select the plus icon to reveal this text.",
+        "_graphic": {
+          "src": "course/en/images/image-slider-1.jpg",
+          "alt": "",
+          "attribution": "Copyright © 2019"
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Narrative item 2 title",
+        "body": "This is display text 2.",
+        "_graphic": {
+          "src": "course/en/images/image-slider-2.jpg",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      },
+      {
+        "title": "Narrative item 3 title",
+        "body": "This is display text 3.",
+        "_graphic": {
+          "src": "course/en/images/image-slider-3.jpg",
+          "alt": "",
+          "attribution": ""
+        },
+        "strapline": ""
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true
+    }
+  },
+  {
+    "_id": "GAL-c-40",
+    "_parentId": "GAL-b-40",
+    "_type": "component",
+    "_component": "opentext",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Reflective prompt",
+    "displayTitle": "",
+    "body": "<p>Think of a recent piece you wrote in your own subject. Which features of it belong to your discipline rather than to writing in general? Name one convention your field expects that another field might not.</p>",
+    "instruction": "Write a few sentences for yourself. This is not marked, and there are no right answers.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "GAL-c-41",
+    "_parentId": "GAL-b-41",
+    "_type": "component",
+    "_component": "references",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Lesson Sources",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "This lesson draws on the following source.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "title": "See pages 136 to 144 of Chapter 9, 'Writing for assessment', of Excelling at University by Dennis and Abbott (2026).",
+        "href": "#",
+        "type": "book",
+        "permalink": ""
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-42",
+    "_parentId": "GAL-b-42",
+    "_type": "component",
+    "_component": "tabs",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Explore the concept",
+    "displayTitle": "The basics of a good revision",
+    "body": "Four parts of revising a draft. Select each tab to see what it asks you to do.",
+    "instruction": "Select each tab to read about that part.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "tabTitle": "Structure",
+        "title": "Structure",
+        "body": "Structure is the order your points come in and how they connect. At the macro level it is the overall arrangement of the whole piece; at the micro level it is how each paragraph opens and links to the next. A reader should always be able to see what a paragraph is about and how it follows on."
+      },
+      {
+        "tabTitle": "Clarity",
+        "title": "Clarity",
+        "body": "Clarity is writing a reader understands first time. A reliable move is the subject-verb-object sentence: say who did what to what, in that order. Using the active voice ('the owner locked the door') rather than the passive ('the door was locked') usually gives a sentence more impact and leaves less to guess."
+      },
+      {
+        "tabTitle": "Editing",
+        "title": "Editing",
+        "body": "Editing is where the real improvement happens. It means deleting text, adding it, changing how you express things, and creating new paragraphs. It works on the substance and shape of the writing, not just its surface, and it is worth far more than a quick read-through."
+      },
+      {
+        "tabTitle": "Proofreading",
+        "title": "Proofreading",
+        "body": "Proofreading comes last. It is polishing the text: eliminating typos and the superficial errors that are easy to correct once the writing itself is settled. It is not the same as editing, and doing only this is why many drafts still read poorly."
+      }
+    ]
+  },
+  {
+    "_id": "GAL-c-43",
+    "_parentId": "GAL-b-43",
+    "_type": "component",
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Overview and justification",
+    "displayTitle": "",
+    "body": "<p>This course is about writing as a member of your discipline. By now you can work through the writing process and get a draft structured and clear. The step this course takes is different. It treats academic writing not as one universal skill but as a practice shaped by the field you write in.</p><p>By the end you will be able to explain how writing conventions vary across disciplines and characterise your own, appraise published writing to work out its conventions, and integrate sources with a critical edge so that your writing advances an argument of your own.</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_component": "timeline",
+    "_supportedLayout": "full-width",
+    "title": "",
+    "displayTitle": "Timeline",
+    "body": "",
+    "instruction": "Move through the events.",
+    "_items": [
+      {
+        "label": "Step one",
+        "title": "First event",
+        "body": "<p>What happens first.</p>"
+      },
+      {
+        "label": "Step two",
+        "title": "Second event",
+        "body": "<p>What happens next.</p>"
+      },
+      {
+        "label": "Step three",
+        "title": "Third event",
+        "body": "<p>And finally this.</p>"
+      }
+    ],
+    "_id": "GAL-c-44",
+    "_parentId": "GAL-b-44",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_id": "GAL-c-45",
+    "_parentId": "GAL-b-45",
+    "_type": "component",
+    "_component": "textinput",
+    "_layout": "full",
+    "_classes": "",
+    "title": "",
+    "displayTitle": "Text input",
+    "body": "",
+    "instruction": "Type a word and submit.",
+    "_supportedLayout": "full-width",
+    "_attempts": 1,
+    "_canShowModelAnswer": true,
+    "_canShowFeedback": true,
+    "_allowsAnyCase": true,
+    "_allowsPunctuation": true,
+    "_items": [
+      {
+        "_answers": [
+          "adapt"
+        ],
+        "prefix": "",
+        "suffix": "",
+        "placeholder": "Type a word"
+      }
+    ],
+    "_feedback": {
+      "correct": "<p>Correct.</p>",
+      "_incorrect": {
+        "final": "<p>Not quite.</p>",
+        "notFinal": "<p>Try again.</p>"
+      }
+    }
+  },
+  {
+    "displayTitle": "Callout notes",
+    "body": "Cards carrying a semantic tone and a Material Symbol icon.",
+    "instruction": "",
+    "_items": [
+      {
+        "_id": "cn-1",
+        "_variant": "positive",
+        "title": "Do this",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "cn-2",
+        "_variant": "negative warn",
+        "title": "Watch out",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "cn-3",
+        "_variant": "neutral",
+        "title": "Good to know",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "cn-4",
+        "_variant": "positive advise",
+        "title": "Tip",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      }
+    ],
+    "_id": "GAL-c-46",
+    "_parentId": "GAL-b-46",
+    "_type": "component",
+    "_component": "ab-card",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "displayTitle": "A sequence",
+    "body": "The same card component used as an ordered sequence.",
+    "instruction": "",
+    "_classes": "ab-card--rag",
+    "_items": [
+      {
+        "_id": "seq-1",
+        "title": "Step 1",
+        "subtitle": "Stage 1 of 3",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "seq-2",
+        "title": "Step 2",
+        "subtitle": "Stage 2 of 3",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      },
+      {
+        "_id": "seq-3",
+        "title": "Step 3",
+        "subtitle": "Stage 3 of 3",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+      }
+    ],
+    "_id": "GAL-c-47",
+    "_parentId": "GAL-b-47",
+    "_type": "component",
+    "_component": "ab-card",
+    "_layout": "full"
+  },
+  {
+    "_id": "GAL-c-48",
+    "_parentId": "GAL-b-48",
+    "_type": "component",
+    "_component": "annotate",
+    "_layout": "full",
+    "_classes": "",
+    "displayTitle": "Free selection",
+    "instruction": "Pick a tool, then select the word or phrase that plays that role (drag, or double-click a word). Click a mark to remove it. Then Submit.",
+    "_freeSelect": true,
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one recent study, nine out of ten students found more mistakes when reading aloud, which suggests the habit is worth building. The effect might not hold for everyone, and some readers may prefer to annotate instead.",
+    "_tools": [
+      {
+        "_id": "claim",
+        "label": "Claim",
+        "_mark": "box",
+        "_color": "accent"
+      },
+      {
+        "_id": "evidence",
+        "label": "Evidence",
+        "_mark": "box",
+        "_color": "positive"
+      },
+      {
+        "_id": "hedge",
+        "label": "Hedge",
+        "_mark": "box",
+        "_color": "neutral"
+      },
+      {
+        "_id": "important",
+        "label": "Important!",
+        "_mark": "exclaim",
+        "_color": "comment"
+      }
+    ],
+    "_isQuestion": true,
+    "_targets": [
+      {
+        "text": "helps",
+        "tool": "claim"
+      },
+      {
+        "text": "nine out of ten",
+        "tool": "evidence"
+      },
+      {
+        "text": "might",
+        "tool": "hedge"
+      },
+      {
+        "text": "suggests",
+        "tool": "hedge"
+      }
+    ],
+    "_minAnnotations": 4,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_feedback": {
+      "correct": "Spot on — you found every one.",
+      "_incorrect": "Close — check the notes below."
+    }
+  }
+]

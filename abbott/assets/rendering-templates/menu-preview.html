@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu template preview</title>
+    <!--
+      menu-preview.html — a standalone harness for DESIGNING grow-menu.css.
+      Not a generated artifact and not shipped to Adapt. It embeds the same
+      markup as menu-template.html and loads grow-menu.css so the menu can be
+      viewed and iterated in a plain browser. The .icon-* glyphs are mapped to
+      Material Symbols HERE ONLY; in the real course they come from the theme's
+      vendor icon font. Edit grow-menu.css to restyle; keep the class hooks.
+    -->
+    <link rel="stylesheet" href="./grow-menu.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+    >
+    <style>
+      :root {
+        color-scheme: light;
+        font: 100%/1.6 system-ui, sans-serif;
+        color: #18313b;
+        background: #f2f5f4;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: clamp(1rem, 4vw, 3rem) 1rem; }
+
+      /* Preview-only: render the vendor .icon-* classes with Material Symbols. */
+      .grow-menu .icon::before {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+      .icon-learning::before { content: "school"; }
+      .icon-structure::before { content: "account_tree"; }
+      .icon-assessment::before { content: "assignment"; }
+      .icon-feedback::before { content: "reviews"; }
+      .icon-cycle::before { content: "autorenew"; }
+      .icon-lock::before { content: "lock"; }
+    </style>
+  </head>
+  <body>
+    <nav class="menu grow-menu grow-menu--icons" aria-label="Understanding learning, assessment &amp; feedback">
+      <h1 class="menu__title grow-menu__heading">Understanding learning, assessment &amp; feedback</h1>
+      <ul class="menu__items grow-menu__items">
+        <li class="menu__item grow-menu__item is-complete" data-adapt-id="co-01" data-state="complete">
+          <a class="menu__item-link grow-menu__link" href="#/id/co-01">
+            <span class="grow-menu__icon" aria-hidden="true">
+              <span class="icon icon-learning"></span>
+            </span>
+            <span class="grow-menu__text">
+              <span class="grow-menu__subtitle">Lesson 1</span>
+              <span class="grow-menu__title">Learning at university</span>
+            </span>
+            <span class="progress-meter" style="--meter-size:44px" role="img" aria-label="Learning at university: 100% complete">
+              <svg class="progress-meter__svg" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+                <circle class="progress-meter__track" cx="22" cy="22" r="20" fill="none" stroke-width="4"></circle>
+                <circle class="progress-meter__value" cx="22" cy="22" r="20" fill="none" stroke-width="4" stroke-dasharray="125.66" stroke-dashoffset="0.00" stroke-linecap="round" transform="rotate(-90 22 22)"></circle>
+              </svg>
+              <span class="progress-meter__pct" aria-hidden="true">100%</span>
+            </span>
+          </a>
+        </li>
+        <li class="menu__item grow-menu__item is-in-progress" data-adapt-id="co-02" data-state="in-progress">
+          <a class="menu__item-link grow-menu__link" href="#/id/co-02" aria-current="step">
+            <span class="grow-menu__icon" aria-hidden="true">
+              <span class="icon icon-structure"></span>
+            </span>
+            <span class="grow-menu__text">
+              <span class="grow-menu__subtitle">Lesson 2</span>
+              <span class="grow-menu__title">How university learning is structured</span>
+            </span>
+            <span class="progress-meter" style="--meter-size:44px" role="img" aria-label="How university learning is structured: 40% complete">
+              <svg class="progress-meter__svg" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+                <circle class="progress-meter__track" cx="22" cy="22" r="20" fill="none" stroke-width="4"></circle>
+                <circle class="progress-meter__value" cx="22" cy="22" r="20" fill="none" stroke-width="4" stroke-dasharray="125.66" stroke-dashoffset="75.40" stroke-linecap="round" transform="rotate(-90 22 22)"></circle>
+              </svg>
+              <span class="progress-meter__pct" aria-hidden="true">40%</span>
+            </span>
+          </a>
+        </li>
+        <li class="menu__item grow-menu__item is-not-started" data-adapt-id="co-03" data-state="not-started">
+          <a class="menu__item-link grow-menu__link" href="#/id/co-03">
+            <span class="grow-menu__icon" aria-hidden="true">
+              <span class="icon icon-assessment"></span>
+            </span>
+            <span class="grow-menu__text">
+              <span class="grow-menu__subtitle">Lesson 3</span>
+              <span class="grow-menu__title">Assessment at university</span>
+            </span>
+            <span class="progress-meter" style="--meter-size:44px" role="img" aria-label="Assessment at university: 0% complete">
+              <svg class="progress-meter__svg" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+                <circle class="progress-meter__track" cx="22" cy="22" r="20" fill="none" stroke-width="4"></circle>
+                <circle class="progress-meter__value" cx="22" cy="22" r="20" fill="none" stroke-width="4" stroke-dasharray="125.66" stroke-dashoffset="125.66" stroke-linecap="round" transform="rotate(-90 22 22)"></circle>
+              </svg>
+              <span class="progress-meter__pct" aria-hidden="true">0%</span>
+            </span>
+          </a>
+        </li>
+        <li class="menu__item grow-menu__item is-locked" data-adapt-id="co-04" data-state="locked">
+          <a class="menu__item-link grow-menu__link" aria-disabled="true">
+            <span class="grow-menu__icon" aria-hidden="true">
+              <span class="icon icon-feedback"></span>
+            </span>
+            <span class="grow-menu__text">
+              <span class="grow-menu__subtitle">Lesson 4</span>
+              <span class="grow-menu__title">Feedback at university</span>
+            </span>
+            <span class="grow-menu__lock icon icon-lock" aria-label="Locked" role="img"></span>
+          </a>
+        </li>
+        <li class="menu__item grow-menu__item is-locked" data-adapt-id="co-05" data-state="locked">
+          <a class="menu__item-link grow-menu__link" aria-disabled="true">
+            <span class="grow-menu__icon" aria-hidden="true">
+              <span class="icon icon-cycle"></span>
+            </span>
+            <span class="grow-menu__text">
+              <span class="grow-menu__subtitle">Lesson 5</span>
+              <span class="grow-menu__title">The learning, assessment &amp; feedback cycle</span>
+            </span>
+            <span class="grow-menu__lock icon icon-lock" aria-label="Locked" role="img"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

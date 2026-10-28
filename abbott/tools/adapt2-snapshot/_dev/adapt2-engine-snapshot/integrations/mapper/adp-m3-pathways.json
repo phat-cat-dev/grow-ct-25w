@@ -1,0 +1,67 @@
+{
+  "profile": "adp-m3-pathways",
+  "version": "0.1.0",
+  "kind": "align",
+  "owner": "adp",
+  "note": "DRAFT by ADAPT nts, 2 October 2026 (nts N-0289), from ADAPT's ruled method; lands in the repository at integrations/mapper/ by a numbered prompt; a profile describes the method and changes nothing in it. Target is the pathway; each statement also names one capability card element (SCE-1), carried as the record's `element`, which mapper 0.1.0 does not check",
+  "method": {
+    "rulings": [
+      "PLT-1 (the mapping flow S0 to S5)",
+      "SFS-1 (a student-facing statement for every statement, written during mapping)",
+      "CNF-1 (independent review agent; review and sample)",
+      "SCE-1 (the element is the statement's normalised skill label)",
+      "SRB-1 (summaries rest only on chunks in the same pathway)",
+      "QV-TAG-2 (direct and indirect)",
+      "D-0026 (confirmation by review and sample)",
+      "D-0028 (term list v2)",
+      "D-0030 (the pilot texts)",
+      "ADP-6 when landed (the cards rule)"
+    ],
+    "rules": "tools/pathways/core/rules/source-mapping-rules.md v1.2 (RJ-0033, not yet written)"
+  },
+  "sources": {
+    "set": "units.jsonl: every included chunk of the run's benchmarks, text from the normalised text by offsets",
+    "unit": "chunk",
+    "docOf": "^(.*)/[^/]+$"
+  },
+  "target": {
+    "scheme": "path pathways (catalogue ids), tag path-<pathway-id> under rules v1.2",
+    "pin": "<the ruled capability cards file and its SHA-256; for a trial only, adp-0212-capability-cards.json a1662f81eb802351a775ca8e76ccdcbf0b8fd187f870df8511e4119154cf28aa, marked trial>"
+  },
+  "candidates": {
+    "mode": "terms",
+    "terms": "<term list v2 (D-0028: RJ-0031's 9 corrections and 5 drops applied, 139 kept) as {pathway-id: {direct: ['/pattern/i', ...]}}>",
+    "scope": "<the ruled capability cards, as the scope elements>",
+    "rules": [
+      "strength direct or indirect (QV-TAG-2)",
+      "an indirect statement names the element it evidences",
+      "the 9 provisional terms (over 10% of chunks) reported kept and dropped"
+    ]
+  },
+  "judgement": {
+    "prompt": "align",
+    "answer": "record",
+    "write": "statement",
+    "statementRules": "second person, the student's skill, never attributed to the benchmark, generalised to the discipline (SFS-1, BNA-1)"
+  },
+  "evidence": {
+    "quote": "required",
+    "cite": "chunk",
+    "words": "4 to 25 (ADAPT rule)"
+  },
+  "output": {
+    "relation": "evidences",
+    "fields": [
+      "strength",
+      "element",
+      "whyItMatters"
+    ]
+  },
+  "confirmation": {
+    "who": "abbott",
+    "flags": "all",
+    "sample": 0.1,
+    "independent": true,
+    "note": "D-0026 asks for 10%, minimum 10, at least one per pathway covered; mapper 0.1.0 takes a share or n per source, so the sitting tops the sample up to meet D-0026 and says so"
+  }
+}

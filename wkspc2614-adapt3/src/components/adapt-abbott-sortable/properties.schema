@@ -1,0 +1,383 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Sorting. Put the items in the correct order, then submit.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "ariaCorrectAnswer": {
+      "type": "string",
+      "required": true,
+      "default": "The correct order is: {{{correctAnswer}}}",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Text announced by screen reader when learner selects 'show correct answer'",
+      "translatable": true
+    },
+    "ariaUserAnswer": {
+      "type": "string",
+      "required": true,
+      "default": "Your order was: {{{userAnswer}}}",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Text announced by screen reader when learner selects 'hide correct answer'",
+      "translatable": true
+    },
+    "ariaItemMoved": {
+      "type": "string",
+      "required": true,
+      "default": "{{{itemText}}} moved to position {{{position}}} of {{{total}}}",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Text announced by screen reader when an item is moved",
+      "translatable": true
+    },
+    "ariaMoveUp": {
+      "type": "string",
+      "required": true,
+      "default": "Move up",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Aria label for move up button",
+      "translatable": true
+    },
+    "ariaMoveDown": {
+      "type": "string",
+      "required": true,
+      "default": "Move down",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Aria label for move down button",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "half-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "Put the items in the correct order, then select Submit.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text",
+      "translatable": true
+    },
+    "ariaQuestion": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Screen reader text for the question. If blank, uses title + body + instruction.",
+      "translatable": true
+    },
+    "_attempts": {
+      "type": "number",
+      "required": true,
+      "default": 1,
+      "title": "Attempts",
+      "inputType": "Number",
+      "validators": ["required", "number"],
+      "help": "How many attempts the learner is allowed"
+    },
+    "_canShowModelAnswer": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Display Model Answer",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Allow the user to view the correct order if they answer incorrectly?"
+    },
+    "_canShowFeedback": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Display Feedback",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_canShowMarking": {
+      "type": "boolean",
+      "default": true,
+      "title": "Display Marking",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_shouldDisplayAttempts": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Display Attempts",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Display the number of attempts remaining?"
+    },
+    "_questionWeight": {
+      "type": "number",
+      "required": false,
+      "default": 1,
+      "title": "Question Weight",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "How much this question is worth"
+    },
+    "_recordInteraction": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Record interaction",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "If disabled, recording to cmi.interactions on the LMS will be disabled for this component."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Items (in correct order)",
+      "help": "Items are authored in the CORRECT order. The component shuffles them for display.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "text": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "The text displayed for this item",
+            "translatable": true
+          }
+        }
+      }
+    },
+    "_feedback": {
+      "type": "object",
+      "required": false,
+      "title": "Feedback",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Feedback Title",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Leave blank to use the component's title.",
+          "translatable": true
+        },
+        "correct": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Correct",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "Feedback for correct answer",
+          "translatable": true
+        },
+        "_incorrect": {
+          "type": "object",
+          "required": false,
+          "title": "Incorrect Feedback",
+          "properties": {
+            "final": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Incorrect Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Feedback for incorrect answer on final attempt",
+              "translatable": true
+            },
+            "notFinal": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Incorrect Not Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Feedback for incorrect answer when attempts remain. If blank, uses 'Incorrect Final'.",
+              "translatable": true
+            }
+          }
+        },
+        "_partlyCorrect": {
+          "type": "object",
+          "required": false,
+          "title": "Partly Correct Feedback",
+          "properties": {
+            "final": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Partly Correct Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Feedback for partly correct answer on final attempt. If blank, uses 'Incorrect Final'.",
+              "translatable": true
+            },
+            "notFinal": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Partly Correct Not Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Feedback for partly correct answer when attempts remain. If blank, uses 'Partly Correct Final'.",
+              "translatable": true
+            }
+          }
+        }
+      }
+    },
+    "_buttons": {
+      "type": "object",
+      "title": "Buttons",
+      "required": false,
+      "properties": {
+        "_submit": {
+          "type": "object",
+          "title": "Submit",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "_reset": {
+          "type": "object",
+          "title": "Reset",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "_showCorrectAnswer": {
+          "type": "object",
+          "title": "Show Correct Answer",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "_hideCorrectAnswer": {
+          "type": "object",
+          "title": "Hide Correct Answer",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "_showFeedback": {
+          "type": "object",
+          "title": "Show Feedback",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "remainingAttemptsText": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "inputType": "QuestionButton",
+          "validators": [],
+          "translatable": true
+        },
+        "remainingAttemptText": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "inputType": "QuestionButton",
+          "validators": [],
+          "translatable": true
+        }
+      }
+    }
+  }
+}

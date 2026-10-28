@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light dark;
+  --h: 202;
+  --s: 72%;
+  --page-bg: light-dark(#f2f6f8,#141e26);
+  --surface-1: light-dark(#fff,#1d2932);
+  --surface-2: light-dark(#eaf0f4,#263640);
+  --ink: light-dark(#202d36,#e7eef3);
+  --ink-soft: light-dark(#50616d,#bdccd5);
+  --line: light-dark(#c4d0d9,#4c616e);
+  --accent: light-dark(#246f9d,#8ccdf3);
+  --on-accent: light-dark(#fff,#152a37);
+  --c-positive: light-dark(#28774b,#90d3ae);
+  --font-ui: system-ui,sans-serif;
+  --font-mono: ui-monospace,monospace;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page-bg); color: var(--ink); font-family: var(--font-ui); line-height: 1.6; }
+.sequence-page { max-width: 90rem; margin-inline: auto; padding: clamp(.75rem,3vw,3rem); }
+.sequence-nav { margin-bottom: 1rem; }
+a { color: var(--accent); }
+[hidden] { display: none !important; }
+.sequence-page button, .sequence-page select, .sequence-page input {
+  font: inherit; color: inherit; background: var(--surface-1); border: 1px solid var(--line); border-radius: .5rem; padding: .5rem .7rem; max-width: 100%;
+}
+.sequence-page button { cursor: pointer; }
+.sequence-page button:disabled { opacity: .6; cursor: default; }
+.sequence-page :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.sequence-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; border-bottom: 1px solid var(--line); margin-bottom: 1rem; padding-bottom: 1rem; }
+.sequence-controls label, .template-picker { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.sequence-controls p { flex-basis: 100%; margin: 0; }
+.sequence-help { font-size: .85rem; color: var(--ink-soft); }
+.template-picker { margin-block: 1rem; }
+.lesson-experiment .ab.card { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-1); }
+.lesson-experiment .ab.card.tinted, .lesson-experiment .ab.card.soft { background: color-mix(in srgb,var(--accent) 8%,var(--surface-1)); }
+.lesson-experiment .ab.btn { display: inline-flex; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); padding: .6rem .8rem; border-radius: .5rem; }
+.lesson-experiment .journal-card { --journal-surface: var(--surface-1); --journal-ink: var(--ink); }
+.lesson-experiment .lesson-revealed { animation-duration: var(--lesson-fade-duration,.55s); }
+@media(prefers-reduced-motion:reduce) { .lesson-experiment .lesson-revealed { animation: none; } }

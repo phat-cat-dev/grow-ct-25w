@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Library | Icon collections</title><link rel="stylesheet" href="icon-gallery.css"></head><body>
+<main class="icon-library"><nav aria-label="Icon collections"><a href="index.html">All collections</a> | <a href="academic-practice.html">Academic practice areas</a> | <a href="resources.html">Resources</a> | <a href="library.html">Library</a></nav>
+<header class="library-heading"><p class="eyebrow">Reusable SVG collections</p><h1>Library</h1><p>Named packs, icon-only buttons and self-contained SVG markup. Select an icon to copy it; Enter and Space work too. These are the existing SVG icons, not a search of Google's full catalogue.</p></header>
+<label class="icon-search">Find an icon <input type="search" data-icon-search placeholder="Search names or sprite IDs"></label>
+<p role="status" data-search-status>1 icons</p>
+<div data-icon-packs><section class="icon-pack" data-icon-pack="library" aria-labelledby="pack-library">
+<header class="packhead"><h2 id="pack-library">Library</h2><span class="pack-count" aria-label="1 icons" data-pack-count>1</span><a href="library.sprite.svg" download>Download sprite</a></header>
+<div class="icongrid"><button type="button" class="iconcell" data-icon="ic-signpost" aria-label="Copy signpost icon SVG" aria-pressed="false" title="Select and copy signpost"><span class="icon-frame"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true" aria-label="signpost"><path d="M440-80v-160H240L120-360l120-120h200v-80H160v-240h280v-80h80v80h200l120 120-120 120H520v80h280v240H520v160h-80ZM240-640h447l40-40-40-40H240v80Zm33 320h447v-80H273l-40 40 40 40Z"/></svg></span></button></div><p class="pack-empty" hidden>No matching icons in this collection.</p></section></div>
+<section class="icon-controls" aria-labelledby="icon-controls-title"><h2 id="icon-controls-title">Preview controls</h2>
+<div class="control-row"><label>Icon size <input type="range" data-icon-size min="20" max="64" value="32"><output data-icon-size-value>32 px</output></label>
+<label>Border thickness <input type="range" data-icon-border min="0" max="8" step="1" value="0"><output data-icon-border-value>0 px</output></label>
+<label>Border style <select data-icon-border-style><option value="solid">Solid</option><option value="dashed">Dashed</option><option value="dotted">Dotted</option><option value="double">Double</option><option value="none">None</option></select></label>
+<label><input type="checkbox" data-icon-circle> Rounded buttons</label></div>
+<div class="control-row">
+<label>Entrance <select data-icon-effect><option value="none">None</option><option value="fade">Fade in</option><option value="rise">Fade + rise</option><option value="pop">Gentle pop</option></select></label>
+<label>Duration <input type="range" data-icon-duration min="100" max="2000" step="50" value="500"><output data-icon-duration-value>500 ms</output></label>
+<label>Stagger <input type="range" data-icon-stagger min="0" max="300" step="10" value="50"><output data-icon-stagger-value>50 ms</output></label>
+<button type="button" data-icon-replay>Replay entrance</button></div>
+<p>Plain buttons by default: increase border thickness to add an optional outline. These controls affect the preview only. Copied SVGs inherit <code>currentColor</code>; downloads remain the original artwork. Reduced motion skips entrance effects.</p>
+</section>
+<section class="icon-selection" aria-labelledby="icon-selection-title"><h2 id="icon-selection-title">Selected icon</h2>
+<p data-selected-name>Select an icon above.</p><div class="selected-preview" data-selected-preview></div>
+<label>Self-contained SVG markup<textarea data-icon-markup rows="5" readonly spellcheck="false" aria-label="Selected self-contained SVG markup"></textarea></label>
+<div class="control-row"><button type="button" data-icon-copy disabled>Copy SVG markup</button><a data-icon-download hidden download>Download SVG</a></div>
+<p data-copy-status role="status">SVG copies contain their own paths: no sprite or font dependency.</p></section>
+<p class="library-note">For variable Google font symbols, use the existing <a href="../../.dev/assets/ab-them/public/site/source_index.html#icons">studio connector</a>. Its search covers a 24-symbol preview set; these three local SVG collections work offline.</p>
+</main><script src="icon-gallery.js"></script></body></html>

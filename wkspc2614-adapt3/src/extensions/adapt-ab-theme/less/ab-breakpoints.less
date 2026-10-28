@@ -1,0 +1,193 @@
+// CM RESPONSIVE SYSTEM — breakpoints, fluid spacing scale, container.
+// Ported from cm-global.css (the layout/space blocks, lines ~4907 and ~23728)
+// onto this theme (Abbott, 10 Oct 2026: wants explicit device-design control
+// for the SCORM box; "we can always roll back").
+//
+// SCOPE / SAFETY: this brings in the breakpoint VARIABLES, the fluid SPACE
+// scale, and a NAMESPACED `.ab-container` utility. It deliberately does NOT
+// re-declare Bootstrap's `.row` / `.col-*` grid or override Adapt's own
+// `.container`, so it cannot fight Adapt's layout — it is additive and removable
+// by deleting this one file. The full Bootstrap-style grid remains available in
+// cm-global.css if we later decide Adapt's own layout is insufficient.
+//
+// LESS breakpoint vars are compile-time (for use in @media across the theme);
+// the --ab-bp-* custom properties mirror them for any runtime/JS use. Breakpoints
+// (min-width): sm 576, md 768, lg 992, xl 1200, xxl 1400, xxxl 1600.
+
+@ab-bp-sm:   576px;
+@ab-bp-md:   768px;
+@ab-bp-lg:   992px;
+@ab-bp-xl:   1200px;
+@ab-bp-xxl:  1400px;
+@ab-bp-xxxl: 1600px;
+
+:root {
+  // ===================== BREAKPOINTS =====================
+  // Schema: design-kb/section-schemas/breakpoints.json. L4 base defaults
+  // (themeable via L5) -> L3 pivots -> flat mirror. These custom-prop tokens are
+  // the runtime/JS/container-query mirror ONLY; @media queries use the
+  // compile-time @ab-bp-* vars above, which a runtime theme override cannot reach.
+  --ab-base-pf-default-bp-sm:   var(--ab-theme-pf-default-bp-sm, 576px);
+  --ab-base-pf-default-bp-md:   var(--ab-theme-pf-default-bp-md, 768px);
+  --ab-base-pf-default-bp-lg:   var(--ab-theme-pf-default-bp-lg, 992px);
+  --ab-base-pf-default-bp-xl:   var(--ab-theme-pf-default-bp-xl, 1200px);
+  --ab-base-pf-default-bp-xxl:  var(--ab-theme-pf-default-bp-xxl, 1400px);
+  --ab-base-pf-default-bp-xxxl: var(--ab-theme-pf-default-bp-xxxl, 1600px);
+  --ab-base-bp-sm:   var(--ab-base-pf-default-bp-sm);
+  --ab-base-bp-md:   var(--ab-base-pf-default-bp-md);
+  --ab-base-bp-lg:   var(--ab-base-pf-default-bp-lg);
+  --ab-base-bp-xl:   var(--ab-base-pf-default-bp-xl);
+  --ab-base-bp-xxl:  var(--ab-base-pf-default-bp-xxl);
+  --ab-base-bp-xxxl: var(--ab-base-pf-default-bp-xxxl);
+  --ab-bp-sm:   var(--ab-base-bp-sm);    // flat mirror (reference / JS) — unchanged value
+  --ab-bp-md:   var(--ab-base-bp-md);
+  --ab-bp-lg:   var(--ab-base-bp-lg);
+  --ab-bp-xl:   var(--ab-base-bp-xl);
+  --ab-bp-xxl:  var(--ab-base-bp-xxl);
+  --ab-bp-xxxl: var(--ab-base-bp-xxxl);
+
+  // ===================== FLUID SPACE SCALE =====================
+  // Schema: design-kb/section-schemas/spacing.json. clamp(min, min + N·vi, max);
+  // vi = viewport-inline. The middle term is calc()-wrapped so LESS emits the vi
+  // verbatim — without it LESS evaluates e.g. `0.235rem + 0.0752vi` as arithmetic
+  // and DROPS the vi, leaving a fixed value (Abbott, 10 Oct 2026 — the scale was
+  // silently non-fluid; near-equal min/max hid it). L4 base defaults (the clamp
+  // ladder) -> L3 pivots -> flat aliases.
+  --ab-base-pf-default-space-025: clamp(0.25rem, calc(0.235rem + 0.0752vi), 0.3125rem);
+  --ab-base-pf-default-space-050: clamp(0.5rem, calc(0.4699rem + 0.1504vi), 0.625rem);
+  --ab-base-pf-default-space-075: clamp(0.75rem, calc(0.7049rem + 0.2256vi), 0.9375rem);
+  --ab-base-pf-default-space-100: clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem);
+  --ab-base-pf-default-space-125: clamp(1.25rem, calc(1.1748rem + 0.3759vi), 1.5625rem);
+  --ab-base-pf-default-space-150: clamp(1.5rem, calc(1.4098rem + 0.4511vi), 1.875rem);
+  --ab-base-pf-default-space-175: clamp(1.75rem, calc(1.6447rem + 0.5263vi), 2.1875rem);
+  --ab-base-pf-default-space-200: clamp(2rem, calc(1.8797rem + 0.6015vi), 2.5rem);
+  --ab-base-pf-default-space-300: clamp(3rem, calc(2.8195rem + 0.9023vi), 3.75rem);
+  --ab-base-pf-default-space-400: clamp(4rem, calc(3.7594rem + 1.203vi), 5rem);
+  --ab-base-pf-default-space-500: clamp(5rem, calc(4.6992rem + 1.5038vi), 6.25rem);
+  --ab-base-pf-default-space-600: clamp(6rem, calc(5.6391rem + 1.8045vi), 7.5rem);
+  --ab-base-space-025: var(--ab-base-pf-default-space-025);
+  --ab-base-space-050: var(--ab-base-pf-default-space-050);
+  --ab-base-space-075: var(--ab-base-pf-default-space-075);
+  --ab-base-space-100: var(--ab-base-pf-default-space-100);
+  --ab-base-space-125: var(--ab-base-pf-default-space-125);
+  --ab-base-space-150: var(--ab-base-pf-default-space-150);
+  --ab-base-space-175: var(--ab-base-pf-default-space-175);
+  --ab-base-space-200: var(--ab-base-pf-default-space-200);
+  --ab-base-space-300: var(--ab-base-pf-default-space-300);
+  --ab-base-space-400: var(--ab-base-pf-default-space-400);
+  --ab-base-space-500: var(--ab-base-pf-default-space-500);
+  --ab-base-space-600: var(--ab-base-pf-default-space-600);
+  --ab-space-025: var(--ab-base-space-025);    // flat aliases (compat for existing consumers)
+  --ab-space-050: var(--ab-base-space-050);
+  --ab-space-075: var(--ab-base-space-075);
+  --ab-space-100: var(--ab-base-space-100);
+  --ab-space-125: var(--ab-base-space-125);
+  --ab-space-150: var(--ab-base-space-150);
+  --ab-space-175: var(--ab-base-space-175);
+  --ab-space-200: var(--ab-base-space-200);
+  --ab-space-300: var(--ab-base-space-300);
+  --ab-space-400: var(--ab-base-space-400);
+  --ab-space-500: var(--ab-base-space-500);
+  --ab-space-600: var(--ab-base-space-600);
+
+  // gutters (x used for container padding; y zero by default, as upstream)
+  --ab-gutter-x: calc(var(--ab-space-100) * 1.5);
+  --ab-gutter-y: calc(var(--ab-space-100) * 0);
+}
+
+// ---- namespaced responsive container ----
+// Centres content and caps width per breakpoint, with gutter padding. Use on an
+// author wrapper inside a text/graphic component; never collides with Adapt's
+// own `.container` because the class is `.ab-container`.
+.ab-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(var(--ab-gutter-x) * 0.5);
+  padding-left: calc(var(--ab-gutter-x) * 0.5);
+}
+
+@media (min-width: @ab-bp-sm)   { .ab-container { max-width: 540px; } }
+@media (min-width: @ab-bp-md)   { .ab-container { max-width: 720px; } }
+@media (min-width: @ab-bp-lg)   { .ab-container { max-width: 960px; } }
+@media (min-width: @ab-bp-xl)   { .ab-container { max-width: 1140px; } }
+@media (min-width: @ab-bp-xxl)  { .ab-container { max-width: 1320px; } }
+@media (min-width: @ab-bp-xxxl) { .ab-container { max-width: 1580px; } }
+
+// ---- xxxl display utilities (the one breakpoint Adapt/Bootstrap lack) ----
+@media (min-width: @ab-bp-xxxl) {
+  .d-xxxl-none         { display: none !important; }
+  .d-xxxl-inline       { display: inline !important; }
+  .d-xxxl-inline-block { display: inline-block !important; }
+  .d-xxxl-block        { display: block !important; }
+  .d-xxxl-flex         { display: flex !important; }
+  .d-xxxl-inline-flex  { display: inline-flex !important; }
+}
+
+// ---- responsive content column + aligned nav: the AUTHORITATIVE CM ladder ----
+// The CM design scheme's own container steps (cm-global.css, "RESPONSIVE
+// BREAKPOINTS": 540 / 720 / 960 / 1140 / 1320 / 1580 at sm/md/lg/xl/xxl/xxxl),
+// applied to BOTH the page content and the nav bar so they share one width and
+// align (Back and page-progress sit at the content column's edges). Centred
+// (margin auto): a WIDE but capped column that never runs to the viewport edge
+// on widescreen (Abbott, 10 Oct 2026: "I don't want widescreen up to the edge —
+// the authoritative one in cm-global.css"). Full width below sm (phone).
+// !important beats vanilla's own content width.
+// GATED under html.ab-theme (optional-skin switch): the capped, centred content
+// column + aligned nav is a brand layout choice, so with `ab-theme` off the
+// page falls back to vanilla's own content width.
+html.ab-theme .page__inner,
+html.ab-theme .nav__inner { margin-left: auto; margin-right: auto; }
+@media (min-width: @ab-bp-sm)   { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 540px !important; } }
+@media (min-width: @ab-bp-md)   { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 720px !important; } }
+@media (min-width: @ab-bp-lg)   { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 960px !important; } }
+@media (min-width: @ab-bp-xl)   { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 1140px !important; } }
+@media (min-width: @ab-bp-xxl)  { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 1320px !important; } }
+@media (min-width: @ab-bp-xxxl) { html.ab-theme .page__inner, html.ab-theme .nav__inner { max-width: 1580px !important; } }
+
+// ---- horizontal edge: FLUSH 0 at all widths (Abbott, 10 Oct 2026) ----
+// --ab-base-gutter follows --ab-page-gutter-x (= 0) in theme.less, so content and the
+// header sit flush to the column edge at EVERY breakpoint — text as far left/
+// right as the column allows. The old lg/xxl gutter bump steps (1.5rem/2rem) are
+// removed deliberately. To re-introduce a gutter at a breakpoint, add a
+// :root{ --ab-base-pf-default-gutter: …rem; } step here.
+
+// (The content column width is the authoritative stepped ladder above — the CM
+// design scheme's own container caps — not a fluid --ab-base-page-max clamp. The
+// width grows in defined steps up to 1580px and stays centred, so widescreen is
+// wide but never edge-to-edge.)
+
+// ---- responsive vertical padding fallback steps (Abbott, 10 Oct 2026) ----
+// --ab-base-pad-y (theme.less) is already a vh-based clamp, so it scales on its own;
+// these are the breakpoint FALLBACK/tuning steps that nudge the cap up on larger
+// screens (parallel to --ab-base-gutter above). They override the clamp's upper reach
+// at lg/xxl. Delete them to let the raw clamp stand; set --ab-base-pad-y to a flat
+// value in theme.less to flatten vertical padding entirely. The middle term is
+// calc()-wrapped so LESS emits the vh verbatim rather than evaluating it to a
+// fixed rem (the --ab-space-* mangling bug).
+@media (min-width: @ab-bp-lg)  { :root { --ab-base-pf-default-pad-y: clamp(1rem, calc(0.5rem + 1.5vh), 2rem); } }
+@media (min-width: @ab-bp-xxl) { :root { --ab-base-pf-default-pad-y: clamp(1.25rem, calc(0.5rem + 1.75vh), 2.5rem); } }
+
+// ---- typography: now ONE fluid ladder in cm-type.less ----
+// The old xl/xxl font-size boosts are retired. cm-type.less computes a single
+// modular clamp ladder from the cm-base dials (@ab-type-ratio + base-min/max +
+// fluid range @ab-vw-min/max); a clamp already scales continuously with the
+// viewport, so no per-breakpoint font step is needed. Retune the whole scale
+// from cm-base, not here.
+
+// ---- hotgraphic: trim the SVG on large screens (Abbott, 10 Oct 2026) ----
+// The learning-cycle SVG otherwise fills the whole content column, which is big
+// at lg+. Cap the pinned graphic to ~80% (centred) from lg up so it sits more
+// comfortably (a ~20% reduction). Capping .hotgraphic__pins rather than just the
+// image keeps the %-placed pins aligned, since they position within this box.
+// Tune the 80%.
+@media (min-width: @ab-bp-lg) {
+  html.ab-theme .hotgraphic__pins { max-width: 80%; margin-left: auto; margin-right: auto; }   // GATED (optional-skin switch)
+}
+
+// ---- mobile-first gutter: phone gets a side gutter, flush from sm up ----
+// theme.less sets --ab-page-gutter-x to a phone gutter (mobile-first base) so
+// body text doesn't jam the screen edge on a vertical phone. From sm (576px) up
+// the content column is capped + centred, so the inline edge flattens to flush
+// 0 (Abbott, 10 Oct 2026). Raise this value to keep a gutter on larger screens.
+@media (min-width: @ab-bp-sm) { :root { --ab-page-gutter-x: 0; } }

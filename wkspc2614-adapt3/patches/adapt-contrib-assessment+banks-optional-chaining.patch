@@ -1,0 +1,15 @@
+# Fix: Add optional chaining to _banks access in assessment extension
+# Date: 2026-07-23
+# Problem: assessmentConfig?._banks._isEnabled throws TypeError when _banks is undefined
+# Solution: Change to assessmentConfig?._banks?._isEnabled
+--- a/src/extensions/adapt-contrib-assessment/js/adapt-assessmentArticleModel.js
++++ b/src/extensions/adapt-contrib-assessment/js/adapt-assessmentArticleModel.js
+@@ -166,7 +166,7 @@
+       }
+       this.getChildren().reset(this._originalChildModels);
+       this._resetFilter();
+-      if (assessmentConfig?._banks._isEnabled &&
++      if (assessmentConfig?._banks?._isEnabled &&
+         assessmentConfig?._banks._split.length > 1) {
+         quizModels = this._setupBankedAssessment();
+       } else if (assessmentConfig?._randomisation._isEnabled) {

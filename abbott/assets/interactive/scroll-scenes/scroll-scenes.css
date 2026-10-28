@@ -1,0 +1,29 @@
+.scroll-scenes {
+  --scene-accent: var(--accent, #246b79);
+  --scene-ink: var(--ink, #152b35);
+  --scene-paper: var(--surface-1, #f2f6f3);
+  color: var(--scene-ink);
+  font: 1rem/1.6 var(--font-ui, system-ui, sans-serif);
+}
+.scroll-scenes, .scroll-scenes * { box-sizing: border-box; }
+.scroll-scenes .scene-nav { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; padding: .75rem 1rem; }
+.scroll-scenes button { font: inherit; color: inherit; background: transparent; border: 0; padding: .5rem .8rem; cursor: pointer; }
+.scroll-scenes button[aria-current="step"] { color: var(--scene-accent); text-decoration: underline; text-underline-offset: .4em; font-weight: 700; }
+.scroll-scenes :focus-visible { outline: 3px solid var(--scene-accent); outline-offset: 3px; }
+.scroll-scenes progress { inline-size: 6rem; block-size: .4rem; accent-color: var(--scene-accent); margin-inline: auto .5rem; }
+.scroll-scenes .scene-status { font-size: .8rem; }
+.scroll-scenes [data-scroll-viewport] { block-size: min(72svh, 48rem); min-block-size: 20rem; overflow-y: auto; overflow-x: hidden; scroll-snap-type: y proximity; background: var(--scene-paper); }
+.scroll-scenes [data-scroll-scene] { min-block-size: 100%; display: grid; align-items: center; scroll-snap-align: start; padding: clamp(1.5rem, 5vw, 5rem); overflow: clip; position: relative; isolation: isolate; }
+.scroll-scenes [data-scroll-scene]::before { content: ""; position: absolute; z-index: -1; inset: 0; opacity: .22; background: radial-gradient(ellipse at 85% 25%, var(--scene-colour, #44a8ba), transparent 60%), repeating-linear-gradient(135deg, transparent 0 4rem, var(--scene-colour, #44a8ba) 4rem 4.08rem, transparent 4.08rem 8rem); }
+.scroll-scenes [data-scroll-scene]:nth-child(2) { --scene-colour: #dbaa45; }
+.scroll-scenes [data-scroll-scene]:nth-child(3) { --scene-colour: #ba7dbb; }
+.scroll-scenes [data-scroll-scene]:nth-child(4) { --scene-colour: #52a783; }
+.scroll-scenes [data-scene-content] { max-inline-size: 48rem; transform-origin: left center; }
+.scroll-scenes .scene-number { font: .85rem ui-monospace, monospace; letter-spacing: .15em; color: var(--scene-accent); }
+.scroll-scenes h2 { font-size: clamp(2rem, 6vw, 5rem); line-height: 1.06; letter-spacing: -.045em; margin-block: 1rem; }
+.scroll-scenes .scene-copy { max-inline-size: 46ch; font-size: clamp(1rem, 2vw, 1.25rem); }
+@media print {
+  .scroll-scenes [data-scroll-viewport] { block-size: auto; overflow: visible; }
+  .scroll-scenes [data-scroll-scene] { break-inside: avoid; }
+  .scroll-scenes [data-scene-content] { opacity: 1 !important; translate: none !important; scale: none !important; filter: none !important; }
+}

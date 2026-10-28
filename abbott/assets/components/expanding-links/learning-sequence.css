@@ -1,0 +1,13 @@
+.learning-sequence { color: var(--ink, #172e3a); font: 1rem/1.65 var(--font-ui, system-ui, sans-serif); }
+.learning-sequence [hidden] { display: none !important; }
+.learning-sequence .learning-number { font: 600 .95rem ui-monospace, monospace; min-inline-size: 2ch; }
+.learning-sequence [data-complete="true"] .learning-number::after { content: " \2713"; }
+.learning-sequence [data-learning-step] { max-inline-size: 48rem; margin-block: 2rem; }
+.learning-sequence [data-learning-step] h2 { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; }
+.learning-sequence textarea { display: block; inline-size: 100%; box-sizing: border-box; font: inherit; min-block-size: 7rem; padding: .65rem; border: 1px solid var(--line, #afc0ca); background: transparent; color: inherit; }
+.learning-sequence .learning-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.learning-sequence .learning-actions button { font: inherit; background: transparent; color: var(--accent, #365f80); border: 0; padding: .65rem .25rem; cursor: pointer; text-decoration: underline; text-underline-offset: .3em; }
+.learning-sequence .learning-actions button:disabled { color: inherit; opacity: .5; cursor: default; text-decoration: none; }
+.learning-sequence :focus-visible { outline: 3px solid var(--accent, #365f80); outline-offset: 4px; }
+.learning-sequence [data-learning-status] { font-size: .85rem; }
+@media print { .learning-sequence [data-learning-step][hidden] { display: block !important; } }

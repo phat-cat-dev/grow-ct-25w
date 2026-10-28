@@ -1,0 +1,40 @@
+{
+  "profile": "adp-m1-stated-subjects",
+  "version": "0.1.0",
+  "kind": "tag",
+  "owner": "adp",
+  "note": "DRAFT by ADAPT nts, 2 October 2026 (nts N-0289), from ADAPT's ruled method; lands in the repository at integrations/mapper/ by a numbered prompt; a profile describes the method and changes nothing in it. Record of the method only: M1 ran read only in adp-0212 (RJ-0024); its results are adp-0212-m1-stated-scope.json",
+  "method": {
+    "rulings": [
+      "MPH-1 (M1: the subjects each benchmark says it covers, quoted, no codes)",
+      "RJ-0024"
+    ]
+  },
+  "sources": {
+    "set": "units.jsonl: every included chunk of every chunked benchmark, text from the normalised text by offsets",
+    "unit": "chunk",
+    "docOf": "^(.*)/[^/]+$"
+  },
+  "target": {
+    "scheme": "the subjects or groupings a benchmark states it informs, as written; no HESA codes"
+  },
+  "candidates": {
+    "mode": "all"
+  },
+  "judgement": {
+    "prompt": "tag",
+    "answer": "record"
+  },
+  "evidence": {
+    "quote": "required",
+    "cite": "chunk",
+    "words": "4 to 25 (ADAPT rule; mapper's own limit is 30)"
+  },
+  "output": {
+    "relation": "states-scope"
+  },
+  "confirmation": {
+    "who": "none",
+    "note": "M1 is compared with M2 (RJ-0043), every major difference listed for Abbott; it is not confirmed on its own"
+  }
+}

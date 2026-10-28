@@ -1,0 +1,64 @@
+@import "../../themes-templates/default_theme_template/default_theme_template.less";
+
+@grow-theme-name: "cmet-default";
+@grow-h: 202;
+@grow-s: 72%;
+@grow-gs: 12%;
+@grow-type-scale: 1;
+@grow-space-scale: 1;
+@grow-font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+@grow-font-heading: var(--font-ui);
+
+// Theme settings only: the shared engine and selectors remain in grow-ct.
+:root {
+  // Typography
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  --fw-light: 300; --fw-regular: 400; --fw-medium: 500;
+  --fw-semibold: 600; --fw-bold: 700;
+  --lh-none: 1; --lh-tight: 1.1; --lh-heading: 1.2;
+  --lh-snug: 1.35; --lh-body: 1.6; --lh-loose: 1.85;
+  --tracking-tighter: -.02em; --tracking-tight: -.01em; --tracking-normal: 0;
+  --tracking-wide: .04em; --tracking-wider: .08em;
+  --tracking-heading: var(--tracking-tighter);
+  --measure: 66ch; --measure-narrow: 48ch; --measure-wide: 78ch;
+
+  // Fluid type: minimum, viewport slope, maximum. Keep mixed-unit maths escaped.
+  --fs-3xs:  ~"clamp(0.69rem, 0.66rem + 0.14vw, 0.78rem)";
+  --fs-2xs:  ~"clamp(0.75rem, 0.71rem + 0.20vw, 0.85rem)";
+  --fs-xs:   ~"clamp(0.80rem, 0.75rem + 0.25vw, 0.92rem)";
+  --fs-sm:   ~"clamp(0.90rem, 0.84rem + 0.30vw, 1.02rem)";
+  --fs-base: ~"clamp(1.00rem, 0.93rem + 0.35vw, 1.15rem)";
+  --fs-md:   ~"clamp(1.15rem, 1.03rem + 0.55vw, 1.35rem)";
+  --fs-lg:   ~"clamp(1.30rem, 1.12rem + 0.80vw, 1.60rem)";
+  --fs-xl:   ~"clamp(1.55rem, 1.28rem + 1.20vw, 2.05rem)";
+  --fs-2xl:  ~"clamp(1.85rem, 1.45rem + 1.80vw, 2.60rem)";
+  --fs-3xl:  ~"clamp(2.20rem, 1.60rem + 2.60vw, 3.30rem)";
+  --fs-4xl:  ~"clamp(2.60rem, 1.75rem + 3.80vw, 4.40rem)";
+  --fs-5xl:  ~"clamp(3.10rem, 1.90rem + 5.40vw, 5.80rem)";
+
+  // Fluid spacing: every step retains the shared density dial.
+  --space-3xs: ~"calc(clamp(0.25rem, 0.23rem + 0.10vw, 0.35rem) * var(--space-scale))";
+  --space-2xs: ~"calc(clamp(0.50rem, 0.45rem + 0.20vw, 0.65rem) * var(--space-scale))";
+  --space-xs:  ~"calc(clamp(0.75rem, 0.65rem + 0.40vw, 1.05rem) * var(--space-scale))";
+  --space-sm:  ~"calc(clamp(1.00rem, 0.85rem + 0.60vw, 1.50rem) * var(--space-scale))";
+  --space-md:  ~"calc(clamp(1.50rem, 1.20rem + 1.20vw, 2.50rem) * var(--space-scale))";
+  --space-lg:  ~"calc(clamp(2.25rem, 1.70rem + 2.20vw, 4.00rem) * var(--space-scale))";
+  --space-xl:  ~"calc(clamp(3.00rem, 2.10rem + 3.60vw, 6.00rem) * var(--space-scale))";
+  --space-2xl: ~"calc(clamp(4.00rem, 2.60rem + 5.60vw, 8.00rem) * var(--space-scale))";
+  --space-3xl: ~"calc(clamp(5.50rem, 3.30rem + 8.80vw, 11.0rem) * var(--space-scale))";
+
+  // Rhythm, content hierarchy and layout
+  --stack: var(--space-sm);
+  --stack-tight: var(--space-2xs);
+  --stack-loose: var(--space-md);
+  --gap-inline: var(--space-xs);
+  --gap-grid: var(--space-md);
+  --pad-control: var(--space-2xs) var(--space-sm);
+  --pad-card: var(--space-sm);
+  --pad-component: var(--space-md);
+  --pad-block: var(--space-lg);
+  --pad-article: var(--space-sm);   // article padding set to small (Abbott, 25 Oct 2026)
+  --pad-section: var(--space-2xl);
+  --layout-max: 75rem; --layout-wide: 88rem; --layout-narrow: 44rem;
+  --gutter: ~"calc(clamp(1rem, 0.5rem + 3vw, 3rem) * var(--space-scale))";
+}

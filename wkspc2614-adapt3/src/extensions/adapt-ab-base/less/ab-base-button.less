@@ -1,0 +1,88 @@
+// adapt-ab-base — minimal .ab.btn base object
+//
+// A compact, token-based button so .ab.btn renders without the full brand
+// theme's ab-buttons.less. No palette: everything derives from --ab-* tokens
+// (ab-base.less), so a theme reskins it (and adds brand colours) by moving the
+// tokens. If the brand ab-buttons.less is present it supersedes this (load
+// order / richer selectors); keep this lean.
+//
+// A bare .ab.btn is the primary (accent) button. Variant classes move the fill;
+// .outline flips to a bordered ghost; .sm / .lg size it; .block fills the row.
+
+.ab.btn {
+  --ab-btn-bg: var(--ab-accent, #2a5db0);
+  --ab-btn-color: var(--ab-on-accent, #ffffff);
+  --ab-btn-border: var(--ab-btn-bg);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ab-space-050, 0.5rem);
+  padding: var(--ab-space-050, 0.5rem) var(--ab-space-125, 1.25rem);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  color: var(--ab-btn-color);
+  background: var(--ab-btn-bg);
+  border: var(--ab-base-border-width, 0.1rem) solid var(--ab-btn-border);
+  border-radius: var(--ab-border-radius, 0.375rem);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--ab-btn-bg) 85%, var(--ab-base-shade, #000));
+    border-color: color-mix(in srgb, var(--ab-btn-border) 85%, var(--ab-base-shade, #000));
+  }
+
+  &:active {
+    background: color-mix(in srgb, var(--ab-btn-bg) 75%, var(--ab-base-shade, #000));
+    border-color: color-mix(in srgb, var(--ab-btn-border) 75%, var(--ab-base-shade, #000));
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--ab-btn-bg) 40%, transparent);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+}
+
+// ---- fill variants: move the fill (hover/active darken from it) ----
+.ab.btn.neutral {
+  --ab-btn-bg: var(--ab-base-surface-sunken, #f3f3f3);
+  --ab-btn-color: var(--ab-base-ink, #1a1a1a);
+  --ab-btn-border: var(--ab-base-hairline, rgba(0, 0, 0, 0.125));
+}
+.ab.btn.accent  { --ab-btn-bg: var(--ab-accent, #2a5db0);  --ab-btn-color: var(--ab-on-accent, #fff); }
+.ab.btn.success { --ab-btn-bg: var(--ab-success, #2e7d4f); --ab-btn-color: var(--ab-on-semantic, #fff); }
+.ab.btn.danger  { --ab-btn-bg: var(--ab-danger, #b23b3b);  --ab-btn-color: var(--ab-on-semantic, #fff); }
+.ab.btn.warning { --ab-btn-bg: var(--ab-warning, #b7791f); --ab-btn-color: var(--ab-on-semantic, #fff); }
+.ab.btn.info    { --ab-btn-bg: var(--ab-info, #2a7d8c);    --ab-btn-color: var(--ab-on-semantic, #fff); }
+
+// ---- outline: transparent fill, coloured text + border; fill on hover ----
+.ab.btn.outline {
+  color: var(--ab-btn-bg);
+  background: transparent;
+  border-color: var(--ab-btn-bg);
+
+  &:hover,
+  &:active {
+    color: var(--ab-on-accent, #fff);
+    background: var(--ab-btn-bg);
+    border-color: var(--ab-btn-bg);
+  }
+}
+
+// ---- sizes ----
+.ab.btn.sm { padding: var(--ab-space-050, 0.5rem) var(--ab-space-075, 0.75rem); font-size: 0.875em; }
+.ab.btn.lg { padding: var(--ab-space-075, 0.75rem) var(--ab-space-200, 2rem);   font-size: 1.125em; }
+
+// ---- block: fill the row ----
+.ab.btn.block { display: flex; width: 100%; }

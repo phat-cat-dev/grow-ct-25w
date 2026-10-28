@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-n1",
+  "slug": "test-n1",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "decidedValue": "Test value",
+          "timestamp": "2026-08-26T00:00:00Z",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "test.md", "ref": "section 1" }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

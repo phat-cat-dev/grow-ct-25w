@@ -1,0 +1,151 @@
+{
+  "pathway": "work-based-experiential-learning",
+  "pathwayName": "Work-Based & Experiential Learning",
+  "tier": "introductory",
+  "focus": "what practice/work-based learning is",
+  "voiceBand": "§16 Beginner (bands 2-4, default). Provisional: confirm at pathway pressure-test.",
+  "conceptChunkCount": 1,
+  "lessons": [
+    {
+      "lessonKey": "L01",
+      "title": "Defining practice- and work-based learning",
+      "grounding": {
+        "chunkId": "ch12/defining-practice-and-work-based-learning",
+        "heading": "Defining practice- and work-based learning",
+        "pages": "221-223",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Broadly speaking, this type of learning is focused on professional practice; it involves the application of theory or knowledge learnt in classroom settings to the way you do something, whether you're a student nurse or teacher, or you're an artist developing your craft."
+          },
+          {
+            "shapeId": "content-shapes/classification",
+            "quote": "In the list below, we've tried to highlight the main ones."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Introduce the topic from first principles and bridge from prior (school/college) experience; concrete and reassuring.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Start of the degree / first year: the ways of working are new; the learner is not expected to have mastered them yet; they are finding their feet. Reassuring and normalising.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom floor: identify, describe, recognise, use.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define from first principles in plain terms: one clear idea with a concrete example; avoid jargon and caveats.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "One concrete example of the concept in the subject; plain, two or three sentences.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A recognition or sorting task at the level of the basic concept; unambiguous, with one clear right grouping.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A simple, single-point contrast: one clear thing the stronger version does better, in an everyday situation.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "First, concrete habits to start now; few steps, low overhead; reassure that starting small is right.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test recognition and recall of the basic concept; distractors are common everyday misconceptions.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to notice their own habits and first reactions; gentle, concrete, low-stakes.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm the first concrete capabilities and encourage; point to the next lesson or step. Keep it foundational.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    }
+  ]
+}

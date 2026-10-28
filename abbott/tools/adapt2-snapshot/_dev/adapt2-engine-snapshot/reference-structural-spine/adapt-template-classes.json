@@ -1,0 +1,2409 @@
+{
+  "generatedBy": "tools/theme-mapping/layers/l1-adapt-templates/adapt-template-classes.js",
+  "spine": [
+    {
+      "selector": "html#adapt",
+      "source": "src/core/required/index.html:2"
+    },
+    {
+      "selector": "#app",
+      "source": "src/core/required/index.html:16"
+    },
+    {
+      "selector": "#wrapper",
+      "source": "src/core/required/index.html:17"
+    },
+    {
+      "selector": ".page.contentobject",
+      "source": "src/core/js/views/pageView.js (type='page', extends ContentObjectView.className())"
+    },
+    {
+      "selector": ".page__inner",
+      "source": "src/core/templates/page.hbs:5"
+    },
+    {
+      "selector": ".article__container",
+      "source": "src/core/templates/page.hbs:66 (childContainer, pageView.js:16)"
+    },
+    {
+      "selector": ".article",
+      "note": "articleView extends AdaptView directly, not ContentObjectView - no contentobject literal (contrast with .page.contentobject above)",
+      "source": "src/core/js/views/articleView.js:6-16"
+    },
+    {
+      "selector": ".article__inner",
+      "source": "src/core/templates/article.hbs:4"
+    },
+    {
+      "selector": ".block__container",
+      "source": "src/core/templates/article.hbs:47 (childContainer, articleView.js:21)"
+    },
+    {
+      "selector": ".block",
+      "source": "src/core/js/views/blockView.js:6-16"
+    },
+    {
+      "selector": ".block__inner",
+      "source": "src/core/templates/block.hbs:4"
+    },
+    {
+      "selector": ".component__container",
+      "source": "src/core/templates/block.hbs:47 (childContainer, blockView.js:21)"
+    },
+    {
+      "selector": ".component",
+      "source": "src/core/js/views/componentView.js:16-28"
+    },
+    {
+      "selector": ".component__inner.<name>__inner",
+      "note": "NOT a core class - emitted by each component's own root .jsx template, not src/core",
+      "source": "see components[].bemRoot below"
+    },
+    {
+      "selector": ".component__widget",
+      "note": "NOT a core class - optional, present only in some component templates (e.g. mcq.jsx:36); absent in e.g. text.jsx",
+      "source": "see components[].classes.literal below"
+    }
+  ],
+  "views": {
+    "contentObjectView.js": {
+      "present": true,
+      "extendsClass": "AdaptView",
+      "childContainer": null,
+      "type": null,
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "this.constructor.type",
+            "kind": "static-field",
+            "field": "type"
+          },
+          {
+            "raw": "'contentobject'",
+            "kind": "literal",
+            "value": "contentobject"
+          },
+          {
+            "raw": "this.constructor.className",
+            "kind": "static-field",
+            "field": "className"
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          }
+        ],
+        "tail": ".filter(Boolean).join(' ');"
+      },
+      "source": "src/core/js/views/contentObjectView.js"
+    },
+    "pageView.js": {
+      "present": true,
+      "extendsClass": "ContentObjectView",
+      "childContainer": ".article__container",
+      "type": "page",
+      "classNameMethod": null,
+      "source": "src/core/js/views/pageView.js"
+    },
+    "menuView.js": {
+      "present": true,
+      "extendsClass": "ContentObjectView",
+      "childContainer": ".js-children",
+      "type": "menu",
+      "classNameMethod": null,
+      "source": "src/core/js/views/menuView.js"
+    },
+    "articleView.js": {
+      "present": true,
+      "extendsClass": "AdaptView",
+      "childContainer": ".block__container",
+      "type": "article",
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "'article'",
+            "kind": "literal",
+            "value": "article"
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "this.setHidden()",
+            "kind": "helper",
+            "helper": "setHidden",
+            "emits": [
+              "u-display-none"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:417-418"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          }
+        ],
+        "tail": ".join(' ');"
+      },
+      "source": "src/core/js/views/articleView.js"
+    },
+    "blockView.js": {
+      "present": true,
+      "extendsClass": "AdaptView",
+      "childContainer": ".component__container",
+      "type": "block",
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "'block'",
+            "kind": "literal",
+            "value": "block"
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "this.setHidden()",
+            "kind": "helper",
+            "helper": "setHidden",
+            "emits": [
+              "u-display-none"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:417-418"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          }
+        ],
+        "tail": ".join(' ');"
+      },
+      "source": "src/core/js/views/blockView.js"
+    },
+    "componentView.js": {
+      "present": true,
+      "extendsClass": "AdaptView",
+      "childContainer": null,
+      "type": null,
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "'component'",
+            "kind": "literal",
+            "value": "component"
+          },
+          {
+            "raw": "this.model.get('_component').toLowerCase()",
+            "kind": "model-field",
+            "field": "_component",
+            "lowercased": true
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "this.setHidden()",
+            "kind": "helper",
+            "helper": "setHidden",
+            "emits": [
+              "u-display-none"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:417-418"
+          },
+          {
+            "raw": "'is-' + this.model.get('_layout')",
+            "kind": "literal-prefix+model-field",
+            "prefix": "is-",
+            "field": "_layout"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          }
+        ],
+        "tail": ".join(' ');"
+      },
+      "source": "src/core/js/views/componentView.js"
+    },
+    "questionView.js": {
+      "present": true,
+      "extendsClass": "ComponentView",
+      "childContainer": null,
+      "type": null,
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "'component'",
+            "kind": "literal",
+            "value": "component"
+          },
+          {
+            "raw": "'is-question'",
+            "kind": "literal",
+            "value": "is-question"
+          },
+          {
+            "raw": "this.model.get('_component').toLowerCase()",
+            "kind": "model-field",
+            "field": "_component",
+            "lowercased": true
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "'is-' + this.model.get('_layout')",
+            "kind": "literal-prefix+model-field",
+            "prefix": "is-",
+            "field": "_layout"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          },
+          {
+            "raw": "(canShowCorrectness ? 'can-show-correctness' : '')",
+            "kind": "conditional",
+            "condition": "canShowCorrectness",
+            "whenTrue": "can-show-correctness"
+          },
+          {
+            "raw": "(canShowModelAnswer && !canShowCorrectness ? 'can-show-model-answer' : '')",
+            "kind": "conditional",
+            "condition": "canShowModelAnswer && !canShowCorrectness",
+            "whenTrue": "can-show-model-answer"
+          },
+          {
+            "raw": "(this.model.get('_canShowFeedback') ? 'can-show-feedback' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_canShowFeedback')",
+            "whenTrue": "can-show-feedback"
+          },
+          {
+            "raw": "(this.model.get('_canShowMarking') ? 'can-show-marking' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_canShowMarking')",
+            "whenTrue": "can-show-marking"
+          }
+        ],
+        "tail": ".join(' ');"
+      },
+      "source": "src/core/js/views/questionView.js"
+    },
+    "menuItemView.js": {
+      "present": true,
+      "extendsClass": "AdaptView",
+      "childContainer": null,
+      "type": null,
+      "classNameMethod": {
+        "elements": [
+          {
+            "raw": "'menu-item'",
+            "kind": "literal",
+            "value": "menu-item"
+          },
+          {
+            "raw": "this.constructor.className",
+            "kind": "static-field",
+            "field": "className"
+          },
+          {
+            "raw": "this.model.get('_id')",
+            "kind": "model-field",
+            "field": "_id",
+            "lowercased": false
+          },
+          {
+            "raw": "this.model.get('_classes')",
+            "kind": "model-field",
+            "field": "_classes",
+            "lowercased": false
+          },
+          {
+            "raw": "this.setVisibility()",
+            "kind": "helper",
+            "helper": "setVisibility",
+            "emits": [
+              "u-visibility-hidden"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:409-410"
+          },
+          {
+            "raw": "this.setHidden()",
+            "kind": "helper",
+            "helper": "setHidden",
+            "emits": [
+              "u-display-none"
+            ],
+            "conditional": true,
+            "source": "src/core/js/views/adaptView.js:417-418"
+          },
+          {
+            "raw": "(this.model.get('_isVisited') ? 'is-visited' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isVisited')",
+            "whenTrue": "is-visited"
+          },
+          {
+            "raw": "(this.model.get('_isComplete') ? 'is-complete' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isComplete')",
+            "whenTrue": "is-complete"
+          },
+          {
+            "raw": "(this.model.get('_isLocked') ? 'is-locked' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isLocked')",
+            "whenTrue": "is-locked"
+          },
+          {
+            "raw": "(this.model.get('_isOptional') ? 'is-optional' : '')",
+            "kind": "conditional",
+            "condition": "this.model.get('_isOptional')",
+            "whenTrue": "is-optional"
+          }
+        ],
+        "tail": ".join(' ');"
+      },
+      "source": "src/core/js/views/menuItemView.js"
+    }
+  },
+  "holders": {
+    "nav": {
+      "file": "nav.hbs",
+      "present": true,
+      "literal": [
+        "nav__inner",
+        "btn-icon",
+        "nav__btn",
+        "nav__skip-btn",
+        "show-label",
+        "nav__btn-label",
+        "nav__back-btn",
+        "js-nav-back-btn",
+        "u-display-none",
+        "icon",
+        "nav__spacer",
+        "nav__drawer-btn",
+        "js-nav-drawer-btn"
+      ],
+      "dynamic": [
+        "is-position-{{#if",
+        "_config._drawer._position}}{{_config._drawer._position}}{{else}}auto{{/if}}",
+        "{{#if",
+        "_config._drawer._iconClass}}{{_config._drawer._iconClass}}{{else}}icon-list{{/if}}"
+      ]
+    },
+    "page": {
+      "file": "page.hbs",
+      "present": true,
+      "literal": [
+        "page__inner",
+        "page__header",
+        "page__header-inner",
+        "page__header-content",
+        "page__priority",
+        "icon",
+        "page__priority-label",
+        "page__title",
+        "page__title-inner",
+        "js-heading",
+        "page__subtitle",
+        "page__subtitle-inner",
+        "page__body",
+        "page__body-inner",
+        "page__instruction",
+        "page__instruction-inner",
+        "article__container"
+      ],
+      "dynamic": [
+        "{{_priorityClass}}",
+        "{{_priorityIconClass}}"
+      ]
+    },
+    "article": {
+      "file": "article.hbs",
+      "present": true,
+      "literal": [
+        "article__inner",
+        "article__header",
+        "article__header-inner",
+        "article__priority",
+        "icon",
+        "article__priority-label",
+        "article__title",
+        "article__title-inner",
+        "js-heading",
+        "article__body",
+        "article__body-inner",
+        "article__instruction",
+        "article__instruction-inner",
+        "block__container"
+      ],
+      "dynamic": [
+        "{{_priorityClass}}",
+        "{{_priorityIconClass}}"
+      ]
+    },
+    "block": {
+      "file": "block.hbs",
+      "present": true,
+      "literal": [
+        "block__inner",
+        "block__header",
+        "block__header-inner",
+        "block__priority",
+        "icon",
+        "block__priority-label",
+        "block__title",
+        "block__title-inner",
+        "js-heading",
+        "block__body",
+        "block__body-inner",
+        "block__instruction",
+        "block__instruction-inner",
+        "component__container"
+      ],
+      "dynamic": [
+        "{{_priorityClass}}",
+        "{{_priorityIconClass}}"
+      ]
+    },
+    "component": {
+      "file": "partials/component.hbs",
+      "present": true,
+      "literal": [
+        "component__header",
+        "_component}}__header",
+        "component__header-inner",
+        "_component}}__header-inner",
+        "component__priority",
+        "_component}}__priority",
+        "icon",
+        "component__priority-label",
+        "_component}}__priority-label",
+        "component__title",
+        "_component}}__title",
+        "component__title-inner",
+        "_component}}__title-inner",
+        "js-heading",
+        "component__body",
+        "_component}}__body",
+        "component__body-inner",
+        "_component}}__body-inner",
+        "component__instruction",
+        "_component}}__instruction",
+        "component__instruction-inner",
+        "_component}}__instruction-inner"
+      ],
+      "dynamic": [
+        "{{lowercase",
+        "{{_priorityClass}}",
+        "{{_priorityIconClass}}"
+      ]
+    },
+    "course": {
+      "file": null,
+      "present": false,
+      "literal": [],
+      "dynamic": [],
+      "notes": "No core/templates .hbs for course/menu; menu markup is JS-view driven. See cascade OBJECT - MENU section instead."
+    }
+  },
+  "components": [
+    {
+      "dir": "adapt-ab-accordion",
+      "component": {
+        "registered": "ab-accordion",
+        "rendered": "ab-accordion",
+        "source": "src/components/adapt-ab-accordion/bower.json",
+        "notes": null
+      },
+      "rootFile": "ab-accordion.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-accordion/templates/ab-accordion.jsx",
+      "bemRoot": "ab-accordion",
+      "derivedHeaderFamily": [
+        "ab-accordion__header",
+        "ab-accordion__header-inner",
+        "ab-accordion__title",
+        "ab-accordion__title-inner",
+        "ab-accordion__body",
+        "ab-accordion__body-inner",
+        "ab-accordion__instruction",
+        "ab-accordion__instruction-inner",
+        "ab-accordion__priority",
+        "ab-accordion__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-accordion__inner",
+          "component__widget",
+          "ab-accordion__widget",
+          "ab",
+          "accordion",
+          "accordion-item",
+          "accordion-header",
+          "accordion-body"
+        ],
+        "conditional": [
+          "accordion-button",
+          "ab-accordion__header-btn",
+          "collapsed",
+          "accordion-collapse",
+          "show",
+          "collapse"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-callouts",
+      "component": {
+        "registered": "ab-callouts",
+        "rendered": "ab-callouts",
+        "source": "src/components/adapt-ab-callouts/bower.json",
+        "notes": null
+      },
+      "rootFile": "callouts.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-callouts/templates/callouts.jsx",
+      "bemRoot": "ab-callouts",
+      "derivedHeaderFamily": [
+        "ab-callouts__header",
+        "ab-callouts__header-inner",
+        "ab-callouts__title",
+        "ab-callouts__title-inner",
+        "ab-callouts__body",
+        "ab-callouts__body-inner",
+        "ab-callouts__instruction",
+        "ab-callouts__instruction-inner",
+        "ab-callouts__priority",
+        "ab-callouts__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-callouts__inner",
+          "component__widget",
+          "ab-callouts__widget",
+          "callout-body",
+          "callout-title",
+          "callout-text"
+        ],
+        "conditional": [
+          "ab-callouts__group",
+          "is-group",
+          "ab",
+          "callout",
+          "with-icon",
+          "callout-icon",
+          "icon"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-card",
+      "component": {
+        "registered": "ab-card",
+        "rendered": "ab-card",
+        "source": "src/components/adapt-ab-card/bower.json",
+        "notes": null
+      },
+      "rootFile": "card.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-card/templates/card.jsx",
+      "bemRoot": "ab-card",
+      "derivedHeaderFamily": [
+        "ab-card__header",
+        "ab-card__header-inner",
+        "ab-card__title",
+        "ab-card__title-inner",
+        "ab-card__body",
+        "ab-card__body-inner",
+        "ab-card__instruction",
+        "ab-card__instruction-inner",
+        "ab-card__priority",
+        "ab-card__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-card__inner",
+          "component__widget",
+          "ab-card__widget",
+          "card-title",
+          "card-subtitle",
+          "card-text",
+          "card-link",
+          "card-img-top",
+          "card-header",
+          "card-body",
+          "card-body__text",
+          "card-footer"
+        ],
+        "conditional": [
+          "ab-card__group",
+          "card-group",
+          "ab",
+          "card",
+          "with-icon",
+          "hover-animate",
+          "tinted",
+          "card-icon",
+          "icon"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-carousel",
+      "component": {
+        "registered": "ab-carousel",
+        "rendered": "ab-carousel",
+        "source": "src/components/adapt-ab-carousel/bower.json",
+        "notes": null
+      },
+      "rootFile": "carousel.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-carousel/templates/carousel.jsx",
+      "bemRoot": "ab-carousel",
+      "derivedHeaderFamily": [
+        "ab-carousel__header",
+        "ab-carousel__header-inner",
+        "ab-carousel__title",
+        "ab-carousel__title-inner",
+        "ab-carousel__body",
+        "ab-carousel__body-inner",
+        "ab-carousel__instruction",
+        "ab-carousel__instruction-inner",
+        "ab-carousel__priority",
+        "ab-carousel__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-carousel__inner",
+          "component__widget",
+          "ab-carousel__widget",
+          "ab",
+          "carousel",
+          "carousel-inner",
+          "carousel-control-prev",
+          "ab-carousel__prev",
+          "carousel-control-prev-icon",
+          "visually-hidden",
+          "carousel-control-next",
+          "ab-carousel__next",
+          "carousel-control-next-icon",
+          "carousel-indicators",
+          "ab-carousel__image",
+          "carousel-caption"
+        ],
+        "conditional": [
+          "ab-carousel__indicator",
+          "active",
+          "carousel-item"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-hero",
+      "component": {
+        "registered": "ab-hero",
+        "rendered": "ab-hero",
+        "source": "src/components/adapt-ab-hero/bower.json",
+        "notes": null
+      },
+      "rootFile": "hero.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-hero/templates/hero.jsx",
+      "bemRoot": "ab-hero",
+      "derivedHeaderFamily": [
+        "ab-hero__header",
+        "ab-hero__header-inner",
+        "ab-hero__title",
+        "ab-hero__title-inner",
+        "ab-hero__body",
+        "ab-hero__body-inner",
+        "ab-hero__instruction",
+        "ab-hero__instruction-inner",
+        "ab-hero__priority",
+        "ab-hero__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-hero__inner",
+          "component__widget",
+          "ab-hero__widget",
+          "hero-bg",
+          "hero-eyebrow",
+          "hero-title",
+          "hero-subtitle",
+          "hero-actions",
+          "hero-media"
+        ],
+        "conditional": [
+          "hero-icon",
+          "icon",
+          "ab",
+          "btn",
+          "accent",
+          "outline"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-hotgraphic",
+      "component": {
+        "registered": "ab-hotgraphic",
+        "rendered": "ab-hotgraphic",
+        "source": "src/components/adapt-ab-hotgraphic/bower.json",
+        "notes": null
+      },
+      "rootFile": "ab-hotgraphic.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-hotgraphic/templates/ab-hotgraphic.jsx",
+      "bemRoot": "ab-hotgraphic",
+      "derivedHeaderFamily": [
+        "ab-hotgraphic__header",
+        "ab-hotgraphic__header-inner",
+        "ab-hotgraphic__title",
+        "ab-hotgraphic__title-inner",
+        "ab-hotgraphic__body",
+        "ab-hotgraphic__body-inner",
+        "ab-hotgraphic__instruction",
+        "ab-hotgraphic__instruction-inner",
+        "ab-hotgraphic__priority",
+        "ab-hotgraphic__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-hotgraphic__inner",
+          "component__widget",
+          "ab-hotgraphic__widget",
+          "ab-cq",
+          "ab-hotgraphic__canvas",
+          "ab-hotgraphic__list",
+          "ab-hotgraphic__list-item",
+          "ab-hotgraphic__reveal",
+          "ab-hotgraphic__reveal-inner",
+          "visually-hidden",
+          "ab-hotgraphic__reveal-title",
+          "ab-hotgraphic__reveal-body"
+        ],
+        "conditional": [
+          "ab-hotgraphic__list-btn",
+          "js-ab-hotgraphic-list-item",
+          "ab-hotgraphic__reveal-close",
+          "js-ab-hotgraphic-reveal-close"
+        ],
+        "partial": []
+      },
+      "subTemplates": [
+        "abHotgraphicPopup.jsx"
+      ],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-ab-sandbox",
+      "component": {
+        "registered": "ab-sandbox",
+        "rendered": "ab-sandbox",
+        "source": "src/components/adapt-ab-sandbox/bower.json",
+        "notes": null
+      },
+      "rootFile": "sandbox.jsx",
+      "rootTemplateSource": "src/components/adapt-ab-sandbox/templates/sandbox.jsx",
+      "bemRoot": "ab-sandbox",
+      "derivedHeaderFamily": [
+        "ab-sandbox__header",
+        "ab-sandbox__header-inner",
+        "ab-sandbox__title",
+        "ab-sandbox__title-inner",
+        "ab-sandbox__body",
+        "ab-sandbox__body-inner",
+        "ab-sandbox__instruction",
+        "ab-sandbox__instruction-inner",
+        "ab-sandbox__priority",
+        "ab-sandbox__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "ab-sandbox__inner",
+          "ab-sandbox__box"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": false,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-annotated",
+      "component": {
+        "registered": "annotated",
+        "rendered": "annotated",
+        "source": "src/components/adapt-abbott-annotated/bower.json",
+        "notes": null
+      },
+      "rootFile": "annotated.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-annotated/templates/annotated.jsx",
+      "bemRoot": "annotated",
+      "derivedHeaderFamily": [
+        "annotated__header",
+        "annotated__header-inner",
+        "annotated__title",
+        "annotated__title-inner",
+        "annotated__body",
+        "annotated__body-inner",
+        "annotated__instruction",
+        "annotated__instruction-inner",
+        "annotated__priority",
+        "annotated__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "annotated__inner",
+          "annotated__passage",
+          "annotated__segment-text",
+          "annotated__marker-label",
+          "annotated__marker-number",
+          "annotated__segment",
+          "annotated__note-header",
+          "annotated__note-title",
+          "js-annotated-note-title",
+          "annotated__note-referent",
+          "js-annotated-note-referent",
+          "annotated__note-body",
+          "js-annotated-note-body",
+          "annotated__back",
+          "js-annotated-back",
+          "annotated__back-icon",
+          "annotated__back-text"
+        ],
+        "conditional": [
+          "component__widget",
+          "annotated__widget",
+          "annotated__segment--annotated",
+          "is-expanded",
+          "annotated__marker",
+          "js-annotated-marker",
+          "annotated__note-region",
+          "js-annotated-note-region",
+          "u-display-none"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-branching",
+      "component": {
+        "registered": "branching",
+        "rendered": "branching",
+        "source": "src/components/adapt-abbott-branching/bower.json",
+        "notes": null
+      },
+      "rootFile": "branching.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-branching/templates/branching.jsx",
+      "bemRoot": "branching",
+      "derivedHeaderFamily": [
+        "branching__header",
+        "branching__header-inner",
+        "branching__title",
+        "branching__title-inner",
+        "branching__body",
+        "branching__body-inner",
+        "branching__instruction",
+        "branching__instruction-inner",
+        "branching__priority",
+        "branching__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "branching__inner",
+          "component__widget",
+          "branching__widget",
+          "branching__instruction",
+          "branching__choices",
+          "branching__consequence",
+          "branching__consequence-title",
+          "branching__consequence-body",
+          "branching__choice-text",
+          "branching__choice-marker"
+        ],
+        "conditional": [
+          "branching__choice",
+          "is-selected",
+          "is-visited",
+          "is-commit-locked"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-checklist",
+      "component": {
+        "registered": "checklist",
+        "rendered": "checklist",
+        "source": "src/components/adapt-abbott-checklist/bower.json",
+        "notes": null
+      },
+      "rootFile": "checklist.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-checklist/templates/checklist.jsx",
+      "bemRoot": "checklist",
+      "derivedHeaderFamily": [
+        "checklist__header",
+        "checklist__header-inner",
+        "checklist__title",
+        "checklist__title-inner",
+        "checklist__body",
+        "checklist__body-inner",
+        "checklist__instruction",
+        "checklist__instruction-inner",
+        "checklist__priority",
+        "checklist__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "checklist__inner",
+          "checklist__fieldset",
+          "checklist__legend",
+          "aria-label",
+          "checklist__items",
+          "checklist__input",
+          "js-checklist-input",
+          "checklist__label",
+          "checklist__indicator",
+          "checklist__text",
+          "checklist__progress",
+          "checklist__progress-text",
+          "js-checklist-progress"
+        ],
+        "conditional": [
+          "component__widget",
+          "checklist__widget",
+          "checklist__item"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-confidence",
+      "component": {
+        "registered": "confidence",
+        "rendered": "confidence",
+        "source": "src/components/adapt-abbott-confidence/bower.json",
+        "notes": null
+      },
+      "rootFile": "confidence.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-confidence/templates/confidence.jsx",
+      "bemRoot": "confidence",
+      "derivedHeaderFamily": [
+        "confidence__header",
+        "confidence__header-inner",
+        "confidence__title",
+        "confidence__title-inner",
+        "confidence__body",
+        "confidence__body-inner",
+        "confidence__instruction",
+        "confidence__instruction-inner",
+        "confidence__priority",
+        "confidence__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "confidence__inner",
+          "confidence__form",
+          "confidence__items",
+          "u-display-none",
+          "confidence__item",
+          "confidence__item-text",
+          "confidence__scale",
+          "confidence__radio",
+          "js-confidence-radio",
+          "confidence__option-indicator",
+          "confidence__option-label",
+          "btn__container",
+          "confidence__confirmation",
+          "confidence__confirmation-text",
+          "confidence__feedback",
+          "confidence__feedback-items",
+          "confidence__feedback-item-text",
+          "confidence__movement-ratings",
+          "confidence__movement-badge",
+          "confidence__feedback-text",
+          "confidence__summary"
+        ],
+        "conditional": [
+          "component__widget",
+          "confidence__widget",
+          "is-disabled",
+          "is-submitted",
+          "is-complete",
+          "confidence__option",
+          "is-selected",
+          "btn-text",
+          "btn__action",
+          "js-confidence-submit",
+          "confidence__feedback-item",
+          "confidence__movement"
+        ],
+        "partial": [
+          "is-"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-flipcard",
+      "component": {
+        "registered": "flipcard",
+        "rendered": "flipcard",
+        "source": "src/components/adapt-abbott-flipcard/bower.json",
+        "notes": null
+      },
+      "rootFile": "flipcard.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-flipcard/templates/flipcard.jsx",
+      "bemRoot": "flipcard",
+      "derivedHeaderFamily": [
+        "flipcard__header",
+        "flipcard__header-inner",
+        "flipcard__title",
+        "flipcard__title-inner",
+        "flipcard__body",
+        "flipcard__body-inner",
+        "flipcard__instruction",
+        "flipcard__instruction-inner",
+        "flipcard__priority",
+        "flipcard__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "flipcard__inner",
+          "component__widget",
+          "flipcard__widget",
+          "flipcard__cards",
+          "flipcard__card",
+          "flipcard__card-inner",
+          "flipcard__face",
+          "flipcard__face--front",
+          "flipcard__graphic",
+          "flipcard__image",
+          "flipcard__title",
+          "flipcard__title--front",
+          "flipcard__body",
+          "flipcard__body--front",
+          "flipcard__face--back",
+          "flipcard__title--back",
+          "flipcard__body--back"
+        ],
+        "conditional": [
+          "flipcard__card-container",
+          "is-flipped",
+          "is-visited"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-glossary",
+      "component": {
+        "registered": "glossary",
+        "rendered": "glossary",
+        "source": "src/components/adapt-abbott-glossary/bower.json",
+        "notes": null
+      },
+      "rootFile": "glossary.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-glossary/templates/glossary.jsx",
+      "bemRoot": "glossary",
+      "derivedHeaderFamily": [
+        "glossary__header",
+        "glossary__header-inner",
+        "glossary__title",
+        "glossary__title-inner",
+        "glossary__body",
+        "glossary__body-inner",
+        "glossary__instruction",
+        "glossary__instruction-inner",
+        "glossary__priority",
+        "glossary__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "glossary__inner",
+          "glossary__passage",
+          "glossary__marker-label",
+          "glossary__marker-text",
+          "glossary__segment",
+          "glossary__definition-header",
+          "glossary__term-heading",
+          "js-glossary-term-heading",
+          "glossary__definition-body",
+          "js-glossary-definition-body",
+          "glossary__back",
+          "js-glossary-back",
+          "glossary__back-icon",
+          "glossary__back-text"
+        ],
+        "conditional": [
+          "component__widget",
+          "glossary__widget",
+          "glossary__segment--term",
+          "is-expanded",
+          "glossary__marker",
+          "js-glossary-marker",
+          "glossary__definition-region",
+          "js-glossary-definition-region",
+          "u-display-none"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-modal",
+      "component": {
+        "registered": "modal",
+        "rendered": "modal",
+        "source": "src/components/adapt-abbott-modal/bower.json",
+        "notes": null
+      },
+      "rootFile": "modal.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-modal/templates/modal.jsx",
+      "bemRoot": "modal",
+      "derivedHeaderFamily": [
+        "modal__header",
+        "modal__header-inner",
+        "modal__title",
+        "modal__title-inner",
+        "modal__body",
+        "modal__body-inner",
+        "modal__instruction",
+        "modal__instruction-inner",
+        "modal__priority",
+        "modal__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "modal__inner",
+          "component__body",
+          "modal__body",
+          "btn__container",
+          "modal__btn-container",
+          "modal__trigger-label"
+        ],
+        "conditional": [
+          "cm",
+          "btn",
+          "primary",
+          "js-modal-trigger",
+          "is-complete"
+        ],
+        "partial": [
+          "ab",
+          "icon-",
+          "-svg",
+          "modal__trigger-icon"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": false,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-opentext",
+      "component": {
+        "registered": "opentext",
+        "rendered": "opentext",
+        "source": "src/components/adapt-abbott-opentext/bower.json",
+        "notes": null
+      },
+      "rootFile": "opentext.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-opentext/templates/opentext.jsx",
+      "bemRoot": "opentext",
+      "derivedHeaderFamily": [
+        "opentext__header",
+        "opentext__header-inner",
+        "opentext__title",
+        "opentext__title-inner",
+        "opentext__body",
+        "opentext__body-inner",
+        "opentext__instruction",
+        "opentext__instruction-inner",
+        "opentext__priority",
+        "opentext__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "opentext__inner",
+          "opentext__body",
+          "opentext__body-inner",
+          "opentext__label--hidden",
+          "opentext__textarea-container",
+          "opentext__textarea",
+          "opentext__counter",
+          "u-display-none",
+          "opentext__over-limit",
+          "opentext__completion",
+          "opentext__status",
+          "opentext__live-region",
+          "opentext__alert"
+        ],
+        "conditional": [
+          "component__widget",
+          "opentext__widget",
+          "is-disabled",
+          "is-complete",
+          "btn-text",
+          "opentext__complete-btn",
+          "opentext__completed-state"
+        ],
+        "partial": [
+          "is-variant-"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-references",
+      "component": {
+        "registered": "references",
+        "rendered": "references",
+        "source": "src/components/adapt-abbott-references/bower.json",
+        "notes": null
+      },
+      "rootFile": "references.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-references/templates/references.jsx",
+      "bemRoot": "references",
+      "derivedHeaderFamily": [
+        "references__header",
+        "references__header-inner",
+        "references__title",
+        "references__title-inner",
+        "references__body",
+        "references__body-inner",
+        "references__instruction",
+        "references__instruction-inner",
+        "references__priority",
+        "references__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "references__inner",
+          "component__widget",
+          "references__widget",
+          "references__list",
+          "references__item",
+          "references__link",
+          "references__permalink"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-sortable",
+      "component": {
+        "registered": "sortable",
+        "rendered": "sortable",
+        "source": "src/components/adapt-abbott-sortable/bower.json",
+        "notes": null
+      },
+      "rootFile": "sortable.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-sortable/templates/sortable.jsx",
+      "bemRoot": "sortable",
+      "derivedHeaderFamily": [
+        "sortable__header",
+        "sortable__header-inner",
+        "sortable__title",
+        "sortable__title-inner",
+        "sortable__body",
+        "sortable__body-inner",
+        "sortable__instruction",
+        "sortable__instruction-inner",
+        "sortable__priority",
+        "sortable__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "sortable__inner",
+          "sortable__live-region",
+          "aria-label",
+          "sortable__items-list",
+          "sortable__item-position",
+          "sortable__item-text",
+          "sortable__item-controls",
+          "icon",
+          "sortable__item-state",
+          "sortable__item-icon",
+          "sortable__item-correct-icon",
+          "sortable__item-incorrect-icon",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "sortable__widget",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "is-correct",
+          "sortable__item",
+          "js-sortable-item",
+          "is-draggable",
+          "is-incorrect",
+          "sortable__move-btn",
+          "sortable__move-up-btn",
+          "js-sortable-move-up",
+          "sortable__move-down-btn",
+          "js-sortable-move-down"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-tabs",
+      "component": {
+        "registered": "tabs",
+        "rendered": "tabs",
+        "source": "src/components/adapt-abbott-tabs/bower.json",
+        "notes": null
+      },
+      "rootFile": "tabs.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-tabs/templates/tabs.jsx",
+      "bemRoot": "tabs",
+      "derivedHeaderFamily": [
+        "tabs__header",
+        "tabs__header-inner",
+        "tabs__title",
+        "tabs__title-inner",
+        "tabs__body",
+        "tabs__body-inner",
+        "tabs__instruction",
+        "tabs__instruction-inner",
+        "tabs__priority",
+        "tabs__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "tabs__inner",
+          "component__widget",
+          "tabs__widget",
+          "tabs__tablist",
+          "tabs__panels",
+          "tabs__panel-content",
+          "tabs__graphic",
+          "tabs__image",
+          "tabs__panel-title",
+          "tabs__panel-body"
+        ],
+        "conditional": [
+          "tabs__tab",
+          "is-active",
+          "is-visited",
+          "tabs__panel"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-abbott-timeline",
+      "component": {
+        "registered": "timeline",
+        "rendered": "timeline",
+        "source": "src/components/adapt-abbott-timeline/bower.json",
+        "notes": null
+      },
+      "rootFile": "timeline.jsx",
+      "rootTemplateSource": "src/components/adapt-abbott-timeline/templates/timeline.jsx",
+      "bemRoot": "timeline",
+      "derivedHeaderFamily": [
+        "timeline__header",
+        "timeline__header-inner",
+        "timeline__title",
+        "timeline__title-inner",
+        "timeline__body",
+        "timeline__body-inner",
+        "timeline__instruction",
+        "timeline__instruction-inner",
+        "timeline__priority",
+        "timeline__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "timeline__inner",
+          "component__widget",
+          "timeline__widget",
+          "timeline__stages",
+          "timeline__marker",
+          "timeline__marker-dot",
+          "timeline__marker-title",
+          "timeline__detail-content",
+          "timeline__graphic",
+          "timeline__image",
+          "timeline__body",
+          "timeline__detail-content--empty"
+        ],
+        "conditional": [
+          "timeline__stage",
+          "is-expanded",
+          "is-visited",
+          "timeline__detail"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-accordion",
+      "component": {
+        "registered": "accordion",
+        "rendered": "accordion",
+        "source": "src/components/adapt-contrib-accordion/bower.json",
+        "notes": null
+      },
+      "rootFile": "accordion.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-accordion/templates/accordion.jsx",
+      "bemRoot": "accordion",
+      "derivedHeaderFamily": [
+        "accordion__header",
+        "accordion__header-inner",
+        "accordion__title",
+        "accordion__title-inner",
+        "accordion__body",
+        "accordion__body-inner",
+        "accordion__instruction",
+        "accordion__instruction-inner",
+        "accordion__priority",
+        "accordion__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "accordion__inner",
+          "component__widget",
+          "accordion__widget",
+          "accordion-item__btn-inner",
+          "accordion-item__title-icon",
+          "accordion-item__title",
+          "aria-label",
+          "accordion-item__title-inner",
+          "accordion-item__icon",
+          "icon",
+          "accordion-item__content",
+          "js-accordion-item-content",
+          "accordion-item__content-inner",
+          "accordion-item__body",
+          "accordion-item__body-inner"
+        ],
+        "conditional": [
+          "accordion-item",
+          "js-accordion-item",
+          "has-image",
+          "is-center-aligned",
+          "accordion-item__btn",
+          "js-toggle-item",
+          "has-title-icon",
+          "is-visited",
+          "is-open",
+          "is-selected",
+          "is-closed"
+        ],
+        "partial": [
+          "align-image-",
+          "has-icon-"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-assessmentResults",
+      "component": {
+        "registered": "assessmentResults",
+        "rendered": "assessmentresults",
+        "source": "src/components/adapt-contrib-assessmentResults/bower.json",
+        "notes": "directory/registered casing differs from rendered class (componentView.js:19 .toLowerCase())"
+      },
+      "rootFile": "assessmentResults.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-assessmentResults/templates/assessmentResults.jsx",
+      "bemRoot": "assessmentresults",
+      "derivedHeaderFamily": [
+        "assessmentresults__header",
+        "assessmentresults__header-inner",
+        "assessmentresults__title",
+        "assessmentresults__title-inner",
+        "assessmentresults__body",
+        "assessmentresults__body-inner",
+        "assessmentresults__instruction",
+        "assessmentresults__instruction-inner",
+        "assessmentresults__priority",
+        "assessmentresults__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "assessmentresults__inner",
+          "component__widget",
+          "assessmentresults__widget",
+          "component__feedback",
+          "assessmentresults__feedback",
+          "component__feedback-inner",
+          "assessmentresults__feedback-inner",
+          "assessmentresults__retry-feedback",
+          "assessmentresults__retry-feedback-inner",
+          "btn-text",
+          "assessmentresults__retry-btn",
+          "js-assessment-retry-btn"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-blank",
+      "component": {
+        "registered": "blank",
+        "rendered": "blank",
+        "source": "src/components/adapt-contrib-blank/bower.json",
+        "notes": null
+      },
+      "rootFile": "blank.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-blank/templates/blank.jsx",
+      "bemRoot": "blank",
+      "derivedHeaderFamily": [
+        "blank__header",
+        "blank__header-inner",
+        "blank__title",
+        "blank__title-inner",
+        "blank__body",
+        "blank__body-inner",
+        "blank__instruction",
+        "blank__instruction-inner",
+        "blank__priority",
+        "blank__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "blank__inner"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": false,
+      "repeatsStandardHooksOnly": true,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-gmcq",
+      "component": {
+        "registered": "gmcq",
+        "rendered": "gmcq",
+        "source": "src/components/adapt-contrib-gmcq/bower.json",
+        "notes": null
+      },
+      "rootFile": "gmcq.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-gmcq/templates/gmcq.jsx",
+      "bemRoot": "gmcq",
+      "derivedHeaderFamily": [
+        "gmcq__header",
+        "gmcq__header-inner",
+        "gmcq__title",
+        "gmcq__title-inner",
+        "gmcq__body",
+        "gmcq__body-inner",
+        "gmcq__instruction",
+        "gmcq__instruction-inner",
+        "gmcq__priority",
+        "gmcq__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "gmcq__inner",
+          "gmcq-item__input",
+          "gmcq-item__option",
+          "gmcq-item__state",
+          "icon",
+          "gmcq-item__text",
+          "gmcq-item__text-inner",
+          "gmcq-item__state-correctness",
+          "gmcq-item__icon",
+          "gmcq-item__correct-icon",
+          "gmcq-item__incorrect-icon",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "gmcq__widget",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "show-user-answer",
+          "show-correct-answer",
+          "show-correctness",
+          "is-correct",
+          "has-column-layout",
+          "is-round",
+          "is-incorrect",
+          "gmcq-item__label",
+          "js-item-label",
+          "u-no-select",
+          "is-selected",
+          "gmcq-item__answer-icon",
+          "is-radio",
+          "is-checkbox"
+        ],
+        "partial": [
+          "gmcq-item",
+          "item-"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-graphic",
+      "component": {
+        "registered": "graphic",
+        "rendered": "graphic",
+        "source": "src/components/adapt-contrib-graphic/bower.json",
+        "notes": null
+      },
+      "rootFile": "graphic.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-graphic/templates/graphic.jsx",
+      "bemRoot": "graphic",
+      "derivedHeaderFamily": [
+        "graphic__header",
+        "graphic__header-inner",
+        "graphic__title",
+        "graphic__title-inner",
+        "graphic__body",
+        "graphic__body-inner",
+        "graphic__instruction",
+        "graphic__instruction-inner",
+        "graphic__priority",
+        "graphic__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "graphic__inner",
+          "component__widget",
+          "graphic__widget",
+          "graphic__longdescription",
+          "graphic__longdescription-inner"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-hotgraphic",
+      "component": {
+        "registered": "hotgraphic",
+        "rendered": "hotgraphic",
+        "source": "src/components/adapt-contrib-hotgraphic/bower.json",
+        "notes": null
+      },
+      "rootFile": "hotgraphic.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-hotgraphic/templates/hotgraphic.jsx",
+      "bemRoot": "hotgraphic",
+      "derivedHeaderFamily": [
+        "hotgraphic__header",
+        "hotgraphic__header-inner",
+        "hotgraphic__title",
+        "hotgraphic__title-inner",
+        "hotgraphic__body",
+        "hotgraphic__body-inner",
+        "hotgraphic__instruction",
+        "hotgraphic__instruction-inner",
+        "hotgraphic__priority",
+        "hotgraphic__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "hotgraphic__inner"
+        ],
+        "conditional": [
+          "component__widget",
+          "hotgraphic__widget",
+          "is-tile",
+          "is-pin",
+          "has-attribution"
+        ],
+        "partial": []
+      },
+      "subTemplates": [
+        "hotgraphicLayoutPins.jsx",
+        "hotgraphicLayoutTiles.jsx",
+        "hotgraphicPopup.jsx",
+        "hotgraphicPopupToolbar.jsx"
+      ],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-matching",
+      "component": {
+        "registered": "matching",
+        "rendered": "matching",
+        "source": "src/components/adapt-contrib-matching/bower.json",
+        "notes": null
+      },
+      "rootFile": "matching.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-matching/templates/matching.jsx",
+      "bemRoot": "matching",
+      "derivedHeaderFamily": [
+        "matching__header",
+        "matching__header-inner",
+        "matching__title",
+        "matching__title-inner",
+        "matching__body",
+        "matching__body-inner",
+        "matching__instruction",
+        "matching__instruction-inner",
+        "matching__priority",
+        "matching__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "matching__inner",
+          "matching-item__title",
+          "matching-item__title_inner",
+          "matching-item__select-container",
+          "js-matching-item-select-container",
+          "matching-item__select-state",
+          "matching-item__select-icon",
+          "matching-item__select-correct-icon",
+          "icon",
+          "matching-item__select-incorrect-icon",
+          "matching-item__answer-container",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "matching__widget",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "show-user-answer",
+          "is-correct",
+          "matching-item",
+          "item",
+          "js-matching-item",
+          "is-incorrect"
+        ],
+        "partial": [
+          "item-"
+        ]
+      },
+      "subTemplates": [
+        "matchingDropDown.jsx"
+      ],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-mcq",
+      "component": {
+        "registered": "mcq",
+        "rendered": "mcq",
+        "source": "src/components/adapt-contrib-mcq/bower.json",
+        "notes": null
+      },
+      "rootFile": "mcq.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-mcq/templates/mcq.jsx",
+      "bemRoot": "mcq",
+      "derivedHeaderFamily": [
+        "mcq__header",
+        "mcq__header-inner",
+        "mcq__title",
+        "mcq__title-inner",
+        "mcq__body",
+        "mcq__body-inner",
+        "mcq__instruction",
+        "mcq__instruction-inner",
+        "mcq__priority",
+        "mcq__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "mcq__inner",
+          "mcq-item__input",
+          "mcq-item__state",
+          "icon",
+          "mcq-item__text",
+          "mcq-item__text-inner",
+          "mcq-item__state-correctness",
+          "mcq-item__icon",
+          "mcq-item__correct-icon",
+          "mcq-item__incorrect-icon",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "mcq__widget",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "show-user-answer",
+          "show-correct-answer",
+          "show-correctness",
+          "is-correct",
+          "is-incorrect",
+          "mcq-item__label",
+          "u-no-select",
+          "is-selected",
+          "mcq-item__answer-icon",
+          "is-radio",
+          "is-checkbox"
+        ],
+        "partial": [
+          "mcq-item",
+          "item-"
+        ]
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-media",
+      "component": {
+        "registered": "media",
+        "rendered": "media",
+        "source": "src/components/adapt-contrib-media/bower.json",
+        "notes": null
+      },
+      "rootFile": "media.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-media/templates/media.jsx",
+      "bemRoot": "media",
+      "derivedHeaderFamily": [
+        "media__header",
+        "media__header-inner",
+        "media__title",
+        "media__title-inner",
+        "media__body",
+        "media__body-inner",
+        "media__instruction",
+        "media__instruction-inner",
+        "media__priority",
+        "media__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__widget",
+          "media__widget",
+          "media__poster",
+          "is-audio",
+          "component__inner",
+          "media__inner",
+          "btn-text",
+          "media__skip-to-transcript",
+          "js-skip-to-transcript",
+          "media__transcript-container",
+          "media__transcript-btn",
+          "media__transcript-btn-inline",
+          "js-media-inline-transcript-toggle",
+          "aria-label",
+          "media__transcript-btn-text",
+          "media__transcript-btn-icon",
+          "icon",
+          "media__transcript-btn-external",
+          "js-media-external-transcript-click",
+          "media__transcript-body-inline",
+          "media__transcript-body-inline-inner"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-narrative",
+      "component": {
+        "registered": "narrative",
+        "rendered": "narrative",
+        "source": "src/components/adapt-contrib-narrative/bower.json",
+        "notes": null
+      },
+      "rootFile": "narrative.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-narrative/templates/narrative.jsx",
+      "bemRoot": "narrative",
+      "derivedHeaderFamily": [
+        "narrative__header",
+        "narrative__header-inner",
+        "narrative__title",
+        "narrative__title-inner",
+        "narrative__body",
+        "narrative__body-inner",
+        "narrative__instruction",
+        "narrative__instruction-inner",
+        "narrative__priority",
+        "narrative__priority-label"
+      ],
+      "classes": {
+        "literal": [],
+        "conditional": [
+          "component__inner",
+          "narrative__inner",
+          "mode-large",
+          "mode-small",
+          "items-are-full-width",
+          "is-stacked",
+          "component__widget",
+          "narrative__widget",
+          "narrative__text-controls"
+        ],
+        "partial": []
+      },
+      "subTemplates": [
+        "narrativeContent.jsx",
+        "narrativeControls.jsx",
+        "narrativeIndicators.jsx",
+        "narrativeSlideContainer.jsx",
+        "narrativeStrapline.jsx"
+      ],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-slider",
+      "component": {
+        "registered": "slider",
+        "rendered": "slider",
+        "source": "src/components/adapt-contrib-slider/bower.json",
+        "notes": null
+      },
+      "rootFile": "slider.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-slider/templates/slider.jsx",
+      "bemRoot": "slider",
+      "derivedHeaderFamily": [
+        "slider__header",
+        "slider__header-inner",
+        "slider__title",
+        "slider__title-inner",
+        "slider__body",
+        "slider__body-inner",
+        "slider__instruction",
+        "slider__instruction-inner",
+        "slider__priority",
+        "slider__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "slider__inner",
+          "slider__label-container",
+          "js-slider-label-container",
+          "slider__label-start",
+          "slider__label-start-inner",
+          "aria-label",
+          "slider__label-end",
+          "slider__label-end-inner",
+          "slider__number-container",
+          "slider__number",
+          "js-slider-number",
+          "js-slider-number-click",
+          "slider__scale-step-prefix",
+          "slider__scale-step-suffix",
+          "slider__number-model-range",
+          "js-slider-model-range",
+          "slider__number-model-answer",
+          "slider__number-answer",
+          "slider__number-selection",
+          "js-slider-number-selection",
+          "a11y-ignore",
+          "slider__state",
+          "icon",
+          "slider__scale-container",
+          "js-slider-scale",
+          "slider__scale-notch",
+          "slider__scale-notch-start",
+          "slider__scale-notch-container",
+          "js-slider-scale-notch-container",
+          "slider__scale-notch-end",
+          "slider__item-input-track",
+          "slider__item-input-fill",
+          "slider__item-input",
+          "js-slider-item-input",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "slider__widget",
+          "has-scale-step-prefix",
+          "has-scale-step-suffix",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "show-user-answer",
+          "show-correct-answer",
+          "show-correctness",
+          "is-correct",
+          "is-incorrect",
+          "slider__icon",
+          "slider__correct-icon",
+          "slider__incorrect-icon",
+          "slider__item"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-text",
+      "component": {
+        "registered": "text",
+        "rendered": "text",
+        "source": "src/components/adapt-contrib-text/bower.json",
+        "notes": null
+      },
+      "rootFile": "text.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-text/templates/text.jsx",
+      "bemRoot": "text",
+      "derivedHeaderFamily": [
+        "text__header",
+        "text__header-inner",
+        "text__title",
+        "text__title-inner",
+        "text__body",
+        "text__body-inner",
+        "text__instruction",
+        "text__instruction-inner",
+        "text__priority",
+        "text__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "text__inner"
+        ],
+        "conditional": [],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": false,
+      "repeatsStandardHooksOnly": true,
+      "notes": null
+    },
+    {
+      "dir": "adapt-contrib-textInput",
+      "component": {
+        "registered": "textinput",
+        "rendered": "textinput",
+        "source": "src/components/adapt-contrib-textInput/bower.json",
+        "notes": null
+      },
+      "rootFile": "textinput.jsx",
+      "rootTemplateSource": "src/components/adapt-contrib-textInput/templates/textinput.jsx",
+      "bemRoot": "textinput",
+      "derivedHeaderFamily": [
+        "textinput__header",
+        "textinput__header-inner",
+        "textinput__title",
+        "textinput__title-inner",
+        "textinput__body",
+        "textinput__body-inner",
+        "textinput__instruction",
+        "textinput__instruction-inner",
+        "textinput__priority",
+        "textinput__priority-label"
+      ],
+      "classes": {
+        "literal": [
+          "component__inner",
+          "textinput__inner",
+          "textinput-item__container",
+          "textinput-item__prefix-container",
+          "textinput-item__prefix",
+          "textinput-item__textbox-container",
+          "textinput-item__textbox",
+          "js-textinput-textbox",
+          "textinput-item__placeholder",
+          "aria-label",
+          "textinput-item__state",
+          "textinput-item__icon",
+          "textinput-item__correct-icon",
+          "icon",
+          "textinput-item__incorrect-icon",
+          "textinput-item__suffix-container",
+          "textinput-item__suffix",
+          "textinput-item__answer-container",
+          "btn__container"
+        ],
+        "conditional": [
+          "component__widget",
+          "textinput__widget",
+          "is-disabled",
+          "is-complete",
+          "is-submitted",
+          "show-user-answer",
+          "show-correctness",
+          "is-correct",
+          "textinput-item",
+          "js-textinput-item",
+          "is-incorrect"
+        ],
+        "partial": []
+      },
+      "subTemplates": [],
+      "hasComponentWidget": true,
+      "repeatsStandardHooksOnly": false,
+      "notes": null
+    }
+  ],
+  "counts": {
+    "spineRungs": 15,
+    "componentDirs": 32,
+    "componentsWithBemRoot": 32,
+    "componentsRepeatingStandardHooksOnly": 2
+  }
+}

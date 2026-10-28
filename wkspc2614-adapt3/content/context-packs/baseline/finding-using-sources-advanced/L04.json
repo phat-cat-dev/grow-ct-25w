@@ -1,0 +1,63 @@
+{
+  "generatedProse": {
+    "concept-context": "<p>In practice this is something you do on every piece of research, not once. You reach past the library's first results into databases and citation trails, then control the search so it is sharp enough to be useful. You weigh each source you find against explicit criteria, and you repeat the cycle until the set is both fair and defensible. Each search teaches you how to run the next one better.</p>",
+    "worked-example": "<p>Two students research the same question. One runs a single discovery-service search, takes the first few results, and uses them without asking how good they are. The other reaches into a subject database and a citation trail, tightens the search for precision and recall, and judges each source against explicit criteria before keeping it. Over the term, the second student's work rests on sources that are both well chosen and defensible, because searching became one practice rather than three separate techniques.</p>",
+    "summary": "<p>Searching well is most useful as a continuing practice. You reach widely, refine for precision and recall, and judge each source against criteria, again and again across your research. It is the practice, not any single search, that makes your work both fair and defensible.</p>"
+  },
+  "generatedItems": {
+    "check": {
+      "body": "<p>A student searches a subject database and a citation trail, tightens the search with Boolean operators and a limiter, then weighs each result against explicit criteria. What does this show?</p>",
+      "items": [
+        {
+          "text": "Their next round of learning and preparation, which is why the following essay improved.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Nothing; feedback comes at the end, so it cannot affect anything that follows.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Only the mark on the first essay, which cannot now change.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "The deadline for the next essay.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Using feedback to plan the next piece of work feeds it straight back into your learning, closing the loop and starting the next round stronger. That is the cycle working as it should.",
+        "incorrectNotFinal": "Not quite. Think about what the student did with the feedback, and what improved as a result.",
+        "incorrectFinal": "Acting on feedback feeds your next round of learning and preparation, which is why the following essay was stronger. The mark on the first essay cannot change, but the feedback still shapes what comes next."
+      },
+      "_items": [
+        {
+          "text": "That the three strands are running as one practice: reaching widely, controlling the search, and judging what it returns.",
+          "_shouldBeSelected": true,
+          "feedback": "Yes. Extend, refine and evaluate worked together as one connected practice."
+        },
+        {
+          "text": "That only one of the three moves was needed, and the others were wasted.",
+          "_shouldBeSelected": false,
+          "feedback": "Each move did real work: reaching, refining and judging all mattered."
+        },
+        {
+          "text": "That evaluating what you find can replace searching widely in the first place.",
+          "_shouldBeSelected": false,
+          "feedback": "Reaching widely is a strand in its own right, not something evaluation removes."
+        },
+        {
+          "text": "That the search is now finished and need never be repeated.",
+          "_shouldBeSelected": false,
+          "feedback": "Searching well is a cycle you repeat, not a single pass."
+        }
+      ]
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; name the cast directly in the prose (the pack supplies the whole body). The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

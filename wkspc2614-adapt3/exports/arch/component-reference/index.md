@@ -1,0 +1,30 @@
+# Component reference
+
+_Generated 2026-10-12T06:25:08.345Z from `src/` + `courses/understanding-learning-assessment-feedback-introductory`._
+
+## Custom components / extensions (source present)
+- [Abbott course styles](adapt-ab-theme.md) — `abTheme` (extension)
+- [Annotated Exemplar](adapt-abbott-annotated.md) — `annotated` (component)
+- [Branching Scenario](adapt-abbott-branching.md) — `branching` (component)
+- [Checklist](adapt-abbott-checklist.md) — `checklist` (component)
+- [Confidence Check](adapt-abbott-confidence.md) — `confidence` (component)
+- [Flip Card](adapt-abbott-flipcard.md) — `flipcard` (component)
+- [Glossary Passage](adapt-abbott-glossary.md) — `glossary` (component)
+- [Modal launcher](adapt-abbott-modal.md) — `modal` (component)
+- [Open Text](adapt-abbott-opentext.md) — `opentext` (component)
+- [Pass Reveal](adapt-abbott-pass-reveal.md) — `passReveal` (extension)
+- [References](adapt-abbott-references.md) — `references` (component)
+- [Reflective Store](adapt-abbott-reflective-store.md) — `reflectiveStore` (extension)
+- [Results Debrief](adapt-abbott-resultsdebrief.md) — `resultsDebrief` (extension)
+- [Sortable Question](adapt-abbott-sortable.md) — `sortable` (component)
+- [Tabs](adapt-abbott-tabs.md) — `tabs` (component)
+- [Timeline](adapt-abbott-timeline.md) — `timeline` (component)
+- [Tooltip](adapt-abbott-tooltip.md) — `abbottTooltip` (extension)
+
+## Contrib types used (source at build)
+- [text](_contrib-text.md)
+- [hotgraphic](_contrib-hotgraphic.md)
+- [mcq](_contrib-mcq.md)
+- [assessmentResults](_contrib-assessmentResults.md)
+- [accordion](_contrib-accordion.md)
+- [matching](_contrib-matching.md)

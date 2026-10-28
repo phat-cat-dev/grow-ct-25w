@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="edu-svg edu-chalk edu-running" viewBox="0 0 300 160" role="img" aria-label="S-curve arrow"><style>.edu-svg{width:100%;height:auto;display:block;color:var(--accent,#65d5ca);overflow:visible}
+.edu-stroke{fill:none;stroke:currentColor;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0}
+.edu-stroke.edu-arrow{stroke-width:2}
+.edu-running .edu-stroke{animation-name:var(--edu-animation);animation-duration:calc(var(--edu-duration,4s) / var(--edu-speed,1) / var(--edu-local-speed,1));animation-timing-function:linear;animation-fill-mode:both;animation-iteration-count:var(--edu-iterations,1)}
+.edu-paused .edu-stroke{animation-play-state:paused}
+.edu-no-arrows .edu-arrow{display:none}
+.edu-chalk .edu-stroke{stroke-width:3.2;filter:drop-shadow(.5px .3px 0 currentColor)}
+@keyframes edu-draw-1-0{0%,0%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-2-0{0%,0%{stroke-dashoffset:1}50%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-2-1{0%,50%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-3-0{0%,0%{stroke-dashoffset:1}33.333333333333336%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-3-1{0%,33.333333333333336%{stroke-dashoffset:1}66.66666666666667%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-3-2{0%,66.66666666666667%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-4-0{0%,0%{stroke-dashoffset:1}25%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-4-1{0%,25%{stroke-dashoffset:1}50%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-4-2{0%,50%{stroke-dashoffset:1}75%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-4-3{0%,75%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-0{0%,0%{stroke-dashoffset:1}16.666666666666668%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-1{0%,16.666666666666668%{stroke-dashoffset:1}33.333333333333336%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-2{0%,33.333333333333336%{stroke-dashoffset:1}50%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-3{0%,50%{stroke-dashoffset:1}66.66666666666667%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-4{0%,66.66666666666667%{stroke-dashoffset:1}83.33333333333333%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-6-5{0%,83.33333333333333%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-0{0%,0%{stroke-dashoffset:1}12.5%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-1{0%,12.5%{stroke-dashoffset:1}25%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-2{0%,25%{stroke-dashoffset:1}37.5%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-3{0%,37.5%{stroke-dashoffset:1}50%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-4{0%,50%{stroke-dashoffset:1}62.5%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-5{0%,62.5%{stroke-dashoffset:1}75%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-6{0%,75%{stroke-dashoffset:1}87.5%,100%{stroke-dashoffset:0}}
+@keyframes edu-draw-8-7{0%,87.5%{stroke-dashoffset:1}100%,100%{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.edu-running .edu-stroke{animation:none!important;stroke-dashoffset:0}}</style><path class="edu-stroke" pathLength="1" d="M45 120 C170 120 130 40 255 40" style="--edu-animation:edu-draw-2-0"></path><path class="edu-stroke edu-arrow" pathLength="1" d="M242 29 L255 40 L242 51" style="--edu-animation:edu-draw-2-1"></path></svg>

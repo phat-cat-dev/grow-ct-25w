@@ -1,0 +1,33 @@
+# Fix: Merge config-level _htmlClasses into router's setGlobalClasses
+# Date: 2026-10-12
+# Problem: setGlobalClasses() only read currentModel.get('_htmlClasses'),
+#          with no fallback/merge to the course-wide config._htmlClasses.
+#          Course authoring sets the theme gate classes (e.g. "ab-theme
+#          ab-profile-ember cm-theme-dark-blue-grey ab-force-light") in
+#          config.json, but every content object explicitly sets
+#          _htmlClasses: "" (empty string, not null/undefined), which wins
+#          outright and strips the gate class from <html> on every route
+#          change. Since the whole L2 theming adapter (ab-vanilla-overrides
+#          .less) gates every selector behind html.ab-theme, this silently
+#          disabled all custom theming and rendered plain vanilla Adapt.
+# Reproduction: Load any course page; inspect <html> class list; the
+#          config-level theme classes are absent after the first route.
+# Solution: Read both Adapt.config._htmlClasses and the current model's
+#          _htmlClasses, and merge them (config classes always apply,
+#          model classes layer on top).
+--- a/src/core/js/router.js
++++ b/src/core/js/router.js
+@@ -408,7 +408,12 @@
+   setGlobalClasses() {
+     const currentModel = location._currentModel;
+
+-    const htmlClasses = currentModel?.get('_htmlClasses') || '';
++    // Course-wide classes (e.g. theme gate) from config, plus any classes
++    // the current content object adds on top. Config classes must always
++    // apply, independent of what a given content object sets.
++    const configClasses = Adapt.config?.get('_htmlClasses') || '';
++    const modelClasses = currentModel?.get('_htmlClasses') || '';
++    const htmlClasses = [configClasses, modelClasses].filter(Boolean).join(' ');
+     const classes = (location._currentId) ?
+       `location-${location._contentType} location-id-${location._currentId}` :
+       `location-${location._currentLocation}`;

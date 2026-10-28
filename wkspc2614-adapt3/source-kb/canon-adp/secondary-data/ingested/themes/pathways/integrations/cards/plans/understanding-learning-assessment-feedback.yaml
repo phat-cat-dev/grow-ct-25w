@@ -1,0 +1,142 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Understanding Learning, Assessment and Feedback
+pathwayNo: 2
+date: 4 October 2026
+time: "12:37"
+note: N-0130
+practiceNoun: understanding learning, assessment and feedback
+
+cards:
+  - new: i1
+    old: understanding-learning-assessment-feedback/01
+    short: Understand how learning works in a discipline's discourse community
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+  - new: i2
+    old: understanding-learning-assessment-feedback/04
+    short: Tell formative from summative assessment and engage with varied forms
+    knowledge: conceptual, with one procedure
+    qf: [{id: 4.10.b5, extract: "within a structured and managed environment"}]
+  - new: i3
+    old: understanding-learning-assessment-feedback/02
+    short: Tell active, constructivist learning from passive reception
+    knowledge: metacognitive, beginning (knowledge of learning strategies)
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+  - new: d1
+    old: understanding-learning-assessment-feedback/03
+    short: Interpret learning outcomes and how activities align to them
+    knowledge: conceptual and analytical
+    qf: [{id: l4/knowledge.3, extract: "the nature and approximate scope of the area of study or work"}]
+  - new: d2
+    old: understanding-learning-assessment-feedback/06
+    short: Turn feedback into an action plan through reflection
+    knowledge: procedural
+    qf: [{id: l5/application.4, extract: "Evaluate actions, methods and results."}, {id: l5/autonomy.1, extract: "planning and developing courses of action"}]
+  - new: d3
+    old: understanding-learning-assessment-feedback/05
+    short: Apply self-regulated learning cycles to independent study
+    knowledge: metacognitive, strategic
+    qf: [{id: 4.15.b5, extract: "the ability to manage their own learning"}]
+  - new: e1
+    old: understanding-learning-assessment-feedback/c3
+    book:
+      - {element: assessment agility, quote: "you need to be agile enough to recognise the differences in expectations between these genres"}
+      - {element: criteria as the guide, quote: "be alive to these differences and look carefully at assessment criteria to identify them"}
+    short: Adapt to the demands of different types of assessment
+    knowledge: procedural, criteria for choosing
+    qf: [{id: l5/application.2, extract: "Determine, adapt and use appropriate methods and skills."}]
+  - new: e2
+    old: understanding-learning-assessment-feedback/c1
+    book:
+      - {element: self and peer assessment, quote: "In self-assessment, you're required to apply the marking criteria to your own work."}
+    short: Assess own and peers' work against marking criteria
+    knowledge: metacognitive (evaluative judgement)
+    qf: [{id: l6/application.4, extract: "Evaluate actions, methods and results and their implications."}]
+  - new: e3
+    old: understanding-learning-assessment-feedback/c2
+    book:
+      - {element: diagnostic feedback, quote: "it's perhaps more appropriate to see feedback as being diagnostic"}
+      - {element: feedback dialogue, quote: "the definition of feedback as a process, a dialogue, even, between you, as a learner, and your tutor"}
+    short: Use feedback in dialogue with tutors to sustain development across a degree
+    knowledge: metacognitive, self-knowledge, with procedural
+    qf: [{id: 4.17.b7, extract: "continue to advance their knowledge and understanding"}]
+
+readings:
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.14: theme
+  qaa/education-studies-2025/1.3: theme
+  qaa/anthropology-2024/3.17: skill
+  qaa/geography-2022/3.36: theme
+  qaa/archaeology-2022/2.20: theme
+  qaa/biosciences-2023/2.19: theme
+  qaa/dance-drama-and-performance-2024/3.14: theme
+  qaa/sociology-2026/3.15: theme
+  qaa/art-and-design-2026/3.23: skill
+  qaa/optometry-2024/1.4: theme
+  qaa/economics-2023/1.17: theme
+  qaa/finance-2025/1.34: theme
+  qaa/social-work-2026/3.7: theme
+  qaa/criminology-2022/3.5: theme
+  qaa/communication-media-film-and-cultural-studies-2024/3.5: theme
+  qaa/health-studies-2024/4.5: skill
+
+vic:
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.14: {verbs: [raise], relation: "training in a discipline's conventions as part of transition support: the discourse community taught as provision, with no student verb"}
+  qaa/education-studies-2025/1.3: {verbs: [regard, have], relation: "the subject described as a discipline with its own community, discourses and methods: the discourse community in the subject's account of itself"}
+  qaa/anthropology-2024/3.17: {verbs: [engage], relation: "students engaged with the disciplinary community and the communities the subject works with: the learner joining the community"}
+  qaa/geography-2022/3.36: {verbs: [include], relation: "self-directed and student-centred learning listed among teaching opportunities: active learning as provision"}
+  qaa/archaeology-2022/2.20: {verbs: [], relation: "self-guided, student-centred practices in a list of provision; no verb for the learner"}
+  qaa/biosciences-2023/2.19: {verbs: [deliver, embed, support, enhance], relation: "flipped and active learning as modes of delivery: the learner's active part assumed, not stated"}
+  qaa/dance-drama-and-performance-2024/3.14: {verbs: [design, assess], relation: "formative and summative assessment in varied formats as the subject's assessment design"}
+  qaa/sociology-2026/3.15: {verbs: [use], relation: "inclusive formative and summative forms listed: the variety the learner meets, named by the subject"}
+  qaa/art-and-design-2026/3.23: {verbs: [encourage, develop, promote, learn], relation: "self- and peer assessment as the way to ownership of learning and self-evaluation: e2 in the subject's words"}
+  qaa/optometry-2024/1.4: {verbs: [ensure, achieve], relation: "graduates achieving a regulator's learning outcomes: outcomes as the profession's frame, not something the learner interprets"}
+  qaa/economics-2023/1.17: {verbs: [go beyond, focus, support], relation: "learning outcomes for sustainability as curriculum design, not read by the learner"}
+  qaa/finance-2025/1.34: {verbs: [go beyond, focus, support], relation: "as in economics: learning outcomes as curriculum design"}
+  qaa/social-work-2026/3.7: {verbs: [], relation: "independent study in a list of teaching methods; no verb for the learner"}
+  qaa/criminology-2022/3.5: {verbs: [], relation: "independent study as one mode of study among others"}
+  qaa/communication-media-film-and-cultural-studies-2024/3.5: {verbs: [combine, make use of], relation: "independent learning sessions beside tutor-led ones: provision for self-directed study"}
+  qaa/health-studies-2024/4.5: {verbs: [act on, express], relation: "acting on feedback from several perspectives, a graduate standard in health studies: d2 in the subject's words"}
+
+vicSummary: "What this shows: three of the sixteen extracts are skill (anthropology, art and design, health studies) and say what the learner does: engage with the community, assess their own and others' work, act on feedback. The rest describe provision: the subjects say what they offer (student-centred learning, varied assessment, independent study, learning outcomes), and the verbs belong to the curriculum, not the learner."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says discourse community, active and passive learning, formative and summative, intended learning outcomes, constructive alignment, the feedback cycle and self-regulated learning; the benchmarks say disciplinary conventions, student-centred and self-directed learning, independent study, act on feedback, and self-assessment that encourages ownership of learning. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** of the sixteen extracts adp-0212 chose, three are skill and thirteen theme. The benchmarks speak of this practice mostly as provision, which is why a search on its words finds so much and shows so little of the learner."
+  - "**Book coverage:** the guide carries all nine cards, across Chapters 3, 4, 5 and 6: e1 as assessment agility and e2 as self and peer assessment (p. 66), e3 as diagnostic feedback and dialogue (p. 80). adp-0212's draft book map has no entries for e1 to e3; their quotes are ing's, checked by script."
+  - "**Other authors:** META holds runs for Lave and Wenger, Marton and Säljö, Biggs, Schön, and Carless and Boud; Zimmerman, Sadler, Tai and others, and Sambell, McDowell and Montgomery are wanted (W-0037, W-0041, W-0047, W-0044)."
+
+qfIntro: "Neither framework names learning, assessment or feedback as such: they speak of knowing the nature of one's area of study, reviewing and evaluating one's own methods and results, the limits of one's knowledge and managing one's own learning."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing what kind of area of study one has joined: the discourse community", tier: before Introductory}
+  - {id: 4.10.b5, verbs: "undertake, develop", relation: "learning within a structured and managed environment: the system of modules, assessment and feedback", tier: Introductory}
+  - {id: l4/knowledge.3, verbs: "be aware", relation: "the nature and scope of the area of study: what outcomes and alignment set out", tier: Introductory}
+  - {id: l4/application.4, verbs: "review", relation: "reviewing how well one's methods worked: the start of the feedback cycle", tier: Introductory}
+  - {id: 4.12.b4, verbs: "(none: a noun phrase)", relation: "knowing the limits of one's knowledge: knowledge of oneself as a learner", tier: Intermediate}
+  - {id: l5/application.4, verbs: "evaluate", relation: "evaluating one's actions and results: turning feedback into action", tier: Intermediate}
+  - {id: l5/autonomy.1, verbs: "take responsibility, plan, develop", relation: "planning one's own courses of action: the action plan and self-regulation", tier: Intermediate}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "managing one's own learning: self-regulated learning owned", tier: Advanced}
+  - {id: l6/application.4, verbs: "evaluate", relation: "evaluating results and their implications: judging work against criteria", tier: Advanced}
+  - {id: 4.17.b7, verbs: "continue, advance, develop", relation: "sustained development of one's own knowledge and skills: feedback used across a degree and beyond", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the parts of the learning framework: module handbook, lectures and tutorials, synchronous and asynchronous learning, formative and summative assessment, feedback as comments and a mark.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains the discourse community and the move from its edge to its centre, and deep against surface learning.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Makes notes actively and takes part in a formative task rather than transcribing.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work"}
+  - {tier: Introductory, statement: "Recognises whether their own approach is active or passive, deep or surface.", type: metacognitive (beginning), process: understand, change: "knowledge of oneself as a learner appears, prompted"}
+  - {tier: Intermediate, statement: "Explains how outcomes, activities and assessment are aligned, and what the mark bands in marking criteria ask for.", type: conceptual, process: analyse, change: "the design behind the system comes into view"}
+  - {tier: Intermediate, statement: "Works through the feedback cycle (review, interpret, articulate, apply) to an action plan.", type: procedural, process: apply, change: "from one task to a cycle"}
+  - {tier: Intermediate, statement: "Plans, monitors and adapts strategy through the forethought, behaviour and evaluation phases.", type: metacognitive (strategic), process: evaluate, change: "knowledge of one's own strategies, used to change them"}
+  - {tier: Advanced, statement: "Chooses an approach suited to an assessment genre and its differences from others.", type: procedural (criteria for choosing), process: evaluate, change: "knowing when to use which approach"}
+  - {tier: Advanced, statement: "Judges own and peers' work against criteria before submission.", type: metacognitive (evaluative judgement), process: evaluate, change: "the learner holds the standard, not only the tutor"}
+  - {tier: Advanced, statement: "Uses feedback in dialogue with tutors and across modules to direct their own development over a degree.", type: metacognitive with procedural, process: create, change: "functioning knowledge: development owned"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative, the names and ideas of the system, with one procedure (active note-making, a formative task) and a first look at one's own approach; Intermediate is mostly procedural, the feedback cycle and the phases of self-regulation, with knowledge of one's own strategies beginning; Advanced is mostly metacognitive, the learner judging their own work against the standard and steering their development across a degree. In Biggs's terms the movement is from knowing how the system works to using it; in Marzano and Kendall's, from the cognitive system to metacognition and then the self-system, where the learner's own goals direct how they use assessment and feedback. Mastery is the learner no longer waiting for the system to tell them how they are doing, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map places the formative-to-summative strategy at Intermediate and assessment agility at Advanced; i2 asks the learner to engage with varied assessment forms at Introductory, close to e1. Otherwise the two agree: deep and surface learning and the learning framework at Introductory, alignment, marking criteria, the feedback cycle and self-regulation at Intermediate, self- and peer assessment and feedback dialogue at Advanced."
+
+qfAdd: "neither framework names assessment literacy, feedback or evaluative judgement. The CQFW speaks of reviewing and then evaluating one's own methods and results at every level, which is the feedback cycle's ground; the FHEQ's understanding of the limits of one's knowledge (L5) is the nearest statement to i3, and managing one's own learning (L6) to d3."
+
+review:
+  - "i2's \"engage with varied assessment forms\" overlaps e1's \"adapt to the demands of different types of assessment\"; the model's author may want i2 narrowed to formative and summative."
+  - "Pedagogy for d3, e1 and e2 waits for Zimmerman (W-0037), Sambell, McDowell and Montgomery (W-0044), Sadler (W-0041) and Tai and others (W-0047)."
+  - "d2's theory in the core is Schön; Carless and Boud (2018), whose work the guide says inspired its feedback cycle, fits it as well and is held by META."

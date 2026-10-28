@@ -1,0 +1,35 @@
+{
+  "generatedProse": {
+    "concept-context": "In your subject, responsible use is one judgement that weighs several things at once. Ask whether a tool protects or harms your learning, whether you can keep the work honestly your own, and whether you are about to share anything private. Some tasks in your field are better done without AI at all, and knowing which is part of the skill.",
+    "worked-example": "Consider two psychology students facing the same week: a reflective essay on their own learning, and a dense set of readings to get through.\n\n{{learner-a}} puts both into a chatbot. The reflective essay comes back fluent but generic, with none of {{learner-a}}'s own experience in it, and the readings become a summary {{learner-a}} never actually reads. A sensitive placement detail goes into the tool along the way. The work is finished, but little was learned and something private was shared.\n\n{{learner-b}} judges each task on its own. The reflection is personal and is the point of the exercise, so {{learner-b}} writes it alone. For the readings, {{learner-b}} uses the tool to clarify two hard passages, does the reading itself, and keeps every personal detail out of the tool.\n\nBoth had the same tools and the same deadline. Only {{learner-b}} used AI where it helped, kept it out where it did not, and protected both the learning and their privacy.",
+    "summary": "Responsible use is one judgement that protects four things at once: your learning, your integrity, your privacy, and the wider world. Part of that judgement is knowing when to keep AI out - when the struggle is the learning, or when you cannot understand what it gives you. Across the course you have learned to stay the thinker, read AI critically, name its failure modes, and now to weigh all of this into one decision you can defend."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "For one task in {{context}} you do not fully understand the AI's output, and the task is meant to build your own thinking. What does responsible use suggest?",
+      "items": [
+        {
+          "text": "Keep AI out of this task: not understanding the output is a reason to stop, and the struggle is where the learning is.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Use the output anyway, since it saves time in {{context}}.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Reword the output and submit it, so the use is not obvious.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Use AI, because every task in {{context}} is improved by it.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. When the struggle is the learning and you do not understand the output, responsible use means keeping AI out.",
+        "incorrectNotFinal": "Not quite. Saving time, disguising use or assuming AI always helps are not responsible judgements here.",
+        "incorrectFinal": "You keep AI out: not understanding the output is a reason to stop, and this task's struggle is the learning. Saving time, rewording to hide use, or blanket use are not responsible."
+      }
+    }
+  }
+}

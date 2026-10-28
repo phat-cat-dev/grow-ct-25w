@@ -1,0 +1,10 @@
+- Name: `ingest-std-cardiffmet-generic-2020-assesscriteria`, the year being version 6's last review (November 2020); the file was saved in August 2026 and belongs to the 2026/27 handbook. For Abbott: 2020 or 2026? The issuer code (`cardiffmet`) waits on D-std-0007's open part.
+- AC2: level 3 is linked to CQFW level 3 by inference; levels 4 to 7 to the FHEQ as the issuer states (aligned with the FHEQ of November 2014, now replaced by the 2024 edition).
+- AC3: bands kept in the issuer's order (highest first); our `axis` puts 1-29 and 1-19 under fail-low and 30-39 and 20-39 under fail-high so the two sets compare.
+- AC4 and AC5: at level 7 the 1-19 band has one band-wide cell, in the Knowledge & Understanding row; the four cells below it are empty (merged), recorded with `spans`.
+- AC5, `versionsFrom`: `sameAs` when the text matches with level numbers masked; `like` when the same criterion and band at an earlier level matches with word similarity 0.95 or more. 210 cells: 143 with their own cell paraphrase.
+- AC5 and AC5a, cut: each cell is a record (AC5) and is cut into its sentences (AC5a), each sentence with its own terms and versions (Abbott, 05:18; D-std-0008). 550 sentences, 285 with their own versions. The split is at a full stop followed by a capital; the issuer's "practice. own practice" slip stays inside one sentence.
+- AC6: terms found by `ac_terms.py`; "may" counted in AC6.2, not as a degree word.
+- AC1: the guidance says the two top bands are "supplemented by characteristics" likely to be present; the tables hold no separate list, and the simplified descriptors are not held (D3).
+- Issuer slips kept as held: a doubled "own practice. own practice but" in the 2:2 argument cell (levels 3, 4); "limited knowledge of research processes may evident" (level 3); "The students demonstrates" (level 7).
+- The two programme specification templates (AH2 1.2B, 1.2C) hold no criteria and are not ingested.

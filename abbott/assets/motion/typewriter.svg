@@ -1,0 +1,9 @@
+<svg data-motion-asset="typewriter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-typewriter-title svg-motion-typewriter-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-typewriter-title">Typewriter</title><desc id="svg-motion-typewriter-desc">A stepped reveal, then a moment to read. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="typewriter"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-typewriter calc(4s / var(--motion-speed,1)) steps(7,end) infinite}
+@keyframes motion-typewriter { 0%, 10% { clip-path: inset(0 100% 0 0); } 55%, 90% { clip-path: inset(0); } 100% { clip-path: inset(0 100% 0 0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="typewriter"] .art,svg[data-motion-asset="typewriter"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Create.</text></g></svg>

@@ -1,0 +1,154 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Presenting
+pathwayNo: 7
+date: 4 October 2026
+time: "12:44"
+note: N-0134
+practiceNoun: presenting
+
+cards:
+  - new: i1
+    statement: Explain what a presentation tests, as assessment and as a transferable skill, and read its brief for the conditions it sets.
+    short: Explain what a presentation tests and read its brief
+    knowledge: factual and conceptual
+    qf: [{id: l3/knowledge.2, extract: "Interpret and evaluate relevant information and ideas."}]
+    book:
+      - {element: what presentations test, quote: "you're expected to articulate an argument, demonstrate an ability to critique relevant discourse, and to communicate clearly"}
+      - {element: transferable skill, quote: "The ability to articulate complex information clearly and confidently represents a highly valued competency."}
+      - {element: reading the instructions, quote: "Read the assessment instructions carefully."}
+    rows:
+      Verbs: explain, read
+      Measures: as assessment; as a transferable skill
+      Keywords: presentation; assessment; transferable skills; employers; brief; assessment instructions
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Aristotle, Rhetoric, not yet ingested; W-0076"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"the presentation as both assessment and transferable skill\" and \"reading the brief carefully\"."
+  - new: i2
+    old: presenting/c1
+    short: Build a presentation to a brief through the five steps
+    knowledge: procedural, one set method
+    qf: [{id: 4.10.b4, extract: "with structured and coherent arguments"}]
+    book:
+      - {element: the conclusion, quote: "refer back to the objectives you set"}
+  - new: i3
+    statement: Practise a presentation to time and fix what does not work before delivering it.
+    short: Practise to time and fix what does not work
+    knowledge: metacognitive, beginning (checking one's own performance)
+    qf: [{id: l5/application.4, extract: "Evaluate actions, methods and results."}]
+    book:
+      - {element: practising, quote: "by practising that you find out whether each part of the presentation works"}
+      - {element: running to time, quote: "Does the presentation run to time now?"}
+    rows:
+      Verbs: practise, fix
+      Measures: to time
+      Keywords: practising; rehearsal; timing; visual aids; spoken content
+      Benchmark evidence: not searched (new card).
+      Pedagogy: none recorded
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the fifth of the guide's five steps, \"Putting it all together and practising\"."
+  - new: d1
+    old: presenting/01
+    short: Design effective, accessible visual aids ("less is more")
+    knowledge: conceptual and procedural
+    qf: [{id: 4.10.b2, extract: "an ability to present, evaluate and interpret qualitative and quantitative data"}]
+  - new: d2
+    old: presenting/03
+    short: Adapt delivery to different presentation formats
+    knowledge: procedural, conditional
+    qf: [{id: 4.12.b6, extract: "in a variety of forms to specialist and non-specialist audiences"}]
+  - new: d3
+    old: presenting/02
+    short: Open engagingly and manage own nerves
+    knowledge: metacognitive (managing one's own state)
+    qf: [{id: 4.15.b9.1, extract: "the exercise of initiative and personal responsibility"}]
+  - new: e1
+    old: presenting/c3
+    short: Present in professional formats (pitch, conference poster, viva-style interview)
+    knowledge: procedural, in professional forms
+    qf: [{id: 4.12.b8, extract: "the qualities and transferable skills necessary for employment"}]
+    book:
+      - {element: professional presentations, quote: "professional or practice-based presentations are used to mirror experiences students might face in the workplace"}
+      - {element: interview-based tasks, quote: "In interview-based assessment, tutors are trying to engage you in a dialogue about certain topics"}
+  - new: e2
+    old: presenting/04
+    short: Work in a group, leading and resolving conflict
+    knowledge: procedural and metacognitive (one's part in a team)
+    qf: [{id: l6/autonomy.2, extract: "Initiate and lead tasks and processes"}]
+    note: "the draft book map lists the OCEAN model (p. 217) under this card; the pathway does not teach it (D-ing-0054)."
+  - new: e3
+    old: presenting/c2
+    short: Present and defend an argument with an academic voice under questioning
+    knowledge: metacognitive, self-knowledge (academic authority)
+    qf: [{id: 4.17.b5, extract: "communicate their conclusions clearly to specialist and non-specialist audiences"}]
+    book:
+      - {element: articulating an argument, quote: "you're expected to articulate an argument, demonstrate an ability to critique relevant discourse, and to communicate clearly"}
+    note: "moved from developed to extended (D-ing-0060): the tier map puts academic voice and defending an argument under questioning at Advanced."
+
+readings:
+  qaa/computing-2022/1.13: theme
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/1.16: skill
+  qaa/creative-writing-2024/1.30: theme
+  qaa/landscape-architecture-2024/3.12: theme
+  qaa/geography-2022/3.41: theme
+  qaa/languages-cultures-and-societies-2023/1.13: theme
+  qaa/creative-writing-2024/1.5: theme
+  qaa/dance-drama-and-performance-2024/1.33: theme
+  qaa/anthropology-2024/3.20: theme
+
+vic:
+  qaa/computing-2022/1.13: {verbs: [provide, support, ensure], relation: "accessible content as the provider's duty: accessibility as provision, not the presenter's design"}
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/1.16: {verbs: [use, relate, make], relation: "using audio-visual aids and relating the material to the audience's concerns, a graduate skill in classics: d1 in the subject's words"}
+  qaa/creative-writing-2024/1.30: {verbs: [consider, mitigate], relation: "accessible formats and participation barriers as provision"}
+  qaa/landscape-architecture-2024/3.12: {verbs: [], relation: "debates, critiques and poster presentations in a list of assessment types: the variety d2 adapts to"}
+  qaa/geography-2022/3.41: {verbs: [], relation: "oral presentations among assessment types"}
+  qaa/languages-cultures-and-societies-2023/1.13: {verbs: [allow, demonstrate], relation: "varied assessment, oral presentations among it, lets students show knowledge in different ways: the reason for adapting to formats"}
+  qaa/creative-writing-2024/1.5: {verbs: [include], relation: "collaborative partnerships with outside bodies: collaboration as the subject's practice, not group work"}
+  qaa/dance-drama-and-performance-2024/1.33: {verbs: [], relation: "collaboration and partnership among the subject's themes"}
+  qaa/anthropology-2024/3.20: {verbs: [], relation: "group work in a list of learning methods"}
+
+vicSummary: "What this shows: one of the nine extracts is skill (classics: using audio-visual aids and relating to the audience). The rest name presentations, accessibility and collaboration as provision or assessment types. The benchmarks list presenting and group work far more than they describe them."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says the five steps, hook, main body, conclusion, less is more, accessibility, nerves, poster, pitch, interview-based, leadership, conflict; the benchmarks say oral presentations, audio-visual aids, audience, debates, critiques, posters, collaboration and group work. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** one of the nine extracts is skill; adp-0212 found nothing for the hook and nerves card (d3)."
+  - "**Book coverage:** Chapter 11 carries all nine cards, and the five steps, the types of presentation, visual aids, structure, Nasser's nerves and Ross's group are all there; the guide does not develop academic voice as such (e3 draws on its \"articulate an argument\")."
+  - "**Other authors:** META holds Gibbs (1994) and Healey (2024) for group work; the strand leads for the rest (Aristotle, Mayer, Tufte, McCroskey, Ivanič) are wanted (W-0076, W-0066, W-0078, W-0067, W-0064)."
+
+qfIntro: "Neither framework names presenting; they speak of communicating results and arguments to audiences of widening range, and at L6 and above of leading tasks and taking responsibility for the work of others, which is where group work sits."
+qf:
+  - {id: l3/knowledge.2, verbs: "interpret, evaluate", relation: "interpreting a brief", tier: before Introductory}
+  - {id: 4.10.b4, verbs: "communicate", relation: "communicating accurately with structured and coherent arguments: the presentation's structure", tier: Introductory}
+  - {id: 4.10.b2, verbs: "present, evaluate, interpret, develop, make", relation: "presenting data to develop lines of argument: visual aids that carry the argument", tier: Introductory}
+  - {id: 4.12.b6, verbs: "communicate, deploy", relation: "communicating in a variety of forms to different audiences: the formats", tier: Intermediate}
+  - {id: l5/application.4, verbs: "evaluate", relation: "evaluating one's own results: practising and fixing", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "qualities for employment with personal responsibility: the professional formats", tier: Intermediate}
+  - {id: 4.15.b8, verbs: "communicate", relation: "communicating ideas, problems and solutions to specialist and non-specialist audiences", tier: Advanced}
+  - {id: 4.15.b9.1, verbs: "(none: a noun phrase)", relation: "initiative and personal responsibility: managing oneself before an audience", tier: Advanced}
+  - {id: l6/autonomy.2, verbs: "initiate, lead, take responsibility", relation: "leading tasks and taking responsibility for others' work: group work and leadership", tier: Advanced}
+  - {id: 4.17.b5, verbs: "deal with, make, communicate", relation: "communicating conclusions clearly and making judgements: defending an argument", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the five steps and the parts of a presentation: hook, main body with one point per slide, conclusion.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains what a presentation tests, as assessment and as a skill employers look for.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Builds an individual presentation to a brief through the five steps.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work, with a set recipe"}
+  - {tier: Introductory, statement: "Practises it to time and notices what does not work.", type: metacognitive (beginning), process: evaluate, change: "checking one's own performance appears"}
+  - {tier: Intermediate, statement: "Explains how the types of presentation differ in what they expect, and what makes a visual aid accessible.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Designs visual aids by \"less is more\" and adapts delivery to the format.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Manages their own nerves and avoids the classic errors.", type: metacognitive (managing one's own state), process: evaluate, change: "knowledge of oneself as a presenter, used to change how one presents"}
+  - {tier: Advanced, statement: "Presents in professional formats: the pitch, the conference poster, the viva-style interview.", type: procedural, process: apply, create}
+  - {tier: Advanced, statement: "Works in a group, leading, resolving conflict and reflecting on their part in it.", type: procedural and metacognitive, process: evaluate}
+  - {tier: Advanced, statement: "Asserts and defends an argument under questioning, with an academic voice.", type: metacognitive (self-knowledge), process: evaluate, create, change: "functioning knowledge: presenting with authority"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative and procedural, the recipe for a presentation, with a first check of one's own performance in practice; Intermediate is procedural, design and delivery across formats, with the self-system entering as the learner manages their own nerves; Advanced is metacognitive, the learner presenting in professional forms, working in a team and defending an argument as someone with standing in their field. In Marzano and Kendall's terms the self-system, beliefs about oneself and one's emotional response, is unusually present in this pathway from the start. Mastery is presenting and collaborating as a professional, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the two agree on the order (the map's 3 September remap): the five steps and structure at Introductory, the types, visual aids and nerves at Intermediate, professional formats, academic voice and group work at Advanced. i1 and i3 add the map's own Introductory items (assessment and transferable skill; reading the brief) and the guide's fifth step (practising) as cards."
+
+qfAdd: "neither framework names presenting or speaking; they name communication to audiences of widening range (L4 to L7) and, from L6, leading tasks and responsibility for others. Nothing names managing one's own anxiety (d3) or academic voice (e3); they sit in Marzano and Kendall's self-system, which the frameworks do not describe."
+
+review:
+  - "i1 and i3 are new and e3 moved from developed to extended: all proposed (D-ing-0060)."
+  - "Most strand leads for this pathway are wanted, not held (W-0064, W-0066, W-0067, W-0076, W-0078); pedagogy and other authors are thin until they are ingested."
+  - "The tier map flags group work as distinct, one that could become its own pathway; e2 stays here meanwhile."

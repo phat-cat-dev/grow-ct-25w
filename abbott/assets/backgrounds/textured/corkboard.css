@@ -1,0 +1,12 @@
+.textured.ab-corkboard {
+  --texture-cork: #c8a46a;
+  --texture-cork-ink: #3a2c17;
+  background-color: var(--texture-cork);
+  background-image: radial-gradient(#78502847 15%, transparent 16%), radial-gradient(#5a3c1c38 15%, transparent 16%), radial-gradient(#966e3c40 12%, transparent 13%);
+  background-size: 7px 7px, 11px 11px, 5px 5px;
+  background-position: 0 0, 4px 5px, 2px 3px;
+  color: var(--texture-cork-ink);
+  border-radius: .6rem;
+  padding: var(--texture-pad);
+}
+.texture-pins { display: flex; flex-wrap: wrap; gap: var(--texture-gap, 1rem); }

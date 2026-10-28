@@ -1,0 +1,174 @@
+:root.cm-theme-dark-blue {
+  --ab-theme-pf-default-surface: var(--ab-white);
+  --ab-theme-pf-default-surface-subtle: var(--ab-white-subtle);
+  --ab-theme-pf-default-surface-sunken: var(--ab-light-blue);
+  --ab-theme-pf-default-ink: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-dark-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, var(--ab-dark-blue) 18%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-dark-blue);
+  --ab-theme-pf-default-on-accent: var(--ab-white);
+  --ab-theme-pf-default-h1-color: var(--ab-dark-blue);
+  --ab-theme-pf-default-h2-color: color-mix(in srgb, var(--ab-dark-blue) 72%, var(--ab-dark-grey) 28%);
+  --ab-theme-pf-default-h3-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-black-subtle);
+}
+:root.cm-theme-dark-blue[data-theme="dark"] {
+  --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-blue) 82%, #000 18%);
+  --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-blue) 68%, #000 32%);
+  --ab-theme-pf-default-surface-sunken: color-mix(in srgb, var(--ab-dark-blue) 55%, #000 45%);
+  --ab-theme-pf-default-ink: var(--ab-light-grey);
+  --ab-theme-pf-default-ink-muted: var(--ab-light-blue);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, var(--ab-light-blue) 22%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-light-blue);
+  --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+  --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+  --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+  --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+  --ab-theme-pf-default-on-accent: var(--ab-dark-blue);
+  --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+  --ab-theme-pf-default-h2-color: color-mix(in srgb, var(--ab-light-blue) 75%, var(--ab-white) 25%);
+  --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+}
+@media (prefers-color-scheme: dark) {
+  :root.cm-theme-dark-blue:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-blue) 82%, #000 18%);
+    --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-blue) 68%, #000 32%);
+    --ab-theme-pf-default-surface-sunken: color-mix(in srgb, var(--ab-dark-blue) 55%, #000 45%);
+    --ab-theme-pf-default-ink: var(--ab-light-grey);
+    --ab-theme-pf-default-ink-muted: var(--ab-light-blue);
+    --ab-theme-pf-default-hairline: color-mix(in srgb, var(--ab-light-blue) 22%, transparent);
+    --ab-theme-pf-default-accent: var(--ab-light-blue);
+    --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+    --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+    --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+    --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+    --ab-theme-pf-default-on-accent: var(--ab-dark-blue);
+    --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+    --ab-theme-pf-default-h2-color: color-mix(in srgb, var(--ab-light-blue) 75%, var(--ab-white) 25%);
+    --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+  }
+}
+:root.cm-theme-dark-grey {
+  --ab-theme-pf-default-surface: var(--ab-white);
+  --ab-theme-pf-default-surface-subtle: var(--ab-white-subtle);
+  --ab-theme-pf-default-surface-sunken: var(--ab-light-grey);
+  --ab-theme-pf-default-ink: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-dark-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, var(--ab-dark-grey) 30%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-dark-grey);
+  --ab-theme-pf-default-on-accent: var(--ab-white);
+  --ab-theme-pf-default-h1-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h2-color: var(--ab-dark-grey);
+  --ab-theme-pf-default-h3-color: color-mix(in srgb, var(--ab-dark-grey) 70%, #000 30%);
+  --ab-theme-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-black-subtle);
+}
+:root.cm-theme-dark-grey[data-theme="dark"] {
+  --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-grey) 55%, #000 45%);
+  --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-grey) 70%, #000 30%);
+  --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink: var(--ab-white-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 18%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-light-grey);
+  --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+  --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+  --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 12%, var(--ab-base-surface));
+  --ab-theme-pf-default-accent-line: color-mix(in srgb, #fff 22%, transparent);
+  --ab-theme-pf-default-on-accent: var(--ab-black-subtle);
+  --ab-theme-pf-default-h1-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+  --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+}
+@media (prefers-color-scheme: dark) {
+  :root.cm-theme-dark-grey:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-grey) 55%, #000 45%);
+    --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-grey) 70%, #000 30%);
+    --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+    --ab-theme-pf-default-ink: var(--ab-white-subtle);
+    --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+    --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 18%, transparent);
+    --ab-theme-pf-default-accent: var(--ab-light-grey);
+    --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+    --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+    --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 12%, var(--ab-base-surface));
+    --ab-theme-pf-default-accent-line: color-mix(in srgb, #fff 22%, transparent);
+    --ab-theme-pf-default-on-accent: var(--ab-black-subtle);
+    --ab-theme-pf-default-h1-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+    --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+  }
+}
+:root.cm-theme-dark-blue-grey {
+  --ab-theme-pf-default-surface: var(--ab-white);
+  --ab-theme-pf-default-surface-subtle: var(--ab-white-subtle);
+  --ab-theme-pf-default-surface-sunken: var(--ab-light-grey);
+  --ab-theme-pf-default-ink: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-dark-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, var(--ab-dark-grey) 28%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-dark-blue);
+  --ab-theme-pf-default-on-accent: var(--ab-white);
+  --ab-theme-pf-default-h1-color: var(--ab-dark-blue);
+  --ab-theme-pf-default-h2-color: var(--ab-dark-grey);
+  --ab-theme-pf-default-h3-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-black-subtle);
+}
+:root.cm-theme-dark-blue-grey[data-theme="dark"] {
+  --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-grey) 55%, #000 45%);
+  --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-grey) 70%, #000 30%);
+  --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink: var(--ab-white-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 16%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-light-blue);
+  --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+  --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+  --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+  --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+  --ab-theme-pf-default-on-accent: var(--ab-dark-blue);
+  --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+  --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+  --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+}
+@media (prefers-color-scheme: dark) {
+  :root.cm-theme-dark-blue-grey:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-theme-pf-default-surface: color-mix(in srgb, var(--ab-dark-grey) 55%, #000 45%);
+    --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--ab-dark-grey) 70%, #000 30%);
+    --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+    --ab-theme-pf-default-ink: var(--ab-white-subtle);
+    --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+    --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 16%, transparent);
+    --ab-theme-pf-default-accent: var(--ab-light-blue);
+    --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+    --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+    --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+    --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+    --ab-theme-pf-default-on-accent: var(--ab-dark-blue);
+    --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+    --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+    --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+  }
+}

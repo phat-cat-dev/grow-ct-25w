@@ -1,0 +1,67 @@
+{
+  "course": {
+    "id": "course-design-tokens",
+    "title": "Design tokens for coherent courses",
+    "language": "en-GB",
+    "audience": {
+      "learner_pitch": "intermediate",
+      "prerequisites": {
+        "knowledge": ["You can read basic CSS, for example a custom property such as var(--accent).", "You have built or edited a course page before."]
+      }
+    },
+    "concept": {
+      "node_id": "concept-design-tokens",
+      "label": "Design tokens",
+      "definition": "Named design decisions, such as a colour, a size or a space, that every part of a course reads from one place.",
+      "through_line": "How can a course stay consistent as it grows without anyone matching things by hand?",
+      "key_terms": [
+        { "id": "T1", "term": "Token", "definition": "A named design decision. Components read it by name and never hold the raw value.", "introduced_in": "lesson-tokens-01" },
+        { "id": "T2", "term": "Cascade", "definition": "The way a token set at a high level reaches everything below it unless something overrides it.", "introduced_in": "lesson-tokens-02" },
+        { "id": "T3", "term": "Theme", "definition": "A complete set of token values that changes how the whole course looks.", "introduced_in": "lesson-tokens-04" },
+        { "id": "T4", "term": "Block metadata", "definition": "Data a block carries about itself so the system can place, label and check it.", "introduced_in": "lesson-tokens-03" }
+      ],
+      "relations": [
+        { "predicate": "broader", "target": "concept-design-systems", "note": null },
+        { "predicate": "requires", "target": "concept-css-custom-properties", "note": null },
+        { "predicate": "applies", "target": "concept-accessibility", "note": "contrast and spacing rules" },
+        { "predicate": "contrasts_with", "target": "concept-style-guide", "note": "a guide describes, a token system enforces" }
+      ]
+    },
+    "outcomes": [
+      { "id": "CO1", "statement": "Explain how a token system keeps a course visually consistent." },
+      { "id": "CO2", "statement": "Build course blocks that carry their own metadata." },
+      { "id": "CO3", "statement": "Evaluate a theme against accessibility guidance." }
+    ],
+    "lesson_map": [
+      { "lesson_id": "lesson-tokens-01", "sequence": 1, "title": "What a token is", "role": "introduces", "course_outcome_ids": ["CO1"], "concept_term_ids": ["T1"], "requires_lesson_ids": [], "estimated_duration_minutes": 10, "summary": "Meet the smallest unit of a design system and see why a name beats a raw value." },
+      { "lesson_id": "lesson-tokens-02", "sequence": 2, "title": "The token cascade", "role": "develops", "course_outcome_ids": ["CO1"], "concept_term_ids": ["T2"], "requires_lesson_ids": ["lesson-tokens-01"], "estimated_duration_minutes": 12, "summary": "Follow a value from the page down to a single button and see what overrides it." },
+      { "lesson_id": "lesson-tokens-03", "sequence": 3, "title": "Designing for depth", "role": "develops", "course_outcome_ids": ["CO1", "CO2"], "concept_term_ids": ["T4"], "requires_lesson_ids": ["lesson-tokens-02"], "estimated_duration_minutes": 12, "summary": "Build a block that carries its own metadata and watch it stay coherent." },
+      { "lesson_id": "lesson-tokens-04", "sequence": 4, "title": "Themes and modes", "role": "applies", "course_outcome_ids": ["CO2", "CO3"], "concept_term_ids": ["T3"], "requires_lesson_ids": ["lesson-tokens-02"], "estimated_duration_minutes": 15, "summary": "Swap a whole set of values and keep the course readable in light and dark." },
+      { "lesson_id": "lesson-tokens-05", "sequence": 5, "title": "Checking accessibility", "role": "applies", "course_outcome_ids": ["CO3"], "concept_term_ids": [], "requires_lesson_ids": ["lesson-tokens-04"], "estimated_duration_minutes": 14, "summary": "Test contrast, spacing and focus against the tokens you chose." },
+      { "lesson_id": "lesson-tokens-06", "sequence": 6, "title": "Pulling it together", "role": "synthesises", "course_outcome_ids": ["CO1", "CO2", "CO3"], "concept_term_ids": [], "requires_lesson_ids": ["lesson-tokens-03", "lesson-tokens-05"], "estimated_duration_minutes": 10, "summary": "Review a small course end to end and say what keeps it coherent." }
+    ],
+    "delivery": {
+      "mode": "self-paced",
+      "estimated_duration_minutes": null,
+      "lesson_order": "guided",
+      "materials_required": ["A small course page of your own to experiment on", "About an hour in total, in any number of sittings"]
+    },
+    "support": {
+      "accessibility_statement": "Every example is keyboard-navigable and described in text. Need an adjustment? Contact your tutor or the course help link.",
+      "help_contact": null
+    },
+    "frontmatter": {
+      "eyebrow": "Welcome",
+      "body": "Consistent courses do not come from matching colours by hand. They come from a system. You will meet the idea of a design token, follow it through a real course, and learn to check that what you build stays coherent and accessible.",
+      "meta": { "duration": null, "level": "Intermediate" },
+      "objectivesTitle": "By the end of this course, you will be able to:",
+      "menu": { "title": "Lessons" }
+    }
+  },
+  "conceptLabels": {
+    "concept-design-systems": "Design systems",
+    "concept-css-custom-properties": "CSS custom properties",
+    "concept-accessibility": "Accessible design",
+    "concept-style-guide": "A style guide"
+  }
+}

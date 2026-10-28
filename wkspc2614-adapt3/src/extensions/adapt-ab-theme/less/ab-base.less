@@ -1,0 +1,117 @@
+// CM BASE — THE DIALS (Abbott, 11 Oct 2026).
+// =============================================================================
+// This is the BASE LAYER: the small, swappable set of values a new theme edits.
+// It holds NO rules and NO derived values — only the raw dials. The token SYSTEM
+// (ab-schemes, the type scale, the breakpoint system, the Adapt interface)
+// DERIVES everything from these, so you re-theme by changing values HERE and
+// nowhere else.
+//
+// Design rules this layer obeys:
+//   • Colour is expressed as HSL COMPONENTS (hue / sat / light), never baked
+//     hex, so the system can derive tints and shades by moving L in calc() and
+//     a whole palette follows one hue. A new colour theme = new hue(s) here.
+//   • Everything downstream stays FLUID: the type and space scales are built
+//     from the ratio + fluid viewport range below with clamp().
+//   • Typography rarely changes except the FONT — so the font families are the
+//     one typographic dial here; the scale itself lives in the system.
+//
+// Nothing in this file should ever be a finished colour/size that a component
+// reads directly — components read the SYSTEM tokens (--ab-base-accent, --ab-step-*,
+// …), and the system reads these dials.
+//
+// Two forms of dial live here:
+//   • COLOUR + fonts + core → CSS custom properties (runtime; HSL lets the
+//     system derive from them live).
+//   • The FLUID SCALE seeds (type ratio, size floors/caps, viewport range) →
+//     also LESS @variables below, because the clamp ladders (cm-type.less, the
+//     breakpoint/space scales) are computed at BUILD time (CSS has no pow()).
+//     The @vars are the source; the matching --ab-* custom props are emitted
+//     from them just below, so there is ONE place to edit.
+// =============================================================================
+
+// ---- FLUID-SCALE SEEDS (build-time LESS vars; the system's clamp ladders read
+// these). Unitless rem numbers so LESS can do the arithmetic. ----
+@ab-vw-min:         20;      // rem — smallest viewport the fluid band starts at
+@ab-vw-max:         90;      // rem — viewport where fluid growth caps
+@ab-type-ratio:     1.2;     // modular-scale ratio (1.25 for more heading contrast)
+@ab-type-base-min:  1;       // rem — body size at vw-min (the clamp floor)
+@ab-type-base-max:  1.125;   // rem — body size at vw-max (the clamp cap)
+
+:root {
+
+  // ---- 1. COLOUR DIALS (HSL components) -------------------------------------
+  // Brand accent. Current brand dark-blue (#0a2a3d) expressed in HSL. Change
+  // --ab-user-h alone to re-hue the whole theme (e.g. 150 = green, 275 = plum);
+  // the system derives hover/active/deep/tint/ink-on-accent from these three.
+  --ab-user-h: var(--cm-corporate-h, 202);
+  --ab-user-s: var(--cm-corporate-s, 72%);
+  --ab-user-l: var(--cm-corporate-l, 14%);
+
+  // Neutral spine. Pure grey by default (hue irrelevant at 0% sat). Give the
+  // neutrals a faint hue by raising --ab-neutral-s a few % and setting a hue to
+  // warm/cool the greys with the brand.
+  --ab-neutral-h: var(--cm-corporate-neutral-h, 202);
+  --ab-neutral-s: var(--cm-corporate-neutral-s, 0%);
+
+  // ---- 1a. LIGHTNESS STOPS — the neutral grayscale STRUCTURE (the CM theme
+  // way: neutrals set as a lightness ladder, the default available to any
+  // build). The role tokens in ab-schemes derive from (neutral hue/sat) + the
+  // matching stop here, so light/dark is just a different SET of these numbers:
+  // these are the LIGHT set; the dark reverse-set overrides them in the mode
+  // block (ab-schemes .ab-dark-tokens). Accent lightness rides alongside.
+  --ab-l-surface:        100%;   // page background (white in light)
+  --ab-l-surface-subtle: 98%;    // cards / raised panels
+  --ab-l-surface-sunken: 95%;    // wells / inset areas
+  --ab-l-hairline:       88%;    // 1px borders / dividers
+  --ab-l-ink-muted:      43%;    // secondary text
+  --ab-l-ink:            10%;    // primary text (near-black in light)
+  --ab-l-on-accent:      100%;   // text on an accent fill
+  --ab-accent-l:         var(--ab-user-l);   // accent lightness (light = the brand L; dark lifts it)
+
+  // Semantic hues (validation). Kept as dials so a theme can retune them; the
+  // system builds the -tint/-text shades off these by moving L.
+  --ab-success-h: 146;  --ab-success-s: 88%;  --ab-success-l: 20%;   // ~#065f28
+  --ab-danger-h:    0;  --ab-danger-s: 100%;  --ab-danger-l: 43%;    // ~#dd0000
+  --ab-warning-h:  28;  --ab-warning-s:  92%; --ab-warning-l: 45%;
+
+  // Optional second/third accents for multi-accent profiles (default to brand;
+  // a profile overrides just the hue).
+  --ab-accent2-h: var(--ab-user-h);  --ab-accent2-s: var(--ab-user-s);  --ab-accent2-l: var(--ab-user-l);
+  --ab-accent3-h: var(--ab-user-h);  --ab-accent3-s: var(--ab-user-s);  --ab-accent3-l: var(--ab-user-l);
+
+  // ---- 1b. BASE-THEME-PROFILE dials (the colour-theory layer) ----------------
+  // The companion pitch for the HSL colour-theory profiles in cm-colour-
+  // profiles.less — harmony swatches (complementary/analogous/triadic/split) are
+  // rotated off the SINGLE theme hue above and rendered at this shared sat/light
+  // so the set reads as a family. This is the "base theme profile" path: one
+  // colour → a whole palette, usable with or without the CM theme layer.
+  --ab-companion-s: var(--cm-corporate-companion-s, 55%);   // companion saturation (vivid but not neon)
+  --ab-companion-l: var(--cm-corporate-companion-l, 45%);   // companion lightness (reads on a light page)
+
+  // ---- 2. TYPOGRAPHY DIALS --------------------------------------------------
+  // The only typographic dials: the font families. The SCALE (clamp ladder) is
+  // system (cm type scale), built from the ratio + fluid range below; it rarely
+  // changes. Swap a font here to re-face the whole programme.
+  --ab-font-sans:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;  // body + UI (until the brand font lands)
+  --ab-font-display: var(--ab-font-sans);   // headings; point at a display face when chosen
+  --ab-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;       // code / ratings readout
+
+  // Type scale SEED — emitted from the @vars above (runtime reference; the
+  // ladder itself is computed from the @vars in cm-type.less):
+  --ab-type-ratio:    @ab-type-ratio;
+  --ab-type-base-min: ~"@{ab-type-base-min}rem";
+  --ab-type-base-max: ~"@{ab-type-base-max}rem";
+
+  // ---- 3. FLUID RANGE (drives every clamp in the system) --------------------
+  // One shared fluid band so type, space and layout all scale on the same
+  // viewport window. The system's clamps interpolate between --ab-vw-min and
+  // --ab-vw-max; below min everything sits at its floor, above max at its cap.
+  --ab-vw-min: ~"@{ab-vw-min}rem";    // emitted from @ab-vw-min (320px — smallest phone)
+  --ab-vw-max: ~"@{ab-vw-max}rem";    // emitted from @ab-vw-max (1440px — where growth caps)
+
+  // ---- 4. CORE SETTINGS -----------------------------------------------------
+  --ab-base-pf-default-radius:        0.32rem;   // default corner radius (0 for square UI)
+  --ab-base-pf-default-border-width:  0.1rem;
+  --ab-base-pf-default-measure-max:   98.75rem;  // content-column cap (the system clamps up to this)
+
+}

@@ -1,0 +1,13 @@
+// ============================================================================
+//  grow-container-queries.less — the component container-query opt-in utility.
+//
+//  Salvaged from the retired ab-theme (ab-container-queries.less). Components
+//  opt in by wrapping their widget in `.ab-cq`, which makes it a query
+//  container so descendants can respond to the component's own inline size.
+//  The ab-hotgraphic widget relies on this: it hides the SVG canvas on narrow
+//  containers and swaps to the SVG at @container (min-width: 40rem). Without
+//  .ab-cq being a container, that swap never fires and the SVG stays hidden
+//  (0x0). ab-theme used to provide this; grow does now that ab-theme is gone.
+// ============================================================================
+.ab-cq       { container-type: inline-size; }
+.ab-cq-scope { container: ab-component / inline-size; }

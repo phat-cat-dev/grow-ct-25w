@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "id": "course-teaching-meta",
+  "title": "The processes beneath your teaching",
+  "summary": "A short course for early career educators on the planning, delivery, evaluation and reflection that sit under every session, and how they connect.",
+  "version": "0.1.0",
+  "status": "draft",
+  "language": "en-GB",
+  "tags": ["teaching", "planning", "evaluation", "reflective practice", "early career"],
+  "concept": {
+    "node_id": "concept-teaching-meta-processes",
+    "label": "Teaching meta-processes",
+    "alt_labels": ["The teaching cycle", "Plan, teach, evaluate, reflect"],
+    "definition": "The connected processes of planning learning, delivering it, evaluating it and reflecting on all three, which explain why a teaching technique works or fails.",
+    "coherence_claim": "Every lesson takes one stage of the same loop and shows what it needs from the stage before and gives to the stage after. Remove any lesson and the loop no longer closes.",
+    "through_line": "What am I doing when I teach, and how do I know it is working?",
+    "threshold_concepts": [],
+    "misconceptions": [
+      { "id": "M1", "statement": "Teaching is mostly delivery. The session itself is the work.", "addressed_in": ["lesson-teaching-meta-01"] },
+      { "id": "M2", "statement": "If learners are quiet and nodding, they understand.", "addressed_in": ["lesson-teaching-meta-04"] },
+      { "id": "M3", "statement": "Assessment is something that happens at the end.", "addressed_in": ["lesson-teaching-meta-05"] },
+      { "id": "M4", "statement": "Reflection means deciding whether the session was good.", "addressed_in": ["lesson-teaching-meta-06"] },
+      { "id": "M5", "statement": "A detailed plan guarantees a good session.", "addressed_in": ["lesson-teaching-meta-04"] }
+    ],
+    "relations": [
+      { "predicate": "broader", "target": "concept-educational-practice", "note": null },
+      { "predicate": "related", "target": "concept-curriculum-design", "note": "this course covers the session, curriculum design covers the programme" },
+      { "predicate": "contrasts_with", "target": "concept-teaching-techniques", "note": "a technique is one move, a meta-process explains when and why to make it" },
+      { "predicate": "applies", "target": "concept-learning-science", "note": "uses research on memory, feedback and practice" }
+    ]
+  },
+  "audience": {
+    "description": "Early career educators: new lecturers, teaching fellows, graduate teaching assistants and professional staff who teach.",
+    "learner_pitch": "introductory",
+    "prior_knowledge": ["You have taught, or will soon teach, at least one session."],
+    "prerequisites": { "knowledge": ["You have taught, or will soon teach, at least one session."], "required_course_ids": [] }
+  },
+  "scope": {
+    "central_topic": "The planning, delivery, evaluation and reflection processes under a single teaching session.",
+    "purpose": "Early career educators often learn techniques before they learn why techniques work. This course gives them the underlying processes so they can choose and adapt techniques with confidence.",
+    "in_scope": ["Planning a single session", "Delivery moves that gather and use evidence", "Assessment and feedback at session level", "Evaluating a session", "Structured reflection"],
+    "out_of_scope": ["Programme and curriculum design", "Subject-specific teaching methods", "Classroom management in schools", "Formal teaching qualifications or accreditation routes"],
+    "assumptions": ["Learners can apply what they read to a real session of their own."]
+  },
+  "outcomes": [
+    { "id": "CO1", "statement": "Explain how planning, delivery, evaluation and reflection form one connected cycle in your own teaching.", "evidence": "A labelled account of one session that shows what each stage passed to the next." },
+    { "id": "CO2", "statement": "Plan a session in which the outcomes, the activities and the evidence of learning align.", "evidence": "A session plan with an alignment table." },
+    { "id": "CO3", "statement": "Choose and adjust delivery moves using evidence of what learners understand during a session.", "evidence": "A delivery note naming two checks and the changes they prompted." },
+    { "id": "CO4", "statement": "Gather and use evidence to judge learning and your own teaching.", "evidence": "An evaluation that uses learner evidence and one other source." },
+    { "id": "CO5", "statement": "Use a reflective cycle to turn an evaluation into one specific change to your next plan.", "evidence": "A written reflection that ends in a dated action." }
+  ],
+  "lesson_map": [
+    { "lesson_id": "lesson-teaching-meta-01", "sequence": 1, "title": "Teaching as a connected cycle", "role": "introduces", "course_outcome_ids": ["CO1"], "requires_lesson_ids": [], "estimated_duration_minutes": 15, "status": "draft", "summary": "See the four processes under a session and how evidence travels between them." },
+    { "lesson_id": "lesson-teaching-meta-02", "sequence": 2, "title": "Planning backwards", "role": "develops", "course_outcome_ids": ["CO2"], "requires_lesson_ids": ["lesson-teaching-meta-01"], "estimated_duration_minutes": 20, "status": "draft", "summary": "Start from the outcome and the evidence, then choose the activity." },
+    { "lesson_id": "lesson-teaching-meta-03", "sequence": 3, "title": "Designing the session", "role": "develops", "course_outcome_ids": ["CO2"], "requires_lesson_ids": ["lesson-teaching-meta-02"], "estimated_duration_minutes": 25, "status": "draft", "summary": "Sequence the session, manage load, plan support and remove barriers." },
+    { "lesson_id": "lesson-teaching-meta-04", "sequence": 4, "title": "Delivering and adapting", "role": "applies", "course_outcome_ids": ["CO3"], "requires_lesson_ids": ["lesson-teaching-meta-03"], "estimated_duration_minutes": 25, "status": "draft", "summary": "Check understanding as you teach and change course when the evidence says so." },
+    { "lesson_id": "lesson-teaching-meta-05", "sequence": 5, "title": "Evaluating learning and teaching", "role": "develops", "course_outcome_ids": ["CO4"], "requires_lesson_ids": ["lesson-teaching-meta-04"], "estimated_duration_minutes": 25, "status": "draft", "summary": "Judge what was learned and how well the teaching helped, using more than impressions." },
+    { "lesson_id": "lesson-teaching-meta-06", "sequence": 6, "title": "Closing the loop", "role": "synthesises", "course_outcome_ids": ["CO1", "CO5"], "requires_lesson_ids": ["lesson-teaching-meta-05"], "estimated_duration_minutes": 20, "status": "draft", "summary": "Reflect with a structured cycle and turn the result into a change to your next plan." }
+  ],
+  "delivery": {
+    "mode": "self-paced",
+    "estimated_duration_minutes": null,
+    "lesson_order": "guided",
+    "materials_required": ["A session you teach or will teach soon", "A notebook or document for a short portfolio"]
+  },
+  "assessment": {
+    "strategy": "Learners build a short portfolio about one real session: a plan, a delivery note, the evidence gathered, an evaluation and a reflection that ends in one change. They check it against the criteria in lesson 5. This is a self-check design and nothing in the course marks it.",
+    "purpose": "formative",
+    "course_outcome_ids": ["CO1", "CO2", "CO3", "CO4", "CO5"]
+  },
+  "support": { "accessibility_statement": null, "help_contact": null },
+  "conventions": { "referencing_style": "Harvard (Cite Them Right)", "voice_specification": null },
+  "inherits_to_lessons": ["language", "learner_pitch", "referencing_style", "rights"],
+  "sources": [],
+  "frontmatter": {
+    "eyebrow": "Welcome",
+    "body": "Techniques are the visible part of teaching. Under them sit four processes: planning, delivering, evaluating and reflecting. You will meet each one, see how the evidence from one feeds the next and build a short portfolio around a session of your own.",
+    "meta": { "duration": null, "level": null },
+    "objectivesTitle": "By the end of this course, you will be able to:",
+    "menu": { "title": "Lessons", "show": ["position", "title", "duration", "outcomes"] }
+  }
+}

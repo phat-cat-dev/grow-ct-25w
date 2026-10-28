@@ -1,0 +1,33 @@
+.flow-diagram {
+  --flow-accent: var(--accent, #326d91);
+  --flow-paper: var(--surface-1, #fafcfd);
+  --flow-ink: var(--ink, #24313b);
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  max-block-size: var(--flow-height, 18rem);
+  overflow: visible;
+}
+.flow-diagram .edge { fill: none; stroke: var(--flow-accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; opacity: .5; }
+.flow-diagram .node { fill: var(--flow-paper); stroke: var(--flow-accent); stroke-width: 2.5; }
+.flow-diagram .node.key { fill: color-mix(in srgb, var(--flow-accent) 16%, var(--flow-paper)); }
+.flow-diagram .nlabel { fill: var(--flow-ink); font-family: var(--font-ui, system-ui, sans-serif); font-size: 13px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.flow-diagram .runner { fill: var(--flow-accent); opacity: 0; }
+.flow-diagram.is-playing .edge { animation: flow-edge-draw calc(.55s / var(--flow-rate, 1)) ease both; animation-delay: calc(var(--d, 0s) / var(--flow-rate, 1)); }
+.flow-diagram.is-playing .runner { opacity: 1; animation: flow-runner calc(6s / var(--flow-rate, 1)) linear infinite; }
+.flow-diagram.is-paused :is(.edge,.runner) { animation-play-state: paused; }
+@keyframes flow-edge-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes flow-runner { to { offset-distance: 100%; } }
+@media (prefers-reduced-motion: reduce) {
+  .flow-diagram.is-playing :is(.edge,.runner) { animation: none; }
+  .flow-diagram .runner { opacity: 0 !important; }
+}
+:is(.no-motion,[data-tm-no-motion="true"]) .flow-diagram.is-playing :is(.edge,.runner) { animation: none; }
+:is(.no-motion,[data-tm-no-motion="true"]) .flow-diagram .runner { opacity: 0; }
+.flow-card { box-sizing: border-box; padding: 1rem; border: 1px solid var(--line, #bac9d4); border-radius: .75rem; background: var(--surface-1, #fafcfd); color: var(--ink, #24313b); font: 1rem/1.6 var(--font-ui, system-ui, sans-serif); }
+.flow-card h2 { margin-block: 0 1rem; font-size: 1.2rem; }
+.flow-card .flow-card__controls { display: flex; flex-wrap: wrap; gap: .5rem; align-items: end; margin-block-start: 1rem; }
+.flow-card label { display: grid; font-size: .85rem; gap: .3rem; }
+.flow-card :is(button,select) { min-block-size: 2.75rem; padding: .4rem .7rem; background: var(--surface-1, #fafcfd); color: inherit; border: 1px solid var(--line, #8299aa); border-radius: .4rem; font: inherit; }
+.flow-card button { cursor: pointer; }
+.flow-card :focus-visible { outline: 3px solid var(--accent, #326d91); outline-offset: 3px; }

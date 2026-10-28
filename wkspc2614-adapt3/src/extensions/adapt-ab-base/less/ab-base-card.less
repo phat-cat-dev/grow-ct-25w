@@ -1,0 +1,188 @@
+// adapt-ab-base — minimal .ab.card base object
+//
+// A compact, token-based Bootstrap-5-shaped card so adapt-ab-card renders
+// without the full brand theme's ab-cards.less. No palette: everything derives
+// from --ab-* tokens (ab-base.less), so a theme reskins it by moving the tokens.
+// If the brand ab-cards.less is present it supersedes this (load order / richer
+// selectors); keep this lean.
+
+.ab.card {
+  --ab-card-bg: var(--ab-base-surface, #fff);
+  --ab-card-color: var(--ab-base-ink, #1a1a1a);
+  --ab-card-border: var(--ab-base-hairline, rgba(0, 0, 0, 0.125));
+  --ab-card-cap-bg: var(--ab-base-surface-sunken, #f3f3f3);
+  --ab-card-accent: var(--ab-card-border);
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--ab-card-bg);
+  color: var(--ab-card-color);
+  border: var(--ab-base-border-width, 0.1rem) solid var(--ab-card-border);
+  border-left-width: 0.25rem;
+  border-left-color: var(--ab-card-accent);
+  border-radius: var(--ab-border-radius, 0.375rem);
+  overflow: hidden;
+
+  .card-header {
+    padding: var(--ab-space-075, 0.75rem) var(--ab-space-100, 1rem);
+    background: var(--ab-card-cap-bg);
+    border-bottom: var(--ab-base-border-width, 0.1rem) solid var(--ab-card-border);
+    font-weight: 600;
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: var(--ab-space-100, 1rem);
+
+    > *:last-child { margin-bottom: 0; }
+  }
+
+  .card-footer {
+    padding: var(--ab-space-075, 0.75rem) var(--ab-space-100, 1rem);
+    background: var(--ab-card-cap-bg);
+    border-top: var(--ab-base-border-width, 0.1rem) solid var(--ab-card-border);
+  }
+
+  .card-title { margin: 0 0 0.25rem; font-size: var(--ab-h4-font-size, 1.25rem); }
+  .card-subtitle { margin: 0 0 0.5rem; color: var(--ab-base-ink-muted, #6d6d6d); }
+  .card-text { margin: 0 0 0.5rem; }
+  .card-link { color: var(--ab-accent, #2a5db0); }
+
+  .card-img-top { display: block; width: 100%; height: auto; }
+}
+
+// card group: responsive auto-fit (mirrors adapt-ab-card's own group LESS)
+.card-group {
+  display: grid;
+  gap: var(--ab-space-100, 1rem);
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+// ---- functional / accent variants: just move the accent (+ a tinted cap) ----
+.ab.card.accent        { --ab-card-accent: var(--ab-accent); }
+.ab.card.do,
+.ab.card.advice,
+.ab.card.feedback-pos  { --ab-card-accent: var(--ab-success); }
+.ab.card.dont,
+.ab.card.feedback-neg  { --ab-card-accent: var(--ab-danger); }
+.ab.card.action,
+.ab.card.starting      { --ab-card-accent: var(--ab-accent); }
+
+// ---- with-icon: reserve a leading icon slot in the body ----
+.ab.card.with-icon {
+  .card-body {
+    display: flex;
+    gap: var(--ab-space-100, 1rem);
+  }
+
+  .card-icon {
+    flex: 0 0 auto;
+    font-size: calc(var(--ab-h4-font-size, 1.25rem) * 1.4);
+    line-height: 1;
+    color: var(--ab-card-accent);
+  }
+
+  .card-body__text { flex: 1 1 auto; min-width: 0; }
+}
+
+// ---- hover-animate: lift the card on hover ----
+.ab.card.hover-animate {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ---- tinted: a faint surface wash + cap drawn from the accent ----
+.ab.card.tinted {
+  --ab-card-bg: color-mix(in srgb, var(--ab-card-accent) 6%, var(--ab-base-surface, #fff));
+  --ab-card-cap-bg: color-mix(in srgb, var(--ab-card-accent) 12%, var(--ab-base-surface, #fff));
+}
+
+// ---- RAG (red / amber / green) semantic variants -----------------------------
+// Optional traffic-light tones. Use a per-card variant (rag-red/amber/green), or
+// a group modifier (below) to colour a whole sequence. Accent = the semantic
+// colour + a faint tint; the with-icon slot inherits --ab-card-accent, so a
+// Material Symbol dropped in (cancel / warning / check_circle) colour-matches.
+.ab.card.rag-red   { --ab-card-accent: var(--ab-danger); }
+.ab.card.rag-amber { --ab-card-accent: var(--ab-warning); }
+.ab.card.rag-green { --ab-card-accent: var(--ab-success); }
+.ab.card.rag-red,
+.ab.card.rag-amber,
+.ab.card.rag-green {
+  --ab-card-bg: color-mix(in srgb, var(--ab-card-accent) 7%, var(--ab-base-surface, #fff));
+  --ab-card-cap-bg: color-mix(in srgb, var(--ab-card-accent) 14%, var(--ab-base-surface, #fff));
+}
+// group themes (set on the component via _classes): colour cards in sequence.
+// ab-card--rag = red -> amber -> green; ab-card--gar = the reverse ("vice versa").
+.ab-card--rag .ab.card:nth-child(3n+1) { --ab-card-accent: var(--ab-danger); }
+.ab-card--rag .ab.card:nth-child(3n+2) { --ab-card-accent: var(--ab-warning); }
+.ab-card--rag .ab.card:nth-child(3n)   { --ab-card-accent: var(--ab-success); }
+.ab-card--gar .ab.card:nth-child(3n+1) { --ab-card-accent: var(--ab-success); }
+.ab-card--gar .ab.card:nth-child(3n+2) { --ab-card-accent: var(--ab-warning); }
+.ab-card--gar .ab.card:nth-child(3n)   { --ab-card-accent: var(--ab-danger); }
+.ab-card--rag .ab.card,
+.ab-card--gar .ab.card {
+  --ab-card-bg: color-mix(in srgb, var(--ab-card-accent) 7%, var(--ab-base-surface, #fff));
+  --ab-card-cap-bg: color-mix(in srgb, var(--ab-card-accent) 14%, var(--ab-base-surface, #fff));
+}
+
+// ---- entrance: a gentle staggered timed fade-in ------------------------------
+@keyframes ab-card-in {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to   { opacity: 1; transform: none; }
+}
+.ab-card__group > .ab.card { animation: ab-card-in 0.5s ease both; }
+.ab-card__group > .ab.card:nth-child(2) { animation-delay: 0.08s; }
+.ab-card__group > .ab.card:nth-child(3) { animation-delay: 0.16s; }
+.ab-card__group > .ab.card:nth-child(4) { animation-delay: 0.24s; }
+.ab-card__group > .ab.card:nth-child(5) { animation-delay: 0.32s; }
+.ab-card__group > .ab.card:nth-child(n+6) { animation-delay: 0.4s; }
+@media (prefers-reduced-motion: reduce) {
+  .ab-card__group > .ab.card { animation: none; }
+}
+
+// ---- semantic cue variants (callout-note cards) ------------------------------
+// Re-homed from the excluded ab-theme ab-semantics.less so it renders in the
+// active build. SCOPED under .ab.card on purpose: bare .positive/.negative/
+// .neutral are already compound modifiers on ab-highlight / ab-mark / ab-btn /
+// mejs, so re-targeting them globally would break those. positive=green,
+// negative=red, neutral=amber, each with a corner Material Symbol that a second
+// class can swap (the ab-semantics two-layer model).
+.ab.card.positive { --ab-card-accent: var(--ab-success); }
+.ab.card.negative { --ab-card-accent: var(--ab-danger); }
+.ab.card.neutral  { --ab-card-accent: var(--ab-warning); }
+.ab.card.positive,
+.ab.card.negative,
+.ab.card.neutral {
+  position: relative;
+  --ab-card-bg: color-mix(in srgb, var(--ab-card-accent) 7%, var(--ab-base-surface, #fff));
+  --ab-card-cap-bg: color-mix(in srgb, var(--ab-card-accent) 14%, var(--ab-base-surface, #fff));
+
+  .card-header, .card-title { padding-right: 2rem; } // clear the corner icon
+}
+.ab.card.positive::after,
+.ab.card.negative::after,
+.ab.card.neutral::after {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ab-card-accent);
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+}
+.ab.card.positive::after { content: "check_circle"; }
+.ab.card.negative::after { content: "cancel"; }
+.ab.card.neutral::after  { content: "info"; }
+// a second class swaps the icon but keeps the layer-1 colour (ab-semantics model)
+.ab.card.positive.advise::after { content: "lightbulb"; }
+.ab.card.negative.warn::after   { content: "warning"; }
+.ab.card.neutral.observe::after { content: "visibility"; }

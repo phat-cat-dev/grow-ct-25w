@@ -1,0 +1,72 @@
+<p class="note">Cards are built from the active project theme, not a separate fixed palette. Their surfaces, accents, spacing and corners follow the main colour, fixed base and Layout settings. Semantic cards keep their meaning hues while their saturation and brightness follow the same foundation.</p>
+
+### 1.1 Themed cards
+<div class="card-doc">
+<p class="note">One accent, four treatments. These examples deliberately keep their fill modifiers so you can compare them while tuning the shared geometry below.</p>
+<div class="ab card-set">
+  <article class="ab card primary tinted with-icon"><div class="card-header">Project theme</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">palette</span>Current foundation</h4><p class="card-text">The main accent colours this border, header and icon. Pin a base colour to keep this set anchored.</p></div><div class="card-footer"><a class="card-link" href="#color">Tune the theme</a></div></article>
+  <article class="ab card primary soft with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">layers</span>Soft surface</h4><p class="card-text">An accent wash distinguishes a supporting panel without inventing a new colour.</p></div></article>
+  <article class="ab card primary invert with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">auto_awesome</span>Featured content</h4><p class="card-text">A solid accent puts a key message first. Foreground responds to the fill.</p></div><div class="card-footer"><a class="card-link" href="#layout">Shared corners</a></div></article>
+  <article class="ab card secondary tinted flat with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">dashboard</span>Quiet companion</h4><p class="card-text">Colour-grey uses the same theme hue with neutral saturation. A flat finish keeps secondary content calm.</p></div></article>
+</div>
+</div>
+
+### 1.2 Semantic cards
+<div class="card-doc">
+<p class="note">Meaning is expressed through colour, icon and text together. Amber caution uses the existing neutral semantic hue (42 degrees), never red. These are part of the project theme, not disconnected colour presets.</p>
+<div class="ab card-set">
+  <article class="ab card positive soft with-icon"><div class="card-header">Positive / success</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">check_circle</span>Ready to publish</h4><p class="card-text">Checks passed. Positive saturation and lightness follow the base.</p></div></article>
+  <article class="ab card warning soft with-icon"><div class="card-header">Amber / caution</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">warning</span>Review needed</h4><p class="card-text">A decision needs attention, but this is not an error.</p></div></article>
+  <article class="ab card negative soft with-icon"><div class="card-header">Negative / danger</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">error</span>Action blocked</h4><p class="card-text">Explain what failed and how to recover.</p></div></article>
+  <article class="ab card info soft with-icon"><div class="card-header">Information</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">info</span>Useful context</h4><p class="card-text">Supporting information with a stable blue identity.</p></div></article>
+  <article class="ab card comment soft with-icon"><div class="card-header">Comment</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">forum</span>Discuss an idea</h4><p class="card-text">A violet note or feedback thread, styled by the same tokens.</p></div></article>
+</div>
+</div>
+
+### 1.3 Card styler
+<div class="card-doc" data-card-live>
+<p class="note">These settings apply to cards throughout the project and save/export with the complete theme. Explicit semantic/fill modifiers take priority; the unmodified preview cards below demonstrate your default. Corner radius remains controlled by Layout.</p>
+<div class="connector-controls">
+  <label>Default family <select id="card-family"><option value="brand">Main accent</option><option value="grey">Colour-grey</option><option value="gray">Pure grey</option></select></label>
+  <label>Default fill <select id="card-fill"><option value="tinted">Tinted header</option><option value="soft">Soft surface</option><option value="invert">Solid / invert</option></select></label>
+  <label>Elevation <select id="card-elevation"><option value="flat">Flat</option><option value="soft">Soft</option><option value="raised">Raised</option></select></label>
+  <label>Padding <input id="card-padding" type="range" min="8" max="40" value="16"><output id="card-padding-value">16 px</output></label>
+  <label>Border <input id="card-border" type="range" min="0" max="6" value="1"><output id="card-border-value">1 px</output></label>
+  <label>Tint <input id="card-tint" type="range" min="0" max="30" value="12"><output id="card-tint-value">12%</output></label>
+  <label>Icon size <input id="card-iconSize" type="range" min="16" max="56" value="28"><output id="card-iconSize-value">28 px</output></label>
+  <label>Set spacing <input id="card-gap" type="range" min="8" max="32" value="16"><output id="card-gap-value">16 px</output></label>
+</div>
+<button type="button" class="ab btn secondary" id="card-reset">Reset card settings</button>
+<div class="ab card-set" id="card-styler-preview">
+  <article class="ab card with-icon"><div class="card-header">Your defaults</div><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">tune</span>Live card</h4><p class="card-text">Family, fill, tint, padding, border, elevation and icon size are genuinely live.</p></div><div class="card-footer">Shared geometry</div></article>
+  <article class="ab card with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">view_agenda</span>Body-only companion</h4><p class="card-text">The same defaults work with or without header and footer slots.</p><a class="card-link" href="#layout">Adjust project corners</a></div></article>
+</div>
+<details><summary>Generated card CSS</summary><pre id="card-css"></pre></details>
+<p id="card-status" role="status"></p>
+</div>
+
+### 1.4 Card sets and layers
+<div class="card-doc">
+<p class="note">Use separate cards for peers, joined cards for a sequence and nested surfaces for parent/child context. Semantic children keep their own accents instead of inheriting their parent's meaning.</p>
+<div class="ab card primary tinted with-icon">
+  <div class="card-header">Layer 1 / project container</div>
+  <div class="card-body">
+    <h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">folder_open</span>Release workspace</h4>
+    <p class="card-text">A theme-linked container holds a set of independent tasks.</p>
+    <div class="ab card-set">
+      <article class="ab card positive soft with-icon"><div class="card-body"><h5 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">task_alt</span>Content approved</h5><p class="card-text">Layer 2 / positive status.</p></div></article>
+      <article class="ab card warning soft with-icon"><div class="card-body"><h5 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">pending_actions</span>One review left</h5><p class="card-text">Layer 2 / amber caution.</p><div class="ab card primary tinted"><div class="card-body"><h6 class="card-title">Layer 3 / review detail</h6><p class="card-text">A quieter nested panel returns to the main theme.</p></div></div></div></article>
+    </div>
+  </div>
+</div>
+<p class="note">Joined sequence: shared outer corners and no doubled joining borders; stacks on small screens.</p>
+<div class="ab card-group">
+  <article class="ab card primary tinted with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">edit_note</span>Plan</h4><p class="card-text">Capture the goal.</p></div></article>
+  <article class="ab card primary soft with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">construction</span>Build</h4><p class="card-text">Work in context.</p></div></article>
+  <article class="ab card positive soft with-icon"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">verified</span>Review</h4><p class="card-text">Confirm the outcome.</p></div></article>
+</div>
+<p class="note">Opt-in emphasis: focus or hover the link to highlight the card without lifting it.</p>
+<article class="ab card primary soft with-icon hover-animate"><div class="card-body"><h4 class="card-title"><span class="material-symbol card-icon" aria-hidden="true">explore</span>Explore the system</h4><p class="card-text">One actionable link, no pretend clickable container.</p><a class="card-link" href="#color">Return to colour tuning</a></div></article>
+<p class="note">Slots and reusable modifiers</p>
+<div class="classlist"><span>.ab.card</span><span>.card-header / .card-body / .card-footer</span><span>.with-icon</span><span>.primary / .secondary</span><span>.positive / .warning / .negative / .info / .comment</span><span>.tinted / .soft / .invert</span><span>.flat / .raised / .square</span><span>.ab.card-set / .ab.card-group</span><span>.advice / .action / .starting / .do / .dont</span></div>
+</div>

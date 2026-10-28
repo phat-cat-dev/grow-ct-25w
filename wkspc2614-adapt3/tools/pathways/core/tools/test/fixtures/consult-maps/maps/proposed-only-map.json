@@ -1,0 +1,19 @@
+{
+  "_comment": "Fixture only, for consult-maps.test.js. Mirrors the real psychology-2023 map's shape: a group exists, every statement is proposed, none confirmed.",
+  "mapVersion": "1.0",
+  "status": "active",
+  "pathways": {
+    "path-fixture-pathway": {
+      "summary": { "text": "Fixture summary, proposed only.", "basis": [], "status": "proposed" },
+      "statements": [
+        {
+          "chunkId": "fixture/benchmark/2.1",
+          "strength": "direct",
+          "extract": "fixture extract text, never read by consult-maps.js",
+          "agentInstruction": "Fixture agent instruction, proposed only.",
+          "status": "proposed"
+        }
+      ]
+    }
+  }
+}

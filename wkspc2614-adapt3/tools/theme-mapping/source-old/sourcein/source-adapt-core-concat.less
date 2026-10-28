@@ -1,0 +1,2368 @@
+/* =====================================================
+   ADAPT CORE LESS - FULL CONCATENATION
+   =====================================================
+
+   Build order: src/core/less/**/*.less (mandatory block)
+   Source: grunt/config/less.js -> grunt/tasks/less.js
+   ===================================================== */
+
+/* ===== _browser/normalize.less ===== */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* ===== _defaults/_variables.less ===== */
+:root {
+  --adapt-viewport-height: 100vh;
+  --adapt-navigation-height: calc(@icon-size + (@icon-padding * 2));
+}
+
+// body {
+//  -webkit-tap-highlight-color: rgba(0,0,0,0);
+// }
+// a, button {-webkit-tap-highlight-color: rgba(0,0,0,0.2);}
+// .icon {
+//  // Fix for iOS devices not displaying icons if hidden then shown
+//  -webkit-transform: translateZ(0);
+// }
+
+// Screen sizings
+// --------------------------------------------------
+// html = 16px
+
+// 45rem = 720px
+// 60rem = 960px
+// 80rem = 1280px
+// 90rem = 1440px
+// 120rem = 1920px
+
+@device-width-small: unit(@adapt-device-small, rem);
+@device-width-medium: unit(@adapt-device-medium, rem);
+@device-width-large: unit(@adapt-device-large, rem);
+@device-width-xlarge: unit(@adapt-device-xlarge, rem);
+
+@max-width: 90rem;
+
+@max-content-width: @device-width-large;
+@max-page-width: @max-width;
+
+// Icons
+// --------------------------------------------------
+@icon-size: 1.5rem;
+@icon-padding: 1rem;
+
+// Spacings
+// --------------------------------------------------
+@item-margin: 0.5rem;
+@item-padding: 1rem;
+
+// Button padding
+// --------------------------------------------------
+@btn-padding: 1rem;
+
+// Duration
+// --------------------------------------------------
+@duration: 0.2s;
+
+// Colours
+// --------------------------------------------------
+@white: #fff;
+@black: #000;
+
+@green: #378153;
+@red: #da3510;
+
+@background: @black;
+@background-inverted: @white;
+
+@shadow: @black;
+@shadow-inverted: @white;
+
+@validation-success: @green;
+@validation-success-inverted: @white;
+
+@validation-error: @red;
+@validation-error-inverted: @white;
+
+// Block padding
+// --------------------------------------------------
+@block-padding-ver: 4rem;
+@block-padding-hoz: 0.5rem;
+
+// Component padding
+// --------------------------------------------------
+@component-padding-hoz: 0.5rem;
+
+// Navigation height
+// --------------------------------------------------
+// Deprecated @navigation-height: Navigation height is now set
+// by --adapt-navigation-height and is updated by JS
+@navigation-height: @icon-size + (@icon-padding * 2);
+
+// Focus outline
+// Deprecated - reverting to browser outline
+// --------------------------------------------------
+@focus-outline: 0;
+
+// Drawer width
+// --------------------------------------------------
+@drawer-width: 20rem;
+
+/* ===== _defaults/base.less ===== */
+// Set up the box sizing override
+// --------------------------------------------------
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Always attach scrollbar - bug fix for Windows
+// --------------------------------------------------
+html {
+  overflow-y: scroll;
+}
+
+// Set the following tags to scale to their container size
+// --------------------------------------------------
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+// Override the default 'inline' display property for images
+// --------------------------------------------------
+img {
+  display: block;
+  min-width: 100%;
+}
+
+// Fix for ie11 display of .svg in <img>
+// https://github.com/adaptlearning/adapt_framework/issues/2916
+// --------------------------------------------------
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}
+
+// Remove the default border and padding from all button tags
+// --------------------------------------------------
+button {
+  border: 0;
+  padding: 0;
+}
+
+// Add a pointer to button tags that are not disabled or locked
+// --------------------------------------------------
+button:not(.is-disabled):not(.is-locked) {
+  cursor: pointer;
+}
+
+// Set the text direction to rtl when enabled
+// --------------------------------------------------
+.dir-rtl body {
+  direction: rtl;
+}
+
+// Used to wrap content which should have zero-width
+// I<zw>&nbsp;</zw>T   will look like IT but read 'EYE TEA' instead of 'it'
+// --------------------------------------------------
+zw {
+  display: inline-block;
+  width: 0;
+}
+
+// Used to wrap content which should not break across multiple lines
+// <nw>I<zw>&nbsp;</zw>T</nw>   will not split to I
+// T instead it will allways appear as IT
+// --------------------------------------------------
+nb {
+  white-space: nowrap;
+}
+
+dialog {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  max-width: inherit;
+  max-height: inherit;
+  width: 100%;
+  height: 100%;
+  border: 0;
+
+  &::backdrop {
+    background: transparent;
+  }
+}
+
+/* ===== _defaults/easing.less ===== */
+// sources:
+// https://joshcollinsworth.com/blog/easing-curves
+// https://easings.net/
+
+:root {
+  --adapt-cubic-bezier-linear: linear;
+  --adapt-cubic-bezier-ease: ease;
+  --adapt-cubic-bezier-easein: ease-in;
+  --adapt-cubic-bezier-easeout: ease-out;
+  --adapt-cubic-bezier-eastinout: ease-in-out;
+  --adapt-cubic-bezier-easeinsine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --adapt-cubic-bezier-easeoutsine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --adapt-cubic-bezier-easeinoutsine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --adapt-cubic-bezier-easeinquad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --adapt-cubic-bezier-easeoutquad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --adapt-cubic-bezier-easeinoutquad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --adapt-cubic-bezier-easeincubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --adapt-cubic-bezier-easeoutcubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --adapt-cubic-bezier-easeinoutcubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --adapt-cubic-bezier-easeinquart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --adapt-cubic-bezier-easeoutquart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --adapt-cubic-bezier-easeinoutquart: cubic-bezier(0.77, 0, 0.175, 1);
+  --adapt-cubic-bezier-easeinquint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --adapt-cubic-bezier-easeoutquint: cubic-bezier(0.23, 1, 0.32, 1);
+  --adapt-cubic-bezier-easeinoutquint: cubic-bezier(0.86, 0, 0.07, 1);
+  --adapt-cubic-bezier-easeinexpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --adapt-cubic-bezier-easeoutexpo: cubic-bezier(0.19, 1, 0.22, 1);
+  --adapt-cubic-bezier-easeinoutexpo: cubic-bezier(1, 0, 0, 1);
+  --adapt-cubic-bezier-easeincirc: cubic-bezier(0.55, 0, 1, 0.45);
+  --adapt-cubic-bezier-easeoutcirc: cubic-bezier(0, 0.55, 0.45, 1);
+  --adapt-cubic-bezier-easeinoutcirc: cubic-bezier(0.85, 0, 0.15, 1);
+  --adapt-cubic-bezier-easeinback: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  --adapt-cubic-bezier-easeoutback: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --adapt-cubic-bezier-easeinoutback: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  // note: the following cannot be represented with cubic-bezier
+  // elastic should be replaced with quint
+  // bounce should be replaced with back
+  // --adapt-cubic-bezier-easeinelastic
+  // --adapt-cubic-bezier-easeoutelastic
+  // --adapt-cubic-bezier-easeinoutelastic
+  // --adapt-cubic-bezier-easeinbounce
+  // --adapt-cubic-bezier-easeoutbounce
+  // --adapt-cubic-bezier-easeinoutbounce
+}
+
+/* ===== _defaults/icons.less ===== */
+// Icons
+// --------------------------------------------------
+@font-face {
+  font-family: "vanilla";
+  src: url('fonts/vanilla.woff2') format('woff2'),
+       url('fonts/vanilla.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  &:before {
+    display: block;
+    font-family: "vanilla";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    font-size: @icon-size;
+    text-align: center;
+    text-decoration: none;
+
+    // Better font rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+// Icons as classes
+// --------------------------------------------------
+.icon-arrow-with-circle-down      { &:before { content: "\e900"; } }
+.icon-arrow-with-circle-left      { &:before { content: "\e901"; .dir-rtl & { content: "\e902"; } } }
+.icon-arrow-with-circle-right     { &:before { content: "\e902"; .dir-rtl & { content: "\e901"; } } }
+.icon-arrow-with-circle-up        { &:before { content: "\e903"; } }
+.icon-chevron-with-circle-down    { &:before { content: "\e904"; } }
+.icon-chevron-with-circle-left    { &:before { content: "\e905"; .dir-rtl & { content: "\e906"; } } }
+.icon-chevron-with-circle-right   { &:before { content: "\e906"; .dir-rtl & { content: "\e905"; } } }
+.icon-chevron-with-circle-up      { &:before { content: "\e907"; } }
+.icon-info-with-circle            { &:before { content: "\e908"; } }
+.icon-location                    { &:before { content: "\e909"; } }
+.icon-medal                       { &:before { content: "\e90a"; } }
+.icon-price-ribbon                { &:before { content: "\e90b"; } }
+.icon-shield                      { &:before { content: "\e90c"; } }
+.icon-stopwatch                   { &:before { content: "\e90d"; } }
+.icon-text-document-inverted      { &:before { content: "\e90e"; } }
+.icon-text-document               { &:before { content: "\e90f"; } }
+.icon-trophy                      { &:before { content: "\e910"; } }
+.icon-arrow-down                  { &:before { content: "\e911"; } }
+.icon-arrow-left                  { &:before { content: "\e912"; .dir-rtl & { content: "\e913"; } } }
+.icon-arrow-right                 { &:before { content: "\e913"; .dir-rtl & { content: "\e912"; } } }
+.icon-arrow-up                    { &:before { content: "\e914"; } }
+.icon-bookmark                    { &:before { content: "\e915"; } }
+.icon-message                     { &:before { content: "\e916"; } }
+.icon-mouse                       { &:before { content: "\e917"; } }
+.icon-mobile                      { &:before { content: "\e918"; } }
+.icon-desktop                     { &:before { content: "\e919"; } }
+.icon-pencil                      { &:before { content: "\e91a"; } }
+.icon-forward-arrow               { &:before { content: "\e91b"; .dir-rtl & { content: "\e91c"; } } }
+.icon-backwards-arrow             { &:before { content: "\e91c"; .dir-rtl & { content: "\e91b"; } } }
+.icon-person                      { &:before { content: "\e91d"; } }
+.icon-persons                     { &:before { content: "\e91e"; } }
+.icon-profile                     { &:before { content: "\e91f"; } }
+.icon-pin                         { &:before { content: "\e920"; } }
+.icon-map                         { &:before { content: "\e921"; } }
+.icon-point                       { &:before { content: "\e922"; } }
+.icon-star                        { &:before { content: "\e923"; } }
+.icon-star-hollow                 { &:before { content: "\e924"; } }
+.icon-comments                    { &:before { content: "\e925"; } }
+.icon-comment                     { &:before { content: "\e926"; } }
+.icon-home                        { &:before { content: "\e927"; } }
+.icon-popup                       { &:before { content: "\e928"; } }
+.icon-search                      { &:before { content: "\e929"; } }
+.icon-printer                     { &:before { content: "\e92a"; } }
+.icon-link                        { &:before { content: "\e92b"; } }
+.icon-flag                        { &:before { content: "\e92c"; } }
+.icon-cog                         { &:before { content: "\e92d"; } }
+.icon-tools                       { &:before { content: "\e92e"; } }
+.icon-tag                         { &:before { content: "\e92f"; } }
+.icon-camera                      { &:before { content: "\e930"; } }
+.icon-feedback                    { &:before { content: "\e931"; } }
+.icon-book                        { &:before { content: "\e932"; } }
+.icon-article                     { &:before { content: "\e933"; } }
+.icon-eye                         { &:before { content: "\e934"; } }
+.icon-time                        { &:before { content: "\e935"; } }
+.icon-microphone                  { &:before { content: "\e936"; } }
+.icon-calendar                    { &:before { content: "\e937"; } }
+.icon-timer                       { &:before { content: "\e938"; } }
+.icon-drag                        { &:before { content: "\e939"; } }
+.icon-light-bulb                  { &:before { content: "\e93a"; } }
+.icon-checklist                   { &:before { content: "\e93b"; } }
+.icon-ticket                      { &:before { content: "\e93c"; } }
+.icon-wi-fi                       { &:before { content: "\e93d"; } }
+.icon-line-graph                  { &:before { content: "\e93e"; } }
+.icon-pie-chart                   { &:before { content: "\e93f"; } }
+.icon-bar-graph                   { &:before { content: "\e940"; } }
+.icon-scatter-graph               { &:before { content: "\e941"; } }
+.icon-padlock-locked              { &:before { content: "\e942"; } }
+.icon-padlock-unlocked            { &:before { content: "\e943"; } }
+.icon-tick                        { &:before { content: "\e944"; } }
+.icon-cross                       { &:before { content: "\e945"; } }
+.icon-minus                       { &:before { content: "\e946"; } }
+.icon-plus                        { &:before { content: "\e947"; } }
+.icon-info                        { &:before { content: "\e948"; } }
+.icon-question                    { &:before { content: "\e949"; } }
+.icon-warning                     { &:before { content: "\e94a"; } }
+.icon-list                        { &:before { content: "\e94b"; } }
+.icon-add-to-list                 { &:before { content: "\e94c"; } }
+.icon-menu                        { &:before { content: "\e94d"; } }
+.icon-grid                        { &:before { content: "\e94e"; } }
+.icon-portrait                    { &:before { content: "\e94f"; } }
+.icon-screens                     { &:before { content: "\e950"; } }
+.icon-landscape                   { &:before { content: "\e951"; } }
+.icon-images                      { &:before { content: "\e952"; } }
+.icon-media                       { &:before { content: "\e953"; } }
+.icon-folder                      { &:before { content: "\e954"; } }
+.icon-documents                   { &:before { content: "\e955"; } }
+.icon-delete                      { &:before { content: "\e956"; } }
+.icon-save                        { &:before { content: "\e957"; } }
+.icon-download                    { &:before { content: "\e958"; } }
+.icon-upload                      { &:before { content: "\e959"; } }
+.icon-expand                      { &:before { content: "\e95a"; } }
+.icon-shrink                      { &:before { content: "\e95b"; } }
+.icon-volume                      { &:before { content: "\e95c"; } }
+.icon-sound                       { &:before { content: "\e95d"; } }
+.icon-sound-mute                  { &:before { content: "\e95e"; } }
+.icon-controls-down               { &:before { content: "\e95f"; } }
+.icon-controls-left               { &:before { content: "\e960"; .dir-rtl & { content: "\e961"; } } }
+.icon-controls-right              { &:before { content: "\e961"; .dir-rtl & { content: "\e960"; } } }
+.icon-controls-up                 { &:before { content: "\e962"; } }
+.icon-triangle-down               { &:before { content: "\e963"; } }
+.icon-triangle-left               { &:before { content: "\e964"; .dir-rtl & { content: "\e965"; } } }
+.icon-triangle-right              { &:before { content: "\e965"; .dir-rtl & { content: "\e964"; } } }
+.icon-triangle-up                 { &:before { content: "\e966"; } }
+.icon-dot                         { &:before { content: "\e967"; } }
+.icon-ellipsis                    { &:before { content: "\e968"; } }
+.icon-up-down                     { &:before { content: "\e969"; } }
+.icon-controls-small-down         { &:before { content: "\e96a"; } }
+.icon-controls-small-left         { &:before { content: "\e96b"; .dir-rtl & { content: "\e96c"; } } }
+.icon-controls-small-right        { &:before { content: "\e96c"; .dir-rtl & { content: "\e96b"; } } }
+.icon-controls-small-up           { &:before { content: "\e96d"; } }
+.icon-radio-checked               { &:before { content: "\e96e"; } }
+.icon-radio-unchecked             { &:before { content: "\e96f"; } }
+.icon-language-1                  { &:before { content: "\e970"; } }
+.icon-accessibility               { &:before { content: "\e971"; } }
+.icon-globe                       { &:before { content: "\e972"; } }
+.icon-language-2                  { &:before { content: "\e973"; } }
+.icon-checkbox-checked            { &:before { content: "\e974"; } }
+.icon-checkbox-unchecked          { &:before { content: "\e975"; } }
+
+.icon-accessibility-2             { &:before { content: "\e976"; } }
+.icon-alert                       { &:before { content: "\e977"; } }
+.icon-arrow-down-2                { &:before { content: "\e978"; } }
+.icon-arrow-left-2                { &:before { content: "\e979"; .dir-rtl & { content: "\e97a"; } } }
+.icon-arrow-right-2               { &:before { content: "\e97a"; .dir-rtl & { content: "\e979"; } } }
+.icon-arrow-up-2                  { &:before { content: "\e97b"; } }
+.icon-arrow-down-3                { &:before { content: "\e97c"; } }
+.icon-arrow-left-3                { &:before { content: "\e97d"; .dir-rtl & { content: "\e97e"; } } }
+.icon-arrow-right-3               { &:before { content: "\e97e"; .dir-rtl & { content: "\e97d"; } } }
+.icon-arrow-up-3                  { &:before { content: "\e97f"; } }
+.icon-attachment                  { &:before { content: "\e980"; } }
+.icon-block                       { &:before { content: "\e981"; } }
+.icon-camera-off                  { &:before { content: "\e982"; } }
+.icon-camera-on                   { &:before { content: "\e983"; } }
+.icon-cloud                       { &:before { content: "\e984"; } }
+.icon-compass                     { &:before { content: "\e985"; } }
+.icon-copy-file                   { &:before { content: "\e986"; } }
+.icon-copyright                   { &:before { content: "\e987"; } }
+.icon-crop                        { &:before { content: "\e988"; } }
+.icon-devices                     { &:before { content: "\e989"; } }
+.icon-down-up                     { &:before { content: "\e98a"; } }
+.icon-ellipsis-vertical           { &:before { content: "\e98b"; } }
+.icon-exclamation                 { &:before { content: "\e98c"; } }
+.icon-expand_1                    { &:before { content: "\e98d"; } }
+.icon-extension                   { &:before { content: "\e98e"; } }
+.icon-favourite                   { &:before { content: "\e98f"; } }
+.icon-google-translate            { &:before { content: "\e990"; } }
+.icon-hand                        { &:before { content: "\e991"; } }
+.icon-lightning                   { &:before { content: "\e992"; } }
+.icon-list-2                      { &:before { content: "\e993"; } }
+.icon-microphone-off              { &:before { content: "\e994"; } }
+.icon-move                        { &:before { content: "\e995"; } }
+.icon-mute                        { &:before { content: "\e996"; } }
+.icon-ordered-list                { &:before { content: "\e997"; } }
+.icon-question-circle             { &:before { content: "\e998"; } }
+.icon-quote-close                 { &:before { content: "\e999"; } }
+.icon-quote-open                  { &:before { content: "\e99a"; } }
+.icon-refresh                     { &:before { content: "\e99b"; } }
+.icon-send                        { &:before { content: "\e99c"; } }
+.icon-sound-down                  { &:before { content: "\e99d"; } }
+.icon-sync                        { &:before { content: "\e99e"; } }
+.icon-tablet                      { &:before { content: "\e99f"; } }
+.icon-thumb-down                  { &:before { content: "\e9a0"; } }
+.icon-thumb-up                    { &:before { content: "\e9a1"; } }
+.icon-timer-empty                 { &:before { content: "\e9a2"; } }
+.icon-timer-full                  { &:before { content: "\e9a3"; } }
+.icon-video-captions-off-2        { &:before { content: "\e9a4"; } }
+.icon-video-captions-off          { &:before { content: "\e9a5"; } }
+.icon-video-captions              { &:before { content: "\e9a6"; } }
+.icon-video-exit-fullscreen       { &:before { content: "\e9a7"; } }
+.icon-video-fast-forward          { &:before { content: "\e9a8"; } }
+.icon-video-fullscreen            { &:before { content: "\e9a9"; } }
+.icon-video-loop                  { &:before { content: "\e9aa"; } }
+.icon-video-pause-circle          { &:before { content: "\e9ab"; } }
+.icon-video-pause                 { &:before { content: "\e9ac"; } }
+.icon-video-play-circle           { &:before { content: "\e9ad"; } }
+.icon-video-play                  { &:before { content: "\e9ae"; } }
+.icon-video-replay                { &:before { content: "\e9af"; } }
+.icon-video-rewind                { &:before { content: "\e9b0"; } }
+.icon-video-skip-back             { &:before { content: "\e9b1"; } }
+.icon-video-skip-forward          { &:before { content: "\e9b2"; } }
+.icon-video-stop                  { &:before { content: "\e9b3"; } }
+
+.icon-quote-close-2               { &:before { content: "\e9b4"; } }
+.icon-quote-open-2                { &:before { content: "\e9b5"; } }
+.icon-emotion-happy               { &:before { content: "\e9b6"; } }
+.icon-emotion-not-ok              { &:before { content: "\e9b7"; } }
+.icon-emotion-ok                  { &:before { content: "\e9b8"; } }
+.icon-emotion-sad                 { &:before { content: "\e9b9"; } }
+.icon-emotion-very-happy          { &:before { content: "\e9ba"; } }
+.icon-emotion-very-unhappy        { &:before { content: "\e9bb"; } }
+.icon-blogger-2                   { &:before { content: "\e9bc"; } }
+.icon-blogger                     { &:before { content: "\e9bd"; } }
+.icon-deviantart-2                { &:before { content: "\e9be"; } }
+.icon-deviantart                  { &:before { content: "\e9bf"; } }
+.icon-doc-excel                   { &:before { content: "\e9c0"; } }
+.icon-doc-pdf                     { &:before { content: "\e9c1"; } }
+.icon-doc-word                    { &:before { content: "\e9c2"; } }
+.icon-facebook-2                  { &:before { content: "\e9c3"; } }
+.icon-facebook                    { &:before { content: "\e9c4"; } }
+.icon-flickr-2                    { &:before { content: "\e9c5"; } }
+.icon-flickr                      { &:before { content: "\e9c6"; } }
+.icon-github                      { &:before { content: "\e9c7"; } }
+.icon-instagram-2                 { &:before { content: "\e9c8"; } }
+.icon-instagram                   { &:before { content: "\e9c9"; } }
+.icon-linkedin-2                  { &:before { content: "\e9ca"; } }
+.icon-linkedin                    { &:before { content: "\e9cb"; } }
+.icon-paypal                      { &:before { content: "\e9cc"; } }
+.icon-pintrest-2                  { &:before { content: "\e9cd"; } }
+.icon-pintrest                    { &:before { content: "\e9ce"; } }
+.icon-qq-2                        { &:before { content: "\e9cf"; } }
+.icon-qq                          { &:before { content: "\e9d0"; } }
+.icon-reddit-2                    { &:before { content: "\e9d1"; } }
+.icon-reddit                      { &:before { content: "\e9d2"; } }
+.icon-rss-2                       { &:before { content: "\e9d3"; } }
+.icon-rss                         { &:before { content: "\e9d4"; } }
+.icon-sina-weibo-2                { &:before { content: "\e9d5"; } }
+.icon-sina-weibo                  { &:before { content: "\e9d6"; } }
+.icon-soundcloud-2                { &:before { content: "\e9d7"; } }
+.icon-soundcloud                  { &:before { content: "\e9d8"; } }
+.icon-steam-2                     { &:before { content: "\e9d9"; } }
+.icon-steam                       { &:before { content: "\e9da"; } }
+.icon-trello-2                    { &:before { content: "\e9db"; } }
+.icon-trello                      { &:before { content: "\e9dc"; } }
+.icon-tumbler-2                   { &:before { content: "\e9dd"; } }
+.icon-tumblr                      { &:before { content: "\e9de"; } }
+.icon-twitch                      { &:before { content: "\e9df"; } }
+.icon-twitter-2                   { &:before { content: "\e9e0"; } }
+.icon-twitter                     { &:before { content: "\e9e1"; } }
+.icon-vimeo-2                     { &:before { content: "\e9e2"; } }
+.icon-vimeo                       { &:before { content: "\e9e3"; } }
+.icon-wechat-2                    { &:before { content: "\e9e4"; } }
+.icon-wechat                      { &:before { content: "\e9e5"; } }
+.icon-weibo-2                     { &:before { content: "\e9e6"; } }
+.icon-weibo                       { &:before { content: "\e9e7"; } }
+.icon-xing-2                      { &:before { content: "\e9e8"; } }
+.icon-xing                        { &:before { content: "\e9e9"; } }
+.icon-youku-2                     { &:before { content: "\e9ea"; } }
+.icon-youku                       { &:before { content: "\e9eb"; } }
+.icon-youtube-2                   { &:before { content: "\e9ec"; } }
+.icon-youtube                     { &:before { content: "\e9ed"; } }
+.icon-sidebar-01                  { &:before { content: "\e9ee"; } }
+.icon-sidebar-02                  { &:before { content: "\e9ef"; } }
+.icon-sidebar-03                  { &:before { content: "\e9f0"; } }
+.icon-sidebar-04                  { &:before { content: "\e9f1"; } }
+
+/* ===== _defaults/layout.less ===== */
+// Create a scrollable horizontal and vertically centered container
+// --------------------------------------------------
+.l-fill-viewport-absolute() {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+// Create a fixed horizontal and vertically centered container
+// --------------------------------------------------
+.l-fill-viewport-fixed() {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+// Mixin to generate a variable width horizontally centered container
+// --------------------------------------------------
+.l-container-responsive(@size) {
+  margin: 0 auto;
+  max-width: @size;
+}
+
+// Mixin to provide responsive container padding
+// --------------------------------------------------
+.l-container-padding(@padding-ver, @padding-hoz) {
+  padding: @padding-ver @padding-hoz;
+}
+
+/* ===== _defaults/utility.less ===== */
+.u-clearfix:before,
+.u-clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.u-clearfix:after { clear: both; }
+.u-clearfix { zoom: 1; }
+
+.u-float-left() {
+  float: left;
+
+  .dir-rtl & {
+    float: right;
+  }
+}
+
+.u-float-right() {
+  float: right;
+
+  .dir-rtl & {
+    float: left;
+  }
+}
+
+.u-display-none {
+  display: none !important;
+}
+
+.u-visibility-hidden {
+  visibility: hidden !important;
+}
+
+.u-no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ===== core/accessibility.less ===== */
+// prevent elements from being obscured by nav bar when they receive focus
+:not(.adapt-scrolling), .adapt-scrolling body {
+  .is-nav-bottom& {
+    scroll-padding-bottom: var(--adapt-navigation-height);
+  }
+  .is-nav-top& {
+    scroll-padding-top: var(--adapt-navigation-height);
+  }
+}
+
+// To allow children elements to be positioned absolutely
+// --------------------------------------------------
+.component { position: relative; }
+.block { position: relative; }
+
+// Use to hide content visually while keeping it accessible to assistive technologies
+.visually-hidden {
+  display: block;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.aria-label {
+  .visually-hidden();
+  pointer-events: none;
+}
+
+// Use to only display content when it's focused
+.aria-label-focusable, .visually-hidden-focusable {
+  &:not(:focus):not(:focus-within) {
+     .visually-hidden;
+   }
+ }
+
+// jquery.a11y start
+
+// Hidden focus guard
+// --------------------------------------------------
+.a11y-focusguard {
+  left: 0 !important;
+  bottom: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: auto !important;
+  color: rgba(0,0,0,0) !important;
+  background: rgba(0,0,0,0) !important;
+  font-size: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: normal !important;
+  z-index: 1;
+
+  // iPad: Stop accessibility cursor focusing until end of page;
+  // --------------------------------------------------
+  .touchevents & {
+    position: absolute !important;
+  }
+
+  // Desktop: stop focus making window jump to bottom of page;
+  // --------------------------------------------------
+  .no-touchevents & {
+    position: fixed !important;
+  }
+}
+
+// Focus distraction
+// --------------------------------------------------
+#a11y-focuser {
+  bottom: 0 !important;
+  position: fixed !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: auto !important;
+  color: rgba(0,0,0,0) !important;
+  background: rgba(0,0,0,0) !important;
+  font-size: 1px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: normal !important;
+  z-index: 1;
+}
+
+.a11y-disable-focusoutline *:focus {
+  outline: none !important;
+}
+
+/* ===== core/article.less ===== */
+.article {
+  &__header-inner {
+    .l-container-responsive(@max-content-width);
+  }
+}
+
+/* ===== core/block.less ===== */
+.block {
+  &__inner {
+    .l-container-responsive(@max-content-width);
+  }
+}
+
+/* ===== core/button.less ===== */
+// Global button styles
+// --------------------------------------------------
+.btn-icon {
+  padding: @icon-padding;
+  border: 0;
+}
+
+.btn-text {
+  padding: (@btn-padding / 2) @btn-padding;
+}
+
+// Question component buttons
+// --------------------------------------------------
+.btn {
+  &__response-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__action:not(.is-full-width) {
+    width: calc(~'50% - @{btn-padding}');
+    margin-inline-end: @btn-padding;
+  }
+
+  &__feedback:not(.is-full-width) {
+    width: calc(~'50% - @{btn-padding}');
+    margin-inline-start: @btn-padding;
+  }
+
+  &__action.is-full-width,
+  &__feedback.is-full-width {
+    width: 100%;
+  }
+
+  .can-show-marking.is-complete &__action.is-full-width,
+  .can-show-marking.is-complete &__feedback.is-full-width {
+    margin-inline-end: @icon-size + (@item-margin * 2);
+  }
+
+  // Button marking
+  // --------------------------------------------------
+  &__marking {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    .transform(translate(-50%, -50%));
+
+    .dir-rtl & {
+      left: inherit;
+      right: 50%;
+      .transform(translate(50%, -50%));
+    }
+  }
+
+  &__marking.is-full-width {
+    left: inherit;
+    right: @item-margin;
+    .transform(translate(0, -50%));
+
+    .dir-rtl & {
+      left: @item-margin;
+      right: inherit;
+    }
+  }
+
+  // Button marking icon states
+  // --------------------------------------------------
+  &__marking.is-correct {
+    background-color: @validation-success;
+    color: @validation-success-inverted;
+  }
+
+  &__marking.is-correct .icon {
+    .icon-tick;
+  }
+
+  &__marking.is-incorrect {
+    background-color: @validation-error;
+    color: @validation-error-inverted;
+  }
+
+  &__marking.is-incorrect .icon {
+    .icon-cross;
+  }
+}
+
+/* ===== core/component.less ===== */
+.component {
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @media (min-width: @device-width-medium) {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: @device-width-medium) {
+    &.is-left {
+      width: 50%;
+    }
+
+    &.is-right {
+      margin-inline-start: auto;
+      width: 50%;
+    }
+  }
+}
+
+/* ===== core/drawer.less ===== */
+.drawer {
+  position: fixed;
+  top: 0;
+  // Update JS to set start point
+  // Update animation to be css rather than js
+  height: 100%;
+  width: @drawer-width;
+  overflow: hidden;
+  z-index: 100;
+
+  &.is-position-auto,
+  &.is-position-right {
+    left: inherit;
+    right: -@drawer-width;
+
+    &.anim-show-after {
+      right: 0;
+    }
+
+    &.anim-hide-after {
+      right: -@drawer-width;
+    }
+  }
+
+  .dir-rtl &:not(.is-position-right),
+  &.is-position-left {
+    right: inherit;
+    left: -@drawer-width;
+
+    &.anim-show-after {
+      left: 0;
+    }
+
+    &.anim-hide-after {
+      left: -@drawer-width;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    height: 100%;
+    padding-top: var(--adapt-navigation-height);
+  }
+
+  // Add top padding equal to the height of the navigation bar
+  // --------------------------------------------------
+  &__holder {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  // Reposition the toolbar to visually sit at the top of the drawer
+  // --------------------------------------------------
+  &__toolbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: var(--adapt-navigation-height);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__back {
+    margin-inline-end: auto;
+  }
+
+  &__back .icon {
+    .icon-controls-small-left;
+  }
+
+  &__close .icon {
+    .icon-cross;
+  }
+}
+
+/* ===== core/drawerItem.less ===== */
+.drawer {
+  &__item-btn {
+    width: 100%;
+  }
+  
+  &__item-title,
+  &__item-body {
+    display: block;
+  }
+}
+
+/* ===== core/global.less ===== */
+// Fix for Firefox outline container height misalignment
+// https://github.com/adaptlearning/adapt_framework/issues/2912
+// --------------------------------------------------
+.menu,
+.menu-item,
+.page,
+.article,
+.block,
+.component {
+  &__title-inner {
+    display: inline;
+    vertical-align: middle;
+  }
+}
+
+/* ===== core/loading.less ===== */
+.loading {
+  .l-fill-viewport-fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+/* ===== core/nav.less ===== */
+// Add top padding equal to the height of the navigation bar
+// --------------------------------------------------
+.html.is-nav-top #wrapper {
+  padding-top: var(--adapt-navigation-height);
+}
+
+.html.is-nav-bottom #wrapper {
+  padding-bottom: var(--adapt-navigation-height);
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 80;
+
+  .html.is-nav-top & {
+    top: 0;
+  }
+
+  .html.is-nav-bottom & {
+    bottom: 0;
+  }
+
+  &__inner {
+    .l-container-responsive(@max-page-width);
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    // Override floats on additional `nav__btn` elements part of plugins
+    // that haven't been updated to work with data-order yet.
+    // Can be removed in time.
+    float: none !important;
+  }
+
+  &.hide-label &__btn:not(.nav__skip-btn) &__btn-label,
+  &__btn.hide-label &__btn-label {
+    display: none;
+  }
+
+  &.show-label {
+    .show-nav-label(small);
+    .show-nav-label(medium);
+    .show-nav-label(large);
+  }
+
+  &.has-label-right &__btn-label {
+    margin-inline-start: @icon-padding / 2;
+  }
+
+  &.has-label-bottom {
+    .nav__btn {
+      flex-direction: column;
+    }
+
+    .nav__btn-label {
+      margin-top: @icon-padding / 2;
+    }
+  }
+
+  &.has-label-top {
+    .nav__btn {
+      flex-direction: column;
+    }
+
+    .nav__btn-label {
+      order: -1;
+      margin-bottom: @icon-padding / 2;
+    }
+  }
+
+  .has-label-left &__btn-label {
+    order: -1;
+  }
+
+  &.has-label-left .icon ~ .nav__btn-label {
+    margin-inline-end: @icon-padding / 2;
+  }
+
+  &.has-label-auto .icon ~ .nav__btn-label {
+    margin-inline-start: @icon-padding / 2;
+  }
+
+  &__spacer {
+    flex-grow: 1;
+  }
+
+  &__skip-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    .html:not(.has-accessibility) & {
+      .u-display-none;
+    }
+
+    .visually-hidden-focusable()
+  }
+
+  &__back-btn .icon {
+    .icon-controls-small-left;
+  }
+}
+
+// Show nav label at breakpoints
+.show-nav-label(@size) {
+  &.show-label-@{size} {
+    .nav__btn-label { display: none }
+
+    .nav__btn:not(.hide-label) .nav__btn-label {
+      @breakpoint: "device-width-@{size}";
+      @media (min-width: @@breakpoint) {
+        display: initial;
+      }
+    }
+  }
+}
+
+/* ===== core/notify.less ===== */
+.notify {
+  z-index: 100;
+
+  &__popup {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    height: fit-content;
+    width: 100%;
+    overflow-y: hidden;
+    max-height: 100vh;
+    z-index: 100;
+    background-color: @background-inverted;
+  }
+
+  &__popup-inner {
+    .l-container-responsive(@max-content-width);
+  }
+
+  // Notify icons
+  // --------------------------------------------------
+  &__close-btn .icon {
+    .icon-cross;
+  }
+
+  &__icon .icon.is-prompt {
+    .icon-question;
+  }
+
+  &__icon .icon.is-alert {
+    .icon-warning;
+  }
+
+  &__popup.has-image {
+    .notify__section-inner {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    @media (min-width: @device-width-medium) {
+      &.align-image-left .notify__section-inner,
+      &.align-image-right .notify__section-inner {
+        flex-direction: row;
+        column-gap: 1rem;
+
+        .notify__text {
+          width: 60%;
+        }
+
+        .notify__image-container {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+
+/* ===== core/notifyPush.less ===== */
+.notify-push {
+  position: fixed;
+  left: auto;
+  right: 0;
+  height: auto;
+  width: @drawer-width;
+  opacity: 0;
+  z-index: 100;
+  background-color: @background-inverted;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  .dir-rtl & {
+    right: auto;
+    left: 0;
+  }
+
+  &__inner {
+    cursor: pointer;
+  }
+
+  // Notify push icon
+  // --------------------------------------------------
+  &__close-btn .icon {
+    .icon-cross;
+  }
+}
+
+/* ===== core/page.less ===== */
+.page {
+  .l-container-responsive(@max-page-width);
+
+  &__header-inner {
+    .l-container-responsive(@max-content-width);
+  }
+}
+
+/* ===== core/scrolling.less ===== */
+.html.adapt-scrolling {
+  height: 100%;
+  // Allow overflow scroll top for refresh on android
+  overflow: auto;
+
+  // Offset the navigation bar width the the body scrollbar
+  .nav {
+    // IE11 is consistant at 18px
+    width: calc(100% - 18px);
+    // Modern browsers change their scroll bar width on zoom
+    width: calc(100% - var(--adapt-scrollbar-width));
+  }
+
+  body {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    overflow-y: scroll;
+    // Allow scrolling of the body in an iframe on ios
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ===== core/shadow.less ===== */
+.shadow {
+  .l-fill-viewport-fixed;
+  z-index: 90;
+}
+
+/* ===== core/tooltip.less ===== */
+@tooltip-color: rgba(0,0,0,0.85);
+@tooltip-text-color: @white;
+@tooltip-radius: 0.35rem; // max 1rem
+@tooltip-offset: 0.35rem; // max 1rem
+@tooltip-arrow-width: 0.7rem; // max 1rem
+@tooltip-arrow-height: 0.35rem;
+@tooltip-arrow: true;
+@tooltip-distance: 1rem;
+@tooltip-viewport-padding: 8px;
+
+:root {
+  --adapt-tooltip-arrow: @tooltip-arrow;
+  --adapt-tooltip-offset: @tooltip-offset;
+  --adapt-tooltip-distance: @tooltip-distance;
+  --adapt-tooltip-viewport-padding: @tooltip-viewport-padding;
+  --adapt-tooltip-target-position-left: 0px;
+  --adapt-tooltip-target-position-top: 0px;
+  --adapt-tooltip-target-position-right: 0px;
+  --adapt-tooltip-target-position-bottom: 0px;
+  --adapt-tooltip-target-position-width: 0px;
+  --adapt-tooltip-target-position-height: 0px;
+  --adapt-tooltip-target-distancetoedge-left: 0px;
+  --adapt-tooltip-target-distancetoedge-top: 0px;
+  --adapt-tooltip-target-distancetoedge-right: 0px;
+  --adapt-tooltip-target-distancetoedge-bottom: 0px;
+  --adapt-tooltip-scroll-top: 0px;
+  --adapt-tooltip-scroll-left: 0px;
+}
+
+.test {
+  color: transparent !important;
+  .tooltip__body {
+    pointer-events: all !important;
+    background-color: transparent !important;
+    outline: 1px solid black !important;
+  }
+  .tooltip__body:hover {
+    background-color: red !important;
+    color: white !important;
+  }
+}
+
+.tooltip__container {
+  overflow: hidden;
+}
+
+// tooltip target overlay position
+.tooltip {
+  position: absolute;
+  left: calc(var(--adapt-tooltip-target-position-left) + var(--adapt-tooltip-scroll-left));
+  top: calc(var(--adapt-tooltip-target-position-top) + var(--adapt-tooltip-scroll-top));
+  width: var(--adapt-tooltip-target-position-width);
+  height: var(--adapt-tooltip-target-position-height);
+
+  pointer-events: none;
+
+  opacity: 0;
+  .is-shown& {
+    opacity: 1;
+  }
+  .is-loading& {
+    visibility: hidden;
+  }
+
+  z-index: 0;
+  .is-fixed& {
+    position: fixed;
+    z-index: 82;
+  }
+
+
+  // tooltip text
+  &__body {
+    position: absolute;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: max-content;
+    min-width: 3rem;
+    max-width: 20rem;
+    @media (min-width: @device-width-medium) {
+      max-width: 30rem;
+    }
+
+    color: @tooltip-text-color;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    padding: 0.5rem 0.75rem 0.55rem;
+
+    background-color: @tooltip-color;
+    border-radius: @tooltip-radius;
+  }
+
+  // tooltip arrow
+  &__arrow {
+    position: absolute;
+
+    width: @tooltip-arrow-width;
+    height: @tooltip-arrow-width;
+
+    :not(.has-arrow) > & {
+      display: none;
+    }
+
+    & when (@tooltip-arrow = false) {
+      display: none;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: @tooltip-arrow-width;
+      height: @tooltip-arrow-width;
+      transform-origin: 50% 50%;
+
+      border-width: 0 (@tooltip-arrow-width / 2) (@tooltip-arrow-height);
+      border-style: solid;
+      border-color: transparent;
+      border-bottom-color: @tooltip-color;
+    }
+  }
+
+  // tooltip text positioning
+  .is-outside.is-vertical-axis &__body {
+    .is-top& {
+      bottom: 100%;
+      margin-bottom: var(--adapt-tooltip-distance);
+    }
+
+    .is-bottom& {
+      top: 100%;
+      margin-top: var(--adapt-tooltip-distance);
+    }
+
+    .is-center& {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .is-left.is-arrow-start& {
+      right: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+      .dir-rtl & {
+        left: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+        right: initial;
+      }
+    }
+
+    .is-left.is-arrow-middle& {
+      right: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        left: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+        right: initial;
+      }
+    }
+
+    .is-left.is-arrow-end& {
+      right: 0%;
+      .dir-rtl & {
+        left: 0%;
+        right: initial;
+      }
+    }
+
+    .is-middle.is-arrow-start& {
+      left: calc(0% + @tooltip-arrow-width);
+      transform: translate(-50%);
+      .dir-rtl & {
+        right: calc(0% + @tooltip-arrow-width);
+        left: initial;
+        transform: translate(50%);
+      }
+    }
+
+    .is-middle.is-arrow-middle& {
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .is-middle.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width);
+      transform: translate(-50%);
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width);
+        left: initial;
+        transform: translate(50%);
+      }
+    }
+
+    .is-right.is-arrow-start& {
+      left: 0%;
+      .dir-rtl & {
+        right: 0%;;
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-middle& {
+      left: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+        left: initial;
+      }
+    }
+
+    .is-middle.is-center.is-arrow-start&,
+    .is-middle.is-center.is-arrow-middle&,
+    .is-middle.is-center.is-arrow-end& {
+      transform: translate(-50%, -50%);
+      .dir-rtl & {
+        transform: translate(50%, -50%);
+      }
+    }
+
+    .is-fill-width.is-arrow-start&,
+    .is-fill-width.is-arrow-middle&,
+    .is-fill-width.is-arrow-end& {
+      left: calc(var(--adapt-tooltip-target-distancetoedge-left) * -1);
+      right: calc(var(--adapt-tooltip-target-distancetoedge-right) * -1);
+      max-width: @max-content-width;
+      margin-left: auto;
+      margin-right: auto;
+      width: initial;
+      transform: initial;
+      .dir-rtl & {
+        left: calc(var(--adapt-tooltip-target-distancetoedge-left) * -1);
+        right: calc(var(--adapt-tooltip-target-distancetoedge-right) * -1);
+      }
+    }
+
+    .is-top.is-fill-width& {
+      max-height: calc(var(--adapt-tooltip-target-distancetoedge-top) - var(--adapt-tooltip-distance));
+    }
+
+    .is-bottom.is-fill-width& {
+      max-height: calc(var(--adapt-tooltip-target-distancetoedge-bottom) - var(--adapt-tooltip-distance));
+    }
+
+    .tooltip__container .is-snap-left& {
+      left: calc(var(--adapt-tooltip-target-distancetoedge-left) * -1);
+      transform: none;
+      right: initial;
+    }
+
+    .tooltip__container .is-snap-right& {
+      right: calc(var(--adapt-tooltip-target-distancetoedge-right) * -1);
+      transform: none;
+      left: initial;
+    }
+
+  }
+
+  .is-outside.is-horizontal-axis &__body {
+    .is-left& {
+      right: 100%;
+      margin-inline-end: var(--adapt-tooltip-distance);
+      .dir-rtl & {
+        left: 100%;
+        right: initial;
+      }
+    }
+
+    .is-right& {
+      left: 100%;
+      margin-inline-start: var(--adapt-tooltip-distance);
+      .dir-rtl & {
+        right: 100%;
+        left: initial;
+      }
+    }
+
+    .is-middle& {
+      left: 50%;
+      transform: translateX(-50%);
+      .dir-rtl & {
+        right: 50%;
+        transform: translateX(50%);
+        left: initial;
+      }
+    }
+
+    .is-top.is-arrow-start& {
+      bottom: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+    }
+
+    .is-top.is-arrow-middle& {
+      bottom: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+    }
+
+    .is-top.is-arrow-end& {
+      bottom: 0%;
+    }
+
+    .is-center.is-arrow-start& {
+      top: calc(0% + @tooltip-arrow-width);
+      transform: translateY(-50%);
+    }
+
+    .is-center.is-arrow-middle& {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .is-center.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width);
+      transform: translateY(-50%);
+    }
+
+    .is-bottom.is-arrow-start& {
+      top: 0%;
+    }
+
+    .is-bottom.is-arrow-middle& {
+      top: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+    }
+
+    .is-bottom.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2));
+    }
+
+    .is-left.is-fill-height& {
+      left: calc(var(--adapt-tooltip-target-distancetoedge-left) * -1);
+      max-height: var(--adapt-tooltip-viewport-constrained-height);
+      max-width: unset;
+      width: unset;
+      .dir-rtl & {
+        right: calc(var(--adapt-tooltip-target-distancetoedge-right) * -1);
+        left: 100%;
+      }
+    }
+
+    .is-right.is-fill-height& {
+      right: calc(var(--adapt-tooltip-target-distancetoedge-right) * -1);
+      max-height: var(--adapt-tooltip-viewport-constrained-height);
+      max-width: unset;
+      width: unset;
+      .dir-rtl & {
+        left: calc(var(--adapt-tooltip-target-distancetoedge-left) * -1);
+        right: 100%;
+      }
+    }
+
+    .is-center.is-middle.is-arrow-start&,
+    .is-center.is-middle.is-arrow-middle&,
+    .is-center.is-middle.is-arrow-end& {
+      transform: translate(-50%, -50%);
+      .dir-rtl & {
+        transform: translate(50%, -50%);
+      }
+    }
+
+    .tooltip__container .is-snap-top& {
+      top: calc(var(--adapt-tooltip-target-distancetoedge-top) * -1);
+      transform: none;
+      bottom: initial;
+    }
+
+    .tooltip__container .is-snap-bottom& {
+      bottom: calc(var(--adapt-tooltip-target-distancetoedge-bottom) * -1);
+      transform: none;
+      top: initial;
+    }
+  }
+
+  .is-inside.is-vertical-axis &__body {
+    .is-top& {
+      top: 0%;
+      margin-top: var(--adapt-tooltip-viewport-padding);
+    }
+
+    .is-bottom& {
+      bottom: 0%;
+      margin-bottom: var(--adapt-tooltip-viewport-padding);
+    }
+
+    .is-center& {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .is-left.is-arrow-start& {
+      right: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+      .dir-rtl & {
+        left: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+        right: initial;
+      }
+    }
+
+    .is-left.is-arrow-middle& {
+      right: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        left: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+        right: initial;
+      }
+    }
+
+    .is-left.is-arrow-end& {
+      right: var(--adapt-tooltip-viewport-padding);
+      .dir-rtl & {
+        left: var(--adapt-tooltip-viewport-padding);
+        right: initial;
+      }
+    }
+
+    .is-middle.is-arrow-start& {
+      left: calc(0% + @tooltip-arrow-width + var(--adapt-tooltip-viewport-padding));
+      transform: translate(-50%);
+      .dir-rtl & {
+        right: calc(0% + @tooltip-arrow-width + var(--adapt-tooltip-viewport-padding));
+        left: initial;
+        transform: translate(50%);
+      }
+    }
+
+    .is-middle.is-arrow-middle& {
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .is-middle.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-viewport-padding));
+      transform: translate(-50%);
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-viewport-padding));
+        left: initial;
+        transform: translate(50%);
+      }
+    }
+
+    .is-right.is-arrow-start& {
+      left: var(--adapt-tooltip-viewport-padding);
+      .dir-rtl & {
+        right: var(--adapt-tooltip-viewport-padding);
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-middle& {
+      left: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+        left: initial;
+      }
+    }
+
+    .is-middle.is-center.is-arrow-start&,
+    .is-middle.is-center.is-arrow-middle&,
+    .is-middle.is-center.is-arrow-end& {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .is-inside.is-horizontal-axis &__body {
+    .is-left& {
+      left: 0%;
+      margin-inline-start: var(--adapt-tooltip-viewport-padding);
+      .dir-rtl & {
+        right: 0%;
+        left: initial;
+      }
+    }
+
+    .is-right& {
+      right: 0%;
+      margin-inline-end: var(--adapt-tooltip-viewport-padding);
+      .dir-rtl & {
+        left: 100%;
+        right: initial;
+      }
+    }
+
+    .is-middle& {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .is-top.is-arrow-start& {
+      bottom: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+    }
+
+    .is-top.is-arrow-middle& {
+      bottom: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+    }
+
+    .is-top.is-arrow-end& {
+      bottom: var(--adapt-tooltip-viewport-padding)
+    }
+
+    .is-center.is-arrow-start& {
+      top: calc(0% + @tooltip-arrow-width + var(--adapt-tooltip-viewport-padding));
+      transform: translateY(-50%);
+    }
+
+    .is-center.is-arrow-middle& {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .is-center.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-viewport-padding));
+      transform: translateY(-50%);
+    }
+
+    .is-bottom.is-arrow-start& {
+      top: var(--adapt-tooltip-viewport-padding);
+    }
+
+    .is-bottom.is-arrow-middle& {
+      top: calc(50% - (@tooltip-arrow-width / 2) - var(--adapt-tooltip-offset));
+    }
+
+    .is-bottom.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width - (var(--adapt-tooltip-offset) * 2) - var(--adapt-tooltip-viewport-padding));
+    }
+
+    .is-center.is-middle.is-arrow-start&,
+    .is-center.is-middle.is-arrow-middle&,
+    .is-center.is-middle.is-arrow-end& {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  // tooltip arrow positioning
+  .is-outside.is-vertical-axis &__arrow {
+    .is-top& {
+      bottom: 100%;
+      margin-bottom: var(--adapt-tooltip-distance);
+      &::before {
+        transform: translateY(99%) rotate(180deg);
+      }
+    }
+
+    .is-bottom& {
+      top: 100%;
+      margin-top: var(--adapt-tooltip-distance);
+      &::before {
+        transform: translateY(-99%);
+      }
+    }
+
+    .is-fill-height.is-arrow-start&,
+    .is-fill-width.is-arrow-start&,
+    .is-left.is-arrow-start& {
+      right: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        left: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+        right: initial;
+      }
+    }
+
+    .is-fill-height.is-arrow-middle&,
+    .is-fill-width.is-arrow-middle&,
+    .is-left.is-arrow-middle& {
+      right: calc(50% - (@tooltip-arrow-width / 2));
+    }
+
+    .is-fill-height.is-arrow-end&,
+    .is-fill-width.is-arrow-end&,
+    .is-left.is-arrow-end& {
+      right: calc(0% + var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        left: calc(0% + var(--adapt-tooltip-offset));
+        right: initial;
+      }
+    }
+
+    .is-middle.is-arrow-start& {
+      left: calc(0% + var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(0% + var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .is-middle.is-arrow-middle& {
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .is-middle.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-start& {
+      left: calc(0% + var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(0% + var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .is-right.is-arrow-middle& {
+      left: calc(50% - (@tooltip-arrow-width / 2));
+    }
+
+    .is-right.is-arrow-end& {
+      left: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+      .dir-rtl & {
+        right: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+        left: initial;
+      }
+    }
+
+    .tooltip__container .is-arrow-snap.is-arrow-start& {
+      left: calc((var(--adapt-tooltip-target-distancetoedge-left) * -1) + var(--adapt-tooltip-offset));
+      transform: none;
+      right: initial;
+      .dir-rtl & {
+        right: calc((var(--adapt-tooltip-target-distancetoedge-right) * -1) + var(--adapt-tooltip-offset));
+        transform: none;
+        left: initial;
+      }
+    }
+
+    .tooltip__container .is-arrow-snap.is-arrow-end& {
+      right: calc((var(--adapt-tooltip-target-distancetoedge-right) * -1) + var(--adapt-tooltip-offset));
+      transform: none;
+      left: initial;
+      .dir-rtl & {
+        left: calc((var(--adapt-tooltip-target-distancetoedge-left) * -1) + var(--adapt-tooltip-offset));
+        transform: none;
+        right: initial;
+      }
+    }
+  }
+
+  .is-outside.is-horizontal-axis &__arrow {
+    .is-left& {
+      right: 100%;
+      margin-inline-end: var(--adapt-tooltip-distance);
+      &::before {
+        transform: translateX(99%) rotate(90deg)
+      }
+      .dir-rtl & {
+        left: 100%;
+        right: initial;
+        &::before {
+          transform: translateX(-99%) rotate(270deg)
+        }
+      }
+    }
+
+    .is-right& {
+      left: 100%;
+      margin-inline-start: var(--adapt-tooltip-distance);
+      &::before {
+        transform: translateX(-99%) rotate(270deg)
+      }
+      .dir-rtl & {
+        right: 100%;
+        left: initial;
+        &::before {
+          transform: translateX(99%) rotate(90deg)
+        }
+      }
+    }
+
+    .is-fill-height.is-arrow-start&,
+    .is-fill-width.is-arrow-start&,
+    .is-top.is-arrow-start& {
+      bottom: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+    }
+
+    .is-fill-height.is-arrow-middle&,
+    .is-fill-width.is-arrow-middle&,
+    .is-top.is-arrow-middle& {
+      bottom: calc(50% - (@tooltip-arrow-width / 2));
+    }
+
+    .is-fill-height.is-arrow-end&,
+    .is-fill-width.is-arrow-end&,
+    .is-top.is-arrow-end& {
+      bottom: calc(0% + var(--adapt-tooltip-offset));
+    }
+
+    .is-center.is-arrow-start& {
+      top: calc(0% + var(--adapt-tooltip-offset));
+    }
+
+    .is-center.is-arrow-middle& {
+      top: calc(50% - (@tooltip-arrow-width / 2));
+    }
+
+    .is-center.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+    }
+
+    .is-bottom.is-arrow-start& {
+      top: calc(0% + var(--adapt-tooltip-offset));
+    }
+
+    .is-bottom.is-arrow-middle& {
+      top: calc(50% - (@tooltip-arrow-width / 2));
+    }
+
+    .is-bottom.is-arrow-end& {
+      top: calc(100% - @tooltip-arrow-width - var(--adapt-tooltip-offset));
+    }
+
+    .tooltip__container .is-arrow-snap.is-arrow-start& {
+      top: calc((var(--adapt-tooltip-target-distancetoedge-top) * -1) + var(--adapt-tooltip-offset));
+      transform: none;
+      bottom: initial;
+    }
+
+    .tooltip__container .is-arrow-snap.is-arrow-end& {
+      bottom: calc((var(--adapt-tooltip-target-distancetoedge-bottom) * -1) + var(--adapt-tooltip-offset));
+      transform: none;
+      top: initial;
+    }
+  }
+
+  .is-inside &__arrow {
+    display: none;
+  }
+
+  // animations
+  .is-shown:not(.was-shown)& {
+    animation: toolTip--fadeScaleIn 0.4s forwards;
+  }
+
+  .is-inside &__body {
+    .is-top.is-left& {
+      transform-origin: top left;
+      .dir-rtl & {
+        transform-origin: top right;
+      }
+    }
+
+    .is-top.is-middle& {
+      transform-origin: top center;
+    }
+
+    .is-top.is-right& {
+      transform-origin: top right;
+      .dir-rtl & {
+        transform-origin: top left;
+      }
+    }
+
+    .is-center.is-left& {
+      transform-origin: center left;
+      .dir-rtl & {
+        transform-origin: center right;
+      }
+    }
+
+    .is-center.is-middle& {
+      transform-origin: center;
+    }
+
+    .is-center.is-right& {
+      transform-origin: center right;
+      .dir-rtl & {
+        transform-origin: center left;
+      }
+    }
+
+    .is-bottom.is-left& {
+      transform-origin: bottom left;
+      .dir-rtl & {
+        transform-origin: bottom right;
+      }
+    }
+
+    .is-bottom.is-middle& {
+      transform-origin: bottom center;
+    }
+
+    .is-bottom.is-right& {
+      transform-origin: bottom right;
+      .dir-rtl & {
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion) {
+    &.is-shown {
+      animation: none;
+    }
+  }
+}
+
+@keyframes toolTip--fadeScaleIn {
+  0% { opacity: 0; transform: scale(0.90); }
+ 40% { opacity: 1; }
+100% { opacity: 1; transform: scale(1); }
+}
+
+/* ===== core/transform.less ===== */
+.transform(@args) {
+  transform: @args;
+}
+
+// Example
+// --------------------------------------------------
+// .transform(translateY(-50%);
+// .transform(translateY(-50%) scale(1.5));
+
+/* ===== core/transitions.less ===== */
+.transition(@args) {
+  transition: @args;
+}
+
+// Examples
+// --------------------------------------------------
+// .transition(background-color @duration ease-in);
+// .transition(background-color @duration ease-in, color @duration ease-in-out;);
+
+// Explanation
+// --------------------------------------------------
+// With LESS 1.4, the javascript used in the original answer for the comma
+// separated arguments is not needed. Instead, the use of a "dummy" semicolon
+// at the end of the argument string causes the commas to be viewed as list
+// separators, not argument separators, so this works now when imputing
+// multiple transitions.
+

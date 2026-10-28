@@ -1,0 +1,190 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: AI and Technology
+pathwayNo: 12
+date: 4 October 2026
+time: "12:53"
+note: N-0141
+practiceNoun: AI literacy
+
+cards:
+  - new: i1
+    statement: Explain what generative AI is, how it works at a high level, and what it is not.
+    short: Explain what generative AI is and is not
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.1, extract: "Use factual, procedural and theoretical understanding"}]
+    rows:
+      Verbs: explain
+      Measures: at a high level
+      Keywords: generative AI; large datasets; pattern generation; AI literacy; misconceptions
+      Book topics: "the guide is silent on AI (the pathway is authored from sector sources, Track B); the tier map's Introductory text: how these tools work (large datasets, pattern generation) and moving past the misconception that AI is a solution to everything"
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "UNESCO (2024), AI competency framework for students, not yet ingested; W-0087; Ng and others (2021), not yet ingested; W-0088"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"what generative AI is and, crucially, is not\"."
+  - new: i2
+    statement: Check the module's assessment guidance before using AI in study, and ask the tutor if unsure.
+    short: Check the assessment guidance before using AI
+    knowledge: procedural, one rule
+    qf: [{id: l4/autonomy.2, extract: "within broad but generally well-defined parameters"}]
+    rows:
+      Verbs: check, ask
+      Measures: before using AI; if unsure
+      Keywords: golden rule; assessment guidance; module guidance; permitted use
+      Book topics: "the guide is silent (Track B); the tier map's Introductory text: the \"golden rule\" (always check the module/assessment guidance and ask the tutor if unsure), from University of Sheffield guidance"
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "University of Sheffield guidance, not yet ingested; W-0090"
+      Frameworks: "Russell Group (2023), principles on generative AI in education (partial); W-0091"
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"foundational integrity threaded in: the golden rule\"; local policy must come from the subject expert."
+  - new: i3
+    statement: Recognise what AI output cannot be trusted for (fabrication, bias, privacy and data risks, non-reproducibility), and think a task through oneself before turning to AI.
+    short: Recognise what AI cannot be trusted for, and think first
+    knowledge: metacognitive, beginning (knowing when not to rely)
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+    rows:
+      Verbs: recognise, think through
+      Measures: before turning to AI
+      Keywords: limitations; hallucination; fabrication; bias; privacy; background thinking
+      Book topics: "the guide is silent (Track B); the tier map's Introductory text: AI's significant limitations, and its Intermediate workflow's first stage, background thinking (\"establish what you already know and think first\")"
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "UNESCO (2024), not yet ingested; W-0087"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060): the most metacognitive of the Introductory cards, joining the map's limitations with the habit of thinking first."
+  - new: d1
+    old: ai-technology/03
+    short: Apply a critical-use workflow, AI as a critical friend
+    knowledge: procedural
+    qf: [{id: l4/knowledge.2, extract: "Analyse, interpret and evaluate relevant information and ideas."}]
+    rows:
+      Book topics: "the guide is silent (Track B); the tier map's Intermediate text: the five-stage critical-use workflow (background thinking, initial prompting, dialogic prompting, critical analysis and fact-checking, Acknowledge, Describe, Evidence) and AI as a \"critical friend\", from University of Sheffield guidance"
+  - new: d2
+    statement: Fact-check AI output against reliable sources, checking for fabrication and bias, and disclose how AI was used (Acknowledge, Describe, Evidence).
+    short: Fact-check AI output and disclose its use
+    knowledge: procedural, with criteria
+    qf: [{id: l5/knowledge.2, extract: "Analyse, interpret and evaluate relevant information, concepts and ideas."}]
+    rows:
+      Verbs: fact-check, check, disclose
+      Measures: against reliable sources
+      Keywords: fact-checking; fabrication; bias; disclosure; Acknowledge, Describe, Evidence
+      Book topics: "the guide is silent (Track B); the tier map's Intermediate text: stages four and five of the workflow, critical analysis and fact-checking, and disclosure"
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "University of Sheffield guidance, not yet ingested; W-0090"
+      Frameworks: none recorded yet
+      Other authors: none held yet
+    note: "new, proposed by ing (D-ing-0060), from the last two stages of the tier map's workflow."
+  - new: d3
+    old: ai-technology/01
+    short: Decide, with reasons, when and when not to use AI
+    knowledge: metacognitive, conditional (informed restraint)
+    qf: [{id: 4.15.b9.2, extract: "decision-making in complex and unpredictable contexts"}, {id: l6/autonomy.3, extract: "Exercise broad autonomy and judgement."}]
+    rows:
+      Book topics: "the guide is silent (Track B); the tier map's framing: AI literacy is measured by how well you decide, and informed restraint (\"no, not here, not yet\") is a valid outcome"
+  - new: e1
+    old: ai-technology/02
+    short: Avoid the GenAI misconduct risks, and never cite GenAI as a source
+    knowledge: conceptual and procedural
+    qf: [{id: 4.12.b8, extract: "the exercise of personal responsibility"}]
+    rows:
+      Book topics: "the guide is silent (Track B); the tier map's Advanced text: the five misconduct risks (plagiarism, buying or commissioning, coursework sites, fabrication, collusion) and the never-cite rule, which the map also threads through Introductory"
+  - new: e2
+    old: ai-technology/06
+    short: Distinguish permitted support from unfair advantage
+    knowledge: conceptual, evaluative
+    qf: [{id: 4.15.b9.1, extract: "the exercise of initiative and personal responsibility"}]
+    rows:
+      Book topics: "the guide is silent (Track B); the tier map's Advanced text: \"the distinction between permitted support and unfair advantage\""
+  - new: e3
+    old: ai-technology/05
+    merged: [ai-technology/04]
+    statement: Weigh the costs of AI and technology use, including environmental, equity and professional impact, against its benefits, as a discerning and responsible user in professional life.
+    short: Weigh AI's costs and benefits as a responsible professional user
+    knowledge: metacognitive, self-knowledge (the user one is becoming)
+    qf: [{id: l7/application.4, extract: "and their short and long term implications"}, {id: 4.17.b8.2, extract: "decision-making in complex and unpredictable situations"}]
+    rows:
+      Book topics: "the guide is silent (Track B); the tier map's Advanced text: the wider issues (bias, equity of access, environmental impact, the human-centred mindset that keeps agency with the student) and AI and graduate identity (\"leaders in an AI-enabled world\")"
+    note: "moved from developed to extended and widened by ing (D-ing-0060): the tier map puts environmental impact and AI and graduate identity at Advanced. Takes in the former 04 (\"Progress through tiers of digital/AI capability while treating ethics as cross-cutting\"), which describes the pathway's design rather than a capability; its point, ethics as cross-cutting, is recorded in 2a."
+
+readings:
+  qaa/linguistics-2023/1.29: theme
+  qaa/psychology-2023/3.4: theme
+  qaa/land-construction-real-estate-and-surveying-2024/1.27: theme
+  qaa/creative-writing-2024/1.1: theme
+  qaa/art-and-design-2026/3.10: theme
+  qaa/art-and-design-2026/3.4: theme
+  qaa/architectural-technology-2022/1.12: theme
+  qaa/social-policy-2026/4.13: theme
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/3.10: theme
+  qaa/accounting-2025/3.34: theme
+  qaa/finance-2025/3.2: theme
+  qaa/education-studies-2025/3.18: theme
+  qaa/accounting-2025/1.55: theme
+  qaa/finance-2025/3.7: theme
+  qaa/computing-2022/1.4: theme
+  qaa/land-construction-real-estate-and-surveying-2024/3.16: theme
+  qaa/languages-cultures-and-societies-2023/1.27: theme
+
+vic:
+  qaa/linguistics-2023/1.29: {verbs: [], relation: "artificial intelligence named among career sectors for graduates"}
+  qaa/psychology-2023/3.4: {verbs: [], relation: "artificial intelligence and metacognition as topics in cognitive psychology: AI as subject content"}
+  qaa/land-construction-real-estate-and-surveying-2024/1.27@01: {verbs: [achieve], relation: "AI named with BIM among technologies for production: the subject's tools"}
+  qaa/land-construction-real-estate-and-surveying-2024/1.27@05: {verbs: [achieve], relation: "technologies such as AI used for production and sustainability: the benefits side of e3's weighing"}
+  qaa/creative-writing-2024/1.1: {verbs: [develop, support], relation: "independent thinking as what the subject develops: the thinking AI must augment, not replace"}
+  qaa/art-and-design-2026/3.10: {verbs: [encourage], relation: "independent thinking encouraged by a student-centred pedagogy"}
+  qaa/art-and-design-2026/3.4: {verbs: [support], relation: "abilities for independent thinking and creative innovation"}
+  qaa/architectural-technology-2022/1.12: {verbs: [achieve], relation: "environmental sustainability among aims of production in a design discipline"}
+  qaa/social-policy-2026/4.13: {verbs: [], relation: "environmental sustainability and equality across research and practice: the wider issues e3 weighs"}
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/3.10: {verbs: [], relation: "generative AI used to create digital content in the subject: a permitted, professional use"}
+  qaa/accounting-2025/3.34: {verbs: [], relation: "GenAI outputs among things a student may compare their work against: AI as a learning resource, not a source to cite"}
+  qaa/finance-2025/3.2: {verbs: [enable], relation: "AI and GenAI as technologies the subject studies"}
+  qaa/education-studies-2025/3.18: {verbs: [maintain], relation: "the integrity of assessment maintained against GenAI: the provider's duty, the other side of e2"}
+  qaa/accounting-2025/1.55: {verbs: [], relation: "rigorous assessment with integrity against GenAI: as above"}
+  qaa/finance-2025/3.7: {verbs: [address, maintain], relation: "addressing integrity issues proactively in blended learning"}
+  qaa/computing-2022/1.4: {verbs: [provide, address], relation: "the digital skills economy and equitable learning: digital capability as policy"}
+  qaa/land-construction-real-estate-and-surveying-2024/3.16: {verbs: [consider], relation: "practices to consider the ethical use of AI (data, sustainability, integrity, inclusivity): ethics as cross-cutting, as the tier map frames it"}
+  qaa/languages-cultures-and-societies-2023/1.27: {verbs: [display], relation: "digital skills among enterprise attributes"}
+
+vicSummary: "What this shows: none of the eighteen extracts is skill. The benchmarks name AI as a topic, a tool, a career sector and a threat to the integrity of assessment, and describe providers' duties; they do not yet describe the AI-literate learner. That fits the tier map's note that this is the fastest-moving pathway."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide is silent on AI; the tier map, from sector sources, says AI literacy, golden rule, never cite, critical friend, critical-use workflow, fact-checking, Acknowledge, Describe, Evidence, informed restraint, misconduct risks, permitted support and unfair advantage; the benchmarks say generative AI, GenAI outputs, academic integrity, ethical use of AI, digital skills, independent thinking."
+  - "**Skill against theme:** none of the eighteen extracts is skill."
+  - "**Book coverage:** none; every card's topics come from the tier map's text and its sources (Sheffield, the Russell Group, UNESCO), which need the subject expert's sign-off and local policy."
+  - "**Ethics as cross-cutting:** the tier map threads integrity through all three tiers (i2, e1, e2), as UNESCO treats ethics; the former 04 said so as a card and is folded into e3."
+  - "**Other authors:** META holds none for this pathway; UNESCO, Ng and others, Sheffield and the Russell Group are wanted (W-0087, W-0088, W-0090, W-0091)."
+
+qfIntro: "Neither framework names AI or technology as such (the FHEQ's 2024 text and the CQFW of 2009 predate their present use); they speak of evaluating information, personal responsibility and decision-making in complex and unpredictable contexts, which is where AI literacy sits."
+qf:
+  - {id: l3/knowledge.1, verbs: "use, complete, address", relation: "using understanding to complete tasks: knowing what a tool is", tier: before Introductory}
+  - {id: l4/autonomy.2, verbs: "exercise", relation: "judgement within well-defined parameters: the golden rule", tier: Introductory}
+  - {id: l4/knowledge.2, verbs: "analyse, interpret, evaluate", relation: "evaluating information: the critical-use workflow", tier: Introductory}
+  - {id: 4.12.b4, verbs: "(none: a noun phrase)", relation: "the limits of one's knowledge: thinking first", tier: Intermediate}
+  - {id: l5/knowledge.2, verbs: "analyse, interpret, evaluate", relation: "evaluating information and concepts: fact-checking", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "personal responsibility: integrity in AI use", tier: Intermediate}
+  - {id: 4.15.b9.1, verbs: "(none: a noun phrase)", relation: "initiative and personal responsibility: permitted support against unfair advantage", tier: Advanced}
+  - {id: 4.15.b9.2, verbs: "(none: a noun phrase)", relation: "decision-making in complex and unpredictable contexts: when and when not to use AI", tier: Advanced}
+  - {id: l7/application.4, verbs: "critically evaluate", relation: "the short and long term implications of actions: AI's wider costs", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names what generative AI is and its main limitations: fabrication, bias, privacy risks, non-reproducibility.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains how these tools generate text and why their output cannot be cited.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Checks the guidance before using AI and asks when unsure.", type: procedural (one rule), process: apply}
+  - {tier: Introductory, statement: "Thinks a task through before turning to AI.", type: metacognitive (beginning), process: apply, change: "knowing when one's own thinking comes first"}
+  - {tier: Intermediate, statement: "Uses AI through the five-stage workflow, as a critical friend.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Fact-checks output against reliable sources and discloses use.", type: procedural with criteria, process: evaluate}
+  - {tier: Intermediate, statement: "Decides when and when not to use AI, and can refuse.", type: metacognitive (conditional), process: evaluate, change: "informed restraint"}
+  - {tier: Advanced, statement: "Avoids the misconduct risks and knows where permitted support ends.", type: conceptual and procedural, process: evaluate}
+  - {tier: Advanced, statement: "Evaluates AI systems and outputs against academic standards, and weighs bias, equity and environmental cost.", type: procedural (criteria), process: evaluate}
+  - {tier: Advanced, statement: "Uses AI as a discerning, responsible professional, keeping agency with themselves.", type: metacognitive (self-knowledge), process: create, change: "functioning knowledge: the AI-literate graduate"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is declarative, what AI is and is not, with one rule and the habit of thinking first; Intermediate is procedural, the workflow, fact-checking and disclosure, ending in conditional knowledge of when not to use AI; Advanced is evaluative and metacognitive, integrity, the wider costs and the user one becomes. The tier map's own backbone is UNESCO's Understand, Apply, Create, which runs alongside. Mastery is the map's \"how well you decide\", AI literacy as judgement rather than fluency, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map threads the never-cite rule through Introductory; here it is carried by e1 with the misconduct risks, and by i3 and i1 as limitations. The map places the five-stage workflow and informed restraint at Intermediate (d1, d3) and environmental impact and graduate identity at Advanced (e3), as the cards do."
+
+qfAdd: "neither framework names AI; its literacy sits in evaluating information (L4, L5), personal responsibility (L5, L6) and decision-making in complex and unpredictable contexts (L6, L7). The descriptors' date shows: the guidance for this pathway lives outside them."
+
+review:
+  - "i1, i2, i3 and d2 are new; 05 moved from developed to extended and widened as e3; the former 04 folded into e3: all proposed (D-ing-0060)."
+  - "The whole pathway needs subject expert sign-off, and Cardiff Met's approved tools, policy and disclosure process must replace the Sheffield specifics (the tier map's notes)."
+  - "The draft book map's entries for this pathway quote the tier map, not the guide; the card file says so in each Book topics row rather than giving pages."

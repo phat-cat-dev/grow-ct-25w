@@ -1,0 +1,31 @@
+// modal launcher — minimal styling. The popup itself is themed by cm-notify.less
+// (light/dark --ab-popup-* tokens); this only lays out the on-page trigger.
+
+.modal {
+
+  &__body {
+    margin-bottom: 0.75rem;
+  }
+
+  &__btn-container {
+    // let the trigger sit inline-start by default; authors can centre via a wrapper
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  // trigger button is a .cm.btn (see cm-buttons.less); align an optional icon
+  .js-modal-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  &__trigger-icon {
+    flex: 0 0 auto;
+    width: 1.2em;
+    height: 1.2em;
+    // inherits currentColor from the button text, so it matches the label
+  }
+
+}

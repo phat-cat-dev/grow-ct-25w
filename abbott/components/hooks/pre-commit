@@ -1,0 +1,29 @@
+#!/bin/sh
+# Pre-commit / CI guard for the GROW component build hub.
+# Fails if components.manifest.json is out of date with its sources + overlay.
+#
+# Install (modern git, from the repo root) — point git at this hooks dir:
+#   git config core.hooksPath adapt-forks/grow-course/abbott/components/hooks
+#
+# Or use it straight from a CI job or another hook:
+#   sh adapt-forks/grow-course/abbott/components/hooks/pre-commit
+#
+# With core.hooksPath set, $0 is this file's committed path, so the components
+# dir is just one level up. If you instead copy this into .git/hooks/, set
+# COMPONENTS to an explicit path below.
+
+COMPONENTS="$(cd "$(dirname "$0")/.." && pwd)"
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-commit: node not found; skipping manifest drift check" >&2
+  exit 0
+fi
+
+if ! node "$COMPONENTS/build-manifest.mjs" --check; then
+  echo ""
+  echo "  components.manifest.json is stale. Regenerate and stage it:"
+  echo "    node \"$COMPONENTS/build-manifest.mjs\""
+  echo "    git add \"$COMPONENTS/components.manifest.json\""
+  echo ""
+  exit 1
+fi

@@ -1,0 +1,123 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "regionLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Step-by-step guide",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible name for the whole wizard, announced when you enter it.",
+      "translatable": true
+    },
+    "progressLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Progress through the steps",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible name for the progress bar.",
+      "translatable": true
+    },
+    "progressValueText": {
+      "type": "string",
+      "required": true,
+      "default": "Step {{current}} of {{total}}",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Spoken value of the progress bar. Placeholders: {{current}}, {{total}}.",
+      "translatable": true
+    },
+    "stepAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "Step {{current}} of {{total}}: {{label}}",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Polite announcement made when you move to another step. Placeholders: {{current}}, {{total}}, {{label}}.",
+      "translatable": true
+    },
+    "backButton": {
+      "type": "string",
+      "required": true,
+      "default": "Back",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the button that moves to the previous step.",
+      "translatable": true
+    },
+    "nextButton": {
+      "type": "string",
+      "required": true,
+      "default": "Next",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the button that moves to the next step.",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional guidance shown above the wizard, for example telling you to use Back and Next.",
+      "translatable": true
+    },
+    "_isCompletionBearing": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Completes on final step",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "When true, the component marks itself complete once you reach the final step. When false it is presentational and completes on view, so it never blocks the page. It is never a score and never a SCORM interaction."
+    },
+    "_steps": {
+      "type": "array",
+      "required": true,
+      "title": "Steps",
+      "minItems": 1,
+      "help": "The ordered steps of the flow. Progress and the active label are computed from the current step.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "label": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Step label",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Short label shown in the progress track, for example 'Intro' or 'Review'. Keep it to one or two words.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Panel body",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "The content shown in the panel when this step is active. Accepts HTML.",
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

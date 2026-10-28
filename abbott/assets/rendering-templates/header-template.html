@@ -1,0 +1,122 @@
+<!--
+  header-template.html — lesson/page hero header (typography, sizes, content).
+
+  Matched set: header-template.yaml (data + type scale) · header-template.jsx (component).
+  The <style> below IS the type scale: each role maps to a GROW
+  --ab-core-text-clamp-<token> custom property, with a clamp() fallback so this
+  renders correctly un-themed. Swap the fallbacks out once the grow tokens load.
+  The frontmatter shows body (overview prose), meta, objectives AND bullets.
+-->
+<style>
+  .asset-hero { padding: clamp(1.5rem, 5vw, 4rem); }
+
+  /* kicker + title -------------------------------------------------- */
+  .asset-hero__kicker,
+  .frontmatter__eyebrow {
+    font-size: var(--ab-core-text-clamp-2xs-l4, clamp(0.72rem, 0.6rem + 0.3vw, 0.82rem));
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--c-comment, #526b70);
+    margin: 0 0 0.5rem;
+  }
+  .asset-hero__title {
+    font-size: var(--ab-core-text-clamp-2xl-l4, clamp(2rem, 1.2rem + 4vw, 3.5rem));
+    line-height: 1.05;
+    font-weight: 800;
+    margin: 0 0 1rem;
+    max-width: 20ch;
+  }
+
+  /* frontmatter ----------------------------------------------------- */
+  .frontmatter--lesson { max-width: 68ch; }
+  .frontmatter__body {
+    font-size: var(--ab-core-text-clamp-md-l4, clamp(1rem, 0.95rem + 0.3vw, 1.15rem));
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+  .frontmatter__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.25rem 1rem;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+  .frontmatter__label {
+    font-size: var(--ab-core-text-clamp-2xs-l4, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--c-comment, #526b70);
+  }
+  .frontmatter__value {
+    font-size: var(--ab-core-text-clamp-sm-l4, 0.95rem);
+    font-weight: 600;
+  }
+  .frontmatter__group { margin-block-start: 1rem; }
+  .frontmatter__group-title {
+    font-size: var(--ab-core-text-clamp-md-l4, 1.05rem);
+    font-weight: 700;
+    margin: 0 0 0.35rem;
+  }
+  .frontmatter__items { margin: 0; padding-inline-start: 1.25rem; }
+  .frontmatter__items--bullets { list-style: disc; }
+  .frontmatter__group--objectives .frontmatter__items { list-style: none; padding-inline-start: 0; }
+  .frontmatter__group--objectives .frontmatter__item {
+    position: relative; padding-inline-start: 1.5rem;
+  }
+  .frontmatter__group--objectives .frontmatter__item::before {
+    content: "→"; position: absolute; inset-inline-start: 0; color: var(--accent, #176b64);
+  }
+  .frontmatter__item {
+    font-size: var(--ab-core-text-clamp-md-l4, 1.05rem);
+    line-height: 1.5;
+  }
+</style>
+
+<header class="page__header asset-hero asset-hero--dots" data-hero-playing="true">
+  <div class="asset-hero__art" aria-hidden="true"></div>
+  <div class="page__header-inner asset-hero__content">
+
+    <p class="page__subtitle asset-hero__kicker">Module 1 · Lesson 1</p>
+    <h1 class="page__title asset-hero__title">Your lesson title</h1>
+
+    <div class="page__body">
+      <header class="frontmatter frontmatter--lesson" data-grow-role="lesson">
+        <p class="frontmatter__eyebrow">Before you begin</p>
+
+        <div class="frontmatter__body">
+          <p>Introduce the topic, explain why it matters, and tell learners what they will do in this lesson.</p>
+        </div>
+
+        <dl class="frontmatter__list">
+          <div class="frontmatter__item frontmatter__item--duration">
+            <dt class="frontmatter__label">Duration</dt>
+            <dd class="frontmatter__value">10 minutes</dd>
+          </div>
+          <div class="frontmatter__item frontmatter__item--level">
+            <dt class="frontmatter__label">Level</dt>
+            <dd class="frontmatter__value">Introductory</dd>
+          </div>
+        </dl>
+
+        <div class="frontmatter__group frontmatter__group--objectives">
+          <p class="frontmatter__group-title">By the end of this lesson, you will be able to:</p>
+          <ul class="frontmatter__items">
+            <li class="frontmatter__item frontmatter__item--objective">Describe the central idea in your own words.</li>
+            <li class="frontmatter__item frontmatter__item--objective">Apply the idea to a relevant example.</li>
+            <li class="frontmatter__item frontmatter__item--objective">Identify one action to take in your own context.</li>
+          </ul>
+        </div>
+
+        <div class="frontmatter__group frontmatter__group--bullets">
+          <p class="frontmatter__group-title">You'll need:</p>
+          <ul class="frontmatter__items frontmatter__items--bullets">
+            <li class="frontmatter__item frontmatter__item--bullet">A recent piece of your own written feedback</li>
+            <li class="frontmatter__item frontmatter__item--bullet">Ten quiet minutes</li>
+          </ul>
+        </div>
+
+      </header>
+    </div>
+  </div>
+</header>

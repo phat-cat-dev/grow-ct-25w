@@ -1,0 +1,29 @@
+[data-lesson] [hidden] { display: none !important; }
+.asset-nav { max-width: 72rem; margin: 0 auto 1rem; }
+[data-lesson] .activity-controls { margin-block: var(--space-md); }
+[data-lesson] button:not(.ab), [data-lesson] .activity-controls label {
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .6rem .8rem;
+  margin: .2rem;
+}
+[data-lesson] button { cursor: pointer; }
+[data-lesson] button:disabled { opacity: .6; cursor: default; }
+[data-lesson] button[aria-pressed="true"] { outline: 2px solid var(--accent); }
+[data-lesson] :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+[data-lesson] progress { display: block; width: 100%; accent-color: var(--accent); }
+[data-lesson] .milestone[data-complete="true"] .num { background: var(--c-positive); }
+[data-lesson] .grid-3 label { display: block; margin-top: 1rem; }
+[data-lesson] .journal-card { margin-top: var(--space-md); }
+[data-lesson] .activity-controls label { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+[data-lesson] input[type="range"] { max-width: 100%; accent-color: var(--accent); }
+[data-lesson] .swatch-study { min-height: 5rem; }
+@media (prefers-reduced-motion: reduce) {
+  [data-lesson] *, [data-lesson] *::before, [data-lesson] *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

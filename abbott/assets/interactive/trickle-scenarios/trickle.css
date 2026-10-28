@@ -1,0 +1,52 @@
+.trickle-player {
+  --trickle-paper: var(--surface-1,light-dark(#fff,#1d2932));
+  --trickle-ink: var(--ink,light-dark(#24323c,#e9f0f5));
+  --trickle-muted: var(--ink-soft,light-dark(#536573,#bdcbd5));
+  --trickle-line: var(--line,light-dark(#c7d5df,#4f6473));
+  --trickle-accent: var(--accent,light-dark(#315db7,#a0bfff));
+  --trickle-radius: var(--radius,16px);
+  --trickle-pad: var(--space-md,clamp(1rem,3vw,2rem));
+  color: var(--trickle-ink);
+  font: 1rem/1.6 var(--font-body,var(--font-ui,system-ui,sans-serif));
+  overflow-wrap: anywhere;
+}
+.trickle-player, .trickle-player * { box-sizing: border-box; min-width: 0; }
+.trickle-player [hidden] { display: none !important; }
+.trickle-heading { margin-block: 2.5rem 3rem; display: grid; gap: .85rem; max-width: 64ch; border: 0; }
+.trickle-heading h2 { margin: 0; font-size: clamp(1.6rem,4vw,2.6rem); line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+.trickle-heading > p { margin: 0; font-size: clamp(1.02rem,1.4vw,1.2rem); line-height: 1.55; color: var(--trickle-muted); text-wrap: pretty; }
+.trickle-player .trickle-kicker { color: var(--trickle-muted); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+.trickle-heading .trickle-kicker { display: inline-flex; align-items: center; gap: .55rem; color: var(--trickle-accent); }
+.trickle-heading .trickle-kicker::before { content: ""; inline-size: 1.75rem; block-size: 2px; background: currentColor; border-radius: 2px; }
+.trickle-controls, .trickle-choices { display: flex; flex-wrap: wrap; gap: .75rem; }
+.trickle-player button {
+  max-width: 100%; min-height: 2.75rem; padding: .65rem 1rem; border: 1px solid var(--trickle-accent);
+  border-radius: .6rem; font: inherit; text-align: start; color: var(--trickle-accent); background: var(--trickle-paper);
+  cursor: pointer; overflow-wrap: anywhere; white-space: normal;
+}
+.trickle-player button:disabled { cursor: default; opacity: .65; }
+.trickle-player button[aria-pressed="true"] { background: color-mix(in srgb,var(--trickle-accent) 14%,var(--trickle-paper)); box-shadow: inset 0 0 0 1px var(--trickle-accent); }
+.trickle-player :focus-visible { outline: 3px solid var(--trickle-accent); outline-offset: 3px; }
+.trickle-stack { border-inline-start: 2px solid var(--trickle-line); padding-inline-start: clamp(.5rem,2vw,1.5rem); display: grid; gap: 1.5rem; }
+.trickle-card { padding: var(--trickle-pad); border: 1px solid var(--trickle-line); border-radius: var(--trickle-radius); background: var(--trickle-paper); animation: trickle-card-in var(--trickle-fade-duration,550ms) ease-out both; }
+.trickle-card h3 { margin: 0; font-size: clamp(1.2rem,2vw,1.6rem); line-height: 1.35; }
+.trickle-body { white-space: pre-wrap; }
+.trickle-reflection { display: block; margin-block: 1rem; font-size: .9rem; }
+.trickle-reflection textarea { display: block; width: 100%; resize: vertical; margin-block: .5rem; padding: .7rem; border: 1px solid var(--trickle-line); border-radius: .5rem; color: inherit; background: var(--trickle-paper); font: inherit; }
+.trickle-player .trickle-revisit { margin-top: 1rem; font-size: .8rem; border-color: var(--trickle-line); }
+.trickle-status, .trickle-progress { color: var(--trickle-muted); font-size: .9rem; }
+@keyframes trickle-card-in { from { opacity: 0; } to { opacity: 1; } }
+@media(prefers-reduced-motion:reduce) { .trickle-card { animation: none; } }
+.trickle-workshop { color-scheme: light dark; margin: 0; background: light-dark(#edf3f7,#14212a); color: light-dark(#24323c,#e9f0f5); font: 1rem/1.6 system-ui,sans-serif; }
+.trickle-workshop__inner { max-width: 70rem; margin: auto; padding: clamp(1rem,3vw,3rem); }
+.trickle-workshop h1 { font-size: clamp(2rem,5vw,3.5rem); line-height: 1.1; }
+.workshop-toolbar { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-block: 1rem; }
+.workshop-toolbar label { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; max-width: 100%; }
+.workshop-toolbar :is(button,select,input) { max-width: 100%; min-width: 0; font: inherit; }
+.workshop-toolbar :is(button,select) { color: inherit; background: light-dark(#fff,#1d2932); border: 1px solid light-dark(#97afbf,#7893a5); border-radius: .5rem; padding: .6rem; }
+.workshop-toolbar button { cursor: pointer; }
+.trickle-workshop a { color: light-dark(#315db7,#a0bfff); }
+.workshop-notice { font-size: .85rem; }
+.scenario-author { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid; }
+#scenario-json { display: block; box-sizing: border-box; width: 100%; resize: vertical; font: .8rem/1.6 ui-monospace,monospace; padding: 1rem; color: inherit; background: light-dark(#fff,#1d2932); border: 1px solid; border-radius: .5rem; }
+#author-status[data-error="true"] { border-inline-start: 4px solid; padding-inline-start: .75rem; font-weight: 700; }

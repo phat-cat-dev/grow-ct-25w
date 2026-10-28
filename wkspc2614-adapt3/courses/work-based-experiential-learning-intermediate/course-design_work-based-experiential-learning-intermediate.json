@@ -1,0 +1,1850 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "work-based-experiential-learning-intermediate",
+  "slug": "work-based-experiential-learning-intermediate",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "work-based-experiential-learning",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = work-based-experiential-learning",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "work-based-experiential-learning",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = work-based-experiential-learning",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate tier (~ FHEQ L4-L5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Work-Based & Experiential Learning",
+            "tierName": "Intermediate",
+            "slug": "work-based-experiential-learning-intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = work-based-experiential-learning",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:49:12.763Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = work-based-experiential-learning",
+              "note": "Layer-1 record: chapter 12, 5 primary + 5 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = work-based-experiential-learning",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T16:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate crs-01_sources 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "12 (primary); Kolb's cycle and its worked example held out for advanced; the chapter opening and defining section recapped, not taught from scratch",
+            "sectionsInScope": [
+              "ch12/opening",
+              "ch12/learning-objectives-and-keywords",
+              "ch12/defining-practice-and-work-based-learning",
+              "ch12/benefits",
+              "ch12/getting-the-most-out-of-it",
+              "ch12/assessment",
+              "ch12/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch12/experiential-learning-and-kolbs-cycle (the Kolb Experiential Learning Cycle model: ADVANCED, reflecting on experience)",
+              "ch12/kolbs-cycle-worked-example (John's worked run through Kolb's four stages: ADVANCED)",
+              "ch12/defining-practice-and-work-based-learning (taught from first principles at INTRODUCTORY; recapped only here)",
+              "ch10/summary (shared with referencing; owned by that pathway)"
+            ],
+            "tierWindow": {
+              "goal": "Make the most of a practice or work-based learning experience: know what it can offer, set clear aims, act proactively while you are in it, and prepare well for how it is assessed.",
+              "cognitiveDemand": "Application and selection: apply strategies, choose appropriate moves and prepare evidence (apply and analyse), beyond the introductory understand and identify.",
+              "taskComplexity": "Realistic but bounded tasks; one experience at a time; strategies applied to familiar placement, laboratory, studio, field or project situations.",
+              "autonomy": "Moderate scaffolding; a worked example models the move, then you choose and apply it yourself; feedback explains rather than simply confirms.",
+              "voiceBand": "Section 16 Intermediate (bands 2-4)",
+              "outcomeVerbs": [
+                "identify",
+                "apply",
+                "choose",
+                "plan",
+                "prepare",
+                "distinguish",
+                "set",
+                "use",
+                "explain"
+              ]
+            },
+            "priorExperienceAnchor": "The learner already knows what practice and work-based learning is, and is doing or about to do some of it: a placement, laboratory or studio work, field work, a simulation or a project. They are past first principles. The need now is to turn an experience into real gains and to meet its assessment well, so teaching builds on that starting point rather than defining the terms again.",
+            "subThemes": [
+              {
+                "id": "forms-of-practice-learning",
+                "label": "The range of practice and work-based learning: laboratory and studio work, field work, simulations, projects, placements, internships and apprenticeships"
+              },
+              {
+                "id": "benefits-to-you",
+                "label": "The benefits to you: authentic real-world learning, employability and the graduate capital an experience builds"
+              },
+              {
+                "id": "setting-your-aims",
+                "label": "Setting your aims: deciding what you want from an experience before you begin"
+              },
+              {
+                "id": "being-proactive",
+                "label": "Being proactive: taking initiative, asking questions and seeking feedback while you are in the experience"
+              },
+              {
+                "id": "maximising-value",
+                "label": "Maximising value: the practical moves that get the most out of an experience, before, during and after"
+              },
+              {
+                "id": "how-wbl-is-assessed",
+                "label": "How practice and work-based learning is assessed, and why standardised criteria are difficult"
+              },
+              {
+                "id": "evidencing-learning",
+                "label": "Evidencing your learning: producing a strong, evidenced account of what you did and learned"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch12/* chunks tagged work-based-experiential-learning",
+              "note": "primary teachable sections for making the most of practice and work-based learning"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = work-based-experiential-learning",
+              "note": "Layer-1 record: chapter 12; intermediate focus 'making the most of it' and Intermediate voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate calibration and Intermediate voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate crs-02_thematic-scope 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Identify what a practice or work-based experience can offer you and set clear aims for it."
+              },
+              {
+                "id": "co2",
+                "text": "Apply practical strategies to get the most out of a practice or work-based experience."
+              },
+              {
+                "id": "co3",
+                "text": "Prepare for how practice and work-based learning is assessed."
+              },
+              {
+                "id": "co4",
+                "text": "Apply aiming, acting and evidencing together as one continuing practice you run for every practice or work-based experience."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three intermediate sub-arcs of making the most of an experience: knowing what it offers and aiming for it (the value), acting to maximise that value while you are in it (the moves), and meeting its assessment well (the evidence). No fourth integrative outcome at intermediate: reflecting on experience through Kolb's cycle is the advanced concern, held out of scope here.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can identify what a practice or work-based experience can offer me and set clear aims for it.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can apply practical strategies to get the most out of a practice or work-based experience.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can prepare for how practice and work-based learning is assessed.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can apply aiming, acting and evidencing together as one continuing practice I run for every practice or work-based experience.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch12/* chunks tagged work-based-experiential-learning",
+              "note": "co1 from the benefits and defining chunks, co2 from getting-the-most-out-of-it, co3 from the assessment chunk"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the intermediate apply/choose/prepare level"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T16:06:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate crs-03_course-outcomes 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "What the experience offers",
+                "topic": "the benefits of practice and work-based learning, and setting your aims",
+                "description": "What the experience offers: the benefits of practice and work-based learning, and setting clear aims for it.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/benefits",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "What are the benefits to you of practice or work-based learning?",
+                    "pages": "223-224"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/defining-practice-and-work-based-learning",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Defining practice- and work-based learning",
+                    "pages": "221-223"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Identify the main benefits a practice or work-based experience can offer you.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Recognise, in a worked example, the difference between drifting through an experience and drawing value from it.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Set a clear aim for a practice or work-based experience in your own field.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Making the most of it",
+                "topic": "the practical moves that get the most out of an experience",
+                "description": "Making the most of it: the practical moves that get the most out of a practice or work-based experience, before, during and after.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/getting-the-most-out-of-it",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Getting the most out of practice- and work-based learning",
+                    "pages": "229"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/benefits",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "What are the benefits to you of practice or work-based learning?",
+                    "pages": "223-224"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Apply practical strategies for getting the most out of a practice or work-based experience.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Distinguish a proactive approach to an experience from a passive one in a worked example.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Choose an active move to make during a practice or work-based experience in your own field.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Showing what you learned",
+                "topic": "how practice and work-based learning is assessed, and evidencing your learning",
+                "description": "Showing what you learned: how practice and work-based learning is assessed, and preparing strong evidence of your learning.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/assessment",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "How is practice- and work-based learning assessed by tutors?",
+                    "pages": "224-225"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/summary",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Summary",
+                    "pages": "229-230"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Explain how practice and work-based learning is typically assessed and why standardised criteria are difficult.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Tell strong evidence of learning apart from a bare description of what happened in a worked example.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Prepare evidence for how a practice or work-based experience in your own field is assessed.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Making the most of every experience",
+                "topic": "aiming, acting and evidencing as one practice you run for every experience",
+                "description": "Bringing together setting your aims, acting proactively and evidencing your learning into one practice you can run for every experience across your studies.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/benefits",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "What are the benefits to you of practice or work-based learning?",
+                    "pages": "223-224"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/defining-practice-and-work-based-learning",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Defining practice- and work-based learning",
+                    "pages": "221-223"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/getting-the-most-out-of-it",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Getting the most out of practice- and work-based learning",
+                    "pages": "229"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/assessment",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "How is practice- and work-based learning assessed by tutors?",
+                    "pages": "224-225"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch12/summary",
+                    "chapter": 12,
+                    "chapterTitle": "Learning by Doing: Practice- and Work-Based Learning",
+                    "heading": "Summary",
+                    "pages": "229-230"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "connect setting aims, acting proactively and evidencing your learning into one practice for any experience",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "analyse how this practice works across a student's run of placements and projects",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "apply the three together to keep making the most of practice or work-based experiences in {{context}} beyond this course",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Making the most of experience as one practice"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch12 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T16:07:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate crs-04_lesson-map 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/work-based-experiential-learning-intermediate/adp-course-design-specification_work-based-experiential-learning-intermediate.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T16:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "work-based-experiential-learning-intermediate-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "What a practice or work-based experience offers",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/ab-card: the forms and benefits of practice learning shown as a few parallel cards - fits the parallel-points shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who drifts with one who aims, the weaker (drifting) version first, using the character-token cast. Grounded in ch12/benefits (pp.223-224) and ch12/defining-practice-and-work-based-learning (pp.221-223).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflective prompt tied to this lesson's move. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own field. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who drifts with one who aims, the weaker (drifting) version first, using the character-token cast. Grounded in ch12/benefits (pp.223-224) and ch12/defining-practice-and-work-based-learning (pp.221-223)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 title/topic/outcomes and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a viable concept shape, kept as a drafted proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an intermediate interactive concept; offered as a drafted proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "work-based-experiential-learning-intermediate-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Making the most of a practice or work-based experience",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/gowTimeline with _reveal true: the before/during/after moves of getting the most out of an experience shown as a staged, click-to-reveal process.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a passive student with a proactive one, the weaker (passive) version first, using the character-token cast. Grounded in ch12/getting-the-most-out-of-it (p.229) and ch12/benefits (pp.223-224).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflective prompt tied to this lesson's move. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own field. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowTimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a passive student with a proactive one, the weaker (passive) version first, using the character-token cast. Grounded in ch12/getting-the-most-out-of-it (p.229) and ch12/benefits (pp.223-224)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 title/topic/outcomes and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a viable concept shape, kept as a drafted proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an intermediate interactive concept; offered as a drafted proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:30:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "work-based-experiential-learning-intermediate-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "How practice and work-based learning is assessed",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/accordion: four facets of how practice learning is assessed, each revealed on demand - fits the grouped-detail shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a descriptive write-up with an evidenced one, the weaker (descriptive) version first, using the character-token cast. Grounded in ch12/assessment (pp.224-225) and ch12/summary (pp.229-230).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflective prompt tied to this lesson's move. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own field. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a descriptive write-up with an evidenced one, the weaker (descriptive) version first, using the character-token cast. Grounded in ch12/assessment (pp.224-225) and ch12/summary (pp.229-230)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 title/topic/outcomes and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a viable concept shape, kept as a drafted proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an intermediate interactive concept; offered as a drafted proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:40:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, what the experience offers: the benefits on the table and how to aim for them. Second, making the most of it: the moves that turn time served into value gained. Third, showing what you learned: how practice is assessed and how to evidence your learning. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This short course is about making the most of practice and work-based learning: placements, laboratory and studio work, field work, simulations and projects. You already know what these are. The aim here is to turn an experience into real gains.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: identify what an experience offers and aim for it, apply strategies to get the most from it, prepare for how it is assessed.",
+            "practiceConnection": {
+              "academic": "<p>Practice and work-based learning is where what you study meets what you will do. Every placement, laboratory session, field trip or project is a chance to build skills, judgement and contacts that your degree alone cannot give you. The habits in this course, aiming, acting and evidencing, are ones you will use in every such experience, and in the professional work that follows.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Work-Based & Experiential Learning: Advanced"
+              ],
+              "horizontal": [
+                "Reflective Practice",
+                "Understanding Learning, Assessment & Feedback",
+                "Presenting"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the advanced course takes experience into structured reflection, using Kolb's Experiential Learning Cycle to turn what happened into insight you can articulate. Going wider: Reflective Practice, Understanding Learning, Assessment and Feedback, and Presenting all draw on the same habits of learning by doing and showing what you gained.</p>",
+            "summary": "<p>You have reached the end of the course. Making the most of practice and work-based learning is now something you can plan rather than hope for. You can identify what an experience offers and set aims to steer it. You can apply the moves, preparing, taking initiative, seeking feedback and recording, that turn time into learning. And you can meet the assessment by showing evidence of what you learned, not just an account of what you did. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, every placement, project, laboratory or field experience your course brings is a chance to put this to work. Aim, act and evidence, and the same experience gives you more. These are also the habits professional life rewards: people who get the most from what they do, and can show for it, are the ones who progress.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 220 to 230 of Chapter 12, 'Learning by Doing: Practice- and Work-Based Learning', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A practice or work-based experience mainly offers you the chance to..."
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What most determines how much a student gains from a placement?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes a proactive approach to a work-based experience?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "After finishing a placement, which move best secures its value?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why is practice and work-based learning usually assessed by portfolio or reflective account rather than a fixed exam?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which turns a description of a placement into strong evidence of learning?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can identify what a practice or work-based experience can offer me and set clear aims for it."
+              },
+              {
+                "rates": "co2",
+                "text": "I can apply practical strategies to get the most out of a practice or work-based experience."
+              },
+              {
+                "rates": "co3",
+                "text": "I can prepare for how practice and work-based learning is assessed."
+              },
+              {
+                "rates": "co4",
+                "text": "I can apply aiming, acting and evidencing together as one continuing practice I run for every practice or work-based experience."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "work-based-experiential-learning-intermediate wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "What the experience offers",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Making the most of it",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowTimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Showing what you learned",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Making the most of every experience",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "work-based-experiential-learning-intermediate-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

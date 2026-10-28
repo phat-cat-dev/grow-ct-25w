@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SKOS Accordion Template</title>
+<style>
+  /* Same warm, taxonomy palette as skos-structure-map.html; now an interactive,
+     data-driven accordion. Edit the DATA block in the script to feed it anything. */
+  :root{
+    --bg:#fbf7f0; --panel:#fffdf9; --ink:#2b2622; --muted:#7a6f64; --line:#e9e0d2;
+    --scheme:#7c3aed; --family:#be123c; --concept:#047857;
+    --note:#a16207; --step:#4338ca; --related:#0e7490;
+    --chip-bg:#f3ecdf; --accent:#be123c;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#17130f; --panel:#201a14; --ink:#f0e9df; --muted:#b2a695; --line:#352c22;
+      --scheme:#a78bfa; --family:#fb7185; --concept:#34d399;
+      --note:#fbbf24; --step:#818cf8; --related:#22d3ee;
+      --chip-bg:#2a221a; --accent:#fb7185;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#17130f; --panel:#201a14; --ink:#f0e9df; --muted:#b2a695; --line:#352c22;
+    --scheme:#a78bfa; --family:#fb7185; --concept:#34d399;
+    --note:#fbbf24; --step:#818cf8; --related:#22d3ee;
+    --chip-bg:#2a221a; --accent:#fb7185;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:24px 16px 64px;
+  }
+  .wrap{max-width:980px;margin:0 auto}
+  h1{font-size:1.6rem;margin:0 0 .2em}
+  p.lede{color:var(--muted);margin:.2em 0 1.2em}
+  .prov{font-size:.82rem;color:var(--muted);background:var(--chip-bg);border:1px solid var(--line);
+    border-radius:8px;padding:10px 12px;margin:0 0 1.2em}
+  .prov code{background:none;padding:0}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    background:var(--chip-bg);padding:1px 5px;border-radius:4px;font-size:.92em}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 1em}
+  .legend span{font-size:.78rem;padding:3px 9px;border-radius:999px;color:#fff;font-weight:600}
+
+  /* ── controls ───────────────────────────────────────────── */
+  .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 1.2em}
+  .btn{font:600 .8rem/1 ui-sans-serif,system-ui;color:var(--ink);background:var(--panel);
+    border:1px solid var(--line);border-radius:7px;padding:7px 11px;cursor:pointer}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn:focus-visible{outline:2px solid var(--step);outline-offset:2px}
+  .bar .spacer{flex:1}
+  .count{font-size:.78rem;color:var(--muted)}
+
+  /* ── the tree ───────────────────────────────────────────── */
+  #tree{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+  .node{margin:7px 0}
+  .node__head{
+    display:flex;align-items:center;gap:8px;width:100%;text-align:left;
+    font:inherit;color:inherit;cursor:pointer;
+    background:var(--panel);border:1px solid var(--line);border-left-width:4px;
+    border-radius:7px;padding:8px 10px;
+  }
+  .node__head.static{cursor:default}
+  .node__head:not(.static):hover{border-color:var(--accent)}
+  .node__head:focus-visible{outline:2px solid var(--step);outline-offset:2px}
+  .kind-scheme  > .node__head{border-left-color:var(--scheme)}
+  .kind-family  > .node__head{border-left-color:var(--family)}
+  .kind-concept > .node__head{border-left-color:var(--concept)}
+  .kind-note    > .node__head{border-left-color:var(--note)}
+  .kind-step    > .node__head{border-left-color:var(--step)}
+  .kind-related > .node__head{border-left-color:var(--related)}
+
+  .twisty{display:inline-block;width:1em;color:var(--muted);transition:transform .25s ease}
+  .node.open > .node__head .twisty{transform:rotate(90deg)}
+  .node__head.static .twisty{visibility:hidden}
+  .label{font-weight:700}
+  .kind-scheme  > .node__head .label{color:var(--scheme)}
+  .kind-family  > .node__head .label{color:var(--family)}
+  .kind-concept > .node__head .label{color:var(--concept)}
+  .chip{font:600 .68rem/1 ui-sans-serif,system-ui;padding:2px 7px;border-radius:999px;
+    border:1px solid var(--line);color:var(--muted);background:var(--chip-bg)}
+  .badge.top{background:#fde2e4;color:#9f1239;border-color:transparent}
+  .badge.leaf{background:#d1fae5;color:#065f46;border-color:transparent}
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]) .badge.top{background:#4c0519;color:#fecdd3}
+    :root:not([data-theme="light"]) .badge.leaf{background:#064e3b;color:#a7f3d0}}
+  :root[data-theme="dark"] .badge.top{background:#4c0519;color:#fecdd3}
+  :root[data-theme="dark"] .badge.leaf{background:#064e3b;color:#a7f3d0}
+  .head-spacer{flex:1}
+
+  /* animated panel: 0fr → 1fr grid gives a smooth height reveal, no JS measuring */
+  .node__panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+  .node.open > .node__panel{grid-template-rows:1fr}
+  .node__inner{overflow:hidden;padding-left:14px}
+
+  .note-box{border:1px dashed var(--note);border-left-width:4px;border-radius:7px;
+    background:var(--panel);padding:7px 10px;margin:7px 0;color:var(--ink)}
+  .note-box .cmt{color:var(--muted);font-style:italic;font-family:inherit}
+  .alt{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0}
+
+  .steps{list-style:none;margin:7px 0;padding:0}
+  .step{border:1px solid var(--line);border-left:4px solid var(--step);border-radius:7px;
+    background:var(--panel);padding:7px 10px;margin:6px 0;
+    opacity:0;transform:translateY(6px);
+    transition:opacity .35s ease,transform .35s ease}
+  .node.open > .node__panel > .node__inner > .steps > .step{
+    opacity:1;transform:none;transition-delay:calc(var(--i,0) * 55ms)}
+  .step .t{font-weight:700;color:var(--step)}
+  .step .d{display:block;margin-top:3px;color:var(--muted);font-family:inherit;font-style:italic}
+
+  .related{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:7px 0}
+  .related .lbl{font-weight:600;color:var(--related)}
+  .rel{font:600 .7rem/1 ui-sans-serif,system-ui;padding:3px 9px;border-radius:999px;
+    border:1px solid var(--related);color:var(--related);background:transparent;cursor:pointer}
+  .rel:hover{background:var(--related);color:#fff}
+  .rel.ext{border-style:dashed;border-color:var(--scheme);color:var(--scheme);cursor:default}
+  .rel.ext:hover{background:transparent;color:var(--scheme)}
+
+  .node__kids{margin-top:2px}
+
+  /* jump-to highlight */
+  @keyframes flashpulse{0%,100%{background:var(--panel)}30%{background:var(--chip-bg)}}
+  .node.flash > .node__head{animation:flashpulse 1.1s ease}
+
+  .callout{border:1px solid var(--line);border-left:4px solid var(--concept);
+    background:var(--panel);border-radius:8px;padding:12px 14px;margin:1.6em 0}
+  .callout h3{margin:0 0 .4em;font-size:1rem}
+  .callout .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+  .callout h4{margin:.2em 0 .3em;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .callout ul{margin:.1em 0;padding-left:1.1em}
+  @media (max-width:640px){.callout .cols{grid-template-columns:1fr}#tree{font-size:12px}}
+
+  .foot{margin-top:2.4em;font-size:.8rem;color:var(--muted)}
+
+  @media (prefers-reduced-motion: reduce){
+    .node__panel,.twisty,.step{transition:none}
+    .node.flash > .node__head{animation:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>SKOS accordion template &mdash; hierarchy as animated reveals</h1>
+  <p class="lede">The same warm palette as the static map, now driven by data. Edit the
+  <code>DATA</code> block at the top of the script and this page rebuilds itself as a nested set of
+  accordions: click any row to reveal its meaning, its ordered steps (which fade in one by one), and
+  its sideways links. Prefilled with the SKOS academic-processes scheme &mdash; swap <code>DATA</code>
+  for any tree of the shape shown below and the hierarchy redraws to fit.</p>
+
+  <div class="prov">
+    <strong>How to feed it.</strong> One source of truth: the <code>DATA</code> object (top of the
+    <code>&lt;script&gt;</code>). A node is
+    <code>{ id, label, kind, note?, alt?, steps?, related?, children? }</code> &mdash; <code>kind</code>
+    picks the colour (<code>scheme</code>/<code>family</code>/<code>concept</code>&hellip; from the legend),
+    <code>steps</code> is <code>[{title,text}]</code>, <code>related</code> is
+    <code>[{label, to?, external?}]</code> (<code>to</code> = another node&rsquo;s <code>id</code>, so the
+    chip jumps to it). A <code>fromSkos(graph)</code> helper is included: assign
+    <code>const DATA = fromSkos(yourSkosJsonLd)</code> to drive it straight from a SKOS
+    <code>@graph</code> instead.
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="bar">
+    <button class="btn" id="expand">Expand all</button>
+    <button class="btn" id="collapse">Collapse all</button>
+    <span class="spacer"></span>
+    <span class="count" id="count"></span>
+    <button class="btn" id="theme" title="Toggle colour theme">Theme: auto</button>
+  </div>
+
+  <div id="tree" aria-label="Concept hierarchy"></div>
+
+  <div class="callout">
+    <h3>What the accordion is teaching</h3>
+    <div class="cols">
+      <div>
+        <h4>Hierarchy is the frame</h4>
+        <ul>
+          <li>nesting = <code>broader</code>/<code>narrower</code> &mdash; the accordion depth <em>is</em> the tree</li>
+          <li>steps open in order, numbered &mdash; a <code>definition</code> is a sequence, not a set</li>
+          <li>a <code>scopeNote</code> is the lede that greets you when a concept opens</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Related is a link, not a limb</h4>
+        <ul>
+          <li>a <code>related</code> chip <em>jumps</em> to its target &mdash; it never nests it</li>
+          <li>dashed chips point outside the scheme (CRAAP/RADAR&hellip;) &mdash; no jump</li>
+          <li>that keeps the tree a clean hierarchy while cross-links stay navigable</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="foot">Interactive companion to <code>skos-structure-map.html</code> (static, same palette) and
+  <code>adapt-dom-map.html</code> (the markup version). Source vocabulary:
+  <code>academic-processes.skos.jsonld</code>.</p>
+
+</div>
+
+<script>
+/* ============================================================================
+   PUT YOUR DATA HERE.  Any tree of this shape renders as animated accordions.
+   node = {
+     id:       unique slug (lets related chips jump to it)
+     label:    heading text
+     kind:     'scheme' | 'family' | 'concept' | 'note' | 'step' | 'related' | (any)
+     note:     optional one-line gloss (shown as the lede when opened)
+     alt:      optional [ "synonym", ... ]  -> chips
+     steps:    optional [ { title, text }, ... ]  -> ordered, staggered reveal
+     related:  optional [ { label, to?, external? }, ... ]  -> cross-link chips
+     children: optional [ node, ... ]
+   }
+   Prefilled below with the SKOS "Universal Undergraduate Academic Processes" scheme.
+   ========================================================================== */
+
+const DATA = {
+  id:"scheme", label:"Universal Undergraduate Academic Processes", kind:"scheme",
+  note:"skos:ConceptScheme — the whole vocabulary. Every concept below declares skos:inScheme back to this root.",
+  children:[
+
+    /* ── FAMILY 1 · THINKING ─────────────────────────────── */
+    { id:"intellectual-depth", label:"Intellectual Depth (Thinking)", kind:"family",
+      note:"A top concept (no skos:broader). Five concepts point up to it via skos:broader.",
+      children:[
+        { id:"critical-analysis", label:"Critical Analysis", kind:"concept",
+          alt:["Evaluation of Arguments"],
+          note:"Move past summarising to judging a source: test its central claim, its hidden assumptions, and whether the evidence actually holds.",
+          steps:[
+            {title:"Identify the core claim", text:"Find the single main point you are being asked to accept. Everything else is scaffolding around it."},
+            {title:"Surface the assumptions", text:"Name the beliefs that must be true for the claim to stand — especially the ones left unstated."},
+            {title:"Weigh the evidence", text:"Is the support sufficient, relevant and unbiased? Ask what data would contradict the claim."},
+            {title:"Judge the reasoning", text:"Check the step from evidence to claim. A true premise can still carry a broken inference."},
+            {title:"Form your verdict", text:"Decide how far the claim earns your acceptance, and say exactly where it is strong and where it is weak."}
+          ],
+          related:[{label:"Argument Mapping",to:"argument-mapping"},{label:"Source Evaluation",to:"source-evaluation"}] },
+        { id:"argument-mapping", label:"Argument Mapping", kind:"concept",
+          note:"Make the shape of an argument visible: separate the thesis, the support beneath it, and the objections that push back.",
+          related:[{label:"Critical Analysis",to:"critical-analysis"},{label:"Counter-argumentation",to:"counter-argumentation"}] },
+        { id:"problem-decomposition", label:"Problem Decomposition", kind:"concept",
+          note:"Take a huge, ill-defined problem and break it into manageable, testable sub-components you can actually work on.",
+          related:[{label:"Research Design",to:"research-design"},{label:"Time Management",to:"time-management"}] },
+        { id:"hypothesis-generation", label:"Hypothesis Generation", kind:"concept",
+          note:"Turn an observation or theory into a specific, testable prediction — one that could be shown to be wrong.",
+          related:[{label:"Research Design",to:"research-design"},{label:"Critical Analysis",to:"critical-analysis"}] },
+        { id:"counter-argumentation", label:"Counter-argumentation", kind:"concept",
+          note:"Strengthen your own position by seeking out and answering the best case against it — not the weakest.",
+          related:[{label:"Argument Mapping",to:"argument-mapping"},{label:"Critical Analysis",to:"critical-analysis"}] }
+      ]},
+
+    /* ── FAMILY 2 · DOING ────────────────────────────────── */
+    { id:"research-retrieval", label:"Research & Retrieval (Doing)", kind:"family",
+      children:[
+        { id:"source-evaluation", label:"Source Evaluation", kind:"concept",
+          alt:["Source Criticism"],
+          note:"Apply a framework to decide whether a source is trustworthy enough to cite — before you rely on it.",
+          steps:[
+            {title:"Identify the source", text:"See what you are dealing with: who, where, when, and what kind of thing it is."},
+            {title:"Check currency and authority", text:"Is it recent enough for the topic, and does the author have credible standing?"},
+            {title:"Test accuracy and evidence", text:"Can the claims be checked? Look for citations, data and corroboration."},
+            {title:"Read the purpose and bias", text:"Ask why it was made — to inform, or to persuade and sell. Motive shapes content."},
+            {title:"Reach a verdict", text:"Weigh the lenses together: relevant is not the same as reliable."}
+          ],
+          related:[{label:"Critical Analysis",to:"critical-analysis"},{label:"CRAAP",external:true},{label:"RADAR",external:true},{label:"ROBOT",external:true}] },
+        { id:"literature-reviewing", label:"Literature Reviewing", kind:"concept",
+          note:"Go beyond listing sources: synthesise them, map what is known, and find the gap your work will fill.",
+          related:[{label:"Literature Search",to:"literature-search"},{label:"Synthesis",to:"synthesis"},{label:"Source Evaluation",to:"source-evaluation"}] },
+        { id:"research-design", label:"Research Design", kind:"concept",
+          note:"Move from a vague question to an actionable, testable plan — structured before any data is collected.",
+          related:[{label:"Hypothesis Generation",to:"hypothesis-generation"},{label:"Problem Decomposition",to:"problem-decomposition"}] },
+        { id:"data-interpretation", label:"Data Interpretation & Visualisation", kind:"concept",
+          note:"Convert raw numbers or qualitative material into a meaningful, honest narrative — with the right picture.",
+          related:[{label:"Research Design",to:"research-design"},{label:"Presentation Storytelling",to:"presentation-storytelling"}] },
+        { id:"literature-search", label:"Literature Search Strategy", kind:"concept",
+          alt:["Boolean search mastery"],
+          note:"Find the right sources efficiently and ethically — by searching deliberately, not by scrolling.",
+          related:[{label:"Literature Reviewing",to:"literature-reviewing"},{label:"Source Evaluation",to:"source-evaluation"}] }
+      ]},
+
+    /* ── FAMILY 3 · APPLYING ─────────────────────────────── */
+    { id:"communication-reflection", label:"Communication & Reflection (Applying)", kind:"family",
+      note:"The largest family — ten narrower concepts.",
+      children:[
+        { id:"academic-writing", label:"Academic Writing", kind:"concept",
+          alt:["Structuring an Argument"],
+          note:"Build a persuasive paper as a whole — from a clear thesis through a structured argument to a defensible conclusion.",
+          related:[{label:"Argument Mapping",to:"argument-mapping"},{label:"Critical Analysis",to:"critical-analysis"}] },
+        { id:"peer-reviewing", label:"Peer Reviewing", kind:"concept",
+          note:"Apply your critical thinking to someone else’s work and return feedback that is honest, specific and usable.",
+          related:[{label:"Critical Analysis",to:"critical-analysis"},{label:"Marking Feedback",external:true}] },
+        { id:"oral-presentation", label:"Oral Presentation & Communication", kind:"concept",
+          note:"Structure complex information so a specific audience can follow it — live, in the time you have.",
+          related:[{label:"Presentation Storytelling",to:"presentation-storytelling"},{label:"Academic Writing",to:"academic-writing"}] },
+        { id:"synthesis", label:"Synthesis of Diverse Fields", kind:"concept",
+          alt:["Interdisciplinary synthesis"],
+          note:"Connect concepts from different fields to build a novel understanding or solution neither field reaches alone.",
+          related:[{label:"Literature Reviewing",to:"literature-reviewing"},{label:"Critical Analysis",to:"critical-analysis"}] },
+        { id:"self-directed-learning", label:"Self-Directed Learning", kind:"concept",
+          note:"Diagnose your own knowledge gaps, find resources independently, and structure your own plan to close them.",
+          related:[{label:"Reflective Practice",to:"reflective-practice"},{label:"Time Management",to:"time-management"}] },
+        { id:"ethical-reasoning", label:"Ethical Reasoning & Integrity", kind:"concept",
+          alt:["Academic integrity"],
+          note:"Recognise the moral stakes in how knowledge is produced and used — plagiarism, bias, authorship, consent.",
+          related:[{label:"Source Evaluation",to:"source-evaluation"},{label:"Reflective Practice",to:"reflective-practice"}] },
+        { id:"time-management", label:"Time Management & Project Sequencing", kind:"concept",
+          note:"Turn a large module into timed, sequential milestones — with slack for when things go wrong.",
+          related:[{label:"Problem Decomposition",to:"problem-decomposition"},{label:"Self-Directed Learning",to:"self-directed-learning"}] },
+        { id:"reflective-practice", label:"Reflective Practice", kind:"concept",
+          note:"Pause after a task to turn raw experience into formalised, reusable learning — what worked, what failed, and why.",
+          related:[{label:"Self-Directed Learning",to:"self-directed-learning"},{label:"Peer Reviewing",to:"peer-reviewing"}] },
+        { id:"active-listening", label:"Active Listening (in lectures)", kind:"concept",
+          note:"Stop transcribing and start listening for structure: catch the lecturer’s shape, emphasis and open questions.",
+          related:[{label:"Critical Analysis",to:"critical-analysis"},{label:"Self-Directed Learning",to:"self-directed-learning"}] },
+        { id:"presentation-storytelling", label:"Presentation Storytelling", kind:"concept",
+          note:"Structure data as an unfolding narrative — beginning, tension, and resolution — not a list of facts.",
+          related:[{label:"Oral Presentation",to:"oral-presentation"},{label:"Data Interpretation",to:"data-interpretation"}] }
+      ]}
+  ]
+};
+
+/* ── kind registry: drives the legend + colours. Add a kind here and the
+      legend picks it up automatically. ─────────────────────────────────── */
+const KINDS = {
+  scheme:  {label:"ConceptScheme", color:"--scheme"},
+  family:  {label:"top concept",   color:"--family"},
+  concept: {label:"concept",       color:"--concept"},
+  note:    {label:"scopeNote",     color:"--note"},
+  step:    {label:"step",          color:"--step"},
+  related: {label:"skos:related",  color:"--related"}
+};
+
+/* ── optional: build DATA straight from a SKOS JSON-LD @graph ────────────
+      usage:  const DATA = fromSkos(mySkosJsonLd)                            */
+function fromSkos(doc){
+  const graph = doc["@graph"] || doc;
+  const typesOf = n => [].concat(n["@type"] || []);
+  const byId = {}; graph.forEach(n => { byId[n["@id"]] = n; });
+  const slug = id => (id || "").split(/[\/#]/).filter(Boolean).pop();
+  const scheme = graph.find(n => typesOf(n).some(t => /ConceptScheme$/.test(t)));
+  const concepts = graph.filter(n => typesOf(n).some(t => /Concept$/.test(t)) &&
+                                     !typesOf(n).some(t => /ConceptScheme$/.test(t)));
+  const arr = v => v == null ? [] : [].concat(v);
+  const related = n => arr(n["skos:related"]).map(r => {
+    const tgt = byId[r["@id"]];
+    return tgt ? {label: tgt["skos:prefLabel"], to: slug(r["@id"])}
+               : {label: slug(r["@id"]).toUpperCase(), external: true};
+  });
+  const steps = n => {
+    const d = n["skos:definition"]; const s = d && d.steps;
+    return arr(s).map(x => ({title: x.step_title, text: x.description}));
+  };
+  const toNode = n => ({
+    id: slug(n["@id"]), label: n["skos:prefLabel"],
+    kind: n["skos:broader"] ? "concept" : "family",
+    note: n["skos:scopeNote"], alt: arr(n["skos:altLabel"]),
+    steps: steps(n), related: related(n),
+    children: concepts.filter(c => arr(c["skos:broader"]).some(b => b["@id"] === n["@id"])).map(toNode)
+  });
+  return {
+    id: slug(scheme && scheme["@id"]) || "scheme",
+    label: (scheme && scheme["skos:prefLabel"]) || "Concept scheme",
+    kind: "scheme",
+    children: concepts.filter(c => !c["skos:broader"]).map(toNode)
+  };
+}
+
+/* ── renderer ─────────────────────────────────────────────────────────── */
+const $ = (t, cls) => { const e = document.createElement(t); if (cls) e.className = cls; return e; };
+let nodeCount = 0;
+
+function renderNode(data, depth){
+  const kind = KINDS[data.kind] ? data.kind : "concept";
+  const wrap = $("div", "node kind-" + kind);
+  wrap.id = "n-" + (data.id || slugify(data.label));
+
+  const hasPanel = !!(data.note || (data.alt && data.alt.length) ||
+                      (data.steps && data.steps.length) ||
+                      (data.related && data.related.length) ||
+                      (data.children && data.children.length));
+  const openByDefault = depth < 2 && hasPanel;
+
+  const head = $("button", "node__head" + (hasPanel ? "" : " static"));
+  head.type = "button";
+  if (hasPanel){ head.setAttribute("aria-expanded", String(openByDefault)); nodeCount++; }
+  head.innerHTML =
+    '<span class="twisty">&#9656;</span>' +
+    '<span class="label"></span>';
+  head.querySelector(".label").textContent = data.label;
+
+  const badge = data.kind === "family" ? "top" : data.kind === "concept" ? "leaf" : null;
+  if (badge){ const b = $("span", "chip badge " + badge); b.textContent = badge; head.appendChild(b); }
+  head.appendChild($("span", "head-spacer"));
+  const kt = $("span", "chip"); kt.textContent = KINDS[kind].label; head.appendChild(kt);
+  wrap.appendChild(head);
+
+  if (hasPanel){
+    const panel = $("div", "node__panel");
+    const inner = $("div", "node__inner");
+
+    if (data.note){
+      const nb = $("div", "note-box");
+      nb.innerHTML = '<span class="chip">scopeNote</span> <span class="cmt"></span>';
+      nb.querySelector(".cmt").textContent = data.note;
+      inner.appendChild(nb);
+    }
+    if (data.alt && data.alt.length){
+      const a = $("div", "alt");
+      data.alt.forEach(x => { const c = $("span", "chip"); c.textContent = "altLabel · " + x; a.appendChild(c); });
+      inner.appendChild(a);
+    }
+    if (data.steps && data.steps.length){
+      const ol = $("ol", "steps");
+      data.steps.forEach((s, i) => {
+        const li = $("li", "step"); li.style.setProperty("--i", i);
+        li.innerHTML = '<span class="t"></span><span class="d"></span>';
+        li.querySelector(".t").textContent = (i + 1) + " · " + s.title;
+        li.querySelector(".d").textContent = s.text;
+        ol.appendChild(li);
+      });
+      inner.appendChild(ol);
+    }
+    if (data.related && data.related.length){
+      const r = $("div", "related");
+      const lbl = $("span", "lbl"); lbl.textContent = "related →"; r.appendChild(lbl);
+      data.related.forEach(rel => {
+        const c = $("button", "rel" + (rel.external ? " ext" : ""));
+        c.type = "button"; c.textContent = rel.label + (rel.external ? " ⇗" : "");
+        if (rel.to && !rel.external){ c.addEventListener("click", () => jumpTo(rel.to)); }
+        else { c.disabled = rel.external ? false : true; }
+        r.appendChild(c);
+      });
+      inner.appendChild(r);
+    }
+    if (data.children && data.children.length){
+      const kids = $("div", "node__kids");
+      data.children.forEach(ch => kids.appendChild(renderNode(ch, depth + 1)));
+      inner.appendChild(kids);
+    }
+
+    panel.appendChild(inner);
+    wrap.appendChild(panel);
+
+    setOpen(wrap, openByDefault);
+    head.addEventListener("click", () => setOpen(wrap, !wrap.classList.contains("open")));
+  }
+  return wrap;
+}
+
+function setOpen(wrap, open){
+  wrap.classList.toggle("open", open);
+  const head = wrap.querySelector(":scope > .node__head");
+  const panel = wrap.querySelector(":scope > .node__panel");
+  if (head && !head.classList.contains("static")) head.setAttribute("aria-expanded", String(open));
+  if (panel){ if (open) panel.removeAttribute("inert"); else panel.setAttribute("inert", ""); }
+}
+
+function slugify(s){ return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+
+function jumpTo(id){
+  const el = document.getElementById("n-" + id);
+  if (!el) return;
+  let p = el;
+  while (p && p.classList){ if (p.classList.contains("node")) setOpen(p, true); p = p.parentElement; }
+  el.scrollIntoView({behavior: "smooth", block: "center"});
+  el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash");
+}
+
+function allNodes(){ return Array.from(document.querySelectorAll("#tree .node")).filter(n => n.querySelector(":scope > .node__panel")); }
+function setAll(open){ allNodes().forEach(n => setOpen(n, open)); }
+
+/* ── legend ───────────────────────────────────────────────────────────── */
+(function legend(){
+  const box = document.getElementById("legend");
+  Object.values(KINDS).forEach(k => {
+    const s = document.createElement("span");
+    s.textContent = k.label;
+    s.style.background = "var(" + k.color + ")";
+    box.appendChild(s);
+  });
+})();
+
+/* ── mount + controls ─────────────────────────────────────────────────── */
+document.getElementById("tree").appendChild(renderNode(DATA, 0));
+document.getElementById("count").textContent = nodeCount + " collapsible nodes";
+document.getElementById("expand").addEventListener("click", () => setAll(true));
+document.getElementById("collapse").addEventListener("click", () => setAll(false));
+
+const themes = ["auto", "light", "dark"];
+let ti = 0;
+document.getElementById("theme").addEventListener("click", function(){
+  ti = (ti + 1) % themes.length;
+  const t = themes[ti];
+  if (t === "auto") delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = t;
+  this.textContent = "Theme: " + t;
+});
+</script>
+</body>
+</html>

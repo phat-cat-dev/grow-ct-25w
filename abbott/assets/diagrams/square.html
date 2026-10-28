@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Square flow diagram</title><link rel="stylesheet" href="./diagrams.css"></head>
+<body><article class="flow-card" data-flow-card data-flow-shape="square"><h2>Square</h2><svg class="flow-diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Four-stage square loop">
+        <path class="edge" pathLength="1" style="--d:0s"   d="M54 54 L186 54"/>
+        <path class="edge" pathLength="1" style="--d:.15s" d="M186 54 L186 186"/>
+        <path class="edge" pathLength="1" style="--d:.3s"  d="M186 186 L54 186"/>
+        <path class="edge" pathLength="1" style="--d:.45s" d="M54 186 L54 54"/>
+        <circle class="node key" cx="54" cy="54" r="20"/><text class="nlabel" x="54" y="54">1</text>
+        <circle class="node" cx="186" cy="54" r="20"/><text class="nlabel" x="186" y="54">2</text>
+        <circle class="node" cx="186" cy="186" r="20"/><text class="nlabel" x="186" y="186">3</text>
+        <circle class="node" cx="54" cy="186" r="20"/><text class="nlabel" x="54" y="186">4</text>
+        <circle class="runner" r="5" style="offset-path:path('M54 54 L186 54 L186 186 L54 186 Z')"/>
+      </svg><div class="flow-card__controls">
+    <label>Nodes<select data-flow-nodes><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label>
+    <button type="button" data-flow-play>Play / replay</button>
+    <button type="button" data-flow-pause aria-pressed="false">Pause</button>
+    <label>Speed<select data-flow-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+    <label>Runner layer<select data-flow-layer><option value="over">Over nodes</option><option value="behind">Behind nodes</option></select></label>
+  </div><p role="status" data-flow-status></p><p><a href="./square.svg" data-flow-download download="square.svg">Download current Square SVG</a></p></article><script src="./diagrams.js"></script></body></html>

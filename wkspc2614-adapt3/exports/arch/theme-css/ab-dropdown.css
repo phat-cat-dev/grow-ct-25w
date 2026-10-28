@@ -1,0 +1,44 @@
+html.ab-theme .dropdown__btn {
+  background-color: var(--ab-base-accent) !important;
+  color: var(--ab-base-on-accent) !important;
+  border-radius: 0 !important;
+}
+html.ab-theme .dropdown__btn:hover,
+html.ab-theme .dropdown__btn:focus {
+  background-color: var(--ab-base-accent-hover) !important;
+}
+html.ab-theme .dropdown__btn.is-selected {
+  background-color: var(--ab-base-accent-active) !important;
+}
+html.ab-theme .dropdown__btn.is-disabled {
+  opacity: 0.5;
+}
+html.ab-theme .dropdown__inner,
+html.ab-theme .dropdown__icon,
+html.ab-theme .dropdown__icon .icon {
+  color: var(--ab-base-on-accent) !important;
+}
+html.ab-theme .dropdown__list {
+  background-color: var(--ab-base-accent) !important;
+  border-radius: 0 !important;
+  border: 1px solid var(--ab-base-accent-active) !important;
+}
+html.ab-theme .dropdown-item {
+  padding: 1rem !important;
+  background-color: var(--ab-base-accent) !important;
+  color: var(--ab-base-on-accent) !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--ab-base-accent-active) !important;
+}
+html.ab-theme .dropdown-item .dropdown-item__inner {
+  color: var(--ab-base-on-accent) !important;
+}
+html.ab-theme .dropdown-item:hover,
+html.ab-theme .dropdown-item.is-selected,
+html.ab-theme .dropdown-item[aria-selected],
+html.ab-theme .dropdown-item[selected] {
+  background-color: var(--ab-base-accent-active) !important;
+}
+html.ab-theme .dropdown-item:last-child {
+  border-bottom: 0 !important;
+}

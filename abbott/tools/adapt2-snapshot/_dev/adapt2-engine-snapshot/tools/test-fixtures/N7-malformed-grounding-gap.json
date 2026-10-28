@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-n7",
+  "slug": "test-n7",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-default-stood",
+          "decidedValue": "Test value with invalid gap store",
+          "timestamp": "2026-08-27T00:00:00Z",
+          "groundingGaps": [
+            {
+              "store": "design-kb",
+              "lookup": "skeletons/lesson-standard",
+              "wouldHaveGrounded": "Skeleton structure."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

@@ -1,0 +1,10 @@
+.textured.ab-whiteboard {
+  --texture-whiteboard-paper: #fcfdff;
+  --texture-whiteboard-ink: #1b2230;
+  background: var(--texture-whiteboard-paper);
+  color: var(--texture-whiteboard-ink);
+  border: 1px solid #d7dce4;
+  border-radius: .6rem;
+  padding: var(--texture-pad);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 2px #0000000f;
+}

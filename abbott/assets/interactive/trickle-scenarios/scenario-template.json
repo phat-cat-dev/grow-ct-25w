@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "id": "your-scenario",
+  "title": "Your scenario title",
+  "intro": "Replace this with the audience, context and learning intention.",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "[Write continue title: opening]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "[Write choice title: decision-1]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "choices": [
+        {
+          "label": "[Write option 1]",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "[Write option 2]",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "[Write auto title: consequence-1-a]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "[Write auto title: consequence-1-b]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "[Write continue title: reflection-1]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "prompt": "[Write a reflection prompt]",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "[Write choice title: decision-2]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "choices": [
+        {
+          "label": "[Write option 1]",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "[Write option 2]",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "[Write auto title: consequence-2-a]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "[Write auto title: consequence-2-b]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "[Write continue title: reflection-2]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "prompt": "[Write a reflection prompt]",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "[Write choice title: decision-3]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "choices": [
+        {
+          "label": "[Write option 1]",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "[Write option 2]",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "[Write auto title: consequence-3-a]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "[Write auto title: consequence-3-b]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "[Write continue title: reflection-3]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "prompt": "[Write a reflection prompt]",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "[Write ending title: outcome]",
+      "body": "[Write a specific situation, consequence or reflection here. Keep route IDs and replace all placeholder text.]",
+      "prompt": "[Write a reflection prompt]"
+    }
+  ]
+}

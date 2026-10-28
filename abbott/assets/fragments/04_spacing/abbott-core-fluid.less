@@ -1,0 +1,64 @@
+/* ==========================================================================
+   abbott-core-fluid.less  (the engine)
+
+   Layer 0  settings    --ab-fluid-*-min / -max / vp-*, --ab-*-mult-*   (written by a pack or profile)
+   Layer 1  fluid base  --ab-fluid-{text|space|layout}                  (one clamp per scale)
+   Layer 2  semantic    --ab-text-*, --ab-layout-*, --ab-space-*        (base x multiplier)
+
+   This file holds no sizes. Every number comes from a pack such as
+   abbott-core-default.less, so a new profile only has to write Layer 0.
+
+   All Layer 0 lengths are unitless rem numbers (0.75 means 0.75rem).
+   Viewport bounds are also rem numbers (20 means 20rem, 320px at 16px).
+
+   Scoping: engine tokens are declared on :root and on any element carrying
+   data-ab-profile. Custom properties resolve where they are declared, so this
+   lets a scoped profile change a setting and have the clamps recompute there.
+   ========================================================================== */
+
+/* One call writes the three base tokens for a scale.
+   A scale may override the global viewport range by setting
+   --ab-fluid-@{name}-vp-min / --ab-fluid-@{name}-vp-max in a pack or profile. */
+.ab-fluid-scale(@name) {
+  --ab-fluid-@{name}-slope: calc(
+    (var(--ab-fluid-@{name}-max) - var(--ab-fluid-@{name}-min)) /
+    (var(--ab-fluid-@{name}-vp-max, var(--ab-fluid-vp-max)) - var(--ab-fluid-@{name}-vp-min, var(--ab-fluid-vp-min)))
+  );
+  --ab-fluid-@{name}-intercept: calc(
+    var(--ab-fluid-@{name}-min) -
+    var(--ab-fluid-@{name}-slope) * var(--ab-fluid-@{name}-vp-min, var(--ab-fluid-vp-min))
+  );
+  --ab-fluid-@{name}: clamp(
+    calc(var(--ab-fluid-@{name}-min) * 1rem),
+    calc(var(--ab-fluid-@{name}-intercept) * 1rem + var(--ab-fluid-@{name}-slope) * 100vw),
+    calc(var(--ab-fluid-@{name}-max) * 1rem)
+  );
+}
+
+:root,
+:where([data-ab-profile]) {
+  /* ===== Layer 1: fluid base tokens (one per scale) ===== */
+  .ab-fluid-scale(text);
+  .ab-fluid-scale(space);
+  .ab-fluid-scale(layout);
+
+  /* ===== Layer 2: typography ===== */
+  --ab-text-2xs: calc(var(--ab-fluid-text) * var(--ab-text-mult-2xs));
+  --ab-text-xs:  calc(var(--ab-fluid-text) * var(--ab-text-mult-xs));
+  --ab-text-sm:  calc(var(--ab-fluid-text) * var(--ab-text-mult-sm));
+  --ab-text-md:  calc(var(--ab-fluid-text) * var(--ab-text-mult-md));
+  --ab-text-lg:  calc(var(--ab-fluid-text) * var(--ab-text-mult-lg));
+  --ab-text-xl:  calc(var(--ab-fluid-text) * var(--ab-text-mult-xl));
+  --ab-text-2xl: calc(var(--ab-fluid-text) * var(--ab-text-mult-2xl));
+
+  /* ===== Layer 2: layout ===== */
+  --ab-layout-block-ver:     calc(var(--ab-fluid-layout) * var(--ab-layout-mult-block-ver));
+  --ab-layout-block-hoz:     calc(var(--ab-fluid-layout) * var(--ab-layout-mult-block-hoz));
+  --ab-layout-component-hoz: calc(var(--ab-fluid-layout) * var(--ab-layout-mult-component-hoz));
+
+  /* ===== Layer 2: spacing ===== */
+  --ab-space-item-margin:  calc(var(--ab-fluid-space) * var(--ab-space-mult-item-margin));
+  --ab-space-item-padding: calc(var(--ab-fluid-space) * var(--ab-space-mult-item-padding));
+  --ab-space-btn-padding:  calc(var(--ab-fluid-space) * var(--ab-space-mult-btn-padding));
+  --ab-space-icon-padding: calc(var(--ab-fluid-space) * var(--ab-space-mult-icon-padding));
+}

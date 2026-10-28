@@ -1,0 +1,5741 @@
+{
+  "subjectBenchmarkId": "optometry-2024",
+  "subject": {
+    "name": "Optometry",
+    "codes": [
+      {
+        "scheme": "hecos",
+        "code": "100036",
+        "label": "optometry"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH02-06-03",
+        "label": "ophthalmics"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH02-06",
+        "label": "allied health"
+      },
+      {
+        "scheme": "cah",
+        "code": "CAH02",
+        "label": "subjects allied to medicine"
+      }
+    ]
+  },
+  "issuer": "QAA",
+  "title": "Subject Benchmark Statement Optometry",
+  "edition": "April 2024 (fifth edition)",
+  "published": "2024-04",
+  "status": "current",
+  "levelsCovered": [
+    "fheq:7",
+    "fqheis:11"
+  ],
+  "awardsCovered": [
+    "integrated master's"
+  ],
+  "nations": [
+    "England",
+    "Wales",
+    "Scotland",
+    "Northern Ireland"
+  ],
+  "source": {
+    "ingestId": "std:doc:qaa-optometry-2024-benchmarks",
+    "ingestDoc": {
+      "repo": "wkspc2614-adapt",
+      "path": "source-kb/canon-adp/secondary-data/ingested/standards/ingest-std-qaa-optometry-2024-benchmarks/ingest-std-qaa-optometry-2024-benchmarks.md",
+      "note": "QAA Subject Benchmark Statement, ingested. Issuer text is held, never copied; every statement here is our paraphrase or audience rewrite."
+    },
+    "adaptMap": {
+      "status": "pending",
+      "expectedPath": "tools/pathways/core/mapping/optometry-2024.adapt-map.json",
+      "note": "No adapt-map for this subject yet; pathwayMapping is empty until one is generated at expectedPath, after which this build picks it up on a re-run."
+    },
+    "licence": "QAA copyright; held for study, never published. No issuer text (the per-statement \"source\" quote) is copied into this file; all statement text here is our own paraphrase or audience rewrite."
+  },
+  "identity": {
+    "issuer": "The Quality Assurance Agency for Higher Education",
+    "title": "Subject Benchmark Statement Optometry",
+    "edition": "April 2024 (fifth edition)",
+    "dates": {
+      "published": "2024-04",
+      "other": []
+    },
+    "kind": "subject-benchmark",
+    "jurisdiction": [
+      "UK"
+    ],
+    "authority": "reference: a sector reference point, not a regulatory requirement; in England not a sector-recognised standard under the OfS framework; a key reference point in Wales and Scotland; part of the quality requirements in Northern Ireland (D1, front matter: Relationship to legislation)",
+    "licence": "QAA copyright; the document gives no re-use terms in its text (D1, front matter)",
+    "copyrightNotice": {
+      "text": "© The Quality Assurance Agency for Higher Education 2024",
+      "locator": "D1, index"
+    }
+  },
+  "purpose": {
+    "governs": "what a graduate of a registrable Optometry integrated master's is expected to know, do and understand at the threshold, and the nature of such courses",
+    "appliesTo": {
+      "awards": [
+        "integrated master's"
+      ],
+      "levels": [
+        "fheq:7",
+        "fqheis:11"
+      ],
+      "providers": [
+        "UK higher education providers"
+      ]
+    },
+    "whoMustUse": "none-stated; it is a reference point, not a requirement (D1, front matter)",
+    "howUsed": [
+      "design",
+      "approval",
+      "review",
+      "other: external examining; PSRBs; information for prospective students and employers"
+    ],
+    "doesNot": "it does not prescribe teaching, learning or assessment, interpret legislation or carry statutory or regulatory requirements; it does not apply to non-registrable optometric and vision sciences qualifications (D1, front matter)",
+    "beneficiary": "the student",
+    "statedScope": "\"This Subject Benchmark Statement is only intended to address integrated master's degree qualifications that enable graduates to register as a practising optometrist.\" (D1, front matter: Relationship to legislation)",
+    "statedSubjects": [
+      {
+        "name": "Optometry",
+        "locator": "(D1, title; front matter; 2.8)",
+        "kind": "subject",
+        "codes": [
+          {
+            "scheme": "hecos",
+            "code": "100036",
+            "label": "optometry"
+          },
+          {
+            "scheme": "cah",
+            "code": "CAH02-06-03",
+            "label": "ophthalmics"
+          }
+        ]
+      }
+    ],
+    "subjects": "see front matter (subjectScope subjects)"
+  },
+  "statedSubjects": [
+    {
+      "name": "Optometry",
+      "locator": "(D1, title; front matter; 2.8)",
+      "kind": "subject",
+      "codes": [
+        {
+          "scheme": "hecos",
+          "code": "100036",
+          "label": "optometry"
+        },
+        {
+          "scheme": "cah",
+          "code": "CAH02-06-03",
+          "label": "ophthalmics"
+        }
+      ]
+    }
+  ],
+  "structure": [
+    {
+      "number": "1.1",
+      "order": 3,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Context",
+      "gloss": "what the discipline joins and who optometrists are"
+    },
+    {
+      "number": "1.2",
+      "order": 4,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Context",
+      "gloss": "where graduates work, from community practice to hospitals and industry"
+    },
+    {
+      "number": "1.3",
+      "order": 5,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Context",
+      "gloss": "functions reserved by law and the route to therapeutic prescribing"
+    },
+    {
+      "number": "1.4",
+      "order": 6,
+      "componentType": "stem",
+      "parent": "section 1",
+      "heading": "Purposes of an Optometry degree",
+      "gloss": "the aims of the degree in three groups: professionals, patients, the profession"
+    },
+    {
+      "number": "1.5",
+      "order": 7,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Characteristics of an Optometry degree",
+      "gloss": "each provider sets its own course within accreditation"
+    },
+    {
+      "number": "1.6",
+      "order": 8,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Characteristics of an Optometry degree",
+      "gloss": "clinical skills built on scientific knowledge"
+    },
+    {
+      "number": "1.7",
+      "order": 9,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Characteristics of an Optometry degree",
+      "gloss": "a spiral curriculum towards complex patients and autonomy"
+    },
+    {
+      "number": "1.8",
+      "order": 10,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Characteristics of an Optometry degree",
+      "gloss": "specialist qualifications that may be built into the degree"
+    },
+    {
+      "number": "1.9",
+      "order": 11,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion",
+      "gloss": "equality and inclusion across the statement and the shared duty to promote them"
+    },
+    {
+      "number": "1.10",
+      "order": 12,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion",
+      "gloss": "evidence-based yet personalised, patient-centred care"
+    },
+    {
+      "number": "1.11",
+      "order": 13,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion",
+      "gloss": "diverse contributors in the curriculum and room to follow personal interests"
+    },
+    {
+      "number": "1.12",
+      "order": 14,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion",
+      "gloss": "weighing the effects of innovation and reflecting on practice"
+    },
+    {
+      "number": "1.13",
+      "order": 15,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Equality, diversity and inclusion",
+      "gloss": "a wide range of patients met in the curriculum"
+    },
+    {
+      "number": "1.14",
+      "order": 16,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "accessible learning and assessment within patient safety and regulator standards"
+    },
+    {
+      "number": "1.15",
+      "order": 17,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "varied learning and assessment for access and a diverse student body"
+    },
+    {
+      "number": "1.16",
+      "order": 18,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Accessibility",
+      "gloss": "accessible course design without risk to patients"
+    },
+    {
+      "number": "1.17",
+      "order": 19,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Education for sustainable development",
+      "gloss": "sustainability, the global goals and visual health"
+    },
+    {
+      "number": "1.18",
+      "order": 20,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Employability, enterprise and entrepreneurship",
+      "gloss": "preparing students for working life inside and beyond clinical practice"
+    },
+    {
+      "number": "1.19",
+      "order": 21,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Employability, enterprise and entrepreneurship",
+      "gloss": "enterprise education given commercial practice ownership"
+    },
+    {
+      "number": "1.20",
+      "order": 22,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Employability, enterprise and entrepreneurship",
+      "gloss": "what enterprise means in the subject"
+    },
+    {
+      "number": "1.21",
+      "order": 23,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Employability, enterprise and entrepreneurship",
+      "gloss": "what entrepreneurship means and its value beyond commerce"
+    },
+    {
+      "number": "1.22",
+      "order": 24,
+      "componentType": "paragraph",
+      "parent": "section 1",
+      "heading": "Employability, enterprise and entrepreneurship",
+      "gloss": "topics that enterprise education may cover"
+    },
+    {
+      "number": "2.1",
+      "order": 26,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "entry routes and foundation courses"
+    },
+    {
+      "number": "2.2",
+      "order": 27,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "extended learning in practice that the regulator requires"
+    },
+    {
+      "number": "2.3",
+      "order": 28,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "supervised practice building readiness for registration"
+    },
+    {
+      "number": "2.4",
+      "order": 29,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "from campus clinics to distant placements"
+    },
+    {
+      "number": "2.5",
+      "order": 30,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "the regulator's seven categories taught through a spiral curriculum"
+    },
+    {
+      "number": "2.6",
+      "order": 31,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Design",
+      "gloss": "extra professional qualifications at or near graduation"
+    },
+    {
+      "number": "2.7",
+      "order": 32,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "progression through levels towards the threshold skills"
+    },
+    {
+      "number": "2.8",
+      "order": 33,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "single-subject study with room for interdisciplinary work"
+    },
+    {
+      "number": "2.9",
+      "order": 34,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "course design on Miller's pyramid"
+    },
+    {
+      "number": "2.10",
+      "order": 35,
+      "componentType": "stem",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "progressive learning supported by four kinds of strategy"
+    },
+    {
+      "number": "2.11",
+      "order": 36,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Progression",
+      "gloss": "progression rules, resits and exit awards that do not register"
+    },
+    {
+      "number": "2.12",
+      "order": 37,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "modes and patterns of study"
+    },
+    {
+      "number": "2.13",
+      "order": 38,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "diverse delivery fitted to learner and material"
+    },
+    {
+      "number": "2.14",
+      "order": 39,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "practical, reflective sessions in real and simulated settings"
+    },
+    {
+      "number": "2.15",
+      "order": 40,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "courses able to change and to withstand disruption"
+    },
+    {
+      "number": "2.16",
+      "order": 41,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Flexibility",
+      "gloss": "courses able to respond to new technology and AI"
+    },
+    {
+      "number": "2.17",
+      "order": 42,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "partnerships with placement hosts and their oversight"
+    },
+    {
+      "number": "2.18",
+      "order": 43,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "work-based practice and an employability strategy"
+    },
+    {
+      "number": "2.19",
+      "order": 44,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "student societies and learned bodies"
+    },
+    {
+      "number": "2.20",
+      "order": 45,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "students as partners and the student voice"
+    },
+    {
+      "number": "2.21",
+      "order": 46,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Partnership",
+      "gloss": "patients as partners in course design and review"
+    },
+    {
+      "number": "2.22",
+      "order": 47,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "course monitoring and periodic review"
+    },
+    {
+      "number": "2.23",
+      "order": 48,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "external reviewers in periodic review"
+    },
+    {
+      "number": "2.24",
+      "order": 49,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "whose feedback review draws on, and embedding ESD and EDI"
+    },
+    {
+      "number": "2.25",
+      "order": 50,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "the external examiner system"
+    },
+    {
+      "number": "2.26",
+      "order": 51,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "ongoing evaluation and who takes part in improving courses"
+    },
+    {
+      "number": "2.27",
+      "order": 52,
+      "componentType": "paragraph",
+      "parent": "section 2",
+      "heading": "Monitoring and review",
+      "gloss": "evaluation and accreditation by professional and regulatory bodies"
+    },
+    {
+      "number": "3.1",
+      "order": 54,
+      "componentType": "stem",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "three topic areas and the key skills courses build"
+    },
+    {
+      "number": "3.2",
+      "order": 55,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "the scientific and theoretical content"
+    },
+    {
+      "number": "3.3",
+      "order": 56,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "the clinical content"
+    },
+    {
+      "number": "3.4",
+      "order": 57,
+      "componentType": "area",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "the regulator's outcomes under seven categories"
+    },
+    {
+      "number": "3.5",
+      "order": 58,
+      "componentType": "stem",
+      "parent": "section 3",
+      "heading": "Content",
+      "gloss": "the regulator's outcomes for registration as abilities"
+    },
+    {
+      "number": "3.6",
+      "order": 59,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "teaching for registered practice, not prescribed in method"
+    },
+    {
+      "number": "3.7",
+      "order": 60,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "from structured towards self-directed learning"
+    },
+    {
+      "number": "3.8",
+      "order": 61,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "teaching that keeps pace, and staff development"
+    },
+    {
+      "number": "3.9",
+      "order": 62,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "student-centred delivery across modes and settings"
+    },
+    {
+      "number": "3.10",
+      "order": 63,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "the range of learning activities"
+    },
+    {
+      "number": "3.11",
+      "order": 64,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Teaching and learning",
+      "gloss": "equal access through inclusive design and adjustments"
+    },
+    {
+      "number": "3.12",
+      "order": 65,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "aligned, authentic assessment of all regulator outcomes"
+    },
+    {
+      "number": "3.13",
+      "order": 66,
+      "componentType": "stem",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "six qualities assessment balances"
+    },
+    {
+      "number": "3.14",
+      "order": 67,
+      "componentType": "stem",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "three properties assessment has"
+    },
+    {
+      "number": "3.15",
+      "order": 68,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "evidence-based assessment, standard setting and moderation"
+    },
+    {
+      "number": "3.16",
+      "order": 69,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "assessment matched to the layers of Miller's pyramid"
+    },
+    {
+      "number": "3.17",
+      "order": 70,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "written and practical kinds of assessment evidence"
+    },
+    {
+      "number": "3.18",
+      "order": 71,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Assessment",
+      "gloss": "unfamiliar problems and research skills at master's level"
+    },
+    {
+      "number": "3.19",
+      "order": 72,
+      "componentType": "practice",
+      "parent": "section 3",
+      "heading": "Feedback and feedforward",
+      "gloss": "qualities of feedback and feedforward"
+    },
+    {
+      "number": "3.20",
+      "order": 73,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Feedback and feedforward",
+      "gloss": "what feedback does for learners"
+    },
+    {
+      "number": "3.21",
+      "order": 74,
+      "componentType": "paragraph",
+      "parent": "section 3",
+      "heading": "Feedback and feedforward",
+      "gloss": "feedforward, evaluative skill and psychological safety"
+    },
+    {
+      "number": "4.1",
+      "order": 76,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Introduction",
+      "gloss": "the standards as the threshold for the master's"
+    },
+    {
+      "number": "4.2",
+      "order": 77,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Introduction",
+      "gloss": "providers judge evidence of achievement with Annex D"
+    },
+    {
+      "number": "4.3",
+      "order": 78,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Threshold level: subject knowledge, understanding and skills",
+      "gloss": "the threshold standard for entry to a regulated profession"
+    },
+    {
+      "number": "4.4",
+      "order": 79,
+      "componentType": "paragraph",
+      "parent": "section 4",
+      "heading": "Threshold level: subject knowledge, understanding and skills",
+      "gloss": "threshold summaries of the regulator's seven outcome categories"
+    },
+    {
+      "number": "4.5",
+      "order": 80,
+      "componentType": "stem",
+      "parent": "section 4",
+      "heading": "Threshold level: generic skills",
+      "gloss": "sixteen generic skills on graduating"
+    },
+    {
+      "number": "1",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Context and purposes of an Optometry degree",
+      "gloss": "section 1"
+    },
+    {
+      "number": "2",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Distinctive features of an Optometry degree",
+      "gloss": "section 2"
+    },
+    {
+      "number": "3",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Content, structure and delivery",
+      "gloss": "section 3"
+    },
+    {
+      "number": "4",
+      "componentType": "section",
+      "parent": "none",
+      "heading": "Benchmark standards",
+      "gloss": "section 4"
+    }
+  ],
+  "frameworkAlignment": {
+    "levels": [
+      {
+        "id": "fheq:7",
+        "role": "cites",
+        "locator": "D1, front matter: Relationship to legislation"
+      },
+      {
+        "id": "fqheis:11",
+        "role": "cites",
+        "locator": "D1, front matter: Relationship to legislation"
+      },
+      {
+        "id": "fheq:6",
+        "role": "cites",
+        "locator": "D1, front matter: the BSc this award replaces"
+      },
+      {
+        "id": "fqheis:10",
+        "role": "cites",
+        "locator": "D1, front matter: the BSc this award replaces"
+      },
+      {
+        "id": "spine:7",
+        "role": "refers",
+        "locator": "std:ref:uk-framework R2 and R8 (inferred: Part E)"
+      }
+    ],
+    "crosswalks": [
+      {
+        "from": "fheq:7",
+        "to": "fqheis:11",
+        "relation": "equivalent",
+        "basis": "stated (D1, front matter: \"integrated master's (FHEQ Level 7; FQHEIS Level 11)\")"
+      },
+      {
+        "from": "fheq:6",
+        "to": "fqheis:10",
+        "relation": "equivalent",
+        "basis": "stated (D1, front matter: the BSc in Optometry at FHEQ Level 6, FQHEIS Level 10)"
+      },
+      {
+        "from": "fheq:7",
+        "to": "cqfw:7",
+        "relation": "compares-with",
+        "basis": "inferred from std:doc:qaa-fheq-2024-framework 2.24 and std:ref:uk-framework R2 (Part E)"
+      }
+    ]
+  },
+  "tierReadings": {
+    "rows": [
+      {
+        "rowId": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "practice": "carries out eye examinations and draws up evidence-informed management plans within their scope, tailoring care to each patient and safeguarding anyone at risk",
+        "knowledge": "how research and enquiry build optometric knowledge, the evidence behind clinical decisions on unfamiliar problems and the business workings of optometric practice",
+        "identity": "a registrable optometrist who answers for patient outcomes, keeps high ethical standards, is candid about mistakes, challenges their own biases and owns lifelong professional development",
+        "groundingIds": [
+          "qaa/optometry-2024/3.5.b3",
+          "qaa/optometry-2024/4.4.b3",
+          "qaa/optometry-2024/4.4.b1",
+          "qaa/optometry-2024/4.4.b5",
+          "qaa/optometry-2024/4.5.b5",
+          "qaa/optometry-2024/3.18",
+          "qaa/optometry-2024/4.4.b4",
+          "qaa/optometry-2024/4.4.b7"
+        ]
+      }
+    ],
+    "note": "Level 7 only: the statement covers the registerable master's degree, so there are no d2, d3 or e2 rows. The statement says little about subject knowledge as such, so the knowledge reading rests on its research and evidence statements.",
+    "source": {
+      "repo": "wkspc2614-adapt",
+      "path": "source-kb/canon-adp/secondary-data/ingested/themes/pathways/integrations/cards/wide/benchmarks/optometry-2024.yaml",
+      "run": "std:doc:qaa-optometry-2024-benchmarks",
+      "note": "Subject-benchmark card readings: our own per-tier synthesis of the statements each row cites; no issuer text copied."
+    }
+  },
+  "themes": [
+    {
+      "id": "theme:edi",
+      "role": "carries",
+      "carriedIn": [
+        "1.9",
+        "1.10",
+        "1.11",
+        "1.12",
+        "1.13",
+        "2.24",
+        "3.2",
+        "4.5"
+      ]
+    },
+    {
+      "id": "theme:accessibility",
+      "role": "carries",
+      "carriedIn": [
+        "1.14",
+        "1.15",
+        "1.16",
+        "2.26",
+        "3.9",
+        "3.11",
+        "3.14"
+      ]
+    },
+    {
+      "id": "theme:esd",
+      "role": "carries",
+      "carriedIn": [
+        "1.17",
+        "2.24",
+        "4.5"
+      ]
+    },
+    {
+      "id": "theme:enterprise",
+      "role": "carries",
+      "carriedIn": [
+        "1.18",
+        "1.19",
+        "1.20",
+        "1.21",
+        "1.22",
+        "2.18",
+        "3.12",
+        "4.5"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "rel": "partOf",
+      "target": "collection: QAA Subject Benchmark Statements",
+      "note": "one of 54 held by stan"
+    },
+    {
+      "rel": "supersedes",
+      "target": "std:doc:qaa-optometry-2019-benchmarks (not yet ingested)",
+      "note": "the 2019 BSc statement is subsumed here but still available separately (front matter)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fheq-2024-framework, Annex D",
+      "note": "providers refer to it for evidence of achievement (4.2); it describes Level 6 and FQHEIS Level 10 classes"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fheq-2024-framework",
+      "note": "FHEQ Levels 6 and 7 (front matter)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-fqheis-2024-framework",
+      "note": "FQHEIS Levels 10 and 11 (front matter)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-advancehe-esd-2021-guidance",
+      "note": "ESD guidance (1.17)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "std:doc:qaa-enterprise-2018-guidance",
+      "note": "enterprise and entrepreneurship guidance (1.22)"
+    },
+    {
+      "rel": "refersTo",
+      "target": "General Optical Council, Requirements for Approved Qualifications in Optometry or Dispensing Optics (not yet ingested)",
+      "note": "front matter, 2.5, 3.4: the regulator's outcomes this statement summarises"
+    },
+    {
+      "rel": "refersTo",
+      "target": "QAA Quality Code, Advice and Guidance (not yet ingested)",
+      "note": "front matter, 2.22"
+    }
+  ],
+  "currency": {
+    "published": "2024-04",
+    "lastReviewed": "none-stated",
+    "reviewCycle": "none-stated",
+    "consultation": "none-stated; an advisory group is named (section 6)",
+    "replacedBy": "none"
+  },
+  "terminology": {
+    "concepts": [
+      {
+        "slug": "registerable-integrated-masters",
+        "definition": "an integrated master's at FHEQ Level 7 (FQHEIS Level 11) that brings patient-facing learning into the degree so its graduates can join the regulator's register as fully qualified optometrists (D1, front matter)",
+        "beneficiaryDefinition": "the master's course that lets you register as an optometrist when you graduate",
+        "scopeNote": "replaces the BSc route; the only award this statement covers",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "millers-pyramid",
+        "definition": "a hierarchy of clinical competence used in health education with four layers, knows, knows how, shows how and does, used here for course design and for matching assessment (D1, 2.9; 3.16)",
+        "beneficiaryDefinition": "a way of describing how clinical skill grows, from knowing about something to doing it reliably in practice",
+        "scopeNote": "named for theory ingest (Part E)",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "enterprise",
+        "definition": "a mix of creativity, originality, innovation, adaptability, reflection, problem-solving, expression, communication and practical action (D1, 1.20)",
+        "beneficiaryDefinition": "the creative, practical and problem-solving qualities that help you make things happen",
+        "scopeNote": "paired with entrepreneurship",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "entrepreneurship",
+        "definition": "using enterprise behaviours to create social, cultural or economic value, in private, public and third sectors alike (D1, 1.21)",
+        "beneficiaryDefinition": "using enterprising qualities to create value of any kind, not only profit",
+        "scopeNote": "not restricted to commercial activity",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "feedforward",
+        "definition": "guidance that looks ahead to future assignments on how to improve, as distinct from feedback on current performance (D1, 3.20; 3.21)",
+        "beneficiaryDefinition": "advice on how to do better in your next piece of work",
+        "scopeNote": "used with feedback",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      },
+      {
+        "slug": "threshold-standard",
+        "definition": "what a student will have shown on being awarded the master's, the abilities expected of a graduate entering a regulated healthcare profession (D1, 4.1; 4.3)",
+        "beneficiaryDefinition": "the level you need to reach to gain the award and enter the profession",
+        "scopeNote": "the only rung this statement sets",
+        "category": "unknown",
+        "practices": [
+          "education"
+        ]
+      }
+    ],
+    "terms": [
+      {
+        "concept": "registerable-integrated-masters",
+        "form": "registerable integrated master's",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "millers-pyramid",
+        "form": "Miller's pyramid of clinical competence",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "discipline-specific"
+      },
+      {
+        "concept": "enterprise",
+        "form": "enterprise",
+        "lang": "en",
+        "partOfSpeech": "noun",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "entrepreneurship",
+        "form": "entrepreneurship",
+        "lang": "en",
+        "partOfSpeech": "noun",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "feedforward",
+        "form": "feedforward",
+        "lang": "en",
+        "partOfSpeech": "noun",
+        "termStatus": "preferred",
+        "register": "formal"
+      },
+      {
+        "concept": "threshold-standard",
+        "form": "threshold standard",
+        "lang": "en",
+        "partOfSpeech": "noun-phrase",
+        "termStatus": "preferred",
+        "register": "formal"
+      }
+    ]
+  },
+  "digest": {
+    "definition": "Optometry joins scientific knowledge with patient-facing clinical skill to secure the best vision and eye health; optometrists are registered healthcare professionals who detect, diagnose, manage and rehabilitate conditions of the eye and visual system",
+    "distinctiveFeatures": [
+      "Optometry joins scientific knowledge with patient-facing clinical skill to secure the best vision and eye health; optometrists are registered healthcare professionals who detect, diagnose, manage and rehabilitate conditions of the eye and visual system",
+      "It is a regulated profession: the General Optical Council approves qualifications, and some functions such as sight testing and contact lens fitting are reserved by law",
+      "Its graduates work mainly in community primary care but also in hospitals, private clinics, universities, charities and industry, often in portfolio careers",
+      "Its course is a single-subject integrated master's that leads to registration, built as a spiral curriculum from theory and simulation to extended placements",
+      "Its standards follow the regulator's seven categories: person-centred care, communication, clinical practice, ethics and standards, risk, leadership and management, and lifelong learning",
+      "Clinical competence is framed by Miller's pyramid, from knowing to doing, in both design and assessment",
+      "Patients and students are treated as partners in designing and reviewing courses"
+    ],
+    "themesInSubject": [
+      {
+        "theme": "theme:edi",
+        "inThisSubject": "evidence-based but personalised care for every patient; diverse contributors and patient presentations in the curriculum; social determinants, disparities, bias and disability as content; EDI in practice as a generic skill (D1, 1.9 to 1.13; 3.2; 4.5)",
+        "statements": [
+          "qaa/optometry-2024/1.10",
+          "qaa/optometry-2024/1.11",
+          "qaa/optometry-2024/1.13",
+          "qaa/optometry-2024/4.5.b11",
+          "qaa/optometry-2024/4.5.b14"
+        ]
+      },
+      {
+        "theme": "theme:accessibility",
+        "inThisSubject": "access by inclusive design and reasonable adjustment, bounded by patient safety and the regulator's standards; accessible clinical elements (D1, 1.14 to 1.16; 3.11; 3.14)",
+        "statements": [
+          "qaa/optometry-2024/1.14",
+          "qaa/optometry-2024/1.15",
+          "qaa/optometry-2024/1.16",
+          "qaa/optometry-2024/3.14.b3"
+        ]
+      },
+      {
+        "theme": "theme:esd",
+        "inThisSubject": "visual health as a global and community health challenge, with the UN goals for health and environment as possible topics; sustainable working and waste in practice (D1, 1.17; 2.24; 4.5)",
+        "statements": [
+          "qaa/optometry-2024/1.17",
+          "qaa/optometry-2024/2.24",
+          "qaa/optometry-2024/4.5.b13"
+        ]
+      },
+      {
+        "theme": "theme:enterprise",
+        "inThisSubject": "many registrants own or franchise practices or work in commercial, manufacturing or charitable settings; employability as a core outcome with placements and employer contact (D1, 1.18 to 1.22; 2.18; 3.12; 4.5)",
+        "statements": [
+          "qaa/optometry-2024/1.18",
+          "qaa/optometry-2024/1.19",
+          "qaa/optometry-2024/2.18",
+          "qaa/optometry-2024/4.5.b15"
+        ]
+      }
+    ],
+    "contentAndDelivery": {
+      "areas": [
+        {
+          "component": "3.1",
+          "gloss": "three topic areas: basic and clinical sciences; law, professional standards and ethics; leadership and management"
+        },
+        {
+          "component": "3.2",
+          "gloss": "optics, ophthalmic devices, perception, ocular biology and disease, imaging, pharmacology, statistics, law and ethics, communication, AI, and social determinants of eye health"
+        },
+        {
+          "component": "3.3",
+          "gloss": "history-taking, visual function, examination techniques, clinical decision-making, prescribing and dispensing, diagnosis and management, evidence-based practice"
+        },
+        {
+          "component": "3.4",
+          "gloss": "the regulator's seven outcome categories for registration"
+        }
+      ],
+      "practices": [
+        {
+          "component": "3.6",
+          "kind": "teaching",
+          "gloss": "authentic clinical learning and reflective practice, methods not prescribed"
+        },
+        {
+          "component": "3.9",
+          "kind": "teaching",
+          "gloss": "synchronous, asynchronous and blended delivery; experiential learning across clinical settings; simulation"
+        },
+        {
+          "component": "3.10",
+          "kind": "learning",
+          "gloss": "lectures, labs, workshops, problem- and team-based learning, simulations, placements, portfolios and research projects"
+        },
+        {
+          "component": "3.12",
+          "kind": "assessment",
+          "gloss": "authentic, rigorous assessment mapped to every regulator outcome and able to separate threshold from higher achievement"
+        },
+        {
+          "component": "3.16",
+          "kind": "assessment",
+          "gloss": "assessment matched to the layers of Miller's pyramid"
+        },
+        {
+          "component": "3.17",
+          "kind": "assessment",
+          "gloss": "written evidence (reports, essays, logbooks, examinations) and practical evidence (OSCEs, observed encounters, EPAs)"
+        },
+        {
+          "component": "3.19",
+          "kind": "assessment",
+          "gloss": "personal, timely feedback and feedforward"
+        }
+      ]
+    },
+    "standards": {
+      "rungs": [
+        {
+          "rung": "threshold",
+          "leadIn": "4.3",
+          "award": "integrated master's",
+          "items": 23
+        }
+      ],
+      "rungBases": "threshold only: 4.1 and 4.3 define it as what a student has shown on being awarded the master's; 4.4 summarises the regulator's seven categories at threshold and 4.5 lists generic skills, which 2.7 calls threshold-level; no typical or excellent rung; 4.2 points to Annex D for evidence of achievement",
+      "outcomeLists": [
+        {
+          "leadIn": "3.1",
+          "gloss": "key skills courses should equip graduates with",
+          "items": 5,
+          "award": [
+            "integrated master's"
+          ]
+        },
+        {
+          "leadIn": "3.5",
+          "gloss": "the regulator's outcomes for registration, as abilities",
+          "items": 7,
+          "award": [
+            "integrated master's"
+          ]
+        }
+      ],
+      "outcomes": [
+        {
+          "outcome": "person-centred care",
+          "threshold": "qaa/optometry-2024/4.4.b1",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "subject-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "communication",
+          "threshold": "qaa/optometry-2024/4.4.b2",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "generic-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "clinical practice",
+          "threshold": "qaa/optometry-2024/4.4.b3",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "subject-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "ethics and standards",
+          "threshold": "qaa/optometry-2024/4.4.b4",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "subject-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "risk",
+          "threshold": "qaa/optometry-2024/4.4.b5",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "subject-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "leadership and management",
+          "threshold": "qaa/optometry-2024/4.4.b6",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "subject-skill",
+          "award": "integrated master's"
+        },
+        {
+          "outcome": "lifelong learning",
+          "threshold": "qaa/optometry-2024/4.4.b7",
+          "typical": "none",
+          "excellent": "none",
+          "basis": "stated",
+          "domain": "generic-skill",
+          "award": "integrated master's"
+        }
+      ]
+    },
+    "bodies": [
+      {
+        "body": "General Optical Council (GOC)",
+        "says": "the statutory regulator for the optical professions in the UK, under the Opticians Act 1989: it approves qualifications, sets standards, keeps the registers and handles fitness to practise; its 2021 requirements for approved qualifications drive the move to the integrated master's; students must by law stay registered with it throughout, and providers check this; its seven outcome categories frame the standards (D1, front matter; 2.2; 2.5; 3.1; 3.4; 3.5; 3.12; 4.4)",
+        "requirements": "not yet ingested (Part E)"
+      },
+      {
+        "body": "Optometry Schools Council",
+        "says": "an education and professional body whose expectations providers may consider (D1, front matter)",
+        "requirements": "not-applicable-by-design"
+      },
+      {
+        "body": "Sector Partnership for Optical Knowledge and Education (SPOKE)",
+        "says": "an education and professional body providers may consider; listed under the College of Optometrists in the references (D1, front matter; section 5)",
+        "requirements": "not-applicable-by-design"
+      },
+      {
+        "body": "Office for Students (OfS)",
+        "says": "in England, benchmark statements are not sector-recognised standards under its framework; it gives guidance on monitoring placement activity (D1, front matter; 2.22)",
+        "requirements": "not-applicable-by-design"
+      }
+    ],
+    "crossCuttingReferences": {
+      "themes": [
+        {
+          "id": "theme:edi",
+          "named": "Equality, diversity and inclusion",
+          "carriedIn": [
+            "front matter",
+            "1.9",
+            "1.10",
+            "1.11",
+            "1.12",
+            "1.13",
+            "2.24",
+            "3.2",
+            "4.5"
+          ],
+          "statements": [
+            "qaa/optometry-2024/1.10",
+            "qaa/optometry-2024/1.11",
+            "qaa/optometry-2024/1.13",
+            "qaa/optometry-2024/2.24",
+            "qaa/optometry-2024/4.5.b11",
+            "qaa/optometry-2024/4.5.b14"
+          ]
+        },
+        {
+          "id": "theme:accessibility",
+          "named": "Accessibility (front matter: accessibility and the needs of disabled students)",
+          "carriedIn": [
+            "front matter",
+            "1.14",
+            "1.15",
+            "1.16",
+            "2.26",
+            "3.9",
+            "3.11",
+            "3.14"
+          ],
+          "statements": [
+            "qaa/optometry-2024/1.14",
+            "qaa/optometry-2024/1.15",
+            "qaa/optometry-2024/1.16",
+            "qaa/optometry-2024/2.26",
+            "qaa/optometry-2024/3.14.b3"
+          ]
+        },
+        {
+          "id": "theme:esd",
+          "named": "Education for sustainable development",
+          "carriedIn": [
+            "front matter",
+            "1.17",
+            "2.24",
+            "4.5"
+          ],
+          "statements": [
+            "qaa/optometry-2024/1.17",
+            "qaa/optometry-2024/2.24",
+            "qaa/optometry-2024/4.5.b13"
+          ]
+        },
+        {
+          "id": "theme:enterprise",
+          "named": "Employability, enterprise and entrepreneurship (front matter: employability, entrepreneurship and enterprise education)",
+          "carriedIn": [
+            "front matter",
+            "1.18",
+            "1.19",
+            "1.20",
+            "1.21",
+            "1.22",
+            "2.18",
+            "3.12",
+            "4.5"
+          ],
+          "statements": [
+            "qaa/optometry-2024/1.18",
+            "qaa/optometry-2024/1.19",
+            "qaa/optometry-2024/2.18",
+            "qaa/optometry-2024/3.12",
+            "qaa/optometry-2024/4.5.b15"
+          ]
+        }
+      ],
+      "frameworks": [
+        {
+          "framework": "fheq",
+          "levels": [
+            "fheq:6",
+            "fheq:7"
+          ],
+          "citedIn": [
+            "front matter",
+            "4.2"
+          ]
+        },
+        {
+          "framework": "scqf",
+          "levels": [
+            "fqheis:10",
+            "fqheis:11"
+          ],
+          "citedIn": [
+            "front matter"
+          ]
+        }
+      ],
+      "bodies": [
+        {
+          "body": "General Optical Council",
+          "citedIn": [
+            "front matter",
+            "1.4",
+            "2.2",
+            "2.5",
+            "3.1",
+            "3.4",
+            "3.5",
+            "3.12",
+            "4.4"
+          ]
+        },
+        {
+          "body": "Optometry Schools Council",
+          "citedIn": [
+            "front matter"
+          ]
+        },
+        {
+          "body": "Sector Partnership for Optical Knowledge and Education",
+          "citedIn": [
+            "front matter"
+          ]
+        },
+        {
+          "body": "Office for Students",
+          "citedIn": [
+            "front matter",
+            "2.22"
+          ]
+        },
+        {
+          "body": "Universities UK",
+          "citedIn": [
+            "2.22"
+          ]
+        }
+      ],
+      "sharedDocuments": [
+        {
+          "document": "std:doc:qaa-fheq-2024-framework, Annex D",
+          "named": "Annex D in The Frameworks for Higher Education Qualifications of UK Degree-Awarding Bodies",
+          "citedIn": [
+            "4.2"
+          ],
+          "role": "providers refer to it in deciding evidence of achievement"
+        },
+        {
+          "document": "std:doc:qaa-advancehe-esd-2021-guidance",
+          "named": "the QAA and Advance HE guidance (on education for sustainable development)",
+          "citedIn": [
+            "1.17"
+          ],
+          "role": "further information on the ESD theme"
+        },
+        {
+          "document": "std:doc:qaa-enterprise-2018-guidance",
+          "named": "Enterprise and Entrepreneurship Education: Guidance for UK Higher Education Providers",
+          "citedIn": [
+            "1.22"
+          ],
+          "role": "further information on the enterprise theme"
+        },
+        {
+          "document": "QAA Quality Code, Advice and Guidance (not yet ingested)",
+          "named": "Advice and Guidance to support the Quality Code; QAA advice and guidance",
+          "citedIn": [
+            "front matter",
+            "2.22"
+          ],
+          "role": "course design, teaching, external expertise, monitoring"
+        },
+        {
+          "document": "QAA Glossary (not ingested)",
+          "named": "QAA's Glossary",
+          "citedIn": [
+            "front matter"
+          ],
+          "role": "explains unfamiliar terms"
+        },
+        {
+          "document": "Opticians Act 1989 (law)",
+          "named": "Opticians Act 1989",
+          "citedIn": [
+            "front matter",
+            "1.3",
+            "4.4"
+          ],
+          "role": "the regulator's powers, reserved functions, student registration"
+        },
+        {
+          "document": "Equality Act 2010 (law)",
+          "named": "Equality Act 2010",
+          "citedIn": [
+            "1.14"
+          ],
+          "role": "duties behind accessibility"
+        },
+        {
+          "document": "UN Sustainable Development Goals (external)",
+          "named": "United Nations Sustainable Development Goals",
+          "citedIn": [
+            "1.17"
+          ],
+          "role": "possible source of ESD topics"
+        },
+        {
+          "document": "General Optical Council requirements for approved qualifications (not yet ingested: Part E)",
+          "named": "Requirements for Approved Qualifications in Optometry or Dispensing Optics; Outcomes for GOC registration; Standards of Practice",
+          "citedIn": [
+            "front matter",
+            "2.5",
+            "3.4",
+            "4.4"
+          ],
+          "role": "the regulator's outcomes and standards the statement summarises"
+        }
+      ]
+    },
+    "skills": {
+      "subjectSpecific": [
+        {
+          "id": "qaa/optometry-2024/3.1.b1",
+          "text": "Your course should prepare you to work within your scope of practice and give care that is safe, lawful and effective."
+        },
+        {
+          "id": "qaa/optometry-2024/3.1.b2",
+          "text": "Your course should help you think critically and base your clinical decisions on evidence."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b1",
+          "text": "To register, you must be able to adapt your care to each patient, taking account of their social, clinical, personal and cultural needs."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b3",
+          "text": "To register, you must be able to carry out the right eye examinations and plan care based on evidence, within the limits of what you are trained and allowed to do."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b4",
+          "text": "To register, you must be able to keep to high, fair professional and ethical standards and work within the law."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b5",
+          "text": "To register, you must be able to spot risks to patients, colleagues and others and act to keep them safe."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b6",
+          "text": "To register, you must be able to show clinical leadership and take part in clinical governance, improving services and public health work."
+        }
+      ],
+      "transferable": [
+        {
+          "id": "qaa/optometry-2024/3.1.b3",
+          "text": "Your course should help you judge research papers and other sources of information critically."
+        },
+        {
+          "id": "qaa/optometry-2024/3.1.b4",
+          "text": "Your course should help you communicate well, both in speech and in writing."
+        },
+        {
+          "id": "qaa/optometry-2024/3.1.b5",
+          "text": "Your course should help you reflect on your practice in a way that supports your learning throughout your career."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b2",
+          "text": "To register, you must be able to communicate well with patients and with other professionals."
+        },
+        {
+          "id": "qaa/optometry-2024/3.5.b7",
+          "text": "To register, you must be able to keep your knowledge and skills up to date and judge your own performance to give patients better care."
+        }
+      ]
+    }
+  },
+  "statements": [
+    {
+      "id": "qaa/optometry-2024/1.7",
+      "locator": {
+        "number": "1.7",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Characteristics of an Optometry degree"
+        ]
+      },
+      "span": {
+        "start": 15837,
+        "end": 16256
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:7",
+      "appliesTo": "students of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "develop"
+      ],
+      "about": "growing capability with complex patients",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Students will gain the ability to care for patients of rising complexity, usually through a spiral curriculum that starts with theory, observation and simulation and adds complexity and autonomy over time.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Sequence the course so that students will build the capability to manage ever more complex patients: theory with observed and simulated clinics early on, more complexity and learner autonomy later.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You will build up your ability to care for patients with more complex needs, starting with theory, observation and simulation and taking on more independence as the course goes on.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.10",
+      "locator": {
+        "number": "1.10",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Equality, diversity and inclusion"
+        ]
+      },
+      "span": {
+        "start": 17273,
+        "end": 17725
+      },
+      "stem": "none",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "navigate"
+      ],
+      "about": "personalised care grounded in evidence",
+      "themes": [
+        "theme:edi"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Since practice rests on accurate, objective observation and care must suit every patient, graduates will be able to tailor each clinical encounter so that care stays both evidence-based and centred on the person.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates will be able to balance evidence-based decisions with the needs of the individual patient, personalising clinical interactions while keeping care grounded in fact.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You will be able to adapt how you deal with each patient to their needs while keeping your clinical decisions firmly based on evidence.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.11",
+      "locator": {
+        "number": "1.11",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Equality, diversity and inclusion"
+        ]
+      },
+      "span": {
+        "start": 17725,
+        "end": 18243
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "curricula in the subject",
+      "addressee": "provider",
+      "verbs": [
+        "recognise",
+        "acknowledge",
+        "explore"
+      ],
+      "about": "diverse contributors and personal interests in the curriculum",
+      "themes": [
+        "theme:edi"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Curricula should credit the work of vision scientists and optical and healthcare professionals from varied backgrounds, accept that different cultures bring different insights, and let learners pursue topics that connect with their own aims, lives and cultures.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Build into the curriculum the contributions of scientists and practitioners of diverse backgrounds and identities, and give learners scope to explore Optometry topics linked to their aspirations, lived experience or culture.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in shaping its curriculum; the student meets its effect",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.13",
+      "locator": {
+        "number": "1.13",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Equality, diversity and inclusion"
+        ]
+      },
+      "span": {
+        "start": 18557,
+        "end": 18712
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "curriculum content",
+      "addressee": "provider",
+      "verbs": [
+        "expose"
+      ],
+      "about": "a broad range of patient presentations",
+      "themes": [
+        "theme:edi"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Curriculum content should bring students into contact with a wide spread of patient experiences and presentations, so that good care can be given anywhere in the UK.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Make sure the curriculum shows students a broad range of patient experiences and presentations, so they can care well for patients across the whole of the UK.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in choosing its content",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.14",
+      "locator": {
+        "number": "1.14",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Accessibility"
+        ]
+      },
+      "span": {
+        "start": 18727,
+        "end": 19435
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "ensure"
+      ],
+      "about": "accessible learning and assessment within patient safety",
+      "themes": [
+        "theme:accessibility"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should offer every student equally accessible learning and assessment, through inclusive design where possible and reasonable adjustments where needed, while patients stay protected, the regulator's standards are met and Equality Act 2010 duties are honoured.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Design learning and assessment to be inclusive by default and add reasonable individual adjustments where needed; keep patient protection and the regulator's standards intact while meeting the Equality Act 2010.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course; the student meets its effect through accessible design and adjustments",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.15",
+      "locator": {
+        "number": "1.15",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Accessibility"
+        ]
+      },
+      "span": {
+        "start": 19435,
+        "end": 19851
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "learning and assessment",
+      "addressee": "provider",
+      "verbs": [
+        "reflect",
+        "increase"
+      ],
+      "about": "varied learning and assessment for access",
+      "themes": [
+        "theme:accessibility"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Learning and assessment should be varied, to mirror the breadth of the subject and to widen access, because the field needs a student body as diverse as possible to bring in new ideas.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Use a variety of learning and assessment experiences, both to reflect the breadth of the subject and to open access, so that students of every background and ability can contribute.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing learning and assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.16",
+      "locator": {
+        "number": "1.16",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Accessibility"
+        ]
+      },
+      "span": {
+        "start": 19851,
+        "end": 20275
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry course teams",
+      "addressee": "provider",
+      "verbs": [
+        "ensuring",
+        "designed"
+      ],
+      "about": "accessible design of all course elements",
+      "themes": [
+        "theme:accessibility"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Course teams should see that curricula, teaching methods, assessments and clinical elements are designed to be accessible without endangering patients, and learners get support to build verbal, spatial, numerical and other transferable skills.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Check that every part of the course, clinical work included, is accessible by design without compromising patient safety, and support learners in developing the verbal, spatial and numerical skills they need.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course team",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.17",
+      "locator": {
+        "number": "1.17",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Education for sustainable development"
+        ]
+      },
+      "span": {
+        "start": 20314,
+        "end": 21168
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "both",
+      "verbs": [
+        "inspire",
+        "engage",
+        "equipped"
+      ],
+      "about": "sustainable development and global health in the subject",
+      "themes": [
+        "theme:esd"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should inspire future practitioners to take on personal, human and global challenges for better visual health; they may draw on the UN Sustainable Development Goals, and sustainable development is part of the subject so graduates can find new answers to complex problems in community and global health.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Inspire students to engage with personal, human and global challenges to visual health; topics from the UN Sustainable Development Goals, especially health and environment, may be used, so graduates can innovate for community and global health.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should inspire you to tackle wider challenges in visual health, such as those in the global goals for health and the environment, and give you skills to find new answers to complex problems.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.18",
+      "locator": {
+        "number": "1.18",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Employability, enterprise and entrepreneurship"
+        ]
+      },
+      "span": {
+        "start": 21219,
+        "end": 21794
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "all Optometry degree courses",
+      "addressee": "both",
+      "verbs": [
+        "equip",
+        "prepare"
+      ],
+      "about": "preparation for working life in and beyond clinical practice",
+      "themes": [
+        "theme:enterprise"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Every course should give students the knowledge, skills, behaviours and attributes for life after graduating in a complex, changing world, and should prepare them both for clinical careers and for roles in other sectors.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Equip students not only with the discipline knowledge and professional skills for clinical practice but also with wider attributes for careers in other roles and sectors, and for contributing to society.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should prepare you for life after you graduate, both for a clinical career and for other roles, with the wider skills and qualities that let you contribute to society.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/1.19",
+      "locator": {
+        "number": "1.19",
+        "headingPath": [
+          "Context and purposes of an Optometry degree",
+          "Employability, enterprise and entrepreneurship"
+        ]
+      },
+      "span": {
+        "start": 21794,
+        "end": 22057
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "integrated"
+      ],
+      "about": "enterprise education built into courses",
+      "themes": [
+        "theme:enterprise"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Enterprise and entrepreneurship education should be built into courses, not least because many optometrists work in commercial, manufacturing or charitable settings and owning or franchising a practice is common.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Integrate enterprise and entrepreneurship education into the course, reflecting that many registrants work in commercial, manufacturing or charitable settings or own or franchise practices.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in what it builds in",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.2",
+      "locator": {
+        "number": "2.2",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 24081,
+        "end": 24567
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "complete"
+      ],
+      "about": "an extended period of learning in practice",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "To satisfy the regulator, graduates must complete a long period of learning integrated with practice; real and simulated patient-facing work will grow in amount and complexity, and placements vary in length and setting.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Every graduate must finish a long stretch of learning integrated with practice; plan patient-facing work, real and simulated, to grow in volume and complexity, with placements across community, hospital or university settings.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You must complete a long period of learning in real practice to meet the regulator's requirements, with more and more complex patient work as you progress and placements in different settings.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.3",
+      "locator": {
+        "number": "2.3",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Design"
+        ]
+      },
+      "span": {
+        "start": 24567,
+        "end": 24924
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:7",
+      "appliesTo": "students of the subject",
+      "addressee": "learner",
+      "verbs": [
+        "develop",
+        "assessed"
+      ],
+      "about": "supervised practice and readiness for registration",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Repeated, controlled and supervised practice will develop students until they are judged ready to do all an optometrist's tasks under delegation, and their readiness for full registration and independent practice will be assessed in this experience.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Give students repeated controlled practice under a fully qualified registrant until they can take on every optometrist task under delegation; assess readiness for registration and independent practice within that experience.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You will practise repeatedly under supervision until you are ready to carry out all of an optometrist's tasks under delegation, and your readiness to register and practise independently will be assessed during this time.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.7",
+      "locator": {
+        "number": "2.7",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 26299,
+        "end": 26905
+      },
+      "stem": "none",
+      "statementType": "expectation",
+      "rung": "none",
+      "force": "will",
+      "level": "fheq:7",
+      "appliesTo": "students of the subject",
+      "addressee": "both",
+      "verbs": [
+        "progress",
+        "include"
+      ],
+      "about": "progression towards the threshold skills",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "A student will move from level to level under the institution's and the regulator's rules; each level is expected to add knowledge, expertise and experience towards the threshold subject and generic skills, usually including credit for all learning and assessment, practical parts included.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Map each level's knowledge, expertise and experience onto the threshold subject-specific and generic skills (4.4, 4.5); progression will usually need credit for every element, practical components included.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You will move up through the levels of your course as you meet its rules and the regulator's, each level building towards the threshold skills, usually by passing every part, practical work included.",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.9",
+      "locator": {
+        "number": "2.9",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 27148,
+        "end": 27706
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "designed",
+        "promote",
+        "based",
+        "develop"
+      ],
+      "about": "design on Miller's pyramid",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should be designed for academic and personal growth, with the curriculum built on Miller's pyramid: students first apply understanding of simple ideas to well-defined problems, then gain confidence and link harder patient cases to analyse, evaluate and solve clinical problems.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Base the curriculum on Miller's pyramid, starting with applying knowledge of simple concepts to well-defined problems and moving to complex patient scenarios that call for analysis, evaluation and clinical problem-solving.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its design",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.10.b1",
+      "locator": {
+        "number": "2.10.b1",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 28099,
+        "end": 28175
+      },
+      "stem": "2.10",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "learning, teaching and assessment strategies",
+      "addressee": "provider",
+      "verbs": [
+        "recognise"
+      ],
+      "about": "prior experience and transition",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Strategies that support progressive learning should take account of the range of students' earlier experience and the difficulty of moving into higher education.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Make the course's progression strategies allow for students' varied prior experience and for the challenges of transition.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its strategies",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.10.b2",
+      "locator": {
+        "number": "2.10.b2",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 28178,
+        "end": 28341
+      },
+      "stem": "2.10",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "learning, teaching and assessment strategies",
+      "addressee": "provider",
+      "verbs": [
+        "provide",
+        "achieve",
+        "realise"
+      ],
+      "about": "every student able to reach their potential",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Progression strategies should give every student the chance to reach their potential and goals, whatever their background or reason for studying.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Shape progression strategies so that all students can fulfil their potential and ambitions, regardless of background or motivation.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its strategies",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.10.b3",
+      "locator": {
+        "number": "2.10.b3",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 28344,
+        "end": 28409
+      },
+      "stem": "2.10",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "learning, teaching and assessment strategies",
+      "addressee": "provider",
+      "verbs": [
+        "support"
+      ],
+      "about": "academic and personal development",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Progression strategies should foster academic and personal development as well as learning of content.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Let progression strategies support students' academic and personal development, not only their subject learning.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its strategies",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.10.b4",
+      "locator": {
+        "number": "2.10.b4",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 28412,
+        "end": 28496
+      },
+      "stem": "2.10",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "learning, teaching and assessment strategies",
+      "addressee": "provider",
+      "verbs": [
+        "matched"
+      ],
+      "about": "strategies matched to outcomes for each level",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Progression strategies should fit the learning outcomes or competencies of the course at each level of study.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Align progression strategies with the course learning outcomes or competencies set for each level.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its strategies",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.11",
+      "locator": {
+        "number": "2.11",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Progression"
+        ]
+      },
+      "span": {
+        "start": 28497,
+        "end": 29441
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "students of the subject",
+      "addressee": "both",
+      "verbs": [
+        "progress",
+        "offered"
+      ],
+      "about": "progression, resits and exit awards",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Students move between levels under each institution's rules; they should usually get a chance to resit failed assessments, especially where failing blocks progression or an award; those who leave early may receive a lower award, but anyone leaving without the master's will not be able to register.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Usually offer a resit for failed assessments, above all where failure blocks progression or an award; make clear that exit awards (CertHE, DipHE, Pass degree or a non-registerable degree) do not lead to registration.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "If you fail an assessment you should usually get a chance to resit it, and if you leave early you may receive another award, but without the master's you will not be able to register as an optometrist.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.13",
+      "locator": {
+        "number": "2.13",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Flexibility"
+        ]
+      },
+      "span": {
+        "start": 29816,
+        "end": 30043
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "utilise"
+      ],
+      "about": "diverse delivery fitted to learners and material",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses use many modes of delivery; the face-to-face and digital methods should be varied and suited to learners, content and assessment.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Choose a varied mix of face-to-face and digital delivery suited to the learners, the material and how it is assessed.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its delivery",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.14",
+      "locator": {
+        "number": "2.14",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Flexibility"
+        ]
+      },
+      "span": {
+        "start": 30043,
+        "end": 30320
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "Optometry courses and students",
+      "addressee": "both",
+      "verbs": [
+        "acquire",
+        "contain",
+        "reflect"
+      ],
+      "about": "practical, reflective sessions in real and simulated settings",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Because students must gain clinical, patient-facing and reflective skills, courses must include practical sessions with chances to reflect, in real and simulated settings, within a suitable scope of practice.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Include practical sessions with built-in reflection, in a range of real and simulated environments, so that students acquire clinical, patient-facing and reflective skills within an appropriate scope of practice.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You must gain clinical, patient-facing and reflective skills, so your course must give you practical sessions in real and simulated settings with time to reflect on them.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.15",
+      "locator": {
+        "number": "2.15",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Flexibility"
+        ]
+      },
+      "span": {
+        "start": 30320,
+        "end": 30713
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "respond",
+        "anticipate",
+        "adapt"
+      ],
+      "about": "courses able to change and withstand disruption",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses need enough flexibility to respond to and foresee change in the subject, its links with other fields and the needs of graduates and employers, and should be resilient enough to adapt to unforeseen events.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Keep the course flexible enough to anticipate change in the subject, its interfaces and employers' needs, and resilient enough to adapt when unforeseen disruption arrives.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in how it is run",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.16",
+      "locator": {
+        "number": "2.16",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Flexibility"
+        ]
+      },
+      "span": {
+        "start": 30713,
+        "end": 30847
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "respond"
+      ],
+      "about": "responding to new technology and artificial intelligence",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should be flexible enough to keep up with changing technology, artificial intelligence among it.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Keep the course able to respond to new technology in practice and education, including artificial intelligence.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in how it is run",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.17",
+      "locator": {
+        "number": "2.17",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Partnership"
+        ]
+      },
+      "span": {
+        "start": 30860,
+        "end": 31420
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "institutions with placement partners",
+      "addressee": "provider",
+      "verbs": [
+        "develop",
+        "ensure"
+      ],
+      "about": "oversight of placement partners",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Institutions may work with placement partners such as the professional body or employers; they are expected to set up oversight so partners meet all standards, and this should include good communication and regular consultation to keep courses meeting employers' needs.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Where partners deliver training, set up oversight processes so that they meet all relevant standards, with effective communication and regular consultation to keep the course meeting employers' needs.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the institution and its partners",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.18",
+      "locator": {
+        "number": "2.18",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Partnership"
+        ]
+      },
+      "span": {
+        "start": 31420,
+        "end": 31919
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "both",
+      "verbs": [
+        "work",
+        "incorporate",
+        "engage"
+      ],
+      "about": "work-based practice and an employability strategy",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should work with stakeholders to include work-based or simulated clinical practice where possible; employability is a core outcome, so courses should have a clear plan for students to build work skills and meet employers, for example through placements.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Work with stakeholders to include work-based or simulated clinical practice, and have a clear employability strategy through which students build employment-focused skills and engage with employers.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should give you work-based or simulated clinical practice and a clear way to build skills for employment and get to know employers, for example through placements.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.20",
+      "locator": {
+        "number": "2.20",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Partnership"
+        ]
+      },
+      "span": {
+        "start": 32467,
+        "end": 33232
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "students and courses",
+      "addressee": "both",
+      "verbs": [
+        "expect",
+        "involved"
+      ],
+      "about": "students as partners and co-creators",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Students should be able to expect to be treated as partners in their course and to help shape its curriculum, with the student voice playing a large part in development, delivery and review through representatives, evaluations and surveys.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Treat students as partners: involve them in co-creating the curriculum and give their voice real weight in course development, delivery and review through representatives, module evaluation and surveys.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You should expect to be treated as a partner in your course and to help shape what and how you learn, through course representatives, module feedback and surveys.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.24",
+      "locator": {
+        "number": "2.24",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Monitoring and review"
+        ]
+      },
+      "span": {
+        "start": 34623,
+        "end": 35118
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "course monitoring and review",
+      "addressee": "provider",
+      "verbs": [
+        "include",
+        "influence",
+        "integrated",
+        "enable"
+      ],
+      "about": "feedback in review and embedding ESD and EDI",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Monitoring and review should take in feedback from current students, employers, placement hosts and alumni to shape the curriculum; data on student performance and experience should be combined with expert review; and periodic review should help embed sustainability and equality, diversity and inclusion throughout.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Gather feedback from students, employers, placement providers and alumni, combine performance and experience data with expert review, and use periodic review to embed ESD and EDI across the curriculum.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in its review",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.26",
+      "locator": {
+        "number": "2.26",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Monitoring and review"
+        ]
+      },
+      "span": {
+        "start": 36082,
+        "end": 36816
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "course teams and stakeholders",
+      "addressee": "both",
+      "verbs": [
+        "conduct",
+        "integrated",
+        "involved"
+      ],
+      "about": "evaluation and involvement in course enhancement",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Course teams evaluate regularly for continuing improvement; performance data, student feedback and voice should be joined with expert review, external examiners' included, to keep curricula current, engaging and accessible; students, graduates, employers, service users and professional bodies should be actively involved in improving courses.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Join student data and feedback with expert and external examiner review to keep the curriculum current, engaging and accessible, and actively involve students, graduates, employers, service users and professional bodies in designing improvements.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You should have an active part, alongside graduates, employers and patients, in designing and making improvements to your course.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/2.27",
+      "locator": {
+        "number": "2.27",
+        "headingPath": [
+          "Distinctive features of an Optometry degree",
+          "Monitoring and review"
+        ]
+      },
+      "span": {
+        "start": 36816,
+        "end": 37061
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "will",
+      "level": "none",
+      "appliesTo": "Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "require"
+      ],
+      "about": "accreditation by professional and regulatory bodies",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "An Optometry course will also need evaluation and accreditation by professional and regulatory bodies, depending on its level, usually through visits and desk reviews.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Plan for evaluation and accreditation by the professional and regulatory bodies, normally by a mix of site visits and desk-based review.",
+          "rewrite": "light",
+          "force": "will",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course; the student meets its effect",
+          "rewrite": "full",
+          "force": "will",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1",
+      "locator": {
+        "number": "3.1",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37435,
+        "end": 37606
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "meet",
+        "join"
+      ],
+      "about": "meeting the regulator's outcomes to register",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "To register, graduates must satisfy the General Optical Council's required outcomes and standards to join its register as fully qualified optometrists.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must meet the GOC's required outcomes and standards to join the register as fully qualified optometrists; design content and placements to that end.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register as a fully qualified optometrist, you must meet the outcomes and standards the General Optical Council sets.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1.b1",
+      "locator": {
+        "number": "3.1.b1",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37731,
+        "end": 37831
+      },
+      "stem": "3.1",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "both",
+      "verbs": [
+        "working",
+        "ensure"
+      ],
+      "about": "safe practice within scope",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should equip graduates to work inside their scope of practice so that patient-centred care is safe, lawful and effective.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Equip graduates to keep within their scope of practice so that their patient-centred care is safe, lawful and effective.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should prepare you to work within your scope of practice and give care that is safe, lawful and effective.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1.b2",
+      "locator": {
+        "number": "3.1.b2",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37834,
+        "end": 37895
+      },
+      "stem": "3.1",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "both",
+      "verbs": [],
+      "about": "critical thinking and evidence-based decisions",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should equip graduates with critical thinking and clinical decisions grounded in evidence.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop graduates' critical thinking and their ability to make clinical decisions based on evidence.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should help you think critically and base your clinical decisions on evidence.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1.b3",
+      "locator": {
+        "number": "3.1.b3",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37898,
+        "end": 37976
+      },
+      "stem": "3.1",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "both",
+      "verbs": [],
+      "about": "critical appraisal of literature and information",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should equip graduates to appraise research and other information sources critically.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop graduates' critical appraisal of research literature and other information sources.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should help you judge research papers and other sources of information critically.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1.b4",
+      "locator": {
+        "number": "3.1.b4",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 37979,
+        "end": 38028
+      },
+      "stem": "3.1",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "both",
+      "verbs": [],
+      "about": "verbal and written communication",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should equip graduates with effective spoken and written communication.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop graduates' effective verbal and written communication skills.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should help you communicate well, both in speech and in writing.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.1.b5",
+      "locator": {
+        "number": "3.1.b5",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 38031,
+        "end": 38098
+      },
+      "stem": "3.1",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the subject",
+      "addressee": "both",
+      "verbs": [
+        "support"
+      ],
+      "about": "reflective practice for CPD",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Courses should equip graduates with reflective practice that supports their continuing professional development.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Develop graduates' reflective practice as the basis of continuing professional development.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "Your course should help you reflect on your practice in a way that supports your learning throughout your career.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b1",
+      "locator": {
+        "number": "3.5.b1",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 41775,
+        "end": 41902
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "employ",
+        "taking"
+      ],
+      "about": "adaptive, personalised patient care",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to adapt and personalise care to each patient's social, clinical, personal and cultural needs.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to use an adaptive, personalised approach to care that weighs social, clinical, personal and cultural needs (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to adapt your care to each patient, taking account of their social, clinical, personal and cultural needs.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b2",
+      "locator": {
+        "number": "3.5.b2",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 41905,
+        "end": 41966
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "communicate"
+      ],
+      "about": "communication with patients and professionals",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to communicate well with patients and other professionals.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to communicate effectively with patients and colleagues in other professions (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to communicate well with patients and with other professionals.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b3",
+      "locator": {
+        "number": "3.5.b3",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 41969,
+        "end": 42116
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "undertake",
+        "devise"
+      ],
+      "about": "examinations and management plans within competence",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to carry out suitable eye examinations and draw up management plans informed by evidence, within their scope and competence.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to carry out suitable eye examinations and build management plans on evidence, within scope and competence (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to carry out the right eye examinations and plan care based on evidence, within the limits of what you are trained and allowed to do.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b4",
+      "locator": {
+        "number": "3.5.b4",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 42123,
+        "end": 42214
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "uphold",
+        "work"
+      ],
+      "about": "professional standards, ethics and law",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to keep high, fair professional and ethical standards and work within the law.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to uphold high, equitable professional and ethical standards and keep within current legislation (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to keep to high, fair professional and ethical standards and work within the law.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b5",
+      "locator": {
+        "number": "3.5.b5",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 42217,
+        "end": 42300
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "identify",
+        "provide"
+      ],
+      "about": "identifying risk and safeguarding",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to spot risks to patients, colleagues and others and put enough safeguards in place.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to recognise risks to patients, colleagues and others and put adequate safeguards in place (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to spot risks to patients, colleagues and others and act to keep them safe.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b6",
+      "locator": {
+        "number": "3.5.b6",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 42303,
+        "end": 42453
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "provide",
+        "promoting",
+        "engaging"
+      ],
+      "about": "clinical leadership and governance",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to lead clinically and support clinical governance, service improvement and national public health initiatives.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to provide clinical leadership and engage with clinical governance, service improvement and national public health work (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to show clinical leadership and take part in clinical governance, improving services and public health work.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.5.b7",
+      "locator": {
+        "number": "3.5.b7",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Content"
+        ]
+      },
+      "span": {
+        "start": 42456,
+        "end": 42566
+      },
+      "stem": "3.5",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "must",
+      "level": "fheq:7",
+      "appliesTo": "graduates seeking registration",
+      "addressee": "learner",
+      "verbs": [
+        "keep",
+        "evaluate",
+        "improve"
+      ],
+      "about": "keeping up to date and evaluating own performance",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "For registration, graduates must be able to keep their knowledge and skills current and assess their own performance to raise the quality of patient care.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Graduates must be able to keep their knowledge and skills current and judge their own performance to improve patient care (the regulator's outcome).",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "To register, you must be able to keep your knowledge and skills up to date and judge your own performance to give patients better care.",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.8",
+      "locator": {
+        "number": "3.8",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Teaching and learning"
+        ]
+      },
+      "span": {
+        "start": 43801,
+        "end": 44163
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "teaching and learning strategies; staff",
+      "addressee": "provider",
+      "verbs": [
+        "keep"
+      ],
+      "about": "responsive teaching and staff development",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Teaching and learning strategies are not fixed and should respond to advances in clinical practice, technology and pedagogic research; staff keep current and have regular access to subject and educational development.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Update teaching and learning strategies as clinical practice, technology and pedagogic research advance, and give staff regular access to subject and educational professional development.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course and its staff",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.12",
+      "locator": {
+        "number": "3.12",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 46346,
+        "end": 47076
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "must",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "assessed",
+        "mapped",
+        "reflect",
+        "support",
+        "discriminate"
+      ],
+      "about": "aligned, authentic assessment of every regulator outcome",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment is constructively aligned with outcomes; every GOC outcome must be assessed and mapped, and assessment should be varied, authentic, rigorous and clinically relevant, build both professional and wider employability skills, and tell threshold achievement apart from higher achievement.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Assess and map every GOC outcome; keep assessment authentic, rigorous and clinically relevant, use it to build professional and wider skills, and make sure it separates threshold from higher achievement.",
+          "rewrite": "light",
+          "force": "must",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "must",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b1",
+      "locator": {
+        "number": "3.13.b1",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47132,
+        "end": 47140
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances validity",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh validity against the other qualities listed: it measures what it claims to.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance validity (that it measures what it claims to) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b2",
+      "locator": {
+        "number": "3.13.b2",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47143,
+        "end": 47154
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances reliability",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh reliability against the other qualities listed: it gives consistent results.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance reliability (that it gives consistent results) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b3",
+      "locator": {
+        "number": "3.13.b3",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47157,
+        "end": 47169
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances equitability",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh equitability against the other qualities listed: it is fair to every student.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance equitability (that it is fair to every student) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b4",
+      "locator": {
+        "number": "3.13.b4",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47172,
+        "end": 47182
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances efficiency",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh efficiency against the other qualities listed: it is proportionate in effort.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance efficiency (that it is proportionate in effort) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b5",
+      "locator": {
+        "number": "3.13.b5",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47185,
+        "end": 47197
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances transparency",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh transparency against the other qualities listed: it is clear to students and staff.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance transparency (that it is clear to students and staff) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.13.b6",
+      "locator": {
+        "number": "3.13.b6",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47200,
+        "end": 47213
+      },
+      "stem": "3.13",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "assessment balances authenticity",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should weigh authenticity against the other qualities listed: it resembles real practice.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "In designing assessment, balance authenticity (that it resembles real practice) against the other five qualities.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.14.b1",
+      "locator": {
+        "number": "3.14.b1",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47235,
+        "end": 47282
+      },
+      "stem": "3.14",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "aligned"
+      ],
+      "about": "constructive alignment",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should line up with the learning outcomes it tests.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Constructively align each assessment with the learning outcomes it is meant to test.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.14.b2",
+      "locator": {
+        "number": "3.14.b2",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47285,
+        "end": 47401
+      },
+      "stem": "3.14",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "designed",
+        "provide"
+      ],
+      "about": "formative and summative opportunities with feedback",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should offer formative as well as summative chances, with ways of giving feedback and feedforward.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Design assessment to give formative and summative opportunities and build in feedback and feedforward.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.14.b3",
+      "locator": {
+        "number": "3.14.b3",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47404,
+        "end": 47429
+      },
+      "stem": "3.14",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [],
+      "about": "inclusive, accessible assessment",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Assessment should be inclusive and accessible.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Make assessment inclusive and accessible to all students.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in designing assessment",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.15",
+      "locator": {
+        "number": "3.15",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47430,
+        "end": 47607
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "higher education providers",
+      "addressee": "provider",
+      "verbs": [
+        "ensure"
+      ],
+      "about": "evidence-based assessment design and moderation",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Providers should base assessment design and methods on evidence and should also think about standard setting and moderation.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Use evidence-based assessment design and methods, and attend to standard setting and moderation.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the provider",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.16",
+      "locator": {
+        "number": "3.16",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 47607,
+        "end": 47715
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "assessment in Optometry courses",
+      "addressee": "provider",
+      "verbs": [
+        "aligned"
+      ],
+      "about": "assessment matched to Miller's pyramid",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "The kind of assessment should fit the layer of Miller's pyramid of clinical competence that it targets.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Match each assessment type to the layer of Miller's pyramid it targets: knows, knows how, shows how or does.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in choosing assessment types",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.18",
+      "locator": {
+        "number": "3.18",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Assessment"
+        ]
+      },
+      "span": {
+        "start": 49123,
+        "end": 49528
+      },
+      "stem": "none",
+      "statementType": "outcome",
+      "rung": "none",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "students at registerable master's level",
+      "addressee": "learner",
+      "verbs": [
+        "apply",
+        "demonstrate"
+      ],
+      "about": "unfamiliar problems, research skills and evidence-based practice",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "At registerable master's level the stress falls on applying Optometry knowledge to unfamiliar problems, and assessing research skills is key to judging master's outcomes; students should be able to show they can practise evidence-based Optometry.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Assess students' application of knowledge to unfamiliar problems and their research skills; they should be able to show they can practise evidence-based Optometry.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "You should be able to show that you can apply what you know to problems you have not met before and that your practice is based on evidence, with your research skills assessed along the way.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.19",
+      "locator": {
+        "number": "3.19",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Feedback and feedforward"
+        ]
+      },
+      "span": {
+        "start": 49554,
+        "end": 50012
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "feedback and feedforward",
+      "addressee": "provider",
+      "verbs": [
+        "made"
+      ],
+      "about": "qualities of feedback and feedforward",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Feedback and feedforward should be personal, understandable, empowering, manageable, developmental, timely and tied to the brief, with interpretive support; they should allow supportive reflection, and the nature and timing of feedback should be set out beforehand.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Give personal, clear, timely and developmental feedback and feedforward linked to the brief, offer help to interpret it, allow time for reflection, and publish in advance what feedback each task will get and when.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in giving feedback",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/3.21",
+      "locator": {
+        "number": "3.21",
+        "headingPath": [
+          "Content, structure and delivery",
+          "Feedback and feedforward"
+        ]
+      },
+      "span": {
+        "start": 50562,
+        "end": 51119
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "feedback practice",
+      "addressee": "provider",
+      "verbs": [
+        "considered"
+      ],
+      "about": "feedforward, evaluative skill and psychological safety",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Feedforward helps learners improve and, joined with feedback, aids development, which needs students to have the chance and help to build evaluative skill; the learner's psychological safety should always be considered in feedback.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Combine feedback with feedforward, help students develop the evaluative skill to use it, and always consider the learner's psychological safety when discussing feedback.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the course in giving feedback",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.2",
+      "locator": {
+        "number": "4.2",
+        "headingPath": [
+          "Benchmark standards",
+          "Introduction"
+        ]
+      },
+      "span": {
+        "start": 51477,
+        "end": 51712
+      },
+      "stem": "none",
+      "statementType": "requirement",
+      "rung": "none",
+      "force": "should",
+      "level": "none",
+      "appliesTo": "higher education providers",
+      "addressee": "provider",
+      "verbs": [
+        "refer"
+      ],
+      "about": "evidence of achievement judged with Annex D",
+      "themes": [
+        "none"
+      ],
+      "domain": "none",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Each provider decides what counts as evidence of reaching the standards and should consult Annex D of the Frameworks for Higher Education Qualifications.",
+      "audience": "practitioner",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "Set your own method for judging evidence of achievement against these standards, referring to Annex D of the Frameworks for Higher Education Qualifications.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "not-applicable: a duty on the provider in judging achievement",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b1",
+      "locator": {
+        "number": "4.4.b1",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 52284,
+        "end": 52684
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "apply",
+        "questioning",
+        "addressing",
+        "collaborating"
+      ],
+      "about": "person-centred care",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Person-centred care: will tailor care to each patient's social, clinical, personal and cultural needs while challenging their own conscious and unconscious biases, and work well with other professionals when needed.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will give flexible, individual care that weighs each patient's social, clinical, personal and cultural needs, question and tackle their own biases, and collaborate with other professionals when necessary.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will be able to fit your care to each patient's social, clinical, personal and cultural needs, question your own biases and work with other professionals when the patient needs it.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b2",
+      "locator": {
+        "number": "4.4.b2",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 52685,
+        "end": 53097
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "demonstrate",
+        "adjusting",
+        "perceive",
+        "understand"
+      ],
+      "about": "communication",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Communication: will show strong communication with patients and professionals, adapting style to each person and to the outcome sought, in writing and speech, and reading non-verbal cues.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will communicate strongly with patients and professionals, adjust their style to individual needs, write and speak proficiently and pick up non-verbal cues.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will be able to communicate well with patients and other professionals, change your style to suit each person, write and speak clearly and notice what people show without words.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b3",
+      "locator": {
+        "number": "4.4.b3",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 53098,
+        "end": 53434
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "work",
+        "operate",
+        "exercise",
+        "making"
+      ],
+      "about": "clinical practice within scope",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Clinical practice: will work within their own scope of practice, accountable for patient outcomes, keeping within their competence and using professional judgement in evidence-informed decisions for every patient.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will practise within their individual scope, take accountability and responsibility for patient outcomes, stay within their competence and exercise professional judgement in evidence-informed decisions.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will work within your scope of practice, take responsibility for how your patients do, stay within what you are competent to do and use professional judgement based on evidence.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b4",
+      "locator": {
+        "number": "4.4.b4",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 53435,
+        "end": 54016
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "uphold",
+        "demonstrate",
+        "safeguarding",
+        "ensure"
+      ],
+      "about": "ethics and standards",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Ethics and standards: will keep high professional and ethical standards, show honesty, integrity and commitment to learning, safeguard patients and the public, and keep their own and delegated practice within the law, professional duties and fairness.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will uphold professional standards and ethics, act with honesty and integrity, safeguard patients and the public, and make sure their own, supervised and delegated practice meets legal and professional obligations and is fair.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will keep to high professional and ethical standards, act honestly, protect patients and the public, and make sure your own work and any work you supervise follows the law and professional rules.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b5",
+      "locator": {
+        "number": "4.4.b5",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 54017,
+        "end": 54549
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "safeguarding",
+        "protect",
+        "operate",
+        "recognising",
+        "admitting"
+      ],
+      "about": "risk and safeguarding",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Risk: will safeguard patients, colleagues and others with proactive protection, know and keep within their own capabilities as practice develops, recognise when people may be at risk, and be open and candid about mistakes.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will safeguard others proactively, understand and keep within their own capabilities, recognise people at risk, and admit mistakes openly and candidly to keep the environment safe.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will protect patients, colleagues and others from harm, know the limits of your own ability, notice when someone may be at risk and be open about any mistakes you make.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b6",
+      "locator": {
+        "number": "4.4.b6",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 54550,
+        "end": 54983
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "exercise",
+        "operate",
+        "collaborate",
+        "support",
+        "participate"
+      ],
+      "about": "leadership and management",
+      "themes": [
+        "none"
+      ],
+      "domain": "subject-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Leadership and management: will lead clinically within their scope and expertise to reach good patient outcomes, and will work with healthcare teams to support governance, service improvement and local and national public health work.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will exercise clinical leadership within scope and competence, and collaborate with teams to take part in clinical governance, service enhancement and public health initiatives.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will take the lead clinically within your scope of practice and work with other healthcare staff on improving services, clinical governance and public health.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.4.b7",
+      "locator": {
+        "number": "4.4.b7",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: subject knowledge, understanding and skills"
+        ]
+      },
+      "span": {
+        "start": 54984,
+        "end": 55336
+      },
+      "stem": "4.4",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "threshold",
+      "level": "fheq:7",
+      "appliesTo": "graduates at the threshold",
+      "addressee": "learner",
+      "verbs": [
+        "ensuring",
+        "undertake",
+        "evaluate"
+      ],
+      "about": "lifelong learning",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "Lifelong learning: will own their continuing professional development, keep knowledge and skills current within their scope, and reflect continually on their own and peers' performance to find room to grow.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates will take personal responsibility for CPD, keep knowledge and skills current within scope, and reflect continually on their own and their peers' performance.",
+          "rewrite": "light",
+          "force": "threshold",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "At the threshold, you will take charge of your own professional development, keep your knowledge and skills current and keep reflecting on how you and your peers perform so you can improve.",
+          "rewrite": "full",
+          "force": "threshold",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b1",
+      "locator": {
+        "number": "4.5.b1",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55508,
+        "end": 55547
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "identify"
+      ],
+      "about": "identifying issues and problems",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to identify the issues, questions and problems in a situation.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to identify the issues, questions and problems in a situation; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to pick out the issues, questions and problems a situation raises.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b2",
+      "locator": {
+        "number": "4.5.b2",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55550,
+        "end": 55644
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "evidence-based decision-making",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to use knowledge, understanding and critical thinking to make decisions based on evidence.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to use knowledge, understanding and critical thinking to make decisions based on evidence; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to apply what you know and think critically to reach decisions grounded in evidence.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b3",
+      "locator": {
+        "number": "4.5.b3",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55647,
+        "end": 55709
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "identify",
+        "acquire"
+      ],
+      "about": "finding and closing gaps in knowledge",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to spot where their own knowledge falls short and learn what is missing.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to spot where their own knowledge falls short and learn what is missing; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to notice where your own knowledge runs out and go and learn what you need.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b4",
+      "locator": {
+        "number": "4.5.b4",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55712,
+        "end": 55798
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "appraise",
+        "apply"
+      ],
+      "about": "appraising and applying research",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to judge research and other sources critically and put them to use.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to judge research and other sources critically and put them to use; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to judge research and other sources critically and use them well.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b5",
+      "locator": {
+        "number": "4.5.b5",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55801,
+        "end": 55942
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "demonstrate"
+      ],
+      "about": "how research creates knowledge",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to show they understand how established research and enquiry methods produce and interpret disciplinary knowledge.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to show they understand how established research and enquiry methods produce and interpret disciplinary knowledge; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to show you understand how research methods build and interpret what is known in your field.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b6",
+      "locator": {
+        "number": "4.5.b6",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 55945,
+        "end": 56021
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "engage",
+        "support"
+      ],
+      "about": "reflective practice for CPD",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to practise reflection to support continuing professional development.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to practise reflection to support continuing professional development; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to reflect on your practice in ways that support your continuing development.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b7",
+      "locator": {
+        "number": "4.5.b7",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56024,
+        "end": 56104
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "demonstrate"
+      ],
+      "about": "verbal and non-verbal communication",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to communicate effectively and appropriately with and without words.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to communicate effectively and appropriately with and without words; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to communicate effectively and suitably, both in words and in other ways.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b8",
+      "locator": {
+        "number": "4.5.b8",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56107,
+        "end": 56222
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "work",
+        "engage",
+        "collate",
+        "analyse"
+      ],
+      "about": "data and digital technology",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to handle a range of data and digital tools to gather and analyse information.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to handle a range of data and digital tools to gather and analyse information; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to work with different kinds of data and digital tools to gather and analyse information.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b9",
+      "locator": {
+        "number": "4.5.b9",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56225,
+        "end": 56253
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "adapt"
+      ],
+      "about": "adapting to changing technology",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to adjust to technology as it changes.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to adjust to technology as it changes; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to adjust as the technology you use changes.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b10",
+      "locator": {
+        "number": "4.5.b10",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56256,
+        "end": 56356
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "work"
+      ],
+      "about": "collaborative working",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to work with others, in groups or teams and in discussion.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to work with others, in groups or teams and in discussion; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to work well with others in groups and teams and take part in discussion.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b11",
+      "locator": {
+        "number": "4.5.b11",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56359,
+        "end": 56476
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "integrate"
+      ],
+      "about": "equality, diversity and inclusion at work",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to bring theory and practice of equality, diversity and inclusion into the workplace.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to bring theory and practice of equality, diversity and inclusion into the workplace; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to bring what you know about equality, diversity and inclusion into how you work.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b12",
+      "locator": {
+        "number": "4.5.b12",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56479,
+        "end": 56601
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "internalise",
+        "act"
+      ],
+      "about": "well-being and its link to learning",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to take to heart how well-being, mental health and emotion bear on learning, and act on it.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to take to heart how well-being, mental health and emotion bear on learning, and act on it; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to take seriously, and act on, how well-being, mental health and emotions affect your learning.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b13",
+      "locator": {
+        "number": "4.5.b13",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56604,
+        "end": 56745
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "apply"
+      ],
+      "about": "sustainable working",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to use sustainable ways of working, from waste and recycling to environmentally aware procedures.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to use sustainable ways of working, from waste and recycling to environmentally aware procedures; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to work in sustainable ways, including handling waste, recycling and following environmentally aware procedures.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b14",
+      "locator": {
+        "number": "4.5.b14",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56748,
+        "end": 56880
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "identify",
+        "question",
+        "challenge",
+        "appreciate"
+      ],
+      "about": "challenging cultural assumptions",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to recognise and challenge cultural and ethnocentric assumptions and value other ways of being.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to recognise and challenge cultural and ethnocentric assumptions and value other ways of being; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to recognise and challenge cultural assumptions, including your own, and respect other ways of living.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b15",
+      "locator": {
+        "number": "4.5.b15",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56883,
+        "end": 56945
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "demonstrate"
+      ],
+      "about": "business and commercial awareness",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to show awareness of how business and commercial operations work.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to show awareness of how business and commercial operations work; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to show you understand how businesses and commercial practices work.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    },
+    {
+      "id": "qaa/optometry-2024/4.5.b16",
+      "locator": {
+        "number": "4.5.b16",
+        "headingPath": [
+          "Benchmark standards",
+          "Threshold level: generic skills"
+        ]
+      },
+      "span": {
+        "start": 56948,
+        "end": 57071
+      },
+      "stem": "4.5",
+      "statementType": "threshold",
+      "rung": "threshold",
+      "force": "should",
+      "level": "fheq:7",
+      "appliesTo": "graduates of the master's",
+      "addressee": "learner",
+      "verbs": [
+        "display"
+      ],
+      "about": "creativity and originality",
+      "themes": [
+        "none"
+      ],
+      "domain": "generic-skill",
+      "award": [
+        "integrated master's"
+      ],
+      "gradeOf": "none",
+      "paraphrase": "On graduating, students should be able to show creativity and originality in solving problems and in developing and communicating ideas.",
+      "audience": "both",
+      "subjects": "inherited",
+      "audienceVersions": {
+        "forPractitioner": {
+          "text": "At threshold, graduates of the master's should be able to show creativity and originality in solving problems and in developing and communicating ideas; design teaching and assessment so every student can show it.",
+          "rewrite": "light",
+          "force": "should",
+          "status": "drafted"
+        },
+        "forBeneficiary": {
+          "text": "By the time you graduate, you should be able to be creative and original when solving problems and when developing and putting across ideas.",
+          "rewrite": "full",
+          "force": "should",
+          "status": "drafted"
+        }
+      }
+    }
+  ],
+  "pathwayMapping": {},
+  "mapAgentInstructions": []
+}

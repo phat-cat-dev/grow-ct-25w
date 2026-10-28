@@ -1,0 +1,39 @@
+:root {
+  --ab-base-pf-default-cq-medium: var(--ab-theme-pf-default-cq-medium, 30rem);
+  --ab-base-pf-default-cq-wide: var(--ab-theme-pf-default-cq-wide, 45rem);
+  --ab-base-cq-medium: var(--ab-base-pf-default-cq-medium);
+  --ab-base-cq-wide: var(--ab-base-pf-default-cq-wide);
+}
+.ab-cq {
+  container-type: inline-size;
+}
+.ab-cq-scope {
+  container: ab-component / inline-size;
+}
+.ab-split {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 0.375rem + 1.875cqi, 1.5rem);
+  padding: clamp(1rem, 0.625rem + 1.875cqi, 1.75rem);
+}
+.ab-split__media {
+  flex: 0 0 auto;
+}
+.ab-split__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+@container (min-width: 30rem) {
+  .ab-split {
+    flex-direction: row;
+    align-items: center;
+  }
+  .ab-split__media {
+    flex-basis: 38%;
+  }
+}
+@container (min-width: 45rem) {
+  .ab-split__media {
+    flex-basis: 30%;
+  }
+}

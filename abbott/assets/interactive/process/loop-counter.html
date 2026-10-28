@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>loop-counter process asset</title><link rel="stylesheet" href="./process.css"></head><body><article class="process-asset" data-process-asset="loop-counter"><div class="tag">Iteration</div><h3>Loop with a counter</h3><p class="use">Repeat a step until a condition is met — the token circles and the count ticks up.</p>
+      <div class="stage" style="flex-direction:column;gap:10px"><svg viewBox="0 0 220 150" width="220" role="img" aria-label="Loop">
+        <path pathLength="1" class="edge" style="--d:0s" d="M150 92 C 152 36,68 36,70 92 M70 92 L63 83 M70 92 L77 83"/>
+        <rect class="node" x="60" y="92" width="100" height="44" rx="6"/><text class="nt" x="110" y="114">repeat</text>
+        <text class="et" x="110" y="30">while not done</text>
+        <circle class="ltoken" r="5" style="offset-path:path('M150 92 C 152 36,68 36,70 92')"/>
+      </svg><div style="font-family:var(--font-mono);font-size:var(--fs-sm);color:var(--ink-soft)">iteration <b data-process-count style="color:var(--accent)">1</b></div></div>
+    <div class="process-asset__controls">
+  <button type="button" data-process-play>Play / replay</button>
+  <button type="button" data-process-pause aria-pressed="false">Pause</button>
+  <label>Speed<select data-process-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+</div><p role="status" data-process-status>Still preview. Press Play to animate.</p></article><script src="./process.js"></script></body></html>

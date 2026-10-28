@@ -1,0 +1,41 @@
+{
+  "kbVersion": "0.0.1",
+  "gates": [
+    {
+      "id": "crs-01_course-facets",
+      "name": "Context facet set",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 0
+    },
+    {
+      "id": "crs-03_vocabulary",
+      "name": "Vocabulary & naming",
+      "phase": "A",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 1
+    },
+    {
+      "id": "gates/B1",
+      "name": "Learning outcomes and lesson frame",
+      "phase": "B",
+      "hardness": "soft",
+      "defaultType": "fixed-value",
+      "sequence": 3,
+      "repeatsPer": "lesson",
+      "procedureFlags": {
+        "candidates": true
+      }
+    },
+    {
+      "id": "act-04_summative-activities",
+      "name": "Summative design",
+      "phase": "S",
+      "hardness": "soft",
+      "defaultType": "fixed-value",
+      "sequence": 4
+    }
+  ]
+}

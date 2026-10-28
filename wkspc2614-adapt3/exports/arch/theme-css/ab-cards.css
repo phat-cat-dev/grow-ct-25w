@@ -1,0 +1,432 @@
+.cm.card {
+  --ab-card-spacer-y: var(--ab-space-100, 1rem);
+  --ab-card-spacer-x: var(--ab-space-100, 1rem);
+  --ab-card-bg: var(--ab-base-surface, #fff);
+  --ab-card-color: var(--ab-base-ink, #1a1a1a);
+  --ab-card-border-color: var(--ab-base-hairline, rgba(0, 0, 0, 0.125));
+  --ab-card-border-width: var(--ab-base-border-width, 0.1rem);
+  --ab-card-border-radius: var(--ab-border-radius, 0.375rem);
+  --ab-card-inner-border-radius: calc(var(--ab-card-border-radius) - var(--ab-card-border-width));
+  --ab-card-cap-bg: var(--ab-base-surface-sunken, #f3f3f3);
+  --ab-card-cap-color: var(--ab-card-color);
+  --ab-card-title-color: inherit;
+  --ab-card-subtitle-color: var(--ab-base-ink-muted, #6d6d6d);
+  --ab-card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.06);
+  --ab-card-accent: var(--ab-card-border-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--ab-card-color);
+  word-wrap: break-word;
+  background-color: var(--ab-card-bg);
+  background-clip: border-box;
+  border: var(--ab-card-border-width) solid var(--ab-card-border-color);
+  border-radius: var(--ab-card-border-radius);
+  box-shadow: var(--ab-card-box-shadow);
+}
+.cm.card > .card-body {
+  flex: 1 1 auto;
+  padding: var(--ab-card-spacer-y) var(--ab-card-spacer-x);
+  color: var(--ab-card-color);
+}
+.cm.card .card-title {
+  margin-top: 0;
+  margin-bottom: calc(var(--ab-card-spacer-y) * 0.5);
+  color: var(--ab-card-title-color);
+  font-weight: 600;
+}
+.cm.card .card-subtitle {
+  margin-top: calc(var(--ab-card-spacer-y) * -0.25);
+  margin-bottom: 0;
+  color: var(--ab-card-subtitle-color);
+  font-weight: 500;
+}
+.cm.card .card-text:last-child {
+  margin-bottom: 0;
+}
+.cm.card .card-link {
+  color: var(--ab-base-accent, var(--ab-primary));
+  text-decoration: none;
+  border-bottom: 0.1rem solid transparent;
+}
+.cm.card .card-link:hover,
+.cm.card .card-link:focus-visible {
+  border-bottom-color: currentColor;
+}
+.cm.card .card-link + .card-link {
+  margin-left: var(--ab-card-spacer-x);
+}
+.cm.card > .card-header {
+  padding: var(--ab-card-spacer-y) var(--ab-card-spacer-x);
+  margin-bottom: 0;
+  color: var(--ab-card-cap-color);
+  background-color: var(--ab-card-cap-bg);
+  border-bottom: var(--ab-card-border-width) solid var(--ab-card-border-color);
+  border-top-left-radius: var(--ab-card-inner-border-radius);
+  border-top-right-radius: var(--ab-card-inner-border-radius);
+  font-weight: 600;
+}
+.cm.card > .card-header > *:last-child {
+  margin-bottom: 0;
+}
+.cm.card > .card-footer {
+  padding: var(--ab-card-spacer-y) var(--ab-card-spacer-x);
+  color: var(--ab-card-cap-color);
+  background-color: var(--ab-card-cap-bg);
+  border-top: var(--ab-card-border-width) solid var(--ab-card-border-color);
+  border-bottom-right-radius: var(--ab-card-inner-border-radius);
+  border-bottom-left-radius: var(--ab-card-inner-border-radius);
+}
+.cm.card > .card-img-top,
+.cm.card > .card-img,
+.cm.card > .card-img-bottom {
+  width: 100%;
+  display: block;
+}
+.cm.card > .card-img-top,
+.cm.card > .card-img {
+  border-top-left-radius: var(--ab-card-inner-border-radius);
+  border-top-right-radius: var(--ab-card-inner-border-radius);
+}
+.cm.card > .card-img-bottom,
+.cm.card > .card-img {
+  border-bottom-right-radius: var(--ab-card-inner-border-radius);
+  border-bottom-left-radius: var(--ab-card-inner-border-radius);
+}
+.cm.card .card-img-overlay {
+  position: absolute;
+  inset: 0;
+  padding: var(--ab-card-spacer-x);
+  border-radius: var(--ab-card-inner-border-radius);
+}
+.cm.card.dark-blue {
+  --ab-card-border-color: var(--ab-dark-blue);
+  --ab-card-accent: var(--ab-dark-blue);
+}
+.cm.card.dark-blue > .card-header {
+  background-color: color-mix(in srgb, var(--ab-dark-blue) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-dark-blue);
+  color: var(--ab-dark-blue);
+}
+.cm.card.midnight {
+  --ab-card-border-color: var(--ab-midnight);
+  --ab-card-accent: var(--ab-midnight);
+}
+.cm.card.midnight > .card-header {
+  background-color: color-mix(in srgb, var(--ab-midnight) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-midnight);
+  color: var(--ab-midnight);
+}
+.cm.card.blue {
+  --ab-card-border-color: var(--ab-blue);
+  --ab-card-accent: var(--ab-blue);
+}
+.cm.card.blue > .card-header {
+  background-color: color-mix(in srgb, var(--ab-blue) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-blue);
+  color: var(--ab-blue);
+}
+.cm.card.ocean {
+  --ab-card-border-color: var(--ab-ocean);
+  --ab-card-accent: var(--ab-ocean);
+}
+.cm.card.ocean > .card-header {
+  background-color: color-mix(in srgb, var(--ab-ocean) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-ocean);
+  color: var(--ab-ocean);
+}
+.cm.card.teal {
+  --ab-card-border-color: var(--ab-teal);
+  --ab-card-accent: var(--ab-teal);
+}
+.cm.card.teal > .card-header {
+  background-color: color-mix(in srgb, var(--ab-teal) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-teal);
+  color: var(--ab-teal);
+}
+.cm.card.aquamarine {
+  --ab-card-border-color: var(--ab-aquamarine);
+  --ab-card-accent: var(--ab-aquamarine);
+}
+.cm.card.aquamarine > .card-header {
+  background-color: color-mix(in srgb, var(--ab-aquamarine) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-aquamarine);
+  color: var(--ab-aquamarine);
+}
+.cm.card.green {
+  --ab-card-border-color: var(--ab-green);
+  --ab-card-accent: var(--ab-green);
+}
+.cm.card.green > .card-header {
+  background-color: color-mix(in srgb, var(--ab-green) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-green);
+  color: var(--ab-green);
+}
+.cm.card.olive {
+  --ab-card-border-color: var(--ab-olive);
+  --ab-card-accent: var(--ab-olive);
+}
+.cm.card.olive > .card-header {
+  background-color: color-mix(in srgb, var(--ab-olive) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-olive);
+  color: var(--ab-olive);
+}
+.cm.card.khaki {
+  --ab-card-border-color: var(--ab-khaki);
+  --ab-card-accent: var(--ab-khaki);
+}
+.cm.card.khaki > .card-header {
+  background-color: color-mix(in srgb, var(--ab-khaki) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-khaki);
+  color: var(--ab-khaki);
+}
+.cm.card.bronze {
+  --ab-card-border-color: var(--ab-bronze);
+  --ab-card-accent: var(--ab-bronze);
+}
+.cm.card.bronze > .card-header {
+  background-color: color-mix(in srgb, var(--ab-bronze) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-bronze);
+  color: var(--ab-bronze);
+}
+.cm.card.brown {
+  --ab-card-border-color: var(--ab-brown);
+  --ab-card-accent: var(--ab-brown);
+}
+.cm.card.brown > .card-header {
+  background-color: color-mix(in srgb, var(--ab-brown) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-brown);
+  color: var(--ab-brown);
+}
+.cm.card.sienna {
+  --ab-card-border-color: var(--ab-sienna);
+  --ab-card-accent: var(--ab-sienna);
+}
+.cm.card.sienna > .card-header {
+  background-color: color-mix(in srgb, var(--ab-sienna) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-sienna);
+  color: var(--ab-sienna);
+}
+.cm.card.coral {
+  --ab-card-border-color: var(--ab-coral);
+  --ab-card-accent: var(--ab-coral);
+}
+.cm.card.coral > .card-header {
+  background-color: color-mix(in srgb, var(--ab-coral) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-coral);
+  color: var(--ab-coral);
+}
+.cm.card.tomato {
+  --ab-card-border-color: var(--ab-tomato);
+  --ab-card-accent: var(--ab-tomato);
+}
+.cm.card.tomato > .card-header {
+  background-color: color-mix(in srgb, var(--ab-tomato) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-tomato);
+  color: var(--ab-tomato);
+}
+.cm.card.jasper {
+  --ab-card-border-color: var(--ab-jasper);
+  --ab-card-accent: var(--ab-jasper);
+}
+.cm.card.jasper > .card-header {
+  background-color: color-mix(in srgb, var(--ab-jasper) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-jasper);
+  color: var(--ab-jasper);
+}
+.cm.card.red {
+  --ab-card-border-color: var(--ab-red);
+  --ab-card-accent: var(--ab-red);
+}
+.cm.card.red > .card-header {
+  background-color: color-mix(in srgb, var(--ab-red) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-red);
+  color: var(--ab-red);
+}
+.cm.card.purple {
+  --ab-card-border-color: var(--ab-purple);
+  --ab-card-accent: var(--ab-purple);
+}
+.cm.card.purple > .card-header {
+  background-color: color-mix(in srgb, var(--ab-purple) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-purple);
+  color: var(--ab-purple);
+}
+.cm.card.amethyst {
+  --ab-card-border-color: var(--ab-amethyst);
+  --ab-card-accent: var(--ab-amethyst);
+}
+.cm.card.amethyst > .card-header {
+  background-color: color-mix(in srgb, var(--ab-amethyst) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-amethyst);
+  color: var(--ab-amethyst);
+}
+.cm.card.violet {
+  --ab-card-border-color: var(--ab-violet);
+  --ab-card-accent: var(--ab-violet);
+}
+.cm.card.violet > .card-header {
+  background-color: color-mix(in srgb, var(--ab-violet) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-violet);
+  color: var(--ab-violet);
+}
+.cm.card.blossom {
+  --ab-card-border-color: var(--ab-blossom);
+  --ab-card-accent: var(--ab-blossom);
+}
+.cm.card.blossom > .card-header {
+  background-color: color-mix(in srgb, var(--ab-blossom) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-blossom);
+  color: var(--ab-blossom);
+}
+.cm.card.pink {
+  --ab-card-border-color: var(--ab-pink);
+  --ab-card-accent: var(--ab-pink);
+}
+.cm.card.pink > .card-header {
+  background-color: color-mix(in srgb, var(--ab-pink) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-pink);
+  color: var(--ab-pink);
+}
+.cm.card.accent {
+  --ab-card-border-color: var(--ab-base-accent, var(--ab-primary));
+  --ab-card-accent: var(--ab-base-accent, var(--ab-primary));
+}
+.cm.card.accent > .card-header {
+  background-color: color-mix(in srgb, var(--ab-base-accent, var(--ab-primary)) 10%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-base-accent, var(--ab-primary));
+  color: var(--ab-base-accent, var(--ab-primary));
+}
+.cm.card.do {
+  --ab-card-border-color: var(--ab-success);
+  --ab-card-accent: var(--ab-success);
+  --ab-card-bg: color-mix(in srgb, var(--ab-success) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.do > .card-header {
+  background-color: color-mix(in srgb, var(--ab-success) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-success);
+  color: var(--ab-success);
+}
+.cm.card.advice {
+  --ab-card-border-color: var(--ab-success);
+  --ab-card-accent: var(--ab-success);
+  --ab-card-bg: color-mix(in srgb, var(--ab-success) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.advice > .card-header {
+  background-color: color-mix(in srgb, var(--ab-success) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-success);
+  color: var(--ab-success);
+}
+.cm.card.feedback-pos {
+  --ab-card-border-color: var(--ab-success);
+  --ab-card-accent: var(--ab-success);
+  --ab-card-bg: color-mix(in srgb, var(--ab-success) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.feedback-pos > .card-header {
+  background-color: color-mix(in srgb, var(--ab-success) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-success);
+  color: var(--ab-success);
+}
+.cm.card.dont {
+  --ab-card-border-color: var(--ab-danger);
+  --ab-card-accent: var(--ab-danger);
+  --ab-card-bg: color-mix(in srgb, var(--ab-danger) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.dont > .card-header {
+  background-color: color-mix(in srgb, var(--ab-danger) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-danger);
+  color: var(--ab-danger);
+}
+.cm.card.feedback-neg {
+  --ab-card-border-color: var(--ab-danger);
+  --ab-card-accent: var(--ab-danger);
+  --ab-card-bg: color-mix(in srgb, var(--ab-danger) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.feedback-neg > .card-header {
+  background-color: color-mix(in srgb, var(--ab-danger) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-danger);
+  color: var(--ab-danger);
+}
+.cm.card.starting {
+  --ab-card-border-color: var(--ab-warning);
+  --ab-card-accent: var(--ab-warning);
+  --ab-card-bg: color-mix(in srgb, var(--ab-warning) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.starting > .card-header {
+  background-color: color-mix(in srgb, var(--ab-warning) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-warning);
+  color: var(--ab-warning);
+}
+.cm.card.action {
+  --ab-card-border-color: var(--ab-info);
+  --ab-card-accent: var(--ab-info);
+  --ab-card-bg: color-mix(in srgb, var(--ab-info) 5%, var(--ab-base-surface, #fff));
+}
+.cm.card.action > .card-header {
+  background-color: color-mix(in srgb, var(--ab-info) 12%, var(--ab-base-surface, #fff));
+  border-bottom-color: var(--ab-info);
+  color: var(--ab-info);
+}
+.cm.card.with-icon .card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cm.card .card-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  color: var(--ab-card-accent);
+}
+.cm.card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+@media (min-width: 576px) {
+  .cm.card-group {
+    flex-direction: row;
+    gap: 0;
+  }
+  .cm.card-group > .cm.card {
+    flex: 1 0 0%;
+  }
+  .cm.card-group > .cm.card + .cm.card {
+    border-left: 0;
+  }
+  .cm.card-group > .cm.card:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .cm.card-group > .cm.card:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.cm.card.hover-animate {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.cm.card.hover-animate:hover,
+.cm.card.hover-animate:focus-within {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+}
+.cm.card:focus-within {
+  box-shadow: var(--ab-card-box-shadow), 0 0 0 0.15rem var(--ab-base-accent, var(--ab-primary));
+}
+@media (prefers-reduced-motion: reduce) {
+  .cm.card.hover-animate {
+    transition: none;
+  }
+  .cm.card.hover-animate:hover,
+  .cm.card.hover-animate:focus-within {
+    transform: none;
+  }
+}
+@media (forced-colors: active) {
+  .cm.card {
+    border: 0.1rem solid CanvasText;
+    box-shadow: none;
+  }
+}

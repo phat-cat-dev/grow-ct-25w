@@ -1,0 +1,13 @@
+{
+  "name": "adapt-ab-dropdown",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "extension": "abDropdown",
+  "targetAttribute": "_abDropdown",
+  "displayName": "AB Dropdown (adapter)",
+  "description": "An interface/adapter over the Adapt matching-component dropdown (.dropdown__btn/.dropdown__list/.dropdown-item). Stamps a .ab-dropdown hook for token-driven restyling (--ab-base-dropdown-*, replacing vanilla's hard-coded palette) and emits abDropdown:change on item selection. Observe-only; renders no widget; dependency-free.",
+  "main": "/js/adapt-ab-dropdown.js",
+  "keywords": ["adapt-plugin", "adapt-extension"],
+  "license": "GPL-3.0",
+  "private": true
+}

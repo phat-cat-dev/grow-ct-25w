@@ -1,0 +1,30 @@
+/* ===========================================================================
+ * adapt-ab-theme — cmab-dual entry point
+ * ---------------------------------------------------------------------------
+ * Identical cascade to ab-theme.css, with the last @import pointed at the
+ * cmab-dual pack instead of pink. One anchor colour + one pinned grey tier,
+ * the whole palette + type scale + spacing + breakpoints + container-query
+ * edges + icon rosters derived at runtime. Plain CSS: hsl()/calc()/clamp()/
+ * var() resolve in the browser, no build step.
+ *
+ * Layers, loaded top-of-stack down to source (resolution is lazy, so load
+ * order is for readability; no two layers set the same custom property):
+ *   L2  adapter   --ab-base-if-adapt-*     renderer role seam (rewire to port)
+ *   L3  pivot     --ab-base-*              the generic surface everything reads
+ *   L4  defaults  --ab-base-pf-default-*   shipped defaults, themeable via L5
+ *   L5  template  --ab-theme-pf-default-*  the authorable theme contract (empty)
+ *   L6  user pack --ab-thm-*               brand values; binds into L5
+ *
+ * To run a different pack, swap the last @import for another --ab-thm-* pack
+ * (see layers/L6-thm-pink.css, L6-thm-blue.css, L6-thm-blue-grey.css); to run
+ * the stock default (blue anchor, no grey pin), drop it entirely.
+ * =========================================================================== */
+@import "layers/L2-adapter.css";
+@import "layers/L3-pivot.css";
+@import "layers/L3-accent-spectrum.css";
+@import "layers/L3-semantics.css";
+@import "layers/L4-defaults.css";
+@import "layers/L4-accent-spectrum.css";
+@import "layers/L4-semantics.css";
+@import "layers/L5-template.css";
+@import "layers/L6-thm-cmab-dual.css";

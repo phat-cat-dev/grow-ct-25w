@@ -1,0 +1,350 @@
+// confidence.less — minimal accessible styling for the confidence component
+
+.confidence {
+
+  // Widget container
+  &__widget {
+    &.is-disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    &.is-submitted {
+      .confidence__form {
+        display: none;
+      }
+    }
+  }
+
+  // Items container
+  &__items {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  // Individual item (statement + scale)
+  &__item {
+    margin-bottom: @item-margin;
+    padding: @item-padding;
+    background: var(--ab-base-surface-subtle);
+    border-radius: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Item text (the confidence statement)
+  &__item-text {
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  // Scale (radio group)
+  &__scale {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  // Individual scale option
+  // CRO-1 fix: Use percentage-based flex-basis instead of fixed min-width.
+  // 5 options at 18% each = 90% + gaps fits comfortably in most containers.
+  // Previous min-width: 120px meant 5 options needed 632px minimum, which
+  // exceeded many container widths and caused the 5th option to wrap.
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--ab-base-hairline);
+    border-radius: 4px;
+    transition: border-color 0.2s, background-color 0.2s;
+    flex: 1 1 18%;
+    min-width: 0;
+
+    &:hover,
+    &:focus-within {
+      border-color: var(--ab-base-accent);
+      background-color: color-mix(in srgb, var(--ab-base-accent) 10%, transparent);
+    }
+
+    &.is-selected {
+      border-color: var(--ab-base-accent);
+      background-color: color-mix(in srgb, var(--ab-base-accent) 15%, transparent);
+    }
+  }
+
+  // Radio input
+  &__radio {
+    // Visually hidden but accessible
+    .visually-hidden();
+    opacity: 0; // Belt-and-braces for focusable input
+
+    // Focus visible on indicator
+    &:focus-visible + .confidence__option-indicator {
+      outline: 2px solid var(--ab-base-accent-hover);
+      outline-offset: 2px;
+    }
+
+    // Checked state
+    &:checked + .confidence__option-indicator::after {
+      transform: scale(1);
+    }
+  }
+
+  // Custom radio indicator
+  &__option-indicator {
+    width: 20px;
+    height: 20px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--ab-base-surface, #fff); // was @white (vanilla var); theme surface
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--ab-base-accent);
+      transform: scale(0);
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+
+  // Scale label text
+  &__option-label {
+    font-size: 0.9em;
+  }
+
+  // Submit button container (uses standard btn styles)
+  .btn__container {
+    margin-top: @item-margin;
+  }
+
+  // PRE confirmation
+  &__confirmation {
+    padding: @item-padding;
+    background: var(--ab-base-surface-subtle);
+    border-radius: 4px;
+
+    &-text {
+      margin: 0;
+    }
+  }
+
+  // POST feedback
+  // The whole region only mounts once the POST test is submitted (the JSX
+  // guards it on isPost && isSubmitted), so a keyframe animation fires on
+  // mount — a transition would not, there is no prior state to transition
+  // from. It fades up gently to mark the moment the shift is revealed.
+  // prefers-reduced-motion users get it instantly (the guard at file end).
+  &__feedback {
+    animation: cm-confidence-fade-in 520ms ease-out both;
+
+    &:focus {
+      outline: none; // Focus is programmatic for a11y
+    }
+  }
+
+  // Before/After comparison chart (POST). The container carries the colour
+  // tokens the view reads via getComputedStyle, and a fixed height so Chart.js
+  // (responsive, maintainAspectRatio:false) has a box to fill. Before = muted,
+  // After = accent; both overridable per theme.
+  &__chart {
+    --confidence-before: var(--ab-base-ink-muted, #9aa5ad);
+    --confidence-after: var(--ab-base-accent, #61b5e5);
+    position: relative;
+    height: 17.5rem;
+    margin: 0 0 @item-margin 0;
+    padding: @item-padding;
+    background: var(--ab-base-surface-subtle);
+    border-radius: 4px;
+
+    &-canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+
+  &__feedback-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 @item-margin 0;
+  }
+
+  &__feedback-item {
+    padding: @item-padding;
+    margin-bottom: 0.5rem;
+    background: var(--ab-base-surface-subtle);
+    border-radius: 4px;
+    border-left: 4px solid transparent;
+
+    // Each item fades up just after its neighbour so the list reveals in
+    // sequence rather than all at once; the delays ride on top of the
+    // region's own fade (above). Capped at six steps — beyond that the
+    // stagger would drag — after which items simply arrive together.
+    animation: cm-confidence-fade-in 420ms ease-out both;
+    &:nth-child(1) { animation-delay: 120ms; }
+    &:nth-child(2) { animation-delay: 200ms; }
+    &:nth-child(3) { animation-delay: 280ms; }
+    &:nth-child(4) { animation-delay: 360ms; }
+    &:nth-child(5) { animation-delay: 440ms; }
+    &:nth-child(n+6) { animation-delay: 520ms; }
+
+    // Pattern-based tints via the theme tokens (--ab-success/-danger/-ink-muted),
+    // with the Adapt validation vars as fallback. Positive patterns = success,
+    // attention patterns = danger; never colour-only (text carries the meaning too).
+    // The two patterns where pre and post DIFFERED (rose up / dropped) carry a
+    // fuller tinted wash and a touch more weight, so the areas that moved stand
+    // out from the ones that held steady. Meaning is still carried by the text
+    // and badge, never colour alone.
+    // Tint mixes the pattern colour INTO the subtle surface (not a light
+    // fallback), so the card stays dark-theme-safe and its text readable.
+    &.is-rose {
+      border-left-color: var(--ab-success, #065f28);
+      background: color-mix(in srgb, var(--ab-success, #065f28) 12%, var(--ab-base-surface-subtle));
+    }
+    &.is-dropped {
+      border-left-color: var(--ab-danger, #dd0000);
+      background: color-mix(in srgb, var(--ab-danger, #dd0000) 12%, var(--ab-base-surface-subtle));
+    }
+    &.is-stayedHigh {
+      border-left-color: var(--ab-success, #065f28);
+    }
+    &.is-stayedLow {
+      border-left-color: var(--ab-warning, #dd0000);
+    }
+    &.is-noMovement {
+      border-left-color: var(--ab-base-ink-muted, #DDDDDD);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__feedback-item-text {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  // Movement output: ratings (pre -> post) + a colour-coded signed badge, so
+  // the direction of change reads at a glance. up = success, down = danger,
+  // same = muted. Meaning is also carried by the aria-label + the arrow glyph,
+  // never colour alone.
+  &__movement {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+
+    &-ratings {
+      font-family: monospace;
+      font-size: 0.85em;
+      color: var(--ab-base-ink-muted, #4D4D4D);
+    }
+
+    &-badge {
+      font-size: 0.85em;
+      font-weight: 700;
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--ab-border-radius, 4px);
+      white-space: nowrap;
+      color: var(--ab-base-on-accent, #fff);
+      background-color: var(--ab-base-ink-muted, #DDDDDD);   // default (same)
+    }
+
+    &.is-up   .confidence__movement-badge { background-color: var(--ab-success, #065f28); }
+    &.is-down .confidence__movement-badge { background-color: var(--ab-danger, #dd0000); }
+    &.is-same .confidence__movement-badge { background-color: var(--ab-base-ink-muted, #DDDDDD); }
+  }
+
+  &__feedback-text {
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  &__summary {
+    padding: @item-padding;
+    background: var(--ab-base-surface-subtle);
+    border-radius: 4px;
+    margin-top: @item-margin;
+  }
+
+}
+
+// CRO-1: Three-tier responsive layout for confidence options
+// ============================================================
+// WIDE (above 720px): Radio inline beside label (default styles above).
+// MIDDLE (720px–561px): Radio stacked above label within each tile,
+//   label gets full tile width; 5 tiles remain on one row.
+// STACKED (560px and below): Tiles stack into a single column.
+//
+// Original issue: @device-width-small evaluated to 0rem (undefined var),
+// and fixed min-width caused overflow. Fixed with percentage flex-basis
+// and hardcoded breakpoints. Breakpoint values chosen after iterative
+// design review (520px → 640px → three-tier 720/560).
+
+// MIDDLE band: radio above label, tiles still in row
+@media (max-width: 720px) {
+  .confidence__option {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .confidence__option-label {
+    width: 100%;
+    line-height: 1.2;
+  }
+}
+
+// STACKED: tiles stack into column (overrides MIDDLE where needed)
+@media (max-width: 560px) {
+  .confidence__scale {
+    flex-direction: column;
+  }
+
+  .confidence__option {
+    flex-basis: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .confidence__option-label {
+    width: auto;
+  }
+}
+
+// POST feedback reveal — the keyframe the feedback region and its items use.
+// A small upward drift plus opacity; nothing that shifts layout around it.
+@keyframes cm-confidence-fade-in {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Accessibility: anyone who has asked the OS to reduce motion gets the
+// feedback instantly, with no drift and no stagger. The content is identical;
+// only the reveal animation is removed.
+@media (prefers-reduced-motion: reduce) {
+  .confidence__feedback,
+  .confidence__feedback-item {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_comment": "Stated lookup, psychology only (RULINGS 3, adp-0214, RJ-0049, point 1). Used only until M2 (benchmark-level HESA tagging) runs: tools/standards/core/qaa/benchmarks/index.json's psychology-2023 entry carries no CAH or HECoS field, checked directly against that file this job, so no tag-based lookup is possible yet. Every code and label below is copied verbatim from tools/subject/core/vocab/cah.json and tools/subject/core/vocab/hecos.json, read directly, not from memory. Every entry's source is marked \"stated\" by the lookup tool, never \"tagged\".",
+  "benchmark": "psychology-2023",
+  "quotedFrom": {
+    "cahFile": "tools/subject/core/vocab/cah.json",
+    "cahSourceVersion": "1.3.4",
+    "cahSourceSha256": "f113839534b8f18696059feeaed78fe0f2e1211003171c3e4e05d3a373bd3d94",
+    "hecosFile": "tools/subject/core/vocab/hecos.json",
+    "hecosSourceSha256": "38af934ed6ddfe7a914938d189d8f9d3b6c9d6f526d576602f652ead7e9fe6cc"
+  },
+  "entries": [
+    {
+      "codeType": "hecos",
+      "code": "100497",
+      "label": "psychology",
+      "cah3": "CAH04-01-01"
+    },
+    {
+      "codeType": "cah3",
+      "code": "CAH04-01-01",
+      "label": "psychology (non-specific)",
+      "parent": "CAH04-01"
+    },
+    {
+      "codeType": "cah2",
+      "code": "CAH04-01",
+      "label": "psychology",
+      "parent": "CAH04"
+    },
+    {
+      "codeType": "cah1",
+      "code": "CAH04",
+      "label": "psychology"
+    }
+  ]
+}

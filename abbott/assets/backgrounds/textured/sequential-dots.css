@@ -1,0 +1,6 @@
+.sequential-dots { --dot-step: .4s; --dot-colour: var(--texture-accent, var(--accent, #326d91)); inline-size: 3rem; block-size: 5rem; display: block; }
+.sequential-dots circle { fill: var(--dot-colour); }
+.sequential-dots.is-playing circle { animation: texture-dot-appear .01s steps(1, end) both; animation-delay: calc(var(--dot-index) * var(--dot-step)); }
+@keyframes texture-dot-appear { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sequential-dots.is-playing circle { animation: none; } }
+:is(.no-motion,[data-tm-no-motion="true"]) .sequential-dots.is-playing circle { animation: none; }

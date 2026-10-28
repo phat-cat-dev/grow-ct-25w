@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scroll scenes / Reusable animation study</title>
+  <link rel="stylesheet" href="scroll-scenes.css">
+  <style>
+    body { margin: 0; background: #f2f6f3; color: #152b35; font: 1rem/1.6 system-ui, sans-serif; }
+    .workshop { padding: 1rem clamp(1rem, 4vw, 3rem); }
+    .workshop h1 { font-size: 1.3rem; margin: 0; }
+    .workshop p { max-width: 70ch; margin-block: .5rem; }
+    .settings { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+    .settings label { display: flex; align-items: center; gap: .5rem; }
+    .settings select { font: inherit; padding: .4rem; max-width: 100%; }
+    .workshop a { color: #246b79; }
+  </style>
+</head>
+<body>
+  <header class="workshop">
+    <h1>Scroll scenes</h1>
+    <p>Original scroll-linked animation studies. Scroll inside the scene, use the arrow/Page Down keys after focusing it, or choose a scene button. Scroll back to reverse the effect.</p>
+    <div class="settings">
+      <label>Effect <select data-effect><option value="zoom">Fade + zoom</option><option value="blur">Zoom + blur</option><option value="fade">Fade only</option><option value="slide">Fade + slide</option><option value="none">No animation</option></select></label>
+      <label><input type="checkbox" data-snap checked> Snap near each scene</label>
+      <a href="section.template.html" download>HTML template</a>
+      <a href="README.md">Integration guide</a>
+    </div>
+    <p role="status" data-workshop-status>Effects follow scroll position, not a timer. Reduced motion keeps text clear and navigation instant.</p>
+  </header>
+  <main class="scroll-scenes">
+    <nav class="scene-nav" aria-label="Choose a scene">
+      <button type="button" data-scroll-to="0">01 Observe</button>
+      <button type="button" data-scroll-to="1">02 Question</button>
+      <button type="button" data-scroll-to="2">03 Explore</button>
+      <button type="button" data-scroll-to="3">04 Act</button>
+      <progress data-scroll-progress max="1" value="0" aria-label="Scroll progress"></progress>
+      <span class="scene-status" data-scroll-status aria-live="polite"></span>
+    </nav>
+    <div data-scroll-viewport tabindex="0" role="region" aria-label="Scrollable scenes">
+      <section data-scroll-scene aria-label="Observe"><div data-scene-content>
+        <p class="scene-number">01 / OBSERVE</p>
+        <h2>Start with<br>what you notice.</h2>
+        <p class="scene-copy">Slow down long enough to see the situation clearly. What is happening, and what might you be missing?</p>
+      </div></section>
+      <section data-scroll-scene aria-label="Question"><div data-scene-content>
+        <p class="scene-number">02 / QUESTION</p>
+        <h2>Make room for<br>a better question.</h2>
+        <p class="scene-copy">Look beyond your first explanation. Find the assumption that would change your next move if it turned out to be wrong.</p>
+      </div></section>
+      <section data-scroll-scene aria-label="Explore"><div data-scene-content>
+        <p class="scene-number">03 / EXPLORE</p>
+        <h2>Try something<br>small and useful.</h2>
+        <p class="scene-copy">Compare possibilities without needing a perfect answer. A modest experiment can reveal more than another round of guessing.</p>
+      </div></section>
+      <section data-scroll-scene aria-label="Act"><div data-scene-content>
+        <p class="scene-number">04 / ACT</p>
+        <h2>Take the learning<br>back with you.</h2>
+        <p class="scene-copy">Choose one action you can explain, test and review. Decide what evidence will tell you whether it helped.</p>
+      </div></section>
+    </div>
+  </main>
+  <script src="scroll-scenes.js"></script>
+  <script>
+    const player = ScrollScenes.mount(document.querySelector('.scroll-scenes'));
+    const status = document.querySelector('[data-workshop-status]');
+    for (const input of document.querySelectorAll('[data-effect], [data-snap]')) {
+      input.addEventListener('change', () => {
+        try {
+          player.set({ effect: document.querySelector('[data-effect]').value, snap: document.querySelector('[data-snap]').checked });
+          status.textContent = 'Updated. Scroll to explore the effect.';
+        } catch (error) { status.textContent = `Could not update: ${error.message}`; }
+      });
+    }
+  </script>
+</body>
+</html>

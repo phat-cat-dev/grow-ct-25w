@@ -1,0 +1,135 @@
+{{!--
+  lesson-stub.md.hbs
+  Generates a lesson Markdown file with YAML front matter, in the shape of
+  frontmatter_spec.md section 3. Render with render-stubs.js (see README.md).
+
+  Helpers (registered by render-stubs.js):
+    {{q x}}   a YAML-safe value: JSON, so strings are double-quoted and escaped,
+              arrays are flow lists and null stays null
+    {{e x}}   an enum value, written bare when it is a plain word (draft, en-GB)
+    {{{fold text n}}}  wraps prose onto folded lines indented by n spaces
+
+  Compile with noEscape: true. These are not HTML pages, so {{ }} must not turn
+  an apostrophe into &#x27;.
+--}}
+---
+schema_version: {{q schema_version}}
+id: {{q id}}
+document_type: lesson
+
+course_id: {{q course_id}}
+parent_id: {{q parent_id}}
+hierarchy_level: {{q hierarchy_level}}
+sequence: {{q sequence}}
+
+title: {{q title}}
+summary: {{q summary}}
+
+version: {{q version}}
+status: {{e status}}
+owner: {{q owner}}
+authors: {{q authors}}
+reviewers: {{q reviewers}}
+created: {{q created}}
+updated: {{q updated}}
+review_due: {{q review_due}}
+
+language: {{e language}}
+tags: {{q tags}}
+sources: {{q sources}}
+
+scope:
+  focus: {{q scope.focus}}
+  in_scope: {{q scope.in_scope}}
+  out_of_scope: {{q scope.out_of_scope}}
+
+alignment:
+  course_outcome_ids: {{q alignment.course_outcome_ids}}
+
+prerequisites:
+  knowledge: {{q prerequisites.knowledge}}
+  required_lesson_ids: {{q prerequisites.required_lesson_ids}}
+
+{{#if learning_outcomes.length}}
+learning_outcomes:
+{{#each learning_outcomes}}
+  - id: {{e id}}
+    statement: {{q statement}}
+    course_outcome_ids: {{q course_outcome_ids}}
+    evidence: {{q evidence}}
+{{/each}}
+{{else}}
+learning_outcomes: []
+{{/if}}
+
+estimated_duration_minutes: {{q estimated_duration_minutes}}
+materials_required: {{q materials_required}}
+
+{{#if activities.length}}
+activities:
+{{#each activities}}
+  - id: {{e id}}
+    purpose: {{q purpose}}
+    lesson_outcome_ids: {{q lesson_outcome_ids}}
+{{/each}}
+{{else}}
+activities: []
+{{/if}}
+
+assessment:
+  purpose: {{e assessment.purpose}}
+  lesson_outcome_ids: {{q assessment.lesson_outcome_ids}}
+
+review:
+  academic_status: {{e review.academic_status}}
+  academic_approved_by: {{q review.academic_approved_by}}
+  academic_approved_on: {{q review.academic_approved_on}}
+
+frontmatter:
+  eyebrow: {{q frontmatter.eyebrow}}
+  body: >
+{{{fold frontmatter.body 4}}}
+  meta:
+    duration: {{q frontmatter.meta.duration}}
+    level: {{q frontmatter.meta.level}}
+  objectivesTitle: {{q frontmatter.objectivesTitle}}
+  objectives: {{q frontmatter.objectives}}
+---
+
+# {{title}}
+
+{{summary}}
+
+## Overview
+
+<!-- What the learner will explore and why it matters. Longer rationale goes
+     here in the body, not in the front matter. -->
+
+## Learning outcomes
+
+{{#each learning_outcomes}}
+- **{{id}}** {{statement}}
+{{else}}
+- None yet.
+{{/each}}
+
+## Activities
+
+{{#each activities}}
+### {{id}}
+
+{{purpose}}
+
+<!-- Content for this activity. -->
+
+{{else}}
+None yet.
+
+{{/each}}
+## Assessment
+
+<!-- Formative or summative checks that evidence the lesson outcomes. -->
+
+## Sources
+
+<!-- Source identifiers and precise locators. Do not invent references. -->

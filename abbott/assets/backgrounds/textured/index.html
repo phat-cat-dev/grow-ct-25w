@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Textured learning surfaces and interactive notes</title>
+  <link rel="stylesheet" href="./textured.css">
+  <link rel="stylesheet" href="./notes-board.css">
+  <link rel="stylesheet" href="./typing-chat.css">
+  <link rel="stylesheet" href="../../components/journal-card/journal-card.css">
+  <link rel="stylesheet" href="../../components/scribble/scribble.css">
+  <link rel="stylesheet" href="../../header/page-header.css">
+  <style>
+    :root { --h: 202; --s: 72%; --accent: hsl(var(--h) var(--s) 38%); --surface-1: #fbfcfd; --surface-2: #edf2f6; --ink: #24313b; --line: #bdcbd5; }
+    :root[data-theme="dark"] { --surface-1: #16232c; --surface-2: #21333f; --ink: #edf2f6; --line: #4e606d; --accent: hsl(var(--h) var(--s) 72%); color-scheme: dark; }
+    body { margin: 0; padding: 1rem; background: var(--surface-2); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+    main { max-width: 86rem; margin: auto; }
+    .gallery-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-block: 1rem; }
+    .gallery-controls button, .dots-replay { min-height: 2.75rem; padding: .5rem .75rem; font: inherit; }
+    .surfaces { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 1rem; }
+    .surfaces > article { border: 1px solid var(--line); border-radius: .6rem; overflow: hidden; }
+    .surfaces > article > h3 { padding: .5rem 1rem; font-size: 1rem; margin: 0; }
+    .gallery-section { margin-block: 3rem; }
+    .gallery-section > p { max-width: 75ch; }
+    .dots-demo { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p>GROW / independent assets / textured backgrounds</p>
+      <h1>Spaces to think, practise and remember.</h1>
+      <p>Token-driven surfaces, interactive sticky notes, a three-dot reveal and a scripted typing conversation. No build or server required.</p>
+      <div class="gallery-controls">
+        <button type="button" id="theme" aria-pressed="false">Dark theme</button>
+        <label>Main hue <input type="range" min="0" max="360" value="202" id="hue"></label>
+        <button type="button" id="motion" aria-pressed="false">Reduce motion</button>
+      </div>
+    </header>
+    <header class="asset-page-header">
+      <span class="asset-page-header__kicker">Maker lab / 02</span>
+      <h2 class="asset-page-header__title"><span class="asset-page-header__depth">d1 / page</span>Learn by taking it apart</h2>
+      <p class="asset-page-header__intro">A working bench: inspect a model, make something, then compare the result.</p>
+      <svg class="asset-page-header__glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M10 52 52 10l6 6-42 42Zm5-5 5 5m3-13 5 5m3-13 5 5m3-13 5 5M12 10l42 42-6 6L6 16Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"></path></svg>
+    </header>
+    <section class="gallery-section" aria-labelledby="surfaces-title">
+      <h2 id="surfaces-title">Individual surfaces</h2>
+      <div class="surfaces">
+        <article><h3>Lined paper</h3><div class="textured texture-sample ab-lined">A thought worth writing down.</div></article>
+        <article><h3>Handwriting paper</h3><div class="textured texture-sample ab-handwriting">Give an idea room to take shape.</div></article>
+        <article><h3>Quad paper</h3><div class="textured texture-sample ab-quad">Sketch a model.</div></article>
+        <article><h3>Dot grid</h3><div class="textured texture-sample ab-dotgrid">Connect the ideas.</div></article>
+        <article><h3>Graph paper</h3><div class="textured texture-sample ab-graph">Map a relationship.</div></article>
+        <article><h3>Spiral notebook</h3><div class="textured texture-sample ab-lined ab-spiral">Keep the question beside your notes.</div></article>
+        <article><h3>Legal pad</h3><div class="textured texture-sample ab-legalpad">Record the evidence.</div></article>
+        <article><h3>Index card</h3><div class="textured texture-sample ab-indexcard"><p>Revision question</p><p>What would change your mind?</p></div></article>
+        <article><h3>Whiteboard</h3><div class="textured texture-sample ab-whiteboard">Try a different explanation.</div></article>
+        <article><h3>Chalkboard</h3><div class="textured texture-sample ab-chalkboard">Think aloud. Explain the <span class="ab-chalk-accent">next step</span>.</div></article>
+        <article><h3>Corkboard + sticky notes</h3><div class="textured texture-sample ab-corkboard texture-pins"><div class="textured ab-sticky">A thought</div><div class="textured ab-sticky pink">A question</div><div class="textured ab-sticky blue">A next step</div><div class="textured ab-sticky brand">Remember</div></div></article>
+        <article><h3>Highlights</h3><div class="textured texture-sample ab-whiteboard">Start with a <mark class="textured ab-highlight">question</mark>, then look for <mark class="textured ab-highlight warning">counter-evidence</mark>.</div></article>
+      </div>
+    </section>
+    <section class="gallery-section" aria-labelledby="activity-title">
+      <h2 id="activity-title">Learn, arrange, test and remember</h2>
+      <p>Activity notes are authored and cannot be edited or deleted. Your own notes are editable and not scored. Move the three process steps into a useful sequence and place the reflection in its own group. Testing mode hides answers until you check.</p>
+      <div id="practice-board"></div>
+    </section>
+    <section class="gallery-section" aria-labelledby="dots-title">
+      <h2 id="dots-title">Just the dots, one after another</h2>
+      <div class="textured ab-chalkboard dots-demo">
+        <svg id="chalk-dots" class="sequential-dots" viewBox="0 0 44 140" role="img" aria-label="Three chalk dots" style="--dot-colour:var(--texture-chalk)">
+          <circle cx="22" cy="28" r="5" style="--dot-index:0"></circle>
+          <circle cx="22" cy="70" r="5" style="--dot-index:1"></circle>
+          <circle cx="22" cy="112" r="5" style="--dot-index:2"></circle>
+        </svg>
+        <button type="button" class="dots-replay">Replay dots</button>
+      </div>
+      <p>Only the three dots appear. No writing strokes, no looping. Reduced motion shows the completed dots immediately.</p>
+    </section>
+    <section class="gallery-section" aria-labelledby="journal-title">
+      <h2 id="journal-title">One saved journal card</h2>
+      <article class="journal-card" data-journal-card="develop-your-thought">
+        <header class="journal-card__header"><p class="journal-card__kicker">Work in progress / no perfect answers</p><h3 class="journal-card__title">Develop your thought</h3></header>
+        <label class="journal-card__field">Practice notes<textarea rows="5" maxlength="20000" placeholder="Capture a thought, question or next step..." data-journal-text></textarea></label>
+        <p class="journal-card__help">What if the opposite were true? What would you remove? What would you keep?</p>
+        <footer class="journal-card__footer"><button type="button" data-journal-save>Sketch ready / save your ideas</button><button type="button" data-journal-export>Export notes JSON</button><p class="journal-card__status" data-journal-status role="status"></p></footer>
+        <p class="journal-card__privacy">Saved only in this browser when you press Save. Nothing is sent to a server.</p>
+      </article>
+    </section>
+    <section class="gallery-section" aria-labelledby="scribble-title">
+      <h2 id="scribble-title">SVG scribbles / speed, size and angle</h2>
+      <div id="scribble-demo"></div>
+    </section>
+    <section class="gallery-section" aria-labelledby="chat-title">
+      <h2 id="chat-title">A typing conversation</h2>
+      <div id="guide-chat"></div>
+    </section>
+  </main>
+  <script src="./notes-board.js"></script>
+  <script src="./typing-chat.js"></script>
+  <script src="../../components/journal-card/journal-card.js"></script>
+  <script src="../../components/scribble/scribble.js"></script>
+  <script>
+    JournalCard.mountJournalCard(document.querySelector('[data-journal-card]'));
+    Scribble.mountScribble(document.getElementById('scribble-demo'));
+    TexturedNotes.mountNotesBoard(document.getElementById('practice-board'), {
+      activity: {
+        id: 'question-evidence-v1',
+        title: 'From question to evidence',
+        groups: [
+          { id: 'pool', label: 'Unsorted notes' },
+          { id: 'process', label: 'Investigation / put steps in order' },
+          { id: 'reflection', label: 'Reflection / things to consider' }
+        ],
+        notes: [
+          { id: 'test', text: 'Test an explanation', answer: 'Compare it with the evidence and consider alternative explanations.', group: 'pool', colour: 'blue', expectedGroup: 'process', expectedOrder: 3 },
+          { id: 'reflect', text: 'What could change my mind?', answer: 'Look for evidence that challenges your preferred explanation.', group: 'pool', colour: 'pink', expectedGroup: 'reflection' },
+          { id: 'ask', text: 'Ask a question', answer: 'Make it specific enough to investigate.', group: 'pool', expectedGroup: 'process', expectedOrder: 1 },
+          { id: 'gather', text: 'Gather evidence', answer: 'Check the reliability and relevance of each source.', group: 'pool', colour: 'brand', expectedGroup: 'process', expectedOrder: 2 }
+        ]
+      }
+    });
+    TexturedChat.mountTypingChat(document.getElementById('guide-chat'), {
+      messages: [
+        { speaker: 'guide', text: 'What is one idea you want to remember?' },
+        { speaker: 'learner', text: 'A good question makes the next step clearer.' },
+        { speaker: 'guide', text: 'Pin that thought to your notes board. What evidence would help you test it?' }
+      ]
+    });
+    document.getElementById('theme').addEventListener('click', function () {
+      const dark = this.getAttribute('aria-pressed') !== 'true';
+      this.setAttribute('aria-pressed', String(dark));
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    });
+    document.getElementById('hue').addEventListener('input', function () {
+      document.documentElement.style.setProperty('--h', this.value);
+    });
+    document.getElementById('motion').addEventListener('click', function () {
+      const reduced = document.documentElement.classList.toggle('no-motion');
+      this.setAttribute('aria-pressed', String(reduced));
+    });
+    document.querySelector('.dots-replay').addEventListener('click', function () {
+      const dots = document.getElementById('chalk-dots');
+      dots.classList.remove('is-playing');
+      void dots.getBoundingClientRect();
+      dots.classList.add('is-playing');
+    });
+  </script>
+</body>
+</html>

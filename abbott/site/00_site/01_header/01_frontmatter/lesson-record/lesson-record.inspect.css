@@ -1,0 +1,85 @@
+/* ============================================================================
+   lesson-record.inspect.css
+   The data layer view. Optional: only used with lesson-record.inspect.js.
+   Adds the tool buttons, depth outlines for every element in the record, and
+   the markup inspector panel. Nothing here touches the template or the skin.
+   ============================================================================ */
+
+/* tool buttons (sit in the bar's [data-lr-tools] slot) */
+.lr__tools { display: inline-flex; flex-wrap: wrap; gap: .35rem; }
+.lr-tool {
+  appearance: none; padding: .3rem .75rem;
+  border: 1px solid #b8b8b8; border-radius: 3px; background: #fff; color: #1f1f1f;
+  font: 600 .8rem/1.2 system-ui, sans-serif; cursor: pointer;
+}
+.lr-tool:hover { border-color: #1f1f1f; }
+.lr-tool[aria-pressed="true"] { background: #1f1f1f; border-color: #1f1f1f; color: #fff; }
+.lr-tool:focus-visible { outline: 2px solid #1f1f1f; outline-offset: 2px; }
+
+/* audience filter: a labelled set of lr-tool buttons, divided from the rest */
+.lr-views { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-inline-end: .5rem; padding-inline-end: .6rem; border-inline-end: 1px solid #d6d6d6; }
+.lr-views__label { font: 600 .72rem/1.2 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; color: #5c5c5c; margin-inline-end: .1rem; }
+
+/* [data-view] hides the groups that do not belong to the chosen audience.
+   Every group carries a data-kind; internal groups are the ones never shown to
+   learners, so "learners" drops them and "internal" keeps only them. */
+.lr[data-view="learners"] .lr__item:has(> [data-kind="internal"]) { display: none; }
+.lr[data-view="internal"] .lr__item:has(> [data-kind]:not([data-kind="internal"])) { display: none; }
+
+/* depth outlines: every element in the record, one hue per nesting level */
+.lr--inspect [data-lr-depth] { outline: 1px solid hsl(var(--lri-h, 0) 60% 42% / .55); outline-offset: -1px; }
+.lr--inspect [data-lr-depth="0"]  { --lri-h: 215; }
+.lr--inspect [data-lr-depth="1"]  { --lri-h: 280; }
+.lr--inspect [data-lr-depth="2"]  { --lri-h: 335; }
+.lr--inspect [data-lr-depth="3"]  { --lri-h: 20; }
+.lr--inspect [data-lr-depth="4"]  { --lri-h: 140; }
+.lr--inspect [data-lr-depth="5"]  { --lri-h: 190; }
+.lr--inspect [data-lr-depth="6"]  { --lri-h: 45; }
+.lr--inspect [data-lr-depth="7"]  { --lri-h: 250; }
+.lr--inspect .lri-hl { outline: 2px solid #0b57d0 !important; background: rgba(11, 87, 208, .1) !important; }
+.lr--inspect .lri-pin { outline: 2px dashed #b3261e !important; background: rgba(179, 38, 30, .08) !important; }
+
+/* the panel */
+body.lri-open { padding-bottom: 46vh; }
+.lri {
+  position: fixed; inset-inline: 0; bottom: 0; z-index: 1000;
+  display: grid; grid-template-rows: auto 1fr; height: 44vh;
+  border-top: 1px solid #b8b8b8; background: #fff; color: #1f1f1f;
+  font: 12px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  box-shadow: 0 -6px 18px rgba(0, 0, 0, .08);
+}
+.lri[hidden] { display: none; }
+.lri__bar { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .9rem; padding: .4rem .8rem; border-bottom: 1px solid #e0e0e0; background: #f6f6f6; }
+.lri__hint { color: #5c5c5c; margin-inline-end: auto; }
+.lri__bar button { appearance: none; padding: .15rem .6rem; border: 1px solid #b8b8b8; border-radius: 3px; background: #fff; font: inherit; cursor: pointer; }
+.lri__bar button[aria-pressed="true"] { background: #1f1f1f; border-color: #1f1f1f; color: #fff; }
+.lri__cols { display: grid; grid-template-columns: minmax(16rem, 30%) 1fr; min-height: 0; }
+.lri__detail { overflow: auto; padding: .6rem .8rem; border-inline-end: 1px solid #e0e0e0; }
+.lri__tree { overflow: auto; padding: .4rem 0; }
+
+.lri__path { margin: 0 0 .6rem; color: #5c5c5c; word-break: break-word; }
+.lri__path b { color: #1f1f1f; }
+.lri__attrs { width: 100%; border-collapse: collapse; }
+.lri__attrs th, .lri__attrs td { padding: .15rem .4rem; border-top: 1px solid #ececec; text-align: start; vertical-align: top; word-break: break-word; }
+.lri__attrs th { width: 38%; color: #5c5c5c; font-weight: 600; }
+.lri__attrs tr[data-aria] th, .lri__attrs tr[data-aria] td { background: #eef5ff; }
+.lri__none { color: #5c5c5c; font-style: italic; }
+
+.lri__line { display: block; padding: 0 .8rem 0 calc(.8rem + var(--d, 0) * 14px); white-space: nowrap; cursor: pointer; }
+.lri__line:hover { background: #eef5ff; }
+.lri__line.is-current { background: #dbe8ff; }
+.lri__line.is-pinned  { background: #fde7e5; }
+.lri__tree[data-filter="aria"]  .lri__line:not([data-has-aria]),
+.lri__tree[data-filter="class"] .lri__line:not([data-has-class]) { display: none; }
+.lri .t { font-weight: 700; }
+.lri .c { color: #7a3e00; }
+.lri .i { color: #0a6b3a; }
+.lri .a { color: #0b57d0; }
+.lri .d { color: #6a3fb5; }
+.lri .o { color: #5c5c5c; }
+.lri .x { color: #8a8a8a; font-style: italic; }
+
+@media (max-width: 700px) {
+  .lri__cols { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .lri__detail { max-height: 12vh; border-inline-end: 0; border-bottom: 1px solid #e0e0e0; }
+}

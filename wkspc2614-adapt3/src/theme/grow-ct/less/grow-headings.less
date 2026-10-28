@@ -1,0 +1,74 @@
+// ============================================================================
+//  grow-headings.less — heading colour baseline. Primary heading (page title,
+//  H1) = scheme navy (#0a2a3d via --h1); secondary headings (page subtitle +
+//  article/block/component titles, H2+) = scheme grey (--h2). Both flip with the
+//  mode (light / dark / contrast) via the tokens in _grow-tokens.less. Iterate
+//  per feedback. !important beats Adapt's compile-time @heading-color.
+// ============================================================================
+#wrapper .page__header-title,
+#wrapper .page__title {
+  color: var(--h1) !important;
+}
+#wrapper .page__header-subtitle,
+#wrapper .page__subtitle,
+#wrapper .article__title,
+#wrapper .block__title,
+#wrapper .component__title {
+  color: var(--h2) !important;
+}
+
+// ── fluid heading sizes ──────────────────────────────────────────────────────
+// Adapt sizes its titles with fixed compile-time values (page 48px, article
+// 40px, …) and renders them as role="heading" aria-level divs, so they ignore
+// grow-ct's fluid type scale that the body already uses. Map every heading —
+// the Adapt title wrappers (their .js-heading-inner / [role="heading"] child
+// inherits), their aria-levels, and authored h1–h6 in component copy — onto the
+// fluid --fs-* clamp tokens, so headings scale with the viewport like the body.
+// Mapping: page/H1 → 3xl, article/H2 → 2xl, block+component/H3 → xl, then lg /
+// md / base for deeper levels. line-height tightens as the size grows.
+#wrapper .page__title,
+#wrapper [role="heading"][aria-level="1"],
+#wrapper .component__body h1 {
+  font-size: var(--fs-3xl);
+  line-height: 1.1;
+}
+#wrapper .article__title,
+#wrapper [role="heading"][aria-level="2"],
+#wrapper .component__body h2 {
+  font-size: var(--fs-2xl);
+  line-height: 1.15;
+}
+#wrapper .block__title,
+#wrapper .component__title,
+#wrapper [role="heading"][aria-level="3"],
+#wrapper .component__body h3 {
+  font-size: var(--fs-xl);
+  line-height: 1.2;
+}
+#wrapper [role="heading"][aria-level="4"],
+#wrapper .component__body h4 {
+  font-size: var(--fs-lg);
+  line-height: 1.25;
+}
+#wrapper [role="heading"][aria-level="5"],
+#wrapper .component__body h5 {
+  font-size: var(--fs-md);
+  line-height: 1.3;
+}
+#wrapper [role="heading"][aria-level="6"],
+#wrapper .component__body h6 {
+  font-size: var(--fs-base);
+  line-height: 1.35;
+}
+
+// ── MCQ question titles: one step down ───────────────────────────────────────
+// MCQ component titles (level-3 headings) read too large against the question
+// body. Proportion them to the 1rem body as an h5 — the level-5 token (--fs-md,
+// ~1.15-1.35rem) instead of level-3's --fs-xl (~1.55-2.05rem), ~30% smaller.
+// Scoped to .mcq only (not gmcq or other components). (Abbott, 25 Oct 2026.)
+#wrapper .mcq .component__title,
+#wrapper .mcq [role="heading"][aria-level="3"],
+#wrapper .mcq .component__body h3 {
+  font-size: var(--fs-md);
+  line-height: 1.3;
+}

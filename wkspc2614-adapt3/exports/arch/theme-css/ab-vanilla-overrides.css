@@ -1,0 +1,248 @@
+:root {
+  --ab-base-if-adapt-item-color: var(--ab-base-accent);
+  --ab-base-if-adapt-item-color-hover: var(--ab-base-accent-hover);
+  --ab-base-if-adapt-item-color-visited: var(--ab-base-accent-active);
+  --ab-base-if-adapt-item-color-selected: var(--ab-base-accent-deep);
+  --ab-base-if-adapt-item-color-inverted: var(--ab-white);
+  --ab-base-if-adapt-font-color: var(--ab-dark-grey);
+  --ab-base-if-adapt-font-color-strong: var(--ab-base-ink);
+  --ab-base-if-adapt-font-color-muted: var(--ab-base-ink-muted);
+  --ab-base-if-adapt-greyDark: var(--ab-primary);
+  --ab-base-if-adapt-greyDark-hover: var(--ab-primary-hover);
+  --ab-base-if-adapt-greyLight: var(--ab-base-surface-sunken);
+  --ab-base-if-adapt-disabled: var(--ab-light);
+  --ab-base-if-adapt-hairline: var(--ab-base-hairline);
+  --ab-base-if-adapt-validation-success: var(--ab-success);
+  --ab-base-if-adapt-validation-error: var(--ab-danger);
+}
+html.ab-theme .boxmenu__title,
+html.ab-theme .boxmenu__subtitle,
+html.ab-theme .page__title,
+html.ab-theme .page__subtitle {
+  color: var(--ab-base-if-adapt-item-color) !important;
+}
+html.ab-theme .boxmenu-item__inner,
+html.ab-theme .aside-pull-quote {
+  border-color: var(--ab-base-if-adapt-item-color) !important;
+}
+html.ab-theme .accordion-item__btn,
+html.ab-theme .boxmenu-item__button,
+html.ab-theme .confidenceslider .slider__item-input-fill-linked,
+html.ab-theme .gmcq-item__option,
+html.ab-theme .hotgraphic__pin:not(.has-pin-image),
+html.ab-theme .mcq-item__label,
+html.ab-theme .media__transcript-btn,
+html.ab-theme .narrative__controls,
+html.ab-theme .narrative__progress,
+html.ab-theme .narrative__strapline-btn,
+html.ab-theme .slider__number-selection,
+html.ab-theme .slider__number-model-answer,
+html.ab-theme .slider__item-input-fill,
+html.ab-theme .trickle__btn {
+  background-color: var(--ab-base-if-adapt-item-color) !important;
+}
+html.ab-theme .no-touch .accordion-item__btn:not(.is-selected):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .accordion-item__btn:focus-visible,
+html.ab-theme .no-touch .boxmenu-item__button:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .boxmenu-item__button:focus-visible,
+html.ab-theme .no-touch .gmcq-item__label:not(.is-disabled):not(.is-selected):hover .gmcq-item__option,
+html.ab-theme:not(.a11y-disable-focusoutline) .gmcq-item__input:focus-visible + .gmcq-item__label .gmcq-item__option,
+html.ab-theme .no-touch .hotgraphic__pin:not(.has-pin-image):not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic__pin:not(.has-pin-image):focus-visible,
+html.ab-theme .no-touch .mcq-item__label:not(.is-disabled):not(.is-selected):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .mcq-item__input:focus-visible + .mcq-item__label,
+html.ab-theme .no-touch .media__transcript-btn:not([aria-expanded="true"]):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .media__transcript-btn:not([aria-expanded="true"]):focus-visible,
+html.ab-theme .no-touch .narrative__controls:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .narrative__controls:focus-visible,
+html.ab-theme .no-touch .narrative__strapline-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .narrative__strapline-btn:focus-visible,
+html.ab-theme .no-touch .trickle__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .trickle__btn:focus-visible {
+  background-color: var(--ab-base-if-adapt-item-color-hover) !important;
+}
+html.ab-theme .accordion-item__btn.is-visited,
+html.ab-theme .hotgraphic__pin:not(.has-pin-image).is-visited,
+html.ab-theme .hotgraphic__pin.has-pin-image .hotgraphic__pin-number,
+html.ab-theme .hotgraphic__pin.has-pin-image.is-visited .icon,
+html.ab-theme .hotgraphic__tile.is-visited .icon,
+html.ab-theme .media.is-complete .media__transcript-btn,
+html.ab-theme .narrative__progress.is-visited,
+html.ab-theme .narrative__strapline-btn.is-visited {
+  background-color: var(--ab-base-if-adapt-item-color-visited) !important;
+}
+html.ab-theme .accordion-item__btn.is-selected,
+html.ab-theme .gmcq-item__label.is-selected .gmcq-item__option,
+html.ab-theme .mcq-item__label.is-selected,
+html.ab-theme .media__transcript-btn[aria-expanded="true"],
+html.ab-theme .narrative__progress.is-selected {
+  background-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+html.ab-theme .narrative__progress.is-selected {
+  border-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+html.ab-theme .no-touch .btn-text:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn-text:focus-visible,
+html.ab-theme .no-touch .btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn-icon:focus-visible,
+html.ab-theme .no-touch .btn__action:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme .no-touch .btn__feedback:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn__action:focus-visible,
+html.ab-theme:not(.a11y-disable-focusoutline) .btn__feedback:focus-visible,
+html.ab-theme .no-touch .nav__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .nav__btn:focus-visible,
+html.ab-theme .no-touch .drawer__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .drawer__btn:focus-visible,
+html.ab-theme .no-touch .notify__btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify__btn:focus-visible,
+html.ab-theme .no-touch .notify__btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify__btn-icon:focus-visible,
+html.ab-theme .no-touch .notify-push__close-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .notify-push__close-btn:focus-visible,
+html.ab-theme .no-touch .assessmentresults__retry-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .assessmentresults__retry-btn:focus-visible,
+html.ab-theme .no-touch .hotgraphic-popup__controls:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme .no-touch .hotgraphic-popup__close:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic-popup__controls:focus-visible,
+html.ab-theme:not(.a11y-disable-focusoutline) .hotgraphic-popup__close:focus-visible,
+html.ab-theme .no-touch .languagepicker__language-btn:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .languagepicker__language-btn:focus-visible,
+html.ab-theme .no-touch .tutor__btn-icon:not(.is-disabled):not(.is-locked):hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor__btn-icon:focus-visible,
+html.ab-theme .no-touch .tutor-type-overlay .tutor__btn:hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor-type-overlay .tutor__btn:focus-visible,
+html.ab-theme .no-touch .tutor-type-overlay .tutor__btn-icon:hover,
+html.ab-theme:not(.a11y-disable-focusoutline) .tutor-type-overlay .tutor__btn-icon:focus-visible {
+  background-color: var(--ab-base-if-adapt-greyDark-hover) !important;
+  border-color: var(--ab-base-if-adapt-greyDark-hover) !important;
+}
+html.ab-theme .btn-text.is-disabled,
+html.ab-theme .btn-text.is-locked,
+html.ab-theme .btn-icon.is-disabled,
+html.ab-theme .btn-icon.is-locked,
+html.ab-theme .btn__action.is-disabled,
+html.ab-theme .btn__feedback.is-disabled,
+html.ab-theme .drawer__item-btn.is-locked,
+html.ab-theme .drawer__item-btn.is-disabled,
+html.ab-theme .notify__btn.is-disabled,
+html.ab-theme .assessmentresults__retry-btn.is-disabled,
+html.ab-theme .boxmenu-item__button.is-locked,
+html.ab-theme .gmcq-item__label.is-disabled .gmcq-item__option,
+html.ab-theme .hotgraphic-popup__controls.is-disabled,
+html.ab-theme .hotgraphic-popup__close.is-disabled,
+html.ab-theme .languagepicker__language-btn.is-disabled,
+html.ab-theme .dropdown__btn.is-disabled,
+html.ab-theme .mcq-item__label.is-disabled,
+html.ab-theme .narrative__controls.is-disabled,
+html.ab-theme .textinput__widget.is-disabled .textinput-item__textbox,
+html.ab-theme .trickle__btn.is-disabled,
+html.ab-theme .trickle__btn.is-locked {
+  background-color: var(--ab-base-if-adapt-disabled) !important;
+  border-color: var(--ab-base-if-adapt-disabled) !important;
+  color: var(--ab-base-if-adapt-font-color) !important;
+}
+html.ab-theme .drawer,
+html.ab-theme .drawer__btn,
+html.ab-theme .drawer__item-btn,
+html.ab-theme .notify__popup,
+html.ab-theme .notify__title,
+html.ab-theme .notify__btn,
+html.ab-theme .notify__btn-icon,
+html.ab-theme .notify-push,
+html.ab-theme .notify-push__close-btn,
+html.ab-theme .boxmenu-item__inner,
+html.ab-theme .resources__filter-btn,
+html.ab-theme .tutor__btn-icon,
+html.ab-theme .tutor-type-overlay .tutor__inner,
+html.ab-theme .tutor-type-overlay .tutor__btn,
+html.ab-theme .tutor-type-overlay .tutor__btn-icon {
+  background-color: var(--ab-base-if-adapt-greyDark) !important;
+  border-color: var(--ab-base-if-adapt-greyDark) !important;
+  color: var(--ab-base-if-adapt-item-color-inverted) !important;
+}
+html.ab-theme .drawer__item-btn[aria-current="true"],
+html.ab-theme .drawer__item-btn.is-selected,
+html.ab-theme .resources__filter-btn.is-selected {
+  background-color: var(--ab-base-if-adapt-item-color-selected) !important;
+  border-color: var(--ab-base-if-adapt-item-color-selected) !important;
+}
+html.ab-theme body,
+html.ab-theme .page__body,
+html.ab-theme .page__instruction,
+html.ab-theme .boxmenu__body,
+html.ab-theme .boxmenu__instruction,
+html.ab-theme .boxmenu-group__body,
+html.ab-theme .boxmenu-group__instruction,
+html.ab-theme .hotgraphic-popup__controls,
+html.ab-theme .hotgraphic-popup__close,
+html.ab-theme .glossary__checkbox-label,
+html.ab-theme .glossary__index-link,
+html.ab-theme .glossary__item-not-found {
+  color: var(--ab-base-if-adapt-font-color) !important;
+}
+html.ab-theme .glossary__item-description,
+html.ab-theme .glossary__items-group-header {
+  color: var(--ab-base-if-adapt-font-color-muted) !important;
+}
+html.ab-theme .pagelevelprogress__indicator,
+html.ab-theme .pagelevelprogress__indicator-bar,
+html.ab-theme .menu-item__progress .pagelevelprogress__indicator,
+html.ab-theme .menu-item__progress .pagelevelprogress__indicator-bar,
+html.ab-theme .pagelevelprogress__nav-btn .pagelevelprogress__indicator-inner,
+html.ab-theme .pagelevelprogress__item-btn:not(.is-disabled) .pagelevelprogress__indicator,
+html.ab-theme .pagelevelprogress__item-btn:not(.is-disabled) .pagelevelprogress__indicator-bar,
+html.ab-theme .header-color.transparent-light.menu .menu__header .pagelevelprogress__indicator,
+html.ab-theme .header-color.header-transparent-light.menu .menu__header .pagelevelprogress__indicator,
+html.ab-theme .header-color.transparent-light.menu .menu__header .pagelevelprogress__indicator-bar,
+html.ab-theme .header-color.header-transparent-light.menu .menu__header .pagelevelprogress__indicator-bar,
+html.ab-theme .comp-header-bg-color.transparent-light .pagelevelprogress__indicator,
+html.ab-theme .comp-header-bg-color.transparent-light .pagelevelprogress__indicator-bar {
+  background-color: var(--ab-base-if-adapt-item-color) !important;
+}
+html.ab-theme .no-touch .pagelevelprogress__nav-btn:hover .pagelevelprogress__indicator-inner,
+html.ab-theme .no-touch .pagelevelprogress__item-btn:not(.is-disabled):hover .pagelevelprogress__indicator,
+html.ab-theme .no-touch .pagelevelprogress__item-btn:not(.is-disabled):hover .pagelevelprogress__indicator-bar {
+  background-color: var(--ab-base-if-adapt-item-color-hover) !important;
+}
+html.ab-theme .pagelevelprogress__item-btn.is-disabled .pagelevelprogress__indicator-inner {
+  background-color: var(--ab-base-if-adapt-disabled) !important;
+}
+html.ab-theme .header-color.transparent-light.menu .menu__title,
+html.ab-theme .header-color.header-transparent-light.menu .menu__title,
+html.ab-theme .comp-header-bg-color.transparent-light .component__header,
+html.ab-theme .comp-header-bg-color.transparent-light .component__title,
+html.ab-theme .comp-header-bg-color.transparent-light .component__body a,
+html.ab-theme .comp-header-bg-color.transparent-light .component__instruction a {
+  color: var(--ab-base-if-adapt-font-color-strong) !important;
+}
+html.ab-theme .drawer__toolbar,
+html.ab-theme .resources__header-inner,
+html.ab-theme .glossary__search-container,
+html.ab-theme .glossary__index-container,
+html.ab-theme .glossary__items-group-header,
+html.ab-theme .glossary__item-description,
+html.ab-theme .glossary__item-not-found {
+  background-color: var(--ab-base-if-adapt-greyLight) !important;
+}
+html.ab-theme .drawer__item-btn.is-locked,
+html.ab-theme .drawer__item-btn.is-disabled {
+  border-color: var(--ab-base-if-adapt-hairline) !important;
+}
+html.ab-theme .btn__marking.is-correct,
+html.ab-theme .slider__widget.show-user-answer.is-correct .slider__number-selection,
+html.ab-theme .slider__widget.show-user-answer.is-correct .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-correct .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-correct .slider__number-model-answer {
+  color: var(--ab-base-if-adapt-validation-success) !important;
+  border-color: var(--ab-base-if-adapt-validation-success) !important;
+}
+html.ab-theme .btn__marking.is-incorrect,
+html.ab-theme .narrative__instruction.has-error,
+html.ab-theme .matching__widget:not(.is-complete) .matching-item__select-container.has-error .dropdown__btn,
+html.ab-theme .slider__widget.show-user-answer.is-incorrect .slider__number-selection,
+html.ab-theme .slider__widget.show-user-answer.is-incorrect .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-incorrect .slider__item-input-fill,
+html.ab-theme .slider__widget.show-correct-answer.is-incorrect .slider__number-model-answer {
+  color: var(--ab-base-if-adapt-validation-error) !important;
+  border-color: var(--ab-base-if-adapt-validation-error) !important;
+}

@@ -1,0 +1,31 @@
+{{!--
+  congen11's renderers/elesson/components/stat-block.njk modelled a single
+  stat at the component root (plus a `trend` field absent from the schema) and
+  was structurally incompatible with the schema's titled-collection shape
+  (`title` + `items[]`, 2-6). This template is rebuilt from the schema:
+  stat-block__value/__label/__context are kept from the source renderer,
+  nested inside new stat-block__items/__item wrappers; stat-block__title and
+  stat-block__source are new (never rendered by the source); `trend` is
+  dropped entirely (not part of the schema).
+--}}
+<div class="component__inner statBlock__inner">
+  <div class="stat-block" data-component="stat-block">
+    {{#if title}}
+      <h2 class="stat-block__title">{{title}}</h2>
+    {{/if}}
+    <div class="stat-block__items">
+      {{#each _items}}
+        <div class="stat-block__item">
+          <div class="stat-block__value">{{value}}</div>
+          <div class="stat-block__label">{{label}}</div>
+          {{#if context}}
+            <div class="stat-block__context">{{context}}</div>
+          {{/if}}
+          {{#if source}}
+            <div class="stat-block__source">{{source}}</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

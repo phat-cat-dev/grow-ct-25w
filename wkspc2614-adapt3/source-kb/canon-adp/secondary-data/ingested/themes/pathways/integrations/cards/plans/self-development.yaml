@@ -1,0 +1,232 @@
+# Plan for the card file (D-ing-0060, D-ing-0061, D-ing-0064). ing's authored data; build-card-file.py fills the rest.
+# A new pathway: no core, no adp-0212 cards, no tier map entry yet. Every card is new and proposed.
+name: Self-Development (the academic practitioner)
+pathwayNo: 14
+date: 4 October 2026
+time: "13:27"
+note: N-0145
+practiceNoun: self-development as an academic practitioner
+
+foundation: {cell: "Describes themselves as a learner, what they are good at and what they want from study, when prompted (compliance: tells their story when asked)", sources: "CQFW L2 and L3; ing's draft"}
+level8: {cell: "Authors their own scholarly identity, examining their own and their field's assumptions, and advances the practice of their community (flow: identity and values lived without prompting)", sources: "CQFW L8; FHEQ L8; ing's draft"}
+
+tierMapDraft:
+  focus:
+    Introductory: becoming aware of oneself as an academic practitioner
+    Intermediate: developing an identity within an academic community
+    Advanced: owning, articulating and examining one's identity and values
+  text: |
+    **Source:** the guide's thread of graduate identity (Chapters 1, 3, 10 and 14) and its account of learning as a journey from the edge of a discourse community to its centre; reflexivity and the affective domain from outside the guide. Discrete; overlaps Starting, Progressing and Succeeding (disposition), Reflective Practice (method) and Referencing (values) by design.
+
+    **Introductory: becoming aware of oneself as an academic practitioner.**
+    What an academic practitioner is; academic practice and graduate identity; keeping a record of one's own learning; naming one's strengths, interests, goals and values. Goal: see oneself as someone who practises, and notice what matters to oneself in study.
+
+    **Intermediate: developing an identity within an academic community.**
+    How communities shape identity: participation from the edge towards the centre, conventions, integrity as a community's values; planning one's development against one's own values and goals; noticing how one's values, beliefs and background shape learning and the response to feedback. Goal: develop deliberately, aware of oneself.
+
+    **Advanced: owning, articulating and examining one's identity and values.**
+    Articulating one's identity and values with evidence; acting from an organised set of values when they conflict; reflexivity: examining and deconstructing one's own identity, assumptions and position as a knower. Goal: an academic practitioner who knows, owns and questions who they are.
+
+    **Progression logic:** aware of oneself → developing within a community → owning and examining oneself.
+
+cards:
+  - new: i1
+    statement: Explain what an academic practitioner is, and what academic practice and graduate identity mean.
+    short: Explain what an academic practitioner and graduate identity are
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+    book:
+      - {element: graduate identity, quote: "an identity defined by the competencies and capabilities associated with being a graduate"}
+      - {element: literacies and identity, quote: "the awareness of its place within graduate identity is its value"}
+    rows:
+      Verbs: explain
+      Measures: none
+      Keywords: academic practitioner; academic practice; graduate identity; literacies
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Situated learning (Lave and Wenger) (`ing:doc:situated-learning-lave-wenger-1991`)"
+      Frameworks: none recorded yet
+      Other authors: "Lave and Wenger (1991): learning as taking part in the practice of a community; newcomers change who they are as they move towards full membership (`ing:doc:situated-learning-lave-wenger-1991`)."
+    note: "new, proposed (D-ing-0064)."
+  - new: i2
+    statement: Keep a record of own learning and development, naming strengths, interests and goals as a student.
+    short: Keep a record of own learning, strengths and goals
+    knowledge: procedural, one set method
+    qf: [{id: l4/autonomy.1, extract: "Take responsibility for courses of action"}]
+    book:
+      - {element: learning about oneself, quote: "What did you learn about yourself and your approach to learning from the experience?"}
+    rows:
+      Verbs: keep, name
+      Measures: own
+      Keywords: learning log; portfolio; personal development; strengths; goals
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Self-regulated learning and goal orientation (Pintrich) (`ing:doc:self-regulated-learning-goal-orientation-pintrich-2000`)"
+      Frameworks: "Vitae RDF B3, professional and career development (partial)"
+      Other authors: "Pintrich (2000): self-regulation runs through forethought, monitoring, control and reflection (`ing:doc:self-regulated-learning-goal-orientation-pintrich-2000`)."
+    note: "new, proposed (D-ing-0064)."
+  - new: i3
+    statement: Name own values and what matters to oneself in study, and notice when study touches them.
+    short: Name own values and notice when study touches them
+    knowledge: metacognitive, beginning; affective, receiving and responding
+    qf: [{id: l5/autonomy.2, extract: "Exercise autonomy and judgement within broad parameters."}]
+    book:
+      - {element: respect and self-esteem, quote: "Respect is about your own self-esteem as well as the esteem in which you hold others."}
+    rows:
+      Verbs: name, notice
+      Measures: own
+      Keywords: values; personal values; what matters; self-esteem
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "The affective domain (Krathwohl, Bloom and Masia) (`ing:doc:affective-domain-krathwohl-bloom-masia-1964`)"
+      Frameworks: none recorded yet
+      Other authors: "Krathwohl, Bloom and Masia (1964): values are internalised in five levels, receiving, responding, valuing, organisation and characterisation by a value or value complex (`ing:doc:affective-domain-krathwohl-bloom-masia-1964`)."
+    note: "new, proposed (D-ing-0064)."
+  - new: d1
+    statement: "Explain how academic communities shape identity and values: participation from the edge towards the centre, conventions, and integrity as the community's values."
+    short: Explain how academic communities shape identity and values
+    knowledge: conceptual
+    qf: [{id: l4/knowledge.4, extract: "Have an informed awareness of different perspectives or approaches"}]
+    book:
+      - {element: from edge to centre, quote: "you gradually take on the identity of an expert who sits at the heart of that community"}
+      - {element: integrity as community values, quote: "Academic integrity, as a set of values, therefore conditions the way you engage with the work of the discourse community to which you belong."}
+    rows:
+      Verbs: explain
+      Measures: none
+      Keywords: discourse community; participation; novice and expert; conventions; integrity; community values
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Situated learning (Lave and Wenger) (`ing:doc:situated-learning-lave-wenger-1991`)"
+      Frameworks: "ICAI (2021), fundamental values, not yet ingested; W-0026"
+      Other authors: "Lave and Wenger (1991): legitimate peripheral participation, from limited but genuine tasks at the edge towards full membership (run above)."
+    note: "new, proposed (D-ing-0064)."
+  - new: d2
+    statement: Plan own development against own values and goals, using feedback and reflection, and act on the plan.
+    short: Plan and act on own development, against own values and goals
+    knowledge: procedural
+    qf: [{id: l5/autonomy.1, extract: "Take responsibility for planning and developing courses of action"}]
+    book:
+      - {element: reflection into development, quote: "Remember to turn that reflection into practical steps to help with your personal development."}
+    rows:
+      Verbs: plan, use, act
+      Measures: against own values and goals
+      Keywords: personal development planning; feedback; reflection; goals; values
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Self-regulated learning and goal orientation (Pintrich) (`ing:doc:self-regulated-learning-goal-orientation-pintrich-2000`); The new taxonomy (Marzano and Kendall) (`ing:doc:new-taxonomy-marzano-kendall-2007`), goal specification"
+      Frameworks: "Vitae RDF B3, professional and career development (partial)"
+      Other authors: "Marzano and Kendall (2007): metacognition specifies goals and monitors processes, above the cognitive system and below the self-system (`ing:doc:new-taxonomy-marzano-kendall-2007`)."
+    note: "new, proposed (D-ing-0064)."
+  - new: d3
+    statement: Notice how own values, beliefs and background shape how one learns, takes part and responds to feedback, and adjust.
+    short: Notice how own values and beliefs shape learning, and adjust
+    knowledge: metacognitive, strategic; affective, valuing
+    qf: [{id: 4.15.b5, extract: "the ability to manage their own learning"}, {id: l6/autonomy.3, extract: "Exercise broad autonomy and judgement."}]
+    book:
+      - {element: mindset and feedback, quote: "will be determined by your mindset"}
+    rows:
+      Verbs: notice, adjust
+      Measures: own
+      Keywords: values; beliefs; background; mindset; response to feedback; self-system
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "The new taxonomy (Marzano and Kendall) (`ing:doc:new-taxonomy-marzano-kendall-2007`), the self-system; Yeager and Dweck (2012), not yet ingested; W-0050"
+      Frameworks: none recorded yet
+      Other authors: "Marzano and Kendall (2007): the self-system examines importance, efficacy and emotional response, and decides whether one engages at all (run above)."
+    note: "new, proposed (D-ing-0064)."
+  - new: e1
+    statement: Articulate own academic identity and values with evidence, for a reader such as a tutor or an employer.
+    short: Articulate own identity and values with evidence
+    knowledge: procedural, with criteria
+    qf: [{id: 4.12.b8, extract: "the qualities and transferable skills necessary for employment"}]
+    book:
+      - {element: identity capital, quote: "Identity capital is about your self-identity as a professional."}
+      - {element: strong identity capital, quote: "A graduate with strong identity capital has a clear understanding of the value of their personal experiences to their career aspirations."}
+    rows:
+      Verbs: articulate
+      Measures: with evidence
+      Keywords: academic identity; identity capital; values; evidence; personal statement; portfolio
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Tomlinson (2017), graduate capital, not yet ingested; W-0057"
+      Frameworks: "Vitae RDF B3, professional and career development (partial)"
+      Other authors: none held yet
+    note: "new, proposed (D-ing-0064)."
+  - new: e2
+    statement: Act from an organised set of own values when they conflict, and judge own conduct as an academic practitioner.
+    short: Act from organised values when they conflict, and judge own conduct
+    knowledge: metacognitive, self-regulation; affective, organisation
+    qf: [{id: 4.15.b9.1, extract: "the exercise of initiative and personal responsibility"}]
+    book:
+      - {element: courage, quote: "courage, in the sense of strength of character, is needed if you are to act on your values"}
+      - {element: conduct as a graduate, quote: "just as important to how you conduct yourself as a graduate"}
+    rows:
+      Verbs: act, judge
+      Measures: when they conflict
+      Keywords: value conflict; integrity; conduct; character; courage
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "The affective domain (Krathwohl, Bloom and Masia) (`ing:doc:affective-domain-krathwohl-bloom-masia-1964`), organisation of a value system"
+      Frameworks: "ICAI (2021), fundamental values, not yet ingested; W-0026"
+      Other authors: "Krathwohl, Bloom and Masia (1964): at organisation, the learner brings values into a system and settles conflicts between them (run above)."
+    note: "new, proposed (D-ing-0064)."
+  - new: e3
+    statement: Examine and deconstruct own identity, assumptions, values and position as a knower, and how they shape what one notices, judges and writes (reflexivity).
+    short: "Reflexivity: examine and deconstruct own identity, values and position"
+    knowledge: metacognitive, self-knowledge; affective, characterisation by a value system
+    qf: [{id: 4.17.b6, extract: "demonstrate self-direction"}, {id: l7/autonomy.2, extract: "Exercise broad autonomy and judgement across a significant area of work or study."}, {id: l8/autonomy.3, extract: "Take responsibility for the advancement of professional practice.", beyond: true}]
+    rows:
+      Verbs: examine, deconstruct
+      Measures: own
+      Keywords: reflexivity; identity; assumptions; values; positionality; the knower; self-authorship
+      Book topics: "none: reflexivity is not in the guide (as for Reflective Practice's e3)"
+      Benchmark evidence: not searched (new pathway).
+      Pedagogy: "Variants of reflexivity (Finlay) (`ing:doc:variants-of-reflexivity-finlay-2002`); Reflexivity in social work (D'Cruz, Gillingham and Melendez) (`ing:doc:reflexivity-social-work-dcruz-gillingham-melendez-2007`); Baxter Magolda (2001), self-authorship, not yet ingested; W-0063"
+      Frameworks: none recorded yet
+      Other authors: "Finlay (2002): five ways of practising reflexivity, introspection, intersubjective reflection, mutual collaboration, social critique and discursive deconstruction (`ing:doc:variants-of-reflexivity-finlay-2002`). D'Cruz, Gillingham and Melendez (2007): reflexivity as response to context, as critique of how knowledge and power are produced, and as attention to emotion (`ing:doc:reflexivity-social-work-dcruz-gillingham-melendez-2007`). Krathwohl, Bloom and Masia (1964): at characterisation, a value system so internalised that it marks the person (run above)."
+    note: "new, proposed (D-ing-0064): the top of the pathway, the reflexive point at which the practitioner deconstructs themselves (Abbott, N-0137)."
+
+readings: {}
+vic: {}
+
+vicSummary: "No extracts: this pathway's cards have not been searched in the benchmarks. The mapping proposed as D-ing-0063 would place statements on them."
+
+across:
+  - "**The guide's vocabulary:** graduate identity, literacies, discourse community, novice and expert, values, integrity, courage, character, identity capital, personal development; outside the guide: practitioner identity, reflexivity, positionality, self-authorship, affective domain."
+  - "**Skill against theme:** not yet searched."
+  - "**Book coverage:** the guide carries the Introductory and Intermediate cards and e1 and e2 through its thread of graduate identity (Chapters 1, 3, 10 and 14); e3, reflexivity, is not in the guide."
+  - "**Two ladders:** the cards climb Anderson and Krathwohl's knowledge dimension towards the metacognitive and, beside it, Krathwohl, Bloom and Masia's affective domain from receiving and responding (i3) through valuing (d3) and organisation (e2) to characterisation by a value system (e3). This is the one pathway where the affective ladder is the spine."
+  - "**Overlaps by design:** Starting, Progressing and Succeeding (graduate identity, e3), Reflective Practice (reflexivity, e3) and Referencing (integrity as values, e1 to e3). Self-Development holds the identity and values themselves; the others hold the disposition, the method and the rules."
+  - "**Other authors:** META holds Lave and Wenger, Pintrich, Marzano and Kendall, the affective domain, Finlay, and D'Cruz, Gillingham and Melendez; Baxter Magolda, Dweck, Tomlinson and the ICAI framework are wanted (W-0063, W-0050, W-0057, W-0026)."
+
+qfIntro: "Neither framework names identity, values or reflexivity; they speak of autonomy and responsibility rising level by level, of knowing the limits of one's knowledge, of managing one's own learning and, at L8, of responsibility for advancing professional practice."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing what kind of practice one has joined", tier: before Introductory}
+  - {id: l3/autonomy.2, verbs: "exercise", relation: "judgement within limited parameters: telling one's story when asked", tier: before Introductory}
+  - {id: l4/autonomy.1, verbs: "take responsibility", relation: "responsibility for one's own courses of action: a record of one's learning", tier: Introductory}
+  - {id: l4/knowledge.4, verbs: "have", relation: "awareness of different perspectives: how communities shape what one sees", tier: Introductory}
+  - {id: l5/autonomy.1, verbs: "take responsibility, plan, develop", relation: "planning one's own development", tier: Intermediate}
+  - {id: l5/autonomy.2, verbs: "exercise", relation: "judgement within broad parameters: acting on what matters to oneself", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "qualities for employment: identity articulated for others", tier: Intermediate}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "managing one's own learning, aware of oneself", tier: Advanced}
+  - {id: 4.15.b9.1, verbs: "(none: a noun phrase)", relation: "initiative and personal responsibility: acting from one's values", tier: Advanced}
+  - {id: l6/autonomy.3, verbs: "exercise", relation: "broad autonomy and judgement", tier: Advanced}
+  - {id: 4.17.b6, verbs: "demonstrate, act", relation: "self-direction and autonomy: the self as author", tier: beyond Advanced}
+  - {id: l7/autonomy.2, verbs: "exercise", relation: "broad autonomy across a significant area: identity owned across one's work", tier: beyond Advanced}
+  - {id: l8/autonomy.3, verbs: "take responsibility", relation: "advancing a field's practice: identity that changes the community", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names graduate identity, academic practice and the idea of learning as moving from novice to expert.", type: "factual", process: remember}
+  - {tier: Introductory, statement: "Explains what it means to be an academic practitioner rather than someone who studies.", type: "conceptual", process: understand}
+  - {tier: Introductory, statement: "Keeps a record of their learning, strengths and goals.", type: "procedural (one method)", process: apply}
+  - {tier: Introductory, statement: "Names their own values and notices when study touches them.", type: "metacognitive (beginning); affective (receiving, responding)", process: understand, change: "the self enters as an object of attention"}
+  - {tier: Intermediate, statement: "Explains how a community's conventions and values shape the identity of those in it.", type: "conceptual", process: analyse}
+  - {tier: Intermediate, statement: "Plans and acts on their development against their own values and goals.", type: "procedural", process: apply}
+  - {tier: Intermediate, statement: "Notices how their values, beliefs and background shape their learning, and adjusts.", type: "metacognitive (strategic); affective (valuing)", process: evaluate, change: "values become reasons for acting"}
+  - {tier: Advanced, statement: "Articulates their identity and values with evidence for others.", type: "procedural (criteria)", process: create}
+  - {tier: Advanced, statement: "Acts from an organised set of values when they conflict, and judges their own conduct.", type: "metacognitive (self-regulation); affective (organisation)", process: evaluate, change: "values brought into a system"}
+  - {tier: Advanced, statement: "Examines and deconstructs their own identity, assumptions and position as a knower.", type: "metacognitive (self-knowledge); affective (characterisation)", process: "evaluate, create", change: "functioning knowledge: the reflexive practitioner"}
+
+mastery: "Two ladders run together here. On Anderson and Krathwohl's knowledge dimension the movement is from knowing what an academic practitioner is, through procedures for recording and planning one's development, to metacognitive knowledge of oneself; on Krathwohl, Bloom and Masia's affective domain it is from receiving and responding to one's values, through valuing and organising them, to characterisation, values so internalised that they mark the person. In Lave and Wenger's terms the student moves from the edge of an academic community towards its centre and changes who they are; in Marzano and Kendall's, the self-system, which decides whether one engages at all, becomes the object of thought. Mastery is the reflexive point at which the practitioner can examine and deconstruct themselves (N-0137), the top of every pathway's A11 ladder made the subject of a pathway of its own."
+
+differ: "the pathway model has no tier map entry for this pathway; section 4a is ing's draft, built from the same reading as section 3a, so the two directions do not yet differ. The model's author's own tier text, when written, is the second direction."
+
+qfAdd: "neither framework names identity, values or reflexivity at any level; the descriptors' rising autonomy and responsibility assume a self that this pathway makes explicit. CQFW L8's responsibility for advancing professional practice is the nearest statement to the level 8 row."
+
+review:
+  - "Every card is new and proposed (D-ing-0064), and the tier text in section 4a is ing's draft for the model's author."
+  - "This is the academic practitioner first; the professional practitioner is to follow (N-0145)."
+  - "The pathway's ingestion document, integration and source map were written after this file (ing N-0146): `pathways/ingest-path-self-development.md` 0.1.0 and its companions."
+  - "Benchmark mapping waits for D-ing-0063."

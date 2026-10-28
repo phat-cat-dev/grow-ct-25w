@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>flowchart process asset</title><link rel="stylesheet" href="./process.css"></head><body><article class="process-asset" data-process-asset="flowchart"><div class="tag">Flow diagram</div><h3>Flowchart with a travelling token</h3><p class="use">Start, process, decision — the dot flows through and takes the "yes" branch. The "no" path loops back.</p>
+      <div class="stage"><svg viewBox="0 0 260 300" width="240" role="img" aria-label="Flowchart">
+        <path pathLength="1" class="edge" style="--d:.1s" d="M130 46 L130 72"/>
+        <path pathLength="1" class="edge" style="--d:.3s" d="M130 116 L130 146"/>
+        <path pathLength="1" class="edge" style="--d:.5s" d="M130 198 L130 224"/>
+        <path pathLength="1" class="edge" style="--d:.6s" d="M166 172 L214 172 L214 94 L192 94 M192 94 L199 89 M192 94 L199 99"/>
+        <rect class="node" x="80" y="12" width="100" height="34" rx="17"/><text class="nt" x="130" y="29">Start</text>
+        <rect class="node" x="70" y="72" width="120" height="44" rx="6"/><text class="nt" x="130" y="94">Process</text>
+        <path class="node q" d="M130 146 L166 172 L130 198 L94 172 Z"/><text class="nt" x="130" y="172">OK?</text>
+        <rect class="node" x="80" y="224" width="100" height="34" rx="17"/><text class="nt" x="130" y="241">Done</text>
+        <text class="et" x="140" y="214">yes</text><text class="et" x="224" y="166">no</text>
+        <circle class="token" r="5" style="offset-path:path('M130 46 L130 72 L130 116 L130 146 L130 172 L130 198 L130 224 L130 241')"/>
+      </svg></div>
+    <div class="process-asset__controls">
+  <button type="button" data-process-play>Play / replay</button>
+  <button type="button" data-process-pause aria-pressed="false">Pause</button>
+  <label>Speed<select data-process-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+</div><p role="status" data-process-status>Still preview. Press Play to animate.</p></article><script src="./process.js"></script></body></html>

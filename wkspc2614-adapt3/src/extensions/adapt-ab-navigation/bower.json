@@ -1,0 +1,13 @@
+{
+  "name": "adapt-ab-navigation",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "extension": "abNavigation",
+  "targetAttribute": "_abNavigation",
+  "displayName": "AB Navigation (adapter)",
+  "description": "An interface/adapter over the whole core navigation bar (.nav): stamps a .ab.navigation hook for token-driven restyling (--ab-base-navigation-*), emits abNavigation:ready with the button inventory + label mode, and injects author-configured custom nav items into .nav__inner (ordered; can trigger a core data-event, open an adapt-ab-modal, or be a link). Pairs with adapt-ab-navbtn. Renders no region of its own; dependency-free.",
+  "main": "/js/adapt-ab-navigation.js",
+  "keywords": ["adapt-plugin", "adapt-extension"],
+  "license": "GPL-3.0",
+  "private": true
+}

@@ -1,0 +1,1413 @@
+{
+  "pathwayReferenceId": "finding-using-sources",
+  "identity": {
+    "id": "ing:doc:pathway-finding-using-sources",
+    "slug": "finding-using-sources",
+    "title": "Finding and Using Sources (academic skills pathway)",
+    "aliases": [
+      "finding sources",
+      "searching",
+      "search strategy",
+      "information literacy",
+      "path:finding-using-sources"
+    ],
+    "practices": [
+      "education"
+    ],
+    "pathwayNumber": 3,
+    "chapters": [
+      7
+    ],
+    "practiceNoun": "finding and using sources",
+    "agentDefinition": "Finding and Using Sources is one of thirteen academic skills pathways: searching for and evaluating academic sources, from using a library's discovery service, through planned searches with keywords, Boolean operators and limiters, to discerning evaluation and comprehensive searching beyond the library. Reach for it to place, sequence or assess a searching or source-evaluation capability, or to translate one into its workplace form. It is not about shaping a research project, which belongs to Researching and Research Methods, nor about citing sources, which belongs to Referencing.",
+    "summary": "The academic skills pathways model (2026) sets Finding and Using Sources as one of thirteen pathways, drawn from a study skills guide's chapter on search strategies. Its first move is a reframe: academic searching is exploratory, effortful and iterative, not the looking-up of trivia. It climbs in three tiers: searching as a discipline (the library discovery service, the reading list, a five-stage shape of plan, keywords, discovery service, evaluate, extend); search craft (planning from what one already knows, keywords and synonyms, Boolean operators, limiters, iterative narrowing); and extending and evaluating deeply (source-type expectations, currency, authority and above all relevance; subject databases and citation searching for a dissertation). It is the information literacy pathway of the model and sits beside the established information literacy frameworks. Its open question is coverage at Introductory (Part E).",
+    "status": "drafted",
+    "catalogueEntry": {
+      "id": "finding-using-sources",
+      "number": 3,
+      "name": "Finding & Using Sources",
+      "chapters": [
+        7
+      ],
+      "routes": {
+        "feeds": null,
+        "drawsOn": null
+      },
+      "file": "catalogue/pathways/finding-using-sources.json"
+    }
+  },
+  "capabilities": [
+    {
+      "rowId": "i1",
+      "capabilityId": null,
+      "tier": "introductory",
+      "fheqLevel": 3,
+      "statement": "Explain how academic searching differs from everyday searching",
+      "knowledgeKind": "conceptual",
+      "qf": [
+        {
+          "id": "l3/application.3",
+          "extract": "Use appropriate investigation to inform actions."
+        }
+      ],
+      "book": [
+        {
+          "element": "searching in higher education",
+          "quote": "Searching in higher education is exploratory; you won't find an exact answer, as you would do when searching for trivia."
+        }
+      ],
+      "competency": null,
+      "vocabulary": null,
+      "bookGrounding": null
+    },
+    {
+      "rowId": "i2",
+      "capabilityId": "finding-using-sources/02",
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "statement": "Use the library discovery service to locate scholarly sources",
+      "knowledgeKind": "procedural, one set method",
+      "qf": [
+        {
+          "id": "l4/application.3",
+          "extract": "Initiate and use appropriate investigation to inform actions."
+        }
+      ],
+      "book": [],
+      "competency": {
+        "academicStatement": "Use library and discovery services effectively to locate scholarly sources.",
+        "verbs": [
+          "use",
+          "locate"
+        ],
+        "theory": [
+          "ing:doc:information-search-process-kuhlthau-1991"
+        ],
+        "process": [
+          "search-strategy"
+        ],
+        "professional": [
+          {
+            "statement": "Finds reliable information quickly with an organisation's knowledge systems and subscription services.",
+            "equivalence": "partial",
+            "gap": "workplace tools are intranets, commercial databases and colleagues; the academic one is the library catalogue and its licensed content",
+            "frameworks": [
+              "SCONUL Seven Pillars: Gather",
+              "CILIP (2018): information literacy in the workplace"
+            ]
+          }
+        ]
+      },
+      "vocabulary": {
+        "verbs": [
+          "use",
+          "locate"
+        ],
+        "measures": [
+          "effectively",
+          "scholarly"
+        ],
+        "terms": [
+          "library",
+          "discovery service",
+          "scholarly sources"
+        ],
+        "keywords": [
+          "library",
+          "discovery service",
+          "scholarly sources",
+          "library discovery service"
+        ],
+        "bookTopics": [
+          "library discovery service"
+        ],
+        "benchmarkHits": "78 / 23"
+      },
+      "bookGrounding": {
+        "capabilityId": "finding-using-sources/02",
+        "tierNote": "introduced",
+        "pages": "pp. 104-108",
+        "teaches": "the discovery service as first port of call",
+        "workedExamples": "the worked search (pp. 100-108)",
+        "notes": null
+      }
+    },
+    {
+      "rowId": "i3",
+      "capabilityId": "finding-using-sources/c1",
+      "tier": "introductory",
+      "fheqLevel": 5,
+      "statement": "Follow a staged search, starting from the reading list and what one already knows",
+      "knowledgeKind": "metacognitive, beginning (what one already knows)",
+      "qf": [
+        {
+          "id": "4.12.b4",
+          "extract": "an understanding of the limits of their knowledge"
+        }
+      ],
+      "book": [
+        {
+          "element": "planning from what you know",
+          "quote": "This includes reviewing what you already know so that you can target aspects of a topic to focus on when searching."
+        }
+      ],
+      "competency": {
+        "academicStatement": "Follow a staged search strategy, starting from the reading list and what one already knows.",
+        "verbs": [
+          "follow"
+        ],
+        "theory": [
+          "ing:doc:information-search-process-kuhlthau-1991"
+        ],
+        "process": [
+          "search-strategy"
+        ],
+        "professional": [
+          {
+            "statement": "Starts a search from what the organisation and its people already hold before looking further.",
+            "equivalence": "partial",
+            "gap": "the academic starting point is a module reading list set by a tutor; the professional one is internal knowledge, colleagues and past work",
+            "frameworks": [
+              "SCONUL Seven Pillars: Identify, Scope",
+              "ACRL Framework: Searching as Strategic Exploration"
+            ]
+          }
+        ]
+      },
+      "vocabulary": {
+        "verbs": [
+          "follow"
+        ],
+        "measures": [
+          "staged"
+        ],
+        "terms": [
+          "search strategy",
+          "reading list",
+          "prior knowledge"
+        ],
+        "keywords": [
+          "search strategy",
+          "reading list",
+          "prior knowledge"
+        ],
+        "bookTopics": [],
+        "benchmarkHits": null
+      },
+      "bookGrounding": {
+        "capabilityId": "finding-using-sources/c1",
+        "tierNote": "introduced",
+        "pages": "pp. 97-103",
+        "teaches": "a staged strategy from the reading list and what one knows",
+        "workedExamples": null,
+        "notes": null
+      }
+    },
+    {
+      "rowId": "d1",
+      "capabilityId": null,
+      "tier": "intermediate",
+      "fheqLevel": 4,
+      "statement": "Identify keywords and synonyms from the task",
+      "knowledgeKind": "conceptual",
+      "qf": [
+        {
+          "id": "l4/knowledge.2",
+          "extract": "Analyse, interpret and evaluate relevant information and ideas."
+        }
+      ],
+      "book": [
+        {
+          "element": "keywords",
+          "quote": "Keywords – those words or short phrases you use when searching – act as the drivers of the searches you do."
+        },
+        {
+          "element": "synonyms",
+          "quote": "A synonym is a word that essentially means the same as another word"
+        }
+      ],
+      "competency": null,
+      "vocabulary": null,
+      "bookGrounding": null
+    },
+    {
+      "rowId": "d2",
+      "capabilityId": "finding-using-sources/01",
+      "tier": "intermediate",
+      "fheqLevel": 5,
+      "statement": "Plan a search strategy with keywords and Boolean operators",
+      "knowledgeKind": "procedural",
+      "qf": [
+        {
+          "id": "l5/application.2",
+          "extract": "Determine, adapt and use appropriate methods and skills."
+        }
+      ],
+      "book": [],
+      "competency": {
+        "academicStatement": "Plan a search strategy using keywords and Boolean operators.",
+        "verbs": [
+          "plan"
+        ],
+        "theory": [
+          "ing:doc:information-search-process-kuhlthau-1991"
+        ],
+        "process": [
+          "search-strategy"
+        ],
+        "professional": [
+          {
+            "statement": "Plans and documents searches for evidence, policy, competitors or prior art.",
+            "equivalence": "partial",
+            "gap": "professional searches answer a decision under time pressure and may need to be reproducible (systematic or patent searching); the academic one supports an assignment",
+            "frameworks": [
+              "SCONUL Seven Pillars: Plan",
+              "ACRL Framework: Searching as Strategic Exploration"
+            ]
+          }
+        ]
+      },
+      "vocabulary": {
+        "verbs": [
+          "plan"
+        ],
+        "measures": [],
+        "terms": [
+          "search strategy",
+          "keywords",
+          "Boolean operators"
+        ],
+        "keywords": [
+          "search strategy",
+          "keywords",
+          "Boolean operators",
+          "keyword selection",
+          "search limiters"
+        ],
+        "bookTopics": [
+          "keyword selection",
+          "Boolean operators",
+          "search limiters"
+        ],
+        "benchmarkHits": "16 / 12"
+      },
+      "bookGrounding": {
+        "capabilityId": "finding-using-sources/01",
+        "tierNote": "developed",
+        "pages": "pp. 103-108",
+        "teaches": "keywords, synonyms, Boolean operators and limiters",
+        "workedExamples": null,
+        "notes": null
+      }
+    },
+    {
+      "rowId": "d3",
+      "capabilityId": null,
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "statement": "Refine a search in cycles, reflecting on the results each time",
+      "knowledgeKind": "metacognitive, strategic",
+      "qf": [
+        {
+          "id": "l6/application.2",
+          "extract": "Determine, refine, adapt and use appropriate methods and skills."
+        }
+      ],
+      "book": [
+        {
+          "element": "iterative search strategy",
+          "quote": "you'll do a search, reflect on the results, amend the parameters of the search, and then search again"
+        }
+      ],
+      "competency": null,
+      "vocabulary": null,
+      "bookGrounding": null
+    },
+    {
+      "rowId": "e1",
+      "capabilityId": "finding-using-sources/04",
+      "tier": "advanced",
+      "fheqLevel": 5,
+      "statement": "Extend a search by citation searching, databases and Google Scholar",
+      "knowledgeKind": "procedural",
+      "qf": [
+        {
+          "id": "l5/application.3",
+          "extract": "Use relevant research or development to inform actions."
+        }
+      ],
+      "book": [],
+      "competency": {
+        "academicStatement": "Extend a search via citation searching and supplementary scholarly tools.",
+        "verbs": [
+          "extend"
+        ],
+        "theory": [
+          "ing:doc:information-search-process-kuhlthau-1991"
+        ],
+        "process": [
+          "search-strategy"
+        ],
+        "professional": [
+          {
+            "statement": "Searches beyond the first tool to cover the evidence comprehensively.",
+            "equivalence": "partial",
+            "gap": "the professional form weighs cost and time against completeness; the academic one aims at a comprehensive review",
+            "frameworks": [
+              "SCONUL Seven Pillars: Scope, Gather",
+              "ACRL Framework: Scholarship as Conversation"
+            ]
+          }
+        ]
+      },
+      "vocabulary": {
+        "verbs": [
+          "extend"
+        ],
+        "measures": [
+          "supplementary",
+          "scholarly"
+        ],
+        "terms": [
+          "search",
+          "citation searching",
+          "scholarly tools"
+        ],
+        "keywords": [
+          "search",
+          "citation searching",
+          "scholarly tools",
+          "extending searches via google scholar"
+        ],
+        "bookTopics": [
+          "citation searching",
+          "extending searches via Google Scholar"
+        ],
+        "benchmarkHits": "6 / 3"
+      },
+      "bookGrounding": {
+        "capabilityId": "finding-using-sources/04",
+        "tierNote": "extended",
+        "pages": "pp. 109-112",
+        "teaches": "citation searching and scholarly search engines",
+        "workedExamples": null,
+        "notes": null
+      }
+    },
+    {
+      "rowId": "e2",
+      "capabilityId": "finding-using-sources/03",
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "statement": "Evaluate sources for currency, authority and relevance to own knowledge",
+      "knowledgeKind": "procedural with metacognitive (relevance to one's own knowledge)",
+      "qf": [
+        {
+          "id": "4.15.b5",
+          "extract": "make use of scholarly reviews and primary sources"
+        }
+      ],
+      "book": [
+        {
+          "element": "relevance to own knowledge",
+          "quote": "its relevance to your reflections on your own knowledge and understanding"
+        }
+      ],
+      "competency": {
+        "academicStatement": "Evaluate sources against currency, authority and relevance criteria.",
+        "verbs": [
+          "evaluate"
+        ],
+        "theory": [
+          "ing:doc:information-search-process-kuhlthau-1991"
+        ],
+        "process": [
+          "search-strategy"
+        ],
+        "professional": [
+          {
+            "statement": "Judges whether information is reliable and relevant enough to base a decision on.",
+            "equivalence": "partial",
+            "gap": "the academic form adds scholarly norms (peer review, citation); the professional form adds time pressure and commercial or legal risk",
+            "frameworks": [
+              "SCONUL Seven Pillars: Evaluate",
+              "ACRL Framework: Authority Is Constructed and Contextual",
+              "CILIP (2018): critical thinking and balanced judgement"
+            ]
+          }
+        ]
+      },
+      "vocabulary": {
+        "verbs": [
+          "evaluate"
+        ],
+        "measures": [
+          "against criteria"
+        ],
+        "terms": [
+          "sources",
+          "currency",
+          "authority",
+          "relevance",
+          "evaluation criteria"
+        ],
+        "keywords": [
+          "sources",
+          "currency",
+          "authority",
+          "relevance",
+          "evaluation criteria",
+          "evaluative criteria for sources",
+          "currency of a source",
+          "authority of a source",
+          "relevance of a source"
+        ],
+        "bookTopics": [
+          "evaluative criteria for sources",
+          "currency of a source",
+          "authority of a source",
+          "relevance of a source"
+        ],
+        "benchmarkHits": "20 / 15"
+      },
+      "bookGrounding": {
+        "capabilityId": "finding-using-sources/03",
+        "tierNote": "extended",
+        "pages": "pp. 108-109",
+        "teaches": "currency, authority and relevance",
+        "workedExamples": null,
+        "notes": null
+      }
+    },
+    {
+      "rowId": "e3",
+      "capabilityId": null,
+      "tier": "advanced",
+      "fheqLevel": 7,
+      "statement": "Search comprehensively, judging when the discourse is covered",
+      "knowledgeKind": "metacognitive, self-regulation",
+      "qf": [
+        {
+          "id": "4.17.b1",
+          "extract": "a critical awareness of current problems and/or new insights"
+        },
+        {
+          "id": "l7/application.3",
+          "extract": "Design and undertake research"
+        }
+      ],
+      "book": [
+        {
+          "element": "extending for a dissertation",
+          "quote": "if you're working on a dissertation as a final year undergraduate student or a master's student"
+        }
+      ],
+      "competency": null,
+      "vocabulary": null,
+      "bookGrounding": null
+    }
+  ],
+  "tierProgression": {
+    "levels": [
+      {
+        "level": 3,
+        "context": "a learner entering higher education: level 3 study, access and foundation years",
+        "skills": [
+          "search the web and a library catalogue with simple keywords",
+          "tell an information source from an opinion"
+        ],
+        "competencies": [
+          "finds information for a set task from sources a tutor names"
+        ],
+        "understandings": [
+          "not all information is equally reliable",
+          "for own development: knowing where to look is a skill one can learn"
+        ],
+        "literacies": [
+          "a short list of sources found; notes from them"
+        ],
+        "metacognition": {
+          "stance": "compliance",
+          "statement": "Searches because the task asks for sources; takes the first results that look relevant."
+        },
+        "changesFromBelow": "not-applicable-by-design",
+        "sources": [
+          "CQFW",
+          "SCONUL"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      },
+      {
+        "level": 4,
+        "context": "the first year of higher education",
+        "skills": [
+          "use the library discovery service and the reading list",
+          "plan a search: keywords, synonyms, Boolean operators, limiters",
+          "judge relevance, currency and authority"
+        ],
+        "competencies": [
+          "searches iteratively for an assignment and narrows results to what is relevant"
+        ],
+        "understandings": [
+          "academic searching is exploratory and effortful, and uncertainty early on is normal",
+          "for own development: knowing that confusion at the start of a search is a stage, not a failure, sustains persistence"
+        ],
+        "literacies": [
+          "a search plan; a keyword list; a working bibliography"
+        ],
+        "metacognition": {
+          "stance": "purpose",
+          "statement": "Knows why academic searching is planned and iterative, and that early uncertainty is normal; still follows a set method."
+        },
+        "changesFromBelow": "from finding something to planning a search and judging what is found",
+        "sources": [
+          "FHEQ",
+          "KUHLTHAU",
+          "SCONUL"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      },
+      {
+        "level": 5,
+        "context": "developing practice, depending on the student: the second year",
+        "skills": [
+          "search subject databases and use citation searching",
+          "evaluate sources against the expectations of each source type",
+          "form a focus that guides further searching"
+        ],
+        "competencies": [
+          "builds a body of sources that maps a topic's discourse"
+        ],
+        "understandings": [
+          "information is produced in a discourse, and authority is constructed and contextual",
+          "for own development: one's own knowledge decides what is relevant, so searching and learning grow together"
+        ],
+        "literacies": [
+          "an annotated bibliography; a search log"
+        ],
+        "metacognition": {
+          "stance": "investment",
+          "statement": "Invests in building a picture of a field, choosing tools and sources with purpose; sees searching and learning growing together."
+        },
+        "changesFromBelow": "from searching the discovery service to extending into databases and citation chains, guided by a focus",
+        "sources": [
+          "FHEQ",
+          "KUHLTHAU",
+          "ACRL"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      },
+      {
+        "level": 6,
+        "context": "independent practice: the final undergraduate year, the dissertation",
+        "skills": [
+          "design a comprehensive search for an extended project",
+          "manage and update searches over months",
+          "evaluate with discernment, including grey literature"
+        ],
+        "competencies": [
+          "searches independently at the forefront of a field"
+        ],
+        "understandings": [
+          "a systematic search can be defended and repeated",
+          "for own development: confident searching underpins independence as a learner"
+        ],
+        "literacies": [
+          "a documented search strategy for a dissertation's literature review"
+        ],
+        "metacognition": {
+          "stance": "ownership",
+          "statement": "Owns their search strategy, confident to defend it; evaluates with discernment as a habit."
+        },
+        "changesFromBelow": "from focused searching for an assignment to a defensible, sustained search for an extended project",
+        "sources": [
+          "FHEQ",
+          "SCONUL",
+          "KUHLTHAU"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      },
+      {
+        "level": 7,
+        "context": "advanced practice: master's study, professional practice",
+        "skills": [
+          "run structured or systematic searches with documented protocols",
+          "critically appraise evidence, including research methods",
+          "use information to inform professional decisions"
+        ],
+        "competencies": [
+          "applies information expertise to professional problems with little guidance"
+        ],
+        "understandings": [
+          "evidence bases have gaps and biases that shape what can be known",
+          "for own development: keeping up with a field is part of professional responsibility"
+        ],
+        "literacies": [
+          "a systematic or scoping review protocol; an evidence summary for practice"
+        ],
+        "metacognition": {
+          "stance": "adaptation",
+          "statement": "Adapts searching to new questions, settings and professional needs; shares sources and search expertise with others."
+        },
+        "changesFromBelow": "from a defensible search to systematic searching and critical appraisal for advanced scholarship and practice",
+        "sources": [
+          "FHEQ",
+          "QAAMSC",
+          "ACRL"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      },
+      {
+        "level": 8,
+        "context": "doctoral practice: an original contribution to knowledge, the researcher's identity and independence",
+        "skills": [
+          "establish the full state of knowledge to show where a contribution lies",
+          "track a field continuously as it moves",
+          "manage information and data across a long project"
+        ],
+        "competencies": [
+          "knows the forefront of the discipline well enough to show what is new"
+        ],
+        "understandings": [
+          "the gap one fills is defined by what the search shows does not yet exist",
+          "for own development: one's own work becomes part of the information landscape others search"
+        ],
+        "literacies": [
+          "the thesis's literature review establishing originality; data management plans"
+        ],
+        "metacognition": {
+          "stance": "flow",
+          "statement": "Searching and evaluating are fluent and tacit, in the flow; they keep the state of knowledge in view and communicate it, so their own work extends the record in the service of their disciplinary community."
+        },
+        "changesFromBelow": "a different kind, not more of level 7: searching establishes where an original contribution sits, and one's work joins the record",
+        "sources": [
+          "QAADOC",
+          "VITAE",
+          "FHEQ"
+        ],
+        "provenance": {
+          "label": "both",
+          "status": "drafted",
+          "basis": "secondary"
+        }
+      }
+    ],
+    "tierStatements": [
+      {
+        "tier": "Introductory",
+        "statement": "Names the tools and stages of a search: the discovery service, the reading list, plan, keywords, evaluate, extend.",
+        "type": "factual",
+        "process": "remember"
+      },
+      {
+        "tier": "Introductory",
+        "statement": "Explains why academic searching is exploratory and effortful, unlike looking up trivia.",
+        "type": "conceptual",
+        "process": "understand"
+      },
+      {
+        "tier": "Introductory",
+        "statement": "Finds sources on the discovery service for one task.",
+        "type": "procedural (one method)",
+        "process": "apply",
+        "change": "declarative knowledge first put to work"
+      },
+      {
+        "tier": "Introductory",
+        "statement": "Starts from what they already know and what the reading list gives them.",
+        "type": "metacognitive (beginning)",
+        "process": "understand",
+        "change": "knowledge of one's own knowledge appears"
+      },
+      {
+        "tier": "Intermediate",
+        "statement": "Explains how keywords, synonyms, operators and limiters widen or narrow a search.",
+        "type": "conceptual",
+        "process": "analyse"
+      },
+      {
+        "tier": "Intermediate",
+        "statement": "Builds a search string with Boolean operators and applies limiters.",
+        "type": "procedural",
+        "process": "apply"
+      },
+      {
+        "tier": "Intermediate",
+        "statement": "Reads each set of results and changes the search in response.",
+        "type": "metacognitive (strategic)",
+        "process": "evaluate",
+        "change": "monitoring one's own search and changing it"
+      },
+      {
+        "tier": "Advanced",
+        "statement": "Extends a search through databases, citation searching and Google Scholar.",
+        "type": "procedural",
+        "process": "apply"
+      },
+      {
+        "tier": "Advanced",
+        "statement": "Judges sources by type, currency, authority and relevance to their own knowledge-building.",
+        "type": "procedural with metacognitive (criteria for choosing)",
+        "process": "evaluate",
+        "change": "the criteria become the learner's own"
+      },
+      {
+        "tier": "Advanced",
+        "statement": "Searches comprehensively for a dissertation and decides when the discourse is covered.",
+        "type": "metacognitive (self-regulation)",
+        "process": "evaluate",
+        "create": null,
+        "change": "functioning knowledge: the search directed by the learner"
+      }
+    ],
+    "masteryNote": "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative, what academic searching is and where to start, with one procedure (the discovery service) and a first look at what one already knows; Intermediate is procedural, the craft of keywords, operators and limiters, with monitoring of one's own search beginning; Advanced is procedural and metacognitive, extending and judging, and deciding for oneself what a comprehensive search needs. In Kuhlthau's terms the learner moves from the uncertainty of initiation to the confidence of a formed focus; in Willison and O'Regan's, from prescribed to open research. Mastery is the guide's \"science\" of searching become the learner's own, which is the core's A11 ladder from compliance to flow.",
+    "ladderReadings": [
+      {
+        "rowId": "F",
+        "tier": "foundation",
+        "fheqLevel": 3,
+        "practice": "looks in the books and sites a tutor lists and uses whatever first seems to fit",
+        "knowledge": "the facts a task needs and where the named sources keep them",
+        "identity": "a learner who searches only when a task demands sources"
+      },
+      {
+        "rowId": "i1",
+        "tier": "introductory",
+        "fheqLevel": 3,
+        "practice": "compares academic searching with everyday searching and describes it as exploring, repeating and taking effort",
+        "knowledge": "why academic searching is exploratory, iterative and effortful where everyday searching is quick and single-shot",
+        "identity": "a newcomer who sees that academic searching is a practice of its own"
+      },
+      {
+        "rowId": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "practice": "searches the library discovery service, filters to scholarly sources and opens or requests the full text",
+        "knowledge": "how the discovery service works and what makes a source scholarly",
+        "identity": "a student trying out searching as a scholar does"
+      },
+      {
+        "rowId": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "practice": "starts a search from the reading list and own notes, then follows up the leads found there in stages",
+        "knowledge": "what one already knows about a topic and how a reading list leads into a staged search",
+        "identity": "a searcher beginning to build on what they already know"
+      },
+      {
+        "rowId": "d1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "practice": "pulls the key terms from an assessment task and lists synonyms and related terms for each",
+        "knowledge": "how a task's wording maps to the terms a discipline uses in its literature",
+        "identity": "a participant learning the community's vocabulary for searching"
+      },
+      {
+        "rowId": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "practice": "plans a search strategy that combines keywords and synonyms with the Boolean operators AND, OR and NOT",
+        "knowledge": "several ways of combining terms with Boolean operators and when each fits the task",
+        "identity": "a searcher taking responsibility for planning their own searches"
+      },
+      {
+        "rowId": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "practice": "runs a search, reviews each set of results and amends keywords, operators and limiters before running it again",
+        "knowledge": "how iterative searching works and own habits in judging and changing results",
+        "identity": "a self-regulating searcher who learns from each round of results"
+      },
+      {
+        "rowId": "e1",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "practice": "extends a search by following citations backward and forward and by searching subject databases and Google Scholar",
+        "knowledge": "which search routes suit an unfamiliar topic and criteria for choosing between them",
+        "identity": "a searcher with a voice of their own who chooses where to look"
+      },
+      {
+        "rowId": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "practice": "weighs each source's date, author standing and fit with what they already know, then keeps or drops it with reasons",
+        "knowledge": "criteria for evaluating sources and how a source fits with what one already knows",
+        "identity": "a critical searcher whose judgement of sources expresses own standards"
+      },
+      {
+        "rowId": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "practice": "runs a systematic or scoping search for a dissertation, logs search strings and databases and justifies when the literature is covered",
+        "knowledge": "how systematic searching works, where grey literature and preprints sit and what counts as enough coverage for a question",
+        "identity": "a searcher who knows the limits of what they found and says so"
+      },
+      {
+        "rowId": "L8",
+        "tier": "beyond",
+        "fheqLevel": 8,
+        "practice": "keeps alerts running across databases, preprint servers and conference proceedings, maps the frontier in a thesis literature review and advises colleagues and students on searching",
+        "knowledge": "searching as how a field's frontier is defined: mapping what is known and not yet known so that a new claim can be placed at the boundary it extends, and working across disciplines in collaborations where new ways of defining knowledge emerge",
+        "identity": "a researcher others turn to for the state of knowledge in their area"
+      }
+    ],
+    "frameworkReadings": [
+      {
+        "rowId": "i2",
+        "tier": "introductory",
+        "fheqLevel": 4,
+        "practice": [],
+        "knowledge": [],
+        "identity": [
+          {
+            "id": "fheq-2024/4.10.b5",
+            "here": "tries out searching as a scholar does, learning the discovery service through library workshops and guided tasks that build the skill step by step",
+            "evidence": "a library search worksheet in nursing, an induction quiz on the catalogue in history and a guided search record in business"
+          }
+        ]
+      },
+      {
+        "rowId": "i3",
+        "tier": "introductory",
+        "fheqLevel": 5,
+        "practice": [],
+        "knowledge": [
+          {
+            "id": "fheq-2024/4.12.b4",
+            "here": "knows what they already understand about a topic and where that understanding stops, and sees how the gaps shape the search the reading list leads into",
+            "evidence": "an annotated reading list in sociology, a topic knowledge map in nursing and a search plan noting gaps in environmental science"
+          }
+        ],
+        "identity": [
+          {
+            "id": "fheq-2024/4.12.b7",
+            "here": "begins to build on what they already know, adding new search skills to existing ones in ways that prepare them for research responsibilities at work",
+            "evidence": "a search skills log in psychology, a staged search record in law and a reflective note on finding sources in engineering"
+          }
+        ]
+      },
+      {
+        "rowId": "d1",
+        "tier": "intermediate",
+        "fheqLevel": 4,
+        "practice": [],
+        "knowledge": [
+          {
+            "id": "fheq-2024/4.10.b1",
+            "here": "knows the core concepts of their subject well enough to translate a task's everyday wording into the terms the discipline uses in its literature",
+            "evidence": "a keyword and synonym table in nursing, a concept grid for a biology assignment and a terminology list for a history essay"
+          }
+        ],
+        "identity": []
+      },
+      {
+        "rowId": "d2",
+        "tier": "intermediate",
+        "fheqLevel": 5,
+        "practice": [],
+        "knowledge": [],
+        "identity": [
+          {
+            "id": "fheq-2024/4.12.b8",
+            "here": "takes responsibility for planning their own searches, deciding which terms and operators to combine as a future professional who must find reliable information alone",
+            "evidence": "a documented search strategy in nursing, a Boolean search plan in business and a database search log in engineering"
+          }
+        ]
+      },
+      {
+        "rowId": "d3",
+        "tier": "intermediate",
+        "fheqLevel": 6,
+        "practice": [
+          {
+            "id": "fheq-2024/4.15.b6",
+            "here": "applies learned search techniques in repeated cycles, reviewing each set of results and amending keywords, operators and limiters to extend and consolidate what the search finds",
+            "evidence": "a search history log in public health, an annotated results review in education and an iterative search record in computer science"
+          }
+        ],
+        "knowledge": [],
+        "identity": [
+          {
+            "id": "fheq-2024/4.15.b5",
+            "here": "becomes a self-regulating searcher who manages their own learning from each round of results, steering towards refereed articles and primary sources as the search improves",
+            "evidence": "a reflective search diary in psychology, a source log of journal articles in sociology and an archive search record in history"
+          }
+        ]
+      },
+      {
+        "rowId": "e1",
+        "tier": "advanced",
+        "fheqLevel": 5,
+        "practice": [],
+        "knowledge": [
+          {
+            "id": "fheq-2024/4.12.b3",
+            "here": "knows the main routes of enquiry in the subject, from citation chaining to databases and Google Scholar, and judges which suit an unfamiliar topic",
+            "evidence": "a search route comparison in nursing, a citation map in physics and a database selection rationale in law"
+          }
+        ],
+        "identity": [
+          {
+            "id": "fheq-2024/4.12.b8",
+            "here": "chooses where to look with a voice of their own, taking responsibility for search decisions that a professional will later make without guidance",
+            "evidence": "a justified source plan in business, a literature search reflection in social work and a database choice rationale in engineering"
+          }
+        ]
+      },
+      {
+        "rowId": "e2",
+        "tier": "advanced",
+        "fheqLevel": 6,
+        "practice": [
+          {
+            "id": "fheq-2024/4.15.b7",
+            "here": "weighs each source's date, author standing and fit with existing knowledge, judging its arguments and evidence critically before keeping or dropping it with reasons",
+            "evidence": "an annotated bibliography in history, a critical appraisal checklist in nursing and a source evaluation table in environmental science"
+          },
+          {
+            "id": "fheq-2024/4.15.b5",
+            "here": "manages their own reading by preferring refereed articles, scholarly reviews and original materials, and records why each kept source earns its place",
+            "evidence": "a source evaluation log in psychology, a review of primary documents in politics and a critical reading record in pharmacy"
+          }
+        ],
+        "knowledge": [],
+        "identity": []
+      },
+      {
+        "rowId": "e3",
+        "tier": "advanced",
+        "fheqLevel": 7,
+        "practice": [
+          {
+            "id": "fheq-2024/4.17.b6",
+            "here": "runs a systematic or scoping search for a dissertation autonomously, planning databases and search strings at a professional standard and adapting the method as problems appear",
+            "evidence": "a scoping review protocol in nursing, a logged search strategy in public health and a methods chapter in education"
+          },
+          {
+            "id": "fheq-2024/4.17.b5",
+            "here": "judges when the literature is covered despite incomplete results, justifying that decision clearly to supervisors and readers in the methods and review sections",
+            "evidence": "a PRISMA flow diagram in health sciences, a search limitations statement in psychology and a literature review chapter in geography"
+          }
+        ],
+        "knowledge": [
+          {
+            "id": "fheq-2024/4.17.b2",
+            "here": "understands systematic searching techniques in depth, including protocols, databases, grey literature and preprints, and how each applies to their own research question",
+            "evidence": "a search protocol in medicine, a grey literature search plan in social policy and a preprint screening record in computer science"
+          },
+          {
+            "id": "fheq-2024/4.17.b1",
+            "here": "holds a systematic understanding of the field's literature and its current problems, enough to say what coverage is sufficient for a given research question",
+            "evidence": "a systematic review in pharmacy, a scoping review in education and a state of the art chapter in engineering"
+          }
+        ],
+        "identity": []
+      },
+      {
+        "rowId": "L8",
+        "tier": "beyond",
+        "fheqLevel": 8,
+        "practice": [
+          {
+            "id": "fheq-2024/4.18.b5",
+            "here": "maps the frontier from alerts across databases, preprint servers and proceedings, judging what is new from partial evidence and advising colleagues and students clearly",
+            "evidence": "a thesis literature review in chemistry, a search training session for students in history and a research briefing in public health"
+          }
+        ],
+        "knowledge": [
+          {
+            "id": "fheq-2024/4.18.b1",
+            "here": "locates the gap a new claim fills by mapping the frontier, including across disciplines, where working with other fields can open new ways of defining knowledge",
+            "evidence": "a systematic review opening a medical thesis, a cross-disciplinary literature map in environmental science and a jointly written review in digital humanities"
+          },
+          {
+            "id": "fheq-2024/4.18.b2",
+            "here": "knows the frontier of their field systematically, its key venues, debates and gaps, so they can place their own work within the current state of knowledge",
+            "evidence": "a doctoral literature review in physics, a review article in sociology and a conference paper in education"
+          }
+        ],
+        "identity": [
+          {
+            "id": "fheq-2024/4.18.b7",
+            "here": "a researcher others turn to for the state of knowledge in their area, taking autonomous responsibility for keeping that view current in complex settings",
+            "evidence": "a commissioned evidence review in public health, a research advisory role in history and a mentoring record in engineering"
+          }
+        ]
+      }
+    ]
+  },
+  "theorySpine": {
+    "overview": "- Three tiers, Introductory, Intermediate and Advanced, each with a focus, content, a progression logic and links to other pathways (D:PTM, Pathway 3).\n- It covers searching for and evaluating sources, distinct from conceiving a research project (D:PTM, Pathway 3).\n- Tiers are anchored to experience of the practice, not to year of study (D:TSPEC, section 2).",
+    "corePrinciples": "- Academic searching differs from everyday searching: it is exploratory, effortful and has no exact answer; it is closer to a science (D:EAU, pp. 96-97).\n- Searching in an academic context means finding sources relevant to the discipline's discourse and the topic, and engaging critically with them as one sifts them (D:EAU, p. 97).\n- Searching tests a learner's self-regulation: it calls for planning, decisions and reflection (D:EAU, p. 97).\n- Effective searching has five stages: plan, identify keywords, use the discovery service, evaluate sources, extend the search (D:EAU, p. 101).\n- Planning starts from what one already knows, so that searches target the gaps (D:EAU, pp. 101-103).\n- Keywords must be specific enough to narrow results; synonyms widen them (D:EAU, pp. 103-104).\n- Less experienced students should use the library discovery service before any other tool (D:EAU, p. 105).\n- The first criterion of evaluation is knowing what to expect of each source type; then currency, authority and relevance to one's own knowledge-building (D:EAU, pp. 108-109).\n- Extending a search beyond the library is not compulsory; if the discovery service finds what is needed, stop there (D:EAU, p. 112).",
+    "selection": "Choose this pathway when the aim is to find and judge sources. For shaping a research project, choose `path:researching-research-methods`, whose search phase builds on this one; for engaging critically with a source once found, `path:criticality`; for citing it, `path:referencing`. It suits badly a learner who already searches comprehensively and needs help with argument.",
+    "theories": [
+      "ing:doc:information-search-process-kuhlthau-1991"
+    ]
+  },
+  "crossCutting": {
+    "analysis": [
+      "**The guide's vocabulary against the benchmarks':** the guide says discovery service, reading list, search strategy, keywords, synonyms, Boolean operators, limiters, currency, authority, relevance, citation searching, databases, Google Scholar; the benchmarks say research literature, sources of information, currency of knowledge, peer-reviewed, systematic review. The practice searcher would need the guide's words, not the benchmarks', to find this practice.",
+      "**Skill against theme:** one of the twelve extracts is skill. adp-0212's matches for \"strategy\", \"peer\" and \"library\" mostly belong to other senses of the words.",
+      "**Book coverage:** Chapter 7 carries all nine cards: the reframe (i1), the discovery service (i2), planning from what you know (i3), keywords and synonyms (d1), Boolean operators and limiters (d2), the iterative strategy (d3), extending the search (e1), the evaluative criteria (e2) and the dissertation search (e3).",
+      "**Other authors:** META holds Kuhlthau and Willison and O'Regan; Kuhlthau describes the searcher's experience, Willison and O'Regan the growing autonomy the tiers climb."
+    ],
+    "benchmarkReadings": [
+      {
+        "benchmarkId": "qaa/librarianship-information-knowledge-records-and-archives-management-2025/1.12",
+        "kind": "theme",
+        "verbs": [
+          "address",
+          "identify",
+          "create",
+          "acquire",
+          "organise",
+          "retrieve",
+          "preserve"
+        ],
+        "relation": "the subject's own work, retrieving and organising information, as its object: the librarian's discipline, not the learner searching"
+      },
+      {
+        "benchmarkId": "qaa/creative-writing-2024/1.5",
+        "kind": "theme",
+        "verbs": [],
+        "relation": "libraries among partner organisations; no searching"
+      },
+      {
+        "benchmarkId": "qaa/librarianship-information-knowledge-records-and-archives-management-2025/2.1",
+        "kind": "theme",
+        "verbs": [],
+        "relation": "librarianship as a field of employment"
+      },
+      {
+        "benchmarkId": "qaa/criminology-2022/2.2",
+        "kind": "theme",
+        "verbs": [
+          "develop"
+        ],
+        "relation": "research strategies in the sense of research design, not search strategies: a word match"
+      },
+      {
+        "benchmarkId": "qaa/criminology-2022/4.5",
+        "kind": "theme",
+        "verbs": [
+          "use",
+          "assess",
+          "identify"
+        ],
+        "relation": "choosing a research strategy for a problem: research design; the search sense is absent"
+      },
+      {
+        "benchmarkId": "qaa/chemistry-2022/3.8",
+        "kind": "skill",
+        "verbs": [
+          "examine",
+          "critique",
+          "maintain",
+          "extend",
+          "support"
+        ],
+        "relation": "examining and critiquing the literature to keep knowledge current: evaluating and using sources, in chemistry's words"
+      },
+      {
+        "benchmarkId": "qaa/forensic-science-2022/1.4",
+        "kind": "theme",
+        "verbs": [
+          "underpin"
+        ],
+        "relation": "peer-reviewed science as the ground of forensic practice: the authority of sources as the subject's value"
+      },
+      {
+        "benchmarkId": "qaa/history-2022/3.7",
+        "kind": "theme",
+        "verbs": [],
+        "relation": "peer review of teaching practice: a word match"
+      },
+      {
+        "benchmarkId": "qaa/philosophy-2025/1.24",
+        "kind": "theme",
+        "verbs": [
+          "apply"
+        ],
+        "relation": "peer review as a learning activity in philosophy"
+      },
+      {
+        "benchmarkId": "qaa/counselling-and-psychotherapy-2022/3.19",
+        "kind": "theme",
+        "verbs": [
+          "take"
+        ],
+        "relation": "systematic review as a form of research project: comprehensive searching implied, not stated"
+      },
+      {
+        "benchmarkId": "qaa/criminology-2022/4.6",
+        "kind": "theme",
+        "verbs": [
+          "inform"
+        ],
+        "relation": "a systematic review informed by wide current understandings: the dissertation that needs an extended search"
+      },
+      {
+        "benchmarkId": "qaa/counselling-and-psychotherapy-2022/4.17",
+        "kind": "theme",
+        "verbs": [
+          "contribute",
+          "inform"
+        ],
+        "relation": "a systematic review contributing to the field: as above"
+      }
+    ],
+    "benchmarkReadingsSummary": "What this shows: one of the twelve extracts is skill (chemistry: examining and critiquing the literature to stay current). The rest are word matches: strategy as research design, peer review of teaching, libraries as partners or a profession, systematic review as a project type. Searching is so assumed in the benchmarks that they almost never describe it.",
+    "frameworkReadings": {
+      "intro": "Neither framework names searching: they speak of investigation that informs action, rising from appropriate investigation (L3, L4) to relevant research (L5) and designed research (L6, L7), and of using scholarly reviews and primary sources (FHEQ L6).",
+      "items": [
+        {
+          "id": "l3/application.3",
+          "verbs": "use, inform",
+          "relation": "investigating to inform action: searching as a means, not an end",
+          "tier": "before Introductory"
+        },
+        {
+          "id": "l4/application.3",
+          "verbs": "initiate, use, inform",
+          "relation": "starting one's own investigation: the discovery service",
+          "tier": "Introductory"
+        },
+        {
+          "id": "l4/knowledge.2",
+          "verbs": "analyse, interpret, evaluate",
+          "relation": "analysing the task for its keywords",
+          "tier": "Introductory"
+        },
+        {
+          "id": "4.12.b4",
+          "verbs": "(none: a noun phrase)",
+          "relation": "the limits of one's knowledge: planning a search from what one already knows",
+          "tier": "Intermediate"
+        },
+        {
+          "id": "l5/application.2",
+          "verbs": "determine, adapt, use",
+          "relation": "choosing and adapting a method: the search strategy",
+          "tier": "Intermediate"
+        },
+        {
+          "id": "l5/application.3",
+          "verbs": "use, inform",
+          "relation": "using relevant research to inform action: extending into the literature",
+          "tier": "Intermediate"
+        },
+        {
+          "id": "l6/application.2",
+          "verbs": "determine, refine, adapt, use",
+          "relation": "refining a method: the iterative search",
+          "tier": "Advanced"
+        },
+        {
+          "id": "4.15.b5",
+          "verbs": "manage, make use of",
+          "relation": "using scholarly reviews, refereed articles and primary sources",
+          "tier": "Advanced"
+        },
+        {
+          "id": "4.17.b1",
+          "verbs": "(none: a noun phrase)",
+          "relation": "awareness of current problems at the forefront: what a comprehensive search must reach",
+          "tier": "beyond Advanced"
+        },
+        {
+          "id": "l7/application.3",
+          "verbs": "design, undertake",
+          "relation": "designing one's own research: the dissertation's search",
+          "tier": "beyond Advanced"
+        }
+      ],
+      "notes": "neither framework names searching or sources; they name investigation and research that inform action, and the FHEQ names using scholarly reviews and refereed articles at L6. The tiers' move from finding to judging to covering a field has no single statement; it is spread across application, knowledge and the FHEQ's sources."
+    }
+  },
+  "gaps": {
+    "coreOpenQuestions": "1. **P2 triggers:** 4 and 5: the external frameworks were read by summary only, and SCONUL's own page returned an error (W-0016, W-0017). The crosswalk is editorial.\n2. **Levels:** `unknown` for every capability (D-ing-0001 (a)).\n3. **Capability coverage:** settled. One capability added by the model's author (D-ing-0012 (a), Abbott, 22:42): c1 \"Follow a staged search strategy, starting from the reading list and what one already knows\" (Introductory), with a temporary id until the model numbers it.\n4. **Theory links:** settled (D-ing-0013 (a), Abbott, 22:44): Kuhlthau's Information Search Process (1991) is the key theory, queued at META's ing; SCONUL's Seven Pillars and the ACRL Framework stay as external frameworks for the crosswalk (A10), not theories. Kuhlthau's details are recall until read; A9's target and the capabilities' `theory:` fill in when the document exists (W-0018).\n5. **Managing information:** settled (D-ing-0014 (a), Abbott, 22:48): SCONUL's Manage pillar (organising and storing what is found, reference management) stays out of this pathway and is carried to the Referencing pathway (`path:referencing`), where recording a source belongs with citing it. The crosswalk in A10 matches no capability here to Manage.\n6. **Templates:** settled (D-ing-0015 (a), Abbott, 22:50): the search plan and the search log (C3) stay here as proposals, not in COMPOSE's catalogue, and are offered to COMPOSE through META's ing when this document reaches `checked`. The log matters most at Advanced, where a comprehensive search must be repeatable.\n7. **Source map:** what *Excelling at University* teaches for each capability belongs in its guide map (held by `path`, draft), not here.\n8. **Progression by level (A11):** drafted 02:36 (J-ing-0001; META D-0205; shape D-ing-0035, D-ing-0036). Every level was read by summary only (W-0031 to W-0034); the entries are editorial readings of the descriptors and the pathway's theory. Kuhlthau's run 0034 is now linked in A9 and in every capability's `theory:` (the key theory, D-ing-0013 (a)).\n9. **Vocabulary (D-ing-0050, Abbott, 11:10):** swept. The guide's glossary terms for this pathway are in B2a (and A4 where new); candidates from the model's tier text are in B2b; A10's direct terms are the term list v1.0 patterns as words, with the ruled second version's changes noted. The search patterns themselves are kept with each consuming project, not here. No published glossary of this pathway's vocabulary has yet been read; B2b stays candidates.\n\n---",
+    "reviewItems": [
+      "i1, d1, d3 and e3 are new and proposed (D-ing-0060); d1 splits keywords and synonyms out of the former 01.",
+      "adp-0212's extracts for this pathway are almost all word matches; the practice searcher would need the guide's vocabulary (discovery service, Boolean, limiters) to find the practice in the benchmarks."
+    ],
+    "differsFromTierMapping": "the map puts planning from what one already knows at Intermediate; i3 places it at Introductory (the former c1, ruled there). Otherwise the two agree: the reframe and the discovery service at Introductory; keywords, synonyms, Boolean operators, limiters and iterative narrowing at Intermediate; evaluation with discernment and extending the search at Advanced."
+  },
+  "adaptIntegration": {
+    "placement": [
+      {
+        "what": "The pathway's entry, Pathway 3, chapters [7]; `routes` feeds and drawsOn both null",
+        "where": "`catalogue/pathways.json` 1.0.0",
+        "state": "in the catalogue"
+      },
+      {
+        "what": "Its three tiers",
+        "where": "`catalogue/pathways/finding-using-sources.json`",
+        "state": "`planned`"
+      },
+      {
+        "what": "The teaching prose",
+        "where": "`docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 3",
+        "state": "draft, for SME review"
+      },
+      {
+        "what": "The capability cards and tier notes",
+        "where": "adp-0212 (RJ-0047), adp-0213 (RJ-0053)",
+        "state": "drafts; D-0058 owed"
+      },
+      {
+        "what": "The term list",
+        "where": "`tools/pathways/core/rules/pathway-term-lists.json` v1.0, 8 patterns for this pathway",
+        "state": "v2 ruled (D-0028), held on RJ-0033"
+      }
+    ],
+    "usage": [
+      {
+        "label": "Courses",
+        "text": "One SCORM course per tier, \"Finding & Using Sources: <Tier> Stage\" (TN-1), from a shell and subject context packs (PKS-1). None built."
+      },
+      {
+        "label": "Voice band",
+        "text": "Default anchor, bands 2 to 4, with no provisional mark (`pathway-tier-mapping.md`, Pathway 3)."
+      },
+      {
+        "label": "Cross-links",
+        "text": "The mapping says the pathway feeds Criticality (evaluating sources), Academic Writing (integrating them) and Researching (the search phase of a project); the catalogue's `routes` are null, so the links live only in the prose. D-ing-0009 (c) makes it, with Criticality, the on-ramp for a learner new to research."
+      },
+      {
+        "label": "Library context",
+        "text": "\"The library discovery service\" is generic in the core; each institution's pack names its own service, subject guides and databases (Phase D)."
+      },
+      {
+        "label": "Benchmark mapping",
+        "text": "The 8 patterns are the word test for QV-TAG-2 part (e). Several are broad (`source`, `search`, `reading`, `literature`) and may tag statements that are not about finding sources, for example a benchmark's \"sources of error\" or \"reading\" as a skill in a language subject; whether D-0028's v2 narrows them is unchecked here."
+      },
+      {
+        "label": "Practice connection and summative parity",
+        "text": "as for every pathway (D-0047; tier specification section 7)."
+      }
+    ],
+    "voiceBand": "Default anchor, bands 2 to 4, with no provisional mark (`pathway-tier-mapping.md`, Pathway 3).",
+    "routing": "The mapping says the pathway feeds Criticality (evaluating sources), Academic Writing (integrating them) and Researching (the search phase of a project); the catalogue's `routes` are null, so the links live only in the prose. D-ing-0009 (c) makes it, with Criticality, the on-ramp for a learner new to research.",
+    "openPoints": [
+      "D-0058: the cards. Abbott added one at 22:42 (D-ing-0012 (a)): \"Follow a staged search strategy, starting from the reading list and what one already knows\" (Introductory), beside `finding-using-sources/02`; for nts to land in `path` (ing N-0036).",
+      "Whether the catalogue's null `routes` should carry the mapping's cross-links.",
+      "The broad term patterns, for RJ-0033 when it commits v2."
+    ],
+    "benchmarkPatterns": [
+      "\\bliterature\\b",
+      "\\bliterature[\\s-]+review\\w*",
+      "\\bsource\\w*",
+      "\\bsearch\\w*",
+      "\\bretriev\\w*",
+      "\\bdatabase\\w*",
+      "\\binformation[\\s-]+literacy\\b",
+      "\\breading\\b"
+    ]
+  },
+  "bookGrounding": {
+    "chapters": "Chapter 7 (Research: Developing Effective Search Strategies, pp. 94-112).",
+    "sections": [
+      {
+        "pages": "pp. 96-97",
+        "teaches": "What searching means at university: exploratory, iterative and effortful"
+      },
+      {
+        "pages": "pp. 97-102",
+        "teaches": "Key principles of effective searching, through a student's search for a marketing assessment"
+      },
+      {
+        "pages": "pp. 102-103",
+        "teaches": "Planning the search from what one already knows and the reading list"
+      },
+      {
+        "pages": "pp. 103-104",
+        "teaches": "Identifying keywords and synonyms"
+      },
+      {
+        "pages": "pp. 104-108",
+        "teaches": "Using the library discovery service: Boolean operators, limiters and sorting"
+      },
+      {
+        "pages": "pp. 108-109",
+        "teaches": "Evaluating sources: currency, authority and relevance to one's own knowledge-building"
+      },
+      {
+        "pages": "pp. 109-112",
+        "teaches": "Extending the search: databases, citation searching, Google Scholar's 'cited by'"
+      }
+    ],
+    "byCapability": [
+      {
+        "capabilityId": "finding-using-sources/02",
+        "tierNote": "introduced",
+        "pages": "pp. 104-108",
+        "teaches": "the discovery service as first port of call",
+        "workedExamples": "the worked search (pp. 100-108)",
+        "notes": null
+      },
+      {
+        "capabilityId": "finding-using-sources/c1",
+        "tierNote": "introduced",
+        "pages": "pp. 97-103",
+        "teaches": "a staged strategy from the reading list and what one knows",
+        "workedExamples": null,
+        "notes": null
+      },
+      {
+        "capabilityId": "finding-using-sources/01",
+        "tierNote": "developed",
+        "pages": "pp. 103-108",
+        "teaches": "keywords, synonyms, Boolean operators and limiters",
+        "workedExamples": null,
+        "notes": null
+      },
+      {
+        "capabilityId": "finding-using-sources/03",
+        "tierNote": "extended",
+        "pages": "pp. 108-109",
+        "teaches": "currency, authority and relevance",
+        "workedExamples": null,
+        "notes": null
+      },
+      {
+        "capabilityId": "finding-using-sources/04",
+        "tierNote": "extended",
+        "pages": "pp. 109-112",
+        "teaches": "citation searching and scholarly search engines",
+        "workedExamples": null,
+        "notes": null
+      }
+    ],
+    "notCovered": "Managing found sources (SCONUL's Manage pillar) is carried to Referencing (D-ing-0014); Kuhlthau's stages and feelings are not named in the guide."
+  },
+  "source": {
+    "repo": "wkspc2614-adapt",
+    "core": "...themes/pathways/pathways/ingest-path-finding-using-sources.md",
+    "plan": "...integrations/cards/plans/finding-using-sources.yaml",
+    "wide": "...integrations/cards/wide/{pathway-readings,fheq-readings}.yaml",
+    "vocab": "...integrations/cards/ing-card-vocabulary.json",
+    "eau": "...source-maps/excelling-at-university/ingest-path-finding-using-sources-eau.md",
+    "adapt": "...integrations/adapt/ingest-path-finding-using-sources-adapt.md",
+    "note": "Our own words; no issuer or book text beyond short checked quotes. bookGrounding is the book->pathway source map; adaptIntegration is the ADAPT consumer view (voice band + scope/signpost routing)."
+  }
+}

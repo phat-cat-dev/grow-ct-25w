@@ -1,0 +1,164 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Researching and Research Methods
+pathwayNo: 9
+date: 4 October 2026
+time: "12:47"
+note: N-0136
+practiceNoun: researching
+
+cards:
+  - new: i1
+    statement: Explain how a research project differs from an essay, and how a proposal plans it.
+    short: Explain how a research project differs from an essay
+    knowledge: conceptual
+    qf: [{id: l3/knowledge.3, extract: "Be aware of the nature of the area of study or work."}]
+    book:
+      - {element: the proposal as plan, quote: "In a sense, the proposal acts as a plan for your research"}
+    rows:
+      Verbs: explain
+      Measures: none
+      Keywords: research project; essay; research proposal; dissertation; structured inquiry
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Research Skill Development framework (Willison and O'Regan) (`ing:doc:research-skill-development-willison-2007`)"
+      Frameworks: none recorded yet
+      Other authors: "Willison and O'Regan (2007): research skills as six facets set against five degrees of student autonomy, from prescribed to unbounded research (`ing:doc:research-skill-development-willison-2007`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"research as a structured project distinct from an essay\"."
+  - new: i2
+    old: researching-research-methods/01
+    short: Formulate a research question, rationale and aims
+    knowledge: procedural
+    qf: [{id: l4/application.3, extract: "Initiate and use appropriate investigation to inform actions."}]
+  - new: i3
+    statement: Narrow a broad topic to a specific, researchable question, judging what can be answered with the time, sources and skills available.
+    short: Narrow a topic to a question one can research
+    knowledge: metacognitive, beginning (knowing what one can do)
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+    book:
+      - {element: general to specific, quote: "The process of defining a title or research question is about moving from the general to the specific"}
+    rows:
+      Verbs: narrow, judge
+      Measures: specific; researchable
+      Keywords: topic; research question; general to specific; scope; feasibility
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Research Skill Development framework (Willison and O'Regan), embark and clarify (`ing:doc:research-skill-development-willison-2007`)"
+      Frameworks: none recorded yet
+      Other authors: "Willison and O'Regan (2007): \"embark and clarify\" is the first facet, setting the scope of the inquiry (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory \"moving from a broad topic to a specific research question\" and goal (\"frame a researchable question\")."
+  - new: d1
+    old: researching-research-methods/02
+    short: Structure and write a literature review and a research report
+    knowledge: conceptual and procedural (the genres)
+    qf: [{id: 4.10.b4, extract: "communicate the results of their study/work accurately and reliably"}]
+  - new: d2
+    old: researching-research-methods/c1
+    short: Write a research proposal that answers each of its questions
+    knowledge: procedural
+    qf: [{id: 4.12.b3, extract: "knowledge of the main methods of enquiry"}]
+  - new: d3
+    statement: Review the literature as critique, analysing, evaluating and synthesising it to show where own research sits and why it matters.
+    short: Review the literature as critique, to place own research in it
+    knowledge: metacognitive, strategic (positioning one's own work)
+    qf: [{id: 4.15.b3.2, extract: "to describe and comment upon particular aspects of current research"}]
+    book:
+      - {element: the literature review as critique, quote: "your objective should be to critique the discourse – to analyse, evaluate and synthesise it"}
+      - {element: not description, quote: "It's not just a description of who said what, when."}
+    rows:
+      Verbs: review, analyse, evaluate, synthesise, show
+      Measures: as critique
+      Keywords: literature review; critique; synthesis; gaps in the literature; intellectual context
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Research Skill Development framework (Willison and O'Regan), evaluate and reflect; analyse and synthesise (`ing:doc:research-skill-development-willison-2007`)"
+      Frameworks: none recorded yet
+      Other authors: "Willison and O'Regan (2007): evaluating, analysing and synthesising are facets of their own, rising with the student's autonomy (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Intermediate \"the literature review as critique (mapping the discourse and synthesising, not describing)\"; d1 keeps the genres' structure."
+  - new: e1
+    old: researching-research-methods/03
+    short: Apply research ethics, including consent and anonymisation
+    knowledge: procedural, by principles
+    qf: [{id: 4.12.b8, extract: "personal responsibility and decision-making"}]
+  - new: e2
+    old: researching-research-methods/c2
+    short: Choose and justify a methodology and methods for a question
+    knowledge: procedural, criteria for choosing
+    qf: [{id: l6/application.3, extract: "where appropriate design relevant research"}, {id: 4.15.b2, extract: "deploy accurately established techniques of analysis and enquiry"}]
+    book:
+      - {element: approach or methodology, quote: "explaining your approach or methodology means setting out how you intend to address the project's aims and objectives"}
+  - new: e3
+    old: researching-research-methods/04
+    short: Plan and scope a dissertation-length project
+    knowledge: metacognitive, self-regulation
+    qf: [{id: l7/application.3, extract: "Design and undertake research"}, {id: 4.17.b6, extract: "act autonomously in planning and implementing tasks"}]
+    book:
+      - {element: the dissertation, quote: "The dissertation draws on all of the literacies discussed in this book but on a grander scale."}
+
+readings:
+  qaa/english-2023/4.2: theme
+  qaa/languages-cultures-and-societies-2023/3.8: theme
+  qaa/architectural-technology-2022/3.17: skill
+  qaa/politics-and-international-relations-2023/3.14: theme
+  qaa/psychology-2023/3.30: theme
+  qaa/biosciences-2023/4.5: theme
+  qaa/optometry-2024/3.2: theme
+  qaa/history-2022/2.1: skill
+  qaa/health-studies-2024/1.12: skill
+  qaa/art-and-design-2026/3.25: theme
+  qaa/music-2025/3.20: theme
+  qaa/public-policy-and-public-administration-2025/3.12: skill
+
+vic:
+  qaa/english-2023/4.2: {verbs: [], relation: "developing research questions named among skills that carry into employment"}
+  qaa/languages-cultures-and-societies-2023/3.8: {verbs: [vary, depend], relation: "a word match: the aims and objectives of a degree course, not of a project"}
+  qaa/architectural-technology-2022/3.17: {verbs: [devise, design, conduct, produce], relation: "devising research questions and conducting a methodology to produce knowledge: the research cycle in a design discipline (i2, e2)"}
+  qaa/politics-and-international-relations-2023/3.14: {verbs: [develop, select, manage, investigate, evaluate, present], relation: "research reports and dissertations among assessments that develop investigating and presenting findings"}
+  qaa/psychology-2023/3.30: {verbs: [include], relation: "research reports among assessment methods"}
+  qaa/biosciences-2023/4.5: {verbs: [], relation: "a literature review as one form a project may take"}
+  qaa/optometry-2024/3.2: {verbs: [], relation: "consent, confidentiality and research ethics in a list of curriculum topics"}
+  qaa/history-2022/2.1: {verbs: [demonstrate, comply], relation: "applying research ethics and complying with codes, a standard in history: e1 in the subject's words"}
+  qaa/health-studies-2024/1.12: {verbs: [understand, inform], relation: "understanding why research ethics matters to clinical practice and its governance"}
+  qaa/art-and-design-2026/3.25: {verbs: [demonstrate], relation: "dissertations and contextual reports among projects meant to demonstrate research skills"}
+  qaa/music-2025/3.20: {verbs: [demonstrate], relation: "dissertations and portfolios meant to demonstrate advanced understanding and research skills"}
+  qaa/public-policy-and-public-administration-2025/3.12: {verbs: [], relation: "designing an independent project, choosing a methodology and writing up, named as nouns: e2 and e3 in the subject's words"}
+
+vicSummary: "What this shows: four of the twelve extracts are skill (architectural technology, history, health studies, public policy), all at the Advanced end: methodology, ethics, the independent project. The benchmarks speak of research mostly as the dissertation and its assessment forms, and rarely of framing a question, which is where the Introductory tier starts."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says research question, rationale, aims and objectives, research proposal, indicative bibliography, literature review, report structure, methodology, ESRC principles, consent, anonymisation, dissertation; the benchmarks say research questions, research methodology, independent research project, research ethics, codes and policies, dissertations, research reports. The vocabularies are close: this is the pathway where the guide and the benchmarks speak most alike."
+  - "**Skill against theme:** four of the twelve extracts are skill, all for the Advanced cards."
+  - "**Book coverage:** the research genres in Chapter 9 and research ethics in Chapter 10 carry all nine cards; the dissertation is introduced in Chapter 5 (p. 66)."
+  - "**Other authors:** META holds Willison and O'Regan, whose facets and degrees of autonomy fit the tiers closely; no other research methods text is held."
+
+qfIntro: "Both frameworks speak of research and enquiry at every level, rising from appropriate investigation (L3, L4) through methods of enquiry (L5) and established techniques of analysis (L6) to designing and undertaking research (L7)."
+qf:
+  - {id: l3/knowledge.3, verbs: "be aware", relation: "knowing the nature of one's area of study: what research is in it", tier: before Introductory}
+  - {id: l4/application.3, verbs: "initiate, use, inform", relation: "starting one's own investigation: the research question", tier: Introductory}
+  - {id: 4.10.b4, verbs: "communicate", relation: "communicating results accurately and reliably: the report and the review", tier: Introductory}
+  - {id: 4.12.b3, verbs: "evaluate critically", relation: "knowing the main methods of enquiry: the proposal's methodology question", tier: Intermediate}
+  - {id: 4.12.b4, verbs: "(none: a noun phrase)", relation: "the limits of one's knowledge: judging what one can research", tier: Intermediate}
+  - {id: 4.12.b8, verbs: "(none: a noun phrase)", relation: "personal responsibility and decision-making: ethical research", tier: Intermediate}
+  - {id: 4.15.b2, verbs: "deploy", relation: "deploying established techniques of analysis and enquiry: the methodology", tier: Advanced}
+  - {id: 4.15.b3.2, verbs: "describe, comment upon", relation: "commenting on current research: the literature review", tier: Advanced}
+  - {id: l6/application.3, verbs: "use, design", relation: "designing research to inform action", tier: Advanced}
+  - {id: l7/application.3, verbs: "design, undertake", relation: "designing and undertaking research: the dissertation and beyond", tier: beyond Advanced}
+  - {id: 4.17.b6, verbs: "demonstrate, act", relation: "self-direction and acting autonomously in planning: running one's own project", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the parts of a research project: question, rationale, aims and objectives, method, bibliography.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains how research differs from an essay, and what a rationale argues.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Moves from a broad topic to a specific question with a rationale and aims.", type: procedural (one method), process: apply, change: "the general-to-specific table put to work"}
+  - {tier: Introductory, statement: "Judges whether their question is one they can research.", type: metacognitive (beginning), process: evaluate, change: "knowledge of one's own capacity appears"}
+  - {tier: Intermediate, statement: "Explains the structure of a proposal, a literature review and a report, and how the sciences and business differ in reporting.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Writes a proposal that answers each of its questions.", type: procedural, process: apply, create}
+  - {tier: Intermediate, statement: "Reviews the literature as critique, placing their own research in the discourse.", type: metacognitive (strategic), process: evaluate, create, change: "one's own work seen within the field"}
+  - {tier: Advanced, statement: "Applies the ESRC principles: consent, anonymisation, the ethics form.", type: procedural, process: apply}
+  - {tier: Advanced, statement: "Chooses and justifies a methodology, its data, analysis and theoretical lens.", type: procedural (criteria for choosing), process: evaluate}
+  - {tier: Advanced, statement: "Plans, scopes and runs a dissertation, drawing every literacy together.", type: metacognitive (self-regulation), process: create, change: "functioning knowledge: independent research"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative, what a research project is and what a question needs, with a first judgement of what one can research; Intermediate is procedural, the genres of the proposal, the review and the report, with one's own work placed in the field; Advanced is procedural at its highest form, choosing a methodology and applying ethics, and metacognitive in running a whole project. In Willison and O'Regan's terms the learner moves from prescribed towards open research, setting their own scope. The tier map notes that this pathway skews later than most, so its Introductory learner is already capable; mastery is independent research to a scholarly standard, which is the core's A11 ladder from compliance to flow."
+
+differ: "the two agree: question, rationale and aims at Introductory; the proposal, the literature review as critique and the report at Intermediate; methodology, ethics and the dissertation at Advanced. The map notes that the whole pathway skews later; the indicative levels here are the cards' positions, not a claim that its Introductory learner is at L3."
+
+qfAdd: "the frameworks name research at every level, and this is the pathway they describe best: investigation (L3, L4), methods of enquiry (L5), established techniques and current research (L6), designing research and acting autonomously (L7). They name ethics only as personal responsibility."
+
+review:
+  - "i1, i3 and d3 are new and proposed (D-ing-0060); d3 takes the literature review as critique from d1, which keeps the genres' structure."
+  - "The indicative levels follow card position (D-ing-0060); the tier map says this pathway's tiers skew later than most, which the model's author may want to show."

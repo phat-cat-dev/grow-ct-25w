@@ -1,0 +1,10 @@
+.textured.ab-highlight {
+  --texture-highlight: var(--texture-accent);
+  background: linear-gradient(to bottom, transparent 55%, color-mix(in srgb, var(--texture-highlight) 38%, transparent) 55%);
+  padding: 0 .1em;
+  border-radius: 2px;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+.textured.ab-highlight.warning { --texture-highlight: var(--c-neutral, #b78712); }

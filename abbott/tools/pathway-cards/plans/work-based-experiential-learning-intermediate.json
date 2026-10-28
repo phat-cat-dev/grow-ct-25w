@@ -1,0 +1,151 @@
+{
+  "pathway": "work-based-experiential-learning",
+  "pathwayName": "Work-Based & Experiential Learning",
+  "tier": "intermediate",
+  "focus": "making the most of it",
+  "voiceBand": "§16 Intermediate (bands 2-4, default). Provisional: confirm at pathway pressure-test.",
+  "conceptChunkCount": 1,
+  "lessons": [
+    {
+      "lessonKey": "L01",
+      "title": "Defining practice- and work-based learning",
+      "grounding": {
+        "chunkId": "ch12/defining-practice-and-work-based-learning",
+        "heading": "Defining practice- and work-based learning",
+        "pages": "221-223",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Broadly speaking, this type of learning is focused on professional practice; it involves the application of theory or knowledge learnt in classroom settings to the way you do something, whether you're a student nurse or teacher, or you're an artist developing your craft."
+          },
+          {
+            "shapeId": "content-shapes/classification",
+            "quote": "In the list below, we've tried to highlight the main ones."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume the basics are in place; frame the topic as deepening and applying it across contexts.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Some experience in hand: the learner can build on the basics and take more responsibility, connecting across modules; the expectation rises.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom mid: apply, analyse, compare, explain.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define with the working nuances and boundary cases a student applying it needs; some field vocabulary assumed.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept operating across a couple of the subject's typical tasks; begin to note where it is less straightforward.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "An application task: the learner uses the concept on a realistic case; distractors are near-misses, not obvious errors.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A multi-step contrast across a realistic task; the stronger version shows judgement, not just more effort.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for applying the practice across modules and heavier tasks; some self-management expected.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test application of the concept to a typical task in the subject; distractors are partial or misapplied versions, not obvious errors.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to compare how this works across their tasks and what they would change.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm application across tasks and modules; begin connecting to neighbouring practices.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    }
+  ]
+}

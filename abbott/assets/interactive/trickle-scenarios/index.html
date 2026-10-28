@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Deep trickle scenarios | Player and data templates</title>
+  <link rel="stylesheet" href="trickle.css">
+</head>
+<body class="trickle-workshop">
+<main class="trickle-workshop__inner">
+  <header><p>Choices / consequences / deeper learning</p><h1>One card opens the next.</h1><p>Deep branching scenarios made from editable data. Choose a route, see its consequence, reflect, then make the next decision. Only the selected route is revealed.</p></header>
+  <div class="workshop-toolbar">
+    <label>Example <select id="scenario-example"></select></label>
+    <button type="button" id="load-example">Load example / clear current route</button>
+    <button type="button" id="export-route">Export route and notes</button>
+    <a href="scenario-template.json" download>Download deep data template</a>
+  </div>
+  <p class="workshop-notice">No network or automatic saving. Reload discards progress. Export before restarting or loading a scenario to keep your route and notes. Timed reveals never choose answers for you.</p>
+  <div id="scenario-player"></div>
+  <section class="scenario-author" aria-labelledby="author-title">
+    <h2 id="author-title">Author a scenario / data template</h2>
+    <p>Edit the JSON, or ask an agent to fill in the downloaded template. Branches may split and rejoin. Continue cards wait for a button; auto cards can trickle after a delay; choice cards always wait for a decision.</p>
+    <div class="workshop-toolbar"><label>Open JSON file <input type="file" id="scenario-file" accept=".json,application/json"></label><button type="button" id="fill-template">Put blank template in editor</button></div>
+    <label for="scenario-json">Scenario JSON</label>
+    <textarea id="scenario-json" rows="18" spellcheck="false"></textarea>
+    <div class="workshop-toolbar"><button type="button" id="validate-json">Validate only</button><button type="button" id="apply-json">Validate and play / clear current route</button><button type="button" id="export-json">Download scenario JSON</button></div>
+    <p id="author-status" role="status">Loading examples...</p>
+    <p><a href="README.md">Data format, agent authoring instructions and embed API</a></p>
+  </section>
+</main>
+<script src="scenario.js"></script>
+<script src="examples.js"></script>
+<script src="workshop.js"></script>
+</body>
+</html>

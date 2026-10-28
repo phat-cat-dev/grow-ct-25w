@@ -1,0 +1,138 @@
+// ============================================================================
+//  grow-style-fade.less — the "Fade" lesson-header style (manual for now; the
+//  typography manager will set these ultimately).
+//
+//  A composed style, kept as three profiles you can reason about separately:
+//    1 · TYPOGRAPHY — eyebrow (kicker) + two-line heading (<em> accent) + intro.
+//    2 · CARDS      — the fade-card grid, LINKED under this style; reuses the
+//                     GROW card depth/colour tokens (--e*, --d-line, --shL).
+//    3 · MOTION     — fade-in reveal + card flip; a SEPARATE layer, engaged only
+//                     when JS marks it (data-fade-motion / data-flip-ready) and
+//                     disabled under prefers-reduced-motion. No-JS = fully visible.
+//  All values are GROW tokens, so the scheme + typography manager flow through.
+// ============================================================================
+
+// ---- 1 · TYPOGRAPHY profile -------------------------------------------------
+.fade-cards {
+  --fade-measure: 62ch;
+  max-width: var(--fade-measure);
+  margin-inline: auto;
+  padding: var(--space-lg) var(--space-md);
+}
+.fade-eyebrow {
+  margin: 0 0 var(--space-2xs);
+  font: 700 var(--fs-2xs)/1.2 var(--font-mono, ui-monospace, monospace);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+}
+.fade-cards > h2 {
+  margin: 0 0 var(--space-sm);
+  font: 700 var(--fs-3xl)/1.1 var(--font-heading, var(--font-ui, system-ui, sans-serif));
+  color: var(--ink);
+  text-wrap: balance;
+}
+.fade-cards > h2 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+.fade-intro {
+  margin: 0 0 var(--space-lg);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+// ---- 2 · CARDS profile (linked under the Fade style) ------------------------
+.fade-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: ~"repeat(auto-fit, minmax(min(16rem, 100%), 1fr))";
+}
+.fade-card {
+  position: relative;
+  min-height: 13rem;
+  perspective: 1200px;
+}
+.fade-card-rotor {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+.fade-card-front,
+.fade-card-back {
+  --card-s: var(--gs);
+  --card-bg: hsl(var(--h) var(--card-s) var(--e2));
+  --card-line: hsl(var(--h) 16% var(--d-line));
+  --card-shadow: ~"0 2px 3px hsl(var(--h) 40% var(--shL) / 0.14), 0 9px 20px -6px hsl(var(--h) 45% var(--shL) / 0.24)";
+  box-sizing: border-box;
+  border: 1px solid var(--card-line);
+  border-radius: 14px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  padding: var(--space-md);
+  backface-visibility: hidden;
+}
+.fade-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+.fade-card h3 {
+  margin: 0 0 var(--space-2xs);
+  font: 700 var(--fs-lg)/1.2 var(--font-heading, var(--font-ui, system-ui, sans-serif));
+  color: var(--ink);
+}
+.fade-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--fs-sm);
+}
+.fade-card .fade-eyebrow { margin-bottom: var(--space-2xs); }
+.fade-card-toggle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.fade-card-toggle::after {
+  content: "\21BB"; // ↻ flip affordance (plain glyph; no icon font dependency)
+  font: 700 1rem/1 var(--font-ui, system-ui, sans-serif);
+  position: absolute;
+  right: var(--space-xs);
+  bottom: var(--space-xs);
+  width: 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  opacity: 0.85;
+}
+
+// ---- 3 · MOTION layer (separate; engaged by JS; reduced-motion safe) ---------
+// flip (user-initiated)
+.fade-card[data-flip-ready] .fade-card-rotor { transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.fade-card[data-flipped="true"] .fade-card-rotor { transform: rotateY(180deg); }
+// fade-in reveal (only once JS marks the section, so no-JS stays visible)
+.fade-cards[data-fade-motion] [data-fade-item] {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: var(--fade-delay, 0s);
+}
+.fade-cards[data-fade-motion] [data-fade-item].is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-card[data-flip-ready] .fade-card-rotor { transition: none; }
+  .fade-cards[data-fade-motion] [data-fade-item] { opacity: 1; transform: none; transition: none; }
+}

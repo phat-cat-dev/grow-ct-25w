@@ -1,0 +1,255 @@
+/* ============================================================================
+   lesson-frontmatter.css
+   The learner-visible LESSON FRONT MATTER PANEL, built in the AB/GROW header
+   style. Lays out everything frontmatter_spec.md §4 recommends a lesson opening
+   should show — not just the short default header.
+   ----------------------------------------------------------------------------
+   Order follows the spec:
+     HEAD (opening)   position · title · purpose & relevance · overview ·
+                      estimated time & pitch · learning outcomes · before you begin
+     DETAIL grid      starting knowledge · materials (side by side when room)
+     MORE (below)     what to expect (activities & assessment) ·
+                      completing this lesson · support & accessibility
+   "Assessment instructions and support details … sit immediately below, rather
+   than crowding the header" (§4) — the .lesson-fm__more block is ruled off for
+   exactly that. Administrative metadata (owner, authors, review, versioning)
+   is deliberately NOT shown: the opening is useful, not an audit record (§4).
+
+   Styled with the same language as assets/header/ (.ab-header): every visual
+   dial is a --lesson-fm-* token that defaults to a GROW theme token with a
+   literal fallback, so it renders fully themed inside grow-ct and still looks
+   right standalone. Scoped to .lesson-fm so it never touches global elements.
+
+   Variation (the header's two variants + responsive, mirrored here):
+     .lesson-fm--hero      the lesson landing — soft card, generous space (default)
+     .lesson-fm--compact   returning / in-flow view — left accent bar, tighter
+     .lesson-fm--plain     no chrome — drop inside an existing hero/header
+   Re-tint any variant by overriding --lesson-fm-accent.
+   ============================================================================ */
+
+.lesson-fm {
+  /* ---- connect to the theme; fall back when standalone ---- */
+  --lesson-fm-accent:       var(--accent, #2f6d83);
+  --lesson-fm-accent-ink:   var(--accent-ink, #24566a);
+  --lesson-fm-ink:          var(--ink, #1c2429);
+  --lesson-fm-ink-soft:     var(--ink-soft, #566069);
+  --lesson-fm-surface:      var(--surface-1, #fbfdff);
+  --lesson-fm-line:         var(--line, #d6dee4);
+  --lesson-fm-shadow:       var(--shadow, hsl(210 40% 20% / .16));
+  --lesson-fm-font-heading: var(--font-heading, var(--font-ui, system-ui, sans-serif));
+  --lesson-fm-font-body:    var(--font-ui, system-ui, sans-serif);
+  --lesson-fm-font-label:   var(--font-mono, ui-monospace, "SF Mono", Menlo, monospace);
+
+  /* ---- spacing + sizing dials (header language) ---- */
+  --lesson-fm-space-before: var(--space-lg, clamp(2.25rem, 1.7rem + 2.2vw, 4rem));
+  --lesson-fm-space-after:  var(--space-md, clamp(1.5rem, 1.2rem + 1.2vw, 2.5rem));
+  --lesson-fm-gap:          var(--space-sm, clamp(1rem, 0.85rem + 0.6vw, 1.5rem));
+  --lesson-fm-title-size:   var(--fs-4xl, clamp(2.6rem, 1.75rem + 3.8vw, 4.4rem));
+  --lesson-fm-measure:      62ch;
+
+  box-sizing: border-box;
+  padding-block: var(--lesson-fm-space-before) var(--lesson-fm-space-after);
+  color: var(--lesson-fm-ink);
+  font-family: var(--lesson-fm-font-body);
+}
+.lesson-fm *,
+.lesson-fm *::before,
+.lesson-fm *::after { box-sizing: inherit; }
+
+/* ---- HEAD ZONE ------------------------------------------------------ */
+
+/* position / kicker */
+.lesson-fm__position {
+  margin: 0 0 var(--space-2xs, .55rem);
+  color: var(--lesson-fm-accent-ink);
+  font-family: var(--lesson-fm-font-label);
+  font-size: var(--fs-2xs, .78rem);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+/* title */
+.lesson-fm__title {
+  max-width: 22ch;
+  margin: 0 0 var(--space-xs, .9rem);
+  font-family: var(--lesson-fm-font-heading);
+  font-size: var(--lesson-fm-title-size);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -.02em;
+  color: var(--lesson-fm-ink);
+  text-wrap: balance;
+}
+
+/* purpose & relevance — the lead line (why this lesson matters) */
+.lesson-fm__purpose {
+  max-width: var(--lesson-fm-measure);
+  margin: 0 0 var(--space-xs, .75rem);
+  font-size: var(--fs-lg, clamp(1.3rem, 1.12rem + 0.8vw, 1.6rem));
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--lesson-fm-ink);
+}
+
+/* overview — what you will explore and do (softer, supporting) */
+.lesson-fm__overview {
+  max-width: var(--lesson-fm-measure);
+  margin: 0;
+  font-size: var(--fs-md, 1.2rem);
+  line-height: 1.6;
+  color: var(--lesson-fm-ink-soft);
+}
+.lesson-fm__overview > :first-child { margin-top: 0; }
+.lesson-fm__overview > :last-child  { margin-bottom: 0; }
+
+/* meta: estimated time · pitch (dot-list, straight from .ab-header) */
+.lesson-fm__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.4rem;
+  margin: var(--lesson-fm-gap) 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--lesson-fm-ink-soft);
+  font-size: var(--fs-xs, .85rem);
+}
+.lesson-fm__meta-item { display: inline-flex; align-items: baseline; }
+.lesson-fm__meta-item::before {
+  content: "";
+  align-self: center;
+  width: 5px;
+  height: 5px;
+  margin-inline-end: .55rem;
+  border-radius: 50%;
+  background: var(--lesson-fm-accent);
+}
+.lesson-fm__meta-key {
+  margin-inline-end: .4rem;
+  font-family: var(--lesson-fm-font-label);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.lesson-fm__meta-val { font-weight: 600; color: var(--lesson-fm-ink); }
+
+/* ---- GROUPS / SECTIONS ---------------------------------------------- */
+.lesson-fm__group { margin-top: var(--lesson-fm-gap); }
+.lesson-fm__group-title {
+  margin: 0 0 .5rem;
+  font-family: var(--lesson-fm-font-label);
+  font-size: var(--fs-2xs, .78rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--lesson-fm-ink-soft);
+}
+.lesson-fm__list {
+  display: grid;
+  gap: .5rem;
+  max-width: var(--lesson-fm-measure);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-base, 1.05rem);
+  line-height: 1.5;
+}
+.lesson-fm__item { position: relative; padding-inline-start: 1.7rem; }
+
+/* objective marker: the ring-dot from grow-lesson.less */
+.lesson-fm__group--objectives .lesson-fm__item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .45em;
+  width: .8rem;
+  height: .8rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--lesson-fm-accent) 28%, transparent);
+  box-shadow: inset 0 0 0 2px var(--lesson-fm-accent);
+}
+/* checklist marker: a small filled chip (starting knowledge, materials) */
+.lesson-fm__list--check .lesson-fm__item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: .5em;
+  width: .62rem;
+  height: .62rem;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--lesson-fm-accent) 55%, transparent);
+}
+
+/* prose section (what to expect, completion, support) */
+.lesson-fm__prose {
+  max-width: var(--lesson-fm-measure);
+  margin: 0;
+  font-size: var(--fs-base, 1.05rem);
+  line-height: 1.6;
+  color: var(--lesson-fm-ink-soft);
+}
+.lesson-fm__prose > :first-child { margin-top: 0; }
+.lesson-fm__prose > :last-child  { margin-bottom: 0; }
+
+/* ---- DETAIL GRID: starting knowledge + materials side by side ------- */
+.lesson-fm__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--lesson-fm-gap) var(--space-md, 2rem);
+  margin-top: var(--lesson-fm-gap);
+}
+.lesson-fm__grid > .lesson-fm__group { margin-top: 0; }
+
+/* ---- MORE: secondary region, ruled off so it doesn't crowd the head - */
+.lesson-fm__more {
+  display: grid;
+  gap: var(--lesson-fm-gap);
+  margin-top: var(--space-md, 2rem);
+  padding-top: var(--space-md, 2rem);
+  border-top: 1px solid var(--lesson-fm-line);
+}
+.lesson-fm__more > .lesson-fm__group { margin-top: 0; }
+
+/* ---- VARIANTS (variation) ------------------------------------------- */
+
+/* hero: the lesson landing — soft accent-washed card, generous space */
+.lesson-fm--hero {
+  --lesson-fm-space-before: var(--space-xl, clamp(3rem, 2.1rem + 3.6vw, 6rem));
+  max-width: 74ch;
+  margin-inline: auto;
+  padding: var(--space-lg, 3rem);
+  border: 1px solid var(--lesson-fm-line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--lesson-fm-accent) 12%, var(--lesson-fm-surface)),
+      var(--lesson-fm-surface) 68%);
+  box-shadow:
+    0 1px 2px var(--lesson-fm-shadow),
+    0 24px 50px -32px var(--lesson-fm-shadow);
+}
+
+/* compact: a returning / in-flow view — left accent bar, tighter, smaller */
+.lesson-fm--compact {
+  --lesson-fm-space-before: var(--space-sm, 1.25rem);
+  --lesson-fm-space-after:  var(--space-sm, 1.25rem);
+  --lesson-fm-title-size:   var(--fs-2xl, clamp(1.85rem, 1.45rem + 1.8vw, 2.6rem));
+  max-width: 72ch;
+  padding-inline: var(--space-md, 1.75rem);
+  border-inline-start: 3px solid var(--lesson-fm-accent);
+  border-radius: 0 12px 12px 0;
+  background: color-mix(in srgb, var(--lesson-fm-accent) 6%, var(--lesson-fm-surface));
+}
+
+/* plain: no chrome — drop inside an existing hero/header */
+.lesson-fm--plain {
+  padding-inline: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* ---- responsive (matches the header's small-screen step-down) ------- */
+@media (max-width: 700px) {
+  .lesson-fm { --lesson-fm-title-size: var(--fs-2xl, 2rem); }
+  .lesson-fm--hero { padding: var(--space-md, 1.5rem); }
+}

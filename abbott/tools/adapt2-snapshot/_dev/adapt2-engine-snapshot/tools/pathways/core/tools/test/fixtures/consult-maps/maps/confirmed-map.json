@@ -1,0 +1,36 @@
+{
+  "_comment": "Fixture only, for consult-maps.test.js. Not a real map.",
+  "mapVersion": "1.0",
+  "status": "active",
+  "pathways": {
+    "path-fixture-pathway": {
+      "summary": { "text": "Fixture summary.", "basis": [], "status": "confirmed" },
+      "statements": [
+        {
+          "chunkId": "fixture/benchmark/1.1",
+          "strength": "direct",
+          "extract": "fixture extract text, never read by consult-maps.js",
+          "agentInstruction": "Fixture agent instruction, confirmed pair.",
+          "status": "confirmed",
+          "studentFacingStatement": "Fixture student-facing statement, second person.",
+          "whyItMatters": "Fixture why-it-matters line.",
+          "scopeElement": "fixture-scope-element"
+        },
+        {
+          "chunkId": "fixture/benchmark/1.2",
+          "strength": "indirect",
+          "extract": "fixture extract text, never read by consult-maps.js",
+          "agentInstruction": "Fixture agent instruction, confirmed pair with no SFS-1 fields.",
+          "status": "confirmed"
+        },
+        {
+          "chunkId": "fixture/benchmark/1.3",
+          "strength": "direct",
+          "extract": "fixture extract text, never read by consult-maps.js",
+          "agentInstruction": "Fixture agent instruction, proposed, must be excluded.",
+          "status": "proposed"
+        }
+      ]
+    }
+  }
+}

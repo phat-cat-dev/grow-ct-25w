@@ -1,0 +1,20 @@
+{
+    "name": "adapt-grow-wizard",
+    "version": "1.0.0",
+    "framework": ">=5.19.1",
+    "homepage": "https://github.com/your-org/adapt-grow-wizard",
+    "description": "Step wizard (GROW): a guided multi-step flow with a progress bar. Authorable ordered steps, each with a short label and a panel body. Progress width and the active label are computed from the current step; Back and Next move through the steps, clamped at the ends. Formative (ComponentModel), outside scoring. Optionally completes when the learner reaches the final step.",
+    "main": "js/adapt-grow-wizard.js",
+    "keywords": [
+        "adapt-plugin",
+        "adapt-component",
+        "adapt-framework"
+    ],
+    "license": "GPL-3.0",
+    "pluginType": "component",
+    "displayName": "Step wizard (GROW)",
+    "component": "growWizard",
+    "targetAttribute": "_growWizard",
+    "properties": "properties.schema",
+    "private": true
+}

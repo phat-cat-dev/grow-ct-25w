@@ -1,0 +1,89 @@
+// adapt-ab-base — token defaults
+//
+// The BASE layer: neutral default values for every --ab-* token the adapt-ab-*
+// components/extensions consume. A theme overrides by redefining these same
+// custom properties (globally or under a scope class). Nothing here is a brand;
+// swap the values, or let a theme win by loading after this.
+
+:root {
+  // ---- ink + surfaces ----
+  --ab-base-ink: #1a1a1a;
+  --ab-base-ink-muted: #6d6d6d;
+  --ab-base-surface: #ffffff;
+  --ab-base-surface-sunken: #f3f3f3;
+  --ab-base-hairline: rgba(0, 0, 0, 0.125);
+  --ab-base-border-width: 0.1rem;
+  --ab-base-shade: #000000; // mix target for hover/active darkening (flips to #fff in dark)
+
+  // ---- accent (the single themeable highlight) ----
+  --ab-accent: #2a5db0;
+  --ab-accent-rgb: 42, 93, 176;
+  --ab-on-accent: #ffffff;
+
+  // ---- semantic colours (used by .ab.card functional variants) ----
+  --ab-success: #2e7d4f;  --ab-success-rgb: 46, 125, 79;
+  --ab-danger:  #b23b3b;  --ab-danger-rgb: 178, 59, 59;
+  --ab-warning: #b7791f;  --ab-warning-rgb: 183, 121, 31;
+  --ab-info:    #2a7d8c;  --ab-info-rgb: 42, 125, 140;
+  --ab-on-semantic: #ffffff; // text on a semantic FILL (a dark ink in dark mode, where the hues brighten)
+
+  // ---- shape ----
+  --ab-border-radius: 0.375rem;
+
+  // ---- type (component titles reference this) ----
+  --ab-h4-font-size: 1.25rem;
+
+  // ---- spacing scale ----
+  --ab-space-050: 0.5rem;
+  --ab-space-075: 0.75rem;
+  --ab-space-100: 1rem;
+  --ab-space-125: 1.25rem;
+  --ab-space-200: 2rem;
+}
+
+// ---- dark theme ----
+// Redefine the neutrals (ink, surfaces, hairline, shade) and brighten the
+// accent and the four semantic hues for text contrast on dark grounds, and
+// flip the on-semantic ink so a semantic button FILL keeps a legible label.
+// Every object derives from these tokens, so the whole suite follows.
+// Applies automatically where the OS asks for dark (unless a .ab-theme-light
+// scope forces light), and on demand via a .ab-theme-dark / .ab-theme-light
+// scope class on the course root or any container.
+
+.ab-dark-tokens() {
+  --ab-base-ink: #eceef2;
+  --ab-base-ink-muted: #a2a6b0;
+  --ab-base-surface: #1a1c21;
+  --ab-base-surface-sunken: #24262d;
+  --ab-base-hairline: rgba(255, 255, 255, 0.14);
+  --ab-base-shade: #ffffff;
+  --ab-accent: #4a7fd0;
+  --ab-accent-rgb: 74, 127, 208;
+  --ab-success: #3f9d66;  --ab-success-rgb: 63, 157, 102;
+  --ab-danger:  #d96a6a;  --ab-danger-rgb: 217, 106, 106;
+  --ab-warning: #cf9a40;  --ab-warning-rgb: 207, 154, 64;
+  --ab-info:    #3fa0b4;  --ab-info-rgb: 63, 160, 180;
+  --ab-on-semantic: #15171c;
+}
+
+.ab-light-tokens() {
+  --ab-base-ink: #1a1a1a;
+  --ab-base-ink-muted: #6d6d6d;
+  --ab-base-surface: #ffffff;
+  --ab-base-surface-sunken: #f3f3f3;
+  --ab-base-hairline: rgba(0, 0, 0, 0.125);
+  --ab-base-shade: #000000;
+  --ab-accent: #2a5db0;
+  --ab-accent-rgb: 42, 93, 176;
+  --ab-success: #2e7d4f;  --ab-success-rgb: 46, 125, 79;
+  --ab-danger:  #b23b3b;  --ab-danger-rgb: 178, 59, 59;
+  --ab-warning: #b7791f;  --ab-warning-rgb: 183, 121, 31;
+  --ab-info:    #2a7d8c;  --ab-info-rgb: 42, 125, 140;
+  --ab-on-semantic: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.ab-theme-light) { .ab-dark-tokens(); }
+}
+.ab-theme-dark { .ab-dark-tokens(); }
+.ab-theme-light { .ab-light-tokens(); }

@@ -1,0 +1,107 @@
+{
+  "kbVersion": "9.9.9",
+  "gates": [
+    {
+      "id": "onb-04_naming",
+      "name": "Course naming",
+      "phase": "ONB",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 0,
+      "decidedValueShape": { "type": "object", "required": ["slug"] }
+    },
+    {
+      "id": "cxs-01_institutional-context",
+      "name": "Institutional context",
+      "phase": "CXS",
+      "hardness": "advisory",
+      "defaultType": "none",
+      "reserved": true,
+      "sequence": 1,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "cxs-04_referencing-style",
+      "name": "Referencing style",
+      "phase": "CXS",
+      "hardness": "advisory",
+      "defaultType": "none",
+      "reserved": true,
+      "sequence": 2,
+      "decidedValueShape": { "type": "object", "required": ["referencingStyle"] }
+    },
+    {
+      "id": "cxs-06_resources",
+      "name": "Resources drawer",
+      "phase": "CXS",
+      "hardness": "advisory",
+      "defaultType": "none",
+      "reserved": true,
+      "sequence": 3,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "crs-02_thematic-scope",
+      "name": "Thematic scope",
+      "phase": "CRS",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 4,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "crs-03_course-outcomes",
+      "name": "Course outcomes",
+      "phase": "CRS",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 5,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "crs-04_lesson-map",
+      "name": "Lesson map",
+      "phase": "CRS",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "sequence": 6,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "les-01_lesson-proposal",
+      "name": "Lesson proposal",
+      "phase": "LES",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands",
+      "sequence": 7,
+      "repeatsPer": "lesson",
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "wra-01_wrapper-open",
+      "name": "Wrapper open",
+      "phase": "WRA",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands",
+      "sequence": 8
+    },
+    {
+      "id": "wra-03_summative",
+      "name": "Summative assessment",
+      "phase": "WRA",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands",
+      "sequence": 9,
+      "decidedValueShape": { "type": "object" }
+    },
+    {
+      "id": "cxp-04_context-generation",
+      "name": "Context generation",
+      "phase": "CXP",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands",
+      "sequence": 10,
+      "decidedValueShape": { "type": "object" }
+    }
+  ]
+}

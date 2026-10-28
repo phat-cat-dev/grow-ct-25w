@@ -1,0 +1,32 @@
+:root {
+  --ab-link-opacity: 1;
+  --ab-link-color: var(--ab-blue);
+  --ab-link-color-rgb: rgba(var(--ab-blue-rgb), var(--ab-link-opacity, 1));
+  --ab-link-border-bottom: 0.05rem dotted var(--ab-link-color-rgb);
+  --ab-link-text-decoration: none;
+  --ab-link-hover-color: var(--ab-dark-blue);
+  --ab-link-hover-color-rgb: rgba(var(--ab-dark-blue-rgb), var(--ab-link-opacity, 1));
+  --ab-link-hover-border-bottom: 0.1rem solid var(--ab-link-hover-color-rgb);
+  --ab-link-hover-text-decoration: none;
+}
+html.ab-theme .ab-link,
+html.ab-theme .component__body a:not(.btn):not(.ab-link) {
+  color: var(--ab-link-color-rgb);
+  border-bottom: var(--ab-link-border-bottom);
+  text-decoration: var(--ab-link-text-decoration);
+  padding-bottom: 0.05em;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+html.ab-theme .ab-link:hover,
+html.ab-theme .ab-link:focus,
+html.ab-theme .component__body a:not(.btn):not(.ab-link):hover,
+html.ab-theme .component__body a:not(.btn):not(.ab-link):focus {
+  color: var(--ab-link-hover-color-rgb);
+  border-bottom: var(--ab-link-hover-border-bottom);
+  text-decoration: var(--ab-link-hover-text-decoration);
+}
+html.ab-theme .ab-link:focus-visible,
+html.ab-theme .component__body a:not(.btn):not(.ab-link):focus-visible {
+  outline: 2px solid var(--ab-primary);
+  outline-offset: 2px;
+}

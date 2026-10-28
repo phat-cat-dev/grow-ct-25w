@@ -1,0 +1,9 @@
+<svg data-motion-asset="jiggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-jiggle-title svg-motion-jiggle-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-jiggle-title">Ring</title><desc id="svg-motion-jiggle-desc">A small angular wiggle. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="jiggle"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-jiggle calc(2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-jiggle { 10%, 30% { transform: rotate(-8deg); } 20%, 40% { transform: rotate(8deg); } 50%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="jiggle"] .art,svg[data-motion-asset="jiggle"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-20 15h40l-5-8V-9a15 15 0 0 0-30 0V7Zm14 7a6 6 0 0 0 12 0M0-30v5"/></g></g></svg>

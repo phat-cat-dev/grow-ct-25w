@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Confidence check / Before and after</title>
+  <link rel="stylesheet" href="confidence.css">
+  <style>
+    body { margin: 0; padding: clamp(1rem,4vw,3rem); max-width: 65rem; margin-inline: auto; background: #f5f8fa; color: #172e3a; font: 1rem/1.6 system-ui,sans-serif; }
+    h1 { font-size: clamp(2rem,5vw,3rem); line-height: 1.15; }
+    a { color: #277a91; }
+  </style>
+</head>
+<body>
+  <h1>How confident do you feel?</h1>
+  <p>Record your starting confidence before an activity, then return to add your after ratings. For this local template, keep this page open: ratings are not automatically saved or sent anywhere.</p>
+  <main class="confidence-check"></main>
+  <noscript>This interactive check requires JavaScript. You can record before and after ratings on paper using a 1–5 scale.</noscript>
+  <p><a href="README.md">Authoring and embedding guide</a> · <a href="topics.json" download>Topic data template</a></p>
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="confidence.js"></script>
+  <script src="topics.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.scribble {
+  --scribble-colour: var(--accent, #326d91);
+  --scribble-duration: 1.6s;
+  --scribble-size: 1;
+  --scribble-angle: 0deg;
+  --scribble-stroke: 3;
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  color: var(--scribble-colour);
+  transform: rotate(var(--scribble-angle)) scale(var(--scribble-size));
+  transform-origin: center;
+  pointer-events: none;
+  overflow: visible;
+}
+.scribble path { fill: none; stroke: currentColor; stroke-width: var(--scribble-stroke); stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 0; vector-effect: non-scaling-stroke; }
+.scribble.is-playing path { animation: scribble-draw var(--scribble-duration) ease-out both; animation-delay: var(--scribble-delay, 0s); }
+@keyframes scribble-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.scribble-tool { color: var(--ink, #24313b); font: 1rem/1.6 var(--font-body, system-ui, sans-serif); }
+.scribble-tool .scribble-tool__controls { display: flex; flex-wrap: wrap; align-items: end; gap: 1rem; }
+.scribble-tool label { display: grid; gap: .25rem; }
+.scribble-tool :is(input,select,button) { font: inherit; accent-color: var(--accent, #326d91); }
+.scribble-tool button, .scribble-tool select { min-block-size: 2.75rem; padding: .4rem .7rem; color: inherit; background: var(--surface-1, #fff); border: 1px solid var(--line, #9cabb7); border-radius: .4rem; }
+.scribble-tool :focus-visible { outline: 3px solid var(--accent, #326d91); outline-offset: 3px; }
+.scribble-tool .scribble-tool__stage { position: relative; min-block-size: 22rem; display: grid; place-items: center; border: 1px dashed var(--line, #9cabb7); margin-block: 1rem; overflow: hidden; background: var(--surface-1, #fff); }
+.scribble-tool .scribble-tool__example { border: 1px solid var(--line, #9cabb7); border-radius: .5rem; padding: 1.5rem; max-inline-size: 80%; text-align: center; }
+.scribble-tool .scribble-tool__overlay { position: absolute; inline-size: min(40%, 16rem); min-inline-size: 9rem; }
+.scribble-tool output { font: .8rem/1.6 ui-monospace, monospace; }
+.scribble-tool .scribble-tool__settings { display: block; white-space: pre-wrap; padding: .5rem; overflow-wrap: anywhere; }
+@media (prefers-reduced-motion: reduce) { .scribble.is-playing path { animation: none; } }
+:is(.no-motion,[data-tm-no-motion="true"]) .scribble.is-playing path { animation: none; }

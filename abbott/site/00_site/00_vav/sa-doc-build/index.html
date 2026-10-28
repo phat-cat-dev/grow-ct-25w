@@ -1,0 +1,113 @@
+<!-- ============================================================================
+     index.html
+     Contents page for the sa-doc-build set. Same grey skin as the pages it
+     lists (lesson-record.skin.css) with the inspect layer (lesson-record.inspect
+     .css / .js) for the depth-by-level markup inspector. One lr-group per
+     category; add a new <li class="lr-item"> to a group (or a new group) as
+     other pages follow — see the comment markers below.
+     ============================================================================ -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contents · sa-doc-build</title>
+<link rel="stylesheet" href="lesson-record.skin.css">
+<link rel="stylesheet" href="lesson-record.inspect.css">
+</head>
+<body>
+<article class="lr" data-lr-role="lesson-record" aria-labelledby="lr-title">
+
+  <header class="lr__header">
+    <p class="lr__kicker">Documentation build · sa-doc-build</p>
+    <h2 class="lr__title" id="lr-title">Contents</h2>
+    <p class="lr__summary">Every page in this build uses the same grey skin and carries the leveled markup inspector. Open a page, then use <strong>Markup</strong> to outline its structure by nesting level.</p>
+  </header>
+
+  <div class="lr__bar" role="group" aria-label="About this build and tools">
+    <ul class="lr__legend" aria-label="About this build">
+      <li>Grey skin · leveled markup inspector on every page</li>
+    </ul>
+    <div class="lr__tools" data-lr-tools hidden></div>
+  </div>
+
+  <ol class="lr__groups">
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-lesson" data-group="lesson-record" data-kind="define" aria-labelledby="lr-h-lesson" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">01</span>
+          <h3 class="lr-group__title" id="lr-h-lesson">Lesson record</h3>
+          <span class="lr-badge">2 pages</span>
+          <span class="lr-group__sum">The lesson front matter, as a document and as data</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item">
+                <h4 class="lr-item__id"><a class="lr-ref" href="lesson-record.example.html">lesson-record.example.html</a></h4>
+                <p class="lr-item__text">The lesson record as a worked example — one lesson's front matter, hand-written as the template would emit it.</p>
+              </li>
+              <li class="lr-item">
+                <h4 class="lr-item__id"><a class="lr-ref" href="lesson-frontmatter-data.html">lesson-frontmatter-data.html</a></h4>
+                <p class="lr-item__text">The same lesson record in the grey skin, with the inspect layer for the leveled div structure.</p>
+              </li>
+              <!-- Add a lesson-record page here:
+              <li class="lr-item">
+                <h4 class="lr-item__id"><a class="lr-ref" href="FILE.html">FILE.html</a></h4>
+                <p class="lr-item__text">One line on what it is.</p>
+              </li>
+              -->
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-course" data-group="course-record" data-kind="define" aria-labelledby="lr-h-course" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">02</span>
+          <h3 class="lr-group__title" id="lr-h-course">Course record</h3>
+          <span class="lr-badge">1 page</span>
+          <span class="lr-group__sum">The course as the Level 0 concept node</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item">
+                <h4 class="lr-item__id"><a class="lr-ref" href="course_frontmatter_spec.html">course_frontmatter_spec.html</a></h4>
+                <p class="lr-item__text">The course frontmatter plan — four layers, the full YAML starting point, the concept-node and lesson-map fields, and the coherence checks.</p>
+              </li>
+              <!-- Add a course-record page here (same lr-item block as above). -->
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-more" data-group="more" data-kind="internal" aria-labelledby="lr-h-more">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">03</span>
+          <h3 class="lr-group__title" id="lr-h-more">More to follow</h3>
+          <span class="lr-badge">Placeholder</span>
+          <span class="lr-group__sum">New pages are added here as the build grows</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <p class="lr-empty">No further pages yet. Copy an <code class="lr-code">li.lr-item</code> block from a group above, or add a whole new <code class="lr-code">lr-group</code> for a new category.</p>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <!-- Add a new category here: copy an <li class="lr__item"> ... </li> block,
+         bump the lr-group__num, and give the details a unique id. -->
+
+  </ol>
+</article>
+
+<script src="lesson-record.inspect.js"></script>
+</body>
+</html>

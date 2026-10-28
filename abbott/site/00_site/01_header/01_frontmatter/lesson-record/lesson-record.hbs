@@ -1,0 +1,362 @@
+{{!--
+  lesson-record.hbs
+  Pure template. Semantic HTML, no JavaScript, no inline styles. It reads as a
+  plain document with no CSS at all (native <details> for the accordions, <dl> for
+  fields, anchors for cross references). Lay lesson-record.skin.css over it for
+  the grey, markdown-style look.
+
+  Expects the view model that build.js makes from a lesson record
+  (frontmatter_spec.md section 3) plus its course record:
+    the lesson fields as-is, `course` (language, learner_pitch, outcomes[] each
+    with `aligned`), `position`, and `summaries.*` (one line shown when a
+    section is closed).
+
+  Structure, outermost to innermost:
+    .lr                      the record
+      .lr__header            title block (no border)
+      .lr__bar               legend and optional tools slot (card)
+      .lr__groups            ordered list of sections
+        .lr-group            one card per section, each a <details> accordion
+                             (01-09 and 12 open by default, 10 and 11 closed)
+          .lr-note           callout
+          .lr-panel          inner layer holding the data
+            .lr-item         one id block (CO, LO or ACT) each in its own card
+
+  CO, LO and ACT are three separate cards at the same level. They link to each
+  other with plain anchors (#CO1, #LO1, #ACT1) and :target highlights the block.
+--}}
+<article class="lr" data-lr-role="lesson-record" aria-labelledby="lr-title">
+
+  <header class="lr__header">
+    <p class="lr__kicker">Lesson record · {{document_type}}</p>
+    <h2 class="lr__title" id="lr-title">{{title}}</h2>
+    <p class="lr__summary">{{summary}} <code class="lr-code">{{id}}</code></p>
+  </header>
+
+  <div class="lr__bar" role="group" aria-label="Key and tools">
+    <ul class="lr__legend" aria-label="What each treatment means">
+      <li class="lr-key" data-kind="define">Defined here (per lesson)</li>
+      <li class="lr-key" data-kind="inherit">Inherited (from course)</li>
+      <li class="lr-key" data-kind="derive">Derived (automatic)</li>
+      <li class="lr-key" data-kind="internal">Kept internal (never shown to learners)</li>
+    </ul>
+    <div class="lr__tools" data-lr-tools hidden></div>
+  </div>
+
+  <ol class="lr__groups">
+
+    {{!-- 01 Identity --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-identity" data-group="identity" data-kind="define" aria-labelledby="lr-h-identity" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">01</span>
+          <h3 class="lr-group__title" id="lr-h-identity">Identity</h3>
+          <span class="lr-badge">Defined here</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The id is stable and never changes. The title can change as often as it needs to.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Schema version</dt><dd>{{schema_version}}</dd></div>
+              <div class="lr-dl__row"><dt>Identifier</dt><dd><code class="lr-code">{{id}}</code></dd></div>
+              <div class="lr-dl__row"><dt>Document type</dt><dd>{{document_type}}</dd></div>
+              <div class="lr-dl__row"><dt>Title</dt><dd>{{title}}</dd></div>
+              <div class="lr-dl__row"><dt>Summary</dt><dd>{{summary}}</dd></div>
+              <div class="lr-dl__row"><dt>Tags</dt><dd>
+                <ul class="lr-tags">{{#each tags}}<li class="lr-tag">{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 02 Place in the course --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-place" data-group="place" data-kind="derive" aria-labelledby="lr-h-place" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">02</span>
+          <h3 class="lr-group__title" id="lr-h-place">Place in the course</h3>
+          <span class="lr-badge">Derived</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Breadcrumbs and the lesson position are derived from these fields. Nobody types them into the page. Sequence is presentation order, not depth.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Course</dt><dd><code class="lr-code">{{course_id}}</code></dd></div>
+              <div class="lr-dl__row"><dt>Parent</dt><dd><code class="lr-code">{{parent_id}}</code></dd></div>
+              <div class="lr-dl__row"><dt>Hierarchy level</dt><dd>{{hierarchy_level}}</dd></div>
+              <div class="lr-dl__row"><dt>Sequence</dt><dd>{{sequence}}</dd></div>
+              <div class="lr-dl__row"><dt>Position (derived)</dt><dd>{{position}}</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 03 Inherited from the course --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-inherited" data-group="inherited" data-kind="inherit" aria-labelledby="lr-h-inherited" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">03</span>
+          <h3 class="lr-group__title" id="lr-h-inherited">Inherited from the course</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">{{summaries.inherited}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Language, pitch, voice, referencing and rights come from the course unless the lesson overrides them. The lesson does not repeat them.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Language</dt><dd>{{course.language}}</dd></div>
+              <div class="lr-dl__row"><dt>Learner pitch</dt><dd>{{course.learner_pitch}}</dd></div>
+              <div class="lr-dl__row"><dt>Voice specification</dt><dd><code class="lr-code">{{course.voice_specification}}</code></dd></div>
+              <div class="lr-dl__row"><dt>Referencing style</dt><dd>{{course.referencing_style}}</dd></div>
+              <div class="lr-dl__row"><dt>Rights holder</dt><dd>{{#if course.rights.holder}}{{course.rights.holder}}{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+              <div class="lr-dl__row"><dt>Licence</dt><dd>{{#if course.rights.licence}}{{course.rights.licence}}{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 04 Scope --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-scope" data-group="scope" data-kind="internal" aria-labelledby="lr-h-scope" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">04</span>
+          <h3 class="lr-group__title" id="lr-h-scope">Scope</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">{{summaries.scope}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The boundary of this lesson. Scope exclusions stay internal. They stop the lesson growing and they are not shown to learners.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Focus</dt><dd>{{scope.focus}}</dd></div>
+              <div class="lr-dl__row"><dt>In scope</dt><dd>
+                <ul class="lr-list">{{#each scope.in_scope}}<li>{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Out of scope</dt><dd>
+                <ul class="lr-list">{{#each scope.out_of_scope}}<li>{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 05 Course outcomes (CO). Same level as 06 and 07. --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-co" data-group="course-outcomes" data-kind="inherit" aria-labelledby="lr-h-co" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">05</span>
+          <h3 class="lr-group__title" id="lr-h-co">Course outcomes</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">{{summaries.co}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">From the course record. Outcomes marked "served" are the ones this lesson is aligned to.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              {{#each course.outcomes}}
+              <li class="lr-item" id="{{id}}" data-aligned="{{#if aligned}}true{{else}}false{{/if}}">
+                <h4 class="lr-item__id"><code class="lr-code">{{id}}</code>{{#if aligned}} <span class="lr-flag">served by this lesson</span>{{/if}}</h4>
+                <p class="lr-item__text">{{statement}}</p>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 06 Lesson outcomes (LO) --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-lo" data-group="lesson-outcomes" data-kind="define" aria-labelledby="lr-h-lo" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">06</span>
+          <h3 class="lr-group__title" id="lr-h-lo">Lesson outcomes</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">{{summaries.lo}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Each lesson outcome points up to the course outcomes it serves and names the evidence that will show it has been met.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              {{#each learning_outcomes}}
+              <li class="lr-item" id="{{id}}">
+                <h4 class="lr-item__id"><code class="lr-code">{{id}}</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Statement</dt><dd>{{statement}}</dd></div>
+                  <div class="lr-dl__row"><dt>Serves</dt><dd><ul class="lr-refs">{{#each course_outcome_ids}}<li><a class="lr-ref" href="#{{this}}">{{this}}</a></li>{{/each}}</ul></dd></div>
+                  <div class="lr-dl__row"><dt>Evidence</dt><dd>{{evidence}}</dd></div>
+                </dl>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 07 Activities (ACT) --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-act" data-group="activities" data-kind="define" aria-labelledby="lr-h-act" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">07</span>
+          <h3 class="lr-group__title" id="lr-h-act">Activities</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">{{summaries.act}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Every activity points back to lesson outcomes. Do not promise that an activity is optional, saves answers or affects completion until that behaviour is verified in Adapt or SCORM.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              {{#each activities}}
+              <li class="lr-item" id="{{id}}">
+                <h4 class="lr-item__id"><code class="lr-code">{{id}}</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Purpose</dt><dd>{{purpose}}</dd></div>
+                  <div class="lr-dl__row"><dt>Evidences</dt><dd><ul class="lr-refs">{{#each lesson_outcome_ids}}<li><a class="lr-ref" href="#{{this}}">{{this}}</a></li>{{/each}}</ul></dd></div>
+                </dl>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 08 Assessment --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-assessment" data-group="assessment" data-kind="define" aria-labelledby="lr-h-assessment" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">08</span>
+          <h3 class="lr-group__title" id="lr-h-assessment">Assessment</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">{{summaries.assessment}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Purpose</dt><dd>{{assessment.purpose}}</dd></div>
+              <div class="lr-dl__row"><dt>Covers</dt><dd><ul class="lr-refs">{{#each assessment.lesson_outcome_ids}}<li><a class="lr-ref" href="#{{this}}">{{this}}</a></li>{{/each}}</ul></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 09 Prerequisites and materials --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-prereq" data-group="prerequisites" data-kind="define" aria-labelledby="lr-h-prereq" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">09</span>
+          <h3 class="lr-group__title" id="lr-h-prereq">Prerequisites and materials</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">{{summaries.prereq}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Only knowledge genuinely needed here. The learner sees this as "Before you begin" and "What you will need".</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Knowledge</dt><dd>
+                <ul class="lr-list">{{#each prerequisites.knowledge}}<li>{{this}}</li>{{else}}<li class="lr-empty">None</li>{{/each}}</ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Required lessons</dt><dd>
+                <ul class="lr-tags">{{#each prerequisites.required_lesson_ids}}<li class="lr-tag"><code class="lr-code">{{this}}</code></li>{{else}}<li class="lr-empty">None</li>{{/each}}</ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Estimated minutes</dt><dd>{{#if estimated_duration_minutes}}{{estimated_duration_minutes}}{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+              <div class="lr-dl__row"><dt>Materials</dt><dd>
+                <ul class="lr-list">{{#each materials_required}}<li>{{this}}</li>{{else}}<li class="lr-empty">None</li>{{/each}}</ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 10 Lifecycle and ownership --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-lifecycle" data-group="lifecycle" data-kind="internal" aria-labelledby="lr-h-lifecycle">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">10</span>
+          <h3 class="lr-group__title" id="lr-h-lifecycle">Lifecycle and ownership</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">{{summaries.lifecycle}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Who is accountable, which version this is and when it is next reviewed. Never shown in the learner opening.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Version</dt><dd>{{version}}</dd></div>
+              <div class="lr-dl__row"><dt>Status</dt><dd><span class="lr-pill">{{status}}</span></dd></div>
+              <div class="lr-dl__row"><dt>Owner</dt><dd>{{owner}}</dd></div>
+              <div class="lr-dl__row"><dt>Authors</dt><dd><ul class="lr-list">{{#each authors}}<li>{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul></dd></div>
+              <div class="lr-dl__row"><dt>Reviewers</dt><dd><ul class="lr-list">{{#each reviewers}}<li>{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul></dd></div>
+              <div class="lr-dl__row"><dt>Created</dt><dd><time datetime="{{created}}">{{created}}</time></dd></div>
+              <div class="lr-dl__row"><dt>Updated</dt><dd><time datetime="{{updated}}">{{updated}}</time></dd></div>
+              <div class="lr-dl__row"><dt>Review due</dt><dd>{{#if review_due}}<time datetime="{{review_due}}">{{review_due}}</time>{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+              <div class="lr-dl__row"><dt>Sources</dt><dd><ul class="lr-list">{{#each sources}}<li>{{this}}</li>{{else}}<li class="lr-empty">None yet</li>{{/each}}</ul></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 11 Academic review --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-review" data-group="review" data-kind="internal" aria-labelledby="lr-h-review">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">11</span>
+          <h3 class="lr-group__title" id="lr-h-review">Academic review</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">{{summaries.review}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Document status and review approval are separate. A draft can have a reviewer assigned without having been approved.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Academic status</dt><dd><span class="lr-pill">{{review.academic_status}}</span></dd></div>
+              <div class="lr-dl__row"><dt>Approved by</dt><dd>{{#if review.academic_approved_by}}{{review.academic_approved_by}}{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+              <div class="lr-dl__row"><dt>Approved on</dt><dd>{{#if review.academic_approved_on}}<time datetime="{{review.academic_approved_on}}">{{review.academic_approved_on}}</time>{{else}}<span class="lr-empty">Not set</span>{{/if}}</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    {{!-- 12 Learner opening --}}
+    <li class="lr__item">
+      <details class="lr-group" id="lr-opening" data-group="opening" data-kind="derive" aria-labelledby="lr-h-opening" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">12</span>
+          <h3 class="lr-group__title" id="lr-h-opening">Learner opening</h3>
+          <span class="lr-badge">Derived</span>
+          <span class="lr-group__sum">{{summaries.opening}}</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The concise introduction learners see before the lesson begins. It is a display view of the record above, not a second source of truth.</p>
+          <div class="lr-panel lr-preview">
+            <p class="lr-preview__eyebrow">{{frontmatter.eyebrow}}</p>
+            <p>{{frontmatter.body}}</p>
+            <p class="lr-preview__meta">{{frontmatter.meta.duration}} · {{frontmatter.meta.level}}</p>
+            <p><strong>{{frontmatter.objectivesTitle}}</strong></p>
+            <ul class="lr-list">{{#each frontmatter.objectives}}<li>{{this}}</li>{{/each}}</ul>
+          </div>
+          <div class="lr-panel">
+            <h4 class="lr-subhead">Derive, do not retype</h4>
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Duration</dt><dd><code class="lr-code">estimated_duration_minutes</code></dd></div>
+              <div class="lr-dl__row"><dt>Level</dt><dd><code class="lr-code">course.learner_pitch</code></dd></div>
+              <div class="lr-dl__row"><dt>Outcomes list</dt><dd><code class="lr-code">learning_outcomes[].statement</code></dd></div>
+              <div class="lr-dl__row"><dt>Position</dt><dd><code class="lr-code">sequence</code> and the course lesson map</dd></div>
+              <div class="lr-dl__row"><dt>Before you begin</dt><dd><code class="lr-code">prerequisites</code> and <code class="lr-code">materials_required</code></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+  </ol>
+</article>

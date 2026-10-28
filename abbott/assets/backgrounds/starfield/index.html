@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layered starfield / Background asset</title>
+  <link rel="stylesheet" href="starfield.css">
+  <style>
+    body { margin: 0; background: #08101e; color: #f4f8ff; font: 1rem/1.5 system-ui, sans-serif; }
+    .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding: 1rem; }
+    .controls label { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+    .controls input { max-width: 100%; }
+    .controls button, .controls a { font: inherit; color: inherit; background: transparent; border: 0; padding: .5rem; cursor: pointer; text-decoration: underline; text-underline-offset: .3em; }
+    :focus-visible { outline: 3px solid #a9d8ff; outline-offset: 3px; }
+    .status { padding-inline: 1rem; }
+  </style>
+</head>
+<body>
+  <div class="controls" role="group" aria-label="Starfield controls">
+    <label>Stars <input data-density type="range" min="20" max="500" step="10" value="180"><output data-density-value>180</output></label>
+    <label>Speed <input data-speed type="range" min="0.1" max="3" step="0.1" value="1"><output data-speed-value>1×</output></label>
+    <label>Star colour <input data-colour type="color" value="#f4f8ff"></label>
+    <button type="button" data-pause aria-pressed="false">Pause stars</button>
+    <button type="button" data-shuffle>Shuffle stars</button>
+    <a href="section.template.html" download>HTML template</a>
+    <a href="README.md">Integration guide</a>
+  </div>
+  <p class="status" role="status">Three depth layers drift at different speeds. Reduced motion keeps the stars still.</p>
+  <main class="starfield">
+    <div class="starfield-content">
+      <p>Space to explore</p>
+      <h1>A different<br>perspective.</h1>
+      <p>A lightweight, original star background. Put your own heading, learning prompt or next step here.</p>
+    </div>
+  </main>
+  <script src="starfield.js"></script>
+  <script>
+    const host = document.querySelector('.starfield');
+    const player = Starfield.mount(host);
+    const status = document.querySelector('.status');
+    for (const key of ['density', 'speed']) {
+      const input = document.querySelector(`[data-${key}]`);
+      input.addEventListener('input', () => {
+        try {
+          player.set({ [key]: input.valueAsNumber });
+          document.querySelector(`[data-${key}-value]`).value = input.value + (key === 'speed' ? '×' : '');
+        } catch (error) { status.textContent = `Could not update: ${error.message}`; }
+      });
+    }
+    document.querySelector('[data-colour]').addEventListener('input', event => { host.style.setProperty('--star-colour', event.target.value); });
+    document.querySelector('[data-pause]').addEventListener('click', event => {
+      const paused = !player.get().paused;
+      player.set({ paused });
+      event.target.setAttribute('aria-pressed', String(paused));
+      event.target.textContent = paused ? 'Resume stars' : 'Pause stars';
+      status.textContent = paused ? 'Star animation paused.' : 'Animation enabled. Reduced-motion preferences still take priority.';
+    });
+    document.querySelector('[data-shuffle]').addEventListener('click', () => { player.shuffle(); status.textContent = 'New star positions generated.'; });
+  </script>
+</body>
+</html>

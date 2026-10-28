@@ -1,0 +1,248 @@
+/**
+ * branching.less
+ *
+ * Styles for the branching decision-scenario component.
+ *
+ * Design refs: BB-5 (less), accessibility requirements
+ *
+ * Four button states, each distinguished by more than colour:
+ * 1. Default: neutral background, standard weight
+ * 2. Hover/focus: darker background, visible focus ring
+ * 3. Selected (chosen): primary colour, bold weight, checkmark marker
+ * 4. Commit-locked (unchosen after commit): muted background, lighter weight
+ *
+ * Consequence region: visually connected to chosen option via shared border/background.
+ * Reveal transition with prefers-reduced-motion fallback.
+ */
+
+// Variables for easy theming
+@branching-choice-bg: #f5f5f5;
+@branching-choice-bg-hover: #e8e8e8;
+// Theme-accent colour only (10 Oct 2026 colour migration) — these two were
+// branching's own Bootstrap-derived blue, not vanilla's teal, but still not
+// the theme accent. Everything else on this list is an intentional neutral grey and
+// stays literal per that decision.
+@branching-choice-bg-selected: var(--ab-base-accent);
+@branching-choice-bg-locked: #e9ecef;
+@branching-choice-text: #212529;
+@branching-choice-text-selected: #ffffff;
+@branching-choice-text-locked: #6c757d;
+@branching-choice-border: #dee2e6;
+@branching-choice-border-selected: var(--ab-base-accent);
+@branching-choice-focus-ring: var(--ab-base-accent-ring);
+@branching-consequence-bg: #f8f9fa;
+@branching-consequence-border: #dee2e6;
+@branching-transition-duration: 0.2s;
+
+.branching__inner {
+  // Component container
+}
+
+.branching__widget {
+  // Widget wrapper
+}
+
+.branching__instruction {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.branching__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.branching__choice {
+  // Base button styles
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  background-color: @branching-choice-bg;
+  color: @branching-choice-text;
+  border: 2px solid @branching-choice-border;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color @branching-transition-duration ease,
+              border-color @branching-transition-duration ease,
+              color @branching-transition-duration ease;
+
+  // Hover state
+  &:hover:not([disabled]):not([aria-disabled="true"]) {
+    background-color: @branching-choice-bg-hover;
+  }
+
+  // Focus state — visible focus ring
+  &:focus {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+
+  // Selected state — primary colour, bold, marker
+  &.is-selected {
+    background-color: @branching-choice-bg-selected;
+    border-color: @branching-choice-border-selected;
+    color: @branching-choice-text-selected;
+    font-weight: 600;
+  }
+
+  // Commit-locked state (unchosen after commit)
+  // Uses aria-disabled, NOT disabled — stays in tab order
+  &.is-commit-locked {
+    background-color: @branching-choice-bg-locked;
+    color: @branching-choice-text-locked;
+    font-weight: 300;
+    cursor: not-allowed;
+
+    // Muted border
+    border-color: darken(@branching-choice-bg-locked, 5%);
+  }
+
+  // Disabled state (component disabled)
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.branching__choice-text {
+  flex: 1;
+}
+
+.branching__choice-marker {
+  // Checkmark for selected choice
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.branching__consequence {
+  // Consequence region — visually connected to choice
+  padding: 1rem;
+  background-color: @branching-consequence-bg;
+  border: 1px solid @branching-consequence-border;
+  border-radius: 0.375rem;
+  margin-top: 0.5rem;
+
+  // Animation on reveal
+  animation: branching-reveal @branching-transition-duration ease-out;
+
+  // Focus styles for programmatic focus
+  &:focus {
+    outline: 2px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+.branching__consequence-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.branching__consequence-body {
+  font-size: 1rem;
+  line-height: 1.6;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Reveal animation
+@keyframes branching-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Reduced motion: instant reveal, no animation
+@media (prefers-reduced-motion: reduce) {
+  .branching__choice {
+    transition: none;
+  }
+
+  .branching__consequence {
+    animation: none;
+  }
+}
+
+// Scenario engine (multi-step): step counter, node body, continue/restart
+// buttons and good/poor/neutral outcome endings. Choices and the consequence
+// region reuse the rules above.
+.branching__step-count {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: @branching-choice-text-locked;
+  margin: 0 0 0.5rem;
+}
+
+.branching__node-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+.branching__chosen {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.branching__continue,
+.branching__restart {
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: @branching-choice-text-selected;
+  background-color: @branching-choice-bg-selected;
+  border: 2px solid @branching-choice-border-selected;
+  border-radius: 0.375rem;
+  cursor: pointer;
+
+  &:hover { filter: brightness(1.05); }
+
+  &:focus-visible {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+.branching__outcome {
+  padding: 1.25rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid @branching-choice-border;
+  background-color: @branching-consequence-bg;
+
+  &:focus { outline: none; }
+
+  &--good { border-left-color: #2e7d32; }
+  &--poor { border-left-color: #c8102e; }
+  &--neutral { border-left-color: @branching-choice-text-locked; }
+}

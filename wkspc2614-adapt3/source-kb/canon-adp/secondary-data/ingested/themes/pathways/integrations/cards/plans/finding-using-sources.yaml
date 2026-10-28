@@ -1,0 +1,174 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Finding and Using Sources
+pathwayNo: 3
+date: 4 October 2026
+time: "12:44"
+note: N-0133
+practiceNoun: finding and using sources
+
+cards:
+  - new: i1
+    statement: Explain how academic searching differs from everyday searching, as exploratory, iterative and effortful.
+    short: Explain how academic searching differs from everyday searching
+    knowledge: conceptual
+    qf: [{id: l3/application.3, extract: "Use appropriate investigation to inform actions."}]
+    book:
+      - {element: searching in higher education, quote: "Searching in higher education is exploratory; you won't find an exact answer, as you would do when searching for trivia."}
+    rows:
+      Verbs: explain
+      Measures: exploratory; iterative; effortful
+      Keywords: academic searching; everyday searching; search strategy; trivia
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Information search process (Kuhlthau) (`ing:doc:information-search-process-kuhlthau-1991`)"
+      Frameworks: none recorded yet
+      Other authors: "Kuhlthau (1991): searching as six stages, initiation, selection, exploration, formulation, collection and presentation, in which uncertainty rises early and falls once a focus forms; it describes the searcher's experience, not a technique (`ing:doc:information-search-process-kuhlthau-1991`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Introductory reframe (\"academic searching is not looking up trivia\")."
+  - new: i2
+    old: finding-using-sources/02
+    short: Use the library discovery service to locate scholarly sources
+    knowledge: procedural, one set method
+    qf: [{id: l4/application.3, extract: "Initiate and use appropriate investigation to inform actions."}]
+  - new: i3
+    old: finding-using-sources/c1
+    short: Follow a staged search, starting from the reading list and what one already knows
+    knowledge: metacognitive, beginning (what one already knows)
+    qf: [{id: 4.12.b4, extract: "an understanding of the limits of their knowledge"}]
+    book:
+      - {element: planning from what you know, quote: "This includes reviewing what you already know so that you can target aspects of a topic to focus on when searching."}
+  - new: d1
+    statement: Identify specific keywords and their synonyms from an assessment task.
+    short: Identify keywords and synonyms from the task
+    knowledge: conceptual
+    qf: [{id: l4/knowledge.2, extract: "Analyse, interpret and evaluate relevant information and ideas."}]
+    book:
+      - {element: keywords, quote: "Keywords – those words or short phrases you use when searching – act as the drivers of the searches you do."}
+      - {element: synonyms, quote: "A synonym is a word that essentially means the same as another word"}
+    rows:
+      Verbs: identify
+      Measures: specific
+      Keywords: keywords; synonyms; assessment task; search terms
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Information search process (Kuhlthau) (`ing:doc:information-search-process-kuhlthau-1991`), the formulation stage"
+      Frameworks: none recorded yet
+      Other authors: "Kuhlthau (1991): the focus formed in the formulation stage is what turns a vague topic into searchable terms (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Intermediate \"identifying keywords and synonyms\"; split out of the former 01, which keeps the Boolean strategy."
+  - new: d2
+    old: finding-using-sources/01
+    short: Plan a search strategy with keywords and Boolean operators
+    knowledge: procedural
+    qf: [{id: l5/application.2, extract: "Determine, adapt and use appropriate methods and skills."}]
+  - new: d3
+    statement: Refine a search in iterative cycles, reflecting on each set of results and amending keywords, operators and limiters.
+    short: Refine a search in cycles, reflecting on the results each time
+    knowledge: metacognitive, strategic
+    qf: [{id: l6/application.2, extract: "Determine, refine, adapt and use appropriate methods and skills."}]
+    book:
+      - {element: iterative search strategy, quote: "you'll do a search, reflect on the results, amend the parameters of the search, and then search again"}
+    rows:
+      Verbs: refine, reflect, amend
+      Measures: iterative; each set of results
+      Keywords: iterative searching; limiters; narrowing; search strategy; results
+      Benchmark evidence: not searched (new card).
+      Pedagogy: "Information search process (Kuhlthau) (`ing:doc:information-search-process-kuhlthau-1991`); Research skill development (Willison and O'Regan) (`ing:doc:research-skill-development-willison-2007`), find and generate"
+      Frameworks: none recorded yet
+      Other authors: "Willison and O'Regan (2007): research skills as six facets, finding and generating among them, set against degrees of student autonomy from prescribed to unbounded (`ing:doc:research-skill-development-willison-2007`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Intermediate \"iterative cycles of narrowing\" and the guide's account of search strategy as iterative."
+  - new: e1
+    old: finding-using-sources/04
+    short: Extend a search by citation searching, databases and Google Scholar
+    knowledge: procedural
+    qf: [{id: l5/application.3, extract: "Use relevant research or development to inform actions."}]
+  - new: e2
+    old: finding-using-sources/03
+    short: Evaluate sources for currency, authority and relevance to own knowledge
+    knowledge: procedural with metacognitive (relevance to one's own knowledge)
+    qf: [{id: 4.15.b5, extract: "make use of scholarly reviews and primary sources"}]
+    book:
+      - {element: relevance to own knowledge, quote: "its relevance to your reflections on your own knowledge and understanding"}
+  - new: e3
+    statement: Search comprehensively for a dissertation, judging when the discourse is covered well enough to stop.
+    short: Search comprehensively, judging when the discourse is covered
+    knowledge: metacognitive, self-regulation
+    qf: [{id: 4.17.b1, extract: "a critical awareness of current problems and/or new insights"}, {id: l7/application.3, extract: "Design and undertake research"}]
+    book:
+      - {element: extending for a dissertation, quote: "if you're working on a dissertation as a final year undergraduate student or a master's student"}
+    rows:
+      Verbs: search, judge
+      Measures: comprehensively; well enough to stop
+      Keywords: dissertation; comprehensive search; discourse; coverage; databases
+      Benchmark evidence: not searched (new card). The systematic-review extracts under e1 imply it.
+      Pedagogy: "Information search process (Kuhlthau) (`ing:doc:information-search-process-kuhlthau-1991`), collection and presentation; Research skill development (Willison and O'Regan) (`ing:doc:research-skill-development-willison-2007`)"
+      Frameworks: none recorded yet
+      Other authors: "Kuhlthau (1991): in the collection stage the searcher gathers what bears on a formed focus, and confidence rises as the search closes (run above). Willison and O'Regan (2007): at the most autonomous degree the student sets the scope of their own research (run above)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced \"the comprehensive searching a dissertation needs\" and goal (\"comprehensive, discerning engagement with the discourse\")."
+
+readings:
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/1.12: theme
+  qaa/creative-writing-2024/1.5: theme
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/2.1: theme
+  qaa/criminology-2022/2.2: theme
+  qaa/criminology-2022/4.5: theme
+  qaa/chemistry-2022/3.8: skill
+  qaa/forensic-science-2022/1.4: theme
+  qaa/history-2022/3.7: theme
+  qaa/philosophy-2025/1.24: theme
+  qaa/counselling-and-psychotherapy-2022/3.19: theme
+  qaa/criminology-2022/4.6: theme
+  qaa/counselling-and-psychotherapy-2022/4.17: theme
+
+vic:
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/1.12: {verbs: [address, identify, create, acquire, organise, retrieve, preserve], relation: "the subject's own work, retrieving and organising information, as its object: the librarian's discipline, not the learner searching"}
+  qaa/creative-writing-2024/1.5: {verbs: [], relation: "libraries among partner organisations; no searching"}
+  qaa/librarianship-information-knowledge-records-and-archives-management-2025/2.1: {verbs: [], relation: "librarianship as a field of employment"}
+  qaa/criminology-2022/2.2: {verbs: [develop], relation: "research strategies in the sense of research design, not search strategies: a word match"}
+  qaa/criminology-2022/4.5: {verbs: [use, assess, identify], relation: "choosing a research strategy for a problem: research design; the search sense is absent"}
+  qaa/chemistry-2022/3.8: {verbs: [examine, critique, maintain, extend, support], relation: "examining and critiquing the literature to keep knowledge current: evaluating and using sources, in chemistry's words"}
+  qaa/forensic-science-2022/1.4: {verbs: [underpin], relation: "peer-reviewed science as the ground of forensic practice: the authority of sources as the subject's value"}
+  qaa/history-2022/3.7: {verbs: [], relation: "peer review of teaching practice: a word match"}
+  qaa/philosophy-2025/1.24: {verbs: [apply], relation: "peer review as a learning activity in philosophy"}
+  qaa/counselling-and-psychotherapy-2022/3.19: {verbs: [take], relation: "systematic review as a form of research project: comprehensive searching implied, not stated"}
+  qaa/criminology-2022/4.6: {verbs: [inform], relation: "a systematic review informed by wide current understandings: the dissertation that needs an extended search"}
+  qaa/counselling-and-psychotherapy-2022/4.17: {verbs: [contribute, inform], relation: "a systematic review contributing to the field: as above"}
+
+vicSummary: "What this shows: one of the twelve extracts is skill (chemistry: examining and critiquing the literature to stay current). The rest are word matches: strategy as research design, peer review of teaching, libraries as partners or a profession, systematic review as a project type. Searching is so assumed in the benchmarks that they almost never describe it."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says discovery service, reading list, search strategy, keywords, synonyms, Boolean operators, limiters, currency, authority, relevance, citation searching, databases, Google Scholar; the benchmarks say research literature, sources of information, currency of knowledge, peer-reviewed, systematic review. The practice searcher would need the guide's words, not the benchmarks', to find this practice."
+  - "**Skill against theme:** one of the twelve extracts is skill. adp-0212's matches for \"strategy\", \"peer\" and \"library\" mostly belong to other senses of the words."
+  - "**Book coverage:** Chapter 7 carries all nine cards: the reframe (i1), the discovery service (i2), planning from what you know (i3), keywords and synonyms (d1), Boolean operators and limiters (d2), the iterative strategy (d3), extending the search (e1), the evaluative criteria (e2) and the dissertation search (e3)."
+  - "**Other authors:** META holds Kuhlthau and Willison and O'Regan; Kuhlthau describes the searcher's experience, Willison and O'Regan the growing autonomy the tiers climb."
+
+qfIntro: "Neither framework names searching: they speak of investigation that informs action, rising from appropriate investigation (L3, L4) to relevant research (L5) and designed research (L6, L7), and of using scholarly reviews and primary sources (FHEQ L6)."
+qf:
+  - {id: l3/application.3, verbs: "use, inform", relation: "investigating to inform action: searching as a means, not an end", tier: before Introductory}
+  - {id: l4/application.3, verbs: "initiate, use, inform", relation: "starting one's own investigation: the discovery service", tier: Introductory}
+  - {id: l4/knowledge.2, verbs: "analyse, interpret, evaluate", relation: "analysing the task for its keywords", tier: Introductory}
+  - {id: 4.12.b4, verbs: "(none: a noun phrase)", relation: "the limits of one's knowledge: planning a search from what one already knows", tier: Intermediate}
+  - {id: l5/application.2, verbs: "determine, adapt, use", relation: "choosing and adapting a method: the search strategy", tier: Intermediate}
+  - {id: l5/application.3, verbs: "use, inform", relation: "using relevant research to inform action: extending into the literature", tier: Intermediate}
+  - {id: l6/application.2, verbs: "determine, refine, adapt, use", relation: "refining a method: the iterative search", tier: Advanced}
+  - {id: 4.15.b5, verbs: "manage, make use of", relation: "using scholarly reviews, refereed articles and primary sources", tier: Advanced}
+  - {id: 4.17.b1, verbs: "(none: a noun phrase)", relation: "awareness of current problems at the forefront: what a comprehensive search must reach", tier: beyond Advanced}
+  - {id: l7/application.3, verbs: "design, undertake", relation: "designing one's own research: the dissertation's search", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the tools and stages of a search: the discovery service, the reading list, plan, keywords, evaluate, extend.", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains why academic searching is exploratory and effortful, unlike looking up trivia.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Finds sources on the discovery service for one task.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work"}
+  - {tier: Introductory, statement: "Starts from what they already know and what the reading list gives them.", type: metacognitive (beginning), process: understand, change: "knowledge of one's own knowledge appears"}
+  - {tier: Intermediate, statement: "Explains how keywords, synonyms, operators and limiters widen or narrow a search.", type: conceptual, process: analyse}
+  - {tier: Intermediate, statement: "Builds a search string with Boolean operators and applies limiters.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Reads each set of results and changes the search in response.", type: metacognitive (strategic), process: evaluate, change: "monitoring one's own search and changing it"}
+  - {tier: Advanced, statement: "Extends a search through databases, citation searching and Google Scholar.", type: procedural, process: apply}
+  - {tier: Advanced, statement: "Judges sources by type, currency, authority and relevance to their own knowledge-building.", type: procedural with metacognitive (criteria for choosing), process: evaluate, change: "the criteria become the learner's own"}
+  - {tier: Advanced, statement: "Searches comprehensively for a dissertation and decides when the discourse is covered.", type: metacognitive (self-regulation), process: evaluate, create, change: "functioning knowledge: the search directed by the learner"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative, what academic searching is and where to start, with one procedure (the discovery service) and a first look at what one already knows; Intermediate is procedural, the craft of keywords, operators and limiters, with monitoring of one's own search beginning; Advanced is procedural and metacognitive, extending and judging, and deciding for oneself what a comprehensive search needs. In Kuhlthau's terms the learner moves from the uncertainty of initiation to the confidence of a formed focus; in Willison and O'Regan's, from prescribed to open research. Mastery is the guide's \"science\" of searching become the learner's own, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map puts planning from what one already knows at Intermediate; i3 places it at Introductory (the former c1, ruled there). Otherwise the two agree: the reframe and the discovery service at Introductory; keywords, synonyms, Boolean operators, limiters and iterative narrowing at Intermediate; evaluation with discernment and extending the search at Advanced."
+
+qfAdd: "neither framework names searching or sources; they name investigation and research that inform action, and the FHEQ names using scholarly reviews and refereed articles at L6. The tiers' move from finding to judging to covering a field has no single statement; it is spread across application, knowledge and the FHEQ's sources."
+
+review:
+  - "i1, d1, d3 and e3 are new and proposed (D-ing-0060); d1 splits keywords and synonyms out of the former 01."
+  - "adp-0212's extracts for this pathway are almost all word matches; the practice searcher would need the guide's vocabulary (discovery service, Boolean, limiters) to find the practice in the benchmarks."

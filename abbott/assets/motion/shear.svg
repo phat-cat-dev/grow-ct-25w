@@ -1,0 +1,9 @@
+<svg data-motion-asset="shear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shear-title svg-motion-shear-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shear-title">Slant &amp; settle</title><desc id="svg-motion-shear-desc">A quick lean forward with a gentle rebound. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shear"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shear calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-shear { 25% { transform: skewX(-12deg) translateX(4px); } 45% { transform: skewX(5deg); } 65%, 100% { transform: skewX(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shear"] .art,svg[data-motion-asset="shear"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Forward</text></g></svg>

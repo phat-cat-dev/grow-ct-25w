@@ -1,0 +1,56 @@
+src/components/*
+!src/components/adapt-abbott-*/
+!src/components/adapt-ab-*/
+!src/components/adapt-gow-*/
+!src/components/adapt-grow-*/
+src/theme/*
+!src/theme/grow-ct/
+!src/theme/grow-ct-theme-packs/
+src/menu
+src/extensions/*
+!src/extensions/adapt-abbott-*/
+!src/extensions/adapt-ab-theme/
+!src/extensions/adapt-ab-*/
+!src/extensions/adapt-grow-*/
+src/less
+src/less/adapt.less
+src/plugins.js
+build
+bower_components
+node_modules
+.DS_Store
+.idea
+coverage
+.vscode
+src/core
+# Build outputs (regenerable)
+courses/_generated/
+docs/project-knowledge/
+scorm-packages/**/*.zip
+!scorm-packages/verified/**
+.playwright-mcp/
+
+# claude.ai relay drop zone, never committed
+incoming-docs/
+
+# QAA subject benchmark PDFs (reference material, not build inputs)
+docs/contexts/qaa/
+
+# Source-map companion full text (SMAP-1): the tracked map holds quotes of
+# at most two sentences; the source's full text, when not otherwise
+# readable from a repo-tracked working copy, lives here instead.
+source-kb/source-maps/_text/
+
+# Python bytecode cache, left by running tools/*.py directly
+__pycache__/
+
+# NB: course-export bundles under exports/ ARE version-controlled (Abbott,
+# 10 Oct 2026): the generated course outputs are a deliverable, not a throwaway
+# build artifact, so they go to git.
+
+# full Material Symbols variable font (kept local as the subsetting source; ship a subset)
+src/extensions/adapt-ab-theme/fonts/material-symbols-outlined.woff2
+
+# VM/transfer excludes
+.claude/worktrees/
+/src/course

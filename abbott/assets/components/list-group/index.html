@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>List groups with badges | Component assets</title>
+  <link rel="stylesheet" href="list-group.css">
+</head>
+<body class="list-group-demo">
+<main>
+  <header>
+    <p>Lists / navigation / counts</p>
+    <h1>Small lists. Clear priorities.</h1>
+    <p>Three original examples with labels on the left and count badges on the right. Responsive, token-driven and usable without a framework.</p>
+    <a href="list-group.html" download>Download the basic HTML template</a>
+  </header>
+  <section aria-labelledby="basic-title">
+    <h2 id="basic-title">01 / Simple count list</h2>
+    <p>A semantic list for information, without implying that each row is clickable.</p>
+    <ul class="list-group" aria-label="Learning resource counts">
+      <li class="list-group__item"><span class="list-group__label">Field notes</span><span class="list-group__badge"><span class="list-group__sr">Resources: </span>12</span></li>
+      <li class="list-group__item"><span class="list-group__label">Practice activities</span><span class="list-group__badge"><span class="list-group__sr">Resources: </span>8</span></li>
+      <li class="list-group__item"><span class="list-group__label">Things to revisit</span><span class="list-group__badge"><span class="list-group__sr">Resources: </span>3</span></li>
+    </ul>
+  </section>
+  <section aria-labelledby="links-title">
+    <h2 id="links-title">02 / Resource navigation</h2>
+    <p>Full-row links to existing asset galleries. Badges describe their collections.</p>
+    <ul class="list-group" aria-label="Asset collections">
+      <li><a class="list-group__item" href="../../icons/index.html"><span class="list-group__label"><strong>Icon collections</strong><span class="list-group__description">Academic practice, resources and library SVGs.</span></span><span class="list-group__badge"><span class="list-group__sr">Collections: </span>3</span></a></li>
+      <li><a class="list-group__item" href="../../interactive/lesson-sequences/index.html"><span class="list-group__label"><strong>Lesson compositions</strong><span class="list-group__description">Progressive layouts for reading, making and reflecting.</span></span><span class="list-group__badge"><span class="list-group__sr">Templates: </span>6</span></a></li>
+      <li><a class="list-group__item" href="../../motion/index.html"><span class="list-group__label"><strong>SVG motion</strong><span class="list-group__description">Animated icons, typography and transition studies.</span></span><span class="list-group__badge"><span class="list-group__sr">Assets: </span>28</span></a></li>
+    </ul>
+  </section>
+  <section aria-labelledby="selection-title" data-list-example>
+    <h2 id="selection-title">03 / Select a learning group</h2>
+    <p>Real buttons update the adjacent reading panel. Selection stays local to this page and resets on reload.</p>
+    <div class="example-layout">
+      <ul class="list-group" aria-label="Learning groups">
+        <li><button type="button" class="list-group__item" data-list-group="notice" aria-pressed="true" aria-controls="selected-group"><span class="list-group__label"><strong>Notice and collect</strong><span class="list-group__description">Look closely before deciding.</span></span><span class="list-group__badge"><span class="list-group__sr">Prompts: </span>3</span></button></li>
+        <li><button type="button" class="list-group__item" data-list-group="try" aria-pressed="false" aria-controls="selected-group"><span class="list-group__label"><strong>Try and compare</strong><span class="list-group__description">Make one small change at a time.</span></span><span class="list-group__badge"><span class="list-group__sr">Prompts: </span>2</span></button></li>
+        <li><button type="button" class="list-group__item" data-list-group="reflect" aria-pressed="false" aria-controls="selected-group"><span class="list-group__label"><strong>Reflect and apply</strong><span class="list-group__description">Turn what you learned into a next step.</span></span><span class="list-group__badge"><span class="list-group__sr">Prompts: </span>3</span></button></li>
+      </ul>
+      <div class="selected-group" id="selected-group" role="region" aria-labelledby="selected-group-title">
+        <h3 id="selected-group-title">Notice and collect</h3>
+        <ul data-list-prompts><li>What stands out first?</li><li>Which details repeat?</li><li>What evidence would you collect?</li></ul>
+      </div>
+    </div>
+    <p role="status" data-list-status>Notice and collect selected: 3 prompts.</p>
+  </section>
+  <footer><a href="README.md">Usage and theme tokens</a></footer>
+</main>
+<script src="list-group.js"></script>
+</body>
+</html>

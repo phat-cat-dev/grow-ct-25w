@@ -1,0 +1,204 @@
+{
+  "formatVersion": 1,
+  "description": "Role-based Adapt page skeletons collated from the portable page-structure specification. These are generator inputs, not rendered course JSON.",
+  "sources": [
+    "../_dev/docs/01-page-structure-and-components-spec.md",
+    "../_dev/docs/02-context-generator-keep-list.md"
+  ],
+  "adaptStructure": {
+    "contentObject": {
+      "_type": "page",
+      "_parentId": "course"
+    },
+    "pageSet": {
+      "fixedPages": [
+        "W-OPEN",
+        "C-PRE",
+        "SUMM",
+        "C-POST",
+        "W-CLOSE"
+      ],
+      "lessonInsertionPoint": {
+        "after": "C-PRE",
+        "before": "SUMM"
+      }
+    },
+    "blockIds": {
+      "pattern": "<pageKey>-b-<NN>",
+      "step": 5,
+      "order": "render"
+    },
+    "blockFields": {
+      "role": "_skeletonKey",
+      "tracking": "_trackingId"
+    },
+    "componentSlotClassPattern": "slot__<pageKey>__<skeletonKey>[ extra-class]"
+  },
+  "articleSections": {
+    "multiArticlePageTypes": [
+      "lesson"
+    ],
+    "lessonSectionOrder": [
+      "lesson-open",
+      "lesson-concept",
+      "lesson-formative",
+      "lesson-reflection",
+      "lesson-close"
+    ],
+    "roleToSection": {
+      "orientation": "lesson-open",
+      "orientation-tier": "lesson-open",
+      "learning-outcomes": "lesson-open",
+      "concept": "lesson-concept",
+      "worked-example": "lesson-concept",
+      "practical-guidance": "lesson-concept",
+      "knowledge-check": "lesson-formative",
+      "reflective": "lesson-reflection",
+      "reflective-task": "lesson-reflection",
+      "summary": "lesson-close",
+      "references": "lesson-close"
+    }
+  },
+  "templates": [
+    {
+      "pageType": "wrapper-open",
+      "baseKey": "W-OPEN",
+      "articles": [
+        {
+          "multiplicity": "single",
+          "blockSlots": [
+            { "skeletonKey": "overview" },
+            { "skeletonKey": "learning-outcomes" },
+            { "skeletonKey": "practice-connection" },
+            { "skeletonKey": "signpost" },
+            { "skeletonKey": "course-instructions" },
+            { "skeletonKey": "course-conventions" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageType": "c-pre",
+      "baseKey": "C-PRE",
+      "articles": [
+        {
+          "multiplicity": "single",
+          "blockSlots": [
+            { "skeletonKey": "confidence-pre" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageType": "lesson",
+      "baseKeyPattern": "L<lessonNumber padded to 2 digits>",
+      "articles": [
+        {
+          "section": "lesson-open",
+          "classes": ["article--lesson-open"],
+          "phase": "intro",
+          "blockSlots": [
+            { "skeletonKey": "orientation" },
+            { "skeletonKey": "orientation-tier", "optional": true },
+            { "skeletonKey": "learning-outcomes" }
+          ]
+        },
+        {
+          "section": "lesson-concept",
+          "classes": ["article--lesson-concept"],
+          "phase": "middle",
+          "blockSlots": [
+            { "skeletonKey": "concept-definition" },
+            { "skeletonKey": "concept-context", "gateAfter": true },
+            { "skeletonKey": "concept-intro" },
+            { "skeletonKey": "worked-example" },
+            { "skeletonKey": "practical-guidance", "gateAfter": true }
+          ]
+        },
+        {
+          "section": "lesson-formative",
+          "classes": ["article--lesson-formative"],
+          "phase": "middle",
+          "blockSlots": [
+            {
+              "skeletonKey": "check",
+              "count": 3,
+              "countBasis": "one per lesson outcome",
+              "activityRole": "knowledge-check"
+            }
+          ]
+        },
+        {
+          "section": "lesson-reflection",
+          "classes": ["article--lesson-reflection"],
+          "phase": "end",
+          "blockSlots": [
+            {
+              "skeletonKey": "reflective-prompt",
+              "variant": "reflection",
+              "activityRole": "reflective-task"
+            }
+          ]
+        },
+        {
+          "section": "lesson-close",
+          "classes": ["article--lesson-close"],
+          "phase": "end",
+          "blockSlots": [
+            { "skeletonKey": "summary" },
+            { "skeletonKey": "lesson-references" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageType": "summative",
+      "baseKey": "SUMM",
+      "articles": [
+        {
+          "multiplicity": "single",
+          "articleFeatures": ["_assessment", "_trickle"],
+          "blockSlots": [
+            { "skeletonKey": "introduction" },
+            { "skeletonKey": "assessment-items" },
+            { "skeletonKey": "results" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageType": "c-post",
+      "baseKey": "C-POST",
+      "articles": [
+        {
+          "multiplicity": "single",
+          "blockSlots": [
+            { "skeletonKey": "confidence-post" },
+            { "skeletonKey": "reflective-bridge", "optional": true }
+          ]
+        }
+      ]
+    },
+    {
+      "pageType": "wrapper-close",
+      "baseKey": "W-CLOSE",
+      "articles": [
+        {
+          "multiplicity": "single",
+          "blockSlots": [
+            { "skeletonKey": "summary" },
+            { "skeletonKey": "practice-connection" },
+            { "skeletonKey": "where-next" },
+            { "skeletonKey": "course-references" }
+          ]
+        }
+      ]
+    }
+  ],
+  "generationNotes": [
+    "Every emitted Adapt object needs a unique _id and the correct _parentId.",
+    "Assign _trackingId values as a dense, course-wide counter; update course.json._latestTrackingId.",
+    "Choose component implementations downstream using content shape, activity pattern, tier, slot type, and context affinity. This catalog defines slots, not component selections.",
+    "Do not confuse page archetypes with content shapes or activity patterns; those are separate routing inputs."
+  ]
+}

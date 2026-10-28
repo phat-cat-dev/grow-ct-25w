@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "id": "project-rescue",
+  "title": "The project that changed overnight",
+  "intro": "A deadline, incomplete evidence and a team waiting for a decision. Follow the consequences through three decisions and a final commitment.",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "The situation",
+      "body": "It is Monday. Your team has four days to deliver a learning prototype. A key source has changed and your first design may no longer fit.",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "Choose your first move",
+      "body": "What do you do before the team starts building?",
+      "choices": [
+        {
+          "label": "Check the changed evidence",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "Keep building from the old brief",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "You uncover a requirement that the old brief missed. The team has less building time, but a clearer target.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "The first screen looks polished. A reviewer then points out that it solves yesterday's problem. Rework is now part of the plan.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "Pause and reflect / 1",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "Set the scope",
+      "body": "You cannot complete every feature by Friday. What will you protect?",
+      "choices": [
+        {
+          "label": "One complete learning journey",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "A sample of every feature",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "You choose a smaller end-to-end experience with a clear outcome. Several attractive extras move to a later release.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "The breadth makes the concept easy to discuss, but several routes stop at placeholders. You must explain that limit in the review.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "Pause and reflect / 2",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "Respond to the trial",
+      "body": "Two learners misunderstand the instruction. The stakeholder wants more decoration. What comes first?",
+      "choices": [
+        {
+          "label": "Rewrite and retest the instruction",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "Add the requested decoration first",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "A quick trial shows that learners can now start independently. You record the visual request for the next iteration.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "The stakeholder likes the new look. The instruction is still unclear, so the team must explicitly flag that learning risk.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "Pause and reflect / 3",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "Your route, your explanation",
+      "body": "Your route is ready to discuss. Compare the consequences of your decisions: evidence, scope and learning clarity. This scenario records a route, not a right-answer score.",
+      "prompt": "What would you keep or change next time?"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+<title>Pathway Table of Correspondences</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a header, a filter strip, then one wide table scrolling inside its own frame; row label columns stick to the left. */
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --fg:#1f2421; --muted:#5d6660; --line:#d9ded8;
+  --accent:#2f6b5a; --f:#e9e6dc; --i:#e4efe9; --d:#dde8f1; --e:#ece3f0; --l8:#f1e6dc;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141816; --surface:#1b201d; --fg:#e6ebe7; --muted:#9aa49d; --line:#2e3631;
+  --accent:#7cc3ad; --f:#2a2822; --i:#1f2d27; --d:#1e2833; --e:#2a2230; --l8:#30271f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141816; --surface:#1b201d; --fg:#e6ebe7; --muted:#9aa49d; --line:#2e3631;
+  --accent:#7cc3ad; --f:#2a2822; --i:#1f2d27; --d:#1e2833; --e:#2a2230; --l8:#30271f; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45}
+.wrap{padding-inline:16px;padding-block:24px 40px;max-width:100%}
+header{max-width:80vw;display:grid;gap:8px}
+h1{font-family:var(--display);font-weight:650;font-size:clamp(1.6rem,3vw,2.2rem);margin:0;text-wrap:balance}
+header p{margin:10px 0 0;color:var(--muted)}
+/* the title opens and closes the introduction */
+details.intro>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+details.intro>summary::-webkit-details-marker{display:none}
+details.intro>summary .hint{font-size:.8rem;color:var(--accent);white-space:nowrap}
+details.intro>summary .hint::before{content:"\25B8 ";display:inline-block;transition:transform .15s}
+details.intro[open]>summary .hint::before{transform:rotate(90deg)}
+details.intro>summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+.strip{margin-block:10px 6px}
+.striphead{display:flex;align-items:center;gap:10px}
+.striptog{font:inherit;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:none;border:0;padding:4px 2px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.striptog:hover{color:var(--fg)}
+.striptog:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.striptog .arrow{display:inline-block;transition:transform .15s}
+.striptog[aria-expanded="true"] .arrow{transform:rotate(90deg)}
+.striptog .count{text-transform:none;letter-spacing:0;color:var(--muted);opacity:.8}
+.stripbody{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+.stripbody[hidden]{display:none}
+button.chip{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:4px 10px;cursor:pointer}
+button.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+button.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.frame{overflow:auto;max-height:78vh;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:separate;border-spacing:0;font-size:.86rem}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+thead th{position:sticky;top:0;background:var(--surface);z-index:2;font-weight:600}
+/* one header row only: two sticky rows drift apart when names wrap or fonts load late */
+thead th .grp{display:block;font-family:var(--display);font-weight:500;font-size:.95rem;margin-bottom:4px;white-space:normal;min-width:180px}
+thead th .sub{display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+thead th.gs{border-left:2px solid var(--line)} thead th.gs.th{border-left-color:var(--accent)}
+thead th.gs.th .grp{color:var(--accent)}
+thead th.gs.bm{border-left-color:var(--muted)}
+th.pw{font-family:var(--display);font-weight:500;font-size:.95rem;white-space:nowrap}
+th.th{color:var(--accent);border-left:2px solid var(--accent)}
+td.thc{font-style:normal}
+td.pre{white-space:pre-line}
+td.qfr{min-width:340px;max-width:420px}
+td.rd{min-width:260px;max-width:340px}
+.sticky{position:sticky;left:0;z-index:1;min-width:64px;font-family:var(--mono);font-weight:500}
+thead .sticky{z-index:3}
+td.card{min-width:220px;max-width:280px}
+td.kind{min-width:130px;color:var(--muted)}
+td.fw{min-width:110px;font-family:var(--mono);font-size:.76rem;color:var(--muted)}
+td.meta{min-width:150px;max-width:200px}
+tr.F td,tr.F th{background:var(--f)} tr.i td,tr.i th{background:var(--i)}
+tr.d td,tr.d th{background:var(--d)} tr.e td,tr.e th{background:var(--e)} tr.L8 td,tr.L8 th{background:var(--l8)}
+.lvl{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.foot{margin-top:14px;color:var(--muted);font-size:.85rem;max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+<header>
+<details class="intro">
+<summary><h1>Pathway Table of Correspondences</h1><span class="hint">About this table</span></summary>
+<p>Fourteen academic practices, nine cards each, read from foundation to level 8: from basic procedure towards the metacognitive and the reflexive. Rows are card positions. Each row is read three ways, as practice (what one does), knowledge (what one knows) and practitioner self-identity (who one is). Each academic practice has six columns: the card, the card read as practice, knowledge and practitioner self-identity, its kind of knowledge and the FHEQ or CQFW statements the card cites. Under each reading come the FHEQ descriptors that answer it at the row's level: what each looks like in the student's disciplinary, professional and personal development in this practice, and how it is evidenced across the disciplines (FHEQ descriptor plus the practice's own practice and knowledge gives the practitioner's practice, knowledge and self-identity). Conceptual models come next, each placed against the rows. Of development: Barnett's levels of critical being in knowledge, self and world, Biggs and Collis's SOLO taxonomy, Dreyfus's stages of skill, Baxter Magolda's journey to self-authorship, Lave and Wenger's participation in a community of practice, loosely the student life cycle, Shulman's signature pedagogies (to think, to perform, to act with integrity), Kuhlthau's information search process in feelings, thoughts and actions, Lea and Street's academic literacies and Finlay's variants of reflexivity, Meyer and Land's threshold concepts, self-determination theory and Mezirow's transformative learning; the life cycle now names Gale and Parker's and Lizzio's models of transition. Of knowledge and metacognition: Anderson and Krathwohl, Marzano and Kendall, Zimmerman, Schraw and Dennison, the Education Endowment Foundation, Efklides and Kuhn. Professional frameworks follow, each across every row: social work's Professional Capabilities Framework, Benner's stages from novice to expert in nursing and the NHS career framework of Skills for Health. The qualification frameworks follow, placed by each row's indicative level: FHEQ, CQFW, the Scottish framework (FQHEIS, within SCQF levels 7 to 12) and the Bologna framework for the European Higher Education Area (its Dublin descriptors, short cycle to third cycle). Cross-cutting themes follow, comparing academic practice with wider professional practice: enterprise and entrepreneurship, employability, education for sustainable development and the occupational competence levels used for apprenticeships. Then each of 54 subject benchmarks, read the same three ways where the benchmark speaks: level 5 at d2, level 6 at d3 (threshold) and e2 (typical and excellent), level 7 at e3. Hover a header for the subject in a sentence, or a cell for the statement ids it rests on.</p>
+</details>
+</header>
+<div class="strip" id="pwstrip"><span class="lab">Academic practices</span></div>
+<div class="strip" id="metastrip"><span class="lab">Row readings</span></div>
+<div class="strip" id="mdstrip"><span class="lab">Conceptual models</span></div>
+<div class="strip" id="pfstrip"><span class="lab">Professional frameworks</span></div>
+<div class="strip" id="qfstrip"><span class="lab">Qualification frameworks</span></div>
+<div class="strip" id="thstrip"><span class="lab">Cross-cutting themes</span></div>
+<div class="strip" id="bmstrip"><span class="lab">Subject benchmarks</span></div>
+<div class="frame"><table id="t"></table></div>
+<p class="foot">Foundation and level 8 rows come from each practice's progression by level (levels 3 and 8); Self-Development's are from its new core, version 0.1.0. Row readings (practice, knowledge, practitioner self-identity, stance) and the placing of each model and theme against a row are working interpretations, not rulings; Barnett, SOLO, Lave and Wenger, Shulman, Kuhlthau, Lea and Street, Finlay, Anderson and Krathwohl and Marzano and Kendall are paraphrased and checked against held summaries of the texts; the other models are paraphrased from ing's knowledge and unverified until their texts are held (hover a model's name for its reference). Framework and theme cells give the issuer's id and a paraphrase; issuers' wording is not reproduced. The apprenticeship column follows each row's indicative level (Ofqual's occupational competence descriptors; levels 6 and 7 are the degree apprenticeship levels). New and moved cards are proposals awaiting sign-off. Built from the card plans, <span id="built"></span>.</p>
+</div>
+<script>
+const DATA = __DATA__;
+const META = DATA.meta;
+const state = {pw:new Set(DATA.pathways.map(p=>p.no)), meta:new Set(META.map((m,i)=>i)), th:new Set(DATA.themes.map(t=>t.key)), bm:new Set(DATA.benchmarks.map(b=>b.slug))};
+try{const s=JSON.parse(localStorage.getItem("pgm11")||"null"); if(s){state.pw=new Set(s.pw); state.meta=new Set(s.meta); state.th=new Set(s.th); state.bm=new Set(s.bm);}}catch(e){}
+function save(){try{localStorage.setItem("pgm11",JSON.stringify({pw:[...state.pw],meta:[...state.meta],th:[...state.th],bm:[...state.bm]}))}catch(e){}}
+// each strip opens with an All chip; chips read their state from the sets, so All and single chips stay in step
+const strips=[];
+function makeStrip(el,setName,items,key,label){
+  const st={el,setName,items,key,btns:[]};
+  // each strip: its All chip, then its title as an accordion toggle, then the chips (closed at first)
+  const lab=el.querySelector(".lab"); const title=lab?lab.textContent:""; if(lab) lab.remove();
+  const head=document.createElement("div");head.className="striphead";el.appendChild(head);
+  const body=document.createElement("div");body.className="stripbody";body.hidden=true;
+  const tog=document.createElement("button");tog.type="button";tog.className="striptog";tog.setAttribute("aria-expanded","false");
+  tog.innerHTML=`<span class="arrow" aria-hidden="true">\u25B8</span>${title}<span class="count"></span>`;
+  tog.onclick=()=>{body.hidden=!body.hidden;tog.setAttribute("aria-expanded",String(!body.hidden));};
+  st.count=tog.querySelector(".count");
+  const all=document.createElement("button");all.className="chip";all.type="button";all.textContent="All";
+  all.onclick=()=>{const S=state[setName];const on=items.every(x=>S.has(key(x)));items.forEach(x=>on?S.delete(key(x)):S.add(key(x)));sync();render();save();};
+  head.appendChild(all);head.appendChild(tog);el.appendChild(body);st.all=all;
+  items.forEach(x=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=label(x);
+    b.onclick=()=>{const S=state[setName],k=key(x);S.has(k)?S.delete(k):S.add(k);sync();render();save();};body.appendChild(b);st.btns.push([b,x]);});
+  strips.push(st);
+}
+function sync(){strips.forEach(st=>{const S=state[st.setName];let n=0;st.btns.forEach(([b,x])=>{const on=S.has(st.key(x));if(on)n++;b.setAttribute("aria-pressed",on);});st.all.setAttribute("aria-pressed",n===st.items.length);st.count.textContent=` ${n} of ${st.items.length}`;});}
+makeStrip(document.getElementById("pwstrip"),"pw",DATA.pathways,p=>p.no,p=>p.no+". "+p.name);
+makeStrip(document.getElementById("metastrip"),"meta",META.map((m,i)=>i),i=>i,i=>META[i]);
+makeStrip(document.getElementById("mdstrip"),"th",DATA.themes.filter(t=>t.group==="model"||t.group==="metacog"),t=>t.key,t=>t.name);
+makeStrip(document.getElementById("pfstrip"),"th",DATA.themes.filter(t=>t.group==="prof"),t=>t.key,t=>t.name);
+makeStrip(document.getElementById("qfstrip"),"th",DATA.themes.filter(t=>t.group==="qf"),t=>t.key,t=>t.name);
+makeStrip(document.getElementById("thstrip"),"th",DATA.themes.filter(t=>t.group==="theme"),t=>t.key,t=>t.name);
+makeStrip(document.getElementById("bmstrip"),"bm",DATA.benchmarks,b=>b.slug,b=>b.name);
+sync();
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function render(){
+  const pws=DATA.pathways.filter(p=>state.pw.has(p.no)); const metas=[...state.meta].sort((a,b)=>a-b); const ths=DATA.themes.filter(t=>state.th.has(t.key)); const bms=DATA.benchmarks.filter(b=>state.bm.has(b.slug));
+  let h="<thead><tr><th class='sticky'>Row</th>";
+  metas.forEach(i=>h+=`<th>${esc(META[i])}</th>`);
+  const grp=(name,subs,cls,title)=>subs.forEach((s,k)=>h+=`<th class='${k?"":"gs "+cls}'${title&&!k?` title="${title}"`:""}>${k?"":`<span class='grp'>${name}</span>`}<span class='sub'>${s}</span></th>`);
+  ths.forEach(t=>grp(esc(t.name),t.subs?t.subs.map(esc):t.group==="qf"?["Level","Statements (id: paraphrase)"]:["Id","Reading"],t.group==="model"||t.group==="metacog"||t.group==="prof"?"th md":"th",esc(t.run)+": "+esc(t.note)));
+  bms.forEach(b=>grp(esc(b.name),["Practice","Knowledge","Practitioner self-identity"],"bm",esc(b.subject)+(b.note?" Note: "+esc(b.note):"")));
+  pws.forEach(p=>grp(p.no+". "+esc(p.name),p.readings?["Card","Practice","Knowledge","Practitioner self-identity","Kind of knowledge","Frameworks"]:["Card","Kind of knowledge","Frameworks"],"",""));
+  h+="</tr></thead><tbody>";
+  DATA.rows.slice().reverse().forEach(r=>{
+    const band=r.row==="F"?"F":r.row==="L8"?"L8":r.row[0];
+    h+=`<tr class='${band}'><th class='sticky'>${esc(r.row)}</th>`;
+    metas.forEach(i=>h+=`<td class='meta${i===1?" lvl":""}'>${esc(r.meta[i])}</td>`);
+    ths.forEach(t=>{const c=r.themes[t.key]; if(t.subs){c.forEach((x,k)=>h+=`<td class='${k?"card":"kind"}'>${esc(x)}</td>`);return;} h+=`<td class='fw thc pre'>${esc(c[0])||"&ndash;"}</td><td class='card thc pre${t.group==="qf"?" qfr":""}'>${esc(c[1])}</td>`;});
+    bms.forEach(b=>{const c=r.bm[b.slug]; const tip=c[3]?` title="${esc(c[3])}"`:""; if(!c[0]){h+=`<td class='kind' colspan='3'>&ndash; not stated at this level</td>`;return;} h+=`<td class='card'${tip}>${esc(c[0])}</td><td class='card'${tip}>${esc(c[1])}</td><td class='card'${tip}>${esc(c[2])}</td>`;});
+    pws.forEach(p=>{const c=r.cells[p.no]; h+=`<td class='card'>${esc(c[0])}</td>`+(c.length>3?`<td class='card pre rd'>${esc(c[3])}</td><td class='card pre rd'>${esc(c[4])}</td><td class='card pre rd'>${esc(c[5])}</td>`:"")+`<td class='kind'>${esc(c[1])}</td><td class='fw'>${esc(c[2])}</td>`;});
+    h+="</tr>";});
+  document.getElementById("t").innerHTML=h+"</tbody>";
+}
+document.getElementById("built").textContent=DATA.built;
+render();
+</script>

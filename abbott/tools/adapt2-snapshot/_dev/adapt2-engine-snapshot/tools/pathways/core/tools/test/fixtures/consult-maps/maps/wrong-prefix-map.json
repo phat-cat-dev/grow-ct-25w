@@ -1,0 +1,19 @@
+{
+  "_comment": "Fixture only, for consult-maps.test.js. Mirrors the real psychology-2023 map's actual group-key gap: an active map whose own groups still use the old adapt- prefix (D-0045's path- rename is ruled, not yet landed), so the key path-<pathwayId> is never found.",
+  "mapVersion": "1.0",
+  "status": "active",
+  "pathways": {
+    "adapt-fixture-pathway": {
+      "summary": { "text": "Fixture summary, wrong prefix.", "basis": [], "status": "confirmed" },
+      "statements": [
+        {
+          "chunkId": "fixture/benchmark/4.1",
+          "strength": "direct",
+          "extract": "fixture extract text, never read by consult-maps.js",
+          "agentInstruction": "Fixture agent instruction, must not surface: wrong group key.",
+          "status": "confirmed"
+        }
+      ]
+    }
+  }
+}

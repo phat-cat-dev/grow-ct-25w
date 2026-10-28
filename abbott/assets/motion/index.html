@@ -1,0 +1,408 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SVG motion assets</title><link rel="stylesheet" href="motion-gallery.css"></head><body><main><h1>SVG motion assets</h1><p>22 icon and typography motions, plus six transition studies. Individual SVGs contain their own animation CSS and need no fonts or scripts. Preview controls do not alter the downloaded originals.</p><p>Icons are original vector interpretations, not Google Material Symbols glyph exports. Text uses your system font. Standalone SVGs animate automatically; previews start paused and reduced motion always wins.</p><div class="grid"><article class="motion-card"><h2>Orbit</h2><p>A steady rotation for ongoing activity.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="spin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-spin-title svg-motion-spin-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-spin-title">Orbit</title><desc id="svg-motion-spin-desc">A steady rotation for ongoing activity. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="spin"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-spin calc(3s / var(--motion-speed,1)) linear infinite}
+@keyframes motion-spin { to { transform: rotate(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="spin"] .art,svg[data-motion-asset="spin"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="19"/><circle r="7"/><path d="M0-29v7m0 44v7m-29-29h7m44 0h7m-49-20 5 5m30 30 5 5m-40 0 5-5m30-30 5-5"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="spin.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Heartbeat</h2><p>A soft pulse without flashing.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-pulse-title svg-motion-pulse-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-pulse-title">Heartbeat</title><desc id="svg-motion-pulse-desc">A soft pulse without flashing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="pulse"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-pulse calc(2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-pulse { 50% { transform: scale(.9); opacity: .65; } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="pulse"] .art,svg[data-motion-asset="pulse"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M0 23C-43-3-22-34 0-15 22-34 43-3 0 23Z"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="pulse.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Ring</h2><p>A small angular wiggle.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="jiggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-jiggle-title svg-motion-jiggle-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-jiggle-title">Ring</title><desc id="svg-motion-jiggle-desc">A small angular wiggle. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="jiggle"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-jiggle calc(2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-jiggle { 10%, 30% { transform: rotate(-8deg); } 20%, 40% { transform: rotate(8deg); } 50%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="jiggle"] .art,svg[data-motion-asset="jiggle"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-20 15h40l-5-8V-9a15 15 0 0 0-30 0V7Zm14 7a6 6 0 0 0 12 0M0-30v5"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="jiggle.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Hop</h2><p>A contained bounce, only in this demo.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-bounce-title svg-motion-bounce-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-bounce-title">Hop</title><desc id="svg-motion-bounce-desc">A contained bounce, only in this demo. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="bounce"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-hop calc(2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-hop { 25% { transform: translateY(-10px); } 45% { transform: translateY(0); } 60% { transform: translateY(-4px); } 75%, 100% { transform: translateY(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="bounce"] .art,svg[data-motion-asset="bounce"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M0 27v-53m-18 18L0-26 18-8"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="bounce.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Nudge</h2><p>A sideways shake with a rest.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="shake" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shake-title svg-motion-shake-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shake-title">Nudge</title><desc id="svg-motion-shake-desc">A sideways shake with a rest. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shake"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shake calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-shake { 10%, 30% { transform: translateX(-4px); } 20%, 40% { transform: translateX(4px); } 50%, 100% { transform: translateX(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shake"] .art,svg[data-motion-asset="shake"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m0-26 29 50h-58ZM0-9V7"/><circle cy="15" r="1" fill="currentColor"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="shake.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Liftoff</h2><p>A diagonal launch and return.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="launch" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-launch-title svg-motion-launch-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-launch-title">Liftoff</title><desc id="svg-motion-launch-desc">A diagonal launch and return. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="launch"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-launch calc(2.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-launch { 45% { transform: translate(18px, -18px); } 70%, 100% { transform: translate(0, 0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="launch"] .art,svg[data-motion-asset="launch"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-8 9C-4-12 10-24 28-27 26-8 13 7-7 11Zm-1-3-13-1 9-12 15-1M-2 12l1 14 13-10V1M-13 15l-10 10"/><circle cx="14" cy="-12" r="4"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="launch.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Pendulum</h2><p>A slow swing from an overhead pivot.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="swing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-swing-title svg-motion-swing-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-swing-title">Pendulum</title><desc id="svg-motion-swing-desc">A slow swing from an overhead pivot. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="swing"] .art{transform-box:view-box;transform-origin:160px 37px;animation:motion-swing calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-swing { 25% { transform: rotate(16deg); } 75% { transform: rotate(-16deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="swing"] .art,svg[data-motion-asset="swing"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cy="-22" r="5"/><path d="M0-17v43M-10-7h20M-26 5c0 28 52 28 52 0m-26 21-7-7M0 26l7-7M-26 5l-4 9m56-9 4 9"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="swing.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Compass flip</h2><p>A full three-dimensional turn.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-flip-title svg-motion-flip-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-flip-title">Compass flip</title><desc id="svg-motion-flip-desc">A full three-dimensional turn. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="flip"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-flip calc(3.2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-flip { 70%, 100% { transform: perspective(300px) rotateY(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="flip"] .art,svg[data-motion-asset="flip"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="28"/><path d="m13-16-6 23-20 9 6-23Zm0 0L-7-7M7 7l-20 9"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="flip.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Drift</h2><p>A cloud tracing a gentle oval.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="float" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-float-title svg-motion-float-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-float-title">Drift</title><desc id="svg-motion-float-desc">A cloud tracing a gentle oval. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="float"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-float calc(4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-float { 25% { transform: translate(9px, -6px); } 50% { transform: translate(0, -10px); } 75% { transform: translate(-9px, -6px); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="float"] .art,svg[data-motion-asset="float"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-19 16C-41 14-33-12-17-10-13-32 17-30 23-10 44-9 37 17 22 16Z"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="float.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Approval pop</h2><p>A springy stamp of approval.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="pop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-pop-title svg-motion-pop-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-pop-title">Approval pop</title><desc id="svg-motion-pop-desc">A springy stamp of approval. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="pop"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-pop calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-pop { 15% { transform: scale(.85); } 30% { transform: scale(1.15); } 45%, 100% { transform: scale(1); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="pop"] .art,svg[data-motion-asset="pop"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m0-29 9 7 11 1 2 12 7 9-7 9-2 12-11 1-9 7-9-7-11-1-2-12-7-9 7-9 2-12 11-1Z"/><path d="m-12 0 8 8L14-10"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="pop.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Clockwork</h2><p>Twelve crisp steps around the dial.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-tick-title svg-motion-tick-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-tick-title">Clockwork</title><desc id="svg-motion-tick-desc">Twelve crisp steps around the dial. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="tick"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-spin calc(6s / var(--motion-speed,1)) steps(12,end) infinite}
+@keyframes motion-spin { to { transform: rotate(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="tick"] .art,svg[data-motion-asset="tick"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="27"/><path d="M0-19V0l13 8M0-27v3m27 24h-3M0 27v-3m-27-24h3"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="tick.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Squash &amp; stretch</h2><p>An elastic ball with a soft landing.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="squash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-squash-title svg-motion-squash-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-squash-title">Squash &amp; stretch</title><desc id="svg-motion-squash-desc">An elastic ball with a soft landing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="squash"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-squash calc(1.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-squash { 15% { transform: translateY(5px) scale(1.12, .85); } 45% { transform: translateY(-12px) scale(.92, 1.08); } 75%, 100% { transform: translateY(0) scale(1); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="squash"] .art,svg[data-motion-asset="squash"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="26"/><path d="M-26 0h52M0-26v52M-18-19C4-8 4 8-18 19M18-19C-4-8-4 8 18 19"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="squash.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Friendly wave</h2><p>A wave pivoting from the wrist.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-wave-title svg-motion-wave-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-wave-title">Friendly wave</title><desc id="svg-motion-wave-desc">A wave pivoting from the wrist. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="wave"] .art{transform-box:view-box;transform-origin:163px 90px;animation:motion-wave calc(2.6s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-wave { 10%, 30% { transform: rotate(18deg); } 20%, 40% { transform: rotate(-12deg); } 55%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="wave"] .art,svg[data-motion-asset="wave"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 7-23-6q-3-9 4-9l9 15-5-28q0-8 6-5l7 27-1-32q3-7 7 0l3 30 4-27q4-6 7 1L14-3l7-16q6-4 7 3L22 9c-4 26-30 30-40-2Z"/></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="wave.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Breathing type</h2><p>A gentle change in scale and spacing.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="breathe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-breathe-title svg-motion-breathe-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-breathe-title">Breathing type</title><desc id="svg-motion-breathe-desc">A gentle change in scale and spacing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="breathe"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-breathe calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-breathe { 50% { transform: scale(1.04); letter-spacing: .04em; } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="breathe"] .art,svg[data-motion-asset="breathe"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Breathe</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="breathe.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Colour ribbon</h2><p>A theme-coloured gradient through the letters.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="shimmer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shimmer-title svg-motion-shimmer-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shimmer-title">Colour ribbon</title><desc id="svg-motion-shimmer-desc">A theme-coloured gradient through the letters. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shimmer"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shimmer calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-shimmer {50% {transform:translateX(-320px)}}
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shimmer"] .art,svg[data-motion-asset="shimmer"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><defs><clipPath id="svg-motion-shimmer-clip"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Spectrum</text></clipPath><linearGradient id="svg-motion-shimmer-gradient"><stop stop-color="var(--motion-accent,#287baa)"/><stop offset=".5" stop-color="var(--motion-ink,#202c36)"/><stop offset="1" stop-color="var(--motion-accent,#287baa)"/></linearGradient></defs><g clip-path="url(#svg-motion-shimmer-clip)"><rect class="art" x="0" y="20" width="640" height="90" fill="url(#svg-motion-shimmer-gradient)"/></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="shimmer.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Playful tilt</h2><p>A greeting with a springy rotation.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="tilt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-tilt-title svg-motion-tilt-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-tilt-title">Playful tilt</title><desc id="svg-motion-tilt-desc">A greeting with a springy rotation. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="tilt"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-tilt calc(2.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-tilt { 20% { transform: rotate(-4deg); } 35% { transform: rotate(3deg); } 50%, 100% { transform: rotate(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="tilt"] .art,svg[data-motion-asset="tilt"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Hello!</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="tilt.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Typewriter</h2><p>A stepped reveal, then a moment to read.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="typewriter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-typewriter-title svg-motion-typewriter-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-typewriter-title">Typewriter</title><desc id="svg-motion-typewriter-desc">A stepped reveal, then a moment to read. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="typewriter"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-typewriter calc(4s / var(--motion-speed,1)) steps(7,end) infinite}
+@keyframes motion-typewriter { 0%, 10% { clip-path: inset(0 100% 0 0); } 55%, 90% { clip-path: inset(0); } 100% { clip-path: inset(0 100% 0 0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="typewriter"] .art,svg[data-motion-asset="typewriter"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Create.</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="typewriter.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Letter ripple</h2><p>Ripple: a wave travels through each letter.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="ripple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-ripple-title svg-motion-ripple-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-ripple-title">Letter ripple</title><desc id="svg-motion-ripple-desc">Ripple: a wave travels through each letter. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="ripple"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-letter calc(2.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-letter { 15% { transform: translateY(-9px); } 30%, 100% { transform: translateY(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="ripple"] .art,svg[data-motion-asset="ripple"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g fill="currentColor"><g class="art" style="animation-delay:0s"><text x="104" y="76" font-size="38" font-family="monospace" font-weight="700">R</text></g><g class="art" style="animation-delay:0.12s"><text x="126" y="76" font-size="38" font-family="monospace" font-weight="700">i</text></g><g class="art" style="animation-delay:0.24s"><text x="148" y="76" font-size="38" font-family="monospace" font-weight="700">p</text></g><g class="art" style="animation-delay:0.36s"><text x="170" y="76" font-size="38" font-family="monospace" font-weight="700">p</text></g><g class="art" style="animation-delay:0.48s"><text x="192" y="76" font-size="38" font-family="monospace" font-weight="700">l</text></g><g class="art" style="animation-delay:0.6s"><text x="214" y="76" font-size="38" font-family="monospace" font-weight="700">e</text></g></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="ripple.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Curtain reveal</h2><p>Letters emerge from a soft vertical curtain.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="reveal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-reveal-title svg-motion-reveal-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-reveal-title">Curtain reveal</title><desc id="svg-motion-reveal-desc">Letters emerge from a soft vertical curtain. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="reveal"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-reveal calc(3.6s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-reveal { 0%, 100% { clip-path: inset(0); transform: translateY(0); } 35% { clip-path: inset(100% 0 0); transform: translateY(8px); } 65%, 85% { clip-path: inset(0); transform: translateY(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="reveal"] .art,svg[data-motion-asset="reveal"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Discover</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="reveal.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Shadow drift</h2><p>Twin coloured shadows drift behind the word.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shadow-title svg-motion-shadow-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shadow-title">Shadow drift</title><desc id="svg-motion-shadow-desc">Twin coloured shadows drift behind the word. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shadow"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shadow calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-breathe { 50% { transform: scale(1.04); letter-spacing: .04em; } }
+svg[data-motion-asset="shadow"] .echo{animation:echo calc(3s / var(--motion-speed,1)) ease-in-out infinite}svg[data-motion-asset="shadow"] .echo-b{animation-direction:reverse}@keyframes echo{30%{transform:translate(5px,3px)}70%{transform:translate(-5px,-3px)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shadow"] .art,svg[data-motion-asset="shadow"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="echo echo-a" fill="var(--motion-line,#b4c5d0)"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g><g class="echo echo-b" fill="var(--motion-muted,#6a8290)"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g><g fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Echo</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="shadow.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Elastic type</h2><p>A rubbery stretch that settles back into shape.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="elastic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-elastic-title svg-motion-elastic-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-elastic-title">Elastic type</title><desc id="svg-motion-elastic-desc">A rubbery stretch that settles back into shape. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="elastic"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-elastic calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-elastic { 20% { transform: scale(1.12, .85); } 35% { transform: scale(.92, 1.12); } 50% { transform: scale(1.04, .96); } 65%, 100% { transform: scale(1); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="elastic"] .art,svg[data-motion-asset="elastic"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Stretch</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="elastic.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Slant &amp; settle</h2><p>A quick lean forward with a gentle rebound.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="shear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-shear-title svg-motion-shear-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-shear-title">Slant &amp; settle</title><desc id="svg-motion-shear-desc">A quick lean forward with a gentle rebound. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="shear"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-shear calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-shear { 25% { transform: skewX(-12deg) translateX(4px); } 45% { transform: skewX(5deg); } 65%, 100% { transform: skewX(0); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="shear"] .art,svg[data-motion-asset="shear"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Forward</text></g></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="shear.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Fade</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-fade" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-fade-title">
+<title id="svg-transition-fade-title">Fade transition</title>
+<style>svg[data-motion-asset="transition-fade"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-fade calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-fade{0%,15%,100%{opacity:.25}45%,65%{opacity:1}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-fade"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-fade.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Slide</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-slide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-slide-title">
+<title id="svg-transition-slide-title">Slide transition</title>
+<style>svg[data-motion-asset="transition-slide"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-slide calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-slide{0%,15%,100%{transform:translateX(0)}45%,65%{transform:translateX(65px)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-slide"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-slide.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Scale</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-scale" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-scale-title">
+<title id="svg-transition-scale-title">Scale transition</title>
+<style>svg[data-motion-asset="transition-scale"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-scale calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-scale{0%,15%,100%{transform:scale(.65)}45%,65%{transform:scale(1.15)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-scale"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-scale.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Quarter turn</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-rotate" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-rotate-title">
+<title id="svg-transition-rotate-title">Quarter turn transition</title>
+<style>svg[data-motion-asset="transition-rotate"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-rotate calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-rotate{0%,15%,100%{transform:rotate(0)}45%,65%{transform:rotate(90deg)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-rotate"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-rotate.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Colour blend</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-colour" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-colour-title">
+<title id="svg-transition-colour-title">Colour blend transition</title>
+<style>svg[data-motion-asset="transition-colour"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-colour calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-colour{0%,15%,100%{fill:var(--motion-accent,#287baa)}45%,65%{fill:var(--motion-ink,#202c36)}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-colour"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-colour.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article>
+<article class="motion-card"><h2>Square to circle</h2><p>A forward transition, hold, and return. Standalone SVG repeats this demonstration.</p>
+<div class="stage"><svg data-paused="" data-motion-asset="transition-round" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-transition-round-title">
+<title id="svg-transition-round-title">Square to circle transition</title>
+<style>svg[data-motion-asset="transition-round"] .art{fill:var(--motion-accent,#287baa);transform-box:view-box;transform-origin:160px 65px;animation:transition-transition-round calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes transition-transition-round{0%,15%,100%{rx:4px}45%,65%{rx:28px}}
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="transition-round"] .art{animation:none!important}}
+</style><rect class="art" x="132" y="37" width="56" height="56" rx="4"/></svg></div>
+<div class="controls"><button type="button" data-play aria-pressed="false">Play</button><button type="button" data-replay>Replay</button>
+<label>Speed <input data-speed type="range" min=".25" max="3" step=".25" value="1"><output>1x</output></label>
+<label>Size <input data-size type="range" min=".5" max="1.5" step=".1" value="1"><output>1x</output></label>
+<label>Angle <input data-angle type="range" min="-45" max="45" step="5" value="0"><output>0 degrees</output></label>
+<a href="transition-round.svg" download>Download SVG</a></div><p data-status role="status">Paused</p></article></div></main><script src="motion-gallery.js"></script></body></html>

@@ -1,0 +1,11 @@
+(function () {
+  'use strict';
+  ConfidenceCheck.mount(document.querySelector('.confidence-check'), {
+    topics: [
+      { id: 'explain', label: 'Explain the key idea in my own words' },
+      { id: 'apply', label: 'Apply the idea to a realistic situation' },
+      { id: 'evidence', label: 'Judge the evidence for a decision' },
+      { id: 'next-step', label: 'Choose a useful next step' },
+    ],
+  });
+})();

@@ -1,0 +1,73 @@
+{
+  "course": {
+    "id": "course-design-tokens",
+    "language": "en-GB",
+    "learner_pitch": "intermediate",
+    "voice_specification": "reference/excelling-voice-specification.md",
+    "referencing_style": "Harvard (Cite Them Right)",
+    "rights": { "holder": null, "licence": null },
+    "lesson_count": 6,
+    "outcomes": [
+      { "id": "CO1", "statement": "Explain how a token system keeps a course visually consistent." },
+      { "id": "CO2", "statement": "Build course blocks that carry their own metadata." },
+      { "id": "CO3", "statement": "Evaluate a design system against accessibility guidance." }
+    ]
+  },
+  "record": {
+    "schema_version": "1.0",
+    "id": "lesson-design-tokens-03",
+    "document_type": "lesson",
+    "course_id": "course-design-tokens",
+    "parent_id": "course-design-tokens",
+    "hierarchy_level": 1,
+    "sequence": 3,
+    "title": "Designing for depth",
+    "summary": "How colour, type and space come from a token system, and how a block carries its own metadata.",
+    "version": "0.3.0",
+    "status": "in-review",
+    "owner": "Learning design team",
+    "authors": ["Author A"],
+    "reviewers": ["Reviewer B"],
+    "created": "2026-10-19",
+    "updated": "2026-10-20",
+    "review_due": "2027-04-01",
+    "language": "en-GB",
+    "tags": ["tokens", "design systems", "metadata"],
+    "sources": [],
+    "scope": {
+      "focus": "Where colour, type and space come from, and how a block declares its own metadata.",
+      "in_scope": ["Reading a token", "Building a two-column block", "Toggling a frontmatter section"],
+      "out_of_scope": ["Authoring new tokens", "Theming for dark mode"]
+    },
+    "alignment": { "course_outcome_ids": ["CO1", "CO2"] },
+    "prerequisites": {
+      "knowledge": ["You can read a CSS custom property, for example var(--accent)."],
+      "required_lesson_ids": ["lesson-design-tokens-02"]
+    },
+    "learning_outcomes": [
+      { "id": "LO1", "statement": "Explain where colour, type and space come from in a token system.", "course_outcome_ids": ["CO1"], "evidence": "Short written explanation using the lesson example." },
+      { "id": "LO2", "statement": "Build a two-column block with per-column metadata.", "course_outcome_ids": ["CO2"], "evidence": "A working block that passes the checkpoint." },
+      { "id": "LO3", "statement": "Toggle a frontmatter section between visible and metadata-only.", "course_outcome_ids": ["CO1", "CO2"], "evidence": "Checkpoint question 2." }
+    ],
+    "estimated_duration_minutes": 12,
+    "materials_required": ["A recent piece of your own written feedback", "Ten quiet minutes"],
+    "activities": [
+      { "id": "ACT1", "purpose": "Trace a colour back to its token.", "lesson_outcome_ids": ["LO1"] },
+      { "id": "ACT2", "purpose": "Build a two-column block with a worked example.", "lesson_outcome_ids": ["LO2"] },
+      { "id": "ACT3", "purpose": "Switch a section to metadata-only and compare.", "lesson_outcome_ids": ["LO3", "LO2"] }
+    ],
+    "assessment": { "purpose": "formative", "lesson_outcome_ids": ["LO1", "LO2", "LO3"] },
+    "review": { "academic_status": "pending", "academic_approved_by": null, "academic_approved_on": null },
+    "frontmatter": {
+      "eyebrow": "Before you begin",
+      "body": "You'll explore where colour, type and space come from in a token system, build a block that carries its own metadata, and see how that keeps a course coherent as it grows.",
+      "meta": { "duration": "12 min", "level": "Intermediate" },
+      "objectivesTitle": "By the end of this lesson, you will be able to:",
+      "objectives": [
+        "Explain where colour, type and space come from in a token system.",
+        "Build a two-column block with per-column metadata.",
+        "Toggle a frontmatter section between visible and metadata-only."
+      ]
+    }
+  }
+}

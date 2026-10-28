@@ -1,0 +1,259 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Scroll scenes. A sequence of scenes that animate as you scroll through them. All scenes are available by scrolling; the scene buttons jump to a scene.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+
+    "_preset": {
+      "type": "string",
+      "required": true,
+      "enum": ["original", "calm", "technical", "editorial", "atlas", "horizon-rise", "night-study", "custom"],
+      "default": "original",
+      "title": "Style preset",
+      "inputType": { "type": "Select", "options": ["original", "calm", "technical", "editorial", "atlas", "horizon-rise", "night-study", "custom"] },
+      "validators": [],
+      "help": "A bundle of scheme + background + transition + effect that suit each other. 'original' is the house look. Choose 'custom' to drive every dial by hand. Any override below beats the preset."
+    },
+    "_scheme": {
+      "type": "string",
+      "required": false,
+      "enum": ["", "default", "night", "warm", "dusk"],
+      "default": "",
+      "title": "Colour scheme (override)",
+      "inputType": { "type": "Select", "options": ["", "default", "night", "warm", "dusk"] },
+      "validators": [],
+      "help": "Overrides the preset's scheme. Leave blank to use the preset. The component otherwise inherits the active theme's colours."
+    },
+    "_background": {
+      "type": "string",
+      "required": false,
+      "enum": ["", "lines", "aurora", "mesh", "dots", "grid", "contour", "horizon", "spotlight", "weave", "wash", "plain"],
+      "default": "",
+      "title": "Background (override)",
+      "inputType": { "type": "Select", "options": ["", "lines", "aurora", "mesh", "dots", "grid", "contour", "horizon", "spotlight", "weave", "wash", "plain"] },
+      "validators": [],
+      "help": "Overrides the preset's background for every scene. Leave blank to use the preset. A single scene can still override this via its own Background field."
+    },
+    "_transition": {
+      "type": "string",
+      "required": false,
+      "enum": ["", "none", "rise", "drift", "tilt", "wipe", "stagger"],
+      "default": "",
+      "title": "Transition model (override)",
+      "inputType": { "type": "Select", "options": ["", "none", "rise", "drift", "tilt", "wipe", "stagger"] },
+      "validators": [],
+      "help": "Overrides the preset's CSS transition model. Best paired with the 'fade' or 'none' effect. Leave blank to use the preset."
+    },
+    "_effect": {
+      "type": "string",
+      "required": false,
+      "enum": ["", "zoom", "blur", "fade", "slide", "none"],
+      "default": "",
+      "title": "Scroll effect (override)",
+      "inputType": { "type": "Select", "options": ["", "zoom", "blur", "fade", "slide", "none"] },
+      "validators": [],
+      "help": "Overrides the preset's scroll-linked effect written onto each scene. Leave blank to use the preset. 'none' disables the JavaScript effect."
+    },
+    "_snap": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Snap to scenes",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Soft proximity snapping to the start of each scene. Tall scenes stay freely scrollable. Turn off for continuous scrolling."
+    },
+    "_showNav": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show scene buttons",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Show the row of numbered buttons that jump to each scene."
+    },
+    "_showProgress": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show progress bar",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Show the scroll progress bar in the scene-button row."
+    },
+    "_showStatus": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show scene status",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Show the polite live-region text ('Scene 2 of 4'). Helps screen-reader and keyboard users track position."
+    },
+
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Scenes",
+      "help": "Each scene is one full-height panel. Order is the scroll order. An eyebrow (stage label) and heading are expected; body and extras are optional.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "stageLabel": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Stage label (eyebrow)",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Short label shown above the heading and on the scene button, e.g. 'Observe'. The scene number (01, 02 ...) is added automatically.",
+            "translatable": true
+          },
+          "heading": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Heading",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "The large scene heading. Use <br> to control line breaks; around 20 characters per line reads best at the largest size.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Body",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "The supporting copy for this scene.",
+            "translatable": true
+          },
+          "_background": {
+            "type": "string",
+            "required": false,
+            "enum": ["", "lines", "aurora", "mesh", "dots", "grid", "contour", "horizon", "spotlight", "weave", "wash", "plain"],
+            "default": "",
+            "title": "Background (this scene)",
+            "inputType": { "type": "Select", "options": ["", "lines", "aurora", "mesh", "dots", "grid", "contour", "horizon", "spotlight", "weave", "wash", "plain"] },
+            "validators": [],
+            "help": "Overrides the component background for this one scene. Leave blank to follow the component setting."
+          },
+          "_colourSlot": {
+            "type": "number",
+            "required": false,
+            "enum": [0, 1, 2, 3, 4],
+            "default": 0,
+            "title": "Colour slot (this scene)",
+            "inputType": { "type": "Select", "options": [0, 1, 2, 3, 4] },
+            "validators": [],
+            "help": "Force this scene's accent colour to slot 1-4. 0 = automatic (slots cycle with scene position)."
+          },
+          "_extras": {
+            "type": "object",
+            "required": false,
+            "title": "Teaching extras (optional)",
+            "help": "Optional prompts shown beneath the body, matching the retired scenes.py output.",
+            "properties": {
+              "questionPrompt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Question prompt",
+                "inputType": "TextArea",
+                "validators": [],
+                "help": "Shown as 'Ask yourself: ...'.",
+                "translatable": true
+              },
+              "microTask": {
+                "type": "object",
+                "required": false,
+                "title": "Micro task",
+                "properties": {
+                  "minutes": {
+                    "type": "number",
+                    "required": false,
+                    "default": 0,
+                    "title": "Minutes",
+                    "inputType": "Number",
+                    "validators": [],
+                    "help": "Time estimate shown in the lead-in, e.g. 'Try this (2 min): ...'. 0 omits the time."
+                  },
+                  "instruction": {
+                    "type": "string",
+                    "required": false,
+                    "default": "",
+                    "title": "Instruction",
+                    "inputType": "TextArea",
+                    "validators": [],
+                    "help": "The task text. Shown as 'Try this (N min): ...'.",
+                    "translatable": true
+                  }
+                }
+              },
+              "evidenceCue": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Evidence cue",
+                "inputType": "TextArea",
+                "validators": [],
+                "help": "Shown as 'You will know it worked when: ...'.",
+                "translatable": true
+              },
+              "reflectionNote": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Reflection note",
+                "inputType": "TextArea",
+                "validators": [],
+                "help": "Shown as 'In your notes: ...'.",
+                "translatable": true
+              },
+              "transitionCue": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Transition cue",
+                "inputType": "Text",
+                "validators": [],
+                "help": "A short italic hand-off line into the next scene. Leave blank on the last scene.",
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

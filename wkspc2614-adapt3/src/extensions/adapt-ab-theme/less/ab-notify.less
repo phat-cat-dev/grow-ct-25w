@@ -1,0 +1,116 @@
+// CM NOTIFY / POPUP THEME
+// The modal popup from adapt-contrib-notify — used by BOTH the hotgraphic
+// hotspot popups and the question feedback popups — themed with --ab-* tokens.
+//
+// TWO VARIANTS, following the page theme (Abbott, 10 Oct 2026):
+//   LIGHT (default): appears as the page would — white to the border, with
+//     dark-blue as the theme colour (headings + toolbar controls). Body text in
+//     the normal dark ink.
+//   DARK  ([data-theme="dark"], or OS dark unless data-theme="light"): the
+//     reverse — a dark-blue surface with LIGHT-BLUE in the neutral colours
+//     (text, hairline, controls), so it stays a blue-on-blue theme rather than
+//     flat grey.
+// The popup is driven ENTIRELY by the --ab-popup-* tokens below; the two blocks
+// flip those tokens, so the dialog rules themselves never change. Everything is
+// tokenised, so a percentage/color-mix derivation can replace the explicit
+// light-blue later (see the dark block) without touching the rules.
+
+:root {
+  // ---- popup width: cap to the content column (not full page) ----
+  // Rides --ab-base-page-max so the popup tracks the same fluid width as the normal
+  // content at every breakpoint; the 0.92 factor brings it in a touch. Lower it
+  // to tighten, or point straight at --ab-base-page-max to match content exactly.
+  --ab-popup-max: calc(var(--ab-base-page-max, 98.75rem) * 0.92);
+
+  // ---- LIGHT variant tokens (default): white surface, dark-blue theme ----
+  --ab-popup-surface:    var(--ab-white);
+  --ab-popup-ink:        var(--ab-base-ink, #1a1a1a);          // body text: normal dark ink
+  --ab-popup-ink-muted:  var(--ab-base-ink-muted, #6d6d6d);    // counter / secondary
+  --ab-popup-heading:    var(--ab-dark-blue);             // titles in dark-blue
+  --ab-popup-hairline:   var(--ab-base-hairline, #e6e6e6);     // border / dividers
+  --ab-popup-accent:     var(--ab-dark-blue);             // toolbar control fill
+  --ab-popup-on-accent:  var(--ab-white);                 // text/icon on the control
+  --ab-popup-backdrop:   rgba(var(--ab-dark-blue-rgb), 0.55);
+  --ab-popup-shadow:     rgba(var(--ab-dark-blue-rgb), 0.25);
+}
+
+// ---- DARK variant tokens: dark-blue surface, light-blue neutrals ----
+// Reverse of the light theme. The light-blue neutral is DERIVED from the brand
+// dark-blue by color-mix percentage — no fixed hex — so it always tracks the
+// brand blue (Abbott, 10 Oct 2026: "yes to colour mix"). --ab-popup-tint is the
+// neutral (dark-blue lifted 85% toward white, ~#d0dfe8); the muted/hairline are
+// that tint mixed back toward the surface by percentage. Change the ONE 15%/85%
+// mix to re-pitch every neutral at once.
+.ab-popup-dark-tokens() {
+  --ab-popup-tint:       color-mix(in srgb, var(--ab-dark-blue) 15%, #fff 85%);
+  --ab-popup-surface:    var(--ab-dark-blue);
+  --ab-popup-ink:        var(--ab-popup-tint);
+  --ab-popup-ink-muted:  color-mix(in srgb, var(--ab-popup-tint) 70%, var(--ab-dark-blue) 30%);
+  --ab-popup-heading:    var(--ab-popup-tint);
+  --ab-popup-hairline:   color-mix(in srgb, var(--ab-popup-tint) 28%, var(--ab-dark-blue) 72%);
+  --ab-popup-accent:     var(--ab-popup-tint);
+  --ab-popup-on-accent:  var(--ab-dark-blue);
+  --ab-popup-backdrop:   rgba(0, 0, 0, 0.6);
+  --ab-popup-shadow:     rgba(0, 0, 0, 0.5);
+}
+:root[data-theme="dark"] { .ab-popup-dark-tokens(); }
+@media (prefers-color-scheme: dark) {
+  // ab-force-light (config _htmlClasses) blocks OS-driven dark for now;
+  // remove it to restore automatic dark.
+  :root:not([data-theme="light"]):not(.ab-force-light) { .ab-popup-dark-tokens(); }
+}
+
+// GATED under html.ab-theme (optional-skin switch): the :root popup tokens and
+// the .ab-popup-dark-tokens() mixin above stay global; the dialog rules below
+// apply only when the skin is on, so with `ab-theme` off the vendor notify /
+// hotgraphic popups render in vanilla's own styling.
+html.ab-theme {
+
+// ---- the dialog (token-driven; identical rules for both variants) ----
+.notify__popup {
+  width: 100% !important;
+  max-width: var(--ab-popup-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  background-color: var(--ab-popup-surface) !important;
+  color: var(--ab-popup-ink) !important;
+  border: var(--ab-base-border-width, 0.1rem) solid var(--ab-popup-hairline) !important;
+  border-radius: var(--ab-border-radius, 0.32rem) !important;
+  box-shadow: 0 0.5rem 1.5rem var(--ab-popup-shadow) !important;
+}
+
+// ---- backdrop / shadow behind the popup ----
+.notify__shadow,
+.shadow.notify__shadow {
+  background-color: var(--ab-popup-backdrop) !important;
+}
+
+// ---- popup headings ----
+.notify__popup .notify__title,
+.notify__popup .component__title,
+.hotgraphic-popup__item-title,
+.hotgraphic-popup__item-title-inner {
+  color: var(--ab-popup-heading) !important;
+}
+
+// ---- body text + counter ----
+.notify__popup .notify__text,
+.hotgraphic-popup__item-body,
+.hotgraphic-popup__item-body-inner { color: var(--ab-popup-ink); }
+.hotgraphic-popup__count { color: var(--ab-popup-ink-muted) !important; }
+
+// ---- toolbar controls (back / next / close) ----
+.notify__popup .btn-icon,
+.hotgraphic-popup__controls,
+.hotgraphic-popup__close {
+  background-color: var(--ab-popup-accent) !important;
+  border-color: var(--ab-popup-accent) !important;
+  color: var(--ab-popup-on-accent) !important;
+}
+.notify__popup .btn-icon.is-disabled,
+.hotgraphic-popup__controls.is-disabled {
+  opacity: 0.5;
+}
+
+} // end html.ab-theme gate

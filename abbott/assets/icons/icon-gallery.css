@@ -1,0 +1,71 @@
+.icon-library {
+  --icon-size: 32px;
+  --icon-frame-size: calc(var(--icon-size) * 2.25);
+  --icon-frame-radius: 8px;
+  --icon-border-width: 0px;
+  --icon-border-style: solid;
+  --icons-ink: var(--ink,light-dark(#202d36,#e7eef3));
+  --icons-muted: var(--ink-soft,light-dark(#526573,#b6c6d0));
+  --icons-surface: var(--surface-1,light-dark(#fff,#1d2932));
+  --icons-surface-alt: var(--surface-2,light-dark(#edf3f7,#263640));
+  --icons-line: var(--line,light-dark(#c5d2db,#4d626f));
+  --icons-accent: var(--accent,light-dark(#236e9c,#8ccdf3));
+  --icons-radius: var(--radius,16px);
+  color: var(--icons-ink);
+  font-family: var(--font-ui,system-ui,sans-serif);
+  line-height: 1.55;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: clamp(1rem,3vw,3rem);
+}
+:root { color-scheme: light dark; }
+body { margin: 0; background: light-dark(#f3f7f9,#141e26); }
+.icon-library *, .icon-library *::before, .icon-library *::after { box-sizing: border-box; }
+.icon-library [hidden] { display: none !important; }
+.icon-library a { color: var(--icons-accent); }
+.library-heading { margin-block: 2rem; }
+.library-heading h1 { font-size: clamp(2rem,5vw,3.5rem); line-height: 1.1; margin: .5rem 0; }
+.library-heading p { max-width: 75ch; }
+.eyebrow { color: var(--icons-muted); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+.icon-pack, .icon-controls, .icon-selection {
+  padding-block: 1rem;
+  margin-block: 1rem;
+}
+.packhead { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+.packhead h2, .icon-controls h2, .icon-selection h2 { font-size: 1.1rem; margin: 0; }
+.packhead a { margin-inline-start: auto; font-size: .85rem; }
+.pack-count { color: var(--icons-muted); background: var(--icons-surface-alt); border-radius: 999px; padding: .15rem .65rem; font-variant-numeric: tabular-nums; }
+.icongrid { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,calc(var(--icon-frame-size) + 2rem)),1fr)); gap: .65rem; }
+.iconcell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .5rem;
+  min-width: 0;
+  padding: .6rem .25rem;
+  border: var(--icon-border-width) var(--icon-border-style) var(--icons-line);
+  border-radius: var(--icon-frame-radius);
+  background: transparent;
+  color: var(--icons-ink);
+  cursor: pointer;
+}
+.icon-frame { display: grid; place-items: center; width: var(--icon-frame-size); height: var(--icon-frame-size); max-width: 100%; color: var(--icons-accent); }
+.icon-frame svg, .selected-preview svg { display: block; width: var(--icon-size); height: var(--icon-size); fill: currentColor; }
+.iconcell:hover, .iconcell[aria-pressed="true"] { border-color: var(--icons-accent); color: var(--icons-accent); }
+.iconcell[aria-pressed="true"] svg { filter: drop-shadow(0 0 3px var(--icons-accent)); }
+.icon-library input, .icon-library button, .icon-library textarea, .icon-library select { font: inherit; accent-color: var(--icons-accent); }
+.icon-library select { padding: .4rem; color: var(--icons-ink); background: var(--icons-surface); border: 1px solid var(--icons-line); border-radius: .3rem; max-width: 100%; }
+.icon-library input[type="search"], .icon-library textarea {
+  width: 100%; padding: .7rem; border: 1px solid var(--icons-line); border-radius: .5rem; background: var(--icons-surface); color: var(--icons-ink);
+}
+.icon-search { display: grid; gap: .5rem; max-width: 42rem; }
+.icon-library textarea { display: block; resize: vertical; margin-block: .5rem; font: .8rem/1.5 var(--font-mono,ui-monospace,monospace); }
+.control-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-block: 1rem; }
+.control-row label { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.control-row input[type="range"] { max-width: 100%; min-width: 0; }
+.control-row button { padding: .6rem 1rem; border: 1px solid var(--icons-accent); border-radius: .5rem; color: var(--icons-accent); background: var(--icons-surface); cursor: pointer; }
+.control-row button:disabled { opacity: .5; cursor: default; }
+.selected-preview { color: var(--icons-accent); padding-block: .75rem; }
+.library-note { color: var(--icons-muted); font-size: .9rem; }
+.icon-library :focus-visible { outline: 3px solid var(--icons-accent); outline-offset: 3px; }

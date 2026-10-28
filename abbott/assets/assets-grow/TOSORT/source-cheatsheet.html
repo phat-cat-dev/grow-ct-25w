@@ -1,0 +1,613 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>AB System Cheat-Sheet</title>
+<style>
+  /* Compact, faithful copy of the theme.css tokens + the components the
+     cheat-sheet previews. The authoritative source is theme.css; this page
+     mirrors it so every example and icon renders live. */
+  :root {
+    --brand-h: 202; --brand-s: 72%; --grey-s: 12%;
+    --blue-100: hsl(var(--brand-h) var(--brand-s) 92%);
+    --blue-300: hsl(var(--brand-h) var(--brand-s) 73%);
+    --blue-400: hsl(var(--brand-h) var(--brand-s) 60%);
+    --blue-600: hsl(var(--brand-h) var(--brand-s) 40%);
+    --blue-700: hsl(var(--brand-h) var(--brand-s) 32%);
+    --blue-900: hsl(var(--brand-h) var(--brand-s) 17%);
+    --grey-100: hsl(var(--brand-h) var(--grey-s) 92%);
+    --grey-600: hsl(var(--brand-h) var(--grey-s) 40%);
+    --grey-900: hsl(var(--brand-h) var(--grey-s) 17%);
+    --radius-sm: 8px; --radius: 12px; --radius-lg: 16px;
+    --shadow-color: var(--brand-h) 40% 20%;
+    --shadow-1: 0 1px 2px hsl(var(--shadow-color)/.10), 0 4px 10px -4px hsl(var(--shadow-color)/.16);
+    --shadow-3: 0 4px 8px hsl(var(--shadow-color)/.14), 0 24px 48px -12px hsl(var(--shadow-color)/.34);
+    --bg: hsl(var(--brand-h) var(--grey-s) 97%);
+    --surface-1: hsl(var(--brand-h) var(--grey-s) 99%);
+    --surface-2: var(--grey-100);
+    --border: hsl(var(--brand-h) var(--grey-s) 84%);
+    --text: var(--grey-900); --text-soft: var(--grey-600);
+    --accent: var(--blue-600); --accent-hover: var(--blue-700); --accent-weak: var(--blue-100); --on-accent: hsl(var(--brand-h) var(--grey-s) 97%);
+    --h1-color: hsl(var(--brand-h) var(--brand-s) 40%);
+    --h2-color: hsl(var(--brand-h) 45% 24%);
+    --h3-color: hsl(var(--brand-h) 28% 36%);
+    /* semantic formula */
+    --sem-s: 55%; --sem-l: 38%; --sem-weak-s: 55%; --sem-weak-l: 92%;
+    --positive-h: 150; --negative-h: 5; --comment-h: 270; --info-h: var(--brand-h); --neutral-h: calc(var(--brand-h) + 198);
+    --positive: hsl(var(--positive-h) var(--sem-s) var(--sem-l)); --positive-weak: hsl(var(--positive-h) var(--sem-weak-s) var(--sem-weak-l));
+    --neutral:  hsl(var(--neutral-h)  var(--sem-s) var(--sem-l)); --neutral-weak:  hsl(var(--neutral-h)  var(--sem-weak-s) var(--sem-weak-l));
+    --negative: hsl(var(--negative-h) var(--sem-s) var(--sem-l)); --negative-weak: hsl(var(--negative-h) var(--sem-weak-s) var(--sem-weak-l));
+    --comment:  hsl(var(--comment-h)  var(--sem-s) var(--sem-l)); --comment-weak:  hsl(var(--comment-h)  var(--sem-weak-s) var(--sem-weak-l));
+    --info:     hsl(var(--info-h)     var(--sem-s) var(--sem-l)); --info-weak:     hsl(var(--info-h)     var(--sem-weak-s) var(--sem-weak-l));
+    --ab-icon-size: 1.5rem;
+    --ab-btn-primary: var(--accent); --ab-btn-secondary: hsl(var(--brand-h) var(--grey-s) 42%);
+    --ab-btn-positive: hsl(150 55% 36%); --ab-btn-negative: hsl(5 70% 48%); --ab-btn-comment: hsl(270 45% 52%); --ab-btn-info: hsl(200 75% 42%);
+    /* colour harmony — sibling hues spawned from --brand-h */
+    --harm-2: 180; --harm-3: 120; --harm-4: 270;
+    --hue-1: var(--brand-h); --hue-2: calc(var(--brand-h) + var(--harm-2)); --hue-3: calc(var(--brand-h) + var(--harm-3)); --hue-4: calc(var(--brand-h) + var(--harm-4));
+    --acc-l: 40%; --acc-weak-l: 92%;
+    --accent-2: hsl(var(--hue-2) var(--brand-s) var(--acc-l)); --accent-3: hsl(var(--hue-3) var(--brand-s) var(--acc-l)); --accent-4: hsl(var(--hue-4) var(--brand-s) var(--acc-l));
+    --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: hsl(var(--brand-h) var(--grey-s) 8%); --surface-1: hsl(var(--brand-h) var(--grey-s) 12%); --surface-2: hsl(var(--brand-h) var(--grey-s) 17%);
+    --border: hsl(var(--brand-h) var(--grey-s) 24%); --text: var(--grey-100); --text-soft: hsl(var(--brand-h) var(--grey-s) 60%);
+    --accent: var(--blue-400); --accent-hover: var(--blue-300); --accent-weak: var(--blue-900); --on-accent: hsl(var(--brand-h) var(--grey-s) 8%);
+    --h1-color: hsl(var(--brand-h) var(--brand-s) 68%); --h2-color: hsl(var(--brand-h) 45% 74%); --h3-color: hsl(var(--brand-h) 28% 70%);
+    --sem-l: 64%; --sem-weak-l: 18%; --acc-l: 60%; --acc-weak-l: 17%; color-scheme: dark;
+  } }
+  :root[data-theme="dark"] {
+    --bg: hsl(var(--brand-h) var(--grey-s) 8%); --surface-1: hsl(var(--brand-h) var(--grey-s) 12%); --surface-2: hsl(var(--brand-h) var(--grey-s) 17%);
+    --border: hsl(var(--brand-h) var(--grey-s) 24%); --text: var(--grey-100); --text-soft: hsl(var(--brand-h) var(--grey-s) 60%);
+    --accent: var(--blue-400); --accent-hover: var(--blue-300); --accent-weak: var(--blue-900); --on-accent: hsl(var(--brand-h) var(--grey-s) 8%);
+    --h1-color: hsl(var(--brand-h) var(--brand-s) 68%); --h2-color: hsl(var(--brand-h) 45% 74%); --h3-color: hsl(var(--brand-h) 28% 70%);
+    --sem-l: 64%; --sem-weak-l: 18%; --acc-l: 60%; --acc-weak-l: 17%; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-ui); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1000px; margin-inline: auto; padding-block: 28px 72px;
+    padding-left: max(16px, env(safe-area-inset-left,0px)); padding-right: max(16px, env(safe-area-inset-right,0px)); }
+
+  h1.title { font-size: clamp(1.7rem,1rem+2.6vw,2.5rem); letter-spacing:-.02em; margin:0 0 4px; color: var(--h1-color); }
+  .lede { margin:0 0 20px; color: var(--text-soft); max-width: 64ch; }
+  h2.sec { position:relative; font-size:.8rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--text-soft);
+    margin: 40px 0 14px; padding-bottom:8px; padding-right:128px; border-bottom:1px solid var(--border); }
+  h3.sub { font-size:1.05rem; margin: 22px 0 10px; color: var(--h3-color); }
+  p.note { color: var(--text-soft); font-size:.9rem; margin:.4rem 0 1rem; }
+
+  .rail { position: sticky; top: env(safe-area-inset-top,0px); z-index:20; display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+    margin: 16px 0 8px; padding:12px 14px; background: color-mix(in srgb, var(--surface-1) 88%, transparent); backdrop-filter: blur(8px);
+    border:1px solid var(--border); border-radius:12px; box-shadow: var(--shadow-1); }
+  .rail label { font-size:.78rem; font-weight:600; color:var(--text-soft); display:inline-flex; align-items:center; gap:8px; }
+  .rail input[type=range] { accent-color: var(--accent); }
+  .rail b { font-family: var(--font-mono); color: var(--text); font-size:.8rem; }
+  .seg { display:inline-flex; gap:6px; }
+  .seg button { font:inherit; font-size:.8rem; font-weight:600; padding:6px 12px; border-radius:999px; cursor:pointer;
+    border:1px solid var(--border); background: var(--surface-2); color: var(--text-soft); }
+  .seg button[aria-pressed="true"] { border-color:var(--accent); color:#fff; background:var(--accent); }
+
+  .card-doc { background: var(--surface-1); border:1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-1);
+    padding: 18px; margin-bottom: 14px; }
+  .demo { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px; }
+  code, kbd { font-family: var(--font-mono); font-size:.82em; background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--text);
+    padding:.08em .4em; border-radius:6px; }
+  pre { background: color-mix(in srgb, var(--brand-h) 0, var(--surface-2)); border:1px solid var(--border); border-radius:10px;
+    padding:12px 14px; overflow-x:auto; font-family:var(--font-mono); font-size:.78rem; line-height:1.6; margin:.2rem 0 0; }
+  .classlist { display:flex; flex-wrap:wrap; gap:6px; margin:.2rem 0 0; }
+  .classlist span { font-family:var(--font-mono); font-size:.76rem; background: var(--surface-2); border:1px solid var(--border);
+    border-radius:6px; padding:3px 8px; color: var(--text); }
+
+  /* ---- components (compact copies) ---- */
+  .ab.btn { --_c: var(--ab-btn-primary); --_fg:#fff; display:inline-flex; align-items:center; justify-content:center; gap:.5em;
+    font:inherit; font-weight:600; line-height:1.4; text-decoration:none; padding:.5rem 1rem; border:1px solid var(--_c);
+    border-radius:var(--radius-sm); background:var(--_c); color:var(--_fg); cursor:pointer;
+    transition: color .15s, background-color .3s, border-color .15s, box-shadow .3s; }
+  .ab.btn:hover, .ab.btn:focus-visible { background:transparent; color:var(--_c); }
+  .ab.btn.primary{--_c:var(--ab-btn-primary);--_fg:var(--on-accent)} .ab.btn.secondary{--_c:var(--ab-btn-secondary)}
+  .ab.btn.positive{--_c:var(--ab-btn-positive)} .ab.btn.negative{--_c:var(--ab-btn-negative)}
+  .ab.btn.comment{--_c:var(--ab-btn-comment)} .ab.btn.info{--_c:var(--ab-btn-info)}
+  .ab.btn.outline{background:transparent;color:var(--_c)} .ab.btn.outline:hover{background:var(--_c);color:var(--_fg)}
+  .ab.btn.shaded-hover:hover{background:color-mix(in srgb,var(--_c),#000 14%);border-color:color-mix(in srgb,var(--_c),#000 14%);color:var(--_fg)}
+  .ab.btn.ghost{background:transparent;color:var(--_c);border-color:transparent} .ab.btn.ghost:hover{background:color-mix(in srgb,var(--_c),transparent 86%)}
+  .ab.btn.link{background:transparent;border-color:transparent;color:var(--accent);font-weight:400;text-decoration:underline}
+  .ab.btn.btn-sm{padding:.3rem .6rem;font-size:.8rem} .ab.btn.btn-lg{padding:.7rem 1.4rem;font-size:1.05rem}
+  .ab.btn.pill{border-radius:999px} .ab.btn.square{border-radius:0} .ab.btn.soft{background:color-mix(in srgb,var(--_c),transparent 86%);color:var(--_c);border-color:transparent}
+  .ab.btn.icon{padding:.5em;aspect-ratio:1;line-height:1} .ab.btn.circle{border-radius:50%}
+  .ab.btn .ic{width:1.15em;height:1.15em;display:block;fill:currentColor}
+
+  .ab.card{--ab-card-accent:var(--border);display:flex;flex-direction:column;min-width:0;color:var(--text);background:var(--surface-1);
+    border:1px solid var(--ab-card-accent);border-radius:var(--radius);box-shadow:var(--shadow-1)}
+  .ab.card .card-body{padding:1rem 1.1rem} .ab.card .card-title{margin:0 0 .4rem;font-weight:700;color:var(--text)}
+  .ab.card .card-text{margin:0;color:var(--text-soft);font-size:.9rem}
+  .ab.card .card-header{padding:.7rem 1.1rem;font-weight:600;color:var(--text-soft);
+    background:color-mix(in srgb,var(--ab-card-accent) 14%,var(--surface-1));border-bottom:1px solid var(--ab-card-accent);
+    border-top-left-radius:var(--radius);border-top-right-radius:var(--radius)}
+  .ab.card.primary{--ab-card-accent:var(--accent)} .ab.card.positive{--ab-card-accent:var(--positive)}
+  .ab.card.negative{--ab-card-accent:var(--negative)} .ab.card.comment{--ab-card-accent:var(--comment)} .ab.card.info{--ab-card-accent:var(--info)}
+  .ab.card.invert{background:var(--ab-card-accent);color:#fff;border-color:var(--ab-card-accent)}
+  .ab.card.invert .card-title{color:#fff} .ab.card.invert .card-text{color:color-mix(in srgb,#fff 82%,transparent)}
+
+  .ab.callout{--ab-callout-accent:var(--accent);display:block;padding:1rem 1.25rem;color:var(--text);
+    background:color-mix(in srgb,var(--ab-callout-accent) 6%,var(--surface-1));border:1px solid var(--border);
+    border-left:4px solid var(--ab-callout-accent);border-radius:var(--radius);box-shadow:var(--shadow-1)}
+  .ab.callout.with-icon{display:flex;align-items:center;gap:1.1rem}
+  .ab.callout .callout-icon{flex:none;width:2.4rem;height:2.4rem;color:var(--ab-callout-accent);display:flex;align-items:center;justify-content:center}
+  .ab.callout .callout-icon .ic{width:2.4rem;height:2.4rem}
+  .ab.callout .callout-content{flex:1;min-width:0}
+  .ab.callout .callout-header{margin:0 0 .35rem;font-weight:600;color:var(--ab-callout-accent)}
+  .ab.callout p{margin:0;color:var(--text-soft);font-size:.9rem}
+  .ab.callout.positive{--ab-callout-accent:var(--positive)} .ab.callout.neutral{--ab-callout-accent:var(--neutral)}
+  .ab.callout.negative{--ab-callout-accent:var(--negative)} .ab.callout.comment{--ab-callout-accent:var(--comment)} .ab.callout.info{--ab-callout-accent:var(--info)}
+
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:999px}
+  .badge-positive{background:var(--positive-weak);color:var(--positive)} .badge-neutral{background:var(--neutral-weak);color:var(--neutral)}
+  .badge-negative{background:var(--negative-weak);color:var(--negative)} .badge-comment{background:var(--comment-weak);color:var(--comment)} .badge-info{background:var(--info-weak);color:var(--info)}
+
+  .ab-icon{display:inline-block;flex:none;vertical-align:middle;width:var(--ab-icon-size);height:var(--ab-icon-size)}
+  .ab-icon > svg{display:block;width:100%;height:100%;fill:currentColor}
+  .ab-icon.sz-1{--ab-icon-size:1rem} .ab-icon.sz-3{--ab-icon-size:2rem} .ab-icon.sz-4{--ab-icon-size:3rem}
+  .ab-icon.rot-90{transform:rotate(90deg)} .ab-icon.flip-h{transform:scaleX(-1)}
+
+  /* swatch + icon gallery */
+  .swrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+  .sw{border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .sw .b{padding:14px 10px;color:#fff;font-weight:600;font-size:.78rem;font-family:var(--font-mono)}
+  .sw .w{padding:8px 10px;font-size:.72rem;font-weight:600;font-family:var(--font-mono)}
+  .packhead{display:flex;align-items:baseline;gap:10px;margin:0 0 12px;color:var(--h3-color)}
+  .packhead .t{font-size:1.05rem;font-weight:700}
+  .packhead .c{font-family:var(--font-mono);font-size:.68rem;font-weight:600;color:var(--text-soft);
+    background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:2px 8px}
+  .icongrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+  .iconcell{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 8px;border:1px solid var(--border);
+    border-radius:12px;background:var(--surface-1);text-align:center}
+  .iconcell{cursor:pointer;transition:border-color .15s,background-color .15s}
+  .iconcell:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 6%,var(--surface-1))}
+  .iconcell.ok{border-color:var(--positive)}
+  .iconcell .nm{font-family:var(--font-mono);font-size:.68rem;color:var(--text-soft);word-break:break-word;line-height:1.3}
+  .iconcell .ab-icon{color:var(--accent)}
+
+  /* send-to-css button + toast */
+  .sendcss{position:absolute;right:0;top:50%;transform:translateY(-60%);font:inherit;font-size:.66rem;font-weight:700;
+    letter-spacing:.03em;text-transform:none;cursor:pointer;padding:5px 11px;border-radius:999px;white-space:nowrap;
+    display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-soft);
+    transition:border-color .15s,color .15s}
+  .sendcss:hover{border-color:var(--accent);color:var(--accent)}
+  .sendcss.ok{border-color:var(--positive);color:var(--positive)}
+  .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,16px);
+    z-index:40;background:var(--grey-900);color:var(--grey-100);font-size:.82rem;font-weight:600;padding:10px 16px;
+    border-radius:999px;box-shadow:var(--shadow-3);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:88vw}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  /* colour harmony */
+  [data-harmony="monochrome"]{--harm-2:0;--harm-3:0;--harm-4:0}
+  [data-harmony="complementary"]{--harm-2:180;--harm-3:180;--harm-4:180}
+  [data-harmony="analogous"]{--harm-2:30;--harm-3:-30;--harm-4:60}
+  [data-harmony="triadic"]{--harm-2:120;--harm-3:240;--harm-4:120}
+  [data-harmony="split"]{--harm-2:150;--harm-3:210;--harm-4:180}
+  [data-harmony="tetradic"]{--harm-2:60;--harm-3:180;--harm-4:240}
+  [data-harmony="square"]{--harm-2:90;--harm-3:180;--harm-4:270}
+  .hue-1,.hue-2,.hue-3,.hue-4{--accent:hsl(var(--_hh) var(--brand-s) var(--acc-l));--accent-weak:hsl(var(--_hh) var(--brand-s) var(--acc-weak-l));--ab-card-accent:var(--accent)}
+  .hue-1{--_hh:var(--hue-1)} .hue-2{--_hh:var(--hue-2)} .hue-3{--_hh:var(--hue-3)} .hue-4{--_hh:var(--hue-4)}
+  .hswrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:14px}
+  .hsw{display:flex;flex-direction:column;justify-content:flex-end;min-height:84px;border-radius:12px;padding:10px 12px;color:#fff;box-shadow:var(--shadow-1)}
+  .hsw span{font-size:.7rem;opacity:.9;font-weight:600} .hsw b{font-family:var(--font-mono);font-size:.9rem}
+  .harm-demo{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .harm-demo .ab.card .card-link{color:var(--accent);font-weight:600;text-decoration:none}
+  .rail select{font:inherit;font-size:.8rem;font-weight:600;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text)}
+  .page-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 24px;padding:6px;background:var(--surface-2);
+    border:1px solid var(--border);border-radius:14px;width:fit-content}
+  .page-tabs button{font:inherit;font-size:.84rem;font-weight:700;padding:9px 16px;border:0;border-radius:10px;
+    background:transparent;color:var(--text-soft);cursor:pointer}
+  .page-tabs button[aria-selected="true"]{background:var(--surface-1);color:var(--accent);box-shadow:var(--shadow-1)}
+  .studio-frame{display:block;width:100%;height:min(82vh,900px);min-height:620px;border:1px solid var(--border);
+    border-radius:14px;background:var(--surface-1);box-shadow:var(--shadow-1)}
+  .reference-intro{margin:0 0 12px;color:var(--text-soft);font-size:.9rem}
+  [hidden]{display:none!important}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="ic-starting" viewBox="0 -960 960 960"><path d="m226-559 78 33q14-28 29-54t33-52l-56-11-84 84Zm142 83 114 113q42-16 90-49t90-75q70-70 109.5-155.5T806-800q-72-5-158 34.5T492-656q-42 42-75 90t-49 90Zm178-65q-23-23-23-56.5t23-56.5q23-23 57-23t57 23q23 23 23 56.5T660-541q-23 23-57 23t-57-23Zm19 321 84-84-11-56q-26 18-52 32.5T532-299l33 79Zm313-653q19 121-23.5 235.5T708-419l20 99q4 20-2 39t-20 33L538-80l-84-197-171-171-197-84 167-168q14-14 33.5-20t39.5-2l99 20q104-104 218-147t235-24ZM157-321q35-35 85.5-35.5T328-322q35 35 34.5 85.5T327-151q-25 25-83.5 43T82-76q14-103 32-161.5t43-83.5Z"/></symbol>
+<symbol id="ic-progressing" viewBox="0 -960 960 960"><path d="M80-200v-80h240v-240h240v-240h320v80H640v240H400v240H80Z"/></symbol>
+<symbol id="ic-graduating" viewBox="0 -960 960 960"><path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Z"/></symbol>
+<symbol id="ic-wellbeing" viewBox="0 -960 960 960"><path d="M480-80q-73-9-145-39.5T206.5-207Q150-264 115-351T80-560v-40h40q51 0 105 13t101 39q12-86 54.5-176.5T480-880q57 65 99.5 155.5T634-548q47-26 101-39t105-13h40v40q0 122-35 209t-91.5 144q-56.5 57-128 87.5T480-80Zm-2-82q-11-166-98.5-251T162-518q11 171 101.5 255T478-162Zm2-254q15-22 36.5-45.5T558-502q-2-57-22.5-119T480-742q-35 59-55.5 121T402-502q20 17 42 40.5t36 45.5Zm78 236q37-12 77-35t74.5-62.5q34.5-39.5 59-98.5T798-518q-94 14-165 62.5T524-332q12 32 20.5 70t13.5 82Z"/></symbol>
+<symbol id="ic-learning" viewBox="0 -960 960 960"><path d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Z"/></symbol>
+<symbol id="ic-assessment" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-80q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm0-80q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Z"/></symbol>
+<symbol id="ic-feedback" viewBox="0 -960 960 960"><path d="M480-360q17 0 28.5-11.5T520-400q0-17-11.5-28.5T480-440q-17 0-28.5 11.5T440-400q0 17 11.5 28.5T480-360Zm-40-160h80v-240h-80v240ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Z"/></symbol>
+<symbol id="ic-integrity" viewBox="0 -960 960 960"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 85-29 163.5T688-214L560-342q-18 11-38.5 16.5T480-320q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 22-5.5 42.5T618-398l60 60q20-41 31-86t11-92v-189l-240-90-240 90v189q0 121 68 220t172 132q26-8 49.5-20.5T576-214l56 56q-33 27-71.5 47T480-80Zm0-320q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400Z"/></symbol>
+<symbol id="ic-finding" viewBox="0 -960 960 960"><path d="m720-430 80 80v190q0 33-23.5 56.5T720-80H160q-33 0-56.5-23.5T80-160v-560q0-33 23.5-56.5T160-800h220q-8 18-12 38.5t-6 41.5H160v560h560v-270Zm52-174 128 128-56 56-128-128q-21 12-45 20t-51 8q-75 0-127.5-52.5T440-700q0-75 52.5-127.5T620-880q75 0 127.5 52.5T800-700q0 27-8 51t-20 45Zm-152 4q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Z"/></symbol>
+<symbol id="ic-studying" viewBox="0 -960 960 960"><path d="M480-60q-72-68-165-104t-195-36v-440q101 0 194 36.5T480-498q73-69 166-105.5T840-640v440q-103 0-195.5 36T480-60Zm0-104q63-47 134-75t146-37v-276q-73 13-143.5 52.5T480-394q-66-66-136.5-105.5T200-552v276q75 9 146 37t134 75Zm0-436q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T560-760q0-33-23.5-56.5T480-840q-33 0-56.5 23.5T400-760q0 33 23.5 56.5T480-680Z"/></symbol>
+<symbol id="ic-referencing" viewBox="0 -960 960 960"><path d="M320-320h480v-480h-80v280l-100-60-100 60v-280H320v480Zm0 80q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Z"/></symbol>
+<symbol id="ic-researching" viewBox="0 -960 960 960"><path d="M450-420q38 0 64-26t26-64q0-38-26-64t-64-26q-38 0-64 26t-26 64q0 38 26 64t64 26Zm193 160L538-365q-20 13-42.5 19t-45.5 6q-71 0-120.5-49.5T280-510q0-71 49.5-120.5T450-680q71 0 120.5 49.5T620-510q0 23-6.5 45.5T594-422l106 106-57 56ZM200-120q-33 0-56.5-23.5T120-200v-160h80v160h160v80H200Zm400 0v-80h160v-160h80v160q0 33-23.5 56.5T760-120H600ZM120-600v-160q0-33 23.5-56.5T200-840h160v80H200v160h-80Zm640 0v-160H600v-80h160q33 0 56.5 23.5T840-760v160h-80Z"/></symbol>
+<symbol id="ic-writing" viewBox="0 -960 960 960"><path d="M280-280h280v-80H280v80Zm0-160h400v-80H280v80Zm0-160h400v-80H280v80Zm-80 480q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"/></symbol>
+<symbol id="ic-presenting" viewBox="0 -960 960 960"><path d="M840-120v-640H120v320H40v-320q0-33 23.5-56.5T120-840h720q33 0 56.5 23.5T920-760v560q0 33-23.5 56.5T840-120ZM360-400q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm0-80q33 0 56.5-23.5T440-560q0-33-23.5-56.5T360-640q-33 0-56.5 23.5T280-560q0 33 23.5 56.5T360-480ZM40-80v-112q0-34 17.5-62.5T104-298q62-31 126-46.5T360-360q66 0 130 15.5T616-298q29 15 46.5 43.5T680-192v112H40Zm80-80h480v-32q0-11-5.5-20T580-226q-54-27-109-40.5T360-280q-56 0-111 13.5T140-226q-9 5-14.5 14t-5.5 20v32Z"/></symbol>
+<symbol id="ic-reflecting" viewBox="0 -960 960 960"><path d="M314-115q-104-48-169-145T80-479q0-26 2.5-51t8.5-49l-46 27-40-69 191-110 110 190-70 40-54-94q-11 27-16.5 56t-5.5 60q0 97 53 176.5T354-185l-40 70Zm306-485v-80h109q-46-57-111-88.5T480-800q-55 0-104 17t-90 48l-40-70q50-35 109-55t125-20q79 0 151 29.5T760-765v-55h80v220H620ZM594 0 403-110l110-190 69 40-57 98q118-17 196.5-107T800-480q0-11-.5-20.5T797-520h81q1 10 1.5 19.5t.5 20.5q0 135-80.5 241.5T590-95l44 26-40 69Z"/></symbol>
+<symbol id="ic-revising-exams" viewBox="0 -960 960 960"><path d="M360-840v-80h240v80H360Zm80 440h80v-240h-80v240Zm40 320q-74 0-139.5-28.5T226-186q-49-49-77.5-114.5T120-440q0-74 28.5-139.5T226-694q49-49 114.5-77.5T480-800q62 0 119 20t107 58l56-56 56 56-56 56q38 50 58 107t20 119q0 74-28.5 139.5T734-186q-49 49-114.5 77.5T480-80Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Z"/></symbol>
+<symbol id="ic-criticality" viewBox="0 -960 960 960"><path d="M480-80q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-200v-80h320v80H320Zm10-120q-69-41-109.5-110T180-580q0-125 87.5-212.5T480-880q125 0 212.5 87.5T780-580q0 81-40.5 150T630-320H330Zm24-80h252q45-32 69.5-79T700-580q0-92-64-156t-156-64q-92 0-156 64t-64 156q0 54 24.5 101t69.5 79Z"/></symbol>
+<symbol id="ic-creativity" viewBox="0 -960 960 960"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 32.5-156t88-127Q256-817 330-848.5T488-880q80 0 151 27.5t124.5 76q53.5 48.5 85 115T880-518q0 115-70 176.5T640-280h-74q-9 0-12.5 5t-3.5 11q0 12 15 34.5t15 51.5q0 50-27.5 74T480-80ZM260-440q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120-160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm200 0q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm120 160q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17ZM480-160q9 0 14.5-5t5.5-13q0-14-15-33t-15-57q0-42 29-67t71-25h70q66 0 113-38.5T800-518q0-121-92.5-201.5T488-800q-136 0-232 93t-96 227q0 133 93.5 226.5T480-160Z"/></symbol>
+<symbol id="ic-international" viewBox="0 -960 960 960"><path d="M472-159q-33 0-56.5-24T392-240q0-33 23.5-56.5T472-320l24-23q8-8 18.5-12.5T536-360q23 0 39.5 17t16.5 40v17q0 20 13 33t33 13q15 0 27-9t17-23l12-33q9-24 29-39.5t46-15.5q11-28 17.5-58t6.5-62q0-89-44.5-162.5T632-758v38q0 33-23.5 56.5T552-640h-40v80q0 17-11.5 28.5T472-520h-40v68q0 22-15 37t-37 15q-14 0-25.5-6T336-423l-64-97h-40v40q0 31-21 53t-50 26q26 104 112.5 173T472-159Zm80-241q-17 0-28.5-11.5T512-440q0-17 11.5-28.5T552-480h40q17 0 28.5 11.5T632-440q0 17-11.5 28.5T592-400h-40Zm93-120q-20 0-31.5-15.5T608-570l15-44q4-12 14-19t22-7q20 0 31.5 15.5T696-590l-15 44q-4 12-14 19t-22 7ZM472-80q-83 0-156-31.5T189-197q-54-54-85.5-127T72-480q0-83 31.5-156T189-763q54-54 127-85.5T472-880q83 0 156 31.5T755-763q54 54 85.5 127T872-480q0 83-31.5 156T755-197q-54 54-127 85.5T472-80Z"/></symbol>
+<symbol id="ic-ai-technology" viewBox="0 -960 960 960"><path d="M360-360v-240h240v240H360Zm80-80h80v-80h-80v80Zm-80 320v-80h-80q-33 0-56.5-23.5T200-280v-80h-80v-80h80v-80h-80v-80h80v-80q0-33 23.5-56.5T280-760h80v-80h80v80h80v-80h80v80h80q33 0 56.5 23.5T760-680v80h80v80h-80v80h80v80h-80v80q0 33-23.5 56.5T680-200h-80v80h-80v-80h-80v80h-80Zm320-160v-400H280v400h400Z"/></symbol>
+<symbol id="ic-workshop" viewBox="0 -960 960 960"><path d="M280-720v-40q0-33 23.5-56.5T360-840h240q33 0 56.5 23.5T680-760v40h28q24 0 43.5 13.5T780-672l94 216q3 8 4.5 16t1.5 16v184q0 33-23.5 56.5T800-160H160q-33 0-56.5-23.5T80-240v-184q0-8 1.5-16t4.5-16l94-216q9-21 28.5-34.5T252-720h28Zm80 0h240v-40H360v40Zm-80 240v-40h80v40h240v-40h80v40h96l-68-160H252l-68 160h96Zm0 80H160v160h640v-160H680v40h-80v-40H360v40h-80v-40Z"/></symbol>
+<symbol id="ic-homepage" viewBox="0 -960 960 960"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Z"/></symbol>
+<symbol id="ic-book" viewBox="0 -960 960 960"><path d="M270-80q-45 0-77.5-30.5T160-186v-558q0-38 23.5-68t61.5-38l395-78v640l-379 76q-9 2-15 9.5t-6 16.5q0 11 9 18.5t21 7.5h450v-640h80v720H270Zm90-233 200-39v-478l-200 39v478Zm-80 16v-478l-15 3q-11 2-18 9.5t-7 18.5v457q5-2 10.5-3.5T261-293l19-4Z"/></symbol>
+<symbol id="ic-bookchapter" viewBox="0 -960 960 960"><path d="M440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6q47 0 91.5 10.5T440-278Zm40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q74 0 126 17t112 52q11 6 16.5 14t5.5 21v418q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-481q15 5 29.5 11t28.5 14q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59Zm140-240v-440l120-40v440l-120 40Z"/></symbol>
+<symbol id="ic-video" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h480q33 0 56.5 23.5T720-720v180l160-160v440L720-420v180q0 33-23.5 56.5T640-160H160Zm0-80h480v-480H160v480Z"/></symbol>
+<symbol id="ic-podcast" viewBox="0 -960 960 960"><path d="M440-80v-331q-18-11-29-28.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 23-11 41t-29 28v331h-80ZM204-190q-57-55-90.5-129.5T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 86-33.5 161T756-190l-56-56q46-44 73-104.5T800-480q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 69 27 129t74 104l-57 57Zm113-113q-35-33-56-78.5T240-480q0-100 70-170t170-70q100 0 170 70t70 170q0 53-21 99t-56 78l-57-57q25-23 39.5-54t14.5-66q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 36 14.5 66.5T374-360l-57 57Z"/></symbol>
+<symbol id="ic-worksheet" viewBox="0 -960 960 960"><path d="M680-320q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480q-17 0-28.5 11.5T640-440q0 17 11.5 28.5T680-400ZM440-40v-116q0-21 10-39.5t28-29.5q32-19 67.5-31.5T618-275l62 75 62-75q37 6 72 18.5t67 31.5q18 11 28.5 29.5T920-156v116H440Zm79-80h123l-54-66q-18 5-35 13t-34 17v36Zm199 0h122v-36q-16-10-33-17.5T772-186l-54 66Zm-518 0q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v200q-16-20-35-38t-45-24v-138H200v560h166q-3 11-4.5 22t-1.5 22v36H200Zm80-480h280q26-20 57-30t63-10v-40H280v80Zm0 160h200q0-21 4.5-41t12.5-39H280v80Zm0 160h138q11-9 23.5-16t25.5-13v-51H280v80Z"/></symbol>
+<symbol id="ic-bookmark" viewBox="0 -960 960 960"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Z"/></symbol>
+<symbol id="ic-digital-learning-activity" viewBox="0 -960 960 960"><path d="M440-280v-40h80v40h-80Zm0-60v-31q-19-11-29.5-29.5T400-440q0-33 23.5-56.5T480-520q33 0 56.5 23.5T560-440q0 21-10.5 39.5T520-371v31h-80Zm200 18-42-43q11-17 16.5-36t5.5-39q0-20-5.5-39T598-515l42-43q20 26 30 56t10 62q0 32-10 62t-30 56Zm-320 0q-20-26-30-56t-10-62q0-83 58.5-141.5T480-640v-50l90 80-90 80v-50q-58 0-99 41t-41 99q0 20 5.5 39t16.5 36l-42 43ZM240-40q-33 0-56.5-23.5T160-120v-720q0-33 23.5-56.5T240-920h480q33 0 56.5 23.5T800-840v720q0 33-23.5 56.5T720-40H240Zm0-200h480v-480H240v480Zm0 80v40h480v-40H240Zm0-640h480v-40H240v40Z"/></symbol>
+<symbol id="ic-workshop-learning-activity" viewBox="0 -960 960 960"><path d="M206-206q-41-48-63.5-107.5T120-440q0-150 105-255t255-105h8l-64-64 56-56 160 160-160 160-57-57 63-63h-6q-116 0-198 82t-82 198q0 51 16.5 96t46.5 81l-57 57Zm234-14q0-23-15.5-45.5t-34.5-47q-19-24.5-34.5-51T340-420q0-58 41-99t99-41q58 0 99 41t41 99q0 30-15.5 56.5t-34.5 51q-19 24.5-34.5 47T520-220h-80Zm0 100v-60h80v60h-80Zm314-86-57-57q30-36 46.5-81t16.5-96q0-66-27.5-122.5T657-657l57-57q58 50 92 120.5T840-440q0 67-22.5 126.5T754-206Z"/></symbol>
+<symbol id="ic-signpost" viewBox="0 -960 960 960"><path d="M440-80v-160H240L120-360l120-120h200v-80H160v-240h280v-80h80v80h200l120 120-120 120H520v80h280v240H520v160h-80ZM240-640h447l40-40-40-40H240v80Zm33 320h447v-80H273l-40 40 40 40Z"/></symbol>
+<symbol id="ic-panopto" viewBox="0 -960 960 960"><g transform="translate(-.47984 -25.431)"><path d="m731.57-387.02 45.559 44.76 81.528 81.527 37.567 36.767v-450.8l-37.567 36.767-81.528 81.528-45.559 44.76v-149.47c0-27.539 3.1003-55.987-13.3-79.929-3.9702-5.7964-8.7286-11.021-13.883-15.784-25.773-23.818-58.57-20.983-91.113-20.983h-438.81c-12.88 0-25.75-0.51979-38.366 2.5646-35.292 8.6287-60.434 41.47-61.486 77.364-1.3092 44.679-0.05876 89.581-0.05876 134.28v334.1c0 12.968-0.89406 26.302 1.0054 39.165 2.519 17.057 10.263 32.356 22.308 44.695 12.456 12.761 28.583 21.232 46.225 23.838 12.094 1.7862 24.576 1.0055 36.767 1.0055h445.2c24.204 0 47.74 0.7287 68.739-13.365 5.5268-3.7094 10.478-8.1901 15.041-13.022 9.9132-10.496 17.104-23.365 20.037-37.556 3.3122-16.024 1.689-33.275 1.689-49.556v-152.66m-81.527-308.53v492.36h-493.16v-492.36h493.16m-66.341 298.93c2.522-12.988 0.79965-27.562 0.79965-40.764v-76.732c-6.9e-4 -17.068 1.136-37.073-8.5173-51.954-9.5569-14.732-24.643-24.017-39.44-32.73-13.802-8.128-27.65-16.194-41.563-24.13-21.605-12.322-45.183-29.396-71.137-28.535-22.09 0.73259-46.002 17.52-53.624 38.237-5.0737 13.791-4.7237 29.481-4.7237 43.961v20.781c0 3.687-0.40664 8.0725 1.6438 11.337 3.1936 5.0836 10.907 8.0289 15.939 10.923l36.768 21.241c35.532 20.4 70.924 41.047 106.31 61.705 21.772 12.712 44.769 23.875 57.549 46.659m-211.81-232.59c-13.044 5.7214-25.24 13.891-37.566 21.001-21.093 12.167-42.209 24.297-63.144 36.734-17.139 10.182-35.975 20.093-44.71 38.979-6.0067 12.986-5.6452 27.567-5.6452 41.563v54.352c0 23.352-3.9598 49.735 7.0963 71.137 12.876 24.926 40.683 37.829 68.037 31.511 12.015-2.7754 22.981-9.6991 33.57-15.754 5.8763-3.3599 11.723-6.7717 17.581-10.163 3.302-1.9116 7.4257-3.816 9.5477-7.1404 3.1075-4.8676 1.5601-12.901 1.9548-18.436 1.191-16.701 0.49027-33.616 0.49027-50.355 0-38.382 0.17541-76.744 0.77324-115.1 0.18184-11.718 0.0317-23.449 0.0317-35.169 0-6.2948-0.60006-12.994 0.74845-19.183 1.8759-8.6082 7.0888-16.341 11.241-23.979m-96.714 303.73c10.368 7.8106 22.373 13.623 33.57 20.149 20.972 12.223 42.001 24.347 63.144 36.271 19.765 11.146 37.911 23.236 61.545 20.677 13.443-1.4554 25.187-8.5595 36.767-15.082 15.505-8.7339 30.968-17.543 46.359-26.476 19.384-11.252 43.54-21.311 56.562-40.334 15.049-21.983 13.289-55.415-3.6321-75.921-8.589-10.409-20.699-16.745-32.149-23.479-5.5736-3.2776-11.18-6.5046-16.785-9.7281-3.4034-1.957-7.1475-4.4696-11.19-4.6671-6.567-0.32161-13.673 5.198-19.183 8.22-13.967 7.6599-27.786 15.621-41.563 23.618-33.567 19.485-67.012 39.179-100.71 58.436-16.334 9.3336-33.584 21.763-51.954 26.568-6.7463 1.7641-13.86 1.5672-20.782 1.7501z"/></g></symbol>
+<symbol id="ic-youtube" viewBox="0 -960 960 960"><g transform="matrix(.025 0 0 .025 15.752 -554.69)"><path d="m5539.7 16469q-1364.4 0-2336-971.6-971.6-971.6-971.6-2336v-19845q0-1364.4 971.6-2336 971.6-971.6 2336-971.6h19845q1364.4 0 2336 971.6 971.6 971.59 971.6 2336v7442l6615.1-6615.1v18192l-6615.1-6615.1v7442q0 1364.4-971.6 2336-971.6 971.6-2336 971.6zm0-3307.6h19845v-19845h-19845zm0 0v-19845z"/></g><g transform="matrix(.78348 0 0 .78348 199.61 -676.34)"><path d="m34.354 0.5h45.959l29.604 91.096h2.863l28.233-91.096h46.353l-53.107 133.34v94.589h-45.618v-90.347zm157.84 98.157c0-13.374 5.495-24.003 16.493-31.938 10.984-7.934 25.749-11.901 44.3-11.901 16.893 0 30.728 4.192 41.506 12.55 10.805 8.358 16.193 19.112 16.193 32.287v89.2c0 14.771-5.301 26.373-15.868 34.782-10.579 8.408-25.151 12.625-43.684 12.625-17.859 0-32.143-4.342-42.866-13.024-10.709-8.683-16.074-20.36-16.074-35.057zm42.012 92.767c0 4.766 1.44 8.409 4.354 11.029 2.907 2.595 7.055 3.867 12.451 3.867 5.532 0 9.93-1.297 13.18-3.942 3.256-2.669 4.891-6.313 4.891-10.954v-94.065c0-3.768-1.672-6.812-4.99-9.132-3.318-2.321-7.679-3.494-13.081-3.494-4.972 0-9.027 1.173-12.133 3.494-3.119 2.32-4.672 5.364-4.672 9.132zm225.79-133.84v172.71h-40.883v-19.063c-7.547 7.037-15.381 12.375-23.541 16.069-8.146 3.643-16.068 5.489-23.729 5.489-9.455 0-16.592-2.57-21.383-7.71-4.791-5.141-7.186-12.85-7.186-23.13v-144.37h40.895v132.39c0 4.117 0.861 7.061 2.57 8.907 1.723 1.822 4.492 2.745 8.322 2.745 3.018 0 6.824-1.223 11.4-3.643 4.604-2.42 8.82-5.514 12.65-9.282v-131.12zm-38.312 305.67c-2.008-2.221-5.203-3.368-9.594-3.368-4.59 0-7.883 1.147-9.879 3.368-1.996 2.245-2.994 5.963-2.994 11.153v10.754h25.473v-10.754c0-5.19-0.998-8.908-3.006-11.153zm-120.82 80.966c2.195 0.898 4.516 1.322 6.961 1.322 3.543 0 6.113-0.849 7.785-2.595 1.67-1.722 2.494-4.591 2.494-8.533v-62.178c0-4.191-1.023-7.36-3.068-9.531-2.059-2.171-5.064-3.244-8.957-3.244-2.059 0-4.092 0.399-6.102 1.198-2.008 0.823-3.991 2.096-5.95 3.792v75.402c2.346 2.046 4.628 3.493 6.837 4.367zm189.64-131.64c0-29.941-30.754-54.219-68.654-54.219-54.068-1.822-109.4-2.62-165.84-2.521-56.427-0.1-111.76 0.698-165.84 2.521-37.881 0-68.633 24.277-68.633 54.219-2.277 23.678-3.263 47.381-3.175 71.085-0.087 23.703 0.898 47.406 3.175 71.11 0 29.916 30.752 54.192 68.633 54.192 54.087 1.797 109.42 2.596 165.84 2.521 56.446 0.075 111.77-0.724 165.84-2.521 37.9 0 68.654-24.276 68.654-54.192 2.27-23.704 3.254-47.407 3.154-71.11 0.1-23.704-0.884-47.407-3.154-71.085zm-369.24 150.88v1.797h-32.473v-143.62h-33.596v-26.147h99.672v26.147h-33.603zm115.52-122.14v123.93h-28.831v-13.698c-5.327 5.064-10.848 8.882-16.592 11.527-5.757 2.619-11.334 3.942-16.748 3.942-6.662 0-11.684-1.847-15.065-5.515-3.387-3.692-5.078-9.231-5.078-16.617v-105.34h28.844v94.988c0 2.92 0.599 5.065 1.802 6.363 1.217 1.322 3.175 1.971 5.876 1.971 2.127 0 4.803-0.873 8.047-2.595 3.231-1.747 6.2-3.967 8.914-6.662v-94.065h28.831zm111.01 29.517v68.74c0 8.808-2.258 15.544-6.773 20.235-4.518 4.641-11.055 6.986-19.588 6.986-5.639 0-10.652-0.898-15.07-2.695-4.428-1.821-8.532-4.616-12.325-8.384v9.532h-29.105v-169.76h29.105v54.068c3.893-3.793 8.009-6.662 12.376-8.608 4.379-1.971 8.809-2.969 13.273-2.969 9.107 0 16.094 2.645 20.896 7.935 4.803 5.289 7.211 12.999 7.211 23.13zm106.59 3.793v31.564h-55.152v21.581c0 6.513 0.947 11.029 2.844 13.549 1.908 2.521 5.152 3.793 9.742 3.793 4.779 0 8.135-1.073 10.043-3.219 1.896-2.121 2.844-6.837 2.844-14.123v-8.607h29.68v11.102c0 12.7-3.605 22.257-10.84 28.694-7.225 6.438-18.016 9.631-32.375 9.631-12.912 0-23.066-3.418-30.49-10.229-7.41-6.812-11.127-16.193-11.127-28.096v-57.411c0-10.754 4.078-19.512 12.213-26.299 8.146-6.762 18.689-10.155 31.588-10.155 13.199 0 23.328 3.144 30.416 9.406 7.061 6.264 10.615 15.296 10.615 27.048v1.771z"/></g></symbol>
+</svg>
+
+<div class="wrap">
+  <h1 class="title">AB System Cheat-Sheet</h1>
+  <p class="lede">Tune and build themes in the studio, or browse the component reference. One hue drives the scales, surfaces, accents and semantics.</p>
+
+  <div class="rail">
+    <label>Brand hue <input type="range" id="hue" min="0" max="360" value="202"> <b id="hue-val">202°</b></label>
+    <label>Harmony <select id="harm">
+      <option value="complementary">Complementary</option>
+      <option value="analogous">Analogous</option>
+      <option value="triadic">Triadic</option>
+      <option value="split">Split-complementary</option>
+      <option value="tetradic">Tetradic</option>
+      <option value="square">Square</option>
+      <option value="monochrome">Monochrome</option>
+    </select></label>
+    <span class="seg" role="group" aria-label="Theme">
+      <button data-t="light" aria-pressed="false">Light</button>
+      <button data-t="dark" aria-pressed="false">Dark</button>
+      <button data-t="system" aria-pressed="true">System</button>
+    </span>
+  </div>
+
+  <div class="page-tabs" role="tablist" aria-label="Theme studio and reference">
+    <button id="studio-tab" type="button" role="tab" aria-selected="false" aria-controls="studio-panel">Theme studio</button>
+    <button id="reference-tab" type="button" role="tab" aria-selected="true" aria-controls="reference-panel">Cheat sheet</button>
+  </div>
+
+  <section id="studio-panel" role="tabpanel" aria-labelledby="studio-tab" hidden>
+    <iframe class="studio-frame" title="AB Theme Studio" data-src="/" loading="lazy"></iframe>
+  </section>
+
+  <section id="reference-panel" role="tabpanel" aria-labelledby="reference-tab">
+  <p class="reference-intro">Reference order: core tokens and scales, color relationships, semantic and heading systems, then reusable components.</p>
+  <h2 class="sec">1 · Tokens — the one knob</h2>
+  <div class="card-doc">
+    <p class="note">Change <code>--brand-h</code> and the whole system re-themes. Saturations: <code>--brand-s</code> (colourful) and <code>--grey-s</code> (blue-grey neutrals).</p>
+    <pre>:root { --brand-h: 202; --brand-s: 72%; --grey-s: 12%; }</pre>
+  </div>
+
+  <h2 class="sec">2 · Scales</h2>
+  <div class="card-doc">
+    <h3 class="sub">Brand <code>--blue-50…950</code> · Blue-grey <code>--grey-50…950</code> · Pure grey <code>--gray-50…950</code></h3>
+    <div class="swrow" id="scaleRow"></div>
+  </div>
+
+  <h2 class="sec">3 · Semantic colours — one formula</h2>
+  <div class="card-doc">
+    <p class="note">Each = <code>hsl(meaning-hue · --sem-s · --sem-l)</code>. Neutral is amber derived from the brand (<code>calc(var(--brand-h) + 198)</code>); info tracks the brand. Dark mode flips only <code>--sem-l</code>/<code>--sem-weak-l</code>.</p>
+    <div class="swrow">
+      <div class="sw"><div class="b" style="background:var(--positive)">positive</div><div class="w" style="background:var(--positive-weak);color:var(--positive)">weak</div></div>
+      <div class="sw"><div class="b" style="background:var(--neutral)">neutral · amber</div><div class="w" style="background:var(--neutral-weak);color:var(--neutral)">weak</div></div>
+      <div class="sw"><div class="b" style="background:var(--negative)">negative</div><div class="w" style="background:var(--negative-weak);color:var(--negative)">weak</div></div>
+      <div class="sw"><div class="b" style="background:var(--comment)">comment</div><div class="w" style="background:var(--comment-weak);color:var(--comment)">weak</div></div>
+      <div class="sw"><div class="b" style="background:var(--info)">info</div><div class="w" style="background:var(--info-weak);color:var(--info)">weak</div></div>
+    </div>
+    <div class="demo" style="margin-top:12px">
+      <span class="badge badge-positive">Positive</span>
+      <span class="badge badge-neutral">Neutral</span>
+      <span class="badge badge-negative">Negative</span>
+      <span class="badge badge-comment">Comment</span>
+      <span class="badge badge-info">Info</span>
+    </div>
+  </div>
+
+  <h2 class="sec">4 · Buttons <code>.ab.btn</code></h2>
+  <div class="card-doc">
+    <div class="demo">
+      <button class="ab btn primary">Primary</button>
+      <button class="ab btn secondary">Secondary</button>
+      <button class="ab btn positive">Positive</button>
+      <button class="ab btn negative">Negative</button>
+      <button class="ab btn comment">Comment</button>
+      <button class="ab btn info">Info</button>
+    </div>
+    <div class="demo">
+      <button class="ab btn primary outline">outline</button>
+      <button class="ab btn primary shaded-hover">shaded-hover</button>
+      <button class="ab btn primary ghost">ghost</button>
+      <button class="ab btn link">link</button>
+      <button class="ab btn primary soft">soft</button>
+      <button class="ab btn primary pill">pill</button>
+      <button class="ab btn primary btn-sm">sm</button>
+      <button class="ab btn primary btn-lg">lg</button>
+      <button class="ab btn primary icon circle" aria-label="add"><svg class="ic"><use href="#ic-homepage"/></svg></button>
+    </div>
+    <p class="note">Variants</p>
+    <div class="classlist"><span>primary</span><span>secondary</span><span>positive</span><span>negative</span><span>comment</span><span>info</span></div>
+    <p class="note">Hover modes (pick one)</p>
+    <div class="classlist"><span>(flip — default)</span><span>shaded-hover</span><span>outline</span><span>ghost</span></div>
+    <p class="note">Modifiers</p>
+    <div class="classlist"><span>soft</span><span>pill</span><span>square</span><span>block</span><span>icon</span><span>circle</span><span>lift</span><span>loading</span><span>btn-sm</span><span>btn-lg</span><span>link</span></div>
+    <p class="note">Themed instead of semantic</p>
+    <div class="classlist"><span>fam-brand</span><span>fam-grey</span><span>fam-gray</span><span>sh-50 … sh-950</span></div>
+  </div>
+
+  <h2 class="sec">5 · Cards <code>.ab.card</code></h2>
+  <div class="card-doc">
+    <div class="swrow">
+      <div class="ab card info"><div class="card-header">Header</div><div class="card-body"><div class="card-title">Info card</div><p class="card-text">Accent tints border + header.</p></div></div>
+      <div class="ab card positive invert"><div class="card-body"><div class="card-title">Invert</div><p class="card-text">Solid accent fill.</p></div></div>
+      <div class="ab card negative"><div class="card-body"><div class="card-title">Negative</div><p class="card-text">One accent var drives it all.</p></div></div>
+    </div>
+    <p class="note">Slots</p>
+    <div class="classlist"><span>card-header</span><span>card-body</span><span>card-footer</span><span>card-title</span><span>card-subtitle</span><span>card-text</span><span>card-link</span><span>card-img-top/-bottom/-overlay</span></div>
+    <p class="note">Modifiers</p>
+    <div class="classlist"><span>primary/secondary/positive/negative/comment/info</span><span>fam-* + sh-*</span><span>invert</span><span>soft</span><span>flat</span><span>raised</span><span>square</span><span>with-icon</span><span>hover-animate</span><span>elevated</span></div>
+  </div>
+
+  <h2 class="sec">6 · Callouts <code>.ab.callout</code></h2>
+  <div class="card-doc">
+    <div style="display:grid;gap:10px">
+      <div class="ab callout info with-icon"><span class="callout-icon"><svg class="ic"><use href="#ic-criticality"/></svg></span><div class="callout-content"><div class="callout-header">Info</div><p>Left bar, tint, header &amp; icon from one accent.</p></div></div>
+      <div class="ab callout neutral"><div class="callout-header">Neutral — amber</div><p>Derived from the Start colour.</p></div>
+      <div class="ab callout positive"><div class="callout-header">Positive / advice / do</div><p>Functional aliases map to the semantics.</p></div>
+    </div>
+    <p class="note">Slots &amp; modifiers</p>
+    <div class="classlist"><span>callout-header(.h2–.h6)</span><span>callout-content</span><span>callout-icon</span><span>with-icon</span><span>primary/positive/negative/comment/info</span><span>advice/action/do/dont/warning/starting/feedback-*</span><span>fam-*+sh-*</span><span>soft</span><span>invert</span></div>
+  </div>
+
+  <h2 class="sec">7 · Accordion <code>.ab.accordion</code></h2>
+  <div class="card-doc">
+    <div class="ab accordion" id="acc">
+      <div class="accordion-item"><h3 class="accordion-header"><button type="button" class="accordion-button">H3 — blue-grey theme</button></h3><div class="accordion-collapse"><div class="accordion-body">Heading level sets the theme; the chevron rotates on open.</div></div></div>
+      <div class="accordion-item"><h5 class="accordion-header"><button type="button" class="accordion-button collapsed">H5 — reverse blue</button></h5><div class="accordion-collapse"><div class="accordion-body">h2→h5 auto-theme; h6 / .intext is a minimal inline disclosure.</div></div></div>
+    </div>
+    <p class="note">Markup &amp; modifiers</p>
+    <div class="classlist"><span>accordion-item</span><span>accordion-header hN</span><span>accordion-button[.collapsed]</span><span>accordion-collapse</span><span>accordion-body</span><span>flush</span><span>intext</span></div>
+  </div>
+
+  <h2 class="sec">8 · Heading scheme layer <code>.scheme</code></h2>
+  <div class="card-doc">
+    <p class="note">Put <code>.scheme</code> on any container (a section or <code>&lt;body&gt;</code>) and headings inside follow it. Stamp a full scheme as a class string:</p>
+    <pre>&lt;main class="scheme hsc-twotone hdec-dotted hbul-chevron hsz-graded"&gt;…&lt;/main&gt;</pre>
+    <p class="note">Schemes</p>
+    <div class="classlist"><span>hsc-diagonal</span><span>hsc-grey</span><span>hsc-gray</span><span>hsc-mono</span><span>hsc-twotone</span><span>hsc-accent</span></div>
+    <p class="note">Decoration · bullets · size · reverse · scale</p>
+    <div class="classlist"><span>hdec-underline/dashed/dotted/leftborder</span><span>hbul-chevron/dot/arrow</span><span>hsz-graded/uniform</span><span>hrev</span><span>--hscale</span></div>
+  </div>
+
+  <h2 class="sec">9 · Icons <code>.ab-icon</code> — colour via <code>color</code></h2>
+  <div class="card-doc">
+    <p class="note">Size <code>sz-1…sz-6</code> (or <code>--ab-icon-size</code> / <code>.em</code>) · transforms <code>rot-90/180/270</code>, <code>flip-h/-v</code> · mask mode <code>.mask</code> with <code>--icon</code>. The chip under each glyph is its sprite id — <b>tap any glyph to copy its markup</b>. Grouped into packs below:</p>
+  </div>
+  <div id="iconPacks"></div>
+
+  <h2 class="sec">10 · Colour harmony <code>data-harmony</code> · <code>.hue-*</code></h2>
+  <div class="card-doc">
+    <p class="note">A layer <em>under</em> the one colour: a preset adds hue-angle offsets and the siblings fall out by <code>calc(var(--brand-h) + …)</code> — they rotate as you change the brand hue. Pick a preset in the top rail; the swatches and demo update live.</p>
+    <div class="hswrow">
+      <div class="hsw" style="background:hsl(var(--hue-1) var(--brand-s) var(--acc-l))"><span>Brand · +0°</span><b data-hue="1">202°</b></div>
+      <div class="hsw" style="background:hsl(var(--hue-2) var(--brand-s) var(--acc-l))"><span>Hue 2</span><b data-hue="2"></b></div>
+      <div class="hsw" style="background:hsl(var(--hue-3) var(--brand-s) var(--acc-l))"><span>Hue 3</span><b data-hue="3"></b></div>
+      <div class="hsw" style="background:hsl(var(--hue-4) var(--brand-s) var(--acc-l))"><span>Hue 4</span><b data-hue="4"></b></div>
+    </div>
+    <p class="note">Full remap — drop <code>.hue-2/3/4</code> on any container and its whole subtree rethemes onto a spawned hue:</p>
+    <div class="harm-demo">
+      <div class="ab card hue-1"><div class="card-body"><div class="card-title">.hue-1 — brand</div><p class="card-text">Base. <a class="card-link" href="#">A link</a>.</p></div></div>
+      <div class="ab card hue-2"><div class="card-body"><div class="card-title">.hue-2</div><p class="card-text">Rethemed. <a class="card-link" href="#">A link</a>.</p></div></div>
+      <div class="ab card hue-3"><div class="card-body"><div class="card-title">.hue-3</div><p class="card-text">Rethemed. <a class="card-link" href="#">A link</a>.</p></div></div>
+      <div class="ab card hue-4"><div class="card-body"><div class="card-title">.hue-4</div><p class="card-text">Rethemed. <a class="card-link" href="#">A link</a>.</p></div></div>
+    </div>
+    <p class="note">Presets (set on <code>&lt;html&gt;</code> or any container)</p>
+    <div class="classlist"><span>data-harmony="complementary"</span><span>analogous</span><span>triadic</span><span>split</span><span>tetradic</span><span>square</span><span>monochrome</span></div>
+    <p class="note">Spawned tokens &amp; scheme classes</p>
+    <div class="classlist"><span>--hue-1 … --hue-4</span><span>--accent-2/-3/-4</span><span>.hue-1 … .hue-4 (subtree)</span><span>.fam-h2/h3/h4 (one element)</span></div>
+  </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var reference = document.getElementById('reference-panel');
+  var sectionOrder = ['Tokens', 'Scales', 'Colour harmony', 'Semantic colours',
+    'Heading scheme', 'Buttons', 'Cards', 'Callouts', 'Accordion', 'Icons'];
+  var groupedSections = new Map();
+  var sectionHeading = reference.querySelector('h2.sec');
+  var originalIndex = 0;
+  while (sectionHeading) {
+    var sectionNodes = [sectionHeading];
+    sectionHeading.dataset.cssIndex = String(originalIndex++);
+    var sibling = sectionHeading.nextElementSibling;
+    while (sibling && !sibling.matches('h2.sec')) {
+      var nextSibling = sibling.nextElementSibling;
+      sectionNodes.push(sibling);
+      sibling = nextSibling;
+    }
+    var label = sectionHeading.textContent;
+    var key = sectionOrder.find(function (name) { return label.includes(name); });
+    if (key) groupedSections.set(key, sectionNodes);
+    sectionHeading = sibling;
+  }
+  var orderedSections = document.createDocumentFragment();
+  sectionOrder.forEach(function (name, i) {
+    var nodes = groupedSections.get(name);
+    if (!nodes) return;
+    var heading = nodes[0];
+    if (heading.firstChild && heading.firstChild.nodeType === Node.TEXT_NODE) {
+      heading.firstChild.nodeValue = (i + 1) + ' · ' + heading.firstChild.nodeValue.replace(/^\s*\d+\s·\s*/, '');
+    }
+    nodes.forEach(function (node) { orderedSections.appendChild(node); });
+  });
+  reference.appendChild(orderedSections);
+
+  var tabButtons = Array.from(document.querySelectorAll('.page-tabs [role="tab"]'));
+  var studioFrame = document.querySelector('.studio-frame');
+  function selectTab(button) {
+    tabButtons.forEach(function (tab) {
+      var selected = tab === button;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+    });
+    if (button.id === 'studio-tab' && !studioFrame.getAttribute('src')) {
+      studioFrame.src = studioFrame.dataset.src;
+    }
+  }
+  tabButtons.forEach(function (button, i) {
+    button.addEventListener('click', function () { selectTab(button); });
+    button.addEventListener('keydown', function (event) {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      var next = tabButtons[(i + (event.key === 'ArrowRight' ? 1 : tabButtons.length - 1)) % tabButtons.length];
+      selectTab(next);
+      next.focus();
+    });
+  });
+
+  var root = document.documentElement;
+  var hue = document.getElementById('hue');
+  hue.addEventListener('input', function () {
+    root.style.setProperty('--brand-h', hue.value);
+    document.getElementById('hue-val').textContent = hue.value + '°';
+    updateHarmHues();
+  });
+  // ---- colour harmony ----
+  var HARM = { monochrome:[0,0,0], complementary:[180,180,180], analogous:[30,-30,60],
+    triadic:[120,240,120], split:[150,210,180], tetradic:[60,180,240], square:[90,180,270] };
+  var harmSel = document.getElementById('harm');
+  function wrapHue(x){ x %= 360; return x < 0 ? x + 360 : x; }
+  function updateHarmHues(){
+    var offs = HARM[harmSel.value] || HARM.complementary, h = +hue.value;
+    var b1 = document.querySelector('.hsw b[data-hue="1"]'); if (b1) b1.textContent = h + '°';
+    [2,3,4].forEach(function(n,i){ var b = document.querySelector('.hsw b[data-hue="'+n+'"]'); if (b) b.textContent = wrapHue(h + offs[i]) + '°'; });
+  }
+  harmSel.addEventListener('change', function(){ root.setAttribute('data-harmony', harmSel.value); updateHarmHues(); });
+  root.setAttribute('data-harmony', harmSel.value);
+  updateHarmHues();
+  var segBtns = document.querySelectorAll('.seg button');
+  segBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      segBtns.forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      var t = b.getAttribute('data-t');
+      if (t === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', t);
+    });
+  });
+  // accordion toggle
+  document.querySelectorAll('.ab.accordion .accordion-button').forEach(function (btn) {
+    btn.addEventListener('click', function () { btn.classList.toggle('collapsed'); });
+  });
+  // scale swatches
+  var fams = [['Brand', 'var(--brand-h) var(--brand-s)'], ['Blue-grey', 'var(--brand-h) var(--grey-s)'], ['Pure grey', '0 0%']];
+  var stops = [97, 92, 84, 73, 60, 48, 40, 32, 24, 17, 12];
+  var sr = document.getElementById('scaleRow');
+  fams.forEach(function (f) {
+    var cell = document.createElement('div'); cell.className = 'sw';
+    stops.forEach(function (L, i) {
+      var d = document.createElement('div'); d.className = 'b';
+      d.style.background = 'hsl(' + f[1] + ' ' + L + '%)';
+      d.style.color = L > 55 ? 'hsl(0 0% 15%)' : '#fff';
+      d.style.padding = '7px 10px'; d.style.fontSize = '.66rem';
+      d.textContent = (i === 0 ? f[0] + ' · ' : '') + [50,100,200,300,400,500,600,700,800,900,950][i];
+      cell.appendChild(d);
+    });
+    sr.appendChild(cell);
+  });
+  // ---- copy helpers + toast ----
+  var toastEl = document.createElement('div');
+  toastEl.className = 'toast'; toastEl.setAttribute('role', 'status'); toastEl.setAttribute('aria-live', 'polite');
+  document.body.appendChild(toastEl);
+  var toastT;
+  function toast(msg) { toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function () { toastEl.classList.remove('show'); }, 1800); }
+  function fallbackCopy(txt) {
+    var ta = document.createElement('textarea'); ta.value = txt;
+    ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    try { document.execCommand('copy'); } catch (e) {} document.body.removeChild(ta);
+  }
+  function copyText(txt, done) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () { done(true); }, function () { fallbackCopy(txt); done(true); });
+    } else { fallbackCopy(txt); done(true); }
+  }
+
+  // ---- per-section CSS (paste straight into theme.css) ----
+  var CSS = [
+// 1 · Tokens
+":root {\n  /* the one knob */\n  --brand-h: 202; --brand-s: 72%; --grey-s: 12%;\n\n  /* radii + hue-tinted depth */\n  --radius-sm: 8px; --radius: 12px; --radius-lg: 16px;\n  --shadow-color: var(--brand-h) 40% 20%;\n  --shadow-1: 0 1px 2px hsl(var(--shadow-color)/.10), 0 4px 10px -4px hsl(var(--shadow-color)/.16);\n  --shadow-3: 0 4px 8px hsl(var(--shadow-color)/.14), 0 24px 48px -12px hsl(var(--shadow-color)/.34);\n\n  /* surfaces + text, all derived from the hue */\n  --bg:        hsl(var(--brand-h) var(--grey-s) 97%);\n  --surface-1: hsl(var(--brand-h) var(--grey-s) 99%);\n  --surface-2: hsl(var(--brand-h) var(--grey-s) 92%);\n  --border:    hsl(var(--brand-h) var(--grey-s) 84%);\n  --text:      hsl(var(--brand-h) var(--grey-s) 17%);\n  --text-soft: hsl(var(--brand-h) var(--grey-s) 40%);\n  --accent:       hsl(var(--brand-h) var(--brand-s) 40%);\n  --accent-hover: hsl(var(--brand-h) var(--brand-s) 32%);\n  --accent-weak:  hsl(var(--brand-h) var(--brand-s) 92%);\n  --on-accent:    hsl(var(--brand-h) var(--grey-s) 97%);\n  color-scheme: light;\n}\n@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) {\n  --bg:        hsl(var(--brand-h) var(--grey-s) 8%);\n  --surface-1: hsl(var(--brand-h) var(--grey-s) 12%);\n  --surface-2: hsl(var(--brand-h) var(--grey-s) 17%);\n  --border:    hsl(var(--brand-h) var(--grey-s) 24%);\n  --text:      hsl(var(--brand-h) var(--grey-s) 92%);\n  --text-soft: hsl(var(--brand-h) var(--grey-s) 60%);\n  --accent:       hsl(var(--brand-h) var(--brand-s) 60%);\n  --accent-hover: hsl(var(--brand-h) var(--brand-s) 73%);\n  --accent-weak:  hsl(var(--brand-h) var(--brand-s) 17%);\n  --on-accent:    hsl(var(--brand-h) var(--grey-s) 8%);\n  color-scheme: dark;\n} }\n:root[data-theme=\"dark\"] { /* repeat the dark overrides above for the manual toggle */ }",
+// 2 · Scales
+"/* Three ramps share the hue; only the saturation channel changes.\n   Lightness stops  97 92 84 73 60 48 40 32 24 17 12  map to  50 100 200 300 400 500 600 700 800 900 950 */\n:root {\n  --blue-50:  hsl(var(--brand-h) var(--brand-s) 97%);  /* brand */\n  --blue-500: hsl(var(--brand-h) var(--brand-s) 48%);\n  --blue-950: hsl(var(--brand-h) var(--brand-s) 12%);\n\n  --grey-50:  hsl(var(--brand-h) var(--grey-s) 97%);   /* blue-grey (hue-tinted neutral) */\n  --grey-500: hsl(var(--brand-h) var(--grey-s) 48%);\n  --grey-950: hsl(var(--brand-h) var(--grey-s) 12%);\n\n  --gray-50:  hsl(0 0% 97%);                           /* pure grey */\n  --gray-500: hsl(0 0% 48%);\n  --gray-950: hsl(0 0% 12%);\n}",
+// 3 · Semantic
+":root {\n  --sem-s: 55%;      --sem-l: 38%;\n  --sem-weak-s: 55%; --sem-weak-l: 92%;\n\n  --positive-h: 150;\n  --negative-h: 5;\n  --comment-h:  270;\n  --info-h:     var(--brand-h);                 /* tracks the brand */\n  --neutral-h:  calc(var(--brand-h) + 198);     /* amber, driven off the Start colour */\n\n  --positive: hsl(var(--positive-h) var(--sem-s) var(--sem-l));\n  --neutral:  hsl(var(--neutral-h)  var(--sem-s) var(--sem-l));\n  --negative: hsl(var(--negative-h) var(--sem-s) var(--sem-l));\n  --comment:  hsl(var(--comment-h)  var(--sem-s) var(--sem-l));\n  --info:     hsl(var(--info-h)     var(--sem-s) var(--sem-l));\n  --positive-weak: hsl(var(--positive-h) var(--sem-weak-s) var(--sem-weak-l));\n  --neutral-weak:  hsl(var(--neutral-h)  var(--sem-weak-s) var(--sem-weak-l));\n  --negative-weak: hsl(var(--negative-h) var(--sem-weak-s) var(--sem-weak-l));\n  --comment-weak:  hsl(var(--comment-h)  var(--sem-weak-s) var(--sem-weak-l));\n  --info-weak:     hsl(var(--info-h)     var(--sem-weak-s) var(--sem-weak-l));\n}\n/* dark mode flips only the lightness — every semantic recomputes */\n@media (prefers-color-scheme: dark){ :root:not([data-theme=\"light\"]){ --sem-l:64%; --sem-weak-l:18%; } }\n:root[data-theme=\"dark\"]{ --sem-l:64%; --sem-weak-l:18%; }",
+// 4 · Buttons
+".ab.btn { --_c: var(--ab-btn-primary); --_fg:#fff; display:inline-flex; align-items:center; justify-content:center; gap:.5em;\n  font:inherit; font-weight:600; line-height:1.4; text-decoration:none; padding:.5rem 1rem; border:1px solid var(--_c);\n  border-radius:var(--radius-sm); background:var(--_c); color:var(--_fg); cursor:pointer;\n  transition: color .15s, background-color .3s, border-color .15s, box-shadow .3s; }\n.ab.btn:hover, .ab.btn:focus-visible { background:transparent; color:var(--_c); }   /* default = inverse flip */\n/* semantic variants */\n.ab.btn.primary{--_c:var(--ab-btn-primary);--_fg:var(--on-accent)} .ab.btn.secondary{--_c:var(--ab-btn-secondary)}\n.ab.btn.positive{--_c:var(--ab-btn-positive)} .ab.btn.negative{--_c:var(--ab-btn-negative)}\n.ab.btn.comment{--_c:var(--ab-btn-comment)} .ab.btn.info{--_c:var(--ab-btn-info)}\n/* hover modes (pick one) */\n.ab.btn.outline{background:transparent;color:var(--_c)} .ab.btn.outline:hover{background:var(--_c);color:var(--_fg)}\n.ab.btn.shaded-hover:hover{background:color-mix(in srgb,var(--_c),#000 14%);border-color:color-mix(in srgb,var(--_c),#000 14%);color:var(--_fg)}\n.ab.btn.ghost{background:transparent;color:var(--_c);border-color:transparent} .ab.btn.ghost:hover{background:color-mix(in srgb,var(--_c),transparent 86%)}\n.ab.btn.link{background:transparent;border-color:transparent;color:var(--accent);font-weight:400;text-decoration:underline}\n/* modifiers */\n.ab.btn.soft{background:color-mix(in srgb,var(--_c),transparent 86%);color:var(--_c);border-color:transparent}\n.ab.btn.pill{border-radius:999px} .ab.btn.square{border-radius:0}\n.ab.btn.btn-sm{padding:.3rem .6rem;font-size:.8rem} .ab.btn.btn-lg{padding:.7rem 1.4rem;font-size:1.05rem}\n.ab.btn.icon{padding:.5em;aspect-ratio:1;line-height:1} .ab.btn.circle{border-radius:50%}\n.ab.btn .ic{width:1.15em;height:1.15em;display:block;fill:currentColor}\n/* themed instead of semantic: family + shade */\n.ab.btn.fam-brand{--_c:hsl(var(--brand-h) var(--brand-s) var(--_l,40%))}\n.ab.btn.fam-grey {--_c:hsl(var(--brand-h) var(--grey-s)  var(--_l,40%))}\n.ab.btn.fam-gray {--_c:hsl(0 0% var(--_l,40%))}\n.ab.btn.sh-50{--_l:97%} .ab.btn.sh-500{--_l:48%} .ab.btn.sh-950{--_l:12%}  /* …full 50–950 ladder… */",
+// 5 · Cards
+".ab.card{--ab-card-accent:var(--border);display:flex;flex-direction:column;min-width:0;color:var(--text);background:var(--surface-1);\n  border:1px solid var(--ab-card-accent);border-radius:var(--radius);box-shadow:var(--shadow-1)}\n.ab.card .card-body{padding:1rem 1.1rem} .ab.card .card-title{margin:0 0 .4rem;font-weight:700;color:var(--text)}\n.ab.card .card-text{margin:0;color:var(--text-soft);font-size:.9rem}\n.ab.card .card-header{padding:.7rem 1.1rem;font-weight:600;color:var(--text-soft);\n  background:color-mix(in srgb,var(--ab-card-accent) 14%,var(--surface-1));border-bottom:1px solid var(--ab-card-accent);\n  border-top-left-radius:var(--radius);border-top-right-radius:var(--radius)}\n/* one accent var drives the whole card */\n.ab.card.primary{--ab-card-accent:var(--accent)} .ab.card.positive{--ab-card-accent:var(--positive)}\n.ab.card.negative{--ab-card-accent:var(--negative)} .ab.card.comment{--ab-card-accent:var(--comment)} .ab.card.info{--ab-card-accent:var(--info)}\n/* themed: .fam-brand/.fam-grey/.fam-gray + .sh-50…950 set --ab-card-accent the same way as buttons */\n.ab.card.invert{background:var(--ab-card-accent);color:#fff;border-color:var(--ab-card-accent)}\n.ab.card.invert .card-title{color:#fff} .ab.card.invert .card-text{color:color-mix(in srgb,#fff 82%,transparent)}\n.ab.card.soft{background:color-mix(in srgb,var(--ab-card-accent) 8%,var(--surface-1))}",
+// 6 · Callouts
+".ab.callout{--ab-callout-accent:var(--accent);display:block;padding:1rem 1.25rem;color:var(--text);\n  background:color-mix(in srgb,var(--ab-callout-accent) 6%,var(--surface-1));border:1px solid var(--border);\n  border-left:4px solid var(--ab-callout-accent);border-radius:var(--radius);box-shadow:var(--shadow-1)}\n.ab.callout.with-icon{display:flex;align-items:center;gap:1.1rem}\n.ab.callout .callout-icon{flex:none;width:2.4rem;height:2.4rem;color:var(--ab-callout-accent);display:flex;align-items:center;justify-content:center}\n.ab.callout .callout-icon .ic{width:2.4rem;height:2.4rem}\n.ab.callout .callout-content{flex:1;min-width:0}\n.ab.callout .callout-header{margin:0 0 .35rem;font-weight:600;color:var(--ab-callout-accent)}\n.ab.callout p{margin:0;color:var(--text-soft);font-size:.9rem}\n/* semantics + functional aliases all map to one accent var */\n.ab.callout.positive{--ab-callout-accent:var(--positive)} .ab.callout.neutral{--ab-callout-accent:var(--neutral)}\n.ab.callout.negative{--ab-callout-accent:var(--negative)} .ab.callout.comment{--ab-callout-accent:var(--comment)} .ab.callout.info{--ab-callout-accent:var(--info)}\n.ab.callout.advice,.ab.callout.do{--ab-callout-accent:var(--positive)} .ab.callout.warning,.ab.callout.dont{--ab-callout-accent:var(--negative)}\n/* themed .fam-*/.sh-*, plus .soft (flat tint, no bar) and .invert (solid fill) */\n.ab.callout.soft{border-left-width:1px;box-shadow:none} .ab.callout.invert{background:var(--ab-callout-accent);color:#fff;border-color:var(--ab-callout-accent)}\n.ab.callout.invert .callout-header,.ab.callout.invert p{color:#fff}",
+// 7 · Accordion
+".ab.accordion{ --_bg:var(--surface-1); --_fg:var(--text); --_abg:var(--accent-weak); --_afg:var(--accent-hover);\n  --chevron:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -960 960 960\"><path d=\"M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z\"/></svg>');\n  border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }\n.ab.accordion .accordion-item + .accordion-item{ border-top:1px solid var(--border); }\n.ab.accordion .accordion-header{ margin:0; }\n.ab.accordion .accordion-button{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:1rem;\n  font:inherit; font-weight:600; font-size:1.17rem; /* all levels at the h3 size; theme still varies by level */\n  text-align:left; padding:.9rem 1.1rem; cursor:pointer; border:0; background:var(--_abg); color:var(--_afg); }\n.ab.accordion .accordion-button.collapsed{ background:var(--_bg); color:var(--_fg); }\n.ab.accordion .accordion-button::after{ content:\"\"; width:1em; height:1em; flex:none; background:currentColor;\n  -webkit-mask:var(--chevron) center/contain no-repeat; mask:var(--chevron) center/contain no-repeat; transition:transform .25s; }\n.ab.accordion .accordion-button.collapsed::after{ transform:rotate(-90deg); }\n.ab.accordion .accordion-collapse{ display:grid; grid-template-rows:1fr; transition:grid-template-rows .25s; }\n.ab.accordion .accordion-button.collapsed + .accordion-collapse{ grid-template-rows:0fr; }\n.ab.accordion .accordion-collapse > *{ overflow:hidden; }\n.ab.accordion .accordion-body{ padding:.9rem 1.1rem; color:var(--text-soft); }\n/* heading level sets the open-state theme */\n.ab.accordion h2.accordion-header .accordion-button:not(.collapsed){ --_abg:var(--accent); --_afg:var(--on-accent); }\n/* .flush drops the outer frame; .intext is a minimal inline disclosure (use h6 headers) */\n.ab.accordion.flush{ border:0; border-radius:0 } .ab.accordion.intext{ border:0; background:none }",
+// 8 · Scheme layer
+"/* put .scheme on any container; the headings inside follow it */\n.scheme{ --hscale:1; }\n.scheme :is(h1,h2,h3,h4,h5,h6){ font-size:calc(var(--_sz,1rem) * var(--hscale)); }\n/* hsz — graded vs uniform sizing */\n.scheme.hsz-graded h1{--_sz:2.2rem} .scheme.hsz-graded h2{--_sz:1.8rem} .scheme.hsz-graded h3{--_sz:1.45rem}\n.scheme.hsz-graded h4{--_sz:1.2rem}  .scheme.hsz-graded h5{--_sz:1rem}   .scheme.hsz-graded h6{--_sz:.85rem}\n.scheme.hsz-uniform :is(h1,h2,h3,h4,h5,h6){ --_sz:1.3rem; }\n/* hsc — colour schemes */\n.scheme.hsc-diagonal h1{color:hsl(var(--brand-h) var(--brand-s) 40%)} .scheme.hsc-diagonal h2{color:hsl(var(--brand-h) 45% 32%)}\n.scheme.hsc-diagonal h3{color:hsl(var(--brand-h) 32% 40%)} .scheme.hsc-diagonal h4{color:hsl(var(--brand-h) 20% 48%)}\n.scheme.hsc-diagonal h5{color:hsl(var(--brand-h) 14% 55%)} .scheme.hsc-diagonal h6{color:hsl(var(--brand-h) 10% 62%)}\n.scheme.hsc-grey :is(h1,h2,h3,h4,h5,h6){color:var(--text)} .scheme.hsc-gray :is(h1,h2,h3,h4,h5,h6){color:hsl(0 0% 40%)}\n.scheme.hsc-mono :is(h1,h2,h3,h4,h5,h6){color:var(--accent)} .scheme.hsc-accent :is(h1,h2,h3,h4,h5,h6){color:var(--accent)}\n.scheme.hsc-twotone :is(h1,h3,h5){color:var(--accent)} .scheme.hsc-twotone :is(h2,h4,h6){color:var(--text-soft)}\n.scheme.hrev.hsc-diagonal h1{color:hsl(var(--brand-h) 10% 62%)} /* …hrev reverses the ramp h1<->h6… */\n/* hdec — decoration */\n.scheme.hdec-underline  :is(h1,h2,h3,h4,h5,h6){text-decoration:underline;text-underline-offset:.15em}\n.scheme.hdec-dashed     :is(h1,h2,h3,h4,h5,h6){text-decoration:underline dashed;text-underline-offset:.15em}\n.scheme.hdec-dotted     :is(h1,h2,h3,h4,h5,h6){text-decoration:underline dotted;text-underline-offset:.15em}\n.scheme.hdec-leftborder :is(h1,h2,h3,h4,h5,h6){padding-left:.6em;border-left:.2em solid currentColor}\n/* hbul — Material-Symbol bullet before each heading */\n.scheme[class*=\"hbul-\"] :is(h1,h2,h3,h4,h5,h6){display:flex;align-items:center;gap:.5em}\n.scheme[class*=\"hbul-\"] :is(h1,h2,h3,h4,h5,h6)::before{content:\"\";width:.8em;height:.8em;flex:none;background:currentColor;\n  -webkit-mask:var(--hbul) center/contain no-repeat;mask:var(--hbul) center/contain no-repeat}\n.scheme.hbul-chevron{--hbul:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 -960 960 960\"><path d=\"M504-480 348-636l44-44 200 200-200 200-44-44 156-156Z\"/></svg>')}",
+// 9 · Icons
+".ab-icon{ display:inline-block; flex:none; vertical-align:middle; color:inherit;\n  width:var(--ab-icon-size,1.5rem); height:var(--ab-icon-size,1.5rem); }\n.ab-icon > svg{ display:block; width:100%; height:100%; fill:currentColor; }   /* colour follows `color` */\n.ab-icon.sz-1{--ab-icon-size:1rem} .ab-icon.sz-2{--ab-icon-size:1.5rem} .ab-icon.sz-3{--ab-icon-size:2rem}\n.ab-icon.sz-4{--ab-icon-size:3rem} .ab-icon.sz-5{--ab-icon-size:4rem}   .ab-icon.sz-6{--ab-icon-size:6rem}\n.ab-icon.rot-90{transform:rotate(90deg)} .ab-icon.rot-180{transform:rotate(180deg)} .ab-icon.rot-270{transform:rotate(270deg)}\n.ab-icon.flip-h{transform:scaleX(-1)} .ab-icon.flip-v{transform:scaleY(-1)}\n/* mask mode — recolour any external/data-URI SVG via currentColor */\n.ab-icon.mask{ background:currentColor; -webkit-mask:var(--icon) center/contain no-repeat; mask:var(--icon) center/contain no-repeat; }\n.ab-icon.mask > svg{ display:none; }\n\n/* usage:  <span class=\"ab-icon sz-3\"><svg><use href=\"#ic-NAME\"/></svg></span>  (sprite lives in icons.svg) */",
+// 10 · Colour harmony
+"/* A LAYER UNDER THE ONE COLOUR — spawn sibling hues from --brand-h.\n   A preset writes three angle offsets; hsl() wraps past 360 so no modulo. */\n:root {\n  --harm-2: 180; --harm-3: 120; --harm-4: 270;   /* a preset overwrites these */\n  --hue-1: var(--brand-h);\n  --hue-2: calc(var(--brand-h) + var(--harm-2));\n  --hue-3: calc(var(--brand-h) + var(--harm-3));\n  --hue-4: calc(var(--brand-h) + var(--harm-4));\n  --acc-l: 40%; --acc-weak-l: 92%;               /* dark mode flips these */\n  --accent-2: hsl(var(--hue-2) var(--brand-s) var(--acc-l));\n  --accent-3: hsl(var(--hue-3) var(--brand-s) var(--acc-l));\n  --accent-4: hsl(var(--hue-4) var(--brand-s) var(--acc-l));\n}\n@media (prefers-color-scheme: dark){ :root:not([data-theme=\"light\"]){ --acc-l:60%; --acc-weak-l:17%; } }\n:root[data-theme=\"dark\"]{ --acc-l:60%; --acc-weak-l:17%; }\n\n/* presets — set data-harmony on <html> or any container */\n[data-harmony=\"monochrome\"]   { --harm-2:0;   --harm-3:0;   --harm-4:0;   }\n[data-harmony=\"complementary\"]{ --harm-2:180; --harm-3:180; --harm-4:180; }\n[data-harmony=\"analogous\"]    { --harm-2:30;  --harm-3:-30; --harm-4:60;  }\n[data-harmony=\"triadic\"]      { --harm-2:120; --harm-3:240; --harm-4:120; }\n[data-harmony=\"split\"]        { --harm-2:150; --harm-3:210; --harm-4:180; }\n[data-harmony=\"tetradic\"]     { --harm-2:60;  --harm-3:180; --harm-4:240; }\n[data-harmony=\"square\"]       { --harm-2:90;  --harm-3:180; --harm-4:270; }\n\n/* scheme — .hue-N rethemes a whole subtree; everything resolving --accent follows */\n.hue-1,.hue-2,.hue-3,.hue-4 {\n  --accent:       hsl(var(--_hh) var(--brand-s) var(--acc-l));\n  --accent-weak:  hsl(var(--_hh) var(--brand-s) var(--acc-weak-l));\n  --ab-btn-primary: var(--accent);\n}\n.hue-1{--_hh:var(--hue-1)} .hue-2{--_hh:var(--hue-2)} .hue-3{--_hh:var(--hue-3)} .hue-4{--_hh:var(--hue-4)}\n/* single element instead of a subtree */\n.ab.btn.fam-h2{--_c:var(--accent-2);--_fg:#fff} .ab.btn.fam-h3{--_c:var(--accent-3);--_fg:#fff} .ab.btn.fam-h4{--_c:var(--accent-4);--_fg:#fff}\n.ab.card.fam-h2{--ab-card-accent:var(--accent-2)} .ab.card.fam-h3{--ab-card-accent:var(--accent-3)} .ab.card.fam-h4{--ab-card-accent:var(--accent-4)}"
+  ];
+
+  // attach a "Send to CSS" button to every section heading
+  document.querySelectorAll('h2.sec').forEach(function (h) {
+    var cssIndex = Number(h.dataset.cssIndex);
+    if (CSS[cssIndex] == null) return;
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'sendcss';
+    b.textContent = '⧉ Send to CSS';
+    b.addEventListener('click', function () {
+      copyText(CSS[cssIndex], function () {
+        b.classList.add('ok'); b.textContent = '✓ Copied';
+        toast('Section CSS copied — paste into theme.css');
+        setTimeout(function () { b.classList.remove('ok'); b.textContent = '⧉ Send to CSS'; }, 1600);
+      });
+    });
+    h.appendChild(b);
+  });
+
+  // ---- icon packs (each in its own container; id chip + tap-to-copy) ----
+  var packs = [
+    { title: 'Academic practice areas', names: ['starting','progressing','graduating','wellbeing','learning','assessment','feedback','integrity','finding','studying','referencing','researching','writing','presenting','reflecting','revising-exams','criticality','creativity','international','ai-technology'] },
+    { title: 'Resources', names: ['workshop','homepage','book','bookchapter','video','panopto','youtube','podcast','worksheet','bookmark','digital-learning-activity','workshop-learning-activity'] },
+    { title: 'Library', names: ['signpost'] }
+  ];
+  var wrap = document.getElementById('iconPacks');
+  function makeCell(n) {
+    var cell = document.createElement('div'); cell.className = 'iconcell';
+    cell.setAttribute('role', 'button'); cell.setAttribute('tabindex', '0');
+    cell.title = 'Tap to copy markup';
+    cell.innerHTML = '<span class="ab-icon sz-3"><svg><use href="#ic-' + n + '"/></svg></span><span class="nm">#ic-' + n + '</span>';
+    var markup = '<span class="ab-icon"><svg><use href="#ic-' + n + '"></use></svg></span>';
+    function go() {
+      copyText(markup, function () {
+        cell.classList.add('ok'); toast('Copied  <use href="#ic-' + n + '">');
+        setTimeout(function () { cell.classList.remove('ok'); }, 1200);
+      });
+    }
+    cell.addEventListener('click', go);
+    cell.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    return cell;
+  }
+  packs.forEach(function (p) {
+    var box = document.createElement('div'); box.className = 'card-doc';
+    var head = document.createElement('div'); head.className = 'packhead';
+    head.innerHTML = '<span class="t">' + p.title + '</span><span class="c">' + p.names.length + '</span>';
+    box.appendChild(head);
+    var grid = document.createElement('div'); grid.className = 'icongrid';
+    p.names.forEach(function (n) { grid.appendChild(makeCell(n)); });
+    box.appendChild(grid);
+    wrap.appendChild(box);
+  });
+})();
+</script>

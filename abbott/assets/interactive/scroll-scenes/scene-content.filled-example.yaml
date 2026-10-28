@@ -1,0 +1,197 @@
+# Filled example of the `content` block. Passes validate_scene_content.py.
+# Illustration only: study the shape, do not copy the words.
+content:
+  d00:
+    topic_id: working-through-a-problem
+    topic: Working through a problem
+    title: Learning journey
+    audience: null
+    learning_aim: null
+    core_move: Test one idea at a time before you commit to it.
+    real_substeps:
+    - Describe what happened
+    - List what you assumed
+    - Try one small change
+    assumptions: []
+    contexts:
+    - baseline
+    layers_enabled:
+    - question_prompt
+    - micro_task
+    - transition_cue
+    - evidence_cue
+    - plain_summary
+    language: en-GB
+    presentation:
+      preset: null
+      scheme: null
+      background: null
+      transition: null
+      effect: zoom
+      snap: true
+  sets:
+    A:
+      model: oqea
+      d01:
+      - key: observe
+        stage_label: Observe
+        stage_purpose: See what is happening before you judge it.
+        heading_lines:
+        - Start with
+        - what you notice.
+        body: Slow down long enough to see the situation clearly. What is happening, and what might you be missing?
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about observe first?
+          micro_task:
+            instruction: Write one plain sentence about what observe means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear observe step without guesses mixed in.
+          plain_summary: A short pass through observe.
+        i18n:
+          cy: null
+      - key: question
+        stage_label: Question
+        stage_purpose: Find the assumption that would change your next move.
+        heading_lines:
+        - Make room for
+        - a better question.
+        body: Look beyond your first explanation. Find the assumption that would change your next move if it turned out to be wrong.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about question first?
+          micro_task:
+            instruction: Write one plain sentence about what question means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear question step without guesses mixed in.
+          plain_summary: A short pass through question.
+        i18n:
+          cy: null
+      - key: explore
+        stage_label: Explore
+        stage_purpose: Compare small options without waiting for a perfect answer.
+        heading_lines:
+        - Try something
+        - small and useful.
+        body: Compare possibilities without needing a perfect answer. A modest experiment can reveal more than another round of guessing.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about explore first?
+          micro_task:
+            instruction: Write one plain sentence about what explore means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear explore step without guesses mixed in.
+          plain_summary: A short pass through explore.
+        i18n:
+          cy: null
+      - key: act
+        stage_label: Act
+        stage_purpose: Choose one action you can explain, test and review.
+        heading_lines:
+        - Take the learning
+        - back with you.
+        body: Choose one action you can explain, test and review. Decide what evidence will tell you whether it helped.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about act first?
+          micro_task:
+            instruction: Write one plain sentence about what act means for this problem.
+            minutes: 2
+          transition_cue: null
+          evidence_cue: Your notes show a clear act step without guesses mixed in.
+          plain_summary: A short pass through act.
+        i18n:
+          cy: null
+    B:
+      model: custom
+      model_name: Gather Weigh Choose Check
+      derivation:
+        shows_that_a_hides: Choosing is a separate step from weighing, and the test shows it.
+        why_not_oqea: Observe and Explore overlap when the work is mostly choosing between known options.
+      d01:
+      - key: gather
+        stage_label: Gather
+        stage_purpose: Find out who made the source and why.
+        heading_lines:
+        - Find out who
+        - made it and why.
+        body: Name the author, the publisher and the date before you read the claims. A source with no traceable maker cannot be checked.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about gather first?
+          micro_task:
+            instruction: Write one plain sentence about what gather means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear gather step without guesses mixed in.
+          plain_summary: A short pass through gather.
+        i18n:
+          cy: null
+      - key: weigh
+        stage_label: Weigh
+        stage_purpose: Check the strongest claim against its own evidence.
+        heading_lines:
+        - Test the claim
+        - you rely on.
+        body: Pick the claim your work will rely on. Look for the data, quotation or study behind it and read that instead of the summary.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about weigh first?
+          micro_task:
+            instruction: Write one plain sentence about what weigh means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear weigh step without guesses mixed in.
+          plain_summary: A short pass through weigh.
+        i18n:
+          cy: null
+      - key: choose
+        stage_label: Choose
+        stage_purpose: Compare with independent sources.
+        heading_lines:
+        - Ask who else
+        - says the same.
+        body: Find two sources that do not cite each other. If they agree, your confidence goes up. If they disagree, you have found a question.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about choose first?
+          micro_task:
+            instruction: Write one plain sentence about what choose means for this problem.
+            minutes: 2
+          transition_cue: Now move on to the next stage.
+          evidence_cue: Your notes show a clear choose step without guesses mixed in.
+          plain_summary: A short pass through choose.
+        i18n:
+          cy: null
+      - key: check
+        stage_label: Check
+        stage_purpose: Decide how far to rely on it.
+        heading_lines:
+        - Decide how far
+        - to rely on it.
+        body: Rate the source for this use only. A blog can suit a local example and still fail as evidence for a general claim.
+        colour_slot: null
+        background: null
+        layers:
+          question_prompt: What would a stranger notice about check first?
+          micro_task:
+            instruction: Write one plain sentence about what check means for this problem.
+            minutes: 2
+          transition_cue: null
+          evidence_cue: Your notes show a clear check step without guesses mixed in.
+          plain_summary: A short pass through check.
+        i18n:
+          cy: null
+  recommendation:
+    set: A
+    reason: The four stages match how most learners meet this problem for the first time.

@@ -1,0 +1,35 @@
+{
+  "generatedProse": {
+    "concept-context": "In a psychology database, a precise search is built rather than stumbled upon. You combine concepts with Boolean operators, gather synonyms with OR, fix set expressions such as \"working memory\" in quotation marks, and truncate a stem so analy* catches analyse, analysis and analytical. Limiters then filter by date, peer-review status and methodology. Every one of these choices moves the balance between recall, how much relevant work you capture, and precision, how little irrelevant work you sift. The right balance depends on the task, and you revisit it with each pass.",
+    "worked-example": "Two psychology students search the same database for the same topic.\n\nTom types a long natural-language sentence into the search box and presses enter. The database returns many thousands of loosely related results, ranked by its own rules. Tom scrolls through the first page, feels overwhelmed, and picks whatever looks closest. The search was wide, but it was never steered.\n\nAmara builds the search instead. She joins her key concepts with AND, gathers synonyms with OR, fixes a set phrase in quotation marks, and truncates a stem to catch its variants. She then applies a date limiter and a peer-review limiter, reads the first results, sees the net is still too wide, and tightens one term. Two passes later the result set is small, relevant and defensible.\n\nBoth searched the same database. Only Amara controlled precision and recall, and refined the search as a cycle rather than a single try.",
+    "summary": "Refining a search in psychology means steering the balance between recall and precision: combining concepts with Boolean operators, fixing phrases, truncating stems, and applying limiters for date, peer review and methodology. You can now control what a database returns and treat refinement as an iterative cycle rather than a single pass. With evaluation, reach and precision together, you can run a psychology search that is both fair and sharp, and defend every choice in it."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did Amara do that Tom did not?",
+      "items": [
+        {
+          "text": "She built the search with Boolean operators, a phrase, truncation and limiters, then refined it over more than one pass.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "She typed a longer natural-language sentence into the search box.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "She picked the first result that looked close enough.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "She accepted the database's default ranking without change.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Building the search with operators and limiters and refining it is deliberate control of precision and recall.",
+        "incorrectNotFinal": "Not quite. Look for the option that steers the search and revisits it.",
+        "incorrectFinal": "Amara built the search with Boolean operators, a phrase, truncation and limiters and refined it over several passes, rather than typing a long sentence or accepting the default results."
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>adapt-core-base | Interactive stacks</title><link rel="stylesheet" href="stack-layout.css"><link rel="stylesheet" href="stacks.css"></head>
+<body><main class="wrap"><nav aria-label="Stack assets"><a href="index.html">Compare both</a> | <a href="adapt-core-base.html">Adapt stack</a> | <a href="grow-core-base.html">Grow stack</a></nav>
+<h1>adapt-core-base</h1><p>Explore each layer, walk through the build order and check your understanding. Controls and practice answers reset on reload.</p>
+<div class="stacks"><section class="stack" data-stack="adapt-core-base">
+
+      <h2>adapt-core-base</h2>
+      <p class="sub">Adapt owns the structure; Grow owns the styles. The base layer is swappable, so a different base profile reskins your course on Adapt's native structure.</p>
+
+      <div class="tier">Mechanical — structure</div>
+      <details class="layer contrib" open><summary class="nm">adapt-contrib-core + contrib</summary><div class="ds">core structural HTML + classes; components &amp; extensions stay functional</div></details>
+      <div class="arrow">↓</div>
+      <details class="layer out" open><summary class="nm">adapt-core-structure → course shape</summary><div class="ds">the native Adapt tree (page / article / block / component) is emitted</div></details>
+
+      <div class="tier">End of mechanical · start of styles</div>
+      <details class="layer sty" open><summary class="nm">grow-core-less</summary><div class="ds">the one interface entry — <code>@import</code>s the layers below</div></details>
+      <div class="arrow">↓ @import</div>
+      <details class="layer sty" open><summary class="nm">grow-base-&lt;grouping&gt;<span class="pill swap">base · swappable</span></summary><div class="ds">token groupings — <code>grow-base-typography</code>, <code>-color</code>, <code>-space</code>…</div></details>
+      <div class="arrow">↓</div>
+      <details class="layer sty" open><summary class="nm">grow-theme-template</summary><div class="ds">the painting that dresses Adapt's native structure from the tokens</div></details>
+      <div class="arrow">↓</div>
+      <details class="layer profile" open><summary class="nm">grow-&lt;customer&gt;-theme-profile<span class="pill swap">generator output</span></summary><div class="ds">active profile — the dials, written by the theme generator</div></details>
+
+      <div class="note">Plugins: real <code>adapt-contrib-core</code> + contrib + <code>_theme: adapt-grow-base</code> (styles) + the Grow content kit. Structure = Adapt's.</div>
+<div class="stack-controls">
+<button type="button" data-step>Walk through layers</button>
+<button type="button" data-show-all>Show all layers</button>
+<button type="button" data-collapse>Close explanations</button>
+<label>Visual profile <select data-profile><option value="default">Default</option><option value="compact">Compact violet</option><option value="airy">Airy green</option></select></label>
+<p class="profile-note">Visual token demonstration only: this does not compile LESS or change the underlying architecture.</p>
+<progress value="0" max="1" aria-label="adapt-core-base layers visited"></progress>
+<p role="status" data-stack-status></p>
+</div>
+<form class="stack-check">
+<h3>Check your understanding</h3>
+<label>Who owns the mechanical structure in adapt-core-base?
+<select name="owner" required><option value="">Choose an answer</option><option value="adapt">Adapt's native structure</option><option value="grow">Grow's structure merged with Adapt's required structure</option><option value="profile">The customer style profile</option></select></label>
+<button type="submit">Check answer</button>
+<button type="button" data-check-reset>Try again</button>
+<p role="status" data-check-status></p>
+</form></section></div></main><script src="stacks.js"></script></body></html>

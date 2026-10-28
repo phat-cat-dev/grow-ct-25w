@@ -1,0 +1,51 @@
+/* grow-accordion.css — block sections as native <details> accordions with a
+   trickle reveal. PROGRESSIVE ENHANCEMENT: with no JS (or reduced motion) every
+   block is open and visible. grow-accordion.js adds `.grow-reveal-armed` to the
+   container, which switches on the hide-until-revealed behaviour below. */
+
+.grow-accordion { display: block; }
+
+.grow-accordion > summary.grow-accordion__summary {
+  list-style: none;                 /* remove native triangle */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--ab-core-space-clamp-item-margin-l4, 0.5rem);
+}
+.grow-accordion > summary::-webkit-details-marker { display: none; }
+
+.grow-accordion__marker {
+  margin-inline-start: auto;
+  transition: transform 0.3s ease;
+}
+.grow-accordion[open] > summary .grow-accordion__marker { transform: rotate(90deg); }
+
+/* ---- trickle reveal (only active once JS arms it) ---- */
+.grow-reveal-armed [data-reveal="trickle"]:not(.is-revealed) { display: none; }
+
+.grow-reveal-armed [data-reveal="trickle"].is-revealed {
+  animation: grow-fade-in 0.45s ease both;
+}
+@keyframes grow-fade-in {
+  from { opacity: 0; transform: translateY(0.5rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---- the "open itself" height animation ----
+   Modern browsers animate <details> content via ::details-content +
+   interpolate-size. Everywhere else it simply opens instantly. */
+@supports (interpolate-size: allow-keywords) {
+  :root { interpolate-size: allow-keywords; }
+  .grow-accordion::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.4s ease, content-visibility 0.4s allow-discrete;
+  }
+  .grow-accordion[open]::details-content { block-size: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grow-reveal-armed [data-reveal="trickle"].is-revealed { animation: none; }
+  .grow-accordion__marker,
+  .grow-accordion::details-content { transition: none; }
+}

@@ -1,0 +1,46 @@
+.fade-cards {
+  --fade-accent: var(--accent, #365f80);
+  --fade-paper: var(--surface-1, #fff);
+  --fade-ink: var(--ink, #202d35);
+  --fade-line: var(--line, #c5d0d6);
+  --fade-radius: 1.25rem;
+  --fade-back-paper: #172b3b;
+  --fade-back-ink: #f3f7fb;
+  --fade-flip-duration: 650ms;
+  color: var(--fade-ink);
+  font: 1rem/1.65 var(--font-ui, system-ui, sans-serif);
+  max-inline-size: 70rem;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 5vw, 4rem);
+}
+.fade-cards, .fade-cards * { box-sizing: border-box; }
+.fade-cards .fade-eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--fade-accent); }
+.fade-cards h2 { font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1.12; letter-spacing: -.035em; max-inline-size: 18ch; margin-block: .75rem 1.5rem; }
+.fade-cards h2 em { font-weight: 400; color: var(--fade-accent); }
+.fade-cards .fade-intro { max-inline-size: 46ch; font-size: clamp(1.05rem, 2vw, 1.25rem); margin-block-end: 2.5rem; }
+.fade-cards [data-fade-item] { overflow-wrap: anywhere; }
+.fade-cards .fade-intro [data-fade-item] { display: inline-block; }
+.fade-cards .fade-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.fade-cards[data-layout="vertical"] .fade-grid { grid-template-columns: minmax(0, 1fr); max-inline-size: 46rem; }
+.fade-cards .fade-card { height: 100%; padding: 1.5rem; border: 1px solid var(--fade-line); border-radius: var(--fade-radius); background: var(--fade-paper); border-block-start: .3rem solid var(--fade-accent); }
+.fade-cards .fade-card h3 { margin-block: .75rem; font-size: 1.3rem; line-height: 1.35; }
+.fade-cards .fade-card p:last-child { margin-block-end: 0; }
+.fade-cards .fade-card-back[hidden] { display: none; }
+.fade-cards .fade-card[data-flip-ready] { position: relative; padding: 0; border: 0; background: transparent; perspective: 70rem; }
+.fade-cards .fade-card-rotor { display: grid; height: 100%; transform-style: preserve-3d; transition: transform var(--fade-flip-duration) cubic-bezier(.2,.65,.3,1); }
+.fade-cards .fade-card[data-flipped="true"] .fade-card-rotor { transform: rotateY(180deg); }
+.fade-cards .fade-card-front, .fade-cards .fade-card-back { grid-area: 1 / 1; min-width: 0; padding: 1.5rem; border: 1px solid var(--fade-line); border-block-start: .3rem solid var(--fade-accent); border-radius: var(--fade-radius); background: var(--fade-paper); backface-visibility: hidden; }
+.fade-cards .fade-card-back { transform: rotateY(180deg); background: var(--fade-back-paper); color: var(--fade-back-ink); border-color: var(--fade-back-paper); }
+.fade-cards .fade-card-back .fade-eyebrow { color: inherit; }
+.fade-cards .fade-card-front::after { content: "Hover or press for more"; display: block; font-size: .75rem; margin-block-start: 1rem; }
+.fade-cards .fade-card-toggle { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: var(--fade-radius); background: transparent; cursor: pointer; }
+.fade-cards .fade-card-toggle:focus-visible { outline: 3px solid var(--fade-accent); outline-offset: 4px; }
+.no-motion .fade-cards .fade-card-rotor, [data-tm-no-motion="true"] .fade-cards .fade-card-rotor { transition: none; }
+@media (prefers-reduced-motion: reduce) { .fade-cards .fade-card-rotor { transition: none; } }
+@media print {
+  .fade-cards .fade-card-rotor { display: block; transform: none !important; }
+  .fade-cards .fade-card-front, .fade-cards .fade-card-back { transform: none; backface-visibility: visible; }
+  .fade-cards .fade-card-toggle { display: none; }
+}
+@media (max-width: 45rem) { .fade-cards .fade-grid { grid-template-columns: 1fr; } }
+@media print { .fade-cards [data-fade-item] { opacity: 1 !important; translate: none !important; scale: none !important; } }

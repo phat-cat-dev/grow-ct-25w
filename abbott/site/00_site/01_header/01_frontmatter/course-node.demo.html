@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course node: learner view</title>
+<link rel="stylesheet" href="course-node.css">
+<style>
+  /* A slice of the grow-ct runtime tokens so the view renders themed and flips
+     for dark mode. Inside grow-ct, drop this block. */
+  :root {
+    --h: 205; --s: 42%;
+    --page-bg: hsl(var(--h) 30% 96%); --surface-1: hsl(var(--h) 24% 99%);
+    --ink: hsl(var(--h) 25% 16%); --ink-soft: hsl(var(--h) 14% 38%); --line: hsl(var(--h) 18% 86%);
+    --accent: hsl(var(--h) var(--s) 42%); --accent-ink: hsl(var(--h) var(--s) 34%);
+    --shadow: hsl(var(--h) 40% 20% / .16);
+    --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-heading: var(--font-ui);
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --fs-2xs: clamp(0.75rem, 0.71rem + 0.20vw, 0.85rem); --fs-xs: clamp(0.80rem, 0.75rem + 0.25vw, 0.92rem);
+    --fs-base: clamp(1.00rem, 0.93rem + 0.35vw, 1.15rem); --fs-md: clamp(1.15rem, 1.03rem + 0.55vw, 1.35rem);
+    --fs-lg: clamp(1.30rem, 1.12rem + 0.80vw, 1.60rem); --fs-2xl: clamp(1.85rem, 1.45rem + 1.80vw, 2.60rem);
+    --fs-4xl: clamp(2.40rem, 1.70rem + 3.40vw, 4.00rem);
+    --space-xs: clamp(0.75rem, 0.65rem + 0.40vw, 1.05rem); --space-sm: clamp(1.00rem, 0.85rem + 0.60vw, 1.50rem);
+    --space-md: clamp(1.50rem, 1.20rem + 1.20vw, 2.50rem);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --page-bg: hsl(var(--h) 32% 8%); --surface-1: hsl(var(--h) 26% 12%); --ink: hsl(var(--h) 20% 92%);
+      --ink-soft: hsl(var(--h) 14% 66%); --line: hsl(var(--h) 22% 22%);
+      --accent: hsl(var(--h) var(--s) 64%); --accent-ink: hsl(var(--h) var(--s) 78%);
+      --shadow: hsl(var(--h) 60% 2% / .5); color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page-bg: hsl(var(--h) 32% 8%); --surface-1: hsl(var(--h) 26% 12%); --ink: hsl(var(--h) 20% 92%);
+    --ink-soft: hsl(var(--h) 14% 66%); --line: hsl(var(--h) 22% 22%);
+    --accent: hsl(var(--h) var(--s) 64%); --accent-ink: hsl(var(--h) var(--s) 78%);
+    --shadow: hsl(var(--h) 60% 2% / .5); color-scheme: dark;
+  }
+  body { margin: 0; padding: clamp(1rem, 4vw, 3rem); background: var(--page-bg); font-family: var(--font-ui); }
+  .demo-theme { max-width: 62rem; margin: 0 auto 1rem; text-align: end; }
+  .demo-theme button { font: 600 .8rem var(--font-ui); padding: .35rem .8rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-1); color: var(--ink); cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="demo-theme"><button type="button" id="theme">Flip light / dark</button></div>
+<div id="root"></div>
+<script src="course-node.demo.js"></script>
+<script>
+  document.getElementById('theme').addEventListener('click', function () {
+    var r = document.documentElement;
+    var dark = r.getAttribute('data-theme') === 'dark' || (!r.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    r.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+</script>
+</body>
+</html>

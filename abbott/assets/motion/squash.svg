@@ -1,0 +1,9 @@
+<svg data-motion-asset="squash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-squash-title svg-motion-squash-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-squash-title">Squash &amp; stretch</title><desc id="svg-motion-squash-desc">An elastic ball with a soft landing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="squash"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-squash calc(1.8s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-squash { 15% { transform: translateY(5px) scale(1.12, .85); } 45% { transform: translateY(-12px) scale(.92, 1.08); } 75%, 100% { transform: translateY(0) scale(1); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="squash"] .art,svg[data-motion-asset="squash"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="26"/><path d="M-26 0h52M0-26v52M-18-19C4-8 4 8-18 19M18-19C-4-8-4 8 18 19"/></g></g></svg>

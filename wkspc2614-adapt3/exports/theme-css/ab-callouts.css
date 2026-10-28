@@ -1,0 +1,192 @@
+.cm.callout {
+  --ab-callout-padding-y: var(--ab-space-100, 1rem);
+  --ab-callout-padding-x: var(--ab-space-125, 1.25rem);
+  --ab-callout-color: var(--ab-base-ink, #1a1a1a);
+  --ab-callout-bg: var(--ab-base-surface, #fff);
+  --ab-callout-border-color: var(--ab-base-hairline, #f3f3f3);
+  --ab-callout-border-width: var(--ab-base-border-width, 0.1rem);
+  --ab-callout-border-radius: var(--ab-border-radius, 0.375rem);
+  --ab-callout-border-left-width: 0.25rem;
+  --ab-callout-accent: var(--ab-base-accent, var(--ab-primary));
+  --ab-callout-font-size: 1rem;
+  --ab-callout-line-height: var(--ab-body-line-height, 1.5);
+  --ab-callout-font-weight: 400;
+  --ab-callout-icon-size: 2.5rem;
+  --ab-callout-icon-margin: var(--ab-callout-padding-x);
+  --ab-callout-header-font-weight: 600;
+  --ab-callout-header-margin-bottom: 0.4rem;
+  --ab-callout-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.05);
+  display: block;
+  padding: var(--ab-callout-padding-y) var(--ab-callout-padding-x);
+  margin: var(--ab-space-100, 1rem) 0;
+  background-color: var(--ab-callout-bg);
+  border: var(--ab-callout-border-width) solid var(--ab-callout-border-color);
+  border-left: var(--ab-callout-border-left-width) solid var(--ab-callout-accent);
+  border-radius: var(--ab-callout-border-radius);
+  font-size: var(--ab-callout-font-size);
+  line-height: var(--ab-callout-line-height);
+  font-weight: var(--ab-callout-font-weight);
+  color: var(--ab-callout-color);
+  box-shadow: var(--ab-callout-shadow);
+}
+.cm.callout:last-child {
+  margin-bottom: 0;
+}
+.cm.callout > *:last-child,
+.cm.callout .callout-content > *:last-child {
+  margin-bottom: 0;
+}
+.cm.callout.with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ab-callout-icon-margin);
+}
+.cm.callout .callout-icon {
+  font-size: var(--ab-callout-icon-size);
+  color: var(--ab-callout-accent);
+  flex-shrink: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cm.callout .callout-content {
+  flex: 1;
+  min-width: 0;
+}
+.cm.callout .callout-header {
+  margin-top: 0;
+  margin-bottom: var(--ab-callout-header-margin-bottom);
+  font-weight: var(--ab-callout-header-font-weight);
+  color: var(--ab-callout-accent);
+}
+.cm.callout .callout-header.h2 {
+  font-size: 1.5rem;
+}
+.cm.callout .callout-header.h3 {
+  font-size: 1.25rem;
+}
+.cm.callout .callout-header.h4 {
+  font-size: 1.125rem;
+}
+.cm.callout .callout-header.h5 {
+  font-size: 1rem;
+}
+.cm.callout .callout-header.h6 {
+  font-size: 0.875rem;
+}
+.cm.callout.dark-blue {
+  --ab-callout-accent: var(--ab-dark-blue);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-dark-blue) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.midnight {
+  --ab-callout-accent: var(--ab-midnight);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-midnight) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.blue {
+  --ab-callout-accent: var(--ab-blue);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-blue) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.ocean {
+  --ab-callout-accent: var(--ab-ocean);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-ocean) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.teal {
+  --ab-callout-accent: var(--ab-teal);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-teal) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.aquamarine {
+  --ab-callout-accent: var(--ab-aquamarine);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-aquamarine) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.green {
+  --ab-callout-accent: var(--ab-green);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-green) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.olive {
+  --ab-callout-accent: var(--ab-olive);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-olive) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.khaki {
+  --ab-callout-accent: var(--ab-khaki);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-khaki) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.bronze {
+  --ab-callout-accent: var(--ab-bronze);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-bronze) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.brown {
+  --ab-callout-accent: var(--ab-brown);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-brown) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.sienna {
+  --ab-callout-accent: var(--ab-sienna);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-sienna) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.coral {
+  --ab-callout-accent: var(--ab-coral);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-coral) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.tomato {
+  --ab-callout-accent: var(--ab-tomato);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-tomato) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.jasper {
+  --ab-callout-accent: var(--ab-jasper);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-jasper) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.red {
+  --ab-callout-accent: var(--ab-red);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-red) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.purple {
+  --ab-callout-accent: var(--ab-purple);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-purple) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.amethyst {
+  --ab-callout-accent: var(--ab-amethyst);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-amethyst) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.violet {
+  --ab-callout-accent: var(--ab-violet);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-violet) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.blossom {
+  --ab-callout-accent: var(--ab-blossom);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-blossom) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.pink {
+  --ab-callout-accent: var(--ab-pink);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-pink) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.accent {
+  --ab-callout-accent: var(--ab-base-accent, var(--ab-primary));
+  --ab-callout-bg: color-mix(in srgb, var(--ab-base-accent, var(--ab-primary)) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.tip {
+  --ab-callout-accent: var(--ab-success);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-success) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.note {
+  --ab-callout-accent: var(--ab-info);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-info) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.info {
+  --ab-callout-accent: var(--ab-info);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-info) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.warning {
+  --ab-callout-accent: var(--ab-warning);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-warning) 6%, var(--ab-base-surface, #fff));
+}
+.cm.callout.important {
+  --ab-callout-accent: var(--ab-danger);
+  --ab-callout-bg: color-mix(in srgb, var(--ab-danger) 6%, var(--ab-base-surface, #fff));
+}
+@media (forced-colors: active) {
+  .cm.callout {
+    border: 0.1rem solid CanvasText;
+    border-left-width: 0.25rem;
+    box-shadow: none;
+  }
+}

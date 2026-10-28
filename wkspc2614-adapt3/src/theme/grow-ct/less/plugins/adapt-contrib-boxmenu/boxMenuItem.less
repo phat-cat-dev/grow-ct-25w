@@ -1,0 +1,122 @@
+.boxmenu-item {
+  display: flex;
+
+  &__inner {
+    width: 100%;
+    margin: 0 @menu-item-padding-hoz @menu-item-padding-ver;
+    padding: @menu-item-inner-padding-ver @menu-item-inner-padding-hoz;
+    background-color: @menu-item;
+    color: @menu-item-inverted;
+    border: 1px solid @menu-item-border-color;
+    border-radius: @item-border-radius;
+  }
+
+  &__image-container + &__details {
+    margin-top: @menu-item-image-margin;
+  }
+
+  // A card graphic (including the scaffold's 1x1 menu-item.png placeholder)
+  // renders at width:100%; a square/1x1 source then blows the whole card up to
+  // ~700px. Pin a fixed banner height and cover-fit so any image - placeholder
+  // or real - stays a compact, consistent size.
+  &__image-container img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: @item-border-radius;
+  }
+
+  // The scaffold seeds a 1x1 menu-item.png placeholder that carries no real
+  // picture; hide it so the card is compact (the cards already carry a
+  // decorative mark). A real image (any other filename) keeps the banner above.
+  &__image-container img[src$="menu-item.png"] {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: @menu-item-title-margin;
+    .menu-item-title;
+  }
+
+  &__body {
+    margin-bottom: @menu-item-body-margin;
+    .menu-item-body;
+  }
+
+  &__body a {
+    .link-text;
+  }
+
+  &__priority {
+    .priority-label;
+    margin-bottom: @menu-item-priority-margin;
+    .menu-item-priority;
+  }
+
+  &__duration {
+    margin-bottom: @menu-item-duration-margin;
+    .menu-item-body;
+  }
+
+  &__progress {
+    margin-bottom: @menu-item-progress-margin;
+  }
+
+  &__button-container {
+    display: flex;
+    align-items: center;
+  }
+
+  & when (@menu-item-btn-color-style = filled) {
+    &__button {
+      .menu-item-btn-color;
+
+      .no-touch &:not(.is-disabled):not(.is-locked):hover {
+        .menu-item-btn-color-hover;
+      }
+
+      html:not(.a11y-disable-focusoutline) &:focus-visible {
+        .menu-item-btn-color-focus;
+      }
+    }
+
+    &__button.is-locked {
+      .menu-item-btn-color-locked;
+    }
+  }
+
+  & when (@menu-item-btn-color-style = outline) {
+    &__button {
+      .menu-item-btn-color-outline;
+
+      .no-touch &:not(.is-disabled):not(.is-locked):hover {
+        .menu-item-btn-color-outline-hover;
+      }
+
+      html:not(.a11y-disable-focusoutline) &:focus-visible {
+        .menu-item-btn-color-outline-focus;
+      }
+    }
+
+    &__button.is-locked {
+      .menu-item-btn-color-outline-locked;
+    }
+  }
+
+  &__status {
+    margin-left: @menu-item-status-margin;
+  }
+
+  &.has-img-zoom &__image-container {
+    .img-zoom();
+  }
+}
+
+// Always stack the menu cards one per row (Abbott, 2026-10-25). Core
+// boxMenuItem.less sets .boxmenu-item to width:50% at @device-width-medium and up
+// (the 2-up grid); override it back to full width at every breakpoint. #wrapper
+// specificity beats the core media-query rule regardless of load order.
+#wrapper .boxmenu-item {
+  width: 100%;
+}

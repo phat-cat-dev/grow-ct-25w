@@ -1,0 +1,70 @@
+// adapt-gow-callout
+// Ported from congen11 themes/cardiff-met/scss/_components.scss (.callout block)
+// Source only styled 4 of the 6 valid callout_type enum values (info/warning/tip/example).
+// --note and --definition are added here using the same house palette so every
+// enum value in properties.schema.json has a corresponding visual treatment.
+
+// Local palette (ported from congen11 _variables.scss $cm-* tokens).
+// Replace with your course's own palette variables if you have them.
+@gow-navy:       #1D2E4F;
+@gow-dark-grey:  #4A4A4A;
+@gow-success:    #28A745;
+@gow-warning:    #FFC107;
+@gow-info:       #17A2B8;
+@gow-purple:     #8B5CF6; // used for --note, not present in congen11 palette
+@gow-navy-tint:  #F4F6F9; // == congen11's --example background
+
+.callout {
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+
+  &--info {
+    background: #EBF5FB;
+    border-color: @gow-info;
+  }
+
+  &--warning {
+    background: #FFF9E6;
+    border-color: @gow-warning;
+  }
+
+  &--tip {
+    background: #EAFAF1;
+    border-color: @gow-success;
+  }
+
+  &--example {
+    background: @gow-navy-tint;
+    border-color: @gow-navy;
+  }
+
+  // Added - valid enum value with no source styling.
+  &--note {
+    background: #F3F0FF;
+    border-color: @gow-purple;
+  }
+
+  // Added - valid enum value with no source styling.
+  &--definition {
+    background: #F5F5F5;
+    border-color: @gow-dark-grey;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: @gow-navy;
+  }
+
+  &__body {
+    margin: 0;
+    color: @gow-dark-grey;
+    line-height: 1.6;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

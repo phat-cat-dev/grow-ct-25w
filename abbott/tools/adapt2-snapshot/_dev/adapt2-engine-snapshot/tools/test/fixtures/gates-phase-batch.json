@@ -1,0 +1,15 @@
+{
+  "kbVersion": "0.0.1",
+  "gates": [
+    { "id": "gates/fx-hardstop", "name": "Fixture hard-stop gate", "phase": "FX-SOLO", "hardness": "hard-stop", "defaultType": "none", "sequence": 0 },
+    { "id": "gates/fx-soft-fixed", "name": "Fixture soft fixed-value gate", "phase": "FX-BATCH", "hardness": "soft", "defaultType": "fixed-value", "sequence": 1,
+      "decidedValueShape": {
+        "type": "object",
+        "if": { "properties": { "outcomes": { "type": "array", "minItems": 4 } }, "required": ["outcomes"] },
+        "then": { "required": ["outcomeCountReason"] }
+      } },
+    { "id": "gates/fx-soft-proposal", "name": "Fixture soft ai-proposal-stands gate", "phase": "FX-BATCH", "hardness": "soft", "defaultType": "ai-proposal-stands", "sequence": 2 },
+    { "id": "gates/fx-advisory", "name": "Fixture advisory gate", "phase": "FX-BATCH", "hardness": "advisory", "defaultType": "none", "sequence": 3 },
+    { "id": "crs-03_course-outcomes", "name": "Course outcomes (real id, pre-existing record for NSK-1)", "phase": "CRS", "hardness": "hard-stop", "defaultType": "none", "sequence": 4 }
+  ]
+}

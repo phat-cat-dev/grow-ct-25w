@@ -1,0 +1,9 @@
+<svg data-motion-asset="tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-tick-title svg-motion-tick-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-tick-title">Clockwork</title><desc id="svg-motion-tick-desc">Twelve crisp steps around the dial. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="tick"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-spin calc(6s / var(--motion-speed,1)) steps(12,end) infinite}
+@keyframes motion-spin { to { transform: rotate(360deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="tick"] .art,svg[data-motion-asset="tick"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle r="27"/><path d="M0-19V0l13 8M0-27v3m27 24h-3M0 27v-3m-27-24h3"/></g></g></svg>

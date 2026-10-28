@@ -1,0 +1,127 @@
+/* ===========================================================================
+ * adapt-ab-theme — LAYER 3: the pivot  (--ab-base-*)
+ * ---------------------------------------------------------------------------
+ * The single generic surface everything above L3 reads. Each pivot token is
+ * the stable name a consuming layer (L2 adapter, or a renderer's component CSS)
+ * references; its value points down the stack, never up.
+ *
+ * Two hook shapes:
+ *   • themeable pivots read L5-else-L4 —
+ *       --ab-base-X: var(--ab-theme-pf-default-X, var(--ab-base-pf-default-X));
+ *     so a theme template (L5) or a user pack binding into it (L6) can retarget
+ *     X at the pivot without touching the default.
+ *   • fixed pivots read L4 only —
+ *       --ab-base-X: var(--ab-base-pf-default-X);
+ *     for tokens a theme is not expected to retarget directly (the seed it
+ *     derives from is the themeable surface instead).
+ *
+ * Generated reference: the fold of the repo's section-schema pivot map
+ * (tools/adapt-ab/ab-fold-section-schemas.js).
+ * =========================================================================== */
+:root {
+  --ab-base-radius: var(--ab-base-pf-default-radius);
+  --ab-base-border-width: var(--ab-base-pf-default-border-width);
+  --ab-base-bp-sm: var(--ab-base-pf-default-bp-sm);
+  --ab-base-bp-md: var(--ab-base-pf-default-bp-md);
+  --ab-base-bp-lg: var(--ab-base-pf-default-bp-lg);
+  --ab-base-bp-xl: var(--ab-base-pf-default-bp-xl);
+  --ab-base-bp-xxl: var(--ab-base-pf-default-bp-xxl);
+  --ab-base-bp-xxxl: var(--ab-base-pf-default-bp-xxxl);
+  --ab-base-surface: var(--ab-theme-pf-default-surface, var(--ab-base-pf-default-surface));
+  --ab-base-surface-subtle: var(--ab-base-pf-default-surface-subtle);
+  --ab-base-surface-sunken: var(--ab-base-pf-default-surface-sunken);
+  --ab-base-ink: var(--ab-theme-pf-default-ink, var(--ab-base-pf-default-ink));
+  --ab-base-ink-muted: var(--ab-base-pf-default-ink-muted);
+  --ab-base-hairline: var(--ab-base-pf-default-hairline);
+  --ab-base-on-accent: var(--ab-base-pf-default-on-accent);
+  --ab-base-accent: var(--ab-theme-pf-default-accent, var(--ab-base-pf-default-accent));
+  --ab-base-accent-hover: var(--ab-base-pf-default-accent-hover);
+  --ab-base-accent-active: var(--ab-base-pf-default-accent-active);
+  --ab-base-accent-deep: var(--ab-base-pf-default-accent-deep);
+  --ab-base-accent-tint: var(--ab-base-pf-default-accent-tint);
+  --ab-base-accent-line: var(--ab-base-pf-default-accent-line);
+  --ab-base-accent-ring: var(--ab-base-pf-default-accent-ring);
+  --ab-base-success: var(--ab-base-pf-default-success);
+  --ab-base-danger: var(--ab-base-pf-default-danger);
+  --ab-base-warning: var(--ab-base-pf-default-warning);
+  --ab-base-info: var(--ab-base-pf-default-info);
+  --ab-base-h1-color: var(--ab-theme-pf-default-h1-color, var(--ab-base-pf-default-h1-color));
+  --ab-base-h2-color: var(--ab-theme-pf-default-h2-color, var(--ab-base-pf-default-h2-color));
+  --ab-base-h3-color: var(--ab-base-pf-default-h3-color);
+  --ab-base-h4-color: var(--ab-base-pf-default-h4-color);
+  --ab-base-h5-color: var(--ab-base-pf-default-h5-color);
+  --ab-base-h6-color: var(--ab-base-pf-default-h6-color);
+  --ab-base-cq-medium: var(--ab-base-pf-default-cq-medium);
+  --ab-base-cq-wide: var(--ab-base-pf-default-cq-wide);
+  --ab-base-academic-practice-iconset: var(--ab-base-pf-default-academic-practice-iconset);
+  --ab-base-cite-source-iconset: var(--ab-base-pf-default-cite-source-iconset);
+  --ab-base-icon-starting-academic-practice-outlined: var(--ab-theme-pf-default-icon-starting-academic-practice-outlined, var(--ab-base-pf-default-icon-starting-academic-practice-outlined));
+  --ab-base-icon-progressing-academic-practice-outlined: var(--ab-theme-pf-default-icon-progressing-academic-practice-outlined, var(--ab-base-pf-default-icon-progressing-academic-practice-outlined));
+  --ab-base-icon-graduating-academic-practice-outlined: var(--ab-theme-pf-default-icon-graduating-academic-practice-outlined, var(--ab-base-pf-default-icon-graduating-academic-practice-outlined));
+  --ab-base-icon-wellbeing-academic-practice-outlined: var(--ab-theme-pf-default-icon-wellbeing-academic-practice-outlined, var(--ab-base-pf-default-icon-wellbeing-academic-practice-outlined));
+  --ab-base-icon-learning-academic-practice-outlined: var(--ab-theme-pf-default-icon-learning-academic-practice-outlined, var(--ab-base-pf-default-icon-learning-academic-practice-outlined));
+  --ab-base-icon-assessment-academic-practice-outlined: var(--ab-theme-pf-default-icon-assessment-academic-practice-outlined, var(--ab-base-pf-default-icon-assessment-academic-practice-outlined));
+  --ab-base-icon-feedback-academic-practice-outlined: var(--ab-theme-pf-default-icon-feedback-academic-practice-outlined, var(--ab-base-pf-default-icon-feedback-academic-practice-outlined));
+  --ab-base-icon-integrity-academic-practice-outlined: var(--ab-theme-pf-default-icon-integrity-academic-practice-outlined, var(--ab-base-pf-default-icon-integrity-academic-practice-outlined));
+  --ab-base-icon-finding-academic-practice-outlined: var(--ab-theme-pf-default-icon-finding-academic-practice-outlined, var(--ab-base-pf-default-icon-finding-academic-practice-outlined));
+  --ab-base-icon-studying-academic-practice-outlined: var(--ab-theme-pf-default-icon-studying-academic-practice-outlined, var(--ab-base-pf-default-icon-studying-academic-practice-outlined));
+  --ab-base-icon-referencing-academic-practice-outlined: var(--ab-theme-pf-default-icon-referencing-academic-practice-outlined, var(--ab-base-pf-default-icon-referencing-academic-practice-outlined));
+  --ab-base-icon-researching-academic-practice-outlined: var(--ab-theme-pf-default-icon-researching-academic-practice-outlined, var(--ab-base-pf-default-icon-researching-academic-practice-outlined));
+  --ab-base-icon-writing-academic-practice-outlined: var(--ab-theme-pf-default-icon-writing-academic-practice-outlined, var(--ab-base-pf-default-icon-writing-academic-practice-outlined));
+  --ab-base-icon-presenting-academic-practice-outlined: var(--ab-theme-pf-default-icon-presenting-academic-practice-outlined, var(--ab-base-pf-default-icon-presenting-academic-practice-outlined));
+  --ab-base-icon-reflecting-academic-practice-outlined: var(--ab-theme-pf-default-icon-reflecting-academic-practice-outlined, var(--ab-base-pf-default-icon-reflecting-academic-practice-outlined));
+  --ab-base-icon-revising-exams-academic-practice-outlined: var(--ab-theme-pf-default-icon-revising-exams-academic-practice-outlined, var(--ab-base-pf-default-icon-revising-exams-academic-practice-outlined));
+  --ab-base-icon-criticality-academic-practice-outlined: var(--ab-theme-pf-default-icon-criticality-academic-practice-outlined, var(--ab-base-pf-default-icon-criticality-academic-practice-outlined));
+  --ab-base-icon-creativity-academic-practice-outlined: var(--ab-theme-pf-default-icon-creativity-academic-practice-outlined, var(--ab-base-pf-default-icon-creativity-academic-practice-outlined));
+  --ab-base-icon-international-academic-practice-outlined: var(--ab-theme-pf-default-icon-international-academic-practice-outlined, var(--ab-base-pf-default-icon-international-academic-practice-outlined));
+  --ab-base-icon-ai-technology-academic-practice-outlined: var(--ab-theme-pf-default-icon-ai-technology-academic-practice-outlined, var(--ab-base-pf-default-icon-ai-technology-academic-practice-outlined));
+  --ab-base-icon-signpost-academic-practice-outlined: var(--ab-theme-pf-default-icon-signpost-academic-practice-outlined, var(--ab-base-pf-default-icon-signpost-academic-practice-outlined));
+  --ab-base-icon-book-cite-source-outlined: var(--ab-theme-pf-default-icon-book-cite-source-outlined, var(--ab-base-pf-default-icon-book-cite-source-outlined));
+  --ab-base-icon-article-cite-source-outlined: var(--ab-theme-pf-default-icon-article-cite-source-outlined, var(--ab-base-pf-default-icon-article-cite-source-outlined));
+  --ab-base-icon-language_us-cite-source-outlined: var(--ab-theme-pf-default-icon-language_us-cite-source-outlined, var(--ab-base-pf-default-icon-language_us-cite-source-outlined));
+  --ab-base-icon-web-cite-source-outlined: var(--ab-theme-pf-default-icon-web-cite-source-outlined, var(--ab-base-pf-default-icon-web-cite-source-outlined));
+  --ab-base-icon-movie-cite-source-outlined: var(--ab-theme-pf-default-icon-movie-cite-source-outlined, var(--ab-base-pf-default-icon-movie-cite-source-outlined));
+  --ab-base-icon-podcast-cite-source-outlined: var(--ab-theme-pf-default-icon-podcast-cite-source-outlined, var(--ab-base-pf-default-icon-podcast-cite-source-outlined));
+  --ab-base-duration-fast: var(--ab-base-pf-default-duration-fast);
+  --ab-base-duration-base: var(--ab-base-pf-default-duration-base);
+  --ab-base-duration-slow: var(--ab-base-pf-default-duration-slow);
+  --ab-base-easing-standard: var(--ab-base-pf-default-easing-standard);
+  --ab-base-easing-emphasis: var(--ab-base-pf-default-easing-emphasis);
+  --ab-base-page-max: var(--ab-base-pf-default-page-max);
+  --ab-base-gutter: var(--ab-base-pf-default-gutter);
+  --ab-base-pad-y: var(--ab-base-pf-default-pad-y);
+  --ab-base-measure-max: var(--ab-base-pf-default-measure-max);
+  --ab-base-space-pad: var(--ab-base-pf-default-pad-item);
+  --ab-base-space-gap: var(--ab-base-pf-default-gap-item);
+  --ab-base-space-025: var(--ab-base-pf-default-space-025);
+  --ab-base-space-050: var(--ab-base-pf-default-space-050);
+  --ab-base-space-075: var(--ab-base-pf-default-space-075);
+  --ab-base-space-100: var(--ab-base-pf-default-space-100);
+  --ab-base-space-125: var(--ab-base-pf-default-space-125);
+  --ab-base-space-150: var(--ab-base-pf-default-space-150);
+  --ab-base-space-175: var(--ab-base-pf-default-space-175);
+  --ab-base-space-200: var(--ab-base-pf-default-space-200);
+  --ab-base-space-300: var(--ab-base-pf-default-space-300);
+  --ab-base-space-400: var(--ab-base-pf-default-space-400);
+  --ab-base-space-500: var(--ab-base-pf-default-space-500);
+  --ab-base-space-600: var(--ab-base-pf-default-space-600);
+  --ab-base-step-small: var(--ab-base-pf-default-step-small);
+  --ab-base-body-font-size: var(--ab-base-pf-default-body-font-size);
+  --ab-base-h6-font-size: var(--ab-base-pf-default-h6-font-size);
+  --ab-base-h5-font-size: var(--ab-base-pf-default-h5-font-size);
+  --ab-base-h4-font-size: var(--ab-base-pf-default-h4-font-size);
+  --ab-base-h3-font-size: var(--ab-base-pf-default-h3-font-size);
+  --ab-base-h2-font-size: var(--ab-base-pf-default-h2-font-size);
+  --ab-base-h1-font-size: var(--ab-base-pf-default-h1-font-size);
+
+  /* --- OBJECT - BUTTONS (7 curated knobs; sizes and semantic variants stay
+     derived, not promoted — mirrors the live ab-buttons.less / ab-schemes.less
+     promotion, 15 Oct 2026) --- */
+  --ab-base-btn-radius: var(--ab-theme-pf-default-btn-radius, var(--ab-base-pf-default-btn-radius));
+  --ab-base-btn-padding-y: var(--ab-theme-pf-default-btn-padding-y, var(--ab-base-pf-default-btn-padding-y));
+  --ab-base-btn-padding-x: var(--ab-theme-pf-default-btn-padding-x, var(--ab-base-pf-default-btn-padding-x));
+  --ab-base-btn-border-width: var(--ab-theme-pf-default-btn-border-width, var(--ab-base-pf-default-btn-border-width));
+  --ab-base-btn-focus-shadow-rgb: var(--ab-theme-pf-default-btn-focus-shadow-rgb, var(--ab-base-pf-default-btn-focus-shadow-rgb));
+  --ab-base-btn-active-shade: var(--ab-theme-pf-default-btn-active-shade, var(--ab-base-pf-default-btn-active-shade));
+  --ab-base-btn-hover-surface: var(--ab-theme-pf-default-btn-hover-surface, var(--ab-base-pf-default-btn-hover-surface));
+}

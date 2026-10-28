@@ -1,0 +1,146 @@
+/**
+ * OpenText component styles.
+ *
+ * Stage 3: auto-grow, counter, status line states.
+ * Stage 6: completion styling, over-limit border, theme integration.
+ */
+
+.opentext {
+
+  &__inner {
+    // Inherits from component__inner
+  }
+
+  &__body {
+    // Body rendered separately for aria-labelledby (spec §9.1)
+    margin-bottom: @item-margin;
+  }
+
+  &__body-inner {
+    // Matches styling from component__body-inner
+  }
+
+  &__widget {
+    // Container for the textarea, status line, and live regions
+
+    // Over-limit state cascades to textarea border (spec §8)
+    &.is-over-limit .opentext__textarea {
+      border-color: var(--ab-danger);
+    }
+  }
+
+  &__textarea-container {
+    margin-bottom: @item-margin / 2;
+  }
+
+  &__textarea {
+    width: 100%;
+    // Initial height set by _rows attribute; auto-grow controlled by JS
+    padding: @item-padding;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.5;
+    // The reflective input stays a white "paper" field in every theme (light,
+    // dark and contrast) with dark ink, so fixed colours here, not theme tokens.
+    border: 1px solid #c3ccd6;
+    border-radius: @item-border-radius;
+    // Disable manual resize — auto-grow handles it (spec §9.4)
+    resize: none;
+    background: #ffffff;
+    color: #1a1a1a;
+    // overflow-y set by JS based on content vs maxRows
+    overflow-y: hidden;
+
+    &:focus {
+      outline: 2px solid var(--ab-base-accent);
+      outline-offset: 1px;
+    }
+
+    &:disabled {
+      background-color: #eef1f4;
+      color: #1a1a1a;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &::placeholder {
+      color: #5a6572;
+      font-style: italic;
+    }
+  }
+
+  &__counter {
+    // Character counter — hidden until approaching limit (spec §8)
+    font-size: 0.875em;
+    color: var(--ab-base-ink-muted);
+    margin-bottom: @item-margin / 2;
+    text-align: right;
+
+    &.is-over-limit {
+      color: var(--ab-danger);
+      font-weight: bold;
+    }
+  }
+
+  &__over-limit {
+    // Over-limit warning message (spec §8, §10)
+    font-size: 0.875em;
+    color: var(--ab-danger);
+    margin-bottom: @item-margin / 2;
+    padding: @item-padding / 2;
+    background-color: color-mix(in srgb, var(--ab-danger) 10%, transparent);
+    border-left: 3px solid var(--ab-danger);
+  }
+
+  &__status {
+    // Status line — updated by view on save success/failure (spec §9.3)
+    font-size: 0.875em;
+    color: var(--ab-base-ink-muted);
+    min-height: 1.5em;
+
+    &.is-failed {
+      color: var(--ab-danger);
+      font-weight: bold;
+    }
+  }
+
+  // Completion area — button and completed state (spec §7)
+  &__completion {
+    margin-top: @btn-margin;
+  }
+
+  &__complete-btn {
+    // Inherits .btn-text styling from core/button.less
+  }
+
+  &__completed-state {
+    // Static confirmation after marking complete
+    // Uses the accent "visited" step (neutral "done" pattern), not
+    // --ab-success, to avoid assessment connotation (spec §7, §9.5)
+    display: inline-block;
+    padding: (@btn-padding / 2) @btn-padding;
+    background-color: var(--ab-base-accent-active);
+    color: var(--ab-base-on-accent, #fff);
+    border-radius: @btn-border-radius;
+    font-weight: bold;
+  }
+
+  &__live-region,
+  &__alert,
+  &__label--hidden {
+    // Visually hidden but available to screen readers (spec §9)
+    // Used for: polite live region, alert region, fallback label
+    .visually-hidden();
+  }
+
+  // Variant classes — intentionally empty
+  // Variants differ by defaults and completion eligibility, not visual identity.
+  // The body text frames the purpose; adding visual differentiation would be
+  // decoration without function. Classes retained for potential future use.
+  &.is-variant-reflection {
+  }
+
+  &.is-variant-notes {
+  }
+
+}

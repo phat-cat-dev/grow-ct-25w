@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maker lab | Interactive lesson assets</title>
+<link rel="stylesheet" href="template-layout.css">
+<link rel="stylesheet" href="../../components/journal-card/journal-card.css">
+<link rel="stylesheet" href="interactivities.css"></head>
+<body><main class="wrap"><nav class="asset-nav" aria-label="Asset navigation"><a href="index.html">All lesson interactivities</a></nav>
+<div class="frame" data-lesson="maker"><section class="tpl" data-tpl="maker" aria-label="Maker lab template">
+      <div class="page__inner">
+        <header class="page__header ab-quad" style="padding:var(--space-md);border-radius:var(--radius)">
+          <span class="lesson-kicker">Maker lab / 02</span>
+          <h1>Learn by taking it apart</h1>
+          <p class="lesson-intro">A working bench: inspect a model, make something, then compare the result.</p>
+          
+        </header>
+        <article class="article"><div class="article__inner">
+          <div class="block"><div class="block__inner grid-3">
+            <div class="component"><div class="ab card primary"><div class="card-header">Station 1</div><div class="card-body"><p class="card-text">Inspect the torch. List every part you can name.</p></div></div></div>
+            <div class="component"><div class="ab card primary"><div class="card-header">Station 2</div><div class="card-body"><p class="card-text">Trace the circuit from cell to bulb.</p></div></div></div>
+            <div class="component"><div class="ab card primary"><div class="card-header">Station 3</div><div class="card-body"><p class="card-text">Break the circuit. Where does the light stop?</p></div></div></div>
+          </div></div>
+          <div class="block"><div class="block__inner"><div class="component"><div class="ab callout info"><div class="callout-header">Bench note</div><p>Keep the cell out until you are ready to test — <span class="ab-highlight warning">short circuits get warm</span>.</p></div></div></div></div>
+        </div></article>
+      </div>
+    </section>
+<div class="activity-controls"><p role="status" data-activity-status></p></div>
+<article class="journal-card" data-journal-card="lesson-maker">
+  <header class="journal-card__header">
+    <p class="journal-card__kicker">Work in progress / no perfect answers</p>
+    <h3 class="journal-card__title">Maker lab notes</h3>
+  </header>
+  <label class="journal-card__field">
+    Practice notes
+    <textarea rows="5" maxlength="20000" placeholder="Capture a thought, question or next step..." data-journal-text></textarea>
+  </label>
+  <p class="journal-card__help">What if the opposite were true? What would you remove? What would you keep?</p>
+  <footer class="journal-card__footer">
+    <button type="button" data-journal-save>Save notes</button>
+    <button type="button" data-journal-export>Export notes JSON</button>
+    <p class="journal-card__status" data-journal-status role="status"></p>
+  </footer>
+  <p class="journal-card__privacy">Saved only in this browser when you press Save. Nothing is sent to a server. Export a backup before clearing browser data.</p>
+</article>
+</div></main>
+<script src="../../components/journal-card/journal-card.js"></script>
+<script src="interactivities.js"></script></body></html>

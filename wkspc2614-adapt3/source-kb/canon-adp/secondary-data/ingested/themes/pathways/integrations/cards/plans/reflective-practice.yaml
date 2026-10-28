@@ -1,0 +1,16 @@
+# Data-only plan (D-ing-0062): the pilot's card file is hand-written (ing-cards-reflective-practice.md 0.2.0);
+# this file carries only what the wide table needs, copied from the pilot's sections 1 and 5.
+# build-card-file.py refuses a dataOnly plan, so the pilot is never overwritten.
+dataOnly: true
+name: Reflective Practice
+pathwayNo: 10
+cards:
+  - {new: i1, old: reflective-practice/01, short: "Apply the describe, reflect, take action cycle", knowledge: "procedural, one set method", qf: [{id: l3/autonomy.2}]}
+  - {new: i2, old: reflective-practice/02, short: "Balance positives and negatives", knowledge: procedural, qf: [{id: 4.10.b6}, {id: l4/autonomy.2}]}
+  - {new: i3, short: "Notice what went well and what didn't in your own work", knowledge: "metacognitive, beginning", qf: [{id: 4.12.b8}]}
+  - {new: d1, old: reflective-practice/c1, short: "Reflect critically rather than describe", knowledge: "conceptual and analytical", qf: [{id: l4/autonomy.2}]}
+  - {new: d2, old: reflective-practice/c2, short: "Turn reflection into a dated action plan", knowledge: procedural, qf: [{id: l5/autonomy.1}, {id: 4.12.b7}]}
+  - {new: d3, old: reflective-practice/04, short: "Reflect on motivation and amend strategies that aren't working", knowledge: "metacognitive, strategic", qf: [{id: 4.15.b5}]}
+  - {new: e1, old: reflective-practice/c3, merged: [reflective-practice/c5], short: "Choose and apply a fuller model (Gibbs, Kolb, Johns)", knowledge: "procedural, criteria for choosing", qf: [{id: 4.12.b8}]}
+  - {new: e2, old: reflective-practice/03, short: "Use reflection for CPD and lifelong learning", knowledge: "metacognitive with procedural", qf: [{id: 4.15.b9.3}, {id: l6/autonomy.3}]}
+  - {new: e3, old: reflective-practice/c4, short: "Reflexivity: how your identity and values shape what you notice", knowledge: "metacognitive, self-knowledge", qf: [{id: 4.17.b8.3}, {id: l8/autonomy.3, beyond: true}]}

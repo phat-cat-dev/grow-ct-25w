@@ -1,0 +1,25 @@
+/* ==========================================================================
+   abbott-core-legacy.less
+
+   Keeps the original --ab-core-*-clamp-*-l4 names working by pointing them at
+   the new --ab-* tokens. Delete this file once nothing references the old names.
+   ========================================================================== */
+
+:root,
+:where([data-ab-profile]) {
+  --ab-core-text-clamp-2xs-l4: var(--ab-text-2xs);
+  --ab-core-text-clamp-xs-l4:  var(--ab-text-xs);
+  --ab-core-text-clamp-sm-l4:  var(--ab-text-sm);
+  --ab-core-text-clamp-md-l4:  var(--ab-text-md);
+  --ab-core-text-clamp-lg-l4:  var(--ab-text-lg);
+  --ab-core-text-clamp-xl-l4:  var(--ab-text-xl);
+  --ab-core-text-clamp-2xl-l4: var(--ab-text-2xl);
+
+  --ab-core-space-clamp-block-ver-l4:     var(--ab-layout-block-ver);
+  --ab-core-space-clamp-block-hoz-l4:     var(--ab-layout-block-hoz);
+  --ab-core-space-clamp-component-hoz-l4: var(--ab-layout-component-hoz);
+  --ab-core-space-clamp-item-margin-l4:   var(--ab-space-item-margin);
+  --ab-core-space-clamp-item-padding-l4:  var(--ab-space-item-padding);
+  --ab-core-space-clamp-btn-padding-l4:   var(--ab-space-btn-padding);
+  --ab-core-space-clamp-icon-padding-l4:  var(--ab-space-icon-padding);
+}

@@ -1,0 +1,7 @@
+.textured.ab-handwriting {
+  --texture-handwriting-gap: 2.6rem;
+  background-color: var(--texture-paper);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--texture-handwriting-gap) - 1px), var(--texture-rule) calc(var(--texture-handwriting-gap) - 1px), var(--texture-rule) var(--texture-handwriting-gap)), radial-gradient(circle, var(--texture-rule) .6px, transparent .7px);
+  background-size: auto, 9px var(--texture-handwriting-gap);
+  background-position: 0 .5rem, 0 .5rem;
+}

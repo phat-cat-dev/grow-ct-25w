@@ -1,0 +1,848 @@
+{
+  "pathway": "finding-using-sources",
+  "pathwayName": "Finding & Using Sources",
+  "tier": "advanced",
+  "focus": "extending and evaluating deeply",
+  "voiceBand": "§16 Advanced (bands 2-4, default).",
+  "conceptChunkCount": 6,
+  "lessons": [
+    {
+      "lessonKey": "L01",
+      "title": "Evaluating sources",
+      "grounding": {
+        "chunkId": "ch7/evaluating-sources",
+        "heading": "Evaluating sources",
+        "pages": "108-109",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/classification",
+            "quote": "Our library's discovery service produces results that include the following source types: journal articles, books, newspaper articles, conference proceedings, theses or dissertations, book chapters, and reviews."
+          },
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Other criteria to use include *currency* (i.e. the date of publication)."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    },
+    {
+      "lessonKey": "L02",
+      "title": "Extending your search",
+      "grounding": {
+        "chunkId": "ch7/extending-your-search",
+        "heading": "Extending your search",
+        "pages": "109-112",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Databases are essentially collections of references that have been indexed or classified using their authors, titles, content, year of publication – and so on."
+          },
+          {
+            "shapeId": "content-shapes/contrast",
+            "quote": "You're more likely to use Google Scholar as you try to broaden out your reading."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    },
+    {
+      "lessonKey": "L03",
+      "title": "Identifying keywords",
+      "grounding": {
+        "chunkId": "ch7/identifying-keywords",
+        "heading": "Identifying keywords",
+        "pages": "103-104",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Keywords – those words or short phrases you use when searching – act as the drivers of the searches you do."
+          },
+          {
+            "shapeId": "content-shapes/classification",
+            "quote": "A synonym is a word that essentially means the same as another word: for example, a synonym for 'car' is 'automobile'."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    },
+    {
+      "lessonKey": "L04",
+      "title": "Planning your search",
+      "grounding": {
+        "chunkId": "ch7/planning-your-search",
+        "heading": "Planning your search",
+        "pages": "102-103",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "As we've seen with Jess' example, effective searching begins with careful and considered planning."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    },
+    {
+      "lessonKey": "L05",
+      "title": "Using your library discovery service",
+      "grounding": {
+        "chunkId": "ch7/using-library-discovery-service",
+        "heading": "Using your library discovery service",
+        "pages": "104-108",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "Searching here follows similar principles to the everyday searching you might do on Google."
+          },
+          {
+            "shapeId": "content-shapes/classification",
+            "quote": "The AND is what librarians call a 'Boolean operator'."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    },
+    {
+      "lessonKey": "L06",
+      "title": "What do we mean by 'searching'?",
+      "grounding": {
+        "chunkId": "ch7/what-is-searching",
+        "heading": "What do we mean by 'searching'?",
+        "pages": "96-97",
+        "shapes": [
+          {
+            "shapeId": "content-shapes/concept",
+            "quote": "At a basic level, searching can be defined simply as 'looking for information'."
+          }
+        ]
+      },
+      "cards": [
+        {
+          "key": "orientation",
+          "role": "orientation",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation",
+          "tierBrief": "Assume fluency; frame the topic as critical, self-directed engagement with nuance and judgement.",
+          "baseContent": "Orient the learner to this lesson's topic: what it is, why it matters, and what the lesson will look at; bridge from what they already know.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "orientation-tier",
+          "role": "orientation-tier",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Orientation: at this level",
+          "tierBrief": "Approaching independence: self-direction, a critical stance and contribution are expected; frame the learner as an experienced student, not a beginner.",
+          "baseContent": "Position the lesson for where the learner is in their studies: what is and is not expected of them at this level, normalising the stage they are at.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "learning-outcomes",
+          "role": "learning-outcomes",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Learning outcomes",
+          "tierBrief": "Bloom ceiling: evaluate, synthesise, critique, design.",
+          "baseContent": "Present this lesson's outcomes decided at crs-04; do not invent them. Each serves exactly one course outcome (AL-1); one verb, one object (AL-2).",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-definition",
+          "role": "concept",
+          "kind": "fixed",
+          "component": "text",
+          "displayTitle": "Concept: definition",
+          "tierBrief": "Define at the level of debate: contested edges, assumptions, where the concept is argued over; assume fluency.",
+          "baseContent": "Define the lesson's concept plainly, example-first where it helps; the generic definition the context pack's concept-context follows on from.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-context",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Concept: in practice",
+          "tierBrief": "Show the concept where the subject contests or complicates it; assume the reader works in the field.",
+          "baseContent": "A short follow-on from the generic concept-definition, showing the concept in the learner's own subject; the context pack supplies the whole prose.",
+          "authoringPrompt": null
+        },
+        {
+          "key": "concept-intro",
+          "role": "concept",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Explore the concept",
+          "tierBrief": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons.",
+          "baseContent": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+          "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md."
+        },
+        {
+          "key": "worked-example",
+          "role": "worked-example",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Worked example",
+          "tierBrief": "A nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer.",
+          "baseContent": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+          "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently."
+        },
+        {
+          "key": "practical-guidance",
+          "role": "practical-guidance",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "How to do it",
+          "tierBrief": "Guidance for self-directed, strategic use: the learner sets their own approach and judges when to adapt it.",
+          "baseContent": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
+          "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory."
+        },
+        {
+          "key": "check",
+          "role": "knowledge-check",
+          "kind": "variable",
+          "component": "mcq",
+          "displayTitle": "Check your understanding",
+          "tierBrief": "Test evaluation, judgement and transfer; distractors are defensible-but-weaker positions a capable student might pick, not clear mistakes.",
+          "baseContent": "A question testing one lesson outcome, with teaching feedback - never a bare right/wrong.",
+          "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict."
+        },
+        {
+          "key": "reflective-prompt",
+          "role": "reflective",
+          "kind": "variable",
+          "component": "opentext",
+          "displayTitle": "Reflective prompt",
+          "tierBrief": "Ask the learner to examine their own stance and assumptions, and how their practice is developing.",
+          "baseContent": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
+          "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz."
+        },
+        {
+          "key": "summary",
+          "role": "summary",
+          "kind": "variable",
+          "component": "text",
+          "displayTitle": "Summary",
+          "tierBrief": "Affirm independent, critical capability and transfer; frame as command, not first steps.",
+          "baseContent": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
+          "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content."
+        },
+        {
+          "key": "lesson-references",
+          "role": "references",
+          "kind": "variable",
+          "component": "references",
+          "displayTitle": "Lesson Sources",
+          "tierBrief": "Same pointer form regardless of subject; a bySubject or byInstitution steer, once set, may override the referencing style (Harvard / APA / OSCOLA).",
+          "baseContent": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
+          "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1)."
+        }
+      ]
+    }
+  ]
+}

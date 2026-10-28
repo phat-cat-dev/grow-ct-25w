@@ -1,0 +1,30 @@
+<div role="navigation" aria-label="Course navigation" class="nav hide-label show-label-medium has-label-auto">
+  <div class="nav__inner">
+    <div class="nav__start">
+    <button type="button" class="btn-icon nav__btn nav__skip-btn show-label" aria-label="Skip Navigation" name="skipButton" data-order="-100" data-event="skipNavigation">
+      <span class="nav__btn-label">Skip Navigation</span>
+    </button>
+    </div>
+    <div class="nav__spacer nav__status" data-order="40" aria-label="Navigation status display">
+      <button type="button" class="nav__step" data-section-step="-1" aria-label="Previous section" title="Previous section"><span class="nav__symbol" aria-hidden="true">arrow_back</span></button>
+      <output class="nav__screen" data-nav-status aria-live="off">Lesson title &gt; Lesson Overview</output>
+      <button type="button" class="nav__step" data-section-step="1" aria-label="Next section" title="Next section"><span class="nav__symbol" aria-hidden="true">arrow_forward</span></button>
+      <div class="nav__status-keys nav__status-keys--end" role="group" aria-label="Status display">
+        <button type="button" data-status-key="alerts" aria-label="Show alerts" title="Alerts" aria-pressed="false"><span class="nav__symbol" aria-hidden="true">notifications</span></button>
+      </div>
+      <span class="nav__sr" role="status" data-nav-announcement></span>
+    </div>
+    <div class="nav__tools">
+    <button type="button" class="btn-icon nav__btn" name="themeManager" aria-label="Theme Manager" title="Theme Manager" data-order="70" data-panel="theme" data-design-only aria-expanded="false" aria-controls="lesson-theme-panel"><span class="nav__symbol" aria-hidden="true">palette</span></button>
+    <button type="button" class="btn-icon nav__btn" name="courseAgent" aria-label="Course Agent" title="Course Agent" data-order="80" data-panel="agent" aria-expanded="false" aria-controls="lesson-agent-panel"><span class="nav__symbol" aria-hidden="true">assistant</span></button>
+    <button type="button" class="btn-icon nav__btn nav__pagelevelprogress-btn pagelevelprogress__nav-btn" name="pagelevelprogress" data-order="90" data-tooltip-id="pagelevelprogress" aria-haspopup="dialog" aria-expanded="false" aria-controls="lesson-progress-panel" data-panel="progress">
+      <span class="icon nav__symbol" aria-hidden="true">format_list_bulleted</span>
+      <span class="nav__btn-label">Page sections</span>
+    </button>
+    <button type="button" class="btn-icon nav__btn nav__drawer-btn js-nav-drawer-btn is-position-auto" aria-haspopup="dialog" aria-label="Open course resources." data-tooltip-id="drawer" name="drawer" data-order="100" data-event="toggleDrawer" data-panel="resources" aria-expanded="false" aria-controls="lesson-resources-panel">
+      <span class="icon icon-list nav__symbol" aria-hidden="true">folder_open</span>
+      <span class="nav__btn-label">Resources</span>
+    </button>
+    </div>
+  </div>
+</div>

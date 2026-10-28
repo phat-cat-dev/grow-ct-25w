@@ -1,0 +1,28 @@
+@grow-type-scale: 1;
+@grow-font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+@grow-font-heading: var(--font-ui);
+
+:root {
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  --fw-light: 300; --fw-regular: 400; --fw-medium: 500;
+  --fw-semibold: 600; --fw-bold: 700;
+  --lh-none: 1; --lh-tight: 1.1; --lh-heading: 1.2;
+  --lh-snug: 1.35; --lh-body: 1.6; --lh-loose: 1.85;
+  --tracking-tighter: -.02em; --tracking-tight: -.01em; --tracking-normal: 0;
+  --tracking-wide: .04em; --tracking-wider: .08em;
+  --tracking-heading: var(--tracking-tighter);
+  --measure: 66ch; --measure-narrow: 48ch; --measure-wide: 78ch;
+  // Preserve escaped mixed-unit maths: minimum, viewport slope, maximum.
+  --fs-3xs:  ~"clamp(0.69rem, 0.66rem + 0.14vw, 0.78rem)";
+  --fs-2xs:  ~"clamp(0.75rem, 0.71rem + 0.20vw, 0.85rem)";
+  --fs-xs:   ~"clamp(0.80rem, 0.75rem + 0.25vw, 0.92rem)";
+  --fs-sm:   ~"clamp(0.90rem, 0.84rem + 0.30vw, 1.02rem)";
+  --fs-base: ~"clamp(1.00rem, 0.93rem + 0.35vw, 1.15rem)";
+  --fs-md:   ~"clamp(1.15rem, 1.03rem + 0.55vw, 1.35rem)";
+  --fs-lg:   ~"clamp(1.30rem, 1.12rem + 0.80vw, 1.60rem)";
+  --fs-xl:   ~"clamp(1.55rem, 1.28rem + 1.20vw, 2.05rem)";
+  --fs-2xl:  ~"clamp(1.85rem, 1.45rem + 1.80vw, 2.60rem)";
+  --fs-3xl:  ~"clamp(2.20rem, 1.60rem + 2.60vw, 3.30rem)";
+  --fs-4xl:  ~"clamp(2.60rem, 1.75rem + 3.80vw, 4.40rem)";
+  --fs-5xl:  ~"clamp(3.10rem, 1.90rem + 5.40vw, 5.80rem)";
+}

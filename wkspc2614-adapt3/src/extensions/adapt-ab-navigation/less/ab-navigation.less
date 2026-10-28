@@ -1,0 +1,48 @@
+// adapt-ab-navigation — restyle seam for the core navigation bar.
+//
+// Level-3 --ab-base-navigation-* tokens (default from the base spine). Rules are
+// scoped under the .ab.navigation hook this extension stamps on the .nav region,
+// so they target core's markup without editing it. On a pristine install this is
+// the nav-bar styling; with the brand theme present its nav styling takes
+// precedence — see the README and issue #6.
+
+:root {
+  --ab-base-navigation-bg: var(--ab-accent, #2a5db0);
+  --ab-base-navigation-color: var(--ab-on-accent, #ffffff);
+  --ab-base-navigation-min-height: 3.5rem;
+  --ab-base-navigation-padding-x: var(--ab-space-100, 1rem);
+  --ab-base-navigation-gap: var(--ab-space-050, 0.5rem);
+  --ab-base-navigation-max-width: 100%;
+}
+
+.ab.navigation {
+  background-color: var(--ab-base-navigation-bg);
+  color: var(--ab-base-navigation-color);
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--ab-base-navigation-gap);
+    min-height: var(--ab-base-navigation-min-height);
+    max-width: var(--ab-base-navigation-max-width);
+    margin: 0 auto;
+    padding: 0 var(--ab-base-navigation-padding-x);
+  }
+
+  // the spacer pushes trailing buttons (progress / drawer) to the end
+  .nav__spacer {
+    flex: 1 1 auto;
+  }
+
+  // injected custom items inherit nav-button look; align icon + label
+  .ab-navitem {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ab-space-050, 0.5rem);
+    color: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}

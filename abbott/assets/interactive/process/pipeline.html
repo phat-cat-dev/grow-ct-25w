@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>pipeline process asset</title><link rel="stylesheet" href="./process.css"></head><body><article class="process-asset" data-process-asset="pipeline"><div class="tag">Data flow</div><h3>Streaming pipeline</h3><p class="use">Items flow continuously through stages — dots stream along the pipe (press Play to begin).</p>
+      <div class="stage"><svg viewBox="0 0 320 80" width="310" role="img" aria-label="Pipeline">
+        <path pathLength="1" class="edge" style="--d:0s" d="M44 40 L276 40"/>
+        <rect class="node" x="14" y="22" width="56" height="36" rx="6"/><text class="nt" x="42" y="40">load</text>
+        <rect class="node" x="132" y="22" width="56" height="36" rx="6"/><text class="nt" x="160" y="40">clean</text>
+        <rect class="node" x="250" y="22" width="56" height="36" rx="6"/><text class="nt" x="278" y="40">save</text>
+        <circle class="ptoken" r="4" style="offset-path:path('M70 40 L250 40');animation-delay:0s"/>
+        <circle class="ptoken" r="4" style="offset-path:path('M70 40 L250 40');animation-delay:-1s"/>
+        <circle class="ptoken" r="4" style="offset-path:path('M70 40 L250 40');animation-delay:-2s"/>
+      </svg></div>
+    <div class="process-asset__controls">
+  <button type="button" data-process-play>Play / replay</button>
+  <button type="button" data-process-pause aria-pressed="false">Pause</button>
+  <label>Speed<select data-process-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+</div><p role="status" data-process-status>Still preview. Press Play to animate.</p></article><script src="./process.js"></script></body></html>

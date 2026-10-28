@@ -1,0 +1,208 @@
+// ============================================================================
+//  grow-chrome.less — tie Adapt's chrome to the live GROW scheme.
+//   • The nav bar takes the page background (follows the theme-manager colour),
+//     so the bar blends with the body at whatever the scheme currently is.
+//   • Every heading (nav + content) uses the scheme's main heading font
+//     (--font-heading). !important so it beats Adapt's compile-time @title-family.
+// ============================================================================
+
+// nav bar == body background, following the live scheme
+body { background: var(--page-bg); }
+// nav bar: copy the tm-rail's proportions — 1rem padding (height) + a bottom
+// border, on the live page background.
+body .nav {
+  // Heading bar: dark blue (Abbott-specified hsl(202 72% 14%)). The
+  // `background-color ... !important` with body-level specificity beats
+  // ab-core.less's `.nav{...!important}`, which had forced the accent blue.
+  background-color: hsl(202, 72%, 14%) !important;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+  padding: 1rem;
+}
+
+// Offset the content below the (now taller) nav bar.
+// NOTE (provisional): --grow-nav-h is tied to the nav height — 1rem padding
+// (×2) + the 2.75rem button ≈ 4.75rem. It is the single knob for this offset.
+// If the nav height changes, update it here; we may need to hard-write this
+// into a page/template later rather than rely on this blanket rule.
+:root { --grow-nav-h: 4.75rem; }
+// Reserve space at the BOTTOM too, so the fixed GROW dock (the bottom toolbar /
+// theme-manager control bar, ~77px full-width) never sits over page content or
+// controls — e.g. a confidence Submit button on a short page. Mirror of the top
+// --grow-nav-h offset; padding-bottom gives the scroll room to clear the dock.
+:root { --grow-dock-h: 6rem; }
+// Clear the fixed nav bar, but TIGHTLY. The bar is ~89px; empirically a 76px
+// offset left the page title floating at ~132px (a ~75px dead band below the
+// bar). The title sits at (≈56px fixed + this margin), so 2.75rem (44px) lands
+// it ~100px — just below the bar with a small gap. --grow-nav-h stays the full
+// nav height for the drawer/scroll offsets below.
+#wrapper > div { margin-top: 2.75rem; padding-bottom: var(--grow-dock-h); }
+// The page title sits in its own header above the stage cards. When the page
+// body/instruction slots are empty (the usual case) they still reserve height,
+// floating the title in a tall empty header - collapse them and drop the
+// header's trailing gap so the title sits close to the bar and the first card.
+.page__header { padding-bottom: 0; margin-bottom: 0; }
+.page__body:empty, .page__body-inner:empty,
+.page__pageBody:empty, .page__pageBody-inner:empty,
+.page__instruction:empty, .page__instruction-inner:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+// also let hash/scroll targets stop clear of the dock
+html { scroll-padding-bottom: var(--grow-dock-h); }
+// push the drawer content down to clear the nav bar (top padding on the inner)
+.drawer__inner { padding-top: var(--grow-nav-h); }
+// move the close button's bottom spacing onto the top of the content holder
+.drawer__close { padding-bottom: 0; }
+.drawer__holder { padding-top: 0.5rem; }
+
+// ── drawer toolbar buttons (close / back) in OUR icon style ──────────────────
+// Bordered, rounded Material Symbol buttons matching the nav icon-buttons. The
+// close button is the Material Symbols "close" cross; back is arrow_back. On the
+// light drawer they use --accent (border + glyph), filling on hover/focus.
+.drawer__close-btn,
+.drawer__back-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.5rem;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.drawer__close-btn .icon,
+.drawer__back-btn .icon { color: inherit; }
+.no-touch .drawer__close-btn:hover,
+.no-touch .drawer__back-btn:hover,
+html:not(.a11y-disable-focusoutline) .drawer__close-btn:focus-visible,
+html:not(.a11y-disable-focusoutline) .drawer__back-btn:focus-visible {
+  background: var(--accent);
+  color: var(--surface-1);
+  border-color: var(--accent);
+}
+// Material Symbol glyphs (font-family MUST be on ::before — Adapt sets its icon
+// font there; our override wins by specificity).
+.drawer__close-btn .icon::before,
+.drawer__back-btn .icon::before {
+  font-family: "Material Symbols Outlined";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.drawer__close-btn .icon::before { content: "\e5cd"; } // close (cross)
+.drawer__back-btn .icon::before  { content: "\e5c4"; } // arrow_back
+
+// nav: always vertically centre the row. Flexbox align-items:center solves
+// "stay centred regardless of nav height OR icon size" with no magic numbers.
+.nav { display: flex; align-items: center; }
+.nav .nav__inner { display: flex; align-items: center; width: 100%; }
+
+// nav buttons: square + rounded + border, themed, sized like the tm-icons.
+.nav .nav__btn.btn-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-inline: 0.2rem;
+  padding: 0.5rem;
+  // On the dark heading bar: white OUTLINE when idle (transparent fill, white
+  // border + icon), white FILL when active (white bg, dark-blue icon).
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.nav .nav__btn.btn-icon .icon { color: inherit; }
+.no-touch .nav .nav__btn.btn-icon:not(.is-disabled):hover,
+.nav .nav__btn.btn-icon:active,
+.nav .nav__btn.btn-icon.is-selected,
+.nav .nav__btn.btn-icon[aria-current="page"],
+html:not(.a11y-disable-focusoutline) .nav .nav__btn.btn-icon:focus-visible {
+  background: #ffffff;
+  color: hsl(202, 72%, 14%);
+  border-color: #ffffff;
+}
+
+// home/back button (the plain .icon — NOT the drawer's .icon-list, which keeps
+// Adapt's list glyph): swap to a Material Symbol "home". Font-family MUST be on
+// the ::before — that's where Adapt sets its icon font.
+.nav .nav__back-btn .icon::before {
+  font-family: "Material Symbols Outlined";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  content: "\e88a"; // home
+}
+
+// ── GROW page navigation (adapt-grow-pagenav) ───────────────────────────────
+// Centre the home button and flank it with the injected previous/next page
+// buttons. The trio is absolutely centred so it sits in the middle of the bar
+// regardless of the right-hand cluster (page progress + drawer), which keep
+// their normal flow on the right.
+.nav .nav__inner { position: relative; }
+
+.nav .nav__back-btn,
+.nav .nav__btn-page-prev,
+.nav .nav__btn-page-next {
+  position: absolute;
+  top: 50%;
+  margin: 0;
+}
+.nav .nav__back-btn      { left: 50%; transform: translate(-50%, -50%); }
+.nav .nav__btn-page-prev { left: 50%; transform: translate(calc(-50% - 3.25rem), -50%); }
+.nav .nav__btn-page-next { left: 50%; transform: translate(calc(-50% + 3.25rem), -50%); }
+
+// prev/next glyphs (Material Symbols, mirroring the home swap above)
+.nav .nav__btn-page-prev .icon::before,
+.nav .nav__btn-page-next .icon::before {
+  font-family: "Material Symbols Outlined";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.nav .nav__btn-page-prev .icon::before { content: "\e5c4"; } // arrow_back
+.nav .nav__btn-page-next .icon::before { content: "\e5c8"; } // arrow_forward
+
+// disabled at the ends of the page sequence
+.nav .nav__btn.btn-icon.is-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+// Hide the per-component page-progress completion pill. adapt-contrib-
+// pageLevelProgress stamps a small indicator (.pagelevelprogress__indicator, a
+// ~28×6px pill) at the top-left of every component; it reads as a stray grey nub
+// on the cards and isn't wanted. Scoped to components, so the menu/drawer
+// progress indicators are untouched.
+.component .pagelevelprogress__indicator { display: none; }
+
+// all headings take the typography scheme's main heading font
+h1, h2, h3, h4, h5, h6,
+[role="heading"],
+.page__title, .article__title, .block__title, .component__title,
+.menu__title, .menu-item__title {
+  font-family: var(--font-heading, var(--font-ui, system-ui, sans-serif)) !important;
+}
+
+// ── core tooltip (adapt-contrib-tooltips) cleanup (Abbott 2026-10-25) ──────────
+// The nav icon buttons trigger a core tooltip whose arrow pokes the bar's bottom
+// edge on hover - the "funny line". Keep the label, but drop the arrow, add a gap
+// so the bubble no longer hugs the bar, and theme the bubble to the brand blue.
+// (the tooltip renders OUTSIDE #wrapper, so scope to .tooltip, not #wrapper)
+.tooltip { --adapt-tooltip-distance: 0.55rem; }
+.tooltip .tooltip__arrow { display: none !important; }
+.tooltip .tooltip__body {
+  background-color: hsl(202, 72%, 14%);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  box-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.28);
+}

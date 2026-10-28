@@ -1,0 +1,26 @@
+:root {
+  --ab-base-pf-default-h1-color: var(--ab-dark-blue);
+  --ab-base-pf-default-h2-color: var(--ab-dark-grey);
+  --ab-base-pf-default-h3-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h6-color: var(--ab-black-subtle);
+}
+:root[data-theme="dark"] {
+  --ab-base-pf-default-h1-color: var(--ab-light-blue);
+  --ab-base-pf-default-h2-color: var(--ab-light-grey);
+  --ab-base-pf-default-h3-color: var(--ab-white-subtle);
+  --ab-base-pf-default-h4-color: var(--ab-white-subtle);
+  --ab-base-pf-default-h5-color: var(--ab-white-subtle);
+  --ab-base-pf-default-h6-color: var(--ab-white-subtle);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-base-pf-default-h1-color: var(--ab-light-blue);
+    --ab-base-pf-default-h2-color: var(--ab-light-grey);
+    --ab-base-pf-default-h3-color: var(--ab-white-subtle);
+    --ab-base-pf-default-h4-color: var(--ab-white-subtle);
+    --ab-base-pf-default-h5-color: var(--ab-white-subtle);
+    --ab-base-pf-default-h6-color: var(--ab-white-subtle);
+  }
+}

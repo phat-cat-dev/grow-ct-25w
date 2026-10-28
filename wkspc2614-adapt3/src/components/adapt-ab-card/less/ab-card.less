@@ -1,0 +1,21 @@
+// adapt-ab-card
+//
+// Structure only. All card visuals (background, border, cap, radius, variants)
+// live in the theme's .ab.card system (ab-cards.less, on --ab-card-* tokens).
+// This file lays out the group wrapper and consumes --ab-* spacing tokens; it
+// never defines colour.
+
+.ab-card {
+
+  &__group {
+    display: grid;
+    gap: var(--ab-space-100, 1rem);
+
+    // single column by default (mobile-first); multi-card groups go to a
+    // responsive auto-fit grid so cards sit side by side where there is room.
+    &.card-group {
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+  }
+
+}

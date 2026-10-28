@@ -1,0 +1,1603 @@
+{
+  "mapVersion": "1.0",
+  "status": "superseded",
+  "supersededNote": "Made against raw-text chunk offsets (adp-0196, 29 September 2026). Superseded by RJ-0046's switch of the chunker to normalised text (NRM-1, 1 October 2026, adp-0212): this map's chunk ids and headings are unchanged under the switch, but the underlying byte offsets shifted, so its extract/orientationExtract verbatim checks against the regenerated chunks file now fail (138 of 156, confirmed by validate-map.js at adp-0212). Kept for reference; left out of validation (see tools/pathways/core/mapping/index.json) until the RJ-0034 pilot remaps this benchmark on the normalised chunks.",
+  "rules": "source-mapping-rules.md v1.0",
+  "project": "adapt",
+  "tagPrefix": "adapt-",
+  "source": {
+    "id": "qaa/psychology-2023",
+    "title": "Psychology",
+    "issuer": "The Quality Assurance Agency for Higher Education",
+    "year": 2023,
+    "text": {
+      "file": "tools/standards/core/qaa/benchmarks/psychology-2023.txt",
+      "sha256": "e99f2554cfa38665fb9c384b03d87c7e7e1d7d77f1cf911e892d3660d7265697"
+    },
+    "chunksFile": {
+      "file": "tools/standards/core/qaa/benchmarks/psychology-2023.chunks.json",
+      "sha256": "8888159053a56ac9c3f35fa601cde03350e62156572758b014e6175ff79b4402"
+    },
+    "chunks": 107,
+    "excludedChunks": 7
+  },
+  "mappedBy": {
+    "agent": "Claude Code, adp-0196 sitting",
+    "date": "2026-09-29",
+    "sessionRef": "adp-0196"
+  },
+  "agentInstructions": [
+    "This map's orientation is overwhelmingly academic; only work-based-experiential-learning and creativity's enterprise content are consistently tagged professional, and a handful of transferable-skills statements are tagged both.",
+    "The referencing pathway has no statement in this benchmark: do not invent referencing content when building this pathway-tier from this source, and do not treat the empty group as an oversight in the map.",
+    "revising-exams has only one, weak statement here (examinations named in a longer list of assessment methods). Do not treat this benchmark as evidence for exam-technique content; look to the book source for that pathway-tier instead.",
+    "The 3.16/3.17 boundary was fixed by adp-0203: the chunker now starts a new chunk at the 'Transferable skills' sub-heading, so chunk 3.16 holds only QAA's 3.16 and a new chunk 3.17 holds QAA's 3.17. Five statements were re-pointed to chunk 3.17 (adapt-starting-progressing-succeeding, adapt-finding-using-sources, adapt-presenting, adapt-reflective-practice, adapt-ai-technology); the rest that cited chunk 3.16 (adapt-criticality, adapt-researching-research-methods, adapt-work-based-experiential-learning, adapt-creativity) still ground correctly in the now-shorter chunk 3.16.",
+    "Where two pathways quote from the same chunk (for example 3.32 for both understanding-learning-assessment-feedback and reflective-practice; 4.9 for both criticality and researching-research-methods), each statement's own extract distinguishes which part of the sentence grounds which tag; they are not duplicate statements."
+  ],
+  "coverage": {
+    "adapt-starting-progressing-succeeding": {
+      "direct": 6,
+      "indirect": 0
+    },
+    "adapt-understanding-learning-assessment-feedback": {
+      "direct": 9,
+      "indirect": 0
+    },
+    "adapt-finding-using-sources": {
+      "direct": 3,
+      "indirect": 0
+    },
+    "adapt-referencing": "none",
+    "adapt-criticality": {
+      "direct": 10,
+      "indirect": 0
+    },
+    "adapt-academic-writing": {
+      "direct": 3,
+      "indirect": 0
+    },
+    "adapt-presenting": {
+      "direct": 7,
+      "indirect": 2
+    },
+    "adapt-revising-exams": {
+      "direct": 1,
+      "indirect": 0
+    },
+    "adapt-researching-research-methods": {
+      "direct": 7,
+      "indirect": 3
+    },
+    "adapt-reflective-practice": {
+      "direct": 7,
+      "indirect": 0
+    },
+    "adapt-work-based-experiential-learning": {
+      "direct": 7,
+      "indirect": 0
+    },
+    "adapt-ai-technology": {
+      "direct": 5,
+      "indirect": 0
+    },
+    "adapt-creativity": {
+      "direct": 8,
+      "indirect": 0
+    }
+  },
+  "pathways": {
+    "adapt-starting-progressing-succeeding": {
+      "summary": {
+        "text": "The benchmark frames progression as building towards threshold-level subject-specific and transferable skills as students move from one level of study to the next (2.7), with increasing independence and responsibility for one's own learning as students advance towards their future professional careers (3.23). Graduates are expected to take ownership of their own learning, employability and development (3.17), and typical/excellent attainment is partly distinguished by depth of engagement in research and independent study (4.6) and by gaining transferable employability skills (4.10).",
+        "basis": [
+          "qaa/psychology-2023/2.7",
+          "qaa/psychology-2023/3.17",
+          "qaa/psychology-2023/3.23",
+          "qaa/psychology-2023/4.6",
+          "qaa/psychology-2023/4.10"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/2.7",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.7",
+            "pages": [
+              10
+            ]
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "a Psychology student will progress from one level of study to the next",
+          "blockType": "distinctive_features",
+          "orientation": "academic",
+          "orientationExtract": "a Psychology student will progress from one level of study to the next",
+          "agentInstruction": "This statement is about how the QAA frames level progression across a degree, not about a specific lesson activity; use it to ground orientation and pacing content, not to invent a skills list.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.17",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.17",
+            "pages": []
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "take ownership for one's own learning, employability and development",
+          "blockType": "transferable_skills",
+          "orientation": "both",
+          "orientationExtract": "take ownership for one's own learning, employability and development",
+          "agentInstruction": "Grounds content on self-directed learning and employability ownership as a graduate outcome; do not present this as a standalone employability module, it sits inside the broader skills list at 3.16-3.17.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.23",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.23",
+            "pages": []
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "students progress through the course, they assume increasing responsibility for their own learning",
+          "blockType": "teaching_and_learning",
+          "orientation": "both",
+          "orientationExtract": "preparing them for their future professional careers",
+          "agentInstruction": "Use to justify why independent-study expectations increase across levels; the professional-careers framing is QAA's own, not an invented employability angle.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.6",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.6",
+            "pages": []
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "engagement in research and independent study",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "engagement in research and independent study",
+          "agentInstruction": "One of four bullet criteria distinguishing typical/excellent attainment from threshold; do not present as a separate skill, it is a differentiator of degree classification.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.10",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.10",
+            "pages": [
+              21
+            ]
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "gained transferable employability skills",
+          "blockType": "benchmark_standards",
+          "orientation": "both",
+          "orientationExtract": "gained transferable employability skills",
+          "agentInstruction": "Appears inside a bullet about personal and professional skills at excellent level; keep the benchmark-standards framing, do not repurpose as a stand-alone employability claim.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.4",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.4",
+            "pages": []
+          },
+          "tag": "adapt-starting-progressing-succeeding",
+          "strength": "direct",
+          "extract": "develop confidence in addressing their personal, professional and community goals",
+          "blockType": "distinctive_features",
+          "orientation": "academic",
+          "orientationExtract": "develop confidence in addressing their personal, professional and community goals",
+          "agentInstruction": "Psychological-literacy paragraph; this clause is about student goal-setting and confidence, not the employability clause later in the same paragraph.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-understanding-learning-assessment-feedback": {
+      "summary": {
+        "text": "Students have flexibility to input into curriculum and assessment design, though this varies by provider (2.14), and courses may let students shape and co-create aspects of their learning and assessment (3.19). Assessment methods are expected to align clearly with learning outcomes (3.30) and to carry clearly articulated criteria (3.31), with clear, constructive feedback and feedforward integrated across the course (3.29) and assessments themselves used to help students monitor and reflect on their own development (3.32).",
+        "basis": [
+          "qaa/psychology-2023/2.14",
+          "qaa/psychology-2023/3.19",
+          "qaa/psychology-2023/3.29",
+          "qaa/psychology-2023/3.30",
+          "qaa/psychology-2023/3.31",
+          "qaa/psychology-2023/3.32"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/2.14",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.14",
+            "pages": [
+              11
+            ]
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "students to have an input into the design of the curriculum and assessment",
+          "blockType": "distinctive_features",
+          "orientation": "academic",
+          "orientationExtract": "students to have an input into the design of the curriculum and assessment",
+          "agentInstruction": "Grounds student co-design of curriculum/assessment as a distinctive feature, not a universal guarantee across all providers (the chunk says approaches vary across the sector).",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.19",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.19",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "opportunities for students to shape and co-create aspects of their learning and assessment",
+          "blockType": "teaching_and_learning",
+          "orientation": "academic",
+          "orientationExtract": "opportunities for students to shape and co-create aspects of their learning and assessment",
+          "agentInstruction": "Use for co-creation framing; this is about course design philosophy, not a specific activity type.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.29",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.29",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "students are provided with clear, constructive feedback and feedforward",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "students are provided with clear, constructive feedback and feedforward",
+          "agentInstruction": "Grounds feedback/feedforward content; do not conflate feedforward with feedback, QAA treats them as a linked pair.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.30",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.30",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "the learning outcomes they seek to develop and measure",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "the learning outcomes they seek to develop and measure",
+          "agentInstruction": "Grounds assessment-to-outcomes alignment; pair with 3.31's criteria statement rather than treating alignment and criteria as the same point.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.31",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.31",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Assessment criteria are clearly articulated and related to the module and course learning outcomes",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Assessment criteria are clearly articulated and related to the module and course learning outcomes",
+          "agentInstruction": "Grounds assessment-criteria transparency; this is a provider-facing quality expectation, but QV-TAG-2 part (k) treats feedback/criteria statements addressed to providers as valid grounding since they describe what students receive.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.32",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.32",
+            "pages": [
+              19
+            ]
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Assessments help students to monitor and reflect on their own development",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Assessments help students to monitor and reflect on their own development",
+          "agentInstruction": "Grounds assessment-as-feedback-for-learning framing; keep distinct from 3.29's feedback/feedforward point, this is about self-monitoring specifically.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.31",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.31",
+            "pages": [
+              8
+            ]
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Assessments facilitate attainment and authentic demonstration of the key competencies",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Assessments facilitate attainment and authentic demonstration of the key competencies",
+          "agentInstruction": "This sentence closes a paragraph otherwise about education-for-sustainable-development pedagogy; the extract itself is a generic assessment statement, not sustainability content.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.28",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.28",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Assessment and feedback enable students to develop and demonstrate a full range of knowledge, skills and attributes",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Assessment and feedback enable students to develop and demonstrate a full range of knowledge, skills and attributes",
+          "agentInstruction": "Whole-paragraph statement naming both assessment and feedback directly, ahead of the more specific assessment statements at 3.29 to 3.32.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.5",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.5",
+            "pages": []
+          },
+          "tag": "adapt-understanding-learning-assessment-feedback",
+          "strength": "direct",
+          "extract": "Students will undertake a variety of assessments matched against the learning outcomes for their particular curricula of study",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "Students will undertake a variety of assessments matched against the learning outcomes for their particular curricula of study",
+          "agentInstruction": "Opening sentence of the benchmark-standards section, naming assessments against learning outcomes; distinct from the later administrative sentences in the same chunk about qualification levels, which are excluded.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-finding-using-sources": {
+      "summary": {
+        "text": "The benchmark names retrieving and organising information from a range of sources as a graduate transferable skill (3.17), and distinguishes threshold-level literature review, a systematic review and evaluation (4.8), from the more in-depth reviews expected at typical level (4.9).",
+        "basis": [
+          "qaa/psychology-2023/3.17",
+          "qaa/psychology-2023/4.8",
+          "qaa/psychology-2023/4.9"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/3.17",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.17",
+            "pages": []
+          },
+          "tag": "adapt-finding-using-sources",
+          "strength": "direct",
+          "extract": "retrieve and organise information found in a range of sources",
+          "blockType": "transferable_skills",
+          "orientation": "academic",
+          "orientationExtract": "retrieve and organise information found in a range of sources",
+          "agentInstruction": "Grounds information-retrieval as a graduate skill; part of the 3.16-3.17 skills list, do not present as an isolated module.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.8",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.8",
+            "pages": [
+              20
+            ]
+          },
+          "tag": "adapt-finding-using-sources",
+          "strength": "direct",
+          "extract": "systematically reviewed and evaluated key psychological literature",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "systematically reviewed and evaluated key psychological literature",
+          "agentInstruction": "Threshold-level literature-review criterion; pair with 4.9's typical-level equivalent to show progression, do not present threshold alone as the full expectation.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.9",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.9",
+            "pages": []
+          },
+          "tag": "adapt-finding-using-sources",
+          "strength": "direct",
+          "extract": "conducted in-depth reviews of psychological literature",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "conducted in-depth reviews of psychological literature",
+          "agentInstruction": "Typical-level literature-review criterion, a step up from 4.8's threshold-level wording; keep the two distinct in any progression narrative.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-referencing": {
+      "summary": {
+        "text": "No statement in this benchmark meets QV-TAG-2's test for the referencing pathway. A mechanical scan against the pathway's term list, and a second, independent manual search for referencing/citation/plagiarism/academic-integrity language, both found only false positives (for example 'reference point', 'reflective'). This benchmark makes no explicit statement about students referencing or citing sources, and that absence is itself recorded here rather than left silent.",
+        "basis": [],
+        "status": "proposed"
+      },
+      "statements": []
+    },
+    "adapt-criticality": {
+      "summary": {
+        "text": "Course content and design emphasise critical thinking throughout (1.20), including students who think critically about dominant systems of thought (1.21) and critically evaluate the ethical behaviour of others (2.5). Critical appraisal also appears in specific research and disciplinary contexts, such as psychometric tests (3.9) and research design (3.10), and graduates are expected to critically and reflectively evaluate psychological theory and research (3.16). Attainment above threshold level is distinguished partly by systematic analysis of research paradigms (4.9) and demonstrated use of critical-thinking skills to evaluate the rigour of evidence (4.10).",
+        "basis": [
+          "qaa/psychology-2023/1.20",
+          "qaa/psychology-2023/1.21",
+          "qaa/psychology-2023/2.5",
+          "qaa/psychology-2023/3.9",
+          "qaa/psychology-2023/3.10",
+          "qaa/psychology-2023/3.16",
+          "qaa/psychology-2023/4.9",
+          "qaa/psychology-2023/4.10"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/1.20",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.20",
+            "pages": [
+              6
+            ]
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "Course content emphasises critical thinking, ethics, evidence-based decision making, and collaboration",
+          "blockType": "context_and_purpose",
+          "orientation": "academic",
+          "orientationExtract": "Course content emphasises critical thinking, ethics, evidence-based decision making, and collaboration",
+          "agentInstruction": "Whole-course framing statement; do not narrow this to a single module, it describes the degree's overall emphasis.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.21",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.21",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "They think critically about different realities and form their own judgements",
+          "blockType": "equality_diversity_inclusion",
+          "orientation": "academic",
+          "orientationExtract": "They think critically about different realities and form their own judgements",
+          "agentInstruction": "This sits inside an EDI-framed paragraph about dominant systems of thought; keep the EDI framing when using this statement, do not strip it to a generic critical-thinking claim.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.5",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.5",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "critically evaluating the ethical behaviour of others",
+          "blockType": "distinctive_features",
+          "orientation": "academic",
+          "orientationExtract": "critically evaluating the ethical behaviour of others",
+          "agentInstruction": "Pair with the same chunk's point about applying ethics to one's own conduct; this extract covers only the evaluative-of-others half.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.9",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.9",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "a critical appraisal of their use, limitations and historical origins",
+          "blockType": "subject_knowledge",
+          "orientation": "academic",
+          "orientationExtract": "a critical appraisal of their use, limitations and historical origins",
+          "agentInstruction": "Specifically about psychometric tests within Individual Differences; do not generalise to all subject content without qualification.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.10",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.10",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "a critical understanding of the role of research design and enquiry",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "a critical understanding of the role of research design and enquiry",
+          "agentInstruction": "Grounds critical engagement with research design specifically, not criticality in general.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.16",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.16",
+            "pages": [
+              16
+            ]
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "critically and reflectively evaluate psychological theory and research",
+          "blockType": "subject_specific_skills",
+          "orientation": "academic",
+          "orientationExtract": "critically and reflectively evaluate psychological theory and research",
+          "agentInstruction": "One bullet among many at 3.16; do not present as the sole critical-thinking outcome of the degree.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.9",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.9",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "systematically analysed research paradigms, methods of enquiry, and measurement techniques",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "systematically analysed research paradigms, methods of enquiry, and measurement techniques",
+          "agentInstruction": "Typical-level benchmark criterion; pair with 4.10's excellent-level equivalent to show the progression QAA describes.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.10",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.10",
+            "pages": [
+              21
+            ]
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "demonstrated the use of critical-thinking skills and the ability to evaluate the rigour",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "demonstrated the use of critical-thinking skills and the ability to evaluate the rigour",
+          "agentInstruction": "Excellent-level benchmark criterion; the full sentence continues into evidence evaluation for novel conclusions, trim carefully if extending the quote.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.32",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.32",
+            "pages": [
+              19
+            ]
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "lead to the progressive development of transferable skills and competencies, such as of critical thinking",
+          "blockType": "transferable_skills",
+          "orientation": "academic",
+          "orientationExtract": "lead to the progressive development of transferable skills and competencies, such as of critical thinking",
+          "agentInstruction": "Second clause of the sentence already quoted for understanding-learning-assessment-feedback and reflective-practice on this chunk (first clause, about monitoring and reflecting); this clause names critical thinking specifically.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.6",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.6",
+            "pages": []
+          },
+          "tag": "adapt-criticality",
+          "strength": "direct",
+          "extract": "prevalence of critical insight",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "prevalence of critical insight",
+          "agentInstruction": "Distinct bullet from the one already quoted for starting-progressing-succeeding (engagement in research and independent study) on this chunk. Four-word extract; the minimum permitted length.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-academic-writing": {
+      "summary": {
+        "text": "Graduates will have completed a series of research reports across their course (3.11), and critical and reflective thinking and writing is named among the humanities-associated skills the degree develops (3.12). Essays, research reports and reflective reports are named among the assessment methods that may be used (3.30).",
+        "basis": [
+          "qaa/psychology-2023/3.11",
+          "qaa/psychology-2023/3.12",
+          "qaa/psychology-2023/3.30"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/3.11",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.11",
+            "pages": [
+              15
+            ]
+          },
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "successfully completed a series of research reports throughout their course",
+          "blockType": "subject_specific_skills",
+          "orientation": "academic",
+          "orientationExtract": "successfully completed a series of research reports throughout their course",
+          "agentInstruction": "Grounds research-report writing across the course, not a single assignment; the empirical project is a separate, culminating piece per the same chunk.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.12",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.12",
+            "pages": []
+          },
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "critical and reflective thinking and writing",
+          "blockType": "subject_specific_skills",
+          "orientation": "academic",
+          "orientationExtract": "critical and reflective thinking and writing",
+          "agentInstruction": "A parenthetical example of humanities-associated skills in 3.12; do not present as a full description of academic writing in psychology.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.30",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.30",
+            "pages": []
+          },
+          "tag": "adapt-academic-writing",
+          "strength": "direct",
+          "extract": "essays, research reports, reflective reports, presentations and examinations",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "essays, research reports, reflective reports, presentations and examinations",
+          "agentInstruction": "One item in a longer list of assessment methods that may be used; QAA does not mandate any of these specifically.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-presenting": {
+      "summary": {
+        "text": "The benchmark frames disseminating evidence to different audiences as part of the degree's core purpose (1.2) and as the final step of the research-methods skillset (3.6). Graduates are expected to respond inclusively to a diverse range of audiences (3.17) and to disseminate research findings to peers and academic supervisors (4.9), with presentations named among possible assessment methods (3.30).",
+        "basis": [
+          "qaa/psychology-2023/1.2",
+          "qaa/psychology-2023/3.6",
+          "qaa/psychology-2023/3.17",
+          "qaa/psychology-2023/3.30",
+          "qaa/psychology-2023/4.9"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/1.2",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.2",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "to interpret evidence and to disseminate to a range of different audiences",
+          "blockType": "context_and_purpose",
+          "orientation": "academic",
+          "orientationExtract": "to interpret evidence and to disseminate to a range of different audiences",
+          "agentInstruction": "Whole-course purpose statement about empirical methods; dissemination here is framed as part of using methods of enquiry, not a standalone presenting module.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.6",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.6",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "the ability to design, obtain, analyse and disseminate evidence",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "the ability to design, obtain, analyse and disseminate evidence",
+          "agentInstruction": "Dissemination appears as the last step of a four-part research-methods skill; do not detach it from the design/obtain/analyse steps that precede it.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.17",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.17",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "respond inclusively in a manner sensitive to the needs and expectations of a diverse range of audiences",
+          "blockType": "transferable_skills",
+          "orientation": "both",
+          "orientationExtract": "respond inclusively in a manner sensitive to the needs and expectations of a diverse range of audiences",
+          "agentInstruction": "Part of the 3.16-3.17 skills list; pairs communication skill with an EDI-aware audience-sensitivity requirement, keep both parts together if quoting further.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.30",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.30",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "research reports, reflective reports, presentations and examinations",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "research reports, reflective reports, presentations and examinations",
+          "agentInstruction": "A span from a longer list of assessment methods; presentations are optional, not mandated by QAA.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.9",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.9",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "disseminated psychological research findings to peers and academic supervisors",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "disseminated psychological research findings to peers and academic supervisors",
+          "agentInstruction": "Typical-level benchmark criterion about dissemination; the same sentence continues into audience-tailoring, which may be quoted separately if needed.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.24",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.24",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "encompass both collaborative group work and independent research",
+          "blockType": "teaching_and_learning",
+          "orientation": "academic",
+          "orientationExtract": "encompass both collaborative group work and independent research",
+          "agentInstruction": "Describes the format of practical work (group versus independent); matches presenting's group-work term.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.10",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.10",
+            "pages": [
+              21
+            ]
+          },
+          "tag": "adapt-presenting",
+          "strength": "direct",
+          "extract": "imparted to peers, tutors, supervisors and mixed audiences a comprehensive grasp of psychology",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "imparted to peers, tutors, supervisors and mixed audiences a comprehensive grasp of psychology",
+          "agentInstruction": "Excellent-level bullet distinct from the four other bullets in this chunk already tagged to other pathways.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.11",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.11",
+            "pages": []
+          },
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "developing students' interpersonal skills, such as empathy, active listening and effective communication",
+          "blockType": "transferable_skills",
+          "orientation": "academic",
+          "orientationExtract": "developing students' interpersonal skills, such as empathy, active listening and effective communication",
+          "agentInstruction": "Distinct clause within the whole-degree skills-list sentence, naming interpersonal/communication skills separately from creativity's critical-thinking clause and reflective-practice's reflective-skills clause already claimed in this same chunk; extract stops before the sentence's later career/professions framing per QV-TAG-2(m).",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.8",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.8",
+            "pages": [
+              20
+            ]
+          },
+          "tag": "adapt-presenting",
+          "strength": "indirect",
+          "extract": "communicated psychological knowledge and research findings in a range of formats",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "communicated psychological knowledge and research findings in a range of formats",
+          "agentInstruction": "Threshold-level graduate attribute for presenting, distinct from the typical-level (4.9) and excellent-level statements already in this map; follows the same across-level progression pattern used elsewhere for other pathways.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-revising-exams": {
+      "summary": {
+        "text": "The only benchmark statement bearing on this pathway names examinations among a longer list of assessment methods that may be used (3.30). The benchmark makes no other statement about revision or timed, unseen examination as a distinct practice, so this pathway's coverage in this source is sparse.",
+        "basis": [
+          "qaa/psychology-2023/3.30"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/3.30",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.30",
+            "pages": []
+          },
+          "tag": "adapt-revising-exams",
+          "strength": "direct",
+          "extract": "reflective reports, presentations and examinations",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "reflective reports, presentations and examinations",
+          "agentInstruction": "One item at the end of a longer list of assessment methods that may be used; QAA does not mandate a timed unseen examination, only lists it as one option among several.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-researching-research-methods": {
+      "summary": {
+        "text": "The benchmark requires students to gain a sound knowledge of qualitative, quantitative and mixed research methods appropriate to the research question (3.6), including the ability to conduct and interpret statistical tests (3.7). Rigorous, specialist training in research design underpins this (3.10), grounded in an empirical project involving original data collection (3.11) and the generation of hypotheses and research questions (3.16). Typical-level attainment is distinguished partly by systematic analysis of research paradigms (4.9).",
+        "basis": [
+          "qaa/psychology-2023/3.6",
+          "qaa/psychology-2023/3.7",
+          "qaa/psychology-2023/3.10",
+          "qaa/psychology-2023/3.11",
+          "qaa/psychology-2023/3.16",
+          "qaa/psychology-2023/4.9"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/3.6",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.6",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+          "agentInstruction": "Core research-methods statement; do not shorten in a way that drops the qualitative/quantitative/mixed distinction, QAA treats all three as expected coverage.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.7",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.7",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "the ability to conduct and interpret appropriate statistical tests",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "the ability to conduct and interpret appropriate statistical tests",
+          "agentInstruction": "Quantitative-skills statement; qualitative-skills content sits later in the same chunk and should be tagged separately if used.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.10",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.10",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "rigorous specialist training is required to engender a critical understanding of the role of research design",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "rigorous specialist training is required to engender a critical understanding of the role of research design",
+          "agentInstruction": "Grounds the depth of research-methods training expected; do not present as light-touch coverage.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.11",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.11",
+            "pages": [
+              15
+            ]
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "the collection of original quantitative, qualitative or mixed methods data",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "the collection of original quantitative, qualitative or mixed methods data",
+          "agentInstruction": "Describes the empirical project's data-collection requirement specifically, not coursework in general.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.16",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.16",
+            "pages": [
+              16
+            ]
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "generate and explore appropriate psychological hypotheses and research questions",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "generate and explore appropriate psychological hypotheses and research questions",
+          "agentInstruction": "One bullet among many at 3.16; pairs hypothesis generation with research-question framing, do not split further without checking the surrounding bullets.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.9",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.9",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "adopted multiple perspectives in psychology and systematically analysed research paradigms",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "adopted multiple perspectives in psychology and systematically analysed research paradigms",
+          "agentInstruction": "Typical-level benchmark criterion; shares wording with a criticality statement from the same chunk, the two pathways tag different halves of the same sentence.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.1",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.1",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "Courses also develop in students, a range of research skills and methods of enquiry for investigating cognitions and behaviour",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "Courses also develop in students, a range of research skills and methods of enquiry for investigating cognitions and behaviour",
+          "agentInstruction": "Whole-degree framing statement about research skills, found by the old-map comparison; distinct from the module-level research-methods statements below.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.3",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.3",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "indirect",
+          "extract": "the inherent difficulties associated with extrapolating research conducted with Western samples to other cultures",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "the inherent difficulties associated with extrapolating research conducted with Western samples to other cultures",
+          "agentInstruction": "Cross-cultural generalisability limitation in research; indirect strength, no research-methods term matched mechanically.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.18",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.18",
+            "pages": []
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "with a particular emphasis on conducting and reporting empirical research",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "with a particular emphasis on conducting and reporting empirical research",
+          "agentInstruction": "Whole-degree summary sentence naming empirical research as a particular emphasis of the degree.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.8",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.8",
+            "pages": [
+              20
+            ]
+          },
+          "tag": "adapt-researching-research-methods",
+          "strength": "direct",
+          "extract": "constructed and tested research hypotheses and undertaken supervised research investigating specific lines of enquiry, both individually and in groups",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "constructed and tested research hypotheses and undertaken supervised research investigating specific lines of enquiry, both individually and in groups",
+          "agentInstruction": "Threshold-level bullet distinct from the finding-using-sources statement drawn from a different bullet in the same chunk.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-reflective-practice": {
+      "summary": {
+        "text": "Reflective skills are named among a wider set of graduate skills (1.11), and students are expected to critically reflect on the language and terminology used within the discipline in an EDI context (1.23) and to value being self-reflexive as a researcher (3.8). Graduates should be able to reflect on and articulate their own strengths and development needs (3.17), and assessments themselves are designed to help students monitor and reflect on their own development (3.32). Typical and excellent-level attainment both involve reflecting on the role of evidence and the significance of findings (4.9, 4.10).",
+        "basis": [
+          "qaa/psychology-2023/1.11",
+          "qaa/psychology-2023/1.23",
+          "qaa/psychology-2023/3.8",
+          "qaa/psychology-2023/3.17",
+          "qaa/psychology-2023/3.32",
+          "qaa/psychology-2023/4.9",
+          "qaa/psychology-2023/4.10"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/1.11",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.11",
+            "pages": []
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "reflective skills, social and personal responsibility",
+          "blockType": "transferable_skills",
+          "orientation": "academic",
+          "orientationExtract": "reflective skills, social and personal responsibility",
+          "agentInstruction": "One item in a longer skills list; do not present reflective skills as the chunk's sole focus, the list also covers critical thinking and data analysis.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.23",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.23",
+            "pages": []
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "critically reflect on the language and terminology used within the discipline",
+          "blockType": "equality_diversity_inclusion",
+          "orientation": "academic",
+          "orientationExtract": "critically reflect on the language and terminology used within the discipline",
+          "agentInstruction": "This is an EDI-framed reflective statement specifically about disciplinary language; keep the EDI context, do not generalise to reflection on personal experience.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.8",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.8",
+            "pages": []
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "the value of being self-reflexive as a researcher",
+          "blockType": "research_methods",
+          "orientation": "academic",
+          "orientationExtract": "the value of being self-reflexive as a researcher",
+          "agentInstruction": "Research-ethics-framed reflexivity, distinct from general reflective practice; sits alongside ethical-consequences content in the same chunk.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.17",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.17",
+            "pages": []
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "reflect on and articulate personal strengths and areas for development",
+          "blockType": "transferable_skills",
+          "orientation": "academic",
+          "orientationExtract": "reflect on and articulate personal strengths and areas for development",
+          "agentInstruction": "Part of the 3.16-3.17 skills list; pairs self-reflection with identifying how development needs may be addressed, in the same bullet.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.32",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.32",
+            "pages": [
+              19
+            ]
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "Assessments help students to monitor and reflect on their own development",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Assessments help students to monitor and reflect on their own development",
+          "agentInstruction": "Shared wording with an understanding-learning-assessment-feedback statement from the same chunk; here the tag is on the reflective-monitoring half, not the assessment-design half.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.9",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.9",
+            "pages": []
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "reflected on the role of evidence in forming conclusions and reasoning scientifically",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "reflected on the role of evidence in forming conclusions and reasoning scientifically",
+          "agentInstruction": "Typical-level benchmark criterion; keep the scientific-reasoning framing, this is not general-purpose reflection.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.10",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.10",
+            "pages": [
+              21
+            ]
+          },
+          "tag": "adapt-reflective-practice",
+          "strength": "direct",
+          "extract": "reflected on the significance of historical and contemporary findings within psychology",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "reflected on the significance of historical and contemporary findings within psychology",
+          "agentInstruction": "Excellent-level benchmark criterion; the same bullet continues into social/political/ethical application, which may be quoted separately if needed.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-work-based-experiential-learning": {
+      "summary": {
+        "text": "Students may have optional opportunities to study abroad or undertake credit-bearing placements (1.14), and providers may offer work-based learning and placement opportunities in flexible, paid or voluntary forms (2.15). Graduates are expected to apply psychological knowledge ethically, professionally and safely to real-world problems (3.16), and course delivery covers ethical conduct in professional practice (3.21). Laboratory classes are named among recognised learning and teaching forms (3.25), and work-based learning, placements and fieldwork are considered good practice for developing transferable and subject-specific skills (3.26).",
+        "basis": [
+          "qaa/psychology-2023/1.14",
+          "qaa/psychology-2023/2.15",
+          "qaa/psychology-2023/3.16",
+          "qaa/psychology-2023/3.21",
+          "qaa/psychology-2023/3.25",
+          "qaa/psychology-2023/3.26"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/1.14",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.14",
+            "pages": []
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "opportunities to study abroad and participate in credit-bearing placement activities",
+          "blockType": "context_and_purpose",
+          "orientation": "professional",
+          "orientationExtract": "opportunities to study abroad and participate in credit-bearing placement activities",
+          "agentInstruction": "Framed as an optional opportunity, not a universal requirement; the chunk also notes duration/mode variation across providers.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.15",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.15",
+            "pages": []
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "the opportunity to undertake work-based learning and/or placements",
+          "blockType": "distinctive_features",
+          "orientation": "professional",
+          "orientationExtract": "the opportunity to undertake work-based learning and/or placements",
+          "agentInstruction": "Framed as provider-arranged and optional (flexible, paid and voluntary options); do not present as compulsory.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.16",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.16",
+            "pages": [
+              16
+            ]
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "apply psychological knowledge ethically, professionally and safely to real-world problems",
+          "blockType": "subject_specific_skills",
+          "orientation": "professional",
+          "orientationExtract": "apply psychological knowledge ethically, professionally and safely to real-world problems",
+          "agentInstruction": "Part of the 3.16-3.17 skills list; combines ethical, professional and safety framing in one bullet, keep all three together.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.21",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.21",
+            "pages": []
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "ethical conduct in professional practice and social responsibility",
+          "blockType": "teaching_and_learning",
+          "orientation": "professional",
+          "orientationExtract": "ethical conduct in professional practice and social responsibility",
+          "agentInstruction": "Sits alongside research-ethics content in the same chunk; this extract covers the professional-practice half specifically.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.25",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.25",
+            "pages": []
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "laboratory classes \n• workshops",
+          "blockType": "teaching_and_learning",
+          "orientation": "both",
+          "orientationExtract": "laboratory classes \n• workshops",
+          "agentInstruction": "One item in a bulleted list of learning/teaching forms; the bullet character is retained because the extract is copied verbatim from the source's list formatting.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.26",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.26",
+            "pages": []
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+          "blockType": "teaching_and_learning",
+          "orientation": "professional",
+          "orientationExtract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+          "agentInstruction": "One of five learning approaches named as good practice in this chunk; do not present as the only recommended approach.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.35",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.35",
+            "pages": [
+              9
+            ]
+          },
+          "tag": "adapt-work-based-experiential-learning",
+          "strength": "direct",
+          "extract": "in the core domains of the discipline, in work placements",
+          "blockType": "professional_context",
+          "orientation": "professional",
+          "orientationExtract": "in the core domains of the discipline, in work placements",
+          "agentInstruction": "Second clause of the sentence already quoted for creativity's enterprise statement on this chunk (first clause ends 'may be embedded'); this clause names work placements specifically.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-ai-technology": {
+      "summary": {
+        "text": "Artificial intelligence appears both as an emerging topic area within the discipline (2.6, 3.4) and as digital-skills content tied to future employment (2.13). Separately, graduates are expected to understand the function and role of AI in learning, teaching and problem-solving (3.17), and AI developments are linked to assessment integrity and students' appropriate use of digital skills (3.31).",
+        "basis": [
+          "qaa/psychology-2023/2.6",
+          "qaa/psychology-2023/2.13",
+          "qaa/psychology-2023/3.4",
+          "qaa/psychology-2023/3.17",
+          "qaa/psychology-2023/3.31"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/2.6",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.6",
+            "pages": []
+          },
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "artificial intelligence, behavioural economics and genetics",
+          "blockType": "distinctive_features",
+          "orientation": "academic",
+          "orientationExtract": "artificial intelligence, behavioural economics and genetics",
+          "agentInstruction": "One item in a list of recent/emerging topic areas; not a statement that AI is core to all psychology courses.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.13",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.13",
+            "pages": []
+          },
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "technology-enhanced learning to ensure that students develop skills for online learning",
+          "blockType": "distinctive_features",
+          "orientation": "both",
+          "orientationExtract": "technology-enhanced learning to ensure that students develop skills for online learning",
+          "agentInstruction": "Framed around future-employment relevance of digital skills; the same sentence continues into that employment framing.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.4",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.4",
+            "pages": []
+          },
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "artificial intelligence, cognitive neuropsychology, cognitive bias and social cognition",
+          "blockType": "subject_knowledge",
+          "orientation": "academic",
+          "orientationExtract": "artificial intelligence, cognitive neuropsychology, cognitive bias and social cognition",
+          "agentInstruction": "AI here names a cognitive-psychology topic area, not AI-as-tool; do not conflate with the transferable-skills AI statement at 3.16-3.17.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.17",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.17",
+            "pages": []
+          },
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "understand the function and role of artificial intelligence in the context of learning and teaching",
+          "blockType": "transferable_skills",
+          "orientation": "both",
+          "orientationExtract": "understand the function and role of artificial intelligence in the context of learning and teaching",
+          "agentInstruction": "Part of the 3.16-3.17 skills list; this is AI-as-tool-and-context, distinct from the subject-knowledge AI topic at 3.4.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.31",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.31",
+            "pages": []
+          },
+          "tag": "adapt-ai-technology",
+          "strength": "direct",
+          "extract": "integrity of assessment which can be linked to artificial intelligence developments",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "integrity of assessment which can be linked to artificial intelligence developments",
+          "agentInstruction": "Links AI to assessment integrity specifically; the same sentence continues into digital-skills use, which may be quoted separately if needed.",
+          "status": "proposed"
+        }
+      ]
+    },
+    "adapt-creativity": {
+      "summary": {
+        "text": "Problem-solving is named among a wider set of graduate skills (1.11), and enterprise and entrepreneurship behaviours and skills are offered as an optional strand that may be embedded across the course, placements or external partnerships (1.34, 1.35, 2.16). Graduates are expected to apply critical thinking to identify creative and innovative solutions to complex problems (3.16), and innovative assessment forms such as case studies and portfolios are encouraged (3.30). Excellent-level attainment is distinguished partly by demonstrated creative thinking when designing psychological research (4.10).",
+        "basis": [
+          "qaa/psychology-2023/1.11",
+          "qaa/psychology-2023/1.34",
+          "qaa/psychology-2023/1.35",
+          "qaa/psychology-2023/2.16",
+          "qaa/psychology-2023/3.16",
+          "qaa/psychology-2023/3.30",
+          "qaa/psychology-2023/4.10"
+        ],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/psychology-2023/1.11",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.11",
+            "pages": []
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "critical thinking, problem-solving, data analysis, ethical awareness",
+          "blockType": "context_and_purpose",
+          "orientation": "academic",
+          "orientationExtract": "critical thinking, problem-solving, data analysis, ethical awareness",
+          "agentInstruction": "Problem-solving is one item in a longer skills list; do not present this chunk as primarily about creativity. Extract trimmed to stop before 'reflective skills', which reflective-practice's own statement on this same chunk claims separately; the two extracts must not overlap per QV-TAG-2(c).",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.34",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.34",
+            "pages": []
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "opportunities to develop and apply enterprise behaviours, attributes and skills",
+          "blockType": "enterprise_entrepreneurship",
+          "orientation": "professional",
+          "orientationExtract": "opportunities to develop and apply enterprise behaviours, attributes and skills",
+          "agentInstruction": "Framed around career-trajectory impact and employability; enterprise content here is optional provision, not a required strand.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.35",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.35",
+            "pages": [
+              9
+            ]
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "Enterprise and entrepreneurship education takes different forms and may be embedded",
+          "blockType": "enterprise_entrepreneurship",
+          "orientation": "professional",
+          "orientationExtract": "Enterprise and entrepreneurship education takes different forms and may be embedded",
+          "agentInstruction": "Describes variable embedding across core domains, placements and external links; do not present as a fixed curriculum component.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/2.16",
+          "locator": {
+            "section": "Distinctive features of a Psychology degree",
+            "paragraphs": "2.16",
+            "pages": []
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "the opportunity to develop enterprise and entrepreneurial skills, and the opportunity to practice these skills",
+          "blockType": "distinctive_features",
+          "orientation": "professional",
+          "orientationExtract": "the opportunity to develop enterprise and entrepreneurial skills, and the opportunity to practice these skills",
+          "agentInstruction": "Framed as provider-arranged and flexible (may be embedded in specific modules or options); not a universal requirement.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.16",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.16",
+            "pages": [
+              16
+            ]
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "apply critical-thinking skills to address complex problems to identifying creative and innovative solutions",
+          "blockType": "subject_specific_skills",
+          "orientation": "academic",
+          "orientationExtract": "apply critical-thinking skills to address complex problems to identifying creative and innovative solutions",
+          "agentInstruction": "Part of the 3.16-3.17 skills list; links creativity/innovation to critical thinking applied to complex problems specifically.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/3.30",
+          "locator": {
+            "section": "Content, structure and delivery",
+            "paragraphs": "3.30",
+            "pages": []
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "Authentic and innovative assessments such as case studies, portfolios, artefacts and blogs are encouraged",
+          "blockType": "assessment_and_feedback",
+          "orientation": "academic",
+          "orientationExtract": "Authentic and innovative assessments such as case studies, portfolios, artefacts and blogs are encouraged",
+          "agentInstruction": "Innovative-assessment content is encouraged, not mandated; QAA lists these as examples alongside more conventional assessment types.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/4.10",
+          "locator": {
+            "section": "Benchmark standards",
+            "paragraphs": "4.10",
+            "pages": [
+              21
+            ]
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "demonstrated creative thinking when designing psychological research with relevance to contemporary psychological issues",
+          "blockType": "benchmark_standards",
+          "orientation": "academic",
+          "orientationExtract": "demonstrated creative thinking when designing psychological research with relevance to contemporary psychological issues",
+          "agentInstruction": "Excellent-level benchmark criterion specifically about research design; do not generalise to creativity across all coursework.",
+          "status": "proposed"
+        },
+        {
+          "chunkId": "qaa/psychology-2023/1.33",
+          "locator": {
+            "section": "Context and purposes of a Psychology Degree",
+            "paragraphs": "1.33",
+            "pages": []
+          },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "enterprise and entrepreneurship education supports the development of behaviours, attributes and skills that together comprise a mindset",
+          "blockType": "enterprise_entrepreneurship",
+          "orientation": "professional",
+          "orientationExtract": "enterprise and entrepreneurship education supports the development of behaviours, attributes and skills that together comprise a mindset",
+          "agentInstruction": "Enterprise-mindset statement, ahead of the two enterprise statements already tagged at 1.34 and 1.35 in this same paragraph run.",
+          "status": "proposed"
+        }
+      ]
+    }
+  },
+  "excluded": [
+    {
+      "chunkId": "qaa/psychology-2023/front-matter-1",
+      "reason": "front matter: material before the first numbered section"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/section-1-heading",
+      "reason": "section heading line, not document substance"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/section-2-heading",
+      "reason": "section heading line, not document substance"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/section-3-heading",
+      "reason": "section heading line, not document substance"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/section-4-heading",
+      "reason": "section heading line, not document substance"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/back-matter-1",
+      "reason": "back matter: list of references and further resources"
+    },
+    {
+      "chunkId": "qaa/psychology-2023/back-matter-2",
+      "reason": "back matter: membership of the advisory group"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$anchor": "callout",
+  "type": "object",
+  "title": "Callout (GOW)",
+  "properties": {
+    "_component": {
+      "type": "string",
+      "const": "callout",
+      "default": "callout",
+      "isObjectId": true,
+      "readOnly": true,
+      "title": "Component type"
+    },
+    "_classes": {
+      "type": "string",
+      "title": "CSS classes",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "default": "",
+      "description": "Optional heading, only needed when it adds clarity beyond the callout type label. No terminal punctuation."
+    },
+    "body": {
+      "type": "string",
+      "title": "Body",
+      "format": "html",
+      "default": "",
+      "required": true,
+      "description": "Main callout content. Keep to one clear point - source authoring guidance capped this at 3 short blocks."
+    },
+    "_calloutType": {
+      "type": "string",
+      "title": "Callout type",
+      "enum": ["info", "warning", "tip", "example", "note", "definition"],
+      "default": "info",
+      "required": true,
+      "description": "Select the type that most accurately reflects the purpose of this callout. Use 'warning' only for genuine cautions, not general emphasis."
+    }
+  },
+  "required": ["_component", "body", "_calloutType"]
+}

@@ -1,0 +1,9 @@
+{
+  "_comment": "Shared first-name pool for the two-character worked-example slots ({{learner-a}} = the weaker/negative example, {{learner-b}} = the stronger/positive example). merge-context.js picks two distinct names from this pool per course, deterministically (seeded by the course slug) so builds stay stable. A pack's context.json may still set a single {{character.name}}; these learner-a/b slots are separate and always pool-filled. Names chosen to be short, varied and inclusive; add/remove freely.",
+  "names": [
+    "Amara", "Leo", "Priya", "Tom", "Zainab", "Max",
+    "Mei", "Sofia", "Noah", "Fatima", "Jack", "Yusuf",
+    "Grace", "Omar", "Hana", "Ben", "Nia", "Sam",
+    "Ava", "Kai", "Ruth", "Dev", "Lucia", "Theo"
+  ]
+}

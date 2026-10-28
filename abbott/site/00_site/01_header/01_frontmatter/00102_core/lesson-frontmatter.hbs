@@ -1,0 +1,130 @@
+{{!--
+  lesson-frontmatter.hbs
+  The learner-visible lesson front matter PANEL as a Handlebars partial. Same
+  markup and class names as lesson-frontmatter.html and lesson-frontmatter.jsx,
+  so lesson-frontmatter.css styles it unchanged.
+
+  Context (the JSX props, as fields):
+    position  title  purpose  overview
+    meta[]                      { label, value }  estimated time, level
+    objectivesTitle  objectives[]
+    startingKnowledgeTitle  startingKnowledge[]
+    materialsTitle          materials[]
+    whatToExpectTitle  whatToExpect  whatToExpectItems[]
+    completionTitle    completion    completionItems[]
+    supportTitle       support       supportItems[]
+    variant        "hero" (default) | "compact" | "plain"
+    headingTag     "h1" (default) .. "h6"
+    role           data-grow-role, default "lesson"
+    hasDetail      true when startingKnowledge or materials has items
+    hasMore        true when any of the three "more" sections is present
+
+  Prose and list items are authored HTML (they may hold <code> or <em>), so
+  they use triple braces. Titles and meta use double braces and are escaped.
+  For each "more" section pass the prose field (a string) or the Items field
+  (an array, shown as a checklist). Every section is optional: omit the data
+  and it is not rendered.
+
+  Spec section 4: do not state that an activity is optional, saves answers or
+  affects completion unless that behaviour is configured in Adapt or SCORM.
+  Pass only verified copy to `completion`. Administrative metadata (owner,
+  authors, reviewers, version) has no field here on purpose.
+--}}
+<section class="lesson-fm lesson-fm--{{#if variant}}{{variant}}{{else}}hero{{/if}}" data-grow-role="{{#if role}}{{role}}{{else}}lesson{{/if}}" aria-label="Lesson overview">
+
+  <header class="lesson-fm__head">
+    {{#if position}}<p class="lesson-fm__position">{{position}}</p>{{/if}}
+    {{#if title}}<{{#if headingTag}}{{headingTag}}{{else}}h1{{/if}} class="lesson-fm__title">{{title}}</{{#if headingTag}}{{headingTag}}{{else}}h1{{/if}}>{{/if}}
+    {{#if purpose}}<p class="lesson-fm__purpose">{{{purpose}}}</p>{{/if}}
+    {{#if overview}}<p class="lesson-fm__overview">{{{overview}}}</p>{{/if}}
+    {{#if meta}}
+    <ul class="lesson-fm__meta" aria-label="Lesson details">
+      {{#each meta}}
+      <li class="lesson-fm__meta-item">
+        {{#if label}}<span class="lesson-fm__meta-key">{{label}}</span>{{/if}}
+        <span class="lesson-fm__meta-val">{{value}}</span>
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
+  </header>
+
+  {{#if objectives}}
+  <div class="lesson-fm__group lesson-fm__group--objectives">
+    <p class="lesson-fm__group-title">{{#if objectivesTitle}}{{objectivesTitle}}{{else}}By the end of this lesson, you will be able to:{{/if}}</p>
+    <ul class="lesson-fm__list">
+      {{#each objectives}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+    </ul>
+  </div>
+  {{/if}}
+
+  {{#if hasDetail}}
+  <div class="lesson-fm__grid">
+    {{#if startingKnowledge}}
+    <section class="lesson-fm__group lesson-fm__group--before">
+      <p class="lesson-fm__group-title">{{#if startingKnowledgeTitle}}{{startingKnowledgeTitle}}{{else}}Before you begin{{/if}}</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        {{#each startingKnowledge}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+      </ul>
+    </section>
+    {{/if}}
+    {{#if materials}}
+    <section class="lesson-fm__group lesson-fm__group--materials">
+      <p class="lesson-fm__group-title">{{#if materialsTitle}}{{materialsTitle}}{{else}}What you'll need{{/if}}</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        {{#each materials}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+      </ul>
+    </section>
+    {{/if}}
+  </div>
+  {{/if}}
+
+  {{#if hasMore}}
+  <div class="lesson-fm__more">
+
+    {{#if whatToExpect}}
+    <section class="lesson-fm__group lesson-fm__group--expect">
+      <p class="lesson-fm__group-title">{{#if whatToExpectTitle}}{{whatToExpectTitle}}{{else}}What to expect{{/if}}</p>
+      <div class="lesson-fm__prose"><p>{{{whatToExpect}}}</p></div>
+    </section>
+    {{else}}{{#if whatToExpectItems}}
+    <section class="lesson-fm__group lesson-fm__group--expect">
+      <p class="lesson-fm__group-title">{{#if whatToExpectTitle}}{{whatToExpectTitle}}{{else}}What to expect{{/if}}</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        {{#each whatToExpectItems}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+      </ul>
+    </section>
+    {{/if}}{{/if}}
+
+    {{#if completion}}
+    <section class="lesson-fm__group lesson-fm__group--completion">
+      <p class="lesson-fm__group-title">{{#if completionTitle}}{{completionTitle}}{{else}}Completing this lesson{{/if}}</p>
+      <div class="lesson-fm__prose"><p>{{{completion}}}</p></div>
+    </section>
+    {{else}}{{#if completionItems}}
+    <section class="lesson-fm__group lesson-fm__group--completion">
+      <p class="lesson-fm__group-title">{{#if completionTitle}}{{completionTitle}}{{else}}Completing this lesson{{/if}}</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        {{#each completionItems}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+      </ul>
+    </section>
+    {{/if}}{{/if}}
+
+    {{#if support}}
+    <section class="lesson-fm__group lesson-fm__group--support">
+      <p class="lesson-fm__group-title">{{#if supportTitle}}{{supportTitle}}{{else}}Support &amp; accessibility{{/if}}</p>
+      <div class="lesson-fm__prose"><p>{{{support}}}</p></div>
+    </section>
+    {{else}}{{#if supportItems}}
+    <section class="lesson-fm__group lesson-fm__group--support">
+      <p class="lesson-fm__group-title">{{#if supportTitle}}{{supportTitle}}{{else}}Support &amp; accessibility{{/if}}</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        {{#each supportItems}}<li class="lesson-fm__item">{{{this}}}</li>{{/each}}
+      </ul>
+    </section>
+    {{/if}}{{/if}}
+
+  </div>
+  {{/if}}
+
+</section>

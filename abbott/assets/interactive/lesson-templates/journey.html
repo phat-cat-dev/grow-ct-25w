@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Milestone journey | Interactive lesson assets</title>
+<link rel="stylesheet" href="template-layout.css">
+<link rel="stylesheet" href="../../components/journal-card/journal-card.css">
+<link rel="stylesheet" href="interactivities.css"></head>
+<body><main class="wrap"><nav class="asset-nav" aria-label="Asset navigation"><a href="index.html">All lesson interactivities</a></nav>
+<div class="frame" data-lesson="journey"><section class="tpl" data-tpl="journey" aria-label="Milestone journey template">
+      <div class="page__inner">
+        <header class="page__header">
+          <span class="lesson-kicker">Journey / 01</span>
+          <h1>Build a habit in three steps</h1>
+          <p class="lesson-intro">A numbered route where each stage reveals the next — progress you can <span class="ab-highlight">see</span>.</p>
+          
+        </header>
+        <article class="article"><div class="article__inner">
+          <div class="block"><div class="block__inner stepline">
+            <div class="component milestone"><span class="num">1</span><div class="ab card primary soft" style="flex:1"><div class="card-body"><div class="lesson-comp-title">Orient yourself</div><p class="card-text">Name the one behaviour you want to build, and when it will happen.</p></div></div></div>
+            <div class="component milestone"><span class="num">2</span><div class="ab card info soft" style="flex:1"><div class="card-body"><div class="lesson-comp-title">Make it small</div><p class="card-text">Shrink it until it is <span class="ab-highlight info">almost too easy</span> to skip.</p></div></div></div>
+            <div class="component milestone"><span class="num">3</span><div class="ab card positive soft" style="flex:1"><div class="card-body"><div class="lesson-comp-title">Anchor it</div><p class="card-text">Attach it to something you already do every day.</p></div></div></div>
+          </div></div>
+          <div class="block"><div class="block__inner"><div class="component"><button type="button" class="ab btn primary" data-journey-next>Complete and continue</button></div></div></div>
+        </div></article>
+      </div>
+    </section>
+<div class="activity-controls"><progress max="3" value="0" aria-label="Completed milestones"></progress><button type="button" data-journey-reset>Restart journey</button><p role="status" data-activity-status></p></div>
+<article class="journal-card" data-journal-card="lesson-journey">
+  <header class="journal-card__header">
+    <p class="journal-card__kicker">Work in progress / no perfect answers</p>
+    <h3 class="journal-card__title">Milestone journey notes</h3>
+  </header>
+  <label class="journal-card__field">
+    Practice notes
+    <textarea rows="5" maxlength="20000" placeholder="Capture a thought, question or next step..." data-journal-text></textarea>
+  </label>
+  <p class="journal-card__help">What if the opposite were true? What would you remove? What would you keep?</p>
+  <footer class="journal-card__footer">
+    <button type="button" data-journal-save>Save notes</button>
+    <button type="button" data-journal-export>Export notes JSON</button>
+    <p class="journal-card__status" data-journal-status role="status"></p>
+  </footer>
+  <p class="journal-card__privacy">Saved only in this browser when you press Save. Nothing is sent to a server. Export a backup before clearing browser data.</p>
+</article>
+</div></main>
+<script src="../../components/journal-card/journal-card.js"></script>
+<script src="interactivities.js"></script></body></html>

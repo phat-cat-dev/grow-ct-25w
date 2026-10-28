@@ -1,0 +1,129 @@
+{{!--
+  lesson-page.hbs — grow lesson page as a data-driven Handlebars template.
+
+  One of a matched set in this folder, all describing the SAME lesson:
+    lesson-page.yaml  the data (authoring input)
+    lesson-page.hbs   this — Handlebars template over that data
+    lesson-page.jsx   React component over that data
+    lesson-page.html  one rendered result (static starter)
+
+  Context = the lesson object (see lesson-page.yaml). Renders the same DOM as
+  lesson-page.html. The lesson frontmatter is a <header> INSIDE .page__body and
+  carries the opening prose as frontmatter__body. Assumes an `eq` block helper
+  for component type-switching (Adapt and handlebars-helpers both provide one);
+  `{{{compile ...}}}` emits raw HTML.
+--}}
+<main class="page contentobject" id="lesson-{{id}}" data-adapt-id="{{id}}" data-page-type="{{pageType}}">
+  <div class="page__inner">
+
+    <header class="page__header asset-hero asset-hero--dots" data-hero-playing="true">
+      <div class="asset-hero__art" aria-hidden="true"></div>
+      <div class="page__header-inner asset-hero__content">
+        {{#if subtitle}}<p class="page__subtitle asset-hero__kicker">{{subtitle}}</p>{{/if}}
+        <h1 class="page__title asset-hero__title">{{title}}</h1>
+
+        {{#if frontmatter}}
+        <div class="page__body">
+          <header class="frontmatter frontmatter--lesson" data-grow-role="lesson">
+            {{#if frontmatter.eyebrow}}<p class="frontmatter__eyebrow">{{frontmatter.eyebrow}}</p>{{/if}}
+
+            {{#if frontmatter.body}}
+            <div class="frontmatter__body">{{{compile frontmatter.body}}}</div>
+            {{/if}}
+
+            {{#if frontmatter.meta}}
+            <dl class="frontmatter__list">
+              {{#each frontmatter.meta}}
+              <div class="frontmatter__item frontmatter__item--{{@key}}">
+                <dt class="frontmatter__label">{{@key}}</dt>
+                <dd class="frontmatter__value">{{this}}</dd>
+              </div>
+              {{/each}}
+            </dl>
+            {{/if}}
+
+            {{#if frontmatter.objectives}}
+            <div class="frontmatter__group frontmatter__group--objectives">
+              {{#if frontmatter.objectivesTitle}}<p class="frontmatter__group-title">{{frontmatter.objectivesTitle}}</p>{{/if}}
+              <ul class="frontmatter__items">
+                {{#each frontmatter.objectives}}<li class="frontmatter__item frontmatter__item--objective">{{{compile this}}}</li>{{/each}}
+              </ul>
+            </div>
+            {{/if}}
+          </header>
+        </div>
+        {{/if}}
+      </div>
+    </header>
+
+    <div class="article__container">
+      {{#each phases}}
+      <article class="article article--{{section}}" id="{{section}}" data-lesson-phase="{{phase}}" data-grow-role="phase">
+        <div class="article__inner">
+          <header class="article__header">
+            {{#if eyebrow}}<p class="article__eyebrow">{{eyebrow}}</p>{{/if}}
+            {{#if title}}<h2 class="article__title">{{title}}</h2>{{/if}}
+            {{#if intro}}<div class="article__body"><p>{{{compile intro}}}</p></div>{{/if}}
+          </header>
+
+          <div class="block__container">
+            {{#each blocks}}
+            <section class="block" data-skeleton-key="{{skeletonKey}}" data-grow-role="section"{{#if gateAfter}} data-gate-after="true"{{/if}}>
+              <div class="block__inner">
+                <header class="block__header">
+                  {{#if title}}<h3 class="block__title">{{title}}</h3>{{/if}}
+                  {{#if instruction}}<p class="block__instruction">{{{compile instruction}}}</p>{{/if}}
+                </header>
+
+                <div class="component__container">
+                  {{#each components}}
+                  <div class="component {{type}}" data-slot="{{slot}}"{{#if variant}} data-variant="{{variant}}"{{/if}}>
+                    <div class="component__inner">
+                      {{#if (eq type "mcq")}}
+                        <fieldset class="component__widget">
+                          <legend class="component__title">{{{compile stem}}}</legend>
+                          {{#each options}}
+                          <label class="mcq__option">
+                            <input type="radio" name="{{../slot}}"{{#if correct}} data-correct="true"{{/if}}>
+                            <span>{{{compile text}}}</span>
+                          </label>
+                          {{/each}}
+                        </fieldset>
+                      {{else if (eq type "opentext")}}
+                        <label class="component__title">{{{compile prompt}}}</label>
+                        <textarea class="opentext__input" rows="4"></textarea>
+                      {{else if (eq type "references")}}
+                        <ol class="component__body references__list">
+                          {{#each items}}<li>{{{compile this}}}</li>{{/each}}
+                        </ol>
+                      {{else}}
+                        <div class="component__body">
+                          {{#if bullets}}
+                          <ul>{{#each bullets}}<li>{{{compile this}}}</li>{{/each}}</ul>
+                          {{else}}
+                          <p>{{{compile body}}}</p>
+                          {{/if}}
+                        </div>
+                      {{/if}}
+                    </div>
+                  </div>
+                  {{/each}}
+                </div>
+              </div>
+            </section>
+            {{/each}}
+          </div>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+
+    {{#if navigation}}
+    <nav class="page__navigation" aria-label="Lesson navigation">
+      {{#if navigation.back}}<a href="{{navigation.back.href}}">{{navigation.back.label}}</a>{{/if}}
+      {{#if navigation.continue}}<a class="button{{#if navigation.continue.primary}} button--primary{{/if}}" href="{{navigation.continue.href}}">{{navigation.continue.label}}</a>{{/if}}
+    </nav>
+    {{/if}}
+
+  </div>
+</main>

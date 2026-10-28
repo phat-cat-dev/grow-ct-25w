@@ -1,0 +1,67 @@
+{
+  "mapVersion": "1.0",
+  "rules": "source-mapping-rules.md v1.0",
+  "project": "adapt",
+  "tagPrefix": "adapt-",
+  "source": {
+    "id": "qaa/fixture-subject-2026",
+    "title": "Fictional Subject Benchmark",
+    "issuer": "Test fixture, not a real body",
+    "year": 2026,
+    "text": {
+      "file": "tools/pathways/core/tools/test/fixtures/fixture-subject-2026.txt",
+      "sha256": "5a50cd13b5dc826e405716b178eb10377595223c4d9b9520e73dfe3cc5ded979"
+    },
+    "chunksFile": {
+      "file": "tools/pathways/core/tools/test/fixtures/fixture-subject-2026.chunks.json",
+      "sha256": "b0a08921b114135bb5604f7d111cf20c5a7b3994069f542f347b98d4d1406e9f"
+    },
+    "chunks": 3,
+    "excludedChunks": 1
+  },
+  "mappedBy": { "agent": "test fixture", "date": "2026-09-30", "sessionRef": "adp-0203-test" },
+  "agentInstructions": [
+    "Fixture map for validate-map.js strength-check tests (adp-0203 unit 5). Not a real benchmark map."
+  ],
+  "coverage": {
+    "adapt-academic-writing": "none",
+    "adapt-ai-technology": "none",
+    "adapt-creativity": { "direct": 1, "indirect": 0 },
+    "adapt-criticality": "none",
+    "adapt-finding-using-sources": "none",
+    "adapt-presenting": "none",
+    "adapt-referencing": "none",
+    "adapt-reflective-practice": "none",
+    "adapt-researching-research-methods": "none",
+    "adapt-revising-exams": "none",
+    "adapt-starting-progressing-succeeding": "none",
+    "adapt-understanding-learning-assessment-feedback": "none",
+    "adapt-work-based-experiential-learning": "none"
+  },
+  "pathways": {
+    "adapt-creativity": {
+      "summary": {
+        "text": "Fixture only: this statement is deliberately mistagged to trigger a strength warning.",
+        "basis": ["qaa/fixture-subject-2026/1.1"],
+        "status": "proposed"
+      },
+      "statements": [
+        {
+          "chunkId": "qaa/fixture-subject-2026/1.1",
+          "locator": { "section": "Context and purposes of a Fictional Degree", "paragraphs": "1.1", "pages": "" },
+          "tag": "adapt-creativity",
+          "strength": "direct",
+          "extract": "reference sources accurately and to maintain academic integrity",
+          "blockType": "subject_knowledge",
+          "orientation": "academic",
+          "orientationExtract": "reference sources accurately and to maintain academic integrity",
+          "agentInstruction": "Fixture only: deliberately mistagged, referencing text under the creativity pathway, to test the strength warning.",
+          "status": "proposed"
+        }
+      ]
+    }
+  },
+  "excluded": [
+    { "chunkId": "qaa/fixture-subject-2026/front-matter-1", "reason": "front matter: material before the first numbered section" }
+  ]
+}

@@ -1,0 +1,1 @@
+.wash-bg.wash-bg--paper::before { background-image:var(--wash-noise),repeating-linear-gradient(to bottom,transparent 0 5px,color-mix(in srgb,var(--wash-ink-soft) 40%,transparent) 5px 6px);background-size:150px 150px,auto;opacity:calc(var(--wash-strength) * 0.4);mix-blend-mode:overlay }

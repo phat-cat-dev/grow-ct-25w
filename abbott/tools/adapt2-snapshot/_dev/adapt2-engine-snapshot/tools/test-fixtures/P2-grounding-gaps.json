@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "test-p2",
+  "slug": "test-p2",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "crs-03_vocabulary",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": { "pathwayName": "Test", "tierName": "introductory", "slug": "test" },
+          "timestamp": "2026-08-27T00:00:00Z",
+          "grounding": [
+            { "doc": "reference/excelling.md", "ref": "ch4 §2" }
+          ],
+          "groundingGaps": [
+            {
+              "store": "institutional-kb",
+              "lookup": "module/ACW4001",
+              "wouldHaveGrounded": "Module learning outcomes to derive tier-specific competencies."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

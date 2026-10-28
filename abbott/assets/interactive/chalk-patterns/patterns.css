@@ -1,0 +1,24 @@
+:root { color-scheme: light dark; --accent: light-dark(#247c78,#8bddcf); --ink: light-dark(#23353c,#e3f0ee); --surface-1: light-dark(#fff,#1d3034); --surface-2: light-dark(#eef6f4,#263e42); --line: light-dark(#bbd3cf,#496a6e); --radius: 14px; --radius-sm: 8px; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--surface-2); font: 1rem/1.55 system-ui,sans-serif; }
+.pattern-page { max-width: 86rem; margin-inline: auto; padding: clamp(1rem,3vw,3rem); }
+a { color: var(--accent); }
+.pattern-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,26rem),1fr)); gap: 1rem; align-items: start; }
+.edu-demo { min-width: 0; background: var(--surface-1); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; }
+.card-title { font-size: 1.15rem; margin: 0 0 1rem; }
+.pattern-master { margin-block: 1rem; border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; }
+.edu-actions, .pattern-master { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.pattern-master p { flex-basis: 100%; margin: 0; }
+.edu-actions label, .pattern-master label { display: inline-flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.edu-board { background: color-mix(in srgb,var(--accent) 8%,var(--surface-1)); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 1rem; margin-block: 1rem; }
+button, select { font: inherit; color: var(--ink); border: 1px solid var(--line); border-radius: .5rem; background: var(--surface-1); padding: .5rem .7rem; max-width: 100%; }
+button, summary { cursor: pointer; }
+button:disabled { cursor: default; opacity: .6; }
+input { accent-color: var(--accent); max-width: 100%; min-width: 0; }
+details { margin-top: 1rem; }
+.edu-code { display: block; width: 100%; min-width: 0; resize: vertical; background: var(--surface-1); color: var(--ink); border: 1px solid var(--line); margin-block: .5rem; font: .75rem/1.4 ui-monospace,monospace; }
+.edu-status { font-size: .85rem; }
+.pattern-card-link { min-width: 0; }
+.asset-links { margin-top: .5rem; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+[hidden] { display: none !important; }

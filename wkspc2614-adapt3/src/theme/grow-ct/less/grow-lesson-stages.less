@@ -1,0 +1,216 @@
+// ============================================================================
+//  grow-lesson-stages.less — override layer: content articles as STAGE cards.
+//  ----------------------------------------------------------------------------
+//  A content page is a stack of articles. On a lesson that is open / concept /
+//  formative / reflection / close; on a wrapper page (welcome, confidence,
+//  summative test, course summary) it is usually a single article. By default
+//  those articles are invisible wrappers and only each component shows a card,
+//  so a page reads as a loose pile of narrow, left-aligned cards.
+//
+//  Here each article becomes a self-contained STAGE: a visible card that wraps
+//  its title, blocks and components, spanning the full content column. The
+//  component cards inside read as raised content one elevation step lighter
+//  than the stage, so they sit clearly WITHIN the stage rather than floating
+//  free. This mirrors the data-grow-role="phase" card treatment in
+//  grow-lesson.less.
+//
+//  Keyed off the base `.article` class, so EVERY content-page article gets the
+//  same treatment — lesson, wrapper, confidence and summative pages all match.
+//  (The menu content object renders `.menu` / `.boxmenu-item`, never `.article`,
+//  so it is never touched.) This deliberately replaces the earlier behaviour
+//  where only `.article--lesson-*` pages were staged and wrapper pages were
+//  left with Adapt's default narrow, left-aligned column.
+//
+//  Knobs: the stage surface/round/pad and the between-stage gap below. Raise or
+//  lower --space-* steps to taste.
+// ============================================================================
+
+// ── the stage card (one per article) ────────────────────────────────────────
+// .article__inner holds BOTH the article header (title) and the blocks, so the
+// card wraps the whole stage. Higher specificity than the base .article__inner
+// rules, so it wins regardless of LESS source order.
+.article > .article__inner {
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: var(--space-md);
+  box-shadow: 0 1px 2px var(--shadow), 0 18px 40px -26px var(--shadow);
+}
+
+// space between the stacked stage cards (the first stage keeps the header gap)
+.article__container > .article + .article {
+  margin-top: var(--space-md);
+}
+
+// ── inside a stage: blocks are plain full-width groupings ────────────────────
+// The stage card already supplies the frame + padding, so drop the block's own
+// max-width / gutter AND its vertical padding (the block adds no rhythm of its
+// own — the single gap below each component, set further down, spaces the
+// cards), and cancel Adapt's component bleed (.component__container
+// { margin-inline: -… }) so nothing spills past the card's rounded border.
+.article .block__inner {
+  max-width: none;
+  padding: 0;
+}
+.article .block__inner .component__container {
+  margin-inline: 0;
+}
+
+// ── components read as raised content cards within the stage ─────────────────
+// One elevation step lighter than the stage (surface-2 over the stage's
+// surface-1) so each component sits clearly inside the stage.
+.article .component__inner {
+  background: var(--surface-2);
+}
+
+// ── plain text components are prose, not cards ───────────────────────────────
+// A bare text component reads as body copy, so drop the card entirely (surface,
+// border, radius, shadow and the card's padding). The prose then sits directly
+// on the stage background, its left edge aligned with the stage titles, while
+// interactive / richer components keep the raised-card treatment above.
+//
+// EXCEPTION: the worked example is an activity, not plain prose — it carries a
+// `slot__L##__worked-example` class, so it is excluded here and keeps the
+// default raised card, marking it out from the surrounding copy.
+.article .component.text:not([class*="worked-example"]) > .component__inner {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+// ── worked-example +/- cues ──────────────────────────────────────────────────
+// Weaker/stronger paragraphs in a worked example carry we-weaker / we-stronger
+// (see docs/authoring/worked-example-cue-convention.md). This was in
+// adapt-ab-theme (ab-core.less), but that skin is excluded from this build, so
+// the cues never rendered. Re-homed here in the active grow-ct theme, using its
+// semantic tokens: a coloured left border + soft tint + a corner glyph - red
+// minus for the weaker example, green plus for the stronger. Kept subtle.
+.we-weaker,
+.we-stronger {
+  position: relative;
+  margin: 0.6em 0;
+  padding: 0.5em 2.2em 0.5em 0.9em;
+  border-left: 3px solid transparent;
+  border-radius: 2px;
+}
+.we-weaker {
+  border-left-color: var(--c-negative);
+  background-color: color-mix(in srgb, var(--c-negative) 8%, var(--surface-1, #fff));
+}
+.we-stronger {
+  border-left-color: var(--c-positive);
+  background-color: color-mix(in srgb, var(--c-positive) 8%, var(--surface-1, #fff));
+}
+.we-weaker::after,
+.we-stronger::after {
+  position: absolute;
+  top: 0.45em;
+  right: 0.65em;
+  font-weight: 700;
+  font-size: 1.15em;
+  line-height: 1;
+}
+.we-weaker::after   { content: "\2212"; color: var(--c-negative); } // minus
+.we-stronger::after { content: "\002B"; color: var(--c-positive); } // plus
+
+// ── titles align to the stage's content column ───────────────────────────────
+// Adapt caps every header column (.*__header-inner) at a reading width (60rem)
+// and centres it (margin-inline:auto) + a 16px gutter — the original vanilla
+// structure, where titles AND content shared that one centred column. The stage
+// rules above widen the blocks/components to fill the stage, so left unchecked
+// the titles would hang indented (≈136px) from the content (≈39px) below them.
+// Release the header cap/centre/gutter so article and block titles sit at the
+// SAME left edge as the blocks and component cards beneath them.
+.article__header-inner,
+.block__header-inner {
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+}
+// The page title sits ABOVE the stage cards (not inside one). The cards
+// (.article__inner / .block__inner) are capped at --layout-max and centred
+// (margin-inline:auto), so on wide screens their left edge moves inward. Give
+// the page header the SAME cap + centring so the title's left edge tracks the
+// card's left edge at every width. A 1rem gutter gives the title breathing room
+// (Abbott, 25 Oct 2026; was padding-inline:0, flush to the card edge).
+.page__header-inner {
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  position: relative;
+  padding: 1rem 1rem;
+}
+
+// The lesson summary article is already titled "Lesson summary", so the summary
+// component's own "Summary" heading just repeats it — hide it. Only the title is
+// hidden (not the whole header: in these components the body/prose is nested
+// INSIDE .component__header, so hiding the header would hide the summary text
+// too). Scoped to the lesson summary slot class, so wrapper-page summaries
+// (which have no article title to lean on) keep their own heading.
+.article .component[class*="__summary"] .component__title {
+  display: none;
+}
+
+// ── trickle button is driven by the outcomes component ───────────────────────
+// The learning-outcomes component's own button becomes the Continue button and
+// drives trickle's button for us, so trickle's visible button is suppressed.
+// Visually hidden (NOT display:none) so it stays in the DOM and the component
+// can still .click() it. Trickle is only used for the outcomes gate here, so
+// hiding it globally is safe.
+.js-trickle-btn-container {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+// ── components fill the stage width ──────────────────────────────────────────
+// By default the block is a flex row and the component container shrinks to the
+// text's reading width (var(--measure)), leaving empty space on the right of the
+// stage. Make the container, component and card span the full stage, and release
+// the paragraph reading-width cap so the text uses the stage as its column.
+.article .block__inner > .component__container {
+  flex: 1 1 100%;
+  width: 100%;
+}
+.article .component {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+.article .component__inner { max-width: none; }
+.article .component__inner p,
+.article .component__widget p { max-width: none; }
+
+// ── vertical rhythm between the cards ────────────────────────────────────────
+// With the block adding no vertical padding of its own (above), a single,
+// tighter gap below each component spaces the cards inside the stage (Adapt's
+// default was the wider --space-md). The last card drops its gap so it sits on
+// the stage's own bottom padding, not doubled up with it.
+.article .component {
+  margin-bottom: var(--space-sm);
+}
+.article .block:last-child .component:last-child {
+  margin-bottom: 0;
+}
+
+// ── article reveal: fade in (Abbott 2026-10-25) ──────────────────────────────
+// Each article fades in as it renders - on page load, and (with article-level
+// trickle) as each article auto-reveals once the previous is complete. So the
+// summary fades in only after the main content article is done.
+@keyframes grow-article-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.article {
+  animation: grow-article-in 0.5s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .article { animation: none; }
+}

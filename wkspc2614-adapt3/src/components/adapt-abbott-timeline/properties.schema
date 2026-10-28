@@ -1,0 +1,116 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Timeline. Select each stage to reveal its details.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+    "_expandBehaviour": {
+      "type": "string",
+      "required": false,
+      "enum": ["single", "independent"],
+      "default": "single",
+      "title": "Expand Behaviour",
+      "inputType": {
+        "type": "Select",
+        "options": ["single", "independent"]
+      },
+      "validators": [],
+      "help": "'single' (default): expanding one stage collapses others, keeping the overview scannable. 'independent': stages expand and stay open individually."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Stages",
+      "help": "Each stage has a label (axis marker), title, optional body, and optional graphic. Label and title are required.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "label": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Label",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Axis marker text (e.g. 'Stage 1', 'Week 3', '1'). Displayed on the timeline axis.",
+            "translatable": true
+          },
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Title",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Stage title displayed next to the marker. Combined with label for the accessible name.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Body",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "Detail content revealed when the stage is expanded.",
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Graphic",
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Source",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Image displayed in the expanded detail area."
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Alternative Text",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Describes the image for screen readers. Leave blank if decorative.",
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

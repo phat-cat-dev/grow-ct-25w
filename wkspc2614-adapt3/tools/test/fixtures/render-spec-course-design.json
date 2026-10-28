@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "fixture-course",
+  "slug": "fixture-course",
+  "status": "in-development",
+  "facetSet": { "pathway": "fixture-pathway", "tier": "introductory" },
+  "kbVersions": { "design-kb": "9.9.9" },
+  "gates": [
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": { "pathwayName": "Fixture Pathway", "slug": "fixture-course" },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        { "seq": 1, "state": "skipped", "timestamp": "2026-10-03T00:00:00.000Z" }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": { "referencingStyle": "Harvard (Cite Them Right)" },
+          "grounding": [],
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        { "seq": 1, "state": "deferred", "deferReason": "resources decision pending", "timestamp": "2026-10-03T00:00:00.000Z" }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book",
+            "priorExperienceAnchor": "none assumed",
+            "tierWindow": { "from": "L3", "to": "L5" },
+            "sectionsInScope": ["Chapter 1"],
+            "sectionsOutOfScope": ["Chapter 9"],
+            "subThemes": ["Strand A", "Strand B"]
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              { "id": "CO1", "text": "Outcome one" },
+              { "id": "CO2", "text": "Outcome two" }
+            ],
+            "courseOutcomeCountReason": "Two outcomes fit this introductory tier."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              { "key": "L01", "title": "Lesson one", "topic": "Topic one", "outcomes": ["CO1"] },
+              { "key": "L02", "title": "Lesson two", "topic": "Topic two", "outcomes": ["CO2"] }
+            ],
+            "progression": "L01 builds the base that L02 extends."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "fixture-course-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": { "conceptTitle": "Concept for L01", "coupledSlots": [] },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "fixture-course-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": { "conceptTitle": "Concept for L02", "coupledSlots": [] },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": { "overview": "A short course overview." },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        { "seq": 1, "state": "proposed", "provenance": "ai-proposal-stood", "timestamp": "2026-10-03T00:00:00.000Z" }
+      ]
+    },
+    {
+      "gateId": "cxp-04_context-generation",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": { "note": "context generated" },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-03T00:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

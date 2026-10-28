@@ -1,0 +1,32 @@
+:root {
+  --ab-swatch-base: hsl(var(--ab-user-h) var(--ab-user-s) var(--ab-user-l));
+  --ab-swatch-base-tint: hsl(var(--ab-user-h) var(--ab-user-s) 85%);
+  --ab-swatch-base-shade: hsl(var(--ab-user-h) var(--ab-user-s) 8%);
+  --ab-swatch-complementary: hsl(calc(var(--ab-user-h) + 180) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-split-a: hsl(calc(var(--ab-user-h) + 150) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-split-b: hsl(calc(var(--ab-user-h) + 210) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-analogous-cool: hsl(calc(var(--ab-user-h) - 30) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-analogous-warm: hsl(calc(var(--ab-user-h) + 30) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-triadic-a: hsl(calc(var(--ab-user-h) + 120) var(--ab-companion-s) var(--ab-companion-l));
+  --ab-swatch-triadic-b: hsl(calc(var(--ab-user-h) + 240) var(--ab-companion-s) var(--ab-companion-l));
+}
+.ab-profile-harbour {
+  --ab-theme-pf-default-accent: var(--ab-swatch-analogous-cool);
+}
+.ab-profile-ember {
+  --ab-theme-pf-default-accent: var(--ab-swatch-complementary);
+}
+.ab-profile-orchid {
+  --ab-theme-pf-default-accent: var(--ab-swatch-triadic-a);
+}
+.ab-profile-fern {
+  --ab-theme-pf-default-accent: var(--ab-swatch-triadic-b);
+}
+.ab-profile-dusk {
+  --ab-theme-pf-default-accent: var(--ab-swatch-analogous-warm);
+}
+.ab-profile-studio {
+  --ab-theme-pf-default-accent: var(--ab-swatch-analogous-cool);
+  --ab-accent-2: var(--ab-swatch-complementary);
+  --ab-accent-3: var(--ab-swatch-split-a);
+}

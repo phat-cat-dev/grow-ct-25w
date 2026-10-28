@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Learning sequences / Expanding steps</title>
+  <link rel="stylesheet" href="expanding-links.css">
+  <link rel="stylesheet" href="learning-sequence.css">
+  <style>
+    body { margin: 0; padding: clamp(1rem,5vw,4rem); background: #f4f7fa; color: #172e3a; font: 1rem/1.6 system-ui,sans-serif; }
+    .settings { display: flex; flex-wrap: wrap; gap: 1rem; margin-block: 2rem; align-items: center; }
+    .settings label { display: flex; flex-wrap: wrap; gap: .5rem; min-width: 0; max-width: 100%; }
+    select { font: inherit; max-width: 100%; padding: .4rem; }
+    a { color: #365f80; }
+  </style>
+</head>
+<body>
+  <h1>Steps for learning</h1>
+  <p>Plain step buttons, one activity at a time. The current step expands; revisit any step freely. Moving on does not mark an activity complete.</p>
+  <div class="settings">
+    <label>Sequence <select data-preset><option value="inquiry">Inquiry / 4 steps</option><option value="practice">Guided practice / 5 steps</option><option value="reflection">Reflect and transfer / 3 steps</option></select></label>
+    <label>Number of steps <input type="number" data-count min="1" max="10" step="1" value="4" style="width:5rem;font:inherit"></label>
+    <label><input type="checkbox" data-labels> Always show step labels</label>
+  </div>
+  <main class="learning-sequence">
+    <nav class="expanding-links" data-learning-nav aria-label="Learning steps"></nav>
+    <p data-learning-status role="status"></p>
+    <div data-steps></div>
+    <div class="learning-actions">
+      <button type="button" data-learning-back>Back</button>
+      <button type="button" data-learning-complete>Mark step complete</button>
+      <button type="button" data-learning-next>Next step</button>
+    </div>
+  </main>
+  <p>Reflections and completion stay in memory only. Switching sequences preserves them until reload. Nothing is submitted or automatically saved.</p>
+  <p><a href="learning.template.html" download>Learning sequence template</a> · <a href="README.md">Integration guide</a> · <a href="index.html">Icon-link example</a></p>
+  <script src="learning-sequence.js"></script>
+  <script src="learning-workshop.js"></script>
+</body>
+</html>

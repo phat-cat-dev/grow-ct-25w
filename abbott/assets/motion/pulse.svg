@@ -1,0 +1,9 @@
+<svg data-motion-asset="pulse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-pulse-title svg-motion-pulse-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-pulse-title">Heartbeat</title><desc id="svg-motion-pulse-desc">A soft pulse without flashing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="pulse"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-pulse calc(2s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-pulse { 50% { transform: scale(.9); opacity: .65; } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="pulse"] .art,svg[data-motion-asset="pulse"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M0 23C-43-3-22-34 0-15 22-34 43-3 0 23Z"/></g></g></svg>

@@ -1,0 +1,47 @@
+{
+  "_id": "c-scroll-scenes-01",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "scrollScenes",
+  "_classes": "",
+  "_layout": "full",
+  "title": "A way of working",
+  "displayTitle": "A way of working",
+  "body": "Scroll through the four moves. Each one comes into focus as it reaches the centre.",
+  "instruction": "Scroll inside the panel, or use the scene buttons to jump.",
+  "_preset": "original",
+  "_scheme": "",
+  "_background": "",
+  "_transition": "",
+  "_effect": "",
+  "_snap": true,
+  "_showNav": true,
+  "_showProgress": true,
+  "_showStatus": true,
+  "_items": [
+    {
+      "stageLabel": "Observe",
+      "heading": "Start with<br>what you notice.",
+      "body": "Slow down long enough to see the situation clearly. What is happening, and what might you be missing?"
+    },
+    {
+      "stageLabel": "Question",
+      "heading": "Make room for<br>a better question.",
+      "body": "Look beyond your first explanation. Find the assumption that would change your next move if it turned out to be wrong."
+    },
+    {
+      "stageLabel": "Explore",
+      "heading": "Try something<br>small and useful.",
+      "body": "Compare possibilities without needing a perfect answer. A modest experiment can reveal more than another round of guessing."
+    },
+    {
+      "stageLabel": "Act",
+      "heading": "Take the learning<br>back with you.",
+      "body": "Choose one action you can explain, test and review. Decide what evidence will tell you whether it helped.",
+      "_extras": {
+        "microTask": { "minutes": 2, "instruction": "Write the one action you will take and the signal you will watch for." },
+        "evidenceCue": "the signal you chose actually moves."
+      }
+    }
+  ]
+}

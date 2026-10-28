@@ -1,0 +1,9 @@
+<svg data-motion-asset="pop" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-pop-title svg-motion-pop-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-pop-title">Approval pop</title><desc id="svg-motion-pop-desc">A springy stamp of approval. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="pop"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-pop calc(2.4s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-pop { 15% { transform: scale(.85); } 30% { transform: scale(1.15); } 45%, 100% { transform: scale(1); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="pop"] .art,svg[data-motion-asset="pop"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m0-29 9 7 11 1 2 12 7 9-7 9-2 12-11 1-9 7-9-7-11-1-2-12-7-9 7-9 2-12 11-1Z"/><path d="m-12 0 8 8L14-10"/></g></g></svg>

@@ -1,0 +1,23 @@
+.confidence-check {
+  --confidence-before: #697b8d;
+  --confidence-after: #277a91;
+  --confidence-accent: var(--accent, #277a91);
+  color: var(--ink, #172e3a);
+  font: 1rem/1.6 var(--font-ui, system-ui, sans-serif);
+}
+.confidence-check, .confidence-check * { box-sizing: border-box; }
+.confidence-check [hidden] { display: none !important; }
+.confidence-check fieldset { min-inline-size: 0; border: 0; padding: 0; margin-block: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+.confidence-check legend { font-weight: 700; padding: 0; margin-bottom: .5rem; }
+.confidence-check label { display: grid; gap: .25rem; min-width: 0; max-width: 100%; }
+.confidence-check select { max-width: 100%; padding: .5rem; font: inherit; color: inherit; background: var(--surface-1, white); border: 1px solid var(--line, #aabcc7); border-radius: .3rem; }
+.confidence-check button { font: inherit; color: var(--confidence-accent); background: transparent; padding: .6rem .25rem; border: 0; text-decoration: underline; text-underline-offset: .3em; cursor: pointer; text-align: start; }
+.confidence-check button:disabled { opacity: .5; cursor: default; text-decoration: none; }
+.confidence-check button[aria-pressed="true"] { font-weight: 700; }
+.confidence-check .confidence-actions, .confidence-check .confidence-highlights { display: flex; flex-wrap: wrap; gap: 1rem; }
+.confidence-check .confidence-chart { position: relative; height: 22rem; max-width: 100%; }
+.confidence-check .confidence-table { overflow-x: auto; }
+.confidence-check table { border-collapse: collapse; width: 100%; text-align: start; }
+.confidence-check th, .confidence-check td { text-align: start; padding: .6rem; border-bottom: 1px solid var(--line, #aabcc7); }
+.confidence-check caption { text-align: start; font-weight: 700; padding-block: 1rem; }
+.confidence-check :focus-visible { outline: 3px solid var(--confidence-accent); outline-offset: 3px; }

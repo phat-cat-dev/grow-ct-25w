@@ -1,0 +1,1163 @@
+/* ==========================================================================
+   theme.css — extensible single-hue HSL colour system
+   ==========================================================================
+
+   HOW THIS FILE IS ORGANISED  (cascade layers)
+   --------------------------------------------------------------------------
+   Everything lives inside a @layer. The order is declared once, on the first
+   line below, and that order — NOT selector specificity — decides who wins:
+
+       reset  <  tokens  <  base  <  components  <  utilities
+       (weakest)                                   (strongest)
+
+   Consequences you can rely on:
+     • A component rule can never accidentally out-specify a token or a base
+       style, even if its selector is heavier — layer order beats specificity.
+     • A .u-* utility ALWAYS wins over a component, so one-off overrides are
+       predictable and don't need !important.
+     • Anything OUTSIDE a layer (e.g. your page's own un-layered CSS) beats
+       everything in here, so you can always override locally.
+
+   HOW TO EXTEND
+     • New colour scale → copy the "brand scale" block, rename --blue-* and
+       feed it a different hue var. (See the optional --accent2 block.)
+     • New semantic token → add it in LAYER: tokens (light) AND in the dark
+       block. If you forget the dark value it simply keeps the light one.
+     • New component → add it in @layer components so utilities still win.
+
+   HOW TO STRIP IT DOWN
+     • Each optional block is fenced with  ▼ DELETE … ▲ . Remove the whole
+       fenced block and nothing else needs touching.
+     • Don't want theming knobs? You can hard-code hues, but you lose the
+       one-line re-theme. Keeping Layer 0 costs nothing.
+
+   HSL syntax: modern space form  hsl(202 72% 14%)  — lets us slot vars in.
+   For legacy browsers switch to the comma form and stop using var fragments.
+   ========================================================================== */
+
+@layer reset, tokens, base, components, utilities;
+
+
+/* ==========================================================================
+   @layer tokens  —  the colour system itself (no component ever edits these)
+   ========================================================================== */
+@layer tokens {
+
+  /* ----- LAYER 0: INGREDIENTS — the only hand-picked values --------------- */
+  :root {
+    --brand-h: 202;      /* hue 0–360. Your cmet-navy = 202 */
+    --brand-s: 72%;      /* saturation of colourful brand blues */
+    --grey-s:  12%;      /* saturation of neutrals: a blue-grey, never 0% */
+  }
+
+  /* ----- LAYER 1: BRAND SCALE — saturated hue, lightness ladder ----------- */
+  :root {
+    --blue-50:  hsl(var(--brand-h) var(--brand-s) 97%);
+    --blue-100: hsl(var(--brand-h) var(--brand-s) 92%);
+    --blue-200: hsl(var(--brand-h) var(--brand-s) 84%);
+    --blue-300: hsl(var(--brand-h) var(--brand-s) 73%);
+    --blue-400: hsl(var(--brand-h) var(--brand-s) 60%);
+    --blue-500: hsl(var(--brand-h) var(--brand-s) 48%);
+    --blue-600: hsl(var(--brand-h) var(--brand-s) 40%);
+    --blue-700: hsl(var(--brand-h) var(--brand-s) 32%);
+    --blue-800: hsl(var(--brand-h) var(--brand-s) 24%);
+    --blue-900: hsl(var(--brand-h) var(--brand-s) 17%);
+    --blue-950: hsl(var(--brand-h) var(--brand-s) 12%);   /* ≈ your navy */
+  }
+
+  /* ----- LAYER 2: BLUE-GREY SCALE — same hue, saturation dialled out ------ */
+  :root {
+    --grey-50:  hsl(var(--brand-h) var(--grey-s) 97%);
+    --grey-100: hsl(var(--brand-h) var(--grey-s) 92%);
+    --grey-200: hsl(var(--brand-h) var(--grey-s) 84%);
+    --grey-300: hsl(var(--brand-h) var(--grey-s) 73%);
+    --grey-400: hsl(var(--brand-h) var(--grey-s) 60%);
+    --grey-500: hsl(var(--brand-h) var(--grey-s) 48%);
+    --grey-600: hsl(var(--brand-h) var(--grey-s) 40%);
+    --grey-700: hsl(var(--brand-h) var(--grey-s) 32%);
+    --grey-800: hsl(var(--brand-h) var(--grey-s) 24%);
+    --grey-900: hsl(var(--brand-h) var(--grey-s) 17%);
+    --grey-950: hsl(var(--brand-h) var(--grey-s) 12%);
+  }
+
+  /* ----- LAYER 2b: PURE GREY SCALE — true neutral, saturation 0% ----------
+     The hue-less equivalent of the blue-grey ramp, same lightness stops.
+     Use when you want a dead-neutral grey that must NOT pick up the brand
+     tint (code blocks, screenshots, third-party chrome). Spelled --gray-
+     (a vs e) so it never clashes with the blue-grey --grey- tokens.        */
+  :root {
+    --gray-50:  hsl(0 0% 97%);
+    --gray-100: hsl(0 0% 92%);
+    --gray-200: hsl(0 0% 84%);
+    --gray-300: hsl(0 0% 73%);
+    --gray-400: hsl(0 0% 60%);
+    --gray-500: hsl(0 0% 48%);
+    --gray-600: hsl(0 0% 40%);
+    --gray-700: hsl(0 0% 32%);
+    --gray-800: hsl(0 0% 24%);
+    --gray-900: hsl(0 0% 17%);
+    --gray-950: hsl(0 0% 12%);
+  }
+
+  /* ▼ DELETE if you only want one brand colour -----------------------------
+     SECOND ACCENT SCALE — proof the system extends. Pick any hue; it shares
+     the same saturation + lightness ladder, so it feels like a sibling.
+  ------------------------------------------------------------------------- */
+  :root {
+    --accent2-h: 28;     /* e.g. a warm amber to contrast the navy */
+    --accent2-s: 80%;
+    --amber-100: hsl(var(--accent2-h) var(--accent2-s) 90%);
+    --amber-300: hsl(var(--accent2-h) var(--accent2-s) 68%);
+    --amber-500: hsl(var(--accent2-h) var(--accent2-s) 52%);
+    --amber-700: hsl(var(--accent2-h) var(--accent2-s) 38%);
+  }
+  /* ▲ END second accent ---------------------------------------------------- */
+
+  /* ▼ DELETE if you only ever want the one hue -----------------------------
+     LAYER 2c: COLOUR HARMONY — spawn related hues FROM the one knob.
+     --------------------------------------------------------------------------
+     The brand hue stays the single source of truth. A preset writes three
+     ANGLE OFFSETS and the sibling hues fall out by calc(). hsl() wraps past
+     360, so no modulo maths is needed. Switch preset with
+
+         <html data-harmony="triadic">            (whole page)
+         <section data-harmony="analogous">        (just this section)
+
+     so different regions can run different harmonies off the same brand hue.
+     Drag --brand-h and every sibling rotates with it, locked to the geometry.
+  ------------------------------------------------------------------------- */
+  :root {
+    --harm-2: 180;   /* secondary  hue offset — default preset = complementary */
+    --harm-3: 120;   /* tertiary   hue offset */
+    --harm-4: 270;   /* quaternary hue offset (square / tetradic)             */
+
+    --hue-1: var(--brand-h);                        /* the brand itself        */
+    --hue-2: calc(var(--brand-h) + var(--harm-2));  /* spawned siblings        */
+    --hue-3: calc(var(--brand-h) + var(--harm-3));
+    --hue-4: calc(var(--brand-h) + var(--harm-4));
+
+    /* accent lightness rungs — ONE place; dark mode flips these (LAYER 6).
+       These match the brand ladder: 40/32/92 light, 60/73/17 dark.           */
+    --acc-l: 40%; --acc-hover-l: 32%; --acc-weak-l: 92%;
+
+    /* resolved sibling accents — reference directly, e.g.
+         .cta { background: var(--accent-2); }                                */
+    --accent-2:       hsl(var(--hue-2) var(--brand-s) var(--acc-l));
+    --accent-2-hover: hsl(var(--hue-2) var(--brand-s) var(--acc-hover-l));
+    --accent-2-weak:  hsl(var(--hue-2) var(--brand-s) var(--acc-weak-l));
+    --accent-3:       hsl(var(--hue-3) var(--brand-s) var(--acc-l));
+    --accent-3-hover: hsl(var(--hue-3) var(--brand-s) var(--acc-hover-l));
+    --accent-3-weak:  hsl(var(--hue-3) var(--brand-s) var(--acc-weak-l));
+    --accent-4:       hsl(var(--hue-4) var(--brand-s) var(--acc-l));
+    --accent-4-weak:  hsl(var(--hue-4) var(--brand-s) var(--acc-weak-l));
+  }
+
+  /* PRESETS — each is just three angles. Add your own; the rest derives. */
+  [data-harmony="monochrome"]    { --harm-2:   0; --harm-3:   0; --harm-4:   0; }
+  [data-harmony="complementary"] { --harm-2: 180; --harm-3: 180; --harm-4: 180; }
+  [data-harmony="analogous"]     { --harm-2:  30; --harm-3: -30; --harm-4:  60; }
+  [data-harmony="triadic"]       { --harm-2: 120; --harm-3: 240; --harm-4: 120; }
+  [data-harmony="split"]         { --harm-2: 150; --harm-3: 210; --harm-4: 180; }
+  [data-harmony="tetradic"]      { --harm-2:  60; --harm-3: 180; --harm-4: 240; }
+  [data-harmony="square"]        { --harm-2:  90; --harm-3: 180; --harm-4: 270; }
+  /* ▲ END colour harmony --------------------------------------------------- */
+
+  /* ----- LAYER 4a: DEPTH primitives — radius + hue-tinted shadows ---------
+     Shadows carry the brand hue at low alpha — never pure black. This is
+     what makes elevation read as one material lit from one source.         */
+  :root {
+    --radius-sm: 8px;
+    --radius:    12px;
+    --radius-lg: 16px;
+    --radius-pill: 999px;
+
+    --shadow-color: var(--brand-h) 40% 20%;   /* h s l, alpha added per use */
+    --shadow-1: 0 1px 2px  hsl(var(--shadow-color) / .10),
+                0 4px 10px -4px hsl(var(--shadow-color) / .16);
+    --shadow-2: 0 2px 4px  hsl(var(--shadow-color) / .12),
+                0 12px 26px -8px hsl(var(--shadow-color) / .26);
+    --shadow-3: 0 4px 8px  hsl(var(--shadow-color) / .14),
+                0 24px 48px -12px hsl(var(--shadow-color) / .34);
+  }
+
+  /* ----- LAYER 3: SEMANTIC SURFACES (light) — what components reference ----
+     Indirection lives here: components never touch the raw scale, so dark
+     mode re-points these ~15 tokens and the whole UI follows.
+     Elevation climbs by lightness; in LIGHT mode "up" = lighter.           */
+  :root {
+    --bg:            var(--grey-50);
+    --surface-1:     hsl(var(--brand-h) var(--grey-s) 99%);  /* cards */
+    --surface-2:     var(--grey-100);                        /* raised +1 */
+    --surface-sunk:  var(--grey-100);                        /* wells, base */
+
+    --border:        var(--grey-200);
+    --border-strong: var(--grey-300);
+
+    --text:          var(--grey-900);
+    --text-soft:     var(--grey-600);
+    --text-faint:    var(--grey-500);
+
+    --accent:        var(--blue-600);
+    --accent-hover:  var(--blue-700);
+    --accent-weak:   var(--blue-100);
+    --on-accent:     var(--grey-50);
+
+    color-scheme: light;
+  }
+
+  /* ----- LAYER 5: HEADINGS — saturation+lightness ramp down the hierarchy -
+     From saturated+dark (h1) to nearly-grey+light (h4): one voice getting
+     quieter, not four colours.                                             */
+  :root {
+    --h1-color: hsl(var(--brand-h) var(--brand-s) 40%);   /* S72 · full brand */
+    --h2-color: hsl(var(--brand-h) 45% 24%);              /* S45 · rich blue-grey */
+    --h3-color: hsl(var(--brand-h) 28% 36%);              /* S28 · muted mid */
+    --h4-color: hsl(var(--brand-h) var(--grey-s) 46%);    /* S12 · nearly grey */
+    --h5-color: hsl(var(--brand-h) var(--grey-s) 56%);    /* S12 · quieter */
+    --h6-color: hsl(var(--brand-h) var(--grey-s) 64%);    /* S12 · faint label */
+  }
+
+  /* ▼ DELETE with the scheme layer -----------------------------------------
+     SCHEME LAYER tokens — decomposed per-level saturation (--hs*) and the raw
+     lightness ramp (--lh*, theme-aware) that the .scheme layer composes into
+     heading colours, plus a global size multiplier (--hscale).
+  ------------------------------------------------------------------------- */
+  :root {
+    --hs1: var(--brand-s); --hs2: 45%; --hs3: 28%; --hs4: var(--grey-s); --hs5: var(--grey-s); --hs6: var(--grey-s);
+    --lh1: 40%; --lh2: 24%; --lh3: 36%; --lh4: 46%; --lh5: 56%; --lh6: 64%;
+    --hscale: 1;
+  }
+  /* ▲ END scheme tokens ---------------------------------------------------- */
+
+  /* ▼ DELETE if you don't need semantic colours ----------------------------
+     SEMANTIC COLOURS — one FORMULA drives them all. Each is
+         hsl(<meaning hue> · --sem-s      · --sem-l)       solid / text tone
+         hsl(<meaning hue> · --sem-weak-s · --sem-weak-l)  weak fill
+     The HUE carries the meaning (green = go, red = stop …); the saturation
+     and lightness come from the shared formula, so every semantic sits in one
+     family and flips cleanly for dark mode — only --sem-l / --sem-weak-l
+     change in the dark blocks and every derived tone recomputes.
+     To make a semantic ROTATE WITH the brand, set its hue to
+         calc(var(--brand-h) + <offset>).
+  ------------------------------------------------------------------------- */
+  :root {
+    /* the formula — tune every semantic from these four knobs */
+    --sem-s:      55%;   /* solid / text-tone saturation */
+    --sem-l:      38%;   /* solid / text-tone lightness  (light theme) */
+    --sem-weak-s: 55%;   /* weak-fill saturation */
+    --sem-weak-l: 92%;   /* weak-fill lightness  (light theme) */
+
+    /* meaning hues (neutral + info track the brand; the rest are fixed) */
+    --positive-h: 150;              /* green  */
+    --negative-h: 5;                /* red    */
+    --comment-h:  270;              /* violet */
+    --info-h:     var(--brand-h);   /* brand-family blue */
+    --neutral-h:  calc(var(--brand-h) + 198);   /* amber — derived from the brand hue (+198°), shifts with the Start colour */
+
+    /* derived tones — don't edit; change the formula above */
+    --positive:      hsl(var(--positive-h) var(--sem-s) var(--sem-l));
+    --positive-weak: hsl(var(--positive-h) var(--sem-weak-s) var(--sem-weak-l));
+    --negative:      hsl(var(--negative-h) var(--sem-s) var(--sem-l));
+    --negative-weak: hsl(var(--negative-h) var(--sem-weak-s) var(--sem-weak-l));
+    --comment:       hsl(var(--comment-h) var(--sem-s) var(--sem-l));
+    --comment-weak:  hsl(var(--comment-h) var(--sem-weak-s) var(--sem-weak-l));
+    --info:          hsl(var(--info-h) var(--sem-s) var(--sem-l));
+    --info-weak:     hsl(var(--info-h) var(--sem-weak-s) var(--sem-weak-l));
+    --neutral:       hsl(var(--neutral-h) var(--sem-s) var(--sem-l));
+    --neutral-weak:  hsl(var(--neutral-h) var(--sem-weak-s) var(--sem-weak-l));
+  }
+  /* ▲ END semantic colours ------------------------------------------------- */
+
+  /* ▼ DELETE with the button component -------------------------------------
+     --ab-btn-* BUTTON TOKENS — a lean core set that covers the whole button
+     component. Two runtime vars do the colour work: --_c (the variant
+     colour) and --_fg (text on a solid fill). A variant class sets only
+     those two; everything else (geometry, sizes, behaviour) is shared.
+     Add a variant in ONE line; retheme by editing the palette block.
+  ------------------------------------------------------------------------- */
+  :root {
+    /* geometry */
+    --ab-btn-py: .5rem;   --ab-btn-px: 1rem;
+    --ab-btn-font-size: .95rem;
+    --ab-btn-font-weight: 600;
+    --ab-btn-line-height: 1.4;
+    --ab-btn-radius: var(--radius-sm);
+    --ab-btn-border-width: 1px;
+
+    /* sizes */
+    --ab-btn-py-sm: .3rem; --ab-btn-px-sm: .6rem; --ab-btn-font-size-sm: .8rem;   --ab-btn-radius-sm: calc(var(--radius-sm) - 2px);
+    --ab-btn-py-lg: .7rem; --ab-btn-px-lg: 1.4rem; --ab-btn-font-size-lg: 1.05rem; --ab-btn-radius-lg: var(--radius);
+
+    /* behaviour */
+    --ab-btn-transition: color .15s ease, background-color .3s ease, border-color .15s ease, box-shadow .3s ease;
+    --ab-btn-focus-ring: 0 0 0 .2rem color-mix(in srgb, var(--_c), transparent 55%);
+    --ab-btn-active-shadow: inset 0 3px 5px hsl(var(--brand-h) 40% 10% / .18);
+    --ab-btn-disabled-opacity: .55;
+
+    /* palette — the only button colours (mapped onto the HSL tokens) */
+    --ab-btn-primary:   var(--accent);
+    --ab-btn-secondary: hsl(var(--brand-h) var(--grey-s) 42%);
+    --ab-btn-positive:  hsl(150 55% 36%);
+    --ab-btn-negative:  hsl(5 70% 48%);
+    --ab-btn-comment:   hsl(270 45% 52%);
+    --ab-btn-info:      hsl(200 75% 42%);
+    --ab-btn-on-fill:   #fff;              /* text on a solid variant */
+  }
+  /* ▲ END button tokens ---------------------------------------------------- */
+
+  /* ▼ DELETE with the card component ---------------------------------------
+     --ab-card-* CARD TOKENS — lean core set. A single --ab-card-accent var
+     (set by a variant class) drives the border, header tint and icon colour;
+     a plain card leaves it at --border (neutral). Mapped onto the HSL tokens.
+  ------------------------------------------------------------------------- */
+  :root {
+    --ab-card-spacer-y: 1rem;
+    --ab-card-spacer-x: 1rem;
+    --ab-card-title-gap: .5rem;
+    --ab-card-border-width: 1px;
+    --ab-card-radius: var(--radius);
+    --ab-card-inner-radius: calc(var(--ab-card-radius) - var(--ab-card-border-width));
+    --ab-card-bg: var(--surface-1);
+    --ab-card-color: var(--text);
+    --ab-card-shadow: var(--shadow-1);
+    --ab-card-overlay-padding: 1rem;
+    --ab-card-group-gap: .75rem;
+  }
+  /* ▲ END card tokens ------------------------------------------------------ */
+
+  /* ▼ DELETE with the callout component ------------------------------------
+     --ab-callout-* CALLOUT TOKENS — a left-bar note/alert. A single
+     --ab-callout-accent var (set by a variant) drives the bar, the tint, the
+     header and the icon colour. Mapped onto the HSL tokens.
+  ------------------------------------------------------------------------- */
+  :root {
+    --ab-callout-py: 1rem;
+    --ab-callout-px: 1.25rem;
+    --ab-callout-radius: var(--radius);
+    --ab-callout-border: 1px;
+    --ab-callout-bar: 4px;          /* left accent bar width */
+    --ab-callout-icon: 2.5rem;
+  }
+  /* ▲ END callout tokens --------------------------------------------------- */
+
+  /* ▼ DELETE with the accordion component ----------------------------------
+     --ab-accordion-* ACCORDION TOKENS. The trigger theming is driven by four
+     runtime vars set per heading level (--_bg/--_fg closed, --_abg/--_afg
+     open); one chevron mask rotates on open.
+  ------------------------------------------------------------------------- */
+  :root {
+    --ab-acc-py: .9rem;
+    --ab-acc-px: 1.1rem;
+    --ab-acc-radius: var(--radius);
+    --ab-acc-gap: 1rem;
+    --ab-acc-icon: 1.1rem;
+    --ab-acc-chevron: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%20-960%20960%20960'%3E%3Cpath%20d='M480-345%20240-585l56-56%20184%20184%20184-184%2056%2056-240%20240Z'/%3E%3C/svg%3E");
+  }
+  /* ▲ END accordion tokens ------------------------------------------------- */
+
+  /* ▼ DELETE with the icon utilities ---------------------------------------
+     --ab-icon token. Icons render in currentColor, so colour is just `color`
+     — any scale or semantic token applies, and CM's ~60 colour classes are
+     not needed at all.
+  ------------------------------------------------------------------------- */
+  :root { --ab-icon-size: 1.5rem; }
+  /* ▲ END icon tokens ------------------------------------------------------ */
+
+
+  /* ----- LAYER 6: DARK THEME — re-point SEMANTIC tokens only --------------
+     The scales (Layers 1–2) stay fixed; we just aim surfaces/text/accent at
+     different rungs. Elevation inverts: "up" = lighter, so page is darkest.
+     Two blocks cover all three states: OS-dark (guarded so an explicit light
+     choice still wins) and the explicit [data-theme="dark"] toggle.        */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:            var(--grey-950);
+      --surface-1:     var(--grey-900);
+      --surface-2:     var(--grey-800);
+      --surface-sunk:  hsl(var(--brand-h) var(--grey-s) 9%);
+      --border:        var(--grey-800);
+      --border-strong: var(--grey-700);
+      --text:          var(--grey-100);
+      --text-soft:     var(--grey-400);
+      --text-faint:    var(--grey-500);
+      --accent:        var(--blue-400);
+      --accent-hover:  var(--blue-300);
+      --accent-weak:   var(--blue-900);
+      --on-accent:     var(--grey-950);
+
+      --shadow-color: var(--brand-h) 60% 3%;
+      --shadow-1: 0 1px 2px hsl(var(--shadow-color) / .4),
+                  0 4px 10px -4px hsl(var(--shadow-color) / .5);
+      --shadow-2: 0 2px 4px hsl(var(--shadow-color) / .45),
+                  0 12px 26px -8px hsl(var(--shadow-color) / .6);
+      --shadow-3: 0 4px 8px hsl(var(--shadow-color) / .5),
+                  0 24px 48px -12px hsl(var(--shadow-color) / .7);
+
+      --h1-color: hsl(var(--brand-h) var(--brand-s) 68%);
+      --h2-color: hsl(var(--brand-h) 45% 74%);
+      --h3-color: hsl(var(--brand-h) 28% 70%);
+      --h4-color: hsl(var(--brand-h) var(--grey-s) 62%);
+      --h5-color: hsl(var(--brand-h) var(--grey-s) 54%);
+      --h6-color: hsl(var(--brand-h) var(--grey-s) 48%);
+      --lh1: 68%; --lh2: 74%; --lh3: 70%; --lh4: 62%; --lh5: 54%; --lh6: 48%;
+
+      /* semantic formula, dark-adjusted (every tone recomputes from these) */
+      --sem-l: 64%; --sem-weak-l: 18%;
+
+      /* harmony accents follow the same dark ladder as the brand accent */
+      --acc-l: 60%; --acc-hover-l: 73%; --acc-weak-l: 17%;
+
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:            var(--grey-950);
+    --surface-1:     var(--grey-900);
+    --surface-2:     var(--grey-800);
+    --surface-sunk:  hsl(var(--brand-h) var(--grey-s) 9%);
+    --border:        var(--grey-800);
+    --border-strong: var(--grey-700);
+    --text:          var(--grey-100);
+    --text-soft:     var(--grey-400);
+    --text-faint:    var(--grey-500);
+    --accent:        var(--blue-400);
+    --accent-hover:  var(--blue-300);
+    --accent-weak:   var(--blue-900);
+    --on-accent:     var(--grey-950);
+    --shadow-color: var(--brand-h) 60% 3%;
+    --shadow-1: 0 1px 2px hsl(var(--shadow-color) / .4),
+                0 4px 10px -4px hsl(var(--shadow-color) / .5);
+    --shadow-2: 0 2px 4px hsl(var(--shadow-color) / .45),
+                0 12px 26px -8px hsl(var(--shadow-color) / .6);
+    --shadow-3: 0 4px 8px hsl(var(--shadow-color) / .5),
+                0 24px 48px -12px hsl(var(--shadow-color) / .7);
+    --h1-color: hsl(var(--brand-h) var(--brand-s) 68%);
+    --h2-color: hsl(var(--brand-h) 45% 74%);
+    --h3-color: hsl(var(--brand-h) 28% 70%);
+    --h4-color: hsl(var(--brand-h) var(--grey-s) 62%);
+    --h5-color: hsl(var(--brand-h) var(--grey-s) 54%);
+    --h6-color: hsl(var(--brand-h) var(--grey-s) 48%);
+    --lh1: 68%; --lh2: 74%; --lh3: 70%; --lh4: 62%; --lh5: 54%; --lh6: 48%;
+    /* semantic formula, dark-adjusted (every tone recomputes from these) */
+    --sem-l: 64%; --sem-weak-l: 18%;
+    /* harmony accents follow the same dark ladder as the brand accent */
+    --acc-l: 60%; --acc-hover-l: 73%; --acc-weak-l: 17%;
+    color-scheme: dark;
+  }
+}
+
+
+/* ==========================================================================
+   @layer base  —  element defaults (no classes). Safe to trim freely.
+   ========================================================================== */
+@layer base {
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+  h1 { color: var(--h1-color); }
+  h2 { color: var(--h2-color); }
+  h3 { color: var(--h3-color); }
+  h4 { color: var(--h4-color); }
+  h5 { color: var(--h5-color); }
+  h6 { color: var(--h6-color); }
+
+  a { color: var(--accent); }
+  a:hover { color: var(--accent-hover); }
+
+  ::selection { background: var(--accent-weak); color: var(--text); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+}
+
+
+/* ==========================================================================
+   @layer components  —  reusable pieces. Each is a self-contained block.
+   ========================================================================== */
+@layer components {
+
+  /* section eyebrow heading */
+  .sec {
+    font-size: .78rem; font-weight: 700; letter-spacing: .09em;
+    text-transform: uppercase; color: var(--text-soft);
+    margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+
+  /* --- panel (simple surface container, used by the headings demo) ------- */
+  .panel {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    padding: clamp(18px, 3vw, 30px);
+  }
+
+  /* ======================================================================
+     CARD (--ab-card) — tokenised templates
+     Namespaced .ab.card (needs both classes): class="ab card".
+     One --ab-card-accent var drives border + header tint + icon, so every
+     colour variant is a one-liner. Slots: card-body / card-title /
+     card-subtitle / card-text / card-header / card-footer / card-link /
+     card-img(-top|-bottom|-overlay).
+     ====================================================================== */
+
+  /* --- base card ------------------------------------------------------- */
+  .ab.card {
+    --ab-card-accent: var(--border);          /* neutral until a variant sets it */
+    position: relative; display: flex; flex-direction: column; min-width: 0;
+    word-wrap: break-word;
+    color: var(--ab-card-color);
+    background: var(--ab-card-bg);
+    background-clip: border-box;
+    border: var(--ab-card-border-width) solid var(--ab-card-accent);
+    border-radius: var(--ab-card-radius);
+    box-shadow: var(--ab-card-shadow);
+  }
+
+  /* --- base: body / title / text --------------------------------------- */
+  .ab.card .card-body     { flex: 1 1 auto; padding: var(--ab-card-spacer-y) var(--ab-card-spacer-x); }
+  .ab.card .card-title    { margin: 0 0 var(--ab-card-title-gap); color: var(--text); font-weight: 600; }
+  .ab.card .card-subtitle { margin: calc(-.5 * var(--ab-card-title-gap)) 0 0; color: var(--text-soft); }
+  .ab.card .card-text:last-child { margin-bottom: 0; }
+
+  /* --- base: header / footer (tinted from the accent) ------------------ */
+  .ab.card .card-header,
+  .ab.card .card-footer {
+    padding: var(--ab-card-spacer-y) var(--ab-card-spacer-x);
+    color: var(--text-soft);
+    background: color-mix(in srgb, var(--ab-card-accent) 14%, var(--surface-1));
+  }
+  .ab.card .card-header {
+    margin-bottom: 0; border-bottom: var(--ab-card-border-width) solid var(--ab-card-accent);
+    border-top-left-radius: var(--ab-card-inner-radius); border-top-right-radius: var(--ab-card-inner-radius);
+  }
+  .ab.card .card-footer {
+    border-top: var(--ab-card-border-width) solid var(--ab-card-accent);
+    border-bottom-left-radius: var(--ab-card-inner-radius); border-bottom-right-radius: var(--ab-card-inner-radius);
+  }
+  .ab.card .card-header :where(h1,h2,h3,h4,h5,h6) { margin-bottom: 0; }
+
+  /* --- base: links ----------------------------------------------------- */
+  .ab.card .card-link {
+    color: var(--accent); text-decoration: none; border-radius: var(--radius-sm);
+    padding: .125rem .25rem; margin: -.125rem -.25rem; transition: all .15s ease;
+  }
+  .ab.card .card-link:hover,
+  .ab.card .card-link:focus { text-decoration: underline; background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .ab.card .card-link:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .ab.card .card-link + .card-link { margin-left: var(--ab-card-spacer-x); }
+
+  /* --- base: images ---------------------------------------------------- */
+  .ab.card .card-img, .ab.card .card-img-top, .ab.card .card-img-bottom { width: 100%; display: block; }
+  .ab.card .card-img, .ab.card .card-img-top    { border-top-left-radius: var(--ab-card-inner-radius); border-top-right-radius: var(--ab-card-inner-radius); }
+  .ab.card .card-img, .ab.card .card-img-bottom { border-bottom-left-radius: var(--ab-card-inner-radius); border-bottom-right-radius: var(--ab-card-inner-radius); }
+  .ab.card .card-img-overlay { position: absolute; inset: 0; padding: var(--ab-card-overlay-padding); border-radius: var(--ab-card-inner-radius); }
+
+  /* --- modifier: colour variants (set --ab-card-accent only) ----------- */
+  .ab.card.primary   { --ab-card-accent: var(--accent); }
+  .ab.card.secondary { --ab-card-accent: hsl(var(--brand-h) var(--grey-s) 45%); }
+  .ab.card.positive  { --ab-card-accent: var(--positive); }
+  .ab.card.negative  { --ab-card-accent: var(--negative); }
+  .ab.card.comment   { --ab-card-accent: var(--comment); }
+  .ab.card.info      { --ab-card-accent: var(--info); }
+  /* functional aliases — same accents, named by intent */
+  .ab.card.do, .ab.card.advice, .ab.card.feedback-pos { --ab-card-accent: var(--positive); }
+  .ab.card.dont, .ab.card.feedback-neg                { --ab-card-accent: var(--negative); }
+  .ab.card.action   { --ab-card-accent: var(--info); }
+  .ab.card.starting { --ab-card-accent: var(--comment); }
+
+  /* --- modifier: themed accent (NON-semantic — family × shade) ----------
+     Colour the accent from a scale instead of a named variant:
+        .fam-brand | .fam-grey | .fam-gray   +   .sh-50 … .sh-950
+     e.g. class="ab card fam-grey sh-600".
+  ------------------------------------------------------------------------- */
+  .ab.card.fam-brand { --_cs: var(--brand-s); }
+  .ab.card.fam-grey  { --_cs: var(--grey-s); }
+  .ab.card.fam-gray  { --_cs: 0%; }
+  .ab.card.sh-50 {--_cl:97%} .ab.card.sh-100{--_cl:92%} .ab.card.sh-200{--_cl:84%}
+  .ab.card.sh-300{--_cl:73%} .ab.card.sh-400{--_cl:60%} .ab.card.sh-500{--_cl:48%}
+  .ab.card.sh-600{--_cl:40%} .ab.card.sh-700{--_cl:32%} .ab.card.sh-800{--_cl:24%}
+  .ab.card.sh-900{--_cl:17%} .ab.card.sh-950{--_cl:12%}
+  .ab.card:is(.sh-50,.sh-100,.sh-200,.sh-300,.sh-400,.sh-500,.sh-600,.sh-700,.sh-800,.sh-900,.sh-950) {
+    --ab-card-accent: hsl(var(--brand-h) var(--_cs, var(--brand-s)) var(--_cl));
+  }
+
+  /* --- modifier: fill styles ------------------------------------------- */
+  /* invert = solid accent fill with contrast text (use a mid/dark accent) */
+  .ab.card.invert { background: var(--ab-card-accent); color: #fff; border-color: var(--ab-card-accent); }
+  .ab.card.invert .card-title { color: #fff; }
+  .ab.card.invert .card-subtitle,
+  .ab.card.invert .card-text { color: color-mix(in srgb, #fff 82%, transparent); }
+  .ab.card.invert .card-link { color: #fff; text-decoration: underline; }
+  .ab.card.invert .card-header,
+  .ab.card.invert .card-footer {
+    color: #fff;
+    background: color-mix(in srgb, #000 14%, var(--ab-card-accent));
+    border-color: color-mix(in srgb, #000 22%, var(--ab-card-accent));
+  }
+  /* soft = faint full-card tint of the accent */
+  .ab.card.soft { background: color-mix(in srgb, var(--ab-card-accent) 8%, var(--surface-1)); }
+
+  /* --- modifier: elevation & shape ------------------------------------- */
+  .ab.card.flat   { box-shadow: none; }
+  .ab.card.raised { box-shadow: var(--shadow-3); }
+  .ab.card.square { border-radius: 0; }
+
+  /* ======================================================================
+     CALLOUT (--ab-callout) — left-bar note / alert
+     One --ab-callout-accent var drives the bar, tint, header and icon, so a
+     variant is one line. Slots: callout-header(.h2–.h6) / callout-content /
+     callout-icon (+ .with-icon). Named brand colours dropped; palette-mapped.
+     ====================================================================== */
+  .ab.callout {
+    --ab-callout-accent: var(--accent);
+    display: block;
+    padding: var(--ab-callout-py) var(--ab-callout-px);
+    color: var(--text);
+    background: color-mix(in srgb, var(--ab-callout-accent) 6%, var(--surface-1));
+    border: var(--ab-callout-border) solid var(--border);
+    border-left: var(--ab-callout-bar) solid var(--ab-callout-accent);
+    border-radius: var(--ab-callout-radius);
+    box-shadow: var(--shadow-1);
+  }
+  .ab.callout.with-icon { display: flex; align-items: center; gap: var(--ab-callout-px); }
+  .ab.callout .callout-icon {
+    flex: none; width: var(--ab-callout-icon); height: var(--ab-callout-icon);
+    font-size: var(--ab-callout-icon); line-height: 1; color: var(--ab-callout-accent);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ab.callout .callout-content { flex: 1; min-width: 0; }
+  .ab.callout .callout-header { margin: 0 0 .5rem; font-weight: 600; color: var(--ab-callout-accent); }
+  .ab.callout .callout-header.h2 { font-size: 1.5rem; }
+  .ab.callout .callout-header.h3 { font-size: 1.25rem; }
+  .ab.callout .callout-header.h4 { font-size: 1.125rem; }
+  .ab.callout .callout-header.h5 { font-size: 1rem; }
+  .ab.callout .callout-header.h6 { font-size: .875rem; }
+
+  /* semantic variants (set the accent only) */
+  .ab.callout.primary   { --ab-callout-accent: var(--accent); }
+  .ab.callout.secondary { --ab-callout-accent: hsl(var(--brand-h) var(--grey-s) 42%); }
+  .ab.callout.positive  { --ab-callout-accent: var(--positive); }
+  .ab.callout.negative  { --ab-callout-accent: var(--negative); }
+  .ab.callout.comment   { --ab-callout-accent: var(--comment); }
+  .ab.callout.info      { --ab-callout-accent: var(--info); }
+  /* functional aliases — same accents, named by intent */
+  .ab.callout.advice, .ab.callout.do, .ab.callout.feedback-pos { --ab-callout-accent: var(--positive); }
+  .ab.callout.warning, .ab.callout.dont, .ab.callout.feedback-neg { --ab-callout-accent: var(--negative); }
+  .ab.callout.action   { --ab-callout-accent: var(--info); }
+  .ab.callout.starting { --ab-callout-accent: var(--comment); }
+
+  /* themed accent (NON-semantic — family × shade) */
+  .ab.callout.fam-brand { --_cs: var(--brand-s); }
+  .ab.callout.fam-grey  { --_cs: var(--grey-s); }
+  .ab.callout.fam-gray  { --_cs: 0%; }
+  .ab.callout.sh-50 {--_cl:97%} .ab.callout.sh-100{--_cl:92%} .ab.callout.sh-200{--_cl:84%}
+  .ab.callout.sh-300{--_cl:73%} .ab.callout.sh-400{--_cl:60%} .ab.callout.sh-500{--_cl:48%}
+  .ab.callout.sh-600{--_cl:40%} .ab.callout.sh-700{--_cl:32%} .ab.callout.sh-800{--_cl:24%}
+  .ab.callout.sh-900{--_cl:17%} .ab.callout.sh-950{--_cl:12%}
+  .ab.callout:is(.sh-50,.sh-100,.sh-200,.sh-300,.sh-400,.sh-500,.sh-600,.sh-700,.sh-800,.sh-900,.sh-950) {
+    --ab-callout-accent: hsl(var(--brand-h) var(--_cs, var(--brand-s)) var(--_cl));
+  }
+
+  /* fill styles */
+  .ab.callout.soft   { background: color-mix(in srgb, var(--ab-callout-accent) 14%, var(--surface-1)); }
+  .ab.callout.invert { background: var(--ab-callout-accent); color: #fff; border-color: var(--ab-callout-accent); }
+  .ab.callout.invert .callout-header, .ab.callout.invert .callout-icon { color: #fff; }
+
+  /* ======================================================================
+     ACCORDION (--ab-accordion) — heading-themed collapsibles
+     Bootstrap-compatible markup (.accordion-item / .accordion-header hN /
+     .accordion-button[.collapsed] / .accordion-collapse / .accordion-body).
+     The trigger's four theme vars (--_bg/--_fg closed, --_abg/--_afg open)
+     are set per HEADING LEVEL, so an <h2>…<h5> header auto-themes; h6 /
+     .intext render as a minimal inline disclosure. Needs JS only to toggle
+     the .collapsed class — the open/closed show-hide is CSS (:has).
+     ====================================================================== */
+  .ab.accordion { display: flex; flex-direction: column; gap: var(--ab-acc-gap); }
+  .ab.accordion .accordion-item { border: 1px solid var(--border); border-radius: var(--ab-acc-radius); overflow: hidden; background: var(--surface-1); }
+  .ab.accordion .accordion-header { margin: 0; }
+  .ab.accordion .accordion-button {
+    --_bg: var(--surface-1); --_fg: var(--text); --_abg: var(--surface-2); --_afg: var(--accent);
+    display: flex; align-items: center; gap: .6em; width: 100%;
+    padding: var(--ab-acc-py) var(--ab-acc-px);
+    font: inherit; font-weight: 600; font-size: 1.17rem;  /* all levels render at the h3 size; theme still varies by heading level */
+    text-align: left; cursor: pointer; border: 0;
+    background: var(--_bg); color: var(--_fg);
+    transition: background .15s ease, color .15s ease;
+  }
+  .ab.accordion .accordion-button::after {
+    content: ""; flex: none; margin-left: auto; width: var(--ab-acc-icon); height: var(--ab-acc-icon);
+    background: currentColor; -webkit-mask: var(--ab-acc-chevron) center/contain no-repeat; mask: var(--ab-acc-chevron) center/contain no-repeat;
+    transition: transform .2s ease;
+  }
+  .ab.accordion .accordion-button:hover,
+  .ab.accordion .accordion-button:not(.collapsed) { background: var(--_abg); color: var(--_afg); }
+  .ab.accordion .accordion-button:not(.collapsed)::after { transform: rotate(180deg); }
+  .ab.accordion .accordion-button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .ab.accordion .accordion-body { padding: var(--ab-acc-py) var(--ab-acc-px); color: var(--text); border-top: 1px solid var(--border); }
+  /* show/hide from the .collapsed class — no JS needed beyond the toggle */
+  .ab.accordion .accordion-header:has(.accordion-button.collapsed) + .accordion-collapse { display: none; }
+
+  /* heading-level themes (closed → open) */
+  .ab.accordion h2 .accordion-button { --_bg: var(--blue-100); --_fg: var(--blue-900); --_abg: var(--blue-700); --_afg: #fff; }
+  .ab.accordion h3 .accordion-button { --_bg: var(--grey-100); --_fg: var(--grey-900); --_abg: var(--grey-600); --_afg: #fff; }
+  .ab.accordion h4 .accordion-button { --_bg: var(--grey-600); --_fg: #fff; --_abg: var(--grey-100); --_afg: var(--grey-900); }
+  .ab.accordion h5 .accordion-button { --_bg: var(--blue-700); --_fg: #fff; --_abg: var(--blue-100); --_afg: var(--blue-900); }
+
+  /* h6 + .intext — minimal inline disclosure (chevron before the label) */
+  .ab.accordion h6 .accordion-button,
+  .ab.accordion.intext .accordion-button {
+    --_bg: transparent; --_fg: var(--text); --_abg: transparent; --_afg: var(--accent);
+    padding: 0; gap: .4em; font-size: inherit;
+  }
+  .ab.accordion h6 .accordion-button::after,
+  .ab.accordion.intext .accordion-button::after { display: none; }
+  .ab.accordion h6 .accordion-button::before,
+  .ab.accordion.intext .accordion-button::before {
+    content: ""; order: -1; flex: none; width: .8em; height: .8em; background: currentColor;
+    -webkit-mask: var(--ab-acc-chevron) center/contain no-repeat; mask: var(--ab-acc-chevron) center/contain no-repeat;
+    transition: transform .2s ease;
+  }
+  .ab.accordion h6 .accordion-button:not(.collapsed)::before,
+  .ab.accordion.intext .accordion-button:not(.collapsed)::before { transform: rotate(180deg); }
+  .ab.accordion.intext .accordion-item,
+  .ab.accordion .accordion-item:has(h6) { border: none; background: transparent; border-radius: 0; overflow: visible; }
+  .ab.accordion.intext .accordion-body,
+  .ab.accordion .accordion-item:has(h6) .accordion-body { padding: .3rem 0 0 1.2em; border-top: none; color: var(--text-soft); }
+
+  /* flush — strip the item chrome */
+  .ab.accordion.flush { gap: 0; }
+  .ab.accordion.flush .accordion-item { border-left: 0; border-right: 0; border-radius: 0; }
+  .ab.accordion.flush .accordion-item + .accordion-item { border-top: 0; }
+
+  /* accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .ab.accordion .accordion-button, .ab.accordion .accordion-button::after, .ab.accordion .accordion-button::before { transition: none; }
+  }
+  @media (max-width: 768px) { .ab.accordion .accordion-button { min-height: 44px; } }
+
+  /* ======================================================================
+     ICON (--ab-icon) — currentColor glyphs, sized + transformable
+     Two render modes: an inline <svg> (fill follows currentColor) or a CSS
+     mask from a data-URI (set --icon). Colour is just `color`, so a semantic
+     or scale token applies with NO icon-specific colour classes. Your named
+     glyph library lives in your own SVG sprite; this is the sizing/colour
+     /transform system around it.
+     ====================================================================== */
+  .ab-icon { display: inline-block; flex: none; vertical-align: middle; width: var(--ab-icon-size); height: var(--ab-icon-size); }
+  .ab-icon > svg, svg.ab-icon { display: block; width: 100%; height: 100%; fill: currentColor; }
+  .ab-icon.em { --ab-icon-size: 1.15em; }                     /* follow the text size */
+  /* mask mode — set --icon to a data-URI SVG; it takes currentColor */
+  .ab-icon.mask { background: currentColor; -webkit-mask: var(--icon) center / contain no-repeat; mask: var(--icon) center / contain no-repeat; }
+  /* size scale */
+  .ab-icon.sz-1 { --ab-icon-size: 1rem; }
+  .ab-icon.sz-2 { --ab-icon-size: 1.5rem; }
+  .ab-icon.sz-3 { --ab-icon-size: 2rem; }
+  .ab-icon.sz-4 { --ab-icon-size: 3rem; }
+  .ab-icon.sz-5 { --ab-icon-size: 4rem; }
+  .ab-icon.sz-6 { --ab-icon-size: 6rem; }
+  /* transforms */
+  .ab-icon.rot-90  { transform: rotate(90deg); }
+  .ab-icon.rot-180 { transform: rotate(180deg); }
+  .ab-icon.rot-270 { transform: rotate(270deg); }
+  .ab-icon.flip-h  { transform: scaleX(-1); }
+  .ab-icon.flip-v  { transform: scaleY(-1); }
+
+  /* --- modifier: heading-scaled titles --------------------------------- */
+  .ab.card h1.card-title { font-size: 2rem;     margin-bottom: 1rem; }
+  .ab.card h2.card-title { font-size: 1.75rem;  margin-bottom: .875rem; }
+  .ab.card h3.card-title { font-size: 1.5rem;   margin-bottom: .75rem; }
+  .ab.card h4.card-title { font-size: 1.25rem;  margin-bottom: .625rem; }
+  .ab.card h5.card-title { font-size: 1.125rem; margin-bottom: .5rem; }
+  .ab.card h6.card-title { font-size: 1rem;     margin-bottom: .5rem; }
+
+  /* --- modifier: with-icon (icon inherits the accent) ------------------ */
+  .ab.card.with-icon .card-title { display: flex; align-items: center; gap: .75rem; }
+  .ab.card.with-icon .card-icon  { font-size: 1.5rem; flex-shrink: 0; color: var(--ab-card-accent); }
+
+  /* --- modifier: elevated (raise one surface rung; used by .depth) ----- */
+  .ab.card.elevated { background: var(--surface-2); }
+
+  /* --- modifier: hover-animate ----------------------------------------- */
+  .ab.card.hover-animate { transition: transform .2s ease, box-shadow .2s ease; cursor: pointer; }
+  .ab.card.hover-animate:hover,
+  .ab.card.hover-animate:focus-within { transform: scale(1.02); box-shadow: var(--shadow-3); }
+  .ab.card.hover-animate:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* --- modifier: card-group -------------------------------------------- */
+  .ab.card-group { display: flex; flex-direction: column; gap: var(--ab-card-group-gap); }
+  @media (min-width: 576px) {
+    .ab.card-group { flex-direction: row; gap: 0; }
+    .ab.card-group > .ab.card { flex: 1 0 0%; }
+    .ab.card-group > .ab.card:not(:last-child)  { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .ab.card-group > .ab.card:not(:first-child) { border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 0; }
+  }
+
+  /* --- modifier: accessibility ----------------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    .ab.card.hover-animate { transition: none; }
+    .ab.card.hover-animate:hover, .ab.card.hover-animate:focus-within { transform: none; box-shadow: var(--ab-card-shadow); }
+  }
+  @media (prefers-contrast: high) { .ab.card { --ab-card-border-width: 2px; } }
+  @media (forced-colors: active) {
+    .ab.card { background: Canvas; color: CanvasText; border-color: CanvasText; box-shadow: none; }
+    .ab.card .card-header, .ab.card .card-footer { background: ButtonFace; color: ButtonText; }
+    .ab.card .card-link { color: LinkText; background: transparent; }
+  }
+  .ab.card .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  /* --- heading hierarchy panel -------------------------------------------
+     <div class="panel headings"><div><h1>…</h1><small>…</small></div> … </div>
+  ------------------------------------------------------------------------- */
+  .headings > div { padding: 12px 0; border-bottom: 1px dashed var(--border); }
+  .headings > div:last-child { border-bottom: none; }
+  .headings h1, .headings h2, .headings h3,
+  .headings h4, .headings h5, .headings h6 {
+    margin: 0 0 2px; line-height: 1.2; text-wrap: balance;
+  }
+  .headings h1 { font-size: 2rem;    letter-spacing: -.02em; }
+  .headings h2 { font-size: 1.5rem;  letter-spacing: -.01em; }
+  .headings h3 { font-size: 1.18rem; }
+  .headings h4 { font-size: 1rem; }
+  .headings h5 { font-size: .875rem; }
+  .headings h6 {                                  /* the faint label at the floor */
+    font-size: .75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+  }
+  .headings small {
+    color: var(--text-soft); font-size: .72rem;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  /* --- depth / elevation — Bootstrap CARDs at three elevation levels -------
+     "Depth" is just: card + a shadow utility + a surface rung. Markup:
+       <div class="depth">                            recessed base surface
+         <div class="ab card shadow">                 elevation +1
+           <div class="card-body">
+             <span class="eyebrow">Card · +1</span>
+             <p class="card-text">…</p>
+             <div class="ab card elevated shadow-lg"> elevation +2 (tinted up a rung)
+               <div class="card-body">…</div>
+             </div>
+           </div>
+         </div>
+       </div>
+     Shadow depth comes from .shadow / .shadow-lg (utilities layer); the
+     surface tint comes from .elevated. Lightness + shadow together = height.
+  ------------------------------------------------------------------------- */
+  .depth {
+    background: var(--surface-sunk);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+  .depth > .ab.card { margin: 0; }
+  .depth .ab.card .ab.card { margin-top: 1rem; }   /* space a nested card from its text */
+
+  .eyebrow {
+    display: block; margin-bottom: .35rem;
+    font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+
+  /* ======================================================================
+     BUTTON (--ab-btn) — tokenised templates
+     Namespaced .ab.btn (needs both classes): class="ab btn primary".
+     Every rule reads two runtime vars: --_c (variant colour) and --_fg
+     (text on a solid fill). A modifier only re-points those, so adding a
+     variant or a mode is a one-liner.
+       solid:   <button class="ab btn primary">
+       outline: <button class="ab btn primary outline">
+       link:    <button class="ab btn link">
+       sizes:   add .btn-sm / .btn-lg
+     ====================================================================== */
+
+  /* --- base button ----------------------------------------------------- */
+  .ab.btn {
+    --_c:  var(--ab-btn-primary);   /* variant colour (a variant class overrides) */
+    --_fg: var(--on-accent);        /* text on the solid fill */
+    display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+    font-family: inherit; font-size: var(--ab-btn-font-size);
+    font-weight: var(--ab-btn-font-weight); line-height: var(--ab-btn-line-height);
+    text-align: center; text-decoration: none; vertical-align: middle;
+    cursor: pointer; user-select: none; max-width: 100%;
+    padding: var(--ab-btn-py) var(--ab-btn-px);
+    border: var(--ab-btn-border-width) solid var(--_c);
+    border-radius: var(--ab-btn-radius);
+    background: var(--_c); color: var(--_fg);
+    transition: var(--ab-btn-transition);
+    white-space: normal; overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;
+  }
+  /* base is SOLID and flips to outline on hover / focus */
+  .ab.btn:hover,
+  .ab.btn:focus-visible { background: transparent; color: var(--_c); }
+  .ab.btn:focus-visible { outline: none; position: relative; z-index: 1; box-shadow: var(--ab-btn-focus-ring); }
+
+  /* --- base: states ---------------------------------------------------- */
+  .ab.btn:active, .ab.btn.active { box-shadow: var(--ab-btn-active-shadow); }
+  .ab.btn:disabled, .ab.btn.disabled, fieldset:disabled .ab.btn {
+    pointer-events: none; opacity: var(--ab-btn-disabled-opacity); box-shadow: none;
+  }
+
+  /* --- modifier: colour variants (set the two vars only) --------------- */
+  .ab.btn.primary   { --_c: var(--ab-btn-primary);   --_fg: var(--on-accent); }
+  .ab.btn.secondary { --_c: var(--ab-btn-secondary); --_fg: var(--ab-btn-on-fill); }
+  .ab.btn.positive  { --_c: var(--ab-btn-positive);  --_fg: var(--ab-btn-on-fill); }
+  .ab.btn.negative  { --_c: var(--ab-btn-negative);  --_fg: var(--ab-btn-on-fill); }
+  .ab.btn.comment   { --_c: var(--ab-btn-comment);   --_fg: var(--ab-btn-on-fill); }
+  .ab.btn.info      { --_c: var(--ab-btn-info);      --_fg: var(--ab-btn-on-fill); }
+
+  /* --- modifier: themed shades (NON-semantic — family × shade) ----------
+     Colour a button straight from the palette instead of a named variant:
+        family = saturation   .fam-brand | .fam-grey | .fam-gray
+        shade  = lightness     .sh-50 … .sh-950  (matches the scales)
+     e.g. class="ab btn fam-grey sh-700". The base's inverse hover still
+     applies, so these are drop-in themed sets. Light shades (≤400) get dark
+     ink; the rest get white.
+  ------------------------------------------------------------------------- */
+  .ab.btn.fam-brand { --_bs: var(--brand-s); }   /* saturated brand   */
+  .ab.btn.fam-grey  { --_bs: var(--grey-s); }    /* blue-grey         */
+  .ab.btn.fam-gray  { --_bs: 0%; }               /* pure neutral      */
+
+  .ab.btn.sh-50  { --_bl: 97%; }
+  .ab.btn.sh-100 { --_bl: 92%; }
+  .ab.btn.sh-200 { --_bl: 84%; }
+  .ab.btn.sh-300 { --_bl: 73%; }
+  .ab.btn.sh-400 { --_bl: 60%; }
+  .ab.btn.sh-500 { --_bl: 48%; }
+  .ab.btn.sh-600 { --_bl: 40%; }
+  .ab.btn.sh-700 { --_bl: 32%; }
+  .ab.btn.sh-800 { --_bl: 24%; }
+  .ab.btn.sh-900 { --_bl: 17%; }
+  .ab.btn.sh-950 { --_bl: 12%; }
+
+  /* compose the colour from family + shade, and pick readable ink */
+  .ab.btn:is(.sh-50,.sh-100,.sh-200,.sh-300,.sh-400,.sh-500,.sh-600,.sh-700,.sh-800,.sh-900,.sh-950) {
+    --_c: hsl(var(--brand-h) var(--_bs, var(--brand-s)) var(--_bl));
+    --_fg: #fff;
+  }
+  .ab.btn:is(.sh-50,.sh-100,.sh-200,.sh-300,.sh-400) { --_fg: hsl(var(--brand-h) 35% 16%); }
+
+  /* --- modifier: hover modes (pick ONE — mutually exclusive, radio-like) -
+     Default (no class) = inverse flip: solid → outline on hover.
+        .shaded-hover   stays solid, darkens a touch on hover (no flip)
+        .ghost          transparent + coloured text, faint tint on hover
+        .outline        starts outlined, fills solid on hover (below)
+  ------------------------------------------------------------------------- */
+  .ab.btn.shaded-hover:hover,
+  .ab.btn.shaded-hover:focus-visible {
+    background: color-mix(in srgb, var(--_c), #000 14%);
+    border-color: color-mix(in srgb, var(--_c), #000 14%);
+    color: var(--_fg);
+  }
+  .ab.btn.ghost { background: transparent; color: var(--_c); border-color: transparent; }
+  .ab.btn.ghost:hover,
+  .ab.btn.ghost:focus-visible { background: color-mix(in srgb, var(--_c), transparent 86%); color: var(--_c); }
+
+  /* --- modifier: outline (starts outlined, FILLS on hover / focus) ----- */
+  .ab.btn.outline { background: transparent; color: var(--_c); }
+  .ab.btn.outline:hover,
+  .ab.btn.outline:focus-visible { background: var(--_c); color: var(--_fg); }
+
+  /* --- modifier: link -------------------------------------------------- */
+  .ab.btn.link {
+    background: transparent; border-color: transparent; color: var(--accent);
+    font-weight: 400; text-decoration: underline; text-underline-offset: 2px;
+  }
+  .ab.btn.link:hover, .ab.btn.link:focus-visible { background: transparent; color: var(--accent-hover); }
+
+  /* --- modifier: sizes ------------------------------------------------- */
+  .ab.btn.btn-sm { padding: var(--ab-btn-py-sm) var(--ab-btn-px-sm); font-size: var(--ab-btn-font-size-sm); border-radius: var(--ab-btn-radius-sm); }
+  .ab.btn.btn-lg { padding: var(--ab-btn-py-lg) var(--ab-btn-px-lg); font-size: var(--ab-btn-font-size-lg); border-radius: var(--ab-btn-radius-lg); }
+
+  /* --- modifier: soft (tonal — faint tint fill, coloured text) --------- */
+  .ab.btn.soft {
+    background: color-mix(in srgb, var(--_c), transparent 86%);
+    color: var(--_c); border-color: transparent;
+  }
+  .ab.btn.soft:hover, .ab.btn.soft:focus-visible {
+    background: color-mix(in srgb, var(--_c), transparent 76%); color: var(--_c);
+  }
+
+  /* --- modifier: shape ------------------------------------------------- */
+  .ab.btn.pill   { border-radius: 999px; }
+  .ab.btn.square { border-radius: 0; }
+
+  /* --- modifier: layout & icon shapes ---------------------------------
+     .icon          = equal padding + 1:1 footprint, glyph centred by the base
+     .icon.square   = perfect square (sharp corners via .square)
+     .icon.circle   = perfect circle
+     All compose with fill / flip / shaded / outline / ghost / family / shade.
+  ------------------------------------------------------------------------- */
+  .ab.btn.block  { display: flex; width: 100%; }
+  .ab.btn.icon   { padding: var(--ab-btn-py); aspect-ratio: 1; line-height: 1; }
+  .ab.btn.circle { border-radius: 50%; }
+
+  /* --- modifier: lift (raise + shadow on hover) ------------------------ */
+  .ab.btn.lift { transition: var(--ab-btn-transition), transform .12s ease; }
+  .ab.btn.lift:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+  @media (prefers-reduced-motion: reduce) { .ab.btn.lift:hover { transform: none; } }
+
+  /* --- modifier: loading (busy spinner, blocks interaction) ------------ */
+  .ab.btn.loading { color: transparent !important; pointer-events: none; position: relative; }
+  .ab.btn.loading::after {
+    content: ""; position: absolute; top: 50%; left: 50%;
+    width: 1em; height: 1em; margin: -.5em 0 0 -.5em;
+    border: 2px solid var(--_fg); border-right-color: transparent; border-radius: 50%;
+    animation: ab-btn-spin .6s linear infinite;
+  }
+  @keyframes ab-btn-spin { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .ab.btn.loading::after { animation-duration: 1.4s; } }
+
+  /* --- modifier: accessibility ----------------------------------------- */
+  @media (prefers-reduced-motion: reduce) { .ab.btn { transition: none; } }
+  @media (prefers-contrast: high) {
+    .ab.btn { border-width: 2px; }
+    .ab.btn:focus-visible { outline: 3px solid; outline-offset: 2px; box-shadow: none; }
+  }
+  @media (forced-colors: active) {
+    .ab.btn { border: 2px solid ButtonText; background: ButtonFace; color: ButtonText; }
+    .ab.btn:hover, .ab.btn:focus { border-color: Highlight; background: Highlight; color: HighlightText; }
+    .ab.btn:disabled { border-color: GrayText; background: ButtonFace; color: GrayText; }
+  }
+  @media (max-width: 768px) {
+    .ab.btn { min-height: 44px; }
+    .ab.btn.btn-sm { min-height: 40px; }
+  }
+  .ab.btn .sr-only, .ab.btn .visually-hidden {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+
+  /* ▼ DELETE alongside the status tokens -----------------------------------
+     status badges — background/weak + readable foreground
+  ------------------------------------------------------------------------- */
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .72rem; font-weight: 600; padding: 3px 10px;
+    border-radius: var(--radius-pill);
+  }
+  .badge-positive { background: var(--positive-weak); color: var(--positive); }
+  .badge-neutral  { background: var(--neutral-weak);  color: var(--neutral);  }
+  .badge-negative { background: var(--negative-weak); color: var(--negative); }
+  .badge-comment  { background: var(--comment-weak);  color: var(--comment);  }
+  .badge-info     { background: var(--info-weak);     color: var(--info);     }
+  /* ▲ END status badges ---------------------------------------------------- */
+
+  /* ▼ DELETE with the scheme tokens ----------------------------------------
+     SCHEME LAYER — opt-in heading colour schemes. Put .scheme on any
+     container (a section, <main>, or <body>) and the headings inside follow
+     it. Modifiers sit on the same element, so a scheme is a stampable string:
+       <main class="scheme hsc-diagonal hdec-underline hbul-chevron hsz-graded">
+     Colour = hsl(brand-h · per-level sat · per-level light). Page chrome
+     (.sec, .card-title) is skipped so cards/section labels keep their own.
+  ------------------------------------------------------------------------- */
+  .scheme h1:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs1) var(--hl1, var(--lh1))); font-size: calc(2rem   * var(--hscale)); }
+  .scheme h2:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs2) var(--hl2, var(--lh2))); font-size: calc(1.5rem  * var(--hscale)); }
+  .scheme h3:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs3) var(--hl3, var(--lh3))); font-size: calc(1.25rem * var(--hscale)); }
+  .scheme h4:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs4) var(--hl4, var(--lh4))); font-size: calc(1.05rem * var(--hscale)); }
+  .scheme h5:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs5) var(--hl5, var(--lh5))); font-size: calc(.9rem   * var(--hscale)); }
+  .scheme h6:not(.sec):not(.card-title) { color: hsl(var(--brand-h) var(--hs6) var(--hl6, var(--lh6))); font-size: calc(.8rem   * var(--hscale)); text-transform: uppercase; letter-spacing: .06em; }
+
+  /* schemes — saturation pattern across the ramp */
+  .hsc-diagonal { --hs1: var(--brand-s); --hs2: 45%; --hs3: 28%; --hs4: var(--grey-s); --hs5: var(--grey-s); --hs6: var(--grey-s); }
+  .hsc-grey     { --hs1: var(--grey-s); --hs2: var(--grey-s); --hs3: var(--grey-s); --hs4: var(--grey-s); --hs5: var(--grey-s); --hs6: var(--grey-s); }
+  .hsc-gray     { --hs1: 0%; --hs2: 0%; --hs3: 0%; --hs4: 0%; --hs5: 0%; --hs6: 0%; }
+  .hsc-mono     { --hs1: var(--brand-s); --hs2: var(--brand-s); --hs3: var(--brand-s); --hs4: var(--brand-s); --hs5: var(--brand-s); --hs6: var(--brand-s); }
+  .hsc-twotone  { --hs1: var(--brand-s); --hs2: var(--brand-s); --hs3: 40%; --hs4: 40%; --hs5: var(--grey-s); --hs6: var(--grey-s); }
+  .hsc-accent   { --hs1: var(--brand-s); --hs2: var(--grey-s); --hs3: var(--grey-s); --hs4: var(--grey-s); --hs5: var(--grey-s); --hs6: var(--grey-s); }
+
+  /* reverse the lightness ramp */
+  .hrev { --hl1: var(--lh6); --hl2: var(--lh5); --hl3: var(--lh4); --hl4: var(--lh3); --hl5: var(--lh2); --hl6: var(--lh1); }
+
+  /* decoration */
+  .hdec-underline  :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .18em; }
+  .hdec-dashed     :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { text-decoration: underline dashed; text-decoration-thickness: .07em; text-underline-offset: .2em; }
+  .hdec-dotted     :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { text-decoration: underline dotted; text-decoration-thickness: .09em; text-underline-offset: .2em; }
+  .hdec-leftborder :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { border-left: .18em solid currentColor; padding-left: .5em; }
+
+  /* size mode — uniform overrides the graded sizes (still × --hscale) */
+  .hsz-uniform :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { font-size: calc(1.15rem * var(--hscale)); }
+
+  /* material-symbol bullets (currentColor via mask) */
+  :is(.hbul-chevron,.hbul-dot,.hbul-arrow) :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title) { display: flex; align-items: center; gap: .4em; }
+  :is(.hbul-chevron,.hbul-dot,.hbul-arrow) :is(h1,h2,h3,h4,h5,h6):not(.sec):not(.card-title)::before {
+    content: ""; flex: none; width: .72em; height: .72em; background: currentColor;
+    -webkit-mask: var(--hbullet) center/contain no-repeat; mask: var(--hbullet) center/contain no-repeat;
+  }
+  .hbul-chevron { --hbullet: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%20-960%20960%20960'%3E%3Cpath%20d='M504-480%20320-664l56-56%20240%20240-240%20240-56-56%20184-184Z'/%3E%3C/svg%3E"); }
+  .hbul-dot { --hbullet: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%20-960%20960%20960'%3E%3Cpath%20d='M480-280q-83%200-141.5-58.5T280-480q0-83%2058.5-141.5T480-680q83%200%20141.5%2058.5T680-480q0%2083-58.5%20141.5T480-280Z'/%3E%3C/svg%3E"); }
+  .hbul-arrow { --hbullet: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%20-960%20960%20960'%3E%3Cpath%20d='M647-440H160v-80h487L423-744l57-56%20320%20320-320%20320-57-56%20224-224Z'/%3E%3C/svg%3E"); }
+  /* ▲ END scheme layer ----------------------------------------------------- */
+}
+
+
+/* ==========================================================================
+   @layer utilities  —  single-purpose helpers. ALWAYS win over components.
+   Keep the ones you use, bin the rest.
+   ========================================================================== */
+@layer utilities {
+  .u-bg        { background: var(--bg); }
+  .u-surface-1 { background: var(--surface-1); }
+  .u-surface-2 { background: var(--surface-2); }
+  .u-sunk      { background: var(--surface-sunk); }
+
+  .u-text      { color: var(--text); }
+  .u-text-soft { color: var(--text-soft); }
+  .u-text-faint{ color: var(--text-faint); }
+  .u-accent    { color: var(--accent); }
+
+  .u-border    { border: 1px solid var(--border); }
+  .u-round     { border-radius: var(--radius); }
+  .u-round-lg  { border-radius: var(--radius-lg); }
+
+  .u-shadow-1  { box-shadow: var(--shadow-1); }
+  .u-shadow-2  { box-shadow: var(--shadow-2); }
+  .u-shadow-3  { box-shadow: var(--shadow-3); }
+
+  /* Bootstrap-named shadow utilities (used by the card elevation demo) */
+  .shadow-sm   { box-shadow: var(--shadow-1); }
+  .shadow      { box-shadow: var(--shadow-2); }
+  .shadow-lg   { box-shadow: var(--shadow-3); }
+  .shadow-none { box-shadow: none; }
+
+  /* ▼ DELETE with the colour-harmony layer ---------------------------------
+     COLOUR-HARMONY SCHEME — the "full remap".
+     --------------------------------------------------------------------------
+     Drop .hue-2 / .hue-3 / .hue-4 on ANY container and its whole subtree
+     rethemes onto that spawned hue, because everything resolves --accent:
+     links, focus rings, ::selection, and every component that reads --accent
+     (cards/callouts .primary, button .primary, etc.). Nest freely — a
+     .hue-3 panel inside a .hue-2 section just re-points again.
+
+     Light/dark is automatic: the accent lightness comes from --acc-*-l, which
+     dark mode already flipped, so a rethemed subtree still reads correctly in
+     both themes. .hue-1 is the identity (brand) — handy to "reset" a subtree.
+
+     For a SINGLE element instead of a whole subtree, use the family
+     modifiers .fam-h2 / .fam-h3 / .fam-h4 on a button, card or callout.      */
+  .hue-1, .hue-2, .hue-3, .hue-4 {
+    --accent:        hsl(var(--_hh) var(--brand-s) var(--acc-l));
+    --accent-hover:  hsl(var(--_hh) var(--brand-s) var(--acc-hover-l));
+    --accent-weak:   hsl(var(--_hh) var(--brand-s) var(--acc-weak-l));
+    --ab-btn-primary: var(--accent);   /* so primary buttons follow too */
+  }
+  .hue-1 { --_hh: var(--hue-1); }
+  .hue-2 { --_hh: var(--hue-2); }
+  .hue-3 { --_hh: var(--hue-3); }
+  .hue-4 { --_hh: var(--hue-4); }
+
+  /* single-element harmony family (parallels .fam-brand / .fam-grey) */
+  .ab.btn.fam-h2     { --_c: var(--accent-2); --_fg: #fff; }
+  .ab.btn.fam-h3     { --_c: var(--accent-3); --_fg: #fff; }
+  .ab.btn.fam-h4     { --_c: var(--accent-4); --_fg: #fff; }
+  .ab.card.fam-h2    { --ab-card-accent: var(--accent-2); }
+  .ab.card.fam-h3    { --ab-card-accent: var(--accent-3); }
+  .ab.card.fam-h4    { --ab-card-accent: var(--accent-4); }
+  .ab.callout.fam-h2 { --ab-callout-accent: var(--accent-2); }
+  .ab.callout.fam-h3 { --ab-callout-accent: var(--accent-3); }
+  .ab.callout.fam-h4 { --ab-callout-accent: var(--accent-4); }
+  /* ▲ END colour-harmony scheme -------------------------------------------- */
+}

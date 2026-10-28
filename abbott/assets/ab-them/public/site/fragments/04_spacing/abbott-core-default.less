@@ -1,0 +1,56 @@
+/* ==========================================================================
+   abbott-core-default.less  (default settings pack)
+
+   Layer 0 only. Reproduces the original 14 --ab-core-*-clamp-*-l4 sizes.
+   Load order against abbott-core-fluid.less does not matter.
+
+   Derivation of the original values:
+     - every clamp runs between 20rem (320px) and 45rem (720px)
+     - every max is the min x 1.3333, so each scale is a 0.75rem -> 1rem base
+       multiplied by a fixed step weight
+   ========================================================================== */
+
+:root {
+  /* ----- viewport range shared by all scales (rem numbers) ----- */
+  --ab-fluid-vp-min: 20;
+  --ab-fluid-vp-max: 45;
+
+  /* ----- base size per scale at the min and max viewport (rem numbers) ----- */
+  --ab-fluid-text-min: 0.75;
+  --ab-fluid-text-max: 1;
+
+  --ab-fluid-space-min: 0.75;
+  --ab-fluid-space-max: 1;
+
+  --ab-fluid-layout-min: 0.75;
+  --ab-fluid-layout-max: 1;
+
+  /* ----- typography step weights (x base) ----- */
+  --ab-text-mult-2xs: 0.875;
+  --ab-text-mult-xs: 1;
+  --ab-text-mult-sm: 1.25;
+  --ab-text-mult-md: 1.5;
+  --ab-text-mult-lg: 2;
+  --ab-text-mult-xl: 2.5;
+  --ab-text-mult-2xl: 3;
+
+  /* ----- layout weights (x base) ----- */
+  --ab-layout-mult-block-ver: 4;
+  --ab-layout-mult-block-hoz: 0.5;
+  --ab-layout-mult-component-hoz: 0.5;
+
+  /* ----- spacing weights (x base) ----- */
+  --ab-space-mult-item-margin: 0.5;
+  --ab-space-mult-item-padding: 1;
+  --ab-space-mult-btn-padding: 1;
+  --ab-space-mult-icon-padding: 1;
+}
+
+/* Example profile (not active). A scoped profile writes Layer 0 only:
+
+   [data-ab-profile="compact"] {
+     --ab-fluid-space-min: 0.5;
+     --ab-fluid-space-max: 0.75;
+     --ab-fluid-text-vp-max: 80;   // this scale alone stretches to 80rem
+   }
+*/

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any database, a precise search is built rather than stumbled upon. You combine your main concepts with Boolean operators, gather synonyms with OR, fix set phrases in quotation marks, and truncate a word stem so one term catches its variants. Limiters then filter by date, type and other features. Every one of these choices shifts the balance between recall, how much relevant work you capture, and precision, how little irrelevant work you sift. The right balance depends on the task, and you revisit it with each pass.",
+    "worked-example": "Consider two students searching the same database for the same topic.\n\nStudent A types a long, natural-language sentence into the search box and presses enter. The database returns many thousands of loosely related results, ranked by its own rules. Student A scrolls through the first page, feels overwhelmed, and picks whatever looks closest. The search was wide, but it was never steered.\n\nStudent B builds the search instead. Student B joins the key concepts with AND, gathers synonyms with OR, fixes a set phrase in quotation marks, and truncates a stem to catch its variants. A date limiter and a type limiter come next, and after reading the first results Student B sees the net is still too wide and tightens one term. Two passes later the result set is small, relevant and defensible.\n\nBoth searched the same database. Only Student B controlled precision and recall, and refined the search as a cycle rather than a single try.",
+    "summary": "Refining a search means steering the balance between recall and precision: combining concepts with Boolean operators, fixing phrases, truncating stems, and applying limiters for date and type. You can now control what a database returns and treat refinement as an iterative cycle rather than a single pass. With evaluation, reach and precision together, you can run a search that is both fair and sharp, and defend every choice in it."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did Student B do that Student A did not?",
+      "items": [
+        {
+          "text": "Built the search with Boolean operators, a phrase, truncation and limiters, then refined it over more than one pass.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Typed a longer natural-language sentence into the search box.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Picked the first result that looked close enough.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Accepted the database's default ranking without change.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Building the search with operators and limiters and refining it is deliberate control of precision and recall.",
+        "incorrectNotFinal": "Not quite. Look for the option that steers the search and revisits it.",
+        "incorrectFinal": "Student B built the search with Boolean operators, a phrase, truncation and limiters and refined it over several passes, rather than typing a long sentence or accepting the default results."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; name the cast directly in the prose (the pack supplies the whole body). The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

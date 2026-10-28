@@ -1,0 +1,118 @@
+// adapt-gow-keyTerm — restyled onto the grow-ct fluid tokens (Abbott, theming).
+// A dark brand-navy "dictionary entry" card: the navy (= --h1 = hsl(h s 14%))
+// retints with the scheme hue and inverts for dark mode, pairing with
+// --surface-1 text so it stays legible in both modes. Spacing/type use the
+// fluid --space-*/--fs-* ramps; dividers and muted text are white at low alpha.
+
+.key-term {
+  background: var(--h1);
+  color: var(--surface-1);
+  border-radius: 10px;
+  padding: var(--space-sm) var(--space-md);
+  margin: 0 0 var(--space-sm);
+  box-shadow: 0 0.15rem 0.6rem var(--shadow, rgba(0, 0, 0, 0.14));
+
+  &__title {
+    color: var(--surface-1);
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+  }
+
+  &__part-of-speech {
+    font-style: italic;
+    font-weight: 400;
+    font-size: var(--fs-xs, 0.8125rem);
+    color: color-mix(in srgb, var(--surface-1) 72%, transparent);
+    margin-left: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  &__pronunciation {
+    font-size: var(--fs-sm, 0.875rem);
+    color: color-mix(in srgb, var(--surface-1) 72%, transparent);
+    margin: 0 0 0.75rem;
+  }
+
+  &__definition,
+  &__extended-definition {
+    color: color-mix(in srgb, var(--surface-1) 92%, transparent);
+    line-height: 1.6;
+
+    p:last-child { margin-bottom: 0; }
+  }
+
+  &__extended-definition { margin-top: 0.75rem; }
+
+  &__example,
+  &__related-terms {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--surface-1) 24%, transparent);
+  }
+
+  &__example-title,
+  &__related-terms-title {
+    font-size: var(--fs-xs, 0.8125rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: color-mix(in srgb, var(--surface-1) 70%, transparent);
+    margin: 0 0 0.375rem;
+  }
+
+  &__related-terms-list {
+    // Two columns for the term list (Abbott 2026-10-27). column-width keeps it
+    // responsive: it collapses to one column when the card is narrow (each column
+    // wants >= 10rem). Custom bullets (list-style:none + li::before) so markers
+    // never clip at a column edge the way list-style:outside can in multicol.
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    column-width: 10rem;
+    column-count: 2;
+    column-gap: 1.5rem;
+
+    li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.15rem;
+      break-inside: avoid;
+    }
+
+    li::before {
+      content: "\2022"; // bullet
+      position: absolute;
+      left: 0;
+      color: color-mix(in srgb, var(--surface-1) 55%, transparent);
+    }
+  }
+}
+
+// Reveal mode (_reveal: true): KeyTermView.onReveal shows one section per
+// click, then hides the button. On the dark card the button is a white outline.
+.key-term--reveal {
+  .key-term__reveal-section[hidden] {
+    display: none;
+  }
+
+  .key-term__reveal-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--surface-1) 55%, transparent);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--surface-1);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background: color-mix(in srgb, var(--surface-1) 15%, transparent);
+    }
+
+    &[hidden] {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+.textured.ab-quad {
+  --texture-quad-size: 1.25rem;
+  background-color: var(--texture-paper);
+  background-image: repeating-linear-gradient(to right, var(--texture-rule) 0 1px, transparent 1px var(--texture-quad-size)), repeating-linear-gradient(to bottom, var(--texture-rule) 0 1px, transparent 1px var(--texture-quad-size)), repeating-linear-gradient(to right, color-mix(in srgb, var(--texture-accent) 30%, var(--texture-rule)) 0 1px, transparent 1px calc(var(--texture-quad-size) * 5)), repeating-linear-gradient(to bottom, color-mix(in srgb, var(--texture-accent) 30%, var(--texture-rule)) 0 1px, transparent 1px calc(var(--texture-quad-size) * 5));
+}

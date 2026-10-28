@@ -1,0 +1,149 @@
+/* grow-menu.css — GROW's own icon-based course menu.
+   Styles the markup in menu-template.html / .jsx (grow-menu, grow-menu__*,
+   progress-meter). This is OUR menu, not adapt-contrib-boxMenu, and OUR SVG
+   progress ring, not pageLevelProgress. Glyphs come from the theme icon font
+   (.icon-*) at runtime; this file only sizes and places them.
+
+   Four item states drive the look: is-complete | is-in-progress |
+   is-not-started | is-locked (mirrored by data-state on the <li>). */
+
+.grow-menu {
+  --gm-surface: #fff;
+  --gm-raised: #e9efed;
+  --gm-ink: #18313b;
+  --gm-muted: #526b70;
+  --gm-line: #d5dfdd;
+  --gm-accent: #176b64;
+  --gm-accent-ink: #124f4a;
+  --gm-radius: 1rem;
+  --gm-gap: clamp(.6rem, 2vw, 1rem);
+  display: block;
+  max-width: 56rem;
+  margin-inline: auto;
+  padding: var(--gm-gap);
+  color: var(--gm-ink);
+}
+
+.grow-menu__heading {
+  margin-block: 0 var(--gm-gap);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.2;
+}
+
+.grow-menu__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--gm-gap);
+}
+
+.grow-menu__item { margin: 0; }
+
+/* ---- the row / card ---- */
+.grow-menu__link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(.75rem, 2.5vw, 1.25rem);
+  padding: clamp(.85rem, 2.5vw, 1.25rem);
+  border: 1px solid var(--gm-line);
+  border-radius: var(--gm-radius);
+  background: var(--gm-surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.grow-menu__link:hover { border-color: var(--gm-accent); box-shadow: 0 .4rem 1rem #0001; }
+.grow-menu__link:active { transform: translateY(1px); }
+.grow-menu__link:focus-visible { outline: 3px solid #b05e12; outline-offset: 3px; }
+
+/* ---- icon tile ---- */
+.grow-menu__icon {
+  display: grid;
+  place-items: center;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: .75rem;
+  background: color-mix(in srgb, var(--gm-accent) 12%, var(--gm-surface));
+  color: var(--gm-accent);
+}
+
+.grow-menu__icon .icon { font-size: 1.5rem; line-height: 1; }
+
+/* ---- text ---- */
+.grow-menu__text { display: grid; gap: .15rem; min-width: 0; }
+
+.grow-menu__subtitle {
+  color: var(--gm-muted);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.grow-menu__title { font-size: clamp(1.05rem, 2vw, 1.25rem); font-weight: 600; line-height: 1.25; }
+
+/* ---- lock marker (locked items) ---- */
+.grow-menu__lock { font-size: 1.25rem; color: var(--gm-muted); }
+
+/* ---- progress ring (OUR meter) ---- */
+.progress-meter {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--meter-size, 44px);
+  block-size: var(--meter-size, 44px);
+}
+
+.progress-meter__svg { display: block; inline-size: 100%; block-size: 100%; }
+.progress-meter__track { stroke: var(--gm-line); }
+.progress-meter__value { stroke: var(--gm-accent); transition: stroke-dashoffset .4s ease; }
+
+.progress-meter__pct {
+  position: absolute;
+  font-size: .68rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--gm-muted);
+}
+
+/* ---- states ---- */
+.grow-menu__item.is-complete .grow-menu__icon {
+  background: var(--gm-accent);
+  color: #fff;
+}
+.grow-menu__item.is-complete .progress-meter__value { stroke: var(--gm-accent); }
+.grow-menu__item.is-complete .progress-meter__pct { color: var(--gm-accent-ink); }
+
+/* in-progress: lead with the accent so it reads as "you are here" */
+.grow-menu__item.is-in-progress .grow-menu__link {
+  border-color: var(--gm-accent);
+  box-shadow: inset .25rem 0 0 var(--gm-accent);
+}
+
+.grow-menu__item.is-not-started .grow-menu__icon {
+  background: var(--gm-raised);
+  color: var(--gm-muted);
+}
+
+.grow-menu__item.is-locked .grow-menu__link {
+  background: var(--gm-raised);
+  border-style: dashed;
+  color: var(--gm-muted);
+  cursor: default;
+}
+.grow-menu__item.is-locked .grow-menu__icon { background: transparent; color: var(--gm-muted); }
+.grow-menu__item.is-locked .grow-menu__link:hover { border-color: var(--gm-line); box-shadow: none; }
+
+/* ---- narrow screens ---- */
+@media (max-width: 30rem) {
+  .grow-menu__link { gap: .75rem; }
+  .grow-menu__icon { inline-size: 2.5rem; block-size: 2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grow-menu__link,
+  .progress-meter__value { transition: none; }
+}

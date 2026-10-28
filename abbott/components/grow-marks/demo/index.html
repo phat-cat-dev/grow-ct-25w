@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>grow-marks demo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="../grow-marks.css">
+<style>
+  /* GROW-style tokens so the demo is on-brand and dark-mode aware. The library
+     CSS has its own fallbacks, so these are only to make the demo look right. */
+  :root{
+    --h:202;--s:72%;--page-bg:hsl(var(--h) 30% 96%);--surface-1:hsl(var(--h) 24% 99%);--surface-2:hsl(var(--h) 20% 94%);
+    --ink:hsl(var(--h) 25% 16%);--ink-soft:hsl(var(--h) 14% 40%);--line:hsl(var(--h) 18% 86%);
+    --accent:hsl(var(--h) var(--s) 42%);
+    --c-positive:hsl(150 55% 40%);--c-negative:hsl(5 65% 52%);--c-neutral:hsl(40 85% 44%);--c-comment:hsl(270 45% 54%);
+    --font-ui:"Inter",ui-sans-serif,system-ui,sans-serif;color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page-bg:hsl(var(--h) 32% 8%);--surface-1:hsl(var(--h) 26% 12%);--surface-2:hsl(var(--h) 24% 16%);--ink:hsl(var(--h) 20% 92%);--ink-soft:hsl(var(--h) 14% 64%);--line:hsl(var(--h) 22% 22%);--accent:hsl(var(--h) var(--s) 64%);color-scheme:dark}}
+  :root[data-theme="dark"]{--page-bg:hsl(var(--h) 32% 8%);--surface-1:hsl(var(--h) 26% 12%);--surface-2:hsl(var(--h) 24% 16%);--ink:hsl(var(--h) 20% 92%);--ink-soft:hsl(var(--h) 14% 64%);--line:hsl(var(--h) 22% 22%);--accent:hsl(var(--h) var(--s) 64%);color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page-bg);color:var(--ink);font-family:var(--font-ui);line-height:1.6}
+  .wrap{max-width:60rem;margin-inline:auto;padding:1rem clamp(1rem,4vw,2rem)}
+  .bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:var(--surface-1);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:1.25rem;position:sticky;top:0;z-index:9}
+  .grow{flex:1 1 auto}
+  button{font:inherit;cursor:pointer}
+  .btn{font-weight:600;font-size:.88rem;padding:7px 13px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff}
+  .btn.ghost{background:var(--surface-2);color:var(--ink);border-color:var(--line)}
+  .pat{background:var(--surface-1);border:1px solid var(--line);border-radius:14px;padding:clamp(1rem,3vw,1.5rem);margin-bottom:1.25rem}
+  h2{font-size:1.1rem;margin:0 0 .3rem}
+  .cap{font-size:.82rem;color:var(--ink-soft);margin:.1rem 0 1rem}
+  .lead{font-size:1.25rem;line-height:2.4}
+  .word{font-weight:700}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:20px 14px}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+  .cell .demoword{font-weight:700;font-size:1.1rem}
+  .tag{font-family:ui-monospace,monospace;font-size:.7rem;color:var(--ink-soft)}
+  .q{font-size:1.2rem;margin:.4rem 0 1rem}
+  select{font:inherit;padding:.3rem}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <strong>grow-marks</strong><span class="grow"></span>
+    <label>mark <select id="pick"></select></label>
+    <button class="btn" id="applyWord">Apply to “idea”</button>
+    <button class="btn ghost" id="replay">▶ Replay all</button>
+    <button class="btn ghost" id="theme">Theme</button>
+  </div>
+
+  <div class="pat">
+    <h2>On a word</h2>
+    <p class="cap">Pick a mark above and apply it to the highlighted word, or replay the pre-marked sentence.</p>
+    <p class="lead">Start with the core <span class="word" id="target">idea</span>, test it,
+      then <span class="word" data-gm-mark="oval">circle</span> the one that
+      <span class="word" data-gm-mark="underline">matters</span> and
+      <span class="word" data-gm-mark="highlight" data-gm-color="neutral">keep</span> it.</p>
+  </div>
+
+  <div class="pat">
+    <h2>Right / wrong feedback (the extension use-case)</h2>
+    <p class="cap">A different component decides right or wrong; grow-marks plays the mark on a target.</p>
+    <p class="q">Does a landscape need a <span class="word" id="fbword">horizon</span>?</p>
+    <button class="btn" id="right">Mark correct</button>
+    <button class="btn ghost" id="wrong">Mark wrong</button>
+    <span id="fbglyph"></span>
+  </div>
+
+  <div class="pat">
+    <h2>Catalogue</h2>
+    <p class="cap">Every mark in the library, grouped by category. Numbered badges are generated on demand.</p>
+    <div id="catalogue"></div>
+  </div>
+</div>
+
+<script type="module">
+  import { drawMark, playMark, playWithin, makeBadge, ensureMarkDefs } from '../src/growMarks.js';
+  import { MARKS, listMarks, categories } from '../src/marksCatalogue.js';
+
+  ensureMarkDefs();
+  const root = document.documentElement;
+  const handles = [];
+  const keep = h => { handles.push(h); return h; };
+
+  // mark picker
+  const pick = document.getElementById('pick');
+  listMarks().forEach(id => pick.add(new Option(id, id)));
+  pick.value = 'oval';
+
+  // pre-marked sentence
+  playWithin(document.querySelector('.lead')).forEach(h => handles.push(h));
+
+  // apply the picked mark to the "idea" word (replace any previous)
+  let wordHandle = null;
+  document.getElementById('applyWord').addEventListener('click', () => {
+    if (wordHandle) wordHandle.remove();
+    wordHandle = drawMark(document.getElementById('target'), { mark: pick.value });
+  });
+
+  // right / wrong feedback
+  const fbword = document.getElementById('fbword');
+  const fbglyph = document.getElementById('fbglyph');
+  let fb = [];
+  function feedback(ok) {
+    fb.forEach(h => h.remove()); fb = [];
+    fbglyph.textContent = '';
+    fb.push(drawMark(fbword, ok ? { mark: 'oval', color: 'positive' } : { mark: 'strike', color: 'negative' }));
+    fb.push(drawMark(fbglyph, ok ? { mark: 'tick' } : { mark: 'cross' }));
+  }
+  document.getElementById('right').addEventListener('click', () => feedback(true));
+  document.getElementById('wrong').addEventListener('click', () => feedback(false));
+
+  // catalogue grid
+  const host = document.getElementById('catalogue');
+  const SAMPLE = { wrap: 'sample', highlight: 'sample' };
+  for (const cat of categories().concat('badge')) {
+    const h = document.createElement('h3'); h.textContent = cat; h.style.cssText = 'font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);margin:1.2rem 0 .6rem';
+    const grid = document.createElement('div'); grid.className = 'grid';
+    host.append(h, grid);
+    const ids = cat === 'badge' ? ['1', '2', '3', 'A', 'B'] : listMarks(cat);
+    ids.forEach(id => {
+      const cell = document.createElement('div'); cell.className = 'cell';
+      const art = document.createElement('div');
+      const def = cat === 'badge' ? makeBadge(id) : MARKS[id];
+      if (def.kind === 'wrap' || def.kind === 'highlight') {
+        art.className = 'demoword'; art.textContent = SAMPLE[def.kind];
+      }
+      const cap = document.createElement('span'); cap.className = 'tag'; cap.textContent = cat === 'badge' ? `badge ${id}` : id;
+      cell.append(art, cap); grid.append(cell);
+      keep(drawMark(art, cat === 'badge' ? { mark: def } : { mark: id }));
+    });
+  }
+
+  // controls
+  function replayAll() {
+    root.classList.remove('gm-playing'); // no-op, marks carry their own host class
+    handles.forEach(h => h.replay());
+    if (wordHandle) wordHandle.replay();
+  }
+  document.getElementById('replay').addEventListener('click', replayAll);
+  document.getElementById('theme').addEventListener('click', () => {
+    const now = root.getAttribute('data-theme');
+    root.setAttribute('data-theme', now === 'dark' ? 'light' : 'dark');
+  });
+
+  setTimeout(replayAll, 300);
+</script>
+</body>
+</html>

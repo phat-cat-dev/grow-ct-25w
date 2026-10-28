@@ -1,0 +1,58 @@
+{
+  "profile": "adp-m2-hesa",
+  "version": "0.1.0",
+  "kind": "tag",
+  "owner": "adp",
+  "note": "DRAFT by ADAPT nts, 2 October 2026 (nts N-0289), from ADAPT's ruled method; lands in the repository at integrations/mapper/ by a numbered prompt; a profile describes the method and changes nothing in it. Covers stage 2 of the ruled method (a chunk's own codes); stage 1 (each benchmark's default chain from its title and opening chunk, which every chunk inherits) is a benchmark-level step the sitting does before R1 and is not a mapper record",
+  "method": {
+    "rulings": [
+      "HTM-1",
+      "HCK-1 as amended (FT-0013 row 5: several subjects per chunk, each with its own extract)",
+      "FT-0013 row 4 (proposed ADP-4: the two-stage method)",
+      "D-0036 (Abbott, 21:35)",
+      "D-0066 (c) (theme mentions recorded, not tagged as subjects)"
+    ],
+    "stores": [
+      "tools/subject/core/vocab/cah.json",
+      "tools/subject/core/vocab/hecos.json"
+    ]
+  },
+  "sources": {
+    "set": "units.jsonl: every included chunk of every chunked benchmark, text from the normalised text by offsets",
+    "unit": "chunk",
+    "docOf": "^(.*)/[^/]+$"
+  },
+  "target": {
+    "scheme": "HECoS subject code, with its CAH3, CAH2 and CAH1 from the stores",
+    "pin": "tools/subject/core/vocab/hecos.json, SHA-256 223befb2241a18d0233608b37fa482b92eedaacf52cbdaa11aff703c85b1f1aa; tools/subject/core/vocab/cah.json, SHA-256 c6d96b7865f785b989d0d88f790f1fc8af33f7a42abd71fa8f0d48b658262074; at commit d08a2a7"
+  },
+  "candidates": {
+    "mode": "terms",
+    "terms": "<every HECoS term and non-preferred term, keyed by HECoS code, as {code: {direct: [term, ...]}}, the benchmark's own default code removed per benchmark>",
+    "rules": [
+      "read every unique hit in context before tagging",
+      "never own: generic vocabulary; QAA cross-cutting themes (recorded as theme mentions under D-0066); names of other benchmarks or neighbouring subjects; career and curriculum lists; same spelling in another sense",
+      "known limit: an elided shared noun ('clinical, educational ... psychology') can be missed; M1 against M2 is the check"
+    ]
+  },
+  "judgement": {
+    "prompt": "tag",
+    "answer": "record",
+    "states": "own (with codes and extract); chunks with no own record are inherited"
+  },
+  "evidence": {
+    "quote": "required",
+    "cite": "chunk",
+    "words": "4 to 25 (ADAPT rule)"
+  },
+  "output": {
+    "relation": "names-subject",
+    "file": "tools/subject/core/tags/<benchmark-slug>.json, one per benchmark, keyed by chunk id"
+  },
+  "confirmation": {
+    "who": "abbott",
+    "flags": "all",
+    "sample": 0,
+    "note": "HTM-1 step 4: M2 is compared with M1 and every major difference goes to Abbott; unclear items listed, never guessed"
+  }
+}

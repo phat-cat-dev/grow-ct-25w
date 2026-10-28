@@ -1,0 +1,664 @@
+# =============================================================================
+# scene-content.template.yaml
+# Data template for the scroll-scenes component.
+#
+# Feeds three parts of the HTML:
+#   main.scroll-scenes > nav.scene-nav            (buttons, one per scene)
+#   main.scroll-scenes > [data-scroll-viewport]   (one section per scene)
+#   [data-scene-content]                          (eyebrow, heading, body)
+#
+# Read top to bottom:
+#   1. schema            what this file is and how fields are named
+#   2. agent_author_prompt   the brief an authoring agent follows
+#   3. field_map         the raw data table: every field and where it lands
+#   4. layers_registry   extra response layers an agent can generate
+#   5. models            the fixed OQEA model and the rules for a custom model
+#   6. style_presets     background + transition + scheme + effect bundles
+#   7. render_recipe     the HTML skeleton the fields compile into
+#   8. content           THE BLANK TEMPLATE. Copy this file, fill the nulls.
+#   9. example           filled examples. Study the shape. Do not copy the words.
+# =============================================================================
+
+schema:
+  id: scroll-scenes-content
+  version: 1
+  language: en-GB
+  purpose: >
+    Hold all written content for one scroll-scenes piece as data, so that the
+    topic stays open and one template serves many topics. Nothing in this file
+    is a colour, a size or a font. Those come from CSS tokens.
+  naming:
+    d00: Topic anchor. One per file.
+    d01: Scene (sub topic). One per stage of a model.
+    rule: >
+      d-prefixed keys are the data layer. Headings (h2 and so on) are a view
+      of that data. Never name a data field after an HTML tag.
+
+# -----------------------------------------------------------------------------
+# 2. THE PROMPT FOR THE AUTHORING AGENT
+# -----------------------------------------------------------------------------
+agent_author_prompt: |
+  ROLE
+  You write content for a scroll-scenes learning piece. Each scene fills the
+  screen and covers one stage of a model. The learner scrolls from stage to
+  stage. Fill this file with accurate, plain and useful content for the topic
+  in d00.topic.
+
+  INPUT
+  d00.topic is a topic, process or skill. It is open: it can be a study skill,
+  a professional routine or a way of thinking. If d00.audience,
+  d00.learning_aim or d00.contexts are set, use them. If they are null, state
+  your assumption in d00.assumptions and carry on.
+
+  OUTPUT
+  Return this whole file as valid YAML with the nulls filled in. Do not change
+  keys. Do not add commentary outside the YAML. Do not remove the registries.
+  Fill only the layers listed in d00.layers_enabled. Set any layer you cannot
+  fill honestly to null.
+
+  METHOD
+  1. Frame the topic. Write d00.core_move: the one thing a learner does when
+     they do this well, in one sentence. Write d00.real_substeps: the actual
+     steps people take in practice, in order. Do this before you choose any
+     stage names.
+  2. Set A, the OQEA model. Use the four fixed stages in models.oqea (Observe,
+     Question, Explore, Act). Do not rename them. Apply each stage to this
+     topic. Do not write advice that would fit any topic.
+  3. Set B, your own model. Design a model that fits this topic better than
+     OQEA does. Start from d00.real_substeps and group them into 3 to 7
+     stages. Name each stage with one verb or one short noun. Name the model
+     in 4 words or fewer. In sets.B.derivation explain what Set B shows that
+     Set A hides. If OQEA fits the topic best, still build a distinct Set B and
+     say so plainly in derivation.why_not_oqea. Do not reuse the stage names in
+     the examples.
+  4. Recommend. In recommendation pick A or B and give the reason in 40 words
+     or fewer.
+  5. Layers. For each scene fill the enabled layers from layers_registry. Each
+     layer must say something the heading and body do not. Do not restate the
+     body.
+  6. Check your work against CHECKS before you return the file.
+
+  HOUSE VOICE
+  British English. No em dashes: use a full stop, a colon or brackets. No
+  Oxford commas. Plain active voice. Plain, specific words: name the thing, the
+  action and the person. Address the learner as "you". No hype and no filler
+  such as "unlock", "dive in" or "game-changer". No rhetorical question
+  openers. Do not group things in threes for rhythm.
+
+  HEADINGS AND BODY
+  heading_lines: 1 or 2 lines, 20 characters or fewer per line. Read together,
+  the lines give an instruction or make a promise.
+  body: 18 to 35 words, one paragraph, two sentences at most. The second
+  sentence gives a reason or a test. It does not repeat the first.
+
+  HONESTY
+  Never invent sources, statistics, quotations or research findings. Fill the
+  sources layer only with works you can name accurately. Otherwise set it to
+  null. List any claim you are unsure of in d00.assumptions. Do not write
+  Welsh as final text: leave i18n.cy null unless asked, because Welsh content
+  goes through professional translation.
+
+  CHECKS
+  - Valid YAML with no tabs.
+  - Set A has exactly 4 scenes in the order Observe, Question, Explore, Act.
+  - Set B has 3 to 7 scenes and every key is unique.
+  - Every heading line is 20 characters or fewer.
+  - Every body is 18 to 35 words.
+  - No em dashes. No comma before the final "and" or "or" in a list.
+  - British spellings (organise, behaviour, colour).
+  - Every layer respects the limits in layers_registry.
+
+# -----------------------------------------------------------------------------
+# 3. FIELD MAP (the raw data table)
+# level: d00 = topic, d01 = per scene, derived = built by the renderer,
+#        layer = see layers_registry
+# html:  CSS selector of the target, or "data only" when nothing renders
+# -----------------------------------------------------------------------------
+field_map:
+  # --- d00: topic anchor -----------------------------------------------------
+  - path: d00.topic_id
+    level: d00
+    type: slug
+    required: true
+    limits: "^[a-z][a-z0-9-]*$"
+    html: data only
+    note: Stable id for the piece. Use it for file names and cross references.
+  - path: d00.topic
+    level: d00
+    type: string
+    required: true
+    limits: 3 to 12 words
+    html: data only
+    note: The topic, process or skill. Left open on purpose.
+  - path: d00.title
+    level: d00
+    type: string
+    required: true
+    limits: 40 characters or fewer
+    html: ".scroll-scenes[aria-label] and [data-scroll-viewport][aria-label]"
+    note: Viewport label is "Scrollable " plus the title with a lower case first letter.
+  - path: d00.audience
+    level: d00
+    type: string
+    required: false
+    limits: 20 words or fewer
+    html: data only
+    note: Sets tone and depth. Null means general adult learner.
+  - path: d00.learning_aim
+    level: d00
+    type: string
+    required: false
+    limits: one sentence
+    html: data only
+    note: What the learner can do after the last scene.
+  - path: d00.core_move
+    level: d00
+    type: string
+    required: true
+    limits: one sentence
+    html: data only
+    note: Written by the agent before it names any stage.
+  - path: d00.real_substeps
+    level: d00
+    type: list of string
+    required: true
+    limits: 3 to 10 items, each 12 words or fewer
+    html: data only
+    note: Ordered steps people take in practice. Set B is built from these.
+  - path: d00.assumptions
+    level: d00
+    type: list of string
+    required: true
+    limits: may be empty
+    html: data only
+    note: Anything the agent assumed or could not verify.
+  - path: d00.contexts
+    level: d00
+    type: list of slug
+    required: false
+    limits: ids supplied by the author only
+    html: data only
+    note: Context packs for the context_variants layer. Example baseline.
+  - path: d00.layers_enabled
+    level: d00
+    type: list of layer id
+    required: true
+    limits: ids from layers_registry
+    html: data only
+    note: The agent fills only these layers.
+  - path: d00.language
+    level: d00
+    type: string
+    required: true
+    limits: en-GB
+    html: "html[lang]"
+    note: Welsh sits in i18n.cy and compiles to a separate page.
+  - path: d00.presentation.preset
+    level: d00
+    type: enum
+    required: false
+    limits: id from style_presets, or null
+    html: sets the four fields below
+    note: A preset fills scheme, background, transition and effect in one go.
+  - path: d00.presentation.scheme
+    level: d00
+    type: enum
+    required: false
+    limits: default | night | warm | dusk
+    html: ".scroll-scenes[data-scheme]"
+    note: Colour tokens only. Defined in scroll-scenes.backgrounds.css.
+  - path: d00.presentation.background
+    level: d00
+    type: enum
+    required: false
+    limits: lines | aurora | mesh | dots | grid | contour | horizon | spotlight | weave | wash | plain
+    html: ".scroll-scenes[data-scene-bg]"
+    note: Null keeps the original look of scroll-scenes.css.
+  - path: d00.presentation.transition
+    level: d00
+    type: enum
+    required: false
+    limits: rise | drift | tilt | wipe | stagger | null
+    html: ".scroll-scenes[data-scene-transition]"
+    note: CSS model. Needs --scene-offset and --scene-distance (see STYLE-STRUCTURE.md).
+  - path: d00.presentation.effect
+    level: d00
+    type: enum
+    required: false
+    limits: zoom | blur | fade | slide | none
+    html: "ScrollScenes.mount(host, { effect })"
+    note: JavaScript effect. Pair a CSS transition with fade or none.
+  - path: d00.presentation.snap
+    level: d00
+    type: boolean
+    required: false
+    limits: default true
+    html: "ScrollScenes.mount(host, { snap })"
+    note: Proximity snapping.
+
+  # --- d01: scene ------------------------------------------------------------
+  - path: d01.key
+    level: d01
+    type: slug
+    required: true
+    limits: "^[a-z][a-z0-9-]*$, unique within the set"
+    html: data only
+    note: Optional data-scene-key on the section if you want a hook.
+  - path: d01.stage_label
+    level: d01
+    type: string
+    required: true
+    limits: 1 word, 14 characters or fewer
+    html: "section[data-scroll-scene][aria-label]"
+    note: Also feeds the eyebrow and the nav button.
+  - path: d01.stage_purpose
+    level: d01
+    type: string
+    required: true
+    limits: one sentence
+    html: data only
+    note: What this stage does for the learner. Layers and tiers build on it.
+  - path: d01.heading_lines
+    level: d01
+    type: list of string
+    required: true
+    limits: 1 or 2 lines, 20 characters or fewer per line
+    html: "[data-scene-content] > h2"
+    transform: join with <br>
+    note: 20 characters fits the 48rem content width at the largest heading size.
+  - path: d01.body
+    level: d01
+    type: string
+    required: true
+    limits: 18 to 35 words, two sentences at most
+    html: "[data-scene-content] > p.scene-copy"
+    note: The measure is 46ch. Longer text pushes the scene taller than the viewport.
+  - path: d01.colour_slot
+    level: d01
+    type: integer
+    required: false
+    limits: 1 to 4
+    html: "section[data-scene-colour]"
+    note: Null uses position (scene 1 gets slot 1 and the slots cycle).
+  - path: d01.background
+    level: d01
+    type: enum
+    required: false
+    limits: same list as d00.presentation.background
+    html: "section[data-scene-bg]"
+    note: Overrides the piece level background for this scene.
+
+  # --- derived: built by the renderer, never authored ------------------------
+  - path: derived.nn
+    level: derived
+    type: string
+    required: false
+    limits: zero padded scene number
+    html: eyebrow and nav button
+    note: "01, 02 and so on, from list position."
+  - path: derived.eyebrow
+    level: derived
+    type: string
+    required: false
+    limits: "{nn} / {STAGE_LABEL}"
+    html: "[data-scene-content] > p.scene-number"
+    note: Stage label upper cased.
+  - path: derived.nav_button
+    level: derived
+    type: string
+    required: false
+    limits: "{nn} {stage_label}"
+    html: "nav.scene-nav > button[data-scroll-to]"
+    note: data-scroll-to is the zero based list position.
+  - path: derived.scene_count
+    level: derived
+    type: integer
+    required: false
+    limits: 1 or more
+    html: "one section and one button per scene"
+    note: Remount the player if the count changes.
+
+  # --- layers and translation ------------------------------------------------
+  - path: d01.layers.<layer_id>
+    level: layer
+    type: per layer
+    required: false
+    limits: see layers_registry
+    html: depends on layer render value
+    note: One key per enabled layer.
+  - path: d01.i18n.cy
+    level: layer
+    type: object or null
+    required: false
+    limits: stage_label, heading_lines, body, review_status
+    html: same targets as the English fields, in a Welsh page
+    note: Leave null unless asked. review_status is needs_professional_translation.
+
+# -----------------------------------------------------------------------------
+# 4. LAYERS REGISTRY: extra "layers of response" the agent can generate
+# render: scene_extra = could be shown inside data-scene-content
+#         data_only   = held for other tools (quiz, audio, search)
+#         export      = for a handout or script, not the scroll page
+# -----------------------------------------------------------------------------
+layers_registry:
+  - id: question_prompt
+    render: scene_extra
+    shape: string
+    limits: 20 words or fewer, one open question
+    agent_instruction: >
+      Ask the learner one question they can answer in their head or in notes.
+      It must need the topic to answer.
+  - id: micro_task
+    render: scene_extra
+    shape: "{ instruction: string, minutes: 1 or 2 }"
+    limits: instruction 25 words or fewer
+    agent_instruction: >
+      Give one action the learner can finish in two minutes with a clear stop.
+  - id: transition_cue
+    render: scene_extra
+    shape: string
+    limits: 15 words or fewer
+    agent_instruction: >
+      One line that hands the learner to the next stage. Null on the last scene.
+  - id: evidence_cue
+    render: scene_extra
+    shape: string
+    limits: 25 words or fewer
+    agent_instruction: >
+      Name the observable sign that the learner did this stage well.
+  - id: example_case
+    render: data_only
+    shape: string
+    limits: 60 words or fewer
+    agent_instruction: >
+      A short concrete case from the topic. Name the person, the situation and
+      the result. No invented statistics.
+  - id: misconception
+    render: data_only
+    shape: "{ myth: string, fix: string }"
+    limits: each 25 words or fewer
+    agent_instruction: >
+      The wrong move people make at this stage and the correction.
+  - id: analogy
+    render: data_only
+    shape: string
+    limits: 30 words or fewer
+    agent_instruction: >
+      One familiar comparison from everyday life. Say where it breaks down if it does.
+  - id: retrieval_check
+    render: data_only
+    shape: "{ question, options (3 or 4), answer_index, feedback_correct, feedback_incorrect }"
+    limits: question 25 words or fewer, options 12 words or fewer
+    agent_instruction: >
+      One multiple choice item. Wrong options must be plausible. Feedback
+      explains why, not just that.
+  - id: tiers
+    render: data_only
+    shape: "{ intro: string, standard: string, advanced: string }"
+    limits: each 18 to 45 words
+    agent_instruction: >
+      Rewrite the body at three depths. Intro uses everyday words. Advanced
+      adds one nuance or limit. Standard matches d01.body.
+  - id: context_variants
+    render: data_only
+    shape: "map of context id to string"
+    limits: each 18 to 35 words, ids from d00.contexts only
+    agent_instruction: >
+      Rewrite the body for each context in d00.contexts. Change the example,
+      not the stage.
+  - id: narration
+    render: export
+    shape: string
+    limits: 45 words or fewer, spoken text only
+    agent_instruction: >
+      Write the scene as it should sound read aloud. Spell out symbols. Add no
+      markup. Mark a hard word as [say: respelling] on first use.
+  - id: plain_summary
+    render: data_only
+    shape: string
+    limits: 15 words or fewer
+    agent_instruction: >
+      One sentence for a contents list, a tooltip or a screen reader summary.
+  - id: reflection_note
+    render: export
+    shape: string
+    limits: 25 words or fewer
+    agent_instruction: >
+      A prompt for the learner's own notes after the scene. It asks about their
+      situation, not about the topic in general.
+  - id: sources
+    render: export
+    shape: "list of { citation, url, claim_supported }"
+    limits: 3 items or fewer
+    agent_instruction: >
+      Only works you can name accurately. Set the whole layer to null when you
+      cannot. Never guess a URL.
+
+# -----------------------------------------------------------------------------
+# 5. MODELS
+# -----------------------------------------------------------------------------
+models:
+  oqea:
+    name: Observe, Question, Explore, Act
+    short: OQEA
+    fixed: true
+    stages:
+      - key: observe
+        label: Observe
+        purpose: See what is happening before you judge it.
+      - key: question
+        label: Question
+        purpose: Find the assumption that would change your next move.
+      - key: explore
+        label: Explore
+        purpose: Compare small options without waiting for a perfect answer.
+      - key: act
+        label: Act
+        purpose: Choose one action you can explain, test and review.
+  custom:
+    fixed: false
+    stage_count: { min: 3, max: 7 }
+    rules:
+      - Build stages from d00.real_substeps, not from a favourite acronym.
+      - One verb or one short noun per stage label.
+      - Stages must not overlap. If two share a purpose, merge them.
+      - Order follows what the learner does first, not what matters most.
+      - More than 4 stages cycle through the four colour slots.
+      - State what the model shows that OQEA hides.
+
+# -----------------------------------------------------------------------------
+# 6. STYLE PRESETS: background, transition, scheme and effect that suit each other
+# -----------------------------------------------------------------------------
+style_presets:
+  - { id: original,     scheme: default, background: lines,     transition: null,    effect: zoom }
+  - { id: calm,         scheme: default, background: wash,      transition: null,    effect: zoom }
+  - { id: technical,    scheme: default, background: grid,      transition: drift,   effect: fade }
+  - { id: editorial,    scheme: warm,    background: spotlight, transition: stagger, effect: fade }
+  - { id: atlas,        scheme: dusk,    background: contour,   transition: tilt,    effect: fade }
+  - { id: horizon-rise, scheme: default, background: horizon,   transition: rise,    effect: fade }
+  - { id: night-study,  scheme: night,   background: aurora,    transition: null,    effect: blur }
+
+# -----------------------------------------------------------------------------
+# 7. RENDER RECIPE
+# Optional attributes are left out when their field is null.
+# -----------------------------------------------------------------------------
+render_recipe:
+  host: |
+    <main class="scroll-scenes" aria-label="{d00.title}"
+          data-scheme="{scheme}" data-scene-bg="{background}"
+          data-scene-transition="{transition}">
+  nav_button: '<button type="button" data-scroll-to="{i}">{nn} {stage_label}</button>'
+  scene: |
+    <section data-scroll-scene aria-label="{stage_label}" data-scene-bg="{d01.background}" data-scene-colour="{colour_slot}"><div data-scene-content>
+      <p class="scene-number">{nn} / {STAGE_LABEL}</p>
+      <h2>{heading_lines joined with <br>}</h2>
+      <p class="scene-copy">{body}</p>
+    </div></section>
+  mount: "ScrollScenes.mount(document.querySelector('.scroll-scenes'), { effect, snap })"
+
+# =============================================================================
+# 8. CONTENT: THE BLANK TEMPLATE
+# Copy from here down. Set d00.topic and hand the file to the agent.
+# =============================================================================
+content:
+  d00:
+    topic_id: null
+    topic: null
+    title: null
+    audience: null
+    learning_aim: null
+    core_move: null
+    real_substeps: []
+    assumptions: []
+    contexts: [baseline]
+    layers_enabled: [question_prompt, micro_task, transition_cue, evidence_cue, plain_summary]
+    language: en-GB
+    presentation:
+      preset: null
+      scheme: null
+      background: null
+      transition: null
+      effect: zoom
+      snap: true
+
+  sets:
+    A:
+      model: oqea
+      d01:
+        - &scene_shape
+          key: observe
+          stage_label: Observe
+          stage_purpose: null
+          heading_lines: []
+          body: null
+          colour_slot: null
+          background: null
+          layers:
+            question_prompt: null
+            micro_task: null
+            transition_cue: null
+            evidence_cue: null
+            plain_summary: null
+          i18n: { cy: null }
+        - { <<: *scene_shape, key: question, stage_label: Question }
+        - { <<: *scene_shape, key: explore,  stage_label: Explore }
+        - { <<: *scene_shape, key: act,      stage_label: Act }
+    B:
+      model: custom
+      model_name: null
+      derivation:
+        shows_that_a_hides: null
+        why_not_oqea: null
+      d01:
+        # 3 to 7 scenes. Copy the shape of a Set A scene for each one.
+        - <<: *scene_shape
+          key: null
+          stage_label: null
+
+  recommendation:
+    set: null          # A or B
+    reason: null       # 40 words or fewer
+
+# =============================================================================
+# 9. EXAMPLES (illustration only)
+# =============================================================================
+example:
+  A_oqea_demo_copy:
+    note: >
+      This is the copy now in index.html, written as data. Rendering it with
+      render_recipe gives the same four sections.
+    d00:
+      topic_id: working-through-a-problem
+      topic: Working through a problem
+      title: Learning journey
+      language: en-GB
+      presentation: { preset: original, scheme: default, background: lines, transition: null, effect: zoom, snap: true }
+    d01:
+      - key: observe
+        stage_label: Observe
+        stage_purpose: See what is happening before you judge it.
+        heading_lines: [Start with, what you notice.]
+        body: >-
+          Slow down long enough to see the situation clearly. What is happening,
+          and what might you be missing?
+        layers:
+          question_prompt: What would a stranger see if they walked in now?
+          micro_task: { instruction: Write three plain facts about the situation. Leave out opinions., minutes: 2 }
+          transition_cue: Now test what you think you know.
+          evidence_cue: Your notes describe what happened without saying why.
+          plain_summary: Look closely before you decide what is going on.
+      - key: question
+        stage_label: Question
+        stage_purpose: Find the assumption that would change your next move.
+        heading_lines: [Make room for, a better question.]
+        body: >-
+          Look beyond your first explanation. Find the assumption that would
+          change your next move if it turned out to be wrong.
+      - key: explore
+        stage_label: Explore
+        stage_purpose: Compare small options without waiting for a perfect answer.
+        heading_lines: [Try something, small and useful.]
+        body: >-
+          Compare possibilities without needing a perfect answer. A modest
+          experiment can reveal more than another round of guessing.
+      - key: act
+        stage_label: Act
+        stage_purpose: Choose one action you can explain, test and review.
+        heading_lines: [Take the learning, back with you.]
+        body: >-
+          Choose one action you can explain, test and review. Decide what
+          evidence will tell you whether it helped.
+
+  B_custom_model_illustration:
+    note: >
+      Shows the shape of an agent-built model for a different topic. The stage
+      names belong to this topic only. Do not reuse them.
+    d00:
+      topic_id: judging-a-source
+      topic: Judging whether a source is reliable
+      title: Source check
+    model_name: Source Trail
+    derivation:
+      shows_that_a_hides: >-
+        Checking a source is a trail you follow outward from the page, and the
+        order matters. OQEA starts from your impressions, but here you must
+        start from who made the thing.
+      why_not_oqea: >-
+        Observe and Question blur together when the first move is a factual
+        lookup, and Act has no single end point because you log what you found.
+    d01:
+      - key: trace
+        stage_label: Trace
+        stage_purpose: Find out who made the source and why.
+        heading_lines: [Find who made it, and why.]
+        body: >-
+          Name the author, the publisher and the date before you read the
+          claims. A source with no traceable maker cannot be checked.
+      - key: test
+        stage_label: Test
+        stage_purpose: Check the strongest claim against its own evidence.
+        heading_lines: [Test the one, claim that matters.]
+        body: >-
+          Pick the claim your work will rely on. Look for the data, quotation
+          or study behind it and read that instead of the summary.
+      - key: cross-check
+        stage_label: Cross-check
+        stage_purpose: Compare with independent sources.
+        heading_lines: [Ask who else, says the same.]
+        body: >-
+          Find two sources that do not cite each other. If they agree, your
+          confidence goes up. If they disagree, you have found a question.
+      - key: judge
+        stage_label: Judge
+        stage_purpose: Decide how far to rely on it.
+        heading_lines: [Decide how much, to rely on it.]
+        body: >-
+          Rate the source for this use only. A blog can suit a local example
+          and still fail as evidence for a general claim.
+      - key: log
+        stage_label: Log
+        stage_purpose: Record the decision so you can defend it later.
+        heading_lines: [Write down, what you decided.]
+        body: >-
+          Note the source, your rating and the reason in one line. You will
+          need that line when someone asks where a claim came from.

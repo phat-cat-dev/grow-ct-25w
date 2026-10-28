@@ -1,0 +1,18 @@
+:root {
+  --ab-base-pf-default-h1-color: var(--ab-dark-blue);
+  --ab-base-pf-default-h2-color: var(--ab-dark-grey);
+  --ab-base-pf-default-h3-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-base-pf-default-h6-color: var(--ab-black-subtle);
+}
+/* DARK THEME TEMPORARILY DISABLED (Abbott, commented out "for a bit"). Uncomment to restore.
+:root[data-theme="dark"] { .ab-font-dark-tokens(); }
+@media (prefers-color-scheme: dark) {
+  // ab-force-light (set on <html> via config _htmlClasses) blocks OS-driven
+  // dark; remove that class to restore automatic dark. data-theme="light"
+  // does the same at the attribute level. [data-theme="dark"] above still
+  // opts in explicitly regardless. (Abbott, 10 Oct 2026: light-only for now.)
+  :root:not([data-theme="light"]):not(.ab-force-light) { .ab-font-dark-tokens(); }
+}
+*/

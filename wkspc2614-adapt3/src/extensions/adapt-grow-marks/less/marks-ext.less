@@ -1,0 +1,17 @@
+// ============================================================================
+//  marks-ext.less — extension-specific tweaks.
+//  The ink-mark styles themselves live in grow-marks.less (vendored from the
+//  grow-marks library). This file only adds small niceties for how marks sit
+//  inside other components' content.
+// ============================================================================
+
+// A feedback glyph dropped next to a question title needs a little air.
+.component__title .gm-inline,
+.component__title-inner .gm-inline {
+  margin-inline-start: .35em;
+}
+
+// Author-tagged words carry no interactivity of their own; keep the text cursor.
+[data-gm-mark] {
+  cursor: inherit;
+}

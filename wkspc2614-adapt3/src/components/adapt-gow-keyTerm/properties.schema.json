@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$anchor": "keyTerm",
+  "type": "object",
+  "title": "Key Term (GOW)",
+  "properties": {
+    "_component": {
+      "type": "string",
+      "const": "keyTerm",
+      "default": "keyTerm",
+      "isObjectId": true,
+      "readOnly": true,
+      "title": "Component type"
+    },
+    "_classes": {
+      "type": "string",
+      "title": "CSS classes",
+      "default": ""
+    },
+    "_reveal": {
+      "type": "boolean",
+      "title": "Reveal on click",
+      "default": false,
+      "description": "When true, only the term is shown first; one button reveals the definition, then the example, then related terms, one click at a time (flashcard style). When false, everything shows at once."
+    },
+    "term": {
+      "type": "string",
+      "title": "Term",
+      "default": "",
+      "required": true,
+      "description": "The term being defined. Keep to ~6 words or fewer."
+    },
+    "_partOfSpeech": {
+      "type": "string",
+      "title": "Part of speech",
+      "enum": ["", "noun", "verb", "adjective", "adverb", "phrase"],
+      "default": ""
+    },
+    "pronunciation": {
+      "type": "string",
+      "title": "Pronunciation",
+      "default": "",
+      "description": "Plain-English phonetic guide (not IPA), e.g. \"pee-er-ree-vyoo\"."
+    },
+    "definition": {
+      "type": "string",
+      "title": "Definition",
+      "default": "",
+      "required": true,
+      "description": "Plain text, ~40 words or fewer."
+    },
+    "extendedDefinition": {
+      "type": "string",
+      "title": "Extended definition",
+      "format": "html",
+      "default": "",
+      "description": "Optional longer-form HTML explanation (congen11 source cap: ~2 short blocks)."
+    },
+    "example": {
+      "type": "string",
+      "title": "Example",
+      "default": "",
+      "description": "A single example sentence showing the term in use."
+    },
+    "_relatedTerms": {
+      "type": "array",
+      "title": "Related terms",
+      "items": {
+        "type": "string",
+        "title": "Term"
+      },
+      "maxItems": 5
+    }
+  },
+  "required": ["_component", "term", "definition"]
+}

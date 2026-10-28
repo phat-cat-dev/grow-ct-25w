@@ -1,0 +1,2547 @@
+{
+  "pack": "dark-blue",
+  "mode": "dark",
+  "viewport": "1280x800",
+  "tokens": {
+    "--ab-accent-2": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-accent-2-line": {
+      "raw": "color-mix(in srgb, #0a2a3d 20%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.2)",
+      "type": "color"
+    },
+    "--ab-accent-2-tint": {
+      "raw": "color-mix(in srgb, #0a2a3d 8%, #ffffff)",
+      "resolved": "color(srgb 0.923137 0.933177 0.939137)",
+      "type": "color"
+    },
+    "--ab-accent-3": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-accent-3-line": {
+      "raw": "color-mix(in srgb, #0a2a3d 20%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.2)",
+      "type": "color"
+    },
+    "--ab-accent-3-tint": {
+      "raw": "color-mix(in srgb, #0a2a3d 8%, #ffffff)",
+      "resolved": "color(srgb 0.923137 0.933177 0.939137)",
+      "type": "color"
+    },
+    "--ab-accent-l": {
+      "raw": "62%",
+      "resolved": "620px",
+      "type": "length"
+    },
+    "--ab-accent-rgb": {
+      "raw": "10, 42, 61",
+      "resolved": "10, 42, 61",
+      "type": "raw"
+    },
+    "--ab-accent2-h": {
+      "raw": "202",
+      "resolved": "202",
+      "type": "raw"
+    },
+    "--ab-accent2-l": {
+      "raw": "14%",
+      "resolved": "140px",
+      "type": "length"
+    },
+    "--ab-accent2-s": {
+      "raw": "72%",
+      "resolved": "720px",
+      "type": "length"
+    },
+    "--ab-accent3-h": {
+      "raw": "202",
+      "resolved": "202",
+      "type": "raw"
+    },
+    "--ab-accent3-l": {
+      "raw": "14%",
+      "resolved": "140px",
+      "type": "length"
+    },
+    "--ab-accent3-s": {
+      "raw": "72%",
+      "resolved": "720px",
+      "type": "length"
+    },
+    "--ab-amethyst": {
+      "raw": "#544154",
+      "resolved": "rgb(84, 65, 84)",
+      "type": "color"
+    },
+    "--ab-amethyst-rgb": {
+      "raw": "84, 65, 84",
+      "resolved": "84, 65, 84",
+      "type": "raw"
+    },
+    "--ab-aquamarine": {
+      "raw": "#2e607a",
+      "resolved": "rgb(46, 96, 122)",
+      "type": "color"
+    },
+    "--ab-aquamarine-rgb": {
+      "raw": "46, 96, 122",
+      "resolved": "46, 96, 122",
+      "type": "raw"
+    },
+    "--ab-base-accent": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-base-accent-active": {
+      "raw": "hsl(202 72% calc(62% - 4%))",
+      "resolved": "rgb(71, 168, 225)",
+      "type": "color"
+    },
+    "--ab-base-accent-deep": {
+      "raw": "hsl(202 72% calc(62% - 6%))",
+      "resolved": "rgb(62, 164, 224)",
+      "type": "color"
+    },
+    "--ab-base-accent-hover": {
+      "raw": "hsl(202 72% calc(62% - 2%))",
+      "resolved": "rgb(80, 173, 226)",
+      "type": "color"
+    },
+    "--ab-base-accent-line": {
+      "raw": "hsl(202 72% 62% / 0.2)",
+      "resolved": "rgba(88, 177, 228, 0.2)",
+      "type": "color"
+    },
+    "--ab-base-accent-ring": {
+      "raw": "hsl(202 72% 55%)",
+      "resolved": "rgb(58, 162, 223)",
+      "type": "color"
+    },
+    "--ab-base-accent-tint": {
+      "raw": "hsl(202 calc(72% * 0.5) 95%)",
+      "resolved": "rgb(238, 243, 247)",
+      "type": "color"
+    },
+    "--ab-base-border-width": {
+      "raw": "0.1rem",
+      "resolved": "1.59375px",
+      "type": "length"
+    },
+    "--ab-base-bp-lg": {
+      "raw": "992px",
+      "resolved": "992px",
+      "type": "length"
+    },
+    "--ab-base-bp-md": {
+      "raw": "768px",
+      "resolved": "768px",
+      "type": "length"
+    },
+    "--ab-base-bp-sm": {
+      "raw": "576px",
+      "resolved": "576px",
+      "type": "length"
+    },
+    "--ab-base-bp-xl": {
+      "raw": "1200px",
+      "resolved": "1200px",
+      "type": "length"
+    },
+    "--ab-base-bp-xxl": {
+      "raw": "1400px",
+      "resolved": "1400px",
+      "type": "length"
+    },
+    "--ab-base-bp-xxxl": {
+      "raw": "1600px",
+      "resolved": "1600px",
+      "type": "length"
+    },
+    "--ab-base-cq-medium": {
+      "raw": "30rem",
+      "resolved": "480px",
+      "type": "length"
+    },
+    "--ab-base-cq-wide": {
+      "raw": "45rem",
+      "resolved": "720px",
+      "type": "length"
+    },
+    "--ab-base-gutter": {
+      "raw": "1rem",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-base-h1-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-base-h2-color": {
+      "raw": "color-mix(in srgb, #0a2a3d 72%, #6d6d6d 28%)",
+      "resolved": "color(srgb 0.147922 0.238275 0.291922)",
+      "type": "color"
+    },
+    "--ab-base-h3-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-h4-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-h5-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-h6-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-hairline": {
+      "raw": "color-mix(in srgb, #0a2a3d 18%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.18)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-disabled": {
+      "raw": "#f3f3f3",
+      "resolved": "rgb(243, 243, 243)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-font-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-font-color-muted": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-font-color-strong": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-greyDark": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-greyDark-hover": {
+      "raw": "color-mix(in srgb, #0a2a3d 85%, #000)",
+      "resolved": "color(srgb 0.0333333 0.14 0.203333)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-greyLight": {
+      "raw": "#d0dfe8",
+      "resolved": "rgb(208, 223, 232)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-hairline": {
+      "raw": "color-mix(in srgb, #0a2a3d 18%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.18)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-item-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-item-color-hover": {
+      "raw": "hsl(202 72% calc(62% - 2%))",
+      "resolved": "rgb(80, 173, 226)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-item-color-inverted": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-item-color-selected": {
+      "raw": "hsl(202 72% calc(62% - 6%))",
+      "resolved": "rgb(62, 164, 224)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-item-color-visited": {
+      "raw": "hsl(202 72% calc(62% - 4%))",
+      "resolved": "rgb(71, 168, 225)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-validation-error": {
+      "raw": "#6b0f1a",
+      "resolved": "rgb(107, 15, 26)",
+      "type": "color"
+    },
+    "--ab-base-if-adapt-validation-success": {
+      "raw": "#29524a",
+      "resolved": "rgb(41, 82, 74)",
+      "type": "color"
+    },
+    "--ab-base-ink": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-ink-muted": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-base-measure-max": {
+      "raw": "98.75rem",
+      "resolved": "1580px",
+      "type": "length"
+    },
+    "--ab-base-negative-bg": {
+      "raw": "hsl(5 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(244, 236, 235)",
+      "type": "color"
+    },
+    "--ab-base-negative-border": {
+      "raw": "hsl(5 55% 42%)",
+      "resolved": "rgb(166, 58, 48)",
+      "type": "color"
+    },
+    "--ab-base-negative-hue": {
+      "raw": "5",
+      "resolved": "5",
+      "type": "raw"
+    },
+    "--ab-base-negative-icon": {
+      "raw": "\"cancel\"",
+      "resolved": "\"cancel\"",
+      "type": "raw"
+    },
+    "--ab-base-negative-icon-colour": {
+      "raw": "hsl(5 55% 42%)",
+      "resolved": "rgb(166, 58, 48)",
+      "type": "color"
+    },
+    "--ab-base-negative-incorrect-icon": {
+      "raw": "\"cancel\"",
+      "resolved": "\"cancel\"",
+      "type": "raw"
+    },
+    "--ab-base-negative-ink": {
+      "raw": "hsl(5 55% 28%)",
+      "resolved": "rgb(111, 39, 32)",
+      "type": "color"
+    },
+    "--ab-base-negative-warn-icon": {
+      "raw": "\"warning\"",
+      "resolved": "\"warning\"",
+      "type": "raw"
+    },
+    "--ab-base-neutral-bg": {
+      "raw": "hsl(38 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(244, 241, 235)",
+      "type": "color"
+    },
+    "--ab-base-neutral-border": {
+      "raw": "hsl(38 55% 42%)",
+      "resolved": "rgb(166, 123, 48)",
+      "type": "color"
+    },
+    "--ab-base-neutral-hue": {
+      "raw": "38",
+      "resolved": "38",
+      "type": "raw"
+    },
+    "--ab-base-neutral-icon": {
+      "raw": "\"info\"",
+      "resolved": "\"info\"",
+      "type": "raw"
+    },
+    "--ab-base-neutral-icon-colour": {
+      "raw": "hsl(38 55% 42%)",
+      "resolved": "rgb(166, 123, 48)",
+      "type": "color"
+    },
+    "--ab-base-neutral-ink": {
+      "raw": "hsl(38 55% 28%)",
+      "resolved": "rgb(111, 82, 32)",
+      "type": "color"
+    },
+    "--ab-base-neutral-observe-icon": {
+      "raw": "\"visibility\"",
+      "resolved": "\"visibility\"",
+      "type": "raw"
+    },
+    "--ab-base-on-accent": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-base-pad-y": {
+      "raw": "clamp(0.75rem, calc(0.5rem + 1.5vh), 1.75rem)",
+      "resolved": "20px",
+      "type": "length"
+    },
+    "--ab-base-page-max": {
+      "raw": "clamp(17.5rem, 94vw, 98.75rem)",
+      "resolved": "1203.19px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-accent": {
+      "raw": "hsl(202 72% 62%)",
+      "resolved": "rgb(88, 177, 228)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-active": {
+      "raw": "hsl(202 72% calc(62% - 4%))",
+      "resolved": "rgb(71, 168, 225)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-deep": {
+      "raw": "hsl(202 72% calc(62% - 6%))",
+      "resolved": "rgb(62, 164, 224)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-hover": {
+      "raw": "hsl(202 72% calc(62% - 2%))",
+      "resolved": "rgb(80, 173, 226)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-line": {
+      "raw": "hsl(202 72% 62% / 0.2)",
+      "resolved": "rgba(88, 177, 228, 0.2)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-ring": {
+      "raw": "hsl(202 72% 55%)",
+      "resolved": "rgb(58, 162, 223)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-accent-tint": {
+      "raw": "hsl(202 calc(72% * 0.5) 95%)",
+      "resolved": "rgb(238, 243, 247)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-border-width": {
+      "raw": "0.1rem",
+      "resolved": "1.59375px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-lg": {
+      "raw": "992px",
+      "resolved": "992px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-md": {
+      "raw": "768px",
+      "resolved": "768px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-sm": {
+      "raw": "576px",
+      "resolved": "576px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-xl": {
+      "raw": "1200px",
+      "resolved": "1200px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-xxl": {
+      "raw": "1400px",
+      "resolved": "1400px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-bp-xxxl": {
+      "raw": "1600px",
+      "resolved": "1600px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-cq-medium": {
+      "raw": "30rem",
+      "resolved": "480px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-cq-wide": {
+      "raw": "45rem",
+      "resolved": "720px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-gutter": {
+      "raw": "1rem",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-h1-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-h2-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-h3-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-h4-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-h5-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-h6-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-hairline": {
+      "raw": "hsl(202 0% 32%)",
+      "resolved": "rgb(82, 82, 82)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-ink": {
+      "raw": "hsl(202 0% 92%)",
+      "resolved": "rgb(235, 235, 235)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-ink-muted": {
+      "raw": "hsl(202 0% 62%)",
+      "resolved": "rgb(158, 158, 158)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-measure-max": {
+      "raw": "98.75rem",
+      "resolved": "1580px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-negative-bg": {
+      "raw": "hsl(5 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(244, 236, 235)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-negative-border": {
+      "raw": "hsl(5 55% 42%)",
+      "resolved": "rgb(166, 58, 48)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-negative-hue": {
+      "raw": "5",
+      "resolved": "5",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-negative-icon": {
+      "raw": "\"cancel\"",
+      "resolved": "\"cancel\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-negative-icon-colour": {
+      "raw": "hsl(5 55% 42%)",
+      "resolved": "rgb(166, 58, 48)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-negative-incorrect-icon": {
+      "raw": "\"cancel\"",
+      "resolved": "\"cancel\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-negative-ink": {
+      "raw": "hsl(5 55% 28%)",
+      "resolved": "rgb(111, 39, 32)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-negative-warn-icon": {
+      "raw": "\"warning\"",
+      "resolved": "\"warning\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-neutral-bg": {
+      "raw": "hsl(38 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(244, 241, 235)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-neutral-border": {
+      "raw": "hsl(38 55% 42%)",
+      "resolved": "rgb(166, 123, 48)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-neutral-hue": {
+      "raw": "38",
+      "resolved": "38",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-neutral-icon": {
+      "raw": "\"info\"",
+      "resolved": "\"info\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-neutral-icon-colour": {
+      "raw": "hsl(38 55% 42%)",
+      "resolved": "rgb(166, 123, 48)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-neutral-ink": {
+      "raw": "hsl(38 55% 28%)",
+      "resolved": "rgb(111, 82, 32)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-neutral-observe-icon": {
+      "raw": "\"visibility\"",
+      "resolved": "\"visibility\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-on-accent": {
+      "raw": "hsl(202 0% 100%)",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-pad-y": {
+      "raw": "clamp(0.75rem, calc(0.5rem + 1.5vh), 1.75rem)",
+      "resolved": "20px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-page-max": {
+      "raw": "clamp(17.5rem, 94vw, 98.75rem)",
+      "resolved": "1203.19px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-positive-advise-icon": {
+      "raw": "\"lightbulb\"",
+      "resolved": "\"lightbulb\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-positive-bg": {
+      "raw": "hsl(145 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(235, 244, 239)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-positive-border": {
+      "raw": "hsl(145 55% 42%)",
+      "resolved": "rgb(48, 166, 97)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-positive-correct-icon": {
+      "raw": "\"check_circle\"",
+      "resolved": "\"check_circle\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-positive-hue": {
+      "raw": "145",
+      "resolved": "145",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-positive-icon": {
+      "raw": "\"check_circle\"",
+      "resolved": "\"check_circle\"",
+      "type": "raw"
+    },
+    "--ab-base-pf-default-positive-icon-colour": {
+      "raw": "hsl(145 55% 42%)",
+      "resolved": "rgb(48, 166, 97)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-positive-ink": {
+      "raw": "hsl(145 55% 28%)",
+      "resolved": "rgb(32, 111, 65)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-radius": {
+      "raw": "0.32rem",
+      "resolved": "5.10938px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-semantic-l": {
+      "raw": "42%",
+      "resolved": "420px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-semantic-s": {
+      "raw": "55%",
+      "resolved": "550px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-025": {
+      "raw": "clamp(0.25rem, calc(0.235rem + 0.0752vi), 0.3125rem)",
+      "resolved": "4.71875px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-050": {
+      "raw": "clamp(0.5rem, calc(0.4699rem + 0.1504vi), 0.625rem)",
+      "resolved": "9.4375px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-075": {
+      "raw": "clamp(0.75rem, calc(0.7049rem + 0.2256vi), 0.9375rem)",
+      "resolved": "14.1562px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-100": {
+      "raw": "clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem)",
+      "resolved": "18.875px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-125": {
+      "raw": "clamp(1.25rem, calc(1.1748rem + 0.3759vi), 1.5625rem)",
+      "resolved": "23.5938px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-150": {
+      "raw": "clamp(1.5rem, calc(1.4098rem + 0.4511vi), 1.875rem)",
+      "resolved": "28.3281px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-175": {
+      "raw": "clamp(1.75rem, calc(1.6447rem + 0.5263vi), 2.1875rem)",
+      "resolved": "33.0469px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-200": {
+      "raw": "clamp(2rem, calc(1.8797rem + 0.6015vi), 2.5rem)",
+      "resolved": "37.7656px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-300": {
+      "raw": "clamp(3rem, calc(2.8195rem + 0.9023vi), 3.75rem)",
+      "resolved": "56.6562px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-400": {
+      "raw": "clamp(4rem, calc(3.7594rem + 1.203vi), 5rem)",
+      "resolved": "75.5469px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-500": {
+      "raw": "clamp(5rem, calc(4.6992rem + 1.5038vi), 6.25rem)",
+      "resolved": "94.4219px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-space-600": {
+      "raw": "clamp(6rem, calc(5.6391rem + 1.8045vi), 7.5rem)",
+      "resolved": "113.312px",
+      "type": "length"
+    },
+    "--ab-base-pf-default-surface": {
+      "raw": "hsl(202 0% 14%)",
+      "resolved": "rgb(36, 36, 36)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-surface-subtle": {
+      "raw": "hsl(202 0% 18%)",
+      "resolved": "rgb(46, 46, 46)",
+      "type": "color"
+    },
+    "--ab-base-pf-default-surface-sunken": {
+      "raw": "hsl(202 0% 9%)",
+      "resolved": "rgb(23, 23, 23)",
+      "type": "color"
+    },
+    "--ab-base-positive-advise-icon": {
+      "raw": "\"lightbulb\"",
+      "resolved": "\"lightbulb\"",
+      "type": "raw"
+    },
+    "--ab-base-positive-bg": {
+      "raw": "hsl(145 calc(55% * 0.5) 94%)",
+      "resolved": "rgb(235, 244, 239)",
+      "type": "color"
+    },
+    "--ab-base-positive-border": {
+      "raw": "hsl(145 55% 42%)",
+      "resolved": "rgb(48, 166, 97)",
+      "type": "color"
+    },
+    "--ab-base-positive-correct-icon": {
+      "raw": "\"check_circle\"",
+      "resolved": "\"check_circle\"",
+      "type": "raw"
+    },
+    "--ab-base-positive-hue": {
+      "raw": "145",
+      "resolved": "145",
+      "type": "raw"
+    },
+    "--ab-base-positive-icon": {
+      "raw": "\"check_circle\"",
+      "resolved": "\"check_circle\"",
+      "type": "raw"
+    },
+    "--ab-base-positive-icon-colour": {
+      "raw": "hsl(145 55% 42%)",
+      "resolved": "rgb(48, 166, 97)",
+      "type": "color"
+    },
+    "--ab-base-positive-ink": {
+      "raw": "hsl(145 55% 28%)",
+      "resolved": "rgb(32, 111, 65)",
+      "type": "color"
+    },
+    "--ab-base-radius": {
+      "raw": "0.32rem",
+      "resolved": "5.10938px",
+      "type": "length"
+    },
+    "--ab-base-semantic-l": {
+      "raw": "42%",
+      "resolved": "420px",
+      "type": "length"
+    },
+    "--ab-base-semantic-s": {
+      "raw": "55%",
+      "resolved": "550px",
+      "type": "length"
+    },
+    "--ab-base-space-025": {
+      "raw": "clamp(0.25rem, calc(0.235rem + 0.0752vi), 0.3125rem)",
+      "resolved": "4.71875px",
+      "type": "length"
+    },
+    "--ab-base-space-050": {
+      "raw": "clamp(0.5rem, calc(0.4699rem + 0.1504vi), 0.625rem)",
+      "resolved": "9.4375px",
+      "type": "length"
+    },
+    "--ab-base-space-075": {
+      "raw": "clamp(0.75rem, calc(0.7049rem + 0.2256vi), 0.9375rem)",
+      "resolved": "14.1562px",
+      "type": "length"
+    },
+    "--ab-base-space-100": {
+      "raw": "clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem)",
+      "resolved": "18.875px",
+      "type": "length"
+    },
+    "--ab-base-space-125": {
+      "raw": "clamp(1.25rem, calc(1.1748rem + 0.3759vi), 1.5625rem)",
+      "resolved": "23.5938px",
+      "type": "length"
+    },
+    "--ab-base-space-150": {
+      "raw": "clamp(1.5rem, calc(1.4098rem + 0.4511vi), 1.875rem)",
+      "resolved": "28.3281px",
+      "type": "length"
+    },
+    "--ab-base-space-175": {
+      "raw": "clamp(1.75rem, calc(1.6447rem + 0.5263vi), 2.1875rem)",
+      "resolved": "33.0469px",
+      "type": "length"
+    },
+    "--ab-base-space-200": {
+      "raw": "clamp(2rem, calc(1.8797rem + 0.6015vi), 2.5rem)",
+      "resolved": "37.7656px",
+      "type": "length"
+    },
+    "--ab-base-space-300": {
+      "raw": "clamp(3rem, calc(2.8195rem + 0.9023vi), 3.75rem)",
+      "resolved": "56.6562px",
+      "type": "length"
+    },
+    "--ab-base-space-400": {
+      "raw": "clamp(4rem, calc(3.7594rem + 1.203vi), 5rem)",
+      "resolved": "75.5469px",
+      "type": "length"
+    },
+    "--ab-base-space-500": {
+      "raw": "clamp(5rem, calc(4.6992rem + 1.5038vi), 6.25rem)",
+      "resolved": "94.4219px",
+      "type": "length"
+    },
+    "--ab-base-space-600": {
+      "raw": "clamp(6rem, calc(5.6391rem + 1.8045vi), 7.5rem)",
+      "resolved": "113.312px",
+      "type": "length"
+    },
+    "--ab-base-surface": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-base-surface-subtle": {
+      "raw": "#fafafa",
+      "resolved": "rgb(250, 250, 250)",
+      "type": "color"
+    },
+    "--ab-base-surface-sunken": {
+      "raw": "#d0dfe8",
+      "resolved": "rgb(208, 223, 232)",
+      "type": "color"
+    },
+    "--ab-black": {
+      "raw": "#000000",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-black-rgb": {
+      "raw": "0, 0, 0",
+      "resolved": "0, 0, 0",
+      "type": "raw"
+    },
+    "--ab-black-subtle": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-black-subtle-rgb": {
+      "raw": "26, 26, 26",
+      "resolved": "26, 26, 26",
+      "type": "raw"
+    },
+    "--ab-blossom": {
+      "raw": "#aa7184",
+      "resolved": "rgb(170, 113, 132)",
+      "type": "color"
+    },
+    "--ab-blossom-rgb": {
+      "raw": "170, 113, 132",
+      "resolved": "170, 113, 132",
+      "type": "raw"
+    },
+    "--ab-blue": {
+      "raw": "#304573",
+      "resolved": "rgb(48, 69, 115)",
+      "type": "color"
+    },
+    "--ab-blue-rgb": {
+      "raw": "48, 69, 115",
+      "resolved": "48, 69, 115",
+      "type": "raw"
+    },
+    "--ab-body-font-family": {
+      "raw": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "resolved": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "type": "raw"
+    },
+    "--ab-body-line-height": {
+      "raw": "1.6",
+      "resolved": "1.6",
+      "type": "raw"
+    },
+    "--ab-body-text-color-primary": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-body-text-color-secondary": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-border-radius": {
+      "raw": "0.32rem",
+      "resolved": "5.10938px",
+      "type": "length"
+    },
+    "--ab-bp-lg": {
+      "raw": "992px",
+      "resolved": "992px",
+      "type": "length"
+    },
+    "--ab-bp-md": {
+      "raw": "768px",
+      "resolved": "768px",
+      "type": "length"
+    },
+    "--ab-bp-sm": {
+      "raw": "576px",
+      "resolved": "576px",
+      "type": "length"
+    },
+    "--ab-bp-xl": {
+      "raw": "1200px",
+      "resolved": "1200px",
+      "type": "length"
+    },
+    "--ab-bp-xxl": {
+      "raw": "1400px",
+      "resolved": "1400px",
+      "type": "length"
+    },
+    "--ab-bp-xxxl": {
+      "raw": "1600px",
+      "resolved": "1600px",
+      "type": "length"
+    },
+    "--ab-bronze": {
+      "raw": "#86775c",
+      "resolved": "rgb(134, 119, 92)",
+      "type": "color"
+    },
+    "--ab-bronze-rgb": {
+      "raw": "134, 119, 92",
+      "resolved": "134, 119, 92",
+      "type": "raw"
+    },
+    "--ab-brown": {
+      "raw": "#8e6e53",
+      "resolved": "rgb(142, 110, 83)",
+      "type": "color"
+    },
+    "--ab-brown-rgb": {
+      "raw": "142, 110, 83",
+      "resolved": "142, 110, 83",
+      "type": "raw"
+    },
+    "--ab-btn-active-box-shadow": {
+      "raw": "inset 0 3px 5px rgba(0, 0, 0, 0.125)",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-btn-active-shade": {
+      "raw": "18%",
+      "resolved": "180px",
+      "type": "length"
+    },
+    "--ab-btn-bg": {
+      "raw": "transparent",
+      "resolved": "transparent",
+      "type": "raw"
+    },
+    "--ab-btn-border-color": {
+      "raw": "transparent",
+      "resolved": "transparent",
+      "type": "raw"
+    },
+    "--ab-btn-border-radius": {
+      "raw": "0.32rem",
+      "resolved": "5.10938px",
+      "type": "length"
+    },
+    "--ab-btn-border-radius-lg": {
+      "raw": "calc(0.32rem * 1.56)",
+      "resolved": "7.98438px",
+      "type": "length"
+    },
+    "--ab-btn-border-radius-sm": {
+      "raw": "calc(0.32rem * 0.78)",
+      "resolved": "3.98438px",
+      "type": "length"
+    },
+    "--ab-btn-border-width": {
+      "raw": "0.1rem",
+      "resolved": "1.59375px",
+      "type": "length"
+    },
+    "--ab-btn-box-shadow": {
+      "raw": "inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075)",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-btn-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-btn-disabled-bg": {
+      "raw": "transparent",
+      "resolved": "transparent",
+      "type": "raw"
+    },
+    "--ab-btn-disabled-border-color": {
+      "raw": "transparent",
+      "resolved": "transparent",
+      "type": "raw"
+    },
+    "--ab-btn-disabled-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-disabled-opacity": {
+      "raw": "0.65",
+      "resolved": "0.65",
+      "type": "raw"
+    },
+    "--ab-btn-focus-box-shadow": {
+      "raw": "0 0 0 0.2rem rgba(10, 42, 61, 0.5)",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-btn-focus-shadow-rgb": {
+      "raw": "10, 42, 61",
+      "resolved": "10, 42, 61",
+      "type": "raw"
+    },
+    "--ab-btn-font-family": {
+      "raw": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "resolved": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "type": "raw"
+    },
+    "--ab-btn-font-size": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-btn-font-size-lg": {
+      "raw": "1.25rem",
+      "resolved": "20px",
+      "type": "length"
+    },
+    "--ab-btn-font-size-sm": {
+      "raw": "0.875em",
+      "resolved": "14px",
+      "type": "length"
+    },
+    "--ab-btn-font-weight": {
+      "raw": "400",
+      "resolved": "400",
+      "type": "raw"
+    },
+    "--ab-btn-hover-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-btn-hover-surface": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-line-height": {
+      "raw": "1.5",
+      "resolved": "1.5",
+      "type": "raw"
+    },
+    "--ab-btn-link-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-btn-link-disabled-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-link-hover-color": {
+      "raw": "color-mix(in srgb, #0a2a3d 85%, #000)",
+      "resolved": "color(srgb 0.0333333 0.14 0.203333)",
+      "type": "color"
+    },
+    "--ab-btn-padding-x": {
+      "raw": "0.75rem",
+      "resolved": "12px",
+      "type": "length"
+    },
+    "--ab-btn-padding-x-lg": {
+      "raw": "1rem",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-btn-padding-x-sm": {
+      "raw": "0.5rem",
+      "resolved": "8px",
+      "type": "length"
+    },
+    "--ab-btn-padding-y": {
+      "raw": "0.375rem",
+      "resolved": "6px",
+      "type": "length"
+    },
+    "--ab-btn-padding-y-lg": {
+      "raw": "0.5rem",
+      "resolved": "8px",
+      "type": "length"
+    },
+    "--ab-btn-padding-y-sm": {
+      "raw": "0.25rem",
+      "resolved": "4px",
+      "type": "length"
+    },
+    "--ab-btn-primary-active-bg": {
+      "raw": "color-mix(in srgb, #0a2a3d 72%, #000)",
+      "resolved": "color(srgb 0.0282353 0.118588 0.172235)",
+      "type": "color"
+    },
+    "--ab-btn-primary-active-border-color": {
+      "raw": "color-mix(in srgb, #0a2a3d 72%, #000)",
+      "resolved": "color(srgb 0.0282353 0.118588 0.172235)",
+      "type": "color"
+    },
+    "--ab-btn-primary-active-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-primary-bg": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-btn-primary-border-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-btn-primary-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-primary-disabled-bg": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-btn-primary-disabled-border-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-btn-primary-disabled-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-primary-focus-shadow-rgb": {
+      "raw": "10, 42, 61",
+      "resolved": "10, 42, 61",
+      "type": "raw"
+    },
+    "--ab-btn-secondary-active-bg": {
+      "raw": "color-mix(in srgb, #6d6d6d 72%, #000)",
+      "resolved": "color(srgb 0.307765 0.307765 0.307765)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-active-border-color": {
+      "raw": "color-mix(in srgb, #6d6d6d 72%, #000)",
+      "resolved": "color(srgb 0.307765 0.307765 0.307765)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-active-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-bg": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-border-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-disabled-bg": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-disabled-border-color": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-disabled-color": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-btn-secondary-focus-shadow-rgb": {
+      "raw": "109, 109, 109",
+      "resolved": "109, 109, 109",
+      "type": "raw"
+    },
+    "--ab-callout-accent": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-bg": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-border-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-border-left-width": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-border-radius": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-border-width": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-font-size": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-font-weight": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-header-font-weight": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-header-margin-bottom": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-icon-margin": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-icon-size": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-line-height": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-padding-x": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-padding-y": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-callout-shadow": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-accent": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-bg": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-border-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-border-radius": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-border-width": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-box-shadow": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-cap-bg": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-cap-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-inner-border-radius": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-spacer-x": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-spacer-y": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-subtitle-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-card-title-color": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-chevron-border": {
+      "raw": "clamp(0.1rem, calc(0.08rem + 0.12vi), 0.18rem)",
+      "resolved": "2.8125px",
+      "type": "length"
+    },
+    "--ab-chevron-nudge": {
+      "raw": "-0.06em",
+      "resolved": "1000px",
+      "type": "length"
+    },
+    "--ab-chevron-size": {
+      "raw": "clamp(0.9rem, calc(0.8rem + 0.4vi), 1.25rem)",
+      "resolved": "17.9062px",
+      "type": "length"
+    },
+    "--ab-companion-l": {
+      "raw": "45%",
+      "resolved": "450px",
+      "type": "length"
+    },
+    "--ab-companion-s": {
+      "raw": "55%",
+      "resolved": "550px",
+      "type": "length"
+    },
+    "--ab-coral": {
+      "raw": "#f98948",
+      "resolved": "rgb(249, 137, 72)",
+      "type": "color"
+    },
+    "--ab-coral-rgb": {
+      "raw": "249, 137, 72",
+      "resolved": "249, 137, 72",
+      "type": "raw"
+    },
+    "--ab-danger": {
+      "raw": "#6b0f1a",
+      "resolved": "rgb(107, 15, 26)",
+      "type": "color"
+    },
+    "--ab-danger-active": {
+      "raw": "color-mix(in srgb, #6b0f1a 72%, #000)",
+      "resolved": "color(srgb 0.302118 0.0423529 0.0734118)",
+      "type": "color"
+    },
+    "--ab-danger-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-danger-h": {
+      "raw": "0",
+      "resolved": "0",
+      "type": "raw"
+    },
+    "--ab-danger-hover": {
+      "raw": "color-mix(in srgb, #6b0f1a 85%, #000)",
+      "resolved": "color(srgb 0.356667 0.05 0.0866667)",
+      "type": "color"
+    },
+    "--ab-danger-l": {
+      "raw": "43%",
+      "resolved": "430px",
+      "type": "length"
+    },
+    "--ab-danger-rgb": {
+      "raw": "107, 15, 26",
+      "resolved": "107, 15, 26",
+      "type": "raw"
+    },
+    "--ab-danger-s": {
+      "raw": "100%",
+      "resolved": "1000px",
+      "type": "length"
+    },
+    "--ab-dark": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-dark-active": {
+      "raw": "color-mix(in srgb, #1a1a1a 72%, #fff)",
+      "resolved": "color(srgb 0.353412 0.353412 0.353412)",
+      "type": "color"
+    },
+    "--ab-dark-blue": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-dark-blue-rgb": {
+      "raw": "10, 42, 61",
+      "resolved": "10, 42, 61",
+      "type": "raw"
+    },
+    "--ab-dark-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-dark-grey": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-dark-grey-rgb": {
+      "raw": "109, 109, 109",
+      "resolved": "109, 109, 109",
+      "type": "raw"
+    },
+    "--ab-dark-hover": {
+      "raw": "color-mix(in srgb, #1a1a1a 85%, #fff)",
+      "resolved": "color(srgb 0.236667 0.236667 0.236667)",
+      "type": "color"
+    },
+    "--ab-dark-rgb": {
+      "raw": "26, 26, 26",
+      "resolved": "26, 26, 26",
+      "type": "raw"
+    },
+    "--ab-font-display": {
+      "raw": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "resolved": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "type": "raw"
+    },
+    "--ab-font-mono": {
+      "raw": "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+      "resolved": "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
+      "type": "raw"
+    },
+    "--ab-font-sans": {
+      "raw": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "resolved": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+      "type": "raw"
+    },
+    "--ab-green": {
+      "raw": "#29524a",
+      "resolved": "rgb(41, 82, 74)",
+      "type": "color"
+    },
+    "--ab-green-rgb": {
+      "raw": "41, 82, 74",
+      "resolved": "41, 82, 74",
+      "type": "raw"
+    },
+    "--ab-greys-dark-10": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 90%, #000 10%)",
+      "resolved": "color(srgb 0.45 0.45 0.45)",
+      "type": "color"
+    },
+    "--ab-greys-dark-20": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 80%, #000 20%)",
+      "resolved": "color(srgb 0.4 0.4 0.4)",
+      "type": "color"
+    },
+    "--ab-greys-dark-30": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 70%, #000 30%)",
+      "resolved": "color(srgb 0.35 0.35 0.35)",
+      "type": "color"
+    },
+    "--ab-greys-dark-40": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 60%, #000 40%)",
+      "resolved": "color(srgb 0.3 0.3 0.3)",
+      "type": "color"
+    },
+    "--ab-greys-dark-50": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 50%, #000 50%)",
+      "resolved": "color(srgb 0.25 0.25 0.25)",
+      "type": "color"
+    },
+    "--ab-greys-dark-60": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 40%, #000 60%)",
+      "resolved": "color(srgb 0.2 0.2 0.2)",
+      "type": "color"
+    },
+    "--ab-greys-dark-70": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 30%, #000 70%)",
+      "resolved": "color(srgb 0.15 0.15 0.15)",
+      "type": "color"
+    },
+    "--ab-greys-dark-80": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 20%, #000 80%)",
+      "resolved": "color(srgb 0.1 0.1 0.1)",
+      "type": "color"
+    },
+    "--ab-greys-dark-90": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 10%, #000 90%)",
+      "resolved": "color(srgb 0.05 0.05 0.05)",
+      "type": "color"
+    },
+    "--ab-greys-light-10": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 90%, #fff 10%)",
+      "resolved": "color(srgb 0.55 0.55 0.55)",
+      "type": "color"
+    },
+    "--ab-greys-light-20": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 80%, #fff 20%)",
+      "resolved": "color(srgb 0.6 0.6 0.6)",
+      "type": "color"
+    },
+    "--ab-greys-light-30": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 70%, #fff 30%)",
+      "resolved": "color(srgb 0.65 0.65 0.65)",
+      "type": "color"
+    },
+    "--ab-greys-light-40": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 60%, #fff 40%)",
+      "resolved": "color(srgb 0.7 0.7 0.7)",
+      "type": "color"
+    },
+    "--ab-greys-light-50": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 50%, #fff 50%)",
+      "resolved": "color(srgb 0.75 0.75 0.75)",
+      "type": "color"
+    },
+    "--ab-greys-light-60": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 40%, #fff 60%)",
+      "resolved": "color(srgb 0.8 0.8 0.8)",
+      "type": "color"
+    },
+    "--ab-greys-light-70": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 30%, #fff 70%)",
+      "resolved": "color(srgb 0.85 0.85 0.85)",
+      "type": "color"
+    },
+    "--ab-greys-light-80": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 20%, #fff 80%)",
+      "resolved": "color(srgb 0.9 0.9 0.9)",
+      "type": "color"
+    },
+    "--ab-greys-light-90": {
+      "raw": "color-mix(in srgb, hsl(202 0% 50%) 10%, #fff 90%)",
+      "resolved": "color(srgb 0.95 0.95 0.95)",
+      "type": "color"
+    },
+    "--ab-greys-middle": {
+      "raw": "#808080",
+      "resolved": "rgb(128, 128, 128)",
+      "type": "color"
+    },
+    "--ab-greys-middle-rgb": {
+      "raw": "128, 128, 128",
+      "resolved": "128, 128, 128",
+      "type": "raw"
+    },
+    "--ab-gutter-x": {
+      "raw": "calc(clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem) * 1.5)",
+      "resolved": "28.3281px",
+      "type": "length"
+    },
+    "--ab-gutter-y": {
+      "raw": "calc(clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem) * 0)",
+      "resolved": "0px",
+      "type": "length"
+    },
+    "--ab-heading-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-heading-line-height": {
+      "raw": "1.2",
+      "resolved": "1.2",
+      "type": "raw"
+    },
+    "--ab-heading-weight": {
+      "raw": "500",
+      "resolved": "500",
+      "type": "raw"
+    },
+    "--ab-icon-fill": {
+      "raw": "0",
+      "resolved": "0",
+      "type": "raw"
+    },
+    "--ab-icon-grad": {
+      "raw": "0",
+      "resolved": "0",
+      "type": "raw"
+    },
+    "--ab-icon-opsz": {
+      "raw": "24",
+      "resolved": "24",
+      "type": "raw"
+    },
+    "--ab-icon-size": {
+      "raw": "1em",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-icon-wght": {
+      "raw": "400",
+      "resolved": "400",
+      "type": "raw"
+    },
+    "--ab-info": {
+      "raw": "#237b80",
+      "resolved": "rgb(35, 123, 128)",
+      "type": "color"
+    },
+    "--ab-info-active": {
+      "raw": "color-mix(in srgb, #237b80 72%, #000)",
+      "resolved": "color(srgb 0.0988235 0.347294 0.361412)",
+      "type": "color"
+    },
+    "--ab-info-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-info-hover": {
+      "raw": "color-mix(in srgb, #237b80 85%, #000)",
+      "resolved": "color(srgb 0.116667 0.41 0.426667)",
+      "type": "color"
+    },
+    "--ab-info-rgb": {
+      "raw": "35, 123, 128",
+      "resolved": "35, 123, 128",
+      "type": "raw"
+    },
+    "--ab-jasper": {
+      "raw": "#ae362c",
+      "resolved": "rgb(174, 54, 44)",
+      "type": "color"
+    },
+    "--ab-jasper-rgb": {
+      "raw": "174, 54, 44",
+      "resolved": "174, 54, 44",
+      "type": "raw"
+    },
+    "--ab-khaki": {
+      "raw": "#7c7f65",
+      "resolved": "rgb(124, 127, 101)",
+      "type": "color"
+    },
+    "--ab-khaki-rgb": {
+      "raw": "124, 127, 101",
+      "resolved": "124, 127, 101",
+      "type": "raw"
+    },
+    "--ab-l-hairline": {
+      "raw": "32%",
+      "resolved": "320px",
+      "type": "length"
+    },
+    "--ab-l-ink": {
+      "raw": "92%",
+      "resolved": "920px",
+      "type": "length"
+    },
+    "--ab-l-ink-muted": {
+      "raw": "62%",
+      "resolved": "620px",
+      "type": "length"
+    },
+    "--ab-l-on-accent": {
+      "raw": "100%",
+      "resolved": "1000px",
+      "type": "length"
+    },
+    "--ab-l-surface": {
+      "raw": "14%",
+      "resolved": "140px",
+      "type": "length"
+    },
+    "--ab-l-surface-subtle": {
+      "raw": "18%",
+      "resolved": "180px",
+      "type": "length"
+    },
+    "--ab-l-surface-sunken": {
+      "raw": "9%",
+      "resolved": "90px",
+      "type": "length"
+    },
+    "--ab-light": {
+      "raw": "#f3f3f3",
+      "resolved": "rgb(243, 243, 243)",
+      "type": "color"
+    },
+    "--ab-light-active": {
+      "raw": "color-mix(in srgb, #f3f3f3 85%, #000)",
+      "resolved": "color(srgb 0.81 0.81 0.81)",
+      "type": "color"
+    },
+    "--ab-light-blue": {
+      "raw": "#d0dfe8",
+      "resolved": "rgb(208, 223, 232)",
+      "type": "color"
+    },
+    "--ab-light-blue-rgb": {
+      "raw": "208, 223, 232",
+      "resolved": "208, 223, 232",
+      "type": "raw"
+    },
+    "--ab-light-contrast": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-light-grey": {
+      "raw": "#f3f3f3",
+      "resolved": "rgb(243, 243, 243)",
+      "type": "color"
+    },
+    "--ab-light-grey-rgb": {
+      "raw": "243, 243, 243",
+      "resolved": "243, 243, 243",
+      "type": "raw"
+    },
+    "--ab-light-hover": {
+      "raw": "color-mix(in srgb, #f3f3f3 92%, #000)",
+      "resolved": "color(srgb 0.876706 0.876706 0.876706)",
+      "type": "color"
+    },
+    "--ab-light-rgb": {
+      "raw": "243, 243, 243",
+      "resolved": "243, 243, 243",
+      "type": "raw"
+    },
+    "--ab-link-border-bottom": {
+      "raw": "0.05rem dotted rgba(48, 69, 115, 1)",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-link-color": {
+      "raw": "#304573",
+      "resolved": "rgb(48, 69, 115)",
+      "type": "color"
+    },
+    "--ab-link-color-rgb": {
+      "raw": "rgba(48, 69, 115, 1)",
+      "resolved": "rgb(48, 69, 115)",
+      "type": "color"
+    },
+    "--ab-link-hover-border-bottom": {
+      "raw": "0.1rem solid rgba(10, 42, 61, 1)",
+      "resolved": "rgb(0, 0, 0)",
+      "type": "color"
+    },
+    "--ab-link-hover-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-link-hover-color-rgb": {
+      "raw": "rgba(10, 42, 61, 1)",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-link-hover-text-decoration": {
+      "raw": "none",
+      "resolved": "none",
+      "type": "raw"
+    },
+    "--ab-link-opacity": {
+      "raw": "1",
+      "resolved": "1",
+      "type": "raw"
+    },
+    "--ab-link-text-decoration": {
+      "raw": "none",
+      "resolved": "none",
+      "type": "raw"
+    },
+    "--ab-midnight": {
+      "raw": "#305276",
+      "resolved": "rgb(48, 82, 118)",
+      "type": "color"
+    },
+    "--ab-midnight-rgb": {
+      "raw": "48, 82, 118",
+      "resolved": "48, 82, 118",
+      "type": "raw"
+    },
+    "--ab-neutral-base": {
+      "raw": "hsl(202 0% 50%)",
+      "resolved": "rgb(128, 128, 128)",
+      "type": "color"
+    },
+    "--ab-neutral-h": {
+      "raw": "202",
+      "resolved": "202",
+      "type": "raw"
+    },
+    "--ab-neutral-s": {
+      "raw": "0%",
+      "resolved": "0px",
+      "type": "length"
+    },
+    "--ab-ocean": {
+      "raw": "#2a6d7d",
+      "resolved": "rgb(42, 109, 125)",
+      "type": "color"
+    },
+    "--ab-ocean-rgb": {
+      "raw": "42, 109, 125",
+      "resolved": "42, 109, 125",
+      "type": "raw"
+    },
+    "--ab-olive": {
+      "raw": "#546857",
+      "resolved": "rgb(84, 104, 87)",
+      "type": "color"
+    },
+    "--ab-olive-rgb": {
+      "raw": "84, 104, 87",
+      "resolved": "84, 104, 87",
+      "type": "raw"
+    },
+    "--ab-opacity-10": {
+      "raw": "0.1",
+      "resolved": "0.1",
+      "type": "raw"
+    },
+    "--ab-opacity-100": {
+      "raw": "1",
+      "resolved": "1",
+      "type": "raw"
+    },
+    "--ab-opacity-20": {
+      "raw": "0.2",
+      "resolved": "0.2",
+      "type": "raw"
+    },
+    "--ab-opacity-30": {
+      "raw": "0.3",
+      "resolved": "0.3",
+      "type": "raw"
+    },
+    "--ab-opacity-40": {
+      "raw": "0.4",
+      "resolved": "0.4",
+      "type": "raw"
+    },
+    "--ab-opacity-50": {
+      "raw": "0.5",
+      "resolved": "0.5",
+      "type": "raw"
+    },
+    "--ab-opacity-60": {
+      "raw": "0.6",
+      "resolved": "0.6",
+      "type": "raw"
+    },
+    "--ab-opacity-70": {
+      "raw": "0.7",
+      "resolved": "0.7",
+      "type": "raw"
+    },
+    "--ab-opacity-80": {
+      "raw": "0.8",
+      "resolved": "0.8",
+      "type": "raw"
+    },
+    "--ab-opacity-90": {
+      "raw": "0.9",
+      "resolved": "0.9",
+      "type": "raw"
+    },
+    "--ab-page-gutter-x": {
+      "raw": "1rem",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-pink": {
+      "raw": "#d17b88",
+      "resolved": "rgb(209, 123, 136)",
+      "type": "color"
+    },
+    "--ab-pink-rgb": {
+      "raw": "209, 123, 136",
+      "resolved": "209, 123, 136",
+      "type": "raw"
+    },
+    "--ab-popup-accent": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-popup-backdrop": {
+      "raw": "rgba(10, 42, 61, 0.55)",
+      "resolved": "rgba(10, 42, 61, 0.55)",
+      "type": "color"
+    },
+    "--ab-popup-hairline": {
+      "raw": "color-mix(in srgb, #0a2a3d 18%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.18)",
+      "type": "color"
+    },
+    "--ab-popup-heading": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-popup-ink": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-popup-ink-muted": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-popup-max": {
+      "raw": "calc(clamp(17.5rem, 94vw, 98.75rem) * 0.92)",
+      "resolved": "1106.94px",
+      "type": "length"
+    },
+    "--ab-popup-on-accent": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-popup-shadow": {
+      "raw": "rgba(10, 42, 61, 0.25)",
+      "resolved": "rgba(10, 42, 61, 0.25)",
+      "type": "color"
+    },
+    "--ab-popup-surface": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-primary": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-primary-active": {
+      "raw": "color-mix(in srgb, #0a2a3d 72%, #000)",
+      "resolved": "color(srgb 0.0282353 0.118588 0.172235)",
+      "type": "color"
+    },
+    "--ab-primary-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-primary-hover": {
+      "raw": "color-mix(in srgb, #0a2a3d 85%, #000)",
+      "resolved": "color(srgb 0.0333333 0.14 0.203333)",
+      "type": "color"
+    },
+    "--ab-primary-rgb": {
+      "raw": "10, 42, 61",
+      "resolved": "10, 42, 61",
+      "type": "raw"
+    },
+    "--ab-purple": {
+      "raw": "#2a1f2d",
+      "resolved": "rgb(42, 31, 45)",
+      "type": "color"
+    },
+    "--ab-purple-rgb": {
+      "raw": "42, 31, 45",
+      "resolved": "42, 31, 45",
+      "type": "raw"
+    },
+    "--ab-red": {
+      "raw": "#6b0f1a",
+      "resolved": "rgb(107, 15, 26)",
+      "type": "color"
+    },
+    "--ab-red-rgb": {
+      "raw": "107, 15, 26",
+      "resolved": "107, 15, 26",
+      "type": "raw"
+    },
+    "--ab-rule": {
+      "raw": "hsl(202 72% 62% / 0.2)",
+      "resolved": "rgba(88, 177, 228, 0.2)",
+      "type": "color"
+    },
+    "--ab-secondary": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-secondary-active": {
+      "raw": "color-mix(in srgb, #6d6d6d 72%, #000)",
+      "resolved": "color(srgb 0.307765 0.307765 0.307765)",
+      "type": "color"
+    },
+    "--ab-secondary-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-secondary-hover": {
+      "raw": "color-mix(in srgb, #6d6d6d 85%, #000)",
+      "resolved": "color(srgb 0.363333 0.363333 0.363333)",
+      "type": "color"
+    },
+    "--ab-secondary-rgb": {
+      "raw": "109, 109, 109",
+      "resolved": "109, 109, 109",
+      "type": "raw"
+    },
+    "--ab-sem-bg": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-sem-border": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-sem-icon": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-sem-icon-colour": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-sem-ink": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-sienna": {
+      "raw": "#ab6621",
+      "resolved": "rgb(171, 102, 33)",
+      "type": "color"
+    },
+    "--ab-sienna-rgb": {
+      "raw": "171, 102, 33",
+      "resolved": "171, 102, 33",
+      "type": "raw"
+    },
+    "--ab-space-025": {
+      "raw": "clamp(0.25rem, calc(0.235rem + 0.0752vi), 0.3125rem)",
+      "resolved": "4.71875px",
+      "type": "length"
+    },
+    "--ab-space-050": {
+      "raw": "clamp(0.5rem, calc(0.4699rem + 0.1504vi), 0.625rem)",
+      "resolved": "9.4375px",
+      "type": "length"
+    },
+    "--ab-space-075": {
+      "raw": "clamp(0.75rem, calc(0.7049rem + 0.2256vi), 0.9375rem)",
+      "resolved": "14.1562px",
+      "type": "length"
+    },
+    "--ab-space-100": {
+      "raw": "clamp(1rem, calc(0.9398rem + 0.3008vi), 1.25rem)",
+      "resolved": "18.875px",
+      "type": "length"
+    },
+    "--ab-space-125": {
+      "raw": "clamp(1.25rem, calc(1.1748rem + 0.3759vi), 1.5625rem)",
+      "resolved": "23.5938px",
+      "type": "length"
+    },
+    "--ab-space-150": {
+      "raw": "clamp(1.5rem, calc(1.4098rem + 0.4511vi), 1.875rem)",
+      "resolved": "28.3281px",
+      "type": "length"
+    },
+    "--ab-space-175": {
+      "raw": "clamp(1.75rem, calc(1.6447rem + 0.5263vi), 2.1875rem)",
+      "resolved": "33.0469px",
+      "type": "length"
+    },
+    "--ab-space-200": {
+      "raw": "clamp(2rem, calc(1.8797rem + 0.6015vi), 2.5rem)",
+      "resolved": "37.7656px",
+      "type": "length"
+    },
+    "--ab-space-300": {
+      "raw": "clamp(3rem, calc(2.8195rem + 0.9023vi), 3.75rem)",
+      "resolved": "56.6562px",
+      "type": "length"
+    },
+    "--ab-space-400": {
+      "raw": "clamp(4rem, calc(3.7594rem + 1.203vi), 5rem)",
+      "resolved": "75.5469px",
+      "type": "length"
+    },
+    "--ab-space-500": {
+      "raw": "clamp(5rem, calc(4.6992rem + 1.5038vi), 6.25rem)",
+      "resolved": "94.4219px",
+      "type": "length"
+    },
+    "--ab-space-600": {
+      "raw": "clamp(6rem, calc(5.6391rem + 1.8045vi), 7.5rem)",
+      "resolved": "113.312px",
+      "type": "length"
+    },
+    "--ab-space-article": {
+      "raw": "clamp(2rem, calc(1.8797rem + 0.6015vi), 2.5rem)",
+      "resolved": "37.7656px",
+      "type": "length"
+    },
+    "--ab-space-block": {
+      "raw": "clamp(1.25rem, calc(1.1748rem + 0.3759vi), 1.5625rem)",
+      "resolved": "23.5938px",
+      "type": "length"
+    },
+    "--ab-space-component": {
+      "raw": "clamp(0.75rem, calc(0.7049rem + 0.2256vi), 0.9375rem)",
+      "resolved": "14.1562px",
+      "type": "length"
+    },
+    "--ab-space-within": {
+      "raw": "clamp(0.5rem, calc(0.4699rem + 0.1504vi), 0.625rem)",
+      "resolved": "9.4375px",
+      "type": "length"
+    },
+    "--ab-stronger": {
+      "raw": "#29524a",
+      "resolved": "rgb(41, 82, 74)",
+      "type": "color"
+    },
+    "--ab-stronger-tint": {
+      "raw": "rgba(41, 82, 74, 0.08)",
+      "resolved": "rgba(41, 82, 74, 0.08)",
+      "type": "color"
+    },
+    "--ab-success": {
+      "raw": "#29524a",
+      "resolved": "rgb(41, 82, 74)",
+      "type": "color"
+    },
+    "--ab-success-active": {
+      "raw": "color-mix(in srgb, #29524a 72%, #000)",
+      "resolved": "color(srgb 0.115765 0.231529 0.208941)",
+      "type": "color"
+    },
+    "--ab-success-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-success-h": {
+      "raw": "146",
+      "resolved": "146",
+      "type": "raw"
+    },
+    "--ab-success-hover": {
+      "raw": "color-mix(in srgb, #29524a 85%, #000)",
+      "resolved": "color(srgb 0.136667 0.273333 0.246667)",
+      "type": "color"
+    },
+    "--ab-success-l": {
+      "raw": "20%",
+      "resolved": "200px",
+      "type": "length"
+    },
+    "--ab-success-rgb": {
+      "raw": "41, 82, 74",
+      "resolved": "41, 82, 74",
+      "type": "raw"
+    },
+    "--ab-success-s": {
+      "raw": "88%",
+      "resolved": "880px",
+      "type": "length"
+    },
+    "--ab-swatch-analogous-cool": {
+      "raw": "hsl(calc(202 - 30) 55% 45%)",
+      "resolved": "rgb(52, 178, 161)",
+      "type": "color"
+    },
+    "--ab-swatch-analogous-warm": {
+      "raw": "hsl(calc(202 + 30) 55% 45%)",
+      "resolved": "rgb(52, 68, 178)",
+      "type": "color"
+    },
+    "--ab-swatch-base": {
+      "raw": "hsl(202 72% 14%)",
+      "resolved": "rgb(10, 43, 61)",
+      "type": "color"
+    },
+    "--ab-swatch-base-shade": {
+      "raw": "hsl(202 72% 8%)",
+      "resolved": "rgb(6, 24, 35)",
+      "type": "color"
+    },
+    "--ab-swatch-base-tint": {
+      "raw": "hsl(202 72% 85%)",
+      "resolved": "rgb(189, 224, 244)",
+      "type": "color"
+    },
+    "--ab-swatch-complementary": {
+      "raw": "hsl(calc(202 + 180) 55% 45%)",
+      "resolved": "rgb(178, 98, 52)",
+      "type": "color"
+    },
+    "--ab-swatch-split-a": {
+      "raw": "hsl(calc(202 + 150) 55% 45%)",
+      "resolved": "rgb(178, 52, 68)",
+      "type": "color"
+    },
+    "--ab-swatch-split-b": {
+      "raw": "hsl(calc(202 + 210) 55% 45%)",
+      "resolved": "rgb(178, 161, 52)",
+      "type": "color"
+    },
+    "--ab-swatch-triadic-a": {
+      "raw": "hsl(calc(202 + 120) 55% 45%)",
+      "resolved": "rgb(178, 52, 132)",
+      "type": "color"
+    },
+    "--ab-swatch-triadic-b": {
+      "raw": "hsl(calc(202 + 240) 55% 45%)",
+      "resolved": "rgb(132, 178, 52)",
+      "type": "color"
+    },
+    "--ab-teal": {
+      "raw": "#237b80",
+      "resolved": "rgb(35, 123, 128)",
+      "type": "color"
+    },
+    "--ab-teal-rgb": {
+      "raw": "35, 123, 128",
+      "resolved": "35, 123, 128",
+      "type": "raw"
+    },
+    "--ab-theme-pf-default-accent": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h1-color": {
+      "raw": "#0a2a3d",
+      "resolved": "rgb(10, 42, 61)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h2-color": {
+      "raw": "color-mix(in srgb, #0a2a3d 72%, #6d6d6d 28%)",
+      "resolved": "color(srgb 0.147922 0.238275 0.291922)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h3-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h4-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h5-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-h6-color": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-hairline": {
+      "raw": "color-mix(in srgb, #0a2a3d 18%, transparent)",
+      "resolved": "color(srgb 0.0392157 0.164706 0.239216 / 0.18)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-ink": {
+      "raw": "#1a1a1a",
+      "resolved": "rgb(26, 26, 26)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-ink-muted": {
+      "raw": "#6d6d6d",
+      "resolved": "rgb(109, 109, 109)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-on-accent": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-surface": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-surface-subtle": {
+      "raw": "#fafafa",
+      "resolved": "rgb(250, 250, 250)",
+      "type": "color"
+    },
+    "--ab-theme-pf-default-surface-sunken": {
+      "raw": "#d0dfe8",
+      "resolved": "rgb(208, 223, 232)",
+      "type": "color"
+    },
+    "--ab-tile-icon-gap": {
+      "raw": "",
+      "resolved": "",
+      "type": "raw"
+    },
+    "--ab-tomato": {
+      "raw": "#f55d3e",
+      "resolved": "rgb(245, 93, 62)",
+      "type": "color"
+    },
+    "--ab-tomato-rgb": {
+      "raw": "245, 93, 62",
+      "resolved": "245, 93, 62",
+      "type": "raw"
+    },
+    "--ab-type-base-max": {
+      "raw": "1.125rem",
+      "resolved": "18px",
+      "type": "length"
+    },
+    "--ab-type-base-min": {
+      "raw": "1rem",
+      "resolved": "16px",
+      "type": "length"
+    },
+    "--ab-type-ratio": {
+      "raw": "1.2",
+      "resolved": "1.2",
+      "type": "raw"
+    },
+    "--ab-user-h": {
+      "raw": "202",
+      "resolved": "202",
+      "type": "raw"
+    },
+    "--ab-user-l": {
+      "raw": "14%",
+      "resolved": "140px",
+      "type": "length"
+    },
+    "--ab-user-s": {
+      "raw": "72%",
+      "resolved": "720px",
+      "type": "length"
+    },
+    "--ab-violet": {
+      "raw": "#82667f",
+      "resolved": "rgb(130, 102, 127)",
+      "type": "color"
+    },
+    "--ab-violet-rgb": {
+      "raw": "130, 102, 127",
+      "resolved": "130, 102, 127",
+      "type": "raw"
+    },
+    "--ab-vw-max": {
+      "raw": "90rem",
+      "resolved": "1440px",
+      "type": "length"
+    },
+    "--ab-vw-min": {
+      "raw": "20rem",
+      "resolved": "320px",
+      "type": "length"
+    },
+    "--ab-warning": {
+      "raw": "#ab6621",
+      "resolved": "rgb(171, 102, 33)",
+      "type": "color"
+    },
+    "--ab-warning-active": {
+      "raw": "color-mix(in srgb, #ab6621 72%, #000)",
+      "resolved": "color(srgb 0.482824 0.288 0.0931765)",
+      "type": "color"
+    },
+    "--ab-warning-contrast": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-warning-h": {
+      "raw": "28",
+      "resolved": "28",
+      "type": "raw"
+    },
+    "--ab-warning-hover": {
+      "raw": "color-mix(in srgb, #ab6621 85%, #000)",
+      "resolved": "color(srgb 0.57 0.34 0.11)",
+      "type": "color"
+    },
+    "--ab-warning-l": {
+      "raw": "45%",
+      "resolved": "450px",
+      "type": "length"
+    },
+    "--ab-warning-rgb": {
+      "raw": "171, 102, 33",
+      "resolved": "171, 102, 33",
+      "type": "raw"
+    },
+    "--ab-warning-s": {
+      "raw": "92%",
+      "resolved": "920px",
+      "type": "length"
+    },
+    "--ab-weaker": {
+      "raw": "#6b0f1a",
+      "resolved": "rgb(107, 15, 26)",
+      "type": "color"
+    },
+    "--ab-weaker-tint": {
+      "raw": "rgba(107, 15, 26, 0.08)",
+      "resolved": "rgba(107, 15, 26, 0.08)",
+      "type": "color"
+    },
+    "--ab-white": {
+      "raw": "#ffffff",
+      "resolved": "rgb(255, 255, 255)",
+      "type": "color"
+    },
+    "--ab-white-rgb": {
+      "raw": "255, 255, 255",
+      "resolved": "255, 255, 255",
+      "type": "raw"
+    },
+    "--ab-white-subtle": {
+      "raw": "#fafafa",
+      "resolved": "rgb(250, 250, 250)",
+      "type": "color"
+    },
+    "--ab-white-subtle-rgb": {
+      "raw": "250, 250, 250",
+      "resolved": "250, 250, 250",
+      "type": "raw"
+    }
+  }
+}

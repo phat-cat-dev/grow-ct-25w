@@ -1,0 +1,72 @@
+:root.cmab-theme-dual {
+  /* --- the pack's own source of truth (published --cmab-dual-* namespace) ---
+     Edit these two lines, and only these two, to retheme. */
+  --cmab-dual-dark-colour: var(--ab-dark-blue);
+  --cmab-dual-dark-colour-rgb: var(--ab-dark-blue-rgb);
+  --cmab-dual-dark-grey: var(--ab-dark-grey);
+  /* lineage metadata — traceable up the stack */
+  --cmab-dual-reflects: ab-theme-pf-default;
+  /* --- buttons: 3 knobs worth a house value; the other 4 stand at L4 --- */
+  --ab-theme-pf-default-btn-radius: calc(var(--ab-base-radius) * 1.4);
+  --ab-theme-pf-default-btn-focus-shadow-rgb: var(--cmab-dual-dark-colour-rgb);
+  --ab-theme-pf-default-btn-hover-surface: var(--ab-theme-pf-default-surface-subtle);
+  /* typography hooks intentionally NOT set -> ab-type.less L4 defaults stand */
+}
+:root.cmab-theme-dual {
+  --ab-theme-pf-default-surface: var(--ab-white);
+  --ab-theme-pf-default-surface-subtle: var(--ab-white-subtle);
+  --ab-theme-pf-default-surface-sunken: var(--ab-light-grey);
+  --ab-theme-pf-default-ink: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink-muted: var(--cmab-dual-dark-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, var(--cmab-dual-dark-grey) 28%, transparent);
+  --ab-theme-pf-default-accent: var(--cmab-dual-dark-colour);
+  --ab-theme-pf-default-on-accent: var(--ab-white);
+  --ab-theme-pf-default-h1-color: var(--cmab-dual-dark-colour);
+  --ab-theme-pf-default-h2-color: var(--cmab-dual-dark-grey);
+  --ab-theme-pf-default-h3-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-black-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-black-subtle);
+}
+:root.cmab-theme-dual[data-theme="dark"] {
+  --ab-theme-pf-default-surface: color-mix(in srgb, var(--cmab-dual-dark-grey) 55%, #000 45%);
+  --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--cmab-dual-dark-grey) 70%, #000 30%);
+  --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+  --ab-theme-pf-default-ink: var(--ab-white-subtle);
+  --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+  --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 16%, transparent);
+  --ab-theme-pf-default-accent: var(--ab-light-blue);
+  --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+  --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+  --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+  --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+  --ab-theme-pf-default-on-accent: var(--cmab-dual-dark-colour);
+  --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+  --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+  --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+  --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+}
+@media (prefers-color-scheme: dark) {
+  :root.cmab-theme-dual:not([data-theme="light"]):not(.ab-force-light) {
+    --ab-theme-pf-default-surface: color-mix(in srgb, var(--cmab-dual-dark-grey) 55%, #000 45%);
+    --ab-theme-pf-default-surface-subtle: color-mix(in srgb, var(--cmab-dual-dark-grey) 70%, #000 30%);
+    --ab-theme-pf-default-surface-sunken: var(--ab-black-subtle);
+    --ab-theme-pf-default-ink: var(--ab-white-subtle);
+    --ab-theme-pf-default-ink-muted: var(--ab-light-grey);
+    --ab-theme-pf-default-hairline: color-mix(in srgb, #fff 16%, transparent);
+    --ab-theme-pf-default-accent: var(--ab-light-blue);
+    --ab-theme-pf-default-accent-hover: color-mix(in srgb, var(--ab-base-accent) 85%, #fff);
+    --ab-theme-pf-default-accent-active: color-mix(in srgb, var(--ab-base-accent) 72%, #fff);
+    --ab-theme-pf-default-accent-tint: color-mix(in srgb, var(--ab-base-accent) 14%, var(--ab-base-surface));
+    --ab-theme-pf-default-accent-line: color-mix(in srgb, var(--ab-base-accent) 30%, transparent);
+    --ab-theme-pf-default-on-accent: var(--cmab-dual-dark-colour);
+    --ab-theme-pf-default-h1-color: var(--ab-light-blue);
+    --ab-theme-pf-default-h2-color: var(--ab-light-grey);
+    --ab-theme-pf-default-h3-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h4-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h5-color: var(--ab-white-subtle);
+    --ab-theme-pf-default-h6-color: var(--ab-white-subtle);
+  }
+}

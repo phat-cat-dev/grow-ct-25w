@@ -1,0 +1,154 @@
+# Plan for the card file (D-ing-0060, D-ing-0061). ing's authored data; build-card-file.py fills the rest.
+name: Academic Writing
+pathwayNo: 6
+date: 4 October 2026
+time: "12:41"
+note: N-0132
+revisions:
+  - {version: 0.2.0, date: 4 October 2026, time: "16:14", note: N-0175, what: "FHEQ citations added from the FHEQ equivalences (wide/fheq-equivalences.yaml): i2 4.10.b4, d1 4.10.b2, d3 4.15.b8 and 4.15.b5, e1 4.12.b6; the generic employment qualities left in the equivalence column"}
+practiceNoun: academic writing
+
+cards:
+  - new: i1
+    old: academic-writing/05
+    short: Interpret an assessment question's steer and keywords before writing
+    knowledge: factual and conceptual
+    qf: [{id: l3/knowledge.2, extract: "Interpret and evaluate relevant information and ideas."}]
+  - new: i2
+    old: academic-writing/c1
+    short: Follow the writing cycle to plan and complete a first draft
+    knowledge: procedural, one set method
+    qf: [{id: l4/application.2, extract: "Identify, adapt and use appropriate methods and skills."}, {id: 4.10.b4, extract: "communicate the results of their study/work accurately and reliably", from: N-0175}]
+    book:
+      - {element: the writing cycle, quote: "The writing cycle represents the process in which you need to engage"}
+      - {element: a draft rather than nothing, quote: "it's better to have a draft of something to work with than nothing at all"}
+  - new: i3
+    old: academic-writing/06
+    short: Find and correct errors in own writing by proofreading and editing
+    knowledge: metacognitive, beginning (checking one's own work)
+    qf: [{id: l5/application.4, extract: "Evaluate actions, methods and results."}]
+  - new: d1
+    old: academic-writing/02
+    short: Identify and structure the essay and other argued genres
+    knowledge: conceptual
+    qf: [{id: 4.10.b4, extract: "with structured and coherent arguments"}, {id: 4.10.b2, extract: "in order to develop lines of argument and make sound judgements", from: N-0175}]
+  - new: d2
+    old: academic-writing/04
+    short: Write clear sentences in the active voice
+    knowledge: procedural
+    qf: [{id: 4.12.b6, extract: "effectively communicate information, arguments and analysis"}]
+  - new: d3
+    old: academic-writing/03
+    statement: Apply the four pillars of effective writing to review and structure own paragraphs and essays.
+    short: Use the four pillars to review and structure own writing
+    knowledge: metacognitive, strategic (a self-review lens)
+    qf: [{id: l6/application.4, extract: "Evaluate actions, methods and results and their implications."}, {id: 4.15.b8, extract: "communicate information, ideas, problems and solutions to both specialist and non-specialist audiences", from: N-0175}, {id: 4.15.b5, extract: "the ability to manage their own learning", from: N-0175}]
+    note: "statement widened by ing from \"Apply the pillars of effective writing to structure paragraphs and essays\" to take in the tier map's \"four pillars as a self-review lens\"; proposed (D-ing-0060)."
+  - new: e1
+    old: academic-writing/01
+    short: Recognise how writing conventions vary by discipline
+    knowledge: conceptual
+    qf: [{id: l5/knowledge.3, extract: "Be aware of the nature and scope of the area of study or work."}, {id: 4.12.b6, extract: "in a variety of forms to specialist and non-specialist audiences and deploy key techniques of the discipline effectively", from: N-0175}]
+    book:
+      - {element: conventions in one's discipline, quote: "it's about doing so in a way that is consistent with the conventions associated with writing in your discipline"}
+  - new: e2
+    old: academic-writing/c2
+    short: Integrate sources actively, own point first
+    knowledge: procedural, with criteria for using sources
+    qf: [{id: 4.15.b3.1, extract: "to devise and sustain arguments"}, {id: 4.15.b5, extract: "make use of scholarly reviews and primary sources"}]
+    book:
+      - {element: the voices technique, quote: "It requires you to put your view first, ahead of those you find in"}
+    note: "moved from developed to extended (D-ing-0060): the tier map puts the voices technique at Intermediate, but the active approach is the guide's critical edge, which the map puts at Advanced; proposed."
+  - new: e3
+    statement: Write with disciplinary self-awareness, reading the conventions of style, evidence, vocabulary and discourse in own discipline and adapting own writing to them.
+    short: Write with disciplinary self-awareness
+    knowledge: metacognitive, self-knowledge
+    qf: [{id: 4.17.b5, extract: "communicate their conclusions clearly to specialist and non-specialist audiences"}, {id: l7/knowledge.3, extract: "Understand the wider contexts in which the area of study or work is located."}]
+    book:
+      - {element: knowledge in one's discipline, quote: "It's very important for you to get to know how knowledge is articulated within your discipline."}
+      - {element: no monolithic academic writing, quote: "'Academic writing', as a concept, is not a monolithic thing that sits astride all disciplines"}
+    rows:
+      Verbs: write, read, adapt
+      Measures: with disciplinary self-awareness
+      Keywords: writing within disciplines; writing conventions; style; evidence; discipline-specific vocabulary; disciplinary self-awareness
+      Benchmark evidence: not searched (new card). The classics extract under e1 (training in disciplinary conventions) is the nearest.
+      Pedagogy: "Academic literacies (Lea and Street) (`ing:doc:academic-literacies-lea-street-1998`); Academic literacy across the curriculum (Wingate) (`ing:doc:academic-literacy-across-the-curriculum-wingate-2018`)"
+      Frameworks: none recorded yet
+      Other authors: "Lea and Street (1998): three overlapping ways to understand student writing, study skills, academic socialisation into a discipline's discourses and genres, and academic literacies, writing as social practice bound up with meaning making and identity (run above). Wingate (2018): academic literacy taught inside each discipline's curriculum, through genre analysis of student texts and collaboration with subject lecturers (`ing:doc:academic-literacy-across-the-curriculum-wingate-2018`)."
+    note: "new, proposed by ing (D-ing-0060), from the tier map's Advanced goal (\"disciplinary self-awareness in writing\")."
+
+readings:
+  qaa/politics-and-international-relations-2023/1.21: theme
+  qaa/english-2023/4.2@05: theme
+  qaa/music-2025/1.33: theme
+  qaa/social-policy-2026/1.61: theme
+  qaa/english-2023/4.2@06: skill
+  qaa/policing-in-partnership-with-2022/3.16: theme
+  qaa/languages-cultures-and-societies-2023/3.15: theme
+  qaa/biosciences-2023/3.11: theme
+  qaa/english-2023/3.11: theme
+  qaa/history-2022/4.3: theme
+  qaa/creative-writing-2024/3.21: theme
+  qaa/languages-cultures-and-societies-2023/1.11: skill
+  qaa/history-2022/1.5: skill
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.14: theme
+
+vic:
+  qaa/politics-and-international-relations-2023/1.21: {verbs: [support], relation: "assessment tasks in a list (presentations, reflective essays, policy briefs): the genres the learner meets, not reading a question"}
+  qaa/english-2023/4.2@05: {verbs: [carry out, understand], relation: "carrying out a variety of assessment tasks, long projects among them: the range of tasks a question may set"}
+  qaa/music-2025/1.33: {verbs: [support, encourage], relation: "assessment tasks in a list, as support for enterprise attributes"}
+  qaa/social-policy-2026/1.61: {verbs: [], relation: "proofreading and editing named among uses of digital tools in the subject"}
+  qaa/english-2023/4.2@06: {verbs: [leave, revise, proofread], relation: "leaving time to revise and proofread before submission, a standard in English: i3 in the subject's words"}
+  qaa/policing-in-partnership-with-2022/3.16: {verbs: [include], relation: "reflective writing and policy briefs among forms of assessment: genres listed"}
+  qaa/languages-cultures-and-societies-2023/3.15: {verbs: [lead], relation: "creative and reflective writing and the dissertation in a list of learning activities"}
+  qaa/biosciences-2023/3.11: {verbs: [], relation: "reflective writing among professional skills assessed"}
+  qaa/english-2023/3.11: {verbs: [], relation: "essay plans and critical reviews among written forms"}
+  qaa/history-2022/4.3: {verbs: [privilege, produce], relation: "essay writing in several forms (examination, extended, dissertation): genres that assess different qualities"}
+  qaa/creative-writing-2024/3.21: {verbs: [lead, include], relation: "a critical essay or reflective analysis beside creative output: genres paired"}
+  qaa/languages-cultures-and-societies-2023/1.11: {verbs: [shape, exhibit, show], relation: "structure, coherence and clarity of communication as a graduate quality: clear writing in the subject's words"}
+  qaa/history-2022/1.5: {verbs: [exhibit, show, reflect], relation: "structure, coherence and clarity of written expression as a graduate quality"}
+  qaa/classics-and-ancient-history-including-byzantine-studies-and-modern-greek-2022/3.14: {verbs: [raise], relation: "training in a discipline's conventions as transition support: the conventions taught as provision"}
+
+vicSummary: "What this shows: three of the fourteen extracts are skill: leaving time to proofread (English) and the structure, coherence and clarity of expression (languages, history), which say what i3 and d2 say. The rest list genres and assessment forms; their verbs belong to the curriculum. Benchmarks name the genres a writer meets far more than the writing they ask for."
+
+across:
+  - "**The guide's vocabulary against the benchmarks':** the guide says writing cycle, steer and keywords, first draft, editing and proofreading, comma splice, SVO, active voice, topic sentence, the four pillars, voices, writing conventions; the benchmarks say essays, extended essays, dissertations, reflective writing, policy briefs, critical reviews, and structure, coherence and clarity of expression. Both belong in the practice searcher's vocabulary for this pathway."
+  - "**Skill against theme:** three of the fourteen extracts are skill. Writing is everywhere in the benchmarks as a list of genres and nearly nowhere as a described skill."
+  - "**Book coverage:** Chapter 9 carries all nine cards; the writing cycle and Emma's blank page (i2), the steer and keywords (i1), proofreading and editing (i3), genres and structure (d1), sentences (d2), the four pillars (d3), discipline conventions (e1, e3) and the voices technique (e2)."
+  - "**Other authors:** META holds Lea and Street and Wingate; both read writing as practice within a discipline, which is where the cards end."
+
+qfIntro: "Both frameworks speak of communicating results and arguments, rising from accurate and reliable communication with structured arguments (L4) to communicating in a variety of forms (L5), to specialist and non-specialist audiences (L6) and clearly, with sound judgement (L7); the CQFW adds evaluating one's own methods and results, the ground of editing."
+qf:
+  - {id: l3/knowledge.2, verbs: "interpret, evaluate", relation: "interpreting what a task asks: the steer and keywords", tier: before Introductory}
+  - {id: l4/application.2, verbs: "identify, adapt, use", relation: "using a method suited to the task: the writing cycle", tier: Introductory}
+  - {id: 4.10.b4, verbs: "communicate", relation: "communicating accurately and reliably with structured and coherent arguments: the essay's structure", tier: Introductory}
+  - {id: 4.12.b6, verbs: "communicate, deploy", relation: "communicating arguments in a variety of forms: genres and clear sentences", tier: Intermediate}
+  - {id: l5/application.4, verbs: "evaluate", relation: "evaluating one's own results: editing and proofreading", tier: Intermediate}
+  - {id: l5/knowledge.3, verbs: "be aware", relation: "the nature and scope of one's area: knowing a discipline writes in its own way", tier: Intermediate}
+  - {id: 4.15.b3.1, verbs: "devise, sustain", relation: "devising and sustaining arguments: integrating sources in one's own argument", tier: Advanced}
+  - {id: 4.15.b8, verbs: "communicate", relation: "communicating to specialist and non-specialist audiences", tier: Advanced}
+  - {id: l6/application.4, verbs: "evaluate", relation: "evaluating one's methods and their implications: reviewing one's writing by the four pillars", tier: Advanced}
+  - {id: 4.17.b5, verbs: "deal with, make, communicate", relation: "communicating conclusions clearly to different audiences", tier: beyond Advanced}
+  - {id: l7/knowledge.3, verbs: "understand", relation: "the wider contexts of one's area: the discipline as the context of one's writing", tier: beyond Advanced}
+
+tierStatements:
+  - {tier: Introductory, statement: "Names the stages of the writing cycle and the parts of an essay (introduction, body, conclusion), and the common errors (comma splice, over-long sentences, apostrophes, colon and semicolon).", type: factual, process: remember}
+  - {tier: Introductory, statement: "Explains what a question's steer and keywords ask for, and why the three false assumptions about academic writing are false.", type: conceptual, process: understand}
+  - {tier: Introductory, statement: "Plans and gets a first draft down, then proofreads it.", type: procedural (one method), process: apply, change: "declarative knowledge first put to work, with a set cycle"}
+  - {tier: Introductory, statement: "Spots the errors they tend to make in their own drafts.", type: metacognitive (beginning), process: understand, change: "knowledge of one's own writing appears, prompted"}
+  - {tier: Intermediate, statement: "Explains macro and micro structure, the judgement-bearing final sentence and how the essay and reflective writing differ as genres.", type: conceptual, process: analyse, change: "the concepts of structure and genre enter"}
+  - {tier: Intermediate, statement: "Edits for clarity and precision (SVO, active voice, cutting non-essential text) and integrates sources by the voices technique.", type: procedural, process: apply}
+  - {tier: Intermediate, statement: "Reviews their own draft by the four pillars and decides what to change.", type: metacognitive (strategic), process: evaluate, change: "knowledge of one's own writing, used to change it"}
+  - {tier: Advanced, statement: "Reads writing from different disciplines for its conventions of style, evidence, vocabulary and discourse.", type: conceptual, process: analyse}
+  - {tier: Advanced, statement: "Uses the language of criticality to give writing a critical edge, leading with their own point.", type: procedural (criteria for using sources), process: create}
+  - {tier: Advanced, statement: "Writes as a member of their discipline, aware of its conventions and of their own voice within them.", type: metacognitive (self-knowledge), process: evaluate, create, change: "functioning knowledge: writing owned within the discipline"}
+
+mastery: "Across the tiers the weight moves along Anderson and Krathwohl's continuum: Introductory is mostly declarative and procedural, the cycle, the parts of an essay and the common errors, with a first noticing of one's own errors; Intermediate is mostly procedural, editing and structuring and integrating sources, with the four pillars turned on one's own draft; Advanced is conceptual and metacognitive, the conventions of a discipline read and then written from within. In Biggs's terms the movement is from knowing how to write to writing that does its work in a discipline; in Lea and Street's, from study skills through academic socialisation to academic literacies. Mastery is disciplinary self-awareness in writing, the map's Advanced goal, which is the core's A11 ladder from compliance to flow."
+
+differ: "the map puts the voices technique, and the four pillars as a self-review lens, at Intermediate; e2 (integrating sources actively) sits at Advanced here with the critical edge, and the four pillars are at the top of Intermediate (d3), as in the map. The map places discipline conventions at Advanced deliberately, against the book's order (its own note); the cards follow the map."
+
+qfAdd: "the frameworks speak of communication rising in range of audience and form, and of evaluating one's own work; neither names genre, convention or the discipline as the frame of one's writing, which is where e1 and e3 take the learner."
+
+review:
+  - "e3 is new, d3's statement widened and e2 moved from developed to extended: all proposed (D-ing-0060)."
+  - "e2 overlaps Criticality's e3 (leading with one's own point); the two pathways share the guide's active approach by design (the map's cross-links)."

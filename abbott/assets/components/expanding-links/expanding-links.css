@@ -1,0 +1,43 @@
+.expanding-links {
+  --expand-accent: var(--accent, #365f80);
+  --expand-ink: var(--ink, #172e3a);
+  --expand-duration: 300ms;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem;
+  font: 600 1rem/1.4 var(--font-ui, system-ui, sans-serif);
+}
+.expanding-links *, .expanding-links *::before, .expanding-links *::after { box-sizing: border-box; }
+.expanding-links :is(a, button) {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  max-inline-size: 100%;
+  padding: .65rem;
+  color: var(--expand-ink);
+  background: transparent;
+  border: 0;
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+}
+.expanding-links svg { display: block; flex: none; inline-size: 1.5rem; block-size: 1.5rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.expanding-links .expand-label { display: grid; grid-template-columns: 0fr; transition: grid-template-columns var(--expand-duration) ease; }
+.expanding-links .expand-label > span { overflow: hidden; min-inline-size: 0; }
+.expanding-links .expand-label-text { display: block; padding-inline-start: .65rem; white-space: nowrap; }
+.expanding-links :is(a, button):is(:hover, :focus-visible, [aria-current]) { color: var(--expand-accent); }
+.expanding-links :is(a, button):is(:hover, :focus-visible, [aria-current]) .expand-label,
+.expanding-links[data-labels="always"] .expand-label { grid-template-columns: 1fr; }
+.expanding-links :is(a, button):focus-visible { outline: 3px solid var(--expand-accent); outline-offset: 3px; border-radius: .25rem; }
+@media (hover: none), (pointer: coarse) {
+  .expanding-links .expand-label { grid-template-columns: 1fr; }
+}
+@media (max-width: 30rem) {
+  .expanding-links .expand-label { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .expanding-links .expand-label { transition: none; }
+}
+.no-motion .expanding-links .expand-label,
+[data-tm-no-motion="true"] .expanding-links .expand-label { transition: none; }

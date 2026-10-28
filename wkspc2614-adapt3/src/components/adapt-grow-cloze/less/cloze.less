@@ -1,0 +1,124 @@
+// adapt-grow-cloze
+//
+// Fill-the-blanks (cloze) activity: choose a word per inline blank, Check, read
+// feedback. Matured from the gallery "Fill the blanks" pattern.
+//
+// Scoped under `.cloze` (the template's widget wrapper), NOT `.growcloze`: Adapt
+// lowercases _component (growCloze -> .growcloze), so a `.growCloze` selector
+// would miss. The study's CSS vars are mapped to component-owned custom
+// properties with grow/ab fallbacks, so the component retints live and flips for
+// dark mode with no hard-coded brand colour. The final fallbacks are the study's
+// own semantic feedback values (positive/negative), not brand colours; the weak
+// backgrounds fall back to a surface-aware color-mix so they stay legible when a
+// theme supplies no "weak" token (e.g. in dark mode).
+
+.cloze {
+  // --- token bridge --------------------------------------------------------
+  --cloze-accent:    var(--grow-accent, var(--accent, #365f80));
+  --cloze-surface-1: var(--grow-surface-1, var(--surface-1, #ffffff));
+  --cloze-line:      var(--grow-line, var(--line, #d5dde2));
+  --cloze-ink:       var(--grow-ink, var(--ink, #1a1a1a));
+  --cloze-pos:       var(--grow-c-positive, var(--c-positive, hsl(150 55% 38%)));
+  --cloze-neg:       var(--grow-c-negative, var(--c-negative, hsl(5 62% 48%)));
+  --cloze-pos-weak:  var(--grow-c-positive-weak, var(--c-positive-weak, var(--c-pos-weak, color-mix(in srgb, var(--cloze-pos) 14%, var(--cloze-surface-1)))));
+  --cloze-neg-weak:  var(--grow-c-negative-weak, var(--c-negative-weak, var(--c-neg-weak, color-mix(in srgb, var(--cloze-neg) 14%, var(--cloze-surface-1)))));
+  --cloze-fs-sm:     var(--grow-fs-sm, var(--fs-sm, 0.95rem));
+
+  font-size: var(--cloze-fs-sm);
+
+  &__group { margin: 0; }
+
+  &__sentence {
+    line-height: 2.1;
+    margin: 0 0 1rem;
+    color: var(--cloze-ink);
+  }
+
+  &__blank {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  &__select {
+    font: inherit;
+    font-size: var(--cloze-fs-sm);
+    padding: 0.15rem 0.3rem;
+    border: 1px solid var(--cloze-line);
+    border-radius: 7px;
+    background: var(--cloze-surface-1);
+    color: var(--cloze-ink);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &:focus-visible {
+      outline: 2px solid var(--cloze-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__blank.is-correct &__select {
+    border-color: var(--cloze-pos);
+    background: var(--cloze-pos-weak);
+  }
+
+  &__blank.is-incorrect &__select {
+    border-color: var(--cloze-neg);
+    background: var(--cloze-neg-weak);
+  }
+
+  // Non-colour state glyph (aria-hidden; the status word carries it for SR).
+  &__mark {
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__blank.is-correct &__mark {
+    color: var(--cloze-pos);
+    &::before { content: "\2713"; } // tick
+  }
+
+  &__blank.is-incorrect &__mark {
+    color: var(--cloze-neg);
+    &::before { content: "\2717"; } // cross
+  }
+
+  // Per-blank status word: visually hidden, conveyed to SR via aria-describedby.
+  &__blank-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  &__feedback {
+    font-weight: 600;
+    min-height: 1.2em;
+
+    &.is-correct { color: var(--cloze-pos); }
+    &.is-incorrect { color: var(--cloze-neg); }
+  }
+}
+
+// Respect reduced-motion preferences.
+@media (prefers-reduced-motion: reduce) {
+  .cloze *,
+  .cloze *::before,
+  .cloze *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

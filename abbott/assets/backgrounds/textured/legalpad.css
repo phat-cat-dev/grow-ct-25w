@@ -1,0 +1,11 @@
+.textured.ab-legalpad {
+  --texture-legal-paper: #fbf6c9;
+  --texture-legal-ink: #2a2a1f;
+  background-color: var(--texture-legal-paper);
+  background-image: linear-gradient(to right, transparent 2.5rem, #c83c3c80 2.5rem, #c83c3c80 calc(2.5rem + 1px), transparent calc(2.5rem + 1px)), repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.9rem - 1px), #4678be66 calc(1.9rem - 1px), #4678be66 1.9rem);
+  background-position: 0 .6rem;
+  color: var(--texture-legal-ink);
+  border: 1px solid #e7df9e;
+  border-radius: .25rem;
+  padding: .6rem .9rem .9rem 3rem;
+}

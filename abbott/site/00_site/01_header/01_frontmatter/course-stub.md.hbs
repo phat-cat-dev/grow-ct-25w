@@ -1,0 +1,222 @@
+{{!--
+  course-stub.md.hbs
+  Generates a course Markdown file with YAML front matter, in the shape of
+  course_frontmatter_spec.md section 4. Same helpers and settings as
+  lesson-stub.md.hbs: {{q}}, {{e}}, {{{fold}}} and noEscape: true.
+--}}
+---
+schema_version: {{q schema_version}}
+id: {{q id}}
+document_type: course-scope
+hierarchy_level: 0
+
+title: {{q title}}
+summary: {{q summary}}
+
+version: {{q version}}
+status: {{e status}}
+owner: {{q owner}}
+authors: {{q authors}}
+reviewers: {{q reviewers}}
+created: {{q created}}
+updated: {{q updated}}
+review_due: {{q review_due}}
+
+language: {{e language}}
+tags: {{q tags}}
+rights:
+  holder: {{q rights.holder}}
+  licence: {{q rights.licence}}
+
+concept:
+  node_id: {{q concept.node_id}}
+  label: {{q concept.label}}
+  alt_labels: {{q concept.alt_labels}}
+  definition: {{q concept.definition}}
+  coherence_claim: {{q concept.coherence_claim}}
+  through_line: {{q concept.through_line}}
+{{#if concept.key_terms.length}}
+  key_terms:
+{{#each concept.key_terms}}
+    - id: {{e id}}
+      term: {{q term}}
+      definition: {{q definition}}
+      introduced_in: {{q introduced_in}}
+{{/each}}
+{{else}}
+  key_terms: []
+{{/if}}
+  threshold_concepts: {{q concept.threshold_concepts}}
+{{#if concept.misconceptions.length}}
+  misconceptions:
+{{#each concept.misconceptions}}
+    - id: {{e id}}
+      statement: {{q statement}}
+      addressed_in: {{q addressed_in}}
+{{/each}}
+{{else}}
+  misconceptions: []
+{{/if}}
+{{#if concept.relations.length}}
+  relations:
+{{#each concept.relations}}
+    - predicate: {{e predicate}}
+      target: {{q target}}
+      note: {{q note}}
+{{/each}}
+{{else}}
+  relations: []
+{{/if}}
+  external_refs: {{q concept.external_refs}}
+
+audience:
+  description: {{q audience.description}}
+  learner_pitch: {{e audience.learner_pitch}}
+  prior_knowledge: {{q audience.prior_knowledge}}
+  prerequisites:
+    knowledge: {{q audience.prerequisites.knowledge}}
+    required_course_ids: {{q audience.prerequisites.required_course_ids}}
+
+scope:
+  central_topic: {{q scope.central_topic}}
+  purpose: {{q scope.purpose}}
+  in_scope: {{q scope.in_scope}}
+  out_of_scope: {{q scope.out_of_scope}}
+  assumptions: {{q scope.assumptions}}
+
+{{#if outcomes.length}}
+outcomes:
+{{#each outcomes}}
+  - id: {{e id}}
+    statement: {{q statement}}
+    evidence: {{q evidence}}
+    concept_term_ids: {{q concept_term_ids}}
+{{/each}}
+{{else}}
+outcomes: []
+{{/if}}
+
+{{#if lesson_map.length}}
+lesson_map:
+{{#each lesson_map}}
+  - lesson_id: {{q lesson_id}}
+    sequence: {{q sequence}}
+    title: {{q title}}
+{{#if summary}}
+    summary: {{q summary}}
+{{/if}}
+    role: {{e role}}
+    course_outcome_ids: {{q course_outcome_ids}}
+    concept_term_ids: {{q concept_term_ids}}
+    requires_lesson_ids: {{q requires_lesson_ids}}
+    estimated_duration_minutes: {{q estimated_duration_minutes}}
+    status: {{e status}}
+{{/each}}
+{{else}}
+lesson_map: []
+{{/if}}
+
+delivery:
+  mode: {{e delivery.mode}}
+  estimated_duration_minutes: {{q delivery.estimated_duration_minutes}}
+  lesson_order: {{e delivery.lesson_order}}
+  materials_required: {{q delivery.materials_required}}
+
+assessment:
+  strategy: {{q assessment.strategy}}
+  purpose: {{e assessment.purpose}}
+  course_outcome_ids: {{q assessment.course_outcome_ids}}
+
+support:
+  accessibility_statement: {{q support.accessibility_statement}}
+  help_contact: {{q support.help_contact}}
+
+conventions:
+  referencing_style: {{q conventions.referencing_style}}
+  voice_specification: {{q conventions.voice_specification}}
+
+inherits_to_lessons: {{q inherits_to_lessons}}
+
+sources: {{q sources}}
+
+review:
+  academic_status: {{e review.academic_status}}
+  academic_approved_by: {{q review.academic_approved_by}}
+  academic_approved_on: {{q review.academic_approved_on}}
+
+frontmatter:
+  eyebrow: {{q frontmatter.eyebrow}}
+  body: >
+{{{fold frontmatter.body 4}}}
+  meta:
+    duration: {{q frontmatter.meta.duration}}
+    level: {{q frontmatter.meta.level}}
+  objectivesTitle: {{q frontmatter.objectivesTitle}}
+  objectives: {{q frontmatter.objectives}}
+  menu:
+    title: {{q frontmatter.menu.title}}
+    show: {{q frontmatter.menu.show}}
+---
+
+# {{title}}
+
+{{summary}}
+
+## The concept
+
+**{{concept.label}}.** {{concept.definition}}
+
+**Why these lessons belong together.** {{concept.coherence_claim}}
+
+**The question running through the course.** {{concept.through_line}}
+
+## Scope
+
+**In scope**
+
+{{#each scope.in_scope}}
+- {{this}}
+{{else}}
+- None yet.
+{{/each}}
+
+**Out of scope**
+
+{{#each scope.out_of_scope}}
+- {{this}}
+{{else}}
+- None yet.
+{{/each}}
+
+## Outcomes
+
+{{#each outcomes}}
+- **{{id}}** {{statement}}
+{{else}}
+- None yet.
+{{/each}}
+
+## Lessons
+
+{{#if lesson_map.length}}
+| # | Lesson | Role | Time |
+|---|---|---|---|
+{{#each lesson_map}}
+| {{sequence}} | {{title}} | {{role}} | {{#if estimated_duration_minutes}}{{estimated_duration_minutes}} min{{/if}} |
+{{/each}}
+{{else}}
+None yet.
+{{/if}}
+
+## Rationale
+
+<!-- Longer rationale, the detailed curriculum map and the full assessment
+     specification belong here in the body, not in the front matter. -->
+
+## Assessment
+
+<!-- How achievement of the outcomes will be evidenced. -->
+
+## Sources
+
+<!-- Source identifiers and precise locators. Do not invent references. -->

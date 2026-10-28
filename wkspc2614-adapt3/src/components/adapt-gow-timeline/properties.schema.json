@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$anchor": "timeline",
+  "type": "object",
+  "title": "Timeline (GOW)",
+  "properties": {
+    "_component": {
+      "type": "string",
+      "const": "gowTimeline",
+      "default": "gowTimeline",
+      "isObjectId": true,
+      "readOnly": true,
+      "title": "Component type"
+    },
+    "_classes": {
+      "type": "string",
+      "title": "CSS classes",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "title": "Title",
+      "default": "",
+      "description": "Rendered as an h2. ~10 words or fewer."
+    },
+    "_direction": {
+      "type": "string",
+      "title": "Display direction",
+      "enum": ["ascending", "descending"],
+      "default": "ascending",
+      "description": "IMPORTANT: always author _items in ascending chronological order regardless of this setting - the view reverses the display order for 'descending', it does not change how you author the data."
+    },
+    "_reveal": {
+      "type": "boolean",
+      "title": "Reveal steps on click",
+      "default": false,
+      "description": "When true, each event's description is collapsed and revealed by clicking its title (an independent toggle per step). When false, all descriptions show at once."
+    },
+    "_items": {
+      "type": "array",
+      "title": "Events",
+      "minItems": 2,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "title": "Event",
+        "properties": {
+          "dateLabel": {
+            "type": "string",
+            "title": "Date label",
+            "default": "",
+            "required": true,
+            "description": "Free text, not a parsed date, e.g. \"1998\", \"March 2010\", \"1980s\", \"Present\". ~4 words or fewer."
+          },
+          "title": {
+            "type": "string",
+            "title": "Event title",
+            "default": "",
+            "required": true,
+            "description": "~12 words or fewer."
+          },
+          "body": {
+            "type": "string",
+            "title": "Body",
+            "format": "html",
+            "default": ""
+          },
+          "_highlight": {
+            "type": "boolean",
+            "title": "Highlight this event",
+            "default": false,
+            "description": "Use sparingly - source guidance recommends at most 1-2 highlighted events per timeline."
+          }
+        },
+        "required": ["dateLabel", "title"]
+      }
+    }
+  },
+  "required": ["_component", "_items"]
+}

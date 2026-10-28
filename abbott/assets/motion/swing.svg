@@ -1,0 +1,9 @@
+<svg data-motion-asset="swing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-swing-title svg-motion-swing-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-swing-title">Pendulum</title><desc id="svg-motion-swing-desc">A slow swing from an overhead pivot. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="swing"] .art{transform-box:view-box;transform-origin:160px 37px;animation:motion-swing calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-swing { 25% { transform: rotate(16deg); } 75% { transform: rotate(-16deg); } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="swing"] .art,svg[data-motion-asset="swing"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art"><g transform="translate(160 65)" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cy="-22" r="5"/><path d="M0-17v43M-10-7h20M-26 5c0 28 52 28 52 0m-26 21-7-7M0 26l7-7M-26 5l-4 9m56-9 4 9"/></g></g></svg>

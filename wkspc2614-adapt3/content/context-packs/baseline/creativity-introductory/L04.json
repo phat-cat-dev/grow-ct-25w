@@ -1,0 +1,63 @@
+{
+  "generatedProse": {
+    "concept-context": "<p>In practice, a working creative practice is something you bring to any open task, in any subject. You treat the task as a chance to practise, give yourself room to generate rough ideas, then choose and refine the strongest. The more often you run it, the more natural each part becomes.</p>",
+    "worked-example": "<p>Two students face the same open brief. One waits for a single good idea, judges it at once, and treats creativity as a gift they may not have. The other treats it as a practice: they list rough ideas, keep the best alive, then choose and refine. Over the term, the second student's work grows stronger, because creativity became a habit rather than a one-off.</p>",
+    "summary": "<p>Creativity is most useful when it becomes a working practice. You treat it as a skill, move between generating and choosing, and keep the barriers loose, again and again. It is the habit, not any single idea, that improves how you study.</p>"
+  },
+  "generatedItems": {
+    "check": {
+      "body": "<p>A student faces an open essay question. They treat it as a chance to practise, list several rough ideas without judging, then choose and refine the strongest. What does this show?</p>",
+      "items": [
+        {
+          "text": "Their next round of learning and preparation, which is why the following essay improved.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Nothing; feedback comes at the end, so it cannot affect anything that follows.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Only the mark on the first essay, which cannot now change.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "The deadline for the next essay.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Using feedback to plan the next piece of work feeds it straight back into your learning, closing the loop and starting the next round stronger. That is the cycle working as it should.",
+        "incorrectNotFinal": "Not quite. Think about what the student did with the feedback, and what improved as a result.",
+        "incorrectFinal": "Acting on feedback feeds your next round of learning and preparation, which is why the following essay was stronger. The mark on the first essay cannot change, but the feedback still shapes what comes next."
+      },
+      "_items": [
+        {
+          "text": "That creativity is working as one practice: the skill, the two modes and loosening the barriers all turn up on the same task.",
+          "_shouldBeSelected": true,
+          "feedback": "Yes. All three ideas are at work together, which is what the practice looks like."
+        },
+        {
+          "text": "That the student is naturally gifted and did not need to practise.",
+          "_shouldBeSelected": false,
+          "feedback": "The student practised on purpose. That is the skill at work, not a gift."
+        },
+        {
+          "text": "That generating ideas is the only part of creativity that matters.",
+          "_shouldBeSelected": false,
+          "feedback": "Generating is one part. The student also chose and refined, which is convergent thinking."
+        },
+        {
+          "text": "That judging ideas early is the best way to start an essay.",
+          "_shouldBeSelected": false,
+          "feedback": "The student held judging back at first. That is what let the rough ideas appear."
+        }
+      ]
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; name the cast directly in the prose (the pack supplies the whole body). The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

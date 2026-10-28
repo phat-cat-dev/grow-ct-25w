@@ -1,0 +1,66 @@
+// GROW display-mode control — a bordered icon button (grow nav style) top-left
+// of the nav, opening a light/dark/contrast + animations panel.
+.grow-mode {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.grow-mode__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: normal 400 1.4rem/1 "Material Symbols Outlined";
+  font-feature-settings: "liga";
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+// the toggle reuses .nav__btn.btn-icon (grow-chrome styles the bordered square)
+.grow-mode__toggle .grow-mode__icon { color: inherit; }
+
+.grow-mode__panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 0.4rem);
+  min-width: 12rem;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--surface-1);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 34px -14px var(--shadow);
+}
+.grow-mode__panel[hidden] { display: none; }
+
+.grow-mode__opt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font: 600 0.9rem/1 var(--font-ui, system-ui, sans-serif);
+  text-align: left;
+}
+.grow-mode__opt .grow-mode__icon { font-size: 1.2rem; }
+.no-touch .grow-mode__opt:hover { border-color: var(--accent); }
+.grow-mode__opt[aria-checked="true"] { border-color: var(--accent); background: var(--surface-2); }
+.grow-mode__motion.is-off { opacity: 0.6; }
+
+// Animations off — manual reduced-motion, driven by the mode button.
+:root[data-motion="off"] *,
+:root[data-motion="off"] *::before,
+:root[data-motion="off"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}

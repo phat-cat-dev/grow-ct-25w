@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "id": "course-[slug]",
+  "title": "[Course title]",
+  "summary": "[What the course covers and why it matters.]",
+  "version": "0.1.0",
+  "status": "draft",
+  "owner": "[Accountable person or team]",
+  "authors": [],
+  "reviewers": [],
+  "review_due": null,
+  "language": "en-GB",
+  "tags": [],
+  "rights": { "holder": null, "licence": null },
+  "concept": {
+    "node_id": "concept-[slug]",
+    "label": "[Preferred label]",
+    "alt_labels": [],
+    "definition": "[One or two sentences saying what the concept is.]",
+    "coherence_claim": "[Why these lessons belong together. What binds them.]",
+    "through_line": "[The question or idea that runs through every lesson.]",
+    "key_terms": [
+      { "id": "T1", "term": "[Term]", "definition": "[Plain definition.]", "introduced_in": "lesson-[slug]-01" }
+    ],
+    "threshold_concepts": [],
+    "misconceptions": [
+      { "id": "M1", "statement": "[A common wrong idea learners arrive with.]", "addressed_in": ["lesson-[slug]-01"] }
+    ],
+    "relations": [
+      { "predicate": "broader", "target": "concept-[other-slug]", "note": null }
+    ],
+    "external_refs": []
+  },
+  "audience": {
+    "description": "[Who this course is for.]",
+    "learner_pitch": "introductory",
+    "prior_knowledge": [],
+    "prerequisites": { "knowledge": [], "required_course_ids": [] }
+  },
+  "scope": {
+    "central_topic": "[The overarching concept or topic.]",
+    "purpose": "[The need the course addresses.]",
+    "in_scope": [],
+    "out_of_scope": [],
+    "assumptions": []
+  },
+  "outcomes": [
+    { "id": "CO1", "statement": "[Observable course outcome.]", "evidence": "[What the learner will do to demonstrate this.]", "concept_term_ids": ["T1"] }
+  ],
+  "lesson_map": [
+    { "lesson_id": "lesson-[slug]-01", "sequence": 1, "title": "[Lesson title]", "role": "introduces", "course_outcome_ids": ["CO1"], "concept_term_ids": ["T1"], "requires_lesson_ids": [], "estimated_duration_minutes": null, "status": "draft" }
+  ],
+  "delivery": { "mode": "self-paced", "estimated_duration_minutes": null, "lesson_order": "guided", "materials_required": [] },
+  "assessment": { "strategy": "[How achievement of the outcomes will be evidenced.]", "purpose": "formative", "course_outcome_ids": ["CO1"] },
+  "support": { "accessibility_statement": null, "help_contact": null },
+  "conventions": { "referencing_style": "Harvard (Cite Them Right)", "voice_specification": "reference/excelling-voice-specification.md" },
+  "inherits_to_lessons": ["language", "learner_pitch", "referencing_style", "voice_specification", "rights"],
+  "sources": [],
+  "review": { "academic_status": "pending", "academic_approved_by": null, "academic_approved_on": null },
+  "frontmatter": {
+    "eyebrow": "Welcome",
+    "body": "[Explain what the course covers, why it matters and how you will work through it.]",
+    "meta": { "duration": "[Estimated time]", "level": "[Learner-facing pitch]" },
+    "objectivesTitle": "By the end of this course, you will be able to:",
+    "objectives": ["[Learner-facing outcome.]"],
+    "menu": { "title": "Lessons", "show": ["position", "title", "duration", "outcomes"] }
+  }
+}

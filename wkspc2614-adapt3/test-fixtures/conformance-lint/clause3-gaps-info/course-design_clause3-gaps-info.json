@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "clause3-gaps-info",
+  "slug": "clause3-gaps-info",
+  "status": "in-development",
+  "facetSet": { "pathway": "Test", "tier": "introductory" },
+  "kbVersions": { "design-kb": "0.1.0" },
+  "gates": [
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": { "scope": "test scope" },
+          "groundingGaps": [
+            {
+              "store": "source-kb",
+              "lookup": "pathway/Test",
+              "wouldHaveGrounded": "This pathway does not exist in source-kb; using placeholder."
+            }
+          ],
+          "timestamp": "2026-08-29T10:00:00Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

@@ -1,0 +1,50 @@
+// CMET content styling — background / foreground / border classes for panels.
+// Built via LESS from the palette (not the brand paste, which set
+// --ab-cntnt-* tokens on half its classes but never applied them, so those
+// did nothing). Here every class sets real properties, generated over the main
+// blue/grey scheme so there is one source and no typos.
+//
+// Two layers:
+//  - MODIFIERS (composable primitives): .content_bg_<c>, .content_fg_<c>,
+//    .content_bdr_<c>, .content_bdr_solid|dashed. Mix freely on one element.
+//  - PRESETS (common pairings): .content_style_<c>--white (filled) and
+//    .content_style_white--<c>-border (outline), matching the brand naming.
+//
+// CONTRAST NOTE: a filled light colour with white text (e.g.
+// content_style_light-blue--white) is low-contrast and likely fails WCAG for
+// body text — use it for decoration, not for reading text, or pick a dark fg.
+
+@cmet-content-scheme: white, white-subtle, light-blue, light-grey, dark-grey, dark-blue;
+@cmet-content-presets: light-blue, light-grey, dark-grey, dark-blue;
+
+// --- modifiers, one set per scheme colour ---
+.cmet-content-mods(@i: 1) when (@i <= length(@cmet-content-scheme)) {
+  @c: extract(@cmet-content-scheme, @i);
+  .content_bg_@{c}  { background-color: var(~"--ab-@{c}"); }
+  .content_fg_@{c}  { color: var(~"--ab-@{c}"); }
+  .content_bdr_@{c} { border-color: var(~"--ab-@{c}"); border-width: 0.2rem; }
+  .cmet-content-mods(@i + 1);
+}
+.cmet-content-mods();
+
+.content_bdr_solid  { border-style: solid; }
+.content_bdr_dashed { border-style: dashed; }
+
+// --- presets: filled (colour fill, white text) + outline (white fill, colour text+border) ---
+.cmet-content-presets(@i: 1) when (@i <= length(@cmet-content-presets)) {
+  @c: extract(@cmet-content-presets, @i);
+  .content_style_@{c}--white {
+    background-color: var(~"--ab-@{c}");
+    color: var(--ab-white);
+    border-color: transparent;
+  }
+  .content_style_white--@{c}-border {
+    background-color: var(--ab-white);
+    color: var(~"--ab-@{c}");
+    border-color: var(~"--ab-@{c}");
+    border-style: solid;
+    border-width: 0.2rem;
+  }
+  .cmet-content-presets(@i + 1);
+}
+.cmet-content-presets();

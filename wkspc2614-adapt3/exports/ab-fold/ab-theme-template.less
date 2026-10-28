@@ -1,0 +1,108 @@
+// ===========================================================================
+// L5 THEME-PROFILE TEMPLATE — the --ab-theme-pf-default-* contract.
+//
+// This is the authorable surface of layer 5: every token a theme / sub-theme
+// MAY set. Each line is commented and shows its L4 default (a literal where the
+// value is a seed, or "derived" where a formula produces it, see
+// theme-formula-map.md). Uncomment and set only what you want to override —
+// anything left blank falls through the pivot hook to the L4 default/formula,
+// so a theme is just the handful of lines it changes.
+//
+// A real L6 user profile (e.g. cm-corporate.less) binds its own --<xx>-<stub>-*
+// values INTO these tokens; this template is the menu it's binding to. Sections
+// marked (derived) are proliferated by formula from the seeds above them —
+// setting a seed re-themes the whole family; setting a role pins one literal.
+//
+// Status: compiled by hand from the section schemas + ab-semantics.less while
+// the fold tool's nested-schema support is pending; the flat sections mirror
+// exports/ab-fold/ab-base-pivot.less, the SEMANTIC CUE SETS section is new.
+// ===========================================================================
+:root {
+
+  // ========================= SUB-THEME / PRIMARY =========================
+  // The one dial that defines a sub-theme: its hue + saturation drive the whole
+  // accent chain AND (via the brand-dark anchor) the deep end of the neutral
+  // ladder. Set these two and name the sub-theme; the formulas do the rest.
+  // --ab-theme-pf-default-user-h: 202;      // primary hue   (CM dark-blue)
+  // --ab-theme-pf-default-user-s: 72%;      // primary saturation
+  // --ab-theme-pf-default-user-l: 14%;      // primary lightness (brand-dark anchor)
+
+  // ========================= COLOUR — neutral spine seeds =========================
+  // --ab-theme-pf-default-neutral-h: 202;   // grey tint hue
+  // --ab-theme-pf-default-neutral-s: 0%;    // 0% = pure grey; raise to lean the greys to the hue
+  // --ab-theme-pf-default-l-surface: 100%;        --ab-theme-pf-default-l-surface-dark: 14%;
+  // --ab-theme-pf-default-accent-l: var(--ab-user-l);  --ab-theme-pf-default-accent-l-dark: 62%;
+
+  // ========================= COLOUR — roles (derived; set to pin a literal) =========================
+  // --ab-theme-pf-default-accent:          derived  hsl(user-h user-s accent-l)
+  // --ab-theme-pf-default-accent-hover:    derived  (accent-l - 2%)
+  // --ab-theme-pf-default-accent-active:   derived  (accent-l - 4%)
+  // --ab-theme-pf-default-accent-deep:     derived  (accent-l - 6%)
+  // --ab-theme-pf-default-accent-tint:     derived  pale wash
+  // --ab-theme-pf-default-accent-line:     derived  translucent hairline
+  // --ab-theme-pf-default-accent-ring:     derived  focus ring (55% L)
+  // --ab-theme-pf-default-surface:         derived  hsl(neutral-h neutral-s l-surface)
+  // --ab-theme-pf-default-surface-subtle:  derived
+  // --ab-theme-pf-default-surface-sunken:  derived
+  // --ab-theme-pf-default-ink:             derived
+  // --ab-theme-pf-default-ink-muted:       derived
+  // --ab-theme-pf-default-hairline:        derived
+  // --ab-theme-pf-default-on-accent:       derived
+  // --ab-theme-pf-default-h1-color:        derived  = accent (primary)
+  // --ab-theme-pf-default-h2-color:        derived  = ink-muted
+  // --ab-theme-pf-default-h3-color:        derived  = ink
+  // --ab-theme-pf-default-h4-color:        derived  = ink
+  // --ab-theme-pf-default-h5-color:        derived  = ink
+  // --ab-theme-pf-default-h6-color:        derived  = ink
+
+  // ========================= TYPOGRAPHY =========================
+  // --ab-theme-pf-default-font-sans:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  // --ab-theme-pf-default-font-display: <inherits sans>
+  // --ab-theme-pf-default-font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  // --ab-theme-pf-default-font-heading: var(--ab-font-sans);
+  // --ab-theme-pf-default-font-body:    var(--ab-font-sans);
+  // --ab-theme-pf-default-weight-heading: 600;    --ab-theme-pf-default-weight-body: 400;
+  // --ab-theme-pf-default-type-ratio:   1.2;      // modular scale ratio
+
+  // ========================= BOX-MODEL / LAYOUT =========================
+  // --ab-theme-pf-default-radius:       0.32rem;
+  // --ab-theme-pf-default-border-width: 0.2rem;
+  // --ab-theme-pf-default-measure-max:  98.75rem;
+  // --ab-theme-pf-default-page-max:     derived clamp
+  // --ab-theme-pf-default-gutter:       derived
+  // --ab-theme-pf-default-pad-y:        derived clamp
+
+  // ========================= MOTION =========================
+  // --ab-theme-pf-default-duration-fast: <L4 default>
+  // --ab-theme-pf-default-duration-base: <L4 default>
+
+  // ========================= ICON PACKS =========================
+  // --ab-theme-pf-default-iconset-academic-practice: starting progressing graduating writing researching;
+  // --ab-theme-pf-default-iconset-cite-source:       book article language_us web movie podcast;
+
+  // ========================= SEMANTIC CUE SETS =========================
+  // Shared dials (ride the theme) — change these to re-pitch every cue colour:
+  // --ab-theme-pf-default-semantic-s: 55%;   // saturation of the greens/reds/ambers
+  // --ab-theme-pf-default-semantic-l: 42%;   // their mid lightness
+  //
+  // Layer 1 — category hues (recognisable defaults; shift to re-hue a category):
+  // --ab-theme-pf-default-positive-hue: 145;   // green
+  // --ab-theme-pf-default-negative-hue: 5;     // red
+  // --ab-theme-pf-default-neutral-hue:  38;    // amber
+  //
+  // Layer 1 — category colours (derived from hue + semantic-s/-l; set to pin):
+  // --ab-theme-pf-default-positive-bg / -border / -ink / -icon-colour : derived
+  // --ab-theme-pf-default-negative-bg / -border / -ink / -icon-colour : derived
+  // --ab-theme-pf-default-neutral-bg  / -border / -ink / -icon-colour : derived
+  //
+  // Icons — placeholder per category + per sub-category (Material Symbol names):
+  // --ab-theme-pf-default-positive-icon:           "check_circle";
+  // --ab-theme-pf-default-positive-correct-icon:   "check_circle";
+  // --ab-theme-pf-default-positive-advise-icon:    "lightbulb";
+  // --ab-theme-pf-default-negative-icon:           "cancel";
+  // --ab-theme-pf-default-negative-incorrect-icon: "cancel";
+  // --ab-theme-pf-default-negative-warn-icon:      "warning";
+  // --ab-theme-pf-default-neutral-icon:            "info";
+  // --ab-theme-pf-default-neutral-observe-icon:    "visibility";
+
+}

@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>show-working process asset</title><link rel="stylesheet" href="./process.css"></head><body><article class="process-asset" data-process-asset="show-working"><div class="tag">Show your working</div><h3>Step-by-step, with annotations</h3><p class="use">Each line arrives in turn with the move explained, then the answer is checked by substitution.</p>
+      <div class="stage" style="justify-content:flex-start"><div class="work">
+        <div class="wline" style="--d:0s"><span class="eq">2x + 6 = 14</span></div>
+        <div class="wline" style="--d:.3s"><span class="eq">2x = 8</span><span class="ann">− 6 both sides</span></div>
+        <div class="wline" style="--d:.6s"><span class="eq">x = 4</span><span class="ann">÷ 2 both sides</span></div>
+        <div class="wline" style="--d:.95s"><span class="eq">2(<span class="sub">4</span>) + 6 = 14</span><span class="ann">check: sub x = 4</span><svg class="tick" viewBox="0 0 48 48"><path pathLength="1" class="edge" style="--d:1.2s;stroke:var(--c-positive)" d="M9 26 L21 38 L40 11"/></svg></div>
+      </div></div>
+    <div class="process-asset__controls">
+  <button type="button" data-process-play>Play / replay</button>
+  <button type="button" data-process-pause aria-pressed="false">Pause</button>
+  <label>Speed<select data-process-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+</div><p role="status" data-process-status>Still preview. Press Play to animate.</p></article><script src="./process.js"></script></body></html>

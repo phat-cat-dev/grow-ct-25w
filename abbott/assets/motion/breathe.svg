@@ -1,0 +1,9 @@
+<svg data-motion-asset="breathe" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 130" role="img" aria-labelledby="svg-motion-breathe-title svg-motion-breathe-desc" style="color:var(--motion-accent,#287baa)">
+<title id="svg-motion-breathe-title">Breathing type</title><desc id="svg-motion-breathe-desc">A gentle change in scale and spacing. Animation respects reduced motion.</desc>
+<style>
+svg[data-motion-asset="breathe"] .art{transform-box:view-box;transform-origin:160px 65px;animation:motion-breathe calc(3s / var(--motion-speed,1)) ease-in-out infinite}
+@keyframes motion-breathe { 50% { transform: scale(1.04); letter-spacing: .04em; } }
+
+svg[data-paused] *{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){svg[data-motion-asset="breathe"] .art,svg[data-motion-asset="breathe"] .echo{animation:none!important;transform:none!important;opacity:1!important;clip-path:none!important}}
+</style><g class="art" fill="currentColor"><text x="160" y="76" text-anchor="middle" font-size="38" font-family="system-ui,sans-serif" font-weight="700">Breathe</text></g></svg>

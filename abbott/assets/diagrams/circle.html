@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Circle flow diagram</title><link rel="stylesheet" href="./diagrams.css"></head>
+<body><article class="flow-card" data-flow-card data-flow-shape="circle"><h2>Circle</h2><svg class="flow-diagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Four-stage cycle">
+        <path class="edge" pathLength="1" style="--d:0s"   d="M120 40 A80 80 0 0 1 200 120"/>
+        <path class="edge" pathLength="1" style="--d:.15s" d="M200 120 A80 80 0 0 1 120 200"/>
+        <path class="edge" pathLength="1" style="--d:.3s"  d="M120 200 A80 80 0 0 1 40 120"/>
+        <path class="edge" pathLength="1" style="--d:.45s" d="M40 120 A80 80 0 0 1 120 40"/>
+        <circle class="node key" cx="120" cy="40" r="20"/><text class="nlabel" x="120" y="40">1</text>
+        <circle class="node" cx="200" cy="120" r="20"/><text class="nlabel" x="200" y="120">2</text>
+        <circle class="node" cx="120" cy="200" r="20"/><text class="nlabel" x="120" y="200">3</text>
+        <circle class="node" cx="40" cy="120" r="20"/><text class="nlabel" x="40" y="120">4</text>
+        <circle class="runner" r="5" style="offset-path:path('M120 40 A80 80 0 0 1 200 120 A80 80 0 0 1 120 200 A80 80 0 0 1 40 120 A80 80 0 0 1 120 40')"/>
+      </svg><div class="flow-card__controls">
+    <label>Nodes<select data-flow-nodes><option value="2">2</option><option value="3">3</option><option value="4" selected>4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select></label>
+    <button type="button" data-flow-play>Play / replay</button>
+    <button type="button" data-flow-pause aria-pressed="false">Pause</button>
+    <label>Speed<select data-flow-rate><option value=".5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option><option value="3">3x</option></select></label>
+    <label>Runner layer<select data-flow-layer><option value="over">Over nodes</option><option value="behind">Behind nodes</option></select></label>
+  </div><p role="status" data-flow-status></p><p><a href="./circle.svg" data-flow-download download="circle.svg">Download current Circle SVG</a></p></article><script src="./diagrams.js"></script></body></html>

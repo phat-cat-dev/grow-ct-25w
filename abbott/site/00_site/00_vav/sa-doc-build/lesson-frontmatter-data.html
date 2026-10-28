@@ -1,0 +1,376 @@
+<!-- ============================================================================
+     lesson-frontmatter-data.html
+     The lesson record in the grey skin, with the inspect layer for the leveled
+     div structure. Loads lesson-record.skin.css for presentation and
+     lesson-record.inspect.css / .js for the tools and the depth-by-level markup
+     inspector. Same record as lesson-record.example.html, one presentation.
+     ============================================================================ -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Designing for depth · lesson record · levels</title>
+<link rel="stylesheet" href="lesson-record.skin.css">
+<link rel="stylesheet" href="lesson-record.inspect.css">
+</head>
+<body>
+<article class="lr" data-lr-role="lesson-record" aria-labelledby="lr-title">
+
+  <header class="lr__header">
+    <p class="lr__kicker">Lesson record · lesson</p>
+    <h2 class="lr__title" id="lr-title">Designing for depth</h2>
+    <p class="lr__summary">How colour, type and space come from a token system, and how a block carries its own metadata. <code class="lr-code">lesson-design-tokens-03</code></p>
+  </header>
+
+  <div class="lr__bar" role="group" aria-label="Key and tools">
+    <ul class="lr__legend" aria-label="What each treatment means">
+      <li class="lr-key" data-kind="define">Defined here (per lesson)</li>
+      <li class="lr-key" data-kind="inherit">Inherited (from course)</li>
+      <li class="lr-key" data-kind="derive">Derived (automatic)</li>
+      <li class="lr-key" data-kind="internal">Kept internal (never shown to learners)</li>
+    </ul>
+    <div class="lr__tools" data-lr-tools hidden></div>
+  </div>
+
+  <ol class="lr__groups">
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-identity" data-group="identity" data-kind="define" aria-labelledby="lr-h-identity" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">01</span>
+          <h3 class="lr-group__title" id="lr-h-identity">Identity</h3>
+          <span class="lr-badge">Defined here</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The id is stable and never changes. The title can change as often as it needs to.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Schema version</dt><dd>1.0</dd></div>
+              <div class="lr-dl__row"><dt>Identifier</dt><dd><code class="lr-code">lesson-design-tokens-03</code></dd></div>
+              <div class="lr-dl__row"><dt>Document type</dt><dd>lesson</dd></div>
+              <div class="lr-dl__row"><dt>Title</dt><dd>Designing for depth</dd></div>
+              <div class="lr-dl__row"><dt>Summary</dt><dd>How colour, type and space come from a token system, and how a block carries its own metadata.</dd></div>
+              <div class="lr-dl__row"><dt>Tags</dt><dd>
+                <ul class="lr-tags"><li class="lr-tag">tokens</li><li class="lr-tag">design systems</li><li class="lr-tag">metadata</li></ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-place" data-group="place" data-kind="derive" aria-labelledby="lr-h-place" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">02</span>
+          <h3 class="lr-group__title" id="lr-h-place">Place in the course</h3>
+          <span class="lr-badge">Derived</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Breadcrumbs and the lesson position are derived from these fields. Nobody types them into the page. Sequence is presentation order, not depth.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Course</dt><dd><code class="lr-code">course-design-tokens</code></dd></div>
+              <div class="lr-dl__row"><dt>Parent</dt><dd><code class="lr-code">course-design-tokens</code></dd></div>
+              <div class="lr-dl__row"><dt>Hierarchy level</dt><dd>1</dd></div>
+              <div class="lr-dl__row"><dt>Sequence</dt><dd>3</dd></div>
+              <div class="lr-dl__row"><dt>Position (derived)</dt><dd>Lesson 3 of 6</dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-inherited" data-group="inherited" data-kind="inherit" aria-labelledby="lr-h-inherited" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">03</span>
+          <h3 class="lr-group__title" id="lr-h-inherited">Inherited from the course</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">en-GB, intermediate pitch</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Language, pitch, voice, referencing and rights come from the course unless the lesson overrides them. The lesson does not repeat them.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Language</dt><dd>en-GB</dd></div>
+              <div class="lr-dl__row"><dt>Learner pitch</dt><dd>intermediate</dd></div>
+              <div class="lr-dl__row"><dt>Voice specification</dt><dd><code class="lr-code">reference/excelling-voice-specification.md</code></dd></div>
+              <div class="lr-dl__row"><dt>Referencing style</dt><dd>Harvard (Cite Them Right)</dd></div>
+              <div class="lr-dl__row"><dt>Rights holder</dt><dd><span class="lr-empty">Not set</span></dd></div>
+              <div class="lr-dl__row"><dt>Licence</dt><dd><span class="lr-empty">Not set</span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-scope" data-group="scope" data-kind="internal" aria-labelledby="lr-h-scope" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">04</span>
+          <h3 class="lr-group__title" id="lr-h-scope">Scope</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">Where colour, type and space come from, and how a block declares its own metadata.</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The boundary of this lesson. Scope exclusions stay internal. They stop the lesson growing and they are not shown to learners.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Focus</dt><dd>Where colour, type and space come from, and how a block declares its own metadata.</dd></div>
+              <div class="lr-dl__row"><dt>In scope</dt><dd>
+                <ul class="lr-list"><li>Reading a token</li><li>Building a two-column block</li><li>Toggling a frontmatter section</li></ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Out of scope</dt><dd>
+                <ul class="lr-list"><li>Authoring new tokens</li><li>Theming for dark mode</li></ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-co" data-group="course-outcomes" data-kind="inherit" aria-labelledby="lr-h-co" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">05</span>
+          <h3 class="lr-group__title" id="lr-h-co">Course outcomes</h3>
+          <span class="lr-badge">Inherited</span>
+          <span class="lr-group__sum">2 of 3 served by this lesson</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">From the course record. Outcomes marked "served" are the ones this lesson is aligned to.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item" id="CO1" data-aligned="true">
+                <h4 class="lr-item__id"><code class="lr-code">CO1</code> <span class="lr-flag">served by this lesson</span></h4>
+                <p class="lr-item__text">Explain how a token system keeps a course visually consistent.</p>
+              </li>
+              <li class="lr-item" id="CO2" data-aligned="true">
+                <h4 class="lr-item__id"><code class="lr-code">CO2</code> <span class="lr-flag">served by this lesson</span></h4>
+                <p class="lr-item__text">Build course blocks that carry their own metadata.</p>
+              </li>
+              <li class="lr-item" id="CO3" data-aligned="false">
+                <h4 class="lr-item__id"><code class="lr-code">CO3</code></h4>
+                <p class="lr-item__text">Evaluate a design system against accessibility guidance.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-lo" data-group="lesson-outcomes" data-kind="define" aria-labelledby="lr-h-lo" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">06</span>
+          <h3 class="lr-group__title" id="lr-h-lo">Lesson outcomes</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">3 lesson outcomes</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Each lesson outcome points up to the course outcomes it serves and names the evidence that will show it has been met.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item" id="LO1">
+                <h4 class="lr-item__id"><code class="lr-code">LO1</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Statement</dt><dd>Explain where colour, type and space come from in a token system.</dd></div>
+                  <div class="lr-dl__row"><dt>Serves</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#CO1">CO1</a></li></ul></dd></div>
+                  <div class="lr-dl__row"><dt>Evidence</dt><dd>Short written explanation using the lesson example.</dd></div>
+                </dl>
+              </li>
+              <li class="lr-item" id="LO2">
+                <h4 class="lr-item__id"><code class="lr-code">LO2</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Statement</dt><dd>Build a two-column block with per-column metadata.</dd></div>
+                  <div class="lr-dl__row"><dt>Serves</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#CO2">CO2</a></li></ul></dd></div>
+                  <div class="lr-dl__row"><dt>Evidence</dt><dd>A working block that passes the checkpoint.</dd></div>
+                </dl>
+              </li>
+              <li class="lr-item" id="LO3">
+                <h4 class="lr-item__id"><code class="lr-code">LO3</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Statement</dt><dd>Toggle a frontmatter section between visible and metadata-only.</dd></div>
+                  <div class="lr-dl__row"><dt>Serves</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#CO1">CO1</a></li><li><a class="lr-ref" href="#CO2">CO2</a></li></ul></dd></div>
+                  <div class="lr-dl__row"><dt>Evidence</dt><dd>Checkpoint question 2.</dd></div>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-act" data-group="activities" data-kind="define" aria-labelledby="lr-h-act" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">07</span>
+          <h3 class="lr-group__title" id="lr-h-act">Activities</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">3 activities</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Every activity points back to lesson outcomes. Do not promise that an activity is optional, saves answers or affects completion until that behaviour is verified in Adapt or SCORM.</p>
+          <div class="lr-panel">
+            <ul class="lr-items">
+              <li class="lr-item" id="ACT1">
+                <h4 class="lr-item__id"><code class="lr-code">ACT1</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Purpose</dt><dd>Trace a colour back to its token.</dd></div>
+                  <div class="lr-dl__row"><dt>Evidences</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#LO1">LO1</a></li></ul></dd></div>
+                </dl>
+              </li>
+              <li class="lr-item" id="ACT2">
+                <h4 class="lr-item__id"><code class="lr-code">ACT2</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Purpose</dt><dd>Build a two-column block with a worked example.</dd></div>
+                  <div class="lr-dl__row"><dt>Evidences</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#LO2">LO2</a></li></ul></dd></div>
+                </dl>
+              </li>
+              <li class="lr-item" id="ACT3">
+                <h4 class="lr-item__id"><code class="lr-code">ACT3</code></h4>
+                <dl class="lr-dl">
+                  <div class="lr-dl__row"><dt>Purpose</dt><dd>Switch a section to metadata-only and compare.</dd></div>
+                  <div class="lr-dl__row"><dt>Evidences</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#LO3">LO3</a></li><li><a class="lr-ref" href="#LO2">LO2</a></li></ul></dd></div>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-assessment" data-group="assessment" data-kind="define" aria-labelledby="lr-h-assessment" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">08</span>
+          <h3 class="lr-group__title" id="lr-h-assessment">Assessment</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">formative, covers 3 outcomes</span>
+        </summary>
+        <div class="lr-group__body">
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Purpose</dt><dd>formative</dd></div>
+              <div class="lr-dl__row"><dt>Covers</dt><dd><ul class="lr-refs"><li><a class="lr-ref" href="#LO1">LO1</a></li><li><a class="lr-ref" href="#LO2">LO2</a></li><li><a class="lr-ref" href="#LO3">LO3</a></li></ul></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-prereq" data-group="prerequisites" data-kind="define" aria-labelledby="lr-h-prereq" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">09</span>
+          <h3 class="lr-group__title" id="lr-h-prereq">Prerequisites and materials</h3>
+          <span class="lr-badge">Defined here</span>
+          <span class="lr-group__sum">12 minutes</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Only knowledge genuinely needed here. The learner sees this as "Before you begin" and "What you will need".</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Knowledge</dt><dd>
+                <ul class="lr-list"><li>You can read a CSS custom property, for example var(--accent).</li></ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Required lessons</dt><dd>
+                <ul class="lr-tags"><li class="lr-tag"><code class="lr-code">lesson-design-tokens-02</code></li></ul>
+              </dd></div>
+              <div class="lr-dl__row"><dt>Estimated minutes</dt><dd>12</dd></div>
+              <div class="lr-dl__row"><dt>Materials</dt><dd>
+                <ul class="lr-list"><li>A recent piece of your own written feedback</li><li>Ten quiet minutes</li></ul>
+              </dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-lifecycle" data-group="lifecycle" data-kind="internal" aria-labelledby="lr-h-lifecycle">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">10</span>
+          <h3 class="lr-group__title" id="lr-h-lifecycle">Lifecycle and ownership</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">v0.3.0, in-review, owned by Learning design team</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Who is accountable, which version this is and when it is next reviewed. Never shown in the learner opening.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Version</dt><dd>0.3.0</dd></div>
+              <div class="lr-dl__row"><dt>Status</dt><dd><span class="lr-pill">in-review</span></dd></div>
+              <div class="lr-dl__row"><dt>Owner</dt><dd>Learning design team</dd></div>
+              <div class="lr-dl__row"><dt>Authors</dt><dd><ul class="lr-list"><li>Author A</li></ul></dd></div>
+              <div class="lr-dl__row"><dt>Reviewers</dt><dd><ul class="lr-list"><li>Reviewer B</li></ul></dd></div>
+              <div class="lr-dl__row"><dt>Created</dt><dd><time datetime="2026-10-19">2026-10-19</time></dd></div>
+              <div class="lr-dl__row"><dt>Updated</dt><dd><time datetime="2026-10-20">2026-10-20</time></dd></div>
+              <div class="lr-dl__row"><dt>Review due</dt><dd><time datetime="2027-04-01">2027-04-01</time></dd></div>
+              <div class="lr-dl__row"><dt>Sources</dt><dd><ul class="lr-list"><li class="lr-empty">None yet</li></ul></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-review" data-group="review" data-kind="internal" aria-labelledby="lr-h-review">
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">11</span>
+          <h3 class="lr-group__title" id="lr-h-review">Academic review</h3>
+          <span class="lr-badge">Kept internal</span>
+          <span class="lr-group__sum">Academic review pending</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">Document status and review approval are separate. A draft can have a reviewer assigned without having been approved.</p>
+          <div class="lr-panel">
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Academic status</dt><dd><span class="lr-pill">pending</span></dd></div>
+              <div class="lr-dl__row"><dt>Approved by</dt><dd><span class="lr-empty">Not set</span></dd></div>
+              <div class="lr-dl__row"><dt>Approved on</dt><dd><span class="lr-empty">Not set</span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+    <li class="lr__item">
+      <details class="lr-group" id="lr-opening" data-group="opening" data-kind="derive" aria-labelledby="lr-h-opening" open>
+        <summary class="lr-group__summary">
+          <span class="lr-group__num" aria-hidden="true">12</span>
+          <h3 class="lr-group__title" id="lr-h-opening">Learner opening</h3>
+          <span class="lr-badge">Derived</span>
+          <span class="lr-group__sum">Before you begin</span>
+        </summary>
+        <div class="lr-group__body">
+          <p class="lr-note">The concise introduction learners see before the lesson begins. It is a display view of the record above, not a second source of truth.</p>
+          <div class="lr-panel lr-preview">
+            <p class="lr-preview__eyebrow">Before you begin</p>
+            <p>You&#x27;ll explore where colour, type and space come from in a token system, build a block that carries its own metadata, and see how that keeps a course coherent as it grows.</p>
+            <p class="lr-preview__meta">12 min · Intermediate</p>
+            <p><strong>By the end of this lesson, you will be able to:</strong></p>
+            <ul class="lr-list"><li>Explain where colour, type and space come from in a token system.</li><li>Build a two-column block with per-column metadata.</li><li>Toggle a frontmatter section between visible and metadata-only.</li></ul>
+          </div>
+          <div class="lr-panel">
+            <h4 class="lr-subhead">Derive, do not retype</h4>
+            <dl class="lr-dl">
+              <div class="lr-dl__row"><dt>Duration</dt><dd><code class="lr-code">estimated_duration_minutes</code></dd></div>
+              <div class="lr-dl__row"><dt>Level</dt><dd><code class="lr-code">course.learner_pitch</code></dd></div>
+              <div class="lr-dl__row"><dt>Outcomes list</dt><dd><code class="lr-code">learning_outcomes[].statement</code></dd></div>
+              <div class="lr-dl__row"><dt>Position</dt><dd><code class="lr-code">sequence</code> and the course lesson map</dd></div>
+              <div class="lr-dl__row"><dt>Before you begin</dt><dd><code class="lr-code">prerequisites</code> and <code class="lr-code">materials_required</code></dd></div>
+            </dl>
+          </div>
+        </div>
+      </details>
+    </li>
+
+  </ol>
+</article>
+
+<script src="lesson-record.inspect.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+# Fix: Preserve actual user text for reflective/open-ended textInput questions
+# Date: 2026-07-29
+# Problem: On SCORM restore, reflective textInput shows '******' instead of actual answer
+#          because only answer indices are stored, not actual text
+# Solution: Store and restore actual user text in addition to answer indices
+--- a/src/components/adapt-contrib-textInput/js/textInputModel.js
++++ b/src/components/adapt-contrib-textInput/js/textInputModel.js
+@@ -62,8 +62,14 @@ class TextInputModel extends QuestionModel {
+       } else if (answerIndex > -1) {
+         item.userAnswer = item._answers[answerIndex];
+         item._answerIndex = answerIndex;
+       } else {
+-        if (item.userAnswer === undefined) item.userAnswer = '******';
++        // Restore actual text for reflective/open-ended questions (no correct answer matched)
++        const storedText = this.get('_userAnswerText');
++        if (storedText && storedText[item._index] !== undefined) {
++          item.userAnswer = storedText[item._index];
++        } else if (item.userAnswer === undefined) {
++          item.userAnswer = '';
++        }
+         item._answerIndex = -1;
+       }
+       if (item.userAnswer instanceof Array) item.userAnswer = item.userAnswer[0];
+@@ -96,8 +102,13 @@ class TextInputModel extends QuestionModel {
+     this.isCorrect();
+
+     const userAnswer = new Array(items.length);
+-    items.forEach(({ _index, _answerIndex }) => (userAnswer[_index] = _answerIndex));
++    const userAnswerText = new Array(items.length);
++    items.forEach(({ _index, _answerIndex, userAnswer: answer }) => {
++      userAnswer[_index] = _answerIndex;
++      userAnswerText[_index] = answer; // Store actual text for reflective/open-ended questions
++    });
+     this.set('_userAnswer', userAnswer);
++    this.set('_userAnswerText', userAnswerText);
+   }
+
+   isCorrect() {

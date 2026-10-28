@@ -1,0 +1,90 @@
+// CM DROPDOWN THEME — the matching component's dropdown, themed on the accent.
+// (Abbott, 10 Oct 2026: "make bg color {theme}" + border-radius 0 + "all
+// dropdown colouring".)
+//
+// adapt-contrib-matching's dropdown (matchingDropDown.jsx) ships from
+// adapt-contrib-vanilla hard-coded teal (#117F93 fill, #0c5865 item divider,
+// white text, .25rem radius). None of that is in this repo's source — it is a
+// base-theme default — so it is re-themed here rather than patched into vendor.
+//
+// Everything is driven by the scheme tokens (ab-schemes.less / the active
+// colour pack), so the dropdown follows whatever theme is live instead of a
+// fixed teal: fill = --ab-base-accent, text = --ab-base-on-accent, the item divider and
+// the hover/selected states = the derived darker accents (--ab-base-accent-hover /
+// --ab-base-accent-active, both defined on :root in ab-schemes.less). border-radius
+// is squared off to 0 throughout (Abbott). !important matches the vanilla
+// rules' specificity, as cm-notify.less does for the popup.
+
+// GATED under html.ab-theme (optional-skin switch, Abbott 11 Oct 2026). Kept as
+// the dropdown's single styling home (not folded into vanilla-overrides.less,
+// which is colour-only — this file also carries structural radius/padding).
+// Wrapping it in the gate means `ab-theme` off reverts the matching dropdown to
+// vanilla's own teal styling.
+html.ab-theme {
+
+// ---- the trigger button ----
+.dropdown__btn {
+  background-color: var(--ab-base-accent) !important;
+  color: var(--ab-base-on-accent) !important;
+  border-radius: 0 !important;
+
+  // hover / keyboard focus: one step darker, text stays on-accent
+  &:hover,
+  &:focus {
+    background-color: var(--ab-base-accent-hover) !important;
+  }
+
+  // a value has been chosen: hold it a touch darker so a filled slot reads
+  &.is-selected {
+    background-color: var(--ab-base-accent-active) !important;
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+  }
+}
+
+// the button's text span and the chevron icon ride the same on-accent ink
+.dropdown__inner,
+.dropdown__icon,
+.dropdown__icon .icon {
+  color: var(--ab-base-on-accent) !important;
+}
+
+// ---- the open list ----
+.dropdown__list {
+  background-color: var(--ab-base-accent) !important;
+  border-radius: 0 !important;
+  // the list floats over the page; a thin accent-active edge sets it off
+  border: 1px solid var(--ab-base-accent-active) !important;
+}
+
+// ---- each option ----
+.dropdown-item {
+  padding: 1rem !important;
+  background-color: var(--ab-base-accent) !important;
+  color: var(--ab-base-on-accent) !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid var(--ab-base-accent-active) !important;
+
+  .dropdown-item__inner {
+    color: var(--ab-base-on-accent) !important;
+  }
+
+  // hovered or highlighted (keyboard) or chosen: darken to the accent-active
+  // shade so the active option is unmistakable; meaning is not colour-only
+  // (the markup also carries aria-selected).
+  &:hover,
+  &.is-selected,
+  &[aria-selected],
+  &[selected] {
+    background-color: var(--ab-base-accent-active) !important;
+  }
+
+  // no divider under the final option
+  &:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+} // end html.ab-theme gate

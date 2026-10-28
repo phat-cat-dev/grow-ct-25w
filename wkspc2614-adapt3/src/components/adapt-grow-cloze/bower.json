@@ -1,0 +1,21 @@
+{
+    "name": "adapt-grow-cloze",
+    "description": "Fill-the-blanks (cloze) formative activity: the learner chooses a word from a dropdown for each inline blank, then selects Check to mark every blank correct/incorrect and read an overall feedback message. Generalised to any number of blanks. A formative CHECK, not an assessed question: extends ComponentModel, records no cmi.interactions and produces no score.",
+    "version": "1.0.0",
+    "framework": ">=5.19.1",
+    "homepage": "https://github.com/your-org/adapt-grow-cloze",
+    "license": "GPL-3.0",
+    "keywords": [
+        "adapt-framework",
+        "adapt-component",
+        "adapt-plugin"
+    ],
+    "main": "js/adapt-grow-cloze.js",
+    "ignore": [],
+    "dependencies": {},
+    "pluginType": "component",
+    "displayName": "Fill the blanks (GROW)",
+    "component": "growCloze",
+    "properties": "properties.schema",
+    "targetAttribute": "_growCloze"
+}

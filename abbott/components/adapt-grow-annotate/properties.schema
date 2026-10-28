@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Annotate. Choose a tool, then select words in the passage to mark them. Selecting a marked word again removes the mark.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "Choose a tool, then select the words you want to mark.",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "passage": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "title": "Passage",
+      "inputType": "TextArea",
+      "validators": ["required"],
+      "help": "The text the learner annotates. Wrap each selectable word or phrase in double brackets, e.g. 'A landscape needs a [[foreground]] and a [[horizon]].' Add a stable key with a pipe if you reuse the same word: [[horizon|hz]]. Plain inline HTML is allowed in the surrounding text.",
+      "translatable": true
+    },
+    "_tools": {
+      "type": "array",
+      "required": false,
+      "title": "Annotation tools",
+      "help": "The palette the learner chooses from. Each tool applies one ink mark in one colour. With a single tool the component is a simple circle-the-word toggle. If left empty, a default 'Circle' tool is used.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Id",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "A short unique id for this tool (e.g. 'idea', 'evidence', 'doubt')."
+          },
+          "label": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Label",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "What this annotation means, shown on the palette and next to marked words (e.g. 'Main idea').",
+            "translatable": true
+          },
+          "_mark": {
+            "type": "string",
+            "required": true,
+            "enum": ["oval", "box", "bracket", "underline", "double", "wavy", "strike", "scribble", "highlight", "tick", "cross", "star", "caret", "checkbox", "question", "exclaim"],
+            "default": "oval",
+            "title": "Mark",
+            "inputType": { "type": "Select", "options": ["oval", "box", "bracket", "underline", "double", "wavy", "strike", "scribble", "highlight", "tick", "cross", "star", "caret", "checkbox", "question", "exclaim"] },
+            "validators": ["required"],
+            "help": "The ink mark this tool draws. 'oval', 'box', 'bracket', 'underline', 'highlight' and 'strike' wrap the word; 'tick', 'cross', 'star', 'question' etc. are drawn beside it."
+          },
+          "_color": {
+            "type": "string",
+            "required": false,
+            "enum": ["accent", "positive", "negative", "neutral", "comment", "soft"],
+            "default": "accent",
+            "title": "Colour",
+            "inputType": { "type": "Select", "options": ["accent", "positive", "negative", "neutral", "comment", "soft"] },
+            "validators": [],
+            "help": "Colour role, mapped to the theme: accent (brand), positive (green), negative (red), neutral (amber), comment (violet), soft (muted)."
+          }
+        }
+      }
+    },
+    "_minAnnotations": {
+      "type": "number",
+      "required": false,
+      "default": 1,
+      "title": "Minimum annotations to complete",
+      "inputType": "Number",
+      "validators": [],
+      "help": "How many words the learner must mark before the component counts as complete. 0 completes it as soon as it is seen on screen."
+    },
+    "_showLabels": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show tool labels on marked words",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Show a small label chip next to each marked word so the annotation's meaning is visible."
+    },
+    "_allowReset": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show a clear button",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Let the learner clear all their annotations and start again."
+    }
+  }
+}

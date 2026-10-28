@@ -1,0 +1,37 @@
+.stacks > :only-child { grid-column: 1 / -1; max-width: 48rem; width: 100%; margin-inline: auto; }
+[data-stack] { min-width: 0; }
+[data-stack] [hidden] { display: none !important; }
+[data-stack] summary { cursor: pointer; overflow-wrap: anywhere; }
+[data-stack] .ds { padding-top: .5rem; }
+[data-stack] [data-current] { outline: 2px solid var(--accent); outline-offset: 2px; }
+[data-stack] .stack-controls, [data-stack] .stack-check { border-top: 1px solid var(--line); padding-top: 1rem; margin-top: 1rem; }
+[data-stack] button, [data-stack] select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface-1);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  padding: .5rem .7rem;
+  margin-block: .3rem;
+  max-width: 100%;
+}
+[data-stack] button { cursor: pointer; }
+[data-stack] label { display: flex; flex-wrap: wrap; margin-block: .5rem; }
+[data-stack] select { width: 100%; white-space: normal; }
+[data-stack] progress { width: 100%; accent-color: var(--accent); }
+[data-stack] .profile-note { font-size: .8rem; color: var(--ink-soft); }
+[data-stack] :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+[data-stack][data-profile="compact"] {
+  --accent: #8855bd;
+  --sty: var(--accent);
+  --accent-ink: var(--ink);
+  --radius: 5px;
+}
+[data-stack][data-profile="compact"] .layer { padding: 7px 9px; border-radius: 4px; }
+[data-stack][data-profile="airy"] {
+  --accent: #37845e;
+  --sty: var(--accent);
+  --accent-ink: var(--ink);
+  --radius: 22px;
+}
+[data-stack][data-profile="airy"] .layer { padding: 18px; border-radius: 16px; margin-block: 12px; }

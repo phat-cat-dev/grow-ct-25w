@@ -1,0 +1,17 @@
+:root { color-scheme: light dark; font-family: system-ui, sans-serif; --motion-accent: light-dark(#287baa,#73c3ef); --motion-ink: light-dark(#202c36,#eef5f8); }
+* { box-sizing: border-box; }
+body { margin: 0; background: light-dark(#f4f7f9,#141e26); color: var(--motion-ink); line-height: 1.5; }
+main { max-width: 90rem; margin: auto; padding: clamp(1rem,3vw,3rem); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,22rem),1fr)); gap: 1rem; }
+.motion-card { min-width: 0; border: 1px solid light-dark(#c2d1da,#475760); border-radius: 1rem; padding: 1rem; }
+.motion-card h2 { font-size: 1.2rem; margin: 0; }
+.motion-card p { font-size: .9rem; }
+.stage { height: 200px; display: grid; place-items: center; overflow: hidden; }
+.stage svg { width: 100%; height: 130px; overflow: visible; transform: rotate(var(--preview-angle,0deg)) scale(var(--preview-size,1)); }
+.controls { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+label { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; width: 100%; }
+input { min-width: 0; accent-color: var(--motion-accent); }
+output { min-width: 5rem; }
+button, a { color: var(--motion-accent); font: inherit; }
+button { padding: .5rem .8rem; cursor: pointer; background: transparent; border: 1px solid currentColor; border-radius: .5rem; }
+:focus-visible { outline: 3px solid var(--motion-accent); outline-offset: 3px; }

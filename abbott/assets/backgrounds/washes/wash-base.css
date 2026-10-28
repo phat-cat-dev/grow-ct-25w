@@ -1,0 +1,21 @@
+.wash-bg {
+  --wash-hue: var(--h, 202);
+  --wash-saturation: var(--s, 72%);
+  --wash-accent: var(--accent, #326d91);
+  --wash-ink-soft: var(--ink-soft, #526674);
+  --wash-noise: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='140'%20height='140'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='140'%20height='140'%20filter='url(%23n)'/%3E%3C/svg%3E");
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  background-color: var(--surface-1, #fbfcfd);
+  color: var(--ink, #24313b);
+}
+.wash-bg::before {
+  --wash-strength: clamp(0, var(--wash-intensity, 1), 2.2);
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+}

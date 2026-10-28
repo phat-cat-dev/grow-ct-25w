@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Auto-width flip buttons</title>
+  <link rel="stylesheet" href="flip-button.css">
+  <style>
+    body { margin: 0; padding: clamp(1rem,5vw,4rem); background: #f4f7fa; color: #172e3a; font: 1rem/1.6 system-ui,sans-serif; }
+    h1 { font-size: clamp(2rem,5vw,3rem); }
+    .examples { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; margin-block: 3rem; }
+    .controls { display: flex; flex-wrap: wrap; gap: 1rem; }
+    label { display: grid; gap: .3rem; }
+    input { font: inherit; max-width: 100%; box-sizing: border-box; }
+    a { color: #365f80; }
+  </style>
+</head>
+<body>
+  <h1>Auto-width flip buttons</h1>
+  <p>Just buttons. Hover or focus to preview the reverse face; click, tap, Enter or Space to toggle the pressed state. Both faces determine the width, so longer text does not get clipped.</p>
+  <div class="controls">
+    <label>Front text <input data-front value="Explore" maxlength="100"></label>
+    <label>Back text <input data-back value="See what is possible" maxlength="100"></label>
+    <label>Transition duration <input data-duration type="range" min="100" max="1500" step="50" value="450"><output data-duration-value>450 ms</output></label>
+  </div>
+  <div class="examples">
+    <button type="button" class="flip-button" data-specimen data-flip-toggle aria-label="Toggle example" aria-pressed="false">
+      <span class="flip-face flip-front" aria-hidden="true">Explore</span>
+      <span class="flip-face flip-back" aria-hidden="true">See what is possible</span>
+    </button>
+    <button type="button" class="flip-button" data-flip-toggle aria-label="Toggle short example" aria-pressed="false">
+      <span class="flip-face flip-front" aria-hidden="true">Short</span>
+      <span class="flip-face flip-back" aria-hidden="true">A longer reverse label</span>
+    </button>
+    <button type="button" class="flip-button" disabled aria-label="Unavailable example">
+      <span class="flip-face flip-front" aria-hidden="true">Unavailable</span>
+      <span class="flip-face flip-back" aria-hidden="true">Disabled</span>
+    </button>
+  </div>
+  <p role="status" data-status>No example selected.</p>
+  <p><a href="button.template.html" download>Button HTML template</a> · <a href="README.md">Integration guide</a></p>
+  <script src="flip-button.js"></script>
+  <script>
+    const specimen = document.querySelector('[data-specimen]');
+    for (const side of ['front', 'back']) {
+      document.querySelector(`[data-${side}]`).addEventListener('input', event => {
+        specimen.querySelector(`.flip-${side}`).textContent = event.target.value;
+      });
+    }
+    document.querySelector('[data-duration]').addEventListener('input', event => {
+      specimen.style.setProperty('--flip-duration', `${event.target.value}ms`);
+      document.querySelector('[data-duration-value]').value = `${event.target.value} ms`;
+    });
+    document.addEventListener('flip-button:change', event => {
+      document.querySelector('[data-status]').textContent = `${event.target.getAttribute('aria-label')}: ${event.detail.flipped ? 'pressed' : 'not pressed'}.`;
+    });
+  </script>
+</body>
+</html>

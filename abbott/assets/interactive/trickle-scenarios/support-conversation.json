@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "id": "support-conversation",
+  "title": "A learner has gone quiet",
+  "intro": "Practise a supportive conversation without pretending to diagnose another person. Follow several layers of choices and consequences.",
+  "start": "opening",
+  "nodes": [
+    {
+      "id": "opening",
+      "type": "continue",
+      "title": "The situation",
+      "body": "A learner who usually contributes has missed two activities. You do not know why. You have a chance to offer support.",
+      "button": "Step into the scenario",
+      "next": "decision-1"
+    },
+    {
+      "id": "decision-1",
+      "type": "choice",
+      "title": "Open the conversation",
+      "body": "How do you make first contact?",
+      "choices": [
+        {
+          "label": "Send a private, non-judgmental invitation",
+          "next": "consequence-1-a"
+        },
+        {
+          "label": "Ask for an explanation in the group",
+          "next": "consequence-1-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-1-a",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "The learner can choose whether and how to respond. You explain what support is available without making assumptions.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "consequence-1-b",
+      "type": "auto",
+      "title": "What happens next / decision 1",
+      "body": "The learner receives attention they did not request. You will need to move the conversation to a private channel and acknowledge that choice.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-1"
+    },
+    {
+      "id": "reflection-1",
+      "type": "continue",
+      "title": "Pause and reflect / 1",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-2"
+    },
+    {
+      "id": "decision-2",
+      "type": "choice",
+      "title": "Listen before planning",
+      "body": "The learner says the workload feels difficult. What next?",
+      "choices": [
+        {
+          "label": "Ask which part is hardest to access",
+          "next": "consequence-2-a"
+        },
+        {
+          "label": "Offer your usual solution immediately",
+          "next": "consequence-2-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-2-a",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "They describe a specific barrier. You can discuss adjustments to the activity rather than guessing at the cause.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "consequence-2-b",
+      "type": "auto",
+      "title": "What happens next / decision 2",
+      "body": "Your suggestion may help, but you have not checked the barrier. You pause and ask whether it fits their situation.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-2"
+    },
+    {
+      "id": "reflection-2",
+      "type": "continue",
+      "title": "Pause and reflect / 2",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Make the next decision",
+      "next": "decision-3"
+    },
+    {
+      "id": "decision-3",
+      "type": "choice",
+      "title": "Agree a next step",
+      "body": "How will the conversation finish?",
+      "choices": [
+        {
+          "label": "Agree one achievable step and a check-in",
+          "next": "consequence-3-a"
+        },
+        {
+          "label": "Leave the plan open-ended",
+          "next": "consequence-3-b"
+        }
+      ]
+    },
+    {
+      "id": "consequence-3-a",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "The learner chooses a manageable action. You both know when to check whether the arrangement helped.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "consequence-3-b",
+      "type": "auto",
+      "title": "What happens next / decision 3",
+      "body": "There is room for flexibility, but no shared next action. You offer to agree a smaller, clearer step when the learner is ready.",
+      "delayMs": 1800,
+      "button": "Consider the next step",
+      "next": "reflection-3"
+    },
+    {
+      "id": "reflection-3",
+      "type": "continue",
+      "title": "Pause and reflect / 3",
+      "body": "Notice what your decision made possible and what it left unresolved.",
+      "prompt": "Why did you choose this route?",
+      "button": "Review the outcome",
+      "next": "outcome"
+    },
+    {
+      "id": "outcome",
+      "type": "ending",
+      "title": "Your route, your explanation",
+      "body": "Reflect on privacy, listening and learner agency. This is a practice conversation, not clinical advice or a substitute for your organisation's support procedures.",
+      "prompt": "What would you keep or change next time?"
+    }
+  ]
+}

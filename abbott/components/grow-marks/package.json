@@ -1,0 +1,17 @@
+{
+  "name": "grow-marks",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared ink-mark library: an SVG mark/bullet catalogue plus a draw-on + pop-in engine. Framework-agnostic core for the planned adapt-grow-annotate component and adapt-grow-marks extension.",
+  "main": "src/growMarks.js",
+  "exports": {
+    ".": "./src/growMarks.js",
+    "./catalogue": "./src/marksCatalogue.js",
+    "./logic": "./src/marksLogic.js",
+    "./css": "./grow-marks.css"
+  },
+  "scripts": {
+    "test": "node --test test/marks.test.js"
+  }
+}

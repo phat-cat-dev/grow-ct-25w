@@ -1,0 +1,99 @@
+<!--
+  lesson-frontmatter.html — copy-ready lesson front matter PANEL (hero variant).
+
+  Shows every learner-visible item frontmatter_spec.md §4 recommends. Pair with
+  lesson-frontmatter.css (styles scoped to .lesson-fm). Any section may be
+  omitted — empty sections simply aren't rendered. data-grow-role keeps it
+  legible to the grow data layer (grow-lesson.less).
+
+  NOTE (spec §4): do NOT claim an activity is optional, saves answers or affects
+  completion unless that behaviour is actually configured in Adapt/SCORM. The
+  "Completing this lesson" copy below states only verified requirements.
+  Administrative metadata (owner, authors, reviewers, version) is intentionally
+  absent — the opening is for learners, not an audit record.
+-->
+<section class="lesson-fm lesson-fm--hero" data-grow-role="lesson" aria-label="Lesson overview">
+
+  <header class="lesson-fm__head">
+    <p class="lesson-fm__position">Module 2 · Lesson 3</p>
+    <h1 class="lesson-fm__title">Designing for depth</h1>
+
+    <p class="lesson-fm__purpose">
+      Consistent courses don't come from matching colours by hand — they come
+      from a system. This lesson is where that idea becomes something you can use.
+    </p>
+    <p class="lesson-fm__overview">
+      You'll explore where colour, type and space come from in a token system,
+      build a block that carries its own metadata, and see how that keeps a
+      course coherent as it grows.
+    </p>
+
+    <ul class="lesson-fm__meta" aria-label="Lesson details">
+      <li class="lesson-fm__meta-item">
+        <span class="lesson-fm__meta-key">Estimated time</span>
+        <span class="lesson-fm__meta-val">12 min</span>
+      </li>
+      <li class="lesson-fm__meta-item">
+        <span class="lesson-fm__meta-key">Level</span>
+        <span class="lesson-fm__meta-val">Intermediate</span>
+      </li>
+    </ul>
+  </header>
+
+  <!-- Learning outcomes -->
+  <div class="lesson-fm__group lesson-fm__group--objectives">
+    <p class="lesson-fm__group-title">By the end of this lesson, you will be able to:</p>
+    <ul class="lesson-fm__list">
+      <li class="lesson-fm__item">Explain where colour, type and space come from in a token system.</li>
+      <li class="lesson-fm__item">Build a two-column block with per-column metadata.</li>
+      <li class="lesson-fm__item">Toggle a frontmatter section between visible and metadata-only.</li>
+    </ul>
+  </div>
+
+  <!-- Starting knowledge + Materials, side by side when there's room -->
+  <div class="lesson-fm__grid">
+    <section class="lesson-fm__group lesson-fm__group--before">
+      <p class="lesson-fm__group-title">Before you begin</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        <li class="lesson-fm__item">You can read a CSS custom property, e.g. <code>var(--accent)</code>.</li>
+        <li class="lesson-fm__item">You've completed <em>Lesson 2 — The token cascade</em>.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-fm__group lesson-fm__group--materials">
+      <p class="lesson-fm__group-title">What you'll need</p>
+      <ul class="lesson-fm__list lesson-fm__list--check">
+        <li class="lesson-fm__item">A recent piece of your own written feedback.</li>
+        <li class="lesson-fm__item">Ten quiet minutes.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Secondary: sits below, ruled off so it doesn't crowd the opening -->
+  <div class="lesson-fm__more">
+    <section class="lesson-fm__group lesson-fm__group--expect">
+      <p class="lesson-fm__group-title">What to expect</p>
+      <div class="lesson-fm__prose">
+        <p>Three short activities with worked examples, then a two-question
+        checkpoint so you can confirm the idea landed before moving on.</p>
+      </div>
+    </section>
+
+    <section class="lesson-fm__group lesson-fm__group--completion">
+      <p class="lesson-fm__group-title">Completing this lesson</p>
+      <div class="lesson-fm__prose">
+        <p>Work through each block to the checkpoint at the end. The checkpoint
+        marks the lesson complete.</p>
+      </div>
+    </section>
+
+    <section class="lesson-fm__group lesson-fm__group--support">
+      <p class="lesson-fm__group-title">Support &amp; accessibility</p>
+      <div class="lesson-fm__prose">
+        <p>Every example is keyboard-navigable and described in text. Need an
+        adjustment? Use the course help link, or contact your tutor.</p>
+      </div>
+    </section>
+  </div>
+
+</section>

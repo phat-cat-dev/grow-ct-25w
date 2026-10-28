@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en" data-authoring="true">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Reusable HTML starter for a five-phase Adapt lesson page."
+    >
+    <title>Lesson page template</title>
+    <link rel="stylesheet" href="./lesson-nav.css">
+    <link rel="stylesheet" href="./grow-accordion.css">
+    <link rel="stylesheet" href="../../../assets/header/heros/heros.css">
+    <style>
+      :root {
+        color-scheme: light;
+        font: 100%/1.6 system-ui, sans-serif;
+        color: #18313b;
+        background: #f2f5f4;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow-x: clip;
+        container: page-body / inline-size;
+      }
+
+      a {
+        color: #176b64;
+      }
+
+      .page {
+        --page-gutter: clamp(1rem, 4vw, 3rem);
+        max-width: 72rem;
+        margin-inline: auto;
+        padding: var(--page-gutter);
+      }
+
+      .lesson-frontmatter,
+      .article,
+      .block {
+        margin-block-end: 1.5rem;
+        padding: clamp(1rem, 3vw, 2rem);
+        border: 1px solid #d5dfdd;
+        border-radius: 1rem;
+        background: #fff;
+      }
+
+      .page__title,
+      .article__title,
+      .block__title,
+      .component__title {
+        line-height: 1.2;
+      }
+
+      /* Full-bleed band: break out of .page, then pad the content back into the page column. */
+      .page__header {
+        --hero-host: #f2f5f4;
+        margin-block: calc(-1 * var(--page-gutter)) 1.5rem;
+        margin-inline: calc(50% - 50cqw);
+        padding: clamp(1.5rem, 4vw, 3rem) calc(50cqw - 50%);
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .page__header .asset-hero__content {
+        max-inline-size: 68ch;
+      }
+
+      .page__header .frontmatter__eyebrow {
+        color: var(--hero-muted);
+      }
+
+      .page__title {
+        margin-block: 0 .75rem;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+      }
+
+      .page__subtitle,
+      .page__body,
+      .frontmatter,
+      .article__body {
+        max-width: 68ch;
+      }
+
+      .frontmatter__eyebrow,
+      .article__eyebrow {
+        color: #526b70;
+        font-size: .875rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      .frontmatter__list,
+      .frontmatter__items {
+        padding-inline-start: 1.25rem;
+      }
+
+      .frontmatter__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        gap: .5rem 1rem;
+      }
+
+      .frontmatter__group {
+        margin-block-start: 1rem;
+      }
+
+      .frontmatter__group-title {
+        font-weight: 700;
+      }
+
+      .article__title {
+        margin-block: 0 .5rem;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+      }
+
+      .block {
+        margin-block-end: 0;
+        padding: clamp(.75rem, 2vw, 1.25rem);
+        background: #f8faf9;
+      }
+
+      .block__title {
+        margin-block: 0;
+        font-size: 1.25rem;
+      }
+
+      /* Accordion affordance: block header is the <summary> toggle, with a caret
+         marker. grow-accordion.css handles layout + the open-rotation; this gives
+         the marker a visible shape when the theme's .icon glyph is not present. */
+      .grow-accordion__marker {
+        inline-size: 0;
+        block-size: 0;
+        border: .36rem solid transparent;
+        border-inline-start-color: currentColor;
+      }
+
+      .component {
+        margin-block-start: 1rem;
+        padding: 1rem;
+        border-inline-start: .25rem solid #79aaa2;
+        background: #fff;
+      }
+
+      .component__title {
+        margin-block: 0 .5rem;
+        font-size: 1.1rem;
+      }
+
+      .component__body > :first-child {
+        margin-block-start: 0;
+      }
+
+      .component__body > :last-child {
+        margin-block-end: 0;
+      }
+
+      .page__navigation {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .75rem;
+        justify-content: space-between;
+        margin-block-start: 2rem;
+      }
+
+      .page__navigation a,
+      .button {
+        display: inline-block;
+        padding: .7rem 1rem;
+        border: 1px solid #176b64;
+        border-radius: .5rem;
+        color: #124f4a;
+        font: inherit;
+        text-decoration: none;
+      }
+
+      .button--primary {
+        color: #fff;
+        background: #176b64;
+      }
+
+      :focus-visible {
+        outline: 3px solid #b05e12;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lesson-nav" data-lesson-nav>
+      <p>Course navigation requires JavaScript and an HTTP preview server.</p>
+    </div>
+    <!--
+      Static HTML authoring starter, not an Adapt runtime template.
+      Keep the Adapt class hooks and nesting. Replace sample IDs with unique
+      course IDs and map each slot to a real Adapt component when generating JSON.
+      Each block is a native <details class="block grow-accordion"> accordion:
+      open + visible with no JS / reduced motion; grow-accordion.js arms the
+      trickle reveal and fades each section in as it is unlocked.
+    -->
+    <main
+      class="page contentobject"
+      id="lesson-page"
+      data-adapt-id="L01"
+      data-page-type="lesson"
+    >
+      <div class="page__inner">
+        <header class="page__header asset-hero asset-hero--dots" data-hero-playing="true">
+          <div class="asset-hero__art" aria-hidden="true"></div>
+          <div class="page__header-inner asset-hero__content">
+            <p class="page__subtitle asset-hero__kicker">Module 1 · Lesson 1</p>
+            <h1 class="page__title asset-hero__title">Your lesson title</h1>
+            <div class="page__body">
+              <header class="frontmatter frontmatter--lesson" data-grow-role="lesson">
+                <p class="frontmatter__eyebrow">Before you begin</p>
+
+                <div class="frontmatter__body">
+                  <p>
+                    Introduce the topic, explain why it matters, and tell learners
+                    what they will do in this lesson.
+                  </p>
+                </div>
+
+                <dl class="frontmatter__list">
+                  <div class="frontmatter__item frontmatter__item--duration">
+                    <dt class="frontmatter__label">Duration</dt>
+                    <dd class="frontmatter__value">10 minutes</dd>
+                  </div>
+                  <div class="frontmatter__item frontmatter__item--level">
+                    <dt class="frontmatter__label">Level</dt>
+                    <dd class="frontmatter__value">Introductory</dd>
+                  </div>
+                </dl>
+
+                <div class="frontmatter__group frontmatter__group--objectives">
+                  <p class="frontmatter__group-title">
+                    By the end of this lesson, you will be able to:
+                  </p>
+                  <ul class="frontmatter__items">
+                    <li class="frontmatter__item frontmatter__item--objective">
+                      Describe the central idea in your own words.
+                    </li>
+                    <li class="frontmatter__item frontmatter__item--objective">
+                      Apply the idea to a relevant example.
+                    </li>
+                    <li class="frontmatter__item frontmatter__item--objective">
+                      Identify one action to take in your own context.
+                    </li>
+                  </ul>
+                </div>
+              </header>
+            </div>
+          </div>
+        </header>
+
+        <div class="article__container">
+          <article
+            class="article article--lesson-open"
+            id="lesson-open"
+            data-adapt-id="L01-a-01"
+            data-lesson-phase="intro"
+            data-grow-role="phase"
+          >
+            <div class="article__inner">
+              <header class="article__header">
+                <p class="article__eyebrow">01 · Introduction</p>
+                <h2 class="article__title">Start with a question</h2>
+                <div class="article__body">
+                  <p>Connect the lesson to something the learner already knows.</p>
+                </div>
+              </header>
+              <div class="block__container">
+                <details
+                  class="block grow-accordion"
+                  id="lesson-orientation"
+                  data-adapt-id="L01-b-05"
+                  data-skeleton-key="orientation"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Think about your experience</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-01"
+                        data-slot="orientation"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <p>
+                              What do you already know about this topic? Keep
+                              one example in mind as you continue.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="article article--lesson-concept"
+            id="lesson-concept"
+            data-adapt-id="L01-a-02"
+            data-lesson-phase="middle"
+            data-grow-role="phase"
+          >
+            <div class="article__inner">
+              <header class="article__header">
+                <p class="article__eyebrow">02 · Explore</p>
+                <h2 class="article__title">Understand the idea</h2>
+                <div class="article__body">
+                  <p>Introduce the concept, make it concrete, then show how to use it.</p>
+                </div>
+              </header>
+              <div class="block__container">
+                <details
+                  class="block grow-accordion"
+                  id="lesson-concept-definition"
+                  data-adapt-id="L01-b-10"
+                  data-skeleton-key="concept-definition"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">The key concept</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-02"
+                        data-slot="concept-definition"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <p>Define the concept in clear, learner-friendly language.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  class="block grow-accordion"
+                  id="lesson-concept-context"
+                  data-adapt-id="L01-b-15"
+                  data-skeleton-key="concept-context"
+                  data-gate-after="true"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Your context</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <p class="block__instruction">
+                      Relate the concept to the learner's subject, work, or life.
+                    </p>
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-03"
+                        data-slot="concept-context"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <p>Add a context-specific explanation or example.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  class="block grow-accordion"
+                  id="lesson-worked-example"
+                  data-adapt-id="L01-b-20"
+                  data-skeleton-key="worked-example"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Worked example</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-04"
+                        data-slot="worked-example"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <p>Walk through an example and explain the decisions made.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  class="block grow-accordion"
+                  id="lesson-practical-guidance"
+                  data-adapt-id="L01-b-25"
+                  data-skeleton-key="practical-guidance"
+                  data-gate-after="true"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Try it yourself</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-05"
+                        data-slot="practical-guidance"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <p>Give the learner a practical next step to try.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="article article--lesson-formative"
+            id="lesson-formative"
+            data-adapt-id="L01-a-03"
+            data-lesson-phase="middle"
+            data-grow-role="phase"
+          >
+            <div class="article__inner">
+              <header class="article__header">
+                <p class="article__eyebrow">03 · Check your understanding</p>
+                <h2 class="article__title">Pause and check</h2>
+                <div class="article__body">
+                  <p>Use one question for each lesson outcome to check understanding.</p>
+                </div>
+              </header>
+              <div class="block__container">
+                <details
+                  class="block grow-accordion"
+                  id="lesson-check-1"
+                  data-adapt-id="L01-b-30"
+                  data-skeleton-key="check"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Check 1 · Key idea</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <fieldset
+                        class="component mcq"
+                        data-adapt-id="L01-c-06"
+                        data-slot="check"
+                      >
+                        <legend class="component__title">
+                          Which response best explains the key idea?
+                        </legend>
+                        <label>
+                          <input type="radio" name="lesson-check-1">
+                          A plausible but incomplete explanation
+                        </label>
+                        <label>
+                          <input type="radio" name="lesson-check-1">
+                          The explanation that connects the idea to its purpose
+                        </label>
+                        <label>
+                          <input type="radio" name="lesson-check-1">
+                          An unrelated detail
+                        </label>
+                        <button class="button" type="button">Check answer</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </details>
+                <p>
+                  Duplicate this check block twice more, changing the question
+                  to assess each remaining lesson outcome.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="article article--lesson-reflection"
+            id="lesson-reflection"
+            data-adapt-id="L01-a-04"
+            data-lesson-phase="end"
+            data-grow-role="phase"
+          >
+            <div class="article__inner">
+              <header class="article__header">
+                <p class="article__eyebrow">04 · Reflect</p>
+                <h2 class="article__title">Connect it to your practice</h2>
+                <div class="article__body">
+                  <p>Invite reflection without making it a blocking assessment.</p>
+                </div>
+              </header>
+              <div class="block__container">
+                <details
+                  class="block grow-accordion"
+                  id="lesson-reflective-prompt"
+                  data-adapt-id="L01-b-35"
+                  data-skeleton-key="reflective-prompt"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Your reflection</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component opentext"
+                        data-adapt-id="L01-c-07"
+                        data-slot="reflective-prompt"
+                        data-variant="reflection"
+                      >
+                        <label class="component__title" for="lesson-reflection-response">
+                          What is one idea you will take into your own context?
+                        </label>
+                        <textarea
+                          id="lesson-reflection-response"
+                          name="lesson-reflection-response"
+                          rows="4"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="article article--lesson-close"
+            id="lesson-close"
+            data-adapt-id="L01-a-05"
+            data-lesson-phase="end"
+            data-grow-role="phase"
+          >
+            <div class="article__inner">
+              <header class="article__header">
+                <p class="article__eyebrow">05 · Wrap up</p>
+                <h2 class="article__title">Take the next step</h2>
+                <div class="article__body">
+                  <p>Summarise the key points and point learners to further reading.</p>
+                </div>
+              </header>
+              <div class="block__container">
+                <details
+                  class="block block--summary grow-accordion"
+                  id="lesson-summary"
+                  data-adapt-id="L01-b-40"
+                  data-skeleton-key="summary"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Remember</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component text"
+                        data-adapt-id="L01-c-08"
+                        data-slot="summary"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <ul>
+                              <li>Restate the first key takeaway.</li>
+                              <li>Restate the second key takeaway.</li>
+                              <li>Give one practical next step.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+
+                <details
+                  class="block grow-accordion"
+                  id="lesson-references"
+                  data-adapt-id="L01-b-45"
+                  data-skeleton-key="lesson-references"
+                  data-grow-role="section"
+                  data-reveal="trickle"
+                  open
+                >
+                  <summary class="block__header grow-accordion__summary">
+                    <h3 class="block__title">Further reading</h3>
+                    <span class="grow-accordion__marker icon" aria-hidden="true"></span>
+                  </summary>
+                  <div class="block__inner grow-accordion__panel">
+                    <div class="component__container">
+                      <div
+                        class="component references"
+                        data-adapt-id="L01-c-09"
+                        data-slot="lesson-references"
+                      >
+                        <div class="component__inner">
+                          <div class="component__body">
+                            <ol>
+                              <li>Add a source learners can use to explore further.</li>
+                            </ol>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <nav class="page__navigation" aria-label="Lesson navigation">
+          <a href="#lesson-open">Back to lesson start</a>
+          <a class="button button--primary" href="#lesson-close">Continue</a>
+        </nav>
+      </div>
+    </main>
+    <script src="../../../assets/header/heros/heros.js"></script>
+    <script type="module">
+      import { mountLessonNav } from './lesson-nav.js';
+      import mountGrowReveal from './grow-accordion.js';
+
+      // Native <details> accordions work without this; it arms the trickle
+      // reveal so sections fade in and auto-open as they scroll into view.
+      mountGrowReveal(document);
+
+      const host = document.querySelector('[data-lesson-nav]');
+      mountLessonNav(host, {
+        lesson: document.querySelector('[data-page-type="lesson"]'),
+        authoring: document.documentElement.dataset.authoring === 'true' && new URLSearchParams(location.search).get('mode') !== 'production',
+      }).catch(error => {
+        host.textContent = `Navigation could not start: ${error.message}`;
+        host.setAttribute('role', 'alert');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+// HAND-AUTHORED EXAMPLE — an L6 user profile (NOT fold-tool output).
+// The CM "corporate" user theme (xx=cm, stub=corporate) filling the L5 theme contract,
+// to prove the L4 -> L5 -> L6 round-trip. A real user theme would author this from a
+// template scaffold. It sets ONE role (accent) and deliberately leaves everything
+// else unset, so the round-trip shows BOTH override (accent) and inheritance
+// (surface, ink, … fall through to the L4 defaults).
+:root {
+  // (1) the customer's own namespace — their source of truth
+  --cm-corporate-accent: #7a1540;   // a magenta, clearly NOT the default navy — so the override is visible
+
+  // (2) bind it into the L5 contract (a template pre-writes this line)
+  --ab-theme-pf-default-accent: var(--cm-corporate-accent);
+
+  // (3) lineage metadata — traceable up to the base
+  --cm-corporate-reflects: ab-theme-pf-default;
+}

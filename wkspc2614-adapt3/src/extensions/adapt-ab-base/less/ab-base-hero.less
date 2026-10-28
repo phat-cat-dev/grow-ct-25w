@@ -1,0 +1,165 @@
+// adapt-ab-base — minimal .ab.hero base object
+//
+// A compact, token-based hero banner so adapt-ab-hero renders without the full
+// brand theme's ab-hero.less. No palette: everything derives from --ab-* tokens
+// (ab-base.less), so a theme reskins it by moving the tokens. If the brand
+// ab-hero.less is present it supersedes this (load order / richer selectors);
+// keep this lean.
+//
+// A bare .ab.hero is a sunken band with eyebrow / title / subtitle / actions.
+// .accent fills it with the brand accent; .center centres the text;
+// .icon-text leads with an icon; .media-side sets text beside media at width;
+// .media-bg lays an image behind the text under a scrim; .animate adds a
+// self-contained entrance.
+
+.ab.hero {
+  --ab-hero-bg: var(--ab-base-surface-sunken, #f3f3f3);
+  --ab-hero-color: var(--ab-base-ink, #1a1a1a);
+  --ab-hero-accent: var(--ab-accent, #2a5db0);
+  --ab-hero-title-size: calc(var(--ab-h4-font-size, 1.25rem) * 2);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--ab-space-100, 1rem);
+  padding: var(--ab-space-200, 2rem) var(--ab-space-125, 1.25rem);
+  background: var(--ab-hero-bg);
+  color: var(--ab-hero-color);
+  border-radius: var(--ab-border-radius, 0.375rem);
+  overflow: hidden;
+
+  .hero-eyebrow {
+    margin: 0;
+    font-size: 0.875em;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ab-hero-accent);
+  }
+
+  .hero-title {
+    margin: 0;
+    font-size: var(--ab-hero-title-size);
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    margin: 0;
+    max-width: 60ch;
+    opacity: 0.9;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ab-space-075, 0.75rem);
+    margin-top: var(--ab-space-050, 0.5rem);
+  }
+
+  .hero-icon {
+    font-size: calc(var(--ab-hero-title-size) * 1.2);
+    line-height: 1;
+    color: var(--ab-hero-accent);
+  }
+}
+
+// ---- accent: a bold filled banner (eyebrow/icon follow the on-accent ink) ----
+.ab.hero.accent {
+  --ab-hero-bg: var(--ab-accent, #2a5db0);
+  --ab-hero-color: var(--ab-on-accent, #ffffff);
+  --ab-hero-accent: var(--ab-on-accent, #ffffff);
+}
+
+// ---- tinted: a faint wash drawn from the accent ----
+.ab.hero.tinted {
+  --ab-hero-bg: color-mix(in srgb, var(--ab-hero-accent) 10%, var(--ab-base-surface, #fff));
+}
+
+// ---- center: centre the text and actions ----
+.ab.hero.center {
+  align-items: center;
+  text-align: center;
+
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+}
+
+// ---- icon-text: lead with an icon above the text ----
+.ab.hero.icon-text .hero-icon { margin-bottom: var(--ab-space-050, 0.5rem); }
+
+// ---- media-side: text beside media once there is room ----
+.ab.hero.media-side {
+  .hero-media { margin-top: var(--ab-space-125, 1.25rem); }
+  .hero-media img,
+  .hero-media video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--ab-border-radius, 0.375rem);
+  }
+
+  @media (min-width: 48rem) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--ab-space-200, 2rem);
+
+    .hero-media { margin-top: 0; }
+  }
+}
+
+// ---- media-bg: an image/video behind the text under a scrim ----
+.ab.hero.media-bg {
+  --ab-hero-color: #ffffff;
+  --ab-hero-accent: #ffffff;
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  > *:not(.hero-bg) { position: relative; z-index: 1; }
+}
+
+// ---- animate: a small, self-contained entrance ----
+.ab.hero.animate {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-subtitle,
+  .hero-actions {
+    animation: ab-hero-rise 0.5s ease both;
+  }
+  .hero-title { animation-delay: 0.06s; }
+  .hero-subtitle { animation-delay: 0.12s; }
+  .hero-actions { animation-delay: 0.18s; }
+}
+
+@keyframes ab-hero-rise {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab.hero.animate {
+    .hero-eyebrow,
+    .hero-title,
+    .hero-subtitle,
+    .hero-actions { animation: none; }
+  }
+}

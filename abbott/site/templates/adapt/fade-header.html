@@ -1,0 +1,73 @@
+<!--
+  "Fade" lesson-header style — template.
+  Styled by grow-ct/less/grow-style-fade.less (typography + cards + motion),
+  wired by plugins/adapt-grow-layer (flip toggle + staggered fade-in).
+  Drop this HTML into a page/component body. Keep the data-* hooks:
+    data-fade-item     → staggered fade-in on scroll
+    data-flip-ready    → enables the card flip
+    aria-controls / id → pair each toggle button with its .fade-card-back
+  Each card's toggle needs a unique id/aria-controls (fade-card-info-N).
+-->
+<section class="fade-cards" aria-label="Your next steps">
+  <p class="fade-eyebrow" data-fade-item>Start a conversation</p>
+  <h2 data-fade-item>Explore the challenge.<br><em>Find a useful next step.</em></h2>
+  <p class="fade-intro">
+    <span data-fade-item>Bring your questions.</span>
+    <span data-fade-item>We will explore the context,</span>
+    <span data-fade-item>try an approach,</span>
+    <span data-fade-item>and agree what to do next.</span>
+  </p>
+  <ol class="fade-grid">
+    <li data-fade-item>
+      <article class="fade-card" data-flip-ready data-flipped="false">
+        <div class="fade-card-rotor">
+          <div class="fade-card-front" aria-hidden="false">
+            <p class="fade-eyebrow">01 / Discover</p>
+            <h3>Understand the situation.</h3>
+            <p>Share your goals, your audience and the constraints that matter.</p>
+          </div>
+          <div class="fade-card-back" id="fade-card-info-1" aria-hidden="true" inert>
+            <p class="fade-eyebrow">Discover / More information</p>
+            <h3>Start with the evidence.</h3>
+            <p>Bring a specific example of the challenge. Identify who is affected, what you already know and which assumptions still need checking.</p>
+          </div>
+        </div>
+        <button type="button" class="fade-card-toggle" aria-controls="fade-card-info-1" aria-expanded="false" aria-label="More information: Understand the situation."></button>
+      </article>
+    </li>
+    <li data-fade-item>
+      <article class="fade-card" data-flip-ready data-flipped="false">
+        <div class="fade-card-rotor">
+          <div class="fade-card-front" aria-hidden="false">
+            <p class="fade-eyebrow">02 / Explore</p>
+            <h3>Try a relevant example.</h3>
+            <p>Use a practical scenario to test an idea against your actual needs.</p>
+          </div>
+          <div class="fade-card-back" id="fade-card-info-2" aria-hidden="true" inert>
+            <p class="fade-eyebrow">Explore / More information</p>
+            <h3>Make the example meaningful.</h3>
+            <p>Try a realistic decision, compare alternatives and discuss the consequences. Notice where the approach fits your context and where it needs adapting.</p>
+          </div>
+        </div>
+        <button type="button" class="fade-card-toggle" aria-controls="fade-card-info-2" aria-expanded="false" aria-label="More information: Try a relevant example."></button>
+      </article>
+    </li>
+    <li data-fade-item>
+      <article class="fade-card" data-flip-ready data-flipped="false">
+        <div class="fade-card-rotor">
+          <div class="fade-card-front" aria-hidden="false">
+            <p class="fade-eyebrow">03 / Plan</p>
+            <h3>Leave with a clear next step.</h3>
+            <p>Capture what you learned and choose a manageable action to take forward.</p>
+          </div>
+          <div class="fade-card-back" id="fade-card-info-3" aria-hidden="true" inert>
+            <p class="fade-eyebrow">Plan / More information</p>
+            <h3>Turn learning into an action.</h3>
+            <p>Choose one small change, decide who will take it forward and agree what evidence you will review to see whether it helped.</p>
+          </div>
+        </div>
+        <button type="button" class="fade-card-toggle" aria-controls="fade-card-info-3" aria-expanded="false" aria-label="More information: Leave with a clear next step."></button>
+      </article>
+    </li>
+  </ol>
+</section>
