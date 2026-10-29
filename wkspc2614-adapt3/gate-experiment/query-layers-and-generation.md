@@ -77,7 +77,9 @@ proliferate, pitched by the tier bands and the L7-crosses-all rule. Deciders sta
 
 - **Pathways:** all 13 carry exactly **9 capabilities = 3 per tier** (`catalogue/context/pathway/*.json`, each capability has `capabilityId`, `tier`, `fheqLevel`, `qf`, `competency{}`). This is the "9 definitive generics". OK.
 - **The 18 = 3x6 distillation:** prototyped (`tiers.json` - ran on ai-technology, reproduced 3 of the real intro course's 4 lessons) but the artifact is **NOT in the current repo** (lost in the VM-transfer snapshot). Needs rebuilding as a tool.
-- **Universal:** `graduate_competency` (20 shared-core) + `pathwayMapping` + `tier-bands` (3 tiers). Benchmarks key into pathways at **pathway level**; **pathway+tier** is the agreed next granularity.
+- **Universal:** `graduate_competency` (20 shared-core) + `pathwayMapping` + `tier-bands` (3 tiers). Benchmarks key into pathways at **pathway + tier**: each edge carries `tiers` (with the capabilities it lands on) and a `tierBasis` - `capability-match` (matched a capability, keyed to its tier), `progression` (direct, no match: all three tiers as a climb) or `floor` (indirect, no match: shared-core floor at every tier; review these). Rule: `tools/pathway_tiers.py`.
+- **Subject keys:** `psychology-2023.json` is tiered by the same rule (`tools/key-benchmark-tiers.py`); most of its edges fall to `progression` because prose overlap with the capabilities is sparse, so treat its tiers as a draft for the derive+gate step. The other 53 subjects stay empty (approach A, filled on demand).
+- **Reverse index:** every `pathway/*.json` carries `benchmarkKeys.byTier` (universal + tiered subjects). It is generated; re-run `key-benchmark-tiers.py` after `build-pathway-reference.py` regenerates the pathway files.
 - **Gates:** every gate carries `agentContext { fieldDescription, authoringReview { instruction, pointers } }` so the agent reviews a gate's ingested sources before authoring.
 
 ## 5. Open definitions to resolve
@@ -90,7 +92,7 @@ proliferate, pitched by the tier bands and the L7-crosses-all rule. Deciders sta
 
 ## 6. Next implementation (this branch)
 
-1. Add the **tier dimension** to the benchmark keys (pathway -> pathway+tier) on the universal `graduate_competency` + `pathwayMapping` and on `psychology-2023.json`.
-2. **Pathway reverse-index** - each `pathway/*.json` lists the benchmarks that key into it, by tier.
+1. ~~Add the **tier dimension** to the benchmark keys (pathway -> pathway+tier) on the universal `graduate_competency` + `pathwayMapping` and on `psychology-2023.json`.~~ Done.
+2. ~~**Pathway reverse-index** - each `pathway/*.json` lists the benchmarks that key into it, by tier.~~ Done (`benchmarkKeys.byTier`).
 3. Rebuild the **`9 -> 18 -> tiers` distiller** as a tool (mirror `tools/build-universal-benchmark.py`).
 4. Wire the **tri-tier benchmark -> outcome generator** (all three tiers at once) reading the keys + each gate's `agentContext`.
