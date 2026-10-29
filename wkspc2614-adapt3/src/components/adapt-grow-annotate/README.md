@@ -50,8 +50,48 @@ starting over. Only an all-correct submit locks it.
 Marks available to `_mark`: the word-wrappers `oval`, `box`, `bracket`,
 `underline`, `double`, `wavy`, `strike`, `scribble`, `highlight`, and the
 beside-the-word glyphs `tick`, `cross`, `star`, `caret`, `checkbox`,
-`question`, `exclaim`. Colours: `accent`, `positive`, `negative`, `neutral`,
-`comment`, `soft` (mapped to the theme).
+`question`, `exclaim`.
+
+Colours (`_color`) come in two families:
+- **Semantic ink** — `accent`, `positive`, `negative`, `neutral`, `comment`,
+  `soft`, mapped to the theme tokens.
+- **Fluoro marker pens** — `fluro-pink`, `fluro-yellow`, `fluro-green`,
+  `fluro-blue`, `fluro-purple`: fixed bright colours. Pair with `highlight` for a
+  highlighter pen, or with `box`/`oval` for a bright rectangle/circle. Together
+  the `highlight`/`box`/`oval` marks × five fluoro colours give the full
+  marker-pen range.
+
+## Activity types (one component, many shapes)
+
+The same component covers a spectrum, set by three independent switches:
+
+| Switch | Off | On |
+| --- | --- | --- |
+| `_freeSelect` | author picks the words (`[[word]]`) | learner drags across any text |
+| `_isQuestion` | reflective, no right/wrong | Submit + marked right/wrong + feedback |
+| who sets the colour | **learner** chooses the pen (omit `_answers`/`_targets`) | **author/AI** fixes it (give `_answers` or `_targets`) |
+
+So, for example: free-hand reflective highlighting (all off); "find and colour
+the claim/evidence/hedge" (free-select + question + `_targets`); or author-pinned
+"label each `[[word]]`" (targets + question + `_answers`). `example.json` ships one
+worked instance of each.
+
+## Data object: shell vs context (baseline / L2 / L3)
+
+The data object splits cleanly into a **stable shell** and a **swappable content
+slot**, so one activity design can be filled by an AI agent or a human at any
+pitch:
+
+- **Shell (fixed per activity design):** `_tools` (the pen palette + what each
+  means), `_freeSelect`, `_isQuestion`, `_showLabels`, `_minAnnotations`,
+  `instruction`, `_feedback`. These are the analytical vocabulary and are reused
+  across subjects.
+- **Content slot (filled per use):** `passage` and the answer key (`_answers` for
+  targets mode, `_targets` for free-select) — and, in targets mode, which words
+  are bracketed. Fill it from a **baseline** generic passage, or from
+  **context-specific** material at proficiency **Level 2 or Level 3**; the shell
+  does not change. Keep tool ids stable so the same `_answers`/`_targets` grammar
+  carries across fills.
 
 ## How it works
 

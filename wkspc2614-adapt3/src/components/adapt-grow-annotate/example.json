@@ -1,21 +1,110 @@
-{
-  "_id": "c-annotate-01",
-  "_parentId": "b-10",
-  "_type": "component",
-  "_component": "annotate",
-  "_classes": "",
-  "_layout": "full",
-  "title": "Read like an editor",
-  "displayTitle": "Read like an editor",
-  "body": "Mark up the paragraph the way you would with a pen.",
-  "instruction": "Choose a tool, then select the words you want to mark. Select a marked word again to remove it.",
-  "passage": "A landscape is built from a [[foreground]], a [[middle ground]] and a [[backdrop|bd]]. Depth is a [[choice]], not an accident — so decide which plane carries the [[idea]] and let the others support it.",
-  "_tools": [
-    { "_id": "idea", "label": "Main idea", "_mark": "oval", "_color": "accent" },
-    { "_id": "evidence", "label": "Evidence", "_mark": "underline", "_color": "positive" },
-    { "_id": "doubt", "label": "Not sure", "_mark": "question", "_color": "neutral" }
-  ],
-  "_minAnnotations": 2,
-  "_showLabels": true,
-  "_allowReset": true
-}
+[
+  {
+    "__comment": "VARIANT A - free-hand highlighter, learner chooses the pen (reflective, not graded). The five fluoro marker colours each carry a meaning the author sets; the learner decides what to mark. This is the 'colours completed by the user' shape: no _answers, so nothing is right or wrong.",
+    "_id": "c-annotate-marker",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Read like a critic",
+    "displayTitle": "Read like a critic",
+    "body": "Mark the paragraph with your highlighters the way you would a printed page.",
+    "instruction": "Pick a highlighter, then drag across any words to mark them. Click a mark to remove it.",
+    "_freeSelect": true,
+    "passage": "Good academic writing makes a claim, supports it with evidence, and stays honest about what it cannot show. As you read, notice the moves the writer makes and mark the ones that matter to you.",
+    "_tools": [
+      { "_id": "term", "label": "Key term", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "important", "label": "Important", "_mark": "highlight", "_color": "fluro-yellow" },
+      { "_id": "agree", "label": "I agree", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "question", "label": "I have a question", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "example", "label": "Good example", "_mark": "highlight", "_color": "fluro-purple" }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT B - graded free selection: the learner must select the correct text AND choose the correct pen. Author/AI sets the answer via _targets (phrase -> correct tool id); grading is the 'covers the word' rule. This is the 'colours auto-set by the activity' shape.",
+    "_id": "c-annotate-find",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Find the three moves",
+    "displayTitle": "Find the three moves",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study nine out of ten students found more mistakes this way, which suggests the habit is worth building, though the effect may not hold for everyone.",
+    "_tools": [
+      { "_id": "claim", "label": "Claim", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "evidence", "label": "Evidence", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "hedge", "label": "Hedge", "_mark": "highlight", "_color": "fluro-yellow" }
+    ],
+    "_targets": [
+      { "text": "Reading your work aloud helps you catch errors", "tool": "claim" },
+      { "text": "nine out of ten students found more mistakes", "tool": "evidence" },
+      { "text": "may not hold for everyone", "tool": "hedge" }
+    ],
+    "_feedback": {
+      "correct": "Spot on - claim, evidence, and the hedge that keeps it honest.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT C - author-pinned targets, graded: the author marks which words are selectable ([[word]]) and _answers gives the correct pen for each, in order. Uses the rectangle (box) and circle (oval) marks in fluoro so the semantic shapes show.",
+    "_id": "c-annotate-targets",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Label the parts of the argument",
+    "displayTitle": "Label the parts of the argument",
+    "body": "",
+    "instruction": "Choose a pen, then click a highlighted word to mark it. Check your answer when you are done.",
+    "_isQuestion": true,
+    "passage": "A good paragraph opens with a [[topic sentence]], develops it with [[evidence]], and closes with a [[link]] back to the question.",
+    "_tools": [
+      { "_id": "claim", "label": "Claim", "_mark": "oval", "_color": "fluro-pink" },
+      { "_id": "support", "label": "Support", "_mark": "box", "_color": "fluro-green" },
+      { "_id": "link", "label": "Link", "_mark": "box", "_color": "fluro-blue" }
+    ],
+    "_answers": ["claim", "support", "link"],
+    "_feedback": {
+      "correct": "Yes - topic sentence, evidence, and the link that ties it together.",
+      "_incorrect": "Close - fix the words in red, then check again."
+    },
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT D - semantic shapes, reflective: a circle pen and a rectangle pen in fluoro, learner marks freely. Shows box/oval as standalone 'marking' tools rather than highlighter fills.",
+    "_id": "c-annotate-shapes",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Circle and box",
+    "displayTitle": "Circle and box",
+    "body": "",
+    "instruction": "Circle the one idea the paragraph is really about; box the words that only support it.",
+    "_freeSelect": true,
+    "passage": "Most paragraphs carry one idea and a handful of supporting details. The skill is deciding which is which before you start to cut.",
+    "_tools": [
+      { "_id": "core", "label": "Core idea", "_mark": "oval", "_color": "fluro-pink" },
+      { "_id": "support", "label": "Support", "_mark": "box", "_color": "fluro-blue" }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  }
+]

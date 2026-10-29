@@ -69,6 +69,16 @@
 .gm-vio { color: var(--c-comment, hsl(270 45% 54%)); }
 .gm-soft { color: var(--ink-soft, hsl(202 14% 42%)); }
 
+/* ---- fluoro "marker pen" ink colours (box / oval strokes) --------------- */
+/* Fixed bright colours, not theme-tinted: a marker pen is a marker pen. The
+   stroke values sit a little deeper than the highlighter wash so an outline
+   still reads on a white page (yellow especially). */
+.gm-fl-pink   { color: var(--gm-c-pink,   hsl(327 90% 55%)); }
+.gm-fl-yellow { color: var(--gm-c-yellow, hsl(45 100% 45%)); }
+.gm-fl-green  { color: var(--gm-c-green,  hsl(96 75% 40%)); }
+.gm-fl-blue   { color: var(--gm-c-blue,   hsl(200 95% 46%)); }
+.gm-fl-purple { color: var(--gm-c-purple, hsl(276 85% 56%)); }
+
 /* ---- placement: wrap marks over a word ---------------------------------- */
 .gm-mark { position: relative; display: inline-block; }
 .gm-mark > .gm-svg { position: absolute; overflow: visible; pointer-events: none; }
@@ -91,10 +101,11 @@
   --gm-hl-top: 52%;
   --gm-hl-h: 42%;
   --gm-hl-pad: .14em;
+  --gm-hl-mix: 40%;
   background-image: linear-gradient(to bottom,
     transparent var(--gm-hl-top),
-    color-mix(in srgb, var(--gm-hl-c) 40%, transparent) var(--gm-hl-top),
-    color-mix(in srgb, var(--gm-hl-c) 40%, transparent) calc(var(--gm-hl-top) + var(--gm-hl-h)),
+    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) var(--gm-hl-top),
+    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) calc(var(--gm-hl-top) + var(--gm-hl-h)),
     transparent calc(var(--gm-hl-top) + var(--gm-hl-h)));
   background-repeat: no-repeat;
   background-position: left center;
@@ -111,8 +122,16 @@
 .gm-hl-violet { --gm-hl-c: var(--c-comment, hsl(270 45% 54%)); }
 .gm-hl-green  { --gm-hl-c: var(--c-positive, hsl(150 55% 40%)); }
 .gm-hl-red    { --gm-hl-c: var(--c-negative, hsl(5 62% 52%)); }
+/* fluoro highlighter washes — bright, so the color-mix(40%) reads like a pen */
+.gm-hl-pink   { --gm-hl-c: var(--gm-c-pink,   hsl(327 100% 62%)); }
+.gm-hl-yellow { --gm-hl-c: var(--gm-c-yellow, hsl(52 100% 55%)); }
+.gm-hl-fgreen { --gm-hl-c: var(--gm-c-green,  hsl(96 90% 52%)); }
+.gm-hl-blue   { --gm-hl-c: var(--gm-c-blue,   hsl(200 100% 55%)); }
+.gm-hl-purple { --gm-hl-c: var(--gm-c-purple, hsl(276 100% 66%)); }
 .gm-hl-tall { --gm-hl-top: 36%; --gm-hl-h: 58%; }
 .gm-hl-thin { --gm-hl-top: 62%; --gm-hl-h: 20%; }
+/* a denser wash for a bolder marker-pen look (opt-in via _color variant) */
+.gm-hl-strong { --gm-hl-mix: 58%; }
 
 /* ---- safety: reduced motion, forced colours, print ---------------------- */
 @media (prefers-reduced-motion: reduce) {

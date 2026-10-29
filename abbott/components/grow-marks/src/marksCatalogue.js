@@ -21,6 +21,9 @@
 
 export const COLOR_ROLES = ['accent', 'positive', 'negative', 'neutral', 'comment', 'soft'];
 
+/** Fluoro "marker pen" colour roles (fixed bright colours, not theme-tinted). */
+export const FLURO_ROLES = ['fluro-pink', 'fluro-yellow', 'fluro-green', 'fluro-blue', 'fluro-purple'];
+
 // ---------------------------------------------------------------------------
 // Emphasis marks that WRAP a word (preserveAspectRatio none so they stretch).
 // ---------------------------------------------------------------------------

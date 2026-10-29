@@ -5,14 +5,22 @@
  * speed, and reads options from a `data-gm-*` dataset. All unit-tested.
  */
 
-/** Colour role -> CSS class. The classes map to GROW theme tokens in the CSS. */
+/** Colour role -> CSS class. The classes map to GROW theme tokens in the CSS.
+ *  Two families: the semantic "ink" roles (theme-tinted) and the five fluoro
+ *  "marker pen" roles (fixed bright colours), which read as a translucent wash
+ *  under the highlight mark and as a bright stroke under box/oval. */
 export const COLOR_CLASS = {
   accent: 'gm-accent',
   positive: 'gm-ok',
   negative: 'gm-no',
   neutral: 'gm-warn',
   comment: 'gm-vio',
-  soft: 'gm-soft'
+  soft: 'gm-soft',
+  'fluro-pink': 'gm-fl-pink',
+  'fluro-yellow': 'gm-fl-yellow',
+  'fluro-green': 'gm-fl-green',
+  'fluro-blue': 'gm-fl-blue',
+  'fluro-purple': 'gm-fl-purple'
 };
 
 /** A colour role's class, falling back to accent for anything unknown/empty. */

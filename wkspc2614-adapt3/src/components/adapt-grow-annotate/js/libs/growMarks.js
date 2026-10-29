@@ -57,7 +57,12 @@ const HIGHLIGHT_COLOR_CLASS = {
   positive: 'gm-hl-green',
   negative: 'gm-hl-red',
   neutral: 'gm-hl-amber',
-  comment: 'gm-hl-violet'
+  comment: 'gm-hl-violet',
+  'fluro-pink': 'gm-hl-pink',
+  'fluro-yellow': 'gm-hl-yellow',
+  'fluro-green': 'gm-hl-fgreen',
+  'fluro-blue': 'gm-hl-blue',
+  'fluro-purple': 'gm-hl-purple'
 };
 
 function makeHandle({ host, svg, speed, hold, cleanup, autoplay }) {
