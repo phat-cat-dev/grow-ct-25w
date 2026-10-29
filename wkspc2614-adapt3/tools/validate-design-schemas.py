@@ -108,6 +108,7 @@ TEST_FIXTURES_DIR = REPO_ROOT / "tools" / "test-fixtures"
 # are covered by --all-defaults.
 DEFAULT_GATES = DESIGN_KB_DIR / "design-kb.gates.json"
 DEFAULT_GATE_PROFILES = DESIGN_KB_DIR / "design-kb.gate-profiles.json"
+DEFAULT_NAME_BANK = DESIGN_KB_DIR / "design-kb.name-bank.json"
 DEFAULT_SKELETONS = DESIGN_KB_DIR / "design-kb.skeletons.json"
 DEFAULT_PALETTE = DESIGN_KB_DIR / "design-kb.palette.json"
 DEFAULT_TIER_BANDS = DESIGN_KB_DIR / "design-kb.tier-bands.json"
@@ -164,6 +165,7 @@ BM1_BLOCK_TYPES = {
 COURSE_DESIGN_SCHEMA = SCHEMAS_DIR / "course-design.schema.json"
 GATES_SCHEMA = SCHEMAS_DIR / "design-kb.gates.schema.json"
 GATE_PROFILES_SCHEMA = SCHEMAS_DIR / "design-kb.gate-profiles.schema.json"
+NAME_BANK_SCHEMA = SCHEMAS_DIR / "design-kb.name-bank.schema.json"
 SOURCE_KB_SCHEMA = SCHEMAS_DIR / "source-kb.schema.json"
 INSTITUTIONAL_KB_SCHEMA = SCHEMAS_DIR / "institutional-kb.schema.json"
 VOCAB_KB_SCHEMA = SCHEMAS_DIR / "vocab-kb.schema.json"
@@ -1184,6 +1186,18 @@ def validate_palette(instance: dict, instance_path: Path) -> list:
     return errors
 
 
+def validate_name_bank(instance: dict, instance_path: Path) -> list:
+    """
+    Validate design-kb.name-bank.json against schema plus one invariant: no name
+    sits in both the female and the male list.
+    """
+    errors = validate_with_jsonschema(instance, NAME_BANK_SCHEMA, "design-kb.name-bank")
+    both = set(instance.get("female", [])) & set(instance.get("male", []))
+    if both:
+        errors.append(f"  [invariant] names in both lists: {sorted(both)}")
+    return errors
+
+
 def validate_gate_profiles(instance: dict, instance_path: Path) -> list:
     """
     Validate design-kb.gate-profiles.json against schema plus structural invariants:
@@ -1944,6 +1958,11 @@ def main():
         help="Path to design-kb.palette.json to validate"
     )
     parser.add_argument(
+        "--name-bank",
+        type=Path,
+        help="Path to design-kb.name-bank.json to validate"
+    )
+    parser.add_argument(
         "--gate-profiles",
         type=Path,
         help="Path to design-kb.gate-profiles.json to validate"
@@ -2223,6 +2242,30 @@ def main():
                 print("PASS")
         print()
 
+    # Validate name-bank
+    name_bank_path = args.name_bank
+    if args.all_defaults and not name_bank_path:
+        name_bank_path = DEFAULT_NAME_BANK
+
+    if name_bank_path:
+        print("=" * 60)
+        print(f"NAME-BANK: {name_bank_path.name}")
+        print("=" * 60)
+        instance, load_error = load_store(name_bank_path)
+        if load_error:
+            print(load_error)
+            exit_code = 1
+        else:
+            errors = validate_name_bank(instance, name_bank_path)
+            if errors:
+                print(f"FAIL - {len(errors)} error(s):")
+                for err in errors:
+                    print(err)
+                exit_code = 1
+            else:
+                print("PASS")
+        print()
+
     # Validate gate-profiles
     gate_profiles_path = args.gate_profiles
     if args.all_defaults and not gate_profiles_path:
@@ -2371,7 +2414,7 @@ def main():
 
     # If no specific action, show help
     if not any([args.course_design, args.gates, args.source_kb, args.institutional_kb,
-                args.vocab_kb, args.hecos_kb, args.skeletons, args.palette, args.tier_bands, args.gate_profiles,
+                args.vocab_kb, args.hecos_kb, args.skeletons, args.palette, args.tier_bands, args.gate_profiles, args.name_bank,
                 args.activity_patterns, args.content_shapes, args.pathways, args.source_maps,
                 args.catalogue, args.test_fixtures, args.all_defaults]):
         parser.print_help()

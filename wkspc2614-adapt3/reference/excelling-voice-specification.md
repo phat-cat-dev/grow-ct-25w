@@ -196,7 +196,7 @@ Structure explanations around two student approaches, concepts, or outcomes. Use
 
 ### 11.6 Named student scenarios
 
-Common first names only, no surnames. Describe academic behaviour, not demographics. When contrasting approaches, present the weaker approach without mockery or judgement. Let the analysis do the work. All references in scenario passages are fictional.
+Welsh first names only, from the name bank (`design-kb/design-kb.name-bank.json`), no surnames. Pair one female and one male name when contrasting two students, alternate across a course which of them takes the weaker approach, and use a different pair in each lesson. Describe academic behaviour, not demographics. When contrasting approaches, present the weaker approach without mockery or judgement. Let the analysis do the work. All references in scenario passages are fictional.
 
 ### 11.7 Direct questions to the reader
 
@@ -268,7 +268,7 @@ Avoid: 'may or may not', 'in some cases it could be argued', 'some people think'
 
 **Language:** Use 'new or less experienced' rather than 'weak' or 'struggling'. Acknowledge different routes without making any seem deficient.
 
-**Named characters:** Range of common first names. Do not describe demographics.
+**Named characters:** Welsh first names from the name bank only (see §11.6). Do not describe demographics.
 
 **No background assumptions:** Do not assume educational background, first language, age, or prior experience.
 
@@ -397,3 +397,5 @@ Apply these six questions before finalising any piece of lesson copy:
 ---
 
 **Change note (26 September 2026, adp-0182):** v1.1 removed every em dash (§4's own ban); corrected the year for *Excelling at University* from 2025 to 2026; and corrected §17's reference example from the chapter form to the book form.
+
+**Change note (29 October 2026):** §11.6 and the narrative rules now require Welsh first names from `design-kb/design-kb.name-bank.json` (ruled by Abbott): one female and one male name per contrasted pair, the weaker role alternating across a course, a different pair per lesson.
