@@ -18,9 +18,11 @@ embeds only its own pathway + tier slice). `floor` edges are
 left out unless --include-floor: they matched no capability, so they would only
 give generic prompts.
 
---embed writes one pathway + tier slice into a course.json as
-_growPromptLibraries["academic-practice"], the shape the prompt builder's
-_library lookup already reads ({stage: [{label, items}]}). Draft starters:
+--embed writes into a course.json: the course's own pathway + tier slice as
+_growPromptLibraries["academic-practice"], and the activities of ALL academic
+practice pathways at the course's tier as ["academic-practice-activities"]
+(filterable by pathway), in the shape the prompt builder's _library lookup
+reads ({stage: [{label, items, filter?}]}). Draft starters:
 review the wording before release. House terms: graduate skill / competency /
 attribute / academic practice, never "academic skills"; no em dashes.
 
@@ -341,25 +343,39 @@ def slice_for(lib, pathway, tier):
     }
 
 
-def activity_slice_for(lib, pathway, tier):
-    """One pathway + tier's activities as {stage: [{label, items}]}: the function
-    stage holds one group per activity (its prompts in learning order), the verb
-    stage the tier's §16 verbs."""
-    acts = [a for a in lib['activities'] if a['pathway'] == pathway and a['tier'] == tier]
-    if not acts:
-        raise SystemExit('no activities for %s / %s' % (pathway, tier))
-    function = [{'label': 'Activity %d: %s' % (i + 1, a['statement']),
-                 'items': [p for f in a['functions'] for p in f['prompts']]} for i, a in enumerate(acts)]
-    fmt, seen = [], set()
-    for a in acts:
-        for f in a['functions']:
-            if f['format'] not in seen:
-                seen.add(f['format']); fmt.append(f['format'])
+def activity_slice_for(lib, tier, pathways=None):
+    """Every academic practice pathway's activities at one tier, as
+    {stage: [{label, items, filter}]}. `practice` lists the pathway titles (a
+    select); role, function and verb groups carry `filter` = that title, so a part
+    with _filterBy: "practice" shows only the chosen pathway's groups. The function
+    stage holds one group per activity (its prompts in learning order); the verb
+    stage holds each pathway tier's §16 verbs."""
+    order = [p['id'] for p in json.load(open(os.path.join(REPO_ROOT, 'design-kb', 'design-kb.pathways.json'),
+                                               encoding='utf-8'))['pathways']]
+    pids = [p for p in order if p in lib['pathways'] and (not pathways or p in pathways)]
+    practice, role, function, verb, fmt, seen = [], [], [], [], [], set()
+    for pid in pids:
+        acts = [a for a in lib['activities'] if a['pathway'] == pid and a['tier'] == tier]
+        if not acts:
+            continue
+        title = lib['pathways'][pid]['title']
+        practice.append(title)
+        role.append({'label': title, 'filter': title, 'items': lib['pathways'][pid]['role'][tier]})
+        function += [{'label': '%s %d: %s' % (title, i + 1, a['statement']), 'filter': title,
+                      'items': [p for f in a['functions'] for p in f['prompts']]} for i, a in enumerate(acts)]
+        verb.append({'label': '%s verbs' % acts[0]['verbBand'], 'filter': title, 'items': acts[0]['verbs']})
+        for a in acts:
+            for f in a['functions']:
+                if f['format'] not in seen:
+                    seen.add(f['format']); fmt.append(f['format'])
+    if not practice:
+        raise SystemExit('no activities for tier %s' % tier)
     tl = lib['tiers'][tier]
     return {
-        'role': [{'label': tl['label'] + ' tier', 'items': lib['pathways'][pathway]['role'][tier]}],
+        'practice': practice,
+        'role': role,
         'function': function,
-        'verb': [{'label': '%s verbs' % acts[0]['verbBand'], 'items': acts[0]['verbs']}],
+        'verb': verb,
         'assessment': [{'label': label, 'items': items} for label, items in ASSESSMENT_TYPES],
         'context': [{'label': tl['label'] + ' tier', 'items': tl['context']}],
         'format': [{'label': 'By step', 'items': fmt}],
@@ -394,7 +410,7 @@ if __name__ == '__main__':
         course = json.load(open(args.embed, encoding='utf-8'))
         libs = course.get('_growPromptLibraries') or {}
         libs[LIB_ID] = slice_for(lib, args.pathway, args.tier)
-        libs[ACT_LIB_ID] = activity_slice_for(lib, args.pathway, args.tier)
+        libs[ACT_LIB_ID] = activity_slice_for(lib, args.tier)
         course['_growPromptLibraries'] = libs
         write_json(args.embed, course)
         print('embedded %s / %s into %s as _growPromptLibraries["%s"] and ["%s"]' % (

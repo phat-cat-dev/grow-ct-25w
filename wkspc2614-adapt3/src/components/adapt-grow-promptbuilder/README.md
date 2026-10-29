@@ -22,6 +22,10 @@ part is filled. It assembles prompt *text* only — it does not call an AI.
 | `_library: "<id>"` (+ optional `_libraryStage`) | pull `_starterGroups` from a shared library (see below) |
 | `_libraryMerge: true` | append the library's groups after the part's inline `_starterGroups` instead of being overridden by them |
 | `_optional: true` | the part is not required for completion (use for slot parts like `verb` / `topic`) |
+| `_filterBy: "<key>"` | show only starter groups whose `filter` equals that part's value (e.g. an "Academic practice" select narrowing Role / Function / Verb) |
+
+A library stage that is a plain list of strings fills a select part's `_options`
+(e.g. `practice: ["Academic Writing", ...]`).
 
 Slots: a starter may itself contain `{key}` placeholders (e.g. `{verb}`, `{topic}`). The
 assembled prompt is filled in two passes, so those are filled from the matching parts.
@@ -84,8 +88,10 @@ attempt, Evidence it; the evidence prompts come from
 slots; `verbBands` holds the voice specification section 16 outcome verbs, and
 each activity takes the band its pathway tier anchors to
 (`docs/curriculum/pathway-tier-mapping.md`). `--embed` also writes
-`_growPromptLibraries["academic-practice-activities"]` with stages `role`,
-`function` (one group per activity), `verb`, `assessment` (assessment types as
+`_growPromptLibraries["academic-practice-activities"]` covering ALL 13 academic
+practice pathways at the course's tier, with stages `practice` (the pathway
+titles, for a select part), `role`, `function` (one group per activity) and `verb`
+(those three tagged with `filter` = pathway title, so use `_filterBy: "practice"`), `assessment` (assessment types as
 whole sentences, grouped: written, spoken and visual, reflective practice, exams
 and tests, practice-based), `context` and `format`. Use it with parts `role`,
 `function`, `verb` (`_optional`), `topic` (label "Module / topic", `_optional`,

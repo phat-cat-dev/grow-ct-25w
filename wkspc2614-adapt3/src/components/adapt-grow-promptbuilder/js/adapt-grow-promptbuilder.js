@@ -48,6 +48,11 @@ class PromptBuilderView extends ComponentView {
       const lib = libs[p._library];
       const groups = lib && lib[p._libraryStage || p._key];
       if (!groups || !groups.length) return;
+      // a stage that is a plain list of strings fills a select part's options
+      if (typeof groups[0] === 'string') {
+        if (!(p._options && p._options.length)) p._options = groups;
+        return;
+      }
       if (p._libraryMerge && p._starterGroups && p._starterGroups.length) {
         if (!p._libraryMerged) p._starterGroups = p._starterGroups.concat(groups);
         p._libraryMerged = true;
@@ -63,8 +68,34 @@ class PromptBuilderView extends ComponentView {
     this.$copy = this.$('.js-pb-copy');
     this.$clear = this.$('.js-pb-clear');
     this.template = this.model.get('_assembleTemplate') || 'Act as {role}. {function} Context: {context}.';
+    this.applyFilters();
     this.assemble();
     this.setReadyStatus();
+  }
+
+  // A part with _filterBy: "<key>" shows only the starter groups whose `filter`
+  // matches that part's current value (groups with no filter always show; an
+  // empty value shows everything). E.g. an "Academic practice" select narrows the
+  // Function, Role and Verb starters to one pathway.
+  applyFilters() {
+    const v = this.partValues();
+    (this.model.get('_parts') || []).forEach(p => {
+      if (!p._filterBy || !(p._starterGroups && p._starterGroups.length)) return;
+      const sel = this.$(`.js-pb-starter[data-key="${p._key}"]`)[0];
+      if (!sel) return;
+      const want = v[p._filterBy] || '';
+      const placeholder = sel.options[0] ? sel.options[0].textContent : '';
+      sel.textContent = '';
+      sel.appendChild(new Option(placeholder, ''));
+      p._starterGroups
+        .filter(g => !g.filter || !want || g.filter === want)
+        .forEach(g => {
+          const og = document.createElement('optgroup');
+          og.label = g.label;
+          (g.items || []).forEach(item => og.appendChild(new Option(item, item)));
+          sel.appendChild(og);
+        });
+    });
   }
 
   partValues() {
@@ -119,11 +150,16 @@ class PromptBuilderView extends ComponentView {
     input.focus();
   }
 
-  onInput() { this.assemble(); }
+  onInput(e) {
+    const key = e && e.currentTarget && e.currentTarget.getAttribute('data-key');
+    if (key && (this.model.get('_parts') || []).some(p => p._filterBy === key)) this.applyFilters();
+    this.assemble();
+  }
 
   onClear() {
     this.$inputs.each((i, el) => { el.value = ''; });
     this.$('.js-pb-starter').each((i, el) => { el.selectedIndex = 0; });
+    this.applyFilters();
     this.assemble();
     const first = this.$inputs[0];
     if (first) first.focus();

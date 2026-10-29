@@ -154,6 +154,12 @@
             "help": "Which stage within the library to use. Defaults to this part's _key.",
             "default": ""
           },
+          "_filterBy": {
+            "type": "string",
+            "title": "Filter starters by part",
+            "help": "The _key of another part (usually a select). Only starter groups whose `filter` matches that part's value are shown; groups without a filter always show.",
+            "default": ""
+          },
           "_optional": {
             "type": "boolean",
             "title": "Optional part",
