@@ -1,98 +1,158 @@
-# Query layers + the distil/proliferate generation flow
+# Query layers + the onboarding generation flow
 
-**Status: design scope (not wired).** Branch `gates/tri-tier`. This is the target
-shape for the reworked onboarding + tri-tier generation; it reconciles the
-intended flow with what is actually in the repo today (see "Where we got to").
+**Status: design scope (not wired).** Branch `gates/tri-tier`. Revised 29 Oct 2026 to
+Abbott's restated layers (`abbott/# TODOs.md`, "SCOPE THE COMPLETE QUERY LAYERS"). Each
+layer is mapped to the gate that holds it today, the data it reads, and what is missing
+(section 3).
 
-## 1. The complete query layers (onboarding)
+## 1. The query layers (onboarding)
 
-The onboarding resolves context top-down. Each layer narrows the next:
+The pathway (THEME) is already chosen by `onb-01_theme-preset` / `onb-02_course-theme`.
+The layers below then resolve the context top-down; each narrows the next, and four agent
+outcomes (AO-01 to AO-04) accumulate into the SHELL context.
 
 ```
-THEME (pathway)
-  > TIER (introductory | intermediate | advanced | none)
-    > LEVEL(S)
-      > QUAL FRAMEWORKS + UNIVERSAL BENCHMARKS
-        > FORK01  (shell vs context slot)
-          > FORK02 (cross-cutting qualifiers)
+1  TIER          intro | inter | advanced | none                       (optional)
+2  LEVEL(S)      auto from tier bands | human: single or grouped | none
+     FORK01  GENERIC STATEMENTS
+       1  qualification frameworks (user selects)
+       2  universal / pathway benchmarks (0-9 of the pathway's 9)
+          -> AO-01  GENERIC COMPETENCY ATTRIBUTES CONTEXT: 6 generic benchmarks
+     FORK02  SHELL vs CONTEXT SLOT
+       1  baseline shell | 2  group context shell | 3  specific context shell
+          -> AO-02  CONTEXT SPECIFIC COMPETENCY ATTRIBUTES CONTEXT
+     FORK03  QUALIFIERS (up to 6, four categories)
+          -> AO-03  QUALIFIER SPECIFIC COMPETENCY ATTRIBUTES CONTEXT
+4  AO-04  ONB SHELL CONTEXT STATEMENT (academic prose, voice-linted)
+5  First 6 course learning outcomes (proliferation, section 2)
 ```
 
-- **THEME** - one of the academic-practice pathways (the 13, soon 14). Gate `onb-02_course-theme`.
-- **TIER** - the pitch band. Gate `onb-03_pitch`. `none` is allowed (defer to LEVEL).
-- **LEVEL(S)** - either **auto-decided by the tier bands** (`design-kb.tier-bands.json`), OR, when TIER is `none`, the human defines one or more FHEQ levels here.
-  - Multiple levels are generally **adjacent** (e.g. L3 / L4).
-  - **Exception: L7 crosses all tiers** - a "L7 introductory / intermediate / advanced" takes the same concepts and pitches them at PG level. So L7 is a cross-cutting level, not a rung on the same ladder.
-- **QUAL FRAMEWORKS + UNIVERSAL BENCHMARKS** - FHEQ / CQFW (WCFQ) generic level descriptors, plus `universal-reference.json` (the `graduate_competency` shared core) as the generic grounding every build can stand on.
-- **FORK01 - SHELL vs CONTEXT SLOT** *(still to define precisely)*. Which source corpus the agent analyses:
-  - **A) BASELINE SHELL** - use the universal statements and run the same analysis from a **generic, subject-neutral** perspective. (`cxp-01 = baseline` already routes `cxp-04` to `universal-reference.json`.)
-  - **B) GROUP** - a group context set by the human: (a) a **group identity** (e.g. School of Sport, School of Health Sciences), and (b) a **group of HESA subjects** under it, so relevant benchmark data can be searched. *Needs the CMET data tree of courses brought in.*
-  - **C) SPECIFIC** - either a specific **HESA subject**, or a general **topic area** given by the user.
-- **FORK02 - cross-cutting themes** - any **qualifiers** selected (the <=3 CXP qualifiers; the graduate-competency subset is one such category). Gate `cxp-02_qualifiers`.
+**1. TIER** (optional): introductory, intermediate, advanced, or none (defer to LEVEL).
 
-> **To define:** the SHELL vs CONTEXT-SLOT mechanics - a "shell" is the generic
-> analysis structure; a "context slot" is what a group/specific context fills it
-> with. Pin down how a slot overrides/extends the shell, and bring in the CMET
-> course tree + HESA grouping for FORK01-B.
+**2. LEVEL(S)** (auto or optional, depending on TIER: single, grouped or none).
+- With a tier: levels are auto-decided by the tier bands (`design-kb.tier-bands.json`).
+- With no tier: the human defines one or more levels. Grouped levels are generally
+  **adjacent** (e.g. L3 / L4).
+- **Exception: L7 and L8 cross all tiers.** An L7 or L8 introductory / intermediate /
+  advanced course takes the same concepts and pitches them at postgraduate or doctoral
+  level. L7 and L8 are cross-cutting levels, not rungs on the same ladder.
 
-## 2. The distil -> proliferate flow (symmetric)
+**FORK01: GENERIC STATEMENTS**
+1. **Qualification frameworks:** the user selects a specific one (FHEQ, CQFW, the Scottish
+   FQHEIS within SCQF, QF-EHEA / Bologna).
+2. **Universal benchmarks:** auto-generated from the previous decisions. If neither TIER
+   nor LEVEL was set, the user is offered the pathway's **9 generic pathway benchmarks** (its
+   capabilities) and selects from 0 to 9. Both 0 and 9 treat all nine equally.
+- **AO-01 = GENERIC COMPETENCY ATTRIBUTES CONTEXT.** The agent refers to the chosen
+  ingested frameworks, universal and pathway benchmarks and the tier (including the fuzzy
+  tops), groups candidates, and with agent suggestion plus human confirmation or amendment
+  boils them down to **6 generic benchmarks** for the pathway. These are the initial
+  generic basis for the course learning outcomes.
 
-The core move is **distil the pathway down to 3 course outcomes per tier, then
-proliferate back out to lesson outcomes** - the same ladder, run in both
-directions.
+**FORK02: SHELL vs CONTEXT SLOT**
+1. **Baseline shell:** the universal statements, analysed as a subject benchmark would be,
+   authored from a generic perspective.
+2. **Group context shell:** (a) a group identity (e.g. School of Sport, School of Health
+   Sciences, Faculty of Aeronautics) and (b) the group of HESA subjects under it, so the
+   relevant benchmark data can be searched. Set by the human.
+3. **Specific context shell:** one HESA subject or code, or a general topic area given by
+   the user.
+- **AO-02 = CONTEXT SPECIFIC COMPETENCY ATTRIBUTES CONTEXT.**
 
-**Distil (pathway -> course):**
+**FORK03: QUALIFIERS:** the earlier ONB qualifiers plus the graduate competencies from
+the universal JSON, in four categories:
+1. pedagogical
+2. professionally oriented
+3. cross-cutting agendas
+4. graduate competencies / capital
+
+Each chosen qualifier directs the agent to the ingested context for that qualifier, which
+adds to the developing SHELL context. The user applies **up to 6** (the number may vary).
+- **AO-03 = QUALIFIER SPECIFIC COMPETENCY ATTRIBUTES CONTEXT.**
+
+**By this stage the agent holds:** level(s) + chosen frameworks + chosen universal
+benchmarks + AO-01 (6 course / pathway benchmarks) + the chosen shell (baseline; group,
+i.e. HESA subject groups and / or codes under a user-given identity; or specific, one HESA
+subject or code) + AO-02 + up to 6 qualifiers + AO-03.
+
+**4. AO-04 = ONB SHELL CONTEXT STATEMENT:** the product of ONB. A context statement that
+restates the SHELL context in academic prose, voice-linted.
+
+**5. The first 6 course learning outcomes**, generated from AO-04 by the proliferation in
+section 2.
+
+## 2. Distil and proliferate
+
 ```
-9 pathway generics (capabilities, 3 per tier)
-  -> 18 benchmarks            (3 tiers x 6; grouped by complexity; "fuzzy/blurry tops" co-tagged across adjacent tiers)
-  -> 6 course outcomes per tier
-  -> [AGENT SUGGESTS / HUMAN CHOOSES]
-  -> 3 course outcomes per tier
+DISTIL (ONB)     9 pathway capabilities (3 per tier) + their 18 evidence examples
+                 -> AO-01: 6 generic benchmarks      [AGENT SUGGESTS / HUMAN CONFIRMS]
+                 -> + AO-02 + AO-03 -> AO-04 shell context statement
+PROLIFERATE      AO-04 -> 6 course learning outcomes
+(CRS onwards)    -> lesson-level, active-verb learning outcomes
+                 -> grouped across 4 / 5 / 6 lessons (count by the shape of the content)
 ```
+Each lesson addresses a group of outcomes; together the lessons deliver an overarching
+course objective. Proliferation is constrained by the tier and / or level choices. At every
+gate the agent first reviews the ingested data it is pointed at (`agentContext` on each gate
+in `design-kb.gates.json`).
 
-**Proliferate (course -> lessons)** - the distillation expanded back out:
-```
-3 course outcomes (per tier)
-  -> 6 -> 18 lesson-level, ACTIVE-VERB learning outcomes   (expand back out, mirroring the distillation in reverse)
-  -> grouped across 4 / 5 / 6 lessons    (count by the shape of the content)
-```
-Each lesson addresses a **group** of these outcomes and, together, the lessons
-deliver an **overarching course objective**. Proliferation is **constrained by
-the tier and/or level qualifiers** chosen in layer 1.
+**All three tiers at once.** When TIER is `none`, or when a whole pathway pack is
+generated, AO-01 runs once per tier from the same 9 + 18, so introductory, intermediate and
+advanced are produced in parallel, each pitched by its tier band and the L7 / L8 rule.
 
-**Alignment inputs at every step:** pathway benchmarks + universal benchmarks +
-subject context (if FORK01 = group/specific) + cross-cutting qualifiers. The
-agent breaks the outcomes down **ensuring alignment** across all of these, and at
-each gate first **reviews the ingested data it is pointed at** (see each gate's
-`agentContext` in `design-kb.gates.json`).
+## 3. Layer -> gate -> data (where we are)
 
-## 3. All three tiers at once
+| Layer | Gate today | Change needed | Data it reads | Status |
+|---|---|---|---|---|
+| THEME | `onb-01_theme-preset`, `onb-02_course-theme` | none | `catalogue/pathways.json` | exists |
+| 1 TIER | `onb-03_pitch` | add a `none` option | `design-kb.tier-bands.json` | exists, `none` to add |
+| 2 LEVEL(S) | none | NEW gate: auto from tier bands, or human single / grouped with the adjacency rule; L7 / L8 cross-tier | tier bands; `pathway/<p>.json` `tierProgression.levels` (L3 to L8) | gap: tier bands list L3 to L7 only, no L8 |
+| FORK01.1 frameworks | `cxs-05_external-standards` (auto, reserved) | make it a human select | `catalogue/context/shared/cross-cutting.json` `frameworks`: FHEQ, CQFW, FQHEIS / SCQF, QF-EHEA | data exists |
+| FORK01.2 benchmarks | none | NEW: select 0 to 9 of the pathway's 9 (0 or 9 = equal weight) | pathway capabilities + `benchmarkKeys` (tiered keys, attribution) + `pathway-evidence/` (the 18) + `universal-reference.json` | data exists |
+| AO-01 | none | NEW agent+human gate: 6 generic benchmarks | the above | to build |
+| FORK02 shell | `cxp-01_subject` (+ `cxp-01 = baseline` routing) | reshape to baseline / group / specific | baseline: `universal-reference.json`; group: HESA groupings = CAH1 / CAH2 in `tools/subject/core/vocab/cah.json`; specific: HECoS / CAH codes on every benchmark, resolved by `tools/resolve-subject-benchmark.js`, or a free topic | gap: group **identity** (School / Faculty -> its HESA subjects) needs the CMET course data tree |
+| AO-02 | `cxp-04_context-generation` | re-aim its product at context-specific competency attributes | subject benchmark corpus, pathway mappings | partial |
+| FORK03 qualifiers | `cxp-02_qualifiers` (max 3, 3 categories), `cxs-03_qualifiers` (reserved) | max 6, 4 categories | `docs/authoring/qualifier-list-2026-10-04.md` (`ped:` / `theme:` / `pro:`), `graduate_competency` (20) in the universal, Advance HE framework ingests under `source-kb/.../ingested/standards/` | gap: no qualifier JSON mapping each qualifier to its ingest |
+| AO-03 | none | NEW | the qualifier ingests | to build |
+| AO-04 | none | NEW: shell context statement, voice-linted | AO-01 to AO-03; `tools/voice-lint.js` | to build |
+| 5 CLOs | `crs-03_course-outcomes` | source from AO-04: first 6 CLOs | AO-04 | exists, re-source |
 
-The `18 = 3 x 6` analysis is produced **once per pathway**; the generator then
-emits **introductory, intermediate and advanced in parallel** (not one
-level-selected tier), each with its own `6 -> 3` distil and `3 -> 6 -> 18`
-proliferate, pitched by the tier bands and the L7-crosses-all rule. Deciders stay
-`AGENT SUGGESTS / HUMAN GATE / AUTO` and the flow is the same whichever is used.
+## 4. Rulings this changes (need sign-off)
 
-## 4. Where we got to (current repo state)
+1. **Qualifiers:** from at most 3 across 3 categories (rulings of 2 to 4 Oct 2026 in the
+   qualifier list) to **up to 6 across 4**. `theme:` becomes "cross-cutting agendas", and
+   graduate competencies / capital is a new category. `cxp-02`'s `decidedValueShape`
+   (`maxItems: 3`) changes with it.
+2. **Course outcomes:** the earlier flow distilled 6 -> 3 course outcomes per tier. This
+   flow generates **6** course learning outcomes. Confirm whether 6 is final, or still
+   distils to 3.
+3. **L8** joins L7 as cross-tier; the tier bands need L8 added.
+4. Still open from before: demoting `crs-02_thematic-scope` to optional colour.
 
-- **Pathways:** all 13 carry exactly **9 capabilities = 3 per tier** (`catalogue/context/pathway/*.json`, each capability has `capabilityId`, `tier`, `fheqLevel`, `qf`, `competency{}`). This is the "9 definitive generics". OK.
-- **The 18 = 3x6 distillation:** prototyped (`tiers.json` - ran on ai-technology, reproduced 3 of the real intro course's 4 lessons) but the artifact is **NOT in the current repo** (lost in the VM-transfer snapshot). Needs rebuilding as a tool.
-- **Universal:** `graduate_competency` (20 shared-core) + `pathwayMapping` + `tier-bands` (3 tiers). Benchmarks key into pathways at **pathway + tier**: each edge carries `tiers` (with the capabilities it lands on) and a `tierBasis` - `capability-match` (matched a capability, keyed to its tier), `progression` (direct, no match: all three tiers as a climb) or `floor` (indirect, no match: shared-core floor at every tier; review these). Rule: `tools/pathway_tiers.py`.
-- **Subject keys:** `psychology-2023.json` is tiered by the same rule (`tools/key-benchmark-tiers.py`); most of its edges fall to `progression` because prose overlap with the capabilities is sparse, so treat its tiers as a draft for the derive+gate step. The other 53 subjects stay empty (approach A, filled on demand).
-- **Reverse index:** every `pathway/*.json` carries `benchmarkKeys.byTier` (universal + tiered subjects). It is generated; re-run `key-benchmark-tiers.py` after `build-pathway-reference.py` regenerates the pathway files.
-- **Gates:** every gate carries `agentContext { fieldDescription, authoringReview { instruction, pointers } }` so the agent reviews a gate's ingested sources before authoring.
+## 5. Open definitions
 
-## 5. Open definitions to resolve
-
-1. **FORK01 shell vs context slot** - precise mechanics (how a context slot fills/overrides the generic shell).
-2. **GROUP context** - bring in the **CMET data tree of courses** + HESA subject groupings so group benchmark data can be searched.
-3. **The 18-grouping method** - how `9 -> 18`, grouped by complexity, and how the **fuzzy/blurry tops** are encoded (co-tag across adjacent tiers).
-4. **L7 cross-tier handling** in the level model (same concepts, PG pitch, across all three tiers).
-5. **The exact `6 -> 3` distil and `3 -> 6 -> 18` proliferate rules** (keep them symmetric so provenance is traceable both ways).
+1. **SHELL vs CONTEXT SLOT mechanics:** how a group or specific slot fills, extends or
+   overrides the baseline shell.
+2. **CMET course data tree:** the source for group identities (School / Faculty -> courses
+   -> HECoS codes). Needed for the group shell.
+3. **AO-01 grouping method:** how the agent groups the selected capabilities (and their 18
+   evidence examples) into 6, and how the fuzzy tops are encoded across adjacent tiers.
+4. **Level adjacency:** the exact rule for grouped levels, and how L7 / L8 pitch each tier.
+5. **Qualifier cap:** 6 now, "may vary". Fixed per course, or per category?
 
 ## 6. Next implementation (this branch)
 
-1. ~~Add the **tier dimension** to the benchmark keys (pathway -> pathway+tier) on the universal `graduate_competency` + `pathwayMapping` and on `psychology-2023.json`.~~ Done.
-2. ~~**Pathway reverse-index** - each `pathway/*.json` lists the benchmarks that key into it, by tier.~~ Done (`benchmarkKeys.byTier`).
-3. Rebuild the **`9 -> 18 -> tiers` distiller** as a tool (mirror `tools/build-universal-benchmark.py`).
-4. Wire the **tri-tier benchmark -> outcome generator** (all three tiers at once) reading the keys + each gate's `agentContext`.
+Done: pathway + tier benchmark keys and the reverse index; capability attribution
+(direct / indirect-only / unattributed); the 18 evidence examples; the academic-practice
+prompt sets and activities.
+
+1. **Qualifier JSON:** compile the four categories into one file, each qualifier mapped to
+   its ingest (`ped:` / `pro:` from the qualifier list, cross-cutting agendas from the
+   Advance HE ingests, graduate competencies from the universal).
+2. **LEVEL(S) gate**, plus L8 in the tier bands.
+3. **FORK01 gate + AO-01 generator:** 0 to 9 benchmark selection -> 6 generic benchmarks,
+   reading the keys and the 18.
+4. **FORK02 shell gate:** wire baseline / CAH group / HECoS specific through
+   `resolve-subject-benchmark.js`; the group identity waits on the CMET tree.
+5. **AO-02 / AO-03 / AO-04:** context, qualifier and shell statements, AO-04 voice-linted.
+6. **CLO generation** from AO-04.
