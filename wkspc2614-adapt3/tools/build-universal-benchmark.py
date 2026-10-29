@@ -354,9 +354,19 @@ def build():
     # / CXP may offer these (if the user wishes) as an opt-in subset of the
     # qualifier list, default none. House term: graduate competency / graduate
     # skill / graduate attribute / academic practice (never "academic skills").
+    pm = build_pathway_mapping(order)
     def _gc_title(a):
         a = (a or '').strip()
         return (a[:1].upper() + a[1:]) if a else a
+    def _gc_pathways(stmt_id):
+        """Which academic-practice pathways this competency keys into (from pathwayMapping)."""
+        out = []
+        for _pwk, _pw in pm.items():
+            for _st in (_pw.get('statements') or []):
+                if _st.get('chunkId') == stmt_id:
+                    out.append({'pathway': _pwk, 'strength': _st.get('strength')})
+                    break
+        return out
     grad_competencies = []
     for _s in statements:
         if _s.get('rung') != 'threshold':
@@ -371,6 +381,7 @@ def build():
             'studentStatement': _av.get('text', ''),
             'sharedBy': {'threshold': _sb.get('threshold', 0), 'of': _sb.get('of', n)},
             'core': bool(_s.get('core')),
+            'pathways': _gc_pathways(_s['id']),
             'statementId': _s['id'],
         })
 
@@ -465,7 +476,7 @@ def build():
             'qualifierCategory': 'graduate-competency',
             'items': grad_competencies,
         },
-        'pathwayMapping': build_pathway_mapping(order),
+        'pathwayMapping': pm,
         'mapAgentInstructions': [
             'Universal baseline reference: pathwayMapping here is generic and subject-neutral (authored from design-kb.pathways.json), not a real per-subject map. Build a baseline pack from the pathway\'s mapped shared-core expectations plus tierReadings, honouring each expectation\'s agentInstruction.',
             'Select, do not cram: pick the expectations whose strand fits the pathway being built (e.g. criticality -> strand:thinking; finding-using-sources -> information and sources; presenting -> communication). Core expectations (sharedBy at least half of the set) carry the framing; low-count ones support.',

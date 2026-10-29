@@ -31,7 +31,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 0
+      "sequence": 0,
+      "agentContext": {
+        "fieldDescription": "A7-round: optional. A preset bundle (academic-practice-pathways first) scopes onb-02's themes and pre-loads crs-01_sources (assumed-approved, amendable). 'none' = fully custom path.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "onb-02_course-theme",
@@ -87,7 +94,17 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 1
+      "sequence": 1,
+      "agentContext": {
+        "fieldDescription": "Preset chosen -> dropdown of that preset's themes (academic-practice-pathways: the 13, soon 14, pathways). No preset -> user gives a one-sentence topic area, agent turns it into the theme, user confirms.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "catalogue/pathways.json",
+            "crs-01 source set (no-preset path)"
+          ]
+        }
+      }
     },
     {
       "id": "onb-03_pitch",
@@ -145,7 +162,19 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 2
+      "sequence": 2,
+      "agentContext": {
+        "fieldDescription": "The tier band, now a grounded choice (tier-bands + the pathway reference's tierStatements/capabilities + the book window from bookGrounding) rather than a blind enum. Flows into manifest.facetSet.tier, which keys the Layer-1 pathway grounding every downstream content gate reads. Indicative FHEQ levels per design-kb.tier-bands.json (indicativeLevels are not a progression). no-tier tooling not yet wired. Future per-level targeting lives in cxs-01 (institutional).",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "design-kb/design-kb.tier-bands.json (the tier <-> FHEQ relation: indicativeLevels are INDICATIVE and cross-cutting -- NOT a progression and NOT a bucket; a tier can span several levels and a level several tiers; + cognitive-demand notes, resolving to docs/curriculum/tier-specification.md)",
+            "catalogue/context/pathway/<pathway>.json (the built pathway reference, from tools/build-pathway-reference.py). It holds BOTH axes independently: the {level} axis tierProgression.levels (FHEQ L3-L8; e.g. L4 undergraduate, L7 postgraduate) and the {tier} axis tierProgression.tierStatements (introductory/intermediate/advanced), plus tierProgression.masteryNote and capabilities[] that EACH carry both a tier AND an fheqLevel (statement, qf extracts, competency verbs)",
+            "catalogue/context/pathway/<pathway>.json bookGrounding (chapters, and sections with pages + what each teaches) -- the book window for this tier",
+            "catalogue/context/subject/benchmarks/universal-reference.json (the generic, subject-neutral shared core distilled across the 54 QAA benchmarks, tools/build-universal-benchmark.py): tierReadings.rows (per-tier practice/knowledge/identity, each with fheqLevel + pitchNote) and pathwayMapping['adapt-<pathway>'] (the shared-core statements mapped to this pathway, each with strength + agentInstruction) -- the standing generic phrase source alongside FHEQ/CQFW, always consulted, never a subject substitute"
+          ]
+        }
+      }
     },
     {
       "id": "onb-04_naming",
@@ -209,7 +238,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 3
+      "sequence": 3,
+      "agentContext": {
+        "fieldDescription": "Agent derives course name + slug from theme + pitch; on confirm, tooling creates the folder and answer-sheet file. No files can be created until answered. (Carries old crs-03_vocabulary shape.)",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-01_institutional-context",
@@ -224,7 +260,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 4
+      "sequence": 4,
+      "agentContext": {
+        "fieldDescription": "Reserved: future institutional/module process (the plug point for a module's own framing, and future per-level targeting). Auto-passes 'none'.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-02_subject-context",
@@ -239,7 +282,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 5
+      "sequence": 5,
+      "agentContext": {
+        "fieldDescription": "Reserved: future human CAH 1-3 grouping select, which parameterises the agent source sweep. Auto-passes 'none'.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-03_qualifiers",
@@ -254,7 +304,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 6
+      "sequence": 6,
+      "agentContext": {
+        "fieldDescription": "Reserved: future human select (<=3 from docs/authoring/qualifier-list-2026-10-04.md). Auto-passes 'none'.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-04_referencing-style",
@@ -269,7 +326,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 7
+      "sequence": 7,
+      "agentContext": {
+        "fieldDescription": "Referencing is ALWAYS set here. Auto-passes the default 'Harvard (Cite Them Right)'; this is the token source CXP inherits (referencing = token-substitution coupling). The one CXS gate with a live default, not 'none'.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-05_external-standards",
@@ -284,7 +348,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 8
+      "sequence": 8,
+      "agentContext": {
+        "fieldDescription": "Reserved: future human select; fed by the standing benchmark/standards corpus. Auto-passes 'none'.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxs-06_resources",
@@ -299,7 +370,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 9
+      "sequence": 9,
+      "agentContext": {
+        "fieldDescription": "Reserved: the course's resources drawer (course.json _resources). The old A7 resources gate has no live counterpart in the six-phase model; kept here as a reserved placeholder for a future process, auto-passes 'none'. Added 8 October 2026 (Abbott: keep a reserved gate for the resources drawer, in CXS). While reserved it writes nothing; the shell ships the adapt-contrib-resources extension at its own default until a live process fills this gate.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "crs-01_sources",
@@ -355,7 +433,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 10
+      "sequence": 10,
+      "agentContext": {
+        "fieldDescription": "After theme+pitch. Points the agent at the theme's pathway doc-set (core + source-map + adapt-integration) and the book (default). Preset pre-loads assumed-approved (amend/remove); no preset -> user supplies, or agent suggests if theme matches the library. Feeds every agent search (CRS, LES, CXP). Standing benchmark corpus is always-on in addition.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "crs-02_thematic-scope",
@@ -479,7 +564,16 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 11
+      "sequence": 11,
+      "agentContext": {
+        "fieldDescription": "Chapters/sections in scope, tier-band window, prior-experience anchor, + 5-10 thematic strands (candidate lesson topics). Most consequential upstream gate. Strands: human approve/amend/remove/regenerate.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "crs-01 source set: pathway core Part A + source-map"
+          ]
+        }
+      }
     },
     {
       "id": "crs-03_course-outcomes",
@@ -631,7 +725,17 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 12
+      "sequence": 12,
+      "agentContext": {
+        "fieldDescription": "3-5 course outcomes (3 default; reason if 4-5). Also produces, per outcome at CRS, a confidence statement + 3 general MCQ sets (courseOutcomeBanks) used on the SUMM page (OBK-1). Lesson-outcome banks are produced later at les-01.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "thematic scope",
+            "pathway core A10 capabilities"
+          ]
+        }
+      }
     },
     {
       "id": "crs-04_lesson-map",
@@ -766,7 +870,18 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 13
+      "sequence": 13,
+      "agentContext": {
+        "fieldDescription": "Per lesson: key, title, topic, brief description, lesson outcomes, source section(s); + cross-lesson progression. Last CRS step before the course spec. Feeds the course pack. (Carries old gates/A3 shape; lesson outcomes folded in from old B1.)",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "course outcomes",
+            "thematic strands",
+            "source search"
+          ]
+        }
+      }
     },
     {
       "id": "crs-05_course-spec",
@@ -797,7 +912,16 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 14
+      "sequence": 14,
+      "agentContext": {
+        "fieldDescription": "Auto-stands rollup of ONB+CRS -> user-facing course pack (tools/doc-templates/course-pack.template.json). Order: Identity -> Context shell -> Thematic scope -> Thematic strands -> Course outcomes -> per-outcome -> Lesson map. No new decisions.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "all closed ONB+CRS records"
+          ]
+        }
+      }
     },
     {
       "id": "les-01_lesson-proposal",
@@ -1004,7 +1128,17 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 15
+      "sequence": 15,
+      "agentContext": {
+        "fieldDescription": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, 3 interactivity proposals) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "pathway core A10 templates + Part C process",
+            "crs-01 source set"
+          ]
+        }
+      }
     },
     {
       "id": "wra-01_wrapper-open",
@@ -1080,7 +1214,17 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 16
+      "sequence": 16,
+      "agentContext": {
+        "fieldDescription": "Overview, learning-outcomes, practice-connection (academic/professional framing; human sets the academic<->professional extent; academic + professional sections each optionally removable), signpost component (old les-02 visual-overview), course-instructions, course-conventions. Wrapper-page coupling degree set here (A6.3).",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "crs-01 source set",
+            "pathway core A10 professional equivalences"
+          ]
+        }
+      }
     },
     {
       "id": "wra-02_wrapper-close",
@@ -1170,7 +1314,18 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 17
+      "sequence": 17,
+      "agentContext": {
+        "fieldDescription": "Summary, practice-connection, where-next (vertical = tier ladder; horizontal = related pathways/themes/subjects; agent proposes + confirm), course-references. Wrapper-page coupling degree set here (A6.3).",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "crs-01 source set",
+            "pathway core A9 Relations + adapt-integration overlap",
+            "catalogue/pathways.json (tier ladder)"
+          ]
+        }
+      }
     },
     {
       "id": "wra-03_summative",
@@ -1255,7 +1410,18 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 18
+      "sequence": 18,
+      "agentContext": {
+        "fieldDescription": "Post-scaffold authoring of SUMM's assessment-items: crs-03's 3 mcqSet specs per outcome become real question stems (palette/mcq or palette/sortable, SM-2 split). AL-3: each course outcome tested by exactly two summative questions; AL-6 tests. A set whose crs-03 coupling is not shell-coupled is left as a marked slot for cxp-04 to fill per subject. Added 8 October 2026 (Abbott: post-scaffold summative/confidence authoring, two gates in WRA).",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "crs-03 courseOutcomeBanks (the 3 mcqSet specs per outcome)",
+            "crs-01 source set",
+            "pathway core"
+          ]
+        }
+      }
     },
     {
       "id": "wra-04_confidence",
@@ -1315,7 +1481,16 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 19
+      "sequence": 19,
+      "agentContext": {
+        "fieldDescription": "Post-scaffold placement of crs-03's per-outcome confidence statements into the C-PRE confidence-pre and C-POST confidence-post components (palette/confidence). AL-4: each statement rates its course outcome; every course outcome carries at least one. The same statement set brackets the course (C-PRE before lessons, C-POST at close). Added 8 October 2026 (Abbott: two gates in WRA).",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "crs-03 courseOutcomeBanks (confidenceStatement per outcome)"
+          ]
+        }
+      }
     },
     {
       "id": "cxp-01_subject",
@@ -1362,7 +1537,14 @@
         "ref": "A-round"
       },
       "sequence": 20,
-      "repeatsPer": "context-pack"
+      "repeatsPer": "context-pack",
+      "agentContext": {
+        "fieldDescription": "Per-pack subject. PRIMARY agent lookup = that subject's interpreted benchmark statements (standing corpus), never the copyrighted originals. BASELINE OPTION: 'baseline' is a valid selection; it routes the cxp-04 lookup to the universal reference (the generic shared-core standards in catalogue/context/subject/benchmarks/universal-reference.json) instead of a single subject's benchmark. Record it as subject {scheme:'baseline', code:'baseline', label:'baseline'}, with the resolved benchmark id (universal-reference) in the record's grounding. resolve-subject-benchmark.js returns this for inputs baseline/universal/generic/none.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxp-02_qualifiers",
@@ -1395,7 +1577,14 @@
         "ref": "A-round"
       },
       "sequence": 21,
-      "repeatsPer": "context-pack"
+      "repeatsPer": "context-pack",
+      "agentContext": {
+        "fieldDescription": "Per-pack qualifiers (<=3 across categories, default none) from docs/authoring/qualifier-list-2026-10-04.md.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxp-03_exemplar-programmes",
@@ -1431,7 +1620,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 22
+      "sequence": 22,
+      "agentContext": {
+        "fieldDescription": "RESERVED / auto-none, come back to (A8). Optional, special-circumstances, likely one exemplar (not the old mandatory three). Demoted from the old hard-stop gates/EXM; carries its shape for when defined. SHAPE NOTE (8 Oct 2026): `programmes` is no longer `required`, so the reserved auto-pass record ({value:\"none\", reserved:true}, written by cxp-open.js) validates. The `programmes` array still carries minItems/maxItems 3 from the old mandatory-three model, which CONTRADICTS this gate's own \"likely one exemplar, not the old mandatory three\": that range is left untouched here (it only bites once cxp-03 is un-reserved and actually defined) and is flagged for that future ruling.",
+        "authoringReview": {
+          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
+          "pointers": []
+        }
+      }
     },
     {
       "id": "cxp-04_context-generation",
@@ -1505,7 +1701,20 @@
         "ref": "A-round"
       },
       "sequence": 23,
-      "repeatsPer": "context-pack"
+      "repeatsPer": "context-pack",
+      "agentContext": {
+        "fieldDescription": "Old D1. Generates all coupled-slot content per subject: lesson context-specific checks, coupled worked examples, wrapper practice-connection prose. Referencing inherited from cxs-04 (not a gate here). Widest sourceConsultation set. BASELINE BRANCH: when cxp-01's subject is baseline, the generation reads the universal reference (generic, average student-facing standards from universal-reference.json) in place of a subject benchmark corpus; see generation.parameters.baseline.",
+        "authoringReview": {
+          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "pointers": [
+            "subject benchmark corpus (adapt-integration benchmark search patterns)",
+            "baseline subject (cxp-01 = baseline): the universal reference in place of a subject benchmark -- catalogue/context/subject/benchmarks/universal-reference.json, the generic shared-core standards distilled across the 54 subject benchmarks by tools/build-universal-benchmark.py",
+            "standing standards registry",
+            "cxs-04 referencing",
+            "crs-01 source set"
+          ]
+        }
+      }
     }
   ]
 }

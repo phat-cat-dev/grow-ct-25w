@@ -238,6 +238,32 @@
           "decidedValueShape": {
             "type": "object",
             "description": "LCR-1 (docs/project/open-decisions.md, Prompt 143): a Draft-07 JSON Schema fragment that a closed record's decidedValue must validate against, applied by validate-design-schemas.py --course-design. Present only on gates whose decidedValue carries fields a lesson check reads (A3, B1, B2, B4 at landing). Absent means no shape is enforced beyond the record's own schema. Keyed to the gate's own id (bare for course-level gates, matched by suffix for slug-prefixed per-lesson gates per GF-1) rather than expressed as a schema conditional in course-design.schema.json, because a record's own subschema there has no sibling visibility of its parent gateId, and GF-1's slug-prefixed per-lesson form (gates/<slug>-L<NN>-B<n>) cannot be matched by const in any case."
+          },
+          "agentContext": {
+            "type": "object",
+            "description": "Authoring metadata for the gate's agent: a description of the field/content being decided, plus an instruction to briefly review the ingested/source data this gate is pointed at before authoring, with explicit pointers to that data.",
+            "properties": {
+              "fieldDescription": {
+                "type": "string",
+                "description": "What this gate's field/content is and why it matters."
+              },
+              "authoringReview": {
+                "type": "object",
+                "properties": {
+                  "instruction": {
+                    "type": "string",
+                    "description": "Tells the agent to briefly review the pointed-at ingested data as context before authoring."
+                  },
+                  "pointers": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "description": "The ingested/source data to review (paths, store ids, or source-set references)."
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
           }
         },
         "additionalProperties": false
