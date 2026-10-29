@@ -125,8 +125,8 @@
       "id": "pathway-distillation",
       "name": "Pathway distillation (all three tiers)",
       "status": "design",
-      "purpose": "Distil a whole pathway for all three tiers at once. The 18 pathway statements (two evidence examples for each of the 9 capabilities, so 6 per tier) are evolved into 6 tiered outcomes per tier, boiled down to 3, then expanded back out to course outcomes. Distil and expand mirror each other, so every outcome traces back to its statements.",
-      "produces": "For each of introductory, intermediate and advanced: 6 tiered outcomes, the 3 chosen, and the course outcomes expanded from them.",
+      "purpose": "Distil a whole pathway for all three tiers at once. The 18 pathway statements (two evidence examples for each of the 9 capabilities, so 6 per tier) are evolved into 6 tiered outcomes per tier and boiled down to 3 course outcomes, which expand back out to 6 lesson outcomes (2 each). Lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4, and 5 and 6 where the content needs them, synthesise. Distil (6 -> 3) and expand (3 -> 6) mirror each other, so every outcome traces back to its statements.",
+      "produces": "For each of introductory, intermediate and advanced: 6 tiered outcomes, 3 course outcomes, 6 lesson outcomes, and a 4 to 6 lesson map (3 outcome lessons + synthesis).",
       "tiers": "all",
       "steps": [
         {
@@ -168,19 +168,41 @@
           "perTier": true
         },
         {
-          "id": "re-expand",
-          "label": "Expand to course outcomes",
+          "id": "course-outcomes",
+          "label": "3 course outcomes",
           "gates": ["crs-03_course-outcomes"],
-          "change": "run once per tier from the 3, mirroring the distillation",
+          "change": "fix the count at 3 per tier (the gate allows 3-5; the built courses all chose 4)",
           "decider": "agent+human",
-          "inputs": ["the tier's 3 outcomes", "their source statements"],
-          "produces": "course outcomes per tier, each traced to one of the 3",
+          "inputs": ["the tier's 3 distilled outcomes", "their source statements"],
+          "produces": "the 3 distilled outcomes become the tier's course outcomes",
+          "count": 3,
+          "perTier": true
+        },
+        {
+          "id": "lesson-outcomes",
+          "label": "Expand to 6 lesson outcomes",
+          "gates": ["crs-04_lesson-map"],
+          "change": "2 lesson outcomes per course outcome (the built courses carry 3 per lesson, all serving one course outcome)",
+          "decider": "agent+human",
+          "inputs": ["the tier's 3 course outcomes", "the 6 tiered outcomes they were distilled from"],
+          "produces": "2 supporting lesson outcomes for each course outcome, mirroring the 6 -> 3 distillation (3 course + 6 lesson outcomes = 9)",
+          "count": 6,
+          "perTier": true
+        },
+        {
+          "id": "lessons",
+          "label": "Lessons 1-3, then synthesis",
+          "gates": ["crs-04_lesson-map"],
+          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes, so a lesson outcome's serves must allow more than one course outcome (today a single string)",
+          "decider": "agent+human",
+          "inputs": ["the 3 course outcomes", "the 6 lesson outcomes", "content shape (design-kb.content-shapes.json)"],
+          "produces": "4 to 6 lessons: 3 outcome lessons and 1 to 3 synthesis lessons",
           "count": null,
           "perTier": true,
-          "open": "how many course outcomes the 3 expand to"
+          "open": "whether synthesis lessons carry new lesson outcomes or reuse the 6; how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes"
         }
       ],
-      "continuesWith": ["crs-04_lesson-map", "les-01_lesson-proposal"]
+      "continuesWith": ["les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
     }
   ]
 }
