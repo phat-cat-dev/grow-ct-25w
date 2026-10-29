@@ -154,6 +154,12 @@
             "help": "Which stage within the library to use. Defaults to this part's _key.",
             "default": ""
           },
+          "_optional": {
+            "type": "boolean",
+            "title": "Optional part",
+            "help": "Not required for completion. Use for slot parts such as {verb} or {topic} that only some starters reference.",
+            "default": false
+          },
           "_libraryMerge": {
             "type": "boolean",
             "title": "Append library starters",

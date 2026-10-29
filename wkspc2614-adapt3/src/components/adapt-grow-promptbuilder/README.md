@@ -21,6 +21,10 @@ part is filled. It assembles prompt *text* only — it does not call an AI.
 | `_starterGroups: [{label, items:[..]}]` | the dropdown, grouped as `<optgroup>`s (e.g. Level 4–7) |
 | `_library: "<id>"` (+ optional `_libraryStage`) | pull `_starterGroups` from a shared library (see below) |
 | `_libraryMerge: true` | append the library's groups after the part's inline `_starterGroups` instead of being overridden by them |
+| `_optional: true` | the part is not required for completion (use for slot parts like `verb` / `topic`) |
+
+Slots: a starter may itself contain `{key}` placeholders (e.g. `{verb}`, `{topic}`). The
+assembled prompt is filled in two passes, so those are filled from the matching parts.
 | `_startersPlaceholder` | placeholder text for the starters dropdown |
 
 A text part can combine chips **and** a starters dropdown. `_options` (select) is
@@ -70,6 +74,20 @@ That writes `_growPromptLibraries["academic-practice"]` with `role`, `task`,
 `context` and `format` stages (task groups are labelled "Graduate skill:
 <strand>", plus "Academic practice: <pathway>" for the pathway's own
 capabilities). The wording is a draft: review it before release.
+
+### Academic practice prompt generator (activities)
+
+The same library holds `activities`: one per pathway capability (117), each a
+sequence of prompts in learning order (Explain, See an example, Try it, Check my
+attempt, Evidence it; the evidence prompts come from
+`catalogue/context/pathway-evidence/`). Prompts carry `{verb}` and `{topic}`
+slots; `verbBands` holds the voice specification section 16 outcome verbs, and
+each activity takes the band its pathway tier anchors to
+(`docs/curriculum/pathway-tier-mapping.md`). `--embed` also writes
+`_growPromptLibraries["academic-practice-activities"]` with stages `role`,
+`function` (one group per activity), `verb`, `context` and `format`. Use it with
+parts `role`, `function`, `verb` (`_optional`), `topic` (`_optional`, typed),
+`context`, `format` and `"_assembleTemplate": "Act as {role}. {function} {context} {format}"`.
 
 ## Authoring example
 

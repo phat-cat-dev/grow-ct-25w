@@ -73,11 +73,16 @@ class PromptBuilderView extends ComponentView {
     return v;
   }
 
+  // Two passes: the template pulls in each part's text, then any {slot} inside
+  // that text (e.g. a starter's {verb} or {topic}) is filled from the parts too.
   assemble() {
     const v = this.partValues();
-    const out = this.template.replace(/\{(\w+)\}/g, (m, k) => v[k] || `[${k}]`);
+    const fill = s => s.replace(/\{(\w+)\}/g, (m, k) => v[k] || `[${k}]`);
+    const out = fill(fill(this.template));
     if (this.$out.length) this.$out.text(out);
-    const allFilled = this.$inputs.length > 0 && Object.values(v).every(s => s.length > 0);
+    const optional = new Set((this.model.get('_parts') || []).filter(p => p._optional).map(p => p._key));
+    const allFilled = this.$inputs.length > 0 &&
+      Object.keys(v).every(k => optional.has(k) || v[k].length > 0);
     this.$('.prompt-builder').toggleClass('is-ready', allFilled);
     if (this.$copy.length) this.$copy.prop('disabled', !allFilled);
     if (allFilled && this.model.get('_setCompletionOn') !== 'inview' && !this.model.get('_isComplete')) {
