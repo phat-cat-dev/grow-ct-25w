@@ -46,6 +46,8 @@ class PromptBuilderView extends ComponentView {
       const hasInline = (p._starterGroups && p._starterGroups.length) || (p._starters && p._starters.length);
       if (!p._library || (hasInline && !p._libraryMerge)) return;
       const lib = libs[p._library];
+      // _iconsFrom: a library stage mapping this part's values to sprite icons
+      if (p._iconsFrom && lib && lib[p._iconsFrom] && !p._icons) p._icons = lib[p._iconsFrom];
       const groups = lib && lib[p._libraryStage || p._key];
       if (!groups || !groups.length) return;
       // a stage that is a plain list of strings fills a select part's options
@@ -68,9 +70,45 @@ class PromptBuilderView extends ComponentView {
     this.$copy = this.$('.js-pb-copy');
     this.$clear = this.$('.js-pb-clear');
     this.template = this.model.get('_assembleTemplate') || 'Act as {role}. {function} Context: {context}.';
+    this.setupIcons();
     this.applyFilters();
+    this.updateIcons();
     this.assemble();
     this.setReadyStatus();
+  }
+
+  // A part with _icons ({ value: "sprite.svg#symbol" }) shows the icon for its
+  // current value beside its field (e.g. the academic practice pathway icon
+  // beside the practice select). Decorative: the value itself is the label.
+  setupIcons() {
+    const ns = 'http://www.w3.org/2000/svg';
+    (this.model.get('_parts') || []).forEach(p => {
+      if (!p._icons) return;
+      const input = this.$(`.js-pb-input[data-key="${p._key}"]`)[0];
+      if (!input || input.parentNode.classList.contains('prompt-builder__icon-row')) return;
+      const row = document.createElement('div');
+      row.className = 'prompt-builder__icon-row';
+      const icon = document.createElementNS(ns, 'svg');
+      icon.setAttribute('class', 'prompt-builder__part-icon js-pb-icon');
+      icon.setAttribute('data-key', p._key);
+      icon.setAttribute('aria-hidden', 'true');
+      icon.setAttribute('focusable', 'false');
+      icon.appendChild(document.createElementNS(ns, 'use'));
+      input.parentNode.insertBefore(row, input);
+      row.append(icon, input);
+    });
+  }
+
+  updateIcons() {
+    const v = this.partValues();
+    (this.model.get('_parts') || []).forEach(p => {
+      if (!p._icons) return;
+      const icon = this.$(`.js-pb-icon[data-key="${p._key}"]`)[0];
+      if (!icon) return;
+      const href = p._icons[v[p._key] || ''];
+      icon.firstChild.setAttribute('href', href || '');
+      icon.classList.toggle('is-empty', !href);
+    });
   }
 
   // A part with _filterBy: "<key>" shows only the starter groups whose `filter`
@@ -153,6 +191,7 @@ class PromptBuilderView extends ComponentView {
   onInput(e) {
     const key = e && e.currentTarget && e.currentTarget.getAttribute('data-key');
     if (key && (this.model.get('_parts') || []).some(p => p._filterBy === key)) this.applyFilters();
+    this.updateIcons();
     this.assemble();
   }
 
@@ -160,6 +199,7 @@ class PromptBuilderView extends ComponentView {
     this.$inputs.each((i, el) => { el.value = ''; });
     this.$('.js-pb-starter').each((i, el) => { el.selectedIndex = 0; });
     this.applyFilters();
+    this.updateIcons();
     this.assemble();
     const first = this.$inputs[0];
     if (first) first.focus();

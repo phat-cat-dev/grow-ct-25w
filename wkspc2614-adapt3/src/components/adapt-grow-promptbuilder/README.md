@@ -22,6 +22,7 @@ part is filled. It assembles prompt *text* only — it does not call an AI.
 | `_library: "<id>"` (+ optional `_libraryStage`) | pull `_starterGroups` from a shared library (see below) |
 | `_libraryMerge: true` | append the library's groups after the part's inline `_starterGroups` instead of being overridden by them |
 | `_optional: true` | the part is not required for completion (use for slot parts like `verb` / `topic`) |
+| `_iconsFrom: "<stage>"` | a library stage mapping each value to a sprite icon (`"sprite.svg#symbol"`); the current value's icon shows beside the field (the activities library's `practiceIcons` gives the academic practice pathway icons) |
 | `_filterBy: "<key>"` | show only starter groups whose `filter` equals that part's value (e.g. an "Academic practice" select narrowing Role / Function / Verb) |
 
 A library stage that is a plain list of strings fills a select part's `_options`

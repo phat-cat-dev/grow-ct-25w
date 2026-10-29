@@ -17,6 +17,12 @@ regenerates a course:
      is new within the course, and the choice is deterministic per course slug.
      Names already in the bank are left alone.
 
+  3. The course knows its academic practice pathway. course.json gains
+     `_growPathway` ({ id, label, symbol, sprite }) from the course-design
+     facetSet and the icon index (src/theme/grow-ct/assets/icons/
+     academic-practice-icons.json), so adapt-grow-practiceicon can show the
+     pathway icon and name above each page title.
+
 Run from the repo root:
     python tools/apply-house-rules.py courses/_generated/ai-technology-introductory-school-of-sport
     python tools/apply-house-rules.py <course-dir> --check     # report only
@@ -25,7 +31,23 @@ import argparse, hashlib, json, os, re
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NAME_BANK = os.path.join(REPO_ROOT, 'design-kb', 'design-kb.name-bank.json')
+ICON_INDEX = os.path.join(REPO_ROOT, 'src', 'theme', 'grow-ct', 'assets', 'icons', 'academic-practice-icons.json')
 PANEL_CLASS = 'worked-example-panel'
+
+
+def pathway_stamp(course_dir):
+    """The course's _growPathway from its course-design facetSet + the icon index."""
+    design = [f for f in os.listdir(course_dir) if f.startswith('course-design_') and f.endswith('.json')]
+    if not design:
+        return None, 'no course-design file'
+    pid = (load(os.path.join(course_dir, design[0])).get('facetSet') or {}).get('pathway')
+    if not pid:
+        return None, 'no facetSet.pathway'
+    index = load(ICON_INDEX)
+    icon = next((i for i in index['icons'] if i['pathway'] == pid), None)
+    if not icon:
+        return None, 'no icon for pathway ' + pid
+    return {'id': pid, 'label': icon['label'], 'symbol': icon['symbol'], 'sprite': index['sprite']}, None
 
 
 def load(path):
@@ -147,8 +169,21 @@ def main():
         print('  ' + r)
     if stray:
         print('  WARNING old names still present: ' + ', '.join(stray))
+
+    course_path = os.path.join(en, 'course.json')
+    course = load(course_path)
+    stamp, why = pathway_stamp(args.course_dir)
+    if stamp is None:
+        print('  pathway: not stamped (%s)' % why)
+    elif course.get('_growPathway') == stamp:
+        print('  pathway: %s (unchanged)' % stamp['id'])
+    else:
+        print('  pathway: %s -> %s' % (stamp['id'], stamp['symbol']))
+        course['_growPathway'] = stamp
     if not args.check:
         save(os.path.join(en, 'components.json'), comps)
+        if stamp is not None:
+            save(course_path, course)
 
 
 if __name__ == '__main__':

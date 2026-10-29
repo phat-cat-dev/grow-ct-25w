@@ -370,9 +370,18 @@ def activity_slice_for(lib, tier, pathways=None):
                     seen.add(f['format']); fmt.append(f['format'])
     if not practice:
         raise SystemExit('no activities for tier %s' % tier)
+    # pathway title -> its icon in the theme sprite (tools/build-practice-icons.py)
+    icons = {}
+    icon_index = os.path.join(REPO_ROOT, 'src', 'theme', 'grow-ct', 'assets', 'icons', 'academic-practice-icons.json')
+    if os.path.exists(icon_index):
+        idx = json.load(open(icon_index, encoding='utf-8'))
+        by_id = {i['pathway']: i['symbol'] for i in idx['icons']}
+        icons = {lib['pathways'][pid]['title']: '%s#%s' % (idx['sprite'], by_id[pid])
+                 for pid in pids if pid in by_id and lib['pathways'][pid]['title'] in practice}
     tl = lib['tiers'][tier]
     return {
         'practice': practice,
+        'practiceIcons': icons,
         'role': role,
         'function': function,
         'verb': verb,

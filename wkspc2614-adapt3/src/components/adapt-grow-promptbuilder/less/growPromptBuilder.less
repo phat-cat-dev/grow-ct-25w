@@ -146,6 +146,24 @@
     html:not(.a11y-disable-focusoutline) &:focus-visible { outline: 2px solid @accent; outline-offset: 1px; }
   }
 
+  // A part with _icons: its value's icon (e.g. the academic practice pathway)
+  // sits beside the field. Empty until a value with an icon is chosen.
+  &__icon-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  &__icon-row > .prompt-builder__input { flex: 1 1 auto; min-width: 0; }
+  &__part-icon {
+    flex: 0 0 auto;
+    width: 2.25rem;
+    height: 2.25rem;
+    fill: currentColor;
+    color: @accent;
+    transition: opacity 0.15s ease;
+    &.is-empty { opacity: 0; }
+  }
+
   // Copy + Clear sit on one row below the assembled prompt.
   &__actions {
     display: flex;

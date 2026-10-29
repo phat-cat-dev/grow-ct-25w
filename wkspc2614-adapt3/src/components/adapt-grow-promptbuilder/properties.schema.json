@@ -154,6 +154,12 @@
             "help": "Which stage within the library to use. Defaults to this part's _key.",
             "default": ""
           },
+          "_iconsFrom": {
+            "type": "string",
+            "title": "Icons library stage",
+            "help": "A stage of this part's _library that maps each value to a sprite icon (\"sprite.svg#symbol\"); the icon for the current value shows beside the field.",
+            "default": ""
+          },
           "_filterBy": {
             "type": "string",
             "title": "Filter starters by part",
