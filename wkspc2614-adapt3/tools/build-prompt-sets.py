@@ -39,6 +39,7 @@ TIER_BANDS = os.path.join(REPO_ROOT, 'design-kb', 'design-kb.tier-bands.json')
 OUT = os.path.join(REPO_ROOT, 'src', 'components', 'adapt-grow-promptbuilder', 'libraries', 'academic-practice-prompts.json')
 TIERS = pathway_tiers.TIERS
 LIB_ID = 'academic-practice'
+ACT_LIB_ID = 'academic-practice-activities'
 
 STRANDS = collections.OrderedDict([
  ('knowledge', ('Knowledge', 'Start with a plain-language summary, then give me three questions to check my understanding.')),
@@ -63,6 +64,133 @@ TASKS = {
 }
 COMPETENCY_TASK = 'Show me what good work in {competency} looks like in [subject] at my stage, with an example to learn from, not copy.'
 TIER_LABEL = {'introductory': 'Introductory', 'intermediate': 'Intermediate', 'advanced': 'Advanced'}
+
+# Activities: one per pathway capability. Each runs the same learning sequence;
+# {verb} and {topic} stay as slots the prompt builder fills from its own parts.
+VOICE_SPEC = os.path.join(REPO_ROOT, 'reference', 'excelling-voice-specification.md')
+TIER_MAP = os.path.join(REPO_ROOT, 'docs', 'curriculum', 'pathway-tier-mapping.md')
+EVIDENCE_DIR = os.path.join(REPO_ROOT, 'catalogue', 'context', 'pathway-evidence')
+FUNCTIONS = collections.OrderedDict([
+ ('explain', ('Explain', [
+    'Explain what it means to {cap}, and how it applies when I {verb} {topic}.',
+    'Explain how {terms} can be applied when I {verb} {topic}.'])),
+ ('model', ('See an example', [
+    'Show me a short worked example of a student asked to {verb} {topic}, and how they {cap_they}. Label each move.'])),
+ ('practise', ('Try it', [
+    'Set me a short task that asks me to {verb} {topic} and to {cap}. Wait for my attempt before giving any answer.'])),
+ ('check', ('Check my attempt', [
+    'Here is my attempt to {verb} {topic}: [paste your work]. Tell me how well I {cap}, and the one change that would help most. Do not rewrite it for me.'])),
+ ('evidence', ('Evidence it', [])),
+])
+EVIDENCE_PROMPT = ('Help me plan evidence that I can {cap}: {title}. My topic is {topic}. '
+                   'What should {artefact} include?')
+FUNCTION_FORMAT = {
+ 'explain': 'Use plain language and one example from [subject].',
+ 'model': 'Keep the example short and label each feature in brackets.',
+ 'practise': 'Keep the task small enough to do in ten minutes.',
+ 'check': 'Reply with three parts: what works, one priority change, and a question that tests me.',
+ 'evidence': 'Give me a checklist I can tick off as I build it.',
+}
+
+
+# Statements that are not verb-led, given an action form per person.
+ACTION_FORM = {
+ 'reflective-practice/c4': {'I': 'examine how my identity and values shape what I notice',
+                            'they': 'examine how their identity and values shape what they notice'},
+}
+
+
+def in_person(s, who='I', ref=None):
+    """Capability statements are imperative; make them read after "I" / "to"
+    (who='I') or after "how they" (who='they')."""
+    if ref in ACTION_FORM:
+        return ACTION_FORM[ref][who]
+    poss, refl = ('my', 'myself') if who == 'I' else ('their', 'themselves')
+    s = lower_first(s)
+    s = re.sub(r"\b(one's|your)\b", poss, s)
+    s = re.sub(r'\boneself\b', refl, s)
+    # "own writing" -> "my own writing", but leave "to own" (the verb)
+    return re.sub(r'(?<!\bmy )(?<!\bto )(?<!their )\bown\b(?= (?!my\b|their\b)[a-z])', poss + ' own', s)
+
+
+SECOND_TO_FIRST = [(r'\byou were\b', 'I was'), (r'\byou are\b', 'I am'), (r"\byou're\b", "I'm"),
+                   (r'\byourself\b', 'myself'), (r'\byours\b', 'mine'), (r'\byour\b', 'my'), (r'\byou\b', 'I')]
+
+
+def as_mine(s):
+    """Evidence titles/artefacts speak to the student ("your log"); inside the
+    student's own prompt they must read as theirs ("my log")."""
+    for rx, rep in SECOND_TO_FIRST:
+        s = re.sub(rx, rep, s)
+        s = re.sub(rx.replace(r'\by', r'\bY', 1), rep[:1].upper() + rep[1:], s)
+    w = s.split(' ', 1)[0]
+    return s if (len(w) > 1 and w.isupper()) or w == 'I' else s[:1].lower() + s[1:]
+
+
+def verb_bands():
+    """§16 of the voice specification: band name -> outcome verbs."""
+    bands = {}
+    for line in open(VOICE_SPEC, encoding='utf-8'):
+        m = re.match(r'\|\s*\*\*(\w+)\*\*\s*\|.*Outcome verbs:\s*([^|]+?)\.?\s*\|\s*$', line)
+        if m:
+            bands[m.group(1)] = [v.strip() for v in m.group(2).split(',') if v.strip()]
+    return bands
+
+
+def tier_anchors():
+    """pathway-tier-mapping.md: pathway number -> {tier: §16 band}."""
+    anchors, num = {}, None
+    for line in open(TIER_MAP, encoding='utf-8'):
+        m = re.match(r'## Pathway (\d+)\b', line)
+        if m:
+            num = int(m.group(1))
+        m = re.search(r'Voice-band anchor:\*\*\s*Introductory\W+16 (\w+), Intermediate\W+16 (\w+), Advanced\W+16 (\w+)', line)
+        if m and num is not None:
+            anchors[num] = dict(zip(TIERS, m.groups()))
+    return anchors
+
+
+def build_activities():
+    bands, anchors = verb_bands(), tier_anchors()
+    activities = []
+    for p in sorted(os.listdir(pathway_tiers.PATHWAY_DIR)):
+        if not p.endswith('.json'):
+            continue
+        pid = p[:-5]
+        doc = json.load(open(os.path.join(pathway_tiers.PATHWAY_DIR, p), encoding='utf-8'))
+        num = (doc.get('identity') or {}).get('pathwayNumber')
+        anchor = anchors.get(num) or dict(zip(TIERS, ('Beginner', 'Intermediate', 'Advanced')))
+        attr = (doc.get('benchmarkKeys') or {}).get('attribution') or {}
+        ev_path = os.path.join(EVIDENCE_DIR, pid + '.json')
+        ev = {}
+        if os.path.exists(ev_path):
+            ev = {c['capability']: c for c in json.load(open(ev_path, encoding='utf-8'))['capabilities']}
+        for c in doc.get('capabilities') or []:
+            ref = c.get('capabilityId') or pid + '#' + str(c.get('rowId'))
+            cap = in_person(c.get('statement') or '', 'I', ref)
+            cap_they = in_person(c.get('statement') or '', 'they', ref)
+            terms = ((c.get('vocabulary') or {}).get('terms') or [])[:3]
+            terms_phrase = ('the ideas of ' + ', '.join(terms[:-1]) + (' and ' if len(terms) > 1 else '') + terms[-1]) if terms else ''
+            funcs = []
+            for key, (label, templates) in FUNCTIONS.items():
+                if key == 'evidence':
+                    prompts = [EVIDENCE_PROMPT.format(cap=cap, title=as_mine(e['title'].rstrip('.')),
+                                                      topic='{topic}', artefact=as_mine(e['artefact'].rstrip('.')))
+                               for e in (ev.get(ref) or {}).get('evidence') or []]
+                else:
+                    prompts = [t.format(cap=cap, cap_they=cap_they, terms=terms_phrase, verb='{verb}', topic='{topic}')
+                               for t in templates if terms_phrase or '{terms}' not in t]
+                if prompts:
+                    funcs.append({'function': key, 'label': label, 'prompts': [clean(x) for x in prompts],
+                                  'format': FUNCTION_FORMAT[key]})
+            band = anchor[c['tier']]
+            activities.append({
+                'id': ref, 'pathway': pid, 'tier': c['tier'], 'fheqLevel': c.get('fheqLevel'),
+                'statement': c.get('statement'), 'attribution': attr.get(ref),
+                'verbBand': band, 'verbs': bands.get(band, []),
+                'functions': funcs,
+            })
+    return activities, bands
 
 
 def clean(s):
@@ -142,10 +270,15 @@ def build(include_floor):
                     'capabilities': refs, 'task': task,
                 })
 
+    activities, bands = build_activities()
     return {
         '_comment': 'GENERATED by tools/build-prompt-sets.py; do not hand-edit. Academic-practice '
                     'prompt starters (RTCF), categorised strand > graduate competency > pathway > tier '
-                    'from the universal benchmark keys. Draft wording: review before release.',
+                    'from the universal benchmark keys, plus `activities`: one per pathway capability, '
+                    'each a sequence of prompts (explain, see an example, try it, check my attempt, '
+                    'evidence it) with {verb} and {topic} slots; verbs come from the voice '
+                    'specification section 16 band the pathway tier anchors to. Draft wording: review '
+                    'before release.',
         'source': {
             'universal': os.path.relpath(UNIVERSAL, REPO_ROOT).replace('\\', '/'),
             'pathways': 'catalogue/context/pathway/*.json',
@@ -158,6 +291,8 @@ def build(include_floor):
         'tiers': tiers,
         'pathways': pathways,
         'sets': sets,
+        'verbBands': bands,
+        'activities': activities,
     }
 
 
@@ -190,6 +325,30 @@ def slice_for(lib, pathway, tier):
     }
 
 
+def activity_slice_for(lib, pathway, tier):
+    """One pathway + tier's activities as {stage: [{label, items}]}: the function
+    stage holds one group per activity (its prompts in learning order), the verb
+    stage the tier's §16 verbs."""
+    acts = [a for a in lib['activities'] if a['pathway'] == pathway and a['tier'] == tier]
+    if not acts:
+        raise SystemExit('no activities for %s / %s' % (pathway, tier))
+    function = [{'label': 'Activity %d: %s' % (i + 1, a['statement']),
+                 'items': [p for f in a['functions'] for p in f['prompts']]} for i, a in enumerate(acts)]
+    fmt, seen = [], set()
+    for a in acts:
+        for f in a['functions']:
+            if f['format'] not in seen:
+                seen.add(f['format']); fmt.append(f['format'])
+    tl = lib['tiers'][tier]
+    return {
+        'role': [{'label': tl['label'] + ' tier', 'items': lib['pathways'][pathway]['role'][tier]}],
+        'function': function,
+        'verb': [{'label': '%s verbs' % acts[0]['verbBand'], 'items': acts[0]['verbs']}],
+        'context': [{'label': tl['label'] + ' tier', 'items': tl['context']}],
+        'format': [{'label': 'By step', 'items': fmt}],
+    }
+
+
 def write_json(path, doc):
     with open(path, 'w', encoding='utf-8') as fh:
         json.dump(doc, fh, ensure_ascii=False, indent=2)
@@ -218,7 +377,8 @@ if __name__ == '__main__':
         course = json.load(open(args.embed, encoding='utf-8'))
         libs = course.get('_growPromptLibraries') or {}
         libs[LIB_ID] = slice_for(lib, args.pathway, args.tier)
+        libs[ACT_LIB_ID] = activity_slice_for(lib, args.pathway, args.tier)
         course['_growPromptLibraries'] = libs
         write_json(args.embed, course)
-        print('embedded %s / %s into %s as _growPromptLibraries["%s"]' % (
-            args.pathway, args.tier, args.embed, LIB_ID))
+        print('embedded %s / %s into %s as _growPromptLibraries["%s"] and ["%s"]' % (
+            args.pathway, args.tier, args.embed, LIB_ID, ACT_LIB_ID))
