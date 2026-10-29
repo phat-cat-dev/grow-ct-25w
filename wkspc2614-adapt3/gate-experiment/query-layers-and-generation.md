@@ -24,7 +24,7 @@ outcomes (AO-01 to AO-04) accumulate into the SHELL context.
      FORK03  QUALIFIERS (up to 6, four categories)
           -> AO-03  QUALIFIER SPECIFIC COMPETENCY ATTRIBUTES CONTEXT
 4  AO-04  ONB SHELL CONTEXT STATEMENT (academic prose, voice-linted)
-5  First 6 course learning outcomes (proliferation, section 2)
+5  3 course outcomes + 6 lesson outcomes (2 each), then the lesson map (section 2)
 ```
 
 **1. TIER** (optional): introductory, intermediate, advanced, or none (defer to LEVEL).
@@ -78,23 +78,37 @@ subject or code) + AO-02 + up to 6 qualifiers + AO-03.
 **4. AO-04 = ONB SHELL CONTEXT STATEMENT:** the product of ONB. A context statement that
 restates the SHELL context in academic prose, voice-linted.
 
-**5. The first 6 course learning outcomes**, generated from AO-04 by the proliferation in
-section 2.
+**5. The course's learning outcomes**, generated from AO-04 by the proliferation in
+section 2: 3 course outcomes, each with 2 supporting lesson outcomes (6 learning outcomes
+beneath the 3), then the lesson map.
 
 ## 2. Distil and proliferate
 
+The distillation (6 -> 3) and the proliferation (3 -> 6) mirror each other, so every
+outcome traces back to its statements.
+
 ```
-DISTIL (ONB)     9 pathway capabilities (3 per tier) + their 18 evidence examples
-                 -> AO-01: 6 generic benchmarks      [AGENT SUGGESTS / HUMAN CONFIRMS]
-                 -> + AO-02 + AO-03 -> AO-04 shell context statement
-PROLIFERATE      AO-04 -> 6 course learning outcomes
-(CRS onwards)    -> lesson-level, active-verb learning outcomes
-                 -> grouped across 4 / 5 / 6 lessons (count by the shape of the content)
+DISTIL           18 pathway statements (the 9 capabilities x 2 evidence examples, 6 per tier)
+                 -> 6 tiered outcomes (single course: AO-01's 6 generic benchmarks,
+                    set in context by AO-02 + AO-03 -> AO-04)
+                 -> 3 course outcomes                 [AGENT SUGGESTS / HUMAN CHOOSES]
+PROLIFERATE      3 course outcomes -> 6 lesson outcomes (2 per course outcome) = 9
+(CRS onwards)    Lessons 1-3: one course outcome + its 2 lesson outcomes each
+                 Lesson 4, and 5-6 where the content's shape needs them: synthesis
 ```
-Each lesson addresses a group of outcomes; together the lessons deliver an overarching
-course objective. Proliferation is constrained by the tier and / or level choices. At every
-gate the agent first reviews the ingested data it is pointed at (`agentContext` on each gate
-in `design-kb.gates.json`).
+**Synthesis lessons** work across the course and lesson outcomes and may generate new
+lesson outcomes, either on a related topic or as a development / reinterpretation of an
+earlier one (recorded against the outcome it develops). Together the lessons deliver the
+overarching course objective. Proliferation is constrained by the tier and / or level
+choices. At every gate the agent first reviews the ingested data it is pointed at
+(`agentContext` on each gate in `design-kb.gates.json`). Both runs are defined as gate
+profiles in `design-kb/design-kb.gate-profiles.json`: `single-course` and
+`pathway-distillation` (all three tiers at once).
+
+**What the built courses do today** (criticality, ai-technology, academic-writing and
+presenting, checked 29 Oct 2026): 4 course outcomes, 4 parallel lessons with one course
+outcome each, 3 lesson outcomes per lesson all serving that one outcome (12), and no
+synthesis lesson.
 
 **All three tiers at once.** When TIER is `none`, or when a whole pathway pack is
 generated, AO-01 runs once per tier from the same 9 + 18, so introductory, intermediate and
@@ -115,7 +129,7 @@ advanced are produced in parallel, each pitched by its tier band and the L7 / L8
 | FORK03 qualifiers | `cxp-02_qualifiers` (max 3, 3 categories), `cxs-03_qualifiers` (reserved) | max 6, 4 categories | `docs/authoring/qualifier-list-2026-10-04.md` (`ped:` / `theme:` / `pro:`), `graduate_competency` (20) in the universal, Advance HE framework ingests under `source-kb/.../ingested/standards/` | gap: no qualifier JSON mapping each qualifier to its ingest |
 | AO-03 | none | NEW | the qualifier ingests | to build |
 | AO-04 | none | NEW: shell context statement, voice-linted | AO-01 to AO-03; `tools/voice-lint.js` | to build |
-| 5 CLOs | `crs-03_course-outcomes` | source from AO-04: first 6 CLOs | AO-04 | exists, re-source |
+| 5 outcomes | `crs-03_course-outcomes`, `crs-04_lesson-map` | 3 course outcomes from AO-04; 2 lesson outcomes each; lessons 1-3 + synthesis | AO-04 | exists, re-source and re-count |
 
 ## 4. Rulings this changes (need sign-off)
 
@@ -123,9 +137,13 @@ advanced are produced in parallel, each pitched by its tier band and the L7 / L8
    qualifier list) to **up to 6 across 4**. `theme:` becomes "cross-cutting agendas", and
    graduate competencies / capital is a new category. `cxp-02`'s `decidedValueShape`
    (`maxItems: 3`) changes with it.
-2. **Course outcomes:** the earlier flow distilled 6 -> 3 course outcomes per tier. This
-   flow generates **6** course learning outcomes. Confirm whether 6 is final, or still
-   distils to 3.
+2. **Course and lesson outcomes (settled 29 Oct 2026):** 3 course outcomes, each with 2
+   lesson outcomes (6), lessons 1-3 one course outcome each, then 1 to 3 synthesis lessons
+   that may add new lesson outcomes. Gate changes this needs: `crs-03` fixed at 3 (today
+   3-5); `crs-04` 2 lesson outcomes per course outcome (today 3 per lesson), `serves` able
+   to name several course outcomes, and a `develops` link for a synthesis outcome;
+   `les-01`'s 3-item check mapped to 1 course + 2 lesson outcomes. Make these per profile,
+   so the built 4 x 3 courses still validate.
 3. **L8** joins L7 as cross-tier; the tier bands need L8 added.
 4. Still open from before: demoting `crs-02_thematic-scope` to optional colour.
 
@@ -155,4 +173,5 @@ prompt sets and activities.
 4. **FORK02 shell gate:** wire baseline / CAH group / HECoS specific through
    `resolve-subject-benchmark.js`; the group identity waits on the CMET tree.
 5. **AO-02 / AO-03 / AO-04:** context, qualifier and shell statements, AO-04 voice-linted.
-6. **CLO generation** from AO-04.
+6. **Outcome generation** from AO-04: 3 course + 6 lesson outcomes, the lesson map with
+   synthesis lessons, and the per-profile crs-03 / crs-04 / les-01 changes in section 4.

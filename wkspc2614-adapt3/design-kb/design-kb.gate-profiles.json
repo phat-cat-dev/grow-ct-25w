@@ -6,7 +6,7 @@
       "name": "Single course",
       "status": "design",
       "purpose": "Onboard and build one course. The query layers narrow the context top-down (tier, levels, generic statements, shell, qualifiers) and four agent outcomes build the shell context the course learning outcomes come from. The run records the tiers and levels the course could feed into or build from, but builds only this one.",
-      "produces": "One course at one tier and level band: AO-04 shell context statement, 6 course learning outcomes, then the course build.",
+      "produces": "One course at one tier and level band: AO-04 shell context statement, 3 course outcomes with 6 lesson outcomes beneath them, a 4 to 6 lesson map (3 outcome lessons + synthesis), then the course build.",
       "tiers": "one",
       "steps": [
         {
@@ -110,16 +110,37 @@
         },
         {
           "id": "course-outcomes",
-          "label": "5 First course learning outcomes",
+          "label": "5 Course outcomes",
           "gates": ["crs-03_course-outcomes"],
-          "change": "source the outcomes from AO-04",
+          "change": "source the outcomes from AO-04 (AO-01's 6 generic benchmarks, set in context) and fix the count at 3 (the gate allows 3-5; the built courses all chose 4)",
           "decider": "agent+human",
-          "inputs": ["AO-04"],
-          "produces": "the first 6 course learning outcomes",
+          "inputs": ["AO-04", "AO-01"],
+          "produces": "3 course outcomes",
+          "count": 3
+        },
+        {
+          "id": "lesson-outcomes",
+          "label": "Expand to 6 lesson outcomes",
+          "gates": ["crs-04_lesson-map"],
+          "change": "2 lesson outcomes per course outcome (the built courses carry 3 per lesson, all serving one course outcome)",
+          "decider": "agent+human",
+          "inputs": ["the 3 course outcomes", "AO-04"],
+          "produces": "2 supporting lesson outcomes for each course outcome: the course's 6 learning outcomes beneath its 3 course outcomes",
           "count": 6
+        },
+        {
+          "id": "lessons",
+          "label": "Lessons 1-3, then synthesis",
+          "gates": ["crs-04_lesson-map"],
+          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes and may add new lesson outcomes, either on a related topic or developing / reinterpreting earlier ones; a lesson outcome's serves must allow more than one course outcome, and a new one records the outcome it develops",
+          "decider": "agent+human",
+          "inputs": ["the 3 course outcomes", "the 6 lesson outcomes", "content shape (design-kb.content-shapes.json)"],
+          "produces": "4 to 6 lessons: 3 outcome lessons and 1 to 3 synthesis lessons",
+          "count": null,
+          "open": "how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes, and to a synthesis lesson's outcomes"
         }
       ],
-      "continuesWith": ["crs-04_lesson-map", "crs-05_course-spec", "les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
+      "continuesWith": ["crs-05_course-spec", "les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
     },
     {
       "id": "pathway-distillation",
@@ -193,13 +214,13 @@
           "id": "lessons",
           "label": "Lessons 1-3, then synthesis",
           "gates": ["crs-04_lesson-map"],
-          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes, so a lesson outcome's serves must allow more than one course outcome (today a single string)",
+          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes and may add new lesson outcomes, either on a related topic or developing / reinterpreting earlier ones; a lesson outcome's serves must allow more than one course outcome (today a single string), and a new one records the outcome it develops",
           "decider": "agent+human",
           "inputs": ["the 3 course outcomes", "the 6 lesson outcomes", "content shape (design-kb.content-shapes.json)"],
           "produces": "4 to 6 lessons: 3 outcome lessons and 1 to 3 synthesis lessons",
           "count": null,
           "perTier": true,
-          "open": "whether synthesis lessons carry new lesson outcomes or reuse the 6; how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes"
+          "open": "how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes, and to a synthesis lesson's outcomes"
         }
       ],
       "continuesWith": ["les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
