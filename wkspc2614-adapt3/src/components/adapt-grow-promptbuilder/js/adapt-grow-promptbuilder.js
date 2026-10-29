@@ -1,10 +1,13 @@
 /*
  * adapt-grow-promptbuilder
- * The learner assembles a learning prompt from a Role, a Function and some
- * Context. Clicking an example chip inserts its text into that part; the parts
- * combine live (via _assembleTemplate) into a full prompt they can copy. Teaches
- * the Role/Function/Context framework by doing. Completes once every part is
- * filled.
+ * The learner assembles a learning prompt from parts (e.g. Role, Function,
+ * Context). Each part has quick example chips AND/OR a dropdown of fuller
+ * "starters" grouped by level; picking a starter fills that field, chips append.
+ * The parts combine live (via _assembleTemplate) into a prompt they can copy.
+ * Completes once every part is filled.
+ *
+ * Starters can be inlined on a part (_starters / _starterGroups) OR pulled from
+ * a shared library on the course model (_growPromptLibraries) via _library.
  *
  * Like the other GROW components, the view calls setReadyStatus() itself (core
  * ComponentView.postRender is a no-op), or the loading curtain never lifts.
@@ -20,9 +23,31 @@ class PromptBuilderView extends ComponentView {
       'click .js-pb-chip': 'onChip',
       'input .js-pb-input': 'onInput',
       'change .js-pb-input': 'onInput',
+      'change .js-pb-starter': 'onStarter',
       'click .js-pb-copy': 'onCopy',
       'click .js-pb-clear': 'onClear'
     };
+  }
+
+  preRender() {
+    this.resolveLibraries();
+  }
+
+  // A part may reference a shared starter library instead of inlining starters:
+  //   part._library = "<libraryId>"  (+ optional part._libraryStage, else _key)
+  // Libraries live on the course model as _growPromptLibraries:
+  //   { "<libraryId>": { "<stage>": [ { "label": "...", "items": [...] }, ... ] } }
+  // Inline _starterGroups / _starters always win.
+  resolveLibraries() {
+    const libs = Adapt.course && Adapt.course.get('_growPromptLibraries');
+    if (!libs) return;
+    (this.model.get('_parts') || []).forEach(p => {
+      const hasInline = (p._starterGroups && p._starterGroups.length) || (p._starters && p._starters.length);
+      if (!p._library || hasInline) return;
+      const lib = libs[p._library];
+      const groups = lib && lib[p._libraryStage || p._key];
+      if (groups && groups.length) p._starterGroups = groups;
+    });
   }
 
   postRender() {
@@ -43,7 +68,7 @@ class PromptBuilderView extends ComponentView {
 
   assemble() {
     const v = this.partValues();
-    let out = this.template.replace(/\{(\w+)\}/g, (m, k) => v[k] || `[${k}]`);
+    const out = this.template.replace(/\{(\w+)\}/g, (m, k) => v[k] || `[${k}]`);
     if (this.$out.length) this.$out.text(out);
     const allFilled = this.$inputs.length > 0 && Object.values(v).every(s => s.length > 0);
     this.$('.prompt-builder').toggleClass('is-ready', allFilled);
@@ -65,12 +90,26 @@ class PromptBuilderView extends ComponentView {
     input.focus();
   }
 
+  // A starter from the dropdown REPLACES the field (pick one, then edit it),
+  // then the dropdown returns to its placeholder so it reads as an inserter.
+  onStarter(e) {
+    const sel = e.currentTarget;
+    const key = sel.getAttribute('data-key');
+    const text = sel.value;
+    sel.selectedIndex = 0;
+    if (!text) return;
+    const input = this.$(`.js-pb-input[data-key="${key}"]`)[0];
+    if (!input) return;
+    input.value = text;
+    this.assemble();
+    input.focus();
+  }
+
   onInput() { this.assemble(); }
 
   onClear() {
-    // Reset every field (text boxes and dropdowns both expose .value), re-assemble
-    // so the output/copy/completion state follows, and return focus to the first.
     this.$inputs.each((i, el) => { el.value = ''; });
+    this.$('.js-pb-starter').each((i, el) => { el.selectedIndex = 0; });
     this.assemble();
     const first = this.$inputs[0];
     if (first) first.focus();

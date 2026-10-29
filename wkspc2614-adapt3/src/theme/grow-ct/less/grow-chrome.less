@@ -52,6 +52,12 @@ body .nav {
 }
 // also let hash/scroll targets stop clear of the dock
 html { scroll-padding-bottom: var(--grow-dock-h); }
+// ...and clear the FIXED TOP NAV: a trickle/nav auto-scroll to a new article
+// must stop BELOW the bar, not hide the article title under it. Core sets this
+// to --adapt-navigation-height, but the grow bar is taller than that measured
+// value, so we override with the theme's own nav knob + a gap (lands ~100px,
+// where grow already floats the page title). !important to beat core's rule.
+html { scroll-padding-top: calc(var(--grow-nav-h) + 1.5rem) !important; }
 // push the drawer content down to clear the nav bar (top padding on the inner)
 .drawer__inner { padding-top: var(--grow-nav-h); }
 // move the close button's bottom spacing onto the top of the content holder

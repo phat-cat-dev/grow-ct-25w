@@ -2,7 +2,7 @@
 
 > The shared core of the QAA Subject Benchmark Statements: what an honours graduate is expected to know, do and be on graduating, whatever the subject.
 
-*Edition: derived 2026-10-25 · FHEQ level 6 (honours graduate) · Derived from 54 subject benchmark statements*
+*Edition: derived 2026-10-29 · FHEQ level 6 (honours graduate) · Derived from 54 subject benchmark statements*
 
 ## What the shared core is
 
@@ -223,10 +223,11 @@ Each is what an honours graduate is expected to show, whatever the subject. "Sha
 
 | Tier | FHEQ | Practice | Knowledge | Identity |
 |---|---|---|---|---|
+| introductory | 4 | Begins to apply the subject's basic methods to familiar, well-defined tasks with guidance, works with sources and data they are given, and communicates straightforward findings clearly. | Knows the core terms, ideas and principles that introduce the subject, and can place them in the wider field. | Works honestly and responsibly, follows guidance on ethical and academic conduct, and begins to reflect on their own learning. |
 | intermediate | 6 | Applies the subject's methods to questions and problems, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences. | Knows the core content, main theories and debates of the subject, and how the field developed and where it currently stands. | Works ethically and increasingly independently, reflects on their own learning, and recognises how diversity, sustainability and professional practice bear on the subject. |
 | advanced | 6 | Designs and critiques enquiry across methods, evaluates evidence and arguments critically throughout, and applies knowledge to current and complex problems with some originality. | Commands the breadth and depth of the subject, its theoretical foundations and their bearing on current thinking, and sees where understanding runs out. | A reflective, ethical and independent practitioner who weighs what findings mean for wider debate and helps varied audiences act on them. |
 
-Benchmarks set standards for the honours graduate (FHEQ level 6); they do not speak at introductory (level 4), so no introductory reading is given. These rows synthesise the shared core across the statements; our words, no issuer text.
+Benchmarks set standards for the honours graduate (FHEQ level 6); the intermediate and advanced rows synthesise that shared core across the statements. The introductory (FHEQ level 4) row is a pedagogical down-pitch toward the same core, marked with its own pitchNote - the benchmarks do not themselves speak at level 4. Our words, no issuer text.
 
 ## How the pathways use the shared core
 
@@ -258,6 +259,6 @@ Benchmarks set standards for the honours graduate (FHEQ level 6); they do not sp
 
 - **Method:** Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.
 - **Pathway mapping:** Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.
-- **Built by:** `tools/build-universal-benchmark.py` on 2026-10-25
+- **Built by:** `tools/build-universal-benchmark.py` on 2026-10-29
 - **Licence:** Distillation across the QAA Subject Benchmark Statements; QAA copyright is held, no issuer text is copied; all wording here is our paraphrase or audience rewrite.
 

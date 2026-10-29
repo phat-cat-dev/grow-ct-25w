@@ -116,6 +116,43 @@
               "type": "string"
             },
             "default": []
+          },
+          "_startersPlaceholder": {
+            "type": "string",
+            "title": "Starters dropdown placeholder",
+            "default": ""
+          },
+          "_starters": {
+            "type": "array",
+            "title": "Starters (flat dropdown under the field)",
+            "help": "A dropdown of fuller prompt starters; choosing one fills the field. Use _starterGroups instead to group by level.",
+            "items": { "type": "string" },
+            "default": []
+          },
+          "_starterGroups": {
+            "type": "array",
+            "title": "Starters grouped by level",
+            "help": "Groups shown as <optgroup>s, e.g. Level 4-7. Choosing an item fills the field.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": { "type": "string", "title": "Group label (e.g. Level 4)" },
+                "items": { "type": "array", "title": "Starters in this group", "items": { "type": "string" } }
+              }
+            },
+            "default": []
+          },
+          "_library": {
+            "type": "string",
+            "title": "Starter library id",
+            "help": "Pull starters from the course's _growPromptLibraries[<id>][stage]. Inline _starters/_starterGroups override this.",
+            "default": ""
+          },
+          "_libraryStage": {
+            "type": "string",
+            "title": "Library stage key",
+            "help": "Which stage within the library to use. Defaults to this part's _key.",
+            "default": ""
           }
         }
       }

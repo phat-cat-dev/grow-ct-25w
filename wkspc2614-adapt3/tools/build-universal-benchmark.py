@@ -349,6 +349,31 @@ def build():
         },
     })
 
+    # Graduate-competency layer: a flat, subject-neutral projection of the
+    # threshold shared-core statements, for reuse as baseline context. Onboarding
+    # / CXP may offer these (if the user wishes) as an opt-in subset of the
+    # qualifier list, default none. House term: graduate competency / graduate
+    # skill / graduate attribute / academic practice (never "academic skills").
+    def _gc_title(a):
+        a = (a or '').strip()
+        return (a[:1].upper() + a[1:]) if a else a
+    grad_competencies = []
+    for _s in statements:
+        if _s.get('rung') != 'threshold':
+            continue
+        _av = (_s.get('audienceVersions') or {}).get('forBeneficiary') or {}
+        _sb = _s.get('sharedBy') or {}
+        grad_competencies.append({
+            'id': _s['id'].split('/')[-1],
+            'label': _gc_title(_s.get('about')),
+            'strand': (_s.get('strand') or '').replace('strand:', ''),
+            'graduateStatement': _s.get('paraphrase', ''),
+            'studentStatement': _av.get('text', ''),
+            'sharedBy': {'threshold': _sb.get('threshold', 0), 'of': _sb.get('of', n)},
+            'core': bool(_s.get('core')),
+            'statementId': _s['id'],
+        })
+
     doc = {
         'subjectBenchmarkId': 'universal-reference',
         'subject': {
@@ -434,6 +459,12 @@ def build():
             },
         },
         'statements': statements,
+        'graduate_competency': {
+            'note': 'Flat, subject-neutral projection of the threshold shared-core statements as graduate competencies, for reuse as baseline context. Onboarding/CXP may offer these (if the user wishes) as an opt-in subset of the qualifier list (design-kb cxp-02_qualifiers), default none. House term: graduate competency / graduate skill / graduate attribute / academic practice - never "academic skills".',
+            'terms': ['graduate competency', 'graduate skill', 'graduate attribute', 'academic practice'],
+            'qualifierCategory': 'graduate-competency',
+            'items': grad_competencies,
+        },
         'pathwayMapping': build_pathway_mapping(order),
         'mapAgentInstructions': [
             'Universal baseline reference: pathwayMapping here is generic and subject-neutral (authored from design-kb.pathways.json), not a real per-subject map. Build a baseline pack from the pathway\'s mapped shared-core expectations plus tierReadings, honouring each expectation\'s agentInstruction.',

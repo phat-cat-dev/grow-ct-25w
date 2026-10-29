@@ -1,7 +1,8 @@
 {{!--
   adapt-grow-promptbuilder
-  Lead-in + one block per prompt part (label, help, example chips, an editable
-  field), then the live-assembled prompt with a copy button and a "why" note.
+  Lead-in + one block per prompt part (label, help, quick example chips, an
+  editable field, and an optional dropdown of starters grouped by level), then
+  the live-assembled prompt with copy/clear and a "why" note.
 --}}
 <div class="component__inner growPromptBuilder__inner">
   <div class="prompt-builder" data-component="grow-promptbuilder">
@@ -22,6 +23,7 @@
           <label class="prompt-builder__part-label" for="{{@root._id}}-pb-{{_key}}">{{{compile label}}}</label>
           {{#if help}}<div class="prompt-builder__part-help">{{{compile help}}}</div>{{/if}}
           {{#if _options.length}}
+            {{! a standalone dropdown whose chosen option IS the value }}
             <select id="{{@root._id}}-pb-{{_key}}" class="prompt-builder__input prompt-builder__select js-pb-input" data-key="{{_key}}">
               <option value="">{{#if placeholder}}{{placeholder}}{{else}}Choose...{{/if}}</option>
               {{#each _options}}
@@ -30,13 +32,31 @@
             </select>
           {{else}}
             {{#if _chips}}
-              <div class="prompt-builder__chips" role="group" aria-label="Examples">
+              <div class="prompt-builder__chips" role="group" aria-label="Quick examples">
                 {{#each _chips}}
                   <button type="button" class="prompt-builder__chip js-pb-chip" data-key="{{../_key}}" data-text="{{this}}">{{this}}</button>
                 {{/each}}
               </div>
             {{/if}}
             <textarea id="{{@root._id}}-pb-{{_key}}" class="prompt-builder__input js-pb-input" data-key="{{_key}}" rows="2" placeholder="{{placeholder}}"></textarea>
+            {{! starters dropdown — inserts a full starter into the field above }}
+            {{#if _starterGroups.length}}
+              <select class="prompt-builder__starters js-pb-starter" data-key="{{_key}}" aria-label="Insert a prompt starter">
+                <option value="">{{#if _startersPlaceholder}}{{_startersPlaceholder}}{{else}}Insert a starter by level…{{/if}}</option>
+                {{#each _starterGroups}}
+                  <optgroup label="{{label}}">
+                    {{#each items}}<option value="{{this}}">{{this}}</option>{{/each}}
+                  </optgroup>
+                {{/each}}
+              </select>
+            {{else}}
+              {{#if _starters.length}}
+                <select class="prompt-builder__starters js-pb-starter" data-key="{{_key}}" aria-label="Insert a prompt starter">
+                  <option value="">{{#if _startersPlaceholder}}{{_startersPlaceholder}}{{else}}Insert a starter…{{/if}}</option>
+                  {{#each _starters}}<option value="{{this}}">{{this}}</option>{{/each}}
+                </select>
+              {{/if}}
+            {{/if}}
           {{/if}}
         </div>
       {{/each}}

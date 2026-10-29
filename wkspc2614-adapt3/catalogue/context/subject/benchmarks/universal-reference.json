@@ -6,8 +6,8 @@
   },
   "issuer": "QAA (distilled across the subject benchmark statements)",
   "title": "Universal reference benchmark: the shared core of the QAA subject benchmark statements",
-  "edition": "derived 2026-10-25",
-  "published": "2026-10-25",
+  "edition": "derived 2026-10-29",
+  "published": "2026-10-29",
   "status": "draft",
   "levelsCovered": [
     "fheq:6"
@@ -30,7 +30,7 @@
       "method": "Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.",
       "pathwayMappingBasis": "Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.",
       "script": "tools/build-universal-benchmark.py",
-      "generated": "2026-10-25",
+      "generated": "2026-10-29",
       "sourceFiles": 54
     }
   },
@@ -1126,6 +1126,278 @@
       }
     }
   ],
+  "graduate_competency": {
+    "note": "Flat, subject-neutral projection of the threshold shared-core statements as graduate competencies, for reuse as baseline context. Onboarding/CXP may offer these (if the user wishes) as an opt-in subset of the qualifier list (design-kb cxp-02_qualifiers), default none. House term: graduate competency / graduate skill / graduate attribute / academic practice - never \"academic skills\".",
+    "terms": [
+      "graduate competency",
+      "graduate skill",
+      "graduate attribute",
+      "academic practice"
+    ],
+    "qualifierCategory": "graduate-competency",
+    "items": [
+      {
+        "id": "subject-knowledge-and-understanding",
+        "label": "Subject knowledge and understanding",
+        "strand": "knowledge",
+        "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+        "studentStatement": "You know the core content of your subject well and can show it.",
+        "sharedBy": {
+          "threshold": 54,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding"
+      },
+      {
+        "id": "analysis-and-problem-solving",
+        "label": "Analysis and problem-solving",
+        "strand": "thinking",
+        "graduateStatement": "Graduates analyse problems and work towards solutions using the subject's approaches.",
+        "studentStatement": "You break problems down and work out solutions using your subject's methods.",
+        "sharedBy": {
+          "threshold": 50,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/analysis-and-problem-solving"
+      },
+      {
+        "id": "applying-knowledge-to-practice-or-problems",
+        "label": "Applying knowledge to practice or problems",
+        "strand": "application",
+        "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+        "studentStatement": "You can use what you know on real problems and in practical settings.",
+        "sharedBy": {
+          "threshold": 50,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems"
+      },
+      {
+        "id": "critical-evaluation-of-evidence-and-arguments",
+        "label": "Critical evaluation of evidence and arguments",
+        "strand": "thinking",
+        "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+        "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+        "sharedBy": {
+          "threshold": 50,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments"
+      },
+      {
+        "id": "oral-or-other-communication-to-audiences",
+        "label": "Oral or other communication to audiences",
+        "strand": "communication",
+        "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+        "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+        "sharedBy": {
+          "threshold": 50,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences"
+      },
+      {
+        "id": "research-and-enquiry-methods",
+        "label": "Research and enquiry methods",
+        "strand": "application",
+        "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+        "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself.",
+        "sharedBy": {
+          "threshold": 50,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/research-and-enquiry-methods"
+      },
+      {
+        "id": "theories",
+        "label": "Theories, concepts and debates",
+        "strand": "knowledge",
+        "graduateStatement": "Graduates understand the subject's main theories and concepts and the debates between them.",
+        "studentStatement": "You understand the main ideas and theories in your subject and where people disagree about them.",
+        "sharedBy": {
+          "threshold": 48,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/theories"
+      },
+      {
+        "id": "ethics",
+        "label": "Ethics, integrity and values",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+        "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+        "sharedBy": {
+          "threshold": 47,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/ethics"
+      },
+      {
+        "id": "history",
+        "label": "History, context and currency of the field",
+        "strand": "knowledge",
+        "graduateStatement": "Graduates place the subject in its history and context and know where it currently stands.",
+        "studentStatement": "You know how your subject developed, the settings it works in and what is current in it.",
+        "sharedBy": {
+          "threshold": 46,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/history"
+      },
+      {
+        "id": "teamwork-and-collaboration",
+        "label": "Teamwork and collaboration",
+        "strand": "communication",
+        "graduateStatement": "Graduates work effectively with others.",
+        "studentStatement": "You can work well with other people.",
+        "sharedBy": {
+          "threshold": 44,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/teamwork-and-collaboration"
+      },
+      {
+        "id": "independent-and-self-directed-learning",
+        "label": "Independent and self-directed learning",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates manage their own learning and work independently.",
+        "studentStatement": "You can manage your own learning and work on your own.",
+        "sharedBy": {
+          "threshold": 43,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/independent-and-self-directed-learning"
+      },
+      {
+        "id": "information-and-sources",
+        "label": "Information and sources",
+        "strand": "application",
+        "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+        "studentStatement": "You can find, choose and use the right sources and information for your subject.",
+        "sharedBy": {
+          "threshold": 42,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/information-and-sources"
+      },
+      {
+        "id": "data",
+        "label": "Data, numbers and quantitative reasoning",
+        "strand": "application",
+        "graduateStatement": "Graduates handle data and numbers appropriately for the subject.",
+        "studentStatement": "You can work with data and numbers in the way your subject needs.",
+        "sharedBy": {
+          "threshold": 42,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/data"
+      },
+      {
+        "id": "digital-skills",
+        "label": "Digital skills",
+        "strand": "application",
+        "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+        "studentStatement": "You can use the digital tools your subject depends on.",
+        "sharedBy": {
+          "threshold": 41,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/digital-skills"
+      },
+      {
+        "id": "sustainability",
+        "label": "Sustainability",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates understand the subject's bearing on sustainability and the environment.",
+        "studentStatement": "You understand how your subject affects sustainability and the environment.",
+        "sharedBy": {
+          "threshold": 37,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/sustainability"
+      },
+      {
+        "id": "professional-practice-and-employability",
+        "label": "Professional practice and employability",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates understand the subject's professional settings and are prepared for work.",
+        "studentStatement": "You understand how your subject is used at work and are ready for it.",
+        "sharedBy": {
+          "threshold": 35,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/professional-practice-and-employability"
+      },
+      {
+        "id": "written-communication",
+        "label": "Written communication",
+        "strand": "communication",
+        "graduateStatement": "Graduates write in the forms the subject requires.",
+        "studentStatement": "You can write in the forms your subject needs.",
+        "sharedBy": {
+          "threshold": 33,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/written-communication"
+      },
+      {
+        "id": "reflection-and-personal-development",
+        "label": "Reflection and personal development",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates reflect on their learning and practice and plan their development.",
+        "studentStatement": "You can reflect on how you learn and work, and plan how to improve.",
+        "sharedBy": {
+          "threshold": 32,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/reflection-and-personal-development"
+      },
+      {
+        "id": "equality",
+        "label": "Equality, diversity and inclusion",
+        "strand": "autonomy",
+        "graduateStatement": "Graduates recognise diversity and inclusion as they bear on the subject.",
+        "studentStatement": "You understand how diversity and inclusion matter in your subject.",
+        "sharedBy": {
+          "threshold": 30,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/equality"
+      },
+      {
+        "id": "enterprise-and-creativity",
+        "label": "Enterprise and creativity",
+        "strand": "application",
+        "graduateStatement": "Graduates show creativity and enterprise in applying the subject.",
+        "studentStatement": "You can be creative and enterprising in how you use your subject.",
+        "sharedBy": {
+          "threshold": 23,
+          "of": 54
+        },
+        "core": true,
+        "statementId": "qaa-universal/threshold/enterprise-and-creativity"
+      }
+    ]
+  },
   "pathwayMapping": {
     "adapt-starting-progressing-succeeding": {
       "coverage": {

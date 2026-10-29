@@ -1,33 +1,77 @@
 # adapt-grow-promptbuilder (GROW)
 
-A **prompt generator**. The learner builds a learning prompt from a **Role**, a
-**Function** and some **Context**, using example chips (or typing their own). The
-parts assemble live into a full prompt they can copy and take to a real AI tool.
-It teaches the Role/Function/Context framework by doing, and completes once every
+A **prompt generator**. The learner builds a learning prompt from parts (e.g.
+**Role**, **Function**, **Context/level/module/difficulty**). Each part offers:
+
+- **quick chips** (`_chips`) that *append* their text, and/or
+- a **starters dropdown** beneath the field that *replaces* the field with a
+  fuller starter — scalable to many, and **groupable by level** (`_starterGroups`).
+
+The parts assemble live (via `_assembleTemplate`) into a prompt they can copy and
+take to a real AI tool. It teaches the framework by doing and completes once every
 part is filled. It assembles prompt *text* only — it does not call an AI.
 
-## Authoring
+## Part field types
+
+| Field | Effect |
+| --- | --- |
+| `_chips: [..]` | quick example buttons; click appends into the field |
+| `_type: "select"` + `_options: [..]` | the field itself is a dropdown (its value is used directly) |
+| `_starters: [..]` | a flat dropdown under the field; choosing one fills the field |
+| `_starterGroups: [{label, items:[..]}]` | the dropdown, grouped as `<optgroup>`s (e.g. Level 4–7) |
+| `_library: "<id>"` (+ optional `_libraryStage`) | pull `_starterGroups` from a shared library (see below) |
+| `_startersPlaceholder` | placeholder text for the starters dropdown |
+
+A text part can combine chips **and** a starters dropdown. `_options` (select) is
+separate — that part's value *is* the chosen option.
+
+## Reusable starter libraries
+
+Keep prompt starters in one place and reuse them across components/courses.
+Register a library on the course (`course.json`):
+
+```json
+"_growPromptLibraries": {
+  "assessment": {
+    "role":     [ { "label": "Level 4 — first year", "items": ["..."] }, ... ],
+    "function": [ ... ],
+    "module":   [ ... ],
+    "difficulty": [ ... ]
+  }
+}
+```
+
+Then a part just references it (stage defaults to the part's `_key`):
+
+```json
+{ "_key": "role", "label": "Role", "help": "...", "placeholder": "...", "_library": "assessment" }
+```
+
+A ready-made, assessment-focused library (Level 4–7, student perspective) ships at
+[`libraries/assessment-prompts.json`](libraries/assessment-prompts.json) — register
+its `assessment` object as `_growPromptLibraries`, or paste a stage's groups
+straight into a part's `_starterGroups`. Inline `_starterGroups`/`_starters`
+always override `_library`.
+
+## Authoring example
 
 ```json
 {
   "_component": "growPromptBuilder",
   "displayTitle": "Build a learning prompt",
-  "body": "<p>A strong prompt has three parts. Build one below.</p>",
-  "instruction": "Pick a chip or type your own in each box.",
-  "_assembleTemplate": "Act as {role}. {function} Context: {context}.",
-  "_assembledLabel": "Your prompt",
-  "_copyText": "Copy prompt",
-  "_whyText": "A role, a clear task and your context make the answer specific - and make you do the thinking first.",
-  "_setCompletionOn": "allFilled",
+  "instruction": "Pick a chip, pick a starter by level, or type your own in each box.",
+  "_assembleTemplate": "Act as {role}. {function}. Context: my level is {level}, I am working on {module}, and I find {difficulty} hard.",
   "_parts": [
-    { "_key": "role", "label": "Role", "help": "What should the AI act as?", "placeholder": "Act as...", "_chips": ["a supportive tutor for a first-year", "a critical friend", "an expert examiner"] },
-    { "_key": "function", "label": "Function", "help": "What should it do?", "placeholder": "Explain / quiz / give feedback...", "_chips": ["explain this three ways: simple, intermediate, advanced", "quiz me and give feedback on my answers", "play devil's advocate against my argument"] },
-    { "_key": "context", "label": "Context", "help": "Your level, module, what you have covered.", "placeholder": "I am studying...", "_chips": ["I am a first-year studying {{context}}", "I keep confusing two key terms", "I have already read the set chapter"] }
+    { "_key": "role", "label": "Role", "help": "What should the AI act as?", "placeholder": "Act as...", "_chips": ["a critical friend"], "_library": "assessment" },
+    { "_key": "function", "label": "Function", "help": "What should it do?", "placeholder": "Explain / quiz / critique...", "_library": "assessment" },
+    { "_key": "level", "label": "Your level", "_type": "select", "_options": ["Level 4: first-year undergraduate", "Level 5: second-year undergraduate", "Level 6: final-year undergraduate", "Level 7: Master's"] },
+    { "_key": "module", "label": "Module or topic", "placeholder": "e.g. the topic you are revising", "_library": "assessment" },
+    { "_key": "difficulty", "label": "What you find hard", "placeholder": "e.g. telling two key terms apart", "_library": "assessment" }
   ]
 }
 ```
 
 - `_assembleTemplate` uses `{key}` placeholders matching each part's `_key`.
-- Chips append their text into that part's field; typing works too.
+- Chips append; starters replace; typing always works.
 
 Like the other GROW components, the view calls `setReadyStatus()` itself.

@@ -23,8 +23,9 @@
 
 .grow-mode__panel {
   position: absolute;
-  left: 0;
-  top: calc(100% + 0.4rem);
+  right: 0;                   // anchor to the button's right edge so it opens
+  left: auto;                 // leftward and stays on-screen (button is nav-right)
+  top: calc(100% + 1.5rem);   // drop clear of the heading bar, with whitespace
   min-width: 12rem;
   display: grid;
   gap: 0.25rem;
@@ -33,9 +34,24 @@
   color: var(--ink);
   border: 1px solid var(--line);
   border-radius: 0.75rem;
-  box-shadow: 0 12px 34px -14px var(--shadow);
+  // house drop shadow: tight contact + soft ambient
+  box-shadow: 0 1px 2px var(--shadow), 0 14px 32px -12px var(--shadow);
+  // fade + slight slide, BOTH directions (see [hidden] below)
+  transform-origin: top right;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0s;
 }
-.grow-mode__panel[hidden] { display: none; }
+// Keep it rendered when closed (not display:none) so it can animate out; the
+// visibility flip is delayed until the fade finishes.
+.grow-mode__panel[hidden] {
+  display: grid;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.4rem) scale(0.98);
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0s linear 0.16s;
+}
 
 .grow-mode__opt {
   display: flex;
