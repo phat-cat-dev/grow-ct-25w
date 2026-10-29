@@ -129,6 +129,11 @@
             "advanced": { "$ref": "#/$defs/benchmarkKeyList" }
           },
           "additionalProperties": false
+        },
+        "attribution": {
+          "type": "object",
+          "description": "Capability ref -> direct | indirect-only | unattributed (no capability-match benchmark lands on it).",
+          "additionalProperties": { "enum": ["direct", "indirect-only", "unattributed"] }
         }
       },
       "additionalProperties": false
