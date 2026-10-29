@@ -53,11 +53,56 @@ STRANDS = collections.OrderedDict([
 # Tier voice: who the AI should be, and how the task is framed.
 ROLES = {
  'introductory': ['a patient tutor introducing [subject] to someone new to it',
-                  'a study adviser who explains {pathway} from first principles'],
+                  'a study adviser who explains {pathway} from first principles',
+                  'an academic practice specialist who explains this step by step',
+                  'an academic librarian who shows me how to find and use good sources'],
  'intermediate': ['an academic tutor who expects me to analyse and evaluate, not just describe',
-                  'a {pathway} tutor who asks me questions before giving answers'],
+                  'a {pathway} tutor who asks me questions before giving answers',
+                  'an academic practice specialist who asks me to analyse my own work',
+                  'an academic librarian who helps me search for and evaluate sources'],
  'advanced': ['a critical peer reviewer in [subject]',
-              'an experienced researcher who challenges my judgements on {pathway}'],
+              'an experienced researcher who challenges my judgements on {pathway}',
+              'an academic practice specialist who challenges my approach and my judgements',
+              'an academic librarian who helps me search the literature systematically'],
+}
+# Role group added to the RTCF bank (academic-prompt-bank.json) and its instances.
+SUPPORT_ROLES = {'label': 'Academic practice support', 'items': [
+    'an academic practice specialist who helps me develop how I study and write',
+    'an academic practice specialist in [academic practice, e.g. criticality]',
+    'an academic librarian who helps me find and evaluate sources',
+    'an academic librarian who helps me reference accurately',
+]}
+
+# One practical prompt per pathway, distilled by hand from its 9 capability
+# statements (introductory to advanced). Generic: [subject] and the {topic} slot
+# stay for the learner; the AI coaches rather than does the work.
+PATHWAY_PROMPTS = {
+ 'starting-progressing-succeeding': ('an academic practice specialist',
+    'I want to get more out of studying {topic} in [subject]. Help me work out what excelling would look like for me now: ask me three questions about how I study, then help me set one goal about mastering the material rather than just the mark, name one pressure that knocks my confidence and a way to manage it, and put one strength into words I could use with an employer. Treat my setbacks as part of learning. Coach me with questions; do not answer for me.'),
+ 'understanding-learning-assessment-feedback': ('an academic practice specialist',
+    'Here are the learning outcome, marking criteria and feedback for my work on {topic}: [paste them]. Help me read them as a tutor would: explain what the outcome asks me to show and whether the task is formative or summative, then help me judge my own work against the criteria, pick the two feedback points that matter most, and turn them into an action plan with one question to take to my tutor. Ask me to make each judgement before you give yours.'),
+ 'finding-using-sources': ('an academic librarian',
+    'I need scholarly sources on {topic} for [subject]. Be my search partner, not my searcher: help me pull keywords and synonyms from my task, build one search string with Boolean operators for the library discovery service, and plan how I will refine it after the first results and extend it through citation searching. Then give me three questions to test each source for currency, authority and relevance, and tell me how I will know the main debates are covered. Do not list sources for me.'),
+ 'referencing': ('an academic librarian',
+    'Check my referencing on {topic} without rewriting my work. Here are a paragraph and its references in [referencing style]: [paste them]. Tell me where a quotation or paraphrase needs acknowledging, where an in-text citation or reference list entry is incomplete or inconsistent, and how to reference any trickier source types. Then ask me one question about why acknowledging this source matters for honest, fair work in my field.'),
+ 'criticality': ('an academic practice specialist',
+    'Help me think critically about {topic} in [subject] rather than describe it. First ask me to sum up the main positions in the debate and who holds them. Then, for one scholarly interpretation I give you, question me on its argument, evidence and method until I can say what it does well and where it is weak. Finally, push me to judge which factors matter most and to state my own position, and point out where my stance shapes my reading.'),
+ 'academic-writing': ('an academic practice specialist',
+    'I am writing an assignment on {topic} in [subject]: [paste the question and my draft]. Do not rewrite it. First help me check I have read the question\'s steer and keywords correctly. Then review the draft for structure, argument, clarity and use of sources: show me where a paragraph lacks a clear point, where a sentence would be clearer in the active voice, and where a source speaks before I do. Finish with the three edits that would most improve it and a proofreading checklist.'),
+ 'presenting': ('an academic practice specialist',
+    'I am giving a [time]-minute presentation on {topic} for [subject] to [audience]. Help me plan it from the brief: what it is testing, a clear structure with an engaging opening, and accessible slides that follow "less is more". Then rehearse with me: ask the three hardest questions an examiner or panel might ask, and give feedback on how clearly and confidently I defend my argument. If it is a group presentation, help us agree roles and how we will handle disagreement.'),
+ 'revising-exams': ('an academic practice specialist',
+    'My [exam type] on {topic} is in [number] weeks. Help me revise actively, not by rereading: ask me questions to find the gaps in what I know, build a simple plan that targets them in the time I have, and suggest two active techniques to try. After each session, quiz me without notes so I can judge what is working and change my plan. Finish with a strategy for the day itself, including how to manage nerves.'),
+ 'researching-research-methods': ('an academic practice specialist',
+    'I am planning a research project on {topic} in [subject]. Act like a supervisor who questions me rather than designs it for me. Help me narrow the topic to a question I can answer, with a rationale and aims; place it in the literature I have read so far; choose and justify a methodology and methods; spot the ethics issues, including consent and anonymity; and check that the scope fits my time and word count. End by naming the weakest part of my plan.'),
+ 'reflective-practice': ('an academic practice specialist',
+    'Help me reflect on a recent experience of {topic}: [describe what happened]. Take me through a reflective model one stage at a time, asking questions rather than writing it for me. Push me past description: what went well and what did not, why, and how my own values and assumptions shaped what I noticed. Finish by helping me turn it into a dated action plan I could use for my continuing professional development.'),
+ 'work-based-experiential-learning': ('an academic practice specialist',
+    'I am starting a placement or work experience in [setting], linked to {topic}. Help me get the most from it: set two learning goals, plan how to use my mentor or supervisor, and pick one theory from my course to test in practice. Afterwards, take me through Kolb\'s experiential learning cycle on one real situation, ask me to justify a professional judgement I made, and help me say what it taught me about the practitioner I am becoming.'),
+ 'ai-technology': ('an academic practice specialist',
+    'I want to use AI responsibly on my work on {topic} in [subject]. Before anything else, ask me what my module\'s assessment guidance allows. Then act as a critical friend, not a ghost writer: help me decide which parts of the task AI could support and which must be my own thinking, show me how to fact-check anything you tell me, and help me write an honest statement of how I used AI. Remind me that you are not a source I can cite.'),
+ 'creativity': ('an academic practice specialist',
+    'Help me take a more creative approach to {topic} in [subject]. Run a structured session: first help me generate as many ideas as I can without judging them, then help me choose between them using criteria I set. If I get stuck or slip into perfectionism, suggest a different method to try. Finally, help me turn the best idea into a small first step I can act on this week, and explain which creativity approach we used and why it suits the task.'),
 }
 TASKS = {
  'introductory': 'Using [topic] as the example, explain step by step how to {cap}, then ask me to try it.',
@@ -289,14 +334,24 @@ def build(include_floor):
                 })
 
     activities, bands = build_activities()
+    pathway_prompts = []
+    for pid in pathways:
+        if pid not in PATHWAY_PROMPTS:
+            raise SystemExit('no distilled prompt for pathway ' + pid)
+        role, prompt = PATHWAY_PROMPTS[pid]
+        pathway_prompts.append({
+            'pathway': pid, 'title': pathways[pid]['title'], 'role': role, 'prompt': clean(prompt),
+            'distilledFrom': [a['id'] for a in activities if a['pathway'] == pid],
+        })
     return {
         '_comment': 'GENERATED by tools/build-prompt-sets.py; do not hand-edit. Academic-practice '
                     'prompt starters (RTCF), categorised strand > graduate competency > pathway > tier '
                     'from the universal benchmark keys, plus `activities`: one per pathway capability, '
                     'each a sequence of prompts (explain, see an example, try it, check my attempt, '
                     'evidence it) with {verb} and {topic} slots; verbs come from the voice '
-                    'specification section 16 band the pathway tier anchors to. Draft wording: review '
-                    'before release.',
+                    'specification section 16 band the pathway tier anchors to; and `pathwayPrompts`: '
+                    'one practical prompt per pathway, distilled by hand from its 9 capability '
+                    'statements, with a suggested role. Draft wording: review before release.',
         'source': {
             'universal': os.path.relpath(UNIVERSAL, REPO_ROOT).replace('\\', '/'),
             'pathways': 'catalogue/context/pathway/*.json',
@@ -311,6 +366,7 @@ def build(include_floor):
         'sets': sets,
         'verbBands': bands,
         'activities': activities,
+        'pathwayPrompts': pathway_prompts,
     }
 
 
@@ -361,6 +417,9 @@ def activity_slice_for(lib, tier, pathways=None):
         title = lib['pathways'][pid]['title']
         practice.append(title)
         role.append({'label': title, 'filter': title, 'items': lib['pathways'][pid]['role'][tier]})
+        whole = next((w for w in lib.get('pathwayPrompts') or [] if w['pathway'] == pid), None)
+        if whole:
+            function.append({'label': '%s: whole-pathway prompt' % title, 'filter': title, 'items': [whole['prompt']]})
         function += [{'label': '%s %d: %s' % (title, i + 1, a['statement']), 'filter': title,
                       'items': [p for f in a['functions'] for p in f['prompts']]} for i, a in enumerate(acts)]
         verb.append({'label': '%s verbs' % acts[0]['verbBand'], 'filter': title, 'items': acts[0]['verbs']})
