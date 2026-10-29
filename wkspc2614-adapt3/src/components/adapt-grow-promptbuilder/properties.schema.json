@@ -153,6 +153,12 @@
             "title": "Library stage key",
             "help": "Which stage within the library to use. Defaults to this part's _key.",
             "default": ""
+          },
+          "_libraryMerge": {
+            "type": "boolean",
+            "title": "Append library starters",
+            "help": "Append the library's groups after this part's inline _starterGroups instead of being overridden by them.",
+            "default": false
           }
         }
       }

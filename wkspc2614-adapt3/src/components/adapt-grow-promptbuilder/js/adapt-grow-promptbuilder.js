@@ -37,16 +37,23 @@ class PromptBuilderView extends ComponentView {
   //   part._library = "<libraryId>"  (+ optional part._libraryStage, else _key)
   // Libraries live on the course model as _growPromptLibraries:
   //   { "<libraryId>": { "<stage>": [ { "label": "...", "items": [...] }, ... ] } }
-  // Inline _starterGroups / _starters always win.
+  // Inline _starterGroups / _starters win, unless _libraryMerge appends the
+  // library's groups after the inline ones.
   resolveLibraries() {
     const libs = Adapt.course && Adapt.course.get('_growPromptLibraries');
     if (!libs) return;
     (this.model.get('_parts') || []).forEach(p => {
       const hasInline = (p._starterGroups && p._starterGroups.length) || (p._starters && p._starters.length);
-      if (!p._library || hasInline) return;
+      if (!p._library || (hasInline && !p._libraryMerge)) return;
       const lib = libs[p._library];
       const groups = lib && lib[p._libraryStage || p._key];
-      if (groups && groups.length) p._starterGroups = groups;
+      if (!groups || !groups.length) return;
+      if (p._libraryMerge && p._starterGroups && p._starterGroups.length) {
+        if (!p._libraryMerged) p._starterGroups = p._starterGroups.concat(groups);
+        p._libraryMerged = true;
+      } else {
+        p._starterGroups = groups;
+      }
     });
   }
 
