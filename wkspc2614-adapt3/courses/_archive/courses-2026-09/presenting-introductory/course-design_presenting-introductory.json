@@ -1,0 +1,1811 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "presenting-introductory",
+  "slug": "presenting-introductory",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "Presenting",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "gates/CTX",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Presenting",
+            "tier": "introductory",
+            "baseline": true,
+            "note": "Core facets only. No subject, level, or institutional facets. No sourceConsultation triggers fire for this course."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 7 (Presenting), Beginner band" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T09:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Presenting",
+            "tierName": "Introductory Stage",
+            "displayName": "Presenting: Introductory Stage",
+            "slug": "presenting-introductory",
+            "folder": "courses/presenting-introductory/"
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 7 (Presenting)" },
+            { "doc": "docs/authoring/course-template.md", "ref": "Course Slug Convention" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T09:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "voiceBandAnchor": {
+              "status": "confirmed",
+              "bands": "2-4 (default)",
+              "mapping": {
+                "beginner": "§16 Beginner (band 2)",
+                "intermediate": "§16 Intermediate (band 3)",
+                "advanced": "§16 Advanced (band 4)"
+              },
+              "provisionalSource": "pathway-tier-mapping.md Pathway 7: '**Voice-band anchor:** Beginner→§16 Beginner, Intermediate→§16 Intermediate, Advanced→§16 Advanced (bands 2–4, default). Provisional: confirm at pathway pressure-test.'",
+              "confirmationNote": "Anchor provisionally set at mapping time (v3.1), confirmed here at pathway pressure-test. This session IS the pressure-test referenced by the provisional marker."
+            },
+            "rejectedAlternative": {
+              "option": "Foundation down-skew (bands 1-3)",
+              "rationale": "Rejected because it places Advanced at §16 Intermediate (band 3), whose verbs cannot carry Pathway 7 Advanced content: viva defence, professional pitch, OCEAN personality-types group work. These require band 4 (§16 Advanced) register."
+            },
+            "parityNote": "Sharing an anchor with Academic Writing is NOT a parity claim. Per open-decisions #8, parity scope = context-within-pathway-tier; no programme-wide equivalence across different pathways at the same tier.",
+            "D1_priorExperience": {
+              "anchor": "No prior experience of presenting deliberately for assessment.",
+              "authoringNote": "Most learners have 'done a presentation' at school, so the pitch must work for someone who thinks they already know this, without turning remedial."
+            },
+            "D2_cognitiveDemand": {
+              "level": "Recognition, recall, description, guided application.",
+              "verbs": ["describe", "identify", "recognise", "explain", "distinguish", "connect"],
+              "source": "§16 Beginner verb band"
+            },
+            "D3_taskComplexity": {
+              "level": "Well-defined, one variable at a time, settled procedure.",
+              "authoringNote": "The format-coverage invariant pushes against this: formats are shown sequentially and separately, never weighed against each other. Weighing formats is Intermediate."
+            },
+            "D4_learnerAutonomy": "High scaffolding; model before practice; feedback that shows.",
+            "courseLevelOutcome": "Describe the process for building a presentation, and identify what a brief asks of you."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 7 (Presenting), 'Provisional: confirm at pathway pressure-test' — confirmed" },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "§3 (anchor rule), §5 D1-D4 Beginner column, §6 verb bands" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#8 (parity scope = context-within-pathway-tier)" },
+            { "store": "design-kb", "id": "tier-bands/introductory", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-04T09:00:00Z",
+          "sessionRef": "Presenting: Introductory Phase A close-write, 04 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "pageKey": "presenting-introductory-L02",
+                "title": "What is a presentation?",
+                "outcomes": [
+                  "Identify the main types of presentation you may be asked to give.",
+                  "Describe where presenting is used beyond assessment."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L03",
+                "title": "Reading the brief",
+                "outcomes": [
+                  "Identify what a presentation brief asks you to do.",
+                  "Distinguish what a brief requires from what it leaves to you."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L04",
+                "title": "Research and planning",
+                "outcomes": [
+                  "Describe the steps between receiving a brief and having a workable plan.",
+                  "Recognise what makes a plan usable."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L05",
+                "title": "Designing visual aids",
+                "outcomes": [
+                  "Distinguish a visual aid that carries a point from one that carries a script.",
+                  "Recognise features that make a slide or poster support the speaker."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L06",
+                "title": "Structuring your argument",
+                "outcomes": [
+                  "Describe the hook-body-conclusion structure.",
+                  "Explain how a conclusion that returns to the objectives closes the argument."
+                ]
+              }
+            ],
+            "note": "5 lessons. Step 5 of the recipe (practise) is named in L06's practical-guidance block only; full delivery treatment is Intermediate. Rationale for five over four: the four-lesson shape merged research/planning with visual aids; splitting them was chosen deliberately with the thin-lesson risk accepted and mitigated by requiring a full worked example in each. Interior patterns and check-component choices per lesson are DEFERRED to Phase B. Thin-lesson risk on L04/L05 logged to backlog 5.59."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 7 (Presenting), Beginner tier scope" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-04T12:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 4 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/timeline",
+            "rationale": "Linear/staged, non-circular fit for the five-lesson sequence, which is itself the five-step recipe the course teaches: read the brief, research, plan, design visual aids, structure. Stage count 5 sits mid-range for the component.",
+            "alternativesConsidered": [
+              { "component": "palette/text", "reason": "Fixed-value default, passed over: the sequence benefits from being seen" },
+              { "component": "palette/hotgraphic", "reason": "For cyclical models; Presenting's process is explicitly sequential, not a loop" },
+              { "component": "palette/flipcard", "reason": "Paired reveal suits parallel choices; these lessons are ordered, and flipcard loses the sequence" },
+              { "component": "palette/narrative", "reason": "Requires per-item images; unscoped image burden, same objection Intermediate raised" }
+            ],
+            "note": "Third consecutive course to select timeline. Recorded as a genuine fit rather than a close call — the alternatives were considered and none contests it. Consistency of signpost across the programme is a side effect, not the reason."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "#32 VO-1 (RESOLVED)" },
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Block 3: Signpost" },
+            { "store": "design-kb", "id": "palette/timeline", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T09:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "contextPacks": [
+              {
+                "packId": "baseline",
+                "status": "new",
+                "note": "NEW - character Nia (tier-scoped override); generic undergraduate, no named discipline; plain register"
+              },
+              {
+                "packId": "criminology",
+                "status": "new",
+                "note": "NEW - character Owain (tier-scoped override, pack root keeps Rhian); evidence-handling register, careful about claims and their support; deliberately different temperament from Rhian"
+              },
+              {
+                "packId": "psychology",
+                "status": "new",
+                "note": "NEW - character Amara (tier-scoped override, pack root keeps Emma); methodical, precise about findings and their limits; more tentative than Owain"
+              }
+            ],
+            "couplingScope": "course-wide",
+            "perLessonCouplingType": "DEFERRED to Phase B per CP-1b/c. Earlier recon predicted L02/L05 token-substitution, but format-coverage invariant likely pushes both toward structured-fields. Re-derive at Phase B, do not carry forward.",
+            "tierScopedResolution": "All three packs use CP-1f tier-scoped character override (content/context-packs/<pack>/presenting-introductory/context.json). Pack-root characters (Jess, Rhian, Emma) remain untouched for Academic Writing courses. Resolution unverified against a real merge until presenting-introductory has an Adapt shell — confirm at first build."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1f amendment (4 Sep 2026) — tier-scoped character resolution" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1b/c (coupling types deferred to Phase B)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-04T14:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 4 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "confidenceItems": [
+              "I can name the main types of presentation and say where each one is used.",
+              "I can work out what a presentation brief is asking me to do, and what it leaves to me.",
+              "I can get from a brief to a workable plan for a presentation.",
+              "I can tell the difference between a slide that supports what I'm saying and one that just repeats it.",
+              "I can structure a presentation so it opens with a hook and closes by returning to the objectives."
+            ],
+            "pairing": "C-PRE/C-POST paired via _selfAssessmentGroupId",
+            "reflectiveBridge": "OFF",
+            "note": "Five items, one per lesson, each folding that lesson's two outcomes into a single ratable claim. Deliberately coarser than the outcomes themselves: a learner can rate 'I can get from a brief to a workable plan' but not 'recognise what makes a plan usable'. Group id: presenting-introductory-confidence."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CC-1 (confidence pages)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "WR-2a (cap 10 items)" },
+            { "doc": "docs/authoring/c-pre-template.md", "ref": "Cross-Reference: Confirmed Decisions" },
+            { "store": "design-kb", "id": "palette/confidence", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T09:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "resourcesDrawer": "ON",
+            "contents": "DEFERRED to gate W1 - do not populate the references component's items in this phase",
+            "note": "Structural presence confirmed; the references component exists per the wrapper-close skeleton. Matches both Academic Writing courses. The fixed default is OFF, overridden here deliberately: Presenting will accumulate lesson-level references during Phase B authoring like any other course, and RF-1 consolidates them at W-CLOSE."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "RF-1 to RF-4 (references/resources design cluster)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#34 PLR-1 (lesson-level references workflow)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T09:00:00Z",
+          "sessionRef": "presenting-introductory Phase A design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: identify the main types of presentation you may be asked to give, and describe where presenting is used beyond assessment."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B1", "version": "0.1.0", "note": "Learning outcomes per confirmed lesson record" },
+            { "doc": "courses/presenting-introductory/course-design_presenting-introductory.json", "ref": "gates/A3 lessons[0].outcomes" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "slots": {
+              "concept-intro": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "Definitional prose — what a presentation is and how it differs from written assessment. No pattern applies; teaching prose at point of need."
+              },
+              "interior": {
+                "pattern": "activity-patterns/explore-model",
+                "realisation": "palette/accordion",
+                "itemCount": 6,
+                "items": ["individual", "poster", "group", "professional/practice-based", "interview-based", "technology-based"],
+                "coupling": {
+                  "coupled": false,
+                  "note": "The six types ARE the formats FCI-1 puts in the shell. The book teaches breadth deliberately — professional presentations are illustrated across marketing, social work and sport science in one paragraph. Coupling would give each learner one discipline's version of each type, teaching less than the generic treatment. Discipline arrives at L03 when there is a brief to read."
+                },
+                "rationale": "Six types exceed the tabs 2–4 schema limit. The explore-model store names accordion for exactly this case — 'use when more than 4 alternatives or when content volume varies significantly' — and both hold: the book gives individual and poster substantial treatment, technology-based less. Flipcard was considered (3–6 range) but is a paired reveal for short content; these descriptions run a paragraph each. Tabs was the initial choice and was rejected on the schema limit rather than on fit."
+              },
+              "practical-guidance": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "The transferable-skills argument and what to do with it. Teaching prose."
+              }
+            },
+            "note": "All three packs supply NOTHING for L02. The three merged variants are identical for this lesson. This is a decision, not unfinished pack authoring."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/explore-model", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/text", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false for content with no coupling mechanism)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "status": "shell-authored",
+              "note": "No context-coupled worked example. Content is the six type descriptions, authored once in the shell, sourced from Chapter 11 'Presentations and assessment'. All three packs receive identical content."
+            }
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 11: Presentations and assessment" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "coupled": false,
+              "note": "Tests recognition of presentation types — the six types are the fixed reference points, not swappable per context."
+            },
+            "content": {
+              "stem": "A student is asked to summarise their dissertation research for an academic conference audience. Which type of presentation is this?",
+              "correct": "A poster presentation",
+              "distractors": [
+                "An interview-based presentation",
+                "A technology-based presentation",
+                "A group presentation"
+              ],
+              "attempts": 2
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Think about a presentation you might have to give this year. Which of these types is it likely to be, and what would your tutor be assessing?",
+            "_isOptional": true
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0", "note": "Reflective prompt per confirmed lesson record" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal expand/collapse handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L02-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required — interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T14:00:00Z",
+          "sessionRef": "presenting-introductory L02 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: identify what a presentation brief asks you to do, and distinguish what a brief requires from what it leaves to you."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B1", "version": "0.1.0", "note": "Learning outcomes per confirmed lesson record" },
+            { "doc": "courses/presenting-introductory/course-design_presenting-introductory.json", "ref": "gates/A3 lessons[1].outcomes" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "slots": {
+              "concept-intro": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "Teaching prose introducing the requires/leaves-open distinction, and naming that the worked example uses an individual presentation while the reading approach applies to any type."
+              },
+              "interior": {
+                "pattern": "activity-patterns/inline-commentary",
+                "realisation": "palette/annotated",
+                "segmentCount": 5,
+                "annotatedCount": 4,
+                "coupling": {
+                  "type": 3,
+                  "note": "Type 3 (CP-1f whole-prose) — each pack supplies the entire brief passage with its four annotations. Shell provides the slot marker only; merge replaces wholesale."
+                },
+                "rationale": "A brief is prose under examination. The learner reads a real artefact with commentary on what each part is telling them. Annotated is the component built for exactly this. The inline-commentary pattern's slotTypes list [concept-intro, practical-guidance], but worked-example fits the same interaction model: prose with selectable phrases revealing expert commentary."
+              },
+              "practical-guidance": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "What to do with a brief before you start work."
+              }
+            },
+            "note": "FCI-1 compliance — all three briefs are INDIVIDUAL presentations. Format is held constant in the shell; only discipline varies by pack. Varying the brief type per pack would mean one learner practising on a poster brief and another never seeing one, which FCI-1 forbids."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/inline-commentary", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/annotated", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/text", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1f (Type 3 whole-prose replacement)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "FCI-1 (format-coverage invariant)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "status": "per-pack",
+              "packs": ["baseline", "criminology", "psychology"],
+              "shape": "Five-segment brief with four annotations. Same four annotation moves across all three: (1) know who is listening; (2) the format constraint; (3) required-but-not-prescribed; (4) the time limits.",
+              "packFiles": "reading-the-brief.json under content/context-packs/<pack>/presenting-introductory/",
+              "baseline": "Natalie's marketing brief from Chapter 11 'Planning, structuring, and designing your presentation'.",
+              "criminology": "Authored fresh on the same skeleton — evidence-handling discipline, audience/format/required-elements/time structure.",
+              "psychology": "Authored fresh on the same skeleton — research-methods discipline, audience/format/required-elements/time structure.",
+              "authoringStatus": "CONTENT NOT YET WRITTEN — authored at content session."
+            }
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 11: Planning, structuring, and designing your presentation" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "coupled": false,
+              "note": "Tests the requires/leaves-open distinction — the concept is fixed across contexts, not swappable per discipline."
+            },
+            "content": {
+              "stem": "A brief says: 'You must include at least one slide on your methodology.' Which is this?",
+              "correct": "A requirement — the brief specifies it",
+              "distractors": [
+                "A choice the brief leaves to you",
+                "A marking criterion",
+                "A time constraint"
+              ],
+              "attempts": 2
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "supersedes": 1,
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "coupled": false,
+              "note": "Tests the requires/leaves-open distinction — the concept is fixed across contexts, not swappable per discipline."
+            },
+            "content": {
+              "stem": "A brief says: 'Your presentation must include at least one example from published research.' Which of the following is true?",
+              "correct": "Including a research example is a requirement; which example you choose is yours to decide.",
+              "distractors": [
+                "You must use the example your tutor recommends.",
+                "Including a research example is optional because the brief says 'at least one'.",
+                "You should include as many examples as possible to show breadth."
+              ],
+              "attempts": 2
+            },
+            "correctionNote": "Seq 1's stem asked the learner to name a category ('Which is this?'), which tests recognition of a label. Seq 2's stem asks whether a statement is true given the same kind of brief phrase, requiring the learner to apply the requires/leaves-open distinction rather than merely recognise it. The outcome says 'distinguish', not 'identify', so the question must test application, not labelling."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T16:00:00Z",
+          "sessionRef": "R46 presenting-introductory L03 content session, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Look at an assignment brief you have been given this term. What does it require, and what does it leave for you to decide?",
+            "_isOptional": true
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0", "note": "Reflective prompt per confirmed lesson record" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Annotated component's single-open default handles pacing — opening a new note closes any open one. The 5.75 accordion collapse question does not arise; annotated has its own internal pacing."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "palette/annotated", "version": "0.1.0", "note": "Single-open by default per configNotes" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L03-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required — interior is annotated (text passage with notes), check is mcq (text). No images."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T15:00:00Z",
+          "sessionRef": "presenting-introductory L03 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: describe the steps between receiving a brief and having a workable plan, and recognise what makes a plan usable."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B1", "version": "0.1.0", "note": "Learning outcomes per confirmed lesson record" },
+            { "doc": "courses/presenting-introductory/course-design_presenting-introductory.json", "ref": "gates/A3 lessons[2].outcomes" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "slots": {
+              "concept-intro": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "Prose introducing what planning is for, and why the gap between reading a brief and drafting is where most time is lost."
+              },
+              "interior": {
+                "pattern": "activity-patterns/decision-scenario",
+                "realisation": "palette/branching",
+                "_selectionBehaviour": "commit",
+                "itemCount": 3,
+                "coupling": {
+                  "type": 3,
+                  "note": "Type 3 (CP-1f whole-prose) — each pack supplies the entire scenario with its three choices and consequences. The pattern's contextAffinity recommends this: variationTypes ['whole-prose'], benefitsFromFacets ['subject'], 'Decision scenarios benefit strongly from discipline-specific professional dilemmas.'"
+                },
+                "rationale": "The outcome 'recognise what makes a plan usable' is served better by facing the decision than by reading about it. The book's Natalie passage is a negative example of exactly this — she skims, half-remembers a model, and picks content for effect. Branching turns that into a choice the learner makes rather than a story they read. FIRST USE of the branching component in authored courseware; the pattern was recorded ahead of use with Presenting named as a first home."
+              },
+              "practical-guidance": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "What a usable plan looks like when you have one."
+              }
+            },
+            "note": "The interior slot uses activity-patterns/decision-scenario whose slotTypes list is ['worked-example', 'practical-guidance']. The interior slot maps to 'worked-example' — unlike L03-B2, which had to argue past the store (5.76), this is within the declared list."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/decision-scenario", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/branching", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/text", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1f (Type 3 whole-prose replacement)" },
+            { "doc": "docs/authoring/component-specs/branching.md", "ref": "§1 First homes: Presenting named" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "status": "per-pack",
+              "packs": ["baseline", "criminology", "psychology"],
+              "shape": "Three-choice dilemma continuing that pack's L03 brief. Same three moves throughout: (1) start building slides immediately; (2) read broadly without a target; (3) turn the brief's required elements into questions first.",
+              "packFiles": "research-and-planning.json under content/context-packs/<pack>/presenting-introductory/",
+              "baseline": "Nia's social media strategy brief continuation. The three choices represent common first moves: jumping to slides, reading without direction, or turning the brief into questions.",
+              "criminology": "Owain's diversionary scheme brief continuation. Same three moves, consequence prose adapted to evidence-handling discipline.",
+              "psychology": "Amara's intervention evidence brief continuation. Same three moves, consequence prose adapted to research-methods discipline.",
+              "consequenceNote": "Consequences instructive not punitive per BR-6; no choice is marked wrong. Each consequence explains what that approach achieves and what it costs.",
+              "authoringStatus": "CONTENT AUTHORED at content session."
+            }
+          },
+          "grounding": [
+            { "doc": "docs/authoring/component-specs/branching.md", "ref": "§3 guardrail 3: Every consequence is instructive" },
+            { "doc": "docs/project/open-decisions.md", "ref": "BR-6 (no gotcha answers)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/sortable",
+            "rationale": "The outcome says 'describe the steps'. Sortable makes the learner construct the sequence rather than read it — the routing boundary the component register draws against timeline ('presents order vs constructs it').",
+            "coupling": {
+              "coupled": false,
+              "note": "Tests the planning sequence — the steps are fixed across contexts, not swappable per discipline."
+            },
+            "content": {
+              "body": "These are the steps between receiving a brief and having a workable plan. Can you put them in the right order?",
+              "instruction": "Drag items to reorder, or use keyboard (Enter to grab, arrows to move, Enter to drop).",
+              "_isRandom": true,
+              "items": [
+                "Turn the brief's required elements into questions",
+                "Find sources that answer those questions",
+                "Read selectively against the questions",
+                "Sketch the shape: sections, and what goes in each",
+                "Check the plan against the brief"
+              ],
+              "authoringNote": "Items authored in correct order per sortable.md §3 guardrail 1 — the component shuffles for display. Never pre-shuffle.",
+              "attempts": 2
+            },
+            "configNote": "_component value is 'sortable', NOT 'adapt-abbott-sortable' — see sortable.md §7 trap."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.12", "note": "slotTypes: ['check'], realisations include palette/sortable for ordering/sequencing" },
+            { "store": "design-kb", "id": "palette/sortable", "version": "0.1.0" },
+            { "doc": "docs/authoring/component-specs/sortable.md", "ref": "§3 guardrail 1 (author in correct order), §7 (_component trap)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Think about how you usually start a piece of assessed work. Where does your planning happen, and what does it look like?",
+            "_isOptional": true
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0", "note": "Reflective prompt per confirmed lesson record" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Branching completes on first selection (branching.md §7), not all-visited. No trickle interaction concerns: the component's completion fires the moment the learner commits, which is before they could scroll past. The consequence region appears inline and does not require scroll-then-complete coordination."
+          },
+          "grounding": [
+            { "doc": "docs/authoring/component-specs/branching.md", "ref": "§7: Completion = first selection, not all-visited" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L04-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required — interior is branching (text scenario with choice buttons), check is sortable (text items). No images. Branching.md §7 confirms: 'No images. This component has no image fields.'"
+          },
+          "grounding": [
+            { "doc": "docs/authoring/component-specs/branching.md", "ref": "§7: No images — the scenario is text-driven" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T17:00:00Z",
+          "sessionRef": "presenting-introductory L04 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "fixed-default",
+          "decidedValue": {
+            "outcomes": [
+              "Distinguish a visual aid that carries a point from one that carries a script.",
+              "Recognise features that make a slide or poster support the speaker."
+            ],
+            "source": "Carried forward from A3 lesson breakdown."
+          },
+          "grounding": [
+            { "doc": "courses/presenting-introductory/course-design_presenting-introductory.json", "ref": "gates/A3 decidedValue.lessons[3]" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "decidedValue": {
+            "outcomes": [
+              "Distinguish a visual aid that carries a point from one that carries a script.",
+              "Recognise features that make a slide or poster support the speaker."
+            ],
+            "source": "Carried forward from A3 lesson breakdown."
+          },
+          "supersedes": 1,
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B1", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.100" }
+          ],
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "gates/B1 is recorded hardness:soft in design-kb.gates.json, not the advisory hardness that fixed-default implies (gate-conversation-model-draft-v1.md: 'typically advisory grade').",
+            "evidence": "Searched project-backlog.md and docs/project/away-week-log.md for the L05-B1 gate id and its 7 Sep 2026 session date; found only the generic sessionRef string below, no narration of whether the AI's proposal stood on silence or was confirmed."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-09T09:00:00Z",
+          "sessionRef": { "venue": "claude-ai-relay", "description": "5.100 ruling 9 Sep 2026" }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "slots": {
+              "concept-intro": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "Prose introducing the 'less is more' principle: visual aids support rather than replace the spoken content. When they become the focus, effectiveness dwindles."
+              },
+              "interior": {
+                "pattern": "activity-patterns/evaluate-versions",
+                "realisation": "palette/narrative",
+                "itemCount": 2,
+                "coupling": {
+                  "coupled": false,
+                  "note": "Uncoupled — the weak/strong slide distinction is universal, not discipline-specific. An overloaded slide is overloaded regardless of subject. No pack variation needed; same images serve all contexts. FCI-1 satisfied trivially."
+                },
+                "rationale": "The outcomes ask learners to distinguish visual aids that carry a point from those that carry a script, and to recognise supporting features. A weak/strong slide comparison — overloaded vs clean — makes the principle concrete. Narrative's forced sequential progression presents the weaker version first, matching evaluate-versions pedagogy. FIRST USE of narrative for evaluate-versions; pattern amended at R53 to admit it for visual artefact comparison."
+              },
+              "practical-guidance": {
+                "pattern": null,
+                "realisation": "palette/text",
+                "rationale": "The book's recommendations distilled: less is more, bold sparingly, avoid small fonts, complementary fonts, accessible colours, keywords not sentences, graphics over text, check resolution. Prose checklist rather than interactive checklist because this is guidance to internalise, not a reusable working tool."
+              }
+            },
+            "note": "Interior uses the newly-amended activity-patterns/evaluate-versions (R53 amendment: narrative added for visual artefact comparison). This is the first lesson in the programme where the weak/strong pair is visual rather than prose."
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/evaluate-versions", "version": "0.1.13" },
+            { "store": "design-kb", "id": "palette/narrative", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/text", "version": "0.1.0" },
+            { "doc": "reference/excelling-at-university.md", "ref": "pp.208-209 Designing visual aids" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleDesign": {
+              "format": "weak/strong visual comparison via narrative slideshow",
+              "itemStructure": [
+                {
+                  "position": 1,
+                  "label": "Weak slide",
+                  "description": "Cluttered, text-heavy slide that functions as a script. Full sentences, small font, no white space, no focal point. The speaker would read from this rather than speak to it."
+                },
+                {
+                  "position": 2,
+                  "label": "Strong slide",
+                  "description": "Clean slide with a header, 3-4 keywords as triggers, one high-impact image. White space, large readable font, clear focal point. The speaker speaks to it; the slide supports, not replaces."
+                }
+              ],
+              "teachingPoint": "The weak slide carries a script; the strong slide carries a point. The learner sees the contrast and recognises what makes visual aids effective: simplicity, supporting role, speaker-centred design.",
+              "note": "Narrative presents weak first, strong second — forced sequential order matches the evaluate-versions pedagogy of showing what doesn't work before showing what does."
+            }
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "p.209 'less is more' and design recommendations" },
+            { "store": "design-kb", "id": "activity-patterns/evaluate-versions", "version": "0.1.13" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "checkDesign": {
+              "pattern": "activity-patterns/retrieval-practice",
+              "realisation": "palette/mcq",
+              "itemCount": 1,
+              "coupling": {
+                "type": 0,
+                "note": "Type 0 (context-neutral) — visual-aid principles are universal across disciplines."
+              },
+              "rationale": "Single MCQ testing recognition: which of these features makes a visual aid effective? Distractors are the book's negative examples (small fonts, full sentences, cluttered layout). Feedback confirms and explains, never bare Correct/Wrong.",
+              "note": "Considered palette/matching (pair features to effective/ineffective) but matching is unroutable per 5.83 — no activity-pattern lists it. MCQ is the safer choice within the retrieval-practice pattern."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.13" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.83 palette/matching unroutable" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "fixed-default",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "pattern": "activity-patterns/write-own-thinking",
+              "realisation": "palette/opentext",
+              "promptDirection": "Think about a presentation you've given or seen. What visual aids were used? Did they support the speaker or compete with them?",
+              "note": "Standard reflective pattern. Prompt invites the learner to connect the 'less is more' principle to their own experience."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/write-own-thinking", "version": "0.1.12" },
+            { "store": "design-kb", "id": "palette/opentext", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-amended",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "pattern": "activity-patterns/write-own-thinking",
+              "realisation": "palette/textinput",
+              "promptDirection": "Think about a presentation you've given or seen. What visual aids were used? Did they support the speaker or compete with them?",
+              "note": "record follows build; opentext migration tracked at 5.102"
+            }
+          },
+          "originalProposal": {
+            "reflectivePrompt": {
+              "pattern": "activity-patterns/write-own-thinking",
+              "realisation": "palette/opentext",
+              "promptDirection": "Think about a presentation you've given or seen. What visual aids were used? Did they support the speaker or compete with them?",
+              "note": "Standard reflective pattern. Prompt invites the learner to connect the 'less is more' principle to their own experience."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/write-own-thinking", "version": "0.1.13" },
+            { "store": "design-kb", "id": "palette/textinput", "version": "0.1.0" },
+            { "doc": "courses/presenting-introductory/en/components.json", "ref": "presenting-introductory-L05-c-35" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.89 L05-B5 records palette/opentext but built component is textinput" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T23:20:00Z",
+          "sessionRef": "claude-ai-relay: 5.89 ruling 8 Sep 2026"
+        },
+        {
+          "seq": 3,
+          "state": "closed",
+          "provenance": "human-amended",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "pattern": "activity-patterns/write-own-thinking",
+              "realisation": "palette/textinput",
+              "promptDirection": "Think about a presentation you've given or seen. What visual aids were used? Did they support the speaker or compete with them?",
+              "note": "record follows build; opentext migration tracked at 5.102"
+            }
+          },
+          "originalProposal": {
+            "reflectivePrompt": {
+              "pattern": "activity-patterns/write-own-thinking",
+              "realisation": "palette/opentext",
+              "promptDirection": "Think about a presentation you've given or seen. What visual aids were used? Did they support the speaker or compete with them?",
+              "note": "Standard reflective pattern. Prompt invites the learner to connect the 'less is more' principle to their own experience."
+            }
+          },
+          "supersedes": 2,
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.100" }
+          ],
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "seq1's original closure (7 Sep 2026, since content-superseded by seq2's 5.89 fix) asserted fixed-default, but gates/B5 is recorded hardness:soft in design-kb.gates.json, not the advisory hardness fixed-default implies. seq2's own provenance (human-amended, the 5.89 content correction) is not disputed here.",
+            "evidence": "Searched project-backlog.md and docs/project/away-week-log.md for the L05-B5 gate id and its 7 Sep 2026 session date; found only the generic sessionRef string on seq1, no narration of whether the AI's proposal stood on silence or was confirmed."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-09T09:00:00Z",
+          "sessionRef": { "venue": "claude-ai-relay", "description": "5.100 ruling 9 Sep 2026" }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleConfig": "Standard lesson flow — trickle enabled at article level, block-by-block progression.",
+            "note": "No special pacing requirements. Narrative has its own internal pacing (must view both slides)."
+          },
+          "grounding": [
+            { "doc": "docs/authoring/lesson-structure-template.md", "ref": "Standard trickle configuration" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L05-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": {
+              "required": 2,
+              "items": [
+                {
+                  "filename": "slide-weak-placeholder.png",
+                  "path": "course/en/assets/slide-weak-placeholder.png",
+                  "altText": "A presentation slide headed 'Social media strategy', filled with six bullet points, each a full sentence in small text. The text fills the slide edge to edge.",
+                  "description": "Overloaded slide demonstrating what NOT to do"
+                },
+                {
+                  "filename": "slide-strong-placeholder.png",
+                  "path": "course/en/assets/slide-strong-placeholder.png",
+                  "altText": "A presentation slide headed 'Three channels, one voice' with three short phrases in large text. White space surrounds the content.",
+                  "description": "Clean slide demonstrating effective visual aid design"
+                }
+              ],
+              "status": "placeholder",
+              "note": "Placeholder images per 5.82. Generic, not per-pack — an overloaded slide is overloaded regardless of discipline. Real assets in the image pass (Outstanding Assets entry). Images created at R54, 800×450."
+            }
+          },
+          "grounding": [
+            { "doc": "docs/project/project-backlog.md", "ref": "5.82 presenting-introductory L05 will add placeholders" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T19:00:00Z",
+          "sessionRef": "presenting-introductory L05 Phase B design conversation, 7 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "fixed-default",
+          "decidedValue": {
+            "outcomes": [
+              "Describe the hook-body-conclusion structure.",
+              "Explain how a conclusion that returns to the objectives closes the argument."
+            ],
+            "source": "Carried forward from A3 lesson breakdown."
+          },
+          "grounding": [
+            {
+              "doc": "courses/presenting-introductory/course-design_presenting-introductory.json",
+              "ref": "gates/A3 decidedValue.lessons[4]"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "R56-R59 (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "R56-R59 log entry" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "decidedValue": {
+            "outcomes": [
+              "Describe the hook-body-conclusion structure.",
+              "Explain how a conclusion that returns to the objectives closes the argument."
+            ],
+            "source": "Carried forward from A3 lesson breakdown."
+          },
+          "supersedes": 1,
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B1", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.100" }
+          ],
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "gates/B1 is recorded hardness:soft in design-kb.gates.json, not the advisory hardness fixed-default implies. seq1's own reconstruction.basis=\"documented\" attests the record's content was retro-filled from the R56-R59 log, not that the log itself narrates deciding-mode.",
+            "evidence": "Re-read the R56-R59 project-backlog.md log entry directly: it narrates content and component outcomes for L06 (structure, coupling) but contains no statement of whether the AI's proposal stood on silence or was confirmed by a human at this gate."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-09T09:00:00Z",
+          "sessionRef": { "venue": "claude-ai-relay", "description": "5.100 ruling 9 Sep 2026" }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "slots": {
+              "concept-intro": {
+                "realisation": "palette/text"
+              },
+              "interior": {
+                "realisation": "palette/timeline",
+                "itemCount": 3,
+                "coupling": {
+                  "type": 3,
+                  "note": "Type 3 (whole-prose) — each pack supplies the entire hook-body-conclusion sequence. Grounded on pack files differing: baseline has Nia, criminology has Owain, psychology has Amara."
+                }
+              },
+              "practical-guidance": {
+                "realisation": "palette/text"
+              }
+            },
+            "note": "Pattern field omitted — log names component only."
+          },
+          "grounding": [
+            {
+              "doc": "content/context-packs/baseline/presenting-introductory/structuring-your-argument.json",
+              "ref": "generatedItems.structure"
+            },
+            {
+              "doc": "content/context-packs/criminology/presenting-introductory/structuring-your-argument.json",
+              "ref": "generatedItems.structure"
+            },
+            {
+              "doc": "content/context-packs/psychology/presenting-introductory/structuring-your-argument.json",
+              "ref": "generatedItems.structure"
+            },
+            {
+              "doc": "docs/project/project-backlog.md",
+              "ref": "R56-R59: 'timeline (L06)'"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "R56-R59 (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "R56-R59 log entry" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleDesign": {
+              "format": "hook-body-conclusion structure via timeline",
+              "itemStructure": [
+                { "position": 1, "title": "Hook" },
+                { "position": 2, "title": "Body" },
+                { "position": 3, "title": "Conclusion" }
+              ]
+            },
+            "note": "teachingPoint omitted — not in log or packs."
+          },
+          "grounding": [
+            {
+              "doc": "content/context-packs/baseline/presenting-introductory/structuring-your-argument.json",
+              "ref": "generatedItems.structure"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "R56-R59 (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "R56-R59 log entry" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "checkDesign": {
+              "realisation": "palette/mcq",
+              "itemCount": 3,
+              "attempts": 2,
+              "coupling": {
+                "type": 0,
+                "note": "Type 0 (context-neutral) — structure principles are universal."
+              }
+            },
+            "note": "Pattern field omitted — log does not name it."
+          },
+          "grounding": [
+            {
+              "doc": "courses/presenting-introductory/en/components.json",
+              "ref": "presenting-introductory-L06-c-30"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "R56-R59 (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "R56-R59 log entry" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "fixed-default",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "realisation": "palette/textinput",
+              "_isOptional": true
+            },
+            "note": "Pattern and promptDirection omitted — not recorded."
+          },
+          "grounding": [
+            {
+              "doc": "courses/presenting-introductory/en/components.json",
+              "ref": "presenting-introductory-L06-c-35"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "R56-R59 (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "R56-R59 log entry" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "realisation": "palette/textinput",
+              "_isOptional": true
+            },
+            "note": "Pattern and promptDirection omitted — not recorded."
+          },
+          "supersedes": 1,
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.100" }
+          ],
+          "provenanceDisputed": {
+            "assertedValue": "fixed-default",
+            "reason": "gates/B5 is recorded hardness:soft in design-kb.gates.json, not the advisory hardness fixed-default implies. seq1's own reconstruction.basis=\"documented\" attests the record's content was retro-filled from the R56-R59 log, not that the log itself narrates deciding-mode.",
+            "evidence": "Re-read the R56-R59 project-backlog.md log entry directly: it narrates content and component outcomes for L06 but contains no statement of whether the AI's proposal stood on silence or was confirmed by a human at this gate."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-09T09:00:00Z",
+          "sessionRef": { "venue": "claude-ai-relay", "description": "5.100 ruling 9 Sep 2026" }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "deferred",
+          "provenance": "advisory-stated",
+          "deferReason": "Decision was not persisted at R56-R59 and is not recoverable from the log or the build. The built L06 article has no _trickle field.",
+          "grounding": [],
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "5.87 retro-fill (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "5.87" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-L06-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "deferred",
+          "provenance": "advisory-stated",
+          "deferReason": "Decision was not persisted at R56-R59 and is not recoverable from the log or the build. L06 uses timeline (text-based); no images in built content.",
+          "grounding": [],
+          "timestamp": "2026-09-08T00:00:00Z",
+          "sessionRef": "5.87 retro-fill (8 Sep 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "docs/project/project-backlog.md", "ref": "5.87" }
+            ],
+            "note": "Written retrospectively 8 Sep 2026; decisions made at R56-R59, records not persisted then. Ref 5.87."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-S1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "pattern": "activity-patterns/summative-mixed",
+            "itemCount": 8,
+            "mix": "6 MCQ + 2 sortable",
+            "coupling": "uncoupled",
+            "passMark": 70,
+            "furniture": ["palette/resultsdebrief", "palette/passreveal"],
+            "suppressMarking": true,
+            "lessonMapping": {
+              "L02-reading-the-brief": 2,
+              "L03-choosing-your-angle": 2,
+              "L04-research-and-planning": 1,
+              "L05-designing-visual-aids": 2,
+              "L06-structuring-your-argument": 1
+            },
+            "parityNote": "Uncoupled summative — identical items across all three contexts. Tier-spec §7 parity is trivially satisfied.",
+            "note": "Eight items total: MCQ-dominant with two sortable for variety. Lessons with heavier pedagogic load (L02, L03, L05) get two items each; L04 and L06 one each. All items context-neutral; scenarios refer to 'your presentation' not to pack-specific tasks."
+          },
+          "grounding": [
+            { "doc": "design-kb/design-kb.activity-patterns.json", "ref": "summative-mixed pattern" },
+            { "doc": "docs/authoring/tier-specification.md", "ref": "§7 Summative parity requirements" },
+            { "doc": "docs/authoring/scoring-and-summative-model.md", "ref": "§5 Pass-mark conventions" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T22:00:00Z",
+          "sessionRef": "presenting-introductory S1 design conversation, 7 Sep 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "decidedValue": {
+            "pattern": "activity-patterns/summative-mixed",
+            "itemCount": 8,
+            "mix": "6 MCQ + 2 sortable",
+            "coupling": "uncoupled",
+            "passMark": 70,
+            "furniture": ["palette/resultsdebrief", "palette/passreveal"],
+            "suppressMarking": true,
+            "lessonMapping": {
+              "L02-reading-the-brief": 2,
+              "L03-choosing-your-angle": 2,
+              "L04-research-and-planning": 1,
+              "L05-designing-visual-aids": 2,
+              "L06-structuring-your-argument": 1
+            },
+            "parityNote": "Uncoupled summative — identical items across all three contexts. Tier-spec §7 parity is trivially satisfied.",
+            "note": "Eight items total: MCQ-dominant with two sortable for variety. Lessons with heavier pedagogic load (L02, L03, L05) get two items each; L04 and L06 one each. All items context-neutral; scenarios refer to 'your presentation' not to pack-specific tasks."
+          },
+          "supersedes": 1,
+          "grounding": [
+            { "store": "design-kb", "id": "gates/S1", "version": "0.1.0" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.100" }
+          ],
+          "provenanceDisputed": {
+            "assertedValue": "advisory-stated",
+            "reason": "gates/S1 is recorded hardness:soft in design-kb.gates.json. advisory-stated is defined (common.schema.json) for advisory-hardness gates stated at the moment they apply, never opened for confirmation — the wrong category for a soft gate.",
+            "evidence": "Searched project-backlog.md and docs/project/away-week-log.md for the S1 gate id and its 7 Sep 2026 session date; found only the generic sessionRef string below, no narration of whether the AI's proposal stood on silence or was confirmed."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-09T09:00:00Z",
+          "sessionRef": { "venue": "claude-ai-relay", "description": "5.100 ruling 9 Sep 2026" }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/presenting-introductory-W1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "resourcesItems": [
+              {
+                "title": "Excelling at University — Chapter 11: Presenting",
+                "description": "The source chapter for this course. Covers presentation types, reading a brief, planning, visual aids, and structure.",
+                "type": "reference"
+              }
+            ],
+            "note": "One item, against Academic Writing Introductory's four. That course drew on three separate chapters plus a course-level entry; Presenting Introductory draws on Chapter 11 almost exclusively. A second entry would be padding. No external or institutional links: the Academic Writing precedent contains none, so there is no convention to follow, and inventing one here would put unreviewed links in a shipped course."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 11: Creating Effective Presentations and Working in Groups" },
+            { "doc": "docs/project/open-decisions.md", "ref": "RF-1 to RF-4 (references/resources design cluster)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-07T22:00:00Z",
+          "sessionRef": "presenting-introductory W1 design conversation, 7 Sep 2026"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "presenting-introductory-W-OPEN",
+      "pageType": "wrapper-open",
+      "order": 1,
+      "archetype": { "id": "skeletons/wrapper-open", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "signpost",
+          "component": "palette/timeline",
+          "decidedByGate": "gates/A4"
+        }
+      ],
+      "notes": "Signpost = timeline per A4."
+    },
+    {
+      "pageKey": "presenting-introductory-C-PRE",
+      "pageType": "c-pre",
+      "title": "Before you start",
+      "order": 2,
+      "archetype": { "id": "skeletons/c-pre", "version": "0.1.0" },
+      "slotChoices": [],
+      "notes": "Fixed single-block page: 5 confidence items per A6."
+    },
+    {
+      "pageKey": "presenting-introductory-L02",
+      "pageType": "lesson",
+      "title": "What is a presentation?",
+      "order": 3,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L02-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L02-B4"
+        }
+      ],
+      "notes": "Interior = accordion (6 items), uncoupled. Check = mcq, uncoupled. Coupling rationale in L02-B2/B4."
+    },
+    {
+      "pageKey": "presenting-introductory-L03",
+      "pageType": "lesson",
+      "title": "Reading the brief",
+      "order": 4,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/annotated",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/presenting-introductory-L03-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L03-B4"
+        }
+      ],
+      "notes": "Interior = annotated (5 segments, 4 annotated), coupled whole-prose. Check = mcq, uncoupled. Coupling rationale in L03-B2/B4."
+    },
+    {
+      "pageKey": "presenting-introductory-L04",
+      "pageType": "lesson",
+      "title": "Research and planning",
+      "order": 5,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/branching",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/presenting-introductory-L04-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L04-B4"
+        }
+      ],
+      "notes": "Interior = branching (3 choices), coupled whole-prose. Check = mcq, uncoupled. Coupling rationale in L04-B2/B4."
+    },
+    {
+      "pageKey": "presenting-introductory-L05",
+      "pageType": "lesson",
+      "title": "Designing visual aids",
+      "order": 6,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/narrative",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L05-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L05-B4"
+        }
+      ],
+      "notes": "Interior = narrative (2 items), uncoupled. Check = mcq, uncoupled. Coupling rationale in L05-B2/B4."
+    },
+    {
+      "pageKey": "presenting-introductory-L06",
+      "pageType": "lesson",
+      "title": "Structuring your argument",
+      "order": 7,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/timeline",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/presenting-introductory-L06-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-L06-B4"
+        }
+      ],
+      "notes": "Interior = timeline (3 items), coupled whole-prose. Check = mcq, uncoupled. Coupling rationale in L06-B2/B4."
+    },
+    {
+      "pageKey": "presenting-introductory-SUMM",
+      "pageType": "summative",
+      "title": "Bringing it together",
+      "order": 8,
+      "archetype": { "id": "skeletons/summative", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-S1"
+        },
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/sortable",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/presenting-introductory-S1"
+        }
+      ],
+      "notes": "8 items (6 MCQ + 2 sortable), uncoupled. 70% pass mark, suppressMarking true, resultsdebrief and passreveal furniture per S1."
+    },
+    {
+      "pageKey": "presenting-introductory-C-POST",
+      "pageType": "c-post",
+      "title": "How far you've come",
+      "order": 9,
+      "archetype": { "id": "skeletons/c-post", "version": "0.1.0" },
+      "slotChoices": [],
+      "notes": "Fixed single-block page: same 5 confidence items as C-PRE via _selfAssessmentGroupId. Reflective bridge OFF per A6."
+    },
+    {
+      "pageKey": "presenting-introductory-W-CLOSE",
+      "pageType": "wrapper-close",
+      "order": 10,
+      "archetype": { "id": "skeletons/wrapper-close", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "decidedByGate": "gates/presenting-introductory-W1"
+        }
+      ],
+      "notes": "Resources drawer ON per A7, populated per W1: one item (Chapter 11)."
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-09-09T09:20:00Z",
+      "trigger": {
+        "gate": "gates/A3",
+        "changeKind": "amended",
+        "note": "instantiations[].pageKey retrofitted from bare (W-OPEN, C-PRE, L02-L06, SUMM, C-POST, W-CLOSE) to course-slug-prefixed (presenting-introductory-W-OPEN etc.) to match gates/A3's own decidedValue.lessons[].pageKey, which already used the prefixed form. Retrofit per PK-1 (open-decisions.md #49) and backlog 5.115; recon confirmed nothing downstream (merge-context.js's CONTEXT_COUPLED_LESSONS, content/shells/lesson-registry.json, context-pack filenames, or any tools/ matcher) keys on the bare form specifically."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A3",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is an instantiations[] pageKey field fix only (a non-append-only field); gate A3's own decidedValue and record are untouched and were already correct - this brings instantiations into line with it. See backlog 5.115."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-2",
+      "timestamp": "2026-09-14T00:00:00Z",
+      "trigger": {
+        "gate": "gates/presenting-introductory-W1",
+        "changeKind": "amended",
+        "note": "instantiations[] W-CLOSE slotKey corrected from further-reading to course-references, matching the skeletons/wrapper-close archetype's key rename (A83, this sitting, 14 September 2026, commit 89c1a48)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/presenting-introductory-W1",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. Second migration on the same field: the 5.105/R72 ruling (skeleton is authoritative, instantiation corrected to match) applies unchanged, a second time. See A83."
+          }
+        }
+      ]
+    }
+  ]
+}

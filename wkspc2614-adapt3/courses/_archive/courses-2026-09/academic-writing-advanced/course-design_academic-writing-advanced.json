@@ -1,0 +1,1257 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "academic-writing-advanced",
+  "slug": "academic-writing-advanced",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "Academic Writing",
+    "tier": "advanced"
+  },
+  "kbVersions": {
+    "design-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "gates/CTX",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Academic Writing",
+            "tier": "advanced",
+            "baseline": true,
+            "note": "Core facets only. No subject, level, or institutional facets. No sourceConsultation triggers fire for this course."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 6 (Academic Writing), Advanced band" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Academic Writing",
+            "tierName": "Advanced Stage",
+            "displayName": "Academic Writing: Advanced Stage",
+            "slug": "academic-writing-advanced",
+            "folder": "courses/academic-writing-advanced/"
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 6 (Academic Writing)" },
+            { "doc": "docs/authoring/course-template.md", "ref": "Course Slug Convention" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "scope": "Advanced band per pathway-tier-mapping.md: the three discipline exemplars (chemistry/sciences, education/social sciences, history/humanities) and their conventions of style, evidence, vocabulary, and discourse; developing a critical edge through the language of criticality.",
+            "goal": "Disciplinary self-awareness in writing.",
+            "source": "Chapter 9 (Academic Writing), Advanced section. The pathway-level Source line also cites 'the writing critically material from Chapter 8' - this applies pathway-wide, including Advanced, but is not Advanced-specific.",
+            "tierBand": "tier-bands/advanced (design-kb, 0.1.0)",
+            "priorExperienceAnchor": "advanced - writer has clarity/structure/integration skills in place; can now turn attention to discipline-specific conventions",
+            "note": "This course IS the pressure-test for placing discipline conventions at the Advanced tier (per the mapping doc's own caveat). If the three-exemplar structure doesn't work as lesson content, raise as a finding."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing (Pathway 6), Advanced band (line 143-144)" },
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing (Pathway 6), Source line (line 134) - pathway-level, includes Chapter 8" },
+            { "store": "design-kb", "id": "tier-bands/advanced", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              { "pageKey": "academic-writing-advanced-L02", "title": "How disciplines shape writing" },
+              { "pageKey": "academic-writing-advanced-L03", "title": "Conventions in practice" },
+              { "pageKey": "academic-writing-advanced-L04", "title": "Reading your own discipline" },
+              { "pageKey": "academic-writing-advanced-L05", "title": "The critical edge" }
+            ],
+            "note": "4 lessons. L02/L03 merge risk noted - if content proves too thin during Phase B drafting, these could merge. Interior pattern and check-component choices per lesson are DEFERRED to Phase B."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing, Advanced band scope" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#49 PK-1 (pageKey naming convention)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-default-stood",
+          "decidedValue": {
+            "signpostComponent": "palette/adapt-abbott-timeline",
+            "rationale": "Linear/staged, non-circular fit for the four-lesson build-up structure (introduce concept, apply comparison, self-apply, critical edge).",
+            "alternativesConsidered": [
+              { "component": "palette/text", "reason": "Fixed-value default, passed over" },
+              { "component": "palette/hotgraphic", "reason": "Pilot's choice for Introductory, wrong fit here - Advanced's content isn't cyclical" },
+              { "component": "palette/flipcard", "reason": "Could work if lessons were parallel-choice, but they're sequential" }
+            ]
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "#32 VO-1 (RESOLVED)" },
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Block 3: Signpost" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": {
+            "contextPacks": [
+              { "packId": "baseline", "status": "reused", "note": "Established" },
+              { "packId": "criminology", "status": "reused", "note": "Established; character Rhian" },
+              { "packId": "sports-journalism", "status": "reused", "note": "Established; character David" },
+              { "packId": "psychology", "status": "reused", "note": "Established; character Emma" },
+              { "packId": "banking-and-finance", "status": "reused", "note": "Established; character pending per 5.20" },
+              { "packId": "project-management", "status": "new", "note": "NEW - character Marcus, male, professional/corporate register" }
+            ],
+            "couplingScope": "course-wide",
+            "perLessonCouplingType": "Decided at each lesson's Phase B (Type 1/2/3 per CP-1b/c), not here - A5 only fixes the pack SET.",
+            "crossReference": "project-management retrofit onto Academic Writing: Introductory and Intermediate tracked separately as backlog 5.25 - NOT part of this course's scope"
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1 (context-pack format)" },
+            { "doc": "docs/project/project-backlog.md", "ref": "5.25 (cross-reference only, not scope)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "confidenceItems": [
+              "I can recognise that different disciplines shape academic writing in different ways.",
+              "I can identify how style, evidence, vocabulary, and discourse conventions vary across disciplines.",
+              "I can read for convention in my own discipline and adapt my writing to fit.",
+              "I can use the language of criticality to develop a sharper critical voice in my writing.",
+              "I understand what disciplinary self-awareness means and can apply it to my own work."
+            ],
+            "pairing": "C-PRE/C-POST paired via _selfAssessmentGroupId",
+            "reflectiveBridge": "OFF"
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CC-1 (confidence pages)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "WR-2a (cap 10 items)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "resourcesDrawer": "ON",
+            "contents": "DEFERRED to gate W1 - do not populate the references component's items in this phase",
+            "note": "Structural presence confirmed; the drawer/component exists per the wrapper-close skeleton."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "RF-1 (consolidated references at W-CLOSE only)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T22:00:00Z",
+          "sessionRef": "Academic Writing: Advanced Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: recognise that different disciplines shape academic writing in distinct ways, and identify how style, evidence, vocabulary, and discourse engagement vary across discipline families."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": null,
+            "patternNote": "No existing activity-pattern in design-kb covers this content shape (comparative/analytical prose comparing three discipline exemplars across four conventions). The worked-example pattern store entry (activity-patterns/sequential-process) is for accordion step-reveal, not comparative prose. Population gap recorded at docs/project/open-decisions.md AP-1.",
+            "realisation": "palette/text",
+            "coupling": {
+              "coupled": false,
+              "note": "CP-1g: fixed reference content (Chapter 9's three-discipline exemplars). No context-pack variation - the comparison requires the specific chemistry/education/history extracts; substitution would break the teaching."
+            },
+            "shapeNote": "COMPARATIVE-EXEMPLAR shape: prose text comparing three disciplines across four conventions (style, evidence, vocabulary, discourse engagement). Not sequential-process/accordion like Intermediate - Advanced's content is comparative analysis, not step-by-step transformation."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9: Academic Writing, Advanced section" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false category)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "AP-1 (activity-patterns population gap)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "coupled": false,
+              "note": "CP-1g: tests recognition of discipline-family conventions via a novel extract. Extract is generic social-sciences prose; no context-pack variation needed."
+            },
+            "content": {
+              "stem": "Read this extract from a journal article... Which discipline family does this writing most likely come from?",
+              "correct": "Social sciences — the style is interpretive and tentative, and evidence includes policy documents.",
+              "distractors": [
+                "Sciences — the style is matter-of-fact, and evidence comes from quantitative data.",
+                "Humanities — the style uses complex sentence structures, and evidence comes primarily from scholarly interpretations."
+              ],
+              "attempts": 2,
+              "feedbackExplainsConventionMarkers": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false category)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "disposition": "folded-into-B3",
+            "note": "B4 (check design) decisions were made during B3's MCQ content authoring. No separate B4 content - grounding points to B3's record."
+          },
+          "grounding": [
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L02-B3", "note": "Check content decided as part of B3" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "body": "Think about a piece of academic writing you've read recently in your own discipline. Which of the four conventions (style, evidence, vocabulary, or discourse engagement) stood out most clearly? What did it tell you about how knowledge is presented in your field?",
+              "instruction": "If you'd like, jot down your thoughts below. This is for your own reflection and won't be marked. Select Submit to save your response; it'll be here when you return."
+            },
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Text component's natural flow handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L02-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is text (prose), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L02 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcome": "By the end of this lesson, you will be able to apply a four-point checklist to analyse a piece of academic writing, using your observations about style, evidence, vocabulary, and discourse engagement to identify which discipline family the writing comes from."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9, pp. 144-145: four-point checklist" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L02-B1", "note": "Builds directly on L02's recognition outcomes" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": null,
+            "patternNote": "No existing activity-pattern in design-kb covers this content shape (analytical walkthrough applying the four-convention framework to a single extract). Same population gap as L02; see docs/project/open-decisions.md AP-1.",
+            "realisation": "palette/text",
+            "coupling": {
+              "coupled": false,
+              "note": "CP-1g: fixed teaching content. The worked example demonstrates the analytical METHOD using a plausible psychology extract; no context-pack variation needed."
+            },
+            "shapeNote": "ANALYTICAL-WALKTHROUGH shape: single prose walkthrough applying the four-point checklist (style, evidence, vocabulary, discourse) to one psychology extract. Shows the METHOD of systematic analysis. Not comparative like L02, not sequential-process/accordion."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9, pp. 144-145: four-point checklist" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false category)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "AP-1 (activity-patterns population gap)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "coupling": {
+              "coupled": true,
+              "variationType": "whole-prose"
+            },
+            "supersedes": "seq 1's coupled:false (CP-1g). Reversal rationale: the lesson demonstrates a checklist-application METHOD using a specific extract as vehicle; the method itself is context-portable even though the extract isn't. Matches the established Type 3 precedent (Intermediate's Editing lesson, CP-1b addendum's naming example)."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1b addendum (Type 3 — whole-prose)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (superseded for this slot)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T19:00:00Z",
+          "sessionRef": "Academic Writing: Advanced context-coupling reversal, claude.ai design conversation, 1 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "coupled": false,
+              "note": "CP-1g: tests convention recognition via a novel extract. Extract is plausible social-sciences prose; no context-pack variation needed."
+            },
+            "content": {
+              "stem": "Read this extract... Which convention is MOST clearly demonstrated in this extract?",
+              "correct": "Evidence: The primary evidence is quantitative data from a controlled study.",
+              "distractors": [
+                "Style: The writing uses short, matter-of-fact sentences typical of sciences.",
+                "Vocabulary: The extract uses discipline-specific terms with precise technical meanings.",
+                "Discourse engagement: The author builds the argument primarily through scholarly dialogue."
+              ],
+              "attempts": 2,
+              "feedbackExplainsConventionMarkers": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false category)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "disposition": "folded-into-B3",
+            "note": "B4 (check design) decisions were made during B3's MCQ content authoring. No separate B4 content - grounding points to B3's record."
+          },
+          "grounding": [
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L03-B3", "note": "Check content decided as part of B3" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "body": "Think about the last piece of academic writing you read in your discipline. If you applied the four-point checklist, which convention would stand out most clearly? What would that tell you about how your discipline presents knowledge?",
+              "instruction": "If you would like, jot down your thoughts below. This is for your own reflection and will not be marked. Select Submit to save your response; it will be here when you return."
+            },
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Linear text-based lesson; standard skeleton pacing applies."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L03-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is text (prose), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-31T18:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L03 Phase B design conversation, 31 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": [
+              "Evaluate a piece of discipline-specific academic writing against the four conventions of style, evidence, vocabulary, and discourse engagement.",
+              "Justify how their own discipline's writing typically satisfies — or departs from — these conventions, drawing on material they have read.",
+              "Critique their own current writing practice against the framework, identifying one convention to strengthen."
+            ]
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "§5 D2 Advanced column; §6" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9, pp. 144-145" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": null,
+            "patternNote": "Named deviation from LS-1c's three options — none of Option A/B/C fits a lesson with no supplied passage. New sub-variant of Option C: accordion, four items, one per convention, each framing what-to-look-for guidance rather than analysis of a supplied text. Flagged as LS-1c gap.",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "coupled": false,
+              "note": "CP-1g: second coupled:false lesson in this course. Corrects away-week handover's assumption that L04 would be first genuinely context-coupled lesson; that assumption was wrong."
+            }
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1c (interior pattern options)" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9, pp. 144-145" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled: false category)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "accordionItems": [
+              { "convention": "Style", "prompt": "What does your discipline's writing typically look like — short and matter-of-fact, or longer and more interpretive? How does that compare to what you've seen in other fields?" },
+              { "convention": "Evidence", "prompt": "What counts as legitimate evidence in your discipline — data, case law, primary text, literature review? How does that differ from what you've seen praised in other fields?" },
+              { "convention": "Vocabulary", "prompt": "What specialist terms does your discipline use that an outsider might not understand? Are they technical labels, or ordinary words carrying discipline-specific meaning?" },
+              { "convention": "Discourse engagement", "prompt": "How do writers in your discipline engage with other scholars — primarily to situate their work, to build argument, or to critique? How central is that engagement to the writing itself?" }
+            ],
+            "note": "Each item is a reflective prompt/question, not a model answer. No worked mini-example supplied (per D4 Advanced: minimal scaffold)."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 9, pp. 139-144 (Examples 1-3 established four conventions cross-discipline)" },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "D4 Advanced column" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": null,
+            "patternNote": "Deviation from course default (mcq). Check uses opentext for written response — learner applies one convention to a specific piece of writing they name from their own reading. No scored right/wrong; advisory feedback only.",
+            "realisation": "palette/opentext",
+            "rationale": "Deliberate per LS-1d (component chosen by what skill is tested) and tier-spec's explicit D2/D4-mismatch warning against wrapping advanced cognitive demand in recognition-level testing."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1d (check component chosen by tested skill)" },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "D2/D4 Advanced column" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "body": "Having applied the four-point framework to your own discipline, which convention did you find hardest to pin down — and why might that be?",
+              "instruction": "If you would like, jot down your thoughts below. This is for your own reflection and will not be marked. Select Submit to save your response; it will be here when you return."
+            },
+            "_isOptional": true
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1b (reflective prompt)" },
+            { "doc": "reference/excelling-voice-specification.md", "ref": "§15.3" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "blockOrder": "Learning outcomes -> Orientation -> Concept intro -> four-item accordion (B2/B3) -> Practical guidance -> Check (B4) -> Reflective (B5) -> Summary",
+            "note": "Standard order, no deviation. Standard trickle-gating."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "S3-D8" },
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1a/LS-1e" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L04-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "No bespoke visual asset. Standard mandatory icons only (reflective-prompt icon). No image/diagram slot."
+          },
+          "grounding": [
+            { "doc": "docs/authoring/lesson-structure-template.md", "ref": "standard lesson structure" },
+            { "doc": "docs/authoring/template-v2-scope.md", "ref": "#22 (mandatory icon treatment for reflective prompt)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T10:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L04 Phase B design conversation, 01 Sep 2026 (claude.ai)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": [
+              "Evaluate a passage of academic writing for its critical edge — distinguishing where the language of criticality signals active engagement with sources from where the writing merely reports them passively.",
+              "Justify why specific choices in presenting sources — leading with argument versus leading with source, presence versus absence of criticality markers — affect the perceived depth of a writer's engagement with discourse.",
+              "Revise a short passage so that it demonstrates a clear critical edge, integrating discourse markers (such as however, furthermore, moreover) and active source presentation to signal engagement with the relevant literature."
+            ],
+            "notes": "Outcome 3 tightened from 'compose or revise' to 'revise' — bounded to a fixed input (learner's own or supplied draft), not open composition."
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8, lines 1629, 1669-1671, 1735 (critical edge and language of criticality)" },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "§5 D2 Advanced column (synthesis, critique, judgement)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T14:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": "Option B (single transformation)",
+            "patternNote": "Named fit to LS-1c — B1's revision outcome maps to transformation interior (before → after → why).",
+            "realisation": "2 × text",
+            "realisationNote": "Two text blocks: Interior-1 (passage lacking critical edge), Interior-2 (revised passage with critical edge). Text not narrative because source exemplars are short passages for direct comparison, not extended scenarios.",
+            "coupling": { "coupled": false },
+            "couplingNote": "CP-1g: fixed reference material demonstrating transformation principle, no context substitution. Third coupled:false lesson in this course."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1c (Option B — single transformation, 2 blocks)" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8, lines 1605-1629 (Susie→John transformation exemplars)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (coupled:false category)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T14:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "coupling": {
+              "coupled": true,
+              "variationType": "whole-prose"
+            },
+            "supersedes": "seq 1's coupled:false (CP-1g). Reversal rationale: identical shape to L03 — a before/after transformation pair where the transformation principle is portable across disciplines even though the specific passages aren't. This is in fact THE lesson CP-1b addendum names as the origin case for Type 3 ('surfaced by Editing's before/after paragraph pair')."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1b addendum (Type 3 — whole-prose; this lesson's shape is the origin case)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "CP-1g (superseded for this slot)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T19:00:00Z",
+          "sessionRef": "Academic Writing: Advanced context-coupling reversal, claude.ai design conversation, 1 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceUseDecision": "adapted",
+            "sourceUseRationale": "Susie/John passages (lines 1607, 1621) reference classroom-management discourse external to lesson purpose. Adapted passages demonstrate identical structural transformation (passive → active) without unrelated topic-load.",
+            "topic": "Procrastination and academic work",
+            "interior1": {
+              "passage": "Procrastination is a problem for many students. Research has shown that it affects academic performance. Steel (2007) found that around 80–95% of students engage in procrastination. Kim and Seo (2015) looked at the relationship between procrastination and academic achievement. They found a negative correlation. Sirois (2014) examined how self-compassion affects the stress that procrastination creates. Students who procrastinate experience higher levels of stress. Tice and Baumeister (1997) suggested that procrastination provides short-term mood benefits. Students delay tasks to avoid negative emotions. Steel (2007) identified lack of self-regulation as a factor. Time management is also important according to several researchers (Häfner et al., 2014). Students need to understand why they procrastinate and develop strategies to address it.",
+              "commentary": "This passage reports sources one after another but makes no argument. Each sentence describes what a researcher found, then moves on. Missing: no discourse markers signalling how sources relate; no authorial voice; no synthesis. The writing is not wrong, but it lacks a critical edge."
+            },
+            "interior2": {
+              "passage": "Research has consistently demonstrated that procrastination is a widespread challenge among university students, with studies suggesting that 80–95% engage in it at some point (Steel, 2007). However, recent work has moved beyond simply documenting its prevalence to examining why students procrastinate and what can be done about it. For example, while early research framed procrastination as a time-management problem (Häfner et al., 2014), more recent studies have emphasised its emotional dimensions: students often delay tasks not because they lack planning skills but because they seek to avoid negative feelings associated with the work (Sirois, 2014). Furthermore, this emotional avoidance may provide short-term mood benefits (Tice & Baumeister, 1997), which helps explain why procrastination persists despite its costs to academic achievement (Kim & Seo, 2015). This shift in understanding has therefore led researchers to advocate for emotion-regulation strategies rather than time-management interventions alone.",
+              "commentary": "Same sources, same evidence — but the writer makes a point. Transformation: argument leads (sources support); discourse markers present (however, for example, while, furthermore, therefore); synthesis into a narrative (early view → recent shift → implication). These markers are the language of criticality."
+            },
+            "citationsVerified": {
+              "method": "external-web-search",
+              "verifiedBy": "human (claude.ai side)",
+              "citations": [
+                { "key": "Steel 2007", "ref": "Psychological Bulletin 133(1), 65-94" },
+                { "key": "Kim & Seo 2015", "ref": "Personality and Individual Differences 82, 26-33" },
+                { "key": "Sirois 2014", "ref": "Self and Identity 13(2), 128-145" },
+                { "key": "Tice & Baumeister 1997", "ref": "Psychological Science 8(6), 454-458" },
+                { "key": "Häfner et al. 2014", "ref": "Educational Studies 40(3), 352-360" }
+              ],
+              "note": "First time in this course build that student-facing scholarly citations were independently verified before gate confirmation. Candidate for verification-discipline addition (backlog)."
+            }
+          },
+          "grounding": [
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8, lines 1607, 1621 (Susie/John structure adapted)" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8, lines 1615, 1627 (passive vs active analysis)" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8, lines 1669-1679 (language-of-criticality markers)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T15:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pattern": null,
+            "patternNote": "Deviation from course default (mcq). Check uses opentext — same component as L04 but different task structure: L04 had open input (learner-chosen), L05 has fixed input (lesson-supplied passage for revision).",
+            "realisation": "palette/opentext",
+            "rationale": "LS-1d: component chosen by tested skill. B1 outcome 3 tests revision (producing transformed text), not recognition. D2 Advanced: learner constructs. D4 Advanced: minimal scaffolding, self-directed within bounded task.",
+            "stimulus": {
+              "passage": "Online learning has become more common in higher education. Many universities now offer online courses. Allen and Seaman (2017) found that over 30% of students take at least one online course. Means et al. (2013) compared online and face-to-face instruction. They found that online learning can be as effective as traditional instruction. Garrison (2011) developed a framework for online learning communities. Student engagement is important. Dixson (2015) studied how students engage with online courses. Some students prefer online learning because of flexibility. Other students find it isolating. Universities need to consider how to support online learners effectively.",
+              "instruction": "Revise this passage so that it has a critical edge. Your revision should: lead with your argument, not with sources; use discourse markers (such as however, furthermore, therefore) to signal relationships between ideas; synthesise the sources into a point, rather than listing them."
+            },
+            "feedback": {
+              "type": "advisory",
+              "content": "Compare your revision to the original. A passage with a critical edge typically: opens with an authorial claim that the sources will support; uses 'however' or 'although' to signal where views differ; uses 'furthermore' or 'in addition' to build the argument; ends with a judgement ('therefore', 'this suggests that'). There is no single right answer — but the transformation should be visible."
+            },
+            "citationsVerified": {
+              "method": "external-web-search",
+              "verifiedBy": "human (claude.ai side)",
+              "citations": [
+                { "key": "Allen & Seaman 2017", "ref": "Digital Learning Compass Report" },
+                { "key": "Means et al. 2013", "ref": "Teachers College Record 115(3)" },
+                { "key": "Garrison 2011", "ref": "E-Learning in the 21st Century, Routledge" },
+                { "key": "Dixson 2015", "ref": "Online Learning 19(4)" }
+              ]
+            }
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "LS-1d (check component chosen by tested skill)" },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "D2/D4 Advanced column" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L04-B4", "note": "Contrast with L04's open-input reflective structure" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T15:30:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": {
+              "body": "Think about the last piece of academic writing you submitted or are working on now. Looking back, would you say it had a critical edge — or did it lean toward listing sources rather than using them? If you were to revise one paragraph, which discourse marker (however, furthermore, therefore) would most strengthen it, and why?",
+              "instruction": "If you would like, jot down your thoughts below. This is for your own reflection and will not be marked. Select Submit to save your response; it will be here when you return."
+            },
+            "_isOptional": true
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "gates/B5", "version": "0.1.0", "note": "Template-shaped against B1 outcomes per fixed-value default" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T16:00:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Linear text-based lesson (2×text interior → opentext check → opentext reflective); standard skeleton pacing applies."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T16:15:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-L05-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "No bespoke visual asset. The before/after transformation is textual — teaching point is in the words themselves. Standard mandatory icons only (reflective-prompt icon)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T16:15:00Z",
+          "sessionRef": "Academic Writing: Advanced L05 Phase B design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-S1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "itemCount": 4,
+            "itemType": "mcq",
+            "itemLessonMapping": [
+              { "item": 1, "lesson": "L02", "topic": "discipline-conventions", "stem": "Which of the following best describes how the sciences discipline family typically handles evidence?" },
+              { "item": 2, "lesson": "L03", "topic": "four-point-checklist", "stem": "A passage foregrounds the writer's personal reflection and uses hedged language throughout. Which discipline family does this most closely resemble?" },
+              { "item": 3, "lesson": "L04", "topic": "evaluate-conventions", "stem": "The extract omits citations and relies on logical deduction. Which convention does this satisfy, and which does it undermine?" },
+              { "item": 4, "lesson": "L05", "topic": "critical-edge-evaluate", "stem": "Which sentence demonstrates active engagement with sources rather than passive reporting?" }
+            ],
+            "passMark": 70,
+            "_isPercentageBased": true,
+            "_attempts": -1,
+            "_assessmentWeight": 1,
+            "feedbackPattern": "remediation-first"
+          },
+          "grounding": [
+            { "store": "course-design", "id": "gates/A2", "note": "Scope: discipline conventions + critical edge" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L02-B1", "note": "Item 1 samples L02 outcomes" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L03-B1", "note": "Item 2 samples L03 outcomes" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L04-B1", "note": "Item 3 samples L04 outcomes" },
+            { "store": "course-design", "id": "gates/academic-writing-advanced-L05-B1", "note": "Item 4 samples L05 outcomes" },
+            { "store": "course-design", "id": "gates/A5", "note": "Context packs (nominal influence only — items are context-neutral)" },
+            { "store": "course-design", "id": "gates/academic-writing-intermediate-S1", "note": "Pattern precedent: 1 item per lesson, passMark 70, unlimited attempts, remediation-first" },
+            { "doc": "docs/project/project-backlog.md", "ref": "14 Aug SUMM furniture decisions (resultsdebrief + pass-reveal)" },
+            { "store": "design-kb", "id": "skeletons/summative", "version": "0.1.0", "note": "Archetype carries furniture config" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T17:00:00Z",
+          "sessionRef": "Academic Writing: Advanced S1 design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-advanced-W1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "wOpen": {
+              "learningOutcomes": "By the end of this course, you will be able to: recognise that different disciplines shape academic writing in distinct ways; identify how style, evidence, vocabulary, and discourse engagement vary across discipline families; evaluate and justify your own discipline's conventions; and develop a critical edge by using the language of criticality to engage actively with sources.",
+              "overviewAndJustification": "This course assumes you already know how to structure a piece of academic writing and integrate sources. Now the question shifts: what does good writing look like in *your* discipline - and how do you develop the critical voice that distinguishes competent work from excellent? You will explore how conventions vary across discipline families and learn to read your own discipline's expectations with sharper awareness.",
+              "signpostIntro": "This course moves through four lessons, each building on the last - from recognising that disciplines differ, through analysing those differences, to applying that awareness to your own field and developing a critical edge.",
+              "signpostOutro": "Each lesson pairs teaching with a quick check or reflective task, so you can test your understanding and connect the ideas to your own writing.",
+              "signpostComponent": "palette/adapt-abbott-timeline"
+            },
+            "wClose": {
+              "courseSummary": "You have completed Academic Writing: Advanced Stage - four lessons on disciplinary self-awareness and critical engagement with sources.",
+              "practiceConnection": "These ideas apply directly to your next piece of writing. Before you submit, ask: does my writing show awareness of my discipline's conventions? Does my critical voice come through - or am I merely reporting what others have said?",
+              "whereThisGoesNext": "This is the final stage of the Academic Writing pathway. What you have learned here - reading for convention, developing a critical edge - will serve you across every writing task your degree requires.",
+              "furtherReading": {
+                "citation": "Dennis, C. and Abbott, S. (2025) Excelling at University. Chapter 8: Critical thought and developing a critical edge in writing; Chapter 9: Writing for Assessment. London: Routledge.",
+                "resourcesDrawer": "ON"
+              }
+            }
+          },
+          "grounding": [
+            { "store": "course-design", "id": "gates/A3", "note": "Lesson map: 4 lessons (L02-L05)" },
+            { "store": "course-design", "id": "gates/A4", "note": "Signpost component: palette/adapt-abbott-timeline" },
+            { "store": "course-design", "id": "gates/A6", "note": "5 confidence items, reflectiveBridge OFF - referenced, not re-litigated" },
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "14 Aug block reorder: LOs first" },
+            { "doc": "docs/authoring/wrapper-close-template.md", "ref": "W-CLOSE content structure" },
+            { "doc": "reference/excelling-at-university.md", "ref": "Chapter 8 (lines 1461-1768), Chapter 9 (lines 1769-2423)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-01T18:00:00Z",
+          "sessionRef": "Academic Writing: Advanced W1 design conversation, 01 Sep 2026 (Claude Code)"
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "phaseId": "A",
+      "closedAt": "2026-08-29T22:00:00Z",
+      "bulkBlessing": {
+        "stood": ["gates/A4"],
+        "proposalStood": ["gates/A6"]
+      }
+    }
+  ],
+  "instantiations": [
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "order": 1,
+      "archetype": { "id": "skeletons/wrapper-open", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "signpost",
+          "component": "palette/adapt-abbott-timeline",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/A4"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Before you start",
+      "order": 2,
+      "archetype": { "id": "skeletons/c-pre", "version": "0.1.0" },
+      "notes": "Fixed single-block page: confidence PRE, 5 items (per A6). No variable slots."
+    },
+    {
+      "pageKey": "academic-writing-advanced-L02",
+      "pageType": "lesson",
+      "title": "How disciplines shape writing",
+      "order": 3,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/text",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L02-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L02-B3"
+        }
+      ],
+      "notes": "Phase B complete. CP-1g: fixed reference content from Chapter 9's three-discipline exemplars. No context-pack variation."
+    },
+    {
+      "pageKey": "academic-writing-advanced-L03",
+      "pageType": "lesson",
+      "title": "Conventions in practice",
+      "order": 4,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/text",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/academic-writing-advanced-L03-B2#seq2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L03-B3"
+        }
+      ],
+      "notes": "Phase B complete. CP-1g: fixed teaching content. Analytical walkthrough applying four-point checklist to psychology extract. L02/L03 merge risk resolved - L03 is distinct (METHOD of analysis, not comparative exemplars)."
+    },
+    {
+      "pageKey": "academic-writing-advanced-L04",
+      "pageType": "lesson",
+      "title": "Reading your own discipline",
+      "order": 5,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L04-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/opentext",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L04-B4"
+        }
+      ],
+      "notes": "Phase B complete. LS-1c deviation: Option C sub-variant (accordion without supplied passage — reflective prompts per convention, not analysis of text). Check uses opentext not mcq (LS-1d, D2/D4 mismatch). CP-1g: coupled:false."
+    },
+    {
+      "pageKey": "academic-writing-advanced-L05",
+      "pageType": "lesson",
+      "title": "The critical edge",
+      "order": 6,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/text",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/academic-writing-advanced-L05-B2#seq2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/opentext",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/academic-writing-advanced-L05-B4"
+        }
+      ],
+      "notes": "Phase B complete. LS-1c Option B (single transformation): 2×text interior (before/after). Check uses opentext with revision task (not mcq). CP-1g: coupled:false (third in this course)."
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "order": 7,
+      "archetype": { "id": "skeletons/summative", "version": "0.1.0" },
+      "notes": "Assessment shape deferred to Phase S. Standard furniture (resultsdebrief + passreveal) attaches at archetype level."
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "How far you've come",
+      "order": 8,
+      "archetype": { "id": "skeletons/c-post", "version": "0.1.0" },
+      "notes": "Confidence POST, same 5 items as PRE. Reflective bridge OFF per A6."
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "order": 9,
+      "archetype": { "id": "skeletons/wrapper-close", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/A7"
+        }
+      ],
+      "notes": "Resources drawer ON per A7; contents populated at W1."
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-09-09T09:10:00Z",
+      "trigger": {
+        "gate": "gates/academic-writing-advanced-L02-B2",
+        "changeKind": "amended",
+        "note": "instantiations[] slotKey corrected on three lessons (L02-L04) from workedExample to interior, to match the skeletons/lesson archetype's own slot definition (5.105 ruling, 9 Sep 2026). L05 in this course already correctly recorded interior and is unaffected."
+      },
+      "sweep": [
+        {
+          "gate": "gates/academic-writing-advanced-L02-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-advanced-L03-B2",
+          "recordSeq": 2,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-advanced-L04-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-2",
+      "timestamp": "2026-09-14T00:00:00Z",
+      "trigger": {
+        "gate": "gates/A7",
+        "changeKind": "amended",
+        "note": "instantiations[] W-CLOSE slotKey corrected from further-reading to course-references, matching the skeletons/wrapper-close archetype's key rename (A83, this sitting, 14 September 2026, commit 89c1a48)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A7",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A7's own decidedValue and record are untouched. Second migration on the same field: the 5.105/R72 ruling (skeleton is authoritative, instantiation corrected to match) applies unchanged, a second time. See A83."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -39,6 +39,14 @@ class GrowMode {
 
     const wrap = document.createElement('div');
     wrap.className = 'grow-mode';
+    // data-order places this in the core nav's sort (sortNavigationButtons in
+    // navigationView.js): negative = left-aligned, positive = right-aligned.
+    // 95 sits just right of adapt-contrib-pageLevelProgress's completion icon
+    // (default _navOrder 90) and just left of the drawer button (default 100).
+    // Without this the button defaulted to order 0 and was force-inserted at
+    // nav.firstChild, landing beside/under the skip-navigation button
+    // (_navOrder -100, position:absolute left:0 on focus — see nav.less).
+    wrap.setAttribute('data-order', '95');
     wrap.innerHTML = `
       <button type="button" class="btn-icon nav__btn grow-mode__toggle" aria-haspopup="true" aria-expanded="false" aria-label="Display mode" title="Mode">
         <span class="grow-mode__icon" aria-hidden="true">contrast</span>
@@ -47,7 +55,7 @@ class GrowMode {
         ${MODES.map(m => `<button type="button" class="grow-mode__opt" role="menuitemradio" data-mode="${m.id}"><span class="grow-mode__icon" aria-hidden="true">${m.icon}</span><span>${m.label}</span></button>`).join('')}
         <button type="button" class="grow-mode__opt grow-mode__motion" role="menuitemcheckbox"><span class="grow-mode__icon" aria-hidden="true">animation</span><span>Animations</span></button>
       </div>`;
-    nav.insertBefore(wrap, nav.firstChild);
+    nav.appendChild(wrap);
 
     const toggle = wrap.querySelector('.grow-mode__toggle');
     const panel = wrap.querySelector('.grow-mode__panel');

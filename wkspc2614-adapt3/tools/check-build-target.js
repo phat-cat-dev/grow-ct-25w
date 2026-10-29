@@ -23,6 +23,19 @@
  * courses/<slug> and courses/_generated/<slug> - are accepted. Only
  * archive/ or any other location outside courses/ is refused.
  *
+ * UPDATED (28 Oct 2026): historical/retired course material now lives at
+ * courses/_archive/ (moved there, inside courses/, on explicit instruction -
+ * see courses/_archive/courses-2026-09/README.md and
+ * courses/_archive/courses-2026-09-rebuild/README.md for provenance).
+ * Underscore-prefixed to match the existing courses/_generated and
+ * courses/_component-gallery convention, so verify-all-courses.js's
+ * discoverCourses() already skips it (its direct-listing filter drops any
+ * name starting with "_"). That placement is still textually "under
+ * courses/" though, and would otherwise pass the check below unchanged -
+ * exactly the failure this file exists to catch, just one level deeper.
+ * courses/_archive/ is therefore refused explicitly here too, by name,
+ * regardless of the courses/ check.
+ *
  * UPDATED (Prompt 140 CSTR-1, 21 Sep 2026): src/course no longer exists
  * as a checked-in symlink at all (it pointed at
  * archive/courses-2026-09/academic-writing-introductory - see this
@@ -53,6 +66,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const TARGET = path.join(ROOT, 'src', 'course');
 const COURSES_ROOT = path.join(ROOT, 'courses') + path.sep;
+const ARCHIVE_ROOT = path.join(ROOT, 'courses', '_archive') + path.sep;
 
 function main() {
   let lstat;
@@ -72,6 +86,15 @@ function main() {
 
   const resolved = fs.realpathSync(TARGET);
   const resolvedWithSep = resolved + path.sep;
+
+  if (resolvedWithSep.startsWith(ARCHIVE_ROOT)) {
+    console.error(`REFUSED: src/course is a symlink resolving into courses/_archive/.`);
+    console.error(`  src/course -> ${resolved}`);
+    console.error('  Build stopped: courses/_archive/ holds retired/historical course material');
+    console.error('  (reference only, not gated against, not reviewed, not repaired, not');
+    console.error('  retrofitted - see courses/_archive/*/README.md). A build must not ship it.');
+    process.exit(1);
+  }
 
   if (!resolvedWithSep.startsWith(COURSES_ROOT)) {
     console.error(`REFUSED: src/course is a symlink resolving outside courses/.`);

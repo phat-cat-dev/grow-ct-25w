@@ -1,0 +1,607 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "academic-writing-introductory",
+  "slug": "academic-writing-introductory",
+  "status": "in-development",
+  "retroFill": {
+    "filledAt": "2026-08-26T00:00:00Z",
+    "method": "Reconstructed from Project knowledge records (open-decisions.md, project-backlog.md APPEND LOG, project-knowledge.md, template docs, away-week log) at away-week Session 1 close-out; every decision verified by search before assertion. Timestamps are date-precision (T00:00:00Z), drawn from the cited records. Repo baseline 6447102. B-phase (per-lesson) gates are ABSENT by finding, not omission: B1-B7's individual definitions exist only in 4 Aug session notes, not in Project knowledge, so per-lesson decisions cannot honestly be assigned to gate ids until Session 2's cluster formalisation; those decisions are carried in instantiations without decidedByGate references.",
+    "sessionRef": "away-week-log.md Session 1 (S1 close-out thread, 26 Aug 2026)"
+  },
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.0.0"
+  },
+  "gates": [
+    {
+      "gateId": "gates/CTX",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": {
+            "pathway": "academic-writing",
+            "tier": "introductory"
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing pathway, Beginner band", "note": "Pathway/tier identity of the pilot." },
+            { "doc": "docs/project/project-knowledge.md", "ref": "section 8, Current state", "note": "Course identity as built." }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "C2 scoping session, 16 July 2026 (earliest record fixing the full course identity)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-07-16, C2 scoping session" }
+            ],
+            "note": "Gate postdates the decision: CTX was defined at S1-D4 (15 Aug 2026); the pilot's identity as Academic Writing: Introductory Stage is the founding choice, Abbott's own, documented throughout. Facet set is baseline (core facets only) - no subject, level, or institutional facets were declared for the pilot."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": {
+            "pathway": "Academic Writing",
+            "tierName": "Introductory Stage",
+            "courseTitle": "Academic Writing: Introductory Stage",
+            "slug": "academic-writing-introductory",
+            "voiceBandAnchor": "section 16 Beginner band (default anchor per pathway-tier-mapping)"
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing pathway", "note": "Pathway anchor and voice-band anchor." },
+            { "doc": "docs/authoring/course-template.md", "ref": "Course Slug Convention", "note": "Naming and slug convention." }
+          ],
+          "timestamp": "2026-07-22T00:00:00Z",
+          "sessionRef": "Naming retrofit, 22 July 2026 (Beginner -> Introductory Stage convention)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "course-template.md", "ref": "Course Slug Convention" },
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-13, Introductory Stage naming follow-through" }
+            ],
+            "note": "Pilot pathway/tier choice is Abbott's; the tier-naming convention (Stage vocabulary) settled 22 July 2026."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": "Beginner band scope per pathway-tier-mapping: getting a draft down and getting the basics right - demystification (three false assumptions), the writing cycle (understand the task -> plan -> first draft -> edit -> proofread), understanding the task (steer and keywords), basic essay structure, the common-errors list. Goal: produce a competent piece without panicking.",
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing, Beginner", "note": "The core curriculum-design artefact, v3." },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "section 5 matrix, Introductory column", "note": "Demand calibration for the tier." }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "pathway-tier-mapping.md v3 (curriculum artefact); C2 scoping session",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "pathway-tier-mapping.md", "ref": "Academic Writing pathway, Beginner band" }
+            ],
+            "note": "Band content is Abbott/Dennis curriculum authorship (from the book), recorded in the mapping artefact before any gate model existed."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              { "pageKey": "L02", "title": "Understanding the task" },
+              { "pageKey": "L03", "title": "Planning" },
+              { "pageKey": "L04", "title": "Drafting" },
+              { "pageKey": "L05", "title": "Editing" },
+              { "pageKey": "L06", "title": "Proofreading" },
+              { "pageKey": "L07", "title": "Common errors" }
+            ],
+            "notes": "Five-lesson shape (Planning, Drafting, Editing, Proofreading, Common errors) confirmed against Chapter 9's structure at C2 scoping, Editing and Proofreading kept distinct as the writing cycle's own stages; Understanding the task (L02) carried from the pilot slice. L01 (The writing cycle) retired; assets folded into W-OPEN and SUMM."
+          },
+          "grounding": [
+            { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-07-16, C2 scoping session", "note": "Five-lesson shape confirmed against Ch 9." },
+            { "doc": "docs/project/project-knowledge.md", "ref": "section 8, Course structure (11 pages)", "note": "As-built lesson list including L01 retirement." }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "C2 scoping session, 16 July 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-07-16" },
+              { "doc": "project-knowledge.md", "ref": "section 8" }
+            ],
+            "note": "Record says 'confirmed' at the scoping session; proposal authorship not recorded - human-confirmed is the floor mode for a session resolution ratified by Abbott."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": "Visual overview treatment for the W-OPEN Signpost: hotgraphic (writing-cycle diagram) - the VO-1 palette's cyclical/circular-model option, matching the writing cycle's shape. Decision made once per pathway at Stage 1 design.",
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "#32 VO-1 (RESOLVED)", "note": "The visual-overview palette and per-pathway selection rule." },
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Block 3: Signpost", "note": "VO-1 slot in W-OPEN." }
+          ],
+          "timestamp": "2026-07-28T00:00:00Z",
+          "sessionRef": "VO-1 resolution (open-decisions #32)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "open-decisions.md", "ref": "#32 VO-1" },
+              { "doc": "project-knowledge.md", "ref": "section 8, W-OPEN line (hotgraphic, writing-cycle diagram)" }
+            ],
+            "note": "VO-1 RESOLVED entry documents the decision; mode floor human-confirmed. VO-1-as-gate-A4 mapping is the 13 Aug gate model's own framing."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "shape": "Dedicated end-of-tier assessment page (adopted as programme default)",
+            "level": "Recognition-level summative; writing-quality assessment explicitly out of scope for now",
+            "passMark": "70%",
+            "attempts": "unlimited"
+          },
+          "grounding": [
+            { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-07-16, S-1 to S-5", "note": "AW-beginner scoring decisions; open-decisions #5 partly resolved (this tier only)." },
+            { "doc": "docs/curriculum/tier-specification.md", "ref": "section 7, Assessment phrasing and difficulty (the parity standard)", "note": "The standard the shape answers to." }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "S-1 to S-5 resolution, 16 July 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-07-16, S-1 to S-5" }
+            ],
+            "note": "Resolved-in-session; mode floor human-confirmed. SUMM page-level design carried at gates/S1."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": "Confidence pre/post instrument: PRE in Wrapper Open after tier outcomes (WR-1b block 4), POST first in Wrapper Close before the tier summary (WR-2b); items curated per tier, capped at 10 (WR-2a); five-pattern comparison feedback with per-item authored overrides as primary mechanism (WR-2d); no cross-component score reads - sequencing only (WR-2c).",
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "WR-2 (confidence mechanics)", "note": "WR-2a-d cluster." }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "Wrapper redesign session, 16 July 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "open-decisions.md", "ref": "WR-2" }
+            ],
+            "note": "Superseded by seq 2; kept visible per append-only history."
+          }
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "supersedes": 1,
+          "decidedValue": "Confidence relocated to dedicated C-PRE / C-POST pages (CC-1a): sequence W-OPEN -> C-PRE -> lessons -> SUMM -> C-POST -> W-CLOSE. Naming C-PRE/C-POST (C-OPEN/C-CLOSE rejected, CC-1b). Each C-page carries a single framing sentence plus the instrument, nothing else (CC-1c). GroupId pairing, WR-2a cap, and modes unchanged (CC-1d). Instance: 9 statements, 5-point scale. Optional post-completion reflective bridge (opentext) exists per-course via this gate - NOT enabled for this course (off by default per CC-1c).",
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CC-1 (confidence pages)", "note": "Supersedes WR-2b placement; WR-2 mechanics amended, not discarded." },
+            { "doc": "docs/authoring/c-pre-template.md", "ref": "Cross-Reference: Confirmed Decisions" },
+            { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-13, CC-1/WC-1 retrofit completed", "note": "Retrofit executed; bridge NOT enabled; tracking IDs 89/101 preserved." }
+          ],
+          "timestamp": "2026-08-13T00:00:00Z",
+          "sessionRef": "claude.ai planning sessions, 4 and 13 August 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-13, CC-1 resolution and retrofit entries" }
+            ],
+            "note": "CC-1 resolved in claude.ai planning and recorded same day; retrofit and CC-1e verification (61/61) both documented 13 Aug."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": "References/resources: one consolidated references component at Wrapper Close only (RF-1); no sub-lesson component - inline cross-references use the existing Cross-reference teaching move. Aggregation curated, not runtime-scanned (RF-2). Lesson-level references drafted during authoring (citation, no URL) and consolidated in one batched pass per tier (PLR-1c/1d); a reference does not render live until a real URL is supplied.",
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "RF-1 to RF-4 (references/resources design cluster)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#34 PLR-1 (lesson-level references workflow)" }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "Wrapper redesign session, 16 July 2026 (RF); PLR-1 29 July 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "open-decisions.md", "ref": "RF-1 to RF-4" },
+              { "doc": "open-decisions.md", "ref": "#34 PLR-1" }
+            ],
+            "note": "Consolidates the 16 July RF design and the 29 July PLR-1 workflow into the gate's standing answer; component built and grounded in W-CLOSE-c-15 (adapt-abbott-references)."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/S1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": "8 items (6 mcq, 2 sortable), trickle-gated, answered in sequence",
+            "itemLessonMapping": "SUMM-c-10/c-15 -> Understanding the task (L02); SUMM-c-20/c-25 -> Planning (L03); SUMM-c-30/c-35/c-40/c-45 -> Common errors (L07)",
+            "marking": "_suppressMarking: true (marking delayed until all answered); _canShowFeedback/Marking: true on article and all 8 components; all 8 _incorrect.notFinal strings carry remediation pointers naming specific lessons (14 Aug)",
+            "furniture": "resultsdebrief (post-submission study-plan debrief grouping incorrect answers by lesson, pass-reveal note on pass) + passreveal (model answers revealed on pass) as STANDARD SUMM furniture",
+            "passMark": "70% (per A5/S-3)",
+            "coverageNote": "SUMM coverage omits Drafting (L04), Editing (L05), Proofreading (L06) - standing watch item feeding backlog C2"
+          },
+          "grounding": [
+            { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-14, SUMM marking/feedback fix and resultsdebrief entries", "note": "The authoritative SUMM record per F7 - summative-template.md deliberately NOT cited (stale)." },
+            { "doc": "docs/authoring/extension-specs/passreveal.md", "ref": "pass-reveal extension spec", "note": "Cited with backlog records in place of the non-existent resultsdebrief spec (F1)." }
+          ],
+          "timestamp": "2026-08-14T00:00:00Z",
+          "sessionRef": "14 August 2026 SUMM records (backlog APPEND LOG)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-14, three Moodle proof-run findings + resultsdebrief evidence runs" }
+            ],
+            "note": "Consolidates decisions spanning 16 July (S-1 to S-5 shape, at gates/A5) through 14 August (marking, remediation feedback, furniture). Resultsdebrief resume path VERIFY-ON-RETURN (Moodle proof); local evidence runs 1-2 documented with DOM evidence, run 3 (resume) blocked locally."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/W1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": "Wrapper architecture: W-OPEN / W-CLOSE naming (WR-1a); W-OPEN block order Overview -> Signpost -> Learning outcomes (WR-1b); ID convention W-OPEN-b-NN / W-CLOSE-b-NN (WR-1d); wrappers unnumbered in menu (28 July decision).",
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "WR-1 (wrapper architecture)" }
+          ],
+          "timestamp": "2026-07-16T00:00:00Z",
+          "sessionRef": "Wrapper redesign session, 16 July 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "open-decisions.md", "ref": "WR-1" }
+            ],
+            "note": "Superseded in part by seq 2 and seq 3; kept visible per append-only history."
+          }
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "supersedes": 1,
+          "decidedValue": "W-CLOSE enrichment (WC-1): W-CLOSE gains practice-connection and where-this-goes-next blocks (interacts with gate A2 scoping), giving the four-block close: tier summary, practice connection, where-this-goes-next, references. Confidence blocks removed from both wrappers per CC-1 (recorded at gates/A6 seq 2).",
+          "grounding": [
+            { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-13, CC-1/WC-1 resolution and retrofit", "note": "W-CLOSE-b-20/b-25 added, tracking IDs 106-107; content voice-lint PASS." },
+            { "doc": "docs/authoring/wrapper-close-template.md", "ref": "WC-1 amendments" }
+          ],
+          "timestamp": "2026-08-13T00:00:00Z",
+          "sessionRef": "claude.ai planning sessions, 4 and 13 August 2026",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "project-backlog.md", "ref": "APPEND LOG 2026-08-13, WC-1 entries" }
+            ]
+          }
+        },
+        {
+          "seq": 3,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "supersedes": 2,
+          "decidedValue": "W-OPEN block reorder (supersedes WR-1b): Learning outcomes render FIRST, before Overview and Signpost (b-15 -> b-05 -> b-10, IDs unchanged) - LOs set expectations for the whole course. Plus wording conformance fix: W-OPEN-c-25 'this topic' -> 'this course' (drift-never-implemented, dated to the 28 July decision; the 14 Aug structural audit missed it because structural conformance checking does not catch wording drift - the 5.13 lint gap).",
+          "grounding": [
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Change note, 14 August 2026", "note": "Both items; supersession of WR-1b recorded in open-decisions annotation." }
+          ],
+          "timestamp": "2026-08-14T00:00:00Z",
+          "sessionRef": "14 Aug 2026 template-conformance audit; implemented in commit 2042be2 (15 Aug 2026)",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "wrapper-open-template.md", "ref": "Change note, 14 August 2026" }
+            ],
+            "note": "Decision dated 14 Aug (template change note); implementation commit 2042be2 per the S1 close-out brief. F6's stale project-knowledge line (pre-reorder order) is a known caveat, fix queued return-week."
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "gates/D1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "pending",
+          "timestamp": "2026-08-26T00:00:00Z",
+          "reconstruction": {
+            "basis": "documented",
+            "evidence": [
+              { "doc": "away-week-log.md", "ref": "Session 1, S1-D1/S1-D8 (store scope) and open threads" },
+              { "doc": "project-backlog.md", "ref": "#11 QAA subject benchmark cross-checking (scope-only, not started)" }
+            ],
+            "note": "Genuinely not reached: the pilot ran baseline (no subject/institutional facets), and the source-kb/institutional-kb stores it would consult do not exist yet (population return-week; formats Session 4b). Timestamp is the observation date at retro-fill."
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "order": 1,
+      "archetype": { "id": "skeletons/wrapper-open", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "signpost",
+          "component": "palette/hotgraphic",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/A4"
+        }
+      ],
+      "notes": "As-built (post 2042be2): Learning outcomes FIRST, then Overview, then Signpost (W1 seq 3). Hotgraphic is the writing-cycle diagram, context-neutral. Completion driven by text inview plus full hotgraphic pin visitation (CC-1e behaviour note)."
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Before you start",
+      "order": 2,
+      "archetype": { "id": "skeletons/c-pre", "version": "0.0.0" },
+      "notes": "Fixed single-block page: confidence PRE, 9 statements, 5-point scale (item selection decided at gates/A6). No variable slots."
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Understanding the task",
+      "order": 3,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true, "variationType": "whole-prose" },
+          "decidedByGate": "gates/A3"
+        }
+      ],
+      "notes": "Interior = Option C, sequential process: accordion + analysis (LS-1c). Context coupling per the 14 Aug two-tier rule (full slot replacement for worked-example prose); the pack template's literal-fixed-steer-words constraint is an intra-pack invariant, not a coupling depth. KNOWN DEVIATION: block order Check (b-25) -> Practical guidance (b-30), reversed from the L03-L06 standard Practical -> Check (LS-1e); retrofit queued (backlog 5.4), NOT landed at baseline 6447102 - recorded as-is, not smoothed. Check-slot component NOT recoverable from records - omitted rather than guessed. decidedByGate points at A3 as the nearest documented decision locus; the true per-lesson (B-phase) gate id is unassignable until Session 2 formalises B1-B7."
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Planning",
+      "order": 4,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "check",
+          "component": "palette/mcq"
+        }
+      ],
+      "notes": "Interior = Option A, weak/strong comparative, 4 blocks (LS-1c); its component realisation is not recoverable from records at block level - slot choice omitted rather than guessed. Check = mcq (LS-1d). Worked-example content context-coupled whole-prose per the 14 Aug two-tier rule and the P6 pack template (narrative-beat and timing invariance). No decidedByGate: B-phase gate ids unassignable (see retroFill.method)."
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Drafting",
+      "order": 5,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "check",
+          "component": "palette/mcq"
+        }
+      ],
+      "notes": "Interior = Option A (LS-1c); component realisation not recoverable - omitted. Check = mcq (LS-1d). Coupling as L03. No decidedByGate: B-phase gate ids unassignable."
+    },
+    {
+      "pageKey": "L05",
+      "pageType": "lesson",
+      "title": "Editing",
+      "order": 6,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "check",
+          "component": "palette/mcq"
+        }
+      ],
+      "notes": "Interior = Option B, single transformation, 2 blocks (LS-1c); component realisation not recoverable - omitted. Check = mcq (LS-1d). No decidedByGate: B-phase gate ids unassignable."
+    },
+    {
+      "pageKey": "L06",
+      "pageType": "lesson",
+      "title": "Proofreading",
+      "order": 7,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "check",
+          "component": "palette/mcq"
+        }
+      ],
+      "notes": "Interior = Option A (LS-1c); component realisation not recoverable - omitted. Check = mcq (LS-1d). No decidedByGate: B-phase gate ids unassignable."
+    },
+    {
+      "pageKey": "L07",
+      "pageType": "lesson",
+      "title": "Common errors",
+      "order": 8,
+      "archetype": { "id": "skeletons/lesson", "version": "0.0.0" },
+      "notes": "Interior pattern and check-slot component NOT recoverable from records (LS-1's structural analysis covered L03-L06 and named L02's Option C; L07 was outside it). Slot choices omitted rather than guessed. Worked-example content context-coupled (P6 pack template: precise grammatical-error pattern). No decidedByGate: B-phase gate ids unassignable."
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "order": 9,
+      "archetype": { "id": "skeletons/summative", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "decidedByGate": "gates/S1"
+        },
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/sortable",
+          "decidedByGate": "gates/S1"
+        }
+      ],
+      "notes": "8 items: 6 mcq + 2 sortable (14 Aug evidence runs), trickle-gated. Repeated slotKey = the repeating-item-slot convention adopted at retro-fill (schema permits duplicate keys; archetype-side repetition semantics flagged for the skeletons population, return week). Furniture resultsdebrief + passreveal attaches at archetype level per the skeletons schema, not as instantiation slot choices. Archetype content derives from the backlog's 14 Aug records, NOT summative-template.md (F7). slotKey corrected from summative-items to assessment-items 8 Sep 2026 to match the skeleton (5.97 ruling); see sweepEvents SW-1."
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "How far you've come",
+      "order": 10,
+      "archetype": { "id": "skeletons/c-post", "version": "0.0.0" },
+      "notes": "Confidence POST, same 9 statements, five-pattern comparison feedback (WR-2d) with predominantlyUp/mixed/flatOrLow summaries. Optional reflective bridge (opentext) NOT enabled - off by default per CC-1c, decided at gates/A6 seq 2. No variable slots filled."
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "order": 11,
+      "archetype": { "id": "skeletons/wrapper-close", "version": "0.0.0" },
+      "slotChoices": [
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "decidedByGate": "gates/A7"
+        }
+      ],
+      "notes": "Four blocks as-built (CC-1e verified DOM order): tier summary (c-10) -> practice connection (c-20) -> where-this-goes-next (c-25) -> references (c-15, adapt-abbott-references). Practice-connection and where-this-goes-next added by WC-1 (gates/W1 seq 2)."
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-09-08T23:27:00Z",
+      "trigger": {
+        "gate": "gates/S1",
+        "changeKind": "amended",
+        "note": "instantiations[] SUMM slotChoices slotKey corrected from summative-items to assessment-items to match the skeletons/summative archetype's own slot definition (5.97 ruling, 8 Sep 2026)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/S1",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate S1's own decidedValue and record are untouched. See backlog 5.97."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-2",
+      "timestamp": "2026-09-09T09:00:00Z",
+      "trigger": {
+        "gate": "gates/A4",
+        "changeKind": "amended",
+        "note": "instantiations[] slotKey corrected on three pages to match their archetype's own slot definitions (5.105 ruling, 9 Sep 2026): W-OPEN visual-overview -> signpost (skeletons/wrapper-open); L02 worked-example-interior -> interior (skeletons/lesson); W-CLOSE references -> further-reading (skeletons/wrapper-close). The W-CLOSE case differs from the other two: 'references' is a real archetype key, but belongs to skeletons/lesson, not skeletons/wrapper-close - the lesson's vocabulary used on a wrapper page, not a same-class typo."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A4",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A4's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/A3",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A3's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/A7",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A7's own decidedValue and record are untouched. Cross-archetype case (lesson-vocabulary key on a wrapper-close page), distinct from the label-typo class of the other two entries in this event. See backlog 5.105."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-3",
+      "timestamp": "2026-09-14T00:00:00Z",
+      "trigger": {
+        "gate": "gates/A7",
+        "changeKind": "amended",
+        "note": "instantiations[] W-CLOSE slotKey corrected from further-reading to course-references, matching the skeletons/wrapper-close archetype's key rename (A83, this sitting, 14 September 2026, commit 89c1a48)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A7",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A7's own decidedValue and record are untouched. Second migration on the same field: the 5.105/R72 ruling (skeleton is authoritative, instantiation corrected to match) applies unchanged, a second time. See A83."
+          }
+        }
+      ]
+    }
+  ]
+}

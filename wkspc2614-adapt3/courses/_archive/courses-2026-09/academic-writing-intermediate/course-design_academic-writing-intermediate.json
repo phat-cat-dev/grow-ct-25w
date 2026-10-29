@@ -1,0 +1,1506 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "academic-writing-intermediate",
+  "slug": "academic-writing-intermediate",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "Academic Writing",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "gates/CTX",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Academic Writing",
+            "tier": "intermediate",
+            "baseline": true,
+            "note": "Core facets only. No subject, level, or institutional facets. No sourceConsultation triggers fire for this course."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 6 (Academic Writing), Intermediate band" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Academic Writing",
+            "tierName": "Intermediate Stage",
+            "displayName": "Academic Writing: Intermediate Stage",
+            "slug": "academic-writing-intermediate",
+            "folder": "courses/academic-writing-intermediate/"
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Pathway 6 (Academic Writing)" },
+            { "doc": "docs/authoring/course-template.md", "ref": "Course Slug Convention" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "scope": "Intermediate band per pathway-tier-mapping.md: clarity and precision (SVO model, active vs passive, cutting non-essential text, unedited-vs-edited paragraph comparison); macro/micro structure (topic sentences, judgement-bearing final sentence, paragraph arrangement); integrating sources via the 'voices' technique; the four pillars as a self-review lens; genre awareness (essay in depth, reflective writing).",
+            "goal": "An argued, well-evidenced piece.",
+            "source": "Chapter 9 (Academic Writing), Intermediate section",
+            "tierBand": "tier-bands/intermediate (design-kb, 0.1.0)",
+            "priorExperienceAnchor": "intermediate - working foundation in place, build without re-teaching basics",
+            "note": "First live exercise of the intermediate tier-band; flag any friction found using it back to the design conversation."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing, Intermediate band" },
+            { "store": "design-kb", "id": "tier-bands/intermediate", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/adapt-abbott-timeline",
+            "rationale": "Linear/staged, non-circular fit for the five-topic build-up structure.",
+            "alternativesConsidered": [
+              { "component": "palette/text", "reason": "Fixed-value default, passed over" },
+              { "component": "palette/hotgraphic", "reason": "Pilot's own choice for Introductory, wrong fit here - Intermediate's content isn't cyclical" },
+              { "component": "palette/narrative", "reason": "Requires per-item images, untested in production" }
+            ],
+            "note": "FIRST real courseware use of adapt-abbott-timeline - it was build-verified with no shipped instance prior to this course. Flag any authoring friction back to the design conversation rather than silently working around it. (Palette entry added this session: bc6793c.)"
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "#32 VO-1 (RESOLVED)" },
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Block 3: Signpost" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-specified",
+          "decidedValue": {
+            "contextPacks": [
+              { "packId": "baseline", "status": "reused", "note": "Reused from pilot's existing built pack" },
+              { "packId": "criminology", "status": "reused", "note": "Reused from pilot's existing built pack" },
+              { "packId": "sports-journalism", "status": "reused", "note": "Reused from pilot's existing built pack" },
+              { "packId": "psychology", "status": "reused", "note": "Reused from pilot's existing built pack" },
+              { "packId": "banking-and-finance", "status": "new", "note": "NEW - needs a new named character/voice parallel to Jess/Rhian/David/Emma, does not yet exist anywhere in the repo" }
+            ],
+            "couplingScope": "course-wide",
+            "perLessonCouplingType": "Decided at each lesson's Phase B (Type 1/2/3 per CP-1b/c), not here - A5 only fixes the pack SET.",
+            "crossReference": "banking-and-finance retrofit onto Academic Writing: Introductory tracked separately as backlog 5.20 - NOT part of this course's scope"
+          },
+          "grounding": [
+            { "doc": "docs/project/project-backlog.md", "ref": "5.20 (cross-reference only, not scope)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "confidenceItems": [
+              "I can write clearly and precisely, cutting unnecessary words.",
+              "I can structure a piece of writing so my argument builds logically.",
+              "I can integrate sources actively into my own argument.",
+              "I can use a self-review process to strengthen a draft.",
+              "I can adapt my writing to suit the genre I'm working in."
+            ],
+            "pairing": "C-PRE/C-POST paired via _selfAssessmentGroupId",
+            "reflectiveBridge": "OFF"
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "CC-1 (confidence pages)" },
+            { "doc": "docs/authoring/c-pre-template.md", "ref": "Cross-Reference: Confirmed Decisions" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "resourcesDrawer": "ON",
+            "contents": "DEFERRED to gate W1 - do not populate the references component's items in this phase",
+            "note": "Structural presence confirmed; the drawer/component exists per the wrapper-close skeleton if A7=ON implies a structural difference from a hypothetical OFF case."
+          },
+          "grounding": [
+            { "doc": "docs/project/open-decisions.md", "ref": "RF-1 to RF-4 (references/resources design cluster)" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#34 PLR-1 (lesson-level references workflow)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              { "pageKey": "L02", "title": "Clarity and precision" },
+              { "pageKey": "L03", "title": "Structuring your argument" },
+              { "pageKey": "L04", "title": "Integrating sources" },
+              { "pageKey": "L05", "title": "The four pillars" },
+              { "pageKey": "L06", "title": "Genre awareness" }
+            ],
+            "note": "5 lessons. Interior pattern and check-component choices per lesson are DEFERRED to Phase B - do not invent placeholder values for them."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing, Intermediate band scope" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T12:54:00Z",
+          "sessionRef": "Track D Phase A design conversation, 29 Aug 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "supersedes": 1,
+          "decidedValue": {
+            "lessons": [
+              { "pageKey": "academic-writing-intermediate-L02", "title": "Clarity and precision" },
+              { "pageKey": "academic-writing-intermediate-L03", "title": "Structuring your argument" },
+              { "pageKey": "academic-writing-intermediate-L04", "title": "Integrating sources" },
+              { "pageKey": "academic-writing-intermediate-L05", "title": "The four pillars" },
+              { "pageKey": "academic-writing-intermediate-L06", "title": "Genre awareness" }
+            ],
+            "note": "5 lessons. pageKey format changed from bare (L02-L06) to course-slug-prefixed (academic-writing-intermediate-L02 through -L06) to ensure global uniqueness across all courses. Interior pattern and check-component choices per lesson are DEFERRED to Phase B."
+          },
+          "grounding": [
+            { "doc": "docs/curriculum/pathway-tier-mapping.md", "ref": "Academic Writing, Intermediate band scope" },
+            { "doc": "docs/project/open-decisions.md", "ref": "#49 PK-1 (pageKey naming convention)" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T14:30:00Z",
+          "sessionRef": "Track D Phase A reopen-sweep, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: use the SVO model to identify and cut non-essential text, and shift sentences from passive to active voice for clarity."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/sequential-process",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "type": 2,
+              "note": "Type 2 (structured worked-example data): mechanism prose (SVO model, active/passive, cutting text) is context-neutral; the worked-example PARAGRAPH varies per context pack."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/sequential-process", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "supersedes": 1,
+          "decidedValue": {
+            "correctionNote": "Seq 1 classified the interior as sequential-process (step-by-step procedure). The content is a before/after paragraph comparison — weak version vs strong version, with analysis of what changed. This is evaluate-versions, not sequential-process. The recognition fields in activity-patterns made the misclassification visible; the error was present when seq 1 was written.",
+            "slots": {
+              "concept-intro": {
+                "pattern": null,
+                "realisation": "text",
+                "rationale": "The weak/strong sentence pair is a teaching illustration embedded within expository prose, not a standalone comparative activity. Patterns with concept-intro slotType (explore-model, survey-alternatives, recall-reveal, inline-commentary) do not match the recognition fields. Text is the right realisation; this is a considered decision, not an absence."
+              },
+              "interior": {
+                "pattern": "activity-patterns/evaluate-versions",
+                "realisation": "palette/annotated",
+                "coupling": {
+                  "type": 2,
+                  "note": "Type 2 (structured worked-example data): mechanism prose (SVO model, active/passive, cutting text) is context-neutral; the annotated weak/strong passages vary per context pack."
+                },
+                "rationale": "Before/after paragraph pair with analysis of what changed. evaluate-versions recognition: 'weak/strong pairs, before/after editing, draft/revision contrasts'. Annotated realisation chosen over accordion because the lesson teaches specific editing moves (find actor, pull forward, make verb direct) — phrase-level highlighting shows exactly which words changed and why."
+              },
+              "practical-guidance": {
+                "pattern": null,
+                "realisation": "text",
+                "rationale": "The three-question diagnostic is reflective ('Ask yourself: who is doing something?'), not actionable checks to tick off. action-checklist would require rephrasing as concrete yes/no items. survey-alternatives and inline-commentary do not match. Text is the right realisation; this is a considered decision, not an absence."
+              }
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/evaluate-versions", "version": "0.1.12", "note": "Recognition field: 'weak/strong pairs, before/after editing, draft/revision contrasts'" },
+            { "store": "design-kb", "id": "palette/annotated", "version": "0.1.1", "note": "Realisation: phrase-level commentary on weak and strong passages" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-09-02T14:00:00Z",
+          "sessionRef": "L02 re-author pass (backlog 5.46), 02 Sep 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "baseline": {
+                "status": "authored",
+                "unedited": "It was found by researchers that a significant reduction in concentration levels can be caused by the constant use of mobile devices, and it has also been suggested by a number of studies that there is a link between screen time and sleep disruption, which is something that many students may not be fully aware of in terms of how it affects their academic performance.",
+                "edited": "Researchers found that constant mobile device use significantly reduces concentration. Several studies also link screen time to sleep disruption - a connection many students underestimate."
+              },
+              "criminology": { "status": "authored" },
+              "sports-journalism": { "status": "authored" },
+              "psychology": { "status": "authored" },
+              "banking-and-finance": { "status": "authored" }
+            },
+            "note": "All five context packs authored: baseline, criminology, sports-journalism, psychology, banking-and-finance."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "type": 1,
+              "note": "Type 1 (token substitution only): tests the principle (SVO/active voice), not a specific paragraph, so no per-pack variation needed."
+            },
+            "content": {
+              "stem": "Which sentence uses active voice?",
+              "correct": "The committee approved the proposal.",
+              "distractors": [
+                "The proposal was approved by the committee.",
+                "Approval of the proposal occurred following committee review."
+              ],
+              "attempts": 2,
+              "feedbackTiesToSVOModelByName": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Look back at something you've written recently. Where could you cut non-essential text or shift from passive to active voice?",
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal step-reveal handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L02-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T16:00:00Z",
+          "sessionRef": "Track D L02 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: open a paragraph with a clear topic sentence, arrange supporting material in a logical order, and close with a sentence that states what the evidence shows."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/sequential-process",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "type": 2,
+              "note": "Type 2 (structured worked-example data): structural mechanism is context-neutral; the paragraph itself varies per pack."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/sequential-process", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "baseline": {
+                "status": "authored",
+                "unstructured": "Mobile phones are used constantly by students. Some studies show effects on concentration. There is also research on sleep. Universities have started offering guidance on screen time. It's a complicated area with many different findings.",
+                "structured": "Constant mobile phone use appears to affect student concentration and sleep. Several studies link frequent device use to reduced attention span during study sessions, while separate research connects screen time before bed to disrupted sleep patterns. In response, a number of universities have begun offering guidance on managing screen time. Taken together, this research suggests that mobile phone habits are a meaningful, addressable factor in academic performance."
+              },
+              "criminology": { "status": "authored" },
+              "sports-journalism": { "status": "authored" },
+              "psychology": { "status": "authored" },
+              "banking-and-finance": { "status": "authored" }
+            },
+            "note": "All five context packs authored: baseline, criminology, sports-journalism, psychology, banking-and-finance."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "type": 1,
+              "note": "Type 1 (token substitution only): tests the principle (topic sentence position), not a specific paragraph."
+            },
+            "content": {
+              "stem": "Which sentence is best placed as the OPENING of a paragraph?",
+              "correct": "Regular exercise has a measurable effect on academic performance.",
+              "distractors": [
+                "For example, one study found a 15% improvement in test scores among students who exercised three times a week.",
+                "This suggests that physical activity should be considered part of an effective study routine."
+              ],
+              "attempts": 2,
+              "feedbackExplainsPositionLogic": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Pick a paragraph you've written recently. Does the first sentence tell the reader what the paragraph is about, or do they have to read to the end to find out?",
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal step-reveal handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L03-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T17:00:00Z",
+          "sessionRef": "Track D L03 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: use the 'voices' technique to integrate sources actively into a paragraph, opening and closing with your own argument rather than simply reporting what sources say."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/sequential-process",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "type": 2,
+              "note": "Type 2 (structured worked-example data): 4 sub-parts (author opening, source A, source B contrast, author closing judgement) vary per context pack."
+            },
+            "shapeNote": "4-step build, not 2-step before/after like L02/L03"
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/sequential-process", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "baseline": {
+                "status": "authored",
+                "step1_authorOpening": "The relationship between part-time work and student wellbeing is not straightforward.",
+                "step2_sourceA": "Chen (2023) found that students working over 15 hours a week reported higher stress and lower engagement with coursework.",
+                "step3_sourceBContrast": "However, Osei and Bramwell (2022) argue that structured part-time work can improve time-management skills and reduce anxiety around post-graduation employment, provided hours stay within a manageable range.",
+                "step4_authorClosing": "The evidence suggests that the effect of part-time work depends less on whether a student works than on how much, pointing to hours worked - not employment status alone - as the more useful variable for future research."
+              },
+              "criminology": { "status": "authored" },
+              "sports-journalism": { "status": "authored" },
+              "psychology": { "status": "authored" },
+              "banking-and-finance": { "status": "authored" }
+            },
+            "note": "All five context packs authored: baseline, criminology, sports-journalism, psychology, banking-and-finance."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "type": 1,
+              "note": "Type 1 (token substitution only): tests the principle (voices technique structure), not a specific paragraph."
+            },
+            "content": {
+              "stem": "In the 'voices' technique, where should the writer's OWN view appear in the paragraph?",
+              "correct": "At the start and the end, framing the sources in between.",
+              "distractors": [
+                "Only at the end, after all sources have been presented.",
+                "Nowhere - the paragraph should let the sources speak for themselves."
+              ],
+              "attempts": 2,
+              "feedbackTiesToFramingPrinciple": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Look at a paragraph where you've cited sources. Are you reporting what they say, or using them to support a point you've already made?",
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal step-reveal handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L04-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T18:00:00Z",
+          "sessionRef": "Track D L04 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: apply the four pillars of effective writing - clarity, structure, engagement with discourse, and presentation - as a self-review checklist to your own work."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/sequential-process",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "type": 2,
+              "note": "Type 2 (structured worked-example data): mechanism prose (four-pillar framework) is context-neutral; the sample paragraph varies per context pack."
+            },
+            "shapeNote": "CHECKLIST-APPLICATION shape: 4 accordion items applying same pillar lens to the SAME sample paragraph (not transformation like L02/L03, not narrative build like L04)"
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/sequential-process", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "baseline": {
+                "status": "authored",
+                "sampleParagraph": "Group projects is a good way for students working together and it can be really useful sometimes but there are also issues that come up like when people don't communicate well and this can affect the whole team's mark which happens quite often especially with big groups, see Robbins (2021) who talks about this a lot in his research on team dynamics generally.",
+                "pillar1_clarityPrecision": "This sentence runs to 65 words with three separate ideas stapled together. 'Is a good way' and 'can be really useful sometimes' say almost nothing - vague filler where a specific claim belongs. Clarity means saying exactly what you mean: which issue, how often, with what effect.",
+                "pillar2_structure": "There's no topic sentence - the reader can't tell what this paragraph is about until they've read the whole thing. No clear claim, evidence, judgement sequence. It reads as one long thought rather than a structured paragraph.",
+                "pillar3_engagementWithDiscourse": "Robbins (2021) is mentioned but not used - 'talks about this a lot' reports that a source exists without saying what it found or why it matters. This is citation without engagement.",
+                "pillar4_presentation": "The citation format itself needs checking against the required style - 'see Robbins (2021) who talks about...' isn't a standard in-text citation format. Small presentation details like this affect the overall impression, even when the content is sound."
+              },
+              "criminology": { "status": "authored" },
+              "sports-journalism": { "status": "authored" },
+              "psychology": { "status": "authored" },
+              "banking-and-finance": { "status": "authored" }
+            },
+            "note": "All five context packs authored: baseline, criminology, sports-journalism, psychology, banking-and-finance."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "type": 1,
+              "note": "Type 1 (token substitution only): tests the principle (pillar identification), not a specific paragraph."
+            },
+            "content": {
+              "stem": "A paragraph makes a strong claim but never cites any evidence for it. Which of the four pillars does this problem relate to?",
+              "correct": "Engagement with relevant discourse",
+              "distractors": [
+                "Clarity and precision of expression",
+                "Presentation"
+              ],
+              "attempts": 2,
+              "feedbackDistinguishesEngagementFromPresentation": true,
+              "feedbackNote": "Must explicitly distinguish 'no evidence cited' (discourse engagement) from 'evidence cited but format is wrong' (presentation) - this distinction is the point of the question."
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Pick a recent piece of your own writing and run it through the four pillars. Which one is your weakest? What would you change first?",
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal step-reveal handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L05-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T19:00:00Z",
+          "sessionRef": "Track D L05 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "learningOutcomes": "By the end of this lesson, you will be able to: identify the register and structural conventions of the academic essay and reflective writing, and adapt your writing to whichever genre a task requires."
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B1",
+              "version": "0.1.0",
+              "note": "Learning outcomes per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B2",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/sequential-process",
+            "realisation": "palette/accordion",
+            "coupling": {
+              "type": 2,
+              "note": "Type 2 (structured worked-example data): both excerpts (essay and reflective) vary per context pack; register commentary stays fixed."
+            },
+            "shapeNote": "COMPARISON shape (4 items: essay excerpt / why essay register / reflective excerpt / why reflective register) - distinct from transformation (L02/L03), narrative-build (L04), and checklist-application (L05)"
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/sequential-process", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/accordion", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B3",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "workedExampleContent": {
+              "baseline": {
+                "status": "authored",
+                "essayExcerpt": "Group work is frequently cited as a valuable component of higher education, offering students the opportunity to develop collaborative and interpersonal skills alongside subject knowledge (Osei and Bramwell, 2022). However, its effectiveness depends significantly on how responsibilities are distributed within the group.",
+                "whyEssayRegister": "Third person, no personal pronouns. A claim supported by a citation. Formal vocabulary ('significantly', 'component'). The writer's own experience is absent - this argues a general point, not a personal one.",
+                "reflectiveExcerpt": "When our group started the project, I assumed everyone would contribute equally. That wasn't quite what happened - two of us ended up doing most of the planning, and I'm still not sure why the others held back. Looking back, I think I should have set clearer roles from the start.",
+                "whyReflectiveRegister": "First person throughout. Informal, conversational phrasing ('I'm still not sure why'). Follows the ERA structure in miniature: what happened (Experience), what it might mean (Reflect), what to do differently (the seed of Take action). No citation - the evidence is the writer's own experience, not a source."
+              },
+              "criminology": { "status": "authored" },
+              "sports-journalism": { "status": "authored" },
+              "psychology": { "status": "authored" },
+              "banking-and-finance": { "status": "authored" }
+            },
+            "note": "All five context packs authored: baseline, criminology, sports-journalism, psychology, banking-and-finance."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B4",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "pattern": "activity-patterns/retrieval-practice",
+            "realisation": "palette/mcq",
+            "coupling": {
+              "type": 1,
+              "note": "Type 1 (token substitution only): tests the principle (reflective register markers), not a specific paragraph."
+            },
+            "content": {
+              "stem": "Which sentence would be appropriate in a piece of REFLECTIVE writing but NOT in an academic essay?",
+              "correct": "I wasn't sure how to respond, so I just went along with the group's decision.",
+              "distractors": [
+                "Group cohesion has a measurable effect on task outcomes (Smith, 2021).",
+                "This report will examine the factors influencing group performance."
+              ],
+              "attempts": 2,
+              "feedbackTiesToFirstPersonExperienceBasedRegister": true
+            }
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/retrieval-practice", "version": "0.1.0" },
+            { "store": "design-kb", "id": "palette/mcq", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B5",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "reflectivePrompt": "Think about a piece of writing you'll submit soon. Which genre does it belong to - and does your current draft match that genre's register?",
+            "_isOptional": true
+          },
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/B5",
+              "version": "0.1.0",
+              "note": "Reflective prompt per confirmed lesson record"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B6",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "trickleOverride": "none",
+            "note": "No override. Accordion's internal step-reveal handles pacing."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-L06-B7",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "visualAssets": "none",
+            "note": "None required - interior is accordion (text), check is mcq (text)."
+          },
+          "grounding": [],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T20:00:00Z",
+          "sessionRef": "Track D L06 Phase B design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-S1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "itemCount": 5,
+            "itemType": "mcq",
+            "itemLessonMapping": [
+              { "item": 1, "lesson": "L02", "topic": "clarity-precision", "stem": "Which of these best demonstrates the SVO model?" },
+              { "item": 2, "lesson": "L03", "topic": "structuring-argument", "stem": "What structural principle does claim-evidence-judgement follow?" },
+              { "item": 3, "lesson": "L04", "topic": "integrating-sources", "stem": "In the voices technique, what is the writer's role?" },
+              { "item": 4, "lesson": "L05", "topic": "four-pillars", "stem": "A paragraph cites a source but never explains its relevance. Which pillar does this fail?" },
+              { "item": 5, "lesson": "L06", "topic": "genre-awareness", "stem": "Which register belongs in an academic essay rather than reflective writing?" }
+            ],
+            "passMark": 70,
+            "_isPercentageBased": true,
+            "_attempts": -1,
+            "_assessmentWeight": 1,
+            "feedbackPattern": "remediation-first"
+          },
+          "grounding": [
+            { "store": "design-kb", "id": "activity-patterns/summative-mixed", "version": "0.1.0" },
+            { "store": "design-kb", "id": "skeletons/summative", "version": "0.1.0" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T21:00:00Z",
+          "sessionRef": "Track D Phase S design conversation, 29 Aug 2026"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/academic-writing-intermediate-W1",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "wOpen": {
+              "learningOutcomes": "By the end of this course, you will be able to: write with clarity and precision, structure a paragraph so it argues rather than reports, integrate sources actively using the 'voices' technique, apply the four pillars as a self-review checklist, and adapt your register to the genre a task requires.",
+              "overviewAndJustification": "This course builds on the basics of getting a draft down. Here, the focus shifts to argument: how to make your writing not just correct, but persuasive - clear at the sentence level, structured at the paragraph level, and evidenced through the sources you bring in.",
+              "signpostIntro": "This course moves through five techniques that build on each other, from sentence-level clarity to genre awareness.",
+              "signpostOutro": "Each lesson pairs a worked example with a quick check, so you can see the technique in action before applying it yourself.",
+              "signpostComponent": "palette/timeline"
+            },
+            "wClose": {
+              "courseSummary": "You have completed Academic Writing: Intermediate Stage - five techniques for writing with argument, structure, and sources.",
+              "practiceConnection": "These techniques apply directly to your next piece of assessed writing: run your draft through the four pillars, check your paragraphs open with a claim, and make sure your own voice frames any sources you cite.",
+              "whereThisGoesNext": "The Advanced stage builds on this by turning to how writing conventions differ across disciplines - chemistry, education, history - and developing a sharper critical edge in your own writing.",
+              "furtherReading": {
+                "citation": "Dennis, C. and Abbott, S. (2025) Excelling at University. Chapter 9: Academic Writing. London: Routledge.",
+                "resourcesDrawer": "ON"
+              }
+            }
+          },
+          "grounding": [
+            { "doc": "docs/authoring/wrapper-open-template.md", "ref": "W-OPEN content structure" },
+            { "doc": "docs/authoring/wrapper-close-template.md", "ref": "W-CLOSE content structure" }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-08-29T21:00:00Z",
+          "sessionRef": "Track D Phase W design conversation, 29 Aug 2026"
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "phaseId": "A",
+      "closedAt": "2026-08-29T12:54:00Z",
+      "bulkBlessing": {}
+    }
+  ],
+  "instantiations": [
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "order": 1,
+      "archetype": { "id": "skeletons/wrapper-open", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "signpost",
+          "component": "palette/adapt-abbott-timeline",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/A4"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Before you start",
+      "order": 2,
+      "archetype": { "id": "skeletons/c-pre", "version": "0.1.0" },
+      "notes": "Fixed single-block page: confidence PRE, 5 items (per A6). No variable slots."
+    },
+    {
+      "pageKey": "academic-writing-intermediate-L02",
+      "pageType": "lesson",
+      "title": "Clarity and precision",
+      "order": 3,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L02-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L02-B4"
+        }
+      ],
+      "notes": "Phase B complete. Baseline context pack authored; criminology/sports-journalism/psychology/banking-and-finance packs are follow-on work."
+    },
+    {
+      "pageKey": "academic-writing-intermediate-L03",
+      "pageType": "lesson",
+      "title": "Structuring your argument",
+      "order": 4,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L03-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L03-B4"
+        }
+      ],
+      "notes": "Phase B complete. Baseline context pack authored; criminology/sports-journalism/psychology/banking-and-finance packs are follow-on work."
+    },
+    {
+      "pageKey": "academic-writing-intermediate-L04",
+      "pageType": "lesson",
+      "title": "Integrating sources",
+      "order": 5,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L04-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L04-B4"
+        }
+      ],
+      "notes": "Phase B complete. Baseline context pack authored; criminology/sports-journalism/psychology/banking-and-finance packs are follow-on work. 4-step accordion (not 2-step like L02/L03)."
+    },
+    {
+      "pageKey": "academic-writing-intermediate-L05",
+      "pageType": "lesson",
+      "title": "The four pillars",
+      "order": 6,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L05-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L05-B4"
+        }
+      ],
+      "notes": "Phase B complete. CHECKLIST-APPLICATION shape (not transformation like L02/L03). Baseline context pack authored; criminology/sports-journalism/psychology/banking-and-finance packs are follow-on work."
+    },
+    {
+      "pageKey": "academic-writing-intermediate-L06",
+      "pageType": "lesson",
+      "title": "Genre awareness",
+      "order": 7,
+      "archetype": { "id": "skeletons/lesson", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "interior",
+          "component": "palette/accordion",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L06-B2"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": { "coupled": true },
+          "decidedByGate": "gates/academic-writing-intermediate-L06-B4"
+        }
+      ],
+      "notes": "Phase B complete. COMPARISON shape (essay vs reflective register). Baseline context pack authored; criminology/sports-journalism/psychology/banking-and-finance packs are follow-on work."
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "order": 8,
+      "archetype": { "id": "skeletons/summative", "version": "0.1.0" },
+      "notes": "Assessment shape deferred to Phase S. Standard furniture (resultsdebrief + passreveal) attaches at archetype level. SUMM-c-48 ('Assessment complete' text component in SUMM-b-50) is skeleton-required furniture - Adapt requires every block to have at least one component. Text copied verbatim from pilot; not S1-decided content."
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "How far you've come",
+      "order": 9,
+      "archetype": { "id": "skeletons/c-post", "version": "0.1.0" },
+      "notes": "Confidence POST, same 5 items as PRE. Reflective bridge OFF per A6."
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "order": 10,
+      "archetype": { "id": "skeletons/wrapper-close", "version": "0.1.0" },
+      "slotChoices": [
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": { "coupled": false },
+          "decidedByGate": "gates/A7"
+        }
+      ],
+      "notes": "Resources drawer ON per A7; contents populated at W1."
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-08-29T14:30:00Z",
+      "trigger": {
+        "gate": "gates/A3",
+        "changeKind": "amended",
+        "oldRecordSeq": 1,
+        "newRecordSeq": 2,
+        "note": "pageKey format changed from bare (L02-L06) to course-slug-prefixed (academic-writing-intermediate-L02 through -L06) to ensure global uniqueness across all courses."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A4",
+          "recordSeq": 1,
+          "basis": { "gate": "gates/A3", "dependencyClass": "substantive" },
+          "defaultVerdict": "flag-for-review",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "A4's decided content (palette/timeline, chosen for the five-topic build-up SHAPE) never cites a specific lesson key in its reasoning - the substantive edge class's mechanical default (flag-for-review) is downgraded here because the record's own evidence tells against it, per gate-conversation-model-draft-v1.md §5.3's 'record evidence mitigates within the net' provision."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-2",
+      "timestamp": "2026-09-09T09:05:00Z",
+      "trigger": {
+        "gate": "gates/academic-writing-intermediate-L02-B2",
+        "changeKind": "amended",
+        "note": "instantiations[] slotKey corrected on five lessons (L02-L06) from workedExample to interior, to match the skeletons/lesson archetype's own slot definition (5.105 ruling, 9 Sep 2026)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/academic-writing-intermediate-L02-B2",
+          "recordSeq": 2,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-intermediate-L03-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-intermediate-L04-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-intermediate-L05-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        },
+        {
+          "gate": "gates/academic-writing-intermediate-L06-B2",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); this gate's own decidedValue and record are untouched. See backlog 5.105."
+          }
+        }
+      ]
+    },
+    {
+      "eventId": "SW-3",
+      "timestamp": "2026-09-14T00:00:00Z",
+      "trigger": {
+        "gate": "gates/A7",
+        "changeKind": "amended",
+        "note": "instantiations[] W-CLOSE slotKey corrected from further-reading to course-references, matching the skeletons/wrapper-close archetype's key rename (A83, this sitting, 14 September 2026, commit 89c1a48)."
+      },
+      "sweep": [
+        {
+          "gate": "gates/A7",
+          "recordSeq": 1,
+          "basis": "universal",
+          "defaultVerdict": "stand-with-warning",
+          "disposition": {
+            "verdict": "stand-with-warning",
+            "mode": "amended",
+            "note": "Correction is a slotKey label fix only (instantiations[], a non-append-only field); gate A7's own decidedValue and record are untouched. Second migration on the same field: the 5.105/R72 ruling (skeleton is authoritative, instantiation corrected to match) applies unchanged, a second time. See A83."
+          }
+        }
+      ]
+    }
+  ]
+}

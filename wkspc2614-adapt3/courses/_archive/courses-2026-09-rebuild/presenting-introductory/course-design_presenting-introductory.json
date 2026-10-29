@@ -1,0 +1,493 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "presenting-introductory",
+  "slug": "presenting-introductory",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "Presenting",
+    "tier": "introductory",
+    "subject": [
+      {
+        "group": {
+          "code": "CAH04",
+          "label": "psychology"
+        },
+        "discipline": {
+          "code": "CAH04-01",
+          "label": "psychology"
+        },
+        "subject": {
+          "code": "CAH04-01-01",
+          "label": "psychology (non-specific)"
+        }
+      }
+    ]
+  },
+  "kbVersions": {
+    "design-kb": "0.3.0",
+    "source-kb": "0.2.0"
+  },
+  "gates": [
+    {
+      "gateId": "gates/CTX",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-amended",
+          "decidedValue": {
+            "pathway": "Presenting",
+            "tier": "introductory",
+            "subject": [
+              {
+                "group": {
+                  "code": "CAH04",
+                  "label": "psychology"
+                },
+                "discipline": {
+                  "code": "CAH04-01",
+                  "label": "psychology"
+                },
+                "subject": {
+                  "code": "CAH04-01-01",
+                  "label": "psychology (non-specific)"
+                }
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/pathway-tier-mapping.md",
+              "ref": "Pathway 7 (Presenting), Beginner band"
+            },
+            {
+              "doc": "source-kb/source-kb.json",
+              "ref": "qaa/psychology-2023"
+            },
+            {
+              "doc": "vocab-kb/cah.json",
+              "ref": "CAH04 / CAH04-01 / CAH04-01-01"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "DL-1 AMENDMENT; DL-1 SHAPE RESOLUTION; FCI-1"
+            }
+          ],
+          "originalProposal": {
+            "pathway": "Presenting",
+            "tier": "introductory",
+            "baseline": true
+          },
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory CTX 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T12:07:11.507Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A1",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathway": "Presenting",
+            "tierName": "Introductory Stage",
+            "displayName": "Presenting: Introductory Stage",
+            "slug": "presenting-introductory",
+            "folder": "courses/presenting-introductory/"
+          },
+          "grounding": [
+            {
+              "doc": "docs/authoring/course-template.md",
+              "ref": "Course Slug Convention"
+            },
+            {
+              "doc": "archive/courses-2026-09/presenting-introductory/course-design_presenting-introductory.json",
+              "ref": "gates/A1 seq 1"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A1 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T12:07:11.507Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A2",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-amended",
+          "decidedValue": {
+            "voiceBandAnchor": {
+              "status": "confirmed",
+              "bands": "2-4 (default)",
+              "mapping": {
+                "beginner": "§16 Beginner (band 2)",
+                "intermediate": "§16 Intermediate (band 3)",
+                "advanced": "§16 Advanced (band 4)"
+              },
+              "provisionalSource": "pathway-tier-mapping.md Pathway 7: '**Voice-band anchor:** Beginner→§16 Beginner, Intermediate→§16 Intermediate, Advanced→§16 Advanced (bands 2-4, default). Provisional: confirm at pathway pressure-test.'",
+              "confirmationNote": "Anchor provisionally set at mapping time (v3.1), confirmed here at pathway pressure-test. This session IS the pressure-test referenced by the provisional marker."
+            },
+            "rejectedAlternative": {
+              "option": "Foundation down-skew (bands 1-3)",
+              "rationale": "Rejected because it places Advanced at §16 Intermediate (band 3), whose verbs cannot carry Pathway 7 Advanced content: viva defence, professional pitch, OCEAN personality-types group work. These require band 4 (§16 Advanced) register."
+            },
+            "parityNote": "Sharing an anchor with Academic Writing is NOT a parity claim. Per open-decisions #8, parity scope = context-within-pathway-tier; no programme-wide equivalence across different pathways at the same tier.",
+            "D1_priorExperience": {
+              "anchor": "No prior experience of presenting deliberately for assessment.",
+              "authoringNote": "Most learners have 'done a presentation' at school, so the pitch must work for someone who thinks they already know this, without turning remedial."
+            },
+            "D2_cognitiveDemand": {
+              "level": "Recognition, recall, description, guided application.",
+              "verbs": ["describe", "identify", "recognise", "explain", "distinguish", "connect"],
+              "source": "§16 Beginner verb band"
+            },
+            "D3_taskComplexity": {
+              "level": "Well-defined, one variable at a time, settled procedure.",
+              "authoringNote": "The format-coverage invariant pushes against this: formats are shown sequentially and separately, never weighed against each other. Weighing formats is Intermediate."
+            },
+            "D4_learnerAutonomy": "High scaffolding; model before practice; feedback that shows.",
+            "courseLevelOutcome": "Describe the process for building a presentation, and identify what a brief asks of you."
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/pathway-tier-mapping.md",
+              "ref": "Pathway 7 (Presenting), 'Provisional: confirm at pathway pressure-test' — confirmed"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "§3 (anchor rule), §5 D1-D4 Beginner column, §6 verb bands"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "#8 (parity scope = context-within-pathway-tier)"
+            },
+            {
+              "store": "design-kb",
+              "id": "tier-bands/introductory",
+              "version": "0.1.0"
+            },
+            {
+              "doc": "docs/contexts/qaa/sbs-psychology-23.pdf",
+              "ref": "§3 Content, structure and delivery / §3.17 Transferable skills — read in full per gates/A2 sourceConsultation trigger (subject facet closed at CTX for the first time in this repo); generic communication/interpersonal skills language only, nothing presentation-format-specific; did not move voiceBandAnchor, D1-D4, or courseLevelOutcome"
+            }
+          ],
+          "originalProposal": {
+            "voiceBandAnchor": {
+              "status": "confirmed",
+              "bands": "2-4 (default)",
+              "mapping": {
+                "beginner": "§16 Beginner (band 2)",
+                "intermediate": "§16 Intermediate (band 3)",
+                "advanced": "§16 Advanced (band 4)"
+              },
+              "provisionalSource": "pathway-tier-mapping.md Pathway 7: '**Voice-band anchor:** Beginner→§16 Beginner, Intermediate→§16 Intermediate, Advanced→§16 Advanced (bands 2-4, default). Provisional: confirm at pathway pressure-test.'",
+              "confirmationNote": "Anchor provisionally set at mapping time (v3.1), confirmed here at pathway pressure-test. This session IS the pressure-test referenced by the provisional marker."
+            },
+            "rejectedAlternative": {
+              "option": "Foundation down-skew (bands 1-3)",
+              "rationale": "Rejected because it places Advanced at §16 Intermediate (band 3), whose verbs cannot carry Pathway 7 Advanced content: viva defence, professional pitch, OCEAN personality-types group work. These require band 4 (§16 Advanced) register."
+            },
+            "parityNote": "Sharing an anchor with Academic Writing is NOT a parity claim. Per open-decisions #8, parity scope = context-within-pathway-tier; no programme-wide equivalence across different pathways at the same tier.",
+            "D1_priorExperience": {
+              "anchor": "No prior experience of presenting deliberately for assessment.",
+              "authoringNote": "Most learners have 'done a presentation' at school, so the pitch must work for someone who thinks they already know this, without turning remedial."
+            },
+            "D2_cognitiveDemand": {
+              "level": "Recognition, recall, description, guided application.",
+              "verbs": ["describe", "identify", "recognise", "explain", "distinguish", "connect"],
+              "source": "§16 Beginner verb band"
+            },
+            "D3_taskComplexity": {
+              "level": "Well-defined, one variable at a time, settled procedure.",
+              "authoringNote": "The format-coverage invariant pushes against this: formats are shown sequentially and separately, never weighed against each other. Weighing formats is Intermediate."
+            },
+            "D4_learnerAutonomy": "High scaffolding; model before practice; feedback that shows.",
+            "courseLevelOutcome": "Describe the process for building a presentation, and identify what a brief asks of you."
+          },
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A2 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T13:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/EXM",
+      "records": [
+        {
+          "seq": 1,
+          "state": "skipped",
+          "timestamp": "2026-09-18T13:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A3",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "pageKey": "presenting-introductory-L02",
+                "title": "What is a presentation?",
+                "outcomes": [
+                  "Identify the main types of presentation you may be asked to give.",
+                  "Describe where presenting is used beyond assessment."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L03",
+                "title": "Reading the brief",
+                "outcomes": [
+                  "Identify what a presentation brief asks you to do.",
+                  "Distinguish what a brief requires from what it leaves to you."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L04",
+                "title": "Research and planning",
+                "outcomes": [
+                  "Describe the steps between receiving a brief and having a workable plan.",
+                  "Recognise what makes a plan usable."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L05",
+                "title": "Designing visual aids",
+                "outcomes": [
+                  "Distinguish a visual aid that carries a point from one that carries a script.",
+                  "Recognise features that make a slide or poster support the speaker."
+                ]
+              },
+              {
+                "pageKey": "presenting-introductory-L06",
+                "title": "Structuring your argument",
+                "outcomes": [
+                  "Describe the hook-body-conclusion structure.",
+                  "Explain how a conclusion that returns to the objectives closes the argument."
+                ]
+              }
+            ],
+            "note": "5 lessons. Step 5 of the recipe (practise) is named in L06's practical-guidance block only; full delivery treatment is Intermediate. Rationale for five over four: the four-lesson shape merged research/planning with visual aids; splitting them was chosen deliberately with the thin-lesson risk accepted and mitigated by requiring a full worked example in each. Interior patterns and check-component choices per lesson are DEFERRED to Phase B. Thin-lesson risk on L04/L05 logged to backlog 5.59."
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/pathway-tier-mapping.md",
+              "ref": "Pathway 7 (Presenting), Beginner scope — five-step recipe and hook-body-conclusion structure"
+            },
+            {
+              "doc": "archive/courses-2026-09/presenting-introductory/course-design_presenting-introductory.json",
+              "ref": "gates/A3 seq 1"
+            },
+            {
+              "doc": "content/context-packs/{baseline,criminology,psychology}/presenting-introductory/",
+              "ref": "reading-the-brief.json, research-and-planning.json, structuring-your-argument.json — existing packs across three disciplines match L03/L04/L06 exactly"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A3 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T13:10:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A4",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/timeline",
+            "rationale": "Linear/staged, non-cyclical fit for the five-lesson sequence, which is itself the five-step recipe the course teaches. Stage count 5 sits within the component's 3-8 range."
+          },
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/hotgraphic",
+              "whyNot": "Sequential not cyclical/spatial; unscoped authored-image cost"
+            },
+            {
+              "pattern": "palette/narrative",
+              "whyNot": "Per-item image burden the spec itself flags as unscoped"
+            },
+            {
+              "pattern": "palette/flipcard",
+              "whyNot": "Paired-reveal loses the ordered sequence"
+            }
+          ],
+          "grounding": [
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "#32 VO-1a (once-per-pathway editorial judgement)"
+            },
+            {
+              "doc": "docs/authoring/wrapper-open-template.md",
+              "ref": "Block 3: Signpost"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/timeline",
+              "version": "0.1.0"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A4 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T13:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A5",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-amended",
+          "decidedValue": {
+            "contextPacks": [
+              {
+                "pack": "psychology",
+                "status": "new"
+              }
+            ],
+            "couplingScope": "course-wide",
+            "perLessonCouplingType": "deferred to Phase B, per CP-1b/c"
+          },
+          "originalProposal": {
+            "contextPacks": [
+              {
+                "pack": "baseline",
+                "status": "new"
+              }
+            ],
+            "couplingScope": "course-wide",
+            "perLessonCouplingType": "deferred to Phase B, per CP-1b/c"
+          },
+          "alternativesConsidered": [
+            {
+              "pattern": "baseline pack only (this gate's own fixed default per gates/A5.consequenceNote)",
+              "whyNot": "Contradicts CTX's closed subject facet (psychology): the record would say the course is for psychology students while building with the generic pack. DL-1 AMENDMENT establishes the facet states who the instance is for, not merely an unconsumed label; the fact that nothing yet reads it mechanically changes what enforces the coupling, not what the design record should say."
+            },
+            {
+              "pattern": "archive's three-pack course-wide plan (baseline+criminology+psychology)",
+              "whyNot": "Archive's build closed no subject facet at CTX, so a multi-pack spread was the only way to serve more than one discipline. This build closes a single psychology subject facet at CTX, so a single matching pack is the more precise fit; no grounding supplies a reason to widen beyond it."
+            }
+          ],
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.gates.json",
+              "ref": "gates/A5.consequenceNote"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "DL-1 AMENDMENT"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "GI-1e"
+            },
+            {
+              "store": "course-design",
+              "id": "gates/CTX",
+              "note": "decidedValue.subject (psychology, CAH04-01-01)"
+            },
+            {
+              "doc": "source-kb/source-kb.json",
+              "ref": "qaa/psychology-2023"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A5 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T14:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A6",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "confidenceItems": [
+              "I can name the main types of presentation and say where each one is used.",
+              "I can work out what a presentation brief is asking me to do, and what it leaves to me.",
+              "I can get from a brief to a workable plan for a presentation.",
+              "I can tell the difference between a slide that supports what I'm saying and one that just repeats it.",
+              "I can structure a presentation so it opens with a hook and closes by returning to the objectives."
+            ],
+            "pairing": "C-PRE/C-POST paired via _selfAssessmentGroupId",
+            "reflectiveBridge": "OFF",
+            "note": "Five items, one per lesson, each folding that lesson's two A3 outcomes into a single ratable first-person claim. Deliberately coarser than the outcomes themselves. Group id: presenting-introductory-confidence."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "gates/A3",
+              "note": "decidedValue.lessons[*].outcomes"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/confidence",
+              "version": "0.1.0"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "CC-1"
+            },
+            {
+              "doc": "docs/authoring/c-pre-template.md",
+              "ref": "Cross-Reference: Confirmed Decisions (WR-2a)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A6 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T14:30:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "gates/A7",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "decidedValue": {
+            "resourcesDrawer": "disabled",
+            "consolidation": "References consolidate at Wrapper Close only, fed by the sourcing log as lesson content is authored; nothing to populate at Phase A.",
+            "note": "Fixed default per gates/A7.consequenceNote. Advisory: stated when it applies, no response sought."
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.gates.json",
+              "ref": "gates/A7.consequenceNote"
+            },
+            {
+              "doc": "docs/authoring/gate-conversation-map.md",
+              "ref": "A7 \u2014 Resources drawer"
+            },
+            {
+              "doc": "docs/project/open-decisions.md",
+              "ref": "RF-1"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": "claude-code-plan: presenting-introductory A7 2026-09-18",
+          "seq": 1,
+          "timestamp": "2026-09-18T15:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}

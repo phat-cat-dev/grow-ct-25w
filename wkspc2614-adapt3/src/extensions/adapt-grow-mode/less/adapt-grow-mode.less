@@ -1,11 +1,12 @@
-// GROW display-mode control — a bordered icon button (grow nav style) top-left
-// of the nav, opening a light/dark/contrast + animations panel.
+// GROW display-mode control — a bordered icon button (grow nav style),
+// opening a light/dark/contrast + animations panel. Sits in normal nav flow
+// (data-order positions it via navigationView's sortNavigationButtons, next
+// to the page-completion icon) rather than absolute top-left, which used to
+// collide with the skip-navigation button (nav.less .nav__skip-btn).
 .grow-mode {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 20;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
 
 .grow-mode__icon {

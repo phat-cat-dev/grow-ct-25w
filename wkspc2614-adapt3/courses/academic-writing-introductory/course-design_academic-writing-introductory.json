@@ -1400,6 +1400,87 @@
             "venue": "claude-code-plan",
             "description": "academic-writing-introductory wra-03_summative 2026-10-23"
           }
+        },
+        {
+          "seq": 2,
+          "supersedes": 1,
+          "state": "closed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes academic writing, as this course presents it?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student opens a blank document and tries to write the finished essay perfectly from the first line. What is the main problem with this approach?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In an assignment task, what does the 'steer' refer to?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the main purpose of a first draft?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the difference between editing and proofreading?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A reliable way to make a sentence clearer is to put it in subject-verb-object order."
+              },
+              {
+                "tests": "co4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes what this course has taught about academic writing?"
+              },
+              {
+                "tests": "co4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student has a new essay to write. Which approach uses the whole writing process this course describes?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "reconstruction": {
+            "basis": "inferred",
+            "evidence": [
+              {
+                "store": "course-design",
+                "id": "crs-03_course-outcomes",
+                "note": "co4 was always planned with 3 mcqSets at crs-03, same as co1-co3; en/components.json already carries two of them authored as real SUMM-page items (\"Summative item 7 (tests co4)\", \"Summative item 8 (tests co4)\") but the wra-03_summative record was never updated to list them alongside the co1-co3 items"
+              }
+            ],
+            "note": "Backfill 2026-10-28: co4 items were authored into the shell but never recorded in this gate; AL-3b (manifest-completeness.js) flagged co4 at 0/2 summative items despite the real content already existing and passing its own checks. decidedValue.items here is the original six plus the two already-built co4 items, copied verbatim from en/components.json."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-28T17:56:52.266Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "academic-writing-introductory wra-03_summative co4 backfill 2026-10-28"
+          }
         }
       ]
     },
@@ -1466,6 +1547,153 @@
           "sessionRef": {
             "venue": "claude-code-plan",
             "description": "academic-writing-introductory wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "academic-writing-introductory-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "decidedValue": {
+            "conceptTitle": "Writing as one process you work through",
+            "interiorPattern": "activity-patterns/explore-model realised as palette/ab-hotgraphic: an interactive exploration of how writing as a process, planning/drafting and revising combine into one practice, each strand a selectable step of the model. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker, single-strand approach and a stronger, integrated approach, the weaker version first, using the character-token cast. Grounded in ch9/three-assumptions-about-academic-writing (pp.136-137), ch9/the-writing-cycle (pp.164-165), ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169), ch9/creating-a-first-draft (pp.169-170), ch9/editing-and-proofreading (pp.170-172), ch9/expression-clarity-and-precision (pp.174-177).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L04-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short private reflection relating the lesson to the learner's own writing. Not marked; there are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's writing move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-hotgraphic",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/hotgraphic",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/three-assumptions-about-academic-writing (pp.136-137), ch9/the-writing-cycle (pp.164-165), ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169), ch9/creating-a-first-draft (pp.169-170), ch9/editing-and-proofreading (pp.170-172), ch9/expression-clarity-and-precision (pp.174-177)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/explore-model",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-hotgraphic"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L04 outcomes (L04-o1..o3 serve co4) and bound sources"
+            }
+          ],
+          "reconstruction": {
+            "basis": "inferred",
+            "evidence": [
+              {
+                "store": "course-design",
+                "id": "crs-04_lesson-map",
+                "note": "the L04 lesson is confirmed in crs-04_lesson-map (outcomes L04-o1..o3, sourceSections) and this manifest's own instantiations[pageKey=L04] already names this gateId as decidedByGate for every slot; the built en/*.json content for L04 exists and passes every per-lesson lesson-check (OC-1, CK-1, RP-1 etc.) — the gate record itself was simply never written"
+              }
+            ],
+            "note": "Backfill 2026-10-28: L04 was fully authored (shell content, instantiations[] slotChoices, lesson-map outcomes) but this gate record was missing entirely, failing manifest-completeness.js clause 1. decidedValue reconstructed from the built artifact (en/blocks.json, en/components.json) and the already-closed crs-04_lesson-map record; the deciding session itself is not recoverable, so provenance is omitted per schema convention."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-28T17:56:52.266Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "academic-writing-introductory L04-les-01 backfill 2026-10-28"
           }
         }
       ]
