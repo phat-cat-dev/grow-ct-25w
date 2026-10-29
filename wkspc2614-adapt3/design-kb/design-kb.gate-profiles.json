@@ -1,0 +1,186 @@
+{
+  "kbVersion": "0.1.0",
+  "profiles": [
+    {
+      "id": "single-course",
+      "name": "Single course",
+      "status": "design",
+      "purpose": "Onboard and build one course. The query layers narrow the context top-down (tier, levels, generic statements, shell, qualifiers) and four agent outcomes build the shell context the course learning outcomes come from. The run records the tiers and levels the course could feed into or build from, but builds only this one.",
+      "produces": "One course at one tier and level band: AO-04 shell context statement, 6 course learning outcomes, then the course build.",
+      "tiers": "one",
+      "steps": [
+        {
+          "id": "theme",
+          "label": "Theme (pathway)",
+          "gates": ["onb-01_theme-preset", "onb-02_course-theme"],
+          "decider": "agent+human",
+          "inputs": ["catalogue/pathways.json"],
+          "produces": "the academic practice pathway"
+        },
+        {
+          "id": "tier",
+          "label": "1 Tier",
+          "gates": ["onb-03_pitch"],
+          "change": "add a none option that defers to LEVEL(S)",
+          "decider": "agent+human",
+          "inputs": ["design-kb/design-kb.tier-bands.json"],
+          "produces": "introductory | intermediate | advanced | none"
+        },
+        {
+          "id": "levels",
+          "label": "2 Level(s)",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["design-kb/design-kb.tier-bands.json", "catalogue/context/pathway/<pathway>.json tierProgression.levels"],
+          "produces": "one level or adjacent levels; auto from the tier bands when a tier is set",
+          "open": "the adjacency rule for grouped levels; L7 and L8 cross all tiers, and the tier bands do not list L8 yet"
+        },
+        {
+          "id": "fork01-frameworks",
+          "label": "FORK01.1 Qualification frameworks",
+          "gates": ["cxs-05_external-standards"],
+          "change": "turn the reserved auto gate into a human select",
+          "decider": "human",
+          "inputs": ["catalogue/context/shared/cross-cutting.json frameworks (FHEQ, CQFW, FQHEIS within SCQF, QF-EHEA)"],
+          "produces": "the chosen framework(s)"
+        },
+        {
+          "id": "fork01-benchmarks",
+          "label": "FORK01.2 Universal and pathway benchmarks",
+          "planned": true,
+          "decider": "human",
+          "inputs": ["catalogue/context/pathway/<pathway>.json capabilities + benchmarkKeys", "catalogue/context/subject/benchmarks/universal-reference.json"],
+          "produces": "0 to 9 of the pathway's 9 generic benchmarks; 0 or 9 weight all nine equally",
+          "count": 9
+        },
+        {
+          "id": "ao-01",
+          "label": "AO-01 Generic competency attributes context",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["the chosen frameworks and benchmarks", "catalogue/context/pathway-evidence/<pathway>.json (the 18)", "the tier, including fuzzy tops"],
+          "produces": "6 generic benchmarks for the pathway: the generic basis for the course learning outcomes",
+          "count": 6
+        },
+        {
+          "id": "fork02-shell",
+          "label": "FORK02 Shell vs context slot",
+          "gates": ["cxp-01_subject"],
+          "change": "reshape to baseline | group | specific",
+          "decider": "human",
+          "inputs": ["baseline: universal-reference.json", "group: CAH1/CAH2 in tools/subject/core/vocab/cah.json + a group identity", "specific: HECoS/CAH via tools/resolve-subject-benchmark.js, or a topic area"],
+          "produces": "the shell: baseline, group (identity + HESA subjects) or specific (one subject or topic)",
+          "open": "group identities need the CMET course data tree"
+        },
+        {
+          "id": "ao-02",
+          "label": "AO-02 Context specific competency attributes context",
+          "gates": ["cxp-04_context-generation"],
+          "change": "re-aim its product at context-specific competency attributes",
+          "decider": "agent+human",
+          "inputs": ["the shell's benchmark corpus", "AO-01"],
+          "produces": "context-specific competency attributes"
+        },
+        {
+          "id": "fork03-qualifiers",
+          "label": "FORK03 Qualifiers",
+          "gates": ["cxp-02_qualifiers"],
+          "change": "raise the cap from 3 to 6 and add a fourth category, graduate competencies / capital",
+          "decider": "human",
+          "inputs": ["docs/authoring/qualifier-list-2026-10-04.md", "universal-reference.json graduate_competency", "Advance HE framework ingests"],
+          "produces": "up to 6 qualifiers: pedagogical, professionally oriented, cross-cutting agendas, graduate competencies / capital",
+          "count": 6,
+          "open": "the cap may vary: fixed per course or per category"
+        },
+        {
+          "id": "ao-03",
+          "label": "AO-03 Qualifier specific competency attributes context",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["the ingest each chosen qualifier points to"],
+          "produces": "qualifier-specific competency attributes added to the shell context"
+        },
+        {
+          "id": "ao-04",
+          "label": "AO-04 ONB shell context statement",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["AO-01", "AO-02", "AO-03", "tools/voice-lint.js"],
+          "produces": "the shell context statement in academic prose, voice-linted: the product of ONB"
+        },
+        {
+          "id": "course-outcomes",
+          "label": "5 First course learning outcomes",
+          "gates": ["crs-03_course-outcomes"],
+          "change": "source the outcomes from AO-04",
+          "decider": "agent+human",
+          "inputs": ["AO-04"],
+          "produces": "the first 6 course learning outcomes",
+          "count": 6
+        }
+      ],
+      "continuesWith": ["crs-04_lesson-map", "crs-05_course-spec", "les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
+    },
+    {
+      "id": "pathway-distillation",
+      "name": "Pathway distillation (all three tiers)",
+      "status": "design",
+      "purpose": "Distil a whole pathway for all three tiers at once. The 18 pathway statements (two evidence examples for each of the 9 capabilities, so 6 per tier) are evolved into 6 tiered outcomes per tier, boiled down to 3, then expanded back out to course outcomes. Distil and expand mirror each other, so every outcome traces back to its statements.",
+      "produces": "For each of introductory, intermediate and advanced: 6 tiered outcomes, the 3 chosen, and the course outcomes expanded from them.",
+      "tiers": "all",
+      "steps": [
+        {
+          "id": "theme",
+          "label": "Theme (pathway)",
+          "gates": ["onb-01_theme-preset", "onb-02_course-theme"],
+          "decider": "agent+human",
+          "inputs": ["catalogue/pathways.json"],
+          "produces": "the academic practice pathway"
+        },
+        {
+          "id": "pathway-statements",
+          "label": "The 18 pathway statements",
+          "planned": true,
+          "decider": "auto",
+          "inputs": ["catalogue/context/pathway/<pathway>.json capabilities (the 9) + benchmarkKeys (tiered keys, attribution)", "catalogue/context/pathway-evidence/<pathway>.json (the 18)"],
+          "produces": "the 18 statements, 6 per tier, with their capabilities, attribution and benchmark keys",
+          "count": 18
+        },
+        {
+          "id": "tiered-outcomes",
+          "label": "6 tiered outcomes",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["the tier's 6 statements", "tierReadings and the tier's section 16 verb band", "the benchmarks keyed to the tier"],
+          "produces": "6 tiered outcomes per tier, each traced to its statements",
+          "count": 6,
+          "perTier": true,
+          "open": "the evolve rule: one outcome per statement, or regrouped by complexity with the fuzzy tops co-tagged across adjacent tiers"
+        },
+        {
+          "id": "distil",
+          "label": "Boil down to 3",
+          "planned": true,
+          "decider": "agent+human",
+          "inputs": ["the tier's 6 tiered outcomes"],
+          "produces": "3 outcomes per tier: agent suggests, human chooses",
+          "count": 3,
+          "perTier": true
+        },
+        {
+          "id": "re-expand",
+          "label": "Expand to course outcomes",
+          "gates": ["crs-03_course-outcomes"],
+          "change": "run once per tier from the 3, mirroring the distillation",
+          "decider": "agent+human",
+          "inputs": ["the tier's 3 outcomes", "their source statements"],
+          "produces": "course outcomes per tier, each traced to one of the 3",
+          "count": null,
+          "perTier": true,
+          "open": "how many course outcomes the 3 expand to"
+        }
+      ],
+      "continuesWith": ["crs-04_lesson-map", "les-01_lesson-proposal"]
+    }
+  ]
+}
