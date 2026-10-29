@@ -78,9 +78,9 @@ SUPPORT_ROLES = {'label': 'Academic practice support', 'items': [
 # stay for the learner; the AI coaches rather than does the work.
 PATHWAY_PROMPTS = {
  'starting-progressing-succeeding': ('an academic practice specialist',
-    'I want to get more out of studying {topic} in [subject]. Help me work out what excelling would look like for me now: ask me three questions about how I study, then help me set one goal about mastering the material rather than just the mark, name one pressure that knocks my confidence and a way to manage it, and put one strength into words I could use with an employer. Treat my setbacks as part of learning. Coach me with questions; do not answer for me.'),
+    'I want to get more out of studying {topic} in [subject]. Help me work out what excelling would look like for me now. Ask me three questions about how I study, then help me set one goal about mastering the material rather than just the mark. Help me name one pressure that knocks my confidence and a way to manage it, and put one strength into words I could use with an employer. Treat my setbacks as part of learning. Coach me with questions; do not answer for me.'),
  'understanding-learning-assessment-feedback': ('an academic practice specialist',
-    'Here are the learning outcome, marking criteria and feedback for my work on {topic}: [paste them]. Help me read them as a tutor would: explain what the outcome asks me to show and whether the task is formative or summative, then help me judge my own work against the criteria, pick the two feedback points that matter most, and turn them into an action plan with one question to take to my tutor. Ask me to make each judgement before you give yours.'),
+    'Here are the learning outcome, marking criteria and feedback for my work on {topic}: [paste them]. Help me read them as a tutor would. Explain what the outcome asks me to show and whether the task is formative or summative. Then help me judge my own work against the criteria, pick the two feedback points that matter most, and turn them into an action plan with one question to take to my tutor. Ask me to make each judgement before you give yours.'),
  'finding-using-sources': ('an academic librarian',
     'I need scholarly sources on {topic} for [subject]. Be my search partner, not my searcher: help me pull keywords and synonyms from my task, build one search string with Boolean operators for the library discovery service, and plan how I will refine it after the first results and extend it through citation searching. Then give me three questions to test each source for currency, authority and relevance, and tell me how I will know the main debates are covered. Do not list sources for me.'),
  'referencing': ('an academic librarian',
@@ -94,13 +94,13 @@ PATHWAY_PROMPTS = {
  'revising-exams': ('an academic practice specialist',
     'My [exam type] on {topic} is in [number] weeks. Help me revise actively, not by rereading: ask me questions to find the gaps in what I know, build a simple plan that targets them in the time I have, and suggest two active techniques to try. After each session, quiz me without notes so I can judge what is working and change my plan. Finish with a strategy for the day itself, including how to manage nerves.'),
  'researching-research-methods': ('an academic practice specialist',
-    'I am planning a research project on {topic} in [subject]. Act like a supervisor who questions me rather than designs it for me. Help me narrow the topic to a question I can answer, with a rationale and aims; place it in the literature I have read so far; choose and justify a methodology and methods; spot the ethics issues, including consent and anonymity; and check that the scope fits my time and word count. End by naming the weakest part of my plan.'),
+    'I am planning a research project on {topic} in [subject]. Act like a supervisor who questions me rather than designs it for me. Help me narrow the topic to a question I can answer, with a rationale and aims, and place it in the literature I have read so far. Then help me choose and justify a methodology and methods, spot the ethics issues, including consent and anonymity, and check that the scope fits my time and word count. End by naming the weakest part of my plan.'),
  'reflective-practice': ('an academic practice specialist',
     'Help me reflect on a recent experience of {topic}: [describe what happened]. Take me through a reflective model one stage at a time, asking questions rather than writing it for me. Push me past description: what went well and what did not, why, and how my own values and assumptions shaped what I noticed. Finish by helping me turn it into a dated action plan I could use for my continuing professional development.'),
  'work-based-experiential-learning': ('an academic practice specialist',
     'I am starting a placement or work experience in [setting], linked to {topic}. Help me get the most from it: set two learning goals, plan how to use my mentor or supervisor, and pick one theory from my course to test in practice. Afterwards, take me through Kolb\'s experiential learning cycle on one real situation, ask me to justify a professional judgement I made, and help me say what it taught me about the practitioner I am becoming.'),
  'ai-technology': ('an academic practice specialist',
-    'I want to use AI responsibly on my work on {topic} in [subject]. Before anything else, ask me what my module\'s assessment guidance allows. Then act as a critical friend, not a ghost writer: help me decide which parts of the task AI could support and which must be my own thinking, show me how to fact-check anything you tell me, and help me write an honest statement of how I used AI. Remind me that you are not a source I can cite.'),
+    'I want to use AI responsibly on my work on {topic} in [subject]. Before anything else, ask me what my module\'s assessment guidance allows. Then act as a critical friend, not a ghost writer. Help me decide which parts of the task AI could support and which must be my own thinking, show me how to fact-check anything you tell me, and help me write an honest statement of how I used AI. Remind me that you are not a source I can cite.'),
  'creativity': ('an academic practice specialist',
     'Help me take a more creative approach to {topic} in [subject]. Run a structured session: first help me generate as many ideas as I can without judging them, then help me choose between them using criteria I set. If I get stuck or slip into perfectionism, suggest a different method to try. Finally, help me turn the best idea into a small first step I can act on this week, and explain which creativity approach we used and why it suits the task.'),
 }
@@ -339,6 +339,10 @@ def build(include_floor):
         if pid not in PATHWAY_PROMPTS:
             raise SystemExit('no distilled prompt for pathway ' + pid)
         role, prompt = PATHWAY_PROMPTS[pid]
+        # voice-lint's sentence-too-long limit (45 words) applies to embedded starters
+        for sentence in re.split(r'(?<=[.!?])\s+', prompt):
+            if len(sentence.split()) > 45:
+                raise SystemExit('%s prompt: sentence over 45 words: %s' % (pid, sentence[:60]))
         pathway_prompts.append({
             'pathway': pid, 'title': pathways[pid]['title'], 'role': role, 'prompt': clean(prompt),
             'distilledFrom': [a['id'] for a in activities if a['pathway'] == pid],
