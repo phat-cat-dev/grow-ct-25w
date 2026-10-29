@@ -89,14 +89,23 @@
     margin-top: var(--space-xs, 0.5rem);
   }
 
+  // One button for the whole sequence (reveal → counter → Continue). A stable
+  // min-width + centred content means it does NOT resize when the label swaps to
+  // "Continue" or the counter clears. Styled to the deep brand blue (#0a2a3d at
+  // the navy hue), derived from the hue tokens so it still retints.
   .outcomes__reveal {
+    --oc-brand: hsl(var(--h, 202) var(--s, 72%) 14%);
+    --oc-brand-hover: hsl(var(--h, 202) var(--s, 72%) 22%);
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
-    padding: 0.55rem 1.2rem;
-    border: 1px solid var(--accent, #1a66a3);
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    min-width: ~"min(100%, 20rem)"; // escaped: LESS would otherwise eval CSS min()
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--oc-brand);
     border-radius: var(--radius, 0.5rem);
-    background: var(--accent, #1a66a3);
+    background: var(--oc-brand);
     color: var(--on-accent, #fff);
     font: inherit;
     font-weight: 600;
@@ -104,8 +113,8 @@
     transition: background-color 0.15s ease, border-color 0.15s ease;
 
     .no-touch &:hover {
-      background: color-mix(in srgb, var(--accent, #1a66a3) 86%, #000);
-      border-color: color-mix(in srgb, var(--accent, #1a66a3) 86%, #000);
+      background: var(--oc-brand-hover);
+      border-color: var(--oc-brand-hover);
     }
 
     html:not(.a11y-disable-focusoutline) &:focus-visible {
@@ -121,5 +130,8 @@
     font-size: 0.85em;
     opacity: 0.85;
   }
+  // when the counter is cleared (the Continue state) drop it entirely so the
+  // flex gap doesn't throw the centred label off-centre
+  .outcomes__counter:empty { display: none; }
 
 }

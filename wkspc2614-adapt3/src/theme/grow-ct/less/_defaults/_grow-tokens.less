@@ -69,10 +69,11 @@
   --h2: hsl(var(--h) var(--gs) 40%);
 
   --sem-s: 55%; --sem-l: 38%; --sem-weak-s: 55%; --sem-weak-l: 92%;
-  --c-positive: hsl(150 var(--sem-s) var(--sem-l)); --c-positive-weak: hsl(150 var(--sem-weak-s) var(--sem-weak-l));
+  // semantics as rotations of the brand hue (identical at --h:202, but now track it)
+  --c-positive: hsl(calc(var(--h) - 52)  var(--sem-s) var(--sem-l)); --c-positive-weak: hsl(calc(var(--h) - 52)  var(--sem-weak-s) var(--sem-weak-l));
   --c-neutral:  hsl(calc(var(--h) + 198) var(--sem-s) var(--sem-l));
-  --c-negative: hsl(5 var(--sem-s) var(--sem-l));
-  --c-comment:  hsl(270 var(--sem-s) var(--sem-l));
+  --c-negative: hsl(calc(var(--h) + 163) var(--sem-s) var(--sem-l));
+  --c-comment:  hsl(calc(var(--h) + 68)  var(--sem-s) var(--sem-l));
 
   // families
   --font-ui:      "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;

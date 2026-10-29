@@ -50,10 +50,18 @@ body {
   font-weight: @link-weight;
   line-height: @link-line-height;
   color: @link;
+  // House ruling: links carry no underline — just a dotted lower border that
+  // goes solid on hover/focus. (High-contrast mode re-adds a full underline.)
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
 
   .no-touch &:hover {
     color: @link-hover;
+    border-bottom-style: solid;
     .transition(color @duration ease-in);
+  }
+  &:focus-visible {
+    border-bottom-style: solid;
   }
 }
 
