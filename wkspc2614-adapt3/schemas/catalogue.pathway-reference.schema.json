@@ -114,7 +114,43 @@
       "type": ["object", "null"],
       "description": "v2: per-capability book pages/teaching/worked-examples/gaps from the book->pathway source map. null until folded in."
     },
-    "source": { "type": "object" }
+    "source": { "type": "object" },
+    "benchmarkKeys": {
+      "type": "object",
+      "description": "Reverse index, written by tools/key-benchmark-tiers.py: the benchmark statements (universal graduate competencies + any tiered subject pathwayMapping) that key into this pathway, grouped by tier. Re-run the tool after build-pathway-reference.py regenerates this file.",
+      "properties": {
+        "note": { "type": "string" },
+        "sources": { "type": "array", "items": { "type": "string" } },
+        "byTier": {
+          "type": "object",
+          "properties": {
+            "introductory": { "$ref": "#/$defs/benchmarkKeyList" },
+            "intermediate": { "$ref": "#/$defs/benchmarkKeyList" },
+            "advanced": { "$ref": "#/$defs/benchmarkKeyList" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "benchmarkKeyList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "statementId", "strength", "tierBasis"],
+        "properties": {
+          "source": { "type": "string" },
+          "statementId": { "type": "string" },
+          "strength": { "enum": ["direct", "indirect"] },
+          "tierBasis": { "enum": ["capability-match", "progression", "floor"] },
+          "capabilities": { "type": "array", "items": { "type": "string" } },
+          "extract": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false
 }
