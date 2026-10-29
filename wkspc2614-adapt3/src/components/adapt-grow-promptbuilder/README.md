@@ -85,9 +85,14 @@ slots; `verbBands` holds the voice specification section 16 outcome verbs, and
 each activity takes the band its pathway tier anchors to
 (`docs/curriculum/pathway-tier-mapping.md`). `--embed` also writes
 `_growPromptLibraries["academic-practice-activities"]` with stages `role`,
-`function` (one group per activity), `verb`, `context` and `format`. Use it with
-parts `role`, `function`, `verb` (`_optional`), `topic` (`_optional`, typed),
-`context`, `format` and `"_assembleTemplate": "Act as {role}. {function} {context} {format}"`.
+`function` (one group per activity), `verb`, `assessment` (assessment types as
+whole sentences, grouped: written, spoken and visual, reflective practice, exams
+and tests, practice-based), `context` and `format`. Use it with parts `role`,
+`function`, `verb` (`_optional`), `topic` (label "Module / topic", `_optional`,
+typed), `assessment` (`_optional`), `context`, `format` and
+`"_assembleTemplate": "Act as {role}. {function} {assessment} {context} {format}"`.
+An empty optional part drops out of the template; an unfilled slot inside a
+starter shows as `[topic]`.
 
 ## Authoring example
 

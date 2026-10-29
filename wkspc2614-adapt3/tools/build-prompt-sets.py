@@ -84,6 +84,22 @@ FUNCTIONS = collections.OrderedDict([
 ])
 EVIDENCE_PROMPT = ('Help me plan evidence that I can {cap}: {title}. My topic is {topic}. '
                    'What should {artefact} include?')
+# Assessment types, as whole sentences so an empty choice simply drops out.
+ASSESSMENT_TYPES = [
+ ('Written', ['My assessment is an essay.', 'My assessment is a report.',
+              'My assessment is a literature review.', 'My assessment is a case study.',
+              'My assessment is a critical review of a source.', 'My assessment is a lab or practical report.',
+              'My assessment is a research proposal.', 'My assessment is a dissertation or independent project.']),
+ ('Spoken and visual', ['My assessment is a presentation.', 'My assessment is a poster.',
+                        'My assessment is a viva or oral examination.', 'My assessment is a podcast or video.',
+                        'My assessment is a group presentation.']),
+ ('Reflective practice', ['My assessment is a reflective essay.', 'My assessment is a reflective journal or log.',
+                          'My assessment is a portfolio with reflective commentary.']),
+ ('Exams and tests', ['My assessment is an unseen written exam.', 'My assessment is an open-book or take-home exam.',
+                      'My assessment is a multiple-choice or online test.', 'My assessment is a practical exam or OSCE.']),
+ ('Practice-based', ['My assessment is a placement portfolio.', 'My assessment is a group project.',
+                     'My assessment is a live brief for an external client.', 'My assessment is a creative artefact with a rationale.']),
+]
 FUNCTION_FORMAT = {
  'explain': 'Use plain language and one example from [subject].',
  'model': 'Keep the example short and label each feature in brackets.',
@@ -344,6 +360,7 @@ def activity_slice_for(lib, pathway, tier):
         'role': [{'label': tl['label'] + ' tier', 'items': lib['pathways'][pathway]['role'][tier]}],
         'function': function,
         'verb': [{'label': '%s verbs' % acts[0]['verbBand'], 'items': acts[0]['verbs']}],
+        'assessment': [{'label': label, 'items': items} for label, items in ASSESSMENT_TYPES],
         'context': [{'label': tl['label'] + ' tier', 'items': tl['context']}],
         'format': [{'label': 'By step', 'items': fmt}],
     }
