@@ -116,19 +116,22 @@
   }
 }
 
-// hover: the corner MARK shivers (not the card); the card just lifts its shadow.
-// Keyframes preserve the mark's base offset and wobble the rotation around --rot.
+// hover: the corner MARK gives a tiny shiver (not the card); the card just lifts
+// its shadow. Keyframes keep the mark's base offset and tilt, adding a 1px
+// sideways jitter and a rotation of at most 1.5deg that dies away.
 @keyframes grow-mark-shiver {
   0%, 100% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(var(--rot,0deg))"; }
-  25% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) - 6deg))"; }
-  55% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) + 6deg))"; }
-  80% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) - 3deg))"; }
+  15% { transform: ~"translate(calc(var(--dx,0px) - 1px), var(--dy,0)) rotate(calc(var(--rot,0deg) - 1.5deg))"; }
+  30% { transform: ~"translate(calc(var(--dx,0px) + 1px), var(--dy,0)) rotate(calc(var(--rot,0deg) + 1.5deg))"; }
+  45% { transform: ~"translate(calc(var(--dx,0px) - 1px), var(--dy,0)) rotate(calc(var(--rot,0deg) - 1deg))"; }
+  60% { transform: ~"translate(calc(var(--dx,0px) + 1px), var(--dy,0)) rotate(calc(var(--rot,0deg) + 1deg))"; }
+  75% { transform: ~"translate(var(--dx,0), var(--dy,0)) rotate(calc(var(--rot,0deg) - 0.5deg))"; }
 }
 .no-touch .boxmenu-item:not(.is-disabled):hover .boxmenu-item__inner {
   --card-shadow: ~"0 4px 8px hsl(var(--h) 40% var(--shL) / 0.20), 0 20px 42px -10px hsl(var(--h) 45% var(--shL) / 0.32)";
 }
 .no-touch .boxmenu-item:not(.is-disabled):hover .grow-card-mark {
-  animation: grow-mark-shiver 0.3s ease;
+  animation: grow-mark-shiver 0.4s linear;
 }
 @media (prefers-reduced-motion: reduce) {
   .no-touch .boxmenu-item:not(.is-disabled):hover .grow-card-mark { animation: none; }
