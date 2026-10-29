@@ -30,6 +30,7 @@ nested forEducator (teacher-to-teacher pedagogical guidance), and forBeneficiary
 clarification). All siblings are written to the same folder.
 """
 import argparse, json, glob, os, re, collections, datetime
+import pathway_tiers
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC_GLOB = os.path.join(REPO_ROOT, 'catalogue', 'context', 'subject', 'benchmarks', '*.json')
@@ -245,10 +246,15 @@ def build_pathway_mapping(order):
         indirect = [k for k in ALWAYS_INDIRECT if k not in direct]
         stmts = []
         for k in direct + indirect:
+            strength = 'direct' if k in direct else 'indirect'
+            tiers, basis = pathway_tiers.key_tiers('adapt-' + p['id'], strength,
+                                                   pattern=PATHWAY_MATCH[k])
             stmts.append({
                 'chunkId': 'qaa-universal/threshold/' + slugify(k),
                 'tag': 'adapt-' + p['id'],
-                'strength': 'direct' if k in direct else 'indirect',
+                'strength': strength,
+                'tiers': tiers,
+                'tierBasis': basis,
                 'extract': EXP[k][0],
                 'orientation': 'professional' if k in PRO_ORIENT else 'academic',
                 'blockType': 'baseline',
@@ -364,7 +370,9 @@ def build():
         for _pwk, _pw in pm.items():
             for _st in (_pw.get('statements') or []):
                 if _st.get('chunkId') == stmt_id:
-                    out.append({'pathway': _pwk, 'strength': _st.get('strength')})
+                    out.append({'pathway': _pwk, 'strength': _st.get('strength'),
+                                'tiers': [t['tier'] for t in _st.get('tiers') or []],
+                                'tierBasis': _st.get('tierBasis')})
                     break
         return out
     grad_competencies = []
@@ -409,7 +417,7 @@ def build():
             },
             'derivedFrom': {
                 'method': 'Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.',
-                'pathwayMappingBasis': 'Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.',
+                'pathwayMappingBasis': 'Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged. Each edge is keyed to pathway + tier by tools/pathway_tiers.py (tierBasis: capability-match | progression | floor).',
                 'script': 'tools/build-universal-benchmark.py',
                 'generated': datetime.date.today().isoformat(),
                 'sourceFiles': n,

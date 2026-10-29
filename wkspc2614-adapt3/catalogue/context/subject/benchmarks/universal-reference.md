@@ -258,7 +258,7 @@ Benchmarks set standards for the honours graduate (FHEQ level 6); the intermedia
 ## Provenance
 
 - **Method:** Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.
-- **Pathway mapping:** Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.
+- **Pathway mapping:** Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged. Each edge is keyed to pathway + tier by tools/pathway_tiers.py (tierBasis: capability-match | progression | floor).
 - **Built by:** `tools/build-universal-benchmark.py` on 2026-10-29
 - **Licence:** Distillation across the QAA Subject Benchmark Statements; QAA copyright is held, no issuer text is copied; all wording here is our paraphrase or audience rewrite.
 

@@ -28,7 +28,7 @@
     },
     "derivedFrom": {
       "method": "Shared-core aggregation across the catalogue per-subject benchmark JSONs; 20-concept / 5-strand keyword rule on each statement about+paraphrase+verbs+themes; sharedBy = subjects with at least one matching statement per rung, out of the whole set.",
-      "pathwayMappingBasis": "Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged.",
+      "pathwayMappingBasis": "Authored, not averaged: each pathway in design-kb/design-kb.pathways.json is mapped to the shared-core expectations it realises, by its name + tier focus. Generic and subject-neutral; only one of the subject benchmarks carries a real pathway map, so this cannot be averaged. Each edge is keyed to pathway + tier by tools/pathway_tiers.py (tierBasis: capability-match | progression | floor).",
       "script": "tools/build-universal-benchmark.py",
       "generated": "2026-10-29",
       "sourceFiles": 54
@@ -1150,55 +1150,120 @@
         "pathways": [
           {
             "pathway": "adapt-starting-progressing-succeeding",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-understanding-learning-assessment-feedback",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-criticality",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-presenting",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-revising-exams",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding"
@@ -1231,15 +1296,30 @@
         "pathways": [
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems"
@@ -1258,55 +1338,120 @@
         "pathways": [
           {
             "pathway": "adapt-starting-progressing-succeeding",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-understanding-learning-assessment-feedback",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-criticality",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "progression"
           },
           {
             "pathway": "adapt-presenting",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-revising-exams",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments"
@@ -1325,55 +1470,133 @@
         "pathways": [
           {
             "pathway": "adapt-starting-progressing-succeeding",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-understanding-learning-assessment-feedback",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-criticality",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-presenting",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-revising-exams",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           }
         ],
         "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences"
@@ -1392,11 +1615,21 @@
         "pathways": [
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/research-and-enquiry-methods"
@@ -1429,55 +1662,125 @@
         "pathways": [
           {
             "pathway": "adapt-starting-progressing-succeeding",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-understanding-learning-assessment-feedback",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-criticality",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-presenting",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-revising-exams",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           }
         ],
         "statementId": "qaa-universal/threshold/ethics"
@@ -1510,7 +1813,11 @@
         "pathways": [
           {
             "pathway": "adapt-presenting",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/teamwork-and-collaboration"
@@ -1529,55 +1836,121 @@
         "pathways": [
           {
             "pathway": "adapt-starting-progressing-succeeding",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-understanding-learning-assessment-feedback",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-criticality",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-presenting",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-revising-exams",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-researching-research-methods",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           },
           {
             "pathway": "adapt-ai-technology",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "indirect"
+            "strength": "indirect",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "floor"
           }
         ],
         "statementId": "qaa-universal/threshold/independent-and-self-directed-learning"
@@ -1596,15 +1969,29 @@
         "pathways": [
           {
             "pathway": "adapt-finding-using-sources",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-referencing",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-academic-writing",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/information-and-sources"
@@ -1637,7 +2024,13 @@
         "pathways": [
           {
             "pathway": "adapt-ai-technology",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/digital-skills"
@@ -1670,15 +2063,29 @@
         "pathways": [
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-creativity",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/professional-practice-and-employability"
@@ -1697,7 +2104,13 @@
         "pathways": [
           {
             "pathway": "adapt-academic-writing",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/written-communication"
@@ -1716,15 +2129,32 @@
         "pathways": [
           {
             "pathway": "adapt-revising-exams",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-reflective-practice",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           },
           {
             "pathway": "adapt-work-based-experiential-learning",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/reflection-and-personal-development"
@@ -1757,7 +2187,13 @@
         "pathways": [
           {
             "pathway": "adapt-creativity",
-            "strength": "direct"
+            "strength": "direct",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ],
+            "tierBasis": "capability-match"
           }
         ],
         "statementId": "qaa-universal/threshold/enterprise-and-creativity"
@@ -1778,6 +2214,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-starting-progressing-succeeding",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "starting-progressing-succeeding/02"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "starting-progressing-succeeding/c3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1788,6 +2239,22 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-starting-progressing-succeeding",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "starting-progressing-succeeding/c2"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "starting-progressing-succeeding/c3",
+                "starting-progressing-succeeding#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1798,6 +2265,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-starting-progressing-succeeding",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1808,6 +2290,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-starting-progressing-succeeding",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1818,6 +2315,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-starting-progressing-succeeding",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1839,6 +2351,29 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-understanding-learning-assessment-feedback",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/01",
+                "understanding-learning-assessment-feedback/02"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/03",
+                "understanding-learning-assessment-feedback/05"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1849,6 +2384,15 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-understanding-learning-assessment-feedback",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/05"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1859,6 +2403,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-understanding-learning-assessment-feedback",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/05"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "understanding-learning-assessment-feedback/c1"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1869,6 +2428,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-understanding-learning-assessment-feedback",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1879,6 +2453,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-understanding-learning-assessment-feedback",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1900,6 +2489,16 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-finding-using-sources",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "finding-using-sources/03",
+                "finding-using-sources#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1910,6 +2509,22 @@
           "chunkId": "qaa-universal/threshold/information-and-sources",
           "tag": "adapt-finding-using-sources",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "finding-using-sources/02"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "finding-using-sources/04",
+                "finding-using-sources/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates find, select and use information and sources appropriate to the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1920,6 +2535,15 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-finding-using-sources",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "finding-using-sources/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1930,6 +2554,15 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-finding-using-sources",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "finding-using-sources/c1"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1940,6 +2573,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-finding-using-sources",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1950,6 +2598,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-finding-using-sources",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1971,6 +2634,17 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-referencing",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "referencing/03",
+                "referencing/04",
+                "referencing#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1981,6 +2655,24 @@
           "chunkId": "qaa-universal/threshold/information-and-sources",
           "tag": "adapt-referencing",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "referencing/c1",
+                "referencing/01",
+                "referencing/c2"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "referencing#d2",
+                "referencing/c3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates find, select and use information and sources appropriate to the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -1991,6 +2683,27 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-referencing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "referencing/c1"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "referencing/02"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "referencing#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2001,6 +2714,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-referencing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2011,6 +2739,15 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-referencing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "referencing/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2021,6 +2758,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-referencing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2042,6 +2794,32 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-criticality",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "criticality/c1",
+                "criticality#i3"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "criticality/01",
+                "criticality/03",
+                "criticality/04"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "criticality/c2",
+                "criticality/05",
+                "criticality#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2052,6 +2830,15 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-criticality",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "criticality#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2062,6 +2849,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-criticality",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2072,6 +2874,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-criticality",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2082,6 +2899,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-criticality",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2103,6 +2935,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-academic-writing",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "progression",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2113,6 +2960,15 @@
           "chunkId": "qaa-universal/threshold/information-and-sources",
           "tag": "adapt-academic-writing",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "academic-writing/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates find, select and use information and sources appropriate to the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2123,6 +2979,32 @@
           "chunkId": "qaa-universal/threshold/written-communication",
           "tag": "adapt-academic-writing",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "academic-writing/05",
+                "academic-writing/c1",
+                "academic-writing/06"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "academic-writing/02",
+                "academic-writing/04",
+                "academic-writing/03"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "academic-writing/01",
+                "academic-writing#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates write in the forms the subject requires.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2133,6 +3015,15 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-academic-writing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "academic-writing#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2143,6 +3034,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-academic-writing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2153,6 +3059,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-academic-writing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2163,6 +3084,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-academic-writing",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2184,6 +3120,31 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-presenting",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "presenting#i1",
+                "presenting/c1"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "presenting/01",
+                "presenting/03",
+                "presenting/02"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "presenting/c3",
+                "presenting/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2194,6 +3155,15 @@
           "chunkId": "qaa-universal/threshold/teamwork-and-collaboration",
           "tag": "adapt-presenting",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "presenting/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates work effectively with others.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2204,6 +3174,15 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-presenting",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "presenting/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2214,6 +3193,15 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-presenting",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "presenting/c2"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2224,6 +3212,15 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-presenting",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "presenting/02"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2234,6 +3231,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-presenting",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2255,6 +3267,21 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-revising-exams",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "revising-exams#d2"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "revising-exams#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2265,6 +3292,30 @@
           "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
           "tag": "adapt-revising-exams",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "revising-exams#i2"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "revising-exams/02",
+                "revising-exams#d2",
+                "revising-exams#d3"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "revising-exams/03",
+                "revising-exams/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates reflect on their learning and practice and plan their development.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2275,6 +3326,15 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-revising-exams",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "revising-exams#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2285,6 +3345,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-revising-exams",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "revising-exams/01"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "revising-exams/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2295,6 +3370,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-revising-exams",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2305,6 +3395,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-revising-exams",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2326,6 +3431,33 @@
           "chunkId": "qaa-universal/threshold/research-and-enquiry-methods",
           "tag": "adapt-researching-research-methods",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "researching-research-methods#i1",
+                "researching-research-methods/01",
+                "researching-research-methods#i3"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "researching-research-methods/02",
+                "researching-research-methods/c1",
+                "researching-research-methods#d3"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "researching-research-methods/03",
+                "researching-research-methods/c2",
+                "researching-research-methods/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates understand and use the subject's methods of research and enquiry.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2336,6 +3468,15 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-researching-research-methods",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "researching-research-methods/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2346,6 +3487,21 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-researching-research-methods",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2356,6 +3512,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-researching-research-methods",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2366,6 +3537,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-researching-research-methods",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2376,6 +3562,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-researching-research-methods",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2397,6 +3598,21 @@
           "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
           "tag": "adapt-reflective-practice",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "reflective-practice/01"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/c3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates apply subject knowledge to practical situations and problems.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2407,6 +3623,15 @@
           "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
           "tag": "adapt-reflective-practice",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates understand the subject's professional settings and are prepared for work.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2417,6 +3642,32 @@
           "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
           "tag": "adapt-reflective-practice",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "reflective-practice/01",
+                "reflective-practice/02"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "reflective-practice/c1",
+                "reflective-practice/c2",
+                "reflective-practice/04"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/c3",
+                "reflective-practice/03",
+                "reflective-practice/c4"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates reflect on their learning and practice and plan their development.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2427,6 +3678,28 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-reflective-practice",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "reflective-practice/01"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "reflective-practice/04"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/03",
+                "reflective-practice/c4"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2437,6 +3710,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-reflective-practice",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "reflective-practice/c1"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/c4"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2447,6 +3735,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-reflective-practice",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2457,6 +3760,15 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-reflective-practice",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "reflective-practice/c4"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2467,6 +3779,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-reflective-practice",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2488,6 +3815,31 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "work-based-experiential-learning/01",
+                "work-based-experiential-learning#i2",
+                "work-based-experiential-learning#i3"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "work-based-experiential-learning/02",
+                "work-based-experiential-learning/c2"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "work-based-experiential-learning/03",
+                "work-based-experiential-learning#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2498,6 +3850,31 @@
           "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "work-based-experiential-learning/01",
+                "work-based-experiential-learning#i2",
+                "work-based-experiential-learning#i3"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "work-based-experiential-learning/c1",
+                "work-based-experiential-learning/c2"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "work-based-experiential-learning/03",
+                "work-based-experiential-learning/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates apply subject knowledge to practical situations and problems.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2508,6 +3885,28 @@
           "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "work-based-experiential-learning/01"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "work-based-experiential-learning/c1"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "work-based-experiential-learning/03",
+                "work-based-experiential-learning/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates understand the subject's professional settings and are prepared for work.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2518,6 +3917,21 @@
           "chunkId": "qaa-universal/threshold/reflection-and-personal-development",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "work-based-experiential-learning/c2"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "work-based-experiential-learning#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates reflect on their learning and practice and plan their development.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2528,6 +3942,15 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "work-based-experiential-learning/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2538,6 +3961,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2548,6 +3986,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2558,6 +4011,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-work-based-experiential-learning",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2579,6 +4047,15 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-ai-technology",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "ai-technology/05"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2589,6 +4066,15 @@
           "chunkId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
           "tag": "adapt-ai-technology",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "ai-technology/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates apply subject knowledge to practical situations and problems.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2599,6 +4085,21 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-ai-technology",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "ai-technology/03"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "ai-technology/06"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2609,6 +4110,15 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-ai-technology",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "ai-technology/05"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2619,6 +4129,32 @@
           "chunkId": "qaa-universal/threshold/digital-skills",
           "tag": "adapt-ai-technology",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "ai-technology#i1",
+                "ai-technology#i2",
+                "ai-technology#i3"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "ai-technology/03",
+                "ai-technology#d2",
+                "ai-technology/01"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "ai-technology/06",
+                "ai-technology/05"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates use the digital tools and technologies the subject relies on.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2629,6 +4165,15 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-ai-technology",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "ai-technology/03"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2639,6 +4184,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-ai-technology",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2660,6 +4220,15 @@
           "chunkId": "qaa-universal/threshold/research-and-enquiry-methods",
           "tag": "adapt-creativity",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "creativity/04"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates understand and use the subject's methods of research and enquiry.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2670,6 +4239,15 @@
           "chunkId": "qaa-universal/threshold/professional-practice-and-employability",
           "tag": "adapt-creativity",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "creativity/06"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates understand the subject's professional settings and are prepared for work.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2680,6 +4258,30 @@
           "chunkId": "qaa-universal/threshold/enterprise-and-creativity",
           "tag": "adapt-creativity",
           "strength": "direct",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "creativity/01",
+                "creativity/03"
+              ]
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "creativity/07",
+                "creativity/04"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "creativity/06",
+                "creativity#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show creativity and enterprise in applying the subject.",
           "orientation": "professional",
           "blockType": "baseline",
@@ -2690,6 +4292,21 @@
           "chunkId": "qaa-universal/threshold/subject-knowledge-and-understanding",
           "tag": "adapt-creativity",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "intermediate",
+              "capabilities": [
+                "creativity/05"
+              ]
+            },
+            {
+              "tier": "advanced",
+              "capabilities": [
+                "creativity#e3"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates show broad and well-founded knowledge of the subject's core content.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2700,6 +4317,15 @@
           "chunkId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
           "tag": "adapt-creativity",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": [
+                "creativity/01"
+              ]
+            }
+          ],
+          "tierBasis": "capability-match",
           "extract": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2710,6 +4336,21 @@
           "chunkId": "qaa-universal/threshold/independent-and-self-directed-learning",
           "tag": "adapt-creativity",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates manage their own learning and work independently.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2720,6 +4361,21 @@
           "chunkId": "qaa-universal/threshold/ethics",
           "tag": "adapt-creativity",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
           "orientation": "academic",
           "blockType": "baseline",
@@ -2730,6 +4386,21 @@
           "chunkId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
           "tag": "adapt-creativity",
           "strength": "indirect",
+          "tiers": [
+            {
+              "tier": "introductory",
+              "capabilities": []
+            },
+            {
+              "tier": "intermediate",
+              "capabilities": []
+            },
+            {
+              "tier": "advanced",
+              "capabilities": []
+            }
+          ],
+          "tierBasis": "floor",
           "extract": "Graduates communicate the subject clearly to different audiences and in different forms.",
           "orientation": "academic",
           "blockType": "baseline",
