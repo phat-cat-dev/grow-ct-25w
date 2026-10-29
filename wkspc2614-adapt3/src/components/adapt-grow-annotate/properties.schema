@@ -81,12 +81,12 @@
           "_color": {
             "type": "string",
             "required": false,
-            "enum": ["accent", "positive", "negative", "neutral", "comment", "soft"],
+            "enum": ["accent", "positive", "negative", "neutral", "comment", "soft", "fluro-pink", "fluro-yellow", "fluro-green", "fluro-blue", "fluro-purple"],
             "default": "accent",
             "title": "Colour",
-            "inputType": { "type": "Select", "options": ["accent", "positive", "negative", "neutral", "comment", "soft"] },
+            "inputType": { "type": "Select", "options": ["accent", "positive", "negative", "neutral", "comment", "soft", "fluro-pink", "fluro-yellow", "fluro-green", "fluro-blue", "fluro-purple"] },
             "validators": [],
-            "help": "Colour role, mapped to the theme: accent (brand), positive (green), negative (red), neutral (amber), comment (violet), soft (muted)."
+            "help": "Colour role. Semantic ink roles map to the theme: accent (brand), positive (green), negative (red), neutral (amber), comment (violet), soft (muted). The fluro-* roles are fixed bright 'marker pen' colours (pink, yellow, green, blue, purple) - use them with the 'highlight' mark for a highlighter pen, or with 'box'/'oval' for a bright rectangle/circle."
           }
         }
       }

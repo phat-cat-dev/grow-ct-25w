@@ -1979,5 +1979,141 @@
       "correct": "Spot on — you found every one.",
       "_incorrect": "Close — check the notes below."
     }
+  },
+  {
+    "_component": "annotate",
+    "title": "",
+    "displayTitle": "Highlighter - read like a critic",
+    "body": "",
+    "instruction": "Pick a highlighter, then drag across any words to mark them. Click a mark to remove it.",
+    "_freeSelect": true,
+    "passage": "Good academic writing makes a claim, supports it with evidence, and stays honest about what it cannot show. As you read, notice the moves the writer makes and mark the ones that matter to you.",
+    "_tools": [
+      {
+        "_id": "term",
+        "label": "Key term",
+        "_mark": "highlight",
+        "_color": "fluro-pink"
+      },
+      {
+        "_id": "important",
+        "label": "Important",
+        "_mark": "highlight",
+        "_color": "fluro-yellow"
+      },
+      {
+        "_id": "agree",
+        "label": "I agree",
+        "_mark": "highlight",
+        "_color": "fluro-green"
+      },
+      {
+        "_id": "question",
+        "label": "I have a question",
+        "_mark": "highlight",
+        "_color": "fluro-blue"
+      },
+      {
+        "_id": "example",
+        "label": "Good example",
+        "_mark": "highlight",
+        "_color": "fluro-purple"
+      }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_id": "GAL-c-49",
+    "_parentId": "GAL-b-49",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_component": "annotate",
+    "title": "",
+    "displayTitle": "Find the three moves",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study nine out of ten students found more mistakes this way, which suggests the habit is worth building, though the effect may not hold for everyone.",
+    "_tools": [
+      {
+        "_id": "claim",
+        "label": "Claim",
+        "_mark": "highlight",
+        "_color": "fluro-pink"
+      },
+      {
+        "_id": "evidence",
+        "label": "Evidence",
+        "_mark": "highlight",
+        "_color": "fluro-green"
+      },
+      {
+        "_id": "hedge",
+        "label": "Hedge",
+        "_mark": "highlight",
+        "_color": "fluro-yellow"
+      }
+    ],
+    "_targets": [
+      {
+        "text": "Reading your work aloud helps you catch errors",
+        "tool": "claim"
+      },
+      {
+        "text": "nine out of ten students found more mistakes",
+        "tool": "evidence"
+      },
+      {
+        "text": "may not hold for everyone",
+        "tool": "hedge"
+      }
+    ],
+    "_feedback": {
+      "correct": "Spot on - claim, evidence, and the hedge that keeps it honest.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_id": "GAL-c-50",
+    "_parentId": "GAL-b-50",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
+  },
+  {
+    "_component": "annotate",
+    "title": "",
+    "displayTitle": "Circle and box",
+    "body": "",
+    "instruction": "Circle the one idea the paragraph is really about; box the words that only support it.",
+    "_freeSelect": true,
+    "passage": "Most paragraphs carry one idea and a handful of supporting details. The skill is deciding which is which before you start to cut.",
+    "_tools": [
+      {
+        "_id": "core",
+        "label": "Core idea",
+        "_mark": "oval",
+        "_color": "fluro-pink"
+      },
+      {
+        "_id": "support",
+        "label": "Support",
+        "_mark": "box",
+        "_color": "fluro-blue"
+      }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_id": "GAL-c-51",
+    "_parentId": "GAL-b-51",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
   }
 ]
