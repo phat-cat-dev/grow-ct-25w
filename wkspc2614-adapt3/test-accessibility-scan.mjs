@@ -6,13 +6,13 @@
  * scans both before and after interaction to catch state-dependent issues.
  *
  * Usage: node test-accessibility-scan.mjs
- * Requires: Playwright, @axe-core/playwright, dev server running on localhost:9001
+ * Requires: Playwright, @axe-core/playwright, dev server running on localhost:9000
  */
 
 import { chromium } from 'playwright';
 import AxeBuilder from '@axe-core/playwright';
 
-const BASE_URL = 'http://localhost:9001/';
+const BASE_URL = 'http://localhost:9000/';
 
 // Severity order for sorting
 const SEVERITY_ORDER = { critical: 0, serious: 1, moderate: 2, minor: 3 };
