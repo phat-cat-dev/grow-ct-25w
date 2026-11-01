@@ -4,6 +4,7 @@ const path = require('path');
 // extends grunt.file.expand with { order: cb(filePaths) }
 require('grunt-file-order');
 const Framework = require('./helpers/Framework');
+const tierServers = require('./tier-servers');
 
 module.exports = function(grunt) {
 
@@ -11,8 +12,36 @@ module.exports = function(grunt) {
 
   // grunt tasks
 
-  grunt.registerTask('_log-server', 'Logs out user-defined build variables', function() {
-    grunt.log.ok(`Starting server in '${grunt.config('outputdir')}' using port ${grunt.config('connect.server.options.port')}`);
+  // Reads the course title straight out of a built imsmanifest.xml, so a
+  // tier server's log line says which of the 39 courses is actually staged
+  // there, instead of just the port. Falls back silently: this is a log
+  // convenience, not a build check.
+  function readStagedCourseTitle(dir) {
+    try {
+      const manifest = fs.readFileSync(path.join(dir, 'imsmanifest.xml'), 'utf8');
+      const match = manifest.match(/<title>(?:<!\[CDATA\[)?([^<]*?)(?:\]\]>)?<\/title>/);
+      return match && match[1].trim();
+    } catch (err) {
+      return null;
+    }
+  }
+
+  grunt.registerTask('_log-server', 'Logs out user-defined build variables', function(target = 'server') {
+    const base = grunt.config(`connect.${target}.options.base`);
+    const port = grunt.config(`connect.${target}.options.port`);
+
+    const tier = Object.keys(tierServers).find(key => tierServers[key].target === target);
+    if (!tier) {
+      grunt.log.ok(`Starting server in '${base}' using port ${port}`);
+      return;
+    }
+
+    const { hostname } = tierServers[tier];
+    const title = readStagedCourseTitle(base);
+    const url = `http://${hostname}:${port}/scorm_test_harness.html`;
+    grunt.log.ok(`Starting reserved ${tier} server in '${base}' on port ${port} (locked, --port is ignored)`);
+    grunt.log.ok(title ? `Staged course: ${title}` : `No course staged yet - run: npx grunt stage-tier:${tier}`);
+    grunt.log.ok(`Open: ${url}`);
   });
   grunt.registerTask('_log-vars', 'Logs out user-defined build variables', function() {
     const includes = grunt.config('includes');
