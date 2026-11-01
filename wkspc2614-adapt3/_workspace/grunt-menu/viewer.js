@@ -70,7 +70,7 @@ const SELF_REL = path.relative(ROOT, __filename).split(path.sep).join('/');
 // Dev-server port, freed before a serve command rather than letting the server
 // fail on an address already in use. Grunt's connect config decides the real
 // one; --port overrides both.
-const PORT = 9001;
+const PORT = 9000;
 
 // Directories scanned for runnable, self-documenting *.sh scripts. Missing
 // directories are skipped, so this list is safe in any project.
