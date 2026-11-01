@@ -17,12 +17,12 @@
  *   Section 12: Cross-cutting — images, mobile viewport, console errors across all 11 pages
  *
  * Usage: node test-browser-checklist.mjs
- * Requires: Playwright, dev server running on localhost:9001
+ * Requires: Playwright, dev server running on localhost:9000
  */
 
 import { chromium } from 'playwright';
 
-const BASE_URL = 'http://localhost:9001/';
+const BASE_URL = 'http://localhost:9000/';
 
 const results = {
   sections: {},
