@@ -148,14 +148,23 @@
 .nav .nav__btn.btn-icon.pagelevelprogress__nav-btn,
 .no-touch .nav .nav__btn.btn-icon.pagelevelprogress__nav-btn:hover,
 html:not(.a11y-disable-focusoutline) .nav .nav__btn.btn-icon.pagelevelprogress__nav-btn:focus-visible {
-  border-color: transparent;
+  // Match the other nav__btn.btn-icon buttons' white outline (was transparent,
+  // which left this button looking unbordered next to its siblings).
+  border-color: #ffffff;
   background: transparent;
   padding: 0.2rem;
 }
 .pagelevelprogress__nav-btn {
   .pagelevelprogress__indicator-wrapper { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
   .pagelevelprogress__indicator { width: auto; height: auto; border: 0; background: transparent; }
-  .pagelevelprogress__indicator-inner,
+  // Visually hide, don't display:none — .indicator-inner contains the ONLY
+  // text that gives this button an accessible name (span.aria-label, "Page
+  // progress. N%. Open page sections."); the sibling .nav__btn-label is
+  // itself aria-hidden. display:none removes the subtree from the a11y tree
+  // too, leaving the button with NO accessible name at all (axe-core
+  // button-name, critical — caught by tools/a11y-scan.js). .visually-hidden
+  // keeps it readable by assistive tech while staying invisible on screen.
+  .pagelevelprogress__indicator-inner { .visually-hidden(); }
   .pagelevelprogress__indicator-bar { display: none; }
   .pagelevelprogress__indicator-outer {
     position: relative;
