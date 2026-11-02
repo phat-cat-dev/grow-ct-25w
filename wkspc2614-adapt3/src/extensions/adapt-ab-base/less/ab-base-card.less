@@ -57,6 +57,13 @@
   display: grid;
   gap: var(--ab-space-100, 1rem);
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+
+  // exactly four cards: cap at two columns (2x2) at any viewport width, same
+  // technique and reasoning as adapt-ab-card/less/ab-card.less.
+  &:has(> .ab.card:nth-child(4):last-child) {
+    // see adapt-ab-card/less/ab-card.less for why this is escaped
+    grid-template-columns: ~"repeat(auto-fit, minmax(max(16rem, calc(50% - var(--ab-space-100, 1rem) / 2)), 1fr))";
+  }
 }
 
 // ---- functional / accent variants: just move the accent (+ a tinted cap) ----

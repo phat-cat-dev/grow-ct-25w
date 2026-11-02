@@ -30,7 +30,49 @@
   }
 
   &__textarea-container {
+    position: relative;
     margin-bottom: @item-margin / 2;
+  }
+
+  // Manual expand/collapse corner control (auto-grow covers typing/pasting;
+  // this lets the learner pre-expand before writing anything, spec §9.4)
+  &__expand-btn {
+    position: absolute;
+    right: 0.4rem;
+    bottom: 0.4rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c3ccd6;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #5a6572;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    .icon::before {
+      font-family: "Material Symbols Outlined";
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.1rem;
+      line-height: 1;
+      content: "\e5cf"; // expand_more
+      transition: transform 0.2s ease;
+    }
+
+    &.is-expanded .icon::before {
+      transform: rotate(180deg); // becomes a "collapse" chevron
+    }
+
+    .no-touch &:hover,
+    html:not(.a11y-disable-focusoutline) &:focus-visible {
+      background: var(--ab-base-accent);
+      color: #ffffff;
+      border-color: var(--ab-base-accent);
+    }
   }
 
   &__textarea {

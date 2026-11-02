@@ -44,7 +44,7 @@ export default function OpenText(props) {
 
   // Variant and rows come from model defaults (spec §2)
   const variant = _variant || 'reflection';
-  const rows = _rows || 8;
+  const rows = _rows || 4;
 
   // Label configuration (spec §9.1): fallback chain for accessible name
   // body → instruction → displayTitle → ariaRegion
@@ -116,6 +116,18 @@ export default function OpenText(props) {
             aria-labelledby={labelId}
             aria-describedby={`${_id}-status`}
           />
+          {/* Manual expand/collapse — auto-grow already handles typing/pasting;
+              this lets the learner pre-expand before writing anything (view
+              toggles height + label directly, no re-render needed) */}
+          <button
+            type="button"
+            className="opentext__expand-btn"
+            aria-expanded="false"
+            aria-controls={`${_id}-textarea`}
+            aria-label={_globals?.expandButtonLabel}
+          >
+            <span className="icon" aria-hidden="true" />
+          </button>
         </div>
 
         {/* Character counter — hidden until approaching limit (spec §8) */}

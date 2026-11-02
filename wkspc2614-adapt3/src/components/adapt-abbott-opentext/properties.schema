@@ -110,6 +110,24 @@
       "validators": [],
       "help": "Message announced when pressing complete with insufficient text.",
       "translatable": true
+    },
+    "expandButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Expand text area",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible label for the corner button that manually expands the text area.",
+      "translatable": true
+    },
+    "collapseButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Collapse text area",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible label for the corner button when the text area is manually expanded.",
+      "translatable": true
     }
   },
   "properties": {
@@ -198,7 +216,7 @@
     "_rows": {
       "type": "number",
       "required": false,
-      "default": 8,
+      "default": 4,
       "title": "Initial rows",
       "inputType": "Number",
       "validators": ["number"],

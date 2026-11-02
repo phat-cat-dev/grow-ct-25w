@@ -30,7 +30,7 @@ export default class OpenTextModel extends ComponentModel {
     return {
       ...super.defaults(),
       _variant: 'reflection',
-      _rows: 8,
+      _rows: 4,
       _maxRows: 20,
       _maxCharacters: 4000,
       _minCharacters: 0,
