@@ -91,8 +91,9 @@ module.exports = function(grunt) {
     const titleMatch = manifest.match(/<title>(?:<!\[CDATA\[)?([^<]*?)(?:\]\]>)?<\/title>/);
     const title = titleMatch && titleMatch[1].trim();
 
-    const { port, hostname } = tierServers[tier];
+    const { previewPort, scormPort, hostname } = tierServers[tier];
     grunt.log.ok(`stage-tier: staged '${title || '(title unknown)'}' into ${dir}`);
-    grunt.log.ok(`Serve it with: npx grunt server-${tier}  ->  http://${hostname}:${port}/scorm_test_harness.html`);
+    grunt.log.ok(`Preview it with: npx grunt server-${tier}  ->  http://${hostname}:${previewPort}/`);
+    grunt.log.ok(`SCORM-check it with: npx grunt server-${tier}-scorm  ->  http://${hostname}:${scormPort}/scorm_test_harness.html`);
   });
 };

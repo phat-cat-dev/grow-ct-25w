@@ -30,7 +30,9 @@ module.exports = function(grunt) {
     const base = grunt.config(`connect.${target}.options.base`);
     const port = grunt.config(`connect.${target}.options.port`);
 
-    const tier = Object.keys(tierServers).find(key => tierServers[key].target === target);
+    const previewTier = Object.keys(tierServers).find(key => tierServers[key].previewTarget === target);
+    const scormTier = Object.keys(tierServers).find(key => tierServers[key].scormTarget === target);
+    const tier = previewTier || scormTier;
     if (!tier) {
       grunt.log.ok(`Starting server in '${base}' using port ${port}`);
       return;
@@ -38,8 +40,10 @@ module.exports = function(grunt) {
 
     const { hostname } = tierServers[tier];
     const title = readStagedCourseTitle(base);
-    const url = `http://${hostname}:${port}/scorm_test_harness.html`;
-    grunt.log.ok(`Starting reserved ${tier} server in '${base}' on port ${port} (locked, --port is ignored)`);
+    const mode = previewTier ? 'preview' : 'SCORM harness';
+    const urlPath = previewTier ? '' : 'scorm_test_harness.html';
+    const url = `http://${hostname}:${port}/${urlPath}`;
+    grunt.log.ok(`Starting reserved ${tier} ${mode} server in '${base}' on port ${port} (locked, --port is ignored)`);
     grunt.log.ok(title ? `Staged course: ${title}` : `No course staged yet - run: npx grunt stage-tier:${tier}`);
     grunt.log.ok(`Open: ${url}`);
   });

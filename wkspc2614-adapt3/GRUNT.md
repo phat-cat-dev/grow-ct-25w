@@ -64,15 +64,19 @@ Same as above, but provides a dummy SCORM interface to allow you to test the tra
 
 **Reserved tier-preview servers**
 `grunt server-introductory` / `grunt server-intermediate` / `grunt server-advanced`
-Serve a dedicated SCORM test harness for one tier on a **locked** port that ignores `--port`: introductory on `9001`, intermediate on `9002`, advanced on `9003` (see `grunt/tier-servers.js`). Each serves a persistent, staged copy of a build (`build-introductory/`, `build-intermediate/`, `build-advanced/`), not the normal `build/` dir, so all three tiers can be previewed side by side without rebuilding. Populate or refresh a tier's staged copy first:
+Plain dev preview of one tier on a **locked** port that ignores `--port`: introductory on `9001`, intermediate on `9002`, advanced on `9003` (see `grunt/tier-servers.js`). For day-to-day review as you develop a tier. Each serves a persistent, staged copy of a build (`build-introductory/`, `build-intermediate/`, `build-advanced/`), not the normal `build/` dir, so all three tiers can be previewed side by side without rebuilding. Populate or refresh a tier's staged copy after each rebuild:
 ```
 npx grunt build                       # build the currently-linked src/course as normal
 npx grunt stage-tier:introductory     # copy build/ -> build-introductory/
-npx grunt server-introductory         # locked to :9001, prints the harness URL
+npx grunt server-introductory         # locked to :9001, prints the preview URL
 ```
 `stage-tier` refuses to run against a missing or stale `build/` (older than the files under `src/course`); pass `--force` to stage anyway.
 
-The three harnesses are served on distinct hostnames (`introductory.localhost`, `intermediate.localhost`, `advanced.localhost`), not plain `localhost`, printed by each server task. This is required, not cosmetic: SCORM tracking state (including `cmi.suspend_data`, capped around 4KB by the SCORM spec) lives in a single `_spoor` cookie, and cookies are scoped by host, not port - three harnesses all on `localhost` would read and write the same cookie and clobber each other's tracking. The servers still bind every interface; `*.localhost` resolves locally in current Chrome/Firefox with no extra setup.
+**Reserved tier-SCORM servers**
+`grunt server-introductory-scorm` / `grunt server-intermediate-scorm` / `grunt server-advanced-scorm`
+Same staged build as the preview server for that tier, but served via the SCORM test harness (`scorm_test_harness.html`) on a second **locked** port: introductory on `9011`, intermediate on `9012`, advanced on `9013`. Use this only for the occasional check that tracking behaves correctly before a Moodle upload - not for routine review, which is what the plain preview ports are for.
+
+Every tier port (preview and SCORM alike) is served on a distinct hostname per tier (`introductory.localhost`, `intermediate.localhost`, `advanced.localhost`), not plain `localhost`, printed by each server task. This is required, not cosmetic: SCORM tracking state (including `cmi.suspend_data`, capped around 4KB by the SCORM spec) lives in a single `_spoor` cookie, and cookies are scoped by host, not port. Sharing a hostname between the preview and SCORM port *within* one tier is fine - it's the same course, same continuous tracking. Sharing a hostname *across* tiers would clobber one tier's tracking with another's, which the distinct hostnames prevent. The servers still bind every interface; `*.localhost` resolves locally in current Chrome/Firefox with no extra setup.
 
 **`translate:export`**  
 `grunt translate:export [--masterLang=xx] [--format=json|raw|csv] [--csvDelimiter=y]`  
