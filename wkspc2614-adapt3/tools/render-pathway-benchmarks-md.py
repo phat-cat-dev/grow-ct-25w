@@ -119,7 +119,6 @@ def render():
                         L.append('    - *(no evidence examples yet)*'); continue
                     gos = item.get('genericOutcomes') or []
                     from_bm = [g for g in gos if g.get('origin') == 'from-benchmark']
-                    distilled = [g for g in gos if g.get('origin') == 'distilled']
                     if from_bm:
                         L.append('    - **Generic outcomes from the benchmark:**')
                         for g in sorted(from_bm, key=lambda g: g.get('kind') != 'conceptual'):
@@ -127,12 +126,6 @@ def render():
                                 g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('learningOutcome'))))
                             L.append('          %s **Evidence:** %s *(Grounding: %s)*' % (
                                 md(g.get('example')),
-                                md(g.get('artefact')), '; '.join(md(x) for x in g.get('grounding') or [])))
-                    if distilled:
-                        L.append('    - **Generic outcomes distilled from the exemplars below:**')
-                        for g in sorted(distilled, key=lambda g: g.get('kind') != 'conceptual'):
-                            L.append('        - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
-                                g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('example')),
                                 md(g.get('artefact')), '; '.join(md(x) for x in g.get('grounding') or [])))
                     L.append('    - **The existing practical examples (evidence a student could offer):**')
                     for e in sorted(item.get('evidence') or [], key=lambda e: e.get('kind') != 'conceptual'):
