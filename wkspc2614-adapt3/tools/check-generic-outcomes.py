@@ -12,8 +12,11 @@ Checks, per file:
   - exactly 4 genericOutcomes entries; the (origin, kind) pairs
     distilled/conceptual, distilled/applied, from-benchmark/conceptual,
     from-benchmark/applied each appear exactly once
-  - fields exactly kind, origin, title, example, artefact, grounding
-  - title <= 12 words; example 35-90 words; artefact 8-30 words
+  - fields exactly kind, origin, title, example, artefact, grounding, plus
+    learningOutcome on from-benchmark entries only (distilled entries must not
+    carry it)
+  - title <= 12 words; example 35-90 words; artefact 8-30 words;
+    learningOutcome (from-benchmark only) 10-40 words
   - grounding non-empty:
       conceptual: every non-benchmark entry is a capability theory id or
         "model: ...". At least one theory id used when the capability has any.
@@ -40,6 +43,7 @@ ORIGINS = ('distilled', 'from-benchmark')
 PAIRS = {(o, k) for o in ORIGINS for k in KINDS}
 FIELDS = {'kind', 'origin', 'title', 'example', 'artefact', 'grounding'}
 LIMITS = {'title': (1, 12), 'example': (35, 90), 'artefact': (8, 30)}
+LO_LIMITS = (10, 40)
 FALLBACK = 'none (unattributed; written from capability statement)'
 
 
@@ -101,8 +105,10 @@ def check(pid):
 
         pairs_seen = []
         for e in go:
-            extra = set(e.keys()) - FIELDS
-            missing = FIELDS - set(e.keys())
+            origin_for_fields = e.get('origin')
+            want_fields = FIELDS | {'learningOutcome'} if origin_for_fields == 'from-benchmark' else FIELDS
+            extra = set(e.keys()) - want_fields
+            missing = want_fields - set(e.keys())
             if extra:
                 errs.append('%s: unexpected fields %s' % (ref, sorted(extra)))
             if missing:
@@ -121,6 +127,11 @@ def check(pid):
                 n = words(e.get(f))
                 if not lo <= n <= hi:
                     errs.append('%s %s/%s.%s is %d words (want %d-%d)' % (ref, origin, kind, f, n, lo, hi))
+            if origin == 'from-benchmark' and 'learningOutcome' in e:
+                lo, hi = LO_LIMITS
+                n = words(e.get('learningOutcome'))
+                if not lo <= n <= hi:
+                    errs.append('%s %s/%s.learningOutcome is %d words (want %d-%d)' % (ref, origin, kind, n, lo, hi))
 
             g = e.get('grounding') or []
             if not g:
