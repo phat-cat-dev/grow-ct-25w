@@ -123,8 +123,10 @@ def render():
                     if from_bm:
                         L.append('    - **Generic outcomes from the benchmark:**')
                         for g in sorted(from_bm, key=lambda g: g.get('kind') != 'conceptual'):
-                            L.append('        - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
-                                g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('example')),
+                            L.append('        - *%s: %s.* **Learning outcome:** %s' % (
+                                g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('learningOutcome'))))
+                            L.append('          %s **Evidence:** %s *(Grounding: %s)*' % (
+                                md(g.get('example')),
                                 md(g.get('artefact')), '; '.join(md(x) for x in g.get('grounding') or [])))
                     if distilled:
                         L.append('    - **Generic outcomes distilled from the exemplars below:**')
