@@ -96,6 +96,7 @@ def render():
                   '|---|---|---|---|---|---|']
             tier_caps = [c for c in caps if c.get('tier') == t]
             first = n + 1
+            matched = [k for k in by.get(t, []) if k['tierBasis'] == 'capability-match']
             for c in tier_caps:
                 n += 1
                 ref = c.get('capabilityId') or pid + '#' + str(c.get('rowId'))
@@ -103,18 +104,39 @@ def render():
                 L.append('| %d | %s | L%s | %s | %s | `%s` |' % (n, md(c.get('statement')), c.get('fheqLevel'), qf,
                                                                  MARK.get(attr.get(ref), '?'), ref))
             if ev:
-                L += ['', '**The 18 at this tier (evidence a student could offer):**', '']
+                L += ['', '**Benchmark, generic learning outcomes and evidence, per capability:**', '']
                 for i, c in enumerate(tier_caps):
                     ref = c.get('capabilityId') or pid + '#' + str(c.get('rowId'))
                     item = ev.get(ref)
-                    if not item:
-                        L.append('- %d. *(no evidence examples yet)*' % (first + i)); continue
                     L.append('%d. **%s**' % (first + i, md(c.get('statement'))))
+                    landed = [k for k in matched if ref in (k.get('capabilities') or [])]
+                    if landed:
+                        for k in landed:
+                            L.append('    - *Benchmark:* %s (%s)' % (label_for(k, comps), k['strength']))
+                    else:
+                        L.append('    - *Benchmark:* none matched at this tier (%s)' % MARK.get(attr.get(ref), '?'))
+                    if not item:
+                        L.append('    - *(no evidence examples yet)*'); continue
+                    gos = item.get('genericOutcomes') or []
+                    from_bm = [g for g in gos if g.get('origin') == 'from-benchmark']
+                    distilled = [g for g in gos if g.get('origin') == 'distilled']
+                    if from_bm:
+                        L.append('    - **Generic outcomes from the benchmark:**')
+                        for g in sorted(from_bm, key=lambda g: g.get('kind') != 'conceptual'):
+                            L.append('        - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
+                                g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('example')),
+                                md(g.get('artefact')), '; '.join(md(x) for x in g.get('grounding') or [])))
+                    if distilled:
+                        L.append('    - **Generic outcomes distilled from the exemplars below:**')
+                        for g in sorted(distilled, key=lambda g: g.get('kind') != 'conceptual'):
+                            L.append('        - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
+                                g['kind'].title(), md(g.get('title')).rstrip('.'), md(g.get('example')),
+                                md(g.get('artefact')), '; '.join(md(x) for x in g.get('grounding') or [])))
+                    L.append('    - **The existing practical examples (evidence a student could offer):**')
                     for e in sorted(item.get('evidence') or [], key=lambda e: e.get('kind') != 'conceptual'):
-                        L.append('    - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
+                        L.append('        - *%s: %s.* %s **Evidence:** %s *(Grounding: %s)*' % (
                             e['kind'].title(), md(e.get('title')).rstrip('.'), md(e.get('example')),
-                            md(e.get('artefact')), '; '.join(md(g) for g in e.get('grounding') or [])))
-            matched = [k for k in by.get(t, []) if k['tierBasis'] == 'capability-match']
+                            md(e.get('artefact')), '; '.join(md(x) for x in e.get('grounding') or [])))
             L += ['', '**Benchmarks keying in at this tier (match):**', '']
             if matched:
                 for k in matched:
