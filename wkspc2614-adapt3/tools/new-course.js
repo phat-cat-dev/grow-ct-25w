@@ -36,6 +36,18 @@
  *     "onb-03_pitch":        { ... },   // decidedValue.pitch -> tier
  *     "onb-04_naming":       { ... }    // decidedValue.slug must equal --slug
  *   }
+ *
+ * Multi-tier mode (pathway-distillation profile, 2 Nov 2026): if
+ * onb-03_pitch.decidedValue.pitch is "all" instead of a single tier, --slug is
+ * the base theme slug (no tier suffix, e.g. "criticality") and this tool
+ * derives and creates THREE sibling manifests atomically -
+ * <slug>-introductory, <slug>-intermediate, <slug>-advanced - each with its
+ * own concrete facetSet.tier and profile:"pathway-distillation". All three
+ * ONB/CXS records are replicated verbatim into each manifest (the ONB choice
+ * was made once, for all three tiers together). Write + validate is
+ * all-or-nothing: if any of the three fails schema validation, every manifest
+ * written in this invocation is rolled back, not just the failing one. The
+ * single-tier path below is untouched by this mode.
  */
 
 const fs = require('fs');
@@ -45,6 +57,7 @@ const { execSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const HARD_STOP_PROVENANCE = new Set(['human-confirmed', 'human-specified', 'human-amended']);
 const ONB_GATES = ['onb-01_theme-preset', 'onb-02_course-theme', 'onb-03_pitch', 'onb-04_naming'];
+const ALL_TIERS = ['introductory', 'intermediate', 'advanced'];
 
 // Reserved/auto CXS gates (gate-redesign-2026-10-06.md; Abbott, 8 Oct 2026,
 // "reserved-gate record-writing"). CXS is deterministic and course-level, so
@@ -132,6 +145,94 @@ function loadKbVersion(storeRelPath, fallback) {
   catch (err) { return fallback; }
 }
 
+// Multi-tier mode (pathway-distillation profile, 2 Nov 2026): onb-03_pitch
+// decidedValue.pitch === "all" derives and writes THREE sibling manifests
+// atomically instead of one. See the module docstring above.
+function createMultiTierManifests(baseSlug, theme, answers, namedSlug) {
+  if (namedSlug !== baseSlug) {
+    fail(`--slug="${baseSlug}" does not match onb-04_naming.decidedValue.slug="${namedSlug}".`);
+  }
+
+  const now = new Date().toISOString();
+  const written = [];
+
+  try {
+    // Pre-check: none of the three target directories may already exist,
+    // checked before anything is written so a conflict on any one of the
+    // three refuses the whole batch up front.
+    for (const tier of ALL_TIERS) {
+      const tierSlug = `${baseSlug}-${tier}`;
+      const courseDir = path.join(ROOT, 'courses', tierSlug);
+      if (fs.existsSync(courseDir)) {
+        throw new Error(`${courseDir} already exists. 'all' mode creates ${baseSlug}-introductory, ${baseSlug}-intermediate and ${baseSlug}-advanced together; remove the conflicting directory or choose a different theme slug.`);
+      }
+    }
+
+    for (const tier of ALL_TIERS) {
+      const tierSlug = `${baseSlug}-${tier}`;
+      const courseDir = path.join(ROOT, 'courses', tierSlug);
+      const facetSet = { pathway: theme, tier: tier };
+      const manifest = {
+        schemaVersion: '0.1.0',
+        courseId: tierSlug,
+        slug: tierSlug,
+        status: 'in-development',
+        profile: 'pathway-distillation',
+        facetSet: facetSet,
+        kbVersions: {
+          'design-kb': loadKbVersion('design-kb/design-kb.gates.json', '0.10.0'),
+          'source-kb': loadKbVersion('source-kb/source-kb.json', '0.1.0')
+        },
+        gates: [
+          ...ONB_GATES.map(gateId => ({
+            gateId,
+            records: [Object.assign({}, answers[gateId], { seq: 1, timestamp: now })]
+          })),
+          ...CXS_AUTO_GATES.map(gateId => ({
+            gateId,
+            records: [cxsAutoRecord(gateId, now)]
+          }))
+        ],
+        phases: [],
+        instantiations: []
+      };
+
+      fs.mkdirSync(courseDir, { recursive: true });
+      const manifestPath = path.join(courseDir, `course-design_${tierSlug}.json`);
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+      written.push({ manifestPath, courseDir, tierSlug });
+    }
+
+    console.log(`Wrote ${written.length} manifests (profile=pathway-distillation, pitch="all"):`);
+    written.forEach(w => console.log(`  ${w.manifestPath}`));
+    console.log('');
+
+    console.log('='.repeat(60));
+    console.log('VALIDATE: validate-design-schemas.py --course-design (each manifest)');
+    console.log('='.repeat(60));
+    for (const w of written) {
+      const out = execSync(
+        `python3 tools/validate-design-schemas.py --course-design "${w.manifestPath}"`,
+        { cwd: ROOT, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }
+      );
+      console.log(out);
+    }
+  } catch (err) {
+    for (const w of written) {
+      if (fs.existsSync(w.manifestPath)) fs.rmSync(w.manifestPath);
+      if (fs.existsSync(w.courseDir) && fs.readdirSync(w.courseDir).length === 0) fs.rmdirSync(w.courseDir);
+    }
+    const detail = err && err.stderr ? `${err.message}\n${err.stderr}` : (err && err.message) || String(err);
+    fail(`multi-tier manifest creation failed; all ${written.length} manifest(s) written in this invocation were rolled back (all-or-nothing). ${detail}`);
+  }
+
+  console.log('');
+  console.log('Manifests created:');
+  written.forEach(w => console.log(`  ${w.manifestPath}`));
+  console.log('');
+  written.forEach(w => console.log(`Next: /gate ${w.tierSlug} crs-01_sources`));
+}
+
 function main() {
   const args = parseArgs();
   const slug = args.slug;
@@ -154,6 +255,12 @@ function main() {
 
   if (!theme) fail('onb-02_course-theme.decidedValue.theme is missing: it becomes facetSet.pathway.');
   if (!pitch) fail('onb-03_pitch.decidedValue.pitch is missing: it becomes facetSet.tier.');
+
+  if (pitch === 'all') {
+    createMultiTierManifests(slug, theme, answers, namedSlug);
+    return;
+  }
+
   if (!['introductory', 'intermediate', 'advanced'].includes(pitch)) {
     fail(`onb-03_pitch.decidedValue.pitch is "${pitch}", which facetSet.tier does not allow (introductory|intermediate|advanced). A no-tier course needs the no-tier machinery, not yet wired (A3).`);
   }

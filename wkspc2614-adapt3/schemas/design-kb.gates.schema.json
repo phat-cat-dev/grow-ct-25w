@@ -130,6 +130,18 @@
             ],
             "description": "RJ-0059: a gate decided more than once per course. 'lesson' (LES, les-01_lesson-proposal) runs once per lesson, keyed <slug>-<lessonKey>-les-01. 'context-pack' (CXP per-pack gates cxp-01_subject, cxp-02_qualifiers, cxp-04_context-generation; gate-redesign-2026-10-06.md, 8 Oct 2026, D1) runs once per context pack, keyed <slug>-<subject>-<phase-nn>. cxp-03_exemplar-programmes is subject-independent and stays once-per-course, so carries no repeatsPer."
           },
+          "profiles": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "built-course-shape",
+                "single-course",
+                "pathway-distillation"
+              ]
+            },
+            "minItems": 1,
+            "description": "Which course-design.json `profile` values this gate applies under. Absent means universal (applies under every profile - the default for all pre-existing gates). Present only where a gate is profile-specific: crs-02/crs-03 are scoped to [\"built-course-shape\",\"single-course\"] (pathway-distillation replaces their job with crs-06/07/08); crs-06/crs-07/crs-08 are scoped to [\"pathway-distillation\"] only. Read by validate-design-schemas.py (NSK-1) to resolve which gates are in-scope for a given manifest before checking cross-gate dependencies; gate.md step 1 RECON resolves it the same way to treat an out-of-profile dependsOn edge as not-applicable rather than a STOP."
+          },
           "procedureFlags": {
             "type": "object",
             "description": "RJ-0059: per-gate procedure steps that gate.md's own step text makes conditional on the gate, read by the shared gate-order tool instead of gate.md keeping its own list.",
