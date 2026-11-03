@@ -166,6 +166,11 @@
       "type": "object",
       "description": "Universal reference only (tools/build-universal-benchmark.py): the threshold shared core as flat graduate competencies, each keyed into pathways at pathway + tier (pathways[].tiers, tierBasis). Opt-in baseline context / CXP qualifier subset. House terms: graduate competency / graduate skill / graduate attribute / academic practice.",
       "additionalProperties": true
+    },
+    "statementFormulas": {
+      "type": "object",
+      "description": "Universal reference only (tools/build-universal-benchmark.py): the shared grammar for the tokenised formula layer carried on tierReadings.rows[].formulas and graduate_competency.items[].formula - the closed slot-role vocabulary (verb, object, condition, field_content, scope, qualifier, audience, stance), the single-brace marker convention, and the section 16 verb-band anchoring. Verified by tools/check-statement-formulas.py.",
+      "additionalProperties": true
     }
   },
   "additionalProperties": false
