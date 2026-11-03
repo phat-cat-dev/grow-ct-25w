@@ -1,5 +1,5 @@
 {
-  "kbVersion": "0.10.6",
+  "kbVersion": "0.10.7",
   "gates": [
     {
       "id": "onb-01_theme-preset",
@@ -1403,7 +1403,7 @@
       },
       "response": {
         "mode": "confirm",
-        "prompt": "Confirm/amend the lesson's interior design and activities (regenerate+steer available).",
+        "prompt": "Confirm/amend the lesson's interior design and activities - for each of the 4 activity slots, choose one of the agent's candidate components (regenerate+steer available).",
         "destination": "decidedValue"
       },
       "generation": {
@@ -1414,10 +1414,10 @@
           "crs-01 source set"
         ],
         "parameters": {
-          "interactivityProposals": "3 different non-question components from activity-patterns + palette"
+          "interactivityProposals": "v5 (3 Nov 2026 - the full quota flagged at v4): up to 10 candidate non-question components across the 4 activity slots (activity-1..4), drawn from activity-patterns + palette - real per-slot variety for the human to choose from, not one pre-picked component per slot. Exactly one confirmed per slot."
         }
       },
-      "consequenceNote": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, 3 interactivity proposals) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
+      "consequenceNote": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, up to 10 interactivity proposals across 4 slots, one confirmed each) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
       "decidedValueShape": {
         "type": "object",
         "properties": {
@@ -1523,8 +1523,8 @@
           "activityProposals": {
             "type": "array",
             "minItems": 3,
-            "maxItems": 4,
-            "description": "v2/v3 lessons (one activity slot): 3 candidate-component proposals, one confirmed. v4 lessons (archetypes/lesson 0.3.0, activity-1..4): 4 entries, one per slot, each carrying its own 'slot' key and status:confirmed. Widened 3->4 (2 Nov 2026) to admit the v4 shape without breaking existing v2/v3 records; the full 10-proposed/4-confirmed quota is a separate, later, deliberately breaking change (plan step 9).",
+            "maxItems": 10,
+            "description": "v2/v3 lessons (one activity slot, no slot key): 3 candidate-component proposals, one confirmed - unchanged and still valid. v4 lessons (activity-1..4, one entry per slot, each confirmed): 4 entries - unchanged and still valid. v5 (3 Nov 2026 - the deliberately breaking step flagged at v4, additive only): where a lesson wants real per-slot variety, a slot may carry more than one candidate (up to 10 total across the 4 slots), each entry tagged with the slot it belongs to; exactly one entry per represented slot carries status:confirmed, the rest carry status:drafted as a visible record of alternatives considered and rejected - this is the gate's concrete form of 'lots of agent suggestion, human decides' for activities. slot stays optional (omitted on v2/v3's single, un-slotted set) and is required only once a v4/v5 per-slot shape is in use.",
             "items": {
               "type": "object",
               "required": [
@@ -1534,7 +1534,13 @@
               "properties": {
                 "slot": {
                   "type": "string",
-                  "description": "v4 only: which of activity-1..4 this proposal belongs to."
+                  "enum": [
+                    "activity-1",
+                    "activity-2",
+                    "activity-3",
+                    "activity-4"
+                  ],
+                  "description": "v4/v5 only: which activity slot this proposal belongs to. Omitted on v2/v3's un-slotted single-set lessons. Required in practice once a lesson uses the v4/v5 per-slot shape, since without it multiple candidates for different slots are indistinguishable - enforced by ACT-1 (agentContext.validation), not the schema, so that v2/v3's un-slotted records stay untouched."
                 },
                 "component": {
                   "type": "string"
@@ -1581,13 +1587,35 @@
       },
       "sequence": 18,
       "agentContext": {
-        "fieldDescription": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, 3 interactivity proposals) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
+        "fieldDescription": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, up to 10 interactivity proposals across the 4 activity slots, one confirmed each) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
             "pathway core A10 templates + Part C process",
             "crs-01 source set"
           ]
+        },
+        "validation": {
+          "purpose": "les-01 is where 'lots of agent suggestion, human decides' is meant to be concretely true for activities (owner ruling, 3 Nov 2026) - the v5 widened activityProposals shape only delivers that in practice if the agent actually proposes real per-slot variety and the confirm/amend response genuinely lets the human pick between distinct options, not a single foregone choice dressed as a proposal. These checks apply only to v4/v5 lessons (any entry carries a slot key); a v2/v3 lesson's un-slotted 3-candidates/1-confirmed set is a different, still-valid shape and is exempt from all three.",
+          "checks": [
+            {
+              "id": "ACT-1",
+              "rule": "Not one of gate.md's numbered AL rules - a shape-intent check for the v5 widened quota, v4/v5 lessons only (skip entirely if no entry carries a slot key). Every one of activity-1/2/3/4 has exactly one activityProposals entry with status:confirmed, and no slot is left with zero entries.",
+              "appliesTo": "activityProposals[].slot against activityProposals[].status, grouped by slot"
+            },
+            {
+              "id": "ACT-2",
+              "rule": "Not one of gate.md's numbered AL rules, v4/v5 lessons only (skip entirely if no entry carries a slot key). At least one slot (not necessarily all four, since a plain-prose or activity-mode-question slot may genuinely have only one defensible component) carries more than one proposal - i.e. the set as a whole shows real drafted-vs-confirmed variety, not four slots each holding a single pre-picked entry restyled as 'confirmed'. A lesson where every slot has exactly one entry has not actually used the v5 quota and should be revised before presenting.",
+              "appliesTo": "activityProposals.length against the per-slot entry counts (this draft)"
+            },
+            {
+              "id": "ACT-3",
+              "rule": "Not one of gate.md's numbered AL rules, v4/v5 lessons only (skip entirely if no entry carries a slot key). Within a slot, every drafted (non-confirmed) proposal's component differs from every other proposal's component in that same slot - two identical component names in one slot is not a real alternative.",
+              "appliesTo": "activityProposals[].component, grouped by slot (this draft)"
+            }
+          ],
+          "scopeNote": "ACT-1/ACT-2/ACT-3 are new labels introduced alongside the v5 activityProposals widening. Confirmed empirically (3 Nov 2026) against every closed les-01 record in the repo: 133 records carry a populated activityProposals, every one a v2/v3 un-slotted 3-candidates/1-confirmed set (0 entries anywhere carry a slot key), so ACT-1/2/3 are vacuously exempt on all of them today and there is nothing to reconcile retroactively; they bind only once a lesson actually adopts the v4/v5 per-slot shape.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft proposals until every check passes before presenting - in particular, do not let a single-component-per-slot draft stand as if the human had a real choice."
         }
       }
     },
