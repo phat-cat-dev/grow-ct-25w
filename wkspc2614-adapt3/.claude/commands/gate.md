@@ -236,43 +236,58 @@ proposal, not after.
     is given. `omit: true` (a tier whose steer sets `applies:false`, e.g.
     advanced `where-next`) means the slot is not proposed at this tier at all.
     A slot with no `agentAuthor` is proposed as before.
+    An `ASK:`-prefixed `warnings` entry is a checkpoint, not a constraint
+    (task #19, authoring-time dialogue steer points): put the question to
+    the human alongside the gate's own proposal, rather than silently
+    self-checking it the way an ordinary do-not is checked. If the human
+    does not answer, the entry's own stated default stands and the record
+    carries `provenance: ai-proposal-stood`, as les-01's existing
+    `hardness: soft` + `defaultType: ai-proposal-stands` already does for
+    an unanswered gate. Every other (non-prefixed) `warnings` entry
+    behaves exactly as above — a do-not to respect.
 
 6. PROPOSAL, in exactly this shape. At `les-01_lesson-proposal` only
-   (SO-1, `docs/project/open-decisions.md`, 19 September 2026): this is
-   not one triple but a `slots` object with one entry for each of
-   `concept-intro`, `worked-example` and `practical-guidance` (the
-   worked-example slot was keyed `interior` before the v2 rename, 8 Oct
-   2026; block-key is now its slotType), each entry in
+   (SO-1, `docs/project/open-decisions.md`, 19 September 2026; v5
+   widening, 3 Nov 2026, `fd9c1f3`): this is not one triple but the
+   shape at this gate's `decidedValueShape`
+   (`design-kb/design-kb.gates.json`) — `workedExample` and
+   `activityProposals` (candidate components for the four activity
+   slots, `activity-1`..`activity-4`) chief among them — each entry in
    the pattern/realisation/coupling shape below plus its own rationale.
    (les-01 is the single consolidated lesson gate — interior design
    plus activities plus per-slot coupling marking; see the master table,
    `docs/authoring/gate-master-table-2026-10-07.md`.)
-   v2 lesson model (8 October 2026, `design-kb/design-kb.skeletons.json`
-   lesson archetype; `docs/authoring/lesson-structure-template.md`): the
-   `concept-intro` slot is the lesson's **interactive concept activity**
-   ("now see it"), not the concept prose. The concept prose is two
-   separate blocks that are NOT gate decisions and carry no entry in
-   this `slots` object: `concept-definition` (a generic definition of the
-   lesson topic, why-before-how, authored at /land — it frames the topic
-   and says why it matters and must NOT summarise or spoil what the
-   activity reveals) and `concept-context` (whole-prose coupled, left
-   empty in the shell for the context pack to fill at CXP). So the
-   `concept-intro` entry here proposes the **activity**: offer it as
-   three shape x component alternatives (BK-4) from which the human
-   chooses one — three distinct components that each present the same
-   content, ranked by content-shape fit (steps 4-5), never a mix of
-   lesson furniture (the practical-guidance checklist and the check MCQ
-   are givens, not among the three). The activity may be a manipulation
+   v4/v5 lesson model (2 Nov 2026, widened 3 Nov 2026,
+   `design-kb/design-kb.skeletons.json` lesson archetype;
+   `docs/authoring/lesson-structure-template.md`): the four activity
+   slots (`activity-1`..`activity-4`, role `concept`) are the lesson's
+   **interactive concept activities** ("now see it"), not the concept
+   prose. The concept prose is two separate blocks that are NOT gate
+   decisions and carry no entry here: `concept-definition` (a generic
+   definition of the lesson topic, why-before-how, authored at /land —
+   it frames the topic and says why it matters and must NOT summarise or
+   spoil what the activities reveal) and `concept-context` (whole-prose
+   coupled, left empty in the shell for the context pack to fill at
+   CXP). So each activity slot's entry proposes real per-slot variety
+   under the v5 `activityProposals` shape (`minItems: 3, maxItems: 10`,
+   each entry tagged `slot: activity-1`..`activity-4`): up to 10
+   candidate non-question components across the four slots, drawn from
+   `design-kb/design-kb.activity-patterns.json` + the palette, ranked by
+   content-shape fit (steps 4-5), never a mix of lesson furniture (the
+   practical-guidance checklist and the check MCQ are givens, not among
+   the activity candidates) — exactly one `status: confirmed` per
+   represented slot, the rest `status: drafted` as a visible record of
+   alternatives considered and rejected (ACT-1/ACT-2/ACT-3 in this
+   gate's `agentContext.validation`). An activity may be a manipulation
    question component in ACTIVITY MODE (palette/matching, sortable,
    hotspot, slider, via sort-into-groups / build-from-parts /
-   label-a-structure / place-on-a-scale, which now serve concept-intro)
-   - learn-by-doing, not a reveal; authored at /land with `_attempts:
-   -1`, a teaching `notFinal` and a concept-reiterating `correct`,
-   `_isPartOfAssessment: false` (see the skeletons lesson archetype
-   notes). mcq/gmcq stay check-only. Each coupled slot's standing
-   context prompt is layout-level and lives in the store
-   (`slot.standingContextPrompt`), not decided here; cite it in the
-   entry's grounding rather than re-authoring it.
+   label-a-structure / place-on-a-scale) - learn-by-doing, not a reveal;
+   authored at /land with `_attempts: -1`, a teaching `notFinal` and a
+   concept-reiterating `correct`, `_isPartOfAssessment: false` (see the
+   skeletons lesson archetype notes). mcq/gmcq stay check-only. Each
+   coupled slot's standing context prompt is layout-level and lives in
+   the store (`slot.standingContextPrompt`), not decided here; cite it in
+   the entry's grounding rather than re-authoring it.
    **Plain prose is always weighed at every entry, and may lead
    (RT-1, 20 September 2026).** Weighing it is not optional even where
    a pattern realisation is proposed: the rationale states that plain
