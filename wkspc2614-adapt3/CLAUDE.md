@@ -54,6 +54,29 @@ articles.json, blocks.json, components.json. Every element needs a unique `_id`
 and a correct `_parentId`. Keep referential integrity intact; the build and
 `tools/verify-course.js` validate it.
 
+## Gate categories: course / lesson / extras
+
+The gate store (`design-kb/design-kb.gates.json`) splits by `phase`: `crs-*` writes
+manifest-level, once-per-course decisions; `les-*` writes once-per-lesson decisions
+(`repeatsPer: lesson`). There is no third `extras-*` phase, and none is needed - "extras"
+(glossary, dialogue steer points, and other per-lesson/per-course additions that are not
+core teaching content) is a **classification of content, not a gate category**. Settled
+rule (3 Nov 2026): decide per item, not by inventing a new phase.
+
+- **Decorates an existing authored slot** (e.g. dialogue steer): stays metadata on that
+  slot, inside the gate that already authors it. Dialogue steer is exactly this -
+  `agentAuthorDialogue` is already live on every authored skeleton slot
+  (`design-kb/design-kb.skeletons.json`), consumed by `/gate` and `/land` per
+  `docs/authoring/agent-author-metadata.md`. It needed no new gate and has none.
+- **Its own content object**, independently authored and confirmed, with no existing
+  slot to decorate: needs its own gate once designed, not before. Glossary is this case -
+  no gate anywhere in the store produces glossary entries yet (confirmed empirically: no
+  `gate.id` or field mentions "glossary"/"extras"). The experimental
+  `gate-experiment/theory-to-keyterm.js` + `glossary-objects.json` prototype is explicitly
+  "not wired in" and scoped to the whole theory corpus, not per-pathway/course - it is a
+  starting point for, not a substitute for, the glossary gate design (tracked separately;
+  see the glossary system task). Do not retrofit a gate for it ahead of that design.
+
 ## Component mapping (voice-aware)
 
 - Teaching prose -> text component (mid-register, why-before-how)
