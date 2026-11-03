@@ -456,11 +456,36 @@ def _vds_covered(path, locks):
     return any(path == u or path.startswith(u + ".") or u.startswith(path + ".") for u in locks)
 
 
+def _profile_gate_ids(profile_id: str, gate_profiles_path: Path = DEFAULT_GATE_PROFILES):
+    """
+    NSK-1 profile awareness (RJ-0067, adp-0217; pathway-distillation wiring,
+    2 Nov 2026): the set of gate ids any step of `profile_id` names in
+    design-kb.gate-profiles.json \u2014 each step's own `gates` list, plus
+    `continuesWith` \u2014 read from the store itself, never a hardcoded list
+    of gate ids or a hardcoded check against "pathway-distillation" by name.
+    Returns None if the profile store cannot be loaded, or if `profile_id`
+    names no profile the store defines; the caller treats None as "can't
+    resolve this, fall back to the universal default" rather than "nothing
+    required by this profile."
+    """
+    instance, load_error = load_store(gate_profiles_path)
+    if load_error:
+        return None
+    for prof in instance.get("profiles", []):
+        if prof.get("id") == profile_id:
+            ids = set(prof.get("continuesWith", []) or [])
+            for step in prof.get("steps", []) or []:
+                ids.update(step.get("gates", []) or [])
+            return ids
+    return None
+
+
 def validate_course_design(
     instance: dict,
     instance_path: Path,
     gates_path: Path = DEFAULT_GATES,
     skeletons_path: Path = DEFAULT_SKELETONS,
+    gate_profiles_path: Path = DEFAULT_GATE_PROFILES,
 ) -> list:
     """
     Validate a course-design instance.
@@ -510,6 +535,28 @@ def validate_course_design(
     nsk1_offenders = []  # RJ-0067 (NSK-1, adp-0217): (gate_id, seq, gate_type) for closed crs-04/after-outcomes records
     co_record_seen = False  # RJ-0067 (NSK-1): True once any record, any state, is seen under a gate resolving to "CO"
     co_sequence = gate_meta.get("crs-03_course-outcomes", {}).get("sequence") if gate_meta.get("crs-03_course-outcomes") else None
+
+    # RJ-0067 (NSK-1) profile awareness, pathway-distillation wiring (2 Nov
+    # 2026): a manifest's `profile` field (course-design.schema.json; absent
+    # means "built-course-shape", the shape all pre-existing courses carry)
+    # selects which design-kb.gate-profiles.json profile governs it. NSK-1
+    # only requires a crs-03_course-outcomes record when that profile's own
+    # step list actually names crs-03_course-outcomes \u2014
+    # pathway-distillation's "lessons" step has no course-outcomes step at
+    # all (flat LOs, no course-outcome tier; crs-03 is scoped out of that
+    # profile in the gates store too, see crs-03's `profiles` field), so
+    # under pathway-distillation NSK-1 must not fire merely because no
+    # crs-03_course-outcomes record exists. The profile's step list in the
+    # store is the single source of truth; nothing here is hardcoded to the
+    # string "pathway-distillation". Profile absent, or the profile store
+    # failing to resolve it, falls back to True \u2014 the universal,
+    # pre-existing behaviour \u2014 so every course without a `profile` field
+    # is governed exactly as before.
+    manifest_profile = instance.get("profile", "built-course-shape")
+    profile_gate_ids = _profile_gate_ids(manifest_profile, gate_profiles_path)
+    co_required_by_profile = (
+        profile_gate_ids is None or "crs-03_course-outcomes" in profile_gate_ids
+    )
 
     for gate_entry in instance.get("gates", []):
         gate_id = gate_entry.get("gateId", "")
@@ -723,8 +770,12 @@ def validate_course_design(
     # cross-check nor AL-4 below,
     # both of which only run "if course_outcome_ids", and so would pass
     # with nothing reported.
-    print(f"NSK-1: {len(nsk1_offenders)} closed lesson-map/after-outcomes record(s) found, crs-03_course-outcomes record present: {co_record_seen}")
-    if nsk1_offenders and not co_record_seen:
+    print(
+        f"NSK-1: {len(nsk1_offenders)} closed lesson-map/after-outcomes record(s) found, "
+        f"crs-03_course-outcomes record present: {co_record_seen}, "
+        f"required by profile '{manifest_profile}': {co_required_by_profile}"
+    )
+    if nsk1_offenders and not co_record_seen and co_required_by_profile:
         for offender_gate_id, offender_seq, offender_gate_type in nsk1_offenders:
             errors.append(
                 f"  [{offender_gate_id} seq {offender_seq} ({offender_gate_type})] "
@@ -887,14 +938,17 @@ def validate_gates_file(instance: dict, instance_path: Path) -> list:
     # 2. Structural invariants the schema cannot express
     gates = instance.get("gates", [])
 
-    # 2a. Exactly 24 gates (gate realignment Round C, 7 Oct 2026, gate-redesign-2026-10-06.md:
+    # 2a. Exactly 27 gates (gate realignment Round C, 7 Oct 2026, gate-redesign-2026-10-06.md:
     # ONB 4 + CXS 6 + CRS 5 + LES 1 + WRA 4 + CXP 4; the old 30-gate model's merges/drops
     # reduced to 21, then the two post-scaffold WRA authoring gates wra-03_summative and
     # wra-04_confidence were added 8 Oct 2026 (WRA 2 -> 4, total 23), and the reserved
     # cxs-06_resources placeholder was added 8 Oct 2026 (Abbott: resources drawer, CXS 5 -> 6,
-    # total 24)).
-    if len(gates) != 24:
-        errors.append(f"  [invariant] Expected exactly 24 gates, found {len(gates)}")
+    # total 24)). The pathway-distillation profile added crs-06_pathway-statements,
+    # crs-07_tiered-outcomes and crs-08_progression 2 Nov 2026 (CRS 5 -> 8, total 27);
+    # these three are profile-scoped to pathway-distillation only (see each gate's
+    # `profiles` field) but still count toward the store's flat total.
+    if len(gates) != 27:
+        errors.append(f"  [invariant] Expected exactly 27 gates, found {len(gates)}")
 
     # 2b. Gate IDs unique
     gate_ids = [g.get("id") for g in gates]

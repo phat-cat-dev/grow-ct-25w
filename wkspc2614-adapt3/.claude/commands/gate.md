@@ -94,12 +94,24 @@ proposal, not after.
      /new-course $1 before opening any other gate." Do not proceed to
      step 2.
 
-   If the manifest exists, read it. State the current
+   If the manifest exists, read it. PROFILE-1 (pathway-distillation
+   wiring, 2 Nov 2026): resolve this course's active profile from
+   `manifest.profile`, or `built-course-shape` if the field is absent,
+   and state which profile is active — this governs the dependsOn check
+   immediately below. State the current
    record for this gate (seq, state, provenance) or "no record". Read
    `design-kb/design-kb.gates.json` and print this gate's entry:
    kind, hardness, every `dependsOn` edge with its dependencyClass.
-   For each upstream gate, print its current decidedValue from the
-   manifest. If any upstream hard-stop is not closed, STOP and say so.
+   For each upstream edge, check the target gate's own `profiles` field
+   (absent = applies to every profile, e.g. `crs-02_thematic-scope` and
+   `crs-03_course-outcomes` carry `["built-course-shape","single-course"]`,
+   `crs-06/07/08` carry `["pathway-distillation"]`): if the active profile
+   is not in that list, the edge is NOT-APPLICABLE — print it as such,
+   read no decidedValue for it, and do not STOP on it regardless of its
+   dependencyClass or the target's own hardness. For every other
+   (applicable) upstream gate, print its current decidedValue from the
+   manifest. If any applicable upstream hard-stop is not closed, STOP
+   and say so.
    The facet set now lives in `manifest.facetSet` (`pathway` from
    onb-02, `tier` from onb-03), written by /new-course — read it there,
    not from any gate's `decidedValue`. No gate in the current store
@@ -299,7 +311,11 @@ proposal, not after.
      (same) — every course outcome is tested by exactly two summative
      questions, the real stems drafted from crs-03's per-outcome MCQ-set
      specs into the SUMM page, each naming via `tests` (AL-6) the one
-     course outcome it tests.
+     course outcome it tests. Under `pathway-distillation` (PROFILE-1,
+     2 Nov 2026: crs-03 not-applicable, no course-outcome tier) AL-3
+     becomes one summative question per `crs-07_tiered-outcomes` flat LO
+     instead, stems drafted from crs-07 directly, each `tests` naming the
+     LO id it tests.
    - **wra-04_confidence** (confidence placement, post-scaffold): AL-4
      (same) — each confidence statement names via `rates` the course
      outcome it rates, and every course outcome carries at least one;
