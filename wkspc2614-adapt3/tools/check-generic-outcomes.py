@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """check-generic-outcomes.py - validate the generic learning outcomes layer
-(the 9 -> 18 -> +4): 4 genericOutcomes entries per capability, in two origins
-(distilled, from-benchmark) x two kinds (conceptual, applied).
+(the 9 -> 18 -> +2): 2 genericOutcomes entries per capability, both
+origin from-benchmark, one per kind (conceptual, applied). (The earlier
+distilled pair was removed; see tools/remove-distilled-generic-outcomes.py.)
 
 Mirrors tools/check-pathway-evidence.py's structure and CLI. Store:
 catalogue/context/pathway-evidence/<pathway>.json -> capabilities[].genericOutcomes
@@ -9,21 +10,20 @@ catalogue/context/pathway-evidence/<pathway>.json -> capabilities[].genericOutco
 
 Checks, per file:
   - every capability of the pathway covered exactly once, tier matches
-  - exactly 4 genericOutcomes entries; the (origin, kind) pairs
-    distilled/conceptual, distilled/applied, from-benchmark/conceptual,
-    from-benchmark/applied each appear exactly once
-  - fields exactly kind, origin, title, example, artefact, grounding, plus
-    learningOutcome on from-benchmark entries only (distilled entries must not
-    carry it)
+  - exactly 2 genericOutcomes entries, both origin from-benchmark; the
+    (origin, kind) pairs from-benchmark/conceptual, from-benchmark/applied
+    each appear exactly once
+  - fields exactly kind, origin, title, learningOutcome, example, artefact,
+    grounding
   - title <= 12 words; example 35-90 words; artefact 8-30 words;
-    learningOutcome (from-benchmark only) 10-40 words
+    learningOutcome 10-40 words
   - grounding non-empty:
       conceptual: every non-benchmark entry is a capability theory id or
         "model: ...". At least one theory id used when the capability has any.
       applied: every non-benchmark entry is "professional: ..." or
         "framework: ...". "practice: ..." is banned here.
-      from-benchmark (either kind): exactly one "benchmark: <statementId>"
-        entry, resolving to a statementId attributed to this capability in
+      exactly one "benchmark: <statementId>" entry, resolving to a
+        statementId attributed to this capability in
         catalogue/context/pathway/<pathway>.json -> benchmarkKeys.byTier, or
         "benchmark: none (unattributed; written from capability statement)"
         when the capability's attribution is unattributed.
@@ -39,9 +39,9 @@ import pathway_tiers
 
 EVIDENCE_DIR = os.path.join(pathway_tiers.REPO_ROOT, 'catalogue', 'context', 'pathway-evidence')
 KINDS = ('conceptual', 'applied')
-ORIGINS = ('distilled', 'from-benchmark')
+ORIGINS = ('from-benchmark',)
 PAIRS = {(o, k) for o in ORIGINS for k in KINDS}
-FIELDS = {'kind', 'origin', 'title', 'example', 'artefact', 'grounding'}
+FIELDS = {'kind', 'origin', 'title', 'learningOutcome', 'example', 'artefact', 'grounding'}
 LIMITS = {'title': (1, 12), 'example': (35, 90), 'artefact': (8, 30)}
 LO_LIMITS = (10, 40)
 FALLBACK = 'none (unattributed; written from capability statement)'
@@ -96,8 +96,8 @@ def check(pid):
         if go is None:
             errs.append('%s: missing genericOutcomes' % ref)
             continue
-        if len(go) != 4:
-            errs.append('%s: genericOutcomes has %d entries, want 4' % (ref, len(go)))
+        if len(go) != 2:
+            errs.append('%s: genericOutcomes has %d entries, want 2' % (ref, len(go)))
 
         theory = {t for t in (cap.get('competency') or {}).get('theory') or [] if isinstance(t, str)}
         valid_bench_ids = benchmark_ids_for(ref, by_tier)
@@ -105,10 +105,8 @@ def check(pid):
 
         pairs_seen = []
         for e in go:
-            origin_for_fields = e.get('origin')
-            want_fields = FIELDS | {'learningOutcome'} if origin_for_fields == 'from-benchmark' else FIELDS
-            extra = set(e.keys()) - want_fields
-            missing = want_fields - set(e.keys())
+            extra = set(e.keys()) - FIELDS
+            missing = FIELDS - set(e.keys())
             if extra:
                 errs.append('%s: unexpected fields %s' % (ref, sorted(extra)))
             if missing:
@@ -127,11 +125,10 @@ def check(pid):
                 n = words(e.get(f))
                 if not lo <= n <= hi:
                     errs.append('%s %s/%s.%s is %d words (want %d-%d)' % (ref, origin, kind, f, n, lo, hi))
-            if origin == 'from-benchmark' and 'learningOutcome' in e:
-                lo, hi = LO_LIMITS
-                n = words(e.get('learningOutcome'))
-                if not lo <= n <= hi:
-                    errs.append('%s %s/%s.learningOutcome is %d words (want %d-%d)' % (ref, origin, kind, n, lo, hi))
+            lo, hi = LO_LIMITS
+            n = words(e.get('learningOutcome'))
+            if not lo <= n <= hi:
+                errs.append('%s %s/%s.learningOutcome is %d words (want %d-%d)' % (ref, origin, kind, n, lo, hi))
 
             g = e.get('grounding') or []
             if not g:
@@ -154,24 +151,20 @@ def check(pid):
                     errs.append('%s %s/applied grounding %s is neither "professional: ..." nor "framework: ..."'
                                 % (ref, origin, stray))
 
-            if origin == 'from-benchmark':
-                if len(bench_lines) != 1:
-                    errs.append('%s %s/%s: needs exactly one "benchmark: ..." grounding entry, has %d'
-                                % (ref, origin, kind, len(bench_lines)))
-                else:
-                    val = bench_lines[0][len('benchmark: '):]
-                    if attr == 'unattributed':
-                        if val != FALLBACK:
-                            errs.append('%s %s/%s: unattributed capability must use fallback benchmark line, got %r'
-                                        % (ref, origin, kind, val))
-                    elif val not in valid_bench_ids:
-                        errs.append('%s %s/%s: benchmark statementId %r not among this capability\'s benchmarkKeys %s'
-                                    % (ref, origin, kind, val, sorted(valid_bench_ids)))
-            elif origin == 'distilled' and bench_lines:
-                errs.append('%s %s/%s: distilled entries should not carry a "benchmark: ..." line'
-                            % (ref, origin, kind))
+            if len(bench_lines) != 1:
+                errs.append('%s %s/%s: needs exactly one "benchmark: ..." grounding entry, has %d'
+                            % (ref, origin, kind, len(bench_lines)))
+            else:
+                val = bench_lines[0][len('benchmark: '):]
+                if attr == 'unattributed':
+                    if val != FALLBACK:
+                        errs.append('%s %s/%s: unattributed capability must use fallback benchmark line, got %r'
+                                    % (ref, origin, kind, val))
+                elif val not in valid_bench_ids:
+                    errs.append('%s %s/%s: benchmark statementId %r not among this capability\'s benchmarkKeys %s'
+                                % (ref, origin, kind, val, sorted(valid_bench_ids)))
 
-        if set(pairs_seen) != PAIRS and len(go) == 4:
+        if set(pairs_seen) != PAIRS and len(go) == 2:
             errs.append('%s: (origin, kind) pairs %s != required %s' % (ref, sorted(pairs_seen), sorted(PAIRS)))
 
     for ref in caps:
