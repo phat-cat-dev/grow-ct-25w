@@ -1,0 +1,922 @@
+{
+  "pathway": "creativity",
+  "status": "generated",
+  "note": "Pathway tier readings: the universal benchmark's three tier readings (practice, knowledge, identity, per tier) re-filled with this pathway's own capability vocabulary and voice band. Generated deterministically and mechanically by tools/build-pathway-tier-readings.py; no hand-authoring and no generated prose. Every slot is either a verb inflected from this pathway's own section 16 voice band, a noun phrase taken verbatim from a capability's vocabulary.terms, or the universal wording kept unchanged. Known limitation: the fill is grammatical by construction but not semantically curated; a harvested term can land in a slot it does not suit. Every fill is traceable in slotProvenance. The identity object slots are filled by owner decision, overriding the universal formula's own agentInstruction guidance to keep them. Draft for review, not finished copy.",
+  "tierReadings": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "universalRowId": "u-intro",
+      "verbBand": "Beginner",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 13 voice-band anchor"
+      },
+      "capabilities": [
+        "creativity/01",
+        "creativity/02",
+        "creativity/03"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Begins to apply the divergent thinking of creativity to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the convergent thinking clearly.",
+          "universalStatement": "Begins to apply the subject's basic methods to familiar, well-defined tasks with guidance, works with sources and data they are given, and communicates straightforward findings clearly.",
+          "template": "Begins to {verb_1} the {object_1} of creativity to {scope_1} tasks {condition_1}, {verb_2} with {object_2}, and {verb_3} {object_3} {qualifier_1}.",
+          "universalTemplate": "Begins to {verb_1} the subject's {object_1} to {scope_1} tasks {condition_1}, {verb_2} with {object_2}, and {verb_3} {object_3} {qualifier_1}.",
+          "fill": {
+            "verb_1": "apply",
+            "object_1": "divergent thinking",
+            "scope_1": "familiar, well-defined",
+            "condition_1": "with guidance",
+            "verb_2": "works",
+            "object_2": "sources and data they are given",
+            "verb_3": "describes",
+            "object_3": "the convergent thinking",
+            "qualifier_1": "clearly"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "apply",
+              "reason": "bound: 'apply X to Y' frame"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/02",
+              "rowId": "i2",
+              "strand": "procedural",
+              "term": "divergent thinking",
+              "termNumber": "singular",
+              "termClass": "fallback-any",
+              "value": "divergent thinking"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "familiar, well-defined"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "with guidance"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "works",
+              "reason": "bound idiom: 'works with X'"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "sources and data they are given"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "third",
+              "value": "describes"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/02",
+              "rowId": "i2",
+              "strand": "procedural",
+              "term": "convergent thinking",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the convergent thinking"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "clearly"
+            }
+          ],
+          "termsUsed": [
+            "divergent thinking",
+            "convergent thinking"
+          ],
+          "capabilitiesUsed": [
+            "creativity/02"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/practice/o1",
+            "u-intro/practice/o2",
+            "u-intro/practice/o3"
+          ],
+          "subjectSubstitution": {
+            "form": "possessive-of-rewrite",
+            "from": "the subject's {object_1}",
+            "to": "the {object_1} of creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "knowledge": {
+          "statement": "Describes the creative barriers that introduce creativity, and can place them in the wider field.",
+          "universalStatement": "Knows the core terms, ideas and principles that introduce the subject, and can place them in the wider field.",
+          "template": "{verb_1} the {object_1} that introduce creativity, and can {verb_2} them in the {scope_1} field.",
+          "universalTemplate": "{verb_1} the {object_1} that introduce the subject, and can {verb_2} them in the {scope_1} field.",
+          "fill": {
+            "verb_1": "Describes",
+            "object_1": "creative barriers",
+            "verb_2": "place",
+            "scope_1": "wider"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "third-cap",
+              "value": "Describes"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/03",
+              "rowId": "i3",
+              "strand": "metacognitive",
+              "term": "creative barriers",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "creative barriers"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "place",
+              "reason": "bound idiom 'place them in X'; modal 'can' requires the bare form"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "wider"
+            }
+          ],
+          "termsUsed": [
+            "creative barriers"
+          ],
+          "capabilitiesUsed": [
+            "creativity/03"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/knowledge/o1",
+            "u-intro/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "Begins to describe creative barriers for the first time, following guidance on the fear of failure as an early sense of the kind of practitioner they are becoming.",
+          "universalStatement": "Begins to connect practice, theory and reflection for the first time, following guidance on ethical and academic conduct as an early sense of the kind of practitioner they are becoming.",
+          "template": "Begins to {verb_1} {object_1} for the first time, following {condition_1} on {object_2} as an early sense of the kind of {audience_1} they are becoming.",
+          "universalTemplate": "Begins to {verb_1} {object_1} for the first time, following {condition_1} on {object_2} as an early sense of the kind of {audience_1} they are becoming.",
+          "fill": {
+            "verb_1": "describe",
+            "object_1": "creative barriers",
+            "condition_1": "guidance",
+            "object_2": "the fear of failure",
+            "audience_1": "practitioner"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "bare",
+              "value": "describe"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/03",
+              "rowId": "i3",
+              "strand": "metacognitive",
+              "term": "creative barriers",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "creative barriers",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The introductory identity statement links practice, theory and reflection for the first time under guidance on conduct. Two object slots are deliberate (the thing linked, and the conduct guided); keep both, since dropping either loses either the triad or the ethical framing."
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "guidance"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/03",
+              "rowId": "i3",
+              "strand": "metacognitive",
+              "term": "fear of failure",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the fear of failure",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The introductory identity statement links practice, theory and reflection for the first time under guidance on conduct. Two object slots are deliberate (the thing linked, and the conduct guided); keep both, since dropping either loses either the triad or the ethical framing."
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "practitioner"
+            }
+          ],
+          "termsUsed": [
+            "creative barriers",
+            "fear of failure"
+          ],
+          "capabilitiesUsed": [
+            "creativity/03"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/identity/o1",
+            "u-intro/identity/o2"
+          ]
+        }
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "universalRowId": "u-int",
+      "verbBand": "Intermediate",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 13 voice-band anchor"
+      },
+      "capabilities": [
+        "creativity/07",
+        "creativity/04",
+        "creativity/05"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Applies the methods of creativity to the creative problem-solving, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+          "universalStatement": "Applies the subject's methods to questions and problems, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+          "template": "{verb_1} the {object_1} of creativity to {object_2}, {verb_2} {condition_1} {object_3}, {verb_3} with {object_4}, and {verb_4} {object_5} to {audience_1}.",
+          "universalTemplate": "{verb_1} the subject's {object_1} to {object_2}, {verb_2} {condition_1} {object_3}, {verb_3} with {object_4}, and {verb_4} {object_5} to {audience_1}.",
+          "fill": {
+            "verb_1": "Applies",
+            "object_1": "methods",
+            "object_2": "the creative problem-solving",
+            "verb_2": "carries out",
+            "condition_1": "supervised",
+            "object_3": "research and enquiry",
+            "verb_3": "works",
+            "object_4": "data and sources",
+            "verb_4": "communicates",
+            "object_5": "findings",
+            "audience_1": "different audiences"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Applies",
+              "reason": "bound: 'Applies X to Y' frame, sentence-initial"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/04",
+              "rowId": "d2",
+              "strand": "procedural",
+              "term": "methods",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "methods"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/04",
+              "rowId": "d2",
+              "strand": "procedural",
+              "term": "creative problem-solving",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the creative problem-solving"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "carries out",
+              "reason": "bound idiom: 'carries out supervised research'"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "supervised"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "research and enquiry"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "works",
+              "reason": "bound idiom: 'works with X'"
+            },
+            {
+              "slot": "object_4",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "data and sources"
+            },
+            {
+              "slot": "verb_4",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "communicates",
+              "reason": "bound frame: 'communicates X to Y'"
+            },
+            {
+              "slot": "object_5",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "findings"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "different audiences"
+            }
+          ],
+          "termsUsed": [
+            "methods",
+            "creative problem-solving"
+          ],
+          "capabilitiesUsed": [
+            "creativity/04"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/practice/o1",
+            "u-int/practice/o2",
+            "u-int/practice/o3",
+            "u-int/practice/o4"
+          ],
+          "subjectSubstitution": {
+            "form": "possessive-of-rewrite",
+            "from": "the subject's {object_1}",
+            "to": "the {object_1} of creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "knowledge": {
+          "statement": "Analyses the creativity theory of creativity, and how the field developed and where it currently stands.",
+          "universalStatement": "Knows the core content, main theories and debates of the subject, and how the field developed and where it currently stands.",
+          "template": "{verb_1} the {object_1} of creativity, and how the field {verb_2} and where it currently {verb_3}.",
+          "universalTemplate": "{verb_1} the {object_1} of the subject, and how the field {verb_2} and where it currently {verb_3}.",
+          "fill": {
+            "verb_1": "Analyses",
+            "object_1": "creativity theory",
+            "verb_2": "developed",
+            "verb_3": "stands"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Intermediate",
+              "lemma": "analyse",
+              "form": "third-cap",
+              "value": "Analyses"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/07",
+              "rowId": "d1",
+              "strand": "conceptual",
+              "term": "creativity theory",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "creativity theory"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "developed",
+              "reason": "bound intransitive past: 'the field developed'"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "stands",
+              "reason": "bound idiom: 'currently stands'"
+            }
+          ],
+          "termsUsed": [
+            "creativity theory"
+          ],
+          "capabilitiesUsed": [
+            "creativity/07"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/knowledge/o1",
+            "u-int/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the cognitive flexibility on their own learning and by how methods bear on creativity.",
+          "universalStatement": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by reflection on their own learning and by how diversity, sustainability and professional practice bear on the subject.",
+          "template": "{verb_1} {qualifier_1} and increasingly {condition_1}, treating {audience_1} identity as still {qualifier_2} rather than fixed, shaped by {object_1} on their own learning and by how {object_2} bear on creativity.",
+          "universalTemplate": "{verb_1} {qualifier_1} and increasingly {condition_1}, treating {audience_1} identity as still {qualifier_2} rather than fixed, shaped by {object_1} on their own learning and by how {object_2} bear on the subject.",
+          "fill": {
+            "verb_1": "Works",
+            "qualifier_1": "ethically",
+            "condition_1": "independently",
+            "audience_1": "practitioner",
+            "qualifier_2": "forming",
+            "object_1": "the cognitive flexibility",
+            "object_2": "methods"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Works",
+              "reason": "main-clause verb, structurally central to the sentence, sentence-initial"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "ethically"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "independently"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "practitioner"
+            },
+            {
+              "slot": "qualifier_2",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "forming"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/05",
+              "rowId": "d3",
+              "strand": "metacognitive",
+              "term": "cognitive flexibility",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the cognitive flexibility",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The intermediate identity statement holds three forces at once: ethical, increasingly independent conduct; identity as still forming; and the cross-cutting themes bearing on it. Keep all three in any reproduction, since dropping the cross-cutting clause loses the EDI/sustainability link entirely."
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/04",
+              "rowId": "d2",
+              "strand": "procedural",
+              "term": "methods",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "methods",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The intermediate identity statement holds three forces at once: ethical, increasingly independent conduct; identity as still forming; and the cross-cutting themes bearing on it. Keep all three in any reproduction, since dropping the cross-cutting clause loses the EDI/sustainability link entirely."
+            }
+          ],
+          "termsUsed": [
+            "cognitive flexibility",
+            "methods"
+          ],
+          "capabilitiesUsed": [
+            "creativity/04",
+            "creativity/05"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/identity/o1",
+            "u-int/identity/o2",
+            "u-int/identity/o3"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        }
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "universalRowId": "u-adv",
+      "verbBand": "Advanced",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 13 voice-band anchor"
+      },
+      "capabilities": [
+        "creativity/06",
+        "creativity#e2",
+        "creativity#e3"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Designs and critiques the enterprise thinking across methods, evaluates the entrepreneurship critically throughout, and applies knowledge to current and complex problems with some originality.",
+          "universalStatement": "Designs and critiques enquiry across methods, evaluates evidence and arguments critically throughout, and applies knowledge to current and complex problems with some originality.",
+          "template": "{verb_1} and {verb_2} {object_1} across {scope_1}, {verb_3} {object_2} {qualifier_1} throughout, and {verb_4} knowledge to {qualifier_2} problems with some {qualifier_3}.",
+          "universalTemplate": "{verb_1} and {verb_2} {object_1} across {scope_1}, {verb_3} {object_2} {qualifier_1} throughout, and {verb_4} knowledge to {qualifier_2} problems with some {qualifier_3}.",
+          "fill": {
+            "verb_1": "Designs",
+            "verb_2": "critiques",
+            "object_1": "the enterprise thinking",
+            "scope_1": "methods",
+            "verb_3": "evaluates",
+            "object_2": "the entrepreneurship",
+            "qualifier_1": "critically",
+            "verb_4": "applies",
+            "qualifier_2": "current and complex",
+            "qualifier_3": "originality"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Designs",
+              "reason": "bound pairing with verb_2: 'Designs and critiques X', sentence-initial"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third",
+              "value": "critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "enterprise thinking",
+              "termNumber": "singular",
+              "termClass": "fallback-any",
+              "value": "the enterprise thinking"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "methods"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "evaluate",
+              "form": "third",
+              "value": "evaluates"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "entrepreneurship",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the entrepreneurship"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "critically"
+            },
+            {
+              "slot": "verb_4",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "applies",
+              "reason": "bound frame: 'applies knowledge to problems' (knowledge is fixed text)"
+            },
+            {
+              "slot": "qualifier_2",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "current and complex"
+            },
+            {
+              "slot": "qualifier_3",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "originality"
+            }
+          ],
+          "termsUsed": [
+            "enterprise thinking",
+            "entrepreneurship"
+          ],
+          "capabilitiesUsed": [
+            "creativity/06"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/practice/o1",
+            "u-adv/practice/o2",
+            "u-adv/practice/o3"
+          ]
+        },
+        "knowledge": {
+          "statement": "Critiques the enterprise thinking of creativity, its entrepreneurship and their bearing on current thinking, and sees where understanding runs out.",
+          "universalStatement": "Commands the breadth and depth of the subject, its theoretical foundations and their bearing on current thinking, and sees where understanding runs out.",
+          "template": "{verb_1} the {object_1} of creativity, its {object_2} and their bearing on {object_3}, and {verb_2} where {object_4} runs out.",
+          "universalTemplate": "{verb_1} the {object_1} of the subject, its {object_2} and their bearing on {object_3}, and {verb_2} where {object_4} runs out.",
+          "fill": {
+            "verb_1": "Critiques",
+            "object_1": "enterprise thinking",
+            "object_2": "entrepreneurship",
+            "object_3": "current thinking",
+            "verb_2": "sees",
+            "object_4": "understanding"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third-cap",
+              "value": "Critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "enterprise thinking",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "enterprise thinking"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "entrepreneurship",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "entrepreneurship"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "current thinking"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "sees",
+              "reason": "bound idiom: 'sees where X runs out'"
+            },
+            {
+              "slot": "object_4",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "understanding"
+            }
+          ],
+          "termsUsed": [
+            "enterprise thinking",
+            "entrepreneurship"
+          ],
+          "capabilitiesUsed": [
+            "creativity/06"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/knowledge/o1",
+            "u-adv/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "creativity",
+            "label": "creativity",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "A reflexive practitioner who critiques how their own position, assumptions and values shape their enterprise thinking, weighs what this means for wider debate and for audiences acting on it, and treats their entrepreneurship as still evolving through that scrutiny.",
+          "universalStatement": "A reflexive practitioner who examines how their own position, assumptions and values shape their judgements, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny.",
+          "template": "A {stance} practitioner who {verb_1} how their own {object_1} shape their {object_2}, {verb_2} what this means for {audience_1} and for {audience_2} acting on it, and {verb_3} their {object_3} as still {qualifier} through that scrutiny.",
+          "universalTemplate": "A {stance} practitioner who {verb_1} how their own {object_1} shape their {object_2}, {verb_2} what this means for {audience_1} and for {audience_2} acting on it, and {verb_3} their {object_3} as still {qualifier} through that scrutiny.",
+          "fill": {
+            "stance": "reflexive",
+            "verb_1": "critiques",
+            "object_1": "position, assumptions and values",
+            "object_2": "enterprise thinking",
+            "verb_2": "weighs",
+            "audience_1": "wider debate",
+            "audience_2": "audiences",
+            "verb_3": "treats",
+            "object_3": "entrepreneurship",
+            "qualifier": "evolving"
+          },
+          "slotProvenance": [
+            {
+              "slot": "stance",
+              "role": "stance",
+              "from": "universalSourceFill",
+              "value": "reflexive"
+            },
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third",
+              "value": "critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "position, assumptions and values"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "enterprise thinking",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "enterprise thinking",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The advanced identity triad: examine your own position, weigh what it means outward, then hold identity open. Fill stance and qualifier from the options to keep the reflexive register; only field_content-bearing outcomes take subject context. Reproduce all three outcomes or none, since dropping the third collapses identity back into reflection."
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "weighs",
+              "reason": "bound frame: 'weighs what this means'"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "wider debate"
+            },
+            {
+              "slot": "audience_2",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "audiences"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "treats",
+              "reason": "bound frame: 'treats X as Y'"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "creativity/06",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "entrepreneurship",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "entrepreneurship",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The advanced identity triad: examine your own position, weigh what it means outward, then hold identity open. Fill stance and qualifier from the options to keep the reflexive register; only field_content-bearing outcomes take subject context. Reproduce all three outcomes or none, since dropping the third collapses identity back into reflection."
+            },
+            {
+              "slot": "qualifier",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "evolving"
+            }
+          ],
+          "termsUsed": [
+            "enterprise thinking",
+            "entrepreneurship"
+          ],
+          "capabilitiesUsed": [
+            "creativity/06"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/identity/o1",
+            "u-adv/identity/o2",
+            "u-adv/identity/o3"
+          ]
+        }
+      }
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-tier-readings.py",
+    "inputs": [
+      "catalogue/context/subject/benchmarks/universal-reference.json (tierReadings.rows[].formulas)",
+      "catalogue/context/pathway/creativity.json (capabilities[].vocabulary.terms, knowledgeKind, identity.practiceNoun)",
+      "reference/excelling-voice-specification.md (section 16 verb bands)",
+      "docs/curriculum/pathway-tier-mapping.md (per-pathway voice-band anchor)"
+    ],
+    "note": "Deterministic: the same inputs always give byte-identical output, so a rebuild is a no-op and determinism is itself checkable. No timestamp is recorded. Our words, no issuer or book text."
+  }
+}

@@ -1,0 +1,903 @@
+{
+  "pathway": "criticality",
+  "status": "generated",
+  "note": "Pathway tier readings: the universal benchmark's three tier readings (practice, knowledge, identity, per tier) re-filled with this pathway's own capability vocabulary and voice band. Generated deterministically and mechanically by tools/build-pathway-tier-readings.py; no hand-authoring and no generated prose. Every slot is either a verb inflected from this pathway's own section 16 voice band, a noun phrase taken verbatim from a capability's vocabulary.terms, or the universal wording kept unchanged. Known limitation: the fill is grammatical by construction but not semantically curated; a harvested term can land in a slot it does not suit. Every fill is traceable in slotProvenance. The identity object slots are filled by owner decision, overriding the universal formula's own agentInstruction guidance to keep them. Draft for review, not finished copy.",
+  "tierReadings": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "universalRowId": "u-intro",
+      "verbBand": "Beginner",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 5 voice-band anchor"
+      },
+      "capabilities": [
+        "criticality/02",
+        "criticality/c1",
+        "criticality#i3"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Begins to apply the critical thought of criticality to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the searching clearly.",
+          "universalStatement": "Begins to apply the subject's basic methods to familiar, well-defined tasks with guidance, works with sources and data they are given, and communicates straightforward findings clearly.",
+          "template": "Begins to {verb_1} the {object_1} of criticality to {scope_1} tasks {condition_1}, {verb_2} with {object_2}, and {verb_3} {object_3} {qualifier_1}.",
+          "universalTemplate": "Begins to {verb_1} the subject's {object_1} to {scope_1} tasks {condition_1}, {verb_2} with {object_2}, and {verb_3} {object_3} {qualifier_1}.",
+          "fill": {
+            "verb_1": "apply",
+            "object_1": "critical thought",
+            "scope_1": "familiar, well-defined",
+            "condition_1": "with guidance",
+            "verb_2": "works",
+            "object_2": "sources and data they are given",
+            "verb_3": "describes",
+            "object_3": "the searching",
+            "qualifier_1": "clearly"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "apply",
+              "reason": "bound: 'apply X to Y' frame"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c1",
+              "rowId": "i2",
+              "strand": "procedural",
+              "term": "critical thought",
+              "termNumber": "singular",
+              "termClass": "fallback-any",
+              "value": "critical thought"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "familiar, well-defined"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "with guidance"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "works",
+              "reason": "bound idiom: 'works with X'"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "sources and data they are given"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "third",
+              "value": "describes"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c1",
+              "rowId": "i2",
+              "strand": "procedural",
+              "term": "searching",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the searching"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "clearly"
+            }
+          ],
+          "termsUsed": [
+            "critical thought",
+            "searching"
+          ],
+          "capabilitiesUsed": [
+            "criticality/c1"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/practice/o1",
+            "u-intro/practice/o2",
+            "u-intro/practice/o3"
+          ],
+          "subjectSubstitution": {
+            "form": "possessive-of-rewrite",
+            "from": "the subject's {object_1}",
+            "to": "the {object_1} of criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "knowledge": {
+          "statement": "Describes the core terms, ideas and principles that introduce criticality, and can place them in the wider field.",
+          "universalStatement": "Knows the core terms, ideas and principles that introduce the subject, and can place them in the wider field.",
+          "template": "{verb_1} the {object_1} that introduce criticality, and can {verb_2} them in the {scope_1} field.",
+          "universalTemplate": "{verb_1} the {object_1} that introduce the subject, and can {verb_2} them in the {scope_1} field.",
+          "fill": {
+            "verb_1": "Describes",
+            "object_1": "core terms, ideas and principles",
+            "verb_2": "place",
+            "scope_1": "wider"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "third-cap",
+              "value": "Describes"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "core terms, ideas and principles"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "place",
+              "reason": "bound idiom 'place them in X'; modal 'can' requires the bare form"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "wider"
+            }
+          ],
+          "termsUsed": [],
+          "capabilitiesUsed": [],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/knowledge/o1",
+            "u-intro/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "Begins to describe the scholarly discourse for the first time, following guidance on the topic as an early sense of the kind of practitioner they are becoming.",
+          "universalStatement": "Begins to connect practice, theory and reflection for the first time, following guidance on ethical and academic conduct as an early sense of the kind of practitioner they are becoming.",
+          "template": "Begins to {verb_1} {object_1} for the first time, following {condition_1} on {object_2} as an early sense of the kind of {audience_1} they are becoming.",
+          "universalTemplate": "Begins to {verb_1} {object_1} for the first time, following {condition_1} on {object_2} as an early sense of the kind of {audience_1} they are becoming.",
+          "fill": {
+            "verb_1": "describe",
+            "object_1": "the scholarly discourse",
+            "condition_1": "guidance",
+            "object_2": "the topic",
+            "audience_1": "practitioner"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Beginner",
+              "lemma": "describe",
+              "form": "bare",
+              "value": "describe"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/02",
+              "rowId": "i1",
+              "strand": "conceptual",
+              "term": "scholarly discourse",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the scholarly discourse",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The introductory identity statement links practice, theory and reflection for the first time under guidance on conduct. Two object slots are deliberate (the thing linked, and the conduct guided); keep both, since dropping either loses either the triad or the ethical framing."
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "guidance"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/02",
+              "rowId": "i1",
+              "strand": "conceptual",
+              "term": "topic",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the topic",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The introductory identity statement links practice, theory and reflection for the first time under guidance on conduct. Two object slots are deliberate (the thing linked, and the conduct guided); keep both, since dropping either loses either the triad or the ethical framing."
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "practitioner"
+            }
+          ],
+          "termsUsed": [
+            "scholarly discourse",
+            "topic"
+          ],
+          "capabilitiesUsed": [
+            "criticality/02"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-intro/identity/o1",
+            "u-intro/identity/o2"
+          ]
+        }
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "universalRowId": "u-int",
+      "verbBand": "Intermediate",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 5 voice-band anchor"
+      },
+      "capabilities": [
+        "criticality/01",
+        "criticality/03",
+        "criticality/04"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Applies the methodology of criticality to the scholarly interpretation, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+          "universalStatement": "Applies the subject's methods to questions and problems, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+          "template": "{verb_1} the {object_1} of criticality to {object_2}, {verb_2} {condition_1} {object_3}, {verb_3} with {object_4}, and {verb_4} {object_5} to {audience_1}.",
+          "universalTemplate": "{verb_1} the subject's {object_1} to {object_2}, {verb_2} {condition_1} {object_3}, {verb_3} with {object_4}, and {verb_4} {object_5} to {audience_1}.",
+          "fill": {
+            "verb_1": "Applies",
+            "object_1": "methodology",
+            "object_2": "the scholarly interpretation",
+            "verb_2": "carries out",
+            "condition_1": "supervised",
+            "object_3": "research and enquiry",
+            "verb_3": "works",
+            "object_4": "data and sources",
+            "verb_4": "communicates",
+            "object_5": "findings",
+            "audience_1": "different audiences"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Applies",
+              "reason": "bound: 'Applies X to Y' frame, sentence-initial"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/04",
+              "rowId": "d3",
+              "strand": "metacognitive",
+              "term": "methodology",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "methodology"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/03",
+              "rowId": "d2",
+              "strand": "procedural",
+              "term": "scholarly interpretation",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the scholarly interpretation"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "carries out",
+              "reason": "bound idiom: 'carries out supervised research'"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "supervised"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "research and enquiry"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "works",
+              "reason": "bound idiom: 'works with X'"
+            },
+            {
+              "slot": "object_4",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "data and sources"
+            },
+            {
+              "slot": "verb_4",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "communicates",
+              "reason": "bound frame: 'communicates X to Y'"
+            },
+            {
+              "slot": "object_5",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "findings"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "different audiences"
+            }
+          ],
+          "termsUsed": [
+            "methodology",
+            "scholarly interpretation"
+          ],
+          "capabilitiesUsed": [
+            "criticality/03",
+            "criticality/04"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/practice/o1",
+            "u-int/practice/o2",
+            "u-int/practice/o3",
+            "u-int/practice/o4"
+          ],
+          "subjectSubstitution": {
+            "form": "possessive-of-rewrite",
+            "from": "the subject's {object_1}",
+            "to": "the {object_1} of criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "knowledge": {
+          "statement": "Analyses the critical thinking of criticality, and how the field developed and where it currently stands.",
+          "universalStatement": "Knows the core content, main theories and debates of the subject, and how the field developed and where it currently stands.",
+          "template": "{verb_1} the {object_1} of criticality, and how the field {verb_2} and where it currently {verb_3}.",
+          "universalTemplate": "{verb_1} the {object_1} of the subject, and how the field {verb_2} and where it currently {verb_3}.",
+          "fill": {
+            "verb_1": "Analyses",
+            "object_1": "critical thinking",
+            "verb_2": "developed",
+            "verb_3": "stands"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Intermediate",
+              "lemma": "analyse",
+              "form": "third-cap",
+              "value": "Analyses"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/01",
+              "rowId": "d1",
+              "strand": "conceptual",
+              "term": "critical thinking",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "critical thinking"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "developed",
+              "reason": "bound intransitive past: 'the field developed'"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "stands",
+              "reason": "bound idiom: 'currently stands'"
+            }
+          ],
+          "termsUsed": [
+            "critical thinking"
+          ],
+          "capabilitiesUsed": [
+            "criticality/01"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/knowledge/o1",
+            "u-int/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the journal article on their own learning and by how diversity, sustainability and professional practice bear on criticality.",
+          "universalStatement": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by reflection on their own learning and by how diversity, sustainability and professional practice bear on the subject.",
+          "template": "{verb_1} {qualifier_1} and increasingly {condition_1}, treating {audience_1} identity as still {qualifier_2} rather than fixed, shaped by {object_1} on their own learning and by how {object_2} bear on criticality.",
+          "universalTemplate": "{verb_1} {qualifier_1} and increasingly {condition_1}, treating {audience_1} identity as still {qualifier_2} rather than fixed, shaped by {object_1} on their own learning and by how {object_2} bear on the subject.",
+          "fill": {
+            "verb_1": "Works",
+            "qualifier_1": "ethically",
+            "condition_1": "independently",
+            "audience_1": "practitioner",
+            "qualifier_2": "forming",
+            "object_1": "the journal article",
+            "object_2": "diversity, sustainability and professional practice"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Works",
+              "reason": "main-clause verb, structurally central to the sentence, sentence-initial"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "ethically"
+            },
+            {
+              "slot": "condition_1",
+              "role": "condition",
+              "from": "universalSourceFill",
+              "value": "independently"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "practitioner"
+            },
+            {
+              "slot": "qualifier_2",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "forming"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/04",
+              "rowId": "d3",
+              "strand": "metacognitive",
+              "term": "journal article",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "the journal article",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The intermediate identity statement holds three forces at once: ethical, increasingly independent conduct; identity as still forming; and the cross-cutting themes bearing on it. Keep all three in any reproduction, since dropping the cross-cutting clause loses the EDI/sustainability link entirely."
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "diversity, sustainability and professional practice"
+            }
+          ],
+          "termsUsed": [
+            "journal article"
+          ],
+          "capabilitiesUsed": [
+            "criticality/04"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-int/identity/o1",
+            "u-int/identity/o2",
+            "u-int/identity/o3"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        }
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "universalRowId": "u-adv",
+      "verbBand": "Advanced",
+      "verbBandBasis": {
+        "doc": "docs/curriculum/pathway-tier-mapping.md",
+        "ref": "Pathway 5 voice-band anchor"
+      },
+      "capabilities": [
+        "criticality/c2",
+        "criticality/05",
+        "criticality#e3"
+      ],
+      "statements": {
+        "practice": {
+          "statement": "Designs and critiques the judgement across methods, evaluates factors critically throughout, and applies knowledge to current and complex problems with some originality.",
+          "universalStatement": "Designs and critiques enquiry across methods, evaluates evidence and arguments critically throughout, and applies knowledge to current and complex problems with some originality.",
+          "template": "{verb_1} and {verb_2} {object_1} across {scope_1}, {verb_3} {object_2} {qualifier_1} throughout, and {verb_4} knowledge to {qualifier_2} problems with some {qualifier_3}.",
+          "universalTemplate": "{verb_1} and {verb_2} {object_1} across {scope_1}, {verb_3} {object_2} {qualifier_1} throughout, and {verb_4} knowledge to {qualifier_2} problems with some {qualifier_3}.",
+          "fill": {
+            "verb_1": "Designs",
+            "verb_2": "critiques",
+            "object_1": "the judgement",
+            "scope_1": "methods",
+            "verb_3": "evaluates",
+            "object_2": "factors",
+            "qualifier_1": "critically",
+            "verb_4": "applies",
+            "qualifier_2": "current and complex",
+            "qualifier_3": "originality"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "Designs",
+              "reason": "bound pairing with verb_2: 'Designs and critiques X', sentence-initial"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third",
+              "value": "critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "judgement",
+              "termNumber": "singular",
+              "termClass": "fallback-any",
+              "value": "the judgement"
+            },
+            {
+              "slot": "scope_1",
+              "role": "scope",
+              "from": "universalSourceFill",
+              "value": "methods"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "evaluate",
+              "form": "third",
+              "value": "evaluates"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "factors",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "factors"
+            },
+            {
+              "slot": "qualifier_1",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "critically"
+            },
+            {
+              "slot": "verb_4",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "applies",
+              "reason": "bound frame: 'applies knowledge to problems' (knowledge is fixed text)"
+            },
+            {
+              "slot": "qualifier_2",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "current and complex"
+            },
+            {
+              "slot": "qualifier_3",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "originality"
+            }
+          ],
+          "termsUsed": [
+            "judgement",
+            "factors"
+          ],
+          "capabilitiesUsed": [
+            "criticality/c2"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/practice/o1",
+            "u-adv/practice/o2",
+            "u-adv/practice/o3"
+          ]
+        },
+        "knowledge": {
+          "statement": "Critiques the judgement of criticality, its factors and their bearing on current thinking, and sees where understanding runs out.",
+          "universalStatement": "Commands the breadth and depth of the subject, its theoretical foundations and their bearing on current thinking, and sees where understanding runs out.",
+          "template": "{verb_1} the {object_1} of criticality, its {object_2} and their bearing on {object_3}, and {verb_2} where {object_4} runs out.",
+          "universalTemplate": "{verb_1} the {object_1} of the subject, its {object_2} and their bearing on {object_3}, and {verb_2} where {object_4} runs out.",
+          "fill": {
+            "verb_1": "Critiques",
+            "object_1": "judgement",
+            "object_2": "factors",
+            "object_3": "current thinking",
+            "verb_2": "sees",
+            "object_4": "understanding"
+          },
+          "slotProvenance": [
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third-cap",
+              "value": "Critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "judgement",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "judgement"
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "factors",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "factors"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "current thinking"
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "sees",
+              "reason": "bound idiom: 'sees where X runs out'"
+            },
+            {
+              "slot": "object_4",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "understanding"
+            }
+          ],
+          "termsUsed": [
+            "judgement",
+            "factors"
+          ],
+          "capabilitiesUsed": [
+            "criticality/c2"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/knowledge/o1",
+            "u-adv/knowledge/o2"
+          ],
+          "subjectSubstitution": {
+            "form": "plain-substitution",
+            "from": "the subject",
+            "to": "criticality",
+            "label": "criticality",
+            "labelSource": "identity.practiceNoun"
+          }
+        },
+        "identity": {
+          "statement": "A reflexive practitioner who critiques how their own factors shape their judgement, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny.",
+          "universalStatement": "A reflexive practitioner who examines how their own position, assumptions and values shape their judgements, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny.",
+          "template": "A {stance} practitioner who {verb_1} how their own {object_1} shape their {object_2}, {verb_2} what this means for {audience_1} and for {audience_2} acting on it, and {verb_3} their {object_3} as still {qualifier} through that scrutiny.",
+          "universalTemplate": "A {stance} practitioner who {verb_1} how their own {object_1} shape their {object_2}, {verb_2} what this means for {audience_1} and for {audience_2} acting on it, and {verb_3} their {object_3} as still {qualifier} through that scrutiny.",
+          "fill": {
+            "stance": "reflexive",
+            "verb_1": "critiques",
+            "object_1": "factors",
+            "object_2": "judgement",
+            "verb_2": "weighs",
+            "audience_1": "wider debate",
+            "audience_2": "audiences",
+            "verb_3": "treats",
+            "object_3": "professional identity",
+            "qualifier": "evolving"
+          },
+          "slotProvenance": [
+            {
+              "slot": "stance",
+              "role": "stance",
+              "from": "universalSourceFill",
+              "value": "reflexive"
+            },
+            {
+              "slot": "verb_1",
+              "role": "verb",
+              "from": "verbBand",
+              "band": "Advanced",
+              "lemma": "critique",
+              "form": "third",
+              "value": "critiques"
+            },
+            {
+              "slot": "object_1",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "factors",
+              "termNumber": "plural",
+              "termClass": "preferred",
+              "value": "factors",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The advanced identity triad: examine your own position, weigh what it means outward, then hold identity open. Fill stance and qualifier from the options to keep the reflexive register; only field_content-bearing outcomes take subject context. Reproduce all three outcomes or none, since dropping the third collapses identity back into reflection."
+            },
+            {
+              "slot": "object_2",
+              "role": "object",
+              "from": "capabilityVocabulary",
+              "capability": "criticality/c2",
+              "rowId": "e1",
+              "strand": "procedural",
+              "term": "judgement",
+              "termNumber": "singular",
+              "termClass": "preferred",
+              "value": "judgement",
+              "agentInstructionOverridden": true,
+              "overriddenInstruction": "The advanced identity triad: examine your own position, weigh what it means outward, then hold identity open. Fill stance and qualifier from the options to keep the reflexive register; only field_content-bearing outcomes take subject context. Reproduce all three outcomes or none, since dropping the third collapses identity back into reflection."
+            },
+            {
+              "slot": "verb_2",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "weighs",
+              "reason": "bound frame: 'weighs what this means'"
+            },
+            {
+              "slot": "audience_1",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "wider debate"
+            },
+            {
+              "slot": "audience_2",
+              "role": "audience",
+              "from": "universalSourceFill",
+              "value": "audiences"
+            },
+            {
+              "slot": "verb_3",
+              "role": "verb",
+              "from": "universalSourceFill",
+              "value": "treats",
+              "reason": "bound frame: 'treats X as Y'"
+            },
+            {
+              "slot": "object_3",
+              "role": "object",
+              "from": "universalSourceFill",
+              "value": "professional identity"
+            },
+            {
+              "slot": "qualifier",
+              "role": "qualifier",
+              "from": "universalSourceFill",
+              "value": "evolving"
+            }
+          ],
+          "termsUsed": [
+            "factors",
+            "judgement"
+          ],
+          "capabilitiesUsed": [
+            "criticality/c2"
+          ],
+          "pathwaySpecific": true,
+          "universalOutcomeRefs": [
+            "u-adv/identity/o1",
+            "u-adv/identity/o2",
+            "u-adv/identity/o3"
+          ]
+        }
+      }
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-tier-readings.py",
+    "inputs": [
+      "catalogue/context/subject/benchmarks/universal-reference.json (tierReadings.rows[].formulas)",
+      "catalogue/context/pathway/criticality.json (capabilities[].vocabulary.terms, knowledgeKind, identity.practiceNoun)",
+      "reference/excelling-voice-specification.md (section 16 verb bands)",
+      "docs/curriculum/pathway-tier-mapping.md (per-pathway voice-band anchor)"
+    ],
+    "note": "Deterministic: the same inputs always give byte-identical output, so a rebuild is a no-op and determinism is itself checkable. No timestamp is recorded. Our words, no issuer or book text."
+  }
+}
