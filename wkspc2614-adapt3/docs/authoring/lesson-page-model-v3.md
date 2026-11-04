@@ -1,5 +1,15 @@
 # Lesson page model (v3)
 
+**Superseded 2 November 2026 by
+[`lesson-page-model-v4.md`](lesson-page-model-v4.md)**, which merges the
+`lesson-formative` and `lesson-reflection` articles below into one
+`lesson-practice` article and adds four `activity-1..4` placeholder blocks to
+`lesson-concept`. The shared store and schema now generate v4 for every new
+course. Kept here as the historical record and because the 36 already-built
+courses in the other 12 pathways (every pathway except `criticality`) still
+carry this v3 five-article structure on disk until their own migration lands
+(deferred; see v4 doc). Do not use this doc to author new content; use v4.
+
 Agreed with Abbott, 9 October 2026 (this sitting). Supersedes the v2 three-section
 model (`opening / main / closing`) for lesson pages. The authoritative structure
 remains `design-kb/design-kb.skeletons.json` (`articleSections`, lesson

@@ -212,7 +212,7 @@ function detectActualPrefix(pageKey, blocks) {
 // archetype key whose title is a slot label rather than an expected
 // title must be added here manually; the store cannot yet express the
 // distinction (see backlog 5.114, cross-referenced from 5.39/5.40).
-const TITLE_CHECK_EXEMPT_KEYS = new Set(['interior', 'assessment-items']);
+const TITLE_CHECK_EXEMPT_KEYS = new Set(['activity-1', 'activity-2', 'activity-3', 'activity-4', 'assessment-items']);
 
 function checkClause1(manifest, blocks, skeletons, courseSlug) {
   const results = {

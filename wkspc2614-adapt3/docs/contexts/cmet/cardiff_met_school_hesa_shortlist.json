@@ -1,0 +1,86 @@
+{
+  "_purpose": "Per-school shortlist of the HESA/CAH disciplines a human most commonly picks for cxp-01_subject's 'group' option (fork02-shell), so choosing a school offers a top 5-10 instead of the full CAH tree. Built from cardiff_met_courses.csv (239 real courses, grouped by school) and verified against the live resolver chain (tools/subject/core/tools/resolve-subject-context.js -> tools/resolve-subject-benchmark.js -> catalogue/context/subject/benchmarks.json, 55 entries). Every code/label below was run through that resolver on 2 Nov 2026; nothing here is invented.",
+  "resolverNotes": [
+    "matchQuality 'direct': the code/term resolves to exactly one catalogue benchmark via its own code or an unambiguous hecos/cah3 match. Safe to use as-is.",
+    "matchQuality 'umbrella': the code is a genuine CAH1/CAH2 whole-discipline grouping, but resolve-subject-benchmark.js returns benchmark: null (gap.type: no-benchmark) at this level - the discipline spans several distinct QAA benchmarks and the catalogue has no single entry for the umbrella itself. Fine as a scoping/display label; pick a narrower entry below it when an actual benchmark reference is needed.",
+    "matchQuality 'fallback-imprecise': the resolver returns a non-null benchmark, but only because an unrelated catalogue entry happens to declare the same CAH2 ancestor (e.g. nursing/midwifery/physiotherapy/podiatry all fall back to 'optometry-2024' purely because optometry's own codes[] lists CAH02-06 'allied health' as an ancestor and is first in the catalogue array). Do not present this match to a human as if it were a real subject-specific benchmark - treat it as unresolved."
+  ],
+  "catalogueGaps": [
+    "No QAA benchmark entry exists yet in catalogue/context/subject/benchmarks.json for: sport and exercise science, nursing (any field), midwifery, physiotherapy, podiatry, speech and language therapy, dietetics, animation, photography, hotel management, TESOL, early years/early childhood. Terms in this file for those subjects are marked 'umbrella' or 'fallback-imprecise' rather than given a false direct match."
+  ],
+  "schools": {
+    "cst": {
+      "name": "Cardiff School of Technology",
+      "courseCountInCsv": 33,
+      "dominantAreas": "computing (~23 courses: Computer Science variants, Cyber Security, Data Science, AI, Software Engineering, Business Information Systems); engineering (~8 courses: Electrical & Electronic Engineering, Robotics Engineering)",
+      "shortlist": [
+        { "level": "cah1", "code": "CAH11", "label": "computing", "matchQuality": "umbrella", "resolvedBenchmark": null },
+        { "level": "cah2", "code": "CAH11-01", "label": "computing", "matchQuality": "direct", "resolvedBenchmark": "computing-2022", "covers": "Computer Science, Business Information Systems" },
+        { "level": "cah3", "code": "CAH11-01-04", "label": "software engineering", "matchQuality": "direct", "resolvedBenchmark": "computing-2022", "covers": "Software Engineering" },
+        { "level": "hecos", "code": "100376", "label": "cyber security", "matchQuality": "direct", "resolvedBenchmark": "computing-2022", "covers": "Cyber Security" },
+        { "level": "hecos", "code": "100359", "label": "artificial intelligence", "matchQuality": "direct", "resolvedBenchmark": "computing-2022", "covers": "Artificial Intelligence, Data Science" },
+        { "level": "cah2", "code": "CAH10-01", "label": "engineering", "matchQuality": "direct", "resolvedBenchmark": "engineering-2023", "covers": "Electrical & Electronic Engineering, general Engineering" },
+        { "level": "hecos", "code": "100170", "label": "mechatronics and robotics", "matchQuality": "direct", "resolvedBenchmark": "engineering-2023", "covers": "Robotics Engineering" }
+      ]
+    },
+    "csad": {
+      "name": "Cardiff School of Art and Design",
+      "courseCountInCsv": 32,
+      "dominantAreas": "design and creative arts (~24 courses: Animation, Fashion Design, Fine Art, Graphic Design, Illustration, Photography, Ceramics, Textile Design, Product Design, Interior Design); architecture cluster (~8 courses: Architecture, Architectural Design & Technology, Interior Architecture, Sustainable Built Environment)",
+      "shortlist": [
+        { "level": "cah1", "code": "CAH25", "label": "design, and creative and performing arts", "matchQuality": "umbrella", "resolvedBenchmark": null },
+        { "level": "cah2", "code": "CAH25-01", "label": "art and design (via term 'design')", "matchQuality": "direct", "resolvedBenchmark": "art-and-design-2026", "covers": "Graphic Design, Illustration, Textile Design, Product Design, Interior Design, Fashion Design, Ceramics, Fine Art" },
+        { "level": "name", "code": "performing arts", "label": "performing arts", "matchQuality": "direct", "resolvedBenchmark": "dance-drama-and-performance-2024" },
+        { "level": "cah1", "code": "CAH13", "label": "architecture, building and planning", "matchQuality": "umbrella", "resolvedBenchmark": null, "note": "the bare CAH13 code falls back ambiguously to architectural-technology-2022; use the named terms below for a precise pick" },
+        { "level": "name", "code": "architecture", "label": "architecture", "matchQuality": "direct", "resolvedBenchmark": "architecture-2026", "covers": "Architecture" },
+        { "level": "name", "code": "architectural technology", "label": "architectural technology", "matchQuality": "direct", "resolvedBenchmark": "architectural-technology-2022", "covers": "Architectural Design & Technology" },
+        { "level": "hecos", "code": "100057", "label": "animation", "matchQuality": "umbrella", "resolvedBenchmark": null, "note": "no QAA benchmark for animation specifically; catalogue gap" },
+        { "level": "name", "code": "sustainable built environment", "label": "sustainable built environment", "matchQuality": "umbrella", "resolvedBenchmark": null, "note": "catalogue gap" }
+      ]
+    },
+    "csesp": {
+      "name": "Cardiff School of Education and Social Policy",
+      "courseCountInCsv": 39,
+      "dominantAreas": "education and teaching (PGCE Primary/Secondary, EdD, Early Years, TESOL); social sciences (Criminology, Sociology & Social Policy, Politics & International Relations, Social Work, Youth & Community Work); English/Creative Writing; Media & Communications/Journalism",
+      "shortlist": [
+        { "level": "cah1", "code": "CAH22", "label": "education and teaching", "matchQuality": "umbrella", "resolvedBenchmark": null },
+        { "level": "name", "code": "education", "label": "education studies", "matchQuality": "direct", "resolvedBenchmark": "education-studies-2025", "covers": "Education Studies, PGCE, EdD" },
+        { "level": "cah1", "code": "CAH15", "label": "social sciences", "matchQuality": "umbrella", "resolvedBenchmark": null, "note": "bare CAH15 code falls back ambiguously (resolves to economics-2023); use the named terms below for a precise pick" },
+        { "level": "name", "code": "criminology", "label": "criminology", "matchQuality": "direct", "resolvedBenchmark": "criminology-2022" },
+        { "level": "name", "code": "sociology", "label": "sociology", "matchQuality": "direct", "resolvedBenchmark": "sociology-2026", "covers": "Sociology & Social Policy" },
+        { "level": "name", "code": "social policy", "label": "social policy", "matchQuality": "direct", "resolvedBenchmark": "social-policy-2026" },
+        { "level": "name", "code": "politics", "label": "politics and international relations", "matchQuality": "direct", "resolvedBenchmark": "politics-and-international-relations-2023" },
+        { "level": "name", "code": "social work", "label": "social work", "matchQuality": "direct", "resolvedBenchmark": "social-work-2026", "covers": "Social Work, Youth & Community Work" },
+        { "level": "name", "code": "creative writing", "label": "creative writing", "matchQuality": "direct", "resolvedBenchmark": "creative-writing-2024" },
+        { "level": "name", "code": "journalism", "label": "media, journalism and communications", "matchQuality": "direct", "resolvedBenchmark": "communication-media-film-and-cultural-studies-2024" }
+      ]
+    },
+    "csshs": {
+      "name": "Cardiff School of Sport and Health Sciences",
+      "courseCountInCsv": 64,
+      "dominantAreas": "sport and exercise science cluster (largest sub-group: Sport Coaching, Sport Management, Sport Psychology, Strength & Conditioning); psychology cluster (Psychology, Forensic, Health, Sport Psychology); subjects allied to medicine (Dietetics, Dental Technology, Podiatry, Speech & Language Therapy, Biomedical Science); health and social care",
+      "shortlist": [
+        { "level": "cah1", "code": "CAH03", "label": "biological and sport sciences", "matchQuality": "umbrella", "resolvedBenchmark": null },
+        { "level": "name", "code": "psychology", "label": "psychology", "matchQuality": "direct", "resolvedBenchmark": "psychology-2023", "covers": "Psychology, Forensic Psychology, Health Psychology, Sport Psychology" },
+        { "level": "cah2", "code": "CAH03-02", "label": "sport and exercise sciences", "matchQuality": "umbrella", "resolvedBenchmark": null, "note": "catalogue gap - no dedicated sport-science benchmark exists yet; covers Sport Coaching, Sport Management, Strength & Conditioning" },
+        { "level": "name", "code": "biomedical science", "label": "biomedical science", "matchQuality": "direct", "resolvedBenchmark": "biomedical-science-and-biomedical-sciences-2023" },
+        { "level": "name", "code": "health and social care", "label": "health and social care", "matchQuality": "direct", "resolvedBenchmark": "health-studies-2024" },
+        { "level": "cah2", "code": "CAH02-06", "label": "allied health", "matchQuality": "fallback-imprecise", "resolvedBenchmark": null, "note": "nursing, midwifery, physiotherapy, podiatry, speech and language therapy and dietetics all share this ancestor but none has its own catalogue entry; the resolver's only non-null match here (optometry-2024/osteopathy-2024) is a false positive caused by ancestor-sharing, not a real subject match - treat as unresolved, catalogue gap" }
+      ]
+    },
+    "csm": {
+      "name": "Cardiff School of Management",
+      "courseCountInCsv": 71,
+      "dominantAreas": "business and management (Accounting, Finance, Marketing, HR, Business & Management variants, MBA); tourism/hospitality/events (International Tourism Management, Hotel & Hospitality Management, Events Management); law; economics",
+      "shortlist": [
+        { "level": "cah1", "code": "CAH17", "label": "business and management", "matchQuality": "direct", "resolvedBenchmark": "business-and-management-2023", "covers": "Business & Management variants, HR, MBA" },
+        { "level": "name", "code": "accounting", "label": "accounting", "matchQuality": "direct", "resolvedBenchmark": "accounting-2025" },
+        { "level": "name", "code": "finance", "label": "finance", "matchQuality": "direct", "resolvedBenchmark": "finance-2025" },
+        { "level": "name", "code": "economics", "label": "economics", "matchQuality": "direct", "resolvedBenchmark": "economics-2023" },
+        { "level": "cah1", "code": "CAH16", "label": "law", "matchQuality": "direct", "resolvedBenchmark": "law-2023", "covers": "Law, Business Law & Management, Law & Criminology" },
+        { "level": "name", "code": "tourism, transport and travel", "label": "tourism, transport and travel", "matchQuality": "direct", "resolvedBenchmark": "business-and-management-2023", "covers": "International Tourism Management, Events Management" },
+        { "level": "name", "code": "marketing", "label": "marketing", "matchQuality": "direct", "resolvedBenchmark": "business-and-management-2023" }
+      ]
+    }
+  }
+}

@@ -285,12 +285,26 @@ function substituteTokens(obj, tokens) {
 // positive one) plus their .possessive forms; the build fills them from a shared
 // pool, chosen deterministically per course so builds stay stable.
 let _namePool = null;
+// Default used only if _name-pool.json is missing/unreadable; 'they'/'their'
+// is the only honest pronoun choice for a name that is itself a placeholder.
+const FALLBACK_POOL = [
+  { name: 'Student A', pronoun: 'they', possessive: 'their' },
+  { name: 'Student B', pronoun: 'they', possessive: 'their' }
+];
+function normaliseNamePool(names) {
+  // Accepts either the legacy flat-string form (["Amara", "Leo", ...]) or the
+  // current {name, pronoun, possessive} object form; always returns objects,
+  // defaulting pronoun/possessive to 'they'/'their' for a bare legacy string.
+  return names.map(n => (typeof n === 'string')
+    ? { name: n, pronoun: 'they', possessive: 'their' }
+    : { name: n.name, pronoun: n.pronoun || 'they', possessive: n.possessive || 'their' });
+}
 function loadNamePool() {
   if (_namePool) return _namePool;
   try {
     const j = JSON.parse(fs.readFileSync(path.join(CONTEXT_PACKS_ROOT, '_name-pool.json'), 'utf8'));
-    _namePool = (Array.isArray(j.names) && j.names.length >= 2) ? j.names : ['Student A', 'Student B'];
-  } catch (e) { _namePool = ['Student A', 'Student B']; }
+    _namePool = (Array.isArray(j.names) && j.names.length >= 2) ? normaliseNamePool(j.names) : FALLBACK_POOL;
+  } catch (e) { _namePool = FALLBACK_POOL; }
   return _namePool;
 }
 function hashStr(s) { let h = 2166136261 >>> 0; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619) >>> 0; } return h; }
@@ -367,17 +381,28 @@ async function applyTokenSubstitution(outputDir, context, tier) {
     }
     contextData = await fs.readJson(packContextPath);
   }
-  const [nameA, nameB] = pickTwoNames(tier);
+  // FLAGGED, not fixed (v4 lesson page model planning, step 2.4): this seeds on
+  // the *tier* string, so every pathway at a given tier gets the same name pair
+  // today - despite the comment above and _name-pool.json's own _comment both
+  // describing the seed as "the course slug". Changing the seed to baseCourseSlug
+  // would re-roll names for every already-merged course; deliberately left as-is
+  // pending a decision, so it isn't fixed silently here.
+  const [learnerA, learnerB] = pickTwoNames(tier);
   const baseTokens = {
     'character.name': contextData.character?.name || '',
     'character.possessive': contextData.character?.name
       ? `${contextData.character.name}'s`
       : '',
     // Two-character worked-example slots, pool-filled per course (see pickTwoNames).
-    'learner-a': nameA,
-    'learner-b': nameB,
-    'learner-a.possessive': `${nameA}'s`,
-    'learner-b.possessive': `${nameB}'s`
+    'learner-a': learnerA.name,
+    'learner-b': learnerB.name,
+    'learner-a.possessive': `${learnerA.name}'s`,
+    'learner-b.possessive': `${learnerB.name}'s`,
+    // Pronoun tokens so third-person prose doesn't need a hardcoded he/she.
+    'learner-a-pronoun': learnerA.pronoun,
+    'learner-a-possessive-pronoun': learnerA.possessive,
+    'learner-b-pronoun': learnerB.pronoun,
+    'learner-b-possessive-pronoun': learnerB.possessive
   };
 
   // {{context}} fills token-substitution coupled slots (the third lesson

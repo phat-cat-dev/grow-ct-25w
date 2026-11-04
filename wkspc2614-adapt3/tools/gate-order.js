@@ -151,7 +151,15 @@ function getDependents(store, gateId) {
   return dependents;
 }
 
-/** A named gate's repeatsPer and procedureFlags, read from the store. */
+/**
+ * A named gate's repeatsPer, procedureFlags and sourceConsultation, read
+ * from the store. sourceConsultation added 3 Nov 2026 (task #21: gate.md
+ * step 2 previously named "currently crs-02_thematic-scope,
+ * les-01_lesson-proposal and cxp-04_context-generation" as hardcoded prose
+ * - the same staleness risk RJ-0059 already fixed for procedureFlags/
+ * repeatsPer. A gate gaining a sourceConsultation block now needs no
+ * command-doc edit to be picked up.
+ */
 function getFlags(store, gateId) {
   const gate = store.gates.find(g => g.id === gateId);
   if (!gate) {
@@ -159,7 +167,8 @@ function getFlags(store, gateId) {
   }
   return {
     repeatsPer: gate.repeatsPer || null,
-    procedureFlags: gate.procedureFlags || {}
+    procedureFlags: gate.procedureFlags || {},
+    sourceConsultation: gate.sourceConsultation || null
   };
 }
 

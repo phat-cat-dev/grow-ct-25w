@@ -1,0 +1,400 @@
+{
+  "pathway": "academic-writing",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "academic-writing/05",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Interpret an assessment question's steer and keywords before writing",
+          "knowledgeKind": "factual and conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Form analysis matched to a task's instruction",
+              "learningOutcome": "The student can explain how a task's steer and keywords indicate the form of writing it requires, before drafting begins."
+            },
+            {
+              "kind": "applied",
+              "title": "Brief read to identify the required output",
+              "learningOutcome": "The student can identify, from an instruction's wording, the form, audience and standard a piece of writing must meet before starting to write."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing/c1",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Follow the writing cycle to plan and complete a first draft",
+          "knowledgeKind": "procedural, one set method",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Staged draft built to match a required form",
+              "learningOutcome": "The student can describe planning, drafting and reviewing as distinct stages needed to produce a complete first draft in a required form."
+            },
+            {
+              "kind": "applied",
+              "title": "Working draft completed before refining the form",
+              "learningOutcome": "The student can plan a structure and produce a complete working draft of a document before refining it to match its required form."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing/06",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Find and correct errors in own writing by proofreading and editing",
+          "knowledgeKind": "metacognitive, beginning (checking one's own work)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Error review checked against a form's requirements",
+              "learningOutcome": "The student can distinguish correcting surface errors from checking a draft's structure against the form its writing is required to take."
+            },
+            {
+              "kind": "applied",
+              "title": "Final check against required form before sending",
+              "learningOutcome": "The student can proofread and edit a finished document, correcting surface errors and confirming it follows the structure its form requires."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the writing cycle of academic writing to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the first draft clearly.",
+        "knowledge": "Describes the keywords that introduce academic writing, and can place them in the wider field.",
+        "identity": "Begins to describe writing errors for the first time, following guidance on the proofreading as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "academic-writing/02",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Identify and structure the essay and other argued genres",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Argued form selected to match a task's purpose",
+              "learningOutcome": "The student can analyse a task to identify which argued form it calls for and explain how that form's structure differs from others."
+            },
+            {
+              "kind": "applied",
+              "title": "Right argued format matched to its reader",
+              "learningOutcome": "The student can select the argued form a task requires and structure a piece of writing so each part fulfils that form's purpose."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing/04",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Write clear sentences in the active voice",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Sentence clarity checked against a form's expectations",
+              "learningOutcome": "The student can analyse sentence construction to judge when active voice better serves a piece of writing's required form and reader."
+            },
+            {
+              "kind": "applied",
+              "title": "Active sentences rewritten for a quick reader",
+              "learningOutcome": "The student can rewrite passive sentences into clear, active ones so a reader can follow a document's point without delay."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing/03",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Use the four pillars to review and structure own writing",
+          "knowledgeKind": "metacognitive, strategic (a self-review lens)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Draft restructured to fit its required form",
+              "learningOutcome": "The student can evaluate a draft's structure against the form it is required to take and identify where it must be reorganised."
+            },
+            {
+              "kind": "applied",
+              "title": "Document restructured to suit its reader and form",
+              "learningOutcome": "The student can restructure a draft document so its sections match what its required form is expected to deliver to its reader."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the sentences of academic writing to the active voice, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the sentences of academic writing, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by pillars of effective writing on their own learning and by how paragraphs bear on academic writing."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "academic-writing/01",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Recognise how writing conventions vary by discipline",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Required form identified across differing conventions",
+              "learningOutcome": "The student can critique how writing conventions vary across disciplines and justify which convention a given form of writing actually requires."
+            },
+            {
+              "kind": "applied",
+              "title": "Writing style adjusted to match required conventions",
+              "learningOutcome": "The student can identify the conventions a disciplinary context expects and adapt their own writing to construct a piece that meets them."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing/c2",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Integrate sources actively, own point first",
+          "knowledgeKind": "procedural, with criteria for using sources",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Sources selected and ranked to support one point",
+              "learningOutcome": "The student can justify the selection and ranking of sources by their relevance to a position, ensuring the writer's own point leads the argument."
+            },
+            {
+              "kind": "applied",
+              "title": "Relevant sources selected to support a recommendation",
+              "learningOutcome": "The student can select sources relevant to a recommendation and construct a response that states their own judgement before citing supporting evidence."
+            }
+          ]
+        },
+        {
+          "ref": "academic-writing#e3",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Write with disciplinary self-awareness",
+          "knowledgeKind": "metacognitive, self-knowledge",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/written-communication",
+              "strength": "direct",
+              "label": "Written communication",
+              "strand": "communication",
+              "graduateStatement": "Graduates write in the forms the subject requires.",
+              "studentStatement": "You can write in the forms your subject needs."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Form chosen to fit a field's expectations",
+              "learningOutcome": "The student can critique how a field's conventions shape the form expected of its writing and justify choices that depart from or follow them."
+            },
+            {
+              "kind": "applied",
+              "title": "Writing choices explained for a wider readership",
+              "learningOutcome": "The student can construct a document that serves specialist and non-specialist readers, justifying which disciplinary conventions to keep, explain or drop."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques sources across methods, evaluates the support critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the writing conventions of academic writing, its discipline and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own writing conventions shape their discipline, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.11",
+      "strength": "direct",
+      "locator": "3.11",
+      "paraphrase": "Graduates will have written a series of research reports through the course, ending in an empirical project (or equivalent) that reports a substantial piece of research collecting original data or using an accepted alternative such as modelling or secondary analysis.",
+      "forBeneficiary": "You will write a series of research reports during your studies, leading up to a substantial project of your own in which you gather and report original data, or work with an accepted alternative such as existing datasets or computer models.",
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.12",
+      "strength": "direct",
+      "extract": "critical and reflective thinking and writing",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.30",
+      "strength": "direct",
+      "extract": "essays, research reports, reflective reports, presentations and examinations",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+      "strength": "direct",
+      "label": "Critical evaluation of evidence and arguments",
+      "strand": "thinking",
+      "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+      "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+      "strength": "indirect",
+      "label": "Independent and self-directed learning",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates manage their own learning and work independently.",
+      "studentStatement": "You can manage your own learning and work on your own.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/academic-writing.json",
+      "catalogue/context/pathway-evidence/academic-writing.json",
+      "catalogue/context/pathway-tier-readings/academic-writing.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

@@ -139,10 +139,29 @@ proposal, not after.
    fires only where a gate carries a `sourceConsultation` block and a
    subject facet is set.
 
-2. SOURCE CONSULTATION (SSC-1, only where this gate's entry in
-   `design-kb/design-kb.gates.json` carries a `sourceConsultation`
-   block — currently `crs-02_thematic-scope`, `les-01_lesson-proposal`
-   and `cxp-04_context-generation`). Print the
+1b. AGENT-CONTEXT CONSULT (every gate). Read this gate's `agentContext`
+   from `design-kb/design-kb.gates.json`. If `agentContext.authoringReview`
+   is present, follow its `instruction` and read each item in `pointers`
+   before going on — a gate whose instruction says there is nothing left
+   to author (e.g. a mechanical rollup) is telling you your real job here
+   is the check, not new prose. If `agentContext.validation` is present,
+   run every entry in `checks` now, by its `rule`, against the exact
+   upstream data named in `appliesTo`; read `scopeNote` first so you do
+   not re-run a check that is already automated elsewhere or that binds at
+   a gate that has not run yet. State each check's id and a plain PASS or
+   FAIL with the specific values found — never a silent PASS. A FAIL is
+   carried into step 6: it overrides this gate's own hardness/defaultType
+   per `agentContext.validation.onFail`, so an advisory or soft gate still
+   stops and asks when its own validation fails. A gate with no
+   `agentContext` block skips this step.
+
+2. SOURCE CONSULTATION (SSC-1, only where `node tools/gate-order.js
+   --flags=<this gate's id>` reports a non-null `sourceConsultation`
+   (RJ-0059: read from the store through the shared tool, not a
+   hardcoded gate-name list here — the same staleness fix already
+   applied to `procedureFlags` in steps 3-4; a future gate gaining a
+   `sourceConsultation` block needs no edit to this doc to be picked
+   up). Print the
    block's `triggeringFacets` and `authorityLevels`. Intersect
    `triggeringFacets` against the manifest's own facet set
    (`manifest.facetSet` — `pathway` and `tier` — plus any module,
@@ -351,12 +370,19 @@ proposal, not after.
    carried from step 2 where this gate's entry carries a
    sourceConsultation block (SSC-1); every id printed in step 2, 4 or
    5>.
+   Validation: <omit where step 1b found no `agentContext.validation`
+   block; otherwise one line per check — id and PASS/FAIL with the
+   specific values checked. Present even when every check PASSes>.
    Consequence: <downstream constraint, or omit>.
    Alternatives (pattern-level sketches, one line each, field-grounded
    why-not): <1 to 3, or "none survive filter">.
    Ask: hard-stop -> "confirm / amend / replace / defer" on its own
    line, nothing else on that line. Soft -> "standing unless you
-   object". Advisory -> "stated, no response sought".
+   object". Advisory -> "stated, no response sought". Any validation
+   FAIL from step 1b overrides this hardness-based phrasing regardless
+   of hardness/defaultType: ask per `agentContext.validation.onFail`
+   instead (normally a recommendation to reopen the named upstream
+   gate), on its own line.
 
 7. Write the full proposal and the draft record JSON into this
    session's plan file (GDP-1), and print the plan file's path

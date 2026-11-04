@@ -1,0 +1,420 @@
+{
+  "pathway": "ai-technology",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "ai-technology#i1",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Explain what generative AI is and is not",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Concept map of a digital tool's capabilities and limits",
+              "learningOutcome": "The student can explain what a generative AI tool can and cannot reliably do, distinguishing genuine capability from assumption."
+            },
+            {
+              "kind": "applied",
+              "title": "Briefing explaining a digital tool's capabilities to colleagues",
+              "learningOutcome": "The student can brief others on what a digital tool can be trusted to do and what checks they should still carry out before relying on it."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology#i2",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Check the assessment guidance before using AI",
+          "knowledgeKind": "procedural, one rule",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Explanation of why a digital use rule fits its purpose",
+              "learningOutcome": "The student can explain why a rule governing permitted digital tools for a task connects to what that task is meant to demonstrate."
+            },
+            {
+              "kind": "applied",
+              "title": "Checklist confirming permitted tools before starting a task",
+              "learningOutcome": "The student can draw up and resolve, in writing, a checklist of permitted and restricted digital tools before starting a task."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology#i3",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Recognise what AI cannot be trusted for, and think first",
+          "knowledgeKind": "metacognitive, beginning (knowing when not to rely)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Monitoring log of confidence before trusting a digital tool",
+              "learningOutcome": "The student can identify, before relying on a digital tool's answer, where their own understanding falls short and where the tool's output cannot be trusted."
+            },
+            {
+              "kind": "applied",
+              "title": "Record of a request a digital tool should not handle",
+              "learningOutcome": "The student can recognise a type of request that a standard digital tool should not be trusted to answer and set out what to do instead."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the basic methods of AI literacy to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes straightforward findings clearly.",
+        "knowledge": "Describes the core terms, ideas and principles that introduce AI literacy, and can place them in the wider field.",
+        "identity": "Begins to describe practice, theory and reflection for the first time, following guidance on ethical and academic conduct as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "ai-technology/03",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Apply a critical-use workflow, AI as a critical friend",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "indirect",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reasoned judgement after an AI tool questions a draft",
+              "learningOutcome": "The student can evaluate challenges raised by an AI tool against the actual evidence to reach a reasoned judgement that remains their own."
+            },
+            {
+              "kind": "applied",
+              "title": "Verified judgement reached with AI acting as challenger",
+              "learningOutcome": "The student can use an AI tool to question a piece of work, test each challenge against the evidence, and justify which points to revise."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology#d2",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Fact-check AI output and disclose its use",
+          "knowledgeKind": "procedural, with criteria",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Verification record for a digital tool's factual output",
+              "learningOutcome": "The student can analyse why a digital tool's factual claims require verification against an independent source before being accepted."
+            },
+            {
+              "kind": "applied",
+              "title": "Disclosed, verified use of a digital tool's output",
+              "learningOutcome": "The student can check a digital tool's factual output against an independent source and disclose clearly how and where the tool was used."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology/01",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Decide, with reasons, when and when not to use AI",
+          "knowledgeKind": "metacognitive, conditional (informed restraint)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Policy based reasoning for using one digital tool over another",
+              "learningOutcome": "The student can weigh the goals and risks of a task against a stated policy to decide which digital tool, if any, is appropriate."
+            },
+            {
+              "kind": "applied",
+              "title": "Documented decision to use or decline a digital tool",
+              "learningOutcome": "The student can decide, with reference to policy and a reasoned weighing of benefits against risks, whether to use or decline a digital tool for a task."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the critical-use workflow of AI literacy to the critical friend, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the critical-use workflow of AI literacy, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by decisions on their own learning and by how diversity, sustainability and professional practice bear on AI literacy."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "ai-technology/02",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Avoid the GenAI misconduct risks, and never cite GenAI as a source",
+          "knowledgeKind": "conceptual and procedural",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Written account of why AI output cannot be a source",
+              "learningOutcome": "The student can justify why presenting generative AI output as a citable source constitutes misconduct rather than a legitimate shortcut."
+            },
+            {
+              "kind": "applied",
+              "title": "Tracing a primary source instead of citing an AI summary",
+              "learningOutcome": "The student can trace a claim generated by an AI tool back to its original source and cite that source instead of the AI output."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology/06",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Distinguish permitted support from unfair advantage",
+          "knowledgeKind": "conceptual, evaluative",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reasoned judgement on a borderline assistive tool",
+              "learningOutcome": "The student can critique the evidence for and against a borderline assistive tool to reach a defensible judgement on whether its use is fair."
+            },
+            {
+              "kind": "applied",
+              "title": "Recommendation on a disputed tool's fairness",
+              "learningOutcome": "The student can weigh what a task is meant to assess against what a disputed tool actually does, and justify a recommendation on its fairness."
+            }
+          ]
+        },
+        {
+          "ref": "ai-technology/05",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Weigh AI's costs and benefits as a responsible professional user",
+          "knowledgeKind": "metacognitive, self-knowledge (the user one is becoming)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/ethics",
+              "strength": "direct",
+              "label": "Ethics, integrity and values",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+              "studentStatement": "You recognise the ethical questions in your subject and act responsibly."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/digital-skills",
+              "strength": "direct",
+              "label": "Digital skills",
+              "strand": "application",
+              "graduateStatement": "Graduates use the digital tools and technologies the subject relies on.",
+              "studentStatement": "You can use the digital tools your subject depends on."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Ethical weighing of a technology's costs against its benefits",
+              "learningOutcome": "The student can synthesise a technology's ethical costs, such as environmental impact or effect on roles, with its practical benefits to reach a justified position."
+            },
+            {
+              "kind": "applied",
+              "title": "Ethically justified recommendation on adopting a technology",
+              "learningOutcome": "The student can assess the ethical costs and practical benefits of adopting a technology and justify a recommendation that withstands disagreement."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques misconduct risks across methods, evaluates GenAI outputs critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the misconduct risks of AI literacy, its GenAI outputs and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own costs shape their benefits, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/2.6",
+      "strength": "direct",
+      "extract": "artificial intelligence, behavioural economics and genetics",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/2.13",
+      "strength": "direct",
+      "extract": "technology-enhanced learning to ensure that students develop skills for online learning",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.4",
+      "strength": "direct",
+      "extract": "artificial intelligence, cognitive neuropsychology, cognitive bias and social cognition",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.17",
+      "strength": "direct",
+      "extract": "understand the function and role of artificial intelligence in the context of learning and teaching",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.31",
+      "strength": "direct",
+      "extract": "integrity of assessment which can be linked to artificial intelligence developments",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/ai-technology.json",
+      "catalogue/context/pathway-evidence/ai-technology.json",
+      "catalogue/context/pathway-tier-readings/ai-technology.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

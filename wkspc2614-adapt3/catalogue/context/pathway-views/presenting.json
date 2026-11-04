@@ -1,0 +1,425 @@
+{
+  "pathway": "presenting",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "presenting#i1",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Explain what a presentation tests and read its brief",
+          "knowledgeKind": "factual and conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Brief read for its hidden test",
+              "learningOutcome": "The student can explain how a presentation brief defines its intended audience, required form and the ideas it is meant to make clear."
+            },
+            {
+              "kind": "applied",
+              "title": "Audience and format checked before drafting",
+              "learningOutcome": "The student can identify the audience and form required by a presentation brief and use that to guide what is planned before any content is drafted."
+            }
+          ]
+        },
+        {
+          "ref": "presenting/c1",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Build a presentation to a brief through the five steps",
+          "knowledgeKind": "procedural, one set method",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Five step structure justified against a sequence model",
+              "learningOutcome": "The student can describe a five step structure for building a presentation and explain how it guides an audience from attention to action."
+            },
+            {
+              "kind": "applied",
+              "title": "Hook, body and close built to a brief",
+              "learningOutcome": "The student can build a presentation to a given brief using five set steps, producing an opening, a main body and a conclusion for a specific audience."
+            }
+          ]
+        },
+        {
+          "ref": "presenting#i3",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Practise to time and fix what does not work",
+          "knowledgeKind": "metacognitive, beginning (checking one's own performance)",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Timed run reviewed for what did not work",
+              "learningOutcome": "The student can explain how timing a rehearsal and identifying what did not work supports improving a presentation before it is delivered."
+            },
+            {
+              "kind": "applied",
+              "title": "Fix identified and tested in the next run",
+              "learningOutcome": "The student can time a rehearsal of a presentation, identify one specific problem it reveals and make a targeted change before the next attempt."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the presentation of presenting to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the brief clearly.",
+        "knowledge": "Describes the five steps that introduce presenting, and can place them in the wider field.",
+        "identity": "Begins to describe the presentation for the first time, following guidance on the brief as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "presenting/01",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Design effective, accessible visual aids (\"less is more\")",
+          "knowledgeKind": "conceptual and procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Slide clutter cut using a load reduction principle",
+              "learningOutcome": "The student can analyse how reducing visual clutter and applying accessibility standards improves an audience's ability to follow a presentation's visual aids."
+            },
+            {
+              "kind": "applied",
+              "title": "Accessible visuals tested with real viewers",
+              "learningOutcome": "The student can redesign a set of visual aids to cut unnecessary content and meet accessibility standards, checking each change against how real viewers respond."
+            }
+          ]
+        },
+        {
+          "ref": "presenting/03",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Adapt delivery to different presentation formats",
+          "knowledgeKind": "procedural, conditional",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Delivery choices tested against a rhetorical model",
+              "learningOutcome": "The student can analyse how the demands of a presentation format shape the pacing, level of detail and structure a speaker should choose."
+            },
+            {
+              "kind": "applied",
+              "title": "Content rebuilt for a different delivery format",
+              "learningOutcome": "The student can adapt the same content for a different presentation format, rebuilding its pacing, detail and structure rather than simply shortening the original."
+            }
+          ]
+        },
+        {
+          "ref": "presenting/02",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Open engagingly and manage own nerves",
+          "knowledgeKind": "metacognitive (managing one's own state)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "indirect",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Opening designed to earn attention from the first line",
+              "learningOutcome": "The student can explain how a deliberately designed opening and a managed level of arousal help a speaker engage an audience from the first moment."
+            },
+            {
+              "kind": "applied",
+              "title": "Composure kept through an unplanned challenge",
+              "learningOutcome": "The student can open a presentation engagingly and stay composed when faced with an unplanned challenge from the audience, without losing its structure."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the presentation delivery of presenting to assessment formats, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the presentation of presenting, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the presentation on their own learning and by how presentation nerves bear on presenting."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "presenting/c3",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Present in professional formats (pitch, conference poster, viva-style interview)",
+          "knowledgeKind": "procedural, in professional forms",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Case built with claim, data, warrant and rebuttal",
+              "learningOutcome": "The student can construct an argument for a professional pitch using claim, evidence, warrant and rebuttal so that each step of its reasoning is explicit."
+            },
+            {
+              "kind": "applied",
+              "title": "Pitch defended under direct questioning",
+              "learningOutcome": "The student can deliver a pitch in a professional format and defend its weakest points under direct questioning, conceding fairly where the evidence is limited."
+            }
+          ]
+        },
+        {
+          "ref": "presenting/04",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Work in a group, leading and resolving conflict",
+          "knowledgeKind": "procedural and metacognitive (one's part in a team)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/teamwork-and-collaboration",
+              "strength": "direct",
+              "label": "Teamwork and collaboration",
+              "strand": "communication",
+              "graduateStatement": "Graduates work effectively with others.",
+              "studentStatement": "You can work well with other people."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Team stage named and used to resolve conflict",
+              "learningOutcome": "The student can justify a response to team conflict by naming the group's stage of development rather than treating the friction as purely personal."
+            },
+            {
+              "kind": "applied",
+              "title": "Disagreement mediated to keep a team on track",
+              "learningOutcome": "The student can mediate a disagreement between team members, steering the group toward a decision both can accept while keeping the work moving."
+            }
+          ]
+        },
+        {
+          "ref": "presenting/c2",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Present and defend an argument with an academic voice under questioning",
+          "knowledgeKind": "metacognitive, self-knowledge (academic authority)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+              "strength": "direct",
+              "label": "Oral or other communication to audiences",
+              "strand": "communication",
+              "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+              "studentStatement": "You can explain your subject clearly to different audiences, in more than one form."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "indirect",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Stance checked across a set of recorded answers",
+              "learningOutcome": "The student can critique the stance taken in a recorded argument, judging where language overclaimed or hedged relative to the strength of the evidence."
+            },
+            {
+              "kind": "applied",
+              "title": "Challenge answered without losing the argument",
+              "learningOutcome": "The student can answer a direct challenge to the weakest part of an argument, acknowledging its limit while justifying why the overall position still holds."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques professional formats across methods, evaluates the pitch critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the professional formats of presenting, its pitch and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own professional formats shape their argument, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.2",
+      "strength": "direct",
+      "extract": "to interpret evidence and to disseminate to a range of different audiences",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.6",
+      "strength": "direct",
+      "extract": "the ability to design, obtain, analyse and disseminate evidence",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.17",
+      "strength": "direct",
+      "extract": "respond inclusively in a manner sensitive to the needs and expectations of a diverse range of audiences",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.30",
+      "strength": "direct",
+      "extract": "research reports, reflective reports, presentations and examinations",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.9",
+      "strength": "direct",
+      "extract": "disseminated psychological research findings to peers and academic supervisors",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.24",
+      "strength": "direct",
+      "extract": "encompass both collaborative group work and independent research",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.10",
+      "strength": "direct",
+      "extract": "imparted to peers, tutors, supervisors and mixed audiences a comprehensive grasp of psychology",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.11",
+      "strength": "indirect",
+      "extract": "developing students' interpersonal skills, such as empathy, active listening and effective communication",
+      "extractOnly": true,
+      "tierBasis": "floor"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.8",
+      "strength": "indirect",
+      "extract": "communicated psychological knowledge and research findings in a range of formats",
+      "extractOnly": true,
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/presenting.json",
+      "catalogue/context/pathway-evidence/presenting.json",
+      "catalogue/context/pathway-tier-readings/presenting.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

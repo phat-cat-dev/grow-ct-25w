@@ -1,0 +1,373 @@
+{
+  "pathway": "referencing",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "referencing/c1",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Explain why academic work acknowledges its sources",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Explaining why selected sources must be named",
+              "learningOutcome": "The student can explain why academic work names its sources, showing how acknowledgement lets a reader judge the quality of information used and trace claims to their origin."
+            },
+            {
+              "kind": "applied",
+              "title": "Justifying chosen sources to an uninvolved colleague",
+              "learningOutcome": "The student can identify the sources used in a piece of work and explain to someone unfamiliar with it why those sources were selected and acknowledged."
+            }
+          ]
+        },
+        {
+          "ref": "referencing/01",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Construct accurate in-text references and a references list in one style",
+          "knowledgeKind": "procedural, one set method",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Converting a mixed source list into one consistent style",
+              "learningOutcome": "The student can describe the elements a reference needs and explain how converting sources into one consistent citation style lets a reader trace every claim."
+            },
+            {
+              "kind": "applied",
+              "title": "Standardising citations across a shared piece of work",
+              "learningOutcome": "The student can identify inconsistent citations in a piece of writing and correct them so every citation and reference entry matches one consistent style."
+            }
+          ]
+        },
+        {
+          "ref": "referencing/c2",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Record and organise sources as they are found, so every citation can be traced",
+          "knowledgeKind": "metacognitive, beginning (managing one's own working)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "indirect",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Logging sources at the point of selection, not afterwards",
+              "learningOutcome": "The student can explain why recording a source at the point it is selected, rather than afterwards, keeps every citation traceable and organised for later use."
+            },
+            {
+              "kind": "applied",
+              "title": "Building a traceable record while gathering evidence",
+              "learningOutcome": "The student can keep an organised, traceable record of sources while gathering evidence for a task, so each one can be found and checked again later."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the in-text citation of referencing and academic integrity to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the references list clearly.",
+        "knowledge": "Describes the sources of knowledge that introduce referencing and academic integrity, and can place them in the wider field.",
+        "identity": "Begins to describe sources for the first time, following guidance on the citation as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "referencing/02",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Acknowledge quotation and paraphrase correctly, avoiding plagiarism",
+          "knowledgeKind": "conceptual and procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Demonstrating subject knowledge through accurate paraphrase",
+              "learningOutcome": "The student can analyse a paraphrase against its original source to check that no distinctive wording survives unattributed, showing genuine understanding rather than rearranged phrasing."
+            },
+            {
+              "kind": "applied",
+              "title": "Showing understanding by paraphrasing a technical passage for others",
+              "learningOutcome": "The student can paraphrase a technical passage accurately for a non specialist reader, marking any direct quotation and crediting the source throughout."
+            }
+          ]
+        },
+        {
+          "ref": "referencing#d2",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Reference trickier source types accurately",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Selecting the right template for an awkward source type",
+              "learningOutcome": "The student can analyse an unfamiliar source type to identify which elements a reader needs to locate it, rather than forcing it into a standard template."
+            },
+            {
+              "kind": "applied",
+              "title": "Referencing an unfamiliar source type under time pressure",
+              "learningOutcome": "The student can reference an unfamiliar source type correctly under time pressure, checking guidance and recording the decision so the approach can be repeated."
+            }
+          ]
+        },
+        {
+          "ref": "referencing/c3",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Use citation to show the scope of research and engagement with the discourse",
+          "knowledgeKind": "metacognitive, strategic (what one's references tell a reader)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/information-and-sources",
+              "strength": "direct",
+              "label": "Information and sources",
+              "strand": "application",
+              "graduateStatement": "Graduates find, select and use information and sources appropriate to the subject.",
+              "studentStatement": "You can find, choose and use the right sources and information for your subject."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Showing research scope through a reference list's range",
+              "learningOutcome": "The student can evaluate a reference list to judge whether its range, including opposing views, reflects the genuine scope of the research undertaken."
+            },
+            {
+              "kind": "applied",
+              "title": "Demonstrating research scope through cited evidence",
+              "learningOutcome": "The student can gather and cite sources that both support and challenge a position, so a reader can judge the breadth of research behind a recommendation."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the plagiarism of referencing and academic integrity to the quotation, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the plagiarism of referencing and academic integrity, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the citation on their own learning and by how diversity, sustainability and professional practice bear on referencing and academic integrity."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "referencing/03",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Uphold honesty and trust in academic work",
+          "knowledgeKind": "conceptual (values in practice)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/ethics",
+              "strength": "direct",
+              "label": "Ethics, integrity and values",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+              "studentStatement": "You recognise the ethical questions in your subject and act responsibly."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Weighing an ethical issue raised by a weak result",
+              "learningOutcome": "The student can justify a course of action when a weak or disappointing result raises an ethical choice between honest reporting and presenting a stronger impression."
+            },
+            {
+              "kind": "applied",
+              "title": "Acting on an ethical responsibility to report accurately",
+              "learningOutcome": "The student can justify acting to correct an unsupported figure or claim in shared work, upholding honesty even where the error would otherwise go unnoticed."
+            }
+          ]
+        },
+        {
+          "ref": "referencing/04",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Uphold fairness, respect, responsibility and courage in academic conduct",
+          "knowledgeKind": "conceptual with metacognitive (one's own conduct towards others)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/ethics",
+              "strength": "direct",
+              "label": "Ethics, integrity and values",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+              "studentStatement": "You recognise the ethical questions in your subject and act responsibly."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reasoning through a fairness issue in shared work",
+              "learningOutcome": "The student can justify a response to a fairness issue in shared work, weighing the discomfort of speaking up against the responsibility that courage requires."
+            },
+            {
+              "kind": "applied",
+              "title": "Acting with courage to correct an unfair outcome",
+              "learningOutcome": "The student can raise an unacknowledged contribution with those involved, treating them with respect, and help secure a fairer outcome even where the conversation is uncomfortable."
+            }
+          ]
+        },
+        {
+          "ref": "referencing#e3",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Carry integrity into graduate and professional identity",
+          "knowledgeKind": "metacognitive, self-knowledge",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/ethics",
+              "strength": "direct",
+              "label": "Ethics, integrity and values",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+              "studentStatement": "You recognise the ethical questions in your subject and act responsibly."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Recognising which ethical habits carry into a profession",
+              "learningOutcome": "The student can critique their own habits of honesty and attribution against the ethical expectations of a profession, identifying where those expectations will tighten."
+            },
+            {
+              "kind": "applied",
+              "title": "Carrying an ethical responsibility into a new professional role",
+              "learningOutcome": "The student can recognise and act on an ethical responsibility in a new professional role without being asked, and explain the habit to someone newer than themselves."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques the honesty across methods, evaluates the trust critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the honesty of referencing and academic integrity, its trust and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own position, assumptions and values shape their honesty, weighs what this means for wider debate and for audiences acting on it, and treats their trust as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+      "strength": "indirect",
+      "label": "Critical evaluation of evidence and arguments",
+      "strand": "thinking",
+      "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+      "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/referencing.json",
+      "catalogue/context/pathway-evidence/referencing.json",
+      "catalogue/context/pathway-tier-readings/referencing.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

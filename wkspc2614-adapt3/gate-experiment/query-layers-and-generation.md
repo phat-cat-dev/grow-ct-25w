@@ -82,28 +82,50 @@ restates the SHELL context in academic prose, voice-linted.
 section 2: 3 course outcomes, each with 2 supporting lesson outcomes (6 learning outcomes
 beneath the 3), then the lesson map.
 
-## 2. Distil and proliferate
+## 2. Distil (flat 6 - settled 2 Nov 2026, supersedes the 6 -> 3 -> 6 draft below)
 
-The distillation (6 -> 3) and the proliferation (3 -> 6) mirror each other, so every
-outcome traces back to its statements.
+**Ruling:** no separate course-outcome tier. AO-01's 6 generic benchmarks (set in
+context by AO-02 + AO-03 -> AO-04) are the tier's 6 final learning outcomes, flat -
+not distilled further to 3 and proliferated back out to 6. Every outcome still traces
+to its source statement(s) in the 18, one level closer than before.
 
 ```
-DISTIL           18 pathway statements (the 9 capabilities x 2 evidence examples, 6 per tier)
-                 -> 6 tiered outcomes (single course: AO-01's 6 generic benchmarks,
-                    set in context by AO-02 + AO-03 -> AO-04)
-                 -> 3 course outcomes                 [AGENT SUGGESTS / HUMAN CHOOSES]
+DISTIL    18 pathway statements (the 9 capabilities x 2 evidence examples, 6 per tier)
+          -> 6 tiered outcomes (single course: AO-01's 6 generic benchmarks,
+             set in context by AO-02 + AO-03 -> AO-04)
+          = the tier's 6 learning outcomes. FLAT. No further distillation to 3.
+(CRS onwards)
+          6 LOs -> up to 6 lessons, one LO each, inside the existing 4-6 lesson band.
+          A synthesis lesson is optional colour (content-shape driven) when the
+          content calls for one, not a structural slot reserved against a 3-vs-6 split.
+```
+**Lesson interior size (2 Nov 2026):** one LO per lesson is not thin - each lesson
+carries circa 4-6 pages to develop its one LO well (orientation, concept, worked
+example, analysis, practical guidance, reflective prompt - the six-part flow in
+`CLAUDE.md`), not a single page per outcome.
+Proliferation is constrained by the tier and / or level choices. At every gate the
+agent first reviews the ingested data it is pointed at (`agentContext` on each gate in
+`design-kb.gates.json`). Both runs are defined as gate profiles in
+`design-kb/design-kb.gate-profiles.json`: `single-course` and `pathway-distillation`
+(all three tiers at once).
+
+**Live-gate impact (not yet resolved, flagged for sign-off alongside the `crs-02`
+demotion):** `crs-03_course-outcomes` loses its job - there is no course-outcome tier
+to distil to. `crs-04_lesson-map`'s dependency note ("Lessons serve the course
+outcomes") and every lesson outcome's `serves: <course outcome id>` field
+(`design-kb.gates.json:852-855`) need a flat-LO equivalent. `wra-03_summative`'s AL-3
+rule - "exactly two summative questions per course outcome", sourced from `crs-03`'s
+`courseOutcomeBanks` (`design-kb.gates.json:1361-1366`) - has no course outcome to
+count two-per against; open whether it becomes two-per-LO (12 total) or one-per-LO (6).
+
+### Superseded draft (6 -> 3 -> 6, settled 29 Oct 2026, replaced 2 Nov 2026)
+```
+DISTIL           18 pathway statements (6 per tier) -> 6 tiered outcomes -> 3 course
+                 outcomes                            [AGENT SUGGESTS / HUMAN CHOOSES]
 PROLIFERATE      3 course outcomes -> 6 lesson outcomes (2 per course outcome) = 9
 (CRS onwards)    Lessons 1-3: one course outcome + its 2 lesson outcomes each
                  Lesson 4, and 5-6 where the content's shape needs them: synthesis
 ```
-**Synthesis lessons** work across the course and lesson outcomes and may generate new
-lesson outcomes, either on a related topic or as a development / reinterpretation of an
-earlier one (recorded against the outcome it develops). Together the lessons deliver the
-overarching course objective. Proliferation is constrained by the tier and / or level
-choices. At every gate the agent first reviews the ingested data it is pointed at
-(`agentContext` on each gate in `design-kb.gates.json`). Both runs are defined as gate
-profiles in `design-kb/design-kb.gate-profiles.json`: `single-course` and
-`pathway-distillation` (all three tiers at once).
 
 **What the built courses do today** (criticality, ai-technology, academic-writing and
 presenting, checked 29 Oct 2026): 4 course outcomes, 4 parallel lessons with one course
@@ -129,7 +151,7 @@ advanced are produced in parallel, each pitched by its tier band and the L7 / L8
 | FORK03 qualifiers | `cxp-02_qualifiers` (max 3, 3 categories), `cxs-03_qualifiers` (reserved) | max 6, 4 categories | `docs/authoring/qualifier-list-2026-10-04.md` (`ped:` / `theme:` / `pro:`), `graduate_competency` (20) in the universal, Advance HE framework ingests under `source-kb/.../ingested/standards/` | gap: no qualifier JSON mapping each qualifier to its ingest |
 | AO-03 | none | NEW | the qualifier ingests | to build |
 | AO-04 | none | NEW: shell context statement, voice-linted | AO-01 to AO-03; `tools/voice-lint.js` | to build |
-| 5 outcomes | `crs-03_course-outcomes`, `crs-04_lesson-map` | 3 course outcomes from AO-04; 2 lesson outcomes each; lessons 1-3 + synthesis | AO-04 | exists, re-source and re-count |
+| 5 outcomes | `crs-04_lesson-map` | 6 flat LOs from AO-04 map one-to-one onto up to 6 lessons; `crs-03_course-outcomes` has no job left | AO-04 | exists (`crs-04`), to remove or repurpose (`crs-03`) |
 
 ## 4. Rulings this changes (need sign-off)
 
@@ -137,13 +159,20 @@ advanced are produced in parallel, each pitched by its tier band and the L7 / L8
    qualifier list) to **up to 6 across 4**. `theme:` becomes "cross-cutting agendas", and
    graduate competencies / capital is a new category. `cxp-02`'s `decidedValueShape`
    (`maxItems: 3`) changes with it.
-2. **Course and lesson outcomes (settled 29 Oct 2026):** 3 course outcomes, each with 2
-   lesson outcomes (6), lessons 1-3 one course outcome each, then 1 to 3 synthesis lessons
-   that may add new lesson outcomes. Gate changes this needs: `crs-03` fixed at 3 (today
-   3-5); `crs-04` 2 lesson outcomes per course outcome (today 3 per lesson), `serves` able
-   to name several course outcomes, and a `develops` link for a synthesis outcome;
-   `les-01`'s 3-item check mapped to 1 course + 2 lesson outcomes. Make these per profile,
-   so the built 4 x 3 courses still validate.
+2. **Flat 6 (settled 2 Nov 2026, supersedes the 29 Oct 2026 "3 course + 6 lesson
+   outcomes" ruling):** AO-04's 6 generic benchmarks ARE the tier's learning outcomes,
+   flat - no distillation to 3 course outcomes, no expansion back out to 6 lesson
+   outcomes. They map one-to-one onto up to 6 lessons, each circa 4-6 pages deep. Gate
+   changes this needs: **`crs-03_course-outcomes` removed or repurposed** - it has no
+   distillation left to do; `crs-04`'s dependency note ("Lessons serve the course
+   outcomes", `design-kb.gates.json:748-751`) and every lesson outcome's `serves`
+   field (`design-kb.gates.json:852-855`) need a flat-LO equivalent, not a course-
+   outcome id; `wra-03`'s AL-3 rule (two summative questions per course outcome,
+   `design-kb.gates.json:1361-1366`) needs a flat-LO equivalent too (two-per-LO = 12,
+   or one-per-LO = 6 - still open); `les-01`'s formative check needs re-mapping from
+   "1 course + 2 lesson outcomes" to "1 LO". Make these per profile, so the built
+   4 x 3 courses (4 course outcomes, 3 LOs each, no synthesis) still validate under
+   their own, unchanged shape.
 3. **L8** joins L7 as cross-tier; the tier bands need L8 added.
 4. Still open from before: demoting `crs-02_thematic-scope` to optional colour.
 

@@ -56,3 +56,31 @@ Applied across all five lessons of
 `understanding-learning-assessment-feedback-introductory` (components
 `L01-c-30` .. `L05-c-30`) at establishment. Future worked examples follow the
 same convention.
+
+## Pronoun tokens (added [v4 lesson page model])
+
+Natural third-person prose needs a pronoun, and until now the only tokens were
+the names themselves (`{{learner-a}}`, `{{learner-b}}`, `{{learner-a.possessive}}`,
+`{{learner-b.possessive}}`) — the absence of a pronoun token is why some authors
+fell back to hardcoding a name instead of using the tokens. Four more tokens are
+now available, filled from the same `content/context-packs/_name-pool.json`
+entry as the matching name token, so they always agree with it:
+
+| Token | Fills with | Example |
+|---|---|---|
+| `{{learner-a-pronoun}}` | `{{learner-a}}`'s subject pronoun | "... before she checks the source again." |
+| `{{learner-a-possessive-pronoun}}` | `{{learner-a}}`'s possessive pronoun | "... reads through her notes once more." |
+| `{{learner-b-pronoun}}` | `{{learner-b}}`'s subject pronoun | "... then he tests the claim against another source." |
+| `{{learner-b-possessive-pronoun}}` | `{{learner-b}}`'s possessive pronoun | "... and widens his search with a second database." |
+
+These resolve through the same `merge-context.js` token-substitution pass as
+`{{learner-a}}`/`{{learner-b}}`; a worked example that uses a pronoun token
+without using the matching name token is still valid (the pronoun alone can
+carry a sentence), but the cue-class rule above still applies to whichever
+paragraph leads with `{{learner-a}}` / `{{learner-b}}`.
+
+**Known limitation, accepted for now:** `_name-pool.json` only pairs each name
+with one pronoun (binary he/she). A learner wanting a gender-neutral "they" pool
+entry, or wanting `{{learner-a}}` to vary pronoun by course rather than by the
+fixed name-pool entry, is not supported; adding either is a `_name-pool.json`
+content change, not a token-mechanism change.

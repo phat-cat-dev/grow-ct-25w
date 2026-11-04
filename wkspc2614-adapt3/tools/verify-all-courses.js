@@ -75,6 +75,15 @@
  * exit code from a real gating failure - see PR-1-15's register row for
  * the CI incident this caused. grunt/tasks/verify-all-courses.js updated
  * to branch on the new code so the distinction survives that caller too).
+ * Extended: 2 Nov 2026, lesson-page-model-v4 plan step 7: worked-example-
+ * lint wired in as a GATING, RATCHET check - but run once globally
+ * (`--packs`), not per course, because it reads content/context-packs/
+ * directly rather than a built course. It gates (unlike manifest-
+ * completeness) because a ratchet only has teeth if regressing it breaks
+ * the build; it passes today (423 non-conformant <= BACKLOG_CEILING) and
+ * is designed to keep passing as long as nobody adds a new non-conformant
+ * worked example, while still letting the committed backlog shrink by
+ * hand (lower the constant in worked-example-lint.js).
  */
 
 const { execFileSync } = require('child_process');
@@ -300,11 +309,18 @@ function main() {
     allResults[course] = runCourse(course);
   }
 
+  // worked-example-lint --packs: a single global ratchet check, not
+  // per-course (it reads content/context-packs/ directly - see header).
+  console.log('='.repeat(60));
+  console.log('GLOBAL CHECK: worked-example-lint --packs (ratchet)');
+  console.log('='.repeat(60));
+  const workedExampleResult = runCheck('worked-example-lint', 'node', ['tools/worked-example-lint.js', '--packs']);
+
   // Compute the exit-determining result before any rendering, so a
   // change to how the table is drawn can never change what the script
   // decides to exit with.
   const allTools = [...GATING_TOOLS, ...REPORTING_TOOLS];
-  let anyGatingFailed = false;
+  let anyGatingFailed = !workedExampleResult.pass;
   for (const course of courses) {
     for (const tool of GATING_TOOLS) {
       if (!allResults[course][tool].pass) anyGatingFailed = true;
@@ -348,11 +364,12 @@ function main() {
   // courses instead of four is visible in the tail, not just inferable
   // by scrolling back to the top.
   console.log(`Courses checked: ${courses.length} (${courses.join(', ')})`);
+  console.log(`worked-example-lint --packs (global ratchet): ${workedExampleResult.pass ? 'PASS' : 'FAIL'}`);
   if (anyGatingFailed) {
-    console.log('verify-all-courses: FAILED (a gating tool failed on at least one course)');
+    console.log('verify-all-courses: FAILED (a gating tool failed on at least one course, or the worked-example ratchet failed)');
     process.exit(1);
   } else {
-    console.log('verify-all-courses: PASSED (voice-lint, conformance-lint and validate-design-schemas all passed on every course)');
+    console.log('verify-all-courses: PASSED (voice-lint, conformance-lint, validate-design-schemas and the worked-example ratchet all passed)');
     process.exit(0);
   }
 }

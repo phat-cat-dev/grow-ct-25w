@@ -1,0 +1,240 @@
+[
+  {
+    "_component": "growOutcomes",
+    "_classes": "",
+    "_layout": "full",
+    "title": "What you will be able to do",
+    "body": "",
+    "instruction": "Press reveal to see each outcome for this lesson.",
+    "_items": [
+      {
+        "text": "Map the voices on a real issue, note where they agree and disagree, and write down the questions they leave open."
+      }
+    ],
+    "_id": "crit-intro-L05-c-01",
+    "_parentId": "crit-intro-L05-b-01",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Discourse mapping outside a reading list",
+    "body": "<p>Mapping a discourse is not only an academic exercise done on a reading list. The same skill applies whenever several sources say different things about a real issue and someone needs to make sense of them.</p>",
+    "instruction": "",
+    "_id": "crit-intro-L05-c-02",
+    "_parentId": "crit-intro-L05-b-02",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A real example",
+    "body": "<p>Imagine volunteering with a local food bank, where the coordinator wants to know what is being said about food insecurity among students. You would map the main voices, such as university reports, a charity briefing, and research articles, note where they agree and disagree, and write down the questions they leave open, for example whether the published figures include part-time and commuting students.</p>",
+    "instruction": "",
+    "_id": "crit-intro-L05-c-03",
+    "_parentId": "crit-intro-L05-b-03",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "slot__L05__worked-example",
+    "_layout": "full",
+    "title": "Worked example",
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two volunteers asked to brief the same coordinator.</p><p class=\"we-weaker\">{{learner-a}} finds three sources that mention food insecurity and lists them in a note for the coordinator, without saying how they relate.</p><p class=\"we-stronger\">{{learner-b}} finds the same three sources, maps who says what, marks where they agree and disagree, and writes down the question that none of them answer: do the figures include part-time and commuting students?</p><p>Both read the same sources. Only {{learner-b}} had mapped them, and found the gap nobody had filled.</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "crit-intro-L05-c-04",
+    "_parentId": "crit-intro-L05-b-04",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Why this still counts as being critical",
+    "body": "<p>Nobody marked this task. The coordinator did not ask for a discourse map by name. But mapping who says what, and noticing what none of them say, is exactly the same critical habit this lesson has been building, now running in a setting with no deadline attached.</p>",
+    "instruction": "",
+    "_id": "crit-intro-L05-c-05",
+    "_parentId": "crit-intro-L05-b-05",
+    "_type": "component"
+  },
+  {
+    "_component": "matching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Match the source to its strength",
+    "displayTitle": "What is each kind of source good for?",
+    "body": "Different sources are strong in different ways. Match each source type to what it is best placed to tell you.",
+    "instruction": "Select an option for each item, then select Submit.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "ariaQuestion": "Match each source type to the kind of claim it is best placed to support.",
+    "_attempts": 1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_hasItemScoring": false,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_shouldResetAllAnswers": true,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_allowOnlyUniqueAnswers": false,
+    "placeholder": "Select an option",
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "A university report",
+        "_options": [
+          {
+            "text": "Official statistics at scale",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Frontline, day-to-day experience",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "A charity briefing",
+        "_options": [
+          {
+            "text": "Frontline, day-to-day experience",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Official statistics at scale",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "A peer-reviewed research article",
+        "_options": [
+          {
+            "text": "Analysis checked by other researchers",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "A single organisation's own figures",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      }
+    ],
+    "_id": "crit-intro-L05-c-06",
+    "_parentId": "crit-intro-L05-b-06",
+    "_type": "component"
+  },
+  {
+    "_component": "branching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Decision scenario",
+    "displayTitle": "Briefing the coordinator",
+    "body": "The food bank coordinator asks you to check whether the published figures on student food insecurity are reliable before she uses them in a funding bid.",
+    "instruction": "Read each situation and choose a response to see what happens next.",
+    "ariaRegion": "Decision scenario. Read each situation and choose a response to see what happens next.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_scenario": {
+      "_start": "s1",
+      "_nodes": {
+        "s1": {
+          "body": "The coordinator asks you to check whether the published figures are reliable before she uses them in a funding bid. What do you do first?",
+          "_choices": [
+            {
+              "text": "Pass the figures on as they are; they were published, so they should be fine.",
+              "consequence": "The figures go into a funding bid unchecked, which is a risk if they turn out to be incomplete.",
+              "_goto": "poor"
+            },
+            {
+              "text": "Check what population the figures actually cover.",
+              "consequence": "A sound first move: a published figure is only as good as what it was measured on.",
+              "_goto": "s2"
+            }
+          ]
+        },
+        "s2": {
+          "body": "You find the figures do not mention part-time or commuting students. What now?",
+          "_choices": [
+            {
+              "text": "Use the figures as they are, since no better ones exist.",
+              "consequence": "Workable, but the gap needs to be stated, not left implicit.",
+              "_goto": "neutral"
+            },
+            {
+              "text": "Flag the gap clearly to the coordinator alongside the figures.",
+              "consequence": "The coordinator can now use the figures honestly, aware of their limits.",
+              "_goto": "good"
+            }
+          ]
+        },
+        "good": {
+          "body": "The coordinator uses the figures with the gap stated plainly. The bid is stronger for being honest about what the data does not cover.",
+          "_outcome": "good"
+        },
+        "neutral": {
+          "body": "The figures go into the bid without the gap being mentioned. They may still hold up, but an assessor who spots the gap themselves will trust the bid less.",
+          "_outcome": "neutral"
+        },
+        "poor": {
+          "body": "An unchecked figure ends up in a funding bid. If it turns out to be incomplete, the bid's credibility is what suffers.",
+          "_outcome": "poor"
+        }
+      }
+    },
+    "_id": "crit-intro-L05-c-07",
+    "_parentId": "crit-intro-L05-b-07",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Building your own briefing note",
+    "body": "<p>Map the main voices on the issue, note where they agree and disagree, and write down one open question that none of them answer. That short note is the same skill as an academic discourse map, built for someone who needs an answer, not a grade.</p>",
+    "instruction": "",
+    "_id": "crit-intro-L05-c-08",
+    "_parentId": "crit-intro-L05-b-08",
+    "_type": "component"
+  },
+  {
+    "_component": "opentext",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Your turn",
+    "body": "",
+    "instruction": "This is for your own reflection; no right answers are expected.",
+    "_items": [
+      {
+        "text": "Think of an issue outside your course where you could map 'who is saying what'. Who are the voices?"
+      },
+      {
+        "text": "What question would you write down as still open, once you had mapped them?"
+      }
+    ],
+    "_id": "crit-intro-L05-c-09",
+    "_parentId": "crit-intro-L05-b-09",
+    "_type": "component"
+  }
+]

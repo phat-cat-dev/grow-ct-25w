@@ -1,12 +1,12 @@
 {
-  "kbVersion": "0.1.0",
+  "kbVersion": "0.1.1",
   "profiles": [
     {
       "id": "single-course",
       "name": "Single course",
       "status": "design",
-      "purpose": "Onboard and build one course. The query layers narrow the context top-down (tier, levels, generic statements, shell, qualifiers) and four agent outcomes build the shell context the course learning outcomes come from. The run records the tiers and levels the course could feed into or build from, but builds only this one.",
-      "produces": "One course at one tier and level band: AO-04 shell context statement, 3 course outcomes with 6 lesson outcomes beneath them, a 4 to 6 lesson map (3 outcome lessons + synthesis), then the course build.",
+      "purpose": "Onboard and build one course. CXS (the context shell) runs first, pre, before the agent authors anything. The query layers then narrow the context top-down (tier, levels, generic statements) and AO-01 builds the course's learning outcomes, flat (settled 2 Nov 2026: no separate course-outcome tier) and not fixed at 6 (revised 2 Nov 2026: typically 4-6, content shape decides the count). AO-04 turns AO-01 into the ONB shell statement that feeds the course body. Once the shell and lessons exist, CXP (the context pack) runs standalone, post (settled 2 Nov 2026: cxs before crs, cxp after) - and getting this working is a priority, not an optional extra: fork02-shell lets the human assign the whole course to a HESA/CAH subject grouping, from one large discipline (a whole CAH1 such as Computing) down to one specific HECoS subject or Cardiff Met course/programme, via the existing tools/resolve-subject-benchmark.js resolver; ao-02 then generates context-specific competency attributes and worked examples grounded in that subject's QAA benchmark, merged into the shell's reserved slots via merge-context.js. The same resolver can also be used early, inside ctx-shell, when the discipline is already known at onboarding. The run records the tiers and levels the course could feed into or build from, but builds only this one.",
+      "produces": "One course at one tier and level band: AO-04 shell context statement, flat learning outcomes (typically 4-6), a lesson map of up to 6 lessons (one LO each, circa 4-6 pages per lesson), the course build, then a standalone context pack - baseline, a whole discipline, or one specific subject/course - merged into the shell with subject-grounded examples.",
       "tiers": "one",
       "steps": [
         {
@@ -36,11 +36,22 @@
           "open": "the adjacency rule for grouped levels; L7 and L8 cross all tiers, and the tier bands do not list L8 yet"
         },
         {
+          "id": "ctx-shell",
+          "label": "CXS Context shell (pre, before the agent authors anything)",
+          "gates": ["cxs-01_institutional-context", "cxs-02_subject-context", "cxs-03_qualifiers", "cxs-04_referencing-style", "cxs-06_resources"],
+          "decider": "auto",
+          "stage": "pre",
+          "inputs": ["reserved placeholders; all five auto-pass today with a default of none (cxs-04 defaults to Harvard Cite Them Right)"],
+          "produces": "the context shell: reserved context slots the course body is built around, in place before the agent starts authoring",
+          "open": "still reserved/auto; this step only makes the existing pre-course-body sequencing explicit, no behaviour change proposed here"
+        },
+        {
           "id": "fork01-frameworks",
           "label": "FORK01.1 Qualification frameworks",
           "gates": ["cxs-05_external-standards"],
           "change": "turn the reserved auto gate into a human select",
           "decider": "human",
+          "stage": "pre",
           "inputs": ["catalogue/context/shared/cross-cutting.json frameworks (FHEQ, CQFW, FQHEIS within SCQF, QF-EHEA)"],
           "produces": "the chosen framework(s)"
         },
@@ -49,6 +60,7 @@
           "label": "FORK01.2 Universal and pathway benchmarks",
           "planned": true,
           "decider": "human",
+          "stage": "course-body",
           "inputs": ["catalogue/context/pathway/<pathway>.json capabilities + benchmarkKeys", "catalogue/context/subject/benchmarks/universal-reference.json"],
           "produces": "0 to 9 of the pathway's 9 generic benchmarks; 0 or 9 weight all nine equally",
           "count": 9
@@ -58,28 +70,42 @@
           "label": "AO-01 Generic competency attributes context",
           "planned": true,
           "decider": "agent+human",
+          "stage": "course-body",
           "inputs": ["the chosen frameworks and benchmarks", "catalogue/context/pathway-evidence/<pathway>.json (the 18)", "the tier, including fuzzy tops"],
-          "produces": "6 generic benchmarks for the pathway: the generic basis for the course learning outcomes",
-          "count": 6
+          "produces": "the tier's learning outcomes, flat, straight from its 6 benchmark statements - these ARE the course's learning outcomes (settled 2 Nov 2026 - no further distillation to 3). One outcome per statement by default; merge two adjacent statements into one outcome only where content shape clusters them (revised 2 Nov 2026 - not fixed at 6; typically 4-6, the content decides, more only where the material is genuinely complex).",
+          "count": null
+        },
+        {
+          "id": "ao-04",
+          "label": "AO-04 ONB shell context statement",
+          "planned": true,
+          "decider": "agent+human",
+          "stage": "course-body",
+          "inputs": ["AO-01", "tools/voice-lint.js"],
+          "produces": "the shell context statement in academic prose, voice-linted: the product of ONB. Built from AO-01 alone - the context-specific and qualifier-specific layers (AO-02, AO-03) no longer feed this; they run after the lessons exist, as the standalone CXP context pack, and merge into this shell's reserved slots instead of composing it up front (settled 2 Nov 2026: cxs before crs, cxp after)."
+        },
+        {
+          "id": "lessons",
+          "label": "Up to 6 lessons, one LO each",
+          "gates": ["crs-04_lesson-map"],
+          "change": "settled 2 Nov 2026: no crs-03_course-outcomes distillation and no lesson-outcome expansion step. AO-04's flat LOs (typically 4-6, content shape decides - revised 2 Nov 2026, not fixed at 6) map one-to-one onto up to 6 lessons, each circa 4-6 pages deep (the six-part flow). A synthesis lesson is optional colour, not a structural 3-vs-6 slot. crs-03_course-outcomes has no job left in this flow.",
+          "decider": "agent+human",
+          "stage": "course-body",
+          "inputs": ["AO-04's flat learning outcomes (typically 4-6)", "content shape (design-kb.content-shapes.json)"],
+          "produces": "up to 6 lessons, one LO each",
+          "count": null,
+          "open": "crs-04's dependency note and every lesson's serves field assume a course-outcome id (design-kb.gates.json:748-755); wra-03's AL-3 rule (two summative questions per course outcome, design-kb.gates.json:1361-1366) has no course outcome to count against - open whether it becomes two-per-LO (12) or one-per-LO (6). crs-03_course-outcomes itself needs removing or repurposing before this touches live gates."
         },
         {
           "id": "fork02-shell",
           "label": "FORK02 Shell vs context slot",
           "gates": ["cxp-01_subject"],
           "change": "reshape to baseline | group | specific",
-          "decider": "human",
-          "inputs": ["baseline: universal-reference.json", "group: CAH1/CAH2 in tools/subject/core/vocab/cah.json + a group identity", "specific: HECoS/CAH via tools/resolve-subject-benchmark.js, or a topic area"],
-          "produces": "the shell: baseline, group (identity + HESA subjects) or specific (one subject or topic)",
-          "open": "group identities need the CMET course data tree"
-        },
-        {
-          "id": "ao-02",
-          "label": "AO-02 Context specific competency attributes context",
-          "gates": ["cxp-04_context-generation"],
-          "change": "re-aim its product at context-specific competency attributes",
           "decider": "agent+human",
-          "inputs": ["the shell's benchmark corpus", "AO-01"],
-          "produces": "context-specific competency attributes"
+          "stage": "post",
+          "inputs": ["baseline: universal-reference.json (unscoped, the default)", "group: a CAH1 or CAH2 code - a whole discipline or large HESA grouping (e.g. all of Computing, not one course), resolved via tools/resolve-subject-benchmark.js against tools/subject/core/vocab/cah.json. Per-school shortlist (built, verified against the live resolver 2 Nov 2026): docs/contexts/cmet/cardiff_met_school_hesa_shortlist.json pairs each of the 5 schools (cardiff_met_schools.json) with its own top 6-10 commonly-picked HESA/CAH groupings, so choosing a school offers a short list instead of the full CAH tree; cardiff_met_courses.csv (239 courses) grounds which real Cardiff Met courses sit inside each grouping", "specific: a HECoS code, a named subject, or one Cardiff Met course/programme, resolved the same way at the finer hecos/cah3 level"],
+          "produces": "the shell's subject grounding: baseline, or a resolved subject-benchmark reference (id + file in catalogue/context/subject/benchmarks.json) at whichever level the human picks - a whole discipline (group) or one course/subject (specific). This is a working priority for CXP, not an optional extra.",
+          "open": "tools/resolve-subject-benchmark.js and the CAH1-3/HECoS resolver already exist and do this lookup end to end; the per-school shortlist file now exists. It found and documents a real catalogue gap worth human sign-off on: several of csshs's dominant subjects (sport and exercise science, nursing, midwifery, physiotherapy, podiatry, dietetics, speech and language therapy) have no dedicated entry in the 55-entry catalogue/context/subject/benchmarks.json yet, so a bare CAH1/CAH2 pick for those either returns no benchmark or, worse, silently falls back to an unrelated entry that merely shares the same CAH2 ancestor (e.g. nursing resolves to optometry-2024) - the shortlist file flags each entry's matchQuality (direct | umbrella | fallback-imprecise) so fork02-shell's human gate can see which picks are trustworthy as-is."
         },
         {
           "id": "fork03-qualifiers",
@@ -87,57 +113,31 @@
           "gates": ["cxp-02_qualifiers"],
           "change": "raise the cap from 3 to 6 and add a fourth category, graduate competencies / capital",
           "decider": "human",
+          "stage": "post",
           "inputs": ["docs/authoring/qualifier-list-2026-10-04.md", "universal-reference.json graduate_competency", "Advance HE framework ingests"],
           "produces": "up to 6 qualifiers: pedagogical, professionally oriented, cross-cutting agendas, graduate competencies / capital",
           "count": 6,
           "open": "the cap may vary: fixed per course or per category"
         },
         {
+          "id": "ao-02",
+          "label": "AO-02 Context specific competency attributes context",
+          "gates": ["cxp-04_context-generation"],
+          "change": "re-aim its product at context-specific competency attributes and worked examples",
+          "decider": "agent+human",
+          "stage": "post",
+          "inputs": ["fork02-shell's resolved subject benchmark (baseline, or a group/specific HECoS-CAH reference)", "AO-01"],
+          "produces": "context-specific competency attributes AND worked examples grounded in that subject benchmark's statements and tier readings - e.g. the same generic lesson re-angled with Computing-wide or one-course-specific examples - generated as the context pack and merged into the shell's reserved slots via merge-context.js (cxp-04_context-generation). The priority half of CXP: a baseline shell with nothing subject-specific to say isn't the end state."
+        },
+        {
           "id": "ao-03",
           "label": "AO-03 Qualifier specific competency attributes context",
           "planned": true,
           "decider": "agent+human",
+          "stage": "post",
           "inputs": ["the ingest each chosen qualifier points to"],
-          "produces": "qualifier-specific competency attributes added to the shell context"
-        },
-        {
-          "id": "ao-04",
-          "label": "AO-04 ONB shell context statement",
-          "planned": true,
-          "decider": "agent+human",
-          "inputs": ["AO-01", "AO-02", "AO-03", "tools/voice-lint.js"],
-          "produces": "the shell context statement in academic prose, voice-linted: the product of ONB"
-        },
-        {
-          "id": "course-outcomes",
-          "label": "5 Course outcomes",
-          "gates": ["crs-03_course-outcomes"],
-          "change": "source the outcomes from AO-04 (AO-01's 6 generic benchmarks, set in context) and fix the count at 3 (the gate allows 3-5; the built courses all chose 4)",
-          "decider": "agent+human",
-          "inputs": ["AO-04", "AO-01"],
-          "produces": "3 course outcomes",
-          "count": 3
-        },
-        {
-          "id": "lesson-outcomes",
-          "label": "Expand to 6 lesson outcomes",
-          "gates": ["crs-04_lesson-map"],
-          "change": "2 lesson outcomes per course outcome (the built courses carry 3 per lesson, all serving one course outcome)",
-          "decider": "agent+human",
-          "inputs": ["the 3 course outcomes", "AO-04"],
-          "produces": "2 supporting lesson outcomes for each course outcome: the course's 6 learning outcomes beneath its 3 course outcomes",
-          "count": 6
-        },
-        {
-          "id": "lessons",
-          "label": "Lessons 1-3, then synthesis",
-          "gates": ["crs-04_lesson-map"],
-          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes and may add new lesson outcomes, either on a related topic or developing / reinterpreting earlier ones; a lesson outcome's serves must allow more than one course outcome, and a new one records the outcome it develops",
-          "decider": "agent+human",
-          "inputs": ["the 3 course outcomes", "the 6 lesson outcomes", "content shape (design-kb.content-shapes.json)"],
-          "produces": "4 to 6 lessons: 3 outcome lessons and 1 to 3 synthesis lessons",
-          "count": null,
-          "open": "how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes, and to a synthesis lesson's outcomes"
+          "produces": "qualifier-specific competency attributes added to the context pack",
+          "open": "cxp-03_exemplar-programmes (auto, reserved) is not yet wired into this or any step; still unused"
         }
       ],
       "continuesWith": ["crs-05_course-spec", "les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
@@ -146,8 +146,8 @@
       "id": "pathway-distillation",
       "name": "Pathway distillation (all three tiers)",
       "status": "design",
-      "purpose": "Distil a whole pathway for all three tiers at once. The 18 pathway statements (two evidence examples for each of the 9 capabilities, so 6 per tier) are evolved into 6 tiered outcomes per tier and boiled down to 3 course outcomes, which expand back out to 6 lesson outcomes (2 each). Lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4, and 5 and 6 where the content needs them, synthesise. Distil (6 -> 3) and expand (3 -> 6) mirror each other, so every outcome traces back to its statements.",
-      "produces": "For each of introductory, intermediate and advanced: 6 tiered outcomes, 3 course outcomes, 6 lesson outcomes, and a 4 to 6 lesson map (3 outcome lessons + synthesis).",
+      "purpose": "Distil a whole pathway for all three tiers at once, and - the point of this profile right now - give the agent and human a single view across all three tiers together, so the progression between them (what introductory sets up, what advanced builds on) can be seen and designed, not just inferred lesson-by-lesson. CXS runs first, pre, shared across all three tiers; CXP (post, subject/discipline grounding) runs once after all three tiers' lessons exist, same priority as in single-course - one resolved HESA/CAH subject or discipline context pack, shared across the tiers since the subject does not change tier to tier. The 18 pathway statements (two evidence examples for each of the 9 capabilities, so 6 per tier) are evolved into each tier's flat learning outcomes (settled 2 Nov 2026: no course-outcome distillation, no lesson-outcome expansion; revised 2 Nov 2026: not fixed at 6 per tier either - typically 4-6, content shape decides) and mapped one-to-one onto up to 6 lessons per tier, each carrying circa 4-6 pages to develop its one LO well. Every outcome traces back to its source statement(s) in the 18. Once all three tiers' outcomes and lesson maps exist, a dedicated progression step reviews them side by side and adds the forward/backward signposting between tiers.",
+      "produces": "For each of introductory, intermediate and advanced: flat learning outcomes (typically 4-6) and a lesson map of up to 6 lessons (one LO each), plus a cross-tier progression map (forward and backward signposts between the three tiers), plus one shared subject/discipline context pack (baseline, a whole discipline, or one specific subject) merged into all three tiers' shells.",
       "tiers": "all",
       "steps": [
         {
@@ -157,6 +157,16 @@
           "decider": "agent+human",
           "inputs": ["catalogue/pathways.json"],
           "produces": "the academic practice pathway"
+        },
+        {
+          "id": "ctx-shell",
+          "label": "CXS Context shell (pre, before the agent authors anything)",
+          "gates": ["cxs-01_institutional-context", "cxs-02_subject-context", "cxs-03_qualifiers", "cxs-04_referencing-style", "cxs-06_resources"],
+          "decider": "auto",
+          "stage": "pre",
+          "inputs": ["reserved placeholders; all five auto-pass today with a default of none (cxs-04 defaults to Harvard Cite Them Right)"],
+          "produces": "the context shell: reserved context slots the course body is built around, shared across all three tiers, in place before the agent starts authoring",
+          "open": "still reserved/auto; this step only makes the existing pre-course-body sequencing explicit, no behaviour change proposed here"
         },
         {
           "id": "pathway-statements",
@@ -169,61 +179,137 @@
         },
         {
           "id": "tiered-outcomes",
-          "label": "6 tiered outcomes",
+          "label": "Flat learning outcomes per tier, book-first, 5-6 per tier",
           "planned": true,
           "decider": "agent+human",
-          "inputs": ["the tier's 6 statements", "tierReadings and the tier's section 16 verb band", "the benchmarks keyed to the tier"],
-          "produces": "6 tiered outcomes per tier, each traced to its statements",
-          "count": 6,
+          "stage": "course-body",
+          "inputs": ["source-kb/source-maps/book-excelling-at-university-2026.json: the pathway's book chapter, chunked and tagged (sectionKind, pathwayTags, content-shapes[])", "the tier's 6 statements (the capability+evidence pairs keyed to this tier)", "tierReadings and the tier's section 16 verb band", "the benchmarks keyed to the tier"],
+          "produces": "the tier's learning outcomes, flat, each traced either to a book section, a benchmark statement, or a named theory source - settled 2 Nov 2026, method revised same day (supersedes the merge/cluster rule below, which tested negative on two pathways - see crs-redesign.md's referencing run, 6/6/6 with zero merges). Two-layer method, agent proposes / human gates: Layer 1 (primary) - one LO per real section of the pathway's own book chapter, as many as the book naturally gives; the book's cross-references and definitions take precedence over external theory. Layer 2 (secondary, fill-to-minimum only) - where Layer 1 falls short of 5 LOs, fill using (a) the pathway's own applied/professional benchmark evidence (no new theory), and/or (b) at most one named theory lesson PER TIER (each tier is its own Adapt course, so each tier carries its own theory budget), delivered anchored inside an existing book-grounded lesson's context, never freestanding. Worked example: criticality settled at 5/5/6 LOs (introductory/intermediate/advanced) - see crs-redesign.md's 'Worked example - criticality' section for the full traced table.",
+          "count": null,
           "perTier": true,
-          "open": "the evolve rule: one outcome per statement, or regrouped by complexity with the fuzzy tops co-tagged across adjacent tiers"
-        },
-        {
-          "id": "distil",
-          "label": "Boil down to 3",
-          "planned": true,
-          "decider": "agent+human",
-          "inputs": ["the tier's 6 tiered outcomes"],
-          "produces": "3 outcomes per tier: agent suggests, human chooses",
-          "count": 3,
-          "perTier": true
-        },
-        {
-          "id": "course-outcomes",
-          "label": "3 course outcomes",
-          "gates": ["crs-03_course-outcomes"],
-          "change": "fix the count at 3 per tier (the gate allows 3-5; the built courses all chose 4)",
-          "decider": "agent+human",
-          "inputs": ["the tier's 3 distilled outcomes", "their source statements"],
-          "produces": "the 3 distilled outcomes become the tier's course outcomes",
-          "count": 3,
-          "perTier": true
-        },
-        {
-          "id": "lesson-outcomes",
-          "label": "Expand to 6 lesson outcomes",
-          "gates": ["crs-04_lesson-map"],
-          "change": "2 lesson outcomes per course outcome (the built courses carry 3 per lesson, all serving one course outcome)",
-          "decider": "agent+human",
-          "inputs": ["the tier's 3 course outcomes", "the 6 tiered outcomes they were distilled from"],
-          "produces": "2 supporting lesson outcomes for each course outcome, mirroring the 6 -> 3 distillation (3 course + 6 lesson outcomes = 9)",
-          "count": 6,
-          "perTier": true
+          "open": "the statement-merge rule is superseded as the generative mechanism (book section count drives it instead) but not yet deleted as a concept - still open whether it survives as a tie-breaker for an unusually long book section list. Also open: the exact Layer-2 trigger logic beyond 'fill to 5' - e.g. whether a tier that is short by two LOs takes two benchmark fills, one fill plus the theory lesson, or the theory lesson alone, is an agent judgement call per run, not yet a rule."
         },
         {
           "id": "lessons",
-          "label": "Lessons 1-3, then synthesis",
+          "label": "5-6 lessons per tier (hard floor 5, ceiling 6), one LO each",
           "gates": ["crs-04_lesson-map"],
-          "change": "lessons 1-3 each carry one course outcome and its 2 lesson outcomes; lesson 4 (and 5, 6 where the content's shape needs them) synthesises across the course and lesson outcomes and may add new lesson outcomes, either on a related topic or developing / reinterpreting earlier ones; a lesson outcome's serves must allow more than one course outcome (today a single string), and a new one records the outcome it develops",
+          "change": "settled 2 Nov 2026: no crs-03_course-outcomes distillation and no lesson-outcome expansion step, per tier. The tier's flat LOs (5-6, set by tiered-outcomes' book-first two-layer method) map one-to-one onto 5-6 lessons, each circa 4-6 pages deep (the six-part flow). A synthesis lesson is optional colour, not a structural 3-vs-6 slot. crs-03_course-outcomes has no job left in this flow.",
           "decider": "agent+human",
-          "inputs": ["the 3 course outcomes", "the 6 lesson outcomes", "content shape (design-kb.content-shapes.json)"],
-          "produces": "4 to 6 lessons: 3 outcome lessons and 1 to 3 synthesis lessons",
+          "stage": "course-body",
+          "inputs": ["the tier's flat learning outcomes (5-6)", "content shape (design-kb.content-shapes.json)"],
+          "produces": "5-6 lessons per tier, one LO each (minimum 5 enforced 2 Nov 2026; ceiling remains 6)",
           "count": null,
           "perTier": true,
-          "open": "how the les-01 formative check (3 items) maps to 1 course + 2 lesson outcomes, and to a synthesis lesson's outcomes"
+          "open": "crs-04's dependency note and every lesson's serves field assume a course-outcome id (design-kb.gates.json:748-755); wra-03's AL-3 rule (two summative questions per course outcome, design-kb.gates.json:1361-1366) has no course outcome to count against - open whether it becomes two-per-LO (10-12) or one-per-LO (5-6) per tier. crs-03_course-outcomes itself needs removing or repurposing before this touches live gates."
+        },
+        {
+          "id": "progression-signposting",
+          "label": "Progression review: all three tiers, side by side",
+          "planned": true,
+          "decider": "agent+human",
+          "stage": "course-body",
+          "inputs": ["all three tiers' flat learning outcomes (tiered-outcomes, introductory + intermediate + advanced together)", "all three tiers' lesson maps (lessons, introductory + intermediate + advanced together)"],
+          "produces": "the cross-tier progression: for each tier, a forward signpost (what this tier sets up for the next one up) and a backward signpost (what this tier assumes or builds on from the one below). Not a new gate on its own content - it reads and annotates the three tiers' existing outcomes/lesson maps once all three exist.",
+          "count": null,
+          "perTier": false,
+          "open": "no generator exists yet. First attempt at a dedicated 'view all three tiers at once' step - still to decide: does the signpost attach per LO, per lesson, or per tier as a whole; does it change the LO/lesson text itself or sit alongside it as a separate annotation; is there a UI for the human to see all three tiers in one pass, or is this agent-drafted prose the human reads linearly."
+        },
+        {
+          "id": "fork02-shell",
+          "label": "FORK02 Shell vs context slot",
+          "gates": ["cxp-01_subject"],
+          "change": "reshape to baseline | group | specific",
+          "decider": "agent+human",
+          "stage": "post",
+          "inputs": ["baseline: universal-reference.json (unscoped, the default)", "group: a CAH1 or CAH2 code - a whole discipline or large HESA grouping, resolved via tools/resolve-subject-benchmark.js. Per-school shortlist (built): docs/contexts/cmet/cardiff_met_school_hesa_shortlist.json pairs each of the 5 schools with its own top 6-10 commonly-picked HESA/CAH groupings", "specific: a HECoS code, a named subject, or one Cardiff Met course/programme"],
+          "produces": "the shell's subject grounding, shared across all three tiers since the subject does not change tier to tier: baseline, or a resolved subject-benchmark reference at whichever level the human picks.",
+          "open": "same resolver and same shortlist file as single-course's fork02-shell; run once here, not per tier. See single-course's fork02-shell open note for the catalogue-gap/matchQuality caveat the shortlist documents."
+        },
+        {
+          "id": "fork03-qualifiers",
+          "label": "FORK03 Qualifiers",
+          "gates": ["cxp-02_qualifiers"],
+          "change": "raise the cap from 3 to 6 and add a fourth category, graduate competencies / capital",
+          "decider": "human",
+          "stage": "post",
+          "inputs": ["docs/authoring/qualifier-list-2026-10-04.md", "universal-reference.json graduate_competency", "Advance HE framework ingests"],
+          "produces": "up to 6 qualifiers, shared across all three tiers",
+          "count": 6
+        },
+        {
+          "id": "ao-02",
+          "label": "AO-02 Context specific competency attributes context",
+          "gates": ["cxp-04_context-generation"],
+          "change": "re-aim its product at context-specific competency attributes and worked examples",
+          "decider": "agent+human",
+          "stage": "post",
+          "inputs": ["fork02-shell's resolved subject benchmark", "each tier's flat learning outcomes (tiered-outcomes)"],
+          "produces": "context-specific competency attributes and worked examples grounded in the resolved subject benchmark, generated once and merged into all three tiers' shells via merge-context.js (cxp-04_context-generation)"
+        },
+        {
+          "id": "ao-03",
+          "label": "AO-03 Qualifier specific competency attributes context",
+          "planned": true,
+          "decider": "agent+human",
+          "stage": "post",
+          "inputs": ["the ingest each chosen qualifier points to"],
+          "produces": "qualifier-specific competency attributes added to the context pack, shared across all three tiers"
         }
       ],
       "continuesWith": ["les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
+    },
+    {
+      "id": "built-course-shape",
+      "name": "Built-course shape (original, live)",
+      "status": "live",
+      "purpose": "The gated sequence as it already runs, unmodified - what onboarded and built criticality, ai-technology, academic-writing and presenting (checked 29 Oct 2026). Free thematic strands drive structure, not pathway benchmarks; no query layers (TIER/LEVEL(S)/FORK01-03/AO-01-04) exist in this run. Kept as its own named profile so the single-course and pathway-distillation redesigns can be compared against, or fallen back to, the shape that is actually live today.",
+      "produces": "One course at one tier: 4 course outcomes, 4 parallel lessons each carrying one course outcome and 3 lesson outcomes (12 total), no synthesis lesson.",
+      "tiers": "one",
+      "steps": [
+        {
+          "id": "theme",
+          "label": "Theme (pathway)",
+          "gates": ["onb-01_theme-preset", "onb-02_course-theme"],
+          "decider": "agent+human",
+          "inputs": ["catalogue/pathways.json"],
+          "produces": "the academic practice pathway"
+        },
+        {
+          "id": "tier",
+          "label": "Tier",
+          "gates": ["onb-03_pitch"],
+          "decider": "agent+human",
+          "inputs": ["design-kb/design-kb.tier-bands.json"],
+          "produces": "introductory | intermediate | advanced (no none option in this profile)"
+        },
+        {
+          "id": "thematic-scope",
+          "label": "Thematic scope",
+          "gates": ["crs-02_thematic-scope"],
+          "decider": "human",
+          "inputs": ["free strands, 5-10, human-authored"],
+          "produces": "the thematic strands that structure the course (the structural source in this profile, unlike the benchmark-first redesigns)"
+        },
+        {
+          "id": "course-outcomes",
+          "label": "Course outcomes",
+          "gates": ["crs-03_course-outcomes"],
+          "decider": "agent+human",
+          "inputs": ["crs-02_thematic-scope"],
+          "produces": "course outcomes; the gate allows 3-5, the built courses all chose 4",
+          "count": 4
+        },
+        {
+          "id": "lessons",
+          "label": "Lessons, one course outcome each",
+          "gates": ["crs-04_lesson-map"],
+          "decider": "agent+human",
+          "inputs": ["the 4 course outcomes"],
+          "produces": "4 parallel lessons, each carrying one course outcome and 3 lesson outcomes serving it (12 lesson outcomes total), no synthesis lesson",
+          "count": 4
+        }
+      ],
+      "continuesWith": ["crs-05_course-spec", "les-01_lesson-proposal", "wra-01_wrapper-open", "wra-02_wrapper-close", "wra-03_summative", "wra-04_confidence"]
     }
   ]
 }

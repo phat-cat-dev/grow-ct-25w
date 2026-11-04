@@ -1,0 +1,240 @@
+[
+  {
+    "_component": "growOutcomes",
+    "_classes": "",
+    "_layout": "full",
+    "title": "What you will be able to do",
+    "body": "",
+    "instruction": "Press reveal to see each outcome for this lesson.",
+    "_items": [
+      {
+        "text": "Recognise when a task is asking for analysis or evaluation, even when it does not use those words."
+      }
+    ],
+    "_id": "crit-inter-L04-c-01",
+    "_parentId": "crit-inter-L04-b-01",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Real tasks rarely say 'analyse'",
+    "body": "<p>Assessment briefs often use the words 'analyse' and 'evaluate' directly. Real requests, from a manager, a client, or a placement supervisor, usually do not. The skill is recognising the same demand underneath different wording.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L04-c-02",
+    "_parentId": "crit-inter-L04-b-02",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A placement example",
+    "body": "<p>On an engineering placement, a supervisor might hand over three requests without using either word: one asking how a system works and why it fails, one asking you to choose between two options, and one asking for both. Reading the brief correctly here is itself a critical skill, confirmed with the supervisor rather than assumed.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L04-c-03",
+    "_parentId": "crit-inter-L04-b-03",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "slot__L04__worked-example",
+    "_layout": "full",
+    "title": "Worked example",
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two placement students handed the same informal request.</p><p class=\"we-weaker\">{{learner-a}} waits for a brief to literally say 'analyse' or 'evaluate' before treating a task as either.</p><p class=\"we-stronger\">{{learner-b}} reads a request like 'can you look into why this keeps failing' and recognises it as a request for analysis, even though neither word appears.</p><p>Both received the request. Only {{learner-b}} had recognised what it was actually asking for.</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "crit-inter-L04-c-04",
+    "_parentId": "crit-inter-L04-b-04",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Why this recognition matters",
+    "body": "<p>Treating every request as a plain instruction, rather than reading what thinking skill it actually calls for, means you can complete a task technically while missing what was really being asked.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L04-c-05",
+    "_parentId": "crit-inter-L04-b-05",
+    "_type": "component"
+  },
+  {
+    "_component": "matching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Match the request to the skill it is asking for",
+    "displayTitle": "What is this request really asking for?",
+    "body": "Workplace requests rarely use the words 'analyse' or 'evaluate' directly. Match each request to what it is really asking for.",
+    "instruction": "Select an option for each item, then select Submit.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "ariaQuestion": "Match each informal request to the thinking skill it is really asking for.",
+    "_attempts": 1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_hasItemScoring": false,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_shouldResetAllAnswers": true,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_allowOnlyUniqueAnswers": false,
+    "placeholder": "Select an option",
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "'Can you look into why this keeps failing?'",
+        "_options": [
+          {
+            "text": "Analysis",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Judgement between options",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "'Which of these two suppliers should we go with?'",
+        "_options": [
+          {
+            "text": "Judgement between options",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Analysis",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "'Work out what's going wrong, then tell us which fix to use.'",
+        "_options": [
+          {
+            "text": "Both analysis and judgement",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Neither; just report back",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      }
+    ],
+    "_id": "crit-inter-L04-c-06",
+    "_parentId": "crit-inter-L04-b-06",
+    "_type": "component"
+  },
+  {
+    "_component": "branching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Decision scenario",
+    "displayTitle": "An informal request",
+    "body": "A supervisor sends a message: 'Customers are complaining about the checkout page, can you take a look?'",
+    "instruction": "Read each situation and choose a response to see what happens next.",
+    "ariaRegion": "Decision scenario. Read each situation and choose a response to see what happens next.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_scenario": {
+      "_start": "s1",
+      "_nodes": {
+        "s1": {
+          "body": "A supervisor messages: 'Customers are complaining about the checkout page, can you take a look?' How do you read this request?",
+          "_choices": [
+            {
+              "text": "Treat it as a simple instruction to check the page loads.",
+              "consequence": "A narrower reading than the supervisor likely meant, and it may miss the actual problem.",
+              "_goto": "poor"
+            },
+            {
+              "text": "Read it as a request to work out why customers are complaining.",
+              "consequence": "A reading that matches what is actually being asked, even though the word 'analyse' never appears.",
+              "_goto": "s2"
+            }
+          ]
+        },
+        "s2": {
+          "body": "You find two possible causes. What now?",
+          "_choices": [
+            {
+              "text": "Report both causes and stop there.",
+              "consequence": "Useful, but the supervisor still has to decide what to do next.",
+              "_goto": "neutral"
+            },
+            {
+              "text": "Report both causes and recommend which to fix first, with your reasoning.",
+              "consequence": "This answers both the analysis and the judgement the request was quietly asking for.",
+              "_goto": "good"
+            }
+          ]
+        },
+        "good": {
+          "body": "The supervisor gets a clear cause and a reasoned recommendation, exactly what the informal request was actually asking for.",
+          "_outcome": "good"
+        },
+        "neutral": {
+          "body": "The supervisor now has to ask a follow-up question to get the recommendation the original message was really after.",
+          "_outcome": "neutral"
+        },
+        "poor": {
+          "body": "The checkout page 'works', but the actual complaint goes unaddressed, since the real request was never recognised.",
+          "_outcome": "poor"
+        }
+      }
+    },
+    "_id": "crit-inter-L04-c-07",
+    "_parentId": "crit-inter-L04-b-07",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Reading requests for what they actually ask",
+    "body": "<p>Before you act on an informal request, pause and ask yourself whether it is really asking for analysis, judgement, or both, whatever words it happens to use. Confirming your reading with whoever asked is a critical move in itself, not a sign of uncertainty.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L04-c-08",
+    "_parentId": "crit-inter-L04-b-08",
+    "_type": "component"
+  },
+  {
+    "_component": "opentext",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Your turn",
+    "body": "",
+    "instruction": "This is for your own reflection; no right answers are expected.",
+    "_items": [
+      {
+        "text": "Think of an informal request you have received, at work, in a club, or at home. What was it really asking for?"
+      },
+      {
+        "text": "Did you ever answer the literal words of a request and miss what it was actually asking? What would you do differently now?"
+      }
+    ],
+    "_id": "crit-inter-L04-c-09",
+    "_parentId": "crit-inter-L04-b-09",
+    "_type": "component"
+  }
+]

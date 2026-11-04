@@ -1567,7 +1567,10 @@ function main() {
     // single consolidated les-01_lesson-proposal gate (the old per-slot
     // B2/B4 owners collapsed into it).
     const SLOT_OWNER_GATE = {
-      'concept-intro': 'les-01',
+      'activity-1': 'les-01',
+      'activity-2': 'les-01',
+      'activity-3': 'les-01',
+      'activity-4': 'les-01',
       'worked-example': 'les-01',
       'practical-guidance': 'les-01',
       'check': 'les-01'
@@ -1577,13 +1580,18 @@ function main() {
     // the old block key "interior" is retired. slotChoices[].slotKey,
     // blockSequence[].key and the built block's _skeletonKey now all read
     // "worked-example", which is what clause 6 and this check both match on.
+    // v4 (2 Nov 2026): concept-intro renamed/cloned to the four sibling
+    // activity-1..4 slots; same identity-map pattern, one entry each.
     const SKELETON_KEY_FOR_SLOT = {
-      'concept-intro': 'concept-intro',
+      'activity-1': 'activity-1',
+      'activity-2': 'activity-2',
+      'activity-3': 'activity-3',
+      'activity-4': 'activity-4',
       'worked-example': 'worked-example',
       'practical-guidance': 'practical-guidance',
       'check': 'check'
     };
-    const SLOTS = ['concept-intro', 'worked-example', 'practical-guidance', 'check'];
+    const SLOTS = ['activity-1', 'activity-2', 'activity-3', 'activity-4', 'worked-example', 'practical-guidance', 'check'];
 
     function builtComponentsForSlot(pageKey, skeletonKey) {
       const contentObjects = loadJsonIfExists(path.join(enDir, 'contentObjects.json')) || [];

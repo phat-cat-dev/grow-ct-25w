@@ -1,5 +1,5 @@
 {
-  "kbVersion": "0.1.10",
+  "kbVersion": "0.1.12",
   "entries": [
     {
       "id": "palette/text",
@@ -414,6 +414,29 @@
       ],
       "specPointer": {
         "doc": "docs/authoring/component-specs/checklist.md",
+        "ref": "Purpose"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/worked-example",
+      "name": "workedExample",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "two-versions-comparison",
+          "register": "Weaker-then-stronger contrast, cast carried by {{learner-a}}/{{learner-b}} tokens; third person. §15.4 register for the surrounding prose."
+        }
+      ],
+      "configNotes": [
+        "Single prose body, no items — unlike checklist, nothing to tick",
+        "Collapsible accordion cloned from checklist's toggle+region pattern (CL-A accessibility model); completes on first open",
+        "we-weaker/we-stronger paragraph cue classes (docs/authoring/worked-example-cue-convention.md) are applied by merge-context.js before this component renders the body — the component itself carries no cast/token logic",
+        "Default realisation for the worked-example slot (design-kb.skeletons.json) and for activity-patterns/evaluate-versions where the content shape is the token-cast contrast"
+      ],
+      "specPointer": {
+        "doc": "docs/authoring/component-specs/worked-example.md",
         "ref": "Purpose"
       },
       "version": "0.1.0"
@@ -960,6 +983,217 @@
       "specPointer": {
         "doc": "docs/authoring/component-specs/modal.md",
         "ref": "Purpose"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/ab-accordion",
+      "name": "ab-accordion",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "progressive-disclosure",
+          "register": "Same expand/collapse disclosure pattern as palette/accordion, in the grow-ct visual treatment."
+        }
+      ],
+      "configNotes": [
+        "Drop-in styled alternative to palette/accordion (adapt-contrib-accordion); same _items[] shape",
+        "Prefer over plain accordion where the grow-ct visual language is wanted; otherwise interchangeable"
+      ],
+      "specPointer": {
+        "doc": "docs/authoring/component-cookbook.md",
+        "ref": "Palette \u2192 activity fit"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/annotate",
+      "name": "annotate",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "inline-commentary",
+          "register": "Learner marks up an authored passage with hand-drawn ink tools (circle/underline/flag); reflective and ungraded, a reader-as-editor activity rather than a question."
+        }
+      ],
+      "configNotes": [
+        "Reflective/formative only \u2014 no right/wrong marking, no SCORM interaction",
+        "Built on the shared grow-marks engine",
+        "Distinct id from the existing palette/annotated (adapt-abbott-annotated, a different component) \u2014 naming collision risk; check which one a lesson actually needs before proposing"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-annotate/README.md",
+        "ref": "adapt-grow-annotate"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/scroll-scenes",
+      "name": "scrollScenes",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "scroll-driven-narrative",
+          "register": "A scroll-linked sequence of full-height scenes (fade/zoom/blur/slide) presenting a staged narrative or process; driven by scroll position, not a timer."
+        }
+      ],
+      "configNotes": [
+        "Present-only \u2014 no question/graded interaction",
+        "Matured from the scroll-scenes study"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-scroll-scenes/README.md",
+        "ref": "adapt-grow-scroll-scenes"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-outcomes",
+      "name": "growOutcomes",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "lesson-furniture",
+          "register": "Presents a lesson's own learning outcomes, revealed one at a time on button-press; the final reveal triggers completion and unlocks trickle's Continue."
+        }
+      ],
+      "configNotes": [
+        "Lesson-opener scaffolding, always present at the top of a lesson \u2014 not a candidate for a per-lesson '10 activities' shortlist; it is structural, not chosen per content shape",
+        "Calls setCompletionStatus() on final reveal \u2014 gates trickle progression"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-outcomes/README.md",
+        "ref": "adapt-grow-outcomes (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-levels",
+      "name": "growLevels",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "sequential-process",
+          "register": "Tiered levels/categories introduced one at a time; opening a level shows it in full and unlocks the next, with an on-demand 'In practice' pop-out. Suits staged category content."
+        }
+      ],
+      "configNotes": [
+        "Completes once every level is opened (trickle-compatible)",
+        "Built for the AI pathway's 'three categories of AI use' but generic \u2014 reusable for any staged-category content"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-levels/README.md",
+        "ref": "adapt-grow-levels (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-memory",
+      "name": "growMemory",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "match-pairs",
+          "register": "Tile-flip pairs/memory game; shuffles a deck of authored pairs each load, won when every pair is found. A game-form realisation of match-pairs, distinct from palette/matching's single-pass question form."
+        }
+      ],
+      "configNotes": [
+        "Game mechanic, not a graded question component \u2014 completion is winning the game, not a scored SCORM interaction",
+        "Add as a realisation option under activity-patterns/match-pairs alongside palette/matching"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-memory/README.md",
+        "ref": "adapt-grow-memory (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-cloze",
+      "name": "growCloze",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "cloze",
+          "register": "Dropdown-select fill-the-blanks: the learner chooses a word per inline blank, then checks; every blank is marked right/wrong with overall feedback. No existing activity-patterns.json entry currently covers this shape \u2014 flagged as a pattern gap, not just a palette gap."
+        }
+      ],
+      "configNotes": [
+        "Question-type component (graded, right/wrong per blank)",
+        "Matured from the component gallery's 'Fill the blanks' pattern"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-cloze/README.md",
+        "ref": "adapt-grow-cloze (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-wizard",
+      "name": "growWizard",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "sequential-process",
+          "register": "A guided multi-step wizard (progress bar + step labels + Back/Next) walking a learner through an ordered procedure one step at a time."
+        }
+      ],
+      "configNotes": [
+        "Present/navigate component, not inherently graded",
+        "Steps are an authored ordered array, each with a label and content"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-wizard/README.md",
+        "ref": "adapt-grow-wizard (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-promptbuilder",
+      "name": "growPromptBuilder",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "build-from-parts",
+          "register": "Learner assembles a prompt from authored parts (role/function/context) via quick chips and/or grouped starter dropdowns; purpose-built for AI-literacy/prompt-engineering content."
+        }
+      ],
+      "configNotes": [
+        "Built specifically for prompt-construction activities (ai-technology pathway) \u2014 check fit before reusing elsewhere",
+        "_chips append text to the field; _starterGroups replace field content, groupable by level"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-promptbuilder/README.md",
+        "ref": "adapt-grow-promptbuilder (GROW)"
+      },
+      "version": "0.1.0"
+    },
+    {
+      "id": "palette/grow-expanding-links",
+      "name": "growExpandingLinks",
+      "kind": "component",
+      "origin": "abbott",
+      "contentFit": [
+        {
+          "shape": "sequential-process",
+          "register": "A formative stepper whose step buttons are expanding icon-links (icon at rest, label on hover/focus/current); shows only the current step's activity, Back/Next to navigate."
+        }
+      ],
+      "configNotes": [
+        "Formative only \u2014 completion is an explicit learner action, never a score or SCORM interaction",
+        "Alternative stepper UI to palette/grow-wizard; choose on visual treatment (icon-link steps vs progress-bar+labels)"
+      ],
+      "specPointer": {
+        "doc": "src/components/adapt-grow-expanding-links/README.md",
+        "ref": "adapt-grow-expanding-links"
       },
       "version": "0.1.0"
     }

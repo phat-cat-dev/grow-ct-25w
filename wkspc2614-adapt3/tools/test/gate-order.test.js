@@ -29,12 +29,30 @@ test('reads flags from a planted store', () => {
   const store = gateOrder.loadStore(SMALL_FIXTURE);
   assert.deepEqual(gateOrder.getFlags(store, 'gates/B1'), {
     repeatsPer: 'lesson',
-    procedureFlags: { candidates: true }
+    procedureFlags: { candidates: true },
+    sourceConsultation: null
   });
   assert.deepEqual(gateOrder.getFlags(store, 'act-04_summative-activities'), {
     repeatsPer: null,
-    procedureFlags: {}
+    procedureFlags: {},
+    sourceConsultation: null
   });
+});
+
+// Task #21: gate.md step 2 now derives its sourceConsultation list from the
+// store through this tool instead of a hardcoded gate-name list (the same
+// staleness fix RJ-0059 already applied to procedureFlags/repeatsPer).
+test('reads sourceConsultation from the real store', () => {
+  const store = gateOrder.loadStore(REAL_STORE);
+  assert.deepEqual(gateOrder.getFlags(store, 'crs-02_thematic-scope').sourceConsultation, {
+    triggeringFacets: ['level'],
+    authorityLevels: ['sector']
+  });
+  assert.deepEqual(gateOrder.getFlags(store, 'les-01_lesson-proposal').sourceConsultation, {
+    triggeringFacets: ['activity'],
+    authorityLevels: ['institutional']
+  });
+  assert.equal(gateOrder.getFlags(store, 'onb-01_theme-preset').sourceConsultation, null);
 });
 
 // RJ-0059 test 2: a command's named check (checkSequenceContiguous, via
@@ -94,13 +112,16 @@ test('a run that reaches no store fails', () => {
 // cxp-04_context-generation. Updated 8 Oct 2026: two post-scaffold WRA
 // authoring gates (wra-03_summative, wra-04_confidence) were added (Abbott),
 // raising the count to 23; then the reserved cxs-06_resources placeholder
-// was added (Abbott: resources drawer in CXS), raising it to 24. The open
-// and close gates are unchanged.
+// was added (Abbott: resources drawer in CXS), raising it to 24. Updated
+// 2 Nov 2026 (plan step 3, pathway-distillation profile): crs-06_pathway-
+// statements, crs-07_tiered-outcomes and crs-08_progression added
+// (profiles: ["pathway-distillation"] only, universal to every OTHER gate),
+// raising the count to 27. The open and close gates are unchanged.
 test('CLI --order prints the real store\'s full order, exit 0', () => {
   const { execFileSync } = require('node:child_process');
   const out = execFileSync('node', [TOOL, '--order'], { encoding: 'utf8' });
   const parsed = JSON.parse(out);
-  assert.equal(parsed.length, 24);
+  assert.equal(parsed.length, 27);
   assert.equal(parsed[0], 'onb-01_theme-preset');
   assert.equal(parsed[parsed.length - 1], 'cxp-04_context-generation');
 });

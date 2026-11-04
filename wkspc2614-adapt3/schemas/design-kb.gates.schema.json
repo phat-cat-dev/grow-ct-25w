@@ -273,6 +273,47 @@
                   }
                 },
                 "additionalProperties": false
+              },
+              "validation": {
+                "type": "object",
+                "description": "2 Nov 2026 addition: a structured check the agent runs over already-closed upstream data before this gate's proposal stands, distinct from authoringReview (which primes context for authoring something NEW). Present only on gates whose job includes validating prior decisions - e.g. crs-05_course-spec, the first choke point after crs-04_lesson-map closes.",
+                "properties": {
+                  "purpose": {
+                    "type": "string",
+                    "description": "Why this gate runs a validation pass, in one sentence."
+                  },
+                  "checks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["id", "rule"],
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "The named rule this check enforces, e.g. an AL-n alignment-rule id from .claude/commands/gate.md's alignment-guidance block."
+                        },
+                        "rule": {
+                          "type": "string",
+                          "description": "The rule itself, stated so the agent can apply it without re-deriving it."
+                        },
+                        "appliesTo": {
+                          "type": "string",
+                          "description": "Which upstream gate(s)/field(s) this check reads, by exact decidedValueShape path."
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "scopeNote": {
+                    "type": "string",
+                    "description": "What this gate's validation deliberately does NOT cover - e.g. a rule bound at a gate that has not run yet, or a rule already automated elsewhere (tools/manifest-completeness.js) - so the agent does not over-reach or duplicate an existing check."
+                  },
+                  "onFail": {
+                    "type": "string",
+                    "description": "What the agent does if a check fails. A failed check is never silently let through by this gate's own hardness/defaultType."
+                  }
+                },
+                "additionalProperties": false
               }
             },
             "additionalProperties": false

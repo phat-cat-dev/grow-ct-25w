@@ -1,0 +1,162 @@
+[
+  {
+    "_component": "growOutcomes",
+    "_classes": "",
+    "_layout": "full",
+    "title": "What you will be able to do",
+    "body": "",
+    "instruction": "Press reveal to see each outcome for this lesson.",
+    "_items": [
+      {
+        "text": "Check a study's method before trusting its claim, especially when a decision rests on it."
+      }
+    ],
+    "_id": "crit-inter-L05-c-01",
+    "_parentId": "crit-inter-L05-b-01",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A claim is only as good as its method",
+    "body": "<p>A published study's headline claim is easy to accept, especially when it supports what you were already planning to do. Checking the method before trusting the claim is where critical thought actually earns its keep.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L05-c-02",
+    "_parentId": "crit-inter-L05-b-02",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "A workplace example",
+    "body": "<p>During a software internship, a team might be asked whether a published study supports adopting a new testing tool. Going straight to the method and results, checking how the tool was actually tested and on what kind of code, matters more than reading the study's own summary of itself.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L05-c-03",
+    "_parentId": "crit-inter-L05-b-03",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "slot__L05__worked-example",
+    "_layout": "full",
+    "title": "Worked example",
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two team members asked the same question about the same study.</p><p class=\"we-weaker\">{{learner-a}} reads a study's abstract, sees it supports adopting the new tool, and recommends adopting it.</p><p class=\"we-stronger\">{{learner-b}} reads the same abstract, then checks the method: the tool was tested on a handful of small open-source projects, quite unlike the team's own large commercial codebase.</p><p>Both read the study. Only {{learner-b}} had checked whether its method actually supported the team's decision.</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_id": "crit-inter-L05-c-04",
+    "_parentId": "crit-inter-L05-b-04",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Why this check changes the decision",
+    "body": "<p>A study can be entirely honest and still not apply to your situation. Checking the method is not about catching dishonesty; it is about checking whether the evidence actually transfers to the decision you are about to make.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L05-c-05",
+    "_parentId": "crit-inter-L05-b-05",
+    "_type": "component"
+  },
+  {
+    "_component": "checklist",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Method-check checklist",
+    "displayTitle": "Before you trust a claim for a decision",
+    "body": "Use these questions before a published claim is allowed to influence a real decision.",
+    "instruction": "Tick each item once you have tried it.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_items": [
+      {
+        "text": "Did I check what was tested, not just what the abstract concludes?"
+      },
+      {
+        "text": "Did I check how closely the tested case matches my own situation?"
+      },
+      {
+        "text": "Did I check the sample size before trusting the result?"
+      },
+      {
+        "text": "Did I check what the authors themselves say the study cannot show?"
+      }
+    ],
+    "_id": "crit-inter-L05-c-06",
+    "_parentId": "crit-inter-L05-b-06",
+    "_type": "component"
+  },
+  {
+    "_component": "mcq",
+    "_classes": "knowledge-check-question",
+    "_layout": "full",
+    "title": "Formative check: when a study doesn't transfer",
+    "displayTitle": "A study on a small open-source project claims a new tool improves testing speed. Your team works on a large commercial codebase. What should you do?",
+    "body": "",
+    "instruction": "Choose one option and select Submit.",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "ariaQuestion": "What should you do when a study's method does not closely match your own situation?",
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Treat the method mismatch as a reason for caution, not an automatic rejection.",
+        "_shouldBeSelected": true,
+        "feedback": "Yes. A mismatch is a reason to weigh the claim carefully, not to dismiss or accept it outright."
+      },
+      {
+        "text": "Reject the study outright, since it was not tested on your kind of codebase.",
+        "_shouldBeSelected": false,
+        "feedback": "That overcorrects. The study may still be informative; the mismatch is a reason for caution, not automatic rejection."
+      },
+      {
+        "text": "Adopt the tool anyway, since the study's overall conclusion was positive.",
+        "_shouldBeSelected": false,
+        "feedback": "This ignores exactly the mismatch that matters: the tested case and your own situation are not alike."
+      }
+    ],
+    "_id": "crit-inter-L05-c-07",
+    "_parentId": "crit-inter-L05-b-07",
+    "_type": "component"
+  },
+  {
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Making the check routine",
+    "body": "<p>Before a published claim gets to influence a real decision, ask what was actually tested and how closely it matches your own situation. That one check is often the difference between evidence that transfers and evidence that merely sounds convincing.</p>",
+    "instruction": "",
+    "_id": "crit-inter-L05-c-08",
+    "_parentId": "crit-inter-L05-b-08",
+    "_type": "component"
+  },
+  {
+    "_component": "opentext",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Your turn",
+    "body": "",
+    "instruction": "This is for your own reflection; no right answers are expected.",
+    "_items": [
+      {
+        "text": "Think of a claim you have relied on recently. Did you check what it was actually tested on?"
+      },
+      {
+        "text": "Is there a decision coming up where a method check like this one would be worth doing first?"
+      }
+    ],
+    "_id": "crit-inter-L05-c-09",
+    "_parentId": "crit-inter-L05-b-09",
+    "_type": "component"
+  }
+]
