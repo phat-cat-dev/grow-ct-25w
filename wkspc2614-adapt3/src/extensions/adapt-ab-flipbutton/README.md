@@ -15,17 +15,24 @@ Zero-config: enabled unless disabled. In `course.json`:
 ## Use
 
 ```html
-<button type="button" class="ab flipbutton" data-ab-flipbutton
+<button type="button" class="ab btn flipbutton" data-ab-flipbutton
   aria-pressed="false" aria-label="Toggle example">
   <span class="flipbutton__face flipbutton__face--front" aria-hidden="true">Explore</span>
   <span class="flipbutton__face flipbutton__face--back" aria-hidden="true">See what is possible</span>
 </button>
 ```
 
+`btn` is the shared `.ab.btn` object (`adapt-ab-base/less/ab-base-button.less`)
+— it supplies colour, padding, and hover/active/focus/disabled states, the
+same as any other `.ab.btn` trigger (e.g. `adapt-ab-collapse`). `flipbutton`
+is required alongside it; it supplies the two-face grid-stack mechanics, not
+a standalone look.
+
 Both face spans sit in the same grid cell and contribute their natural width
 and height, so the button auto-sizes to the larger face with no JS
-measurement. Faces can wrap on narrow screens. No card or external container
-is needed.
+measurement; each face is centred (both axes) within that cell, so the two
+labels sit in the same visual spot regardless of which is shorter. Faces can
+wrap on narrow screens. No card or external container is needed.
 
 Hover and keyboard focus preview the back face; this preview is separate from
 the pressed state — removing hover/focus returns to the front face unless the
@@ -50,11 +57,12 @@ transition).
 
 ## Styling
 
-`less/ab-flipbutton.less` consumes `--ab-base-*` theme tokens only (surface,
-ink, hairline, radius, spacing, accent) plus one component-specific
-`--ab-flipbutton-duration` override — no palette is defined here, so the
-button inherits the active theme / base defaults. Choose contrasting theme
-colours; this extension does not calculate contrast automatically.
+`less/ab-flipbutton.less` adds only the grid-stack mechanics and face
+centring on top of `.ab.btn` — colour, padding and states come from
+`.ab.btn` itself (`--ab-accent`/`--ab-base-*` tokens), not from this file.
+The one component-specific token is `--ab-flipbutton-duration` (face-swap
+transition length). No palette is defined here; the button follows the
+active theme the same way any other `.ab.btn` does.
 
 ## Events
 

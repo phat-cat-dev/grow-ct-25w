@@ -8,11 +8,14 @@
  * cell, so both face sizes count toward the button's own size (auto-width,
  * no JS measurement):
  *
- *   <button type="button" class="ab flipbutton" data-ab-flipbutton
+ *   <button type="button" class="ab btn flipbutton" data-ab-flipbutton
  *     aria-pressed="false" aria-label="Toggle example">
  *     <span class="flipbutton__face flipbutton__face--front" aria-hidden="true">Explore</span>
  *     <span class="flipbutton__face flipbutton__face--back" aria-hidden="true">See what is possible</span>
  *   </button>
+ *
+ * `btn` is the shared .ab.btn object (colour/padding/states); flipbutton
+ * supplies the grid-stack mechanics and centres each face within the cell.
  *
  * Hover/focus previews the back face without committing; click/Enter/Space
  * toggles the pressed state (aria-pressed, data-flipped), which persists
