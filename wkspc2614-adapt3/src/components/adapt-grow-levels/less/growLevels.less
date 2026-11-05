@@ -42,6 +42,7 @@
   &__item {
     counter-increment: lvl;
     --tone: @tone-neutral;
+    --tone-icon: "info";
     border: 1px solid var(--line, #d5dde2);
     border-left: 6px solid var(--tone);
     border-radius: 12px;
@@ -49,10 +50,10 @@
     overflow: hidden;
     transition: box-shadow 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
 
-    &--restricted { --tone: @tone-restricted; }
-    &--guarded    { --tone: @tone-guarded; }
-    &--open       { --tone: @tone-open; }
-    &--neutral    { --tone: @tone-neutral; }
+    &--restricted { --tone: @tone-restricted; --tone-icon: "cancel"; }
+    &--guarded    { --tone: @tone-guarded;    --tone-icon: "visibility"; }
+    &--open       { --tone: @tone-open;       --tone-icon: "check_circle"; }
+    &--neutral    { --tone: @tone-neutral;    --tone-icon: "info"; }
 
     &.is-locked { opacity: 0.5; }
 
@@ -96,6 +97,27 @@
   &__card-title {
     flex: 1 1 auto;
     font-weight: 700;
+  }
+
+  // Tone glyph, right-hand end of the card. Reinforces the tone colour with a
+  // shape, so a level's stance is not carried by colour alone. The glyph
+  // vocabulary is the semantic icon set in
+  // design-kb/section-schemas/semantics.json as rendered by the theme's
+  // grow-semantics.less: cancel (negative), check_circle (positive), info
+  // (neutral layer 1), visibility (neutral.observe). LESS cannot read that
+  // JSON, so the two are kept in step by convention - change one, change both.
+  // Decorative only: every level's title already names its meaning in words.
+  &__tone-icon {
+    flex: 0 0 auto;
+    font-family: 'Material Symbols Outlined'; // self-hosted by the GROW theme
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-feature-settings: 'liga';
+    color: var(--tone);
+
+    &::before { content: var(--tone-icon); }
   }
 
   &__lock {

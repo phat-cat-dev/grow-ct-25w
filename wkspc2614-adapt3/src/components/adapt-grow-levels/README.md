@@ -25,7 +25,12 @@ any set of tiered levels works.
 }
 ```
 
-- `_tone`: `restricted` (red), `guarded` (amber), `open` (green), `neutral` (brand blue).
+- `_tone`: `restricted` (red, `cancel`), `guarded` (amber, `visibility`),
+  `open` (green, `check_circle`), `neutral` (brand blue, `info`). The glyph is
+  decorative reinforcement of the colour; the glyph names come from the semantic
+  icon set (`design-kb/section-schemas/semantics.json`) and are hardcoded in
+  `less/growLevels.less`, kept in step with the theme's `grow-semantics.less` by
+  convention.
 - `advice`: optional; shows an "In practice" pop-out on the open level.
 
 Like the other GROW components, the view calls `setReadyStatus()` itself.
