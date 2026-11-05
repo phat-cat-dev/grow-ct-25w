@@ -2115,5 +2115,39 @@
     "_type": "component",
     "_layout": "full",
     "_classes": ""
+  },
+  {
+    "_id": "GAL-c-52",
+    "_parentId": "GAL-b-52",
+    "_type": "component",
+    "_component": "pagefeedback",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Page feedback",
+    "displayTitle": "",
+    "body": "<p>Was this explanation useful for your learning?</p>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    },
+    "_variant": "growth",
+    "_isCompletionBearing": false
+  },
+  {
+    "_id": "GAL-c-53",
+    "_parentId": "GAL-b-53",
+    "_type": "component",
+    "_component": "text",
+    "_classes": "",
+    "_layout": "full",
+    "title": "AB flip button",
+    "displayTitle": "",
+    "body": "<p>Enabled as a zero-config extension; any button with <code>data-ab-flipbutton</code> picks up the toggle behaviour, wherever it appears in authored HTML. Click, or focus with Tab, to preview the back face; click again (or Enter/Space) to toggle it.</p><button type=\"button\" class=\"ab flipbutton\" data-ab-flipbutton aria-pressed=\"false\" aria-label=\"Toggle example\"><span class=\"flipbutton__face flipbutton__face--front\" aria-hidden=\"true\">Explore</span><span class=\"flipbutton__face flipbutton__face--back\" aria-hidden=\"true\">See what is possible</span></button>",
+    "instruction": "",
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
   }
 ]
