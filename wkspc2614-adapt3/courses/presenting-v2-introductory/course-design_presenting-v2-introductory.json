@@ -271,6 +271,141 @@
           "timestamp": "2026-11-06T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-06_pathway-statements",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "capabilityId": "presenting/i1",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Presentation brief mapped to learning outcomes"
+              },
+              {
+                "capabilityId": "presenting/i1",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Purpose notes for a team huddle talk at work"
+              },
+              {
+                "capabilityId": "presenting/c1",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Storyboard built through the five steps and compared with Monroe"
+              },
+              {
+                "capabilityId": "presenting/c1",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Open day talk planned as a student ambassador"
+              },
+              {
+                "capabilityId": "presenting/i3",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Timed rehearsal log structured by Kolb's learning cycle"
+              },
+              {
+                "capabilityId": "presenting/i3",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Society welcome speech tested and cut to time"
+              },
+              {
+                "capabilityId": "presenting/01",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Slide redesign justified with cognitive load theory"
+              },
+              {
+                "capabilityId": "presenting/01",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Accessible slide loop for a local museum entrance"
+              },
+              {
+                "capabilityId": "presenting/03",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "One project delivered as talk and poster, analysed with Bitzer"
+              },
+              {
+                "capabilityId": "presenting/03",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Union update delivered in person and as an online video"
+              },
+              {
+                "capabilityId": "presenting/02",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Tested hooks and a nerves plan based on Yerkes-Dodson"
+              },
+              {
+                "capabilityId": "presenting/02",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Season launch talk to parents as a volunteer coach"
+              },
+              {
+                "capabilityId": "presenting/c3",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Enterprise pitch and poster built on Toulmin's argument model"
+              },
+              {
+                "capabilityId": "presenting/c3",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Assessment centre presentation and panel interview"
+              },
+              {
+                "capabilityId": "presenting/04",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Team ground rules and a conflict worked through with Tuckman"
+              },
+              {
+                "capabilityId": "presenting/04",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Leading volunteers through a budget dispute at a charity event"
+              },
+              {
+                "capabilityId": "presenting/c2",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Recorded question session analysed for stance"
+              },
+              {
+                "capabilityId": "presenting/c2",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Research presentation defended at a student conference"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/presenting.json",
+              "ref": "capabilities[].evidence[].title",
+              "note": "18 statements (9 capabilities x 2 evidence items), full file read (441 lines); capabilityId normalised presenting#i1/i3 -> presenting/i1, presenting/i3 per D4 ruling"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 crs-06_pathway-statements 2026-11-06"
+          },
+          "timestamp": "2026-11-06T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
