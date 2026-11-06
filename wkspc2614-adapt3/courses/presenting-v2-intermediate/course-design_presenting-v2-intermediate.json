@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "presenting-v2-intermediate",
+  "slug": "presenting-v2-intermediate",
+  "status": "in-development",
+  "profile": "pathway-distillation",
+  "facetSet": {
+    "pathway": "presenting",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.9",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = presenting",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 onb-01_theme-preset 2026-11-06"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "presenting",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = presenting",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 onb-02_course-theme 2026-11-06"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "all",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "all three tiers, pathway-distillation profile"
+            },
+            {
+              "doc": "tools/new-course.js",
+              "ref": "multi-tier mode docstring, 2 Nov 2026",
+              "note": "pitch=all derives/creates three sibling manifests atomically"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 onb-03_pitch 2026-11-06"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Presenting",
+            "tierName": "All tiers",
+            "slug": "presenting-v2"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/pathways.json",
+              "ref": "pathways[].id = presenting",
+              "note": "pathway display name"
+            },
+            {
+              "doc": "courses/presenting-introductory/course-design_presenting-introductory.json",
+              "ref": "onb-04_naming record",
+              "note": "naming convention precedent; presenting-* taken, base slug presenting-v2 chosen to avoid collision"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 onb-04_naming 2026-11-06"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-06T10:57:27.925Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}
