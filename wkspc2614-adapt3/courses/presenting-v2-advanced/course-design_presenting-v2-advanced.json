@@ -229,6 +229,48 @@
           "timestamp": "2026-11-06T10:57:27.925Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = presenting",
+              "note": "chapter 11, 13 primary + 1 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = presenting",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "presenting-v2 crs-01_sources 2026-11-06"
+          },
+          "timestamp": "2026-11-06T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
