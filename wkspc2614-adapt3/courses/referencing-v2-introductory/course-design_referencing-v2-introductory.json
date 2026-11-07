@@ -1254,6 +1254,84 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "o1",
+                "text": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "rates": "o2",
+                "text": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "rates": "o3",
+                "text": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "rates": "o4",
+                "text": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "rates": "o5",
+                "text": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "rates": "o6",
+                "text": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "o1",
+              "o2",
+              "o3",
+              "o4",
+              "o5",
+              "o6"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "pathway-distillation override (per wra-04's dependsOn edge): one confidence statement per flat LO (o1-o6), text taken verbatim from crs-07.outcomes[].confidenceStatement, not re-worded. Same set fills C-PRE and C-POST (AL-4). itemIds covers all six rated outcomes, not a subset (precedent in academic-writing-advanced carries only 3 itemIds against 4 statements; that drift is not reproduced here)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-04_confidence 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1335,6 +1413,28 @@
           "decidedByGate": "wra-03_summative"
         }
       ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 10,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
     }
   ]
 }
