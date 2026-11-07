@@ -1977,6 +1977,143 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L06-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "A new role, an unprompted responsibility",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices an unchecked shared record in their first month and reasons that, since nobody assigned it to them, it is not their responsibility; {{learner-b}} notices the same gap, raises it with their supervisor, and later explains the habit directly to a newer colleague. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L06-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L06-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L06-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they noticed something in a new role that nobody had explicitly asked them to deal with, and what shaped their decision to act or wait, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a role relevant to {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L06-o1/o2/o3) taken verbatim from crs-04's advanced L06 entry ('A new role, an unprompted responsibility'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L06-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern. This is the tier's final lesson; per the structural review already recorded at Phase A (W-CLOSE has no where-next component for advanced, a terminal tier), the course closes outward into the student's own practice rather than pointing to a next tier, and this lesson's o3 outcome (explaining a habit to someone newer) reinforces that outward, teach-forward framing directly in the lesson content."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01-L05 applies here. activity-1 (matching) written as classification of situations as formally assigned or falling to whoever notices, requiring judgement about implicit versus explicit responsibility. activity-2 (sortable) written as a weighing task ranking scenarios by initiative required, accounting for power gaps and ownership ambiguity, not a fixed severity ordering. activity-3/4 keep the established recall-reveal mechanic. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01-L05."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify new-role situations as normally assigned or falling to whoever notices first)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four situations by initiative required - a weighing task on ownership ambiguity and power gap, not a fixed ordering of fact)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01-L05 and all prior lessons across the course, not fixed here (out of scope for a per-lesson gate; now flagged across all 18 landed lessons for separate design-kb repair)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01-L05 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked. This is the eighteenth and final occurrence across the full referencing-v2 Phase B landing."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01-L05: this pattern (palette/branching) could fit a judgement-task default, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected in favour of the proven matching/sortable/flipcard/accordion structure established and used consistently across the entire tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L06-les-01 referencing-v2-advanced L06 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -2593,6 +2730,109 @@
             "coupled": false
           },
           "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L06",
+      "pageType": "lesson",
+      "title": "A new role, an unprompted responsibility",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
         }
       ]
     }
