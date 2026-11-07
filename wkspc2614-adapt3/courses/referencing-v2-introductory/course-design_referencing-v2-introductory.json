@@ -1186,6 +1186,74 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "o1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why does academic work name its sources?"
+              },
+              {
+                "tests": "o2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What does a reference need to let a reader trace a claim back to its source?"
+              },
+              {
+                "tests": "o3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What makes a citation inconsistent with a piece of writing's reference list?"
+              },
+              {
+                "tests": "o4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why might you need to explain the sources in your own work to someone unfamiliar with it?"
+              },
+              {
+                "tests": "o5",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why record a source the moment you select it, rather than afterwards?"
+              },
+              {
+                "tests": "o6",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What makes a source log useful while you are gathering evidence for a task?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "One summative item per flat LO (o1-o6), owner decision 2 Nov 2026 overriding the skeleton's default two-per-outcome, since pathway-distillation has no course-outcome tier. Each item's tests names the crs-07 outcome id (AL-6)."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Two items per outcome (the skeleton's built-course-shape default). Rejected: wra-03's dependsOn edge states the pathway-distillation override explicitly as one-per-LO."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-03_summative 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1245,6 +1313,26 @@
             "coupled": false
           },
           "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
         }
       ]
     }
