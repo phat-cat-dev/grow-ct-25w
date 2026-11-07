@@ -233,3 +233,91 @@ test('CLI with a gate not in the store fails with exit 1, named error on stderr'
     assert.match(e.stderr, /no gate gates\/NOPE in store/);
   }
 });
+
+// RJ-0062 D8(a) (4 Nov 2026): buildReopenPreview's profile filter, read
+// through gateOrder.profileGateIds against design-kb.gate-profiles.json
+// (never hardcoded to a profile name).
+const GATE_PROFILES_FIXTURE = path.join(FIXTURES, 'gate-profiles-reopen.json');
+
+test('D8(a): a gate the active profile does not claim reports an empty dependents list', () => {
+  const store = gateOrder.loadStore(STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(GATE_PROFILES_FIXTURE);
+  const courseDesign = loadCourseDesign();
+  courseDesign.profile = 'no-crs02'; // this profile's step list omits crs-02_thematic-scope
+  const preview = reopen.buildReopenPreview(store, courseDesign, 'crs-02_thematic-scope', gateProfilesStore);
+  assert.deepEqual(preview.dependents, []);
+});
+
+test('D8(a): a gate the active profile does claim keeps its unfiltered dependents', () => {
+  const store = gateOrder.loadStore(STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(GATE_PROFILES_FIXTURE);
+  const courseDesign = loadCourseDesign();
+  courseDesign.profile = 'has-crs02'; // this profile's step list names crs-02_thematic-scope
+  const preview = reopen.buildReopenPreview(store, courseDesign, 'crs-02_thematic-scope', gateProfilesStore);
+  assert.equal(preview.dependents.length, 3);
+});
+
+test('D8(a): a profile name the store cannot resolve falls back to the unfiltered list', () => {
+  const store = gateOrder.loadStore(STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(GATE_PROFILES_FIXTURE);
+  const courseDesign = loadCourseDesign();
+  courseDesign.profile = 'unknown-profile-not-in-fixture';
+  const preview = reopen.buildReopenPreview(store, courseDesign, 'crs-02_thematic-scope', gateProfilesStore);
+  assert.equal(preview.dependents.length, 3);
+});
+
+test('D8(a): omitting gateProfilesStore skips the filter entirely (pre-existing behaviour)', () => {
+  const store = gateOrder.loadStore(STORE_FIXTURE);
+  const courseDesign = loadCourseDesign();
+  courseDesign.profile = 'no-crs02'; // would be filtered to [] if a gateProfilesStore were supplied
+  const preview = reopen.buildReopenPreview(store, courseDesign, 'crs-02_thematic-scope');
+  assert.equal(preview.dependents.length, 3);
+});
+
+// RJ-0062 D8(b) (4 Nov 2026): hasRecord's repeatsPer:'lesson' id-expansion.
+// les-01_lesson-proposal is never stored under its own bare id; three
+// closed per-lesson records exist under <slug>-<lessonKey>-les-01. Before
+// the fix, hasRecord found none of them and misclassified the dependent
+// as authoredFresh.
+const LESSON_STORE_FIXTURE = path.join(FIXTURES, 'gates-reopen-lessons.json');
+const LESSON_COURSE_DESIGN_FIXTURE = path.join(FIXTURES, 'course-design-reopen-lessons.json');
+
+function loadLessonCourseDesign() {
+  return JSON.parse(fs.readFileSync(LESSON_COURSE_DESIGN_FIXTURE, 'utf8'));
+}
+
+test('D8(b): a repeatsPer:lesson dependent with real per-lesson records is sweep-eligible, not authoredFresh', () => {
+  const store = gateOrder.loadStore(LESSON_STORE_FIXTURE);
+  const courseDesign = loadLessonCourseDesign();
+  const answer = {
+    changeKind: 'amended',
+    note: 'lesson map picked up a third lesson',
+    provenance: 'human-specified',
+    decidedValue: { lessons: [{ key: 'L01' }, { key: 'L02' }, { key: 'L03' }] },
+    dispositions: [
+      { gate: 'les-01_lesson-proposal', verdict: 'flag-for-review', mode: 'confirmed', resolution: { status: 'open' } }
+    ]
+  };
+  const result = reopen.buildReopen(store, courseDesign, 'crs-04_lesson-map', answer);
+
+  assert.deepEqual(result.authoredFresh, []);
+  const byGate = new Map(result.sweepEvent.sweep.map(s => [s.gate, s]));
+  const sweptLes01 = byGate.get('les-01_lesson-proposal');
+  assert.ok(sweptLes01, 'les-01_lesson-proposal should appear in the sweep, not authoredFresh');
+  // Max seq across the three per-lesson records (seq 1, 2, 1) is 2.
+  assert.equal(sweptLes01.recordSeq, 2);
+  assert.deepEqual(sweptLes01.basis, { gate: 'crs-04_lesson-map', dependencyClass: 'constitutive' });
+});
+
+test('D8(b): recordsForDependent expands a repeatsPer:lesson gate into its real per-lesson manifest entries', () => {
+  const store = gateOrder.loadStore(LESSON_STORE_FIXTURE);
+  const courseDesign = loadLessonCourseDesign();
+  const found = reopen.recordsForDependent(store, courseDesign, { gate: 'les-01_lesson-proposal', dependencyClass: 'constitutive' });
+  assert.equal(found.length, 3);
+  const ids = found.map(e => e.gateId).sort();
+  assert.deepEqual(ids, [
+    'reopen-lessons-fixture-L01-les-01',
+    'reopen-lessons-fixture-L02-les-01',
+    'reopen-lessons-fixture-L03-les-01'
+  ]);
+});

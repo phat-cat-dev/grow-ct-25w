@@ -210,8 +210,8 @@ source doc, all verified against the live store):
 | FORK01.1 frameworks | cxs-05 (auto, reserved) | `cross-cutting.json` `frameworks` | data exists, needs human-select change |
 | FORK01.2 benchmarks | none | capabilities + benchmarkKeys + pathway-evidence (18) + universal-reference.json | data exists, gate to build |
 | AO-01 | none | the above | to build |
-| FORK02 shell | cxp-01 (+ baseline routing) | baseline: universal-reference.json; group: CAH1/2 via `tools/subject/core/vocab/cah.json`; specific: HECoS/CAH via `tools/resolve-subject-benchmark.js` | gap: group identity (School→HESA subjects) needs the CMET course data tree |
-| AO-02 | cxp-04 | subject benchmark corpus, pathway mappings | partial |
+| FORK02 shell | cxp-01 (+ baseline routing) | baseline: universal-reference.json; group: CAH1/2 via `tools/subject/core/vocab/cah.json`; specific: HECoS/CAH via `tools/resolve-subject-benchmark.js` | now available, not yet consumed here: `tools/cmet-context.js` (added 5 Nov 2026) resolves School/Faculty→HESA-subject grouping against the `tools/context-cmet` submodule's HECoS/CAH-tagged course data; FORK02/cxp-01 itself stays design-status and unwired this session (see Part C) |
+| AO-02 | cxp-04 | subject benchmark corpus, pathway mappings, **+ context-cmet's HECoS/CAH-to-pathway mapping (`tools/cmet-context.js`, wired live 5 Nov 2026)** | partial — the CMET source is live and additive (fills the empty `pathwayMapping` in 53 of 55 host benchmark files); AO-02 as a whole is still design-status |
 | FORK03 qualifiers | cxp-02 (max 3/3 today), cxs-03 (reserved) | `qualifier-list-2026-10-04.md`, `graduate_competency` (20, in universal), Advance HE ingests | gap: no qualifier JSON mapping each qualifier to its ingest yet |
 | AO-03 | none | qualifier ingests | to build |
 | AO-04 | none | AO-01 to AO-03, `tools/voice-lint.js` | to build |
@@ -244,14 +244,30 @@ lessons (single-course) or 5-6 (pathway-distillation), each ~4-6 pages.
 - **L8** is not yet in the tier bands (only L3-L7), despite
   `tierProgression.levels` elsewhere documenting it as cross-cutting
   alongside L7.
-- **No CMET course-data tree yet** for FORK02's "group" shell identity
-  (School/Faculty → its HESA subjects); the per-school shortlist file
-  (`docs/contexts/cmet/cardiff_met_school_hesa_shortlist.json`) exists and
-  flags several csshs subjects (sport/exercise science, nursing, midwifery,
-  physiotherapy, podiatry, dietetics, speech and language therapy) with no
-  dedicated `catalogue/context/subject/benchmarks.json` entry — a bare
-  CAH1/CAH2 pick for those returns nothing or silently falls back to an
-  unrelated entry sharing only the same CAH2 ancestor.
+- **A CMET course-data tree now exists and is wired for lookup, but not yet
+  consumed at FORK02.** `tools/cmet-context.js` (added 5 Nov 2026) wraps the
+  private `tools/context-cmet` submodule (not the flat
+  `docs/contexts/cmet/cardiff_met_courses.csv` the host already holds, which
+  carries no HECoS/CAH tags) and resolves a HECoS/CAH code or subject text to
+  its School/Faculty grouping, Cardiff Met course and school data, and
+  pathway mapping, by shelling out to the submodule's own CLI. It is live
+  only at `cxp-04_context-generation` (AO-02) this session, as an additive
+  source alongside the existing baseline/fork02-shell resolver, and carried
+  as a shape (not a live selector) on the still-reserved
+  `cxs-02_subject-context` for when it is un-reserved — confirmed 5 Nov 2026
+  that un-reserving, if it happens, is human-select only, never
+  auto-derived. **FORK02/cxp-01 itself — the design-status site in this doc
+  for an actual School→HESA-subjects grouping choice — has not been
+  touched**, so the specific gap this bullet names (a bare CAH1/CAH2 pick for
+  sport/exercise science, nursing, midwifery, physiotherapy, podiatry,
+  dietetics or speech and language therapy silently falling back to an
+  unrelated entry sharing only the same CAH2 ancestor) is not yet closed;
+  closing it means wiring `cmet-context.js` into FORK02 itself, a follow-on,
+  not done here. Two deliberate non-translations, confirmed rather than
+  invented: context-cmet's extra `self-development` pathway has no host
+  course-slug counterpart and is not synthesised one; and tier→row (the host
+  records tier, not FHEQ level) is never guessed — `--row` is passed through
+  only when a caller supplies one explicitly.
 - **No qualifier JSON** yet mapping each of the (proposed) 6 qualifiers
   across 4 categories to its own ingest.
 - **The book-first two-layer LO method has been run on exactly one

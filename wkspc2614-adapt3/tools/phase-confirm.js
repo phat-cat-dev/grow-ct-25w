@@ -90,7 +90,7 @@
  * renderReadBack's own comment for what this does and does not run.
  *
  * Usage:
- *   node tools/phase-confirm.js --course-design=<path> --draft=<path> --phase=<id> [--store=<path>]
+ *   node tools/phase-confirm.js --course-design=<path> --draft=<path> --phase=<id> [--store=<path>] [--gate-profiles=<path>]
  *
  * Draft file shape (written by the /phase-draft session, GDP-1):
  *   { "answers": [
@@ -113,10 +113,37 @@ const renderCourseSpecTool = require('./render-course-spec.js');
  * Never a hardcoded list: filters tools/gate-order.js's own getOrder()
  * output. Throws, naming the phase, when the result is empty (RJ-0061
  * test 3: "a run reaching no gates fails").
+ *
+ * `gateProfilesStore`/`activeProfile` (D9/D-adp3 profile wiring, 4 Nov
+ * 2026): when a gateProfilesStore is supplied, the phase's gate list is
+ * further filtered through gateOrder.profileGateIds, mirroring reopen.js's
+ * own D8(a) filter (RJ-0062) field-for-field. Without this, a CRS
+ * phase-close on any built-course-shape course demands answers for
+ * crs-06_pathway-statements and crs-08_progression too (both soft/advisory,
+ * both profiles: ["pathway-distillation"] only, neither applicable under
+ * built-course-shape) - buildPhaseBatch would then throw "no answer
+ * supplied" for gates this profile never asks. activeProfile defaults to
+ * 'built-course-shape' when the manifest carries no `profile` field,
+ * matching every other profile resolution in this codebase (reopen.js,
+ * validate-design-schemas.py's NSK-1). Omitting gateProfilesStore (as
+ * every call before this fix did) skips the filter entirely - the
+ * pre-existing, unfiltered behaviour - matching profileGateIds' own "null
+ * means can't resolve, fall back to universal" contract. The
+ * gates.length === 0 throw below still fires, now checked AFTER the
+ * profile filter, so a phase that genuinely has nothing to batch under
+ * the active profile is refused by the same named error as a phase with
+ * no soft/advisory gate at all.
  */
-function getPhaseBatchGates(store, phaseId) {
-  const gates = gateOrder.getOrder(store)
+function getPhaseBatchGates(store, phaseId, gateProfilesStore, activeProfile) {
+  let gates = gateOrder.getOrder(store)
     .filter(g => g.phase === phaseId && (g.hardness === 'soft' || g.hardness === 'advisory'));
+  if (gateProfilesStore) {
+    const profileId = activeProfile || 'built-course-shape';
+    const ids = gateOrder.profileGateIds(gateProfilesStore, profileId);
+    if (ids !== null) {
+      gates = gates.filter(g => ids.has(g.id));
+    }
+  }
   if (gates.length === 0) {
     throw new Error(`phase-confirm: phase ${phaseId} has no soft or advisory gate in the store: nothing to batch`);
   }
@@ -142,9 +169,12 @@ function computeProvenance(gate, marked) {
  * phase batches has no answer (RJ-0061 test 2: "a planted course
  * missing a gate fails with a named error" -- "missing" here is the
  * answer, found missing against the store's own phase list).
+ *
+ * `gateProfilesStore`/`activeProfile`: forwarded to getPhaseBatchGates
+ * unchanged; see that function's own comment.
  */
-function buildPhaseBatch(store, phaseId, answers) {
-  const gates = getPhaseBatchGates(store, phaseId);
+function buildPhaseBatch(store, phaseId, answers, gateProfilesStore, activeProfile) {
+  const gates = getPhaseBatchGates(store, phaseId, gateProfilesStore, activeProfile);
   const byId = new Map(answers.map(a => [a.gateId, a]));
   const nowIso = new Date().toISOString();
 
@@ -289,7 +319,7 @@ function renderReadBack(courseDesignPath, courseDesign, store) {
 }
 
 function parseArgs(argv) {
-  const args = { courseDesign: null, draft: null, phase: null, store: null };
+  const args = { courseDesign: null, draft: null, phase: null, store: null, gateProfiles: null };
   argv.forEach(param => {
     const eq = param.indexOf('=');
     if (eq === -1) return;
@@ -299,6 +329,7 @@ function parseArgs(argv) {
     if (key === 'draft') args.draft = value;
     if (key === 'phase') args.phase = value;
     if (key === 'store') args.store = value;
+    if (key === 'gate-profiles') args.gateProfiles = value;
   });
   return args;
 }
@@ -306,15 +337,16 @@ function parseArgs(argv) {
 function main() {
   const args = parseArgs(process.argv.slice(2));
   if (!args.courseDesign || !args.draft || !args.phase) {
-    console.error('phase-confirm: usage: --course-design=<path> --draft=<path> --phase=<id> [--store=<path>]');
+    console.error('phase-confirm: usage: --course-design=<path> --draft=<path> --phase=<id> [--store=<path>] [--gate-profiles=<path>]');
     process.exit(1);
   }
   try {
     const store = gateOrder.loadStore(args.store);
+    const gateProfilesStore = args.gateProfiles ? gateOrder.loadGateProfiles(args.gateProfiles) : null;
     const courseDesignPath = path.resolve(args.courseDesign);
     const courseDesign = JSON.parse(fs.readFileSync(courseDesignPath, 'utf8'));
     const draft = JSON.parse(fs.readFileSync(path.resolve(args.draft), 'utf8'));
-    const batch = buildPhaseBatch(store, args.phase, draft.answers || []);
+    const batch = buildPhaseBatch(store, args.phase, draft.answers || [], gateProfilesStore, courseDesign.profile);
     applyPhaseBatch(courseDesign, batch);
     fs.writeFileSync(courseDesignPath, JSON.stringify(courseDesign, null, 2) + '\n');
     const validatorOutput = runCourseDesignValidator(courseDesignPath, args.store);

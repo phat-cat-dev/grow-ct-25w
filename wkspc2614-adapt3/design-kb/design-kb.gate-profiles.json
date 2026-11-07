@@ -126,7 +126,7 @@
           "change": "re-aim its product at context-specific competency attributes and worked examples",
           "decider": "agent+human",
           "stage": "post",
-          "inputs": ["fork02-shell's resolved subject benchmark (baseline, or a group/specific HECoS-CAH reference)", "AO-01"],
+          "inputs": ["fork02-shell's resolved subject benchmark (baseline, or a group/specific HECoS-CAH reference)", "AO-01", "context-cmet's HECoS/CAH-to-pathway mapping (tools/cmet-context.js, added 5 Nov 2026): fills the pathwayMapping gap in the host's own benchmark files (53 of 55 empty, verified) - additive alongside fork02-shell's resolution, not a replacement; falls back to the baseline branch on a miss"],
           "produces": "context-specific competency attributes AND worked examples grounded in that subject benchmark's statements and tier readings - e.g. the same generic lesson re-angled with Computing-wide or one-course-specific examples - generated as the context pack and merged into the shell's reserved slots via merge-context.js (cxp-04_context-generation). The priority half of CXP: a baseline shell with nothing subject-specific to say isn't the end state."
         },
         {
@@ -172,6 +172,7 @@
           "id": "pathway-statements",
           "label": "The 18 pathway statements",
           "planned": true,
+          "gates": ["crs-06_pathway-statements"],
           "decider": "auto",
           "inputs": ["catalogue/context/pathway/<pathway>.json capabilities (the 9) + benchmarkKeys (tiered keys, attribution)", "catalogue/context/pathway-evidence/<pathway>.json (the 18)"],
           "produces": "the 18 statements, 6 per tier, with their capabilities, attribution and benchmark keys",
@@ -181,6 +182,7 @@
           "id": "tiered-outcomes",
           "label": "Flat learning outcomes per tier, book-first, 5-6 per tier",
           "planned": true,
+          "gates": ["crs-07_tiered-outcomes"],
           "decider": "agent+human",
           "stage": "course-body",
           "inputs": ["source-kb/source-maps/book-excelling-at-university-2026.json: the pathway's book chapter, chunked and tagged (sectionKind, pathwayTags, content-shapes[])", "the tier's 6 statements (the capability+evidence pairs keyed to this tier)", "tierReadings and the tier's section 16 verb band", "the benchmarks keyed to the tier"],
@@ -206,13 +208,15 @@
           "id": "progression-signposting",
           "label": "Progression review: all three tiers, side by side",
           "planned": true,
+          "gates": ["crs-08_progression"],
+          "change": "settled 4 Nov 2026 (cross-tier learning journey pass): the signpost attaches per tier as a whole, not per LO or per lesson. It sits alongside this tier's LO/lesson text as a separate annotation and never changes that text itself (crs-08's own consequenceNote already said so). There is no UI for the human to see all three tiers in one pass - this is agent-drafted prose the human reads linearly, rendered on demand to docs/curriculum/journey-maps/adp-cross-tier-journey-map_<pathway>.md once a renderer exists (deferred, see open). Per-tier partition, not a cross-manifest writer: each tier's crs-08 record carries only that tier's own journey row and spread reading (new decidedValueShape fields journey/spreadReading); the shared 11-row ladder and its evolution narrative stay upstream (catalogue/context/pathway/<pathway>.json), read, never copied into any one tier's record - three independent single-manifest /land runs, the cross-tier view assembled at read time from their concatenation plus the upstream reads.",
           "decider": "agent+human",
           "stage": "course-body",
           "inputs": ["all three tiers' flat learning outcomes (tiered-outcomes, introductory + intermediate + advanced together)", "all three tiers' lesson maps (lessons, introductory + intermediate + advanced together)"],
-          "produces": "the cross-tier progression: for each tier, a forward signpost (what this tier sets up for the next one up) and a backward signpost (what this tier assumes or builds on from the one below). Not a new gate on its own content - it reads and annotates the three tiers' existing outcomes/lesson maps once all three exist.",
+          "produces": "the cross-tier progression: for each tier, a forward signpost (what this tier sets up for the next one up), a backward signpost (what this tier assumes or builds on from the one below), this tier's re-authored practice/knowledge/identity journey row, and this tier's LO-spread-vs-level reading. Not a new gate on its own content - it reads and annotates the three tiers' existing outcomes/lesson maps once all three exist.",
           "count": null,
           "perTier": false,
-          "open": "no generator exists yet. First attempt at a dedicated 'view all three tiers at once' step - still to decide: does the signpost attach per LO, per lesson, or per tier as a whole; does it change the LO/lesson text itself or sit alongside it as a separate annotation; is there a UI for the human to see all three tiers in one pass, or is this agent-drafted prose the human reads linearly."
+          "open": "the renderer: deferred until one real crs-08 record carries a journey/spreadReading pair to render from (tools/render-tier-journey.js + tools/doc-templates/tier-journey.template.json, over tools/render-doc.js, mirroring render-course-spec.js's read-only contract). Not wired into /land (docs/BACKLOG.md BK-3, still open for crs-05). Until then the markdown artifact is the /gate session's own plan file (GDP-1)."
         },
         {
           "id": "fork02-shell",
@@ -243,7 +247,7 @@
           "change": "re-aim its product at context-specific competency attributes and worked examples",
           "decider": "agent+human",
           "stage": "post",
-          "inputs": ["fork02-shell's resolved subject benchmark", "each tier's flat learning outcomes (tiered-outcomes)"],
+          "inputs": ["fork02-shell's resolved subject benchmark", "each tier's flat learning outcomes (tiered-outcomes)", "context-cmet's HECoS/CAH-to-pathway mapping (tools/cmet-context.js, added 5 Nov 2026): fills the pathwayMapping gap in the host's own benchmark files (53 of 55 empty, verified) - additive alongside fork02-shell's resolution, not a replacement; falls back to the baseline branch on a miss"],
           "produces": "context-specific competency attributes and worked examples grounded in the resolved subject benchmark, generated once and merged into all three tiers' shells via merge-context.js (cxp-04_context-generation)"
         },
         {

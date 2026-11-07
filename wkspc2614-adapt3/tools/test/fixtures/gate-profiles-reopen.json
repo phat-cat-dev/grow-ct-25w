@@ -1,0 +1,19 @@
+{
+  "kbVersion": "0.0.1",
+  "profiles": [
+    {
+      "id": "has-crs02",
+      "steps": [
+        { "id": "s1", "gates": ["crs-02_thematic-scope", "crs-03_course-outcomes"] }
+      ],
+      "continuesWith": ["wra-04_confidence", "crs-05_course-spec", "wra-01_wrapper-open"]
+    },
+    {
+      "id": "no-crs02",
+      "steps": [
+        { "id": "s1", "gates": ["crs-03_course-outcomes"] }
+      ],
+      "continuesWith": ["wra-04_confidence", "crs-05_course-spec", "wra-01_wrapper-open"]
+    }
+  ]
+}

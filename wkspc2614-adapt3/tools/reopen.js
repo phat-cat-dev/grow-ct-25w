@@ -137,19 +137,82 @@ function enforceUnlockScope(courseDesign, priorDecidedValue, newDecidedValue, un
  * opposite of "nothing depends on it". This tool implements only the
  * listed (static-edge) net; a universal-scope reopen is out of its scope
  * and is named here, not guessed at.
+ *
+ * `gateProfilesStore` (optional, D8(a), 4 Nov 2026): when supplied, the
+ * dependents list is filtered through gateOrder.profileGateIds, mirroring
+ * validate-design-schemas.py's own NSK-1 resolver. A gate the manifest's
+ * active profile does not claim in its own step list (crs-02/crs-03 under
+ * pathway-distillation - see those gates' dependency notes in
+ * design-kb.gates.json) has, under that profile, no live edge pointing at
+ * it, so its dependents are reported empty rather than listing edges that
+ * are not-applicable under this profile. Omitting the argument (as every
+ * call before this fix did) skips the filter entirely - the pre-existing,
+ * unfiltered behaviour - matching profileGateIds' own "null means can't
+ * resolve, fall back to universal" contract.
  */
-function buildReopenPreview(store, courseDesign, gateId) {
+function buildReopenPreview(store, courseDesign, gateId, gateProfilesStore) {
   const gateDef = store.gates.find(g => g.id === gateId);
   if (gateDef && gateDef.propagationScope === 'universal') {
     throw new Error(`reopen: ${gateId} has propagationScope 'universal': its sweep runs the change-kind tracer rule over every gate (gate-conversation-model-draft-v1.md 5.4), not this tool's static dependsOn net; refusing to report an empty dependents list for it`);
   }
-  const dependents = gateOrder.getDependents(store, gateId);
+  let dependents = gateOrder.getDependents(store, gateId);
+  if (gateProfilesStore) {
+    const activeProfile = courseDesign.profile || 'built-course-shape';
+    const ids = gateOrder.profileGateIds(gateProfilesStore, activeProfile);
+    if (ids !== null && !ids.has(gateId)) {
+      dependents = [];
+    }
+  }
   const entry = (courseDesign.gates || []).find(g => g.gateId === gateId);
   if (!entry || entry.records.length === 0) {
     throw new Error(`reopen: ${gateId} has no record in the course design: nothing to reopen`);
   }
   const currentSeq = Math.max(...entry.records.map(r => r.seq));
   return { gateId, currentSeq, dependents };
+}
+
+/**
+ * RJ-0062 D8(b) lesson-id wiring (4 Nov 2026): the manifest entry/entries
+ * a dependent's bare store gate id actually resolves to. A once-per-course
+ * gate is a single, direct gateId match. A `repeatsPer: 'lesson'` gate
+ * (design-kb.gates.schema.json's own repeatsPer description -
+ * schemas/design-kb.gates.schema.json:126-131) is never stored under its
+ * own bare id; each lesson's decision is a separate manifest entry keyed
+ * `<slug>-<lessonKey>-<shortCode>` (the same convention
+ * tools/manifest-completeness.js's own per-lesson checks already read -
+ * `shortCode` is the gate id's own code before its first underscore, e.g.
+ * "les-01" from "les-01_lesson-proposal", read off the gate itself rather
+ * than hardcoded). Reads the gate's own repeatsPer flag off the store, so
+ * a gate that later gains repeatsPer: 'lesson' is picked up here with no
+ * edit to this function. 'context-pack' gates key differently
+ * (`<slug>-<subject>-<phase-nn>`, no lesson list to expand from) and are
+ * out of this expansion's scope - returned as a direct (and here, always
+ * absent) bare-id match, the pre-existing behaviour for them.
+ */
+function recordsForDependent(store, courseDesign, dep) {
+  const manifestGates = courseDesign.gates || [];
+  const gateDef = store.gates.find(g => g.id === dep.gate);
+  if (!gateDef || gateDef.repeatsPer !== 'lesson') {
+    const e = manifestGates.find(g => g.gateId === dep.gate);
+    return e ? [e] : [];
+  }
+  const shortCode = dep.gate.split('_')[0];
+  const matchSlug = courseDesign.slug;
+  const mapEntry = manifestGates.find(g => g.gateId === 'crs-04_lesson-map');
+  const lastMapRecord = mapEntry && Array.isArray(mapEntry.records) && mapEntry.records.length > 0
+    ? mapEntry.records[mapEntry.records.length - 1]
+    : null;
+  const lessons = (lastMapRecord && lastMapRecord.decidedValue && lastMapRecord.decidedValue.lessons) || [];
+  const found = [];
+  for (const lesson of lessons) {
+    const key = lesson.key;
+    if (typeof key !== 'string' || key.length === 0) continue;
+    const bareKey = key.startsWith(`${matchSlug}-`) ? key.slice(matchSlug.length + 1) : key;
+    const perLessonId = `${matchSlug}-${bareKey}-${shortCode}`;
+    const e = manifestGates.find(g => g.gateId === perLessonId);
+    if (e) found.push(e);
+  }
+  return found;
 }
 
 /**
@@ -163,8 +226,8 @@ function buildReopenPreview(store, courseDesign, gateId) {
  * required for invalidate/flag-for-review; note required when mode is
  * amended).
  */
-function buildReopen(store, courseDesign, gateId, answer) {
-  const preview = buildReopenPreview(store, courseDesign, gateId);
+function buildReopen(store, courseDesign, gateId, answer, gateProfilesStore) {
+  const preview = buildReopenPreview(store, courseDesign, gateId, gateProfilesStore);
   const nowIso = new Date().toISOString();
   const newSeq = preview.currentSeq + 1;
 
@@ -197,10 +260,7 @@ function buildReopen(store, courseDesign, gateId, answer) {
   // Such dependents are reported as "authored fresh against the new decision"
   // and neither require nor receive a sweep entry; the sweep tracks only the
   // decisions that actually exist.
-  const hasRecord = dep => {
-    const e = (courseDesign.gates || []).find(g => g.gateId === dep.gate);
-    return !!(e && e.records && e.records.length > 0);
-  };
+  const hasRecord = dep => recordsForDependent(store, courseDesign, dep).some(e => e.records && e.records.length > 0);
   const authoredFresh = preview.dependents.filter(dep => !hasRecord(dep)).map(dep => dep.gate);
   const sweep = preview.dependents.filter(hasRecord).map(dep => {
     const disposition = byGate.get(dep.gate);
@@ -214,10 +274,11 @@ function buildReopen(store, courseDesign, gateId, answer) {
     if (needsResolution && !disposition.resolution) {
       throw new Error(`reopen: ${dep.gate}'s disposition verdict is '${disposition.verdict}' but carries no resolution (required for invalidate and flag-for-review)`);
     }
-    const depEntry = (courseDesign.gates || []).find(g => g.gateId === dep.gate);
+    const depEntries = recordsForDependent(store, courseDesign, dep);
+    const depSeqs = depEntries.flatMap(e => (e.records || []).map(r => r.seq));
     const sweepEntry = {
       gate: dep.gate,
-      recordSeq: Math.max(...depEntry.records.map(r => r.seq)),
+      recordSeq: Math.max(...depSeqs),
       basis: { gate: gateId, dependencyClass: dep.dependencyClass },
       defaultVerdict: defaultVerdictForClass(dep.dependencyClass),
       disposition: { verdict: disposition.verdict, mode: disposition.mode }
@@ -263,7 +324,7 @@ function applyReopen(courseDesign, result) {
 }
 
 function parseArgs(argv) {
-  const args = { preview: false, courseDesign: null, draft: null, gate: null, store: null };
+  const args = { preview: false, courseDesign: null, draft: null, gate: null, store: null, gateProfiles: null };
   argv.forEach(param => {
     if (param === '--preview') { args.preview = true; return; }
     const eq = param.indexOf('=');
@@ -274,6 +335,7 @@ function parseArgs(argv) {
     if (key === 'draft') args.draft = value;
     if (key === 'gate') args.gate = value;
     if (key === 'store') args.store = value;
+    if (key === 'gate-profiles') args.gateProfiles = value;
   });
   return args;
 }
@@ -281,27 +343,28 @@ function parseArgs(argv) {
 function main() {
   const args = parseArgs(process.argv.slice(2));
   if (!args.gate || !args.courseDesign) {
-    console.error('reopen: usage: --preview --gate=<id> --course-design=<path> [--store=<path>]');
-    console.error('    or: --course-design=<path> --draft=<path> --gate=<id> [--store=<path>]');
+    console.error('reopen: usage: --preview --gate=<id> --course-design=<path> [--store=<path>] [--gate-profiles=<path>]');
+    console.error('    or: --course-design=<path> --draft=<path> --gate=<id> [--store=<path>] [--gate-profiles=<path>]');
     process.exit(1);
   }
   try {
     const store = gateOrder.loadStore(args.store);
+    const gateProfilesStore = args.gateProfiles ? gateOrder.loadGateProfiles(args.gateProfiles) : null;
     const courseDesignPath = path.resolve(args.courseDesign);
     const courseDesign = JSON.parse(fs.readFileSync(courseDesignPath, 'utf8'));
 
     if (args.preview) {
-      const preview = buildReopenPreview(store, courseDesign, args.gate);
+      const preview = buildReopenPreview(store, courseDesign, args.gate, gateProfilesStore);
       console.log(JSON.stringify(preview, null, 2));
       return;
     }
 
     if (!args.draft) {
-      console.error('reopen: usage: --course-design=<path> --draft=<path> --gate=<id> [--store=<path>]');
+      console.error('reopen: usage: --course-design=<path> --draft=<path> --gate=<id> [--store=<path>] [--gate-profiles=<path>]');
       process.exit(1);
     }
     const draft = JSON.parse(fs.readFileSync(path.resolve(args.draft), 'utf8'));
-    const result = buildReopen(store, courseDesign, args.gate, draft);
+    const result = buildReopen(store, courseDesign, args.gate, draft, gateProfilesStore);
     applyReopen(courseDesign, result);
     fs.writeFileSync(courseDesignPath, JSON.stringify(courseDesign, null, 2) + '\n');
     console.log(JSON.stringify({
@@ -325,5 +388,6 @@ module.exports = {
   defaultVerdictForClass,
   buildReopenPreview,
   buildReopen,
-  applyReopen
+  applyReopen,
+  recordsForDependent
 };

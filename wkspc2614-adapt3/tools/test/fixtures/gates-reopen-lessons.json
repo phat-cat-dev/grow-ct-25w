@@ -1,0 +1,8 @@
+{
+  "kbVersion": "0.0.1",
+  "gates": [
+    { "id": "crs-04_lesson-map", "name": "Lesson map", "phase": "CRS", "hardness": "hard-stop", "defaultType": "ai-proposal-stands", "sequence": 0 },
+    { "id": "les-01_lesson-proposal", "name": "Lesson proposal", "phase": "LES", "hardness": "hard-stop", "defaultType": "ai-proposal-stands", "sequence": 1, "repeatsPer": "lesson",
+      "dependsOn": [ { "gate": "crs-04_lesson-map", "dependencyClass": "constitutive", "note": "fixture edge" } ] }
+  ]
+}

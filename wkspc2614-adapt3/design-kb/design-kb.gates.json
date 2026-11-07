@@ -1,5 +1,5 @@
 {
-  "kbVersion": "0.10.7",
+  "kbVersion": "0.10.9",
   "gates": [
     {
       "id": "onb-01_theme-preset",
@@ -345,17 +345,37 @@
       "reserved": true,
       "hardness": "advisory",
       "defaultType": "none",
-      "consequenceNote": "Reserved: future human CAH 1-3 grouping select, which parameterises the agent source sweep. Auto-passes 'none'.",
+      "consequenceNote": "Reserved: future human-only CAH 1-3 grouping select, which parameterises the agent source sweep (never auto-derived, confirmed 5 Nov 2026). Auto-passes 'none'. SHAPE NOTE (5 Nov 2026): decidedValueShape below is carried now, ahead of un-reserving, so a later human-select design lands against a validated shape rather than inventing one cold. No field is required and additionalProperties is open, so today's 40 auto-pass records ({value:\"none\", reserved:true}) keep validating against it (proven: Draft7Validator, 40 checked, 0 failed). The grouping fields (hecos/cah/courses/schools) mirror context-cmet's own defineGrouping() selector vocabulary (tools/context-cmet), so a human-chosen grouping recorded here can be replayed through that tool verbatim. NOT the same site as FORK02 (design-kb.gate-profiles.json \"fork02-shell\", keyed to cxp-01_subject): that fork is the already-speced, non-reserved mechanism for choosing a subject grouping today, via tools/resolve-subject-benchmark.js and a flat Cardiff Met course list; this gate's own promised grouping-select has not been reconciled with it. Confirmed 5 Nov 2026: whichever gate eventually carries the select, it is human-only, never auto-derived.",
       "prosePointer": {
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
       "sequence": 5,
+      "decidedValueShape": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string" },
+          "reserved": { "type": "boolean" },
+          "grouping": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "hecos": { "type": "array", "items": { "type": "string" } },
+              "cah": { "type": "array", "items": { "type": "string" } },
+              "courses": { "type": "array", "items": { "type": "string" } },
+              "schools": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "cmetDataVersion": { "type": "string" }
+        }
+      },
       "agentContext": {
-        "fieldDescription": "Reserved: future human CAH 1-3 grouping select, which parameterises the agent source sweep. Auto-passes 'none'.",
+        "fieldDescription": "Reserved: future human-only CAH 1-3 grouping select, which parameterises the agent source sweep (never auto-derived, confirmed 5 Nov 2026). Auto-passes 'none'. SHAPE NOTE (5 Nov 2026): decidedValueShape below is carried now, ahead of un-reserving, so a later human-select design lands against a validated shape rather than inventing one cold. No field is required and additionalProperties is open, so today's 40 auto-pass records ({value:\"none\", reserved:true}) keep validating against it (proven: Draft7Validator, 40 checked, 0 failed). The grouping fields (hecos/cah/courses/schools) mirror context-cmet's own defineGrouping() selector vocabulary (tools/context-cmet), so a human-chosen grouping recorded here can be replayed through that tool verbatim. NOT the same site as FORK02 (design-kb.gate-profiles.json \"fork02-shell\", keyed to cxp-01_subject): that fork is the already-speced, non-reserved mechanism for choosing a subject grouping today, via tools/resolve-subject-benchmark.js and a flat Cardiff Met course list; this gate's own promised grouping-select has not been reconciled with it. Confirmed 5 Nov 2026: whichever gate eventually carries the select, it is human-only, never auto-derived.",
         "authoringReview": {
-          "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
-          "pointers": []
+          "instruction": "No upstream ingested data for a decision; author from the prior gates decidedValues and the field description. Reserved - do not open for a choice. tools/cmet-context.js (wraps the context-cmet submodule) is the intended source once this gate is un-reserved into a human select: it resolves a HECoS/CAH code or subject text to its grouping, course and school data.",
+          "pointers": [
+            "HECoS/CAH hierarchy and Cardiff Met course/school data: tools/context-cmet (accessed via tools/cmet-context.js) - not yet consulted while this gate stays reserved"
+          ]
         }
       }
     },
@@ -864,12 +884,17 @@
         {
           "gate": "crs-03_course-outcomes",
           "dependencyClass": "constitutive",
-          "note": "Lessons serve the course outcomes."
+          "note": "Lessons serve the course outcomes. built-course-shape / single-course only: crs-03 is not in the pathway-distillation profile's step list (see crs-03's own `profiles` field), so under that profile this edge is not-applicable and crs-07_tiered-outcomes below is the constitutive source instead."
         },
         {
           "gate": "crs-02_thematic-scope",
           "dependencyClass": "constitutive",
-          "note": "Lessons derive from scope + strands."
+          "note": "Lessons derive from scope + strands. built-course-shape / single-course only: crs-02 is not in the pathway-distillation profile's step list, so under that profile this edge is not-applicable and crs-07_tiered-outcomes below supplies the scope instead (the tier's own flat LOs, book-first)."
+        },
+        {
+          "gate": "crs-07_tiered-outcomes",
+          "dependencyClass": "constitutive",
+          "note": "pathway-distillation only (crs-07 carries no record, and this edge is not-applicable, under any profile that does not name crs-07_tiered-outcomes in its step list): under this profile, with no course-outcome tier, lessons map one-to-one onto crs-07's flat LOs directly - each lesson's outcomes[].serves and mainCourseOutcome name a crs-07_tiered-outcomes.outcomes[].id, not a crs-03 course-outcome id."
         }
       ],
       "response": {
@@ -1002,18 +1027,18 @@
           "checks": [
             {
               "id": "AL-1",
-              "rule": "Every lesson outcome object in lessons[].outcomes carries a `serves` value naming a real id from crs-03_course-outcomes.courseOutcomes (serves is optional in the schema - set it anyway, and check it). A `serves` value that matches no course-outcome id is a dangling reference.",
-              "appliesTo": "lessons[].outcomes[].serves (this draft) against crs-03_course-outcomes.courseOutcomes[].id"
+              "rule": "Every lesson outcome object in lessons[].outcomes carries a `serves` value naming a real id from crs-03_course-outcomes.courseOutcomes (serves is optional in the schema - set it anyway, and check it). A `serves` value that matches no course-outcome id is a dangling reference. Under pathway-distillation (crs-03 carries no record under that profile), `serves` instead names a real id from crs-07_tiered-outcomes.outcomes - the same dangling-reference check, against the profile's actual id space.",
+              "appliesTo": "lessons[].outcomes[].serves (this draft) against crs-03_course-outcomes.courseOutcomes[].id (built-course-shape / single-course), or against crs-07_tiered-outcomes.outcomes[].id (pathway-distillation)"
             },
             {
               "id": "AL-2",
-              "rule": "Every lesson outcome's text states one verb and one object, never two tasks joined by 'and'. The outcome count for a lesson is a judgement call, not a count derived from lessons[].sourceSections.length. Each lesson outcome's subject matter stays inside crs-02_thematic-scope.sectionsInScope (and does not stray into sectionsOutOfScope) - a qualitative check, not a string match.",
-              "appliesTo": "lessons[].outcomes[].text (this draft), cross-checked against crs-02_thematic-scope.sectionsInScope/sectionsOutOfScope"
+              "rule": "Every lesson outcome's text states one verb and one object, never two tasks joined by 'and'. The outcome count for a lesson is a judgement call, not a count derived from lessons[].sourceSections.length. Each lesson outcome's subject matter stays inside crs-02_thematic-scope.sectionsInScope (and does not stray into sectionsOutOfScope) - a qualitative check, not a string match. Under pathway-distillation (crs-02 carries no record under that profile), the same qualitative check reads against the tier's own crs-07_tiered-outcomes entries instead: each lesson outcome stays inside the flat LO(s) it is mapped one-to-one from, not crs-02's sectionsInScope/sectionsOutOfScope.",
+              "appliesTo": "lessons[].outcomes[].text (this draft), cross-checked against crs-02_thematic-scope.sectionsInScope/sectionsOutOfScope (built-course-shape / single-course), or against crs-07_tiered-outcomes.outcomes[] (pathway-distillation)"
             },
             {
               "id": "MCO-1",
-              "rule": "Not one of gate.md's numbered AL rules - a consistency rule implied by this gate's own shape, confirmed true of every one of the 158 lessons in every closed crs-04 record today (2 Nov 2026), so it hardens an existing universal pattern rather than introducing a new one. Every lesson's mainCourseOutcome names a real crs-03 course-outcome id, and equals the single value shared by every one of that lesson's outcomes[].serves - a lesson's outcomes must not serve more than one course outcome, and mainCourseOutcome must agree with them.",
-              "appliesTo": "lessons[].mainCourseOutcome (this draft) against crs-03_course-outcomes.courseOutcomes[].id, and against the serves set of lessons[].outcomes[] within the same lesson"
+              "rule": "Not one of gate.md's numbered AL rules - a consistency rule implied by this gate's own shape, confirmed true of every one of the 158 lessons in every closed crs-04 record today (2 Nov 2026), so it hardens an existing universal pattern rather than introducing a new one. Every lesson's mainCourseOutcome names a real crs-03 course-outcome id, and equals the single value shared by every one of that lesson's outcomes[].serves - a lesson's outcomes must not serve more than one course outcome, and mainCourseOutcome must agree with them. Under pathway-distillation (crs-03 carries no record under that profile), mainCourseOutcome instead names a real crs-07_tiered-outcomes.outcomes[].id, with the same one-LO-per-lesson agreement rule against outcomes[].serves.",
+              "appliesTo": "lessons[].mainCourseOutcome (this draft) against crs-03_course-outcomes.courseOutcomes[].id (built-course-shape / single-course), or against crs-07_tiered-outcomes.outcomes[].id (pathway-distillation), and against the serves set of lessons[].outcomes[] within the same lesson"
             }
           ],
           "scopeNote": "AL-3, AL-5 and AL-6 bind at les-01 and wra-01/02/03, none of which have run yet. The lesson-count floor (minimum 5 per tier, 2 Nov 2026 ruling) and the exactly-3-outcomes-per-lesson quota are standing rulings but NOT YET schema-enforced on decidedValueShape (deferred, the one breaking step in the gate-quota work); this validation does not add or enforce either count, only the reference and alignment checks above.",
@@ -1166,7 +1191,7 @@
       "agentContext": {
         "fieldDescription": "Auto-stands surfacing of the pathway's 18 evidence statements, read verbatim from catalogue/context/pathway-evidence/<pathway>.json. No authoring; this gate's only job is correct retrieval.",
         "authoringReview": {
-          "instruction": "Read catalogue/context/pathway-evidence/<pathway>.json in full and copy its 18 statements into decidedValue.statements unchanged. Do not paraphrase, trim, or invent a 19th. If the file has fewer than 18 (not yet drafted for this pathway), state that plainly as a grounding gap rather than padding the array.",
+          "instruction": "Read catalogue/context/pathway-evidence/<pathway>.json in full and copy its 18 statements into decidedValue.statements unchanged. decidedValue.statements[].text is sourced from each evidence item's own `title` field (the evidence file carries no `text` key; `title` is its one self-contained, single-statement string, as distinct from `example`'s worked-scenario prose) \u2014 copy `title` verbatim into `text`, do not paraphrase, trim, or invent a 19th. If the file has fewer than 18 (not yet drafted for this pathway), state that plainly as a grounding gap rather than padding the array.",
           "pointers": [
             "crs-01_sources",
             "catalogue/context/pathway-evidence/<pathway>.json"
@@ -1217,7 +1242,7 @@
         "properties": {
           "outcomes": {
             "type": "array",
-            "minItems": 4,
+            "minItems": 5,
             "maxItems": 6,
             "items": {
               "type": "object",
@@ -1260,6 +1285,10 @@
                     }
                   },
                   "description": "Required when layer=2: a Layer-1 book-section LO is self-evidently grounded by its own text and needs no separate source."
+                },
+                "confidenceStatement": {
+                  "type": "string",
+                  "description": "pathway-distillation only (D6, 4 Nov 2026): this outcome's own confidence statement, the replacement for crs-03's per-outcome courseOutcomeBanks confidence text under a profile with no course-outcome tier. Read by wra-04_confidence's crs-07 branch and placed into C-PRE/C-POST the same way crs-03's confidence statements are under built-course-shape / single-course."
                 }
               }
             }
@@ -1274,7 +1303,7 @@
       "agentContext": {
         "fieldDescription": "4-6 flat LOs for this tier, book-first two-layer method. No course-outcome tier above them under this profile.",
         "authoringReview": {
-          "instruction": "Build outcomes in two passes. Layer 1: for each real book-chapter section in this tier's bookGrounding window, write one LO stating the one verb/one object the section actually teaches; set layer=1, no source needed. Layer 2: only if Layer 1 produced fewer than 4, fill to the 4-6 range using the pathway's own applied evidence statement (crs-06, source.type=capability-evidence, source.ref=capabilityId) or at most one named-theory LO per tier anchored inside an existing book-grounded lesson (source.type=named-theory-anchor, source.ref=that lesson's key). Never invent a Layer-2 LO with no traceable source.",
+          "instruction": "Build outcomes in two passes. Layer 1: for each real book-chapter section in this tier's bookGrounding window, write one LO stating the one verb/one object the section actually teaches; set layer=1, no source needed. Layer 2: only if Layer 1 produced fewer than 4, fill to the 4-6 range using the pathway's own applied evidence statement (crs-06, source.type=capability-evidence, source.ref=capabilityId) or at most one named-theory LO per tier anchored inside an existing book-grounded lesson (source.type=named-theory-anchor, source.ref=that lesson's key). Never invent a Layer-2 LO with no traceable source. Author each outcome's confidenceStatement in the same pass as its text, book-grounded like the outcome itself (no separate source lookup) - a short first-person confidence-check sentence against this one flat LO, the same register as crs-03's per-outcome confidence statements under built-course-shape / single-course.",
           "pointers": [
             "crs-06_pathway-statements",
             "catalogue/context/pathway/<pathway>.json bookGrounding"
@@ -1323,10 +1352,13 @@
       },
       "generation": {
         "trigger": "crs-07 closed",
-        "produces": "decidedValue (tierSiblings + up/down signposts)",
+        "produces": "decidedValue (tierSiblings + up/down signposts, and, once all three tiers' crs-07 exist, this tier's journey + spreadReading)",
         "sources": [
           "crs-07 this tier's flat LOs",
-          "catalogue/pathways.json (tier ladder)"
+          "crs-07_tiered-outcomes records for all three tiers (introductory, intermediate, advanced), read side by side for journey/spreadReading",
+          "catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings: resolved by the <pathway>-<tier> directory convention with an existence check - catalogue/pathways.json itself carries no tier data, and courseSlug is null/status is 'planned' for all three tiers today, so neither pathways file can supply tierSiblings directly)",
+          "catalogue/context/pathway/<pathway>.json tierProgression.ladderReadings, masteryNote, tierStatements, capabilities[] (the 11-row ladder, its evolution narrative, and the rowId<->fheqLevel join - read upstream, never copied into the record)",
+          "catalogue/context/shared/cross-cutting.json genericLadder.heads, tierModel (the three ladder heads' exact wording; the sole level authority for spreadReading)"
         ]
       },
       "consequenceNote": "Soft, advisory framing only: names this course's sibling tier slugs and a short up/down signpost sentence for each direction that exists (introductory has no 'down'; advanced has no 'up'). Does not change this course's own LOs or lessons.",
@@ -1350,6 +1382,61 @@
                 "type": "string"
               }
             }
+          },
+          "journey": {
+            "type": "object",
+            "description": "Optional at top level (a signposts-only first record stays valid), but once present must carry all four fields below - this is where SHP-1 gets teeth against ungrounded invention. This tier's re-authored practice/knowledge/identity row, written after reading all three tiers' crs-07_tiered-outcomes side by side. The shared 11-row ladder (catalogue/context/pathway/<pathway>.json tierProgression.ladderReadings) and its evolution narrative (masteryNote, tierStatements) are read upstream and NEVER copied verbatim into this record - the agent re-authors its own prose each run and must name which ladder rows it reasoned from.",
+            "required": [
+              "practice",
+              "knowledge",
+              "identity",
+              "ladderRows"
+            ],
+            "properties": {
+              "practice": {
+                "type": "string",
+                "description": "This tier's re-authored answer to the ladder's 'Practice (what one does)' head (catalogue/context/shared/cross-cutting.json genericLadder.heads), grounded in this tier's own crs-07 LOs, not a copy of the shared ladder's wording."
+              },
+              "knowledge": {
+                "type": "string",
+                "description": "This tier's re-authored answer to the ladder's 'Knowledge (what one knows)' head."
+              },
+              "identity": {
+                "type": "string",
+                "description": "This tier's re-authored answer to the ladder's 'Practitioner self-identity (who one is)' head."
+              },
+              "ladderRows": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "pattern": "^(i|d|e)[1-3]$"
+                },
+                "description": "The bare rowIds this tier's journey prose reasoned from, resolvable against catalogue/context/pathway/<pathway>.json's own capabilities[] join table (rowId <-> this tier's fheqLevel)."
+              }
+            }
+          },
+          "spreadReading": {
+            "type": "object",
+            "description": "Optional at top level, required-when-present inside. A judgement, not a mechanical lookup: crs-07's outcomes[] carry no fheqLevel, rowId or capabilityId (the majority, Layer-1 LOs, trace only to bookGrounding.sections[], which carries no level), so this tier's LO spread cannot be read against a level automatically - it must be recorded as agent prose with its basis named. Level authority is catalogue/context/shared/cross-cutting.json's tierModel, never design-kb/design-kb.tier-bands.json's indicativeLevels (that field is explicitly who is in the room - self-judged beginners arriving from many levels - not what level the capability sits at; tierModel is corroborated row-for-row by each pathway's capabilities[] join table, tier-bands is not).",
+            "required": [
+              "reading",
+              "basis"
+            ],
+            "properties": {
+              "reading": {
+                "type": "string",
+                "description": "This tier's LO spread, read against tierModel's fheqRange/rows for this tier, in prose."
+              },
+              "topHeavy": {
+                "type": "boolean",
+                "description": "True when the spread reads as weighted toward the top of this tier's fheqRange. Expected and acceptable - record, do not correct."
+              },
+              "basis": {
+                "type": "string",
+                "description": "Which tierModel rows and/or levels (or journey.ladderRows above) this reading was read against."
+              }
+            }
           }
         }
       },
@@ -1359,13 +1446,33 @@
       },
       "sequence": 17,
       "agentContext": {
-        "fieldDescription": "Sibling tier slugs + up/down signpost sentences. Soft, advisory framing only.",
+        "fieldDescription": "Sibling tier slugs + up/down signpost sentences, plus (D-adp3, once all three tiers' crs-07 exist) this tier's own re-authored cross-tier journey row and LO-spread-vs-level reading. Soft, advisory framing only; never changes this course's own LOs or lessons.",
         "authoringReview": {
-          "instruction": "Derive tierSiblings from catalogue/pathways.json's tier ladder for this theme (the other slugs sharing this course's theme). Write one up-signpost sentence (what the next tier adds) if a tier above this one exists, and one down-signpost sentence (what this tier assumes was covered) if a tier below exists. introductory has no down; advanced has no up.",
+          "instruction": "Derive tierSiblings by the <pathway>-<tier> directory convention (catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json name the pathway and its three tier slugs; resolve siblings by checking which sibling directories actually exist, not by a courseSlug field - courseSlug is null and status is 'planned' for all three tiers today). Write one up-signpost sentence (what the next tier adds) if a tier above this one exists, and one down-signpost sentence (what this tier assumes was covered) if a tier below exists. introductory has no down; advanced has no up. Then, reading all three tiers' crs-07_tiered-outcomes records side by side: re-author this tier's own practice/knowledge/identity row (journey) - use catalogue/context/shared/cross-cutting.json's genericLadder.heads' exact wording ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)') as the frame for the three fields, not words to copy; the row itself is this tier's own re-authoring, grounded in its own crs-07 LOs, never a copy of the shared ladder's or another tier's wording. Name the ladder rows (journey.ladderRows) reasoned from, resolvable against catalogue/context/pathway/<pathway>.json's capabilities[] join table. Then read this tier's LO spread against catalogue/context/shared/cross-cutting.json's tierModel - never design-kb/design-kb.tier-bands.json's indicativeLevels, which is who is in the room, not what level the capability sits at - and write spreadReading: say plainly where the spread is top-heavy relative to this tier's fheqRange; that is expected and acceptable, record it, do not correct it.",
           "pointers": [
             "crs-07_tiered-outcomes",
-            "catalogue/pathways.json (tier ladder)"
+            "crs-07_tiered-outcomes records for all three tiers, read together",
+            "catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings, by directory-existence convention)",
+            "catalogue/context/pathway/<pathway>.json tierProgression.ladderReadings, masteryNote, tierStatements, capabilities[]",
+            "catalogue/context/shared/cross-cutting.json genericLadder.heads, tierModel"
           ]
+        },
+        "validation": {
+          "purpose": "A ruling (not a coin-flip): tierModel is the sole level authority for spreadReading, and journey/spreadReading are agent re-authored prose, not a copy of the ladder - these checks stop a journey block from standing ungrounded under this gate's soft hardness.",
+          "checks": [
+            {
+              "id": "CTJ-1",
+              "rule": "Every journey.ladderRows entry matches ^(i|d|e)[1-3]$ and belongs to this tier per catalogue/context/pathway/<pathway>.json's capabilities[] join (that rowId's own tier field equals this course's tier).",
+              "appliesTo": "decidedValue.journey.ladderRows against catalogue/context/pathway/<pathway>.json capabilities[].rowId/tier"
+            },
+            {
+              "id": "CTJ-2",
+              "rule": "spreadReading.basis names at least one level (an fheqLevel or fheqRange bound from tierModel) or rowId it was read against.",
+              "appliesTo": "decidedValue.spreadReading.basis"
+            }
+          ],
+          "scopeNote": "Does not check journey/spreadReading prose for accuracy - only that each is traceable to named rows/levels. The shape itself (decidedValueShape, enforced by SHP-1) already requires practice/knowledge/identity/ladderRows together when journey is present, and reading/basis together when spreadReading is present.",
+          "onFail": "A failed check means the draft itself is ungrounded. Revise before presenting it; do not let it stand on silence."
         }
       }
     },
@@ -1374,8 +1481,8 @@
       "name": "Lesson proposal",
       "phase": "LES",
       "kind": "agent+human",
-      "hardness": "soft",
-      "defaultType": "ai-proposal-stands",
+      "hardness": "hard-stop",
+      "defaultType": "none",
       "repeatsPer": "lesson",
       "procedureFlags": {
         "varietyView": true,
@@ -1921,7 +2028,12 @@
         {
           "gate": "crs-03_course-outcomes",
           "dependencyClass": "constitutive",
-          "note": "Places crs-03's per-outcome confidence statements into C-PRE/C-POST."
+          "note": "Places crs-03's per-outcome confidence statements into C-PRE/C-POST. built-course-shape / single-course only: crs-03 is not in the pathway-distillation profile's step list (see crs-03's own `profiles` field), so under that profile this edge is not-applicable and crs-07_tiered-outcomes below is the constitutive source instead."
+        },
+        {
+          "gate": "crs-07_tiered-outcomes",
+          "dependencyClass": "constitutive",
+          "note": "pathway-distillation only (crs-07 carries no record, and this edge is not-applicable, under any profile that does not name crs-07_tiered-outcomes in its step list): under this profile, with no course-outcome tier, confidence statements are placed one per flat LO from crs-07's own outcomes[].confidenceStatement field directly."
         }
       ],
       "response": {
@@ -1930,13 +2042,15 @@
         "destination": "decidedValue"
       },
       "generation": {
-        "trigger": "crs-03 closed, scaffold run (C-PRE/C-POST pages exist)",
+        "trigger": "crs-03 closed, scaffold run (C-PRE/C-POST pages exist); under pathway-distillation, crs-07 closed instead (crs-03 carries no record under that profile)",
         "produces": "C-PRE confidence-pre + C-POST confidence-post components",
         "sources": [
-          "crs-03 courseOutcomeBanks (confidenceStatement per outcome)"
+          "crs-03 courseOutcomeBanks (confidenceStatement per outcome) - built-course-shape / single-course",
+          "crs-07 tiered outcomes (outcomes[].confidenceStatement per flat LO) - pathway-distillation"
         ],
         "parameters": {
-          "perOutcome": "every course outcome carries at least one confidence statement (AL-4), each naming via rates the outcome it rates"
+          "perOutcome": "every course outcome carries at least one confidence statement (AL-4), each naming via rates the outcome it rates - built-course-shape / single-course",
+          "perLO": "every crs-07 flat LO carries its own confidenceStatement, placed one per LO, each naming via rates the crs-07 outcome id it rates - pathway-distillation"
         }
       },
       "consequenceNote": "Post-scaffold placement of crs-03's per-outcome confidence statements into the C-PRE confidence-pre and C-POST confidence-post components (palette/confidence). AL-4: each statement rates its course outcome; every course outcome carries at least one. The same statement set brackets the course (C-PRE before lessons, C-POST at close). Added 8 October 2026 (Abbott: two gates in WRA).",
@@ -1954,7 +2068,7 @@
               "properties": {
                 "rates": {
                   "type": "string",
-                  "description": "AL-4: the course outcome id (from crs-03) this statement rates."
+                  "description": "AL-4: the course outcome id (from crs-03) this statement rates - built-course-shape / single-course. Under pathway-distillation (crs-03 carries no record under that profile): the crs-07 flat LO id (from crs-07_tiered-outcomes.outcomes[].id) this statement rates instead."
                 },
                 "text": {
                   "type": "string"
@@ -1974,7 +2088,8 @@
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
-            "crs-03 courseOutcomeBanks (confidenceStatement per outcome)"
+            "crs-03 courseOutcomeBanks (confidenceStatement per outcome) - built-course-shape / single-course",
+            "crs-07 tiered outcomes (outcomes[].confidenceStatement per flat LO) - pathway-distillation"
           ]
         }
       }
@@ -2152,6 +2267,7 @@
       ],
       "sourceConsultation": {
         "triggeringFacets": [
+          "subject",
           "level",
           "institution",
           "faculty",
@@ -2159,6 +2275,7 @@
         ],
         "authorityLevels": [
           "sector",
+          "subject",
           "institutional"
         ]
       },
@@ -2175,11 +2292,13 @@
           "baseline subject (cxp-01 = baseline): the universal reference in place of a subject benchmark -- catalogue/context/subject/benchmarks/universal-reference.json, the generic shared-core standards distilled across the 54 subject benchmarks by tools/build-universal-benchmark.py",
           "standing standards registry",
           "cxs-04 referencing",
-          "crs-01 source set"
+          "crs-01 source set",
+          "HECoS/CAH subject-benchmark-to-pathway mapping and Cardiff Met course/school data (tools/context-cmet, accessed via tools/cmet-context.js): the host's own subject benchmark files carry pathwayMapping mostly empty (53 of 55, verified); this fills that gap for a real (non-baseline) subject"
         ],
         "parameters": {
           "neverOriginals": "use interpreted benchmark docs, never copyrighted originals",
-          "baseline": "When cxp-01_subject = baseline (resolve-subject-benchmark.js returns matchLevel 'baseline', id 'universal-reference', resolved null), generate every coupled slot against the universal reference json INSTEAD of a subject benchmark corpus: use its shared-core statements and their forBeneficiary (average, student-facing) wording, its tierReadings for pitch, and its pathwayMapping entry for this course's pathway (honouring each mapped statement's agentInstruction). Keep all content subject-neutral (the 'your subject' / Student A / Student B cast); invent no subject-specific content. A real subject chosen at cxp-01 overrides this branch."
+          "baseline": "When cxp-01_subject = baseline (resolve-subject-benchmark.js returns matchLevel 'baseline', id 'universal-reference', resolved null), generate every coupled slot against the universal reference json INSTEAD of a subject benchmark corpus: use its shared-core statements and their forBeneficiary (average, student-facing) wording, its tierReadings for pitch, and its pathwayMapping entry for this course's pathway (honouring each mapped statement's agentInstruction). Keep all content subject-neutral (the 'your subject' / Student A / Student B cast); invent no subject-specific content. A real subject chosen at cxp-01 overrides this branch.",
+          "cmet": "For a real (non-baseline) subject: call `node tools/cmet-context.js <subject-or-code> --pathway=<course-pathway>`, passing the course's pathway id verbatim (context-cmet's pathway ids are the host's course-slug stems - an identity mapping for 13 of the 14; only its extra 'self-development' has no host counterpart). Pass --row only if a row is already known; the host records tier (introductory/intermediate/advanced), not context-cmet's row-level FHEQ split (e.g. intermediate spans d1/d2/d3 = L4/L5/L6), so never guess a row. Every statement context-cmet returns is 'proposed', none 'confirmed' (its own first caveat): use it to ground pitch, scope and the pathway's reading of the subject, never cite it as settled academic authority. Honour each statement's own instruction/agentInstruction. Never reproduce its verbatim QAA extracts in generated copy (held for study only; the submodule is private/internal, excludes extracts by default). On a `gap` (no match, or the submodule not populated), fall through to the baseline branch above rather than inventing subject-specific content."
         }
       },
       "consequenceNote": "Old D1. Generates all coupled-slot content per subject: lesson context-specific checks, coupled worked examples, wrapper practice-connection prose. Referencing inherited from cxs-04 (not a gate here). Widest sourceConsultation set. BASELINE BRANCH: when cxp-01's subject is baseline, the generation reads the universal reference (generic, average student-facing standards from universal-reference.json) in place of a subject benchmark corpus; see generation.parameters.baseline.",
@@ -2198,7 +2317,8 @@
             "baseline subject (cxp-01 = baseline): the universal reference in place of a subject benchmark -- catalogue/context/subject/benchmarks/universal-reference.json, the generic shared-core standards distilled across the 54 subject benchmarks by tools/build-universal-benchmark.py",
             "standing standards registry",
             "cxs-04 referencing",
-            "crs-01 source set"
+            "crs-01 source set",
+            "HECoS/CAH subject-benchmark-to-pathway mapping and Cardiff Met course/school data (tools/context-cmet, accessed via tools/cmet-context.js): the host's own subject benchmark files carry pathwayMapping mostly empty (53 of 55, verified); this fills that gap for a real (non-baseline) subject"
           ]
         }
       }

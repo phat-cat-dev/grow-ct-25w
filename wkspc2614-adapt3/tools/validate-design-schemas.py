@@ -684,9 +684,24 @@ def validate_course_design(
                 # each courseOutcomeBank's outcomeId is that outcome's confidence
                 # statement (AL-4; confidence moved onto crs-03's banks from the
                 # retired act-02 gate, six-phase migration 8 Oct 2026).
-                for co in decided_value.get("courseOutcomes", []) or []:
-                    if isinstance(co, dict) and "id" in co:
-                        course_outcome_ids.add(co["id"])
+                # D9 (distillation-unblock-decisions.md): course_outcome_ids
+                # feeds OC-1/CO-1 below, which checks crs-04 lessons' `serves`
+                # against it. Under a profile where crs-03_course-outcomes is
+                # not in the resolved gate-id set (co_required_by_profile,
+                # already computed above for NSK-1), a crs-03 record is inert
+                # history, not the active course-outcome tier - e.g.
+                # pathway-distillation's lessons serve crs-07's flat LOs
+                # directly, never crs-03 ids. A stale closed crs-03 record
+                # left in the manifest under such a profile must not populate
+                # course_outcome_ids, or OC-1/CO-1 fails every lesson's
+                # correctly-pointed `serves` by comparing it against the wrong
+                # tier's ids. AL-4 (confidence_seen/confidence_outcome_ids,
+                # below) is not in scope for this ruling and stays
+                # unconditional.
+                if co_required_by_profile:
+                    for co in decided_value.get("courseOutcomes", []) or []:
+                        if isinstance(co, dict) and "id" in co:
+                            course_outcome_ids.add(co["id"])
                 banks = decided_value.get("courseOutcomeBanks", []) or []
                 if banks:
                     confidence_seen = True

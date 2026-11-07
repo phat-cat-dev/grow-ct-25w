@@ -36,6 +36,11 @@ scorm-packages/**/*.zip
 # claude.ai relay drop zone, never committed
 incoming-docs/
 
+# raw HTML/JS staged for conversion into a src/components or src/extensions
+# plugin (see incoming-components/README.md); never committed as-is
+incoming-components/*
+!incoming-components/README.md
+
 # QAA subject benchmark PDFs (reference material, not build inputs)
 docs/contexts/qaa/
 
