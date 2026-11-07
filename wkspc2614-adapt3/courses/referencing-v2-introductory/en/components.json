@@ -910,7 +910,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>The last lesson looked at logging a source the moment you select it. This lesson looks at keeping that log organised, so every entry stays easy to find again while you keep gathering evidence.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -926,7 +926,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this stage, the aim is to keep a source log running as you work, organise it so an entry can be found again, and check an entry against its original source.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -942,7 +942,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>By the end of this lesson, you will be able to:</p><ul><li>keep a source log while gathering evidence</li><li>organise a source log so an entry can be found again</li><li>check a source log entry against its original source</li></ul>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -958,7 +958,7 @@
     "_layout": "full",
     "title": "Concept: definition",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>A source log is a running record of every source used, built up as you gather evidence rather than assembled at the end. Keeping it organised means each entry can be found again quickly, by topic, by source type, or in the order it was added; checking it means comparing an entry back against the original source to confirm nothing has drifted.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -990,7 +990,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You have seen what keeps a source log usable: adding to it as you go, organising it, and checking entries against their originals. The activities ahead let you practise organising and checking; the check at the end asks you to apply both.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -1006,7 +1006,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Look at how you currently keep track of sources, if you keep track at all. Could you find a specific entry again quickly? When did you last check one against the original?</p><p>No right answers apply here; the aim is simply to notice how your own log holds up.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -1022,7 +1022,7 @@
     "_layout": "full",
     "title": "Summary",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You can now keep a source log while gathering evidence, organise it so an entry can be found again, and check an entry against its original source. This closes the course's coverage of giving every source the record it needs.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -3865,6 +3865,436 @@
       "_incorrect": {
         "notFinal": "Think about what a reader would need to go and check the exact idea against its source.",
         "final": "The exact page or location is essential to a traceable record. Confidence, reading time, and font are not."
+      }
+    },
+    "_isPartOfAssessment": false
+  },
+  {
+    "_id": "L06-c-30",
+    "_parentId": "L06-b-30",
+    "_type": "component",
+    "_component": "sortable",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Activity: keeping the log running",
+    "displayTitle": "Put these steps in order",
+    "body": "These are the steps for keeping a source log running while gathering evidence. They are out of order.",
+    "instruction": "Drag items to reorder, or use the keyboard (Enter to grab, arrows to move, Enter to drop). Then select Submit.",
+    "ariaQuestion": "Put the steps for keeping a source log running in the correct order.",
+    "_attempts": -1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Open the log before starting a new research session."
+      },
+      {
+        "text": "Add each new source to the log the moment it is selected."
+      },
+      {
+        "text": "File the entry under a topic or source type as it is added."
+      },
+      {
+        "text": "Review the log at the end of the session to check nothing was missed."
+      }
+    ],
+    "_feedback": {
+      "title": "",
+      "correct": "That is the right order: open the log first, add each source as it is found, file it immediately, then review at the end.",
+      "_incorrect": {
+        "notFinal": "Not in order yet. The log has to be open before anything can be added to it. Try again.",
+        "final": ""
+      },
+      "_partlyCorrect": {
+        "notFinal": "Some steps are in the right place, but not all. Try again.",
+        "final": ""
+      }
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "L06-c-35",
+    "_parentId": "L06-b-35",
+    "_type": "component",
+    "_component": "matching",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Activity: organised or not",
+    "displayTitle": "Match each log to its outcome",
+    "body": "Two ways of organising a source log, and what tends to happen when you need to find an entry again.",
+    "instruction": "Select an option for each item, then select Submit.",
+    "ariaQuestion": "Match each way of organising a source log to its outcome.",
+    "_attempts": -1,
+    "_shouldDisplayAttempts": false,
+    "_questionWeight": 1,
+    "_hasItemScoring": false,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": false,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_shouldResetAllAnswers": true,
+    "_isRandom": false,
+    "_isRandomQuestionOrder": false,
+    "_allowOnlyUniqueAnswers": false,
+    "placeholder": "Select an option",
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Every source is filed under the topic or claim it supports as soon as it is added.",
+        "_options": [
+          {
+            "text": "An entry can be found again quickly when needed.",
+            "_isCorrect": true,
+            "_score": 1
+          },
+          {
+            "text": "Finding one entry means searching through everything.",
+            "_isCorrect": false,
+            "_score": 0
+          }
+        ]
+      },
+      {
+        "text": "Sources are added to a single long list with no topic or type attached.",
+        "_options": [
+          {
+            "text": "An entry can be found again quickly when needed.",
+            "_isCorrect": false,
+            "_score": 0
+          },
+          {
+            "text": "Finding one entry means searching through everything.",
+            "_isCorrect": true,
+            "_score": 1
+          }
+        ]
+      }
+    ],
+    "_feedback": {
+      "title": "",
+      "correct": "That's right. Filing by topic or claim keeps entries findable; an unfiled list does not.",
+      "_incorrect": {
+        "notFinal": "Not quite. Think about what has to happen to find one entry in each case.",
+        "final": ""
+      },
+      "_partlyCorrect": {
+        "notFinal": "One of these is right, but not both. Check the other.",
+        "final": ""
+      }
+    },
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "L06-c-40",
+    "_parentId": "L06-b-40",
+    "_type": "component",
+    "_component": "workedExample",
+    "_classes": "slot__L06__worked-example",
+    "_layout": "full",
+    "title": "Worked example: keeping the log usable",
+    "displayTitle": "Worked example: keeping the log usable",
+    "body": "<p>Two students each keep a source log while researching an assignment.</p><p class=\"we-weaker\">{{learner-a}} adds every source to a single long list in the order they were found, with no topic or type attached. Three weeks later, {{learner-a-pronoun}} cannot find the one source that covers a particular statistic without reading the whole list again.</p><p class=\"we-stronger\">{{learner-b}} files each source under the claim it supports as it is added, and checks each entry against the original the same day.</p><p>Only {{learner-b}}'s log can still be searched and trusted weeks later.</p>"
+  },
+  {
+    "_id": "L06-c-45",
+    "_parentId": "L06-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Activity: checking an entry against its source",
+    "displayTitle": "Turn each card over",
+    "body": "Four things to check an entry against its original source. Select a card to flip it and see why.",
+    "instruction": "Select each card to turn it over.",
+    "_flipBehaviour": "independent",
+    "_items": [
+      {
+        "front": {
+          "title": "The exact wording"
+        },
+        "back": {
+          "body": "If the entry includes a quote, is it word for word, not paraphrased by accident?"
+        }
+      },
+      {
+        "front": {
+          "title": "The page or location"
+        },
+        "back": {
+          "body": "Does the page or location noted actually match where the idea appears in the source?"
+        }
+      },
+      {
+        "front": {
+          "title": "The reference detail"
+        },
+        "back": {
+          "body": "Do the author, year and title in the log match the source exactly?"
+        }
+      },
+      {
+        "front": {
+          "title": "The claim it supports"
+        },
+        "back": {
+          "body": "Does the source actually say what the log entry claims it says?"
+        }
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "L06-c-50",
+    "_parentId": "L06-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Activity: ways to organise a source log",
+    "displayTitle": "Ways to organise a source log",
+    "body": "Four common ways of organising a source log. Open each to see it explained.",
+    "instruction": "Select each heading to reveal it. Work through all four.",
+    "_items": [
+      {
+        "title": "By topic or claim",
+        "body": "Sources are grouped under the point in the assignment they support."
+      },
+      {
+        "title": "By source type",
+        "body": "Books, journal articles and websites are grouped separately, since each needs different detail recorded."
+      },
+      {
+        "title": "By date added",
+        "body": "Sources stay in the order they were found, useful for a short piece of work with few sources."
+      },
+      {
+        "title": "By a combination",
+        "body": "Sources are filed by topic first, then by type within each topic, for a longer piece with many sources."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "L06-c-55",
+    "_parentId": "L06-b-55",
+    "_type": "component",
+    "_component": "checklist",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Practical guidance: keeping a usable source log",
+    "displayTitle": "While gathering evidence in {{context}}",
+    "body": "Run through this list regularly while researching a piece of work.",
+    "instruction": "Tick each item once you have checked it.",
+    "_items": [
+      {
+        "text": "Every source is added to the log as it is selected, not afterward."
+      },
+      {
+        "text": "Each entry is filed under a topic, claim or source type as it is added."
+      },
+      {
+        "text": "Entries are checked against their original source before the log is relied on."
+      },
+      {
+        "text": "You can find any specific entry again without reading the whole log."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": false
+    }
+  },
+  {
+    "_id": "L06-c-65",
+    "_parentId": "L06-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "knowledge-check-question",
+    "_layout": "full",
+    "title": "Check 1: keeping the log running",
+    "displayTitle": "What keeps a source log useful while gathering evidence over several weeks?",
+    "body": "",
+    "instruction": "Choose one option and select Submit.",
+    "ariaQuestion": "What keeps a source log useful over a long research period?",
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Adding each source the moment it is selected, rather than reconstructing the list later.",
+        "_shouldBeSelected": true,
+        "feedback": "Yes. A log stays accurate when sources are added as they are found, not reconstructed from memory later."
+      },
+      {
+        "text": "Waiting until the research is finished to build the log in one sitting.",
+        "_shouldBeSelected": false,
+        "feedback": "Building the log in one sitting risks exactly the memory problems logging as you go avoids."
+      },
+      {
+        "text": "Keeping the log in a different format for every source type.",
+        "_shouldBeSelected": false,
+        "feedback": "Different formats are not what keeps a log useful; consistent, ongoing entry is."
+      },
+      {
+        "text": "Only logging sources that are quoted directly.",
+        "_shouldBeSelected": false,
+        "feedback": "Every source used, quoted or not, needs an entry in the log."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "_attempts": 3,
+    "_shouldDisplayAttempts": true,
+    "_isRandom": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_feedback": {
+      "title": "",
+      "correct": "Yes. Adding each source as it is found keeps the log accurate across a long research period.",
+      "_incorrect": {
+        "notFinal": "Think about what happens to detail when it is reconstructed from memory at the end.",
+        "final": "Adding each source as it is selected keeps the log accurate. Waiting until the end, varying format, and quote-only logging do not."
+      }
+    },
+    "_isPartOfAssessment": false
+  },
+  {
+    "_id": "L06-c-67",
+    "_parentId": "L06-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "knowledge-check-question",
+    "_layout": "full",
+    "title": "Check 2: organising for findability",
+    "displayTitle": "A source log holds forty entries in a single unsorted list. What problem does this create?",
+    "body": "",
+    "instruction": "Choose one option and select Submit.",
+    "ariaQuestion": "What problem does an unsorted source log create?",
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Finding one specific entry again means searching through all forty.",
+        "_shouldBeSelected": true,
+        "feedback": "Right. Without filing by topic or type, finding one entry means checking the whole list."
+      },
+      {
+        "text": "The sources stop being valid to cite.",
+        "_shouldBeSelected": false,
+        "feedback": "How a log is organised does not affect whether a source is valid to cite."
+      },
+      {
+        "text": "The log automatically loses older entries.",
+        "_shouldBeSelected": false,
+        "feedback": "An unsorted list does not lose entries; it just makes them harder to find."
+      },
+      {
+        "text": "Nothing; order of addition is organisation enough.",
+        "_shouldBeSelected": false,
+        "feedback": "Order of addition alone does not let a reader jump to a specific entry quickly."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "_attempts": 3,
+    "_shouldDisplayAttempts": true,
+    "_isRandom": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_feedback": {
+      "title": "",
+      "correct": "Right. An unsorted list means searching through everything to find one entry.",
+      "_incorrect": {
+        "notFinal": "Think about what has to happen to find one entry among forty unsorted ones.",
+        "final": "Finding one entry in an unsorted list of forty means searching all of them. Validity, losing entries, and order alone are not the issue."
+      }
+    },
+    "_isPartOfAssessment": false
+  },
+  {
+    "_id": "L06-c-69",
+    "_parentId": "L06-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "knowledge-check-question",
+    "_layout": "full",
+    "title": "Check 3: checking an entry",
+    "displayTitle": "In a piece of work for {{context}}, a log entry claims a source found 'most students benefit', but the source actually says 'some students benefit'. What does checking the entry reveal?",
+    "body": "",
+    "instruction": "Choose one option and select Submit.",
+    "ariaQuestion": "What does checking a log entry against its source reveal when the wording has drifted?",
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "The log entry overstates what the source actually says and needs correcting.",
+        "_shouldBeSelected": true,
+        "feedback": "Yes. Checking against the original catches exactly this kind of drift between the entry and the source."
+      },
+      {
+        "text": "The source itself is unreliable.",
+        "_shouldBeSelected": false,
+        "feedback": "The mismatch is in how the log recorded the source, not in the source's reliability."
+      },
+      {
+        "text": "The entry does not need a page number.",
+        "_shouldBeSelected": false,
+        "feedback": "Page numbers and wording accuracy are separate matters; this mismatch is about wording."
+      },
+      {
+        "text": "Nothing; both versions mean roughly the same thing.",
+        "_shouldBeSelected": false,
+        "feedback": "'Most' and 'some' make different claims; the log entry has overstated the source."
+      }
+    ],
+    "_pageLevelProgress": {
+      "_isEnabled": true,
+      "_isCompletionIndicatorEnabled": true
+    },
+    "_attempts": 3,
+    "_shouldDisplayAttempts": true,
+    "_isRandom": true,
+    "_hasItemScoring": false,
+    "_questionWeight": 1,
+    "_canShowModelAnswer": true,
+    "_canShowCorrectness": true,
+    "_canShowFeedback": true,
+    "_canShowMarking": true,
+    "_recordInteraction": true,
+    "_feedback": {
+      "title": "",
+      "correct": "Yes. The entry overstates the source, which checking against the original is designed to catch.",
+      "_incorrect": {
+        "notFinal": "Compare exactly what the source says against exactly what the log entry claims.",
+        "final": "The entry overstates the source: 'most' is not the same claim as 'some'. The source's reliability and page numbers are not the issue here."
       }
     },
     "_isPartOfAssessment": false
