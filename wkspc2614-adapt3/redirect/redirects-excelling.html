@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<p>Redirecting to the reference...</p>
+<script>
+  // Reads ?ref=<id> and sends the reader to the current link for that
+  // reference (see links.json, generated from links.md by
+  // tools/build-redirect-config.js). links.json sits next to this page, so
+  // this fetch is always same-origin - no CORS configuration is needed on
+  // any host this page is deployed to.
+  (function () {
+    var ref = new URLSearchParams(window.location.search).get('ref');
+    if (!ref) {
+      document.body.textContent = 'No reference specified.';
+      return;
+    }
+    fetch('links.json')
+      .then(function (res) { return res.json(); })
+      .then(function (config) {
+        var entry = config.refs[ref];
+        if (!entry) throw new Error('Unknown ref: ' + ref);
+        var mode = (config.mode === 'fallback') ? 'fallback' : 'primary';
+        var target = entry[mode] || entry.primary || entry.fallback;
+        if (!target) throw new Error('No link available for ref: ' + ref);
+        window.location.replace(target);
+      })
+      .catch(function (err) {
+        document.body.textContent = 'Could not resolve this reference link (' + err.message + ').';
+      });
+  })();
+</script>
+</body>
+</html>
