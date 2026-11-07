@@ -501,6 +501,195 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "A weak result, an honest report",
+                "topic": "the ethical choice between honest reporting and a stronger impression",
+                "description": "A weak result, an honest report — the ethical choice between honest reporting and a stronger impression.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/defining-academic-integrity",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Defining academic integrity",
+                    "pages": "185-187"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Recognise an ethical choice raised by a weak result.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Classify a response to a weak result as honest or embellished.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Justify a course of action that reports a weak result honestly.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "Correcting an unsupported claim",
+                "topic": "upholding honesty when an error would otherwise go unnoticed",
+                "description": "Correcting an unsupported claim — upholding honesty when an error would otherwise go unnoticed.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Identify an unsupported figure in shared work.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Justify correcting an unsupported claim others would not notice.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Act to correct an unsupported figure in shared work.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "A fairness issue in shared work",
+                "topic": "weighing the discomfort of speaking up against staying silent",
+                "description": "A fairness issue in shared work — weighing the discomfort of speaking up against staying silent.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify a fairness issue in shared work.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Weigh the discomfort of speaking up against staying silent.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Justify a response to a fairness issue in shared work.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Raising an unacknowledged contribution",
+                "topic": "securing a fairer outcome in an uncomfortable conversation",
+                "description": "Raising an unacknowledged contribution — securing a fairer outcome in an uncomfortable conversation.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Raise an unacknowledged contribution with those involved.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Treat those involved with respect during an uncomfortable conversation.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Help secure a fairer outcome after raising a concern.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Your own habits, a profession's expectations",
+                "topic": "critiquing your attribution habits against a community of practice",
+                "description": "Your own habits, a profession's expectations — critiquing your attribution habits against a community of practice.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Critique a personal habit of attribution against professional expectations.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Identify where a profession's ethical expectations will tighten.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Apply a community-of-practice lens to a personal honesty habit.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "A new role, an unprompted responsibility",
+                "topic": "acting on an ethical responsibility before being asked",
+                "description": "A new role, an unprompted responsibility — acting on an ethical responsibility before being asked.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Recognise an ethical responsibility in a new professional role.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Act on an ethical responsibility without being asked.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Explain a professional habit to someone newer than yourself.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "sourceSections for L01 only (the tier's single Layer-1 anchor); L01 also carries the tier's one named-theory-anchor budget (Wenger 1998) that crs-07's o5 cites by lessonKey (source.ref = L01) - the theory is introduced in this book-grounded lesson, while o5 itself is taught and assessed separately in L05. L02-L06 serve the remaining Layer-2 capability-evidence/named-theory-anchor outcomes and carry no sourceSections"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-04_lesson-map 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
