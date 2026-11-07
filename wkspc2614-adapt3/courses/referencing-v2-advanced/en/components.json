@@ -121,7 +121,33 @@
         "Very confident"
       ]
     },
-    "_preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed."
+    "_preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed.",
+    "_items": [
+      {
+        "_id": "o1",
+        "text": "I can justify my course of action when a weak result tempts me to present a stronger impression than the evidence supports."
+      },
+      {
+        "_id": "o2",
+        "text": "I can justify acting to correct an unsupported figure or claim in shared work, even if the error would otherwise go unnoticed."
+      },
+      {
+        "_id": "o3",
+        "text": "I can justify my response to a fairness issue in shared work, weighing discomfort against the responsibility to speak up."
+      },
+      {
+        "_id": "o4",
+        "text": "I can raise an unacknowledged contribution with those involved, respectfully, even when the conversation is uncomfortable."
+      },
+      {
+        "_id": "o5",
+        "text": "I can critique my own habits of honesty and attribution against the ethical expectations of a profession."
+      },
+      {
+        "_id": "o6",
+        "text": "I can recognise and act on an ethical responsibility in a new role without being asked, and explain the habit to someone newer than me."
+      }
+    ]
   },
   {
     "_id": "L01-c-05",
@@ -1046,7 +1072,28 @@
         "Very confident"
       ]
     },
-    "_preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed."
+    "_preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed.",
+    "_items": [],
+    "_hasSummativeFollowing": false,
+    "_feedback": {
+      "_patterns": {
+        "rose": "Your confidence in {{item}} has grown over the course.",
+        "stayedHigh": "You were confident about {{item}} and remain so.",
+        "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+        "noMovement": "Your confidence in {{item}} has not shifted much.",
+        "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+      },
+      "_summary": {
+        "_predominantlyUp": "Your confidence grew across most of these.",
+        "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+        "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+      },
+      "_standalone": "Here is where your confidence sits on each statement.",
+      "_forward": {
+        "_summative": "The check ahead is where this confidence will be tested.",
+        "_application": "The real measure will be how this holds up when you next apply it in your own practice."
+      }
+    }
   },
   {
     "_id": "referencing-v2-advanced-W-CLOSE-c-05",
