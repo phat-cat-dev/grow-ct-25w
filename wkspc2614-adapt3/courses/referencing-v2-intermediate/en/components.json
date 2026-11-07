@@ -606,7 +606,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Every referencing style covers the common source types: books, journal articles, websites. Sooner or later you will meet a source that does not fit any of these cleanly: a dataset, a piece of software, a recorded lecture, a government report with no named author. This lesson is about working out what that source needs, rather than forcing it into the nearest template.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -622,7 +622,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this level the task is analysis, not lookup. Given an unfamiliar source, you will identify what a reader needs in order to find it again: who or what produced it, when, where it can be accessed, and what distinguishes this instance from any other. You will also recognise when forcing it into a standard template loses information a reader needs.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -638,7 +638,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>An unfamiliar source type is one your referencing style's examples do not cover directly: a dataset, a piece of software, a recording, a report with a corporate rather than a named author. Working out how to cite it means identifying the elements any citation needs, whatever the source, and finding where this source carries each one, even if its label is unfamiliar.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -686,7 +686,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Meeting an unfamiliar source stops being daunting once you know what to look for. Before you cite a source your style guide does not cover directly, identify who or what produced it, when, where it can be accessed, and what would let a reader find this exact instance again.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -702,7 +702,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Think of a source you have used, or expect to use, that does not fit neatly into \"book\", \"journal article\", or \"website\": a dataset, a recording, a report, a piece of software. What elements would a reader need to find it again? Is there a version or date that distinguishes this instance from others? No right answers are expected here; the aim is to notice what the source itself offers, not what a template expects it to offer.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -718,7 +718,7 @@
     "_layout": "full",
     "title": "Summary",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Citing an unfamiliar source means identifying what any citation needs, whatever the source type, and finding where this source carries each element, even under an unfamiliar label. Forcing it into a standard template instead risks losing exactly the information a reader needs to find it again.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -2565,5 +2565,285 @@
       "_incorrect": "Keeping jargon, quoting everything, or crediting only once each fail one side of the same balance: a new reader's understanding and the source's credit."
     },
     "tests": "L03-o1"
+  },
+  {
+    "_id": "L04-c-30",
+    "_parentId": "L04-b-30",
+    "_type": "component",
+    "_component": "matching",
+    "_layout": "full",
+    "title": "What does a reader need to find this source?",
+    "displayTitle": "",
+    "instruction": "<p>Match each unfamiliar source to the element a reader most needs in order to find it again.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "A dataset held in an open repository, updated periodically",
+        "options": [
+          "The version or access date"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "A government report issued by a department with no named author",
+        "options": [
+          "The issuing body, standing in for an author"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "A recorded lecture delivered live and not published elsewhere",
+        "options": [
+          "The date and context of the recording"
+        ],
+        "_shuffle": true
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Each unfamiliar source still needs an identifiable producer, a time, and a way back to the exact instance; what changes is which element carries that information.",
+      "_incorrect": {
+        "notFinal": "Ask what would let a reader find this exact source again, not what label the source carries."
+      }
+    }
+  },
+  {
+    "_id": "L04-c-35",
+    "_parentId": "L04-b-35",
+    "_type": "component",
+    "_component": "sortable",
+    "_layout": "full",
+    "title": "Analysing an unfamiliar source",
+    "displayTitle": "",
+    "instruction": "<p>Put these steps for analysing an unfamiliar source type in order.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Identify who or what produced the source"
+      },
+      {
+        "text": "Identify when it was produced or last updated"
+      },
+      {
+        "text": "Identify where and how a reader can access it"
+      },
+      {
+        "text": "Identify what distinguishes this instance from any other"
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Producer, date, access, and distinguishing detail: the same four questions apply whatever the source type, in that order.",
+      "_incorrect": {
+        "notFinal": "Start from who or what produced the source; access and distinguishing detail depend on knowing that first."
+      }
+    }
+  },
+  {
+    "_id": "L04-c-40",
+    "_parentId": "L04-b-40",
+    "_type": "component",
+    "_component": "narrative",
+    "title": "Citing a source outside the usual templates",
+    "displayTitle": "",
+    "body": "<p class=\"we-weaker\">{{learner-a}} needs to cite a government department's open dataset. {{learner-a}} cannot find an author's name, so forces the citation into the \"book\" template, leaving the author field blank and losing the department's name and the dataset's version number altogether.</p><p class=\"we-stronger\">{{learner-b}} needs to cite the same dataset. {{learner-b}} starts from what a reader needs: the issuing department stands in for the author, the dataset's version and access date stand in for a publication date, and the repository's permanent link stands in for a publisher. The citation looks unlike any of the style guide's worked examples, but it carries everything a reader needs to find the exact version {{learner-b}} used.</p>",
+    "_classes": "slot__L04__worked-example",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L04-c-45",
+    "_parentId": "L04-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_layout": "full",
+    "title": "Four elements any citation needs",
+    "displayTitle": "",
+    "instruction": "<p>Select each card to reveal an element any citation needs, whatever the source type.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "A producer",
+        "body": "A person, team, or body responsible for the source, even if no individual is named."
+      },
+      {
+        "title": "A date",
+        "body": "When the source was produced, issued, or last updated."
+      },
+      {
+        "title": "An access route",
+        "body": "Where and how a reader can reach the source themselves."
+      },
+      {
+        "title": "A distinguishing detail",
+        "body": "A version, edition, or identifier that singles out this instance from any other like it."
+      }
+    ]
+  },
+  {
+    "_id": "L04-c-50",
+    "_parentId": "L04-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_layout": "full",
+    "title": "Four ways forcing a template fails",
+    "displayTitle": "",
+    "instruction": "<p>Select each heading to reveal a way forcing an unfamiliar source into a standard template fails.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "Blank author field",
+        "body": "Leaving the author blank loses the issuing body that should have stood in for it."
+      },
+      {
+        "title": "Wrong date entirely",
+        "body": "Using a publication date template for a periodically updated source loses which version was actually used."
+      },
+      {
+        "title": "No access route",
+        "body": "A book template has no field for a repository link, so the reader is left unable to locate the source."
+      },
+      {
+        "title": "Lost version",
+        "body": "Treating a dataset like a static publication drops the version number a reader needs to reproduce the same figures."
+      }
+    ]
+  },
+  {
+    "_id": "L04-c-55",
+    "_parentId": "L04-b-55",
+    "_type": "component",
+    "_component": "text",
+    "title": "Citing an unfamiliar source",
+    "displayTitle": "",
+    "body": "<p>Use this checklist when citing a source your style guide does not cover directly:</p><ol><li>Identify who or what produced the source.</li><li>Identify when it was produced or last updated.</li><li>Identify where and how a reader can access it.</li><li>Identify what distinguishes this instance from any other.</li></ol>",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L04-c-65",
+    "_parentId": "L04-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>A dataset has no named individual author, only an issuing research centre. What should the citation do?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Name the research centre as the author, since it is the body responsible for the source",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Leave the author field blank, since no individual is named",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Cite it as an anonymous source",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Omit authorship and cite only the dataset's title",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Any citation needs a producer; when no individual is named, the issuing body stands in for the author, rather than being treated as absent.",
+      "_incorrect": "A dataset still has a producer, even without a named individual. The issuing body fills that role rather than leaving it blank, anonymous, or omitted."
+    },
+    "tests": "L04-o1"
+  },
+  {
+    "_id": "L04-c-67",
+    "_parentId": "L04-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You need to cite a piece of software used to analyse your data, with no clear \"author\" and no publication date in the usual sense. What should guide the citation?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "What elements a reader needs to identify and access this exact version of the software",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "The nearest standard template, with any unavailable field left blank",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Omitting the citation, since software is not normally referenced",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "A citation for the software's user manual instead",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Starting from what a reader needs to find this exact version works for software just as it does for any other unfamiliar source; the developer and the version number carry what author and date would carry elsewhere.",
+      "_incorrect": "Forcing a standard template, omitting the citation, or citing the manual instead all lose the point: identifying what a reader needs to find this version of the software itself."
+    },
+    "tests": "L04-o3"
+  },
+  {
+    "_id": "L04-c-69",
+    "_parentId": "L04-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You are citing an unfamiliar source for {{context}}, and no named individual author is given. What matters most for a reader trying to find this source again?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "That the citation carries a producer, a date, an access route, and a distinguishing detail, however the source is labelled",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "That the citation matches the exact format of the style guide's book example",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "That the source is cited as anonymous, since no individual author is given",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "That the citation is kept as short as possible, since the source is unusual",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. The four elements, not the label or the nearest template, are what let a reader locate the exact source, whatever kind of source it is.",
+      "_incorrect": "Matching a book template, treating the source as anonymous, or shortening the citation all risk losing one of the four elements a reader actually needs."
+    },
+    "tests": "L04-o2"
   }
 ]
