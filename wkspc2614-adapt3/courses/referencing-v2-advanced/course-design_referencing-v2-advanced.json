@@ -1146,6 +1146,74 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "o1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Your results are weaker than expected. Reporting them honestly risks a less impressive outcome than quietly rounding the figures favourably. What justifies the honest choice?"
+              },
+              {
+                "tests": "o2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You notice an unsupported figure in a piece of shared work that no one else has spotted. What justifies correcting it rather than leaving it?"
+              },
+              {
+                "tests": "o3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Raising a fairness issue in shared work means an uncomfortable conversation with people you work closely with. What justifies speaking up anyway?"
+              },
+              {
+                "tests": "o4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A contribution to shared work has gone unacknowledged. What does raising it with those involved, respectfully, aim to achieve?"
+              },
+              {
+                "tests": "o5",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You compare your own habits of honesty and attribution against a profession's ethical expectations. What should that critique help you identify?"
+              },
+              {
+                "tests": "o6",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In a new professional role, you notice an ethical responsibility that no one has asked you to take on. What does acting on it, and explaining it to someone newer, demonstrate?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "One summative item per flat LO (o1-o6), owner decision 2 Nov 2026 overriding the skeleton's default two-per-outcome, since pathway-distillation has no course-outcome tier. Each item's tests names the crs-07 outcome id (AL-6). Advanced tier: evaluation, judgement and transfer across the course's material (weighing competing considerations in a scenario), per skeletons/summative byTier.advanced."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Two items per outcome (the skeleton's built-course-shape default). Rejected: wra-03's dependsOn edge states the pathway-distillation override explicitly as one-per-LO."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-03_summative 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1205,6 +1273,26 @@
             "coupled": false
           },
           "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
         }
       ]
     }
