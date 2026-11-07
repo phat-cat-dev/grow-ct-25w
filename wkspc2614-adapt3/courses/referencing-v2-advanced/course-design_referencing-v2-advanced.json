@@ -1429,6 +1429,143 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Correcting an unsupported claim",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices an untraceable 40% figure in a shared group report and leaves it uncorrected near the deadline; {{learner-b}} notices the same figure, asks the group where it came from, and the group rewords the claim to state only what the data support. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they noticed, or suspected, an unsupported figure in shared work and what tipped their decision to raise it or let it pass, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('shared work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L02-o1/o2/o3) taken verbatim from crs-04's advanced L02 entry ('Correcting an unsupported claim'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L02-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern from introductory/intermediate L02-L06 and from this tier's own established approach."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established and researched at L01 applies here (activity-1..4 resolve to 'A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons'; practical-guidance resolves to heuristics, not a numbered procedure). Content for activity-1/2 (matching, sortable) written as judgement classification/ranking on borderline cases, not simple lookup. activity-3/4 keep the established recall-reveal mechanic, with judgement/reasoning folded into the reveal text. practical-guidance kept as palette/checklist, reframed as weighable heuristic self-checks rather than a sequential procedure, consistent with the L01 precedent set this tier."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify report figures as supported or unsupported - the judgement lies in tracing each figure to a source/table/calculation, not in recognising a label)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four unsupported-figure scenarios by urgency of correction - a weighing task on relative risk, not a single fixed ordering of fact)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01 and all 12 prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with the L01 precedent - items remain concrete self-checks per the pattern's own recognition rule, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01: this pattern (palette/branching) best fits advanced tier's judgement-task default and this lesson's dilemma subject matter, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected again in favour of the proven matching/sortable/flipcard/accordion structure, now established as this tier's precedent at L01."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L02-les-01 referencing-v2-advanced L02 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1633,6 +1770,109 @@
             "coupled": false
           },
           "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Correcting an unsupported claim",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
         }
       ]
     }

@@ -310,7 +310,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You are checking a shared draft, a dataset summary or a group report, and you notice a figure that nobody can actually support. No one invented it to deceive; it has simply drifted into the document unchecked and now sits there as though it were fact. Correcting it means admitting, to yourself and possibly to others, that something already circulating is wrong.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -326,7 +326,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this stage you are expected to treat an unsupported claim as worth correcting even when nobody else has noticed it and even when raising it costs you something, such as time, an awkward conversation, or the comfort of leaving well enough alone. The claim's size is not the point; its lack of support is.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -342,7 +342,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>By the end of this lesson, you will be able to:</p><ul><li>Identify an unsupported figure in shared work.</li><li>Justify correcting an unsupported claim that others would not notice.</li><li>Act to correct an unsupported figure in shared work.</li></ul>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -358,7 +358,7 @@
     "_layout": "full",
     "title": "Concept: definition",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>A claim is unsupported when no source, calculation or piece of evidence in the work actually establishes it, whatever confidence it is stated with. This differs from a claim that is simply wrong: an unsupported claim might turn out to be true, but the document gives the reader no way to check that, which is itself the problem. Correcting it means tracing the figure back to where it should be justified and either justifying it properly or removing it.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -374,7 +374,7 @@
     "_layout": "full",
     "title": "Concept: in practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Unsupported claims rarely begin as deliberate fabrications. A number copied from an early draft survives several revisions after its source was cut. A rounded estimate, offered once in conversation as a guess, is later quoted as though it were measured. A figure from one context is reused in another where it no longer applies. Each has the same effect: a reader now treats as established something that was never actually shown.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -390,7 +390,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You have now distinguished an unsupported claim from one that is simply wrong, and practised tracing a figure back to whatever is meant to justify it. The habit to carry forward is treating silence, not confrontation, as the greater risk: a figure nobody checks does not become true because it goes uncorrected.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -406,7 +406,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Think of a time you noticed, or suspected, an unsupported figure in shared work that nobody else seemed to question. What made you decide to raise it, or to let it pass?</p><p>No right answers are expected here; the aim is to notice what actually tips that decision one way or the other.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -421,8 +421,8 @@
     "_classes": "slot__L02__summary",
     "_layout": "full",
     "title": "Summary",
-    "displayTitle": "",
-    "body": "",
+    "displayTitle": "Summary",
+    "body": "<p>An unsupported claim is one no source or calculation in the work actually establishes, regardless of how confidently it is stated. You can now identify such a claim in shared work, even when it has sat unquestioned through several revisions. You can also justify correcting it when nobody else would notice, because a figure's apparent acceptance by others is not the same as its being supported.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -443,7 +443,8 @@
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
-    }
+    },
+    "_items": []
   },
   {
     "_id": "L03-c-05",
@@ -1849,6 +1850,317 @@
       }
     },
     "tests": "L01-o3",
+    "tokenMode": "cxp-fillable"
+  },
+  {
+    "_id": "L02-c-30",
+    "_parentId": "L02-b-30",
+    "_type": "component",
+    "_component": "matching",
+    "_classes": "",
+    "title": "Supported or unsupported?",
+    "displayTitle": "Supported or unsupported?",
+    "body": "<p>A group report contains several figures. For each one, decide whether it is supported by something in the document or unsupported.</p>",
+    "instruction": "Match each figure to the correct category.",
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "\"62% of respondents agreed (n = 48, see Table 2).\"",
+        "options": [
+          {
+            "text": "Supported",
+            "_isCorrect": true
+          },
+          {
+            "text": "Unsupported",
+            "_isCorrect": false
+          }
+        ]
+      },
+      {
+        "text": "\"Most students find this approach more effective.\" (no citation or data given anywhere in the report)",
+        "options": [
+          {
+            "text": "Supported",
+            "_isCorrect": false
+          },
+          {
+            "text": "Unsupported",
+            "_isCorrect": true
+          }
+        ]
+      },
+      {
+        "text": "\"Costs fell by around a third.\" (figure appears only here, with no source, calculation or earlier mention)",
+        "options": [
+          {
+            "text": "Supported",
+            "_isCorrect": false
+          },
+          {
+            "text": "Unsupported",
+            "_isCorrect": true
+          }
+        ]
+      },
+      {
+        "text": "\"Response time improved from 4.2 to 2.1 seconds (see Section 3.1 for method).\"",
+        "options": [
+          {
+            "text": "Supported",
+            "_isCorrect": true
+          },
+          {
+            "text": "Unsupported",
+            "_isCorrect": false
+          }
+        ]
+      }
+    ],
+    "_feedback": {
+      "correct": "Notice that an unsupported figure can sound just as precise and confident as a supported one. The difference is never in the tone of the sentence; it is in whether the document gives a reader any way to check it.",
+      "_incorrect": {
+        "notFinal": "Look for whether a reader could trace the figure to a source, a table, a calculation or a method described somewhere in the document, not for whether the figure sounds plausible."
+      }
+    }
+  },
+  {
+    "_id": "L02-c-35",
+    "_parentId": "L02-b-35",
+    "_type": "component",
+    "_component": "sortable",
+    "_classes": "",
+    "title": "From most to least likely to need correcting first",
+    "displayTitle": "From most to least likely to need correcting first",
+    "body": "<p>A shared draft contains four figures, each raising a different kind of doubt. Order them from the one you would investigate first to the one you would investigate last, based on how much the final document relies on it.</p>",
+    "instruction": "Drag the figures into order, most urgent first.",
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "A headline statistic quoted in the executive summary and repeated three more times in the report."
+      },
+      {
+        "text": "A supporting figure used once, in a single paragraph, to illustrate a minor point."
+      },
+      {
+        "text": "A number used only in an appendix table that the main text never refers back to."
+      },
+      {
+        "text": "A rounded estimate explicitly flagged in the text as \"approximate, pending confirmation\"."
+      }
+    ],
+    "_feedback": {
+      "correct": "Urgency here tracks how much weight the document places on the figure and how clearly its uncertainty is already disclosed, not how large the number itself is. A flagged estimate is already honest about its status; a repeated headline figure is not.",
+      "_incorrect": {
+        "notFinal": "Weigh how much a reader's overall impression of the document depends on each figure, and whether its uncertain status is already visible to that reader."
+      }
+    }
+  },
+  {
+    "_id": "L02-c-40",
+    "_parentId": "L02-b-40",
+    "_type": "component",
+    "_component": "narrative",
+    "_classes": "slot__L02__worked-example",
+    "title": "Worked example: a figure that drifted into a shared report",
+    "displayTitle": "Worked example",
+    "body": "",
+    "instruction": "",
+    "_items": [
+      {
+        "title": "Weaker approach",
+        "body": "<p class=\"we-weaker\">Reviewing the group report before submission, {{learner-a}} notices that the claim \"adoption increased by 40% over the period\" cannot be traced to any table, source or calculation in the document. Rather than raise it with the group so close to the deadline, {{learner-a}} leaves it as it is, reasoning that the marker is unlikely to check every figure.</p>"
+      },
+      {
+        "title": "Stronger approach",
+        "body": "<p class=\"we-stronger\">{{learner-b}} notices the same unsupported claim. {{learner-b}} messages the group to ask where the 40% figure came from, and when nobody can point to a source, proposes either finding the original calculation or rewording the claim to state only what the data actually show. The group agrees to the second option, and the final report describes the change in terms it can actually support.</p>"
+      }
+    ]
+  },
+  {
+    "_id": "L02-c-45",
+    "_parentId": "L02-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_classes": "",
+    "title": "Four ways an unsupported claim survives unnoticed",
+    "displayTitle": "Four ways an unsupported claim survives unnoticed",
+    "body": "<p>Each situation below describes how an unsupported figure can persist in shared work. Weigh each one before flipping the card to see the risk it carries.</p>",
+    "instruction": "Select a card to reveal the reasoning.",
+    "_items": [
+      {
+        "title": "It appears early and gets copied forward",
+        "back": "Once a figure is in a draft, later editors often treat its presence as evidence that it was already checked, rather than checking it themselves."
+      },
+      {
+        "title": "It sounds precise",
+        "back": "A specific number, such as 40% rather than \"a lot\", reads as more credible, even though precision says nothing about whether the figure is actually supported."
+      },
+      {
+        "title": "Everyone assumes someone else checked it",
+        "back": "In group work, responsibility for verifying a shared figure can diffuse across the group until no one individual has actually traced it."
+      },
+      {
+        "title": "Correcting it feels disproportionate",
+        "back": "A small, easily fixed error can go unaddressed simply because raising it feels like more trouble than the figure's apparent importance warrants."
+      }
+    ]
+  },
+  {
+    "_id": "L02-c-50",
+    "_parentId": "L02-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_classes": "",
+    "title": "Why correcting an unsupported claim matters, even a small one",
+    "displayTitle": "Why correcting an unsupported claim matters, even a small one",
+    "body": "<p>Expand each heading to see a consequence of leaving an unsupported claim uncorrected.</p>",
+    "instruction": "Select a heading to expand it.",
+    "_items": [
+      {
+        "title": "For the group's shared responsibility",
+        "body": "<p>Everyone whose name is on the work is implicitly vouching for figures they did not personally verify, including this one.</p>"
+      },
+      {
+        "title": "For anyone who cites the work later",
+        "body": "<p>A reader who quotes the unsupported figure in their own work inherits a claim that was never actually established, and passes that on again.</p>"
+      },
+      {
+        "title": "For the habit it builds",
+        "body": "<p>Letting one unsupported claim pass because it seemed too small to matter makes it easier to let the next one pass too, including a larger one.</p>"
+      },
+      {
+        "title": "For the document's overall credibility",
+        "body": "<p>A single traceable error, once found by a reader or marker, can prompt them to question every other figure in the work, not just the one that was wrong.</p>"
+      }
+    ]
+  },
+  {
+    "_id": "L02-c-55",
+    "_parentId": "L02-b-55",
+    "_type": "component",
+    "_component": "text",
+    "_classes": "",
+    "title": "Heuristics for weighing whether to raise an unsupported claim",
+    "displayTitle": "Heuristics for weighing whether to raise an unsupported claim",
+    "body": "<p>These are checks to weigh against a figure you are unsure about, not steps to follow in sequence.</p><ul><li>Could you point to the exact source, table or calculation that justifies this figure, if asked?</li><li>Has this figure been repeated or built on elsewhere in the document, increasing how much rides on it?</li><li>Would raising it now cost less than leaving it to be found later, by a marker, a reader or someone who cites the work?</li><li>Is there a quick way to confirm or correct it, such as asking whoever first added it, rather than assuming the worst?</li><li>Would you want someone else to raise an equivalent figure of yours, if the situation were reversed?</li></ul>",
+    "instruction": ""
+  },
+  {
+    "_id": "L02-c-65",
+    "_parentId": "L02-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "",
+    "title": "Check 1",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "A shared report states a figure that no table, source or calculation in the document actually establishes. Which best describes why this is a problem, even if the figure later turns out to be roughly correct?",
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Because any figure that cannot be traced is necessarily false.",
+        "_isCorrect": false
+      },
+      {
+        "text": "Because a reader has no way to check it, regardless of whether it happens to be accurate.",
+        "_isCorrect": true
+      },
+      {
+        "text": "Because unsupported figures are always larger than supported ones.",
+        "_isCorrect": false
+      },
+      {
+        "text": "Because the group will lose marks for including any unverified number.",
+        "_isCorrect": false
+      }
+    ],
+    "_feedback": {
+      "correct": "An unsupported claim's problem is not its accuracy, which may be fine, but its traceability. A reader cannot tell the difference between a correct guess and a careful calculation unless the document shows its working.",
+      "_incorrect": {
+        "notFinal": "Separate the question of whether the figure is true from the question of whether the document gives a reader any way to verify it."
+      }
+    },
+    "tests": "L02-o1"
+  },
+  {
+    "_id": "L02-c-67",
+    "_parentId": "L02-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "",
+    "title": "Check 2",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "You notice an unsupported figure in a group report two days before submission. Raising it will mean reopening a section the group considers finished. What is the strongest justification for raising it anyway?",
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "The group is less likely to notice a late change than an early one.",
+        "_isCorrect": false
+      },
+      {
+        "text": "The timing of the deadline does not change whether the figure is actually supported, and the document will carry the error regardless of when it is raised.",
+        "_isCorrect": true
+      },
+      {
+        "text": "Markers always check figures against their original sources.",
+        "_isCorrect": false
+      },
+      {
+        "text": "Reopening a finished section is never disruptive if the correction is small.",
+        "_isCorrect": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Deadline pressure changes how inconvenient a correction feels; it does not change whether the underlying figure is supported. The justification for raising it holds regardless of timing.",
+      "_incorrect": {
+        "notFinal": "Consider what would still be true about the figure even if the deadline were further away."
+      }
+    },
+    "tests": "L02-o2"
+  },
+  {
+    "_id": "L02-c-69",
+    "_parentId": "L02-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "_classes": "",
+    "title": "Check 3",
+    "displayTitle": "",
+    "body": "",
+    "instruction": "You have found an unsupported figure in a piece of shared work for {{context}}, and nobody else in the group seems to have noticed. What should you do?",
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Leave it, since you are not responsible for figures you did not personally add.",
+        "_isCorrect": false
+      },
+      {
+        "text": "Raise it with whoever can trace or correct it, since your name is also attached to the final document.",
+        "_isCorrect": true
+      },
+      {
+        "text": "Remove it yourself without telling anyone, to avoid an awkward conversation.",
+        "_isCorrect": false
+      },
+      {
+        "text": "Wait to see whether the marker notices it first.",
+        "_isCorrect": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Shared authorship means the figure's accuracy is partly your responsibility too, whoever first added it. Raising it openly, rather than silently fixing or silently ignoring it, keeps the correction transparent to the rest of the group.",
+      "_incorrect": {
+        "notFinal": "Think about who the final document actually belongs to, and what that implies about who should know a correction is being made."
+      }
+    },
+    "tests": "L02-o3",
     "tokenMode": "cxp-fillable"
   }
 ]
