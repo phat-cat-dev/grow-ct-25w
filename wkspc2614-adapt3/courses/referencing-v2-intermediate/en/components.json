@@ -750,7 +750,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You can now work out how to cite an unfamiliar source when you have time to think it through. This lesson is about doing the same thing under pressure: a deadline, a source you only just found, no time to check every detail. Referencing correctly under pressure is not about skipping steps; it is about knowing which steps you can do quickly and recording what you decided.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -766,7 +766,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this level the challenge is speed without sacrificing accuracy. Given an unfamiliar source and limited time, you will reference it correctly, check the guidance that applies when you are unsure, and record the decision you made so you, or someone else, can repeat it or correct it later.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -782,7 +782,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Referencing under pressure means applying the same four elements (producer, date, access, distinguishing detail) quickly rather than skipping them. When a style guide does not give a direct example, checking its general guidance, rather than guessing, still takes less time than researching from scratch. Recording the decision, in a note or a source log, means you are not working it out again if the same source appears later.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -830,7 +830,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Referencing under pressure gets faster with a routine. When time is short, apply the four elements quickly, check general guidance rather than guessing if you are unsure, and write down the decision you made before you move on.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -846,7 +846,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Think of a time you had to reference a source quickly, close to a deadline. Did you check guidance when unsure, or guess? Did you record the decision anywhere, or would you have to work it out again if the source came up a second time? No right answers are expected here; the aim is to notice what you actually did under pressure, not what you would do with more time.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -862,7 +862,7 @@
     "_layout": "full",
     "title": "Summary",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Referencing under pressure still means applying the four elements, checking guidance rather than guessing when unsure, and recording the decision so it can be repeated or corrected. Speed does not excuse skipping any of the three.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -2845,5 +2845,285 @@
       "_incorrect": "Matching a book template, treating the source as anonymous, or shortening the citation all risk losing one of the four elements a reader actually needs."
     },
     "tests": "L04-o2"
+  },
+  {
+    "_id": "L05-c-30",
+    "_parentId": "L05-b-30",
+    "_type": "component",
+    "_component": "matching",
+    "_layout": "full",
+    "title": "Guessing or checking guidance?",
+    "displayTitle": "",
+    "instruction": "<p>Match each action, taken under time pressure, to whether it checks guidance or guesses.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Searching the style guide's general rules for \"source with no named author\" when an unfamiliar source has none",
+        "options": [
+          "Checks guidance"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "Picking whichever template looks closest and filling in the gaps without checking",
+        "options": [
+          "Guesses"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "Applying the four elements (producer, date, access, distinguishing detail) directly, without a named template",
+        "options": [
+          "Checks guidance"
+        ],
+        "_shuffle": true
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Checking guidance, even general guidance rather than a direct example, takes less time under pressure than it looks like, and avoids the errors a guess introduces.",
+      "_incorrect": {
+        "notFinal": "Ask whether the action is based on a rule the style guide actually states, or on a guess at what looks close enough."
+      }
+    }
+  },
+  {
+    "_id": "L05-c-35",
+    "_parentId": "L05-b-35",
+    "_type": "component",
+    "_component": "sortable",
+    "_layout": "full",
+    "title": "Referencing an unfamiliar source quickly",
+    "displayTitle": "",
+    "instruction": "<p>Put these steps for referencing an unfamiliar source under time pressure in order.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Identify the four elements the source actually carries"
+      },
+      {
+        "text": "Check general guidance for anything the elements do not cover"
+      },
+      {
+        "text": "Write the citation using what you have found"
+      },
+      {
+        "text": "Record the decision, in a note or source log, before moving on"
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Elements first, then guidance for any gap, then the citation, then a record of the decision, in that order, even under time pressure.",
+      "_incorrect": {
+        "notFinal": "Identify what the source carries before checking guidance for what it does not; otherwise you are checking guidance for a gap you have not confirmed exists."
+      }
+    }
+  },
+  {
+    "_id": "L05-c-40",
+    "_parentId": "L05-b-40",
+    "_type": "component",
+    "_component": "narrative",
+    "title": "Citing a source close to a deadline",
+    "displayTitle": "",
+    "body": "<p class=\"we-weaker\">{{learner-a}} finds an unfamiliar source the night before a deadline. {{learner-a}} picks the closest-looking template, fills in what fits, guesses the rest, and submits without writing down what was decided.</p><p class=\"we-stronger\">{{learner-b}} finds the same kind of source with the same deadline. {{learner-b}} spends two minutes identifying the four elements the source carries, then checks the style guide's general rule for the one element it is missing. {{learner-b}} writes the citation and adds a one-line note to a source log recording the decision, in case the same source type appears again.</p>",
+    "_classes": "slot__L05__worked-example",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L05-c-45",
+    "_parentId": "L05-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_layout": "full",
+    "title": "Four things worth recording about a decision",
+    "displayTitle": "",
+    "instruction": "<p>Select each card to reveal something worth recording about a referencing decision.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "What the source was",
+        "body": "Enough detail to recognise the same source, or source type, if it appears again."
+      },
+      {
+        "title": "What guidance you used",
+        "body": "The general rule or principle you applied, not just the result."
+      },
+      {
+        "title": "What you guessed",
+        "body": "Anywhere you could not find guidance and made a judgement call, flagged so it can be checked later."
+      },
+      {
+        "title": "The date of the decision",
+        "body": "Guidance can be updated; knowing when you decided helps you judge whether to check again."
+      }
+    ]
+  },
+  {
+    "_id": "L05-c-50",
+    "_parentId": "L05-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_layout": "full",
+    "title": "Four ways time pressure causes errors",
+    "displayTitle": "",
+    "instruction": "<p>Select each heading to reveal a way time pressure causes referencing errors.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "Skipping an element",
+        "body": "Rushing can mean one of the four elements (producer, date, access, distinguishing detail) is never checked at all."
+      },
+      {
+        "title": "Guessing instead of checking",
+        "body": "A guess at the closest template takes a similar amount of time to checking general guidance, but is far more likely to be wrong."
+      },
+      {
+        "title": "No record kept",
+        "body": "A decision made under pressure and never written down has to be remade, and possibly re-guessed, next time."
+      },
+      {
+        "title": "Copying a wrong precedent",
+        "body": "Reusing a citation seen elsewhere without checking it was correct repeats someone else's error."
+      }
+    ]
+  },
+  {
+    "_id": "L05-c-55",
+    "_parentId": "L05-b-55",
+    "_type": "component",
+    "_component": "text",
+    "title": "Referencing under pressure",
+    "displayTitle": "",
+    "body": "<p>Use this checklist when referencing an unfamiliar source under time pressure:</p><ol><li>Identify the four elements the source actually carries.</li><li>Check general guidance for anything the elements do not cover.</li><li>Write the citation using what you have found.</li><li>Record the decision before moving on.</li></ol>",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L05-c-65",
+    "_parentId": "L05-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You have ten minutes before a submission deadline and an unfamiliar source to cite. What is the most efficient correct approach?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Identify the source's four elements quickly, check general guidance for any gap, and cite it",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Pick the closest-looking template and fill in the gaps without checking",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Omit the citation and add it after submission",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Cite it exactly as a similar source was cited elsewhere, without checking that citation's accuracy",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. The four-element approach is quick enough for ten minutes and avoids the errors a guessed template or an uncritical copy would introduce.",
+      "_incorrect": "Guessing, omitting, or copying an unchecked precedent are all faster only in appearance; each risks an error the four-element check would have caught."
+    },
+    "tests": "L05-o1"
+  },
+  {
+    "_id": "L05-c-67",
+    "_parentId": "L05-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You are unsure how to cite a source and cannot find a direct example in the style guide. The guide does state a general rule covering this case. What should you do?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Apply the general rule the guide states, even without a direct worked example",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Guess, since no direct example exists for this source",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Wait until a direct example becomes available before citing the source",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Use a citation for an unrelated source type, since none matches exactly",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. A general rule that covers the case is guidance, not a gap; applying it is checking guidance, not guessing.",
+      "_incorrect": "A general rule that covers the case means guidance exists, even without a direct worked example; guessing, waiting, or substituting an unrelated citation all bypass guidance that was there to check."
+    },
+    "tests": "L05-o2"
+  },
+  {
+    "_id": "L05-c-69",
+    "_parentId": "L05-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You make a referencing decision for {{context}} under time pressure, with no direct precedent to follow. What should you do afterwards?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Record the decision, including what guidance or judgement you used, so it can be repeated or corrected",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Move on; the citation is written, so nothing further is needed",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Delete any note of the decision, since it was made under pressure and may be wrong",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Wait for someone else to check it before recording anything",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. A decision made under pressure, with no direct precedent, is exactly the kind worth recording: it lets you or someone else repeat it correctly, or correct it, without starting from nothing.",
+      "_incorrect": "Moving on, deleting the note, or waiting for someone else all lose the record a later check, or a later repeat of the same source, would need."
+    },
+    "tests": "L05-o3"
   }
 ]

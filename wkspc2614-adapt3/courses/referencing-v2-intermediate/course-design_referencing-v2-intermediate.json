@@ -1863,6 +1863,143 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "referencing-v2-intermediate-L05-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Referencing under pressure",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} picks the closest-looking template under deadline pressure, guesses the rest, and keeps no record; {{learner-b}} identifies the four elements quickly, checks a general rule for the one gap, and logs the decision in one line. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L05-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L05-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L05-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they referenced a source under deadline pressure and whether they checked guidance or guessed, and whether they recorded the decision.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a referencing decision for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/sortable",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L05-o1/o2/o3) taken verbatim from crs-04's intermediate L05 entry ('Referencing under pressure'). sourceSections is empty for this lesson, a confirmed Layer-2 outcome with no chapter-10 anchor, accepted design reality. BKS-1/PLR-1 are expected to fail; lesson-references (L05-c-80) is left as an empty shell, matching the introductory tier's L05/L06 resolution."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify actions under pressure as checking guidance or guessing)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, order the steps for referencing an unfamiliar source quickly)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "No pronoun token used this lesson (none needed in the prose drafted); same design-kb marker-class gap flagged at L01-L04, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/sort-into-groups",
+              "whyNot": "activity-3 also drafted as palette/sortable (ordering what to record about a decision) - rejected as confirmed because flipcard's discrete four-card recall suits naming four distinct recording elements better than a second ordering task, which would duplicate activity-2's structure."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-intermediate-L05-les-01 referencing-v2-intermediate L05 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -2376,6 +2513,109 @@
             "coupled": false
           },
           "decidedByGate": "referencing-v2-intermediate-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L05",
+      "pageType": "lesson",
+      "title": "Referencing under pressure",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-intermediate-L05-les-01"
         }
       ]
     }
