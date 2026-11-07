@@ -43,7 +43,14 @@
  *     its applicable assertions (a hard per-course gate, not a ratchet -
  *     this is the --strict check wired into verify-course.js).
  *
- * The 7 assertions (plan step 7):
+ * The 8 assertions (plan step 7, extended 7 Nov 2026 with assertion 0):
+ *   0. The block's component is _component: "workedExample"              [course mode]
+ *      (docs/authoring/component-specs/worked-example.md). Checked in
+ *      --course mode only (there is no component type in a context
+ *      pack): a worked-example slot realised as "narrative" or "text" is
+ *      a spec violation even when its prose is otherwise conformant -
+ *      the boundary table in that spec restricts "narrative" to
+ *      image-based before/after comparisons, never prose-only contrasts.
  *   1. Contains both {{learner-a}} and {{learner-b}}.                 [tokens mode]
  *   2. At least one paragraph *begins* with each token (mirrors         [tokens mode]
  *      merge-context.js:226-227's /^\{\{learner-a\b/ etc.) - the silent
@@ -321,7 +328,12 @@ function runCourseMode(slug, opts) {
     const text = extractComponentText(comp);
     const paragraphs = htmlParagraphs(text);
     const r = assess(paragraphs, { namePool, mode });
-    results.push({ blockId: b._id, componentId: comp._id, ...r });
+    // Assertion 0: component type. Checked here, not in assess(), since
+    // it is a component-level fact assess() (which only sees paragraphs)
+    // has no access to - see header comment.
+    r.assertions = { a0_componentType: comp._component === 'workedExample', ...r.assertions };
+    r.pass = r.pass && r.assertions.a0_componentType;
+    results.push({ blockId: b._id, componentId: comp._id, componentType: comp._component, ...r });
   }
 
   const failing = results.filter(r => r.error || !r.pass);

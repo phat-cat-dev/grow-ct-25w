@@ -15,6 +15,7 @@
  *   3. conformance-lint.js --course=<slug>
  *   4. manifest-completeness.js --course=<slug>
  *   5. worked-example-lint.js --course=<slug>  (--strict only, see below)
+ *   6. mcq-heading-lint.js --course=<slug>     (--strict only, see below)
  *
  * Landed: 31 Aug 2026, session retrospective (fixes: validation skipped piecemeal).
  * Extended: 8 Sep 2026, backlog 5.88 (manifest-completeness added as check 4;
@@ -26,6 +27,14 @@
  * must not fail a plain `verify-course.js` run for every untouched course.
  * --strict opts a specific course in once its worked examples are conformant
  * (or are being driven to conformance) - see worked-example-lint.js's header.
+ * Extended: 7 Nov 2026: worked-example-lint.js gained an 8th assertion
+ * (component type - a worked-example slot must use _component:
+ * "workedExample", not "narrative"/"text") and mcq-heading-lint.js was added
+ * as check 6 (an mcq must never populate both displayTitle and body, which
+ * renders its stem twice). Same --strict gating and same reason: a 164-
+ * component backlog across 34 courses (mcq-heading-lint.js's header) means
+ * most courses fail check 6 today on a pre-existing defect, not something
+ * this run introduced.
  */
 
 const { execSync } = require('child_process');
@@ -133,6 +142,14 @@ function main() {
     results.push(runCheck(
       'worked-example-lint',
       `node tools/worked-example-lint.js --course=${course}`
+    ));
+  }
+
+  // 6. mcq-heading-lint (--strict only - see header comment)
+  if (strict) {
+    results.push(runCheck(
+      'mcq-heading-lint',
+      `node tools/mcq-heading-lint.js --course=${course}`
     ));
   }
 
