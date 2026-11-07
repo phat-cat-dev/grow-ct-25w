@@ -462,7 +462,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>So far you have paraphrased material written at roughly the level you are writing at. This lesson asks you to paraphrase a technical passage for a reader who does not share the writer's specialist vocabulary, while still crediting the source accurately throughout and marking anywhere you keep a phrase word for word.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -478,7 +478,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this level the challenge is not just avoiding the original wording; it is making a technical passage make sense to someone new to the field, without losing the source's meaning or its credit. You will decide what needs explaining, what can be kept as a direct quotation, and how to credit the source at more than one point in a longer paraphrase.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -494,7 +494,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Paraphrasing for a new reader means rewriting a technical passage in plain terms while keeping its meaning intact and its source credited. Where a technical term has no everyday equivalent, or the original phrasing is too precise to improve on, you quote it directly rather than force an imprecise paraphrase. Across a longer passage, you credit the source more than once, not only at the first sentence, so a reader never loses track of whose idea they are reading.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -542,7 +542,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Paraphrasing for a non-specialist becomes more natural with practice. Before you paraphrase a technical passage, identify the terms a new reader will not know, decide which phrases are precise enough to quote directly, and plan where you will credit the source again as the passage continues.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -558,7 +558,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Think of a technical passage from your own subject that you have paraphrased, or will need to, for a reader outside the field. Which terms would need explaining? Is there a phrase precise enough that quoting it directly would serve the reader better than paraphrasing it? No right answers are expected here; the aim is to notice where plain language and precision pull against each other.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -574,7 +574,7 @@
     "_layout": "full",
     "title": "Summary",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Paraphrasing a technical passage for a new reader means rewriting it in plain terms, marking any phrase kept as a direct quotation, and crediting the source more than once across a longer passage. Losing any one of these loses either the reader or the source.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -2285,5 +2285,285 @@
       "_incorrect": "Reliability and recency are not the issue here. Look at what kind of evidence is missing: anything that tests or opposes the main argument."
     },
     "tests": "L02-o3"
+  },
+  {
+    "_id": "L03-c-30",
+    "_parentId": "L03-b-30",
+    "_type": "component",
+    "_component": "matching",
+    "_layout": "full",
+    "title": "Plain language or jargon?",
+    "displayTitle": "",
+    "instruction": "<p>Match each rewritten sentence to whether it suits a non-specialist reader.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "\"The intervention produced a statistically significant reduction in attrition.\" rewritten as \"The programme produced a reduction in attrition that was unlikely to be due to chance.\"",
+        "options": [
+          "Suits a non-specialist reader"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "\"The intervention produced a statistically significant reduction in attrition.\" rewritten as \"The programme significantly affected attrition in a statistically meaningful way.\"",
+        "options": [
+          "Still jargon"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "\"Participants were recruited via stratified random sampling.\" rewritten as \"People were chosen at random, in proportions matching the wider population.\"",
+        "options": [
+          "Suits a non-specialist reader"
+        ],
+        "_shuffle": true
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Plain language replaces the technical term with what it means, rather than keeping the term and adding a technical gloss around it.",
+      "_incorrect": {
+        "notFinal": "Check whether the rewrite has actually removed the technical term, or just added more words around it."
+      }
+    }
+  },
+  {
+    "_id": "L03-c-35",
+    "_parentId": "L03-b-35",
+    "_type": "component",
+    "_component": "sortable",
+    "_layout": "full",
+    "title": "Paraphrasing a technical passage",
+    "displayTitle": "",
+    "instruction": "<p>Put these steps for paraphrasing a technical passage in order.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Identify the terms a non-specialist reader will not know"
+      },
+      {
+        "text": "Decide which phrases are precise enough to quote directly"
+      },
+      {
+        "text": "Rewrite the rest in plain language without losing the meaning"
+      },
+      {
+        "text": "Credit the source again at a natural point further into the passage"
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Know what needs explaining before you decide what to quote, then write the plain-language version, then make sure credit continues through the passage.",
+      "_incorrect": {
+        "notFinal": "Start by identifying the unfamiliar terms; deciding what to quote or credit before that is working in the wrong order."
+      }
+    }
+  },
+  {
+    "_id": "L03-c-40",
+    "_parentId": "L03-b-40",
+    "_type": "component",
+    "_component": "narrative",
+    "title": "Paraphrasing for a reader outside the field",
+    "displayTitle": "",
+    "body": "<p class=\"we-weaker\">{{learner-a}} paraphrases a passage on soil permeability for a general-studies assignment. {{learner-a}} replaces \"hydraulic conductivity\" with \"conductivity rate\" and leaves the rest of the sentence structure and technical density unchanged, crediting the source once at the start of the paragraph.</p><p class=\"we-stronger\">{{learner-b}} paraphrases the same passage. {{learner-b}} rewrites \"hydraulic conductivity\" as \"how easily water moves through the soil\" and keeps the original's precise figure as a direct quotation, because no plain restatement would be as exact. {{learner-b}} credits the source again partway through the paragraph, where the original argument resumes after the quoted figure.</p>",
+    "_classes": "slot__L03__worked-example",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L03-c-45",
+    "_parentId": "L03-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_layout": "full",
+    "title": "Four signs a term needs explaining",
+    "displayTitle": "",
+    "instruction": "<p>Select each card to reveal a sign a term needs explaining for a non-specialist reader.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "No everyday equivalent",
+        "body": "The term names something a general reader has no plain-language word for."
+      },
+      {
+        "title": "Different everyday meaning",
+        "body": "The term means something else in ordinary use, risking confusion if left unexplained."
+      },
+      {
+        "title": "Carries a precise value",
+        "body": "The term packs in a specific measurement or threshold a plain restatement would blur."
+      },
+      {
+        "title": "Field-specific shorthand",
+        "body": "The term stands in for a longer explanation that specialists already share but a new reader does not."
+      }
+    ]
+  },
+  {
+    "_id": "L03-c-50",
+    "_parentId": "L03-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_layout": "full",
+    "title": "Four ways to keep the source credited",
+    "displayTitle": "",
+    "instruction": "<p>Select each heading to reveal a way to keep a source credited across a longer paraphrase.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "Credit at the start",
+        "body": "Name the source before the paraphrase begins, so the reader knows whose argument follows."
+      },
+      {
+        "title": "Credit again mid-passage",
+        "body": "If the paraphrase runs more than a sentence or two, repeat the source's name or a clear \"they also\" to keep credit attached."
+      },
+      {
+        "title": "Credit around a quotation",
+        "body": "When you quote directly within a paraphrase, attribute the quotation specifically, not just the surrounding paraphrase."
+      },
+      {
+        "title": "Credit at a change of idea",
+        "body": "If the passage moves to a new point from the same source, mark that the source is still speaking, not a new, uncredited claim."
+      }
+    ]
+  },
+  {
+    "_id": "L03-c-55",
+    "_parentId": "L03-b-55",
+    "_type": "component",
+    "_component": "text",
+    "title": "Paraphrasing a technical passage",
+    "displayTitle": "",
+    "body": "<p>Use this checklist when paraphrasing a technical passage for a new reader:</p><ol><li>List the terms a non-specialist reader will not know.</li><li>Decide which phrases are precise enough to quote directly.</li><li>Rewrite the rest in plain language without losing the original meaning.</li><li>Credit the source again at a natural point further into the passage.</li></ol>",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L03-c-65",
+    "_parentId": "L03-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>A technical passage states a precise statistical threshold. You are not confident a plain restatement would capture it exactly. What should you do?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Quote the figure directly, crediting the source, rather than risk blurring it in paraphrase",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Paraphrase it anyway; a close approximation is good enough for a non-specialist reader",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Omit the figure, since a non-specialist reader will not need it",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Paraphrase it and add the original figure in brackets without attribution",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Where paraphrase risks losing precision, a direct, credited quotation serves the reader and the source better than an approximation.",
+      "_incorrect": "Precision that paraphrase cannot safely preserve is exactly when a direct, credited quotation is the better choice, not omission or an uncredited figure."
+    },
+    "tests": "L03-o2"
+  },
+  {
+    "_id": "L03-c-67",
+    "_parentId": "L03-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>A paraphrase of a long technical passage names the source in its first sentence, then continues for three more sentences restating the source's argument with no further mention of who is being paraphrased. What is missing?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Nothing; naming the source once at the start is sufficient for the whole passage",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "A repeated credit partway through, so a reader does not mistake the later sentences for the writer's own claims",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "A direct quotation, since paraphrase alone is never sufficient over several sentences",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "A reference-list entry, since in-text credit is not required for paraphrase",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Over several sentences, a single credit at the start fades; crediting the source again partway through keeps the reader clear about whose argument they are reading.",
+      "_incorrect": "The issue here is in-text credit continuing through the passage, not whether a quotation or reference-list entry is also needed."
+    },
+    "tests": "L03-o3"
+  },
+  {
+    "_id": "L03-c-69",
+    "_parentId": "L03-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You are paraphrasing a technical passage from {{context}} for a reader new to the subject. Which approach best suits this reader?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Replace technical terms with plain language, keep only genuinely untranslatable precision as direct quotation, and credit the source throughout",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "Keep the original technical terms, since a reader new to the subject will need to learn them anyway",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Quote the whole passage directly, to avoid any risk of misrepresenting it",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "Paraphrase freely and credit the source only once, at the very end",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Plain language serves the new reader; reserving direct quotation for what paraphrase cannot safely carry, and crediting the source throughout, keeps both the reader and the source served.",
+      "_incorrect": "Keeping jargon, quoting everything, or crediting only once each fail one side of the same balance: a new reader's understanding and the source's credit."
+    },
+    "tests": "L03-o1"
   }
 ]
