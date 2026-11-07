@@ -1237,6 +1237,84 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "o1",
+                "text": "I can check a paraphrase against its original source so no distinctive wording survives unattributed."
+              },
+              {
+                "rates": "o2",
+                "text": "I can judge whether my reference list's range, including opposing views, reflects the real scope of my research."
+              },
+              {
+                "rates": "o3",
+                "text": "I can paraphrase a technical passage for a non-specialist reader, marking any quotation and crediting the source."
+              },
+              {
+                "rates": "o4",
+                "text": "I can work out which elements an unfamiliar source type needs, rather than forcing it into a standard template."
+              },
+              {
+                "rates": "o5",
+                "text": "I can reference an unfamiliar source type correctly under time pressure, and record my decision so I can repeat it."
+              },
+              {
+                "rates": "o6",
+                "text": "I can gather and cite sources that both support and challenge my position, so a reader can judge my research's breadth."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "o1",
+              "o2",
+              "o3",
+              "o4",
+              "o5",
+              "o6"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "pathway-distillation override (per wra-04's dependsOn edge): one confidence statement per flat LO (o1-o6), text taken verbatim from crs-07.outcomes[].confidenceStatement, not re-worded. Same set fills C-PRE and C-POST (AL-4). itemIds covers all six rated outcomes, not a subset (precedent in academic-writing-advanced carries only 3 itemIds against 4 statements; that drift is not reproduced here)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-intermediate wra-04_confidence 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1318,6 +1396,28 @@
           "decidedByGate": "wra-03_summative"
         }
       ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 10,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
     }
   ]
 }
