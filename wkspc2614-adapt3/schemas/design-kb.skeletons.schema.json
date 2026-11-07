@@ -57,7 +57,7 @@
     },
     "articleSections": {
       "type": "object",
-      "description": "Which article a block's own role groups into, per pageType (v3, 9 Oct 2026, docs/authoring/lesson-page-model-v3.md; supersedes the opening/main/closing model of AG-1, Prompt 88). A lesson page carries five titled articles (per sectionOrder); every other pageType carries one article holding all its blocks. Data a generator reads, not logic it embeds: role is already schema-validated per block (blockSequence[].role), and this table is the single place that derives a section from it.",
+      "description": "Which article a block's own role groups into, per pageType (v4, 2 Nov 2026, docs/authoring/lesson-page-model-v4.md; supersedes the v3 five-section model, which itself superseded the opening/main/closing model of AG-1, Prompt 88). A lesson page carries four titled articles (per sectionOrder); every other pageType carries one article holding all its blocks. Data a generator reads, not logic it embeds: role is already schema-validated per block (blockSequence[].role), and this table is the single place that derives a section from it.",
       "required": ["multiArticlePageTypes", "singleArticlePageTypes", "sectionOrder", "roleToSection", "sectionMeta", "sourcePointer"],
       "properties": {
         "multiArticlePageTypes": {
@@ -76,27 +76,27 @@
         },
         "sectionOrder": {
           "type": "array",
-          "items": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-          "minItems": 5,
-          "maxItems": 5,
-          "description": "Article order on a multiArticlePageTypes page (v3 five-section model)."
+          "items": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "Article order on a multiArticlePageTypes page (v4 four-section model, docs/authoring/lesson-page-model-v4.md)."
         },
         "roleToSection": {
           "type": "object",
           "description": "Which section each role's blocks belong to, on a multi-article page. summative and furniture are deliberately absent: neither role appears on the lesson pageType (AG-1b).",
           "required": ["orientation", "orientation-tier", "learning-outcomes", "concept", "worked-example", "practical-guidance", "knowledge-check", "reflective", "reflective-task", "summary", "references"],
           "properties": {
-            "orientation": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "orientation-tier": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "learning-outcomes": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "concept": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "worked-example": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "practical-guidance": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "knowledge-check": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "reflective": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "reflective-task": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "summary": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] },
-            "references": { "enum": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"] }
+            "orientation": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "orientation-tier": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "learning-outcomes": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "concept": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "worked-example": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "practical-guidance": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "knowledge-check": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "reflective": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "reflective-task": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "summary": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] },
+            "references": { "enum": ["lesson-open", "lesson-concept", "lesson-practice", "lesson-close"] }
           },
           "additionalProperties": false
         },

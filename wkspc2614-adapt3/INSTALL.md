@@ -41,7 +41,7 @@ Start a server by running the following command:
 `grunt server`  
 
 Once the server has started, the course will open in your default browser via the URL
-[http://localhost:9001/](http://localhost:9001/)
+[http://localhost:9000/](http://localhost:9000/)
 
 To terminate the server, press <kbd>CTRL+c</kbd>.  
 
@@ -78,7 +78,7 @@ Start a server by running the following command:
 `grunt server`  
 
 Once the server has started, the course will open in your default browser via the URL
-[http://localhost:9001/](http://localhost:9001/)
+[http://localhost:9000/](http://localhost:9000/)
 
 To terminate the server, press <kbd>CTRL+c</kbd>.  
 

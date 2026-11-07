@@ -13,12 +13,12 @@
  * - Dynamic state scans for SUMM and confidence components after interaction
  *
  * Usage: node test-focus-sequence-scan.mjs
- * Requires: Playwright, dev server running on localhost:9001
+ * Requires: Playwright, dev server running on localhost:9000
  */
 
 import { chromium } from 'playwright';
 
-const BASE_URL = 'http://localhost:9001/';
+const BASE_URL = 'http://localhost:9000/';
 const MAX_TAB_PRESSES = 100;
 
 /**

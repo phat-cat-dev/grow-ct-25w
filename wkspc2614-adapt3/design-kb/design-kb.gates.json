@@ -1,5 +1,5 @@
 {
-  "kbVersion": "0.10.1",
+  "kbVersion": "0.10.7",
   "gates": [
     {
       "id": "onb-01_theme-preset",
@@ -103,6 +103,23 @@
             "catalogue/pathways.json",
             "crs-01 source set (no-preset path)"
           ]
+        },
+        "validation": {
+          "purpose": "decidedValue.theme becomes manifest.facetSet.pathway verbatim once /new-course runs (tools/new-course.js:151,164), with no validity check in that tool beyond 'is it non-empty' (line 155) - an invented or misspelled pathway id would only surface much later, when every downstream Layer-1 lookup against catalogue/context/pathway/<id>.json silently fails to resolve. Check it here instead, before the human confirms.",
+          "checks": [
+            {
+              "id": "THM-1",
+              "rule": "Not one of gate.md's numbered AL rules - a structural grounding check. decidedValue.theme must be one of catalogue/pathways.json's pathways[].id values (the 13 pathways), not an invented or paraphrased id.",
+              "appliesTo": "decidedValue.theme against catalogue/pathways.json pathways[].id"
+            },
+            {
+              "id": "THM-2",
+              "rule": "Not one of gate.md's numbered AL rules. decidedValue.themeSource must record which path was actually taken: 'preset' only when onb-01's decidedValue.preset is not 'none' (the presetPath dropdown was used); 'derived' only when onb-01's decidedValue.preset is 'none' (the no-preset one-sentence path was used).",
+              "appliesTo": "decidedValue.themeSource against onb-01_theme-preset.decidedValue.preset"
+            }
+          ],
+          "scopeNote": "tools/new-course.js only checks theme is present (line 155), not that it resolves to a real pathway - THM-1 is this gate's own safeguard; nothing downstream repeats it.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft theme/themeSource until every check passes before presenting the proposal. Never present a proposal that already fails its own consistency checks."
         }
       }
     },
@@ -122,7 +139,7 @@
       ],
       "response": {
         "mode": "choose",
-        "prompt": "Choose the tier (pitch), grounded in what that tier means for this pathway against the book.",
+        "prompt": "Choose the tier (pitch) - one of introductory/intermediate/advanced, or 'all three tiers' to build the pathway-distillation profile's full set at once - grounded in what that tier means for this pathway against the book.",
         "destination": "decidedValue.pitch"
       },
       "generation": {
@@ -140,7 +157,7 @@
           "sourceOfRecord": "The pathway reference is distilled (tools/build-pathway-reference.py) from the interpreted, student-facing rewrites in source-kb/canon-adp/secondary-data/ingested -- the agent's source of record. Ground the tier picture (and any book window) in those rewrites and the reference, never the copyrighted originals."
         }
       },
-      "consequenceNote": "The tier band, now a grounded choice (tier-bands + the pathway reference's tierStatements/capabilities + the book window from bookGrounding) rather than a blind enum. Flows into manifest.facetSet.tier, which keys the Layer-1 pathway grounding every downstream content gate reads. Indicative FHEQ levels per design-kb.tier-bands.json (indicativeLevels are not a progression). no-tier tooling not yet wired. Future per-level targeting lives in cxs-01 (institutional).",
+      "consequenceNote": "The tier band, now a grounded choice (tier-bands + the pathway reference's tierStatements/capabilities + the book window from bookGrounding) rather than a blind enum. Flows into manifest.facetSet.tier, which keys the Layer-1 pathway grounding every downstream content gate reads. Indicative FHEQ levels per design-kb.tier-bands.json (indicativeLevels are not a progression). Choosing 'all' instead of a single tier commits to all three tiers at once under the pathway-distillation profile (tools/new-course.js creates three sibling manifests, one per tier, atomically) - CXS/CXP run once and are shared across them. no-tier tooling not yet wired. Future per-level targeting lives in cxs-01 (institutional).",
       "decidedValueShape": {
         "type": "object",
         "required": [
@@ -152,8 +169,20 @@
               "introductory",
               "intermediate",
               "advanced",
+              "all",
               "no-tier"
             ]
+          },
+          "tiers": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "introductory",
+                "intermediate",
+                "advanced"
+              ]
+            },
+            "description": "Optional, forward-compatible record of the concrete tier slugs this choice yields. When pitch='all' this is the full ['introductory','intermediate','advanced'] set - 'all' already implies every tier, so this field is explanatory, not load-bearing; no partial-tier selection exists yet."
           }
         },
         "additionalProperties": false
@@ -164,7 +193,7 @@
       },
       "sequence": 2,
       "agentContext": {
-        "fieldDescription": "The tier band, now a grounded choice (tier-bands + the pathway reference's tierStatements/capabilities + the book window from bookGrounding) rather than a blind enum. Flows into manifest.facetSet.tier, which keys the Layer-1 pathway grounding every downstream content gate reads. Indicative FHEQ levels per design-kb.tier-bands.json (indicativeLevels are not a progression). no-tier tooling not yet wired. Future per-level targeting lives in cxs-01 (institutional).",
+        "fieldDescription": "The tier band, now a grounded choice (tier-bands + the pathway reference's tierStatements/capabilities + the book window from bookGrounding) rather than a blind enum. Flows into manifest.facetSet.tier, which keys the Layer-1 pathway grounding every downstream content gate reads. Indicative FHEQ levels per design-kb.tier-bands.json (indicativeLevels are not a progression). Choosing 'all' instead of a single tier commits to all three tiers at once under the pathway-distillation profile (tools/new-course.js creates three sibling manifests, one per tier, atomically) - CXS/CXP run once and are shared across them. no-tier tooling not yet wired. Future per-level targeting lives in cxs-01 (institutional).",
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
@@ -173,6 +202,23 @@
             "catalogue/context/pathway/<pathway>.json bookGrounding (chapters, and sections with pages + what each teaches) -- the book window for this tier",
             "catalogue/context/subject/benchmarks/universal-reference.json (the generic, subject-neutral shared core distilled across the 54 QAA benchmarks, tools/build-universal-benchmark.py): tierReadings.rows (per-tier practice/knowledge/identity, each with fheqLevel + pitchNote) and pathwayMapping['adapt-<pathway>'] (the shared-core statements mapped to this pathway, each with strength + agentInstruction) -- the standing generic phrase source alongside FHEQ/CQFW, always consulted, never a subject substitute"
           ]
+        },
+        "validation": {
+          "purpose": "/new-course (tools/new-course.js:157-159) hard-fails if decidedValue.pitch is anything other than introductory|intermediate|advanced - it explicitly rejects 'no-tier' because the no-tier machinery is not yet wired (tracked as A3). decidedValueShape's own enum still allows 'no-tier' as a legal answer at this gate, so that mismatch must be caught here, not discovered later at course-creation time.",
+          "checks": [
+            {
+              "id": "PITCH-1",
+              "rule": "Not one of gate.md's numbered AL rules - a downstream-tooling compatibility check. If decidedValue.pitch is 'no-tier', flag to the human before confirming that /new-course will reject it outright (tools/new-course.js:157-159) until the no-tier machinery lands. Do not let a 'no-tier' answer through as if it were buildable today. 'all' IS buildable: tools/new-course.js's multi-tier mode derives <theme>-introductory/-intermediate/-advanced and creates all three manifests atomically under profile='pathway-distillation'.",
+              "appliesTo": "decidedValue.pitch against tools/new-course.js's accepted pitch values"
+            },
+            {
+              "id": "PITCH-2",
+              "rule": "Not one of gate.md's numbered AL rules. If pitch is introductory/intermediate/advanced, the pathway's catalogue/context/pathway/<pathway>.json tierProgression.tierStatements must contain at least one entry whose tier field matches the chosen pitch (case-insensitive) - guards against picking a tier this pathway has no grounding content for. If pitch is 'all', tierStatements must cover all three tiers (introductory AND intermediate AND advanced), since every one of the three manifests new-course.js is about to create needs its own grounding - a pathway missing coverage for even one tier fails this check for 'all' even though it might pass for the other two tiers individually.",
+              "appliesTo": "decidedValue.pitch against catalogue/context/pathway/<pathway>.json tierProgression.tierStatements[].tier"
+            }
+          ],
+          "scopeNote": "Confirmed empirically (2 Nov 2026) across all 13 pathways: 12 of 13 carry tierStatements entries for all three tiers. reflective-practice.json is the one exception - its tierProgression.tierStatements array is empty, so PITCH-2 fails for every pitch choice on that pathway today, not just a hypothetical future gap. Flag this to the human rather than silently waving onb-03 through for reflective-practice until catalogue/context/pathway/reflective-practice.json is rebuilt with real tierStatements.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft pitch (or warn the human explicitly before they confirm 'no-tier') until every check passes before presenting the proposal."
         }
       }
     },
@@ -244,6 +290,28 @@
         "authoringReview": {
           "instruction": "No upstream ingested data; author from the prior gates decidedValues and the field description.",
           "pointers": []
+        },
+        "validation": {
+          "purpose": "/new-course (tools/new-course.js:160-162) hard-fails if decidedValue.slug does not literally equal the --slug the human later passes to the tool, and separately fails (line 145) if courses/<slug> already exists. Both failures surface late, at course-creation, not at this gate - check them here instead.",
+          "checks": [
+            {
+              "id": "SLUG-1",
+              "rule": "Not one of gate.md's numbered AL rules - a naming-convention check confirmed against all existing course directories. For the base course, slug should equal '<onb-02 decidedValue.theme>-<onb-03 decidedValue.pitch>' (e.g. criticality-introductory, understanding-learning-assessment-feedback-advanced) - the convention every existing courses/ directory already follows.",
+              "appliesTo": "decidedValue.slug against onb-02_course-theme.decidedValue.theme and onb-03_pitch.decidedValue.pitch"
+            },
+            {
+              "id": "SLUG-2",
+              "rule": "Not one of gate.md's numbered AL rules. decidedValue.slug must not already exist as a courses/<slug> directory - tools/new-course.js:145 hard-fails on this, but only at creation time, after this gate has already closed.",
+              "appliesTo": "decidedValue.slug against the courses/ directory listing"
+            },
+            {
+              "id": "SLUG-3",
+              "rule": "Not one of gate.md's numbered AL rules. pathwayName and tierName should read as the human-facing display names of onb-02's theme and onb-03's pitch respectively, not arbitrary restatements.",
+              "appliesTo": "decidedValue.pathwayName, decidedValue.tierName against onb-02_course-theme.decidedValue.theme, onb-03_pitch.decidedValue.pitch"
+            }
+          ],
+          "scopeNote": "SLUG-1/2/3 are new labels introduced by this agentContext addition. Confirmed empirically (2 Nov 2026) against every courses/ directory in the repo: every one follows the <theme>-<pitch> convention SLUG-1 checks.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft name/slug until every check passes before presenting the proposal - in particular, never present a slug that already exists as a courses/ directory."
         }
       }
     },
@@ -565,13 +633,40 @@
         "ref": "A-round"
       },
       "sequence": 11,
+      "profiles": [
+        "built-course-shape",
+        "single-course"
+      ],
       "agentContext": {
         "fieldDescription": "Chapters/sections in scope, tier-band window, prior-experience anchor, + 5-10 thematic strands (candidate lesson topics). Most consequential upstream gate. Strands: human approve/amend/remove/regenerate.",
         "authoringReview": {
-          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "instruction": "This gate's own job is to DEFINE the thematic scope and the 5-10 strands that crs-03/crs-04 (AL-2's scope-containment clause) and every downstream gate will be checked against - get both the in/out-of-scope partition and the strand count right here, since nothing downstream can add scope you did not record. Layer-2 subject-source consultation is a separate step (sourceConsultation above, gate.md step 2) that already runs before this instruction; this authoringReview is the Layer-1 pathway grounding for the write-up itself. Ground the scope in crs-01's chosen source set and the pathway's own chapters/bookChunks; do not invent beyond what they support.",
           "pointers": [
-            "crs-01 source set: pathway core Part A + source-map"
+            "crs-01_sources",
+            "design-kb.pathways.json (pathways[].chapters, bookChunks.primary/shared, tiers.<tier>.voiceBand - the pathway record keyed by manifest.facetSet.pathway)"
           ]
+        },
+        "validation": {
+          "purpose": "crs-02 does not itself carry one of gate.md's numbered AL rules - it is the thing AL-2's scope-containment clause checks against downstream, not a gate bound by one of them directly. Its own job is completeness and internal consistency of the scope it hands down, self-checked before presenting since this is a hard-stop confirm gate.",
+          "checks": [
+            {
+              "id": "SCP-1",
+              "rule": "Not one of gate.md's numbered AL rules - a structural consistency rule implied by carrying both arrays. No section appears in both sectionsInScope and sectionsOutOfScope; the two arrays partition the source's sections, and a section in both is a direct contradiction no downstream AL-2 scope check can resolve.",
+              "appliesTo": "sectionsInScope against sectionsOutOfScope (this draft)"
+            },
+            {
+              "id": "STR-1",
+              "rule": "Not one of gate.md's numbered AL rules. subThemes carries 5-10 entries. The schema's minItems/maxItems on subThemes only bite once the array is present; subThemes is not in decidedValueShape.required, so an agent could omit it entirely and still pass schema validation. Do not rely on the schema here - check it directly: this gate's own consequenceNote and response.prompt both treat the 5-10 strands as the deliverable, not an optional extra.",
+              "appliesTo": "subThemes.length (this draft)"
+            },
+            {
+              "id": "TW-1",
+              "rule": "Not one of gate.md's numbered AL rules; a qualitative check, not a string match. tierWindow.voiceBand (and the other tierWindow fields where set) should read as consistent with, not necessarily identical to, the pathway's own recorded per-tier voiceBand (the two use different phrasing: a short tag here, a full sentence carrying provenance there) - check the pitch/band they name agrees.",
+              "appliesTo": "tierWindow.voiceBand (this draft) against design-kb.pathways.json pathways[].tiers[manifest.facetSet.tier].voiceBand"
+            }
+          ],
+          "scopeNote": "SCP-1, STR-1 and TW-1 are new labels introduced by this agentContext addition, not pre-existing project ruling ids. Confirmed empirically (2 Nov 2026) against every closed crs-02 record in the repo: SCP-1 and STR-1 hold with zero violations in all 39 closed records today. Layer-2 subject-source consultation (triggeringFacets/authorityLevels above) is a separate, already-wired mechanism (SSC-1, gate.md step 2); do not duplicate it here.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft scope/strands until every check passes before presenting the proposal. Never present a proposal that already fails its own consistency checks."
         }
       }
     },
@@ -726,14 +821,35 @@
         "ref": "A-round"
       },
       "sequence": 12,
+      "profiles": [
+        "built-course-shape",
+        "single-course"
+      ],
       "agentContext": {
         "fieldDescription": "3-5 course outcomes (3 default; reason if 4-5). Also produces, per outcome at CRS, a confidence statement + 3 general MCQ sets (courseOutcomeBanks) used on the SUMM page (OBK-1). Lesson-outcome banks are produced later at les-01.",
         "authoringReview": {
-          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "instruction": "This gate is where AL-2's one-idea rule (for course outcomes and confidence statements) and AL-4's coverage rule (for the banks) are PRODUCED - self-check both against the checks in validation below before presenting, since this is a hard-stop confirm gate. Ground every outcome in crs-02's recorded scope and in the pathway's own core-capability crosswalk; do not invent beyond what they support.",
           "pointers": [
-            "thematic scope",
-            "pathway core A10 capabilities"
+            "crs-02_thematic-scope",
+            "catalogue/context/pathway/<pathway-id>.json (capabilities[].capabilityId, the A10 core-capability crosswalk)"
           ]
+        },
+        "validation": {
+          "purpose": "crs-03 is where AL-2 (one-idea rule) is produced for course outcomes and confidence statements, and where AL-4 (confidence coverage) is produced - self-check both before presenting, the same discipline as crs-04's AL-1/AL-2/MCO-1.",
+          "checks": [
+            {
+              "id": "AL-2",
+              "rule": "Every course outcome's text, and every confidence statement's text in courseOutcomeBanks, states one thing (the one-idea rule): one verb, one object/idea, never two joined by 'and'. This rule does not reach mcqSets here - crs-03 only decides each MCQ-set's spec (coupling, crossLessonApplication, feedbackOnEveryAnswer, status), never stem text; the actual question stems are authored later at wra-03.",
+              "appliesTo": "courseOutcomes[].text, courseOutcomeBanks[].confidenceStatement.text"
+            },
+            {
+              "id": "AL-4",
+              "rule": "Every courseOutcomes[].id appears as a courseOutcomeBanks[].outcomeId (every course outcome is rated by at least one confidence statement), and every courseOutcomeBanks[].outcomeId names a real courseOutcomes[].id (no dangling bank).",
+              "appliesTo": "courseOutcomes[].id against courseOutcomeBanks[].outcomeId, both directions"
+            }
+          ],
+          "scopeNote": "AL-1 does not apply here - course outcomes don't themselves serve anything upstream (crs-04's lesson outcomes serve these, not the reverse). AL-3, AL-5 and AL-6 bind at les-01 and wra-01/02/03, none of which have run yet. AL-4 is ALSO already a live automated check (checkId AL-4 in tools/manifest-completeness.js, run post-hoc against the closed record by verify-course.js/verify-all-courses.js) - running it here too is deliberate self-checking before the human confirms, not a replacement for that script; the two should always agree.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft outcomes/banks until every check passes before presenting the proposal. Never present a proposal that already fails its own alignment checks."
         }
       }
     },
@@ -874,12 +990,34 @@
       "agentContext": {
         "fieldDescription": "Per lesson: key, title, topic, brief description, lesson outcomes, source section(s); + cross-lesson progression. Last CRS step before the course spec. Feeds the course pack. (Carries old gates/A3 shape; lesson outcomes folded in from old B1.)",
         "authoringReview": {
-          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "instruction": "This gate is where AL-1, AL-2 and the mainCourseOutcome consistency rule in validation below are PRODUCED, not merely checked - get every lesson's outcomes right here so crs-05's downstream check, and the human confirming this hard-stop, have nothing to catch. Review crs-01's sources, crs-02's scope and crs-03's course outcomes before drafting; do not invent beyond what they support.",
           "pointers": [
-            "course outcomes",
-            "thematic strands",
-            "source search"
+            "crs-01_sources",
+            "crs-02_thematic-scope",
+            "crs-03_course-outcomes"
           ]
+        },
+        "validation": {
+          "purpose": "Run these checks against the draft lesson map before presenting it for confirm/amend/reject - this is a hard-stop gate, so a dangling or mismatched reference reaching the human is a defect in the proposal, not a decision for them to catch.",
+          "checks": [
+            {
+              "id": "AL-1",
+              "rule": "Every lesson outcome object in lessons[].outcomes carries a `serves` value naming a real id from crs-03_course-outcomes.courseOutcomes (serves is optional in the schema - set it anyway, and check it). A `serves` value that matches no course-outcome id is a dangling reference.",
+              "appliesTo": "lessons[].outcomes[].serves (this draft) against crs-03_course-outcomes.courseOutcomes[].id"
+            },
+            {
+              "id": "AL-2",
+              "rule": "Every lesson outcome's text states one verb and one object, never two tasks joined by 'and'. The outcome count for a lesson is a judgement call, not a count derived from lessons[].sourceSections.length. Each lesson outcome's subject matter stays inside crs-02_thematic-scope.sectionsInScope (and does not stray into sectionsOutOfScope) - a qualitative check, not a string match.",
+              "appliesTo": "lessons[].outcomes[].text (this draft), cross-checked against crs-02_thematic-scope.sectionsInScope/sectionsOutOfScope"
+            },
+            {
+              "id": "MCO-1",
+              "rule": "Not one of gate.md's numbered AL rules - a consistency rule implied by this gate's own shape, confirmed true of every one of the 158 lessons in every closed crs-04 record today (2 Nov 2026), so it hardens an existing universal pattern rather than introducing a new one. Every lesson's mainCourseOutcome names a real crs-03 course-outcome id, and equals the single value shared by every one of that lesson's outcomes[].serves - a lesson's outcomes must not serve more than one course outcome, and mainCourseOutcome must agree with them.",
+              "appliesTo": "lessons[].mainCourseOutcome (this draft) against crs-03_course-outcomes.courseOutcomes[].id, and against the serves set of lessons[].outcomes[] within the same lesson"
+            }
+          ],
+          "scopeNote": "AL-3, AL-5 and AL-6 bind at les-01 and wra-01/02/03, none of which have run yet. The lesson-count floor (minimum 5 per tier, 2 Nov 2026 ruling) and the exactly-3-outcomes-per-lesson quota are standing rulings but NOT YET schema-enforced on decidedValueShape (deferred, the one breaking step in the gate-quota work); this validation does not add or enforce either count, only the reference and alignment checks above.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft lesson map until every check passes before presenting the proposal. Never present a proposal that already fails its own alignment checks."
         }
       }
     },
@@ -916,9 +1054,317 @@
       "agentContext": {
         "fieldDescription": "Auto-stands rollup of ONB+CRS -> user-facing course pack (tools/doc-templates/course-pack.template.json). Order: Identity -> Context shell -> Thematic scope -> Thematic strands -> Course outcomes -> per-outcome -> Lesson map. No new decisions.",
         "authoringReview": {
-          "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
+          "instruction": "render-doc.js assembles this gate mechanically from already-closed records; there is nothing left to author. The agent's real job here is to validate the lesson map against the alignment rules in the validation block below before letting the rollup stand, not to add prose or invent content beyond what the pointed-at records already decided.",
           "pointers": [
-            "all closed ONB+CRS records"
+            "onb-01_theme-preset",
+            "onb-02_course-theme",
+            "onb-03_pitch",
+            "onb-04_naming",
+            "cxs-04_referencing-style",
+            "crs-01_sources",
+            "crs-02_thematic-scope",
+            "crs-03_course-outcomes",
+            "crs-04_lesson-map"
+          ]
+        },
+        "validation": {
+          "purpose": "crs-05 is the first choke point after the lesson map closes and before any lesson interior (les-01) or wrapper (wra-*) authoring builds on top of it - the cheapest place to catch a broken outcome before 15+ more gates build on it.",
+          "checks": [
+            {
+              "id": "AL-1",
+              "rule": "Every lesson outcome object in crs-04_lesson-map.lessons[].outcomes carries a `serves` value naming a real id from crs-03_course-outcomes.courseOutcomes (serves is optional in the schema, so its absence is not a schema violation - check it anyway). A `serves` value that matches no course-outcome id is a dangling reference.",
+              "appliesTo": "crs-04_lesson-map.lessons[].outcomes[].serves against crs-03_course-outcomes.courseOutcomes[].id"
+            },
+            {
+              "id": "AL-2",
+              "rule": "Every outcome text (both crs-03_course-outcomes.courseOutcomes[].text and crs-04_lesson-map.lessons[].outcomes[].text) states one verb and one object, never two tasks joined by 'and'. Each lesson's outcome count is a judgement call, not a count derived from lessons[].sourceSections.length. Each lesson outcome's subject matter stays inside crs-02_thematic-scope.sectionsInScope (and does not stray into sectionsOutOfScope) - a qualitative check, not a string match.",
+              "appliesTo": "crs-03_course-outcomes.courseOutcomes[].text, crs-04_lesson-map.lessons[].outcomes[].text, cross-checked against crs-02_thematic-scope.sectionsInScope/sectionsOutOfScope"
+            }
+          ],
+          "scopeNote": "AL-3 (check/summative item counts) and AL-6 (tests coupling) bind at les-01 and wra-03; AL-5 binds at wra-01/wra-02. None of those gates have run yet at crs-05's position in sequence (seq 14, before les-01 at seq 15) - do not attempt to validate them here. AL-4 (confidence-statement coverage) already has a live automated check at crs-03 time in tools/manifest-completeness.js; do not re-run it, just note its last result.",
+          "onFail": "A failed check is never silently let through by the advisory default. State the violation plainly in the proposal's Grounding line, and recommend reopening the specific upstream gate (crs-03 or crs-04) via /reopen rather than letting crs-05 close over it."
+        }
+      }
+    },
+    {
+      "id": "crs-06_pathway-statements",
+      "name": "Pathway statements",
+      "phase": "CRS",
+      "kind": "agent+human",
+      "hardness": "advisory",
+      "defaultType": "ai-proposal-stands",
+      "dependsOn": [
+        {
+          "gate": "crs-01_sources",
+          "dependencyClass": "constitutive",
+          "note": "Statements are read from the chosen source set's pathway, not authored fresh."
+        }
+      ],
+      "profiles": [
+        "pathway-distillation"
+      ],
+      "generation": {
+        "trigger": "crs-01 closed",
+        "produces": "decidedValue (the pathway's 18 evidence statements, surfaced for crs-07 grounding)",
+        "sources": [
+          "catalogue/context/pathway-evidence/<pathway>.json (18 evidence statements: 9 capabilities x conceptual+applied)"
+        ],
+        "parameters": {
+          "autoStands": true
+        }
+      },
+      "consequenceNote": "Auto-stands surfacing of the pathway's own 18 evidence statements (2 per capability, one conceptual + one applied, across the 9 i1-i3/d1-d3/e1-e3 capabilities) from catalogue/context/pathway-evidence/<pathway>.json. No new decisions; crs-07 reads this record as its grounding. Pathway-distillation only - crs-02/crs-03 (thematic scope / free course outcomes) are not in scope under this profile.",
+      "decidedValueShape": {
+        "type": "object",
+        "required": [
+          "statements"
+        ],
+        "properties": {
+          "statements": {
+            "type": "array",
+            "minItems": 18,
+            "maxItems": 18,
+            "items": {
+              "type": "object",
+              "required": [
+                "capabilityId",
+                "tier",
+                "kind",
+                "text"
+              ],
+              "properties": {
+                "capabilityId": {
+                  "type": "string",
+                  "description": "The i1-i3/d1-d3/e1-e3 capability id this statement evidences."
+                },
+                "tier": {
+                  "enum": [
+                    "introductory",
+                    "intermediate",
+                    "advanced"
+                  ]
+                },
+                "kind": {
+                  "enum": [
+                    "conceptual",
+                    "applied"
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "prosePointer": {
+        "doc": "docs/authoring/pathway-proliferation-gating-lookups.md",
+        "ref": "Part B"
+      },
+      "sequence": 15,
+      "agentContext": {
+        "fieldDescription": "Auto-stands surfacing of the pathway's 18 evidence statements, read verbatim from catalogue/context/pathway-evidence/<pathway>.json. No authoring; this gate's only job is correct retrieval.",
+        "authoringReview": {
+          "instruction": "Read catalogue/context/pathway-evidence/<pathway>.json in full and copy its 18 statements into decidedValue.statements unchanged. Do not paraphrase, trim, or invent a 19th. If the file has fewer than 18 (not yet drafted for this pathway), state that plainly as a grounding gap rather than padding the array.",
+          "pointers": [
+            "crs-01_sources",
+            "catalogue/context/pathway-evidence/<pathway>.json"
+          ]
+        }
+      }
+    },
+    {
+      "id": "crs-07_tiered-outcomes",
+      "name": "Tiered outcomes",
+      "phase": "CRS",
+      "kind": "agent+human",
+      "hardness": "hard-stop",
+      "defaultType": "none",
+      "dependsOn": [
+        {
+          "gate": "crs-06_pathway-statements",
+          "dependencyClass": "constitutive",
+          "note": "Flat LOs are grounded in the pathway's own evidence statements, not a free thematic scope."
+        }
+      ],
+      "profiles": [
+        "pathway-distillation"
+      ],
+      "response": {
+        "mode": "confirm",
+        "prompt": "Confirm/amend this tier's 4-6 flat learning outcomes (book-first two-layer method).",
+        "destination": "decidedValue"
+      },
+      "generation": {
+        "trigger": "crs-06 closed",
+        "produces": "decidedValue (outcomes: 4-6 flat LOs for this course's own tier)",
+        "sources": [
+          "crs-06 pathway statements",
+          "the pathway's own book chapter sections (bookGrounding)"
+        ],
+        "parameters": {
+          "method": "docs/authoring/pathway-proliferation-gating-lookups.md book-first two-layer method: Layer 1 = one LO per real book-chapter section; Layer 2 = fill-to-minimum only, via the pathway's own applied evidence statement (crs-06) or at most one named theory lesson per tier, anchored inside an existing book-grounded lesson.",
+          "count": "4-6 flat LOs, no distillation and no course-outcome tier above them (flat-6 ruling, 2 Nov 2026)"
+        }
+      },
+      "consequenceNote": "Flat LOs replace crs-03's course-outcome tier under this profile: the pathway's own evidence statements (crs-06) ground the tier's final LOs, typically 4-6, content shape decides - no distillation to 3, no expansion to 9. Each LO records which layer produced it, so a Layer-2 theory LO stays traceable to the one book-grounded lesson it is anchored inside.",
+      "decidedValueShape": {
+        "type": "object",
+        "required": [
+          "outcomes"
+        ],
+        "properties": {
+          "outcomes": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "text",
+                "layer"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text": {
+                  "type": "string"
+                },
+                "layer": {
+                  "enum": [
+                    1,
+                    2
+                  ],
+                  "description": "1 = one LO per real book-chapter section. 2 = fill-to-minimum only, via source (below)."
+                },
+                "source": {
+                  "type": "object",
+                  "required": [
+                    "type",
+                    "ref"
+                  ],
+                  "properties": {
+                    "type": {
+                      "enum": [
+                        "book-section",
+                        "capability-evidence",
+                        "named-theory-anchor"
+                      ]
+                    },
+                    "ref": {
+                      "type": "string",
+                      "description": "book-section: the section id/title. capability-evidence: the crs-06 statement's capabilityId. named-theory-anchor: the lessonKey of the one existing book-grounded lesson this theory LO is anchored inside."
+                    }
+                  },
+                  "description": "Required when layer=2: a Layer-1 book-section LO is self-evidently grounded by its own text and needs no separate source."
+                }
+              }
+            }
+          }
+        }
+      },
+      "prosePointer": {
+        "doc": "docs/authoring/pathway-proliferation-gating-lookups.md",
+        "ref": "Part B"
+      },
+      "sequence": 16,
+      "agentContext": {
+        "fieldDescription": "4-6 flat LOs for this tier, book-first two-layer method. No course-outcome tier above them under this profile.",
+        "authoringReview": {
+          "instruction": "Build outcomes in two passes. Layer 1: for each real book-chapter section in this tier's bookGrounding window, write one LO stating the one verb/one object the section actually teaches; set layer=1, no source needed. Layer 2: only if Layer 1 produced fewer than 4, fill to the 4-6 range using the pathway's own applied evidence statement (crs-06, source.type=capability-evidence, source.ref=capabilityId) or at most one named-theory LO per tier anchored inside an existing book-grounded lesson (source.type=named-theory-anchor, source.ref=that lesson's key). Never invent a Layer-2 LO with no traceable source.",
+          "pointers": [
+            "crs-06_pathway-statements",
+            "catalogue/context/pathway/<pathway>.json bookGrounding"
+          ]
+        },
+        "validation": {
+          "purpose": "crs-07 is where the flat-6 ruling (2 Nov 2026) and the book-first two-layer method are enforced before the lesson map (crs-04) builds lessons on top of these LOs.",
+          "checks": [
+            {
+              "id": "FLAT-1",
+              "rule": "outcomes has between 4 and 6 items (already schema-enforced by minItems/maxItems; this check confirms the draft was not padded or trimmed to hit the bound mechanically - each item is a genuine, distinct LO).",
+              "appliesTo": "outcomes.length and outcomes[].text distinctness (this draft)"
+            },
+            {
+              "id": "LAYER-1",
+              "rule": "Every outcome with layer=2 carries a source object naming a real capabilityId (from crs-06.statements[].capabilityId) or a real lessonKey (from crs-04, once it exists) under source.ref. A layer=2 outcome with no source, or a source.ref that resolves to nothing, is ungrounded.",
+              "appliesTo": "outcomes[].source against crs-06_pathway-statements.statements[].capabilityId"
+            }
+          ],
+          "scopeNote": "The named-theory-anchor source type can only be fully resolved once crs-04 (lesson map) exists; at crs-07 time, accept it provisionally and re-check at crs-04/crs-05 time that the named lesson actually exists.",
+          "onFail": "A failed check means the draft itself is wrong. Revise until FLAT-1 and LAYER-1 both pass before presenting the proposal."
+        }
+      }
+    },
+    {
+      "id": "crs-08_progression",
+      "name": "Cross-tier progression",
+      "phase": "CRS",
+      "kind": "agent+human",
+      "hardness": "soft",
+      "defaultType": "ai-proposal-stands",
+      "dependsOn": [
+        {
+          "gate": "crs-07_tiered-outcomes",
+          "dependencyClass": "constitutive",
+          "note": "Signposts link this tier's LOs to its siblings' LOs."
+        }
+      ],
+      "profiles": [
+        "pathway-distillation"
+      ],
+      "response": {
+        "mode": "confirm",
+        "prompt": "Confirm/amend the cross-tier progression signposts.",
+        "destination": "decidedValue"
+      },
+      "generation": {
+        "trigger": "crs-07 closed",
+        "produces": "decidedValue (tierSiblings + up/down signposts)",
+        "sources": [
+          "crs-07 this tier's flat LOs",
+          "catalogue/pathways.json (tier ladder)"
+        ]
+      },
+      "consequenceNote": "Soft, advisory framing only: names this course's sibling tier slugs and a short up/down signpost sentence for each direction that exists (introductory has no 'down'; advanced has no 'up'). Does not change this course's own LOs or lessons.",
+      "decidedValueShape": {
+        "type": "object",
+        "properties": {
+          "tierSiblings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Slugs of the other tier(s) of this same theme, where they exist yet."
+          },
+          "signposts": {
+            "type": "object",
+            "properties": {
+              "up": {
+                "type": "string"
+              },
+              "down": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "prosePointer": {
+        "doc": "docs/authoring/pathway-proliferation-gating-lookups.md",
+        "ref": "Part B"
+      },
+      "sequence": 17,
+      "agentContext": {
+        "fieldDescription": "Sibling tier slugs + up/down signpost sentences. Soft, advisory framing only.",
+        "authoringReview": {
+          "instruction": "Derive tierSiblings from catalogue/pathways.json's tier ladder for this theme (the other slugs sharing this course's theme). Write one up-signpost sentence (what the next tier adds) if a tier above this one exists, and one down-signpost sentence (what this tier assumes was covered) if a tier below exists. introductory has no down; advanced has no up.",
+          "pointers": [
+            "crs-07_tiered-outcomes",
+            "catalogue/pathways.json (tier ladder)"
           ]
         }
       }
@@ -957,7 +1403,7 @@
       },
       "response": {
         "mode": "confirm",
-        "prompt": "Confirm/amend the lesson's interior design and activities (regenerate+steer available).",
+        "prompt": "Confirm/amend the lesson's interior design and activities - for each of the 4 activity slots, choose one of the agent's candidate components (regenerate+steer available).",
         "destination": "decidedValue"
       },
       "generation": {
@@ -968,10 +1414,10 @@
           "crs-01 source set"
         ],
         "parameters": {
-          "interactivityProposals": "3 different non-question components from activity-patterns + palette"
+          "interactivityProposals": "v5 (3 Nov 2026 - the full quota flagged at v4): up to 10 candidate non-question components across the 4 activity slots (activity-1..4), drawn from activity-patterns + palette - real per-slot variety for the human to choose from, not one pre-picked component per slot. Exactly one confirmed per slot."
         }
       },
-      "consequenceNote": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, 3 interactivity proposals) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
+      "consequenceNote": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, up to 10 interactivity proposals across 4 slots, one confirmed each) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
       "decidedValueShape": {
         "type": "object",
         "properties": {
@@ -1077,7 +1523,8 @@
           "activityProposals": {
             "type": "array",
             "minItems": 3,
-            "maxItems": 3,
+            "maxItems": 10,
+            "description": "v2/v3 lessons (one activity slot, no slot key): 3 candidate-component proposals, one confirmed - unchanged and still valid. v4 lessons (activity-1..4, one entry per slot, each confirmed): 4 entries - unchanged and still valid. v5 (3 Nov 2026 - the deliberately breaking step flagged at v4, additive only): where a lesson wants real per-slot variety, a slot may carry more than one candidate (up to 10 total across the 4 slots), each entry tagged with the slot it belongs to; exactly one entry per represented slot carries status:confirmed, the rest carry status:drafted as a visible record of alternatives considered and rejected - this is the gate's concrete form of 'lots of agent suggestion, human decides' for activities. slot stays optional (omitted on v2/v3's single, un-slotted set) and is required only once a v4/v5 per-slot shape is in use.",
             "items": {
               "type": "object",
               "required": [
@@ -1085,6 +1532,16 @@
                 "status"
               ],
               "properties": {
+                "slot": {
+                  "type": "string",
+                  "enum": [
+                    "activity-1",
+                    "activity-2",
+                    "activity-3",
+                    "activity-4"
+                  ],
+                  "description": "v4/v5 only: which activity slot this proposal belongs to. Omitted on v2/v3's un-slotted single-set lessons. Required in practice once a lesson uses the v4/v5 per-slot shape, since without it multiple candidates for different slots are indistinguishable - enforced by ACT-1 (agentContext.validation), not the schema, so that v2/v3's un-slotted records stay untouched."
+                },
                 "component": {
                   "type": "string"
                 },
@@ -1128,15 +1585,37 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 15,
+      "sequence": 18,
       "agentContext": {
-        "fieldDescription": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, 3 interactivity proposals) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
+        "fieldDescription": "One consolidated per-lesson gate (A6.2): interior design (knowledge/interactivity, worked example, pacing, visuals) + activities (formative check, reflective prompt, up to 10 interactivity proposals across the 4 activity slots, one confirmed each) + per-slot coupling marking. NO confidence (course-level, C-PRE/C-POST fed by crs-03). Outcomes are set at crs-04, not here. Merges old B2-B7 and crs-06 lessonOutcomeBanks.",
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
             "pathway core A10 templates + Part C process",
             "crs-01 source set"
           ]
+        },
+        "validation": {
+          "purpose": "les-01 is where 'lots of agent suggestion, human decides' is meant to be concretely true for activities (owner ruling, 3 Nov 2026) - the v5 widened activityProposals shape only delivers that in practice if the agent actually proposes real per-slot variety and the confirm/amend response genuinely lets the human pick between distinct options, not a single foregone choice dressed as a proposal. These checks apply only to v4/v5 lessons (any entry carries a slot key); a v2/v3 lesson's un-slotted 3-candidates/1-confirmed set is a different, still-valid shape and is exempt from all three.",
+          "checks": [
+            {
+              "id": "ACT-1",
+              "rule": "Not one of gate.md's numbered AL rules - a shape-intent check for the v5 widened quota, v4/v5 lessons only (skip entirely if no entry carries a slot key). Every one of activity-1/2/3/4 has exactly one activityProposals entry with status:confirmed, and no slot is left with zero entries.",
+              "appliesTo": "activityProposals[].slot against activityProposals[].status, grouped by slot"
+            },
+            {
+              "id": "ACT-2",
+              "rule": "Not one of gate.md's numbered AL rules, v4/v5 lessons only (skip entirely if no entry carries a slot key). At least one slot (not necessarily all four, since a plain-prose or activity-mode-question slot may genuinely have only one defensible component) carries more than one proposal - i.e. the set as a whole shows real drafted-vs-confirmed variety, not four slots each holding a single pre-picked entry restyled as 'confirmed'. A lesson where every slot has exactly one entry has not actually used the v5 quota and should be revised before presenting.",
+              "appliesTo": "activityProposals.length against the per-slot entry counts (this draft)"
+            },
+            {
+              "id": "ACT-3",
+              "rule": "Not one of gate.md's numbered AL rules, v4/v5 lessons only (skip entirely if no entry carries a slot key). Within a slot, every drafted (non-confirmed) proposal's component differs from every other proposal's component in that same slot - two identical component names in one slot is not a real alternative.",
+              "appliesTo": "activityProposals[].component, grouped by slot (this draft)"
+            }
+          ],
+          "scopeNote": "ACT-1/ACT-2/ACT-3 are new labels introduced alongside the v5 activityProposals widening. Confirmed empirically (3 Nov 2026) against every closed les-01 record in the repo: 133 records carry a populated activityProposals, every one a v2/v3 un-slotted 3-candidates/1-confirmed set (0 entries anywhere carry a slot key), so ACT-1/2/3 are vacuously exempt on all of them today and there is nothing to reconcile retroactively; they bind only once a lesson actually adopts the v4/v5 per-slot shape.",
+          "onFail": "A failed check means the draft itself is wrong. Revise the draft proposals until every check passes before presenting - in particular, do not let a single-component-per-slot draft stand as if the human had a real choice."
         }
       }
     },
@@ -1214,7 +1693,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 16,
+      "sequence": 19,
       "agentContext": {
         "fieldDescription": "Overview, learning-outcomes, practice-connection (academic/professional framing; human sets the academic<->professional extent; academic + professional sections each optionally removable), signpost component (old les-02 visual-overview), course-instructions, course-conventions. Wrapper-page coupling degree set here (A6.3).",
         "authoringReview": {
@@ -1314,7 +1793,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 17,
+      "sequence": 20,
       "agentContext": {
         "fieldDescription": "Summary, practice-connection, where-next (vertical = tier ladder; horizontal = related pathways/themes/subjects; agent proposes + confirm), course-references. Wrapper-page coupling degree set here (A6.3).",
         "authoringReview": {
@@ -1341,32 +1820,39 @@
         {
           "gate": "crs-03_course-outcomes",
           "dependencyClass": "constitutive",
-          "note": "Authors SUMM items from crs-03's per-outcome mcqSets specs."
+          "note": "Authors SUMM items from crs-03's per-outcome mcqSets specs. built-course-shape / single-course only: crs-03 is not in the pathway-distillation profile's step list (see crs-03's own `profiles` field), so under that profile this edge is not-applicable and crs-07_tiered-outcomes below is the constitutive source instead."
         },
         {
           "gate": "crs-04_lesson-map",
           "dependencyClass": "substantive",
           "note": "Cross-lesson MCQ sets span the mapped lessons."
+        },
+        {
+          "gate": "crs-07_tiered-outcomes",
+          "dependencyClass": "constitutive",
+          "note": "pathway-distillation only (crs-07 carries no record, and this edge is not-applicable, under any profile that does not name crs-07_tiered-outcomes in its step list): under this profile, with no course-outcome tier, SUMM items are authored one per flat LO (AL-3 becomes one-per-LO, not two-per-course-outcome) from crs-07's tiered outcomes directly."
         }
       ],
       "response": {
         "mode": "confirm",
-        "prompt": "Confirm/amend the summative question stems drafted from crs-03's MCQ-set specs.",
+        "prompt": "Confirm/amend the summative question stems drafted from crs-03's MCQ-set specs (or, under pathway-distillation, from crs-07's flat tiered learning outcomes).",
         "destination": "decidedValue"
       },
       "generation": {
-        "trigger": "crs-03 + crs-04 closed, scaffold run (SUMM page exists)",
+        "trigger": "crs-03 + crs-04 closed, scaffold run (SUMM page exists); under pathway-distillation, crs-07 + crs-04 closed instead (crs-03 carries no record under that profile)",
         "produces": "SUMM assessment-items (real MCQ/sortable question stems)",
         "sources": [
-          "crs-03 courseOutcomeBanks (the 3 mcqSet specs per outcome)",
+          "crs-03 courseOutcomeBanks (the 3 mcqSet specs per outcome) - built-course-shape / single-course",
+          "crs-07 tiered outcomes (flat LOs) - pathway-distillation",
           "crs-01 source set",
           "pathway core"
         ],
         "parameters": {
-          "perOutcome": "exactly two summative questions per course outcome (AL-3), each naming via tests the outcome it tests (AL-6)"
+          "perOutcome": "exactly two summative questions per course outcome (AL-3), each naming via tests the outcome it tests (AL-6) - built-course-shape / single-course",
+          "perLO": "exactly one summative question per flat LO (AL-3 under pathway-distillation, owner decision 2 Nov 2026: replaces the two-per-course-outcome rule for this profile only, since there is no course-outcome tier), each naming via tests the crs-07 outcome id it tests (AL-6)"
         }
       },
-      "consequenceNote": "Post-scaffold authoring of SUMM's assessment-items: crs-03's 3 mcqSet specs per outcome become real question stems (palette/mcq or palette/sortable, SM-2 split). AL-3: each course outcome tested by exactly two summative questions; AL-6 tests. A set whose crs-03 coupling is not shell-coupled is left as a marked slot for cxp-04 to fill per subject. Added 8 October 2026 (Abbott: post-scaffold summative/confidence authoring, two gates in WRA).",
+      "consequenceNote": "Post-scaffold authoring of SUMM's assessment-items: crs-03's 3 mcqSet specs per outcome become real question stems (palette/mcq or palette/sortable, SM-2 split). AL-3: each course outcome tested by exactly two summative questions; AL-6 tests. A set whose crs-03 coupling is not shell-coupled is left as a marked slot for cxp-04 to fill per subject. Added 8 October 2026 (Abbott: post-scaffold summative/confidence authoring, two gates in WRA). Under pathway-distillation (2 Nov 2026): no crs-03/course-outcome tier exists, so AL-3 is one summative question per crs-07 flat LO instead of two per course outcome; each item's `tests` names the LO id, not a course outcome id.",
       "decidedValueShape": {
         "type": "object",
         "properties": {
@@ -1410,13 +1896,14 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 18,
+      "sequence": 21,
       "agentContext": {
-        "fieldDescription": "Post-scaffold authoring of SUMM's assessment-items: crs-03's 3 mcqSet specs per outcome become real question stems (palette/mcq or palette/sortable, SM-2 split). AL-3: each course outcome tested by exactly two summative questions; AL-6 tests. A set whose crs-03 coupling is not shell-coupled is left as a marked slot for cxp-04 to fill per subject. Added 8 October 2026 (Abbott: post-scaffold summative/confidence authoring, two gates in WRA).",
+        "fieldDescription": "Post-scaffold authoring of SUMM's assessment-items: crs-03's 3 mcqSet specs per outcome become real question stems (palette/mcq or palette/sortable, SM-2 split). AL-3: each course outcome tested by exactly two summative questions; AL-6 tests. A set whose crs-03 coupling is not shell-coupled is left as a marked slot for cxp-04 to fill per subject. Added 8 October 2026 (Abbott: post-scaffold summative/confidence authoring, two gates in WRA). Under pathway-distillation (2 Nov 2026): no crs-03/course-outcome tier exists, so AL-3 is one summative question per crs-07 flat LO instead of two per course outcome; each item's `tests` names the LO id, not a course outcome id.",
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
-            "crs-03 courseOutcomeBanks (the 3 mcqSet specs per outcome)",
+            "crs-03 courseOutcomeBanks (the 3 mcqSet specs per outcome) - built-course-shape / single-course",
+            "crs-07 tiered outcomes (flat LOs) - pathway-distillation",
             "crs-01 source set",
             "pathway core"
           ]
@@ -1481,7 +1968,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 19,
+      "sequence": 22,
       "agentContext": {
         "fieldDescription": "Post-scaffold placement of crs-03's per-outcome confidence statements into the C-PRE confidence-pre and C-POST confidence-post components (palette/confidence). AL-4: each statement rates its course outcome; every course outcome carries at least one. The same statement set brackets the course (C-PRE before lessons, C-POST at close). Added 8 October 2026 (Abbott: two gates in WRA).",
         "authoringReview": {
@@ -1536,7 +2023,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 20,
+      "sequence": 23,
       "repeatsPer": "context-pack",
       "agentContext": {
         "fieldDescription": "Per-pack subject. PRIMARY agent lookup = that subject's interpreted benchmark statements (standing corpus), never the copyrighted originals. BASELINE OPTION: 'baseline' is a valid selection; it routes the cxp-04 lookup to the universal reference (the generic shared-core standards in catalogue/context/subject/benchmarks/universal-reference.json) instead of a single subject's benchmark. Record it as subject {scheme:'baseline', code:'baseline', label:'baseline'}, with the resolved benchmark id (universal-reference) in the record's grounding. resolve-subject-benchmark.js returns this for inputs baseline/universal/generic/none.",
@@ -1576,7 +2063,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 21,
+      "sequence": 24,
       "repeatsPer": "context-pack",
       "agentContext": {
         "fieldDescription": "Per-pack qualifiers (<=3 across categories, default none) from docs/authoring/qualifier-list-2026-10-04.md.",
@@ -1620,7 +2107,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 22,
+      "sequence": 25,
       "agentContext": {
         "fieldDescription": "RESERVED / auto-none, come back to (A8). Optional, special-circumstances, likely one exemplar (not the old mandatory three). Demoted from the old hard-stop gates/EXM; carries its shape for when defined. SHAPE NOTE (8 Oct 2026): `programmes` is no longer `required`, so the reserved auto-pass record ({value:\"none\", reserved:true}, written by cxp-open.js) validates. The `programmes` array still carries minItems/maxItems 3 from the old mandatory-three model, which CONTRADICTS this gate's own \"likely one exemplar, not the old mandatory three\": that range is left untouched here (it only bites once cxp-03 is un-reserved and actually defined) and is flagged for that future ruling.",
         "authoringReview": {
@@ -1700,7 +2187,7 @@
         "doc": "docs/authoring/gate-redesign-2026-10-06.md",
         "ref": "A-round"
       },
-      "sequence": 23,
+      "sequence": 26,
       "repeatsPer": "context-pack",
       "agentContext": {
         "fieldDescription": "Old D1. Generates all coupled-slot content per subject: lesson context-specific checks, coupled worked examples, wrapper practice-connection prose. Referencing inherited from cxs-04 (not a gate here). Widest sourceConsultation set. BASELINE BRANCH: when cxp-01's subject is baseline, the generation reads the universal reference (generic, average student-facing standards from universal-reference.json) in place of a subject benchmark corpus; see generation.parameters.baseline.",

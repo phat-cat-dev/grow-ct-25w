@@ -141,7 +141,7 @@ if [ -n "$BRANCH" ]; then
   shift
   echo "== workspace-build-sync: hard-reset to origin/${BRANCH} =="
   git reset --hard "origin/${BRANCH}"
-  git clean -fdx -e node_modules -e build
+  git clean -fdx -e node_modules -e build -e 'build-*'
   MERGED_BRANCHES=("$BRANCH")
 else
   select_and_merge_branches "$PROJECT"

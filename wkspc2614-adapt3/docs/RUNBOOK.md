@@ -97,7 +97,26 @@ node voice-lint.js --course=<slug>
    npx grunt server-scorm        # serves build/ with a dummy SCORM harness
    ```
    Note: `server-scorm` serves `build/`, it does not build it. Run `grunt build`
-   first and confirm the served course title matches.
+   first and confirm the served course title matches. Default port is `9000`.
+
+   To preview a tier's build alongside the others instead of replacing
+   whatever is currently linked at `src/course`, stage it into its own
+   reserved, locked-port server (`grunt/tier-servers.js`):
+   ```
+   npx grunt stage-tier:introductory     # copies build/ -> build-introductory/
+   npx grunt server-introductory         # plain preview, locked to :9001
+   npx grunt server-introductory-scorm   # SCORM harness, same build, locked to :9011
+   ```
+   `intermediate`/`advanced` work the same way, on `:9002`/`:9012` and
+   `:9003`/`:9013`. Use the plain preview port for day-to-day review after
+   each rebuild + restage; reach for the `-scorm` port only to check
+   tracking behaviour before a Moodle upload. Each pair is printed on its
+   own hostname (`introductory.localhost`, etc.), not plain `localhost` -
+   SCORM state lives in a single `_spoor` cookie scoped by host, not port,
+   so three *tiers* sharing `localhost` would overwrite each other's
+   tracking (the preview/SCORM pair within one tier sharing a hostname is
+   fine - same course, same tracking). `stage-tier` refuses a stale or
+   missing `build/`; pass `--force` to stage anyway.
 
 ## Stage C - verify, package, hand off
 

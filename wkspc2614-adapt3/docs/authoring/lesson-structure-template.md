@@ -1,4 +1,4 @@
-# Lesson page structure (v2)
+# Lesson page structure (v2, block order superseded by v5)
 
 The content-lesson page model. This is the readable guide; the authoritative
 structure is `design-kb/design-kb.skeletons.json` (SKS-1). v2 (8 October 2026)
@@ -6,13 +6,32 @@ rewrites the earlier draft to the model agreed while authoring the first course,
 and adds the generic/context coupling split, the standing per-slot context
 prompts, and the token system.
 
-## Block order
+**Superseded (2 Nov 2026, archetype v0.4.0, "v5"):** the single "Interior /
+activity" block below is out of date twice over and this doc has not been
+rewritten for either change - the store is authoritative where they disagree
+(SKS-1):
+
+- **v4** split it into four distinct blocks, `activity-1`..`activity-4` (role
+  `concept`, same section), not one `concept-intro` block.
+- **v5** reordered the sequence (worked example now sits between activity-2
+  and activity-3, not after activity-4) and added a new fixed `concept-handover`
+  block closing the lesson-concept section, after practical guidance: a short
+  recap-and-handover paragraph into the lesson-practice article (check +
+  reflective prompt). See the "Block order" diagram immediately below, which
+  reflects v5.
+
+## Block order (v5)
 
 ```
 Orientation -> Learning outcomes -> Concept (definition + context) ->
-  Interior / activity -> Worked example -> Practical guidance ->
+  Activity 1 -> Activity 2 -> Worked example -> Activity 3 -> Activity 4 ->
+  Practical guidance -> Concept handover ->
   Check (general + context) -> Reflective prompt -> Summary -> Lesson Sources
 ```
+
+(The four activities replace the single "Interior / activity" block described
+in the rest of this v2 doc below; each is independently decided at the gate.
+`Concept handover` is new in v5: fixed, shell-authored, no gate decision.)
 
 Orientation renders before learning outcomes (LS-2, 2 September 2026; see
 `design-kb/design-kb.skeletons.json`'s lesson-archetype notes). The authoritative

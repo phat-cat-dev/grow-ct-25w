@@ -1,5 +1,5 @@
 {
-  "kbVersion": "0.1.17",
+  "kbVersion": "0.1.18",
   "patterns": [
     {
       "id": "activity-patterns/retrieval-practice",
@@ -225,6 +225,10 @@
         "ref": "Option A: Weak/Strong Comparative"
       },
       "realisations": [
+        {
+          "component": "palette/worked-example",
+          "registerNote": "Default: collapsible accordion for the standard worked-example slot, cast carried by the {{learner-a}}/{{learner-b}} tokens (v4 lesson page model, Nov 2026). Use the others below only when the comparison itself needs phrase-level annotation, images, or a plain non-collapsible pairing."
+        },
         {
           "component": "palette/annotated",
           "registerNote": "Phrase-level commentary on weak and strong passages; use when specific wording choices need highlighting."

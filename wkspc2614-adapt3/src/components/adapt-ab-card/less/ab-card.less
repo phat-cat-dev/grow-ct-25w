@@ -16,6 +16,17 @@
     &.card-group {
       grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     }
+
+    // exactly four cards: cap at two columns (2x2) at any viewport width.
+    // The minmax lower bound is the larger of 16rem or "just under half the
+    // container", so auto-fit still collapses to one column on narrow/mobile
+    // widths exactly as above, but a third/fourth column can never fit, even
+    // on an extra-wide viewport - no breakpoint needed.
+    &.card-group:has(> .ab.card:nth-child(4):last-child) {
+      // LESS has its own max()/calc() handling that collides with the native
+      // CSS functions here, so the value is escaped through as a literal.
+      grid-template-columns: ~"repeat(auto-fit, minmax(max(16rem, calc(50% - var(--ab-space-100, 1rem) / 2)), 1fr))";
+    }
   }
 
 }

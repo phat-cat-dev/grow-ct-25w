@@ -94,12 +94,24 @@ proposal, not after.
      /new-course $1 before opening any other gate." Do not proceed to
      step 2.
 
-   If the manifest exists, read it. State the current
+   If the manifest exists, read it. PROFILE-1 (pathway-distillation
+   wiring, 2 Nov 2026): resolve this course's active profile from
+   `manifest.profile`, or `built-course-shape` if the field is absent,
+   and state which profile is active — this governs the dependsOn check
+   immediately below. State the current
    record for this gate (seq, state, provenance) or "no record". Read
    `design-kb/design-kb.gates.json` and print this gate's entry:
    kind, hardness, every `dependsOn` edge with its dependencyClass.
-   For each upstream gate, print its current decidedValue from the
-   manifest. If any upstream hard-stop is not closed, STOP and say so.
+   For each upstream edge, check the target gate's own `profiles` field
+   (absent = applies to every profile, e.g. `crs-02_thematic-scope` and
+   `crs-03_course-outcomes` carry `["built-course-shape","single-course"]`,
+   `crs-06/07/08` carry `["pathway-distillation"]`): if the active profile
+   is not in that list, the edge is NOT-APPLICABLE — print it as such,
+   read no decidedValue for it, and do not STOP on it regardless of its
+   dependencyClass or the target's own hardness. For every other
+   (applicable) upstream gate, print its current decidedValue from the
+   manifest. If any applicable upstream hard-stop is not closed, STOP
+   and say so.
    The facet set now lives in `manifest.facetSet` (`pathway` from
    onb-02, `tier` from onb-03), written by /new-course — read it there,
    not from any gate's `decidedValue`. No gate in the current store
@@ -127,10 +139,29 @@ proposal, not after.
    fires only where a gate carries a `sourceConsultation` block and a
    subject facet is set.
 
-2. SOURCE CONSULTATION (SSC-1, only where this gate's entry in
-   `design-kb/design-kb.gates.json` carries a `sourceConsultation`
-   block — currently `crs-02_thematic-scope`, `les-01_lesson-proposal`
-   and `cxp-04_context-generation`). Print the
+1b. AGENT-CONTEXT CONSULT (every gate). Read this gate's `agentContext`
+   from `design-kb/design-kb.gates.json`. If `agentContext.authoringReview`
+   is present, follow its `instruction` and read each item in `pointers`
+   before going on — a gate whose instruction says there is nothing left
+   to author (e.g. a mechanical rollup) is telling you your real job here
+   is the check, not new prose. If `agentContext.validation` is present,
+   run every entry in `checks` now, by its `rule`, against the exact
+   upstream data named in `appliesTo`; read `scopeNote` first so you do
+   not re-run a check that is already automated elsewhere or that binds at
+   a gate that has not run yet. State each check's id and a plain PASS or
+   FAIL with the specific values found — never a silent PASS. A FAIL is
+   carried into step 6: it overrides this gate's own hardness/defaultType
+   per `agentContext.validation.onFail`, so an advisory or soft gate still
+   stops and asks when its own validation fails. A gate with no
+   `agentContext` block skips this step.
+
+2. SOURCE CONSULTATION (SSC-1, only where `node tools/gate-order.js
+   --flags=<this gate's id>` reports a non-null `sourceConsultation`
+   (RJ-0059: read from the store through the shared tool, not a
+   hardcoded gate-name list here — the same staleness fix already
+   applied to `procedureFlags` in steps 3-4; a future gate gaining a
+   `sourceConsultation` block needs no edit to this doc to be picked
+   up). Print the
    block's `triggeringFacets` and `authorityLevels`. Intersect
    `triggeringFacets` against the manifest's own facet set
    (`manifest.facetSet` — `pathway` and `tier` — plus any module,
@@ -224,43 +255,58 @@ proposal, not after.
     is given. `omit: true` (a tier whose steer sets `applies:false`, e.g.
     advanced `where-next`) means the slot is not proposed at this tier at all.
     A slot with no `agentAuthor` is proposed as before.
+    An `ASK:`-prefixed `warnings` entry is a checkpoint, not a constraint
+    (task #19, authoring-time dialogue steer points): put the question to
+    the human alongside the gate's own proposal, rather than silently
+    self-checking it the way an ordinary do-not is checked. If the human
+    does not answer, the entry's own stated default stands and the record
+    carries `provenance: ai-proposal-stood`, as les-01's existing
+    `hardness: soft` + `defaultType: ai-proposal-stands` already does for
+    an unanswered gate. Every other (non-prefixed) `warnings` entry
+    behaves exactly as above — a do-not to respect.
 
 6. PROPOSAL, in exactly this shape. At `les-01_lesson-proposal` only
-   (SO-1, `docs/project/open-decisions.md`, 19 September 2026): this is
-   not one triple but a `slots` object with one entry for each of
-   `concept-intro`, `worked-example` and `practical-guidance` (the
-   worked-example slot was keyed `interior` before the v2 rename, 8 Oct
-   2026; block-key is now its slotType), each entry in
+   (SO-1, `docs/project/open-decisions.md`, 19 September 2026; v5
+   widening, 3 Nov 2026, `fd9c1f3`): this is not one triple but the
+   shape at this gate's `decidedValueShape`
+   (`design-kb/design-kb.gates.json`) — `workedExample` and
+   `activityProposals` (candidate components for the four activity
+   slots, `activity-1`..`activity-4`) chief among them — each entry in
    the pattern/realisation/coupling shape below plus its own rationale.
    (les-01 is the single consolidated lesson gate — interior design
    plus activities plus per-slot coupling marking; see the master table,
    `docs/authoring/gate-master-table-2026-10-07.md`.)
-   v2 lesson model (8 October 2026, `design-kb/design-kb.skeletons.json`
-   lesson archetype; `docs/authoring/lesson-structure-template.md`): the
-   `concept-intro` slot is the lesson's **interactive concept activity**
-   ("now see it"), not the concept prose. The concept prose is two
-   separate blocks that are NOT gate decisions and carry no entry in
-   this `slots` object: `concept-definition` (a generic definition of the
-   lesson topic, why-before-how, authored at /land — it frames the topic
-   and says why it matters and must NOT summarise or spoil what the
-   activity reveals) and `concept-context` (whole-prose coupled, left
-   empty in the shell for the context pack to fill at CXP). So the
-   `concept-intro` entry here proposes the **activity**: offer it as
-   three shape x component alternatives (BK-4) from which the human
-   chooses one — three distinct components that each present the same
-   content, ranked by content-shape fit (steps 4-5), never a mix of
-   lesson furniture (the practical-guidance checklist and the check MCQ
-   are givens, not among the three). The activity may be a manipulation
+   v4/v5 lesson model (2 Nov 2026, widened 3 Nov 2026,
+   `design-kb/design-kb.skeletons.json` lesson archetype;
+   `docs/authoring/lesson-structure-template.md`): the four activity
+   slots (`activity-1`..`activity-4`, role `concept`) are the lesson's
+   **interactive concept activities** ("now see it"), not the concept
+   prose. The concept prose is two separate blocks that are NOT gate
+   decisions and carry no entry here: `concept-definition` (a generic
+   definition of the lesson topic, why-before-how, authored at /land —
+   it frames the topic and says why it matters and must NOT summarise or
+   spoil what the activities reveal) and `concept-context` (whole-prose
+   coupled, left empty in the shell for the context pack to fill at
+   CXP). So each activity slot's entry proposes real per-slot variety
+   under the v5 `activityProposals` shape (`minItems: 3, maxItems: 10`,
+   each entry tagged `slot: activity-1`..`activity-4`): up to 10
+   candidate non-question components across the four slots, drawn from
+   `design-kb/design-kb.activity-patterns.json` + the palette, ranked by
+   content-shape fit (steps 4-5), never a mix of lesson furniture (the
+   practical-guidance checklist and the check MCQ are givens, not among
+   the activity candidates) — exactly one `status: confirmed` per
+   represented slot, the rest `status: drafted` as a visible record of
+   alternatives considered and rejected (ACT-1/ACT-2/ACT-3 in this
+   gate's `agentContext.validation`). An activity may be a manipulation
    question component in ACTIVITY MODE (palette/matching, sortable,
    hotspot, slider, via sort-into-groups / build-from-parts /
-   label-a-structure / place-on-a-scale, which now serve concept-intro)
-   - learn-by-doing, not a reveal; authored at /land with `_attempts:
-   -1`, a teaching `notFinal` and a concept-reiterating `correct`,
-   `_isPartOfAssessment: false` (see the skeletons lesson archetype
-   notes). mcq/gmcq stay check-only. Each coupled slot's standing
-   context prompt is layout-level and lives in the store
-   (`slot.standingContextPrompt`), not decided here; cite it in the
-   entry's grounding rather than re-authoring it.
+   label-a-structure / place-on-a-scale) - learn-by-doing, not a reveal;
+   authored at /land with `_attempts: -1`, a teaching `notFinal` and a
+   concept-reiterating `correct`, `_isPartOfAssessment: false` (see the
+   skeletons lesson archetype notes). mcq/gmcq stay check-only. Each
+   coupled slot's standing context prompt is layout-level and lives in
+   the store (`slot.standingContextPrompt`), not decided here; cite it in
+   the entry's grounding rather than re-authoring it.
    **Plain prose is always weighed at every entry, and may lead
    (RT-1, 20 September 2026).** Weighing it is not optional even where
    a pattern realisation is proposed: the rationale states that plain
@@ -299,7 +345,11 @@ proposal, not after.
      (same) — every course outcome is tested by exactly two summative
      questions, the real stems drafted from crs-03's per-outcome MCQ-set
      specs into the SUMM page, each naming via `tests` (AL-6) the one
-     course outcome it tests.
+     course outcome it tests. Under `pathway-distillation` (PROFILE-1,
+     2 Nov 2026: crs-03 not-applicable, no course-outcome tier) AL-3
+     becomes one summative question per `crs-07_tiered-outcomes` flat LO
+     instead, stems drafted from crs-07 directly, each `tests` naming the
+     LO id it tests.
    - **wra-04_confidence** (confidence placement, post-scaffold): AL-4
      (same) — each confidence statement names via `rates` the course
      outcome it rates, and every course outcome carries at least one;
@@ -320,12 +370,19 @@ proposal, not after.
    carried from step 2 where this gate's entry carries a
    sourceConsultation block (SSC-1); every id printed in step 2, 4 or
    5>.
+   Validation: <omit where step 1b found no `agentContext.validation`
+   block; otherwise one line per check — id and PASS/FAIL with the
+   specific values checked. Present even when every check PASSes>.
    Consequence: <downstream constraint, or omit>.
    Alternatives (pattern-level sketches, one line each, field-grounded
    why-not): <1 to 3, or "none survive filter">.
    Ask: hard-stop -> "confirm / amend / replace / defer" on its own
    line, nothing else on that line. Soft -> "standing unless you
-   object". Advisory -> "stated, no response sought".
+   object". Advisory -> "stated, no response sought". Any validation
+   FAIL from step 1b overrides this hardness-based phrasing regardless
+   of hardness/defaultType: ask per `agentContext.validation.onFail`
+   instead (normally a recommendation to reopen the named upstream
+   gate), on its own line.
 
 7. Write the full proposal and the draft record JSON into this
    session's plan file (GDP-1), and print the plan file's path

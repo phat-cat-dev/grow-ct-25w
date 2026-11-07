@@ -1,6 +1,6 @@
 # Browser Test Checklist: Academic Writing: Introductory Stage
 
-**Server:** `http://localhost:9001/` (currently running via plain `grunt
+**Server:** `http://localhost:9000/` (currently running via plain `grunt
 server`). Note: full SCORM completion/suspend-resume behaviour needs
 `grunt server-scorm` specifically, flagged separately below where it
 matters, don't assume the plain server covers it.

@@ -7,17 +7,34 @@
  * for each. Exits non-zero if ANY check fails.
  *
  * Usage:
- *   node tools/verify-course.js --course=<course-slug>
+ *   node tools/verify-course.js --course=<course-slug> [--strict]
  *
  * Runs in order:
  *   1. voice-lint.js --course=<slug>
  *   2. validate-design-schemas.py --course-design courses/<slug>/course-design_<slug>.json
  *   3. conformance-lint.js --course=<slug>
  *   4. manifest-completeness.js --course=<slug>
+ *   5. worked-example-lint.js --course=<slug>  (--strict only, see below)
+ *   6. mcq-heading-lint.js --course=<slug>     (--strict only, see below)
  *
  * Landed: 31 Aug 2026, session retrospective (fixes: validation skipped piecemeal).
  * Extended: 8 Sep 2026, backlog 5.88 (manifest-completeness added as check 4;
  * missing-course-design SKIP-as-PASS fixed to FAIL, backlog 5.106).
+ * Extended: 2 Nov 2026, lesson-page-model-v4 plan step 7: worked-example-lint
+ * added as check 5, gated behind --strict only. Unlike checks 1-4, it is not
+ * unconditional: the 423-file worked-example backlog (plan step 7) means most
+ * courses fail it today on content deliberately deferred, not broken, so it
+ * must not fail a plain `verify-course.js` run for every untouched course.
+ * --strict opts a specific course in once its worked examples are conformant
+ * (or are being driven to conformance) - see worked-example-lint.js's header.
+ * Extended: 7 Nov 2026: worked-example-lint.js gained an 8th assertion
+ * (component type - a worked-example slot must use _component:
+ * "workedExample", not "narrative"/"text") and mcq-heading-lint.js was added
+ * as check 6 (an mcq must never populate both displayTitle and body, which
+ * renders its stem twice). Same --strict gating and same reason: a 164-
+ * component backlog across 34 courses (mcq-heading-lint.js's header) means
+ * most courses fail check 6 today on a pre-existing defect, not something
+ * this run introduced.
  */
 
 const { execSync } = require('child_process');
@@ -28,15 +45,16 @@ const { resolveCourse } = require('./lib/course-resolve');
 const ROOT = path.resolve(__dirname, '..');
 
 function parseArgs() {
-  const args = { course: null };
+  const args = { course: null, strict: false };
   process.argv.slice(2).forEach(param => {
+    if (param === '--strict') { args.strict = true; return; }
     const parts = param.replace(/^--/, '').split('=');
     if (parts[0] === 'course') {
       args.course = parts[1];
     }
   });
   if (!args.course) {
-    console.error('Usage: node tools/verify-course.js --course=<course-slug>');
+    console.error('Usage: node tools/verify-course.js --course=<course-slug> [--strict]');
     process.exit(1);
   }
   return args;
@@ -65,7 +83,7 @@ function runCheck(name, command) {
 }
 
 function main() {
-  const { course } = parseArgs();
+  const { course, strict } = parseArgs();
 
   // Verify course directory exists
   const resolved = resolveCourse(course, ['courses', 'courses/_generated']);
@@ -118,6 +136,22 @@ function main() {
     'manifest-completeness',
     `node tools/manifest-completeness.js --course=${course}`
   ));
+
+  // 5. worked-example-lint (--strict only - see header comment)
+  if (strict) {
+    results.push(runCheck(
+      'worked-example-lint',
+      `node tools/worked-example-lint.js --course=${course}`
+    ));
+  }
+
+  // 6. mcq-heading-lint (--strict only - see header comment)
+  if (strict) {
+    results.push(runCheck(
+      'mcq-heading-lint',
+      `node tools/mcq-heading-lint.js --course=${course}`
+    ));
+  }
 
   // Summary table
   console.log('='.repeat(60));

@@ -42,6 +42,10 @@
                 },
                 "change": { "type": "string", "description": "What an existing gate needs changing to serve this step." },
                 "decider": { "enum": ["human", "agent+human", "auto"] },
+                "stage": {
+                  "enum": ["pre", "course-body", "post"],
+                  "description": "pre = CXS angle-setting, before the agent authors anything; course-body = CRS/LES/WRA; post = CXP context-pack generation, standalone, after the shell/lessons exist. Omitted for steps that are ONB housekeeping (theme, tier, levels) rather than CXS/CXP/CRS proper."
+                },
                 "inputs": { "type": "array", "items": { "type": "string" } },
                 "produces": { "type": "string" },
                 "count": {

@@ -1,8 +1,11 @@
 {
-  "kbVersion": "0.1.33",
+  "kbVersion": "0.1.40",
   "courseConfigBaseline": {
     "description": "Adapt's build config.json content. Confirmed byte-identical across all 4 archived courses (md5sum academic-writing-introductory/intermediate/advanced + presenting-introductory, all 9478a23d28a4a469a6ab56523748cd13) — an Adapt-framework literal, not a per-course design decision. Moved here from archive/courses-2026-09/ so generate-course-shell.js stops depending on the archive directory for a live build input.",
-    "sourcePointer": { "doc": "docs/project/open-decisions.md", "ref": "DR-1" },
+    "sourcePointer": {
+      "doc": "docs/project/open-decisions.md",
+      "ref": "DR-1"
+    },
     "config": {
       "_type": "config",
       "_defaultLanguage": "en",
@@ -96,9 +99,22 @@
     }
   },
   "articleSections": {
-    "multiArticlePageTypes": ["lesson"],
-    "singleArticlePageTypes": ["wrapper-open", "c-pre", "summative", "c-post", "wrapper-close"],
-    "sectionOrder": ["lesson-open", "lesson-concept", "lesson-formative", "lesson-reflection", "lesson-close"],
+    "multiArticlePageTypes": [
+      "lesson"
+    ],
+    "singleArticlePageTypes": [
+      "wrapper-open",
+      "c-pre",
+      "summative",
+      "c-post",
+      "wrapper-close"
+    ],
+    "sectionOrder": [
+      "lesson-open",
+      "lesson-concept",
+      "lesson-practice",
+      "lesson-close"
+    ],
     "roleToSection": {
       "orientation": "lesson-open",
       "orientation-tier": "lesson-open",
@@ -106,28 +122,68 @@
       "concept": "lesson-concept",
       "worked-example": "lesson-concept",
       "practical-guidance": "lesson-concept",
-      "knowledge-check": "lesson-formative",
-      "reflective": "lesson-reflection",
-      "reflective-task": "lesson-reflection",
+      "knowledge-check": "lesson-practice",
+      "reflective": "lesson-practice",
+      "reflective-task": "lesson-practice",
       "summary": "lesson-close",
       "references": "lesson-close"
     },
     "sectionMeta": {
-      "lesson-open":       { "metaName": "article-lesson-open",       "displayTitle": "Lesson overview",          "classes": "article--lesson-open" },
-      "lesson-concept":    { "metaName": "article-lesson-concept",    "titleFrom": "conceptTitle",                "classes": "article--lesson-concept" },
-      "lesson-formative":  { "metaName": "article-lesson-formative",  "displayTitle": "Check your understanding", "classes": "article--lesson-formative" },
-      "lesson-reflection": { "metaName": "article-lesson-reflection", "displayTitle": "Your thoughts",            "classes": "article--lesson-reflection" },
-      "lesson-close":      { "metaName": "article-lesson-close",      "displayTitle": "Lesson summary",           "classes": "article--lesson-close" }
+      "lesson-open": {
+        "metaName": "article-lesson-open",
+        "displayTitle": "Lesson overview",
+        "classes": "article--lesson-open"
+      },
+      "lesson-concept": {
+        "metaName": "article-lesson-concept",
+        "titleFrom": "conceptTitle",
+        "classes": "article--lesson-concept"
+      },
+      "lesson-practice": {
+        "metaName": "article-lesson-practice",
+        "displayTitle": "Lesson practice",
+        "classes": "article--lesson-practice"
+      },
+      "lesson-close": {
+        "metaName": "article-lesson-close",
+        "displayTitle": "Lesson summary",
+        "classes": "article--lesson-close"
+      }
     },
-    "sourcePointer": { "doc": "docs/authoring/lesson-page-model-v3.md", "ref": "The five articles (v3, 9 Oct 2026, supersedes AG-1 opening/main/closing)" }
+    "sourcePointer": {
+      "doc": "docs/authoring/lesson-page-model-v4.md",
+      "ref": "The four articles (v4, 2 Nov 2026, merges the v3 lesson-formative + lesson-reflection sections into lesson-practice)"
+    }
   },
   "pageSet": {
     "fixedPages": [
-      { "baseKey": "W-OPEN", "order": 1, "archetype": "skeletons/wrapper-open" },
-      { "baseKey": "C-PRE", "order": 2, "archetype": "skeletons/c-pre", "displayTitle": "Confidence check: before you start" },
-      { "baseKey": "SUMM", "order": 3, "archetype": "skeletons/summative" },
-      { "baseKey": "C-POST", "order": 4, "archetype": "skeletons/c-post", "displayTitle": "Confidence check: how far you've come" },
-      { "baseKey": "W-CLOSE", "order": 5, "archetype": "skeletons/wrapper-close" }
+      {
+        "baseKey": "W-OPEN",
+        "order": 1,
+        "archetype": "skeletons/wrapper-open"
+      },
+      {
+        "baseKey": "C-PRE",
+        "order": 2,
+        "archetype": "skeletons/c-pre",
+        "displayTitle": "Confidence check: before you start"
+      },
+      {
+        "baseKey": "SUMM",
+        "order": 3,
+        "archetype": "skeletons/summative"
+      },
+      {
+        "baseKey": "C-POST",
+        "order": 4,
+        "archetype": "skeletons/c-post",
+        "displayTitle": "Confidence check: how far you've come"
+      },
+      {
+        "baseKey": "W-CLOSE",
+        "order": 5,
+        "archetype": "skeletons/wrapper-close"
+      }
     ],
     "lessonInsertionPoint": {
       "afterBaseKey": "C-PRE",
@@ -135,14 +191,20 @@
       "archetype": "skeletons/lesson",
       "note": "Variable-count lesson pages instantiate here, one per lesson, in authored order. Not part of fixedPages because their number is per-course, not fixed."
     },
-    "sourcePointer": { "doc": "docs/project/open-decisions.md", "ref": "CC-1a" }
+    "sourcePointer": {
+      "doc": "docs/project/open-decisions.md",
+      "ref": "CC-1a"
+    }
   },
   "archetypes": [
     {
       "id": "skeletons/wrapper-open",
       "pageType": "wrapper-open",
       "version": "0.1.0",
-      "sourcePointer": { "doc": "docs/authoring/wrapper-open-template.md", "ref": "Structure Summary" },
+      "sourcePointer": {
+        "doc": "docs/authoring/wrapper-open-template.md",
+        "ref": "Structure Summary"
+      },
       "blockSequence": [
         {
           "key": "overview",
@@ -217,8 +279,16 @@
               "One verb, one object per outcome (AL-2)."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; present the decided outcomes, do not re-word them past recognition." ] },
-          "agentAuthorDialogue": { "notes": [ "State what the learner will be able to do, then check they see why it matters before moving on." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; present the decided outcomes, do not re-word them past recognition."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "State what the learner will be able to do, then check they see why it matters before moving on."
+            ]
+          }
         },
         {
           "key": "practice-connection",
@@ -230,10 +300,14 @@
           "displayTitle": "In real academic practice",
           "slot": {
             "slotType": "practice-connection",
-            "componentOptions": ["palette/text"],
+            "componentOptions": [
+              "palette/text"
+            ],
             "selectionModel": "single-realisation: only palette/text fills this slot. No routing decision; no activity-pattern names this slotType.",
             "standingContextPrompt": "Recast the generic 'In real academic practice' section in the learner's own subject: show how this topic applies in their actual academic work, with the academic framing first and any professional connection kept brief, as a natural follow-on from the generic version above.",
-            "contextCoupling": ["whole-prose"]
+            "contextCoupling": [
+              "whole-prose"
+            ]
           },
           "agentAuthor": {
             "content": "Show, up front, how this course's practice shows up in real academic work and why it is worth learning, with the academic framing first and any professional connection brief.",
@@ -257,8 +331,16 @@
               "Academic framing first; keep any professional connection brief."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; British English, why before what." ] },
-          "agentAuthorDialogue": { "notes": [ "Ask where the learner already meets this practice in their work, then frame the course against their answer." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English, why before what."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Ask where the learner already meets this practice in their work, then frame the course against their answer."
+            ]
+          }
         },
         {
           "key": "signpost",
@@ -271,9 +353,17 @@
           "displayTitle": "What's ahead",
           "slot": {
             "slotType": "visual-overview",
-            "componentOptions": ["palette/hotgraphic", "palette/narrative", "palette/text", "palette/timeline", "palette/flipcard"],
+            "componentOptions": [
+              "palette/hotgraphic",
+              "palette/narrative",
+              "palette/text",
+              "palette/timeline",
+              "palette/flipcard"
+            ],
             "selectionModel": "furniture: signpost component selected once per pathway at A4 gate. Choice based on visual suitability — hotgraphic for spatial models, narrative for staged tours, timeline for linear/staged sequences, flipcard for a playful reveal of a small item set, text for prose-only. Deliberately excluded from activity-pattern layer (furniture class).",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           }
         },
         {
@@ -307,7 +397,10 @@
       "id": "skeletons/c-pre",
       "pageType": "c-pre",
       "version": "0.1.0",
-      "sourcePointer": { "doc": "docs/authoring/c-pre-template.md", "ref": "Structure Summary" },
+      "sourcePointer": {
+        "doc": "docs/authoring/c-pre-template.md",
+        "ref": "Structure Summary"
+      },
       "blockSequence": [
         {
           "key": "confidence-pre",
@@ -326,8 +419,11 @@
     {
       "id": "skeletons/lesson",
       "pageType": "lesson",
-      "version": "0.2.0",
-      "sourcePointer": { "doc": "docs/authoring/lesson-structure-template.md", "ref": "Block order" },
+      "version": "0.4.0",
+      "sourcePointer": {
+        "doc": "docs/authoring/lesson-structure-template.md",
+        "ref": "Block order (v5, 2 Nov 2026: worked example moved between activity-2/activity-3; concept-handover block added closing lesson-concept) - docs/authoring/lesson-structure-template.md"
+      },
       "blockSequence": [
         {
           "key": "orientation",
@@ -444,8 +540,16 @@
               "One verb, one object per outcome (AL-2); each serves one course outcome (AL-1)."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; present the decided outcomes, do not re-word them past recognition." ] },
-          "agentAuthorDialogue": { "notes": [ "State what the learner will be able to do, then check they see why it matters before moving on." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; present the decided outcomes, do not re-word them past recognition."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "State what the learner will be able to do, then check they see why it matters before moving on."
+            ]
+          }
         },
         {
           "key": "concept-definition",
@@ -478,8 +582,16 @@
               "Example-first where it aids understanding (why before how)."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; British English, mid-register, no contractions in a definition's first sentence." ] },
-          "agentAuthorDialogue": { "notes": [ "Offer the concept with a quick concrete case, then check the learner can restate it before going on." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English, mid-register, no contractions in a definition's first sentence."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Offer the concept with a quick concrete case, then check the learner can restate it before going on."
+            ]
+          }
         },
         {
           "key": "concept-context",
@@ -492,9 +604,13 @@
           "displayTitle": null,
           "slot": {
             "slotType": "concept-context",
-            "componentOptions": ["palette/text"],
+            "componentOptions": [
+              "palette/text"
+            ],
             "selectionModel": "single-realisation: palette/text. A coupled follow-on to the generic concept-definition above it; empty in the shell, filled by the context pack as natural prose. No routing decision.",
-            "contextCoupling": ["whole-prose"],
+            "contextCoupling": [
+              "whole-prose"
+            ],
             "standingContextPrompt": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline."
           },
           "agentAuthor": {
@@ -510,34 +626,60 @@
               "bySubject": {},
               "byInstitution": {}
             },
-            "relation": "Follows concept-definition; precedes concept-intro (the activity). Recast the definition in the subject; do not redefine it.",
+            "relation": "Follows concept-definition; precedes activity-1. Recast the definition in the subject; do not redefine it.",
             "warnings": [
               "Follow straight on from the generic definition; do not restate it.",
-              "Pitch the depth to the tier (see context.byTier)."
+              "Pitch the depth to the tier (see context.byTier).",
+              "ASK: should this recast name the subject's own objects and situations, or stay at generic academic practice with {{context}} tokens only? If unanswered, stay generic and token-only."
             ],
             "bestPractice": [
               "Two to three sentences; mid-register; concrete."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; British English, follow straight on from the definition." ] },
-          "agentAuthorDialogue": { "notes": [ "Ask the learner for an example from their own subject, then build the follow-on on their answer." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English, follow straight on from the definition."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Ask the learner for an example from their own subject, then build the follow-on on their answer."
+            ]
+          }
         },
         {
-          "key": "concept-intro",
-          "title": "Explore the concept",
+          "key": "activity-1",
+          "title": "Explore the concept (activity 1)",
           "kind": "variable",
           "required": true,
           "role": "concept",
           "orderFixed": true,
           "slot": {
-            "slotType": "concept-intro",
-            "componentOptions": ["palette/text", "palette/accordion", "palette/flipcard", "palette/tabs", "palette/hotgraphic", "palette/narrative", "palette/timeline", "palette/annotated", "palette/graphic", "palette/media", "palette/matching", "palette/sortable", "palette/hotspot", "palette/slider"],
-            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Presentational patterns: explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), survey-alternatives (tabs, accordion), recall-reveal (flipcard, accordion), inline-commentary (annotated). Plus palette/text for plain prose. ACTIVITY-MODE question patterns (8 Oct 2026, Abbott): a manipulation question component may be the activity (learn by doing) - sort-into-groups (matching), build-from-parts (sortable), label-a-structure (hotspot), place-on-a-scale (slider); when one fills this slot it runs in activity mode, not as a check (see this archetype's notes). v2 (8 Oct 2026): this is the lesson's interactive concept activity (the \"interior / activity\"), authored generically; the subject-specific concept prose lives in the concept-context block above it, not here.",
+            "slotType": "activity-1",
+            "componentOptions": [
+              "palette/text",
+              "palette/accordion",
+              "palette/flipcard",
+              "palette/tabs",
+              "palette/hotgraphic",
+              "palette/narrative",
+              "palette/timeline",
+              "palette/annotated",
+              "palette/graphic",
+              "palette/media",
+              "palette/matching",
+              "palette/sortable",
+              "palette/hotspot",
+              "palette/slider"
+            ],
+            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Presentational patterns: explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), survey-alternatives (tabs, accordion), recall-reveal (flipcard, accordion), inline-commentary (annotated). Plus palette/text for plain prose. ACTIVITY-MODE question patterns (8 Oct 2026, Abbott): a manipulation question component may be the activity (learn by doing) - sort-into-groups (matching), build-from-parts (sortable), label-a-structure (hotspot), place-on-a-scale (slider); when one fills this slot it runs in activity mode, not as a check (see this archetype's notes). v2 (8 Oct 2026): this is one of the lesson's interactive concept activities (the \"interior / activity\"), authored generically; the subject-specific concept prose lives in the concept-context block above it, not here. v4 (2 Nov 2026): one of four sibling activity slots (activity-1..4, all role concept); the worked example and the practical-guidance checklist are not among the 4 activities, and each activity must teach a distinct facet of the concept, not a repeat of another activity in a different guise.",
             "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md.",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
-            "content": "The lesson's interactive concept activity: the task itself teaches the concept (learn by doing), authored generically.",
+            "content": "One of the lesson's interactive concept activities: the task itself teaches the concept (learn by doing), authored generically.",
             "context": {
               "all": "Shell-coupled: the activity is generic; it may name the subject only through {{context}} where the lesson's tokenMode allows.",
               "byTier": {
@@ -549,18 +691,95 @@
               "bySubject": {},
               "byInstitution": {}
             },
-            "relation": "Follows concept-context; precedes the worked example. Teach by doing; do not duplicate the worked example's weaker/stronger contrast.",
+            "relation": "Follows concept-context; precedes activity-2/3/4 and the worked example. Teach by doing; do not duplicate the worked example's weaker/stronger contrast. The worked example and checklist are separate slots, not additional activities; each of the four activities must teach a distinct facet of the concept, not a four-way variant of the same task.",
             "warnings": [
               "Activity mode: the task teaches and feedback reasons, never a bare verdict.",
               "Scale the cognitive demand to the tier (see context.byTier).",
-              "Balance any options per mcq-authoring-guidance.md."
+              "Balance any options per mcq-authoring-guidance.md.",
+              "Must teach a facet distinct from activity-2/3/4; do not vary the same task four times.",
+              "ASK: which facet should the first activity open with - recognition of the concept, or straight into applying it? If unanswered, open with recognition and leave application to activity-2."
             ],
             "bestPractice": [
               "Incorrect feedback points toward the answer; correct feedback restates the concept."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; British English." ] },
-          "agentAuthorDialogue": { "notes": [ "Run the activity as a live task: let the learner attempt it, then reason through the answer with them." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Run the activity as a live task: let the learner attempt it, then reason through the answer with them."
+            ]
+          }
+        },
+        {
+          "key": "activity-2",
+          "title": "Explore the concept (activity 2)",
+          "kind": "variable",
+          "required": true,
+          "role": "concept",
+          "orderFixed": true,
+          "slot": {
+            "slotType": "activity-2",
+            "componentOptions": [
+              "palette/text",
+              "palette/accordion",
+              "palette/flipcard",
+              "palette/tabs",
+              "palette/hotgraphic",
+              "palette/narrative",
+              "palette/timeline",
+              "palette/annotated",
+              "palette/graphic",
+              "palette/media",
+              "palette/matching",
+              "palette/sortable",
+              "palette/hotspot",
+              "palette/slider"
+            ],
+            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Presentational patterns: explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), survey-alternatives (tabs, accordion), recall-reveal (flipcard, accordion), inline-commentary (annotated). Plus palette/text for plain prose. ACTIVITY-MODE question patterns (8 Oct 2026, Abbott): a manipulation question component may be the activity (learn by doing) - sort-into-groups (matching), build-from-parts (sortable), label-a-structure (hotspot), place-on-a-scale (slider); when one fills this slot it runs in activity mode, not as a check (see this archetype's notes). v2 (8 Oct 2026): this is one of the lesson's interactive concept activities (the \"interior / activity\"), authored generically; the subject-specific concept prose lives in the concept-context block above it, not here. v4 (2 Nov 2026): one of four sibling activity slots (activity-1..4, all role concept); the worked example and the practical-guidance checklist are not among the 4 activities, and each activity must teach a distinct facet of the concept, not a repeat of another activity in a different guise.",
+            "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md.",
+            "contextCoupling": [
+              "shell-coupled"
+            ]
+          },
+          "agentAuthor": {
+            "content": "One of the lesson's interactive concept activities: the task itself teaches the concept (learn by doing), authored generically.",
+            "context": {
+              "all": "Shell-coupled: the activity is generic; it may name the subject only through {{context}} where the lesson's tokenMode allows.",
+              "byTier": {
+                "introductory": "A recognition or sorting task at the level of the basic concept; unambiguous, with one clear right grouping.",
+                "intermediate": "An application task: the learner uses the concept on a realistic case; distractors are near-misses, not obvious errors.",
+                "advanced": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons."
+              },
+              "byQualifier": {},
+              "bySubject": {},
+              "byInstitution": {}
+            },
+            "relation": "Follows activity-1; precedes activity-3/4 and the worked example. Teach by doing; do not duplicate the worked example's weaker/stronger contrast. The worked example and checklist are separate slots, not additional activities; each of the four activities must teach a distinct facet of the concept, not a four-way variant of the same task.",
+            "warnings": [
+              "Activity mode: the task teaches and feedback reasons, never a bare verdict.",
+              "Scale the cognitive demand to the tier (see context.byTier).",
+              "Balance any options per mcq-authoring-guidance.md.",
+              "Must teach a facet distinct from activity-1/3/4; do not vary the same task four times.",
+              "ASK: should this apply the concept to a single case, or contrast two? If unanswered, use a single case and leave contrast to the worked example."
+            ],
+            "bestPractice": [
+              "Incorrect feedback points toward the answer; correct feedback restates the concept."
+            ]
+          },
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Run the activity as a live task: let the learner attempt it, then reason through the answer with them."
+            ]
+          }
         },
         {
           "key": "worked-example",
@@ -572,16 +791,31 @@
           "displayTitle": "Worked example",
           "slot": {
             "slotType": "worked-example",
-            "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently.",
-            "componentOptions": ["palette/text", "palette/accordion", "palette/narrative", "palette/hotgraphic", "palette/timeline", "palette/flipcard", "palette/annotated", "palette/branching", "palette/graphic", "palette/media"],
-            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Patterns: sequential-process (accordion, narrative, media), explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), evaluate-versions (annotated, accordion, text), recall-reveal (flipcard, accordion), decision-scenario (branching). Plus palette/text for plain prose. Block count (1–4 blocks depending on content shape) is recorded in instantiation, not governed by this slot; see backlog 5.45 follow-on (a). v2 (8 Oct 2026): contextCoupling is structured-fields + token-substitution (the character cast); the shell authors a generic surface-vs-deep frame and the context pack fills subject fields and the cast names.",
-            "contextCoupling": ["structured-fields", "token-substitution"],
+            "authoringPrompt": "Worked example — third person: a weaker/less-developed version first, then a stronger version reached by better practice; make explicit what the stronger one does differently. Each example paragraph must begin with its token ({{learner-a}} … / {{learner-b}} …), weaker first — merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. Natural third-person prose can also use {{learner-a-pronoun}}/{{learner-a-possessive-pronoun}} and {{learner-b-pronoun}}/{{learner-b-possessive-pronoun}} (see docs/authoring/worked-example-cue-convention.md) rather than a hardcoded he/she.",
+            "componentOptions": [
+              "palette/worked-example",
+              "palette/text",
+              "palette/accordion",
+              "palette/narrative",
+              "palette/hotgraphic",
+              "palette/timeline",
+              "palette/flipcard",
+              "palette/annotated",
+              "palette/branching",
+              "palette/graphic",
+              "palette/media"
+            ],
+            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. palette/worked-example (the collapsible accordion built for this slot) is the default — first-listed here and first-listed in evaluate-versions' realisations; fall back to the others only when the comparison itself needs phrase-level annotation, images, or branching. Patterns: sequential-process (accordion, narrative, media), explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), evaluate-versions (worked-example, annotated, accordion, text), recall-reveal (flipcard, accordion), decision-scenario (branching). Plus palette/text for plain prose. Block count (1–4 blocks depending on content shape) is recorded in instantiation, not governed by this slot; see backlog 5.45 follow-on (a). v2 (8 Oct 2026): contextCoupling is structured-fields + token-substitution (the character cast); the shell authors a generic surface-vs-deep frame and the context pack fills subject fields and the cast names.",
+            "contextCoupling": [
+              "structured-fields",
+              "token-substitution"
+            ],
             "standingContextPrompt": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently."
           },
           "agentAuthor": {
-            "content": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast named directly.",
+            "content": "A third-person worked example showing the concept in use: a weaker attempt first, then a stronger one reached by better practice, with the cast carried by the {{learner-a}}/{{learner-b}} tokens.",
             "context": {
-              "all": "The context pack supplies the whole body in the subject, naming its own cast; keep the weaker-then-stronger contrast.",
+              "all": "The context pack supplies the whole body in the subject but not the cast's names: it uses {{learner-a}}/{{learner-b}}, filled at merge from the shared pool. Keep the weaker-then-stronger contrast.",
               "byTier": {
                 "introductory": "A simple, single-point contrast: one clear thing the stronger version does better, in an everyday situation.",
                 "intermediate": "A multi-step contrast across a realistic task; the stronger version shows judgement, not just more effort.",
@@ -594,14 +828,157 @@
             "relation": "Follows the concept; precedes the practical guidance and the check. Show the concept in use; do not restate the definition.",
             "warnings": [
               "Keep the weaker-example-first order and the two-part contrast.",
-              "Scale the example's complexity to the tier (see context.byTier)."
+              "Scale the example's complexity to the tier (see context.byTier).",
+              "ASK: should the weaker/stronger pair sit in a named discipline scenario, or a generic study situation any subject can read? If unanswered, use a generic study situation."
             ],
             "bestPractice": [
-              "Name the cast directly in the prose (not token-substituted); third person."
+              "Refer to the cast only through the character tokens {{learner-a}} (weaker) and {{learner-b}} (stronger), never by a literal name; third person."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; continuous prose, rendered as a block quote by the merge." ] },
-          "agentAuthorDialogue": { "notes": [ "Walk the weaker attempt first, ask the learner what they would change, then reveal the stronger version." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; continuous prose, rendered as a block quote by the merge."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Walk the weaker attempt first, ask the learner what they would change, then reveal the stronger version."
+            ]
+          }
+        },
+        {
+          "key": "activity-3",
+          "title": "Explore the concept (activity 3)",
+          "kind": "variable",
+          "required": true,
+          "role": "concept",
+          "orderFixed": true,
+          "slot": {
+            "slotType": "activity-3",
+            "componentOptions": [
+              "palette/text",
+              "palette/accordion",
+              "palette/flipcard",
+              "palette/tabs",
+              "palette/hotgraphic",
+              "palette/narrative",
+              "palette/timeline",
+              "palette/annotated",
+              "palette/graphic",
+              "palette/media",
+              "palette/matching",
+              "palette/sortable",
+              "palette/hotspot",
+              "palette/slider"
+            ],
+            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Presentational patterns: explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), survey-alternatives (tabs, accordion), recall-reveal (flipcard, accordion), inline-commentary (annotated). Plus palette/text for plain prose. ACTIVITY-MODE question patterns (8 Oct 2026, Abbott): a manipulation question component may be the activity (learn by doing) - sort-into-groups (matching), build-from-parts (sortable), label-a-structure (hotspot), place-on-a-scale (slider); when one fills this slot it runs in activity mode, not as a check (see this archetype's notes). v2 (8 Oct 2026): this is one of the lesson's interactive concept activities (the \"interior / activity\"), authored generically; the subject-specific concept prose lives in the concept-context block above it, not here. v4 (2 Nov 2026): one of four sibling activity slots (activity-1..4, all role concept); the worked example and the practical-guidance checklist are not among the 4 activities, and each activity must teach a distinct facet of the concept, not a repeat of another activity in a different guise.",
+            "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md.",
+            "contextCoupling": [
+              "shell-coupled"
+            ]
+          },
+          "agentAuthor": {
+            "content": "One of the lesson's interactive concept activities: the task itself teaches the concept (learn by doing), authored generically.",
+            "context": {
+              "all": "Shell-coupled: the activity is generic; it may name the subject only through {{context}} where the lesson's tokenMode allows.",
+              "byTier": {
+                "introductory": "A recognition or sorting task at the level of the basic concept; unambiguous, with one clear right grouping.",
+                "intermediate": "An application task: the learner uses the concept on a realistic case; distractors are near-misses, not obvious errors.",
+                "advanced": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons."
+              },
+              "byQualifier": {},
+              "bySubject": {},
+              "byInstitution": {}
+            },
+            "relation": "Follows activity-2; precedes activity-4 and the worked example. Teach by doing; do not duplicate the worked example's weaker/stronger contrast. The worked example and checklist are separate slots, not additional activities; each of the four activities must teach a distinct facet of the concept, not a four-way variant of the same task.",
+            "warnings": [
+              "Activity mode: the task teaches and feedback reasons, never a bare verdict.",
+              "Scale the cognitive demand to the tier (see context.byTier).",
+              "Balance any options per mcq-authoring-guidance.md.",
+              "Must teach a facet distinct from activity-1/2/4; do not vary the same task four times.",
+              "ASK: the learner has now had recognition and application - should this add judgement/weighing, or procedure/sequencing? If unanswered, add judgement at intermediate and advanced, procedure at introductory."
+            ],
+            "bestPractice": [
+              "Incorrect feedback points toward the answer; correct feedback restates the concept."
+            ]
+          },
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Run the activity as a live task: let the learner attempt it, then reason through the answer with them."
+            ]
+          }
+        },
+        {
+          "key": "activity-4",
+          "title": "Explore the concept (activity 4)",
+          "kind": "variable",
+          "required": true,
+          "role": "concept",
+          "orderFixed": true,
+          "slot": {
+            "slotType": "activity-4",
+            "componentOptions": [
+              "palette/text",
+              "palette/accordion",
+              "palette/flipcard",
+              "palette/tabs",
+              "palette/hotgraphic",
+              "palette/narrative",
+              "palette/timeline",
+              "palette/annotated",
+              "palette/graphic",
+              "palette/media",
+              "palette/matching",
+              "palette/sortable",
+              "palette/hotspot",
+              "palette/slider"
+            ],
+            "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Presentational patterns: explore-model (hotgraphic, narrative, timeline, flipcard, accordion, graphic, media), survey-alternatives (tabs, accordion), recall-reveal (flipcard, accordion), inline-commentary (annotated). Plus palette/text for plain prose. ACTIVITY-MODE question patterns (8 Oct 2026, Abbott): a manipulation question component may be the activity (learn by doing) - sort-into-groups (matching), build-from-parts (sortable), label-a-structure (hotspot), place-on-a-scale (slider); when one fills this slot it runs in activity mode, not as a check (see this archetype's notes). v2 (8 Oct 2026): this is one of the lesson's interactive concept activities (the \"interior / activity\"), authored generically; the subject-specific concept prose lives in the concept-context block above it, not here. v4 (2 Nov 2026): one of four sibling activity slots (activity-1..4, all role concept); the worked example and the practical-guidance checklist are not among the 4 activities, and each activity must teach a distinct facet of the concept, not a repeat of another activity in a different guise.",
+            "authoringPrompt": "Activity mode — the task itself teaches the concept. For a manipulation question (matching/sortable/hotspot/slider): plausible, unambiguous options/pairs/targets; incorrect feedback (notFinal) explains and points toward the answer; correct feedback restates the concept, not a bare verdict. Balance any selected options per docs/authoring/mcq-authoring-guidance.md.",
+            "contextCoupling": [
+              "shell-coupled"
+            ]
+          },
+          "agentAuthor": {
+            "content": "One of the lesson's interactive concept activities: the task itself teaches the concept (learn by doing), authored generically.",
+            "context": {
+              "all": "Shell-coupled: the activity is generic; it may name the subject only through {{context}} where the lesson's tokenMode allows.",
+              "byTier": {
+                "introductory": "A recognition or sorting task at the level of the basic concept; unambiguous, with one clear right grouping.",
+                "intermediate": "An application task: the learner uses the concept on a realistic case; distractors are near-misses, not obvious errors.",
+                "advanced": "A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons."
+              },
+              "byQualifier": {},
+              "bySubject": {},
+              "byInstitution": {}
+            },
+            "relation": "Follows activity-3; precedes the worked example. Teach by doing; do not duplicate the worked example's weaker/stronger contrast. The worked example and checklist are separate slots, not additional activities; each of the four activities must teach a distinct facet of the concept, not a four-way variant of the same task.",
+            "warnings": [
+              "Activity mode: the task teaches and feedback reasons, never a bare verdict.",
+              "Scale the cognitive demand to the tier (see context.byTier).",
+              "Balance any options per mcq-authoring-guidance.md.",
+              "Must teach a facet distinct from activity-1/2/3; do not vary the same task four times.",
+              "ASK: last activity before the worked example - should it consolidate the previous three, or introduce the concept's limits and edge cases? If unanswered, consolidate."
+            ],
+            "bestPractice": [
+              "Incorrect feedback points toward the answer; correct feedback restates the concept."
+            ]
+          },
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Run the activity as a live task: let the learner attempt it, then reason through the answer with them."
+            ]
+          }
         },
         {
           "key": "practical-guidance",
@@ -615,9 +992,23 @@
           "slot": {
             "slotType": "practical-guidance",
             "authoringPrompt": "Practical, do-this-now guidance the learner can act on this week; why-before-how; concrete steps, not restated theory.",
-            "componentOptions": ["palette/text", "palette/accordion", "palette/tabs", "palette/branching", "palette/checklist", "palette/annotated", "palette/matching", "palette/sortable", "palette/slider", "palette/hotspot"],
+            "componentOptions": [
+              "palette/text",
+              "palette/accordion",
+              "palette/tabs",
+              "palette/branching",
+              "palette/checklist",
+              "palette/annotated",
+              "palette/matching",
+              "palette/sortable",
+              "palette/slider",
+              "palette/hotspot"
+            ],
             "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Patterns: survey-alternatives (tabs, accordion), decision-scenario (branching), action-checklist (checklist), inline-commentary (annotated), sort-into-groups (matching), build-from-parts (sortable), place-on-a-scale (slider), label-a-structure (hotspot). Plus palette/text for plain prose. Note: decision-scenario names this slotType but records first homes as Presenting, Reflective Practice, Work-Based Learning. Branching included because the archetype serves all thirteen pathways. v2 (8 Oct 2026): contextCoupling is shell-coupled + token-substitution — broadly generic guidance that may name the context via {{context}}.",
-            "contextCoupling": ["shell-coupled", "token-substitution"]
+            "contextCoupling": [
+              "shell-coupled",
+              "token-substitution"
+            ]
           },
           "agentAuthor": {
             "content": "Practical, do-this-now guidance the learner can act on this week; why before how; concrete steps, not restated theory.",
@@ -635,14 +1026,65 @@
             "relation": "Follows the worked example; precedes the check. Turn the concept into action; do not restate the theory.",
             "warnings": [
               "Concrete and actionable, not restated theory.",
-              "Pitch the autonomy expected to the tier (see context.byTier)."
+              "Pitch the autonomy expected to the tier (see context.byTier).",
+              "ASK: should this be a numbered procedure the learner follows, or judgement heuristics they apply? If unanswered, numbered procedure at introductory, heuristics at advanced."
             ],
             "bestPractice": [
               "Why before how; steps the learner can act on this week."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; British English, 'you', why before how." ] },
-          "agentAuthorDialogue": { "notes": [ "Offer one concrete step at a time and check it fits the learner's situation before giving the next." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; British English, 'you', why before how."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Offer one concrete step at a time and check it fits the learner's situation before giving the next."
+            ]
+          }
+        },
+        {
+          "key": "concept-handover",
+          "title": "Moving into practice",
+          "kind": "fixed",
+          "required": true,
+          "role": "concept",
+          "orderFixed": true,
+          "component": "palette/text",
+          "displayTitle": null,
+          "agentAuthor": {
+            "content": "Briefly recap, in plain terms, what this lesson concept section has just covered (the definition, the activities, the worked example, the practical guidance), then hand the learner over explicitly to the practice that follows: the formative check and the reflective prompt.",
+            "context": {
+              "all": "Short: a recap sentence or two naming what was just explored, then one clear sentence that the learner now moves into practising it. Do not introduce new content here.",
+              "byTier": {
+                "introductory": "Keep the recap concrete and reassuring: name the one main idea just covered, in the same plain terms as the definition.",
+                "intermediate": "Recap the concept and gesture at how the activities just explored it from more than one angle.",
+                "advanced": "Recap at the level of the concept's own complexity; it is fine to name the tension or debate the activities surfaced."
+              },
+              "byQualifier": {},
+              "bySubject": {},
+              "byInstitution": {}
+            },
+            "relation": "Closes the lesson-concept article; follows practical-guidance; precedes the lesson-practice article (check, then reflective prompt).",
+            "warnings": [
+              "Recap only - do not introduce new content.",
+              "Make the handover explicit: say plainly that practice follows."
+            ],
+            "bestPractice": [
+              "One short paragraph: recap, then handover."
+            ]
+          },
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; keep it brief, no new citations or claims."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Ask the learner, in their own words, what they have just learned, then confirm before moving them into practice."
+            ]
+          }
         },
         {
           "key": "check",
@@ -654,17 +1096,49 @@
           "displayTitle": "Check your understanding",
           "slot": {
             "slotType": "check",
-            "componentOptions": ["palette/mcq", "palette/sortable", "palette/matching", "palette/gmcq", "palette/hotspot", "palette/slider"],
+            "componentOptions": [
+              "palette/mcq",
+              "palette/sortable",
+              "palette/matching",
+              "palette/gmcq",
+              "palette/hotspot",
+              "palette/slider"
+            ],
             "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Patterns: retrieval-practice (mcq, sortable), match-pairs (matching), spot-the-error (mcq, gmcq, hotspot), sort-into-groups (matching), build-from-parts (sortable), place-on-a-scale (slider), label-a-structure (hotspot).",
-            "contextCoupling": ["shell-coupled", "token-substitution", "structured-fields", "whole-prose"],
-            "band": { "min": 3, "max": 3, "unit": "blocks" },
-            "bandRationale": ["Every check carries exactly three questions, one per lesson outcome: item 1 general/shell-coupled (o1), item 2 context-specific body (o2), item 3 token-substitution carrying {{context}} (o3). Three-outcome model, 9 Oct 2026; see docs/authoring/token-substitution-coupling-and-three-outcome-model.md (CK-1)."],
+            "contextCoupling": [
+              "shell-coupled",
+              "token-substitution",
+              "structured-fields",
+              "whole-prose"
+            ],
+            "band": {
+              "min": 3,
+              "max": 3,
+              "unit": "blocks"
+            },
+            "bandRationale": [
+              "Every check carries exactly three questions, one per lesson outcome: item 1 general/shell-coupled (o1), item 2 context-specific body (o2), item 3 token-substitution carrying {{context}} (o3). Three-outcome model, 9 Oct 2026; see docs/authoring/token-substitution-coupling-and-three-outcome-model.md (CK-1)."
+            ],
             "authoringVenueNote": "Item 1 (position 1, shell-coupled) is authored in the shell. A context-specific body item (whole-prose / structured-fields) is authored in context packs; an uncoupled lesson authors it in the shell instead. A token-substitution item is authored in the shell carrying {{context}}, filled at merge per its tokenMode (generic -> 'your subject'; cxp-fillable -> context.label, floor 'your subject'). Derived from the lesson's coupling, not declared independently.",
             "standingContextPrompt": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline.",
             "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict.",
             "positionRules": [
-              { "position": 1, "contextCoupling": ["shell-coupled"], "note": "General question, the same for every subject (CK-1)" },
-              { "position": "rest", "contextCoupling": ["token-substitution", "structured-fields", "whole-prose"], "note": "Context-specific (CK-1)" }
+              {
+                "position": 1,
+                "contextCoupling": [
+                  "shell-coupled"
+                ],
+                "note": "General question, the same for every subject (CK-1)"
+              },
+              {
+                "position": "rest",
+                "contextCoupling": [
+                  "token-substitution",
+                  "structured-fields",
+                  "whole-prose"
+                ],
+                "note": "Context-specific (CK-1)"
+              }
             ]
           },
           "agentAuthor": {
@@ -689,10 +1163,14 @@
             ]
           },
           "agentAuthorWritten": {
-            "notes": ["Apply the Voice Spec section 18 register check before treating copy as done."]
+            "notes": [
+              "Apply the Voice Spec section 18 register check before treating copy as done."
+            ]
           },
           "agentAuthorDialogue": {
-            "notes": ["Pose the question conversationally; probe the learner's reasoning before revealing the key."]
+            "notes": [
+              "Pose the question conversationally; probe the learner's reasoning before revealing the key."
+            ]
           }
         },
         {
@@ -706,9 +1184,13 @@
           "slot": {
             "slotType": "reflective-prompt",
             "authoringPrompt": "1-3 genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
-            "componentOptions": ["palette/opentext"],
+            "componentOptions": [
+              "palette/opentext"
+            ],
             "selectionModel": "pattern-derived: served by activity-patterns/write-own-thinking, realised as palette/opentext (replacing the legacy palette/textinput).",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
             "content": "One to three genuine open questions with no right answers; private, unmarked tone; invite the learner's own view, never quiz.",
@@ -727,14 +1209,23 @@
             "warnings": [
               "No right answers; never quiz.",
               "Keep it private and unmarked in tone.",
-              "Pitch the depth of reflection to the tier (see context.byTier)."
+              "Pitch the depth of reflection to the tier (see context.byTier).",
+              "ASK: should the reflection turn on the learner's own past practice, or on the concept in the abstract? If unanswered, turn it on their own past practice."
             ],
             "bestPractice": [
               "One to three genuine questions; invite the learner's own view."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; keep the 'no right answers' framing explicit." ] },
-          "agentAuthorDialogue": { "notes": [ "Pose one question and listen; do not evaluate or correct the learner's answer." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; keep the 'no right answers' framing explicit."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Pose one question and listen; do not evaluate or correct the learner's answer."
+            ]
+          }
         },
         {
           "key": "summary",
@@ -747,9 +1238,13 @@
           "slot": {
             "slotType": "summary",
             "authoringPrompt": "Recap what the learner can now do, outcome by outcome, and why it matters next; affirm progress; introduce no new content.",
-            "componentOptions": ["palette/text"],
+            "componentOptions": [
+              "palette/text"
+            ],
             "selectionModel": "single-realisation: palette/text. A generic recap frame authored in the shell; the context pack fills it with what the learner can now do in their own subject. No routing decision.",
-            "contextCoupling": ["structured-fields"],
+            "contextCoupling": [
+              "structured-fields"
+            ],
             "standingContextPrompt": "Recap what the learner can now do, in terms of their own subject or context."
           },
           "agentAuthor": {
@@ -796,9 +1291,13 @@
           "slot": {
             "slotType": "lesson-references",
             "authoringPrompt": "Footnote-style pointer(s) only — 'See pages x-y of Chapter n of Title by Authors'; chapter + page range; real sources only (LSP-1).",
-            "componentOptions": ["palette/references"],
+            "componentOptions": [
+              "palette/references"
+            ],
             "selectionModel": "single-realisation: only palette/references fills this slot. No routing decision; no activity-pattern names this slotType.",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
             "content": "List this lesson's real sources as footnote-style pointers (LSP-1): 'See pages x to y of Chapter n of *Title* by Authors', citing at least the chapter and page range.",
@@ -817,8 +1316,16 @@
               "Cite at least the chapter and page range (PLR-1 amendment)."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Keep the pointer form exactly; do not expand pointers into full formatted references." ] },
-          "agentAuthorDialogue": { "notes": [ "If asked, point the learner to the exact chapter and pages rather than reciting a reference." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Keep the pointer form exactly; do not expand pointers into full formatted references."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "If asked, point the learner to the exact chapter and pages rather than reciting a reference."
+            ]
+          }
         }
       ],
       "notes": "Fixed spine + flexible interior (L02 principle). v2 lesson-page model (8 Oct 2026, docs/authoring/lesson-structure-template.md v2, BACKLOG BK-6): the concept introduction is now TWO blocks — concept-definition (fixed, generic prose that frames the topic and says why it matters but does NOT spoil the activity) and concept-context (whole-prose coupled, empty in the shell, filled per subject by the context pack as a natural follow-on). The former single concept-intro slot is retained as the lesson's interactive concept ACTIVITY (the \"interior / activity\"), now authored generically (contextCoupling shell-coupled) since the subject-specific concept prose moved up into concept-context. The worked-example slot's block key is now \"worked-example\", matching its slotType (formerly \"interior\" in v1; renamed 8 Oct 2026 so block-key == slotType, removing the old SO-1/LK-1 `interior` mismatch); it is a distinct block after the activity, now structured-fields + character tokens. Summary is now a structured-fields coupled slot (was a fixed block): a generic recap frame in the shell, subject fields filled at CXP. practical-guidance is now shell-coupled + token-substitution. Each coupled slot carries a standingContextPrompt — a layout-level instruction the CXP agent applies (schema field added 8 Oct 2026). orientation and practical-guidance may also carry the {{context}} label token in otherwise-generic text; {{context}} is a global label resolved at CXP and needs no per-slot coupling declaration. Character tokens (e.g. {{learner-a}}) are context-specific, generated and confirmed at CXP (cxp-05, BK-8) and reused for that context across all pathways and tiers; in the shell they are slugs only. 2 Sep 2026 reorder (LS-2): orientation renders before learning-outcomes, intended as a visually unified intro unit via a shared _classes value (styling deferred to the Cardiff Met theme pass). WOS-1 (20 Sep 2026) brings W-OPEN's order in line for the same reason. See open-decisions.md LS-2 and WOS-1. 14 Sep 2026 W3 ruling: the references block's key is lesson-references (matching its own slot.slotType); required true. Citation form: source-first, e.g. 'Dennis and Abbott (2026), Chapter 7: Structuring Your Argument, pp. 44-49' (pg. singular for one page, pp. for a range; the chapter element is omissible). Real sources live only in this block and in skeletons/wrapper-close's course-references block; exemplar citations anywhere else in a lesson must be fictional and marked illustrative. Lintable consistency rule: every source cited in a lesson-references block must also appear in course-references, and course-references must carry nothing no lesson-references block cites. 20 Sep 2026 LPG-1: displayed titles set on every fixed-position block via displayTitle, except the concept blocks (concept-definition and concept-context render with no visible title, displayTitle null, reading as continuous concept prose like orientation) and concept-intro, whose displayed title is the idea's own name decided per instance at les-01 (never a generic or empty archetype value). Trickle gating is data on this archetype: gateAfter true on concept-context (one gate immediately after the concept prose, before the interactive activity — \"now see it\") and on practical-guidance (the main/closing boundary — \"now prove it\"); absent (false) on every other block. No gate inside the opening concept prose; interior gating depends on the chosen activity component's own pacing. See open-decisions.md LPG-1. ACTIVITY-MODE QUESTION COMPONENTS (8 October 2026, Abbott): the concept-intro activity may be a manipulation question component (palette/matching, palette/sortable, palette/hotspot, palette/slider) and not only a presentational reveal - learn by doing. When a question component fills the concept-intro (activity) slot it runs in ACTIVITY MODE, distinct from the formative CHECK slot: _attempts: -1 (unlimited tries, the Adapt convention already used by the summative model); _feedback._incorrect.notFinal explains the error and points toward the answer (shown on every wrong try; _incorrect.final is structurally unreachable under -1 and is not authored); _feedback.correct is a positive message that reiterates and explains the concept and structure the learner has just completed correctly, never a bare verdict; _isPartOfAssessment: false (formative, low-stakes, never graded). This reuses the proven -1 + notFinal + correct pairing from docs/authoring/verification-specs/summative.md, applied to the activity slot. mcq/gmcq (pure selection) are deliberately not added to this slot; the four added are manipulation components where doing the task is the learning."
@@ -827,7 +1334,10 @@
       "id": "skeletons/summative",
       "pageType": "summative",
       "version": "0.1.0",
-      "sourcePointer": { "doc": "docs/project/project-backlog.md", "ref": "2026-08-14 resultsdebrief/pass-reveal verification" },
+      "sourcePointer": {
+        "doc": "docs/project/project-backlog.md",
+        "ref": "2026-08-14 resultsdebrief/pass-reveal verification"
+      },
       "blockSequence": [
         {
           "key": "introduction",
@@ -849,10 +1359,15 @@
           "orderFixed": true,
           "slot": {
             "slotType": "summative-item",
-            "componentOptions": ["palette/mcq", "palette/sortable"],
+            "componentOptions": [
+              "palette/mcq",
+              "palette/sortable"
+            ],
             "selectionModel": "pattern-derived: identify content shape → match pattern recognition → take realisation. Pattern: summative-mixed (mcq, sortable).",
             "authoringPrompt": "Author MCQ options balanced per docs/authoring/mcq-authoring-guidance.md: all options the same length and specificity so the correct answer is never the longest or most qualified; distractors are plausible misconceptions, not filler; keep hedging and absolutes even across options; feedback gives the reason, never a bare verdict.",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
             "content": "Summative questions testing the course outcomes, two per outcome (AL-3), each with teaching feedback - never a bare right/wrong.",
@@ -878,10 +1393,14 @@
             ]
           },
           "agentAuthorWritten": {
-            "notes": ["Apply the Voice Spec section 18 register check before treating copy as done."]
+            "notes": [
+              "Apply the Voice Spec section 18 register check before treating copy as done."
+            ]
           },
           "agentAuthorDialogue": {
-            "notes": ["Pose each question conversationally; probe the learner's reasoning before revealing the key."]
+            "notes": [
+              "Pose each question conversationally; probe the learner's reasoning before revealing the key."
+            ]
           }
         },
         {
@@ -893,7 +1412,10 @@
           "interactionMode": "passive",
           "orderFixed": true,
           "component": "palette/assessmentresults",
-          "extensions": ["palette/resultsdebrief", "palette/passreveal"]
+          "extensions": [
+            "palette/resultsdebrief",
+            "palette/passreveal"
+          ]
         }
       ],
       "notes": "SUMM furniture from 14 Aug backlog records, NOT summative-template.md (F7). Assessment items are a repeated slot (1-per-question); orderFixed=true because build structure is deterministic (instantiation lists items in authored order). Results block carries assessmentResults component; resultsdebrief/passreveal are standard extensions attached at archetype level. _suppressMarking: true, _canShowFeedback/Marking: true per 14 Aug SUMM marking/feedback fix. 20 Sep 2026 SVP-1 ruling (structure review, Prompt 139): new fixed introduction block added as the first block, before assessment-items, generator-written fixed body substituting {{passMark}} from assessmentDefaults. Text covers what the test covers and the pass mark and that it can be retaken; it does NOT state a literal question count, because fixedTextTokens (schema addition, Prompt 139 Unit 2) restricts substitution to passMark only and the generator substitutes nothing else (task 8) — 'how many questions' is covered by the generic phrase 'a set of questions to work through' rather than a number. SVP-1 requires establishing whether the template's separate 'assessment complete' button block is needed to reveal the results block: it is NOT. Read directly, src/components/adapt-contrib-assessmentResults/js/assessmentResultsModel.js's init() registers this.listenTo(Adapt, {'assessments:complete': this.onAssessmentComplete, ...}) and onAssessmentComplete() itself calls this.toggleVisibility(true) — the results component reveals itself on the assessments:complete event fired by the assessment article on completion, with no separate button component in the chain. This archetype therefore keeps exactly three blocks (introduction, assessment-items, results), never four. Attempts: assessmentDefaults.attempts (count 3, reshuffleOnAttempt true) settles the assessment-level number PR-6-2 left open; per-item _attempts is unchanged, unlimited within a single attempt, per SVP-1. GAP FOUND, not fixed this sitting: SVP-1 requires the debrief to cover every question, not only those failed, but src/extensions/adapt-abbott-resultsdebrief/js/adapt-abbott-resultsdebrief.js's handleAssessmentState() filters state.questions to q._isCorrect === false before building its study plan (groupByLesson receives incorrectQuestions only) — the built extension does not meet this requirement as it stands. Extension code is out of scope for this sitting's CHANGES (7-13 do not name resultsdebrief); backlogged instead. See open-decisions.md SVP-1 and project-backlog.md for the backlog entry. 22 Sep 2026 SQ-1 ruling (Prompt 156): the summative-item slot's contextCoupling changed from [\"token-substitution\", \"structured-fields\"] to [\"none\"] — summative questions are not tailored to context; per SQ-1 they may refer to 'your subject' in generic phrasing where suitable, the same allowance RP-1 already gives the reflective prompt. Token substitution for SUMM items is not reinstated. See open-decisions.md SQ-1."
@@ -902,7 +1424,10 @@
       "id": "skeletons/c-post",
       "pageType": "c-post",
       "version": "0.1.0",
-      "sourcePointer": { "doc": "docs/authoring/c-post-template.md", "ref": "Structure Summary" },
+      "sourcePointer": {
+        "doc": "docs/authoring/c-post-template.md",
+        "ref": "Structure Summary"
+      },
       "blockSequence": [
         {
           "key": "confidence-post",
@@ -924,9 +1449,13 @@
           "orderFixed": true,
           "slot": {
             "slotType": "reflective-bridge",
-            "componentOptions": ["palette/opentext"],
+            "componentOptions": [
+              "palette/opentext"
+            ],
             "selectionModel": "furniture: optional bridge after C-POST, off by default per CC-1c. Deliberately excluded from activity-pattern layer (furniture class). Realised as palette/opentext, matching reflective-prompt's realisation elsewhere in this store.",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
             "content": "An optional short reflection after the post-course confidence survey: invite the learner to notice how their confidence has shifted and what they will carry forward. No right answers; private; never marked.",
@@ -951,8 +1480,16 @@
               "Tie the reflection to the confidence shift the learner just saw on C-POST."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Apply the Voice Spec section 18 register check; keep the 'no right answers' framing explicit." ] },
-          "agentAuthorDialogue": { "notes": [ "Ask one question about how their confidence has shifted and listen; do not evaluate the answer." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Apply the Voice Spec section 18 register check; keep the 'no right answers' framing explicit."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "Ask one question about how their confidence has shifted and listen; do not evaluate the answer."
+            ]
+          }
         }
       ],
       "notes": "POST with five-pattern feedback (WR-2d). Reflective bridge OPTIONAL, off by default per CC-1c — enabled per course at A6 gate. Bridge revealed after POST completes via trickle. 20 Sep 2026 CPG-1 ruling (structure review, Prompt 139): confidence-post's displayed title set to \"How confident do you feel now?\", distinct from the internal title \"Confidence check\"; page menu title set to \"Looking back\" (pageSet.fixedPages). CPG-1 confirms reflective-bridge's off-by-default status is unchanged and follows RP-1; CPG-1 does not set a displayTitle for reflective-bridge, so none is added here. See open-decisions.md CPG-1."
@@ -961,7 +1498,10 @@
       "id": "skeletons/wrapper-close",
       "pageType": "wrapper-close",
       "version": "0.1.0",
-      "sourcePointer": { "doc": "docs/authoring/wrapper-close-template.md", "ref": "Structure Summary" },
+      "sourcePointer": {
+        "doc": "docs/authoring/wrapper-close-template.md",
+        "ref": "Structure Summary"
+      },
       "blockSequence": [
         {
           "key": "summary",
@@ -1015,10 +1555,14 @@
           "displayTitle": "In real academic practice",
           "slot": {
             "slotType": "practice-connection",
-            "componentOptions": ["palette/text"],
+            "componentOptions": [
+              "palette/text"
+            ],
             "selectionModel": "single-realisation: only palette/text fills this slot. No routing decision; no activity-pattern names this slotType.",
             "standingContextPrompt": "Recast the generic 'In real academic practice' section in the learner's own subject: show how this topic applies in their actual academic work, with the academic framing first and any professional connection kept brief, as a natural follow-on from the generic version above.",
-            "contextCoupling": ["whole-prose"]
+            "contextCoupling": [
+              "whole-prose"
+            ]
           },
           "agentAuthor": {
             "content": "Show the learner how this practice applies in real academic work: concrete ways to use it in their current study, academic framing first and any professional connection kept brief.",
@@ -1136,9 +1680,13 @@
           "slot": {
             "slotType": "course-references",
             "authoringPrompt": "Aggregate the real sources cited across the lessons, same pointer form; every lesson source present and nothing here uncited (consistency rule).",
-            "componentOptions": ["palette/references"],
+            "componentOptions": [
+              "palette/references"
+            ],
             "selectionModel": "single-realisation: only palette/references fills this slot. No routing decision; no activity-pattern names this slotType.",
-            "contextCoupling": ["shell-coupled"]
+            "contextCoupling": [
+              "shell-coupled"
+            ]
           },
           "agentAuthor": {
             "content": "Aggregate every source cited across the lessons as footnote-style pointers (LSP-1), same form; the full course bibliography.",
@@ -1157,8 +1705,16 @@
               "Match the lesson-references pointer form exactly."
             ]
           },
-          "agentAuthorWritten": { "notes": [ "Keep the pointer form exactly; aggregate, do not reformat." ] },
-          "agentAuthorDialogue": { "notes": [ "If asked, locate any lesson's source in the aggregated list rather than reciting it." ] }
+          "agentAuthorWritten": {
+            "notes": [
+              "Keep the pointer form exactly; aggregate, do not reformat."
+            ]
+          },
+          "agentAuthorDialogue": {
+            "notes": [
+              "If asked, locate any lesson's source in the aggregated list rather than reciting it."
+            ]
+          }
         }
       ],
       "notes": "WC-1 enrichment: practice-connection (WC-1b-i) and where-this-goes-next (WC-1b-ii) added 13 Aug. Where-next required=false because terminal tier (advanced) omits it. 14 Sep 2026 W3 ruling: this block's key renamed further-reading -> course-references (now matching its own slot.slotType; the further-reading key is dropped entirely, not retained as an alias); required changed false -> true; title changed from 'Further reading for this course' to 'References' because the block's function is no longer curated recommendation reading but the mandatory full bibliography of every source any lesson in the course cites. Same citation form and lintable consistency rule as skeletons/lesson's lesson-references block (see that archetype's notes): every lesson-cited source appears here, and nothing here is uncited by any lesson. AUD-AWM-WCLOSE-1 (references listed as plain, unclickable text) was filed as an observation when this block was optional; under this rule it becomes a defect. This supersedes PLR-1a and WC-1d (open-decisions.md) in part, specifically the 'Further reading for this course' framing and its optional status; open-decisions.md is not edited this sitting, this note records the supersession. Migration of the four built courses' course-design_*.json manifests, which still hold slotKey: further-reading, is deliberately out of scope this sitting — see audit-actions-arising.md, action opened this date citing backlog 5.105/R72 as precedent. docs/authoring/component-specs/references.md, written throughout around the now-dropped recommendation-reading framing, is likewise not rewritten this sitting — see the paired action opened this date. 19 Sep 2026 CP-1i ruling: this block's kind changed from fixed to variable, with a coupled (whole-prose) slot; key, title, position and required value kept unchanged per the CP-1i AMENDMENT (open-decisions.md). 20 Sep 2026 SVP-1 ruling (structure review, Prompt 139): displayed titles set on all four blocks via the new displayTitle field (schema addition, Prompt 139 Unit 2): 'Summary' (summary; distinct from its internal title 'Course summary'), 'In real academic practice' (practice-connection), 'Where this goes next' (where-next), 'Course Sources' (course-references) — the last three each match their existing internal title. See open-decisions.md SVP-1."
@@ -1170,42 +1726,60 @@
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role: content is consumed by reading, not tested. Completion on view (inview/scroll) makes the block stateable and lintable; no build change. Two failure modes become defects once this is stated: a reading block that cannot complete after a full scroll (AUD-AWA-WCLOSE-1) and one that completes without being scrolled at all (AUD-PRI-L06-2). This entry and the learning-outcomes entry below were one welcome-overview entry until the 14 Sep 2026 role split; the completion behaviour did not change, only the role name.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-PRI-L06-2" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-PRI-L06-2"
+      }
     },
     {
       "role": "orientation-tier",
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role (added 9 Oct 2026, lesson-page-model-v3.md): situates the lesson topic at the course tier; consumed by reading, so it completes on view exactly as orientation does. Same two failure modes apply (cannot complete after a full scroll; completes without being scrolled).",
-      "sourcePointer": { "doc": "docs/authoring/lesson-page-model-v3.md", "ref": "New element: orientation-tier" }
+      "sourcePointer": {
+        "doc": "docs/authoring/lesson-page-model-v3.md",
+        "ref": "New element: orientation-tier"
+      }
     },
     {
       "role": "learning-outcomes",
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role: content is consumed by reading, not tested. Completion on view (inview/scroll) makes the block stateable and lintable; no build change. Two failure modes become defects once this is stated: a reading block that cannot complete after a full scroll (AUD-AWA-WCLOSE-1) and one that completes without being scrolled at all (AUD-PRI-L06-2). This entry and the orientation entry above were one welcome-overview entry until the 14 Sep 2026 role split; the completion behaviour did not change, only the role name.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-PRI-L06-2" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-PRI-L06-2"
+      }
     },
     {
       "role": "concept",
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role: content is consumed by reading, not tested. Completion on view (inview/scroll) makes the block stateable and lintable; no build change. Two failure modes become defects once this is stated: a reading block that cannot complete after a full scroll (AUD-AWA-WCLOSE-1) and one that completes without being scrolled at all (AUD-PRI-L06-2).",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-PRI-L06-2" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-PRI-L06-2"
+      }
     },
     {
       "role": "practical-guidance",
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role: content is consumed by reading, not tested. Completion on view (inview/scroll) makes the block stateable and lintable; no build change. Two failure modes become defects once this is stated: a reading block that cannot complete after a full scroll (AUD-AWA-WCLOSE-1) and one that completes without being scrolled at all (AUD-PRI-L06-2).",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-PRI-L06-2" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-PRI-L06-2"
+      }
     },
     {
       "role": "summary",
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Reading role: content is consumed by reading, not tested. Completion on view (inview/scroll) makes the block stateable and lintable; no build change. Two failure modes become defects once this is stated: a reading block that cannot complete after a full scroll (AUD-AWA-WCLOSE-1) and one that completes without being scrolled at all (AUD-PRI-L06-2).",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-PRI-L06-2" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-PRI-L06-2"
+      }
     },
     {
       "role": "knowledge-check",
@@ -1224,8 +1798,11 @@
       "namedDependencies": [
         "Feedback quality, not an optional extra: final-attempt feedback text must carry the correct answer and the reason (knowledge-check feedback two-stage convention, content-conventions/knowledge-check-feedback; source material AUD-AWM-SUMM-2), authored into _incorrectFinal / _feedback._incorrect.final. This satisfies 'revealed with an explanation on the final attempt' by content/config; the native _canShowModelAnswer affordance is always button-gated (questionModel.js getButtonState) and is not the mechanism this rule relies on."
       ],
-      "rationale": "Completion on submission of the final attempt, not on correctness, states existing framework behaviour rather than changing it: checkQuestionCompletion completes on _isCorrect || _attemptsLeft === 0 \u2014 a learner correct on the first attempt completes then, not on exhausting attempts. Achievable entirely by config (_attempts) and authoring (final-attempt feedback text); no component work required.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "AUD-AWM-SUMM-2" }
+      "rationale": "Completion on submission of the final attempt, not on correctness, states existing framework behaviour rather than changing it: checkQuestionCompletion completes on _isCorrect || _attemptsLeft === 0 — a learner correct on the first attempt completes then, not on exhausting attempts. Achievable entirely by config (_attempts) and authoring (final-attempt feedback text); no component work required.",
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "AUD-AWM-SUMM-2"
+      }
     },
     {
       "role": "furniture",
@@ -1233,7 +1810,10 @@
       "completionTrigger": "submit",
       "mandatory": true,
       "rationale": "Interactive furniture (the two confidence instruments) completes on submit. Furniture is one role for styling and two for completion: this entry and the passive furniture entry below share role=furniture but diverge on completionTrigger, discriminated by each block's own declared interactionMode field, never by component identity.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "role property description" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "role property description"
+      }
     },
     {
       "role": "furniture",
@@ -1241,7 +1821,10 @@
       "completionTrigger": "view",
       "mandatory": true,
       "rationale": "Passive furniture (signpost, results, where-next) completes on view. Furniture is one role for styling and two for completion: this entry and the interactive furniture entry above share role=furniture but diverge on completionTrigger, discriminated by each block's own declared interactionMode field, never by component identity.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "role property description" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "role property description"
+      }
     },
     {
       "role": "worked-example",
@@ -1251,7 +1834,10 @@
         "Where the realising component supports _setCompletionOn, it must be set to \"allItems\", never \"inview\" — the point of a multi-item worked example is that the learner sees every part. An accordion set to inview is a stateable defect against this rule, not a design choice."
       ],
       "rationale": "Forty-odd worked-example blocks across the four built courses use six different plugins (text, accordion, annotated, narrative, branching, timeline); how a learner gets through an example depends on its form, so one fixed completion trigger across all six would either complete an accordion with items unopened or demand interaction from prose that has none. The role therefore defers to each component's own completion behaviour rather than fixing one trigger, with the allItems requirement stated separately as a named dependency because it constrains configuration, not the choice of trigger.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "completionTrigger enum: component-defined, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "completionTrigger enum: component-defined, added 14 Sep 2026"
+      }
     },
     {
       "role": "summative",
@@ -1273,7 +1859,10 @@
         "Feedback: the two-stage convention extends to the summative (summative feedback two-stage-extended convention, content-conventions/summative-feedback; source material Phase 4 cluster 6 Paper 3, 15 Sep 2026). Under this role's own _attempts: -1, the pairing is notFinal plus correct, not notFinal plus final — getFeedback()'s isFinal test (questionModel.js line 266) never fires when _attemptsLeft only ever decrements away from zero, confirmed live on AWM's SUMM-c-10. Authoring targets _feedback._incorrect.notFinal and _feedback.correct; _feedback._incorrect.final is not a target for this role while _attempts remains -1."
       ],
       "rationale": "submit-resolved states existing framework behaviour (checkQuestionCompletion completes on _isCorrect || _attemptsLeft === 0) rather than changing it, consistent with the knowledge-check rule above. The attempts formula itself is left open rather than inherited from knowledge-check, because the two served configurations cited in exclusions already demonstrate that whichever formula is eventually chosen, unlimited or retry-until-correct attempts make the resulting score uninformative — the open question is which formula, not whether one is needed.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-findings-register.md", "ref": "AUD-PRI-SUMM-3" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-findings-register.md",
+        "ref": "AUD-PRI-SUMM-3"
+      }
     },
     {
       "role": "reflective",
@@ -1284,7 +1873,10 @@
         "_isCompletionBearing: false reads as an attempt to express optionality on opentext, but the completion cascade (adaptModel.js checkCompletionStatusFor) reads only _isComplete and _isOptional and never reads _isCompletionBearing — the flag is inert to completion either way and must not be relied on to satisfy this rule."
       ],
       "rationale": "The learner is told this block is private, unmarked and voluntary, so it must not block progress: making it mandatory turns reflection into a compliance box, teaching the opposite of the intent. Seventeen of twenty existing reflective-prompt instances already comply (textinput's _isOptional: true). Trigger is submit rather than view because the learner's own act of submitting is the meaningful signal for an optional block, not incidental scrolling.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-findings-register.md", "ref": "AUD-AWA-L04-10" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-findings-register.md",
+        "ref": "AUD-AWA-L04-10"
+      }
     },
     {
       "role": "reflective-task",
@@ -1296,7 +1888,10 @@
         "No instance of this role exists in any built course as of this sitting; it is a future capability, not a retrofit. c-post's never-authored reflective-bridge slot is an obvious first home but that placement is not decided here."
       ],
       "rationale": "reflective-task exists because reflective's own contract (private, unmarked, voluntary, non-blocking) cannot honestly describe a task that produces something assessed against a standard; forcing that content through the reflective role would either make reflective dishonestly mandatory or leave a graded task wrongly marked optional. Trigger is submit, matching reflective, because completion is the learner's own act of submitting; mandatory is true, unlike reflective, because the task is required rather than voluntary.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "role property description: reflective-task, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "role property description: reflective-task, added 14 Sep 2026"
+      }
     }
   ],
   "iconRules": [
@@ -1305,42 +1900,60 @@
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026). AUD-AWI-WOPEN-7 first raised this role's missing icon, and its own comparison against the page's instruction-icon span is corrected at AUD-AWI-WOPEN-8: that span is equally glyph-less, so its presence does not confirm the mechanism works. This entry records intended treatment, not current rendering.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "iconRules construct, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "iconRules construct, added 14 Sep 2026"
+      }
     },
     {
       "role": "worked-example",
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026). No prior register finding names this role specifically; it is extended here under the same ruling as the other five.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "iconRules construct, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "iconRules construct, added 14 Sep 2026"
+      }
     },
     {
       "role": "knowledge-check",
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026). No prior register finding names this role specifically; it is extended here under the same ruling as the other five.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "iconRules construct, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "iconRules construct, added 14 Sep 2026"
+      }
     },
     {
       "role": "reflective",
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026), and the one role with a prior, if oblique, citation: 'ruling #22' (mandatory icon treatment for the reflective prompt), referenced in open-decisions.md and cited by name in AUD-AWA-L04-9 and AUD-AWA-WCLOSE-6. AUD-AWI-WOPEN-8 records that this ruling has never once produced a visible icon in any of the four built courses.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-findings-register.md", "ref": "AUD-AWA-L04-9" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-findings-register.md",
+        "ref": "AUD-AWA-L04-9"
+      }
     },
     {
       "role": "reflective-task",
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026). No instance of this role exists in any built course as of this sitting (see the reflective-task completionRules entry); this entry establishes the icon treatment ahead of the role's first use, not as a retrofit.",
-      "sourcePointer": { "doc": "schemas/design-kb.skeletons.schema.json", "ref": "iconRules construct, added 14 Sep 2026" }
+      "sourcePointer": {
+        "doc": "schemas/design-kb.skeletons.schema.json",
+        "ref": "iconRules construct, added 14 Sep 2026"
+      }
     },
     {
       "role": "references",
       "ariaHidden": true,
       "glyphStatus": "deferred-to-theme",
       "rationale": "One of the six icon-carrying roles named in this sitting's ruling (14 Sep 2026). AUD-AWA-WCLOSE-6 records this role's missing icon and cites 'ruling #22' directly, though that ruling's own text names only the reflective prompt; this entry extends the same treatment to references under this sitting's wider ruling rather than under #22 itself.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-findings-register.md", "ref": "AUD-AWA-WCLOSE-6" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-findings-register.md",
+        "ref": "AUD-AWA-WCLOSE-6"
+      }
     }
   ],
   "headingRules": [
@@ -1350,8 +1963,11 @@
       "configKey": "_accessibility._ariaLevels._article",
       "levelBasis": "fixed",
       "ariaLevel": 2,
-      "rationale": "Section = aria-level 2 (14 Sep 2026 ruling, A55, accepted as the decision paper proposed). Already the live behaviour: config.schema.json's _ariaLevels._article default is \"@page+1\", and _page defaults to \"1\", so a conforming build already renders sections at level 2 with no config or code change. LEFT OPEN (deliberately, per the ruling): whether a multi-part section needs restructuring into one article per section \u2014 a skeletons-store structural question, not a headings rule, not resolved by this entry.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "A55" }
+      "rationale": "Section = aria-level 2 (14 Sep 2026 ruling, A55, accepted as the decision paper proposed). Already the live behaviour: config.schema.json's _ariaLevels._article default is \"@page+1\", and _page defaults to \"1\", so a conforming build already renders sections at level 2 with no config or code change. LEFT OPEN (deliberately, per the ruling): whether a multi-part section needs restructuring into one article per section — a skeletons-store structural question, not a headings rule, not resolved by this entry.",
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "A55"
+      }
     },
     {
       "tier": "block",
@@ -1360,7 +1976,10 @@
       "levelBasis": "fixed",
       "ariaLevel": 3,
       "rationale": "Part = aria-level 3 (14 Sep 2026 ruling, A55, accepted as the decision paper proposed). Already the live behaviour: _ariaLevels._block defaults to \"@article+1\", which resolves to 3 given the article entry above, so a conforming build already renders parts at level 3 with no config or code change.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "A55" }
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "A55"
+      }
     },
     {
       "tier": "componentItem",
@@ -1368,15 +1987,21 @@
       "configKey": "_accessibility._ariaLevels._componentItem",
       "levelBasis": "relative-to-parent",
       "relativeOffset": 1,
-      "rationale": "Component-internal items sit one level below their parent component (14 Sep 2026 ruling, A55, accepted as the decision paper proposed). Already correct by default (_componentItem: \"@component+1\") and already correctly wired in accordion (accordion.jsx:41) and narrative (narrativeContent.jsx:46) via a11y.ariaLevel({ id, level: 'componentItem' }). SEPARATELY AUTHORISED (14 Sep 2026, Phase 5, patches/ precedent applies, not executed this sitting): patch annotated.jsx:123 and glossary.jsx:123, both currently a hardcoded <h4> (annotated__note-title, glossary__term-heading), to call a11y.ariaLevel({ id, level: 'componentItem' }) in place of the literal tag, matching accordion and narrative. Reason stated in the ruling: the convention alone would work by luck without this patch \u2014 PRI L03 already places an annotated component where it reads as section-level, producing the observed 2-to-4 skip (AUD-PRI-L03-1) today, and nothing enforces placement.",
-      "sourcePointer": { "doc": "docs/project/audit-2026-09/audit-actions-arising.md", "ref": "A55" }
+      "rationale": "Component-internal items sit one level below their parent component (14 Sep 2026 ruling, A55, accepted as the decision paper proposed). Already correct by default (_componentItem: \"@component+1\") and already correctly wired in accordion (accordion.jsx:41) and narrative (narrativeContent.jsx:46) via a11y.ariaLevel({ id, level: 'componentItem' }). SEPARATELY AUTHORISED (14 Sep 2026, Phase 5, patches/ precedent applies, not executed this sitting): patch annotated.jsx:123 and glossary.jsx:123, both currently a hardcoded <h4> (annotated__note-title, glossary__term-heading), to call a11y.ariaLevel({ id, level: 'componentItem' }) in place of the literal tag, matching accordion and narrative. Reason stated in the ruling: the convention alone would work by luck without this patch — PRI L03 already places an annotated component where it reads as section-level, producing the observed 2-to-4 skip (AUD-PRI-L03-1) today, and nothing enforces placement.",
+      "sourcePointer": {
+        "doc": "docs/project/audit-2026-09/audit-actions-arising.md",
+        "ref": "A55"
+      }
     }
   ],
   "blockIdRule": {
     "step": 5,
     "order": "render-order",
     "prefixPattern": "<pageKey>-b-<NN>, where pageKey is that page's own key (already course-slug-prefixed per PK-1) and NN is the running block count on that page, incremented by step and zero-padded to two digits.",
-    "sourcePointer": { "doc": "tools/generate-course-shell.js", "ref": "ID-1, 20 September 2026" }
+    "sourcePointer": {
+      "doc": "tools/generate-course-shell.js",
+      "ref": "ID-1, 20 September 2026"
+    }
   },
   "assessmentDefaults": {
     "passMark": 70,
@@ -1384,16 +2009,32 @@
       "count": 3,
       "reshuffleOnAttempt": true
     },
-    "sourcePointer": { "doc": "docs/project/open-decisions.md", "ref": "CSTR-1", "note": "passMark of 70 confirmed live and identical across every generated course found (archive/courses-2026-09/_generated-snapshot/*/en/course.json and articles.json _scoreToPass), grepped 20 September 2026; CSTR-1 holds this as the programme default a course's S1 may override. attempts.count and attempts.reshuffleOnAttempt settle SVP-1's resolution of PR-6-2 (pipeline-requirements-register.md), not CSTR-1 itself." }
+    "sourcePointer": {
+      "doc": "docs/project/open-decisions.md",
+      "ref": "CSTR-1",
+      "note": "passMark of 70 confirmed live and identical across every generated course found (archive/courses-2026-09/_generated-snapshot/*/en/course.json and articles.json _scoreToPass), grepped 20 September 2026; CSTR-1 holds this as the programme default a course's S1 may override. attempts.count and attempts.reshuffleOnAttempt settle SVP-1's resolution of PR-6-2 (pipeline-requirements-register.md), not CSTR-1 itself."
+    }
   },
   "confidenceDefaults": {
-    "scaleLabels": ["Not at all confident", "Slightly confident", "Fairly confident", "Confident", "Very confident"],
+    "scaleLabels": [
+      "Not at all confident",
+      "Slightly confident",
+      "Fairly confident",
+      "Confident",
+      "Very confident"
+    ],
     "preConfirmation": "Thank you. You will see these statements again at the end of the course, so you can see how your confidence has changed.",
     "framing": {
       "cPre": "Before you start, rate how confident you feel about each statement. There are no right or wrong answers.",
       "cPost": "Now that you have finished the course, rate each statement again. You will then see how your confidence has changed."
     },
-    "sourcePointer": { "doc": "docs/project/open-decisions.md", "ref": "CF-1", "note": "CF-1, 24 September 2026: the generator writes these three fixed texts, plus _mode and _selfAssessmentGroupId, onto both confidence components. The c-pre archetype's own notes field (below) previously stated this framing text was not yet in the store; this entry brings it in." }
+    "sourcePointer": {
+      "doc": "docs/project/open-decisions.md",
+      "ref": "CF-1",
+      "note": "CF-1, 24 September 2026: the generator writes these three fixed texts, plus _mode and _selfAssessmentGroupId, onto both confidence components. The c-pre archetype's own notes field (below) previously stated this framing text was not yet in the store; this entry brings it in."
+    }
   },
-  "fixedTextTokens": ["passMark"]
+  "fixedTextTokens": [
+    "passMark"
+  ]
 }

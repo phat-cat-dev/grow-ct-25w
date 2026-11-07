@@ -19,7 +19,7 @@
 
 import { chromium } from 'playwright';
 
-const BASE_URL = 'http://localhost:9001/';
+const BASE_URL = 'http://localhost:9000/';
 
 // Correct answer text patterns (MCQs are shuffled, so match by text)
 const CORRECT_ANSWERS = {

@@ -878,7 +878,7 @@
     "_classes": "",
     "_layout": "full",
     "title": "Building a strong prompt",
-    "displayTitle": "How to do it",
+    "displayTitle": "Checklist: How to do it",
     "body": "These checks turn a vague request into a prompt that makes the tool work and makes you think. Try them on your next AI-assisted task.",
     "instruction": "Tick each item once you have tried it.",
     "_pageLevelProgress": {
@@ -1263,7 +1263,7 @@
     "_classes": "",
     "_layout": "full",
     "title": "Making prompt moves",
-    "displayTitle": "How to do it",
+    "displayTitle": "Checklist: How to do it",
     "body": "These moves turn a flat first answer into something useful, without restarting. Try them on your next AI dialogue.",
     "instruction": "Tick each item once you have tried it.",
     "_pageLevelProgress": {
@@ -1498,35 +1498,35 @@
     "_items": [
       {
         "title": "Explain it back",
-        "body": "Have the tool explain an idea, then close it and write the idea in your own words. Ask what you missed. Prompt: explain this simply, then I will explain it back and you tell me what I got wrong."
+        "body": "<p>Ask the tool to explain an idea, then close it and restate the idea yourself, in your own words, without looking. Comparing your version against the original shows exactly where your understanding breaks down, because the gap only shows up once you try to produce the explanation rather than just recognise it.</p><p>Try prompts like:</p><ul><li>\"{Explain} {topic} simply, then wait while I explain it back to you in my own words.\"</li><li>\"{Summarise} {topic} in three sentences, then ask me to repeat it without looking.\"</li><li>\"{Break down} {topic} step by step, then tell me which step I get wrong when I explain it back.\"</li></ul>"
       },
       {
         "title": "Socratic questioning",
-        "body": "Let the tool question you one step at a time, so gaps in your understanding surface. Prompt: act as a Socratic tutor on this topic; ask one question at a time and wait for my answer."
+        "body": "<p>Let the tool question you one step at a time instead of explaining, so you have to produce each answer rather than just recognise it. Reasoning out loud under gentle questioning surfaces exactly where your understanding is thin, because you cannot skip the step you are unsure about.</p><p>Try prompts like:</p><ul><li>\"{Act} as a Socratic tutor on {topic}; ask me one question at a time and wait for my answer before the next one.\"</li><li>\"{Question} me about {topic} one step at a time, and do not give me the answer even if I ask.\"</li><li>\"{Probe} my understanding of {topic} with follow-up questions until I can explain it clearly.\"</li></ul>"
       },
       {
         "title": "Targeted practice and feedback",
-        "body": "Get practice matched to your level, attempt it, then ask for feedback on your method. Prompt: set five questions on this topic at my level; do not show the answers until I try."
+        "body": "<p>Ask for practice matched to your current level, attempt it without help, then ask for feedback on your method rather than just the mark. Separating the attempt from the feedback forces you to commit to an answer first, so the feedback corrects your thinking instead of just confirming what you already suspected.</p><p>Try prompts like:</p><ul><li>\"{Set} five questions on {topic} at my level; do not show me the answers until I try each one.\"</li><li>\"{Create} a short test on {topic}, mark my answers, and tell me what my mistakes say about my method.\"</li><li>\"{Give} me one hard problem on {topic} and wait until I attempt it before giving feedback.\"</li></ul>"
       },
       {
         "title": "Feedback on your own work",
-        "body": "Share a draft and ask a precise question, so the feedback is usable. Prompt: read my introduction and tell me what my main argument is; show me where I was unclear."
+        "body": "<p>Share a draft and ask a precise question, rather than a vague \"is this good\", so the feedback is usable. A sharp question about one feature of the work, such as your argument, your structure or your evidence, gets feedback you can act on, where a general request only gets general praise.</p><p>Try prompts like:</p><ul><li>\"{Read} my {topic} and tell me what my main argument is; show me where it is unclear.\"</li><li>\"{Check} this paragraph on {topic} for how well the evidence supports the claim.\"</li><li>\"{Identify} the weakest point in my argument about {topic} and explain why it is weak.\"</li></ul>"
       },
       {
         "title": "Mapping concepts",
-        "body": "Organise what you know and find the missing links. Prompt: here is what I understand so far; show me how these ideas connect and what I am missing."
+        "body": "<p>Lay out what you already know about a topic, then ask the tool to show how the ideas connect and where the gaps are. Building the map yourself first means the tool fills genuine gaps in your thinking, rather than doing the organising for you.</p><p>Try prompts like:</p><ul><li>\"{List} what I understand about {topic} so far; show me how these ideas connect and what I am missing.\"</li><li>\"{Map} the relationship between these ideas in {topic} and point out any I have left out.\"</li><li>\"{Organise} my notes on {topic} into a structure and flag where the links are weak.\"</li></ul>"
       },
       {
         "title": "Devil's advocate",
-        "body": "State your position and ask the tool to argue against it, to find where your reasoning is weak. Prompt: I argue this; give me the strongest counter-arguments I must answer."
+        "body": "<p>State your position on a topic and ask the tool to argue against it, so you can find the weak points in your own reasoning before a marker does. Defending your view against a real counter-argument is a harder test of understanding than simply restating it.</p><p>Try prompts like:</p><ul><li>\"{Argue} against this claim about {topic}: give me the strongest counter-arguments I must answer.\"</li><li>\"{Challenge} my position on {topic} as if you disagreed with it.\"</li><li>\"{Find} the weakest part of my argument on {topic} and press me on it.\"</li></ul>"
       },
       {
         "title": "Learning through analogy",
-        "body": "Ask for an analogy from a field you know, then ask where it breaks down. Prompt: explain this with an everyday analogy, then tell me where the analogy stops working."
+        "body": "<p>Ask for an analogy from a field you already know, then ask where the analogy breaks down. The breakdown point is often the most important part of the original idea, because it is exactly where the comparison stops holding.</p><p>Try prompts like:</p><ul><li>\"{Explain} {topic} using an everyday analogy, then tell me where the analogy stops working.\"</li><li>\"{Compare} {topic} to something from a subject I already know, and show me the limits of the comparison.\"</li><li>\"{Translate} {topic} into a simple analogy, then test whether I can say why it eventually fails.\"</li></ul>"
       },
       {
         "title": "Preparing for reading",
-        "body": "Before a hard chapter, ask for the key terms and debates in plain language, so your first read is productive. Prompt: I am about to read this; give me the key terms and arguments I will meet."
+        "body": "<p>Before a difficult chapter or paper, ask for the key terms and debates in plain language, so your first read is productive rather than spent decoding vocabulary. Knowing the terrain in advance means your first pass can focus on the argument instead of the words.</p><p>Try prompts like:</p><ul><li>\"{List} the key terms and debates I will meet in this reading on {topic}, in plain language.\"</li><li>\"{Preview} this chapter on {topic}: what are the main questions it is trying to answer?\"</li><li>\"{Flag} any specialist vocabulary in {topic} I should look up before I start reading.\"</li></ul>"
       }
     ]
   },
@@ -1662,7 +1662,7 @@
     "_classes": "",
     "_layout": "full",
     "title": "Using a technique well",
-    "displayTitle": "How to do it",
+    "displayTitle": "Checklist: How to do it",
     "body": "These checks keep a technique working as learning, not as a shortcut. Try one on your next hard topic.",
     "instruction": "Tick each item once you have tried it.",
     "_pageLevelProgress": {
@@ -2502,7 +2502,7 @@
     "_classes": "",
     "_layout": "full",
     "title": "Working with the cycle",
-    "displayTitle": "How to run the routine",
+    "displayTitle": "Checklist: How to run the routine",
     "body": "<p>Use these on each AI-assisted task, so the three strands stay joined up.</p>",
     "instruction": "Tick each item when you have done it.",
     "_pageLevelProgress": {
@@ -3070,7 +3070,7 @@
     "_classes": "",
     "_layout": "full",
     "title": "A routine that keeps the thinking yours",
-    "displayTitle": "A routine that keeps the thinking yours",
+    "displayTitle": "Checklist: A routine that keeps the thinking yours",
     "body": "<p>A good routine shares the work with AI without handing over the learning.</p>",
     "instruction": "Tick each item once your routine covers it.",
     "_pageLevelProgress": {

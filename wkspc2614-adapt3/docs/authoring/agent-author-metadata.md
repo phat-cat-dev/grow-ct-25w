@@ -133,6 +133,55 @@ Within that chain:
 - The baseline is always included; the mode field is included only for the
   active mode.
 
+## The `ASK:` convention (authoring-time checkpoints)
+
+Task #19 (3 Nov 2026) needed a way to raise an authoring-time question to the
+human at specific points in the lesson archetype - e.g. "should the worked
+example sit in a named discipline scenario, or stay generic?" - without adding
+a new field. The owner's decision was to use the existing fields: an entry in
+`agentAuthor.warnings`, prefixed `ASK:`, with the default stated inline if the
+human does not answer, e.g.:
+
+```jsonc
+"warnings": [
+  "Keep the weaker-example-first order and the two-part contrast.",
+  "ASK: should the weaker/stronger pair sit in a named discipline scenario, or a generic study situation any subject can read? If unanswered, use a generic study situation."
+]
+```
+
+**What it is.** An authoring-time agent-to-human checkpoint, surfaced by `/gate`
+alongside its own proposal (see 5b in `.claude/commands/gate.md`). It is
+skippable: silence means the stated default stands, riding the same
+`hardness: soft` + `defaultType: ai-proposal-stands` mechanic `les-01` already
+uses for an unanswered gate.
+
+**Not `agentAuthorDialogue`.** This is deliberately not that field.
+`agentAuthorDialogue` is reserved for a conversational agent's *learner-facing*
+delivery nuances at build/runtime (see the three fields above) - a different
+audience, a different moment. `ASK:` targets the human author, at gate time,
+before the content exists.
+
+**Why `warnings` and not `relation`.** Per the resolution order above,
+`warnings` **accumulate** (de-duplicated) across the four layers
+(`skeleton.agentAuthor` -> `skeleton.agentAuthor{M}` -> `manifest.agentAuthor`
+-> `manifest.agentAuthor{M}`), so an `ASK:` entry set at skeleton level
+survives every later layer. `relation` is a **directive field that overrides**
+- a more specific level replaces it outright - so a checkpoint placed there
+would be silently lost the moment a manifest-level block exists for that slot.
+
+**The semantic stretch, stated openly.** `warnings` means "do-nots"; a
+question is not a do-not. `ASK:` borrows the field anyway because it is the
+one place a per-slot string is guaranteed to survive to `/gate`, not because
+the fit is natural. `/gate` step 5b treats a non-prefixed entry as a
+constraint to self-check, and an `ASK:`-prefixed entry as a question to put to
+the human - the prefix is load-bearing, not decorative.
+
+**The limitation.** This is prose only. Nothing lands in the manifest's
+`decidedValueShape`, so nothing is machine-recorded and nothing is tallied in
+`/ledger`. A human who answers an `ASK:` does so in the gate's conversation,
+and the resulting choice shows up in the ordinary proposal/rationale for that
+slot - not as a separate, queryable field.
+
 ## Worked example — the `check` (mcq) slot
 
 This is where today's distractor fix belongs:

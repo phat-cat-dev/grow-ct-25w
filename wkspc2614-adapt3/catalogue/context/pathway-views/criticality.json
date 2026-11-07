@@ -1,0 +1,453 @@
+{
+  "pathway": "criticality",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "criticality/02",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Map and question the scholarly discourse around a topic",
+          "knowledgeKind": "factual and conceptual",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Critical map of positions within a field of debate",
+              "learningOutcome": "The student can describe the main positions within a scholarly debate and identify which questions about it remain unresolved."
+            },
+            {
+              "kind": "applied",
+              "title": "Questioning the state of a field before acting",
+              "learningOutcome": "The student can map the key positions in a field of debate and note the open questions before acting on any of them."
+            }
+          ]
+        },
+        {
+          "ref": "criticality/c1",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Apply critical thought to the choices made when searching, reading and planning",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Judgement reached through weighing conflicting evidence",
+              "learningOutcome": "The student can explain how weighing the strength and relevance of conflicting evidence leads to a reasoned judgement rather than a quick preference."
+            },
+            {
+              "kind": "applied",
+              "title": "Recommendation after weighing the evidence",
+              "learningOutcome": "The student can identify which of two conflicting pieces of evidence better supports a course of action and state the reasoning behind that choice."
+            }
+          ]
+        },
+        {
+          "ref": "criticality#i3",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Treat being critical as a habit of mind, not a switch for assessment",
+          "knowledgeKind": "metacognitive, beginning",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Habitual evaluation of everyday evidence and claims",
+              "learningOutcome": "The student can explain why evaluating evidence and arguments critically should be a standing habit rather than a response reserved for assessment."
+            },
+            {
+              "kind": "applied",
+              "title": "Evaluating claims as routine professional practice",
+              "learningOutcome": "The student can routinely question the evidence behind everyday claims and judge whether the reasoning holds up before relying on them."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the critical thought of criticality to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the searching clearly.",
+        "knowledge": "Describes the core terms, ideas and principles that introduce criticality, and can place them in the wider field.",
+        "identity": "Begins to describe the scholarly discourse for the first time, following guidance on the topic as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "criticality/01",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Recognise the critical thinking skills of analysis and evaluation",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/1.20",
+              "strength": "direct",
+              "extract": "Course content emphasises critical thinking, ethics, evidence-based decision making, and collaboration",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.5",
+              "strength": "direct",
+              "locator": "2.5",
+              "paraphrase": "Ethics sits at the core of the discipline and of course design, with activities that apply it to research, practice and daily conduct; students will be able to apply ethics to their own behaviour and judge the ethical conduct of others critically.",
+              "forBeneficiary": "You will be able to apply ethical principles to how you behave in research, in practice and day to day, and to judge critically how ethically others act."
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "critically and reflectively evaluate psychological theory and research",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/4.10",
+              "strength": "direct",
+              "extract": "demonstrated the use of critical-thinking skills and the ability to evaluate the rigour",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.32",
+              "strength": "direct",
+              "extract": "lead to the progressive development of transferable skills and competencies, such as of critical thinking",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Judging the rigour of a piece of work",
+              "learningOutcome": "The student can analyse a piece of work by distinguishing what was done from how rigorously it was carried out, then evaluate each separately."
+            },
+            {
+              "kind": "applied",
+              "title": "Assessing the rigour of a piece of work",
+              "learningOutcome": "The student can evaluate the rigour of a piece of work by analysing its method before judging how far its conclusions can be trusted."
+            }
+          ]
+        },
+        {
+          "ref": "criticality/03",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Analyse and evaluate a scholarly interpretation",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.5",
+              "strength": "direct",
+              "locator": "2.5",
+              "paraphrase": "Ethics sits at the core of the discipline and of course design, with activities that apply it to research, practice and daily conduct; students will be able to apply ethics to their own behaviour and judge the ethical conduct of others critically.",
+              "forBeneficiary": "You will be able to apply ethical principles to how you behave in research, in practice and day to day, and to judge critically how ethically others act."
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "critically and reflectively evaluate psychological theory and research",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/4.10",
+              "strength": "direct",
+              "extract": "demonstrated the use of critical-thinking skills and the ability to evaluate the rigour",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Evaluating theory and research with reflection",
+              "learningOutcome": "The student can evaluate a theoretical interpretation by analysing the evidence and assumptions it rests on and reflecting on their own standpoint."
+            },
+            {
+              "kind": "applied",
+              "title": "Reflective evaluation of research behind a proposal",
+              "learningOutcome": "The student can analyse the research behind a proposal and evaluate how far the evidence supports it before reaching a justified conclusion."
+            }
+          ]
+        },
+        {
+          "ref": "criticality/04",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Read a journal article strategically by its structure and method",
+          "knowledgeKind": "metacognitive, strategic (choosing how to read)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Verifying findings by reading the method first",
+              "learningOutcome": "The student can analyse a study's method ahead of its findings to judge whether the approach actually supports the conclusions drawn."
+            },
+            {
+              "kind": "applied",
+              "title": "Checking a study's method before acting on it",
+              "learningOutcome": "The student can evaluate whether a published study's method is strong enough to support a decision before relying on its reported findings."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the methodology of criticality to the scholarly interpretation, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the critical thinking of criticality, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the journal article on their own learning and by how diversity, sustainability and professional practice bear on criticality."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "criticality/c2",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Form and justify judgements on the relative importance of factors",
+          "knowledgeKind": "procedural, criteria for judging",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reasoned ranking of competing factors",
+              "learningOutcome": "The student can justify a ranking of competing factors by weighing the evidence and arguments for each and keeping the reasoning open to challenge."
+            },
+            {
+              "kind": "applied",
+              "title": "Recommending priorities after weighing the factors",
+              "learningOutcome": "The student can construct a recommendation that names the most important factor, justifies that priority, and states what evidence would change the judgement."
+            }
+          ]
+        },
+        {
+          "ref": "criticality/05",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Write critically, synthesising sources in the discipline's vocabulary",
+          "knowledgeKind": "procedural with conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Synthesis reaching a reasoned written conclusion",
+              "learningOutcome": "The student can synthesise several sources into a single reasoned argument, making explicit how strongly the evidence supports its conclusion."
+            },
+            {
+              "kind": "applied",
+              "title": "Written recommendation synthesising evidence into one conclusion",
+              "learningOutcome": "The student can construct a written recommendation that draws evidence from several sources together and justifies a clear conclusion for others to act on."
+            }
+          ]
+        },
+        {
+          "ref": "criticality#e3",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Write with authority, aware of how own stance shapes the argument",
+          "knowledgeKind": "metacognitive, self-knowledge",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "direct",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Writing authoritatively while declaring your own stance",
+              "learningOutcome": "The student can critique their own standpoint, explaining how it may have shaped which evidence they judged most persuasive in reaching a conclusion."
+            },
+            {
+              "kind": "applied",
+              "title": "Owning your stance when reporting a judgement",
+              "learningOutcome": "The student can justify a written judgement with authority while disclosing the standpoint it was argued from, so others can assess the reasoning accordingly."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques the judgement across methods, evaluates factors critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the judgement of criticality, its factors and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own factors shape their judgement, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.21",
+      "strength": "direct",
+      "extract": "They think critically about different realities and form their own judgements",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.9",
+      "strength": "direct",
+      "extract": "a critical appraisal of their use, limitations and historical origins",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.10",
+      "strength": "direct",
+      "extract": "a critical understanding of the role of research design and enquiry",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.9",
+      "strength": "direct",
+      "extract": "systematically analysed research paradigms, methods of enquiry, and measurement techniques",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.6",
+      "strength": "direct",
+      "extract": "prevalence of critical insight",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+      "strength": "indirect",
+      "label": "Independent and self-directed learning",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates manage their own learning and work independently.",
+      "studentStatement": "You can manage your own learning and work on your own.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/criticality.json",
+      "catalogue/context/pathway-evidence/criticality.json",
+      "catalogue/context/pathway-tier-readings/criticality.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

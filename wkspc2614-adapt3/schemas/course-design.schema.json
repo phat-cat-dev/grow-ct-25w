@@ -41,6 +41,14 @@
     "facetSet": {
       "$ref": "common.schema.json#/$defs/facetSet"
     },
+    "profile": {
+      "enum": [
+        "built-course-shape",
+        "single-course",
+        "pathway-distillation"
+      ],
+      "description": "Which gate-profiles.json profile this course's gate sequence follows. Absent means built-course-shape (the default, pre-existing shape all 45 courses were built under). Read by validate-design-schemas.py (NSK-1) to resolve which gates are in-scope for this course before checking cross-gate dependencies."
+    },
     "kbVersions": {
       "type": "object",
       "description": "Store versions this design was conducted against. CONVENTION (retro-fill, 26 Aug 2026): 0.0.0 = design conducted before the store was populated (pre-population placeholder), used by the AW:Intro retro-fill; real versions from first populated release.",

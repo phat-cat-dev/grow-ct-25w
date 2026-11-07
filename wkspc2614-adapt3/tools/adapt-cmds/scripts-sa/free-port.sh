@@ -34,7 +34,7 @@ set -euo pipefail
 # switching to `ask` cannot hang a script or a CI job that calls this.
 # ===========================================================================
 PORT_MODE="fixed"     # fixed | ask
-DEFAULT_PORT=9001
+DEFAULT_PORT=9000
 # ===========================================================================
 
 die() { printf '%s\n' "$*" >&2; exit 1; }

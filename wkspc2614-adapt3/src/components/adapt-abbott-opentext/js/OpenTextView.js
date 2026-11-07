@@ -23,7 +23,8 @@ class OpenTextView extends ComponentView {
     return {
       'input .opentext__textarea': 'onInput',
       'blur .opentext__textarea': 'onBlur',
-      'click .opentext__complete-btn': 'onCompletionPress'
+      'click .opentext__complete-btn': 'onCompletionPress',
+      'click .opentext__expand-btn': 'onExpandToggle'
     };
   }
 
@@ -81,6 +82,9 @@ class OpenTextView extends ComponentView {
     this.$completionContainer = this.$('.opentext__completion');
     this.$completionBtn = this.$('.opentext__complete-btn');
     this.$completedState = this.$('.opentext__completed-state');
+    // Manual expand/collapse control
+    this.$expandBtn = this.$('.opentext__expand-btn');
+    this._isManuallyExpanded = false;
 
     // Track which thresholds have been announced (spec §9.2)
     // Once announced, stays announced for this component instance
@@ -116,8 +120,9 @@ class OpenTextView extends ComponentView {
     const text = this.$textarea.val();
     this.model.setText(text);
 
-    // Auto-grow textarea (spec §9.4)
-    this._autoGrow();
+    // Auto-grow textarea (spec §9.4) — skipped while manually expanded,
+    // since that already holds the textarea at the _maxRows ceiling
+    if (!this._isManuallyExpanded) this._autoGrow();
 
     // Update character counter (spec §8)
     this._updateCounter();
@@ -135,6 +140,36 @@ class OpenTextView extends ComponentView {
       this._debouncedSave.cancel();
     }
     this._saveText();
+  }
+
+  /**
+   * Handle manual expand/collapse button press.
+   * Auto-grow already fits the textarea to content on input, so this only
+   * matters before the learner has typed anything (or to shrink back down).
+   * Expanding forces height to the _maxRows ceiling; collapsing hands control
+   * back to _autoGrow, which fits the actual content (never clips text).
+   * @private
+   */
+  onExpandToggle() {
+    const textarea = this.$textarea[0];
+    if (!textarea) return;
+
+    const globals = this._getGlobals();
+    this._isManuallyExpanded = !this._isManuallyExpanded;
+
+    if (this._isManuallyExpanded) {
+      const maxRows = this.model.get('_maxRows') || 20;
+      const lineHeight = parseInt(window.getComputedStyle(textarea).lineHeight, 10) || 20;
+      textarea.style.height = (maxRows * lineHeight) + 'px';
+      textarea.style.overflowY = textarea.scrollHeight > (maxRows * lineHeight) ? 'auto' : 'hidden';
+    } else {
+      this._autoGrow();
+    }
+
+    this.$expandBtn
+      .attr('aria-expanded', this._isManuallyExpanded.toString())
+      .attr('aria-label', this._isManuallyExpanded ? globals.collapseButtonLabel : globals.expandButtonLabel)
+      .toggleClass('is-expanded', this._isManuallyExpanded);
   }
 
   /**

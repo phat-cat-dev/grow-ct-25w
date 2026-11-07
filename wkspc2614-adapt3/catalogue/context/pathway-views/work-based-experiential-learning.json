@@ -1,0 +1,559 @@
+{
+  "pathway": "work-based-experiential-learning",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "work-based-experiential-learning/01",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Distinguish the types of practice- and work-based learning",
+          "knowledgeKind": "factual and conceptual",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.15",
+              "strength": "direct",
+              "extract": "the opportunity to undertake work-based learning and/or placements",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.26",
+              "strength": "direct",
+              "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/professional-practice-and-employability",
+              "strength": "direct",
+              "label": "Professional practice and employability",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates understand the subject's professional settings and are prepared for work.",
+              "studentStatement": "You understand how your subject is used at work and are ready for it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Classification of learning modes by depth of engagement",
+              "learningOutcome": "The student can identify and explain the different forms that learning through practice can take, distinguishing each by the level of responsibility it involves."
+            },
+            {
+              "kind": "applied",
+              "title": "Briefing note distinguishing real learning opportunities",
+              "learningOutcome": "The student can describe, for someone less experienced, the practical differences between distinct forms of learning through practice, using a real example of each."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning#i2",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Explain what learning in practice offers",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.26",
+              "strength": "direct",
+              "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Explanation of why practice knowledge differs from theory",
+              "learningOutcome": "The student can explain what direct engagement with practical situations adds to understanding that theoretical study alone does not provide."
+            },
+            {
+              "kind": "applied",
+              "title": "Real situation used to explain practice's distinct value",
+              "learningOutcome": "The student can identify a specific practical situation and explain to others what applying subject knowledge within it revealed that study alone could not."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning#i3",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Set own learning goals for a practice experience",
+          "knowledgeKind": "metacognitive, beginning",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.26",
+              "strength": "direct",
+              "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Goal set defined before starting a period of practice",
+              "learningOutcome": "The student can describe how to set specific, checkable learning goals before a period of practical experience, explaining what each goal is intended to develop."
+            },
+            {
+              "kind": "applied",
+              "title": "Learning goals set and checked against real progress",
+              "learningOutcome": "The student can set specific learning goals before a period of practical work and review progress against them at agreed points."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the practice-based learning of work-based and experiential learning to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the work-based learning clearly.",
+        "knowledge": "Describes the core terms, ideas and principles that introduce work-based and experiential learning, and can place them in the wider field.",
+        "identity": "Begins to describe the practice-based learning for the first time, following guidance on the work-based learning as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "work-based-experiential-learning/c1",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Conduct oneself as a professional in a practice setting",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.21",
+              "strength": "direct",
+              "extract": "ethical conduct in professional practice and social responsibility",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/professional-practice-and-employability",
+              "strength": "direct",
+              "label": "Professional practice and employability",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates understand the subject's professional settings and are prepared for work.",
+              "studentStatement": "You understand how your subject is used at work and are ready for it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Decision analysed against a community's standards of conduct",
+              "learningOutcome": "The student can analyse a decision taken in practice against the standards of ethical conduct and social responsibility expected of an established professional."
+            },
+            {
+              "kind": "applied",
+              "title": "Ethical judgement made and explained in real practice",
+              "learningOutcome": "The student can make and explain an ethical decision in a real practice situation, accounting for the professional standards and wider responsibilities involved."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning/02",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Make effective use of a mentor on placement",
+          "knowledgeKind": "procedural (learning from others)",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.15",
+              "strength": "direct",
+              "extract": "the opportunity to undertake work-based learning and/or placements",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.26",
+              "strength": "direct",
+              "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Mentoring relationship read through a participation model",
+              "learningOutcome": "The student can analyse a mentoring relationship in terms of stages of participation, identifying what support would help progress to the next stage."
+            },
+            {
+              "kind": "applied",
+              "title": "Mentor's guidance turned into a concrete change in practice",
+              "learningOutcome": "The student can act deliberately on mentoring guidance received during practical work and evaluate what change it produced in their own performance."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning/c2",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Test theory in practice and reflect on the result",
+          "knowledgeKind": "metacognitive, strategic",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/reflection-and-personal-development",
+              "strength": "direct",
+              "label": "Reflection and personal development",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates reflect on their learning and practice and plan their development.",
+              "studentStatement": "You can reflect on how you learn and work, and plan how to improve."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Theoretical prediction checked against a real outcome",
+              "learningOutcome": "The student can state what a theory predicts for a real situation and evaluate any gap between that prediction and the actual outcome."
+            },
+            {
+              "kind": "applied",
+              "title": "A taught method applied to a real problem and reviewed",
+              "learningOutcome": "The student can apply a taught method to a real problem encountered in practice and evaluate whether it produced the expected result."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the practice setting of work-based and experiential learning to the professionalism, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the professionalism of work-based and experiential learning, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the theoretical knowledge on their own learning and by how diversity, sustainability and professional practice bear on work-based and experiential learning."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "work-based-experiential-learning/03",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Apply an experiential learning cycle (Kolb) to work-based learning",
+          "knowledgeKind": "procedural (a model)",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.15",
+              "strength": "direct",
+              "extract": "the opportunity to undertake work-based learning and/or placements",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.26",
+              "strength": "direct",
+              "extract": "work-based learning (for example, placements and fieldwork) are also considered good practice",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/professional-practice-and-employability",
+              "strength": "direct",
+              "label": "Professional practice and employability",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates understand the subject's professional settings and are prepared for work.",
+              "studentStatement": "You understand how your subject is used at work and are ready for it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Cycle used to turn one setback into a tested change",
+              "learningOutcome": "The student can construct a structured cycle of experience, reflection, generalisation and renewed action to explain how a specific professional setback produced learning."
+            },
+            {
+              "kind": "applied",
+              "title": "Development log built from cycles of real practice",
+              "learningOutcome": "The student can apply a structured learning cycle repeatedly across real practice, constructing a developmental record that shows genuine change in professional understanding over time."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning/04",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Exercise and justify professional judgement in a work setting",
+          "knowledgeKind": "procedural, criteria for judging",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/applying-knowledge-to-practice-or-problems",
+              "strength": "direct",
+              "label": "Applying knowledge to practice or problems",
+              "strand": "application",
+              "graduateStatement": "Graduates apply subject knowledge to practical situations and problems.",
+              "studentStatement": "You can use what you know on real problems and in practical settings."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/professional-practice-and-employability",
+              "strength": "direct",
+              "label": "Professional practice and employability",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates understand the subject's professional settings and are prepared for work.",
+              "studentStatement": "You understand how your subject is used at work and are ready for it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "indirect",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reasoned judgement built from competing considerations",
+              "learningOutcome": "The student can construct a reasoned professional judgement by weighing competing considerations against the standards of a role, stating what evidence would alter that judgement."
+            },
+            {
+              "kind": "applied",
+              "title": "Judgement call defended against a challenge",
+              "learningOutcome": "The student can justify a professional judgement made in a real situation by responding to a genuine challenge to it, rather than simply restating the original decision."
+            }
+          ]
+        },
+        {
+          "ref": "work-based-experiential-learning#e3",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Reflect on own developing identity as a practitioner",
+          "knowledgeKind": "metacognitive, self-knowledge",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/reflection-and-personal-development",
+              "strength": "direct",
+              "label": "Reflection and personal development",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates reflect on their learning and practice and plan their development.",
+              "studentStatement": "You can reflect on how you learn and work, and plan how to improve."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Developing identity traced across several reflective entries",
+              "learningOutcome": "The student can critique their own developing professional identity across a series of reflective accounts, naming what belief changed and why."
+            },
+            {
+              "kind": "applied",
+              "title": "Development plan built from a changed sense of identity",
+              "learningOutcome": "The student can construct a development plan from a genuine shift in professional identity, naming one resulting strength, one exposed gap, and a concrete action."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques the experiential learning cycle across methods, evaluates the work-based learning critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the experiential learning cycle of work-based and experiential learning, its work-based learning and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own position, assumptions and values shape their experiential learning cycle, weighs what this means for wider debate and for audiences acting on it, and treats their work-based learning as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.14",
+      "strength": "direct",
+      "extract": "opportunities to study abroad and participate in credit-bearing placement activities",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.16",
+      "strength": "direct",
+      "extract": "apply psychological knowledge ethically, professionally and safely to real-world problems",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.25",
+      "strength": "direct",
+      "extract": "laboratory classes \n• workshops",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.35",
+      "strength": "direct",
+      "extract": "in the core domains of the discipline, in work placements",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+      "strength": "indirect",
+      "label": "Independent and self-directed learning",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates manage their own learning and work independently.",
+      "studentStatement": "You can manage your own learning and work on your own.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/work-based-experiential-learning.json",
+      "catalogue/context/pathway-evidence/work-based-experiential-learning.json",
+      "catalogue/context/pathway-tier-readings/work-based-experiential-learning.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

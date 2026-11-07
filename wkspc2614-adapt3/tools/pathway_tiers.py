@@ -60,6 +60,26 @@ def capabilities(pathway_key):
     return _cache[pid]
 
 
+def raw_capabilities(pathway_key):
+    """The pathway's capabilities as full dicts, uncached and unfiltered.
+
+    Unlike capabilities(), nothing is flattened to text: vocabulary.terms,
+    knowledgeKind, competency, etc. are all still present. Used by
+    tools/build-pathway-tier-readings.py, which needs the full shape.
+    """
+    pid = strip_prefix(pathway_key)
+    path = os.path.join(PATHWAY_DIR, pid + '.json')
+    if not os.path.exists(path):
+        return []
+    return json.load(open(path, encoding='utf-8')).get('capabilities') or []
+
+
+def cap_ref(c, pathway_key):
+    """A capability dict's reference id, matching the ref used in capabilities()."""
+    pid = strip_prefix(pathway_key)
+    return c.get('capabilityId') or (pid + '#' + str(c.get('rowId')))
+
+
 def _stems(text):
     words = re.findall(r'[a-z]{5,}', text.lower())
     return {w[:6] for w in words if w not in STOP}

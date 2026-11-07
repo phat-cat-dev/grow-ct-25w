@@ -10,7 +10,7 @@
  * Prerequisites:
  *   1. Course built: courses/_generated/<course>-<context>/ exists
  *   2. Symlink set: src/course -> courses/_generated/<course>-<context>/
- *   3. Server running: grunt server (port 9001)
+ *   3. Server running: grunt server (port 9000)
  *
  * Exit codes:
  *   0 - all checks passed
@@ -28,7 +28,7 @@ const { values: args } = parseArgs({
   options: {
     course: { type: 'string' },
     context: { type: 'string', default: 'baseline' },
-    port: { type: 'string', default: '9001' }
+    port: { type: 'string', default: '9000' }
   }
 });
 

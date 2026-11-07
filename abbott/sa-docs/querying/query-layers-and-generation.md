@@ -1,0 +1,1 @@
+/home/abbottdev/workspace-26u/wkspc2615-grow-course/grow-ct-25w/wkspc2614-adapt3/gate-experiment/query-layers-and-generation.md

@@ -1,0 +1,274 @@
+pathway: finding-using-sources
+status: generated
+note: 'Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores.
+  No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically
+  by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json)
+  -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes
+  (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity
+  per tier (catalogue/context/pathway-tier-readings/<pathway>.json).'
+tiers:
+- tier: introductory
+  fheqLevel: 4
+  verbBand: Beginner
+  capabilities:
+  - ref: finding-using-sources#i1
+    rowId: i1
+    fheqLevel: 3
+    statement: Explain how academic searching differs from everyday searching
+    knowledgeKind: conceptual
+    benchmarks: []
+    genericOutcomes:
+    - kind: conceptual
+      title: Explanation of how structured searching differs from casual searching
+      learningOutcome: The student can explain how structured, scholarly searching differs from everyday
+        searching in the terms chosen, the sources consulted, and the checks applied before trusting a
+        result.
+    - kind: applied
+      title: Structured search explained to someone unfamiliar with it
+      learningOutcome: The student can describe, for someone unfamiliar with structured searching, the
+        practical difference between everyday searching and a scholarly search, using one worked example.
+  - ref: finding-using-sources/02
+    rowId: i2
+    fheqLevel: 4
+    statement: Use the library discovery service to locate scholarly sources
+    knowledgeKind: procedural, one set method
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/information-and-sources
+      strength: direct
+      label: Information and sources
+      strand: application
+      graduateStatement: Graduates find, select and use information and sources appropriate to the subject.
+      studentStatement: You can find, choose and use the right sources and information for your subject.
+    genericOutcomes:
+    - kind: conceptual
+      title: Scholarly sources located and selected as appropriate to a question
+      learningOutcome: The student can explain how a dedicated discovery service narrows a broad enquiry
+        to scholarly sources appropriate to a given subject and question.
+    - kind: applied
+      title: Appropriate sources located quickly using a dedicated search system
+      learningOutcome: The student can use a library discovery service to locate and select scholarly
+        sources appropriate to a specific question within a working session.
+  - ref: finding-using-sources/c1
+    rowId: i3
+    fheqLevel: 5
+    statement: Follow a staged search, starting from the reading list and what one already knows
+    knowledgeKind: metacognitive, beginning (what one already knows)
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/independent-and-self-directed-learning
+      strength: indirect
+      label: Independent and self-directed learning
+      strand: autonomy
+      graduateStatement: Graduates manage their own learning and work independently.
+      studentStatement: You can manage your own learning and work on your own.
+    genericOutcomes:
+    - kind: conceptual
+      title: Independent search sequence planned before asking for help
+      learningOutcome: The student can describe a staged search sequence that begins with existing knowledge
+        and set reading before seeking further help.
+    - kind: applied
+      title: Independent search carried out before raising a question with others
+      learningOutcome: The student can carry out a staged search independently, starting from a reading
+        list and prior knowledge, before raising questions with others.
+  tierReading:
+    practice: Begins to apply the search strategy of finding and using sources to familiar, well-defined
+      tasks with guidance, works with sources and data they are given, and describes the library clearly.
+    knowledge: Describes the scholarly sources that introduce finding and using sources, and can place
+      them in the wider field.
+    identity: Begins to describe the search strategy for the first time, following guidance on the reading
+      list as an early sense of the kind of practitioner they are becoming.
+- tier: intermediate
+  fheqLevel: 6
+  verbBand: Intermediate
+  capabilities:
+  - ref: finding-using-sources#d1
+    rowId: d1
+    fheqLevel: 4
+    statement: Identify keywords and synonyms from the task
+    knowledgeKind: conceptual
+    benchmarks: []
+    genericOutcomes:
+    - kind: conceptual
+      title: Keywords and synonyms identified before a search begins
+      learningOutcome: The student can analyse a task description to identify its component concepts and
+        generate appropriate keywords and synonyms for each one.
+    - kind: applied
+      title: Search terms built from a task's own wording and common usage
+      learningOutcome: The student can apply a task's own wording and common alternative terms to build
+        a search vocabulary that extends beyond the original phrasing.
+  - ref: finding-using-sources/01
+    rowId: d2
+    fheqLevel: 5
+    statement: Plan a search strategy with keywords and Boolean operators
+    knowledgeKind: procedural
+    benchmarks: []
+    genericOutcomes:
+    - kind: conceptual
+      title: Search strings built and explained using Boolean logic
+      learningOutcome: The student can explain how Boolean operators and truncation combine keywords into
+        a precise, purposeful search strategy.
+    - kind: applied
+      title: Reproducible search strategy planned and recorded for others
+      learningOutcome: The student can plan and record a reproducible search strategy using keywords and
+        Boolean operators so that another person could repeat it.
+  - ref: finding-using-sources#d3
+    rowId: d3
+    fheqLevel: 6
+    statement: Refine a search in cycles, reflecting on the results each time
+    knowledgeKind: metacognitive, strategic
+    benchmarks: []
+    genericOutcomes:
+    - kind: conceptual
+      title: Search cycles judged and adjusted through reflection
+      learningOutcome: The student can analyse search results from successive cycles to judge what is
+        working and what change should be carried forward.
+    - kind: applied
+      title: Search terms adjusted each cycle based on a stated reason
+      learningOutcome: The student can refine a search across repeated cycles, adjusting terms or sources
+        for a stated reason based on each round's results.
+  tierReading:
+    practice: Applies the search strategy of finding and using sources to keywords, carries out supervised
+      research and enquiry, works with data and sources, and communicates findings to different audiences.
+    knowledge: Analyses the search strategy of finding and using sources, and how the field developed
+      and where it currently stands.
+    identity: Works ethically and increasingly independently, treating practitioner identity as still
+      forming rather than fixed, shaped by the search strategy on their own learning and by how keywords
+      bear on finding and using sources.
+- tier: advanced
+  fheqLevel: 6
+  verbBand: Advanced
+  capabilities:
+  - ref: finding-using-sources/04
+    rowId: e1
+    fheqLevel: 5
+    statement: Extend a search by citation searching, databases and Google Scholar
+    knowledgeKind: procedural
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/information-and-sources
+      strength: direct
+      label: Information and sources
+      strand: application
+      graduateStatement: Graduates find, select and use information and sources appropriate to the subject.
+      studentStatement: You can find, choose and use the right sources and information for your subject.
+    genericOutcomes:
+    - kind: conceptual
+      title: Comprehensive source coverage built through citation tracking
+      learningOutcome: The student can explain how backward and forward citation tracking across multiple
+        tools builds comprehensive, appropriate coverage of a topic.
+    - kind: applied
+      title: Sources selected as appropriate after a search extended across tools
+      learningOutcome: The student can extend a search using citation tracking and additional databases,
+        then select only the sources appropriate to the question.
+  - ref: finding-using-sources/03
+    rowId: e2
+    fheqLevel: 6
+    statement: Evaluate sources for currency, authority and relevance to own knowledge
+    knowledgeKind: procedural with metacognitive (relevance to one's own knowledge)
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments
+      strength: direct
+      label: Critical evaluation of evidence and arguments
+      strand: thinking
+      graduateStatement: Graduates evaluate evidence and arguments critically and reach reasoned judgements.
+      studentStatement: You weigh up evidence and arguments critically and come to reasoned conclusions.
+    - source: universal-reference
+      statementId: qaa-universal/threshold/information-and-sources
+      strength: direct
+      label: Information and sources
+      strand: application
+      graduateStatement: Graduates find, select and use information and sources appropriate to the subject.
+      studentStatement: You can find, choose and use the right sources and information for your subject.
+    - source: universal-reference
+      statementId: qaa-universal/threshold/subject-knowledge-and-understanding
+      strength: indirect
+      label: Subject knowledge and understanding
+      strand: knowledge
+      graduateStatement: Graduates show broad and well-founded knowledge of the subject's core content.
+      studentStatement: You know the core content of your subject well and can show it.
+    genericOutcomes:
+    - kind: conceptual
+      title: Reasoned judgement reached on a source's currency and authority
+      learningOutcome: The student can evaluate a source's currency, authority and relevance against existing
+        knowledge to reach a reasoned, defensible judgement.
+    - kind: applied
+      title: Reasoned decision made on which sources to rely on
+      learningOutcome: The student can weigh competing sources for currency, authority and relevance and
+        justify a reasoned decision on which to rely on.
+  - ref: finding-using-sources#e3
+    rowId: e3
+    fheqLevel: 7
+    statement: Search comprehensively, judging when the discourse is covered
+    knowledgeKind: metacognitive, self-regulation
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments
+      strength: direct
+      label: Critical evaluation of evidence and arguments
+      strand: thinking
+      graduateStatement: Graduates evaluate evidence and arguments critically and reach reasoned judgements.
+      studentStatement: You weigh up evidence and arguments critically and come to reasoned conclusions.
+    genericOutcomes:
+    - kind: conceptual
+      title: Reasoned judgement reached on when a search is sufficiently complete
+      learningOutcome: The student can justify a judgement on when a search is sufficiently comprehensive,
+        weighing evidence such as repeated or diminishing results.
+    - kind: applied
+      title: Judgement made on when evidence-gathering is complete enough
+      learningOutcome: The student can decide and justify when evidence-gathering is complete enough,
+        recording the indicators and reasoning behind that stopping point.
+  tierReading:
+    practice: Designs and critiques the search across methods, evaluates the citation searching critically
+      throughout, and applies knowledge to current and complex problems with some originality.
+    knowledge: Critiques the search of finding and using sources, its citation searching and their bearing
+      on current thinking, and sees where understanding runs out.
+    identity: A reflexive practitioner who critiques how their own scholarly tools shape their search,
+      weighs what this means for wider debate and for audiences acting on it, and treats their professional
+      identity as still evolving through that scrutiny.
+everyTierBenchmarks:
+- source: psychology-2023
+  statementId: qaa/psychology-2023/3.17
+  strength: direct
+  extract: retrieve and organise information found in a range of sources
+  extractOnly: true
+  tierBasis: progression
+- source: psychology-2023
+  statementId: qaa/psychology-2023/4.8
+  strength: direct
+  extract: systematically reviewed and evaluated key psychological literature
+  extractOnly: true
+  tierBasis: progression
+- source: psychology-2023
+  statementId: qaa/psychology-2023/4.9
+  strength: direct
+  extract: conducted in-depth reviews of psychological literature
+  extractOnly: true
+  tierBasis: progression
+- source: universal-reference
+  statementId: qaa-universal/threshold/ethics
+  strength: indirect
+  label: Ethics, integrity and values
+  strand: autonomy
+  graduateStatement: Graduates recognise and act on the ethical issues and responsibilities of the subject.
+  studentStatement: You recognise the ethical questions in your subject and act responsibly.
+  tierBasis: floor
+- source: universal-reference
+  statementId: qaa-universal/threshold/oral-or-other-communication-to-audiences
+  strength: indirect
+  label: Oral or other communication to audiences
+  strand: communication
+  graduateStatement: Graduates communicate the subject clearly to different audiences and in different
+    forms.
+  studentStatement: You can explain your subject clearly to different audiences, in more than one form.
+  tierBasis: floor
+source:
+  script: tools/build-pathway-views.py
+  inputs:
+  - catalogue/context/pathway/finding-using-sources.json
+  - catalogue/context/pathway-evidence/finding-using-sources.json
+  - catalogue/context/pathway-tier-readings/finding-using-sources.json
+  - catalogue/context/subject/benchmarks/psychology-2023.json
+  - catalogue/context/subject/benchmarks/universal-reference.json
+  note: Deterministic join across already-built stores; no authored content. A rebuild is byte-identical.

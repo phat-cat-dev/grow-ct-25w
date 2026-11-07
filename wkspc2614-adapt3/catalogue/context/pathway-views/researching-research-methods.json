@@ -1,0 +1,492 @@
+{
+  "pathway": "researching-research-methods",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "researching-research-methods#i1",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Explain how a research project differs from an essay",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Research cycle set against essay-based argument",
+              "learningOutcome": "The student can explain how a research project's method-based cycle, posing a question, gathering evidence and reporting openly, differs from an essay's use of existing argument."
+            },
+            {
+              "kind": "applied",
+              "title": "Methods and findings explained to someone unfamiliar with research",
+              "learningOutcome": "The student can explain to someone unfamiliar with research how a method-based enquiry differs from an opinion piece, covering how evidence was gathered, checked and reported with its limits."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods/01",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Formulate a research question, rationale and aims",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.6",
+              "strength": "direct",
+              "extract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "generate and explore appropriate psychological hypotheses and research questions",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Hypothesis and question generated from a problem area",
+              "learningOutcome": "The student can explain how a testable research question, its rationale and its aims are generated from a broad problem area and checked against each other for consistency."
+            },
+            {
+              "kind": "applied",
+              "title": "Question and aims specified for a commissioned enquiry",
+              "learningOutcome": "The student can formulate a workable research question, state its rationale and specify aims that can be checked for progress, within the resources realistically available."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods#i3",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Narrow a topic to a question one can research",
+          "knowledgeKind": "metacognitive, beginning (knowing what one can do)",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.6",
+              "strength": "direct",
+              "extract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "generate and explore appropriate psychological hypotheses and research questions",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Testable question generated and refined from a broad area",
+              "learningOutcome": "The student can explain how a broad area of interest is narrowed into a specific, testable research question by checking each version against the evidence it would require."
+            },
+            {
+              "kind": "applied",
+              "title": "Enquiry scoped to fit real constraints on time and access",
+              "learningOutcome": "The student can narrow a broad research concern into a specific question that fits the time and access available, recording what has been excluded from the final scope."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the research question of researching to familiar, well-defined tasks with guidance, works with sources and data they are given, and analyses the rationale clearly.",
+        "knowledge": "Analyses the aims that introduce researching, and can place them in the wider field.",
+        "identity": "Begins to analyse the research question for the first time, following guidance on the rationale as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "researching-research-methods/02",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Structure and write a literature review and a research report",
+          "knowledgeKind": "conceptual and procedural (the genres)",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.18",
+              "strength": "direct",
+              "extract": "with a particular emphasis on conducting and reporting empirical research",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Empirical findings reported through a structured report format",
+              "learningOutcome": "The student can analyse how a structured empirical report and a thematically organised literature review combine to justify and present a piece of research clearly."
+            },
+            {
+              "kind": "applied",
+              "title": "Empirical findings reported for a non-specialist audience",
+              "learningOutcome": "The student can apply a clear reporting structure to present empirical findings and a preceding review of existing evidence to an audience unfamiliar with the research."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods/c1",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Write a research proposal that answers each of its questions",
+          "knowledgeKind": "procedural",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.6",
+              "strength": "direct",
+              "extract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "generate and explore appropriate psychological hypotheses and research questions",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Proposal sections tested against the methods they rely on",
+              "learningOutcome": "The student can evaluate whether each section of a research proposal, its question, method, timeline and resourcing, can actually generate the evidence the method promises."
+            },
+            {
+              "kind": "applied",
+              "title": "Proposal defended against questions about its own methods",
+              "learningOutcome": "The student can defend a research proposal by explaining, for each section, why its chosen method fits the question and what evidence it will produce."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods#d3",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Review the literature as critique, to place own research in it",
+          "knowledgeKind": "metacognitive, strategic (positioning one's own work)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Own enquiry positioned against existing methods of research",
+              "learningOutcome": "The student can analyse how earlier research methods and findings fall short, using that critique to justify the specific approach taken in their own enquiry."
+            },
+            {
+              "kind": "applied",
+              "title": "New work positioned against the limits of earlier enquiry",
+              "learningOutcome": "The student can position a new piece of work against the limitations of earlier research, presenting clearly which gap in existing enquiry it is intended to close."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the research proposal of researching to the literature review, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Critiques the literature review of researching, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the literature review on their own learning and by how diversity, sustainability and professional practice bear on researching."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Masters",
+      "capabilities": [
+        {
+          "ref": "researching-research-methods/03",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Apply research ethics, including consent and anonymisation",
+          "knowledgeKind": "procedural, by principles",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/ethics",
+              "strength": "direct",
+              "label": "Ethics, integrity and values",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+              "studentStatement": "You recognise the ethical questions in your subject and act responsibly."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Ethical issues identified and resolved before data collection",
+              "learningOutcome": "The student can justify the ethical decisions made before data collection, including consent, anonymisation and storage, as a reasoned judgement rather than a procedural formality."
+            },
+            {
+              "kind": "applied",
+              "title": "Ethical responsibilities acted on throughout a piece of work",
+              "learningOutcome": "The student can act on ethical responsibilities throughout a piece of research, adjusting consent, anonymisation or storage arrangements when a specific concern is identified."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods/c2",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Choose and justify a methodology and methods for a question",
+          "knowledgeKind": "procedural, criteria for choosing",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.6",
+              "strength": "direct",
+              "extract": "a range of qualitative, quantitative and mixed methods, as appropriate to the research question",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.11",
+              "strength": "direct",
+              "locator": "3.11",
+              "paraphrase": "Graduates will have written a series of research reports through the course, ending in an empirical project (or equivalent) that reports a substantial piece of research collecting original data or using an accepted alternative such as modelling or secondary analysis.",
+              "forBeneficiary": "You will write a series of research reports during your studies, leading up to a substantial project of your own in which you gather and report original data, or work with an accepted alternative such as existing datasets or computer models."
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.16",
+              "strength": "direct",
+              "extract": "generate and explore appropriate psychological hypotheses and research questions",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/4.9",
+              "strength": "indirect",
+              "extract": "adopted multiple perspectives in psychology and systematically analysed research paradigms",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/2.1",
+              "strength": "direct",
+              "extract": "Courses also develop in students, a range of research skills and methods of enquiry for investigating cognitions and behaviour",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Qualitative, quantitative or mixed methods chosen for fit",
+              "learningOutcome": "The student can justify a choice between qualitative, quantitative and mixed methods by comparing the evidence each would produce against what the research question requires."
+            },
+            {
+              "kind": "applied",
+              "title": "Appropriate methods chosen and defended for a live question",
+              "learningOutcome": "The student can select and defend a combination of research methods for a live question, presenting the justification clearly enough for another person to scrutinise before work begins."
+            }
+          ]
+        },
+        {
+          "ref": "researching-research-methods/04",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Plan and scope a dissertation-length project",
+          "knowledgeKind": "metacognitive, self-regulation",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/research-and-enquiry-methods",
+              "strength": "direct",
+              "label": "Research and enquiry methods",
+              "strand": "application",
+              "graduateStatement": "Graduates understand and use the subject's methods of research and enquiry.",
+              "studentStatement": "You know how research is done in your subject and can carry out an enquiry yourself."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Extended enquiry scoped around its own methods of research",
+              "learningOutcome": "The student can construct an extended research plan that scopes timeline and resourcing around its chosen methods, with milestones and fallback options for stages at risk of delay."
+            },
+            {
+              "kind": "applied",
+              "title": "Large-scale enquiry planned around realistic delivery constraints",
+              "learningOutcome": "The student can plan a large, independent research project against realistic time, budget and access constraints, agreeing in advance how major risks to delivery will be handled."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critically evaluates the methodology across methods, synthesises the research ethics critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critically evaluates the research ethics of researching, its informed consent and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critically evaluates how their own methods shape their research project, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.7",
+      "strength": "indirect",
+      "extract": "the ability to conduct and interpret appropriate statistical tests",
+      "extractOnly": true,
+      "tierBasis": "floor"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.10",
+      "strength": "direct",
+      "extract": "rigorous specialist training is required to engender a critical understanding of the role of research design",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.3",
+      "strength": "indirect",
+      "extract": "the inherent difficulties associated with extrapolating research conducted with Western samples to other cultures",
+      "extractOnly": true,
+      "tierBasis": "floor"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.8",
+      "strength": "direct",
+      "extract": "constructed and tested research hypotheses and undertaken supervised research investigating specific lines of enquiry, both individually and in groups",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+      "strength": "indirect",
+      "label": "Subject knowledge and understanding",
+      "strand": "knowledge",
+      "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+      "studentStatement": "You know the core content of your subject well and can show it.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+      "strength": "indirect",
+      "label": "Critical evaluation of evidence and arguments",
+      "strand": "thinking",
+      "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+      "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+      "strength": "indirect",
+      "label": "Independent and self-directed learning",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates manage their own learning and work independently.",
+      "studentStatement": "You can manage your own learning and work on your own.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/researching-research-methods.json",
+      "catalogue/context/pathway-evidence/researching-research-methods.json",
+      "catalogue/context/pathway-tier-readings/researching-research-methods.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

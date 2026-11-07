@@ -1,0 +1,419 @@
+{
+  "pathway": "understanding-learning-assessment-feedback",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "understanding-learning-assessment-feedback/01",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Understand how learning works in a discipline's discourse community",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Core knowledge traced to a community's shared practice",
+              "learningOutcome": "The student can explain how a discipline's core knowledge is established and legitimised through participation in its community of practice, rather than through isolated facts."
+            },
+            {
+              "kind": "applied",
+              "title": "Core knowledge checked against a community of practitioners",
+              "learningOutcome": "The student can check their understanding of a core topic against how practitioners in the discipline actually apply and test it."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/04",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Tell formative from summative assessment and engage with varied forms",
+          "knowledgeKind": "conceptual, with one procedure",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Formative and summative purposes distinguished by function",
+              "learningOutcome": "The student can distinguish formative from summative assessment by purpose, timing and the role each plays in improving or recording performance."
+            },
+            {
+              "kind": "applied",
+              "title": "Varied forms of judgement engaged with on their own terms",
+              "learningOutcome": "The student can engage appropriately with different forms of assessment, adjusting their approach according to whether a form is meant to improve or to record their work."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/02",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Tell active, constructivist learning from passive reception",
+          "knowledgeKind": "metacognitive, beginning (knowledge of learning strategies)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Core content tested through a deep approach to study",
+              "learningOutcome": "The student can explain how a deep, questioning approach to study produces more well-founded subject knowledge than passive, surface-level reading."
+            },
+            {
+              "kind": "applied",
+              "title": "Well-founded knowledge built by active questioning on the job",
+              "learningOutcome": "The student can build well-founded knowledge by actively questioning procedures and explanations rather than accepting them at face value."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the academic learning of understanding learning, assessment and feedback to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes the discipline clearly.",
+        "knowledge": "Describes the assessment forms that introduce understanding learning, assessment and feedback, and can place them in the wider field.",
+        "identity": "Begins to describe the constructivist learning for the first time, following guidance on the passive reception as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "understanding-learning-assessment-feedback/03",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Interpret learning outcomes and how activities align to them",
+          "knowledgeKind": "conceptual and analytical",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.30",
+              "strength": "direct",
+              "extract": "the learning outcomes they seek to develop and measure",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.31",
+              "strength": "direct",
+              "extract": "Assessment criteria are clearly articulated and related to the module and course learning outcomes",
+              "extractOnly": true
+            },
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/4.5",
+              "strength": "direct",
+              "locator": "4.5",
+              "paraphrase": "Assessments matched to learning outcomes let students reach the standard; the base classification corresponds to framework level 6 (FHEQ, outside Scotland) or level 10 (FQHEIS, Scotland); the standards guide conversion courses at FHEQ level 7 or FQHEIS level 11, whose outcomes must ultimately align with the right framework levels.",
+              "forBeneficiary": "not-applicable: a duty on the provider in setting outcome levels"
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Assessment criteria traced back to stated outcomes",
+              "learningOutcome": "The student can analyse how assessment criteria, activities and stated learning outcomes are aligned, identifying any mismatch between them."
+            },
+            {
+              "kind": "applied",
+              "title": "Review criteria matched to agreed goals before work begins",
+              "learningOutcome": "The student can evaluate, before starting a task, whether the criteria it will be judged against clearly relate to its intended outcomes."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/06",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Turn feedback into an action plan through reflection",
+          "knowledgeKind": "procedural",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Reflection used to turn comment into a dated action plan",
+              "learningOutcome": "The student can analyse feedback through deliberate reflection to identify why a gap occurred and convert that analysis into a dated action plan."
+            },
+            {
+              "kind": "applied",
+              "title": "Feedback converted into a tracked plan for improvement",
+              "learningOutcome": "The student can convert feedback received on their work into a tracked plan of dated actions and review progress against it over time."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/05",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Apply self-regulated learning cycles to independent study",
+          "knowledgeKind": "metacognitive, strategic",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "direct",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "indirect",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Independent study managed through a full regulation cycle",
+              "learningOutcome": "The student can explain how setting goals, monitoring progress and evaluating outcomes form a self-regulated cycle that sustains independent study."
+            },
+            {
+              "kind": "applied",
+              "title": "Self-directed work regulated without outside direction",
+              "learningOutcome": "The student can manage a piece of independent work by setting their own targets, tracking progress against them and adjusting their approach without external direction."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the reflective practice of understanding learning, assessment and feedback to the feedback, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the intended learning outcomes of understanding learning, assessment and feedback, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the self-regulated learning cycle on their own learning and by how intended learning outcomes bear on understanding learning, assessment and feedback."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "understanding-learning-assessment-feedback/c3",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Adapt to the demands of different types of assessment",
+          "knowledgeKind": "procedural, criteria for choosing",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.31",
+              "strength": "direct",
+              "extract": "Assessment criteria are clearly articulated and related to the module and course learning outcomes",
+              "extractOnly": true
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Criteria compared across assessment types for consistency",
+              "learningOutcome": "The student can critique how published criteria for different assessment types encode different levels of cognitive demand, despite assessing related learning outcomes."
+            },
+            {
+              "kind": "applied",
+              "title": "Preparation adapted once criteria for a form are read",
+              "learningOutcome": "The student can justify and adapt their approach to preparing for a given form of assessment based on a careful reading of its specific criteria."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/c1",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Assess own and peers' work against marking criteria",
+          "knowledgeKind": "metacognitive (evaluative judgement)",
+          "benchmarks": [
+            {
+              "source": "psychology-2023",
+              "statementId": "qaa/psychology-2023/3.31",
+              "strength": "direct",
+              "extract": "Assessment criteria are clearly articulated and related to the module and course learning outcomes",
+              "extractOnly": true
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+              "strength": "indirect",
+              "label": "Critical evaluation of evidence and arguments",
+              "strand": "thinking",
+              "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+              "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Own work judged against clearly articulated criteria",
+              "learningOutcome": "The student can justify a mark for a piece of work by evaluating it criterion by criterion against clearly articulated standards."
+            },
+            {
+              "kind": "applied",
+              "title": "Peer work judged against shared, explicit standards",
+              "learningOutcome": "The student can critique a peer's work against shared, explicit standards and give criterion-by-criterion feedback rather than a general impression."
+            }
+          ]
+        },
+        {
+          "ref": "understanding-learning-assessment-feedback/c2",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Use feedback in dialogue with tutors to sustain development across a degree",
+          "knowledgeKind": "metacognitive, self-knowledge, with procedural",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "direct",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Recurring feedback used to deepen core knowledge over time",
+              "learningOutcome": "The student can synthesise feedback received over an extended period to diagnose a recurring theme and explain how resolving it deepens their core subject knowledge."
+            },
+            {
+              "kind": "applied",
+              "title": "Dialogue with a reviewer used to build core knowledge",
+              "learningOutcome": "The student can sustain an ongoing dialogue with a reviewer across several rounds of feedback, agreeing actions that build their grasp of core material over time."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques types of assessment across methods, evaluates assessment demands critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the assessment demands of understanding learning, assessment and feedback, its types of assessment and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own types of assessment shape their peers' work, weighs what this means for wider debate and for audiences acting on it, and treats their professional identity as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/2.14",
+      "strength": "direct",
+      "extract": "students to have an input into the design of the curriculum and assessment",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.19",
+      "strength": "direct",
+      "extract": "opportunities for students to shape and co-create aspects of their learning and assessment",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.29",
+      "strength": "direct",
+      "extract": "students are provided with clear, constructive feedback and feedforward",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.32",
+      "strength": "direct",
+      "extract": "Assessments help students to monitor and reflect on their own development",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/1.31",
+      "strength": "direct",
+      "extract": "Assessments facilitate attainment and authentic demonstration of the key competencies",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.28",
+      "strength": "direct",
+      "extract": "Assessment and feedback enable students to develop and demonstrate a full range of knowledge, skills and attributes",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/understanding-learning-assessment-feedback.json",
+      "catalogue/context/pathway-evidence/understanding-learning-assessment-feedback.json",
+      "catalogue/context/pathway-tier-readings/understanding-learning-assessment-feedback.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

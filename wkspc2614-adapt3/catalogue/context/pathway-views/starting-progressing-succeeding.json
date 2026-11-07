@@ -1,0 +1,363 @@
+{
+  "pathway": "starting-progressing-succeeding",
+  "status": "generated",
+  "note": "Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores. No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json) -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity per tier (catalogue/context/pathway-tier-readings/<pathway>.json).",
+  "tiers": [
+    {
+      "tier": "introductory",
+      "fheqLevel": 4,
+      "verbBand": "Beginner",
+      "capabilities": [
+        {
+          "ref": "starting-progressing-succeeding#i1",
+          "rowId": "i1",
+          "fheqLevel": 3,
+          "statement": "Explain what excelling at university means",
+          "knowledgeKind": "conceptual",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Excelling characterised through levels of understanding",
+              "learningOutcome": "The student can define and explain excelling as a staged progression from meeting minimum requirements to demonstrating mastery, in their own words."
+            },
+            {
+              "kind": "applied",
+              "title": "Excelling in a role explained to someone new",
+              "learningOutcome": "The student can identify and communicate, to someone unfamiliar with a role, the practical difference between adequate performance and excelling, using a concrete example of each."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding/c1",
+          "rowId": "i2",
+          "fheqLevel": 4,
+          "statement": "Recognise and follow the conventions of academic practice",
+          "knowledgeKind": "procedural",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Conventions of a field identified before adopting them",
+              "learningOutcome": "The student can identify the conventions that govern practice in an unfamiliar field and explain why those conventions exist."
+            },
+            {
+              "kind": "applied",
+              "title": "New role's conventions followed from the outset",
+              "learningOutcome": "The student can observe and follow the unwritten conventions of a new setting when making their first contributions to it."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding/01",
+          "rowId": "i3",
+          "fheqLevel": 5,
+          "statement": "Adopt a growth mindset towards academic challenge",
+          "knowledgeKind": "metacognitive and self-system (beliefs about one's own ability)",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Challenge reframed as opportunity rather than threat",
+              "learningOutcome": "The student can describe how reframing a difficult task as an opportunity to develop a skill reflects a growth mindset."
+            },
+            {
+              "kind": "applied",
+              "title": "Difficult task treated as a learning opportunity",
+              "learningOutcome": "The student can respond to a challenging task by treating it as a chance to learn and acting on feedback received before it is finished."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Begins to apply the academic practice of starting, progressing and succeeding at university to familiar, well-defined tasks with guidance, works with sources and data they are given, and describes conventions of academic practice clearly.",
+        "knowledge": "Describes the conventions of academic practice that introduce starting, progressing and succeeding at university, and can place them in the wider field.",
+        "identity": "Begins to describe the growth mindset for the first time, following guidance on the academic challenge as an early sense of the kind of practitioner they are becoming."
+      }
+    },
+    {
+      "tier": "intermediate",
+      "fheqLevel": 6,
+      "verbBand": "Intermediate",
+      "capabilities": [
+        {
+          "ref": "starting-progressing-succeeding/03",
+          "rowId": "d1",
+          "fheqLevel": 4,
+          "statement": "Set and sustain mastery-oriented goals",
+          "knowledgeKind": "procedural",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "A mastery goal set and tracked over time",
+              "learningOutcome": "The student can analyse the difference between a mastery goal and a performance target, and define what achieving a mastery goal would involve."
+            },
+            {
+              "kind": "applied",
+              "title": "A mastery goal sustained in a real role",
+              "learningOutcome": "The student can set a mastery goal that goes beyond required targets and sustain progress towards it over time without external prompting."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding/02",
+          "rowId": "d2",
+          "fheqLevel": 5,
+          "statement": "Build self-efficacy and manage stress and anxiety under pressure",
+          "knowledgeKind": "metacognitive and self-system (managing one's own state)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "direct",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Independent working planned to manage pressure",
+              "learningOutcome": "The student can explain how structuring independent work into manageable stages helps sustain confidence and reduce stress under pressure."
+            },
+            {
+              "kind": "applied",
+              "title": "Confidence sustained while working independently under pressure",
+              "learningOutcome": "The student can manage their own learning independently under pressure, adjusting their approach when they notice confidence or stress levels changing."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding/c2",
+          "rowId": "d3",
+          "fheqLevel": 6,
+          "statement": "Develop an academic voice and the confidence to own one's practice",
+          "knowledgeKind": "metacognitive, self-knowledge",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Voice grounded in command of core content",
+              "learningOutcome": "The student can distinguish their own interpretation of a topic from paraphrased source material, grounding that interpretation in broad, well-founded subject knowledge."
+            },
+            {
+              "kind": "applied",
+              "title": "Expert view voiced with confidence in practice",
+              "learningOutcome": "The student can voice their own professional assessment of a situation, drawing on well-founded subject knowledge, and defend that assessment when questioned."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Applies the practice of starting, progressing and succeeding at university to academic goals, carries out supervised research and enquiry, works with data and sources, and communicates findings to different audiences.",
+        "knowledge": "Analyses the academic goals of starting, progressing and succeeding at university, and how the field developed and where it currently stands.",
+        "identity": "Works ethically and increasingly independently, treating practitioner identity as still forming rather than fixed, shaped by the self-efficacy on their own learning and by how conventions bear on starting, progressing and succeeding at university."
+      }
+    },
+    {
+      "tier": "advanced",
+      "fheqLevel": 6,
+      "verbBand": "Advanced",
+      "capabilities": [
+        {
+          "ref": "starting-progressing-succeeding/04",
+          "rowId": "e1",
+          "fheqLevel": 5,
+          "statement": "Articulate one's graduate capital for the move from student to graduate",
+          "knowledgeKind": "conceptual and procedural",
+          "benchmarks": [],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Readiness for transition mapped across personal assets",
+              "learningOutcome": "The student can synthesise distinct forms of personal advantage, such as knowledge, networks and resilience, into a reasoned account of their readiness for transition."
+            },
+            {
+              "kind": "applied",
+              "title": "Personal advantages presented to a decision-maker",
+              "learningOutcome": "The student can justify their readiness for a genuine transition by presenting specific personal advantages, each supported by evidence, to a decision-maker."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding/c3",
+          "rowId": "e2",
+          "fheqLevel": 6,
+          "statement": "Direct one's own learning and development, as a lifelong learner",
+          "knowledgeKind": "metacognitive, self-regulation",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/independent-and-self-directed-learning",
+              "strength": "direct",
+              "label": "Independent and self-directed learning",
+              "strand": "autonomy",
+              "graduateStatement": "Graduates manage their own learning and work independently.",
+              "studentStatement": "You can manage your own learning and work on your own."
+            },
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Own learning managed without external direction",
+              "learningOutcome": "The student can construct a self-directed plan for a substantial piece of learning, justifying the sources, sequence and standard of knowledge chosen without external direction."
+            },
+            {
+              "kind": "applied",
+              "title": "Independent work carried through unprompted and unsupervised",
+              "learningOutcome": "The student can independently plan, carry out and judge the standard of a substantial piece of work, directing their own learning without external oversight."
+            }
+          ]
+        },
+        {
+          "ref": "starting-progressing-succeeding#e3",
+          "rowId": "e3",
+          "fheqLevel": 7,
+          "statement": "Consolidate a graduate identity",
+          "knowledgeKind": "metacognitive, self-knowledge (identity)",
+          "benchmarks": [
+            {
+              "source": "universal-reference",
+              "statementId": "qaa-universal/threshold/subject-knowledge-and-understanding",
+              "strength": "indirect",
+              "label": "Subject knowledge and understanding",
+              "strand": "knowledge",
+              "graduateStatement": "Graduates show broad and well-founded knowledge of the subject's core content.",
+              "studentStatement": "You know the core content of your subject well and can show it."
+            }
+          ],
+          "genericOutcomes": [
+            {
+              "kind": "conceptual",
+              "title": "Identity grounded in command of core knowledge",
+              "learningOutcome": "The student can critique their own development by linking specific, well-founded subject knowledge to an emerging sense of themselves as a graduate."
+            },
+            {
+              "kind": "applied",
+              "title": "Graduate identity shown through command of knowledge",
+              "learningOutcome": "The student can present themselves to others as a graduate by drawing fluently on well-founded subject knowledge rather than listing qualifications alone."
+            }
+          ]
+        }
+      ],
+      "tierReading": {
+        "practice": "Designs and critiques the academic practice across methods, evaluates the graduate capital critically throughout, and applies knowledge to current and complex problems with some originality.",
+        "knowledge": "Critiques the graduate capital of starting, progressing and succeeding at university, its transition and their bearing on current thinking, and sees where understanding runs out.",
+        "identity": "A reflexive practitioner who critiques how their own position, assumptions and values shape their academic practice, weighs what this means for wider debate and for audiences acting on it, and treats their learning and development as still evolving through that scrutiny."
+      }
+    }
+  ],
+  "everyTierBenchmarks": [
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/2.7",
+      "strength": "direct",
+      "extract": "a Psychology student will progress from one level of study to the next",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.17",
+      "strength": "direct",
+      "extract": "take ownership for one's own learning, employability and development",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/3.23",
+      "strength": "direct",
+      "extract": "students progress through the course, they assume increasing responsibility for their own learning",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.6",
+      "strength": "direct",
+      "extract": "engagement in research and independent study",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/4.10",
+      "strength": "direct",
+      "extract": "gained transferable employability skills",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "psychology-2023",
+      "statementId": "qaa/psychology-2023/2.4",
+      "strength": "direct",
+      "extract": "develop confidence in addressing their personal, professional and community goals",
+      "extractOnly": true,
+      "tierBasis": "progression"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments",
+      "strength": "indirect",
+      "label": "Critical evaluation of evidence and arguments",
+      "strand": "thinking",
+      "graduateStatement": "Graduates evaluate evidence and arguments critically and reach reasoned judgements.",
+      "studentStatement": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/ethics",
+      "strength": "indirect",
+      "label": "Ethics, integrity and values",
+      "strand": "autonomy",
+      "graduateStatement": "Graduates recognise and act on the ethical issues and responsibilities of the subject.",
+      "studentStatement": "You recognise the ethical questions in your subject and act responsibly.",
+      "tierBasis": "floor"
+    },
+    {
+      "source": "universal-reference",
+      "statementId": "qaa-universal/threshold/oral-or-other-communication-to-audiences",
+      "strength": "indirect",
+      "label": "Oral or other communication to audiences",
+      "strand": "communication",
+      "graduateStatement": "Graduates communicate the subject clearly to different audiences and in different forms.",
+      "studentStatement": "You can explain your subject clearly to different audiences, in more than one form.",
+      "tierBasis": "floor"
+    }
+  ],
+  "source": {
+    "script": "tools/build-pathway-views.py",
+    "inputs": [
+      "catalogue/context/pathway/starting-progressing-succeeding.json",
+      "catalogue/context/pathway-evidence/starting-progressing-succeeding.json",
+      "catalogue/context/pathway-tier-readings/starting-progressing-succeeding.json",
+      "catalogue/context/subject/benchmarks/psychology-2023.json",
+      "catalogue/context/subject/benchmarks/universal-reference.json"
+    ],
+    "note": "Deterministic join across already-built stores; no authored content. A rebuild is byte-identical."
+  }
+}

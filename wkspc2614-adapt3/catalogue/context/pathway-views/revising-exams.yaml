@@ -1,0 +1,290 @@
+pathway: revising-exams
+status: generated
+note: 'Pathway view: the benchmark chain for this pathway, joined read-only from four already-built stores.
+  No new data is invented, filled or inflected here; this is a view, not a new store. Built deterministically
+  by tools/build-pathway-views.py. Chain: benchmark statement (full text, pulled back from catalogue/context/subject/benchmarks/<source>.json)
+  -> the 9 capabilities (catalogue/context/pathway/<pathway>.json) -> the 18 generic learning outcomes
+  (catalogue/context/pathway-evidence/<pathway>.json) -> the 9 tier readings, practice/knowledge/identity
+  per tier (catalogue/context/pathway-tier-readings/<pathway>.json).'
+tiers:
+- tier: introductory
+  fheqLevel: 4
+  verbBand: Beginner
+  capabilities:
+  - ref: revising-exams#i1
+    rowId: i1
+    fheqLevel: 3
+    statement: Explain the forms of exam and what each demands
+    knowledgeKind: factual and conceptual
+    benchmarks: []
+    genericOutcomes:
+    - kind: conceptual
+      title: Exam demands explained through format features
+      learningOutcome: The student can identify and explain the demands of different exam formats, including
+        what each tests and how marks are likely distributed.
+    - kind: applied
+      title: Format briefing used before choosing a strategy
+      learningOutcome: The student can produce a short briefing that identifies what each exam format
+        demands and where preparation effort should be concentrated.
+  - ref: revising-exams#i2
+    rowId: i2
+    fheqLevel: 4
+    statement: Make a simple revision plan from the time available
+    knowledgeKind: procedural, one set method
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    genericOutcomes:
+    - kind: conceptual
+      title: Development plan built from reflection on past revision
+      learningOutcome: The student can explain how reflecting on past revision attempts informs a realistic
+        plan for allocating the time available.
+    - kind: applied
+      title: Realistic plan drawn up after reviewing past attempts
+      learningOutcome: The student can produce a revision plan that allocates available time across topics
+        by priority, informed by review of a previous attempt.
+  - ref: revising-exams/01
+    rowId: i3
+    fheqLevel: 5
+    statement: Manage exam anxiety and prepare in an organised way
+    knowledgeKind: metacognitive and self-system (managing one's own state)
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/independent-and-self-directed-learning
+      strength: indirect
+      label: Independent and self-directed learning
+      strand: autonomy
+      graduateStatement: Graduates manage their own learning and work independently.
+      studentStatement: You can manage your own learning and work on your own.
+    genericOutcomes:
+    - kind: conceptual
+      title: Independent routine built to manage exam nerves
+      learningOutcome: The student can explain how self-directed techniques, tested and refined over time,
+        can be used to manage anxiety before an assessment.
+    - kind: applied
+      title: Self-managed preparation routine for a pressured exam
+      learningOutcome: The student can independently design and run an organised preparation routine that
+        manages anxiety before and during a high-stakes assessment.
+  tierReading:
+    practice: Begins to apply the exam anxiety of revising and taking exams to familiar, well-defined
+      tasks with guidance, works with sources and data they are given, and describes exams clearly.
+    knowledge: Describes the exams that introduce revising and taking exams, and can place them in the
+      wider field.
+    identity: Begins to describe the exam anxiety for the first time, following guidance on exams as an
+      early sense of the kind of practitioner they are becoming.
+- tier: intermediate
+  fheqLevel: 6
+  verbBand: Intermediate
+  capabilities:
+  - ref: revising-exams/02
+    rowId: d1
+    fheqLevel: 4
+    statement: Turn passive revision into active revision
+    knowledgeKind: conceptual and procedural
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    genericOutcomes:
+    - kind: conceptual
+      title: Study methods reviewed and replaced through reflection
+      learningOutcome: The student can analyse why passive revision methods fail to produce lasting recall
+        and explain how active techniques improve retention.
+    - kind: applied
+      title: Active revision adopted after reviewing what failed
+      learningOutcome: The student can replace an ineffective passive study method with an active technique
+        and evaluate the improvement in recall it produces.
+  - ref: revising-exams#d2
+    rowId: d2
+    fheqLevel: 5
+    statement: Target revision at the gaps in own knowledge
+    knowledgeKind: procedural with metacognitive (knowing one's gaps)
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/subject-knowledge-and-understanding
+      strength: direct
+      label: Subject knowledge and understanding
+      strand: knowledge
+      graduateStatement: Graduates show broad and well-founded knowledge of the subject's core content.
+      studentStatement: You know the core content of your subject well and can show it.
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    genericOutcomes:
+    - kind: conceptual
+      title: Subject gaps mapped against core content expected
+      learningOutcome: The student can analyse their own command of core subject content against what
+        is expected, in order to identify genuine gaps in knowledge.
+    - kind: applied
+      title: Preparation time targeted at weakest core content
+      learningOutcome: The student can evaluate their own knowledge against expected core content and
+        direct remaining preparation time at the weakest areas identified.
+  - ref: revising-exams#d3
+    rowId: d3
+    fheqLevel: 6
+    statement: Monitor own revision and change it when it is not working
+    knowledgeKind: metacognitive, strategic
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    genericOutcomes:
+    - kind: conceptual
+      title: Revision adjusted after reflecting on recall evidence
+      learningOutcome: The student can analyse recall evidence from their own revision to judge whether
+        a method is working and explain the reasoning behind any change.
+    - kind: applied
+      title: Approach changed after reflecting on weak results
+      learningOutcome: The student can evaluate recall evidence against expectation and apply a specific,
+        reasoned change to their revision approach when results are weak.
+  tierReading:
+    practice: Applies the revision techniques of revising and taking exams to the revision, carries out
+      supervised research and enquiry, works with data and sources, and communicates findings to different
+      audiences.
+    knowledge: Analyses the revision of revising and taking exams, and how the field developed and where
+      it currently stands.
+    identity: Works ethically and increasingly independently, treating practitioner identity as still
+      forming rather than fixed, shaped by the revision on their own learning and by how revision techniques
+      bear on revising and taking exams.
+- tier: advanced
+  fheqLevel: 6
+  verbBand: Advanced
+  capabilities:
+  - ref: revising-exams/03
+    rowId: e1
+    fheqLevel: 5
+    statement: Use kinaesthetic and role-play techniques to deepen engagement
+    knowledgeKind: procedural
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    genericOutcomes:
+    - kind: conceptual
+      title: Physical rehearsal reflected on to plan development
+      learningOutcome: The student can critique how physical rehearsal and role-play deepen engagement
+        with material compared with reading-based methods, and justify when to use each.
+    - kind: applied
+      title: Scenario rehearsal reviewed to plan the next one
+      learningOutcome: The student can design and run a physical rehearsal of a scenario, then evaluate
+        what it revealed to plan a second, targeted rehearsal.
+  - ref: revising-exams/04
+    rowId: e2
+    fheqLevel: 6
+    statement: Apply an exam strategy across formats and on the day
+    knowledgeKind: procedural, conditional (by format)
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/reflection-and-personal-development
+      strength: direct
+      label: Reflection and personal development
+      strand: autonomy
+      graduateStatement: Graduates reflect on their learning and practice and plan their development.
+      studentStatement: You can reflect on how you learn and work, and plan how to improve.
+    - source: universal-reference
+      statementId: qaa-universal/threshold/independent-and-self-directed-learning
+      strength: indirect
+      label: Independent and self-directed learning
+      strand: autonomy
+      graduateStatement: Graduates manage their own learning and work independently.
+      studentStatement: You can manage your own learning and work on your own.
+    genericOutcomes:
+    - kind: conceptual
+      title: Strategy adjusted across formats through reflection
+      learningOutcome: The student can evaluate how an exam strategy performs across different formats
+        and justify adjustments carried forward from one sitting to the next.
+    - kind: applied
+      title: Time plan carried across formats and refined
+      learningOutcome: The student can independently apply and refine a time-management strategy across
+        exam formats, adjusting it under pressure based on performance in each sitting.
+  - ref: revising-exams#e3
+    rowId: e3
+    fheqLevel: 7
+    statement: Choose techniques by what works, judged by own recall
+    knowledgeKind: metacognitive, self-knowledge with conditional
+    benchmarks:
+    - source: universal-reference
+      statementId: qaa-universal/threshold/subject-knowledge-and-understanding
+      strength: direct
+      label: Subject knowledge and understanding
+      strand: knowledge
+      graduateStatement: Graduates show broad and well-founded knowledge of the subject's core content.
+      studentStatement: You know the core content of your subject well and can show it.
+    - source: universal-reference
+      statementId: qaa-universal/threshold/critical-evaluation-of-evidence-and-arguments
+      strength: indirect
+      label: Critical evaluation of evidence and arguments
+      strand: thinking
+      graduateStatement: Graduates evaluate evidence and arguments critically and reach reasoned judgements.
+      studentStatement: You weigh up evidence and arguments critically and come to reasoned conclusions.
+    genericOutcomes:
+    - kind: conceptual
+      title: Technique evidence weighed to reach a reasoned choice
+      learningOutcome: The student can evaluate evidence of how effective a technique is, measured by
+        their own recall, to reach a reasoned judgement about which method to use.
+    - kind: applied
+      title: Recommendation on technique argued from weighed evidence
+      learningOutcome: The student can justify a recommended revision technique to someone else by weighing
+        recall evidence against common assumptions, stating what would change the judgement.
+  tierReading:
+    practice: Designs and critiques revision techniques across methods, evaluates the role-play critically
+      throughout, and applies knowledge to current and complex problems with some originality.
+    knowledge: Critiques the role-play of revising and taking exams, its revision techniques and their
+      bearing on current thinking, and sees where understanding runs out.
+    identity: A reflexive practitioner who critiques how their own revision techniques shape their role-play,
+      weighs what this means for wider debate and for audiences acting on it, and treats their professional
+      identity as still evolving through that scrutiny.
+everyTierBenchmarks:
+- source: psychology-2023
+  statementId: qaa/psychology-2023/3.30
+  strength: direct
+  extract: reflective reports, presentations and examinations
+  extractOnly: true
+  tierBasis: progression
+- source: universal-reference
+  statementId: qaa-universal/threshold/ethics
+  strength: indirect
+  label: Ethics, integrity and values
+  strand: autonomy
+  graduateStatement: Graduates recognise and act on the ethical issues and responsibilities of the subject.
+  studentStatement: You recognise the ethical questions in your subject and act responsibly.
+  tierBasis: floor
+- source: universal-reference
+  statementId: qaa-universal/threshold/oral-or-other-communication-to-audiences
+  strength: indirect
+  label: Oral or other communication to audiences
+  strand: communication
+  graduateStatement: Graduates communicate the subject clearly to different audiences and in different
+    forms.
+  studentStatement: You can explain your subject clearly to different audiences, in more than one form.
+  tierBasis: floor
+source:
+  script: tools/build-pathway-views.py
+  inputs:
+  - catalogue/context/pathway/revising-exams.json
+  - catalogue/context/pathway-evidence/revising-exams.json
+  - catalogue/context/pathway-tier-readings/revising-exams.json
+  - catalogue/context/subject/benchmarks/psychology-2023.json
+  - catalogue/context/subject/benchmarks/universal-reference.json
+  note: Deterministic join across already-built stores; no authored content. A rebuild is byte-identical.

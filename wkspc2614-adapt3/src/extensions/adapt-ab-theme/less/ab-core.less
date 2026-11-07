@@ -386,9 +386,11 @@ button.btn-icon,
 // same max-width at every breakpoint and stay aligned.
 
 // ---------------------------------------------------------------------------
-// Lesson section hierarchy (v3 five-article model)
+// Lesson section hierarchy (v4 four-article model, docs/authoring/lesson-page-model-v4.md)
 // ---------------------------------------------------------------------------
-// The five titled articles (article--lesson-*). Section title gets a little
+// The titled articles (article--lesson-*) - a wildcard class match, so this
+// rule needs no edit when a section is added, renamed or merged (v3's five
+// sections -> v4's four covered it for free). Section title gets a little
 // extra top space and a faint dark-blue rule to read as a section break; the
 // knowledge-check question sits a step below it (h5 scale, lightly muted).
 [class*="article--lesson-"] .article__title {
