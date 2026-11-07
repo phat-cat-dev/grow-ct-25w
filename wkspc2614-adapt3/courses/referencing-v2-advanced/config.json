@@ -3,7 +3,7 @@
   "_defaultLanguage": "en",
   "_defaultDirection": "ltr",
   "_questionWeight": 1,
-  "_theme": "adapt-contrib-vanilla",
+  "_theme": "grow-ct",
   "_menu": "adapt-contrib-boxMenu",
   "_logging": {
     "_isEnabled": true,
@@ -86,6 +86,10 @@
     "_limitToSelector": ""
   },
   "build": {
-    "strictMode": true
+    "strictMode": true,
+    "excludes": [
+      "adapt-contrib-vanilla",
+      "grow-ct-theme-packs"
+    ]
   }
 }
