@@ -1102,6 +1102,50 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "summary": "<p>You have reached the end of the course, and of this pathway. Referencing is no longer a mechanical or even a judgement skill: it is an ethical practice you can be trusted with. You can justify your own course of action when a weak result tempts you toward a stronger impression, act to correct an unsupported claim in shared work, respond to a fairness issue around an unacknowledged contribution, critique your own habits against a profession's ethical expectations, and recognise and act on a new ethical responsibility without being asked. Look back at the confidence check to see how far this has moved, and carry this judgement into whatever comes next in your own academic and professional practice.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, this is a habit you carry rather than a course you finish. Notice the moment a weak result tempts you toward a stronger impression, and choose honest reporting anyway. Notice an unsupported claim or an unacknowledged contribution in shared work, and act on it even when the conversation is uncomfortable. This same ethical attention underpins the arguments you build in your academic writing, the rigour you bring to researching and investigating, and the judgement you exercise whenever you read and evaluate critically: it is not a separate strand of your practice but the integrity running through all of them.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 185 to 187 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the C-POST confidence shift (AL-5). wra-02's own dependsOn edges name crs-07 explicitly for this course's profile (pathway-distillation). Advanced is a terminal tier, so the summary closes outward to the student's own practice rather than toward a next tier (byTier.advanced in skeletons/wrapper-close)."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "No whereNext/whereNextBody fields authored: skeletons/wrapper-close's where-next block has byTier.advanced.applies=false (terminal tier; the outward move collapses into practice-connection instead). courseReferences aggregated from the sourceSections actually cited across L01 (185-187; L02-L06 carry no sourceSections). This is a seq-1 approximation ahead of the lessons landing; flagged for a seq-2 top-up once Phase B closes if any lesson's own sourceSections differ from this aggregation (the consistency rule)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-02_wrapper-close 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1132,6 +1176,35 @@
             "coupled": false
           },
           "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
         }
       ]
     }
