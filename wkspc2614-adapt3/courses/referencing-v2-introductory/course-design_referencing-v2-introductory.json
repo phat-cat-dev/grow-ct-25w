@@ -415,6 +415,80 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-07_tiered-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can explain why academic work names its sources, showing how acknowledgement lets a reader judge the quality of information used and trace claims to their origin.",
+                "layer": 1,
+                "confidenceStatement": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "id": "o2",
+                "text": "The student can describe the elements a reference needs and explain how converting sources into one consistent citation style lets a reader trace every claim.",
+                "layer": 1,
+                "confidenceStatement": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "id": "o3",
+                "text": "The student can identify inconsistent citations in a piece of writing and correct them so every citation and reference entry matches one consistent style.",
+                "layer": 1,
+                "confidenceStatement": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "id": "o4",
+                "text": "The student can identify the sources used in a piece of work and explain to someone unfamiliar with it why those sources were selected and acknowledged.",
+                "layer": 1,
+                "confidenceStatement": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "id": "o5",
+                "text": "The student can explain why recording a source at the point it is selected, rather than afterwards, keeps every citation traceable and organised for later use.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "id": "o6",
+                "text": "The student can keep an organised, traceable record of sources while gathering evidence for a task, so each one can be found and checked again later.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/c1, referencing/01, referencing/c2's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "4 Layer-1 book-section anchors (o1-o4); referencing/c2 (source-logging) has no book section, so its two outcomes (o5-o6) are Layer-2 capability-evidence fills"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-07_tiered-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],

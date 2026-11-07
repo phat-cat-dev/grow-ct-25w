@@ -415,6 +415,92 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-07_tiered-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can justify a course of action when a weak or disappointing result raises an ethical choice between honest reporting and presenting a stronger impression.",
+                "layer": 1,
+                "confidenceStatement": "I can justify my course of action when a weak result tempts me to present a stronger impression than the evidence supports."
+              },
+              {
+                "id": "o2",
+                "text": "The student can justify acting to correct an unsupported figure or claim in shared work, upholding honesty even where the error would otherwise go unnoticed.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/03"
+                },
+                "confidenceStatement": "I can justify acting to correct an unsupported figure or claim in shared work, even if the error would otherwise go unnoticed."
+              },
+              {
+                "id": "o3",
+                "text": "The student can justify a response to a fairness issue in shared work, weighing the discomfort of speaking up against the responsibility that courage requires.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can justify my response to a fairness issue in shared work, weighing discomfort against the responsibility to speak up."
+              },
+              {
+                "id": "o4",
+                "text": "The student can raise an unacknowledged contribution with those involved, treating them with respect, and help secure a fairer outcome even where the conversation is uncomfortable.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can raise an unacknowledged contribution with those involved, respectfully, even when the conversation is uncomfortable."
+              },
+              {
+                "id": "o5",
+                "text": "The student can critique their own habits of honesty and attribution against the ethical expectations of a profession, identifying where those expectations will tighten.",
+                "layer": 2,
+                "source": {
+                  "type": "named-theory-anchor",
+                  "ref": "L01"
+                },
+                "confidenceStatement": "I can critique my own habits of honesty and attribution against the ethical expectations of a profession."
+              },
+              {
+                "id": "o6",
+                "text": "The student can recognise and act on an ethical responsibility in a new professional role without being asked, and explain the habit to someone newer than themselves.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/e3"
+                },
+                "confidenceStatement": "I can recognise and act on an ethical responsibility in a new role without being asked, and explain the habit to someone newer than me."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/03, referencing/04, referencing/e3's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "1 Layer-1 book-section anchor (o1); referencing/04 and referencing/e3 have no book section (bookGrounding: null in catalogue/context/pathway/referencing.json), so o3-o4 and o6 are Layer-2 capability-evidence fills; o5 is the tier's one named-theory-anchor (Wenger 1998), anchored inside lesson L01, the same book-grounded lesson as o1"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-07_tiered-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
