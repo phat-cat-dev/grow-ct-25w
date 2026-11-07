@@ -1874,6 +1874,143 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L05-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Log it as you go",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} plans to write down every reference once a reading session is over and misremembers which page two statistics came from; {{learner-b}} notes the reference, page and purpose of each source the moment it is selected. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L05-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L05-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L05-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to reflect on whether they logged sources as they found them in a recent piece of research, or reconstructed detail afterward.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/flipcard",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L05-o1/o2/o3) taken verbatim from crs-04's L05 entry ('Log it as you go'). L05 carries no sourceSections (Layer-2 outcome, no chapter-10 anchor) - a confirmed crs-04 design reality, already flagged and accepted at the crs review; the lesson-references slotChoice is instantiated with palette/references but no _items, and BKS-1 is expected to fail for this lesson, not a defect to fix here."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, pair a logging habit with its outcome)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-2/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-3 (sortable, order the steps of logging a source at the point of selection)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens plus pronoun tokens",
+              "note": "Used {{learner-a-pronoun}} once in the weaker paragraph; no marker-class convention yet exists to distinguish check items 2/3 from item 1 within a single check skeletonKey - flagged as a design-kb gap, left unmarked, same as L01-L04."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/3 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/recall-reveal",
+              "whyNot": "activity-4 also drafted as palette/flipcard (one-fact-per-card reveal of the same four failure modes) - rejected as confirmed because accordion's continuous list suits four related-but-not-discrete causes (they build on each other as reasons delay fails) better than isolated cards would."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L05-les-01 referencing-v2-introductory L05 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -2387,6 +2524,109 @@
             "coupled": false
           },
           "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L05",
+      "pageType": "lesson",
+      "title": "Lesson 5: Log it as you go",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
         }
       ]
     }
