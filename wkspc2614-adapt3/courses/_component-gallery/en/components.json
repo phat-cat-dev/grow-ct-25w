@@ -258,10 +258,10 @@
     "_layout": "full",
     "title": "Read like an editor",
     "displayTitle": "Read like an editor",
-    "body": "Writers signal what they are doing. Find the claim, its evidence, and the hedge.",
+    "body": "Writers signal what they are doing. Find the claim, the evidence, and the two stances toward certainty: assertive and tentative.",
     "instruction": "Choose a tool, then click the word or phrase that plays that role. Mark them all, then Submit.",
     "ariaRegion": "Annotate. Choose a tool, then select words in the passage to mark their role.",
-    "passage": "Reading your work aloud [[helps]] you catch errors that silent reading skips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. In one recent study, [[nine out of ten]] students found more mistakes when reading aloud, which [[suggests]] the habit is worth building. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo. The effect [[may]] not hold for everyone, yet the data [[consistently]] point the same way, though most researchers still [[tend to]] hedge their conclusions.",
+    "passage": "Reading your work aloud [[helps you catch errors]] that silent reading skips. In one study, [[nine out of ten students found more mistakes]] this way. [[This proves that every writer should read aloud]] before submitting. In practice, the gain [[may be smaller for people who already proofread carefully]].",
     "_tools": [
       {
         "_id": "claim",
@@ -276,8 +276,14 @@
         "_color": "positive"
       },
       {
-        "_id": "hedge",
-        "label": "Hedge",
+        "_id": "assertive",
+        "label": "Assertive",
+        "_mark": "box",
+        "_color": "comment"
+      },
+      {
+        "_id": "tentative",
+        "label": "Tentative",
         "_mark": "box",
         "_color": "neutral"
       },
@@ -285,23 +291,21 @@
         "_id": "important",
         "label": "Important!",
         "_mark": "exclaim",
-        "_color": "comment"
+        "_color": "soft"
       }
     ],
     "_isQuestion": true,
     "_answers": [
       "claim",
       "evidence",
-      "hedge",
-      "hedge",
-      "evidence",
-      "hedge"
+      "assertive",
+      "tentative"
     ],
     "_feedback": {
-      "correct": "Exactly - you have spotted the claim, its evidence, and the hedge.",
+      "correct": "Exactly - you have spotted the claim, the evidence, and the two stances toward certainty.",
       "_incorrect": "Not quite - check the notes below to see which role each word plays."
     },
-    "_minAnnotations": 6,
+    "_minAnnotations": 4,
     "_showLabels": true,
     "_allowReset": true,
     "_pageLevelProgress": {
@@ -1963,7 +1967,7 @@
     "displayTitle": "Free selection",
     "instruction": "Pick a tool, then select the word or phrase that plays that role (drag, or double-click a word). Click a mark to remove it. Then Submit.",
     "_freeSelect": true,
-    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one recent study, nine out of ten students found more mistakes when reading aloud, which suggests the habit is worth building. The effect might not hold for everyone, and some readers may prefer to annotate instead.",
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study, nine out of ten students found more mistakes this way. This proves that every writer should read aloud before submitting. In practice, the gain may be smaller for people who already proofread carefully.",
     "_tools": [
       {
         "_id": "claim",
@@ -1978,8 +1982,14 @@
         "_color": "positive"
       },
       {
-        "_id": "hedge",
-        "label": "Hedge",
+        "_id": "assertive",
+        "label": "Assertive",
+        "_mark": "box",
+        "_color": "comment"
+      },
+      {
+        "_id": "tentative",
+        "label": "Tentative",
         "_mark": "box",
         "_color": "neutral"
       },
@@ -1987,34 +1997,34 @@
         "_id": "important",
         "label": "Important!",
         "_mark": "exclaim",
-        "_color": "comment"
+        "_color": "soft"
       }
     ],
     "_isQuestion": true,
     "_targets": [
       {
-        "text": "helps",
+        "text": "Reading your work aloud helps you catch errors",
         "tool": "claim"
       },
       {
-        "text": "nine out of ten",
+        "text": "nine out of ten students found more mistakes",
         "tool": "evidence"
       },
       {
-        "text": "might",
-        "tool": "hedge"
+        "text": "This proves that every writer should read aloud",
+        "tool": "assertive"
       },
       {
-        "text": "suggests",
-        "tool": "hedge"
+        "text": "may be smaller for people who already proofread carefully",
+        "tool": "tentative"
       }
     ],
     "_minAnnotations": 4,
     "_showLabels": true,
     "_allowReset": true,
     "_feedback": {
-      "correct": "Spot on — you found every one.",
-      "_incorrect": "Close — check the notes below."
+      "correct": "Spot on - you found every one.",
+      "_incorrect": "Close - check the notes below."
     }
   },
   {
@@ -2069,12 +2079,12 @@
   {
     "_component": "annotate",
     "title": "",
-    "displayTitle": "Find the three moves",
+    "displayTitle": "Find the four moves",
     "body": "",
     "instruction": "Highlight each phrase with the pen that names what it is doing, then check your answer.",
     "_freeSelect": true,
     "_isQuestion": true,
-    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study nine out of ten students found more mistakes this way, which suggests the habit is worth building, though the effect may not hold for everyone.",
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study, nine out of ten students found more mistakes this way. This proves that every writer should read aloud before submitting. In practice, the gain may be smaller for people who already proofread carefully.",
     "_tools": [
       {
         "_id": "claim",
@@ -2089,8 +2099,14 @@
         "_color": "fluro-green"
       },
       {
-        "_id": "hedge",
-        "label": "Hedge",
+        "_id": "assertive",
+        "label": "Assertive",
+        "_mark": "highlight",
+        "_color": "fluro-blue"
+      },
+      {
+        "_id": "tentative",
+        "label": "Tentative",
         "_mark": "highlight",
         "_color": "fluro-yellow"
       }
@@ -2105,15 +2121,19 @@
         "tool": "evidence"
       },
       {
-        "text": "may not hold for everyone",
-        "tool": "hedge"
+        "text": "This proves that every writer should read aloud",
+        "tool": "assertive"
+      },
+      {
+        "text": "may be smaller for people who already proofread carefully",
+        "tool": "tentative"
       }
     ],
     "_feedback": {
-      "correct": "Spot on - claim, evidence, and the hedge that keeps it honest.",
+      "correct": "Spot on - claim, evidence, and the two stances toward certainty that frame them.",
       "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
     },
-    "_minAnnotations": 1,
+    "_minAnnotations": 4,
     "_showLabels": true,
     "_allowReset": true,
     "_id": "GAL-c-50",
@@ -2186,5 +2206,71 @@
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
     }
+  },
+  {
+    "_component": "annotate",
+    "title": "",
+    "displayTitle": "Find the four moves in a reflection",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what kind of thinking it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "After the seminar I used Gibbs' cycle to structure my notes on the group task. Comparing my notes with the recording showed that I spoke twice and interrupted once, which explains why the group stalled. The model was useful for ordering what happened, but it did little to help me decide what mattered most. Next time I will combine Gibbs' stages with the feedback criteria from my tutor, so that my reflection points at something I can change.",
+    "_tools": [
+      {
+        "_id": "application",
+        "label": "Application",
+        "_mark": "highlight",
+        "_color": "fluro-pink"
+      },
+      {
+        "_id": "analysis",
+        "label": "Analysis",
+        "_mark": "highlight",
+        "_color": "fluro-green"
+      },
+      {
+        "_id": "evaluation",
+        "label": "Evaluation",
+        "_mark": "highlight",
+        "_color": "fluro-blue"
+      },
+      {
+        "_id": "synthesis",
+        "label": "Synthesis",
+        "_mark": "highlight",
+        "_color": "fluro-purple"
+      }
+    ],
+    "_targets": [
+      {
+        "text": "used Gibbs' cycle to structure my notes",
+        "tool": "application"
+      },
+      {
+        "text": "Comparing my notes with the recording showed that I spoke twice and interrupted once",
+        "tool": "analysis"
+      },
+      {
+        "text": "it did little to help me decide what mattered most",
+        "tool": "evaluation"
+      },
+      {
+        "text": "combine Gibbs' stages with the feedback criteria from my tutor",
+        "tool": "synthesis"
+      }
+    ],
+    "_feedback": {
+      "correct": "Spot on - applying the model, analysing what happened, evaluating it, and synthesising a next step.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 4,
+    "_showLabels": true,
+    "_allowReset": true,
+    "_id": "GAL-c-54",
+    "_parentId": "GAL-b-54",
+    "_type": "component",
+    "_layout": "full",
+    "_classes": ""
   }
 ]

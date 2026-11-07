@@ -25,35 +25,37 @@
     "_allowReset": true
   },
   {
-    "__comment": "VARIANT B - graded free selection: the learner must select the correct text AND choose the correct pen. Author/AI sets the answer via _targets (phrase -> correct tool id); grading is the 'covers the word' rule. This is the 'colours auto-set by the activity' shape.",
+    "__comment": "VARIANT B - graded free selection: the learner must select the correct text AND choose the correct pen. Author/AI sets the answer via _targets (phrase -> correct tool id); grading is the 'covers the word' rule. This is the 'colours auto-set by the activity' shape. Four pens over one passage: claim and evidence are the content moves; assertive and tentative are two stances toward certainty, not synonyms for hedging - the assertive phrase deliberately overstates what the evidence supports.",
     "_id": "c-annotate-find",
     "_parentId": "b-10",
     "_type": "component",
     "_component": "annotate",
     "_classes": "",
     "_layout": "full",
-    "title": "Find the three moves",
-    "displayTitle": "Find the three moves",
+    "title": "Find the four moves",
+    "displayTitle": "Find the four moves",
     "body": "",
     "instruction": "Highlight each phrase with the pen that names what it is doing, then check your answer.",
     "_freeSelect": true,
     "_isQuestion": true,
-    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study nine out of ten students found more mistakes this way, which suggests the habit is worth building, though the effect may not hold for everyone.",
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study, nine out of ten students found more mistakes this way. This proves that every writer should read aloud before submitting. In practice, the gain may be smaller for people who already proofread carefully.",
     "_tools": [
       { "_id": "claim", "label": "Claim", "_mark": "highlight", "_color": "fluro-pink" },
       { "_id": "evidence", "label": "Evidence", "_mark": "highlight", "_color": "fluro-green" },
-      { "_id": "hedge", "label": "Hedge", "_mark": "highlight", "_color": "fluro-yellow" }
+      { "_id": "assertive", "label": "Assertive", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "tentative", "label": "Tentative", "_mark": "highlight", "_color": "fluro-yellow" }
     ],
     "_targets": [
       { "text": "Reading your work aloud helps you catch errors", "tool": "claim" },
       { "text": "nine out of ten students found more mistakes", "tool": "evidence" },
-      { "text": "may not hold for everyone", "tool": "hedge" }
+      { "text": "This proves that every writer should read aloud", "tool": "assertive" },
+      { "text": "may be smaller for people who already proofread carefully", "tool": "tentative" }
     ],
     "_feedback": {
-      "correct": "Spot on - claim, evidence, and the hedge that keeps it honest.",
+      "correct": "Spot on - claim, evidence, and the two stances toward certainty that frame them.",
       "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
     },
-    "_minAnnotations": 1,
+    "_minAnnotations": 4,
     "_showLabels": true,
     "_allowReset": true
   },
@@ -104,6 +106,41 @@
       { "_id": "support", "label": "Support", "_mark": "box", "_color": "fluro-blue" }
     ],
     "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT E - graded free selection using the critical-vocabulary pen set (application, analysis, evaluation, synthesis) rather than Variant B's rhetorical-moves set - same shell, a second unrelated subject vocabulary, which is the proof that no _mode switch is needed. Pitch per docs/curriculum/tier-specification.md Section 5: application, analysis and evaluation sit at Intermediate, synthesis at Advanced. The passage is reflective writing on purpose: the same four moves, turned on the writer's own practice and landing on something to change, are what make writing reflective rather than merely descriptive.",
+    "_id": "c-annotate-vocab",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "annotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Find the four moves in a reflection",
+    "displayTitle": "Find the four moves in a reflection",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what kind of thinking it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "After the seminar I used Gibbs' cycle to structure my notes on the group task. Comparing my notes with the recording showed that I spoke twice and interrupted once, which explains why the group stalled. The model was useful for ordering what happened, but it did little to help me decide what mattered most. Next time I will combine Gibbs' stages with the feedback criteria from my tutor, so that my reflection points at something I can change.",
+    "_tools": [
+      { "_id": "application", "label": "Application", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "analysis", "label": "Analysis", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "evaluation", "label": "Evaluation", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "synthesis", "label": "Synthesis", "_mark": "highlight", "_color": "fluro-purple" }
+    ],
+    "_targets": [
+      { "text": "used Gibbs' cycle to structure my notes", "tool": "application" },
+      { "text": "Comparing my notes with the recording showed that I spoke twice and interrupted once", "tool": "analysis" },
+      { "text": "it did little to help me decide what mattered most", "tool": "evaluation" },
+      { "text": "combine Gibbs' stages with the feedback criteria from my tutor", "tool": "synthesis" }
+    ],
+    "_feedback": {
+      "correct": "Spot on - applying the model, analysing what happened, evaluating it, and synthesising a next step.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 4,
     "_showLabels": true,
     "_allowReset": true
   }

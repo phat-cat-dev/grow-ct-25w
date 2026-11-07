@@ -245,6 +245,54 @@ test('CLI on a record the validator refuses: write stands, read-back skipped, na
   }
 });
 
+// D9/D-adp3 (4 Nov 2026): getPhaseBatchGates's profile filter, mirroring
+// reopen.js's D8(a) filter (RJ-0062) field-for-field, through
+// gateOrder.profileGateIds against a planted gate-profiles fixture - never
+// hardcoded to a profile name. Fixture mirrors the real CRS phase's shape:
+// crs-02/crs-03 hard-stop (excluded from the soft/advisory batch regardless
+// of profile); crs-05 advisory, claimed by built-course-shape only; crs-06
+// advisory and crs-08 soft, claimed by pathway-distillation only.
+const PROFILE_STORE_FIXTURE = path.join(FIXTURES, 'gates-phase-batch-profiles.json');
+const PROFILE_GATE_PROFILES_FIXTURE = path.join(FIXTURES, 'gate-profiles-phase-batch.json');
+
+test('CRS batch on a no-profile manifest (defaults to built-course-shape) excludes crs-06/crs-08', () => {
+  const store = gateOrder.loadStore(PROFILE_STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(PROFILE_GATE_PROFILES_FIXTURE);
+  const gates = phaseConfirm.getPhaseBatchGates(store, 'CRS', gateProfilesStore, undefined);
+  const ids = gates.map(g => g.id);
+  assert.deepEqual(ids, ['crs-05_course-spec']);
+});
+
+test('CRS batch on a pathway-distillation manifest includes crs-08 and excludes crs-02/crs-03', () => {
+  const store = gateOrder.loadStore(PROFILE_STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(PROFILE_GATE_PROFILES_FIXTURE);
+  const gates = phaseConfirm.getPhaseBatchGates(store, 'CRS', gateProfilesStore, 'pathway-distillation');
+  const ids = gates.map(g => g.id);
+  assert.ok(ids.includes('crs-08_progression'));
+  assert.ok(!ids.includes('crs-02_thematic-scope'));
+  assert.ok(!ids.includes('crs-03_course-outcomes'));
+  assert.deepEqual(ids.slice().sort(), ['crs-06_pathway-statements', 'crs-08_progression']);
+});
+
+test('the "nothing to batch" throw still fires when a phase genuinely has none, including when a profile filters everything out', () => {
+  const store = gateOrder.loadStore(PROFILE_STORE_FIXTURE);
+  const gateProfilesStore = gateOrder.loadGateProfiles(PROFILE_GATE_PROFILES_FIXTURE);
+  // empty-profile claims no gate at all: the hardness filter alone would
+  // find crs-05/crs-06/crs-08, but the profile filter reduces that to none.
+  assert.throws(
+    () => phaseConfirm.getPhaseBatchGates(store, 'CRS', gateProfilesStore, 'empty-profile'),
+    /phase CRS has no soft or advisory gate in the store: nothing to batch/
+  );
+});
+
+test('omitting gateProfilesStore skips the filter entirely (pre-existing behaviour, unaffected by the profile wiring)', () => {
+  const store = gateOrder.loadStore(PROFILE_STORE_FIXTURE);
+  const gates = phaseConfirm.getPhaseBatchGates(store, 'CRS', undefined, 'pathway-distillation');
+  const ids = gates.map(g => g.id).sort();
+  // No filter applied: every soft/advisory CRS gate, regardless of profile.
+  assert.deepEqual(ids, ['crs-05_course-spec', 'crs-06_pathway-statements', 'crs-08_progression']);
+});
+
 test('CLI with a phase reaching no gates fails with exit 1, named error on stderr', () => {
   const { execFileSync } = require('node:child_process');
 

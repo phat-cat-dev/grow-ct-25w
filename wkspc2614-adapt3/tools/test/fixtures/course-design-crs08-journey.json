@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.0.1",
+  "courseId": "crs08-journey-fixture",
+  "slug": "crs08-journey-fixture",
+  "profile": "pathway-distillation",
+  "facetSet": { "pathway": "presenting", "tier": "introductory" },
+  "kbVersions": { "design-kb": "0.10.8" },
+  "gates": [
+    { "gateId": "crs-07_tiered-outcomes", "records": [
+      { "seq": 1, "state": "closed", "provenance": "human-confirmed", "decidedValue": {
+        "outcomes": [
+          { "id": "lo1", "text": "Explain what a presentation tests and read its brief.", "layer": 1 },
+          { "id": "lo2", "text": "Build a presentation to a brief by working through a structured method.", "layer": 1 },
+          { "id": "lo3", "text": "Rehearse aloud to time and fix parts of a talk that overrun or stumble.", "layer": 1 },
+          { "id": "lo4", "text": "Design accessible slides with little text and clear contrast.", "layer": 1 },
+          { "id": "lo5", "text": "Name own strengths and weak points as a presenter after rehearsal.", "layer": 2,
+            "source": { "type": "capability-evidence", "ref": "presenting/i3" } }
+        ]
+      }, "timestamp": "2026-11-01T00:00:00.000Z" } ] },
+    { "gateId": "crs-08_progression", "records": [
+      { "seq": 1, "state": "closed", "provenance": "ai-proposal-stood", "decidedValue": {
+        "tierSiblings": ["presenting-intermediate", "presenting-advanced"],
+        "signposts": {
+          "up": "Intermediate takes this tier's rehearsal-and-fix habit and extends it to designing accessible visual aids and adapting delivery across formats."
+        },
+        "journey": {
+          "practice": "At this tier the learner reads a presentation brief, works through a set method with support, and starts rehearsing aloud to catch and fix what overruns or stumbles.",
+          "knowledge": "What a presentation assesses, the steps of one set method for building it, and where in a rehearsed run-through their own talk is weak.",
+          "identity": "A newcomer who sees presenting as a practice worth learning, beginning to check their own performance against the method rather than only following it.",
+          "ladderRows": ["i1", "i2", "i3"]
+        },
+        "spreadReading": {
+          "reading": "The five LOs sit mostly at the i1-i2 end of the introductory range, with one Layer-2 fill-to-minimum LO (lo5) reaching toward i3's self-checking practice; the tier does not evenly cover i1 through i3.",
+          "topHeavy": false,
+          "basis": "read against catalogue/context/shared/cross-cutting.json tierModel's introductory fheqRange (L3-L5) and rows i1 (L3), i2 (L4), i3 (L5)"
+        }
+      }, "timestamp": "2026-11-04T00:00:00.000Z" } ] }
+  ],
+  "phases": [],
+  "instantiations": []
+}

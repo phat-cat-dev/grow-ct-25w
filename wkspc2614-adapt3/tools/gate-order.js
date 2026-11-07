@@ -37,6 +37,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const DEFAULT_STORE = path.join(ROOT, 'design-kb', 'design-kb.gates.json');
+const DEFAULT_GATE_PROFILES = path.join(ROOT, 'design-kb', 'design-kb.gate-profiles.json');
 
 /**
  * Loads and parses the gates store. Throws (never returns undefined, never
@@ -64,6 +65,59 @@ function loadStore(storePath) {
     throw new Error(`gate-order: store at ${resolved} carries no "gates" array`);
   }
   return parsed;
+}
+
+/**
+ * Loads and parses the gate-profiles store (design-kb/design-kb.gate-profiles.json).
+ * Same throw-never-silently-fall-back discipline as loadStore above.
+ */
+function loadGateProfiles(storePath) {
+  const resolved = storePath ? path.resolve(storePath) : DEFAULT_GATE_PROFILES;
+  if (!fs.existsSync(resolved)) {
+    throw new Error(`gate-order: no gate-profiles store at ${resolved}`);
+  }
+  let raw;
+  try {
+    raw = fs.readFileSync(resolved, 'utf8');
+  } catch (err) {
+    throw new Error(`gate-order: gate-profiles store unreadable at ${resolved} (${err.message})`);
+  }
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (err) {
+    throw new Error(`gate-order: gate-profiles store is not valid JSON at ${resolved} (${err.message})`);
+  }
+  if (!parsed || !Array.isArray(parsed.profiles)) {
+    throw new Error(`gate-order: gate-profiles store at ${resolved} carries no "profiles" array`);
+  }
+  return parsed;
+}
+
+/**
+ * RJ-0062 D8(a) profile wiring (4 Nov 2026): the set of gate ids a named
+ * profile's own step list claims in design-kb.gate-profiles.json - each
+ * step's own `gates` array, plus `continuesWith` - read from the store
+ * itself, never a hardcoded list of gate ids or a hardcoded check against
+ * a profile name. Deliberately mirrors validate-design-schemas.py's
+ * `_profile_gate_ids` (NSK-1) field-for-field, so the two resolvers
+ * cannot silently diverge on what a profile's gate-id set is.
+ *
+ * Returns null, never an empty set, when `profileId` names no profile the
+ * store defines; the caller treats null as "can't resolve this, fall back
+ * to the universal default" rather than "nothing claimed by this profile."
+ */
+function profileGateIds(gateProfilesStore, profileId) {
+  for (const prof of gateProfilesStore.profiles || []) {
+    if (prof.id === profileId) {
+      const ids = new Set(prof.continuesWith || []);
+      for (const step of prof.steps || []) {
+        for (const g of step.gates || []) ids.add(g);
+      }
+      return ids;
+    }
+  }
+  return null;
 }
 
 /**
@@ -224,10 +278,12 @@ if (require.main === module) {
 
 module.exports = {
   loadStore,
+  loadGateProfiles,
   checkSequenceContiguous,
   getOrder,
   getPhaseClosureSet,
   getPhaseAClosureSet,
   getFlags,
-  getDependents
+  getDependents,
+  profileGateIds
 };
