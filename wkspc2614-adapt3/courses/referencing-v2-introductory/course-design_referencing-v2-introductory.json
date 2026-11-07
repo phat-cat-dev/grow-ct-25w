@@ -101,6 +101,18 @@
           },
           "seq": 1,
           "timestamp": "2026-11-07T09:27:29.665Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "Introductory",
+            "slug": "referencing-v2"
+          },
+          "supersedes": 1,
+          "timestamp": "2026-11-07T17:20:51.189Z"
         }
       ]
     },
@@ -2869,6 +2881,20 @@
           "decidedByGate": "referencing-v2-introductory-L06-les-01"
         }
       ]
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-11-07T17:20:51.189Z",
+      "trigger": {
+        "gate": "onb-04_naming",
+        "changeKind": "amended",
+        "oldRecordSeq": 1,
+        "newRecordSeq": 2,
+        "note": "tierName was copied as 'All tiers' into all three per-tier course-design files when a single three-tier onboarding answer was split into three separate per-tier courses; corrected to this course's own tier, confirmed by the human."
+      },
+      "sweep": []
     }
   ]
 }
