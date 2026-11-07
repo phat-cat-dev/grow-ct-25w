@@ -996,6 +996,67 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-08_progression",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "tierSiblings": [
+              "referencing-v2-introductory",
+              "referencing-v2-intermediate"
+            ],
+            "signposts": {
+              "down": "Advanced assumes you can already reference accurately and judge a source list's scope; it does not re-teach citation mechanics."
+            },
+            "journey": {
+              "practice": "Reports a weak result honestly rather than overstating it, acts to correct an unsupported claim others would not notice, and raises an unacknowledged contribution even where the conversation is uncomfortable.",
+              "knowledge": "How honesty, fairness and courage show up as choices in shared work, and how a profession's expectations of attribution and integrity will tighten beyond a degree.",
+              "identity": "A practitioner whose conduct towards others expresses their own values, not only their compliance with a rule.",
+              "ladderRows": [
+                "e1",
+                "e2",
+                "e3"
+              ]
+            }
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "journey re-authored from this tier's own 6 flat LOs (o1-o6: the honest-reporting-vs-impression choice, correcting an unsupported claim, a fairness issue in shared work, raising an unacknowledged contribution, critiquing own habits against professional expectations, acting on responsibility in a new role)"
+            },
+            {
+              "doc": "catalogue/pathways/referencing.json",
+              "ref": "pathwayId=referencing",
+              "note": "tierSiblings resolved by directory-existence check against courses/, not by this file's own courseSlug field (null/planned for intermediate and advanced)"
+            },
+            {
+              "doc": "courses/referencing-v2-introductory/course-design_referencing-v2-introductory.json, courses/referencing-v2-intermediate/course-design_referencing-v2-intermediate.json",
+              "ref": "directory existence",
+              "note": "both sibling tier directories exist (advanced has no up-signpost: it is the pathway's top tier)"
+            },
+            {
+              "doc": "catalogue/context/pathway/referencing.json",
+              "ref": "tierProgression.ladderReadings[rowId=e1,e2,e3], masteryNote, tierStatements",
+              "note": "read upstream for the evolution narrative; journey prose re-authored fresh from this tier's own crs-07 LOs, not copied from ladderReadings' wording"
+            },
+            {
+              "doc": "catalogue/context/shared/cross-cutting.json",
+              "ref": "genericLadder.heads",
+              "note": "practice/knowledge/identity fields framed against the three head labels ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)'), wording not copied"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-08_progression 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],

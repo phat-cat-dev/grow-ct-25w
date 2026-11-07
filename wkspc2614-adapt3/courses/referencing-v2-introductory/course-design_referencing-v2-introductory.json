@@ -1026,6 +1026,67 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-08_progression",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "tierSiblings": [
+              "referencing-v2-intermediate",
+              "referencing-v2-advanced"
+            ],
+            "signposts": {
+              "up": "Intermediate builds on accurate, consistent referencing by adding judgement: paraphrasing technical sources for new readers, handling unfamiliar source types, and using citation to show the breadth of your research."
+            },
+            "journey": {
+              "practice": "Builds each citation and reference entry to one consistent style, correcting any that drift, and keeps a traceable log of sources from the moment each is selected.",
+              "knowledge": "What a reference needs, why acknowledging sources lets a reader judge and trace a claim, and why a source record kept as you go stays traceable later.",
+              "identity": "A newcomer treating consistent acknowledgement, not just completion, as part of how academic work is done.",
+              "ladderRows": [
+                "i1",
+                "i2",
+                "i3"
+              ]
+            }
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-v2-introductory/course-design_referencing-v2-introductory.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "journey re-authored from this tier's own 6 flat LOs (o1-o6: naming sources, reference elements and consistent style, correcting inconsistent citations, acknowledging sources to a newcomer, logging a source at the point of selection)"
+            },
+            {
+              "doc": "catalogue/pathways/referencing.json",
+              "ref": "pathwayId=referencing",
+              "note": "tierSiblings resolved by directory-existence check against courses/, not by this file's own courseSlug field (null/planned for intermediate and advanced)"
+            },
+            {
+              "doc": "courses/referencing-v2-intermediate/course-design_referencing-v2-intermediate.json, courses/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "directory existence",
+              "note": "both sibling tier directories exist (introductory has no down-signpost: it is the pathway's bottom tier)"
+            },
+            {
+              "doc": "catalogue/context/pathway/referencing.json",
+              "ref": "tierProgression.ladderReadings[rowId=i1,i2,i3], masteryNote, tierStatements",
+              "note": "read upstream for the evolution narrative; journey prose re-authored fresh from this tier's own crs-07 LOs, not copied from ladderReadings' wording"
+            },
+            {
+              "doc": "catalogue/context/shared/cross-cutting.json",
+              "ref": "genericLadder.heads",
+              "note": "practice/knowledge/identity fields framed against the three head labels ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)'), wording not copied"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-08_progression 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],

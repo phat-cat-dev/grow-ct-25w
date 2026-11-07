@@ -1006,6 +1006,68 @@
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-08_progression",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "tierSiblings": [
+              "referencing-v2-introductory",
+              "referencing-v2-advanced"
+            ],
+            "signposts": {
+              "up": "Advanced moves from citation practice to academic integrity as a value: justifying honest reporting under pressure, acting on fairness in shared work, and treating integrity as part of a professional identity.",
+              "down": "Intermediate assumes you can already build a single consistent reference and keep a traceable source log; it does not re-teach reference formatting from scratch."
+            },
+            "journey": {
+              "practice": "Checks a paraphrase against its source for wording that survives unattributed, references unfamiliar source types by checking guidance under time pressure, and cites sources on both sides of a position.",
+              "knowledge": "How paraphrase differs from patchwriting, what a reference list's range reveals about the research behind it, and what an unfamiliar source type needs even without a ready template.",
+              "identity": "A referencer taking responsibility for accuracy across any source, whose citing choices start to show the shape of their own research.",
+              "ladderRows": [
+                "d1",
+                "d2",
+                "d3"
+              ]
+            }
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-v2-intermediate/course-design_referencing-v2-intermediate.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "journey re-authored from this tier's own 6 flat LOs (o1-o6: checking a paraphrase against its source, judging a reference list's range, paraphrasing for a non-specialist reader, analysing and referencing an unfamiliar source type under pressure, citing both sides of a position)"
+            },
+            {
+              "doc": "catalogue/pathways/referencing.json",
+              "ref": "pathwayId=referencing",
+              "note": "tierSiblings resolved by directory-existence check against courses/, not by this file's own courseSlug field (null/planned for intermediate and advanced)"
+            },
+            {
+              "doc": "courses/referencing-v2-introductory/course-design_referencing-v2-introductory.json, courses/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "directory existence",
+              "note": "both sibling tier directories exist; intermediate has both an up and a down signpost"
+            },
+            {
+              "doc": "catalogue/context/pathway/referencing.json",
+              "ref": "tierProgression.ladderReadings[rowId=d1,d2,d3], masteryNote, tierStatements",
+              "note": "read upstream for the evolution narrative; journey prose re-authored fresh from this tier's own crs-07 LOs, not copied from ladderReadings' wording"
+            },
+            {
+              "doc": "catalogue/context/shared/cross-cutting.json",
+              "ref": "genericLadder.heads",
+              "note": "practice/knowledge/identity fields framed against the three head labels ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)'), wording not copied"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-intermediate crs-08_progression 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
