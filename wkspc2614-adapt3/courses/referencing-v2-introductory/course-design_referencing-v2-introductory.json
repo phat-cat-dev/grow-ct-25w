@@ -413,6 +413,43 @@
             "description": "referencing-v2 crs-01_sources 2026-11-07"
           },
           "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "chunks[].pathwayTags[].pathway = referencing",
+              "note": "10 tagged chunks total (3 framing + 7 teaching-shape)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-01_sources confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
         }
       ]
     },
@@ -485,6 +522,77 @@
           "sessionRef": {
             "venue": "claude-code-plan",
             "description": "referencing-v2-introductory crs-07_tiered-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can explain why academic work names its sources, showing how acknowledgement lets a reader judge the quality of information used and trace claims to their origin.",
+                "layer": 1,
+                "confidenceStatement": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "id": "o2",
+                "text": "The student can describe the elements a reference needs and explain how converting sources into one consistent citation style lets a reader trace every claim.",
+                "layer": 1,
+                "confidenceStatement": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "id": "o3",
+                "text": "The student can identify inconsistent citations in a piece of writing and correct them so every citation and reference entry matches one consistent style.",
+                "layer": 1,
+                "confidenceStatement": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "id": "o4",
+                "text": "The student can identify the sources used in a piece of work and explain to someone unfamiliar with it why those sources were selected and acknowledged.",
+                "layer": 1,
+                "confidenceStatement": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "id": "o5",
+                "text": "The student can explain why recording a source at the point it is selected, rather than afterwards, keeps every citation traceable and organised for later use.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "id": "o6",
+                "text": "The student can keep an organised, traceable record of sources while gathering evidence for a task, so each one can be found and checked again later.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/c1, referencing/01, referencing/c2's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "4 Layer-1 book-section anchors (o1-o4); referencing/c2 (source-logging) has no book section, so its two outcomes (o5-o6) are Layer-2 capability-evidence fills"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-07_tiered-outcomes confirm 2026-11-07"
           },
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
@@ -701,6 +809,219 @@
           "sessionRef": {
             "venue": "claude-code-plan",
             "description": "referencing-v2-introductory crs-04_lesson-map 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "Why sources are named",
+                "topic": "how acknowledging sources lets a reader judge and trace your work",
+                "description": "Why sources are named — how acknowledging sources lets a reader judge and trace your work.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-intro",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing",
+                    "pages": "188"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain why academic work names its sources.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Identify what source-acknowledgement lets a reader do.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Trace a claim in a worked example back to its origin.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "One style, every reference",
+                "topic": "what a reference needs and why consistency matters",
+                "description": "One style, every reference — what a reference needs and why consistency matters.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-styles",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing styles",
+                    "pages": "188-189"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Describe the elements a reference needs.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Classify a set of references by citation style.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Explain why one consistent style lets a reader trace every claim.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "Spotting inconsistent citations",
+                "topic": "finding and fixing citations that do not match your reference list",
+                "description": "Spotting inconsistent citations — finding and fixing citations that do not match your reference list.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/what-references-look-like",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "What do references look like?",
+                    "pages": "189-191"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify an inconsistent citation in a piece of writing.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Locate the matching reference-list entry for a citation.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Correct an inconsistent citation to match one style.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Sources in your own work",
+                "topic": "identifying your sources and explaining why you acknowledged them",
+                "description": "Sources in your own work — identifying your sources and explaining why you acknowledged them.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/how-to-format-references",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "How do you format references?",
+                    "pages": "195-198"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Identify the sources used in a piece of work.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Assemble a reference entry in a consistent format.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Explain to a newcomer why a source was acknowledged.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Log it as you go",
+                "topic": "why a source is recorded the moment it is selected",
+                "description": "Log it as you go — why a source is recorded the moment it is selected.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Explain why a source is logged at the point it is selected.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Recognise the risk of logging a source after the fact.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Describe what a traceable source record contains.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "Keeping a source log",
+                "topic": "organising a traceable record while you gather evidence",
+                "description": "Keeping a source log — organising a traceable record while you gather evidence.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Keep a source log while gathering evidence.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Organise a source log so an entry can be found again.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Check a source log entry against its original source.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-v2-introductory/course-design_referencing-v2-introductory.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "sourceSections for L01-L04 (the tier's 4 Layer-1 anchors); L05-L06 serve the Layer-2 capability-evidence outcomes (referencing/c2, no book section) and carry no sourceSections"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-04_lesson-map confirm 2026-11-07"
           },
           "timestamp": "2026-11-07T00:00:00.000Z"
         }
