@@ -1703,6 +1703,143 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Raising an unacknowledged contribution",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} mentions a missed acknowledgement once, vaguely, and lets it drop when nobody responds directly; {{learner-b}} raises the same omission directly and privately, proposes a specific fix, agrees a date to confirm it, and follows up. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L04-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they raised, or wished they had raised, an unacknowledged contribution and how they balanced directness with respect, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('shared work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L04-o1/o2/o3) taken verbatim from crs-04's advanced L04 entry ('Raising an unacknowledged contribution'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L04-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern. This lesson is the explicit follow-through to L03's fairness-issue decision: L03 covers deciding whether to raise an issue, L04 covers the conversation itself and securing an actual outcome."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01-L03 applies here. activity-1 (matching) written as classification requiring judgement about tone (respectful vs accusatory), not simple recall. activity-2 (sortable) written as a weighing task ranking follow-up approaches by likely effectiveness, not a fixed ordering of fact. activity-3/4 keep the established recall-reveal mechanic. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01-L03."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify conversation openers as respectful or accusatory - the judgement lies in whether the line names outcome or assumes motive)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four follow-up approaches by likelihood of securing a fairer outcome - a weighing task on effectiveness, not a fixed ordering of severity)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01-L03 and all prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01-L03 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01-L03: this pattern (palette/branching) best fits advanced tier's judgement-task default and this lesson's conversation-management subject matter, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected again in favour of the proven matching/sortable/flipcard/accordion structure established across this tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L04-les-01 referencing-v2-advanced L04 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -2113,6 +2250,109 @@
             "coupled": false
           },
           "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Raising an unacknowledged contribution",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
         }
       ]
     }
