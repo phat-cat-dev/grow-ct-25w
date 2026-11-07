@@ -310,7 +310,7 @@
     "_layout": "full",
     "title": "Orientation",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>You have already checked that a reference list uses a consistent style and that each citation points to the right entry. This lesson asks a different question: does the list, taken as a whole, actually reflect the research it claims to draw on? A reference list can be perfectly formatted and still be thin, one-sided, or out of date, and none of that shows up in a style check.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -326,7 +326,7 @@
     "_layout": "full",
     "title": "Orientation: at this level",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>At this level you are not just reading a reference list; you are judging it. Given a reference list and the claim it is supposed to support, you will decide whether the list's range is wide enough, whether it includes views that disagree with the writer's own, and where the evidence coverage falls short.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -342,7 +342,7 @@
     "_layout": "full",
     "title": "Learning outcomes",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>A reference list earns a reader's trust by its range, not just its formatting. When you judge whether a reference list includes opposing views, whether its range matches its claimed scope, and where it leaves evidence gaps, you are reading the way an examiner or reviewer reads. You are checking for what the writer chose not to cite, as much as for what they did.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -390,7 +390,7 @@
     "_layout": "full",
     "title": "Moving into practice",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Judging a reference list this way becomes second nature once you have done it a few times. Before you accept a reference list at face value, in your own reading or someone else's, ask what range it covers, whether disagreement is represented, and what it leaves out.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -406,7 +406,7 @@
     "_layout": "full",
     "title": "Reflective prompt",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>Think of a reading list or reference list you have used recently, for an assignment or a piece of research. Does it include views that disagree with the argument it supports? Is there a gap in evidence coverage you noticed at the time, or only now? No right answers are expected here; the aim is to look at the list itself, not just the argument it was attached to.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -422,7 +422,7 @@
     "_layout": "full",
     "title": "Summary",
     "displayTitle": "",
-    "body": "",
+    "body": "<p>A reference list's range matters as much as its formatting. Check whether it includes opposing views, whether its range matches the scope it claims, and where it leaves evidence gaps. A well-formatted list that fails all three still misrepresents the research behind it.</p>",
     "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
@@ -443,7 +443,15 @@
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
-    }
+    },
+    "_items": [
+      {
+        "title": "See pages 191 to 193 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+        "href": "#",
+        "type": "book",
+        "permalink": ""
+      }
+    ]
   },
   {
     "_id": "L03-c-05",
@@ -1997,5 +2005,285 @@
       }
     },
     "_isPartOfAssessment": false
+  },
+  {
+    "_id": "L02-c-30",
+    "_parentId": "L02-b-30",
+    "_type": "component",
+    "_component": "matching",
+    "_layout": "full",
+    "title": "Does this reference list include opposing views?",
+    "displayTitle": "",
+    "instruction": "<p>Match each reference list description to a judgement about its range.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "A list that cites five studies all reaching the same conclusion, on a question where the field is known to disagree",
+        "options": [
+          "Opposing views absent"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "A list that cites the leading study and a direct rebuttal of it, alongside supporting work",
+        "options": [
+          "Opposing views included"
+        ],
+        "_shuffle": true
+      },
+      {
+        "text": "A list that cites only sources published by the same research group as the writer",
+        "options": [
+          "Opposing views absent"
+        ],
+        "_shuffle": true
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. A reference list that cites only agreement, or only one group's own work, has not represented the field's disagreement, whatever its formatting looks like.",
+      "_incorrect": {
+        "notFinal": "Look again at who is being cited, not just how many sources there are. Agreement in number is not the same as a represented range of views."
+      }
+    }
+  },
+  {
+    "_id": "L02-c-35",
+    "_parentId": "L02-b-35",
+    "_type": "component",
+    "_component": "sortable",
+    "_layout": "full",
+    "title": "Judging a reference list's range",
+    "displayTitle": "",
+    "instruction": "<p>Put these steps for judging a reference list's range in order.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_items": [
+      {
+        "text": "Note what the writer claims the research covers"
+      },
+      {
+        "text": "List the sources actually cited and what each one covers"
+      },
+      {
+        "text": "Check whether disagreement in the field is represented"
+      },
+      {
+        "text": "Identify what the claimed scope implies that is missing"
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Scope first, then what is actually there, then whether disagreement features, then what the gap between the two implies.",
+      "_incorrect": {
+        "notFinal": "Start from what the writer claims to cover before checking what is actually cited; otherwise you are judging the list against nothing."
+      }
+    }
+  },
+  {
+    "_id": "L02-c-40",
+    "_parentId": "L02-b-40",
+    "_type": "component",
+    "_component": "narrative",
+    "title": "Reading a reference list for its range",
+    "displayTitle": "",
+    "body": "<p class=\"we-weaker\">{{learner-a}} is asked to check a reference list attached to an essay claiming to cover \"current debate on remote work productivity\". {{learner-a}} counts the sources: eleven, all recent, all from business journals. {{learner-a}} decides the list is strong because there are enough sources and they all look current.</p><p class=\"we-stronger\">{{learner-b}} is asked to check the same list. {{learner-b}} starts from the claim, not the count: debate implies disagreement. Reading the eleven sources, {{learner-b}} finds they all report the same finding, that remote work increases productivity, and none test or challenge it. {{learner-b}} concludes the list is one-sided: it supports a claim of debate while containing none, whatever its size and recency.</p>",
+    "_classes": "slot__L02__worked-example",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L02-c-45",
+    "_parentId": "L02-b-45",
+    "_type": "component",
+    "_component": "flipcard",
+    "_layout": "full",
+    "title": "Four signs a reference list's range falls short",
+    "displayTitle": "",
+    "instruction": "<p>Select each card to reveal a sign a reference list's range does not match its claimed scope.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "Only agreement",
+        "body": "Every source reaches the same conclusion, on a question the field is known to contest."
+      },
+      {
+        "title": "Only one source type",
+        "body": "A claim about practice is supported only by theory, or a claim about theory only by anecdote."
+      },
+      {
+        "title": "Only one group's own work",
+        "body": "The citations all trace back to the same research team or institution."
+      },
+      {
+        "title": "Scope narrower than the claim",
+        "body": "The writer claims a broad review but the citations cover only a narrow slice of it."
+      }
+    ]
+  },
+  {
+    "_id": "L02-c-50",
+    "_parentId": "L02-b-50",
+    "_type": "component",
+    "_component": "accordion",
+    "_layout": "full",
+    "title": "Four ways to identify an evidence gap",
+    "displayTitle": "",
+    "instruction": "<p>Select each heading to reveal a way to identify an evidence gap in a reference list.</p>",
+    "_isEnabled": true,
+    "_items": [
+      {
+        "title": "Compare the claim to the citations",
+        "body": "State what the writer says the research covers, then list what the citations actually cover; the difference is the gap."
+      },
+      {
+        "title": "Check for a missing source type",
+        "body": "A claim resting only on theory with no empirical support, or the reverse, has a gap in evidence type."
+      },
+      {
+        "title": "Check the date range",
+        "body": "A claim about a fast-moving field supported only by older sources may have a currency gap."
+      },
+      {
+        "title": "Check for the obvious rebuttal",
+        "body": "If a well-known challenge to the claim exists and is not cited, that absence is itself a gap."
+      }
+    ]
+  },
+  {
+    "_id": "L02-c-55",
+    "_parentId": "L02-b-55",
+    "_type": "component",
+    "_component": "text",
+    "title": "Checking a reference list's range",
+    "displayTitle": "",
+    "body": "<p>Use this checklist when judging a reference list:</p><ol><li>State what the writer claims the research covers.</li><li>List what the cited sources actually cover.</li><li>Check whether views that disagree with the writer's own are represented.</li><li>Identify anything the claimed scope implies that is missing from the list.</li></ol>",
+    "_isEnabled": true
+  },
+  {
+    "_id": "L02-c-65",
+    "_parentId": "L02-b-65",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>A reference list cites eleven recent sources, all reaching the same conclusion on a question the field is known to contest. What does this most strongly suggest?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "The list is strong, because eleven sources is a large number",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "The list's range does not match a contested question, because it represents no disagreement",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "The list is strong, because all sources are recent",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "The list cannot be judged without knowing the authors' institutions",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. On a contested question, uniform agreement across every cited source is itself evidence that the list's range is too narrow, not a sign of strength.",
+      "_incorrect": "Count and recency do not establish range. A list that cites only one side of a known disagreement has not matched the field's actual shape, however many sources it contains."
+    },
+    "tests": "L02-o1"
+  },
+  {
+    "_id": "L02-c-67",
+    "_parentId": "L02-b-67",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>An essay claims to give \"a full review of theories of motivation\" but every source cited is a single textbook chapter summarising one theory. What is missing?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "Nothing; a textbook chapter is a reliable source for any claim",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "The range does not match the claimed scope: one summary cannot support a claim of a full review",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "The essay needs a longer reference list, regardless of what it contains",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "The source is too old to be used for this claim",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. A claim of a full review commits the writer to a range of theories and sources; one textbook summary cannot deliver on that claim, however reliable it is on its own terms.",
+      "_incorrect": "The problem here is range against the claim made, not the reliability or age of the one source cited."
+    },
+    "tests": "L02-o2"
+  },
+  {
+    "_id": "L02-c-69",
+    "_parentId": "L02-b-69",
+    "_type": "component",
+    "_component": "mcq",
+    "title": "Check your understanding",
+    "displayTitle": "",
+    "body": "<p>You are judging a reference list for {{context}}. The list cites recent studies supporting the main argument, but no study that tests or challenges it. What gap does this show?</p>",
+    "instruction": "<p>Choose the best answer.</p>",
+    "_isEnabled": true,
+    "_attempts": -1,
+    "_isPartOfAssessment": false,
+    "_isRandom": false,
+    "_selectable": 1,
+    "_items": [
+      {
+        "text": "An evidence gap: no opposing or testing view is represented",
+        "_isCorrect": true,
+        "_shuffle": false
+      },
+      {
+        "text": "No gap, provided every cited source is itself reliable",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "A formatting gap, because the citations may not follow a consistent style",
+        "_isCorrect": false,
+        "_shuffle": false
+      },
+      {
+        "text": "A currency gap, because the sources are described as recent",
+        "_isCorrect": false,
+        "_shuffle": false
+      }
+    ],
+    "_feedback": {
+      "correct": "Right. Recency and individual reliability do not supply disagreement. A list that cites only supporting evidence leaves an evidence gap at the point where a challenge should appear.",
+      "_incorrect": "Reliability and recency are not the issue here. Look at what kind of evidence is missing: anything that tests or opposes the main argument."
+    },
+    "tests": "L02-o3"
   }
 ]
