@@ -260,9 +260,11 @@ proposal, not after.
     the human alongside the gate's own proposal, rather than silently
     self-checking it the way an ordinary do-not is checked. If the human
     does not answer, the entry's own stated default stands and the record
-    carries `provenance: ai-proposal-stood`, as les-01's existing
+    carries `provenance: ai-proposal-stood`, as crs-08_progression's existing
     `hardness: soft` + `defaultType: ai-proposal-stands` already does for
-    an unanswered gate. Every other (non-prefixed) `warnings` entry
+    an unanswered gate (les-01_lesson-proposal was this example until it
+    moved to `hardness: hard-stop` + `defaultType: none`, 4 Nov 2026 - every
+    lesson proposal now requires an explicit human word). Every other (non-prefixed) `warnings` entry
     behaves exactly as above — a do-not to respect.
 
 6. PROPOSAL, in exactly this shape. At `les-01_lesson-proposal` only

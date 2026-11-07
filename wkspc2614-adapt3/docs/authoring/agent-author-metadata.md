@@ -152,8 +152,11 @@ human does not answer, e.g.:
 **What it is.** An authoring-time agent-to-human checkpoint, surfaced by `/gate`
 alongside its own proposal (see 5b in `.claude/commands/gate.md`). It is
 skippable: silence means the stated default stands, riding the same
-`hardness: soft` + `defaultType: ai-proposal-stands` mechanic `les-01` already
-uses for an unanswered gate.
+`hardness: soft` + `defaultType: ai-proposal-stands` mechanic `crs-08_progression`
+uses for an unanswered gate (`les-01_lesson-proposal` moved to
+`hardness: hard-stop` + `defaultType: none` on 4 Nov 2026 - every lesson
+proposal now requires an explicit human word, so it is no longer a live
+example of this mechanic).
 
 **Not `agentAuthorDialogue`.** This is deliberately not that field.
 `agentAuthorDialogue` is reserved for a conversational agent's *learner-facing*

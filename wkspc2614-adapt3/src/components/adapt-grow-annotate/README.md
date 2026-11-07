@@ -73,8 +73,13 @@ The same component covers a spectrum, set by three independent switches:
 
 So, for example: free-hand reflective highlighting (all off); "find and colour
 the claim/evidence/hedge" (free-select + question + `_targets`); or author-pinned
-"label each `[[word]]`" (targets + question + `_answers`). `example.json` ships one
-worked instance of each.
+"label each `[[word]]`" (targets + question + `_answers`). `example.json` ships five
+worked instances: a reflective free-hand marker (Variant A); two graded
+free-select exercises on the identical shell but two unrelated subject
+vocabularies — rhetorical moves (claim / evidence / assertive / tentative,
+Variant B) and critical vocabulary (application / analysis / evaluation /
+synthesis, Variant E); an author-pinned graded exercise (Variant C); and a
+reflective free-select shapes exercise (Variant D).
 
 ## Data object: shell vs context (baseline / L2 / L3)
 
@@ -92,6 +97,61 @@ pitch:
   **context-specific** material at proficiency **Level 2 or Level 3**; the shell
   does not change. Keep tool ids stable so the same `_answers`/`_targets` grammar
   carries across fills.
+
+**One data object, not two.** The split above is the whole answer to "do we
+need a separate data shape per activity type?" — no. `_tools[]` already takes
+an arbitrary palette and `js/annotateLogic.js` is tool-id-agnostic throughout
+(its own test fixture uses `'hedge'` as a bare string), so a new teaching
+vocabulary is new *content*, not a new *component shape*. Variant B
+(rhetorical moves: claim / evidence / assertive / tentative) and Variant E
+(critical vocabulary: application / analysis / evaluation / synthesis) are the
+proof: two worked examples from unrelated subject domains, filled into the
+identical shell, with no `_mode` switch anywhere. Adding one would hard-code a
+specific rhetorical or Bloom's vocabulary into component code — exactly the
+coupling a generic, cross-subject component needs to avoid.
+
+## Reflective or analytical?
+
+Marking up a passage looks reflective — the learner is doing something with
+the text in front of them — but most annotate exercises are analytical: the
+learner is naming the structure of *someone else's* writing, not examining
+their own practice. Three conditions have to hold together before an instance
+counts as reflective, not analytical:
+
+1. **`_isQuestion` is false (or omitted).** A right answer to mark means the
+   exercise is testing recognition of a category, not inviting a response.
+2. **No `_targets` or `_answers`.** An answer key is itself evidence the
+   activity is graded against one fixed reading, whatever `_isQuestion` says.
+3. **Tool labels invite a response, not name a category.** "I agree", "I have
+   a question", "Important to me" ask what the learner thinks. "Claim",
+   "Evidence", "Hedge" ask the learner to identify a category, whether or not
+   that identification is marked right or wrong.
+
+The third condition is the one authors get wrong. Strip the grading out of
+Variant B or Variant E (drop `_isQuestion` and `_targets`, keep the pens) and
+the result is still analytical, merely unmarked — the pens still name
+rhetorical or cognitive categories, not responses. Only Variant A (the
+free-hand marker, with pens like "I agree" and "I have a question") meets all
+three conditions.
+
+Per CLAUDE.md's component-mapping table, a reflective prompt routes to
+`opentext` (1-3 genuine questions, "no right answers"), and that routing does
+not change here. Annotate's reflective mode *complements* opentext, it does
+not replace it: it lets the learner mark up *someone else's* text — a
+passage, a source, a piece of feedback — and never asks them to compose their
+own writing. Candidate placements: critical/close reading, source evaluation,
+rhetorical analysis, feedback literacy (marking up a tutor's comments), and —
+as a pre-writing step, never the destination — a reflective-writing pathway
+that has the learner mark a passage before an `opentext` prompt asks them to
+write about it.
+
+That pre-writing placement is also the direct answer to "what makes a piece of
+writing reflective rather than descriptive": not the first person, and not
+naming a feeling, but four moves — what you did, what close comparison shows,
+whether it worked, and what you would combine or change next time — turned on
+your own practice instead of someone else's. That is exactly what mode 2
+(`c-annotate-vocab`, the Gibbs'-cycle passage) has the learner find in
+somebody else's reflective paragraph, as rehearsal before writing their own.
 
 ## How it works
 
@@ -115,6 +175,21 @@ Each target is a real `<button>` with `aria-pressed`; the palette is a
 `role="toolbar"`; changes are announced through a polite live region; marks
 respect reduced motion (shown complete, no animation). Native scrolling/reading
 is unaffected.
+
+Author-pinned targets (`[[word]]`) no longer underline on hover. A hover
+underline reads as a hyperlink affordance, so brushing the cursor across the
+passage silently revealed the whole answer set before anyone read a word. The
+underline carried no other function — focus state and the `.is-annotated`
+weight change are untouched — so it was removed outright rather than dimmed.
+
+That fixes the visual leak, not the whole leak, by design. Pinned targets are
+real `<button>` elements so they are reachable and operable by keyboard and by
+screen reader, which is the correct accessible control — and that same
+correctness means the full set of answerable words is still discoverable by
+tabbing through the passage before engaging with it. Breaking button
+semantics to hide that would trade accessibility for a cosmetic fix, which is
+not a trade worth making. Free-select mode has no pinned target set to leak:
+there is nothing to tab to until the learner selects something themselves.
 
 ## Vendored library
 

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "0.0.1",
+  "courseId": "d9-distillation-stale-crs03",
+  "slug": "d9-distillation-stale-crs03",
+  "profile": "pathway-distillation",
+  "facetSet": { "pathway": "writing", "tier": "introductory" },
+  "kbVersions": { "design-kb": "0.0.1" },
+  "gates": [
+    { "gateId": "crs-03_course-outcomes", "records": [
+      { "seq": 1, "state": "closed", "provenance": "human-confirmed", "decidedValue": {
+        "courseOutcomes": [
+          { "id": "co1", "text": "Stale course outcome one, from the superseded built-course-shape pass." },
+          { "id": "co2", "text": "Stale course outcome two." },
+          { "id": "co3", "text": "Stale course outcome three." }
+        ]
+      }, "timestamp": "2026-09-01T00:00:00.000Z" }
+    ] },
+    { "gateId": "crs-04_lesson-map", "records": [
+      { "seq": 1, "state": "closed", "provenance": "human-confirmed", "decidedValue": {
+        "lessons": [
+          { "key": "L01", "outcomes": [
+            { "id": "lo1", "text": "Flat lesson outcome one.", "serves": "crs07-lo1" }
+          ] }
+        ]
+      }, "timestamp": "2026-09-01T00:00:00.000Z" }
+    ] }
+  ],
+  "phases": [],
+  "instantiations": []
+}

@@ -1,0 +1,24 @@
+{
+  "kbVersion": "0.0.1",
+  "profiles": [
+    {
+      "id": "built-course-shape",
+      "steps": [
+        { "id": "s1", "gates": ["crs-02_thematic-scope", "crs-03_course-outcomes"] }
+      ],
+      "continuesWith": ["crs-05_course-spec"]
+    },
+    {
+      "id": "pathway-distillation",
+      "steps": [
+        { "id": "s1", "gates": ["crs-06_pathway-statements", "crs-08_progression"] }
+      ],
+      "continuesWith": []
+    },
+    {
+      "id": "empty-profile",
+      "steps": [],
+      "continuesWith": []
+    }
+  ]
+}
