@@ -198,6 +198,141 @@
           "timestamp": "2026-11-07T09:27:29.665Z"
         }
       ]
+    },
+    {
+      "gateId": "crs-06_pathway-statements",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Community of practice note on why sources are acknowledged"
+              },
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Tracing the sources behind a community leaflet"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Annotated references list showing what each element does"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Footnoted campaign briefing in an organisation's house style"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Source log mapped to the SCONUL Manage pillar"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Placement evidence log behind a component specification"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Patchwriting check and revision of a drafted paragraph"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Ward newsletter summary with quotation and paraphrase marked"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Core elements breakdown of awkward source types"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Credits page and decision note for a live design brief"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Citation map showing which conversations your essay joins"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Evidence-backed recommendation for a sports club"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Case analysis of an honesty decision in your own work"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Correcting an overstated figure during an internship"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Group project conduct analysed against four integrity values"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Raising a concern about an uncredited shared resource"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Professional identity statement linking integrity to a code"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Source-checking routine set up for a policy team"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].evidence[].title",
+              "note": "18 statements (9 capabilities x 2 evidence items), full file read (483 lines); capabilityId normalised referencing#d2/e3 -> referencing/d2, referencing/e3 per D4 ruling"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-06_pathway-statements 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
     }
   ],
   "phases": [],
