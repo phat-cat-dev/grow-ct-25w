@@ -1,0 +1,205 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "referencing-v2-intermediate",
+  "slug": "referencing-v2-intermediate",
+  "status": "in-development",
+  "profile": "pathway-distillation",
+  "facetSet": {
+    "pathway": "referencing",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.9",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-01_theme-preset 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "referencing",
+            "themeSource": "preset"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-02_course-theme 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "all",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-03_pitch 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "All tiers",
+            "slug": "referencing-v2"
+          },
+          "grounding": [
+            {
+              "doc": "courses/referencing-introductory/course-design_referencing-introductory.json",
+              "ref": "onb-04_naming record",
+              "note": "slug collision with the existing live-profile referencing-introductory course; referencing-v2 is the parallel pathway-distillation build, mirroring the presenting-v2 naming precedent"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-04_naming 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": []
+}
