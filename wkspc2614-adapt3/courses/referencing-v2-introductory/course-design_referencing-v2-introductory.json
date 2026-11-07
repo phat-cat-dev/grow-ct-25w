@@ -1132,6 +1132,60 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "summary": "<p>You have reached the end of the course. Naming your sources, building a reference, and keeping everything in one consistent style are no longer unfamiliar: you now have a first, solid foundation in referencing. You can explain why sources are named, describe what a reference needs, spot and correct an inconsistent citation, identify and explain the sources in your own work, and keep an organised, traceable log of sources as you gather them. Look back at the confidence check to see how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>Start using what you've learned in the very next piece of work you submit: log each source as you choose it, check your reference list matches what you've cited in the text, and keep everything in one consistent style from the first draft. You will also use this habit of logging sources as you go when you come to finding and using sources for a longer piece of work.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "whereNext": {
+              "vertical": [
+                "Referencing: Introductory",
+                "Referencing: Intermediate"
+              ],
+              "horizontal": [
+                "Finding & Using Sources"
+              ]
+            },
+            "whereNextBody": "<p>This is the first course in the Referencing pathway. The natural next step is the intermediate course, which moves from getting referencing right to judging it: checking a paraphrase against its source, weighing whether a reference list's range reflects real research, and handling source types that do not fit a standard template. The habit of logging a source as you select it, which you have just built, is exactly what makes that judgement possible later.</p>",
+            "courseReferences": [
+              {
+                "title": "See pages 188 to 198 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the C-POST confidence shift (AL-5). wra-02's own dependsOn edges name crs-07 explicitly for this course's profile (pathway-distillation)."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "courseReferences aggregated from the sourceSections actually cited across L01-L04 (188, 188-189, 189-191, 195-198; L05/L06 carry no sourceSections). This is a seq-1 approximation ahead of the lessons landing; flagged for a seq-2 top-up once Phase B closes if any lesson's own sourceSections differ from this aggregation (the consistency rule)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-02_wrapper-close 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1162,6 +1216,35 @@
             "coupled": false
           },
           "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
         }
       ]
     }
