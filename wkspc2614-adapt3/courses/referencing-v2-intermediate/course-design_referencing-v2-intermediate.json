@@ -1169,6 +1169,74 @@
           }
         }
       ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "o1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student rewrites a source sentence by swapping a few words but keeping its structure and most phrasing. What should checking the paraphrase against its original reveal?"
+              },
+              {
+                "tests": "o2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A reference list cites several sources that all support the same conclusion, with no opposing view represented. What does evaluating its range suggest?"
+              },
+              {
+                "tests": "o3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You are paraphrasing a technical passage for a reader unfamiliar with the field. What must the paraphrase still do?"
+              },
+              {
+                "tests": "o4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You need to reference an unfamiliar source type with no obvious template. What should you identify first?"
+              },
+              {
+                "tests": "o5",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You must reference an unfamiliar source type under time pressure. What should you do, beyond getting an answer quickly?"
+              },
+              {
+                "tests": "o6",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A recommendation is backed only by sources that agree with it. What does gathering and citing opposing sources as well let a reader do?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "One summative item per flat LO (o1-o6), owner decision 2 Nov 2026 overriding the skeleton's default two-per-outcome, since pathway-distillation has no course-outcome tier. Each item's tests names the crs-07 outcome id (AL-6). Intermediate tier: application of the concepts across typical tasks (scenario-based stems), per skeletons/summative byTier.intermediate."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Two items per outcome (the skeleton's built-course-shape default). Rejected: wra-03's dependsOn edge states the pathway-distillation override explicitly as one-per-LO."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-intermediate wra-03_summative 2026-11-07"
+          }
+        }
+      ]
     }
   ],
   "phases": [],
@@ -1228,6 +1296,26 @@
             "coupled": false
           },
           "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
         }
       ]
     }
