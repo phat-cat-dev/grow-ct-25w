@@ -2,14 +2,14 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://excelling.cardiffmet/schemas/catalogue.pathway.schema.json",
   "title": "catalogue: single pathway",
-  "description": "catalogue/pathways/<pathway>.json holds one pathway's tiers (CAT-1 AMENDMENT, Prompt 140 Unit 1): tier id, display name and focus (TN-1), course slug, status, contexts built, what the tier assumes from the one before, and its voice band. Teaching prose stays in docs/curriculum/pathway-tier-mapping.md; each tier entry points at it, no prose is copied in.",
+  "description": "catalogue/context/pathways/<pathway>.json holds one pathway's tiers (CAT-1 AMENDMENT, Prompt 140 Unit 1): tier id, display name and focus (TN-1), course slug, status, contexts built, what the tier assumes from the one before, and its voice band. Teaching prose stays in docs/curriculum/pathway-tier-mapping.md; each tier entry points at it, no prose is copied in.",
   "type": "object",
   "required": ["pathwayId", "tiers"],
   "properties": {
     "pathwayId": {
       "type": "string",
       "pattern": "^[a-z0-9-]+$",
-      "description": "Matches this pathway's id in catalogue/pathways.json."
+      "description": "Matches this pathway's id in catalogue/context/pathways.json."
     },
     "tiers": {
       "type": "array",

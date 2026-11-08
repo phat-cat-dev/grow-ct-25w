@@ -10,7 +10,7 @@ const rd = p => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
 
 const PATHWAY = 'ai-technology';
 const ref = rd(`catalogue/context/pathway/${PATHWAY}.json`);
-const facing = rd('catalogue/context/pathway-student-facing.json').pathways[PATHWAY] || [];
+const facing = rd('catalogue/context/pathway-student-facing/pathway-student-facing.json').pathways[PATHWAY] || [];
 const caps = (ref.capabilities || []).filter(c => c.statement);
 
 // student-facing "you can…" matched to a capability by tier + fheqLevel

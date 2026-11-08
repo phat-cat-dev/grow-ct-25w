@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://excelling.cardiffmet/schemas/catalogue.pathways.schema.json",
   "title": "catalogue: pathways collection",
-  "description": "catalogue/pathways.json holds the 13 pathways (CAT-1 AMENDMENT, Prompt 140 Unit 1). Each entry: id, number, name, book chapters, routes (which pathways it feeds and draws on), and the file holding its tiers.",
+  "description": "catalogue/context/pathways.json holds the 13 pathways (CAT-1 AMENDMENT, Prompt 140 Unit 1). Each entry: id, number, name, book chapters, routes (which pathways it feeds and draws on), and the file holding its tiers.",
   "type": "object",
   "required": ["pathwaysVersion", "pathways"],
   "properties": {
@@ -47,7 +47,7 @@
           },
           "file": {
             "type": "string",
-            "description": "Repo-relative path to catalogue/pathways/<pathway>.json holding this pathway's tiers."
+            "description": "Repo-relative path to catalogue/context/pathways/<pathway>.json holding this pathway's tiers."
           }
         },
         "additionalProperties": false

@@ -2,7 +2,7 @@
 // + new 9 (proliferated, drafted) = 18 per pathway. Asserts coverage, then writes in place.
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const storePath = path.join(ROOT, 'catalogue/context/pathway-student-facing.json');
+const storePath = path.join(ROOT, 'catalogue/context/pathway-student-facing/pathway-student-facing.json');
 const store = JSON.parse(fs.readFileSync(storePath, 'utf8'));
 
 const prolif = {};
@@ -50,4 +50,4 @@ store.status = 'mixed (identified=confirmed, proliferated=drafted)';
 store.proliferatedGenerated = new Date().toISOString().slice(0, 10);
 
 fs.writeFileSync(storePath, JSON.stringify(store, null, 2) + '\n');
-console.log('OK -> catalogue/context/pathway-student-facing.json (18 per pathway)');
+console.log('OK -> catalogue/context/pathway-student-facing/pathway-student-facing.json (18 per pathway)');

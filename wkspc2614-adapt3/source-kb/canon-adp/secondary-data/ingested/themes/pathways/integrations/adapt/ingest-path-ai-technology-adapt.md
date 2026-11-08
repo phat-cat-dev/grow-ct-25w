@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror (`adp/adp-mirror/`, generated from `d9cf3af`);
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 12, "AI & Technology", no chapter (authored, Track B) | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers, focus understand AI, use AI critically, evaluate, create with and act ethically around AI | `catalogue/pathways/ai-technology.json` | all `planned`; no course slug; voice band "Provisional: confirm at SME sign-off." |
+| The pathway's entry, Pathway 12, "AI & Technology", no chapter (authored, Track B) | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers, focus understand AI, use AI critically, evaluate, create with and act ethically around AI | `catalogue/context/pathways/ai-technology.json` | all `planned`; no course slug; voice band "Provisional: confirm at SME sign-off." |
 | The teaching prose, with its sources, framing decision, cross-links and notes | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 12 | draft; needs SME approval before authoring |
 | The capability cards and tier notes | adp-0212 (RJ-0047), adp-0213 (RJ-0053): six cards, three developed, two extended, one unplaced, none introduced | drafts; D-0058 owed |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0, 8 patterns for this pathway | v2 ruled (D-0028), held on RJ-0033 |

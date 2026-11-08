@@ -1,0 +1,2900 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "referencing-v2-introductory",
+  "slug": "referencing-v2-introductory",
+  "status": "in-development",
+  "profile": "pathway-distillation",
+  "facetSet": {
+    "pathway": "referencing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.9",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-01_theme-preset 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "referencing",
+            "themeSource": "preset"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-02_course-theme 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "all",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-03_pitch 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "All tiers",
+            "slug": "referencing-v2"
+          },
+          "grounding": [
+            {
+              "doc": "courses/v1/referencing-introductory/course-design_referencing-introductory.json",
+              "ref": "onb-04_naming record",
+              "note": "slug collision with the existing live-profile referencing-introductory course; referencing-v2 is the parallel pathway-distillation build, mirroring the presenting-v2 naming precedent"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-04_naming 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "Introductory",
+            "slug": "referencing-v2"
+          },
+          "supersedes": 1,
+          "timestamp": "2026-11-07T17:20:51.189Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-06_pathway-statements",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Community of practice note on why sources are acknowledged"
+              },
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Tracing the sources behind a community leaflet"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Annotated references list showing what each element does"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Footnoted campaign briefing in an organisation's house style"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Source log mapped to the SCONUL Manage pillar"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Placement evidence log behind a component specification"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Patchwriting check and revision of a drafted paragraph"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Ward newsletter summary with quotation and paraphrase marked"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Core elements breakdown of awkward source types"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Credits page and decision note for a live design brief"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Citation map showing which conversations your essay joins"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Evidence-backed recommendation for a sports club"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Case analysis of an honesty decision in your own work"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Correcting an overstated figure during an internship"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Group project conduct analysed against four integrity values"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Raising a concern about an uncredited shared resource"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Professional identity statement linking integrity to a code"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Source-checking routine set up for a policy team"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].evidence[].title",
+              "note": "18 statements (9 capabilities x 2 evidence items), full file read (483 lines); capabilityId normalised referencing#d2/e3 -> referencing/d2, referencing/e3 per D4 ruling"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-06_pathway-statements 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "seq": 1,
+          "state": "skipped",
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/crs-02_thematic-scope",
+              "note": "crs-02_thematic-scope.profiles = [built-course-shape, single-course]; pathway-distillation is not in that list, so this gate is out of scope for a referencing-v2-* manifest."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-02_thematic-scope 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "skipped",
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/crs-03_course-outcomes",
+              "note": "crs-03_course-outcomes.profiles = [built-course-shape, single-course]; pathway-distillation is not in that list, so this gate is out of scope for a referencing-v2-* manifest."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-03_course-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "chunks[].pathwayTags[].pathway = referencing",
+              "note": "10 tagged chunks total (3 framing + 7 teaching-shape)"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-01_sources 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "chunks[].pathwayTags[].pathway = referencing",
+              "note": "10 tagged chunks total (3 framing + 7 teaching-shape)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-01_sources confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-07_tiered-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can explain why academic work names its sources, showing how acknowledgement lets a reader judge the quality of information used and trace claims to their origin.",
+                "layer": 1,
+                "confidenceStatement": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "id": "o2",
+                "text": "The student can describe the elements a reference needs and explain how converting sources into one consistent citation style lets a reader trace every claim.",
+                "layer": 1,
+                "confidenceStatement": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "id": "o3",
+                "text": "The student can identify inconsistent citations in a piece of writing and correct them so every citation and reference entry matches one consistent style.",
+                "layer": 1,
+                "confidenceStatement": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "id": "o4",
+                "text": "The student can identify the sources used in a piece of work and explain to someone unfamiliar with it why those sources were selected and acknowledged.",
+                "layer": 1,
+                "confidenceStatement": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "id": "o5",
+                "text": "The student can explain why recording a source at the point it is selected, rather than afterwards, keeps every citation traceable and organised for later use.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "id": "o6",
+                "text": "The student can keep an organised, traceable record of sources while gathering evidence for a task, so each one can be found and checked again later.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/c1, referencing/01, referencing/c2's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "4 Layer-1 book-section anchors (o1-o4); referencing/c2 (source-logging) has no book section, so its two outcomes (o5-o6) are Layer-2 capability-evidence fills"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-07_tiered-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can explain why academic work names its sources, showing how acknowledgement lets a reader judge the quality of information used and trace claims to their origin.",
+                "layer": 1,
+                "confidenceStatement": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "id": "o2",
+                "text": "The student can describe the elements a reference needs and explain how converting sources into one consistent citation style lets a reader trace every claim.",
+                "layer": 1,
+                "confidenceStatement": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "id": "o3",
+                "text": "The student can identify inconsistent citations in a piece of writing and correct them so every citation and reference entry matches one consistent style.",
+                "layer": 1,
+                "confidenceStatement": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "id": "o4",
+                "text": "The student can identify the sources used in a piece of work and explain to someone unfamiliar with it why those sources were selected and acknowledged.",
+                "layer": 1,
+                "confidenceStatement": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "id": "o5",
+                "text": "The student can explain why recording a source at the point it is selected, rather than afterwards, keeps every citation traceable and organised for later use.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "id": "o6",
+                "text": "The student can keep an organised, traceable record of sources while gathering evidence for a task, so each one can be found and checked again later.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/c2"
+                },
+                "confidenceStatement": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/c1, referencing/01, referencing/c2's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "4 Layer-1 book-section anchors (o1-o4); referencing/c2 (source-logging) has no book section, so its two outcomes (o5-o6) are Layer-2 capability-evidence fills"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-07_tiered-outcomes confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "Why sources are named",
+                "topic": "how acknowledging sources lets a reader judge and trace your work",
+                "description": "Why sources are named — how acknowledging sources lets a reader judge and trace your work.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-intro",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing",
+                    "pages": "188"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain why academic work names its sources.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Identify what source-acknowledgement lets a reader do.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Trace a claim in a worked example back to its origin.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "One style, every reference",
+                "topic": "what a reference needs and why consistency matters",
+                "description": "One style, every reference — what a reference needs and why consistency matters.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-styles",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing styles",
+                    "pages": "188-189"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Describe the elements a reference needs.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Classify a set of references by citation style.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Explain why one consistent style lets a reader trace every claim.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "Spotting inconsistent citations",
+                "topic": "finding and fixing citations that do not match your reference list",
+                "description": "Spotting inconsistent citations — finding and fixing citations that do not match your reference list.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/what-references-look-like",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "What do references look like?",
+                    "pages": "189-191"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify an inconsistent citation in a piece of writing.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Locate the matching reference-list entry for a citation.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Correct an inconsistent citation to match one style.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Sources in your own work",
+                "topic": "identifying your sources and explaining why you acknowledged them",
+                "description": "Sources in your own work — identifying your sources and explaining why you acknowledged them.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/how-to-format-references",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "How do you format references?",
+                    "pages": "195-198"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Identify the sources used in a piece of work.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Assemble a reference entry in a consistent format.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Explain to a newcomer why a source was acknowledged.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Log it as you go",
+                "topic": "why a source is recorded the moment it is selected",
+                "description": "Log it as you go — why a source is recorded the moment it is selected.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Explain why a source is logged at the point it is selected.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Recognise the risk of logging a source after the fact.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Describe what a traceable source record contains.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "Keeping a source log",
+                "topic": "organising a traceable record while you gather evidence",
+                "description": "Keeping a source log — organising a traceable record while you gather evidence.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Keep a source log while gathering evidence.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Organise a source log so an entry can be found again.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Check a source log entry against its original source.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-introductory/course-design_referencing-v2-introductory.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "sourceSections for L01-L04 (the tier's 4 Layer-1 anchors); L05-L06 serve the Layer-2 capability-evidence outcomes (referencing/c2, no book section) and carry no sourceSections"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-04_lesson-map 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "Why sources are named",
+                "topic": "how acknowledging sources lets a reader judge and trace your work",
+                "description": "Why sources are named — how acknowledging sources lets a reader judge and trace your work.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-intro",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing",
+                    "pages": "188"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain why academic work names its sources.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Identify what source-acknowledgement lets a reader do.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Trace a claim in a worked example back to its origin.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "One style, every reference",
+                "topic": "what a reference needs and why consistency matters",
+                "description": "One style, every reference — what a reference needs and why consistency matters.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/referencing-styles",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Referencing styles",
+                    "pages": "188-189"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Describe the elements a reference needs.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Classify a set of references by citation style.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Explain why one consistent style lets a reader trace every claim.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "Spotting inconsistent citations",
+                "topic": "finding and fixing citations that do not match your reference list",
+                "description": "Spotting inconsistent citations — finding and fixing citations that do not match your reference list.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/what-references-look-like",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "What do references look like?",
+                    "pages": "189-191"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify an inconsistent citation in a piece of writing.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Locate the matching reference-list entry for a citation.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Correct an inconsistent citation to match one style.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Sources in your own work",
+                "topic": "identifying your sources and explaining why you acknowledged them",
+                "description": "Sources in your own work — identifying your sources and explaining why you acknowledged them.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/how-to-format-references",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "How do you format references?",
+                    "pages": "195-198"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Identify the sources used in a piece of work.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Assemble a reference entry in a consistent format.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Explain to a newcomer why a source was acknowledged.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Log it as you go",
+                "topic": "why a source is recorded the moment it is selected",
+                "description": "Log it as you go — why a source is recorded the moment it is selected.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Explain why a source is logged at the point it is selected.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Recognise the risk of logging a source after the fact.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Describe what a traceable source record contains.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "Keeping a source log",
+                "topic": "organising a traceable record while you gather evidence",
+                "description": "Keeping a source log — organising a traceable record while you gather evidence.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Keep a source log while gathering evidence.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Organise a source log so an entry can be found again.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Check a source log entry against its original source.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-introductory/course-design_referencing-v2-introductory.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references",
+              "note": "sourceSections for L01-L04 (the tier's 4 Layer-1 anchors); L05-L06 serve the Layer-2 capability-evidence outcomes (referencing/c2, no book section) and carry no sourceSections"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-04_lesson-map confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-08_progression",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "tierSiblings": [
+              "referencing-v2-intermediate",
+              "referencing-v2-advanced"
+            ],
+            "signposts": {
+              "up": "Intermediate builds on accurate, consistent referencing by adding judgement: paraphrasing technical sources for new readers, handling unfamiliar source types, and using citation to show the breadth of your research."
+            },
+            "journey": {
+              "practice": "Builds each citation and reference entry to one consistent style, correcting any that drift, and keeps a traceable log of sources from the moment each is selected.",
+              "knowledge": "What a reference needs, why acknowledging sources lets a reader judge and trace a claim, and why a source record kept as you go stays traceable later.",
+              "identity": "A newcomer treating consistent acknowledgement, not just completion, as part of how academic work is done.",
+              "ladderRows": [
+                "i1",
+                "i2",
+                "i3"
+              ]
+            }
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-introductory/course-design_referencing-v2-introductory.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "journey re-authored from this tier's own 6 flat LOs (o1-o6: naming sources, reference elements and consistent style, correcting inconsistent citations, acknowledging sources to a newcomer, logging a source at the point of selection)"
+            },
+            {
+              "doc": "catalogue/context/pathways/referencing.json",
+              "ref": "pathwayId=referencing",
+              "note": "tierSiblings resolved by directory-existence check against courses/, not by this file's own courseSlug field (null/planned for intermediate and advanced)"
+            },
+            {
+              "doc": "courses/v2/referencing-v2-intermediate/course-design_referencing-v2-intermediate.json, courses/v2/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "directory existence",
+              "note": "both sibling tier directories exist (introductory has no down-signpost: it is the pathway's bottom tier)"
+            },
+            {
+              "doc": "catalogue/context/pathway/referencing.json",
+              "ref": "tierProgression.ladderReadings[rowId=i1,i2,i3], masteryNote, tierStatements",
+              "note": "read upstream for the evolution narrative; journey prose re-authored fresh from this tier's own crs-07 LOs, not copied from ladderReadings' wording"
+            },
+            {
+              "doc": "catalogue/context/shared/cross-cutting.json",
+              "ref": "genericLadder.heads",
+              "note": "practice/knowledge/identity fields framed against the three head labels ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)'), wording not copied"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-introductory crs-08_progression 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has six short lessons. First, why sources are named at all. Second, what a reference needs and why one consistent style matters. Third, spotting and fixing citations that do not match your reference list. Fourth, identifying the sources in your own work and explaining why you acknowledged them. Fifth, why a source is logged the moment you select it, not afterwards. Sixth, keeping an organised source log as you gather evidence. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the six lessons in order.",
+            "overview": "<p>This course is about referencing: naming your sources so a reader can judge your work and trace every claim back to where it came from. If you are starting out at university, this might be one of the first academic skills that feels unfamiliar. It is also one of the most practical: get it right from the beginning and you save yourself a great deal of trouble later.</p><p>By the end of this course you will be able to explain why sources are named, describe what a reference needs, spot and correct an inconsistent citation, identify and explain the sources in your own work, and build the habit of logging a source the moment you choose it, so your record stays organised and traceable.</p>",
+            "courseOutcomesFraming": "Six flat learning outcomes, read from crs-07_tiered-outcomes (pathway-distillation profile: crs-03 is not-applicable), framed up front: naming sources, reference elements and consistent style, correcting inconsistent citations, explaining acknowledgement to a newcomer, logging a source at the point of selection, and keeping an organised source log.",
+            "practiceConnection": {
+              "academic": "<p>Referencing is not an exam skill that disappears after this course. Every essay, report and dissertation you write from now on will ask you to name your sources accurately and consistently, and markers notice straight away when a reference list does not match what is cited in the text. Get the habit right now, while the stakes are low, and it becomes automatic long before it matters for a big piece of work.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-OPEN states the six crs-07 flat learning outcomes and why they matter (AL-5). wra-01's own dependsOn edges (design-kb.gates.json) name only crs-03_course-outcomes (not-applicable under the pathway-distillation profile) and crs-04_lesson-map; crs-07 is not named there. Interpretation taken here: crs-07 is this course's only outcomes source under this profile (as wra-03/wra-04 already name explicitly), so outcomes are read from it. The missing wra-01->crs-07 dependsOn edge is a design-kb gap, flagged for separate repair."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "Signpost content drawn from the six lessons' title/topic (L01-L06)."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Leave W-OPEN's outcomes unstated pending a corrected wra-01->crs-07 dependsOn edge. Rejected: under pathway-distillation crs-07 is the course's only outcomes source, and withholding it would leave W-OPEN with no outcomes at all; the interpretation is instead stated here and the missing edge flagged as a design-kb gap."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-01_wrapper-open 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "summary": "<p>You have reached the end of the course. Naming your sources, building a reference, and keeping everything in one consistent style are no longer unfamiliar: you now have a first, solid foundation in referencing. You can explain why sources are named, describe what a reference needs, spot and correct an inconsistent citation, identify and explain the sources in your own work, and keep an organised, traceable log of sources as you gather them. Look back at the confidence check to see how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>Start using what you've learned in the very next piece of work you submit: log each source as you choose it, check your reference list matches what you've cited in the text, and keep everything in one consistent style from the first draft. You will also use this habit of logging sources as you go when you come to finding and using sources for a longer piece of work.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "whereNext": {
+              "vertical": [
+                "Referencing: Introductory",
+                "Referencing: Intermediate"
+              ],
+              "horizontal": [
+                "Finding & Using Sources"
+              ]
+            },
+            "whereNextBody": "<p>This is the first course in the Referencing pathway. The natural next step is the intermediate course, which moves from getting referencing right to judging it: checking a paraphrase against its source, weighing whether a reference list's range reflects real research, and handling source types that do not fit a standard template. The habit of logging a source as you select it, which you have just built, is exactly what makes that judgement possible later.</p>",
+            "courseReferences": [
+              {
+                "title": "See pages 188 to 198 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the C-POST confidence shift (AL-5). wra-02's own dependsOn edges name crs-07 explicitly for this course's profile (pathway-distillation)."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "courseReferences aggregated from the sourceSections actually cited across L01-L04 (188, 188-189, 189-191, 195-198; L05/L06 carry no sourceSections). This is a seq-1 approximation ahead of the lessons landing; flagged for a seq-2 top-up once Phase B closes if any lesson's own sourceSections differ from this aggregation (the consistency rule)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-02_wrapper-close 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "o1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why does academic work name its sources?"
+              },
+              {
+                "tests": "o2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What does a reference need to let a reader trace a claim back to its source?"
+              },
+              {
+                "tests": "o3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What makes a citation inconsistent with a piece of writing's reference list?"
+              },
+              {
+                "tests": "o4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why might you need to explain the sources in your own work to someone unfamiliar with it?"
+              },
+              {
+                "tests": "o5",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why record a source the moment you select it, rather than afterwards?"
+              },
+              {
+                "tests": "o6",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What makes a source log useful while you are gathering evidence for a task?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "One summative item per flat LO (o1-o6), owner decision 2 Nov 2026 overriding the skeleton's default two-per-outcome, since pathway-distillation has no course-outcome tier. Each item's tests names the crs-07 outcome id (AL-6)."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Two items per outcome (the skeleton's built-course-shape default). Rejected: wra-03's dependsOn edge states the pathway-distillation override explicitly as one-per-LO."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-03_summative 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "o1",
+                "text": "I can explain why academic work names its sources, and how that lets a reader judge my work and trace my claims."
+              },
+              {
+                "rates": "o2",
+                "text": "I can describe what a reference needs and keep every citation in one consistent style."
+              },
+              {
+                "rates": "o3",
+                "text": "I can spot inconsistent citations in a piece of writing and correct them to one consistent style."
+              },
+              {
+                "rates": "o4",
+                "text": "I can identify the sources in my work and explain to someone unfamiliar with it why I selected and acknowledged them."
+              },
+              {
+                "rates": "o5",
+                "text": "I can explain why I record a source as soon as I select it, not afterwards."
+              },
+              {
+                "rates": "o6",
+                "text": "I can keep an organised, traceable record of my sources while I gather evidence."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "o1",
+              "o2",
+              "o3",
+              "o4",
+              "o5",
+              "o6"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "pathway-distillation override (per wra-04's dependsOn edge): one confidence statement per flat LO (o1-o6), text taken verbatim from crs-07.outcomes[].confidenceStatement, not re-worded. Same set fills C-PRE and C-POST (AL-4). itemIds covers all six rated outcomes, not a subset (precedent in academic-writing-advanced carries only 3 itemIds against 4 statements; that drift is not reproduced here)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory wra-04_confidence 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Why sources are named",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} states a statistic with no source given; {{learner-b}} states the same figure and names the study, letting a reader trace it to origin and judge its weight. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance); concept, then four activities and a worked example, then practical guidance, then check.",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to check their own recent habit of naming sources and notice what made it easy or hard.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work in {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-1",
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L01-o1/o2/o3) taken verbatim from crs-04's L01 entry ('Why sources are named'). sourceSections names page 188 of Chapter 10, used for lesson-references."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, learner-a/learner-b tokens"
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false. No marker convention yet exists to distinguish check items 2/3 from item 1 within the single 'check' skeletonKey; left unmarked, a flagged CXP-phase gap, consistent with other CXP-dependent gaps already out of scope for this phase."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/recall-reveal",
+              "whyNot": "activity-1 also drafted as palette/accordion (plain reveal of the same three reasons) - rejected as confirmed because matching's shared-category structure gives the introductory tier a clearer 'one right grouping' recognition task (archetype byTier: introductory = recognition or sorting, one clear right grouping) than a plain reveal would."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L01-les-01 referencing-v2-introductory L01 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "One style, every reference",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} mixes citation styles across a reference list; {{learner-b}} rewrites every entry into one consistent style, letting a reader predict and trace information reliably. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to check a recent reference list of their own for consistency of style.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-1",
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L02-o1/o2/o3) taken verbatim from crs-04's L02 entry ('One style, every reference'). sourceSections names pages 188-189 of Chapter 10, used for lesson-references."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-1/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-2 (matching, classify by style)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-3 (sortable, build a reference in order)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-2/3 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/recall-reveal",
+              "whyNot": "activity-1 also drafted as palette/accordion (plain reveal of the same four elements) - rejected as confirmed because flipcard's one-fact-per-card structure suits a short, discrete recall task (four named elements) better than a single continuous reveal list would at the introductory tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L02-les-01 referencing-v2-introductory L02 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Spotting inconsistent citations",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices a citation does not quite match its reference-list entry and leaves it as it is; {{learner-b}} notices the same mismatch, checks the reference list, and corrects the citation. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to check three recent citations of their own against their reference list.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-1",
+                "component": "palette/sortable",
+                "status": "drafted"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L03-o1/o2/o3) taken verbatim from crs-04's L03 entry ('Spotting inconsistent citations'). sourceSections names pages 189-191 of Chapter 10, used for lesson-references."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1/2 (matching, classify consistency and locate matching entry)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-3 (sortable, order the correction steps)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-4 (accordion, common causes of mismatch)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens plus pronoun tokens",
+              "note": "Used {{learner-a-pronoun}} once in the weaker paragraph; no marker-class convention yet exists to distinguish check items 2/3 from item 1 within a single check skeletonKey - flagged as a design-kb gap, left unmarked, same as L01/L02."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2/3 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/sort-into-groups",
+              "whyNot": "activity-1 also drafted as palette/sortable (ordering a mixed set of consistent/inconsistent citations) - rejected as confirmed because matching's binary classify-each-item structure more directly tests L03-o1 (identify an inconsistent citation) than an ordering task would."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L03-les-01 referencing-v2-introductory L03 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Sources in your own work",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} lists only directly quoted sources, leaving off a paraphrased statistic and an adapted line of reasoning; {{learner-b}} goes through the draft sentence by sentence and lists every source that contributed, quoted or not. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L04-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to check a recent idea, statistic, or line of reasoning in their own writing against its source.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L04-o1/o2/o3) taken verbatim from crs-04's L04 entry ('Sources in your own work'). sourceSections names pages 195-198 of Chapter 10, used for lesson-references."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify needs-citation vs does-not)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, assemble a journal-article reference)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens plus pronoun tokens",
+              "note": "Used {{learner-a-pronoun}} once in the weaker paragraph; no marker-class convention yet exists to distinguish check items 2/3 from item 1 within a single check skeletonKey - flagged as a design-kb gap, left unmarked, same as L01/L02/L03."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/recall-reveal",
+              "whyNot": "activity-3 also drafted as palette/accordion (plain reveal of the same four reasons) - rejected as confirmed because flipcard's one-fact-per-card structure suits a short, discrete recall task (four named reasons) better than a single continuous reveal list would at the introductory tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L04-les-01 referencing-v2-introductory L04 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L05-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Log it as you go",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} plans to write down every reference once a reading session is over and misremembers which page two statistics came from; {{learner-b}} notes the reference, page and purpose of each source the moment it is selected. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L05-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L05-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L05-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to reflect on whether they logged sources as they found them in a recent piece of research, or reconstructed detail afterward.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/flipcard",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L05-o1/o2/o3) taken verbatim from crs-04's L05 entry ('Log it as you go'). L05 carries no sourceSections (Layer-2 outcome, no chapter-10 anchor) - a confirmed crs-04 design reality, already flagged and accepted at the crs review; the lesson-references slotChoice is instantiated with palette/references but no _items, and BKS-1 is expected to fail for this lesson, not a defect to fix here."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, pair a logging habit with its outcome)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-2/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-3 (sortable, order the steps of logging a source at the point of selection)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens plus pronoun tokens",
+              "note": "Used {{learner-a-pronoun}} once in the weaker paragraph; no marker-class convention yet exists to distinguish check items 2/3 from item 1 within a single check skeletonKey - flagged as a design-kb gap, left unmarked, same as L01-L04."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/3 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/recall-reveal",
+              "whyNot": "activity-4 also drafted as palette/flipcard (one-fact-per-card reveal of the same four failure modes) - rejected as confirmed because accordion's continuous list suits four related-but-not-discrete causes (they build on each other as reasons delay fails) better than isolated cards would."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L05-les-01 referencing-v2-introductory L05 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-introductory-L06-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Keeping a source log",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} adds every source to one unsorted list and cannot find a specific entry weeks later; {{learner-b}} files each source under the claim it supports and checks each entry against the original the same day. Realised via palette/worked-example (structured-fields, character tokens).",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L06-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L06-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L06-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "One open question (plus a no-right-answers framing line) inviting the student to check whether they could find a specific log entry again quickly, and when they last checked one against its original.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L06-o1/o2/o3) taken verbatim from crs-04's L06 entry ('Keeping a source log'). L06 carries no sourceSections (Layer-2 outcome, no chapter-10 anchor), same confirmed crs-04 design reality as L05; the lesson-references slotChoice is instantiated with palette/references but no _items, and BKS-1 is expected to fail for this lesson, not a defect to fix here."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-1 (sortable, order the steps of keeping the log running)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-2 (matching, pair an organising habit with its outcome)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens plus pronoun tokens",
+              "note": "Used {{learner-a-pronoun}} once in the weaker paragraph; no marker-class convention yet exists to distinguish check items 2/3 from item 1 within a single check skeletonKey - flagged as a design-kb gap, left unmarked, same as every prior introductory lesson. This is also the final les-01 landing for the introductory tier: all six lessons now instantiated."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: sortable/matching in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/sort-into-groups",
+              "whyNot": "activity-1 also drafted as palette/matching (pairing each step with its rationale) - rejected as confirmed because sortable's ordering task more directly tests L06-o1 (keep a log while gathering evidence, i.e. the running sequence of actions) than a static pairing would."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-introductory-L06-les-01 referencing-v2-introductory L06 2026-11-07"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 11,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 10,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "Lesson 1: Why sources are named",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Lesson 2: One style, every reference",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Lesson 3: Spotting inconsistent citations",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Lesson 4: Sources in your own work",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L05",
+      "pageType": "lesson",
+      "title": "Lesson 5: Log it as you go",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L05-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L06",
+      "pageType": "lesson",
+      "title": "Lesson 6: Keeping a source log",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-introductory-L06-les-01"
+        }
+      ]
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-11-07T17:20:51.189Z",
+      "trigger": {
+        "gate": "onb-04_naming",
+        "changeKind": "amended",
+        "oldRecordSeq": 1,
+        "newRecordSeq": 2,
+        "note": "tierName was copied as 'All tiers' into all three per-tier course-design files when a single three-tier onboarding answer was split into three separate per-tier courses; corrected to this course's own tier, confirmed by the human."
+      },
+      "sweep": []
+    }
+  ]
+}

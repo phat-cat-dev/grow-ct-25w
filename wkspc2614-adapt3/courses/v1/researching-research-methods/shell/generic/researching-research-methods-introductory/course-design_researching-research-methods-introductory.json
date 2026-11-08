@@ -1,0 +1,1825 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "researching-research-methods-introductory",
+  "slug": "researching-research-methods-introductory",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "researching-research-methods",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "researching-research-methods",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "introductory"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory tier (~ FHEQ L3-low L5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Researching & Research Methods",
+            "tierName": "Introductory",
+            "slug": "researching-research-methods-introductory"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:04.296Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "Layer-1 record: chapters 3/5/9/10; ch10/research-and-data-handling primary, plus shared chunks in ch5 and ch9"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = researching-research-methods",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory crs-01_sources 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "9 and 5 (primary); ch10 research-and-data-handling out of scope for introductory (advanced)",
+            "sectionsInScope": [
+              "ch9/genres-of-writing-overview",
+              "ch5/the-dissertation",
+              "ch9/research-proposal",
+              "ch9/reports"
+            ],
+            "sectionsOutOfScope": [
+              "ch9/literature-review (composing the literature review as a research-document genre: INTERMEDIATE)",
+              "ch9/reports deeper composition and discipline variation, the full craft of writing up a report: INTERMEDIATE (the structure is introduced here only to show a project's shape)",
+              "ch5/the-dissertation as a full assessment genre to execute: INTERMEDIATE/ADVANCED (used here only as the exemplar of what research is)",
+              "ch10/research-and-data-handling (research ethics, participant consent, data handling and research integrity: ADVANCED, running research with rigour and ethics)"
+            ],
+            "tierWindow": {
+              "goal": "Understand what academic research is and how a research project is shaped and structured, before you ever run one.",
+              "cognitiveDemand": "Understanding, description and recognition with guided application (explain, describe, identify), not designing or critiquing research.",
+              "taskComplexity": "Well-defined, one idea at a time; the nature of research, the purpose of a proposal and the shape of a project, not the craft of writing each genre.",
+              "autonomy": "High scaffolding; worked examples; feedback confirms and explains; frequent low-stakes checks. Pitched for a capable beginner.",
+              "voiceBand": "Section 16 Intermediate (bands 3-5, up-skew)",
+              "outcomeVerbs": [
+                "explain",
+                "describe",
+                "recognise",
+                "identify",
+                "outline",
+                "give an example of"
+              ]
+            },
+            "priorExperienceAnchor": "The learner is early in their studies and has probably not yet run a research project or written a dissertation. They have met the word 'research' loosely, as looking things up, and need a clear sense of what academic research is and how a project is shaped. No experience of research design, methods or ethics is assumed; teach what research is and the shape of a project from first principles.",
+            "subThemes": [
+              {
+                "id": "research-as-inquiry",
+                "label": "What academic research is: systematic inquiry that offers a fresh perspective, not a summary of sources"
+              },
+              {
+                "id": "dissertation-as-exemplar",
+                "label": "The dissertation as the exemplar research project, drawing on all your academic literacies on a grander scale"
+              },
+              {
+                "id": "research-based-writing",
+                "label": "Research-based writing as a recognised family of genres you meet across your course"
+              },
+              {
+                "id": "the-research-proposal",
+                "label": "The research proposal as the framework that shapes a whole project"
+              },
+              {
+                "id": "guiding-questions",
+                "label": "How a series of carefully created questions builds and structures a project"
+              },
+              {
+                "id": "freshness-of-perspective",
+                "label": "Freshness of perspective rather than wholly original research"
+              },
+              {
+                "id": "shape-of-a-project",
+                "label": "The shape of a research write-up: introduction, methodology, results and discussion"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 and ch5 chunks tagged researching-research-methods",
+              "note": "primary teachable sections for what research is and how a project is shaped"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "Layer-1 record: introductory focus 'what research is and how a project is shaped'; Intermediate voice band (up-skew)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory calibration; this pathway up-skews the band because its introductory tier assumes a capable student"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:05:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory crs-02_thematic-scope 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Explain what academic research is and what makes a piece of work count as research."
+              },
+              {
+                "id": "co2",
+                "text": "Describe how a research project is shaped by a research proposal and its guiding questions."
+              },
+              {
+                "id": "co3",
+                "text": "Recognise the main parts of a research project and how they fit together."
+              },
+              {
+                "id": "co4",
+                "text": "Recognise how what research is, how a project is shaped and the shape it takes work together across your studies."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three introductory sub-theme clusters: what research is (the nature of research and the dissertation as its exemplar), how a project is shaped (the research proposal and its guiding questions), and the shape a project takes (its main parts and how they fit together). No integrative fourth outcome at introductory: composing the research-document genres is the intermediate concern and running research with rigour and ethics is the advanced concern; this course builds what research is and how a project is shaped.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can explain what academic research is and what makes a piece of work count as research.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can describe how a research proposal and its questions shape a project.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can recognise the main parts of a research project and how they fit together.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can recognise how what research is, how a project is shaped and the shape it takes work together across my studies.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 and ch5 chunks tagged researching-research-methods",
+              "note": "co1 from the dissertation and genres chunks, co2 from research-proposal, co3 from reports and the project shape"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the introductory understand/describe end, up-skewed for a capable beginner"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:06:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory crs-03_course-outcomes 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "What academic research is",
+                "topic": "what academic research is and the dissertation as its exemplar",
+                "description": "What academic research is: systematic inquiry that offers a fresh perspective, with the dissertation as its exemplar.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/genres-of-writing-overview",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Genres of writing",
+                    "pages": "145"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch5/the-dissertation",
+                    "chapter": 5,
+                    "chapterTitle": "Understanding Assessment",
+                    "heading": "Forms of assessment",
+                    "pages": "66"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain what makes a piece of work count as research rather than a summary of sources.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Recognise research rather than summary in a worked example of two students' approaches.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Identify what counts as research when you meet it in your own subject.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Shaping a project: the research proposal",
+                "topic": "the research proposal and its guiding questions",
+                "description": "Shaping a project: the research proposal as a framework built from a series of guiding questions.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/research-proposal",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Research proposal",
+                    "pages": "150-157"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Explain the purpose of a research proposal in shaping a project.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Recognise how guiding questions build a project's framework in a worked example.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Choose a guiding question that would help shape a project in your own subject.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "The shape of a research project",
+                "topic": "the main parts of a research project and how they fit together",
+                "description": "The shape of a research project: introduction, methodology, results and discussion, and how they carry a project from question to findings.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/reports",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Reports",
+                    "pages": "160-161"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/research-proposal",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Research proposal",
+                    "pages": "150-157"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Recognise the core parts of a research write-up: introduction, methodology, results and discussion.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Identify which part of a project a piece of writing belongs to in a worked example.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Match a stage of a research project in your own subject to the part that reports it.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Research as one connected whole",
+                "topic": "the three strands of research as one connected view of a project",
+                "description": "Bringing together what research is, how a project is shaped, and the shape it takes, into one connected way of seeing research.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/reports",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Reports",
+                    "pages": "160-161"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/research-proposal",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Research proposal",
+                    "pages": "150-157"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Recognise how what research is, how a project is shaped and the shape it takes connect as one view.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Show the three strands working together in a worked example of a research project.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Plan one way to use the three strands together to make sense of research in {{context}}.",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Research as one connected whole"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 and ch5 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T13:07:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory crs-04_lesson-map 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/researching-research-methods-introductory/adp-course-design-specification_researching-research-methods-introductory.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T13:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-introductory-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "What academic research is",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/keyTerm (_reveal): the single key idea 'research' revealed on demand, with definition, extended definition and example. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a summary and a research use of the same sources, the weaker (summary) version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/genres-of-writing-overview (p.145) and ch5/the-dissertation (p.66).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a recent assignment. Did it ask you to research something, or to summarise what others had said? What is one question you could have asked to turn a summary into an inquiry of your own? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's idea to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/keyTerm",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/genres-of-writing-overview (p.145) and ch5/the-dissertation (p.66): what research is; the dissertation as the exemplar extended research project."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/keyTerm"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a workable concept shape but less suited to this content than the confirmed component; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-introductory-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Shaping a project: the research proposal",
+            "interiorPattern": "activity-patterns/sequence realised as palette/gowTimeline (_reveal): the stages by which a broad interest is shaped into a workable project, stepped through in order. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting an unshaped proposal and one built from guiding questions, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/research-proposal (pp.150-157).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a topic in your subject you find interesting. What is one focused question you could ask about it, and what would you need to leave out to keep the project workable? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's idea to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowTimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/research-proposal (pp.150-157): the proposal as a framework built from a series of carefully created guiding questions; freshness of perspective."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/gowTimeline"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a workable concept shape but less suited to this content than the confirmed component; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-introductory-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The shape of a research project",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/ab-card: the four core parts of a research write-up as parallel cards, each naming the job that part does. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a muddled write-up and one where each part does its job, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/reports (pp.160-161) and ch9/research-proposal (pp.150-157).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a piece of research writing you have read in your subject. Could you tell which part was the introduction, method, results or discussion? Which part was hardest to spot, and why? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's idea to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/reports (pp.160-161): the report structure (introduction, methodology, results, discussion); ch9/research-proposal (pp.150-157) for how the parts connect question to findings."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-card"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "a workable concept shape but less suited to this content than the confirmed component; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, what academic research is: how it differs from simply gathering information. Second, shaping a project: how a research proposal and its questions build the framework for a study. Third, the shape of a research project: the parts that carry it from question to findings. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This short course is about research at university: what academic research actually is, and how a research project is shaped before anyone runs it. By the end you will be able to explain what makes work count as research, describe how a research proposal shapes a project, and recognise the main parts of a research project.</p><p>Research is not just looking things up. It is how knowledge is made and tested in every subject, and at some point your degree will ask you to do it, often in a dissertation. Knowing what research is, and how a project is built, makes that moment far less daunting.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: explain what research is, describe how a proposal shapes a project, recognise the parts of a research project.",
+            "practiceConnection": {
+              "academic": "<p>Research underpins your whole degree. Every reading list points to research others have done, every dissertation asks you to do some of your own, and the judgement research demands, asking good questions and weighing evidence, is prized in professional work too. Understanding what research is now gives you a head start when a project lands on your desk.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Researching & Research Methods: Intermediate",
+                "Researching & Research Methods: Advanced"
+              ],
+              "horizontal": [
+                "Academic Writing",
+                "Finding & Using Sources",
+                "Criticality"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the intermediate and advanced researching courses take you into the research-document genres, such as the literature review and the report, and then into running research with rigour and ethics. Going wider: the same habits underpin Academic Writing, Finding and Using Sources, and Criticality, where you put research to work on real tasks.</p>",
+            "summary": "<p>You have reached the end of the course. Research is no longer just a word for looking things up. You can explain what makes work count as research: a focused question answered with evidence towards a defensible conclusion, aiming at a fresh perspective. You can describe how a research proposal and its guiding questions shape a project into something workable. And you can recognise the main parts of a research project, introduction, methodology, results and discussion, and how they carry it from question to findings. Look back at the confidence check to see how far you have moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, research is something you will meet in every part of your degree. Each reading list is built on it, each dissertation asks for some of your own, and the habit of asking a focused question and answering it with evidence is valued well beyond university. The judgement research builds travels into professional work.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 145 to 161 of Chapter 9, 'Writing for Assessment', and page 66 of Chapter 5, 'Understanding Assessment', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What makes a piece of work count as academic research rather than a summary?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these is the best example of research rather than description?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the main purpose of a research proposal?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "How does a series of guiding questions help a research project?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In a research write-up, which part explains how the research was carried out?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the job of the discussion in a research write-up?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can explain what academic research is and what makes a piece of work count as research."
+              },
+              {
+                "rates": "co2",
+                "text": "I can describe how a research proposal and its questions shape a project."
+              },
+              {
+                "rates": "co3",
+                "text": "I can recognise the main parts of a research project and how they fit together."
+              },
+              {
+                "rates": "co4",
+                "text": "I can recognise how what research is, how a project is shaped and the shape it takes work together across my studies."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-introductory wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "What academic research is",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/keyTerm",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Shaping a project: the research proposal",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowTimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "The shape of a research project",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Research as one connected whole",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-introductory-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

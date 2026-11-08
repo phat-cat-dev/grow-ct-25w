@@ -48,7 +48,7 @@ where set.
 | seq | gate id | phase | hardness | kind | deps | generation.sources / pointers | checks | sourceConsultation |
 |---|---|---|---|---|---|---|---|---|
 | 0 | `onb-01_theme-preset` | ONB | hard-stop | human | — | — | — | — |
-| 1 | `onb-02_course-theme` | ONB | hard-stop | agent+human | onb-01 | `catalogue/pathways.json` \| crs-01 source set (no-preset path) | — | — |
+| 1 | `onb-02_course-theme` | ONB | hard-stop | agent+human | onb-01 | `catalogue/context/pathways.json` \| crs-01 source set (no-preset path) | — | — |
 | 2 | `onb-03_pitch` | ONB | hard-stop | agent+human | onb-02 | `design-kb/design-kb.tier-bands.json` (tier↔FHEQ relation, cognitive-demand notes) \| `catalogue/context/pathway/<pathway>.json` (both axes independently: `tierProgression.levels` L3-L8, `tierProgression.tierStatements`, `masteryNote`, `capabilities[]` each with tier+fheqLevel) \| same file's `bookGrounding` \| `catalogue/context/subject/benchmarks/universal-reference.json` (`tierReadings.rows`, `pathwayMapping['adapt-<pathway>']`) | — | — |
 | 3 | `onb-04_naming` | ONB | hard-stop | agent+human | onb-02, onb-03 | — | — | — |
 | 4 | `cxs-01_institutional-context` | CXS | advisory | auto | — | — | — | — |
@@ -64,7 +64,7 @@ where set.
 | 14 | `crs-05_course-spec` | CRS | advisory | agent+human | crs-04 | sources: `all closed ONB+CRS records` (prose). pointers (tightened): `onb-01_theme-preset` ;; `onb-02_course-theme` ;; `onb-03_pitch` ;; `onb-04_naming` ;; `cxs-04_referencing-style` ;; `crs-01_sources` ;; `crs-02_thematic-scope` ;; `crs-03_course-outcomes` ;; `crs-04_lesson-map` | AL-1, AL-2 | — |
 | 15 | `les-01_lesson-proposal` | LES | soft | agent+human | crs-04, crs-02 | pathway core A10 templates + Part C process \| crs-01 source set | — | `{triggeringFacets:["activity"], authorityLevels:["institutional"]}` |
 | 16 | `wra-01_wrapper-open` | WRA | soft | agent+human | crs-03, crs-04 | crs-01 source set \| pathway core A10 professional equivalences | — | — |
-| 17 | `wra-02_wrapper-close` | WRA | soft | agent+human | crs-03, crs-04 | crs-01 source set \| pathway core A9 Relations + adapt-integration overlap \| `catalogue/pathways.json` (tier ladder) | — | — |
+| 17 | `wra-02_wrapper-close` | WRA | soft | agent+human | crs-03, crs-04 | crs-01 source set \| pathway core A9 Relations + adapt-integration overlap \| `catalogue/context/pathways.json` (tier ladder) | — | — |
 | 18 | `wra-03_summative` | WRA | soft | agent+human | crs-03, crs-04 | crs-03 `courseOutcomeBanks` (the 3 `mcqSet` specs per outcome) \| crs-01 source set \| pathway core | — | — |
 | 19 | `wra-04_confidence` | WRA | soft | agent+human | crs-03 | crs-03 `courseOutcomeBanks` (`confidenceStatement` per outcome) | — | — |
 | 20 | `cxp-01_subject` | CXP | hard-stop | human | — | — | — | — |
@@ -113,8 +113,8 @@ test fixture that was written against a non-default store), `--source-kb`,
 `--institutional-kb`, `--vocab-kb`, `--hecos-kb`, `--skeletons`, `--palette`,
 `--name-bank`, `--gate-profiles`, `--tier-bands`, `--activity-patterns`,
 `--content-shapes`, `--pathways`, `--source-maps` (directory scan),
-`--catalogue` (`catalogue.json` + `catalogue/pathways.json` + every
-`catalogue/pathways/<pathway>.json`), `--test-fixtures`, `--all-defaults`
+`--catalogue` (`catalogue.json` + `catalogue/context/pathways.json` + every
+`catalogue/context/pathways/<pathway>.json`), `--test-fixtures`, `--all-defaults`
 (validates every store above at its fixed repo path; `--course-design` is
 excluded since it has no fixed default — PR-S-35).
 
@@ -123,7 +123,7 @@ named prompt/decision in its own comment trail): `CS-1` (book content
 shapes, 7 anchored on Horn's taxonomy), `SMAP-1` + amendment (source maps:
 one file per source, pathwayTag rules), `BM-1` + amendment (source-map
 block-type list, QAAVector), `CAT-1` + amendment (`catalogue.json`/
-`catalogue/pathways.json`), `HSV-1` (hecos-kb vs `vocab-kb/cah.json`),
+`catalogue/context/pathways.json`), `HSV-1` (hecos-kb vs `vocab-kb/cah.json`),
 `TLS-1`/`HMD-1` (vocab-kb/ layout), `LCR-1`/`GF-1` (per-gate record shape,
 bare Phase-A gate ids), `CPL-1` (skeleton slot/depth), `SHP-1` (closed
 record vs its resolved shape — prints `PASS`/`FAIL` per record), `GI-2`

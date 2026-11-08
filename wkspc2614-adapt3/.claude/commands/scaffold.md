@@ -19,7 +19,7 @@ These rules bind every session that runs this command. The same block stands in 
    - `@@ -[0-9]`
    - `Ruling [0-9]`
    - `\bruling [0-9]` (case-insensitive; commit messages and added lines only)
-6. Cite the course's own gate records under the store `course-design` (`courses/<slug>/course-design_<slug>.json`), never under `design-kb`, which names the shared stores only.
+6. Cite the course's own gate records under the store `course-design` (`courses/v1/<slug>/course-design_<slug>.json` or `courses/v2/<slug>/...`), never under `design-kb`, which names the shared stores only.
 7. Compare a log or a register by row id, never by line.
 
 Cold-start for course `$1`'s content model. This runs ONCE per course

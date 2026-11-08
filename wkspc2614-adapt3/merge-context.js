@@ -38,6 +38,33 @@ const { resolveCourse } = require('./tools/lib/course-resolve');
 const GENERATED_ROOT = path.join(__dirname, 'courses', '_generated');
 const CONTEXT_PACKS_ROOT = path.join(__dirname, 'content', 'context-packs');
 
+// Some context packs have been distributed out of content/context-packs/
+// into their owning pathway's own directory, classified by scheme (8 Nov
+// 2026): a HECoS subject code (psychology), a Cardiff Met institutional
+// school (school-of-sport), or the subject-neutral baseline (universal).
+// Packs not listed here still read from CONTEXT_PACKS_ROOT as before. The
+// pack-level context.json (e.g. content/context-packs/baseline/context.json)
+// is unaffected by relocation and always stays at CONTEXT_PACKS_ROOT.
+const RELOCATED_CONTEXT_PACKS = {
+  psychology: 'context/hecos/psychology',
+  'school-of-sport': 'context/cmet/schools/sport',
+  baseline: 'context/universal'
+};
+
+function pathwayFromSlug(slug) {
+  return slug.replace(/-(introductory|intermediate|advanced)$/, '');
+}
+
+// Directory holding a given context pack's files for one base course slug -
+// either the relocated per-pathway location, or the legacy flat location.
+function contextPackDir(context, baseCourseSlug) {
+  const relocated = RELOCATED_CONTEXT_PACKS[context];
+  if (relocated) {
+    return path.join(__dirname, 'courses', 'v1', pathwayFromSlug(baseCourseSlug), relocated, baseCourseSlug);
+  }
+  return path.join(CONTEXT_PACKS_ROOT, context, baseCourseSlug);
+}
+
 // LK-1 wrapper-marker reconciliation: the shell generator writes wrapper
 // component markers by archetype key (slot__wrapper-open__..., slot__wrapper-
 // close__...), while instantiations[] and the pack file names key those pages
@@ -359,7 +386,7 @@ function readLessonTokenModes(outputDir) {
  * If absent or character.name is empty/missing, falls back to pack-level.
  */
 async function applyTokenSubstitution(outputDir, context, tier) {
-  const tierContextPath = path.join(CONTEXT_PACKS_ROOT, context, tier, 'context.json');
+  const tierContextPath = path.join(contextPackDir(context, tier), 'context.json');
   const packContextPath = path.join(CONTEXT_PACKS_ROOT, context, 'context.json');
 
   let contextData;
@@ -549,7 +576,7 @@ async function mergeContext(outputDir, context, tier, baseCourseSlug, planSlotsB
     const key = packKeyFor(slot);
 
     if (!packCache[pageKey]) {
-      const packPath = path.join(CONTEXT_PACKS_ROOT, context, baseCourseSlug, `${pageKey}.json`);
+      const packPath = path.join(contextPackDir(context, baseCourseSlug), `${pageKey}.json`);
       if (!fs.existsSync(packPath)) {
         errors.push(`Pack file the coupling plan needs is missing: no context pack for page "${pageKey}" at ${packPath} (course "${tier}", context "${context}").`);
         continue;
@@ -911,7 +938,12 @@ async function main() {
   parseArgs();
   const { context, tier } = argumentValues;
   const { baseCourseSlug, planSlotsByPage } = requireCouplingPlan(tier);
-  const shellDir = path.join(__dirname, 'courses', tier);
+  const resolved = resolveCourse(tier, ['courses']);
+  if (!resolved.found) {
+    console.error(`No course folder found for "${tier}" under courses/ (checked: ${resolved.checked.join(', ')}).`);
+    process.exit(1);
+  }
+  const shellDir = resolved.courseDir;
   const outputDir = path.join(GENERATED_ROOT, `${tier}-${context}`);
 
   await extractShell(shellDir, outputDir);

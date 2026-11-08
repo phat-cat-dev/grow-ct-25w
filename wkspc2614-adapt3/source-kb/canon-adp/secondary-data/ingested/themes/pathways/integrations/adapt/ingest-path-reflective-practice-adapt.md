@@ -16,8 +16,8 @@ What ADAPT does with the pathway, kept out of the core so the core stays generic
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 10, chapters [4] | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers, each with focus, voice band and a pointer to the teaching prose | `catalogue/pathways/reflective-practice.json` | all three `planned`, no course slug |
+| The pathway's entry, Pathway 10, chapters [4] | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers, each with focus, voice band and a pointer to the teaching prose | `catalogue/context/pathways/reflective-practice.json` | all three `planned`, no course slug |
 | The teaching prose for each tier | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 10 | draft, for SME review |
 | The tier definitions | `docs/curriculum/tier-specification.md` v1.0 | validated on Academic Writing only |
 | The capability cards and tier notes | adp-0212 (RJ-0047) and adp-0213 (RJ-0053); `adp-relay/threads/prm/reviews/adp-0213-tier-notes.json` | drafts; ADAPT D-0058 owed; the cards file is not in the Project |

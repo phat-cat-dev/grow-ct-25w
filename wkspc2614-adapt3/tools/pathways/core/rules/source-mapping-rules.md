@@ -33,7 +33,7 @@ The map records **what the benchmark says**. It does not record what the mapper 
 | The benchmark's chunks | `tools/standards/core/qaa/benchmarks/<slug>.chunks.json` | The unit every statement is taken from |
 | The benchmark's text | `tools/standards/core/qaa/benchmarks/<slug>.txt` | Full text, read where a chunk needs checking |
 | The sources index | `tools/standards/core/qaa/benchmarks/index.json` | Title, year, origin and SHA-256; the map records the hashes it was made from |
-| The pathway list **[ADAPT]** | `catalogue/pathways.json` | The 13 pathway ids; never remapped |
+| The pathway list **[ADAPT]** | `catalogue/context/pathways.json` | The 13 pathway ids; never remapped |
 | The term list for each pathway **[ADAPT]** | `tools/pathways/core/rules/pathway-term-lists.json` | The word test for strength |
 | Block types | BM-1's closed list of 15 | One block type per chunk |
 
@@ -43,7 +43,7 @@ The mapper never reads the PDF, except to settle what none of these can.
 
 - **Chunk.** One of QAA's numbered paragraphs, or a run of them, as the generic ingestion step cut it. Identified by its `chunkId`, `qaa/<slug>/<paragraphs>` (for example `qaa/psychology-2023/3.16`), which is the join key. Chunks excluded at ingestion are not mapped.
 - **Statement.** A chunk (or one sentence within it) that says something about one pathway. A chunk can yield statements for several pathways.
-- **Pathway tag.** `adapt-<pathway-id>`, for example `adapt-referencing` or `adapt-finding-using-sources` **[ADAPT prefix]**. The part after the prefix is always a `catalogue/pathways.json` id.
+- **Pathway tag.** `adapt-<pathway-id>`, for example `adapt-referencing` or `adapt-finding-using-sources` **[ADAPT prefix]**. The part after the prefix is always a `catalogue/context/pathways.json` id.
 - **Strength.**
   - `direct`: the passage names the pathway's topic in the pathway's own terms (the term list's word test).
   - `indirect`: the passage describes the activity without those terms.

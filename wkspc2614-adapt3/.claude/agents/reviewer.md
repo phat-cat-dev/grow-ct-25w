@@ -18,7 +18,8 @@ evidence, in this order:
    pattern's `realisations` list. Pattern `slotTypes` contains the
    slot. Any miss is a FAIL with the id printed.
 2. RECORD vs CONTENT (B-gates). The component types in
-   `courses/<slug>/en/components.json` for this lesson's slot ids
+   `courses/v1/<slug>/en/components.json` or `courses/v2/<slug>/en/components.json`
+   for this lesson's slot ids
    match the record's palette ids (the 5.28/5.55 class). Print the
    `_component` values.
 3. PROVENANCE. Hard-stop gate: the record says human-confirmed AND

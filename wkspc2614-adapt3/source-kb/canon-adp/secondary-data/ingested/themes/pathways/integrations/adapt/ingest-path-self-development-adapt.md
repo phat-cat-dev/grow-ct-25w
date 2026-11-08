@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror (`adp/adp-mirror/`, generated from `b22b1c3`);
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, a fourteenth pathway, "Self-Development" | `catalogue/pathways.json` | not in the catalogue: added by Abbott on 4 October 2026 (D-ing-0064); a catalogue entry is owed |
-| Its three tiers | `catalogue/pathways/self-development.json` | no file; the tiers are ing's draft (the core's A3; the card integration's section 4a) |
+| The pathway's entry, a fourteenth pathway, "Self-Development" | `catalogue/context/pathways.json` | not in the catalogue: added by Abbott on 4 October 2026 (D-ing-0064); a catalogue entry is owed |
+| Its three tiers | `catalogue/context/pathways/self-development.json` | no file; the tiers are ing's draft (the core's A3; the card integration's section 4a) |
 | The teaching prose | `docs/curriculum/pathway-tier-mapping.md` | no Pathway 14 section; ing's draft tier text is in the card integration's section 4a, for Abbott to rule |
 | The capability cards | `integrations/cards/ing-cards-self-development.md` 0.1.0 | nine proposed cards, i1 to e3 (D-ing-0060, D-ing-0064); no adp-0212 drafts exist for this pathway |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0 | no entry; candidate patterns in section 4 |

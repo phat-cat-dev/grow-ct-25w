@@ -1,0 +1,1773 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "revising-exams-intermediate",
+  "slug": "revising-exams-intermediate",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "revising-exams",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.1",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = revising-exams",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate onb-01_theme-preset 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "revising-exams",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = revising-exams",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate onb-02_course-theme 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:01:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate tier (~ FHEQ L4-L5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate onb-03_pitch 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:02:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Revising & Exams",
+            "tierName": "Intermediate",
+            "slug": "revising-exams-intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = revising-exams",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate onb-04_naming 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:03:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-29T10:04:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = revising-exams",
+              "note": "Layer-1 record: chapter 13, 11 primary + 1 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = revising-exams",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate crs-01_sources 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "13 (primary); exam-day strategy and the purpose/types of exams out of scope for intermediate",
+            "sectionsInScope": [
+              "ch13/opening",
+              "ch13/learning-objectives-and-keywords",
+              "ch13/developing-an-effective-revision-strategy",
+              "ch13/active-learning-and-revision-strategy",
+              "ch13/visual",
+              "ch13/auditory",
+              "ch13/kinaesthetic",
+              "ch13/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch13/the-purpose-of-exams, ch13/types-of-exams (understanding what exams are and why they matter: INTRODUCTORY, 'understanding exams and the need for strategy')",
+              "ch13/exam-anxiety (recognising the need for a strategy and how anxiety builds: INTRODUCTORY)",
+              "ch13/exam-strategy (exam-day performance and in-the-room technique: ADVANCED, 'active techniques and exam-day performance')",
+              "Deep own-development and adaptation of active techniques under exam conditions: ADVANCED",
+              "ch13/visual deeper creativity overlap (shared chunk with creativity; only the revision-technique use is in scope here)"
+            ],
+            "tierWindow": {
+              "goal": "Build a revision strategy: organise your time and your knowledge gaps into a plan, and populate it with active techniques chosen to fit your material.",
+              "cognitiveDemand": "Application and organisation (apply, build, select, plan), beyond the introductory understand/identify level and short of the advanced self-directed adaptation.",
+              "taskComplexity": "Structured multi-step tasks: assembling a strategy from parts, contrasting active with passive approaches, and matching techniques to material.",
+              "autonomy": "Moderate scaffolding; worked examples contrast a weaker and a stronger approach; the learner makes choices and plans, with guidance.",
+              "voiceBand": "Section 16 Intermediate",
+              "outcomeVerbs": [
+                "build",
+                "apply",
+                "select",
+                "organise",
+                "plan",
+                "distinguish",
+                "match",
+                "connect"
+              ]
+            },
+            "priorExperienceAnchor": "The learner already understands what exams are and why a revision strategy is needed (the introductory tier). They are now ready to put that into action: to build a strategy and choose techniques for it, rather than only recognising that one is necessary. They have not yet mastered the self-directed application of techniques or exam-day performance (the advanced tier).",
+            "subThemes": [
+              {
+                "id": "two-elements",
+                "label": "The two elements an effective revision strategy is built on: your use of time and your ability to identify gaps in your knowledge"
+              },
+              {
+                "id": "cognitive-resilience",
+                "label": "Cognitive resilience: staying focused on your objectives while managing the pressures of revision and exams"
+              },
+              {
+                "id": "revision-stages",
+                "label": "The stages of building and following a revision strategy over the run-up to an exam"
+              },
+              {
+                "id": "active-vs-passive",
+                "label": "Active learning versus passive review in revision, contrasted through two students' approaches"
+              },
+              {
+                "id": "active-principles",
+                "label": "Why active techniques deepen knowledge and build confidence more than passive reading"
+              },
+              {
+                "id": "technique-families",
+                "label": "The three families of active revision techniques: visual, auditory and kinaesthetic"
+              },
+              {
+                "id": "selecting-techniques",
+                "label": "Selecting active techniques that fit the material you are revising"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch13/* chunks tagged revising-exams",
+              "note": "primary teachable sections for building a revision strategy"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = revising-exams",
+              "note": "Layer-1 record: chapter 13; intermediate focus 'building a revision strategy' and Intermediate voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate calibration and Intermediate voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate crs-02_thematic-scope 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:06:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Build a revision strategy around your use of time and the gaps in your knowledge."
+              },
+              {
+                "id": "co2",
+                "text": "Apply active-learning principles to revision, distinguishing active techniques from passive review."
+              },
+              {
+                "id": "co3",
+                "text": "Select active revision techniques across visual, auditory and kinaesthetic approaches to fit your material."
+              }
+            ],
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can build a revision strategy around my use of time and the gaps in my knowledge.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can apply active-learning principles to my revision rather than relying on passive review.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can select active revision techniques across visual, auditory and kinaesthetic approaches to fit my material.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch13/* chunks tagged revising-exams",
+              "note": "co1 from developing-an-effective-revision-strategy, co2 from active-learning-and-revision-strategy, co3 from the visual/auditory/kinaesthetic technique families"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the intermediate apply/build/select level; three outcomes match the three sub-theme clusters, with L04 integrative across all three rather than adding a fourth outcome"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate crs-03_course-outcomes 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:07:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "The anatomy of a revision strategy",
+                "topic": "building a revision strategy around time and knowledge gaps",
+                "description": "The anatomy of a revision strategy: organising your use of time and the gaps in your knowledge into a plan.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/developing-an-effective-revision-strategy",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Developing an effective revision strategy",
+                    "pages": "236-238"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Identify the two elements an effective revision strategy is built on: your use of time and your ability to spot gaps in your knowledge.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Recognise, in a worked example, how a student turns a vague plan into a strategy built on time and gaps.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Apply the stages of a revision strategy to plan your own revision for a module.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Active revision, not passive",
+                "topic": "applying active-learning principles to revision",
+                "description": "Active revision, not passive: applying active-learning principles rather than relying on passive review.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/active-learning-and-revision-strategy",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Active learning and revision strategy",
+                    "pages": "237-239"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Distinguish active revision techniques from passive review.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Recognise, in a worked example, the active move a student makes instead of re-reading passively.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Replace a passive revision habit of your own with an active technique.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Choosing active techniques",
+                "topic": "selecting visual, auditory and kinaesthetic techniques",
+                "description": "Choosing active techniques: selecting from the visual, auditory and kinaesthetic families to fit your material.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/visual",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Visual",
+                    "pages": "239-242"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/auditory",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Auditory",
+                    "pages": "240-241"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/kinaesthetic",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Kinaesthetic",
+                    "pages": "241-243"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Describe the visual, auditory and kinaesthetic families of active revision technique and match a technique to its family.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Recognise, in a worked example, how a student selects techniques to fit the material.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Select active techniques that fit the material you are revising.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "title": "Revising on purpose",
+                "topic": "strategy, active revision and fitting techniques as one revision practice",
+                "description": "Bringing together a revision strategy, active revision and well-chosen techniques into one revision practice you run across your studies.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/developing-an-effective-revision-strategy",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Developing an effective revision strategy",
+                    "pages": "236-238"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/active-learning-and-revision-strategy",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Active learning and revision strategy",
+                    "pages": "237-239"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/visual",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Visual",
+                    "pages": "239-242"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/auditory",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Auditory",
+                    "pages": "240-241"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch13/kinaesthetic",
+                    "chapter": 13,
+                    "chapterTitle": "Revision and Exam Strategies",
+                    "heading": "Kinaesthetic",
+                    "pages": "241-243"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Connect your use of time and your knowledge gaps to the stage of a revision strategy they inform.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Connect a stage of a revision strategy to the active technique it calls for, rather than passive review.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Apply a revision strategy, active revision and well-matched techniques together as one practice across your own studies.",
+                    "serves": "co3"
+                  }
+                ],
+                "conceptTitle": "Revising on purpose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch13 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; L01-L03 one lesson per course outcome, L04 integrative across all three"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "L01-L03 outcomes each serve one course outcome (AL-1); L04 outcomes serve co1/co2/co3 respectively rather than a fourth outcome"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate crs-04_lesson-map 2026-10-29"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-29T10:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/revising-exams-intermediate/adp-course-design-specification_revising-exams-intermediate.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-29T10:09:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "revising-exams-intermediate-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The two building blocks of a revision strategy",
+            "interiorPattern": "activity-patterns/sequence-reveal realised as palette/accordion: the stages of building a revision strategy presented as a staged process, each stage opened on demand. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to planning revision time, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch13/developing-an-effective-revision-strategy (pp.236-238).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think about how you revised for your last set of exams. Did you allocate your time according to where your knowledge was thinnest, or spread it evenly across everything regardless of need? What would you do differently next time? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "drafted"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/ab-card",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch13 Developing an effective revision strategy (pp.236-238)"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate L01-les-01 2026-10-29"
+          },
+          "timestamp": "2026-10-29T10:10:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "revising-exams-intermediate-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "What makes revision active rather than passive",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/ab-card: a short set of cards contrasting active moves with their passive counterparts, so the distinction is visible before the worked example develops it. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who reviews passively with one who revises actively on the same material, the passive version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch13/active-learning-and-revision-strategy (pp.237-239).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think about a revision session you have actually sat through. How much of it, honestly, was re-reading or highlighting rather than testing yourself or reconstructing something from memory? What is one passive habit you could swap for an active one? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "drafted"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch13 Active learning and revision strategy (pp.237-239)"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate L02-les-01 2026-10-29"
+          },
+          "timestamp": "2026-10-29T10:11:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "revising-exams-intermediate-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Matching technique families to your material",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/accordion: the visual, auditory and kinaesthetic families opened in turn, each with its defining move and a short example. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who applies one favourite technique to every topic with one who matches technique to material, the mismatched version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch13/visual, ch13/auditory and ch13/kinaesthetic (pp.239-243).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think about the technique you default to when you revise, whatever the material. Does it actually fit everything you use it for, or does it just happen to be the one you reach for first? Which topic in your own studies might suit a different family altogether? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "drafted"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/ab-card",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch13 Visual, Auditory and Kinaesthetic (pp.239-243)"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate L03-les-01 2026-10-29"
+          },
+          "timestamp": "2026-10-29T10:12:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "revising-exams-intermediate-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Revising on purpose",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/ab-card: cards connecting each stage of a strategy to the active technique it calls for, so the three strands are seen working together before the worked example develops the connection further. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example following one student's revision plan across a whole module, where strategy, active technique and material are kept connected throughout, contrasted with a second student who runs the same three elements in isolation from one another. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in all four scoped sections (pp.236-243).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "structured-fields",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o3"
+                }
+              ]
+            },
+            "reflectivePrompt": "Look at your revision plan for the module you find hardest right now. Where does it show a stage of your strategy actually connected to an active technique that fits the material, and where does it not yet? What would make it feel like one plan rather than three separate jobs? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "drafted"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "check",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch13 all four scoped sections, integrative (pp.236-243)"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L04 outcomes and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "revising-exams-intermediate L04-les-01 2026-10-29"
+          },
+          "timestamp": "2026-10-29T10:13:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has four short lessons. First, the two building blocks of a revision strategy: your use of time and the gaps in your knowledge. Second, what makes revision active rather than passive. Third, matching technique families, visual, auditory and kinaesthetic, to your material. Fourth, bringing strategy, active technique and material together so you revise on purpose rather than by habit. Work through them in order; the last lesson depends on the first three.</p>",
+            "signpostInstruction": "Work through the four lessons in order.",
+            "overview": "<p>This course is about building a revision strategy rather than simply starting to revise. By the end you will be able to build a strategy around your use of time and the gaps in your knowledge, apply active-learning principles so your revision tests you rather than just reminding you, and select technique families, visual, auditory or kinaesthetic, to match your material.</p><p>None of this assumes you already revise well. It assumes you want your revision time to do more than it currently does, and shows you how to connect the pieces so it does.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: build a strategy around time and knowledge gaps, apply active-learning principles instead of passive review, select technique families to fit the material.",
+            "practiceConnection": {
+              "academic": "<p>Treating your own knowledge as something you can audit, rather than something you either have or do not, is a habit that extends well past exam revision. The same move, checking honestly where the gaps are before deciding what to do next, is worth applying to any piece of coursework or professional task you take on.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-29T10:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "wra-01_wrapper-open wra-01_wrapper-open 2026-10-29"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Revising & Exams: Advanced"
+              ],
+              "horizontal": [
+                "Academic Writing",
+                "Researching & Research Methods",
+                "Reflective Practice"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the advanced revising and exams course turns an individual strategy into something you can sustain and adapt under real exam pressure across a whole module or year. Going wider: the same discipline of auditing what you know before deciding what to do next underpins Academic Writing, Researching and Reflective Practice.</p>",
+            "summary": "<p>You have reached the end of the course. Revision is no longer just something you start the week before an exam: you can build a strategy around your use of time and the gaps in your knowledge, apply active-learning principles so your sessions test you rather than just remind you, and select the technique family that actually fits what you are revising. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, treating revision as a strategy built from parts that fit together, time, technique and material, rather than a single habit applied regardless, is one you can carry into any sustained piece of academic or professional preparation.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 236 to 238 of Chapter 13, 'Revision and Exam Strategies', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              },
+              {
+                "title": "See pages 237 to 239 of Chapter 13, 'Revision and Exam Strategies', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              },
+              {
+                "title": "See pages 239 to 243 of Chapter 13, 'Revision and Exam Strategies', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              },
+              {
+                "title": "See pages 236 to 243 of Chapter 13, 'Revision and Exam Strategies', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "#",
+                "type": "book",
+                "permalink": ""
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-29T10:21:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "wra-02_wrapper-close wra-02_wrapper-close 2026-10-29"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why does a revision strategy need to account for the gaps in your knowledge, not just the time you have available?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the risk of allocating revision time evenly across every topic regardless of how well you already know it?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What distinguishes an active revision technique from a passive one?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why does re-reading notes tend to create a false sense of how well material has been learned?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why might a single favourite revision technique fail to suit every topic in a module?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What should mainly guide the choice between a visual, auditory or kinaesthetic technique for a given topic?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-29T10:22:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "wra-03_summative wra-03_summative 2026-10-29"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can build a revision strategy around my use of time and the gaps in my knowledge."
+              },
+              {
+                "rates": "co2",
+                "text": "I can apply active-learning principles to my revision rather than relying on passive review."
+              },
+              {
+                "rates": "co3",
+                "text": "I can select active revision techniques across visual, auditory and kinaesthetic approaches to fit my material."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-29T10:23:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "wra-04_confidence wra-04_confidence 2026-10-29"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "The two building blocks of a revision strategy",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "What makes revision active rather than passive",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Matching technique families to your material",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Revising on purpose",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "revising-exams-intermediate-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check: before you start",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check: how far you've come",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

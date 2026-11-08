@@ -129,7 +129,7 @@ Two distinct things answer "what was the 18 generated from":
 
 | step id | gates | decider | inputs | produces |
 |---|---|---|---|---|
-| `theme` | onb-01, onb-02 | agent+human | `catalogue/pathways.json` | the pathway |
+| `theme` | onb-01, onb-02 | agent+human | `catalogue/context/pathways.json` | the pathway |
 | `tier` | onb-03 | agent+human | `design-kb.tier-bands.json` | intro\|inter\|advanced\|none |
 | `levels` (planned) | — | agent+human | tier-bands, `pathway/<p>.json` `tierProgression.levels` | one or adjacent levels |
 | `ctx-shell` (CXS, pre) | cxs-01..04, cxs-06 | auto | reserved placeholders, all auto-pass | the context shell, in place before authoring starts |
@@ -204,7 +204,7 @@ source doc, all verified against the live store):
 
 | Layer | Gate today | Data it reads | Status |
 |---|---|---|---|
-| THEME | onb-01, onb-02 | `catalogue/pathways.json` | exists |
+| THEME | onb-01, onb-02 | `catalogue/context/pathways.json` | exists |
 | 1 TIER | onb-03 | `design-kb.tier-bands.json` | exists, `none` option to add |
 | 2 LEVEL(S) | none | tier bands; `pathway/<p>.json` `tierProgression.levels` (L3-L8) | gap: tier bands list L3-L7 only, no L8 |
 | FORK01.1 frameworks | cxs-05 (auto, reserved) | `cross-cutting.json` `frameworks` | data exists, needs human-select change |

@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror at commit `89ee9c4`; not evidence of repo stat
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 5, chapters [8]; `routes` feeds and drawsOn both null | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers | `catalogue/pathways/criticality.json` | `planned` |
+| The pathway's entry, Pathway 5, chapters [8]; `routes` feeds and drawsOn both null | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers | `catalogue/context/pathways/criticality.json` | `planned` |
 | The teaching prose | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 5 | draft, for SME review |
 | The capability cards and tier notes | adp-0212 (RJ-0047), adp-0213 (RJ-0053) | drafts; D-0058 owed |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0, 7 patterns for this pathway | v2 ruled (D-0028), held on RJ-0033 |

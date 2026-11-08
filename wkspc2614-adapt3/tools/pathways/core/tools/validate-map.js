@@ -17,7 +17,7 @@ const fs = require('fs');
 const path = require('path');
 
 const REPO_ROOT = path.resolve(__dirname, '..', '..', '..', '..');
-const CATALOGUE_PATH = path.join(REPO_ROOT, 'catalogue', 'pathways.json');
+const CATALOGUE_PATH = path.join(REPO_ROOT, 'catalogue', 'context', 'pathways.json');
 const SOURCE_MAP_SCHEMA_PATH = path.join(REPO_ROOT, 'schemas', 'source-map.schema.json');
 const PATHWAY_TERM_LISTS_PATH = path.join(REPO_ROOT, 'tools', 'pathways', 'core', 'rules', 'pathway-term-lists.json');
 const MAP_INDEX_PATH = path.join(REPO_ROOT, 'tools', 'pathways', 'core', 'mapping', 'index.json');
@@ -172,7 +172,7 @@ function checkTagsAndCoverage(map, catalogueIds, failures) {
   if (isPlainObject(map.pathways)) {
     for (const tag of Object.keys(map.pathways)) {
       if (!validTags.has(tag)) {
-        fail(failures, `tag: "pathways" key "${tag}" is not "adapt-" plus a catalogue/pathways.json id`);
+        fail(failures, `tag: "pathways" key "${tag}" is not "adapt-" plus a catalogue/context/pathways.json id`);
       }
       const group = map.pathways[tag];
       if (Array.isArray(group && group.statements)) {
@@ -180,7 +180,7 @@ function checkTagsAndCoverage(map, catalogueIds, failures) {
           if (st.tag !== tag) {
             fail(failures, `tag: pathways.${tag}.statements[${i}].tag ("${st.tag}") does not match its group key ("${tag}")`);
           } else if (!validTags.has(st.tag)) {
-            fail(failures, `tag: pathways.${tag}.statements[${i}].tag "${st.tag}" is not "adapt-" plus a catalogue/pathways.json id`);
+            fail(failures, `tag: pathways.${tag}.statements[${i}].tag "${st.tag}" is not "adapt-" plus a catalogue/context/pathways.json id`);
           }
         });
       }
@@ -198,7 +198,7 @@ function checkTagsAndCoverage(map, catalogueIds, failures) {
     }
     for (const tag of coverageKeys) {
       if (!validTags.has(tag)) {
-        fail(failures, `coverage: entry "${tag}" is not a catalogue/pathways.json pathway`);
+        fail(failures, `coverage: entry "${tag}" is not a catalogue/context/pathways.json pathway`);
       }
     }
     const seen = new Set();
@@ -554,7 +554,7 @@ function validateLoadedMap(map, mapPath, strict) {
   try {
     catalogueIds = loadCatalogueIds();
   } catch (e) {
-    fail(failures, `catalogue: cannot read catalogue/pathways.json (${e.message})`);
+    fail(failures, `catalogue: cannot read catalogue/context/pathways.json (${e.message})`);
   }
   if (catalogueIds.length) checkTagsAndCoverage(map, catalogueIds, failures);
 

@@ -181,6 +181,6 @@ const withSF = Object.values(out.pathways).reduce((a, b) => a + b.filter(x => x.
 console.log(`pathways: ${Object.keys(out.pathways).length}  capabilities: ${total}  with studentFacing: ${withSF}`);
 if (problems.length) { console.log('PROBLEMS:\n  ' + problems.join('\n  ')); process.exit(1); }
 
-const dest = __dirname + '/../catalogue/context/pathway-student-facing.json';
+const dest = __dirname + '/../catalogue/context/pathway-student-facing/pathway-student-facing.json';
 fs.writeFileSync(dest, JSON.stringify(out, null, 2) + '\n');
-console.log('OK -> catalogue/context/pathway-student-facing.json');
+console.log('OK -> catalogue/context/pathway-student-facing/pathway-student-facing.json');
