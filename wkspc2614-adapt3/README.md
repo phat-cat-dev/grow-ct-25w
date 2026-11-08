@@ -17,7 +17,7 @@ three stages:
 
 | Stage | What | Output |
 |---|---|---|
-| **A - consult & specify** | a guided gate conversation (6 phases: ONB, CXS, CRS ...) | the **manifest** (`courses/<slug>/course-design_<slug>.json`) |
+| **A - consult & specify** | a guided gate conversation (6 phases: ONB, CXS, CRS ...) | the **manifest** (`courses/v1/<slug>/course-design_<slug>.json`, or `courses/v2/<slug>/...` for a pathway-distillation course) |
 | **B - build** | scaffold the shell from the manifest, author lessons/wrappers, generate a subject context pack, compile | the compiled course (`build/`) |
 | **C - test & package** | verify, lint, package, hand off | the **SCORM package** (`scorm-packages/`) |
 
@@ -64,7 +64,8 @@ tools/         pipeline + quality tooling and tests
 .claude/       the gate skills and the reviewer agent
 src/           custom Adapt components + extensions (contrib plugins install on demand)
 grunt/         the Adapt build
-courses/       one directory per course (manifest + Adapt content model)
+courses/       v1/ (original design) and v2/ (pathway-distillation) course directories
+               - see courses/README.md
 content/       context packs and shared assets
 docs/          PIPELINE, ARCHITECTURE, RUNBOOK + authoring/curriculum/testing references
 ```

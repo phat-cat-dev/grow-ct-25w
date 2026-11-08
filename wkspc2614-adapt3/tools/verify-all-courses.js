@@ -139,19 +139,24 @@ function isSuperseded(absDir) {
 
 function discoverCourses() {
   const skipped = [];
-  // Direct: anything committed straight under courses/ (excluding the
-  // leading-underscore _generated directory itself, handled separately
-  // below). Kept so a course committed here again in future is still
-  // found - additive to Option 1's checked surface, not a replacement of
-  // it, per PR-1-13's Option 2 ruling (17 Sep 2026).
-  const direct = fs.readdirSync(COURSES_DIR, { withFileTypes: true })
-    .filter(entry => entry.isDirectory())
-    .map(entry => entry.name)
-    .filter(name => !name.startsWith('_'))
-    .filter(name => {
-      if (isSuperseded(path.join(COURSES_DIR, name))) { skipped.push(name); return false; }
-      return true;
-    });
+  // Direct: anything committed straight under courses/v1/ or courses/v2/
+  // (v1/v2 split, 8 Nov 2026 - courses/ itself now holds only the version
+  // directories plus the leading-underscore special dirs, not slugs).
+  // Recursing into both, additively, keeps this the same shape as the
+  // courses/_generated/ recursion below - a course committed at either
+  // vintage is still found, per PR-1-13's Option 2 ruling (17 Sep 2026).
+  const direct = ['v1', 'v2'].flatMap(version => {
+    const versionDir = path.join(COURSES_DIR, version);
+    if (!fs.existsSync(versionDir)) return [];
+    return fs.readdirSync(versionDir, { withFileTypes: true })
+      .filter(entry => entry.isDirectory())
+      .map(entry => entry.name)
+      .filter(name => !name.startsWith('_'))
+      .filter(name => {
+        if (isSuperseded(path.join(versionDir, name))) { skipped.push(name); return false; }
+        return true;
+      });
+  });
 
   // Generated: recurse one level into courses/_generated/'s own
   // subdirectories. Deliberately not "drop the leading-underscore

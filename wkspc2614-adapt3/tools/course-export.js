@@ -69,18 +69,23 @@ const components = en('components.json');
 const courseObj = Array.isArray(course) ? course[0] : course;
 // Auto-discover the base manifest and packs when not passed, so the build task
 // can run with just --course. Direct: a course-design_*.json inside courseDir.
-// Else (e.g. a courses/_generated/<base>-<subject> merged dir): the courses/<d>
-// whose slug is a prefix of courseDir's basename.
+// Else (e.g. a courses/_generated/<base>-<subject> merged dir): the
+// courses/v1/<d> or courses/v2/<d> (v1/v2 split, 8 Nov 2026) whose slug is a
+// prefix of courseDir's basename.
 let baseSlug = null;
 if (!manifestPath) {
   const bn = path.basename(courseDir);
   const direct = fs.existsSync(courseDir) ? fs.readdirSync(courseDir).find(f => /^course-design_.*\.json$/.test(f)) : null;
   if (direct) { manifestPath = path.join(courseDir, direct); baseSlug = direct.replace(/^course-design_/, '').replace(/\.json$/, ''); }
-  else if (fs.existsSync('courses')) {
-    for (const d of fs.readdirSync('courses')) {
-      if (d === '_generated') continue;
-      const mf = path.join('courses', d, `course-design_${d}.json`);
-      if (fs.existsSync(mf) && bn.startsWith(d)) { manifestPath = mf; baseSlug = d; break; }
+  else {
+    outer:
+    for (const version of ['v1', 'v2']) {
+      const versionDir = path.join('courses', version);
+      if (!fs.existsSync(versionDir)) continue;
+      for (const d of fs.readdirSync(versionDir)) {
+        const mf = path.join(versionDir, d, `course-design_${d}.json`);
+        if (fs.existsSync(mf) && bn.startsWith(d)) { manifestPath = mf; baseSlug = d; break outer; }
+      }
     }
   }
 }

@@ -30,7 +30,13 @@
  * broken tools once.
  *
  * Named roots and what each means:
- *   'courses'                 -> <repo>/courses/<slug>
+ *   'courses'                 -> <repo>/courses/<slug>, or (v1/v2 split,
+ *                                8 Nov 2026) <repo>/courses/v1/<slug> or
+ *                                <repo>/courses/v2/<slug> - tried in that
+ *                                order, first match wins. One named root,
+ *                                several candidate locations: a caller still
+ *                                says just 'courses' and does not need to
+ *                                know which vintage a given slug landed in.
  *   'courses/_generated'      -> <repo>/courses/_generated/<slug>
  *
  * No archive root. RBD-1 AMENDMENT: no tool reads from the archive; there is
@@ -47,9 +53,17 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 
+// Each root maps to an ORDERED array of candidate base directories, not a
+// single path - 'courses' now has three (flat legacy, v1, v2), all other
+// roots keep their single candidate. resolveCourse tries every candidate of
+// a root before moving to the next root in the caller's list.
 const ROOT_PATHS = {
-  'courses': path.join(ROOT, 'courses'),
-  'courses/_generated': path.join(ROOT, 'courses', '_generated')
+  'courses': [
+    path.join(ROOT, 'courses'),
+    path.join(ROOT, 'courses', 'v1'),
+    path.join(ROOT, 'courses', 'v2')
+  ],
+  'courses/_generated': [path.join(ROOT, 'courses', '_generated')]
 };
 
 /**
@@ -86,28 +100,30 @@ function resolveCourse(slug, roots) {
   const warnings = [];
 
   for (const root of roots) {
-    const courseDir = path.join(ROOT_PATHS[root], slug);
-    checked.push(courseDir);
-    if (!fs.existsSync(courseDir) || !fs.statSync(courseDir).isDirectory()) continue;
+    for (const base of ROOT_PATHS[root]) {
+      const courseDir = path.join(base, slug);
+      checked.push(courseDir);
+      if (!fs.existsSync(courseDir) || !fs.statSync(courseDir).isDirectory()) continue;
 
-    // Found the directory. Resolve the course-design file by pattern, not
-    // by templating the slug (see PROBLEM 2 above).
-    const entries = fs.readdirSync(courseDir).filter(f => /^course-design_.*\.json$/.test(f));
-    let courseDesignPath = null;
-    if (entries.length === 0) {
-      warnings.push(`${courseDir}: no course-design_*.json file found`);
-    } else if (entries.length > 1) {
-      warnings.push(`${courseDir}: multiple course-design_*.json files found (${entries.join(', ')}) - not picking one`);
-    } else {
-      courseDesignPath = path.join(courseDir, entries[0]);
+      // Found the directory. Resolve the course-design file by pattern, not
+      // by templating the slug (see PROBLEM 2 above).
+      const entries = fs.readdirSync(courseDir).filter(f => /^course-design_.*\.json$/.test(f));
+      let courseDesignPath = null;
+      if (entries.length === 0) {
+        warnings.push(`${courseDir}: no course-design_*.json file found`);
+      } else if (entries.length > 1) {
+        warnings.push(`${courseDir}: multiple course-design_*.json files found (${entries.join(', ')}) - not picking one`);
+      } else {
+        courseDesignPath = path.join(courseDir, entries[0]);
+      }
+
+      const enDirCandidate = path.join(courseDir, 'en');
+      const enDir = fs.existsSync(enDirCandidate) && fs.statSync(enDirCandidate).isDirectory()
+        ? enDirCandidate
+        : null;
+
+      return { found: true, root, courseDir, courseDesignPath, enDir, checked, warnings };
     }
-
-    const enDirCandidate = path.join(courseDir, 'en');
-    const enDir = fs.existsSync(enDirCandidate) && fs.statSync(enDirCandidate).isDirectory()
-      ? enDirCandidate
-      : null;
-
-    return { found: true, root, courseDir, courseDesignPath, enDir, checked, warnings };
   }
 
   return { found: false, root: null, courseDir: null, courseDesignPath: null, enDir: null, checked, warnings };

@@ -48,6 +48,15 @@
  * all-or-nothing: if any of the three fails schema validation, every manifest
  * written in this invocation is rolled back, not just the failing one. The
  * single-tier path below is untouched by this mode.
+ *
+ * v1/v2 placement (8 Nov 2026): courses/ now splits by vintage, not just by
+ * slug. This maps exactly onto the single-tier/multi-tier distinction above -
+ * confirmed empirically across every course committed so far (all 39
+ * single-tier manifests carry no `profile` field; all 6 pathway-distillation
+ * manifests carry `profile: "pathway-distillation"`, no exceptions either
+ * way) - so no new flag is needed: single-tier mode writes to
+ * courses/v1/<slug>, multi-tier/pathway-distillation mode writes to
+ * courses/v2/<tierSlug>.
  */
 
 const fs = require('fs');
@@ -162,7 +171,7 @@ function createMultiTierManifests(baseSlug, theme, answers, namedSlug) {
     // three refuses the whole batch up front.
     for (const tier of ALL_TIERS) {
       const tierSlug = `${baseSlug}-${tier}`;
-      const courseDir = path.join(ROOT, 'courses', tierSlug);
+      const courseDir = path.join(ROOT, 'courses', 'v2', tierSlug);
       if (fs.existsSync(courseDir)) {
         throw new Error(`${courseDir} already exists. 'all' mode creates ${baseSlug}-introductory, ${baseSlug}-intermediate and ${baseSlug}-advanced together; remove the conflicting directory or choose a different theme slug.`);
       }
@@ -170,7 +179,7 @@ function createMultiTierManifests(baseSlug, theme, answers, namedSlug) {
 
     for (const tier of ALL_TIERS) {
       const tierSlug = `${baseSlug}-${tier}`;
-      const courseDir = path.join(ROOT, 'courses', tierSlug);
+      const courseDir = path.join(ROOT, 'courses', 'v2', tierSlug);
       const facetSet = { pathway: theme, tier: tier };
       const manifest = {
         schemaVersion: '0.1.0',
@@ -237,7 +246,7 @@ function main() {
   const args = parseArgs();
   const slug = args.slug;
 
-  const courseDir = path.join(ROOT, 'courses', slug);
+  const courseDir = path.join(ROOT, 'courses', 'v1', slug);
   if (fs.existsSync(courseDir)) {
     const existingManifests = fs.readdirSync(courseDir).filter(f => /^course-design_.*\.json$/.test(f));
     if (existingManifests.length > 0) {

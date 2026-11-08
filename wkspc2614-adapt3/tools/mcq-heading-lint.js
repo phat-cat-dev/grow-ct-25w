@@ -80,17 +80,26 @@ function findDuplicateStems(components) {
 // ── --all mode ───────────────────────────────────────────────────────────
 
 function runAllMode(opts) {
-  const coursesDir = path.join(ROOT, 'courses');
-  const slugs = fs.readdirSync(coursesDir, { withFileTypes: true })
-    .filter(e => e.isDirectory())
-    .map(e => e.name)
-    .sort();
+  // v1/v2 split (8 Nov 2026): course slugs live one level deeper, under
+  // courses/v1/ and courses/v2/, not directly under courses/ itself. Walk
+  // both version directories rather than courses/'s own direct children
+  // (which are now just v1/, v2/, _archive/, _generated/, etc.).
+  const versionDirs = ['v1', 'v2'].map(v => path.join(ROOT, 'courses', v));
+  const slugDirs = [];
+  for (const versionDir of versionDirs) {
+    if (!fs.existsSync(versionDir)) continue;
+    for (const e of fs.readdirSync(versionDir, { withFileTypes: true })) {
+      if (e.isDirectory()) slugDirs.push(path.join(versionDir, e.name));
+    }
+  }
+  slugDirs.sort();
 
   const byCourse = {};
   let total = 0;
 
-  for (const slug of slugs) {
-    const compPath = path.join(coursesDir, slug, 'en', 'components.json');
+  for (const courseDir of slugDirs) {
+    const slug = path.basename(courseDir);
+    const compPath = path.join(courseDir, 'en', 'components.json');
     if (!fs.existsSync(compPath)) continue;
     let components;
     try { components = JSON.parse(fs.readFileSync(compPath, 'utf8')); } catch (e) { continue; }
