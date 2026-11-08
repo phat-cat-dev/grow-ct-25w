@@ -72,6 +72,13 @@ const courseObj = Array.isArray(course) ? course[0] : course;
 // Else (e.g. a courses/_generated/<base>-<subject> merged dir): the
 // courses/v1/<d> or courses/v2/<d> (v1/v2 split, 8 Nov 2026) whose slug is a
 // prefix of courseDir's basename.
+//
+// Pathway/shell reorg (8 Nov 2026): every v1 pathway is now its own
+// directory (courses/v1/<pathway>/), not a course directory itself - it
+// has no course-design_*.json directly inside it. If a candidate <d> has
+// no course-design_<d>.json of its own, check its shell/generic/<d2>/
+// subdirectories too, matching bn against <d2> instead - same per-tier
+// slugs course-resolve.js and verify-all-courses.js now also check.
 let baseSlug = null;
 if (!manifestPath) {
   const bn = path.basename(courseDir);
@@ -85,6 +92,12 @@ if (!manifestPath) {
       for (const d of fs.readdirSync(versionDir)) {
         const mf = path.join(versionDir, d, `course-design_${d}.json`);
         if (fs.existsSync(mf) && bn.startsWith(d)) { manifestPath = mf; baseSlug = d; break outer; }
+        const genericDir = path.join(versionDir, d, 'shell', 'generic');
+        if (!fs.existsSync(genericDir)) continue;
+        for (const d2 of fs.readdirSync(genericDir)) {
+          const mf2 = path.join(genericDir, d2, `course-design_${d2}.json`);
+          if (fs.existsSync(mf2) && bn.startsWith(d2)) { manifestPath = mf2; baseSlug = d2; break outer; }
+        }
       }
     }
   }

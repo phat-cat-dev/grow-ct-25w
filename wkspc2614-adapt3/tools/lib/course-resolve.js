@@ -37,6 +37,11 @@
  *                                several candidate locations: a caller still
  *                                says just 'courses' and does not need to
  *                                know which vintage a given slug landed in.
+ *                                Also tried last (8 Nov 2026, pathway/shell
+ *                                reorg): <repo>/courses/v1/<pathway>/shell/
+ *                                generic/<slug>, where <pathway> is <slug>
+ *                                with its trailing tier stripped - the
+ *                                location all 13 v1 pathways now use.
  *   'courses/_generated'      -> <repo>/courses/_generated/<slug>
  *
  * No archive root. RBD-1 AMENDMENT: no tool reads from the archive; there is
@@ -53,17 +58,25 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 
-// Each root maps to an ORDERED array of candidate base directories, not a
-// single path - 'courses' now has three (flat legacy, v1, v2), all other
-// roots keep their single candidate. resolveCourse tries every candidate of
-// a root before moving to the next root in the caller's list.
+function pathwayFromSlug(slug) {
+  return slug.replace(/-(introductory|intermediate|advanced)$/, '');
+}
+
+// Each root maps to an ORDERED array of candidate-directory functions (not
+// static base dirs any more, now that one candidate - the v1 pathway/shell
+// nesting - depends on the slug being resolved, not just the root). Order
+// matters: flat legacy / v1 / v2 are tried first so any course not yet
+// moved into the nested shape still resolves there; the nested v1 shape is
+// tried last. resolveCourse tries every candidate of a root before moving
+// to the next root in the caller's list.
 const ROOT_PATHS = {
   'courses': [
-    path.join(ROOT, 'courses'),
-    path.join(ROOT, 'courses', 'v1'),
-    path.join(ROOT, 'courses', 'v2')
+    slug => path.join(ROOT, 'courses', slug),
+    slug => path.join(ROOT, 'courses', 'v1', slug),
+    slug => path.join(ROOT, 'courses', 'v2', slug),
+    slug => path.join(ROOT, 'courses', 'v1', pathwayFromSlug(slug), 'shell', 'generic', slug)
   ],
-  'courses/_generated': [path.join(ROOT, 'courses', '_generated')]
+  'courses/_generated': [slug => path.join(ROOT, 'courses', '_generated', slug)]
 };
 
 /**
@@ -100,8 +113,8 @@ function resolveCourse(slug, roots) {
   const warnings = [];
 
   for (const root of roots) {
-    for (const base of ROOT_PATHS[root]) {
-      const courseDir = path.join(base, slug);
+    for (const candidate of ROOT_PATHS[root]) {
+      const courseDir = candidate(slug);
       checked.push(courseDir);
       if (!fs.existsSync(courseDir) || !fs.statSync(courseDir).isDirectory()) continue;
 

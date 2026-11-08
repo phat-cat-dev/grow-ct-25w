@@ -145,6 +145,20 @@ function discoverCourses() {
   // Recursing into both, additively, keeps this the same shape as the
   // courses/_generated/ recursion below - a course committed at either
   // vintage is still found, per PR-1-13's Option 2 ruling (17 Sep 2026).
+  //
+  // Pathway/shell reorg (8 Nov 2026): every v1 pathway is now its own
+  // directory (courses/v1/<pathway>/) holding context/ and shell/generic/,
+  // not a course directory itself - it has no course-design_*.json or en/
+  // of its own, same failure shape _generated's own dir had before the
+  // leading-underscore filter was added (see comment below). A directory
+  // is a real course only if it has a course-design_*.json or en/ directly
+  // inside it (checked via resolveCourse's own courseDesignPath/enDir, kept
+  // cheap here as a plain existence check); otherwise, if it has a
+  // shell/generic/ subdirectory, recurse into THAT one level for the real
+  // per-tier slugs, matching the location course-resolve.js now also
+  // checks. Not hardcoded to v1: a version dir with no shell/generic/ (v2,
+  // or any future vintage) falls through to the old flat behaviour
+  // unchanged.
   const direct = ['v1', 'v2'].flatMap(version => {
     const versionDir = path.join(COURSES_DIR, version);
     if (!fs.existsSync(versionDir)) return [];
@@ -155,6 +169,21 @@ function discoverCourses() {
       .filter(name => {
         if (isSuperseded(path.join(versionDir, name))) { skipped.push(name); return false; }
         return true;
+      })
+      .flatMap(name => {
+        const entryDir = path.join(versionDir, name);
+        const looksLikeCourse = fs.readdirSync(entryDir).some(f => /^course-design_.*\.json$/.test(f))
+          || fs.existsSync(path.join(entryDir, 'en'));
+        if (looksLikeCourse) return [name];
+        const genericDir = path.join(entryDir, 'shell', 'generic');
+        if (!fs.existsSync(genericDir)) return [name]; // not grouped - keep old flat behaviour
+        return fs.readdirSync(genericDir, { withFileTypes: true })
+          .filter(entry => entry.isDirectory())
+          .map(entry => entry.name)
+          .filter(slug => {
+            if (isSuperseded(path.join(genericDir, slug))) { skipped.push(slug); return false; }
+            return true;
+          });
       });
   });
 
