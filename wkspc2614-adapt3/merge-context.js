@@ -40,12 +40,15 @@ const CONTEXT_PACKS_ROOT = path.join(__dirname, 'content', 'context-packs');
 
 // Some context packs have been distributed out of content/context-packs/
 // into their owning pathway's own directory, classified by scheme (8 Nov
-// 2026): a HECoS subject code (psychology) or a Cardiff Met institutional
-// school (school-of-sport). Packs not listed here (e.g. baseline) still
-// read from CONTEXT_PACKS_ROOT as before.
+// 2026): a HECoS subject code (psychology), a Cardiff Met institutional
+// school (school-of-sport), or the subject-neutral baseline (universal).
+// Packs not listed here still read from CONTEXT_PACKS_ROOT as before. The
+// pack-level context.json (e.g. content/context-packs/baseline/context.json)
+// is unaffected by relocation and always stays at CONTEXT_PACKS_ROOT.
 const RELOCATED_CONTEXT_PACKS = {
   psychology: 'context/hecos/psychology',
-  'school-of-sport': 'context/cmet/schools/sport'
+  'school-of-sport': 'context/cmet/schools/sport',
+  baseline: 'context/universal'
 };
 
 function pathwayFromSlug(slug) {
