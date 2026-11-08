@@ -751,319 +751,70 @@
     "_classes": "",
     "_layout": "full",
     "title": "Explore the concept",
-    "displayTitle": "Build an academic AI prompt (RTCF)",
-    "body": "<p>Build a strong AI prompt in four steps. Inspired by the University of Sheffield Academic Prompt Bank.</p>",
-    "instruction": "Work through the four steps. Pick a phrase from a dropdown or type your own; your prompt assembles below. RTCF: Role, Task, Context, Format.",
-    "_assembleTemplate": "Act as {role}. {task} {context} {format}",
+    "displayTitle": "Build a learning prompt",
+    "body": "<p>A strong learning prompt names who the AI should be, what it should do, and your own context. Build one below, then copy it and try it in a real AI tool.</p>",
+    "instruction": "Pick a chip, choose from the list, or type your own in each part.",
+    "_assembleTemplate": "Act as {role}. {function}. Context: my level is {level}, I am working on {module}, and I find {difficulty} hard.",
     "_assembledLabel": "Your prompt",
     "_copyText": "Copy prompt",
     "_clearText": "Clear",
-    "_whyText": "A clear Role, Task, Context and Format make the answer useful, and make you do the thinking first.",
+    "_whyText": "A role, a clear task and your own context make the answer specific - and asking for the method, not the answer, keeps the thinking yours.",
     "_setCompletionOn": "allFilled",
     "_parts": [
       {
         "_key": "role",
-        "label": "Step 1: Role",
-        "help": "Who should the AI act as?",
+        "label": "Role",
+        "help": "What should the AI act as?",
         "placeholder": "Act as...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_starterGroups": [
-          {
-            "label": "Expertise",
-            "items": [
-              "an expert in [subject]",
-              "an academic tutor on my [subject] course",
-              "a researcher who knows the literature on [topic]"
-            ]
-          },
-          {
-            "label": "Academic practice support",
-            "items": [
-              "an academic practice specialist who helps me develop how I study and write",
-              "an academic practice specialist in [academic practice, e.g. criticality]",
-              "an academic librarian who helps me find and evaluate sources",
-              "an academic librarian who helps me reference accurately"
-            ]
-          },
-          {
-            "label": "Support style",
-            "items": [
-              "a study-skills tutor who explains things simply",
-              "a critical friend who challenges my reasoning",
-              "an examiner marking against the grade criteria",
-              "an English-language tutor (English is my second language)"
-            ]
-          },
-          {
-            "label": "Audience voice",
-            "items": [
-              "writing for an academic audience",
-              "explaining to a non-specialist audience"
-            ]
-          }
-        ],
-        "_library": "academic-practice",
-        "_libraryMerge": true
+        "_chips": [
+          "a supportive tutor for a first-year",
+          "a critical friend who challenges my reasoning",
+          "an expert examiner in my field"
+        ]
       },
       {
-        "_key": "task",
-        "label": "Step 2: Task",
-        "help": "What should it actually do?",
-        "placeholder": "Ask it to...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_starterGroups": [
-          {
-            "label": "Background research",
-            "items": [
-              "Trace how [concept] developed and why it matters today.",
-              "Compare and contrast [two theories] in [subject], with strengths and weaknesses.",
-              "Explore the impact of [innovation] on [field], short and long term.",
-              "Examine where [subject] and [another subject] intersect.",
-              "Outline the main debates in [topic] and what is at stake."
-            ]
-          },
-          {
-            "label": "Be critical",
-            "items": [
-              "Give a range of critical perspectives on this claim: [claim].",
-              "Set out the weaknesses or limits of [theory] and the alternatives.",
-              "Give the strongest counter-arguments to [idea].",
-              "What controversies surround [topic], and why do they matter?",
-              "Whose perspectives are missing from this, and why?"
-            ]
-          },
-          {
-            "label": "Understand a concept",
-            "items": [
-              "Explain [concept] in plain language for someone new to it.",
-              "Summarise [theory] as five key points I must know, and why.",
-              "Use an everyday analogy to explain [concept].",
-              "Give a step-by-step breakdown of [concept] for a beginner.",
-              "List common misconceptions about [concept] and correct them."
-            ]
-          },
-          {
-            "label": "Feedback: structure",
-            "items": [
-              "Is the structure of this logical and coherent? [paste your draft]",
-              "How strong and clear are my introduction and thesis? [paste your draft]",
-              "Is my main argument supported all the way through? [paste your draft]",
-              "How effective is my conclusion at pulling the argument together? [paste your draft]"
-            ]
-          },
-          {
-            "label": "Feedback: language",
-            "items": [
-              "Is my language clear and easy to follow? [paste your draft]",
-              "Comment on my academic style and tone, and suggest improvements. [paste your draft]",
-              "Check for grammar, punctuation and syntax issues. [paste your draft]"
-            ]
-          },
-          {
-            "label": "Feedback: use of sources",
-            "items": [
-              "How well do I synthesise the literature here? [paste your draft]",
-              "Are my claims properly supported by evidence? [paste your draft]",
-              "Identify gaps or limits in my use of sources. [paste your draft]"
-            ]
-          },
-          {
-            "label": "Exam revision",
-            "items": [
-              "Ask me short-answer questions on [topic] one at a time, with feedback after each.",
-              "Make flashcards to test me on [topic].",
-              "Break [topic] into short, memorable key points.",
-              "What should I focus on revising for a [level] exam in [topic]?",
-              "Build a spaced-repetition revision timetable for my exam on [date]: [topics]."
-            ]
-          },
-          {
-            "label": "Productivity",
-            "items": [
-              "Evaluate the tone of this email. [paste email]",
-              "List the actions arising from this email. [paste email]",
-              "Redraft this in a more formal tone. [paste text]",
-              "Plan intermediate deadlines for an essay due in [time].",
-              "Give me five concepts to prepare before a lecture on [topic]."
-            ]
-          },
-          {
-            "label": "Follow-on (after a reply)",
-            "items": [
-              "Expand on point [number] in more detail.",
-              "Give case studies to illustrate these points.",
-              "Give counter-arguments to each of these points.",
-              "Where can I find more data on [topic]?",
-              "Which views are under-represented here, and why?"
-            ]
-          }
-        ],
-        "_library": "academic-practice",
-        "_libraryMerge": true
+        "_key": "function",
+        "label": "Function",
+        "help": "What should it do, exactly?",
+        "placeholder": "Explain / quiz / critique...",
+        "_chips": [
+          "explain the method step by step, not just the answer",
+          "give me a structural checklist, do not write it for me",
+          "quiz me, then tell me what I misunderstood"
+        ]
       },
       {
-        "_key": "context",
-        "label": "Step 3: Context",
-        "help": "Tell it about you and your work.",
-        "placeholder": "I am...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_starterGroups": [
-          {
-            "label": "Your level",
-            "items": [
-              "I am a first-year (Level 4) undergraduate.",
-              "I am a second-year (Level 5) undergraduate.",
-              "I am a final-year (Level 6) undergraduate.",
-              "I am a Master's (Level 7) student.",
-              "I am a PhD researcher."
-            ]
-          },
-          {
-            "label": "About you",
-            "items": [
-              "I am studying [module or topic].",
-              "My strengths are [x] and [x].",
-              "My challenges are [x] and [x].",
-              "English is my second language.",
-              "My work is influenced by the ideas of [x]."
-            ]
-          }
-        ],
-        "_library": "academic-practice",
-        "_libraryMerge": true
+        "_key": "level",
+        "label": "Your level",
+        "help": "Choose where you are studying.",
+        "placeholder": "Choose your level...",
+        "_type": "select",
+        "_options": [
+          "Level 3: Foundation year",
+          "Level 4: first-year undergraduate",
+          "Level 5: second-year undergraduate",
+          "Level 6: final-year undergraduate",
+          "Level 7: Master's",
+          "Level 8: Doctoral"
+        ]
       },
       {
-        "_key": "format",
-        "label": "Step 4: Format",
-        "help": "How should the answer be shaped?",
-        "placeholder": "Please...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_starterGroups": [
-          {
-            "label": "Length",
-            "items": [
-              "Keep it under 500 words.",
-              "Use no more than five paragraphs."
-            ]
-          },
-          {
-            "label": "Form",
-            "items": [
-              "Give a numbered list.",
-              "Write in prose, not bullet points.",
-              "Present it as questions and answers."
-            ]
-          },
-          {
-            "label": "Study integrity",
-            "items": [
-              "Explain it, do not write it for me.",
-              "Avoid the first person.",
-              "Show your reasoning so I can check it."
-            ]
-          }
-        ],
-        "_library": "academic-practice",
-        "_libraryMerge": true
+        "_key": "module",
+        "label": "Module or topic",
+        "help": "The module or topic you are working on.",
+        "placeholder": "e.g. the topic you are revising"
+      },
+      {
+        "_key": "difficulty",
+        "label": "What you find hard",
+        "help": "The specific thing you are stuck on.",
+        "placeholder": "e.g. telling two key terms apart"
       }
     ],
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
     }
-  },
-  {
-    "_id": "L01-c-31",
-    "_parentId": "L01-b-31",
-    "_type": "component",
-    "_component": "growPromptBuilder",
-    "_classes": "",
-    "_layout": "full",
-    "title": "Practise with prompts",
-    "displayTitle": "Academic practice prompt generator",
-    "body": "<p>Use AI to develop your academic practice. Choose a practice, then an activity step: explain it, see an example, try it, check your attempt, or plan your evidence. Pick the action verb your task uses and add your module or topic.</p>",
-    "instruction": "Choose an academic practice first: the Role, Function and verb lists then show that practice. Edit anything before you copy it.",
-    "_assembleTemplate": "Act as {role}. {function} {assessment} {context} {format}",
-    "_assembledLabel": "Your prompt",
-    "_copyText": "Copy prompt",
-    "_clearText": "Clear",
-    "_whyText": "Each prompt asks the AI to help you do the thinking, not to do the work for you.",
-    "_setCompletionOn": "allFilled",
-    "_pageLevelProgress": {
-      "_isEnabled": true,
-      "_isCompletionIndicatorEnabled": false
-    },
-    "_parts": [
-      {
-        "_key": "practice",
-        "label": "Academic practice",
-        "help": "Which academic practice do you want to develop with AI?",
-        "placeholder": "Choose an academic practice...",
-        "_library": "academic-practice-activities",
-        "_optional": true,
-        "_iconsFrom": "practiceIcons"
-      },
-      {
-        "_key": "role",
-        "label": "Role",
-        "help": "Who should the AI act as?",
-        "placeholder": "Act as...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities",
-        "_filterBy": "practice"
-      },
-      {
-        "_key": "function",
-        "label": "Function",
-        "help": "Which step of an activity do you want help with?",
-        "placeholder": "Pick an activity step...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities",
-        "_filterBy": "practice"
-      },
-      {
-        "_key": "verb",
-        "label": "Action verb",
-        "help": "The verb your task or question uses.",
-        "placeholder": "e.g. evaluate",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities",
-        "_optional": true,
-        "_filterBy": "practice"
-      },
-      {
-        "_key": "topic",
-        "label": "Module / topic",
-        "help": "The module or topic you are working on.",
-        "placeholder": "e.g. your module name or essay topic",
-        "_optional": true
-      },
-      {
-        "_key": "assessment",
-        "label": "Assessment type",
-        "help": "What kind of assessment is this for?",
-        "placeholder": "e.g. My assessment is an essay.",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities",
-        "_optional": true
-      },
-      {
-        "_key": "context",
-        "label": "Context",
-        "help": "Tell it about your level.",
-        "placeholder": "I am...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities"
-      },
-      {
-        "_key": "format",
-        "label": "Format",
-        "help": "How should the answer be shaped?",
-        "placeholder": "Please...",
-        "_startersPlaceholder": "Insert a phrase, or type your own...",
-        "_library": "academic-practice-activities"
-      }
-    ]
   },
   {
     "_id": "L01-c-32",
@@ -1107,21 +858,13 @@
     "_id": "L01-c-35",
     "_parentId": "L01-b-35",
     "_type": "component",
-    "_component": "accordion",
-    "_classes": "slot__L01__worked-example worked-example-panel",
+    "_component": "text",
+    "_classes": "slot__L01__worked-example",
     "_layout": "full",
     "title": "Worked example",
-    "displayTitle": "",
-    "body": "",
-    "instruction": "Select the heading to open the worked example.",
-    "_shouldCollapseItems": true,
-    "_shouldExpandFirstItem": false,
-    "_items": [
-      {
-        "title": "Worked example",
-        "body": "<p>Consider two sport and exercise science students who want help revising research methods, each writing one prompt for the same AI tool.</p><p class=\"we-weaker\">Gethin types a single line: explain research methods. The answer is long, generic, and pitched at no particular level. It never mentions Gethin's module, it muddles the very terms Gethin finds hard, and it offers nothing to practise. Gethin reads it, feels no clearer, and has done no real thinking.</p><p class=\"we-stronger\">Ffion builds the prompt in three parts. The role is a supportive tutor for a first-year. The function is to explain the difference between qualitative and quantitative methods, then set five short questions and hide the answers. The context is a social sciences student who keeps confusing methods with methodology. The reply is pitched right, names the trap, and gives Ffion something to attempt.</p><p>Both asked about the same topic. Only Ffion gave the tool a role, a function and a context, and so got an answer that made them think.</p>"
-      }
-    ],
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two sport and exercise science students who want help revising research methods, each writing one prompt for the same AI tool.</p><p class=\"we-weaker\">Omar types a single line: explain research methods. The answer is long, generic, and pitched at no particular level. It never mentions Omar's module, it muddles the very terms Omar finds hard, and it offers nothing to practise. Omar reads it, feels no clearer, and has done no real thinking.</p><p class=\"we-stronger\">Max builds the prompt in three parts. The role is a supportive tutor for a first-year. The function is to explain the difference between qualitative and quantitative methods, then set five short questions and hide the answers. The context is a social sciences student who keeps confusing methods with methodology. The reply is pitched right, names the trap, and gives Max something to attempt.</p><p>Both asked about the same topic. Only Max gave the tool a role, a function and a context, and so got an answer that made them think.</p>",
+    "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -1496,21 +1239,13 @@
     "_id": "L02-c-35",
     "_parentId": "L02-b-35",
     "_type": "component",
-    "_component": "accordion",
-    "_classes": "slot__L02__worked-example worked-example-panel",
+    "_component": "text",
+    "_classes": "slot__L02__worked-example",
     "_layout": "full",
     "title": "Worked example",
-    "displayTitle": "",
-    "body": "",
-    "instruction": "Select the heading to open the worked example.",
-    "_shouldCollapseItems": true,
-    "_shouldExpandFirstItem": false,
-    "_items": [
-      {
-        "title": "Worked example",
-        "body": "<p>Consider two sport and exercise science students who each get a bland first answer from an AI tool about a theory they are studying.</p><p class=\"we-weaker\">Carys is not satisfied, so Carys deletes the chat and writes a brand-new prompt from scratch. The second answer is just as general as the first. Carys tries a third time, rewording the question again, and keeps losing the thread. Nothing builds, because every attempt starts over.</p><p class=\"we-stronger\">Rhys keeps the dialogue going. First Rhys asks the tool to go deeper and compare two versions of the theory. Then Rhys adds context: use examples from my module. Next Rhys asks what the answer leaves out, and finally asks which claims to verify against the reading. Each move sharpens the last, and the answer becomes genuinely useful.</p><p>Both started from the same weak answer. Only Rhys improved it with deliberate moves instead of starting again.</p>"
-      }
-    ],
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two sport and exercise science students who each get a bland first answer from an AI tool about a theory they are studying.</p><p class=\"we-weaker\">Omar is not satisfied, so Omar deletes the chat and writes a brand-new prompt from scratch. The second answer is just as general as the first. Omar tries a third time, rewording the question again, and keeps losing the thread. Nothing builds, because every attempt starts over.</p><p class=\"we-stronger\">Max keeps the dialogue going. First Max asks the tool to go deeper and compare two versions of the theory. Then Max adds context: use examples from my module. Next Max asks what the answer leaves out, and finally asks which claims to verify against the reading. Each move sharpens the last, and the answer becomes genuinely useful.</p><p>Both started from the same weak answer. Only Max improved it with deliberate moves instead of starting again.</p>",
+    "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -1755,35 +1490,35 @@
     "_items": [
       {
         "title": "Explain it back",
-        "body": "Have the tool explain an idea, then close it and write the idea in your own words. Ask what you missed. Prompt: explain this simply, then I will explain it back and you tell me what I got wrong."
+        "body": "<p>Ask the tool to explain an idea, then close it and restate the idea yourself, in your own words, without looking. Comparing your version against the original shows exactly where your understanding breaks down, because the gap only shows up once you try to produce the explanation rather than just recognise it.</p><p>Try prompts like:</p><ul><li>\"{Explain} {topic} simply, then wait while I explain it back to you in my own words.\"</li><li>\"{Summarise} {topic} in three sentences, then ask me to repeat it without looking.\"</li><li>\"{Break down} {topic} step by step, then tell me which step I get wrong when I explain it back.\"</li></ul>"
       },
       {
         "title": "Socratic questioning",
-        "body": "Let the tool question you one step at a time, so gaps in your understanding surface. Prompt: act as a Socratic tutor on this topic; ask one question at a time and wait for my answer."
+        "body": "<p>Let the tool question you one step at a time instead of explaining, so you have to produce each answer rather than just recognise it. Reasoning out loud under gentle questioning surfaces exactly where your understanding is thin, because you cannot skip the step you are unsure about.</p><p>Try prompts like:</p><ul><li>\"{Act} as a Socratic tutor on {topic}; ask me one question at a time and wait for my answer before the next one.\"</li><li>\"{Question} me about {topic} one step at a time, and do not give me the answer even if I ask.\"</li><li>\"{Probe} my understanding of {topic} with follow-up questions until I can explain it clearly.\"</li></ul>"
       },
       {
         "title": "Targeted practice and feedback",
-        "body": "Get practice matched to your level, attempt it, then ask for feedback on your method. Prompt: set five questions on this topic at my level; do not show the answers until I try."
+        "body": "<p>Ask for practice matched to your current level, attempt it without help, then ask for feedback on your method rather than just the mark. Separating the attempt from the feedback forces you to commit to an answer first, so the feedback corrects your thinking instead of just confirming what you already suspected.</p><p>Try prompts like:</p><ul><li>\"{Set} five questions on {topic} at my level; do not show me the answers until I try each one.\"</li><li>\"{Create} a short test on {topic}, mark my answers, and tell me what my mistakes say about my method.\"</li><li>\"{Give} me one hard problem on {topic} and wait until I attempt it before giving feedback.\"</li></ul>"
       },
       {
         "title": "Feedback on your own work",
-        "body": "Share a draft and ask a precise question, so the feedback is usable. Prompt: read my introduction and tell me what my main argument is; show me where I was unclear."
+        "body": "<p>Share a draft and ask a precise question, rather than a vague \"is this good\", so the feedback is usable. A sharp question about one feature of the work, such as your argument, your structure or your evidence, gets feedback you can act on, where a general request only gets general praise.</p><p>Try prompts like:</p><ul><li>\"{Read} my {topic} and tell me what my main argument is; show me where it is unclear.\"</li><li>\"{Check} this paragraph on {topic} for how well the evidence supports the claim.\"</li><li>\"{Identify} the weakest point in my argument about {topic} and explain why it is weak.\"</li></ul>"
       },
       {
         "title": "Mapping concepts",
-        "body": "Organise what you know and find the missing links. Prompt: here is what I understand so far; show me how these ideas connect and what I am missing."
+        "body": "<p>Lay out what you already know about a topic, then ask the tool to show how the ideas connect and where the gaps are. Building the map yourself first means the tool fills genuine gaps in your thinking, rather than doing the organising for you.</p><p>Try prompts like:</p><ul><li>\"{List} what I understand about {topic} so far; show me how these ideas connect and what I am missing.\"</li><li>\"{Map} the relationship between these ideas in {topic} and point out any I have left out.\"</li><li>\"{Organise} my notes on {topic} into a structure and flag where the links are weak.\"</li></ul>"
       },
       {
         "title": "Devil's advocate",
-        "body": "State your position and ask the tool to argue against it, to find where your reasoning is weak. Prompt: I argue this; give me the strongest counter-arguments I must answer."
+        "body": "<p>State your position on a topic and ask the tool to argue against it, so you can find the weak points in your own reasoning before a marker does. Defending your view against a real counter-argument is a harder test of understanding than simply restating it.</p><p>Try prompts like:</p><ul><li>\"{Argue} against this claim about {topic}: give me the strongest counter-arguments I must answer.\"</li><li>\"{Challenge} my position on {topic} as if you disagreed with it.\"</li><li>\"{Find} the weakest part of my argument on {topic} and press me on it.\"</li></ul>"
       },
       {
         "title": "Learning through analogy",
-        "body": "Ask for an analogy from a field you know, then ask where it breaks down. Prompt: explain this with an everyday analogy, then tell me where the analogy stops working."
+        "body": "<p>Ask for an analogy from a field you already know, then ask where the analogy breaks down. The breakdown point is often the most important part of the original idea, because it is exactly where the comparison stops holding.</p><p>Try prompts like:</p><ul><li>\"{Explain} {topic} using an everyday analogy, then tell me where the analogy stops working.\"</li><li>\"{Compare} {topic} to something from a subject I already know, and show me the limits of the comparison.\"</li><li>\"{Translate} {topic} into a simple analogy, then test whether I can say why it eventually fails.\"</li></ul>"
       },
       {
         "title": "Preparing for reading",
-        "body": "Before a hard chapter, ask for the key terms and debates in plain language, so your first read is productive. Prompt: I am about to read this; give me the key terms and arguments I will meet."
+        "body": "<p>Before a difficult chapter or paper, ask for the key terms and debates in plain language, so your first read is productive rather than spent decoding vocabulary. Knowing the terrain in advance means your first pass can focus on the argument instead of the words.</p><p>Try prompts like:</p><ul><li>\"{List} the key terms and debates I will meet in this reading on {topic}, in plain language.\"</li><li>\"{Preview} this chapter on {topic}: what are the main questions it is trying to answer?\"</li><li>\"{Flag} any specialist vocabulary in {topic} I should look up before I start reading.\"</li></ul>"
       }
     ]
   },
@@ -1899,21 +1634,13 @@
     "_id": "L03-c-35",
     "_parentId": "L03-b-35",
     "_type": "component",
-    "_component": "accordion",
-    "_classes": "slot__L03__worked-example worked-example-panel",
+    "_component": "text",
+    "_classes": "slot__L03__worked-example",
     "_layout": "full",
     "title": "Worked example",
-    "displayTitle": "",
-    "body": "",
-    "instruction": "Select the heading to open the worked example.",
-    "_shouldCollapseItems": true,
-    "_shouldExpandFirstItem": false,
-    "_items": [
-      {
-        "title": "Worked example",
-        "body": "<p>Consider two sport and exercise science students preparing the same hard topic for a seminar.</p><p class=\"we-weaker\">Osian asks the tool to summarise the topic and reads the summary twice. It all makes sense on the page. In the seminar, asked to explain the idea without notes, Osian cannot do it. The tool had done the understanding, and none of it had moved across.</p><p class=\"we-stronger\">Lowri uses two techniques. First, explain it back: Lowri reads the tool's explanation, closes it, writes the idea from memory, then asks what was missed. Second, a Socratic turn: Lowri asks the tool to question the explanation one step at a time. The gaps show up, and Lowri can hold the idea with no tool open.</p><p>Both used the same tool on the same topic. Only Lowri used it to build understanding, not to replace it.</p>"
-      }
-    ],
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two sport and exercise science students preparing the same hard topic for a seminar.</p><p class=\"we-weaker\">Omar asks the tool to summarise the topic and reads the summary twice. It all makes sense on the page. In the seminar, asked to explain the idea without notes, Omar cannot do it. The tool had done the understanding, and none of it had moved across.</p><p class=\"we-stronger\">Max uses two techniques. First, explain it back: Max reads the tool's explanation, closes it, writes the idea from memory, then asks what was missed. Second, a Socratic turn: Max asks the tool to question the explanation one step at a time. The gaps show up, and Max can hold the idea with no tool open.</p><p>Both used the same tool on the same topic. Only Max used it to build understanding, not to replace it.</p>",
+    "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
@@ -2743,21 +2470,13 @@
     "_id": "L04-c-30",
     "_parentId": "L04-b-30",
     "_type": "component",
-    "_component": "accordion",
-    "_classes": "slot__L04__worked-example worked-example-panel",
+    "_component": "text",
+    "_classes": "slot__L04__worked-example",
     "_layout": "full",
     "title": "Worked example",
-    "displayTitle": "",
-    "body": "",
-    "instruction": "Select the heading to open the worked example.",
-    "_shouldCollapseItems": true,
-    "_shouldExpandFirstItem": false,
-    "_items": [
-      {
-        "title": "Worked example",
-        "body": "<p>Consider two sport and exercise science students who both plan to use AI across a busy term.</p><p class=\"we-weaker\">Elin has no routine. Elin types quick one-line questions, takes the first answer, and never checks it or records how it was used. Some weeks it helps; some weeks it misleads. Because nothing is deliberate, Elin cannot tell which is which.</p><p class=\"we-stronger\">Dafydd works to a routine. Each prompt gets a role, a function and context. When an answer is thin, Dafydd makes a move rather than starting again. For hard ideas Dafydd explains them back or asks to be questioned, checks claims against the reading, and notes any AI use. The practice is skilled, critical and honest at once.</p><p>Both used the same tool all term. Only Dafydd had a routine, and so learned more and could defend every step.</p>"
-      }
-    ],
+    "displayTitle": "Worked example",
+    "body": "<p>Consider two sport and exercise science students who both plan to use AI across a busy term.</p><p class=\"we-weaker\">Omar has no routine. Omar types quick one-line questions, takes the first answer, and never checks it or records how it was used. Some weeks it helps; some weeks it misleads. Because nothing is deliberate, Omar cannot tell which is which.</p><p class=\"we-stronger\">Max works to a routine. Each prompt gets a role, a function and context. When an answer is thin, Max makes a move rather than starting again. For hard ideas Max explains them back or asks to be questioned, checks claims against the reading, and notes any AI use. The practice is skilled, critical and honest at once.</p><p>Both used the same tool all term. Only Max had a routine, and so learned more and could defend every step.</p>",
+    "instruction": "",
     "_pageLevelProgress": {
       "_isEnabled": true,
       "_isCompletionIndicatorEnabled": false
