@@ -30,7 +30,7 @@ the whole flow. Then:
 ## Taxonomy
 
 13 pathways x 3 pitches (introductory / intermediate / advanced). The pathways
-are in `catalogue/pathways.json`; the pathway/tier mapping is in
+are in `catalogue/context/pathways.json`; the pathway/tier mapping is in
 `docs/curriculum/pathway-tier-mapping.md`. The taxonomy is settled.
 
 ## Golden rules (the short version)

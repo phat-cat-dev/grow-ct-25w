@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror at commit `89ee9c4`; not evidence of repo stat
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 2, "Understanding Learning, Assessment & Feedback", chapters [3, 4, 5, 6]; `routes` feeds and drawsOn both null | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers | `catalogue/pathways/understanding-learning-assessment-feedback.json` | all `planned`; no course slug |
+| The pathway's entry, Pathway 2, "Understanding Learning, Assessment & Feedback", chapters [3, 4, 5, 6]; `routes` feeds and drawsOn both null | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers | `catalogue/context/pathways/understanding-learning-assessment-feedback.json` | all `planned`; no course slug |
 | The teaching prose | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 2 | draft, for SME review |
 | The capability cards and tier notes | adp-0212 (RJ-0047), adp-0213 (RJ-0053): six cards, three introduced, three developed, none extended | drafts; D-0058 owed |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0, 26 patterns for this pathway | v2 ruled (D-0028), held on RJ-0033 |

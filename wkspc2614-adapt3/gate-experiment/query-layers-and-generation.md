@@ -140,7 +140,7 @@ advanced are produced in parallel, each pitched by its tier band and the L7 / L8
 
 | Layer | Gate today | Change needed | Data it reads | Status |
 |---|---|---|---|---|
-| THEME | `onb-01_theme-preset`, `onb-02_course-theme` | none | `catalogue/pathways.json` | exists |
+| THEME | `onb-01_theme-preset`, `onb-02_course-theme` | none | `catalogue/context/pathways.json` | exists |
 | 1 TIER | `onb-03_pitch` | add a `none` option | `design-kb.tier-bands.json` | exists, `none` to add |
 | 2 LEVEL(S) | none | NEW gate: auto from tier bands, or human single / grouped with the adjacency rule; L7 / L8 cross-tier | tier bands; `pathway/<p>.json` `tierProgression.levels` (L3 to L8) | gap: tier bands list L3 to L7 only, no L8 |
 | FORK01.1 frameworks | `cxs-05_external-standards` (auto, reserved) | make it a human select | `catalogue/context/shared/cross-cutting.json` `frameworks`: FHEQ, CQFW, FQHEIS / SCQF, QF-EHEA | data exists |

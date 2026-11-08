@@ -50,7 +50,7 @@ hardness: hard-stop
 produces: tiers.json            # 18 benchmarks = 3 tiers × 6
 sources:
   - catalogue/context/pathway/<pathway>.json  (capabilities: tier, fheqLevel, statement, qf)
-  - catalogue/context/pathway-student-facing.json  (the "you can…" rewrites)
+  - catalogue/context/pathway-student-facing/pathway-student-facing.json  (the "you can…" rewrites)
   - catalogue/context/subject/benchmarks/universal-reference.json  (shared-core + pathwayMapping)
   - FHEQ + CQFW/WCFQ generic level descriptors  (generic phrase sources)
 method: mirror tools/build-universal-benchmark.py — tier, group by type/action, co-tag the fuzzy tops

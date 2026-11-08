@@ -7,7 +7,7 @@
 // shape) as a Markdown file, written beside the map with the same base name
 // and a ".md" extension in place of ".json". Node.js, no dependencies.
 //
-// One section per pathway, in catalogue/pathways.json order. A pathway with
+// One section per pathway, in catalogue/context/pathways.json order. A pathway with
 // no statements is listed as having none. The whole-map agentInstructions
 // are rendered once, at the top. The file's own first line states that it
 // is generated and must never be hand-edited.
@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 const REPO_ROOT = path.resolve(__dirname, '..', '..', '..', '..');
-const CATALOGUE_PATH = path.join(REPO_ROOT, 'catalogue', 'pathways.json');
+const CATALOGUE_PATH = path.join(REPO_ROOT, 'catalogue', 'context', 'pathways.json');
 
 function readJSON(absPath) {
   const raw = fs.readFileSync(absPath, 'utf8');

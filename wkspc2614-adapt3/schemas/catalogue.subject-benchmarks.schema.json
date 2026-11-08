@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://excelling.cardiffmet/schemas/catalogue.subject-benchmarks.schema.json",
   "title": "catalogue: subject benchmarks collection",
-  "description": "catalogue/context/subject/benchmarks.json indexes the subject benchmarks, parallel to catalogue/pathways.json. Each entry points at one subject's benchmark file under catalogue/context/subject/benchmarks/<id>.json. The benchmarks are the CXP-phase reference: a subject context resolves (by HECoS/CAH code or name) to its benchmark, which tells the authoring agent how this subject's standards bear on each pathway.",
+  "description": "catalogue/context/subject/benchmarks.json indexes the subject benchmarks, parallel to catalogue/context/pathways.json. Each entry points at one subject's benchmark file under catalogue/context/subject/benchmarks/<id>.json. The benchmarks are the CXP-phase reference: a subject context resolves (by HECoS/CAH code or name) to its benchmark, which tells the authoring agent how this subject's standards bear on each pathway.",
   "type": "object",
   "required": ["subjectBenchmarksVersion", "benchmarks"],
   "properties": {

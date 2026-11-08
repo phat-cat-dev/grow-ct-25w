@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror at commit `89ee9c4`; not evidence of repo stat
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 4, "Referencing, Citation & Academic Integrity", chapters [10]; `routes` null | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers | `catalogue/pathways/referencing.json` | Introductory `in-design`, course slug `referencing-introductory`; Intermediate and Advanced `planned` |
+| The pathway's entry, Pathway 4, "Referencing, Citation & Academic Integrity", chapters [10]; `routes` null | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers | `catalogue/context/pathways/referencing.json` | Introductory `in-design`, course slug `referencing-introductory`; Intermediate and Advanced `planned` |
 | The teaching prose | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 4 | draft, for SME review |
 | The capability cards and tier notes | adp-0212 (RJ-0047), adp-0213 (RJ-0053) | drafts; D-0058 owed |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0, 10 patterns for this pathway | v2 ruled (D-0028), held on RJ-0033 |

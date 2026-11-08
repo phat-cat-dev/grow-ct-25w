@@ -14,8 +14,8 @@ read from: ADAPT's Project mirror (now `adp-mirror/`); not evidence of repo stat
 
 | What | Where | State |
 |---|---|---|
-| The pathway's entry, Pathway 7, "Presenting", chapters [11]; `routes` feeds and drawsOn both null | `catalogue/pathways.json` 1.0.0 | in the catalogue |
-| Its three tiers | `catalogue/pathways/presenting.json` | all `planned`; no course slug; each tier's voice band "Confirmed 4 Sep 2026 at presenting-introductory A2 (f05d72d)" |
+| The pathway's entry, Pathway 7, "Presenting", chapters [11]; `routes` feeds and drawsOn both null | `catalogue/context/pathways.json` 1.0.0 | in the catalogue |
+| Its three tiers | `catalogue/context/pathways/presenting.json` | all `planned`; no course slug; each tier's voice band "Confirmed 4 Sep 2026 at presenting-introductory A2 (f05d72d)" |
 | The teaching prose | `docs/curriculum/pathway-tier-mapping.md` Draft v3 (v3.1), Pathway 7, with the remap note of 3 September 2026 and two flags | draft, for SME review |
 | The capability cards and tier notes | adp-0212 (RJ-0047), adp-0213 (RJ-0053): four cards, three developed, one extended, none introduced | drafts; D-0058 owed |
 | The term list | `tools/pathways/core/rules/pathway-term-lists.json` v1.0, 11 patterns for this pathway | v2 ruled (D-0028), held on RJ-0033 |

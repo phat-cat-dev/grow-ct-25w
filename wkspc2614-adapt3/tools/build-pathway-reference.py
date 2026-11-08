@@ -55,7 +55,7 @@ DEFAULT_WIDE_ROOT = f"{THEMES}/integrations/cards/wide"
 DEFAULT_VOCAB = f"{THEMES}/integrations/cards/ing-card-vocabulary.json"
 DEFAULT_EAU_ROOT = f"{THEMES}/source-maps/excelling-at-university"
 DEFAULT_ADAPT_ROOT = f"{THEMES}/integrations/adapt"
-DEFAULT_CATALOGUE = "/home/user/wkspc2613-adapt2/catalogue/pathways.json"
+DEFAULT_CATALOGUE = "/home/user/wkspc2613-adapt2/catalogue/context/pathways.json"
 DEFAULT_OUT_DIR = "/home/user/wkspc2613-adapt2/catalogue/context/pathway"
 
 CORE_TMPL = "ingest-path-{slug}.md"

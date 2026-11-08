@@ -63,7 +63,7 @@
         "trigger": "onb-01 closed",
         "produces": "decidedValue.theme",
         "sources": [
-          "catalogue/pathways.json",
+          "catalogue/context/pathways.json",
           "crs-01 source set (no-preset path)"
         ],
         "parameters": {
@@ -100,7 +100,7 @@
         "authoringReview": {
           "instruction": "Before authoring, briefly review the ingested/source data in pointers to ground this gate in the real context (pathway, benchmarks, sources); do not invent beyond what they support, and note in one line what you took from them.",
           "pointers": [
-            "catalogue/pathways.json",
+            "catalogue/context/pathways.json",
             "crs-01 source set (no-preset path)"
           ]
         },
@@ -109,8 +109,8 @@
           "checks": [
             {
               "id": "THM-1",
-              "rule": "Not one of gate.md's numbered AL rules - a structural grounding check. decidedValue.theme must be one of catalogue/pathways.json's pathways[].id values (the 13 pathways), not an invented or paraphrased id.",
-              "appliesTo": "decidedValue.theme against catalogue/pathways.json pathways[].id"
+              "rule": "Not one of gate.md's numbered AL rules - a structural grounding check. decidedValue.theme must be one of catalogue/context/pathways.json's pathways[].id values (the 13 pathways), not an invented or paraphrased id.",
+              "appliesTo": "decidedValue.theme against catalogue/context/pathways.json pathways[].id"
             },
             {
               "id": "THM-2",
@@ -1356,7 +1356,7 @@
         "sources": [
           "crs-07 this tier's flat LOs",
           "crs-07_tiered-outcomes records for all three tiers (introductory, intermediate, advanced), read side by side for journey/spreadReading",
-          "catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings: resolved by the <pathway>-<tier> directory convention with an existence check - catalogue/pathways.json itself carries no tier data, and courseSlug is null/status is 'planned' for all three tiers today, so neither pathways file can supply tierSiblings directly)",
+          "catalogue/context/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings: resolved by the <pathway>-<tier> directory convention with an existence check - catalogue/context/pathways.json itself carries no tier data, and courseSlug is null/status is 'planned' for all three tiers today, so neither pathways file can supply tierSiblings directly)",
           "catalogue/context/pathway/<pathway>.json tierProgression.ladderReadings, masteryNote, tierStatements, capabilities[] (the 11-row ladder, its evolution narrative, and the rowId<->fheqLevel join - read upstream, never copied into the record)",
           "catalogue/context/shared/cross-cutting.json genericLadder.heads, tierModel (the three ladder heads' exact wording; the sole level authority for spreadReading)"
         ]
@@ -1448,11 +1448,11 @@
       "agentContext": {
         "fieldDescription": "Sibling tier slugs + up/down signpost sentences, plus (D-adp3, once all three tiers' crs-07 exist) this tier's own re-authored cross-tier journey row and LO-spread-vs-level reading. Soft, advisory framing only; never changes this course's own LOs or lessons.",
         "authoringReview": {
-          "instruction": "Derive tierSiblings by the <pathway>-<tier> directory convention (catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json name the pathway and its three tier slugs; resolve siblings by checking which sibling directories actually exist, not by a courseSlug field - courseSlug is null and status is 'planned' for all three tiers today). Write one up-signpost sentence (what the next tier adds) if a tier above this one exists, and one down-signpost sentence (what this tier assumes was covered) if a tier below exists. introductory has no down; advanced has no up. Then, reading all three tiers' crs-07_tiered-outcomes records side by side: re-author this tier's own practice/knowledge/identity row (journey) - use catalogue/context/shared/cross-cutting.json's genericLadder.heads' exact wording ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)') as the frame for the three fields, not words to copy; the row itself is this tier's own re-authoring, grounded in its own crs-07 LOs, never a copy of the shared ladder's or another tier's wording. Name the ladder rows (journey.ladderRows) reasoned from, resolvable against catalogue/context/pathway/<pathway>.json's capabilities[] join table. Then read this tier's LO spread against catalogue/context/shared/cross-cutting.json's tierModel - never design-kb/design-kb.tier-bands.json's indicativeLevels, which is who is in the room, not what level the capability sits at - and write spreadReading: say plainly where the spread is top-heavy relative to this tier's fheqRange; that is expected and acceptable, record it, do not correct it.",
+          "instruction": "Derive tierSiblings by the <pathway>-<tier> directory convention (catalogue/context/pathways/<pathway>.json and design-kb/design-kb.pathways.json name the pathway and its three tier slugs; resolve siblings by checking which sibling directories actually exist, not by a courseSlug field - courseSlug is null and status is 'planned' for all three tiers today). Write one up-signpost sentence (what the next tier adds) if a tier above this one exists, and one down-signpost sentence (what this tier assumes was covered) if a tier below exists. introductory has no down; advanced has no up. Then, reading all three tiers' crs-07_tiered-outcomes records side by side: re-author this tier's own practice/knowledge/identity row (journey) - use catalogue/context/shared/cross-cutting.json's genericLadder.heads' exact wording ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)') as the frame for the three fields, not words to copy; the row itself is this tier's own re-authoring, grounded in its own crs-07 LOs, never a copy of the shared ladder's or another tier's wording. Name the ladder rows (journey.ladderRows) reasoned from, resolvable against catalogue/context/pathway/<pathway>.json's capabilities[] join table. Then read this tier's LO spread against catalogue/context/shared/cross-cutting.json's tierModel - never design-kb/design-kb.tier-bands.json's indicativeLevels, which is who is in the room, not what level the capability sits at - and write spreadReading: say plainly where the spread is top-heavy relative to this tier's fheqRange; that is expected and acceptable, record it, do not correct it.",
           "pointers": [
             "crs-07_tiered-outcomes",
             "crs-07_tiered-outcomes records for all three tiers, read together",
-            "catalogue/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings, by directory-existence convention)",
+            "catalogue/context/pathways/<pathway>.json and design-kb/design-kb.pathways.json (tierSiblings, by directory-existence convention)",
             "catalogue/context/pathway/<pathway>.json tierProgression.ladderReadings, masteryNote, tierStatements, capabilities[]",
             "catalogue/context/shared/cross-cutting.json genericLadder.heads, tierModel"
           ]
@@ -1845,7 +1845,7 @@
         "sources": [
           "crs-01 source set",
           "pathway core A9 Relations + adapt-integration overlap",
-          "catalogue/pathways.json (tier ladder)"
+          "catalogue/context/pathways.json (tier ladder)"
         ],
         "parameters": {
           "whereNext": "vertical (tier ladder up/down) + horizontal (related pathways/themes/subjects)"
@@ -1908,7 +1908,7 @@
           "pointers": [
             "crs-01 source set",
             "pathway core A9 Relations + adapt-integration overlap",
-            "catalogue/pathways.json (tier ladder)"
+            "catalogue/context/pathways.json (tier ladder)"
           ]
         }
       }

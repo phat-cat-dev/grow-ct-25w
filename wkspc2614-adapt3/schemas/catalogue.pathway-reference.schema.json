@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://excelling.cardiffmet/schemas/catalogue.pathway-reference.schema.json",
   "title": "catalogue: per-pathway authoring reference",
-  "description": "catalogue/context/pathway/<slug>.json: the self-contained, concept-ordered authoring reference for one academic-practice pathway, aggregating the pathway core, card plan, per-row readings, FHEQ readings and card vocabulary into one place. Distinct from catalogue/pathways/<slug>.json (the bare tier registry read at gates) and catalogue/pathways.json (the index). Concept-ordered: identity, capabilities, tierProgression, theorySpine, crossCutting, gaps. Every tiered item carries both axes (tier + fheqLevel) per the shared cross-cutting store. Deep nested content is intentionally permissive so nothing useful is lost. adaptIntegration and bookGrounding are v2 and may be null.",
+  "description": "catalogue/context/pathway/<slug>.json: the self-contained, concept-ordered authoring reference for one academic-practice pathway, aggregating the pathway core, card plan, per-row readings, FHEQ readings and card vocabulary into one place. Distinct from catalogue/context/pathways/<slug>.json (the bare tier registry read at gates) and catalogue/context/pathways.json (the index). Concept-ordered: identity, capabilities, tierProgression, theorySpine, crossCutting, gaps. Every tiered item carries both axes (tier + fheqLevel) per the shared cross-cutting store. Deep nested content is intentionally permissive so nothing useful is lost. adaptIntegration and bookGrounding are v2 and may be null.",
   "type": "object",
   "required": ["pathwayReferenceId", "identity", "capabilities", "tierProgression", "theorySpine", "crossCutting"],
   "properties": {

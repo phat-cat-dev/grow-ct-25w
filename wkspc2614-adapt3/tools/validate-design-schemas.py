@@ -49,14 +49,14 @@ non-empty evidence. Zero map files, or zero chunks in a file, FAILs, never
 passes vacuously. Added to --all-defaults (the directory is now as fixed a
 repo-conventional location as any single-file store above).
 Extended: 21 Sep 2026, Prompt 145, SMAP-1 AMENDMENT — every pathwayTag's
-pathway value must resolve in catalogue/pathways.json's own pathway ids;
+pathway value must resolve in catalogue/context/pathways.json's own pathway ids;
 a tag naming anything else FAILs. Closes the gap that let this file carry
 referencing-citation-integrity and work-based-experiential, neither a
 catalogue pathway id, unnoticed by any check.
 Extended: 21 Sep 2026, Prompt 140 Unit 2 — --catalogue mode (CAT-1, CAT-1
 AMENDMENT): validates catalogue.json against schemas/catalogue.schema.json,
-catalogue/pathways.json against schemas/catalogue.pathways.schema.json, and
-every catalogue/pathways/<pathway>.json against
+catalogue/context/pathways.json against schemas/catalogue.pathways.schema.json, and
+every catalogue/context/pathways/<pathway>.json against
 schemas/catalogue.pathway.schema.json. Structural invariants beyond schema:
 every pathway file named in pathways.json exists; every pathway has exactly
 one file (no two pathway entries share a file path); no course slug is
@@ -135,10 +135,10 @@ DEFAULT_SOURCE_MAPS_DIR = REPO_ROOT / "source-kb" / "source-maps"
 # covered by --all-defaults the same way.
 DEFAULT_CATALOGUE = REPO_ROOT / "catalogue.json"
 # SMAP-1 AMENDMENT (Prompt 145, 21 Sep 2026): a source map's pathwayTags
-# must use catalogue/pathways.json's own pathway ids, so --source-maps
+# must use catalogue/context/pathways.json's own pathway ids, so --source-maps
 # reads this fixed path as a cross-store dependency the same way it
 # already reads the content-shapes and source-kb stores below.
-DEFAULT_CATALOGUE_PATHWAYS = REPO_ROOT / "catalogue" / "pathways.json"
+DEFAULT_CATALOGUE_PATHWAYS = REPO_ROOT / "catalogue" / "context" / "pathways.json"
 # BM-1 AMENDMENT (Prompt 148, 21 Sep 2026) relied on QAAVector, a separate,
 # read-only sibling workspace, as ground truth for a benchmark-kind source
 # map's chunk headings, text and verification state. RJ-0073 (adp-0217,
@@ -1432,7 +1432,7 @@ def validate_pathways(instance: dict, instance_path: Path) -> list:
     against schema plus cross-store invariants:
       - pathway ids are unique and non-empty (zero pathways is a FAIL, never a
         vacuous pass, matching this file's zero-rows discipline);
-      - every pathway id resolves in catalogue/pathways.json, and every
+      - every pathway id resolves in catalogue/context/pathways.json, and every
         catalogue pathway id has a record here (the two id sets match exactly);
       - every bookChunks chunk id (primary and shared) exists in the book
         source-map; every shared.with co-pathway id resolves in the catalogue.
@@ -1458,12 +1458,12 @@ def validate_pathways(instance: dict, instance_path: Path) -> list:
     # cross-store: catalogue pathway ids must match this store's ids exactly.
     cat_instance, cat_err = load_store(DEFAULT_CATALOGUE_PATHWAYS)
     if cat_err:
-        errors.append(f"  [invariant] Cannot read catalogue/pathways.json for id cross-check: {cat_err}")
+        errors.append(f"  [invariant] Cannot read catalogue/context/pathways.json for id cross-check: {cat_err}")
         cat_ids = set()
     else:
         cat_ids = {p.get("id") for p in cat_instance.get("pathways", [])}
         for pid in sorted(rec_ids - cat_ids):
-            errors.append(f"  [invariant] pathway '{pid}' is not in catalogue/pathways.json")
+            errors.append(f"  [invariant] pathway '{pid}' is not in catalogue/context/pathways.json")
         for pid in sorted(cat_ids - rec_ids):
             errors.append(f"  [invariant] catalogue pathway '{pid}' has no record in the pathways store")
 
@@ -1553,7 +1553,7 @@ def validate_source_maps(maps_dir: Path) -> list:
       - chunk ids unique within the file;
       - every shapeId resolves in design-kb/design-kb.content-shapes.json;
       - every pathwayTag carries non-empty evidence;
-      - every pathwayTag's pathway value resolves in catalogue/pathways.json's
+      - every pathwayTag's pathway value resolves in catalogue/context/pathways.json's
         pathway ids (SMAP-1 AMENDMENT, Prompt 145).
 
     Book-kind only:
@@ -1620,11 +1620,11 @@ def validate_source_maps(maps_dir: Path) -> list:
     catalogue_pathway_ids = set()
     pathways_instance, pathways_load_error = load_store(DEFAULT_CATALOGUE_PATHWAYS)
     if pathways_load_error:
-        cross_store_errors.append(f"  [cross-store] catalogue/pathways.json unreadable: {pathways_load_error}")
+        cross_store_errors.append(f"  [cross-store] catalogue/context/pathways.json unreadable: {pathways_load_error}")
     else:
         catalogue_pathway_ids = {p.get("id") for p in pathways_instance.get("pathways", [])}
         if not catalogue_pathway_ids:
-            cross_store_errors.append("  [cross-store] catalogue/pathways.json has zero pathway ids; pathwayTag check cannot pass vacuously")
+            cross_store_errors.append("  [cross-store] catalogue/context/pathways.json has zero pathway ids; pathwayTag check cannot pass vacuously")
 
     results = []
 
@@ -1715,8 +1715,8 @@ def validate_source_maps(maps_dir: Path) -> list:
 
 def validate_catalogue(catalogue_path: Path) -> list:
     """
-    Validate catalogue.json, catalogue/pathways.json, and every
-    catalogue/pathways/<pathway>.json file (CAT-1, CAT-1 AMENDMENT,
+    Validate catalogue.json, catalogue/context/pathways.json, and every
+    catalogue/context/pathways/<pathway>.json file (CAT-1, CAT-1 AMENDMENT,
     Prompt 140 Unit 2).
 
     Checks per file: schema validity against catalogue.schema.json,
@@ -1724,19 +1724,19 @@ def validate_catalogue(catalogue_path: Path) -> list:
     appropriate.
 
     Structural invariants (schema alone cannot express these):
-      - every pathway file named in catalogue/pathways.json's pathways[].file
+      - every pathway file named in catalogue/context/pathways.json's pathways[].file
         exists on disk;
       - every pathway has exactly one file (no two pathway entries point at
         the same file);
       - no course slug is claimed by two tiers, across every pathway file
         combined.
 
-    Zero pathways listed in catalogue/pathways.json is a FAIL, never a
+    Zero pathways listed in catalogue/context/pathways.json is a FAIL, never a
     vacuous pass (mirrors the same rule already enforced for content-shapes,
     activity-patterns, and source-maps above).
 
     Returns a list of (name, errors) tuples: one for catalogue.json, one for
-    catalogue/pathways.json, one per pathway file found, plus a final
+    catalogue/context/pathways.json, one per pathway file found, plus a final
     "(cross-file invariants)" entry for checks that span multiple files.
     """
     results = []
@@ -2064,7 +2064,7 @@ def main():
     parser.add_argument(
         "--catalogue",
         action="store_true",
-        help="Validate catalogue.json, catalogue/pathways.json, and every catalogue/pathways/<pathway>.json against their schemas plus structural invariants (CAT-1, CAT-1 AMENDMENT)"
+        help="Validate catalogue.json, catalogue/context/pathways.json, and every catalogue/context/pathways/<pathway>.json against their schemas plus structural invariants (CAT-1, CAT-1 AMENDMENT)"
     )
     parser.add_argument(
         "--test-fixtures",

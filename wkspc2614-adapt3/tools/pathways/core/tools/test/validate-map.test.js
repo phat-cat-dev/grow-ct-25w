@@ -29,7 +29,7 @@ test('good-map.json passes with exit 0', () => {
 
 const failureCases = [
   { file: 'bad-shape.json', mustContain: 'shape: missing top-level field "mappedBy"' },
-  { file: 'bad-tag.json', mustContain: 'is not "adapt-" plus a catalogue/pathways.json id' },
+  { file: 'bad-tag.json', mustContain: 'is not "adapt-" plus a catalogue/context/pathways.json id' },
   { file: 'bad-count-mismatch.json', mustContain: 'coverage: "adapt-referencing".direct is 2, statements give 1' },
   { file: 'bad-blocktype.json', mustContain: "is not one of BM-1's 15" },
   { file: 'bad-status.json', mustContain: 'is not "proposed" or "confirmed"' },
