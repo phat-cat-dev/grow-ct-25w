@@ -35,6 +35,7 @@ const GENERATED_ROOT = path.join(ROOT, 'courses', '_generated');
 const COURSES_ROOT = path.join(ROOT, 'courses');
 const SRC_COURSE_LINK = path.join(ROOT, 'src', 'course');
 const SCORM_PACKAGES_ROOT = path.join(ROOT, 'scorm-packages');
+const EXPORTS_GENERATED_ROOT = path.join(ROOT, 'exports', 'generated');
 const PACKAGE_SCRIPT = path.join(ROOT, 'package-scorm.js');
 
 // --- Symlink save/restore ---
@@ -88,12 +89,37 @@ process.on('uncaughtException', (err) => {
 // --- Enumeration ---
 
 function getKnownTiers() {
-  // Tiers are directories in courses/ that have en/course.json (i.e., built shells)
-  // Exclude _generated and any other non-tier directories
-  return fs.readdirSync(COURSES_ROOT, { withFileTypes: true })
-    .filter(d => d.isDirectory() && d.name !== '_generated')
-    .filter(d => fs.existsSync(path.join(COURSES_ROOT, d.name, 'en', 'course.json')))
-    .map(d => d.name);
+  // Tiers are directories that have en/course.json (i.e., built shells).
+  //
+  // Pathway/shell reorg (8 Nov 2026): real per-tier course dirs no longer
+  // live directly under courses/ - they're under courses/v1/<slug>/ or
+  // courses/v2/<slug>/ (flat), or nested under
+  // courses/v1/<pathway>/shell/generic/<slug>/ (pathway wrappers, which have
+  // no en/ of their own). Walk v1/ and v2/ themselves, recursing into
+  // shell/generic/ one level when a directory isn't a course itself - same
+  // discovery shape already applied to verify-all-courses.js,
+  // mcq-heading-lint.js and course-export.js for this same reorg.
+  const tiers = [];
+  for (const version of ['v1', 'v2']) {
+    const versionDir = path.join(COURSES_ROOT, version);
+    if (!fs.existsSync(versionDir)) continue;
+    for (const d of fs.readdirSync(versionDir, { withFileTypes: true })) {
+      if (!d.isDirectory()) continue;
+      const entryDir = path.join(versionDir, d.name);
+      if (fs.existsSync(path.join(entryDir, 'en', 'course.json'))) {
+        tiers.push(d.name);
+        continue;
+      }
+      const genericDir = path.join(entryDir, 'shell', 'generic');
+      if (!fs.existsSync(genericDir)) continue;
+      for (const g of fs.readdirSync(genericDir, { withFileTypes: true })) {
+        if (g.isDirectory() && fs.existsSync(path.join(genericDir, g.name, 'en', 'course.json'))) {
+          tiers.push(g.name);
+        }
+      }
+    }
+  }
+  return tiers;
 }
 
 function enumeratePairs() {
@@ -183,6 +209,56 @@ function findPackageZip(tier, context, commitHash) {
   return files.length > 0 ? path.join(SCORM_PACKAGES_ROOT, files[0]) : null;
 }
 
+// --- Archive-after-export ---
+// Once a courses/_generated/<tier>-<context>/ pair has a SCORM zip sitting in
+// scorm-packages/ (built on ANY commit, not just HEAD - the pair may have
+// been packaged on an earlier commit than the one currently checked out),
+// its generated-content directory has done its job and can move out of
+// _generated/ into exports/generated/<tier>-<context>/. This keeps
+// _generated/ holding only pairs still awaiting their first package, and
+// matches courses/README.md's description of _generated/ as build output
+// that isn't meant to accumulate indefinitely.
+//
+// No new marker file: "exported" is detected purely by matching existing
+// scorm-packages/*.zip filenames against the {tier}_{context}_ prefix (same
+// prefix findPackageZip uses), deliberately without the commit-hash suffix.
+
+function hasAnyExportedPackage(tier, context) {
+  const prefix = `${tier}_${context}_`;
+  return fs.readdirSync(SCORM_PACKAGES_ROOT)
+    .some(f => f.startsWith(prefix) && f.endsWith('.zip'));
+}
+
+function archiveGeneratedDir(dir) {
+  const src = path.join(GENERATED_ROOT, dir);
+  const dest = path.join(EXPORTS_GENERATED_ROOT, dir);
+  if (!fs.existsSync(EXPORTS_GENERATED_ROOT)) {
+    fs.mkdirSync(EXPORTS_GENERATED_ROOT, { recursive: true });
+  }
+  if (fs.existsSync(dest)) {
+    throw new Error(`Archive destination already exists, refusing to overwrite: ${path.relative(ROOT, dest)}`);
+  }
+  fs.renameSync(src, dest);
+}
+
+// Scans all currently-enumerated pairs (not just ones just built) and
+// archives any whose package already exists in scorm-packages/. Used both
+// as a one-time backfill (--archive-only) and, per-pair, right after a
+// fresh build's own verification passes in the main loop below.
+function archiveExportedPairs(pairs) {
+  const archived = [];
+  const notYetExported = [];
+  for (const { tier, context, dir } of pairs) {
+    if (hasAnyExportedPackage(tier, context)) {
+      archiveGeneratedDir(dir);
+      archived.push(dir);
+    } else {
+      notYetExported.push(dir);
+    }
+  }
+  return { archived, notYetExported };
+}
+
 // --- Verification ---
 
 function verifyPackage(zipPath) {
@@ -237,10 +313,32 @@ function verifyPackage(zipPath) {
 function main() {
   // Parse arguments
   let limit = null;
+  let archiveOnly = false;
   for (const arg of process.argv.slice(2)) {
     if (arg.startsWith('--limit=')) {
       limit = parseInt(arg.split('=')[1], 10);
+    } else if (arg === '--archive-only') {
+      archiveOnly = true;
     }
+  }
+
+  // --archive-only: move already-packaged pairs out of _generated/ into
+  // exports/generated/ without building anything. No commit hash is
+  // embedded in this operation (it only reads existing scorm-packages/
+  // filenames), so the dirty-tree guard below does not apply to this mode.
+  if (archiveOnly) {
+    const allPairs = enumeratePairs();
+    console.log(`[build-all] --archive-only: checking ${allPairs.length} pair(s) under ${path.relative(ROOT, GENERATED_ROOT)} against ${path.relative(ROOT, SCORM_PACKAGES_ROOT)}`);
+    const { archived, notYetExported } = archiveExportedPairs(allPairs);
+    if (archived.length > 0) {
+      console.log(`[build-all] Archived ${archived.length} pair(s) to ${path.relative(ROOT, EXPORTS_GENERATED_ROOT)}/:`);
+      archived.forEach(d => console.log(`  ${d}`));
+    }
+    if (notYetExported.length > 0) {
+      console.log(`[build-all] Left in place (no matching package yet): ${notYetExported.length} pair(s):`);
+      notYetExported.forEach(d => console.log(`  ${d}`));
+    }
+    process.exit(0);
   }
 
   const dirtyFiles = getDirtyFiles();
@@ -326,7 +424,21 @@ function main() {
         errors: [],
         zipPath
       });
-      console.log(`  -> PASS (${verification.size}KB)\n`);
+      console.log(`  -> PASS (${verification.size}KB)`);
+
+      // Archive the generated source now that an independently-verified
+      // package exists for it. Done here, after verification.valid, not
+      // inside package-scorm.js itself: package-scorm.js's own zip step has
+      // no independent check, so archiving straight after it would risk
+      // moving the _generated/ source away before this script's stricter
+      // verifyPackage() (size, imsmanifest.xml, course.json) has confirmed
+      // the package is actually good.
+      try {
+        archiveGeneratedDir(dir);
+        console.log(`  -> archived ${dir} to ${path.relative(ROOT, EXPORTS_GENERATED_ROOT)}/\n`);
+      } catch (err) {
+        console.error(`  -> WARNING: failed to archive ${dir}: ${err.message}\n`);
+      }
     } else {
       results.push({
         tier,
