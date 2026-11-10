@@ -83,9 +83,27 @@
 const fs = require('fs');
 const path = require('path');
 const { resolveCourse } = require('./lib/course-resolve');
+const { CONTEXT_PACKS_ROOT, RELOCATED_CONTEXT_PACKS } = require('../merge-context');
 
 const ROOT = path.resolve(__dirname, '..');
-const BACKLOG_CEILING = 423;
+// 315 confirmed against the current repo (8 Nov 2026). History: 459
+// context-pack files carry a worked-example body across all three
+// relocated contexts (universal/baseline, hecos/psychology, cmet/
+// schools/sport - 153 each). The 2 Nov 2026 figure of 423 non-conformant
+// fell to 408 after a first 15-file fix to the universal/baseline
+// context, then to 315 after converting the remaining 98 literal
+// "Student A"/"Student B" files (the studentAB bucket, now 0 - that
+// pattern existed only in the universal/baseline context; hecos/
+// psychology and cmet/schools/sport use the poolName pattern instead,
+// still outstanding). 144 files are now fully conformant.
+// See runPacksMode()'s directory-discovery fix below (8 Nov 2026): this
+// ratchet silently read 0 files and always passed from the day the
+// context packs were relocated out of content/context-packs/
+// (RELOCATED_CONTEXT_PACKS, merge-context.js) until that fix, because its
+// file-discovery never followed the relocation. Every fix lowers this
+// constant by hand; the ratchet means no new file can push the count
+// back up unnoticed.
+const BACKLOG_CEILING = 315;
 
 function parseArgs() {
   const args = { mode: 'packs', course: null, json: false };
@@ -120,6 +138,52 @@ function walkJsonFiles(dir) {
       else if (entry.name.endsWith('.json')) out.push(p);
     }
   })(dir);
+  return out;
+}
+
+// Discover every context-pack file carrying a worked-example body,
+// following the relocation (RELOCATED_CONTEXT_PACKS, merge-context.js): a
+// relocated context's files now live under
+// courses/<pathway>/<relocated-subpath>/<tier-slug>/*.json, one subtree
+// per pathway, rather than flat under content/context-packs/<context>/. A
+// context not listed in RELOCATED_CONTEXT_PACKS is still read from the
+// legacy flat location.
+// Returns [{file, context, pathway}], pathway being the tier slug
+// (e.g. "academic-writing-advanced") for the per-pathway breakdown.
+function discoverPackFiles() {
+  const out = [];
+
+  // Legacy flat layout: content/context-packs/<context>/<tier-slug>/*.json,
+  // for any context not (or not yet) relocated.
+  if (fs.existsSync(CONTEXT_PACKS_ROOT)) {
+    for (const entry of fs.readdirSync(CONTEXT_PACKS_ROOT, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const context = entry.name;
+      if (RELOCATED_CONTEXT_PACKS[context]) continue; // relocated - handled below
+      const contextDir = path.join(CONTEXT_PACKS_ROOT, context);
+      for (const f of walkJsonFiles(contextDir)) {
+        const segments = path.relative(contextDir, f).split(path.sep);
+        out.push({ file: f, context, pathway: segments[0] || null });
+      }
+    }
+  }
+
+  // Relocated layout: courses/<pathway>/<relocated-subpath>/<tier-slug>/*.json.
+  const coursesDir = path.join(ROOT, 'courses');
+  const pathwayDirs = fs.existsSync(coursesDir)
+    ? fs.readdirSync(coursesDir, { withFileTypes: true }).filter(e => e.isDirectory() && !e.name.startsWith('_')).map(e => e.name)
+    : [];
+  for (const [context, relocatedSubpath] of Object.entries(RELOCATED_CONTEXT_PACKS)) {
+    for (const pathwayName of pathwayDirs) {
+      const contextDir = path.join(coursesDir, pathwayName, relocatedSubpath);
+      if (!fs.existsSync(contextDir)) continue;
+      for (const f of walkJsonFiles(contextDir)) {
+        const segments = path.relative(contextDir, f).split(path.sep);
+        out.push({ file: f, context, pathway: segments[0] || null });
+      }
+    }
+  }
+
   return out;
 }
 
@@ -198,12 +262,11 @@ function assess(paragraphs, { namePool, mode }) {
 // ── --packs mode ─────────────────────────────────────────────────────────
 
 function runPacksMode(opts) {
-  const dir = path.join(ROOT, 'content', 'context-packs');
-  const files = walkJsonFiles(dir);
+  const discovered = discoverPackFiles();
   const namePool = loadNamePool();
 
   const results = [];
-  for (const f of files) {
+  for (const { file: f, context, pathway } of discovered) {
     let j;
     try { j = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (e) { continue; }
     const we = j.generatedProse && j.generatedProse['worked-example'];
@@ -211,9 +274,6 @@ function runPacksMode(opts) {
     const paragraphs = plainParagraphs(we);
     const r = assess(paragraphs, { namePool, mode: 'tokens' });
     const rel = path.relative(ROOT, f);
-    const segments = path.relative(dir, f).split(path.sep);
-    const context = segments[0];
-    const pathway = segments[1] || null;
     results.push({ file: rel, context, pathway, ...r });
   }
 

@@ -34,6 +34,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const ROOT = path.resolve(__dirname, '..');
+
 function arg(name, def) { const i = process.argv.indexOf('--' + name); return (i >= 0 && i + 1 < process.argv.length) ? process.argv[i + 1] : def; }
 const courseDir = arg('course');
 let shortSlug = arg('short-slug', null);
@@ -70,11 +72,10 @@ const courseObj = Array.isArray(course) ? course[0] : course;
 // Auto-discover the base manifest and packs when not passed, so the build task
 // can run with just --course. Direct: a course-design_*.json inside courseDir.
 // Else (e.g. a courses/_generated/<base>-<subject> merged dir): the
-// courses/v1/<d> or courses/v2/<d> (v1/v2 split, 8 Nov 2026) whose slug is a
-// prefix of courseDir's basename.
+// courses/<d> whose slug is a prefix of courseDir's basename.
 //
-// Pathway/shell reorg (8 Nov 2026): every v1 pathway is now its own
-// directory (courses/v1/<pathway>/), not a course directory itself - it
+// Pathway/shell reorg (10 Nov 2026): every pathway is now its own
+// directory (courses/<pathway>/), not a course directory itself - it
 // has no course-design_*.json directly inside it. If a candidate <d> has
 // no course-design_<d>.json of its own, check its shell/generic/<d2>/
 // subdirectories too, matching bn against <d2> instead - same per-tier
@@ -85,14 +86,13 @@ if (!manifestPath) {
   const direct = fs.existsSync(courseDir) ? fs.readdirSync(courseDir).find(f => /^course-design_.*\.json$/.test(f)) : null;
   if (direct) { manifestPath = path.join(courseDir, direct); baseSlug = direct.replace(/^course-design_/, '').replace(/\.json$/, ''); }
   else {
-    outer:
-    for (const version of ['v1', 'v2']) {
-      const versionDir = path.join('courses', version);
-      if (!fs.existsSync(versionDir)) continue;
-      for (const d of fs.readdirSync(versionDir)) {
-        const mf = path.join(versionDir, d, `course-design_${d}.json`);
+    const coursesDir = path.join(ROOT, 'courses');
+    if (fs.existsSync(coursesDir)) {
+      outer:
+      for (const d of fs.readdirSync(coursesDir)) {
+        const mf = path.join(coursesDir, d, `course-design_${d}.json`);
         if (fs.existsSync(mf) && bn.startsWith(d)) { manifestPath = mf; baseSlug = d; break outer; }
-        const genericDir = path.join(versionDir, d, 'shell', 'generic');
+        const genericDir = path.join(coursesDir, d, 'shell', 'generic');
         if (!fs.existsSync(genericDir)) continue;
         for (const d2 of fs.readdirSync(genericDir)) {
           const mf2 = path.join(genericDir, d2, `course-design_${d2}.json`);

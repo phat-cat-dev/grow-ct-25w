@@ -30,9 +30,10 @@ confirmed step; nothing is committed silently.
    ```
    This creates the manifest from the four answers and auto-states the reserved
    CXS gates. Where it lands depends on `onb-03_pitch`: a single-tier pitch
-   writes `courses/v1/<slug>/course-design_<slug>.json` (the original design);
-   pitch `"all"` writes three sibling manifests at
-   `courses/v2/<slug>-<tier>/course-design_<slug>-<tier>.json`
+   writes `courses/<pathway>/shell/generic/<slug>/course-design_<slug>.json`
+   (`<pathway>` is `<slug>` with its tier suffix stripped); pitch `"all"`
+   writes three sibling manifests at
+   `courses/<theme>/shell/generic/<theme>-<tier>/course-design_<theme>-<tier>.json`
    (`profile: "pathway-distillation"`). See `courses/README.md`.
 2. **CXS.** All six gates auto-pass for now; `/new-course` has already stated
    them. Nothing to do unless a CXS gate is being wired for real.
@@ -75,21 +76,21 @@ node tools/manifest-completeness.js --course=<slug>   # clause 4 (scaffold) PASS
 After each `/land`, verify the result before moving on:
 ```
 node tools/verify-course.js --course=<slug>
-python3 tools/validate-design-schemas.py --course-design courses/v1/<slug>/course-design_<slug>.json
+python3 tools/validate-design-schemas.py --course-design courses/<pathway>/shell/generic/<slug>/course-design_<slug>.json
 node tools/conformance-lint.js --course=<slug>
 node voice-lint.js --course=<slug>
 ```
-(use `courses/v2/<slug>/...` for a pathway-distillation course; `verify-course.js`,
+(`<pathway>` is `<slug>` with its tier suffix stripped; `verify-course.js`,
 `conformance-lint.js` and `voice-lint.js` resolve the slug themselves via
-`tools/lib/course-resolve.js`, which checks both locations)
+`tools/lib/course-resolve.js`, which checks both the flat and nested locations)
 
 7. **Build.** Point the build at the course and compile. A course builds cleanly
    only once **fully** authored (every deferred block filled); `check-json`
    aborts while any deferred block still has an empty `_id`.
    ```
-   ls -l src/course                               # note the current symlink target
-   ln -sfn ../courses/v1/<slug> src/course         # or courses/v2/<slug> for pathway-distillation
-   npx grunt build                                # a fully authored course builds clean
+   ls -l src/course                                                    # note the current symlink target
+   ln -sfn ../courses/<pathway>/shell/generic/<slug> src/course         # <pathway> = <slug> minus its tier suffix
+   npx grunt build                                                     # a fully authored course builds clean
    ```
    On a partly authored shell, `grunt build` aborts at `check-json` (exit 3) -
    that is expected, not a fault. `npx grunt build --force` will build a shell by

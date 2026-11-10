@@ -7,38 +7,45 @@ content model (`en/*.json`) once scaffolded/authored.
 
 ```
 courses/
-  v1/                     39 single-tier courses - the original design
-  v2/                     6 pathway-distillation courses (2 themes x 3 tiers)
-  _archive/               frozen pre-realignment pilots, read-only
-  _component-gallery/     a static gallery/demo course, not part of the taxonomy
-  _generated/             build output: merged <tier>-<context> pairs, gitignored
-  sandbox-les01-hardstop/ a standalone sandbox course, not part of the taxonomy
+  <pathway>/                  one directory per pathway (13 single-tier +
+                               presenting-v2, referencing-v2)
+    shell/generic/<slug>/     the per-tier course (course-design_<slug>.json,
+                               en/*.json once scaffolded/authored)
+    context/<taxonomy>/<slug>/ per-tier context pack (relocated, see below)
+  _archive/                   frozen pre-realignment pilots, read-only
+  _component-gallery/         a static gallery/demo course, not part of the taxonomy
+  _generated/                 build output: merged <tier>-<context> pairs, gitignored
 ```
 
-## v1/ vs v2/
+## Pathway grouping
 
-Split 8 Nov 2026 to keep two different course designs - built at different
-times, to different specs - from sitting flat side by side. See
-`v1/README.md` and `v2/README.md`, and
-`docs/curriculum/referencing-presenting-v1-v2-comparison.md` for a worked
-side-by-side comparison of the two designs on the same subjects
-(referencing, presenting).
+Reorganised 10 Nov 2026 (pathway/shell reorg): every pathway is its own
+directory holding its tiers under `shell/generic/` rather than courses
+sitting flat, or split by a v1/v2 vintage flag. `presenting-v2` and
+`referencing-v2` are pathway groups in exactly the same shape as the
+13 original pathways - "v2" is part of the pathway name now, not a separate
+root. See `docs/curriculum/referencing-presenting-v1-v2-comparison.md` for
+the worked side-by-side comparison of the two designs that motivated keeping
+them distinct (referencing, presenting).
 
-The split is reliably detectable from the manifest itself: every `v1/`
-manifest carries no `profile` field; every `v2/` manifest carries
-`profile: "pathway-distillation"`. `tools/new-course.js` uses exactly this
-rule to decide where a new course's manifest is written: a single-tier
-`onb-03_pitch` answer writes to `v1/`, pitch `"all"` (three sibling tiers at
-once) writes to `v2/`.
+The distinction is reliably detectable from the manifest itself: a
+single-tier manifest carries no `profile` field; a pathway-distillation
+manifest (the `-v2` pathways) carries `profile: "pathway-distillation"`.
+`tools/new-course.js` uses exactly this rule to decide a new course's
+manifest path: a single-tier `onb-03_pitch` answer writes to
+`courses/<pathway>/shell/generic/<slug>` where `<pathway>` is `<slug>` with
+its tier suffix stripped; pitch `"all"` (three sibling tiers at once) writes
+the same shape under the theme's own pathway group.
 
 ## Resolving a course slug in code
 
-Do not assume `courses/<slug>/` - a slug may live at `courses/v1/<slug>/`,
-`courses/v2/<slug>/`, or (for a merged build) `courses/_generated/<slug>/`.
-Use `tools/lib/course-resolve.js`'s `resolveCourse(slug, roots)`: the
-`'courses'` root itself tries all of flat `courses/<slug>` (legacy, kept for
-callers that pre-date the split), `courses/v1/<slug>` and `courses/v2/<slug>`
-in that order, so callers do not need to know which vintage a slug is in.
+Do not assume `courses/<slug>/` - a slug usually lives at
+`courses/<pathway>/shell/generic/<slug>/`, or (for a merged build) at
+`courses/_generated/<slug>/`. Use `tools/lib/course-resolve.js`'s
+`resolveCourse(slug, roots)`: the `'courses'` root tries flat
+`courses/<slug>` (legacy, kept for callers that pre-date the reorg) then
+`courses/<pathway>/shell/generic/<slug>`, so callers do not need to know
+which pathway a slug belongs to.
 
 ## The other directories
 
@@ -48,7 +55,5 @@ in that order, so callers do not need to know which vintage a slug is in.
   component palette, not part of the 13-pathway x 3-tier taxonomy.
 - **`_generated/`** - build output only, never committed by hand: each
   subdirectory is a merged `<tier>-<context>` pair produced by
-  `merge-context.js` from a `v1/` or `v2/` course plus a subject context pack.
+  `merge-context.js` from a pathway's course plus a subject context pack.
   Gitignored; rebuilt, not edited.
-- **`sandbox-les01-hardstop/`** - a standalone sandbox course for exercising
-  the `les-01` gate/hard-stop machinery, not part of the taxonomy.

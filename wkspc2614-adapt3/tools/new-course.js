@@ -49,14 +49,13 @@
  * written in this invocation is rolled back, not just the failing one. The
  * single-tier path below is untouched by this mode.
  *
- * v1/v2 placement (8 Nov 2026): courses/ now splits by vintage, not just by
- * slug. This maps exactly onto the single-tier/multi-tier distinction above -
- * confirmed empirically across every course committed so far (all 39
- * single-tier manifests carry no `profile` field; all 6 pathway-distillation
- * manifests carry `profile: "pathway-distillation"`, no exceptions either
- * way) - so no new flag is needed: single-tier mode writes to
- * courses/v1/<slug>, multi-tier/pathway-distillation mode writes to
- * courses/v2/<tierSlug>.
+ * Pathway/shell placement (10 Nov 2026): courses/ splits by pathway, not by
+ * vintage. Both single-tier and multi-tier modes write into the same shape -
+ * courses/<pathway>/shell/generic/<tierSlug> - with <pathway> derived from
+ * the slug for single-tier mode (pathwayFromSlug, stripping the trailing
+ * -introductory|-intermediate|-advanced) and from the theme-derived baseSlug
+ * directly for multi-tier/pathway-distillation mode (baseSlug already IS the
+ * pathway group name, e.g. "presenting-v2").
  */
 
 const fs = require('fs');
@@ -67,6 +66,12 @@ const ROOT = path.resolve(__dirname, '..');
 const HARD_STOP_PROVENANCE = new Set(['human-confirmed', 'human-specified', 'human-amended']);
 const ONB_GATES = ['onb-01_theme-preset', 'onb-02_course-theme', 'onb-03_pitch', 'onb-04_naming'];
 const ALL_TIERS = ['introductory', 'intermediate', 'advanced'];
+
+// Same derivation as tools/lib/course-resolve.js and merge-context.js: the
+// pathway group name is the slug with its tier suffix stripped.
+function pathwayFromSlug(slug) {
+  return slug.replace(/-(introductory|intermediate|advanced)$/, '');
+}
 
 // Reserved/auto CXS gates (gate-redesign-2026-10-06.md; Abbott, 8 Oct 2026,
 // "reserved-gate record-writing"). CXS is deterministic and course-level, so
@@ -171,7 +176,7 @@ function createMultiTierManifests(baseSlug, theme, answers, namedSlug) {
     // three refuses the whole batch up front.
     for (const tier of ALL_TIERS) {
       const tierSlug = `${baseSlug}-${tier}`;
-      const courseDir = path.join(ROOT, 'courses', 'v2', tierSlug);
+      const courseDir = path.join(ROOT, 'courses', baseSlug, 'shell', 'generic', tierSlug);
       if (fs.existsSync(courseDir)) {
         throw new Error(`${courseDir} already exists. 'all' mode creates ${baseSlug}-introductory, ${baseSlug}-intermediate and ${baseSlug}-advanced together; remove the conflicting directory or choose a different theme slug.`);
       }
@@ -179,7 +184,7 @@ function createMultiTierManifests(baseSlug, theme, answers, namedSlug) {
 
     for (const tier of ALL_TIERS) {
       const tierSlug = `${baseSlug}-${tier}`;
-      const courseDir = path.join(ROOT, 'courses', 'v2', tierSlug);
+      const courseDir = path.join(ROOT, 'courses', baseSlug, 'shell', 'generic', tierSlug);
       const facetSet = { pathway: theme, tier: tier };
       const manifest = {
         schemaVersion: '0.1.0',
@@ -246,7 +251,7 @@ function main() {
   const args = parseArgs();
   const slug = args.slug;
 
-  const courseDir = path.join(ROOT, 'courses', 'v1', slug);
+  const courseDir = path.join(ROOT, 'courses', pathwayFromSlug(slug), 'shell', 'generic', slug);
   if (fs.existsSync(courseDir)) {
     const existingManifests = fs.readdirSync(courseDir).filter(f => /^course-design_.*\.json$/.test(f));
     if (existingManifests.length > 0) {

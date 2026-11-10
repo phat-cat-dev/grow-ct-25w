@@ -80,30 +80,23 @@ function findDuplicateStems(components) {
 // ── --all mode ───────────────────────────────────────────────────────────
 
 function runAllMode(opts) {
-  // v1/v2 split (8 Nov 2026): course slugs live one level deeper, under
-  // courses/v1/ and courses/v2/, not directly under courses/ itself. Walk
-  // both version directories rather than courses/'s own direct children
-  // (which are now just v1/, v2/, _archive/, _generated/, etc.).
-  //
-  // Pathway/shell reorg (8 Nov 2026): every v1 pathway is now its own
-  // directory (courses/v1/<pathway>/) holding context/ and shell/generic/,
-  // not a course directory itself - it has no en/ of its own. A directory
-  // is a real course only if it has an en/ directly inside it; otherwise,
-  // if it has a shell/generic/ subdirectory, recurse into THAT one level
-  // for the real per-tier slugs. Not hardcoded to v1: a version dir with
-  // no shell/generic/ (v2, or any future vintage) falls through to the
-  // old flat behaviour unchanged - same shape as verify-all-courses.js's
-  // discoverCourses() fix.
-  const versionDirs = ['v1', 'v2'].map(v => path.join(ROOT, 'courses', v));
+  // Pathway/shell reorg (10 Nov 2026): course slugs live one level deeper,
+  // under courses/<pathway>/, not directly under courses/ itself. Every
+  // pathway is its own directory (courses/<pathway>/) holding context/ and
+  // shell/generic/, not a course directory itself - it has no en/ of its
+  // own. A directory is a real course only if it has an en/ directly
+  // inside it; otherwise, if it has a shell/generic/ subdirectory, recurse
+  // into THAT one level for the real per-tier slugs - same shape as
+  // verify-all-courses.js's discoverCourses() fix.
+  const coursesDir = path.join(ROOT, 'courses');
   const slugDirs = [];
-  for (const versionDir of versionDirs) {
-    if (!fs.existsSync(versionDir)) continue;
-    for (const e of fs.readdirSync(versionDir, { withFileTypes: true })) {
-      if (!e.isDirectory()) continue;
-      const entryDir = path.join(versionDir, e.name);
+  if (fs.existsSync(coursesDir)) {
+    for (const e of fs.readdirSync(coursesDir, { withFileTypes: true })) {
+      if (!e.isDirectory() || e.name.startsWith('_')) continue;
+      const entryDir = path.join(coursesDir, e.name);
       if (fs.existsSync(path.join(entryDir, 'en'))) { slugDirs.push(entryDir); continue; }
       const genericDir = path.join(entryDir, 'shell', 'generic');
-      if (!fs.existsSync(genericDir)) { slugDirs.push(entryDir); continue; }
+      if (!fs.existsSync(genericDir)) continue; // not a pathway group and not a course itself - ignore
       for (const g of fs.readdirSync(genericDir, { withFileTypes: true })) {
         if (g.isDirectory()) slugDirs.push(path.join(genericDir, g.name));
       }
