@@ -36,8 +36,14 @@ Two things keep that safe:
   rebuild attempt at `presenting-introductory`, closed at Phase A (no
   B-gates) and retired without being built on 19 Sep 2026. Distinct from
   the batch above.
+- **`v2/`** — the retired `presenting-v2` and `referencing-v2`
+  pathway-distillation pathways (`profile: "pathway-distillation"` on their
+  manifests), each with its three tiers under `shell/generic/`. Moved here
+  from `courses/presenting-v2/` and `courses/referencing-v2/` on 10 Nov 2026.
 
-Each subdirectory keeps its own original README with full provenance.
+Each subdirectory keeps its own original README with full provenance, except
+`v2/`, which has none - it was moved straight from the live pathway tree, not
+imported from the predecessor repo.
 
 ## What was deliberately not imported
 
