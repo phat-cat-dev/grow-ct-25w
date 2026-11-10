@@ -11,9 +11,16 @@ Two rules that are not optional:
 ## 0. One-time setup
 
 ```
+git submodule update --init --recursive  # pull the 13 pathway repos + context-cmet
 npm ci                 # install node deps against the committed lockfile
 npm run adapt-install  # install core/menu/theme + adapt-contrib-* and reapply patches
 ```
+
+Each of the 13 single-tier pathways (`courses/<pathway>/`) is its own repo on
+`modules-branch`, wired in as a submodule - a fresh clone has empty pathway
+directories until `git submodule update --init` runs. `presenting-v2`/
+`referencing-v2` are not submodules; they are archived in-tree at
+`courses/_archive/v2/`.
 
 `npm run adapt-install` is what populates `src/core`, `src/menu`, `src/theme` and
 the contrib plugins listed in `adapt.json`. They are not vendored in git.
