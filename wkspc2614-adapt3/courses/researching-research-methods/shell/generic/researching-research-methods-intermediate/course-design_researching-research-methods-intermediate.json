@@ -1,0 +1,1817 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "researching-research-methods-intermediate",
+  "slug": "researching-research-methods-intermediate",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "researching-research-methods",
+    "tier": "intermediate"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "researching-research-methods",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate tier (~ FHEQ L5-L6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Researching & Research Methods",
+            "tierName": "Intermediate",
+            "slug": "researching-research-methods-intermediate"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:31:37.172Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "Layer-1 record: chapters 3,5,9,10; 1 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = researching-research-methods",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T15:45:00.000Z",
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate crs-01_sources 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "9 (primary: the research-document genres literature review, research proposal, reports); ch5 dissertation and ch10 data-handling/ethics out of scope for intermediate",
+            "sectionsInScope": [
+              "ch9/literature-review",
+              "ch9/research-proposal",
+              "ch9/reports"
+            ],
+            "sectionsOutOfScope": [
+              "ch5/the-dissertation (the whole-project frame that contains the genres: the shape of a research project is the INTRODUCTORY concern, and the dissertation as a sustained undertaking is revisited at ADVANCED)",
+              "ch10/research-and-data-handling (consent, data handling and the six principles of research integrity: running research with rigour and ethics is the ADVANCED tier)",
+              "ch9/opening, ch9/genres-of-writing-overview, ch9/the-essay, ch9/reflective-writing (the wider writing-for-assessment framing and other genres, owned by academic-writing or out of this pathway's genre set)"
+            ],
+            "tierWindow": {
+              "goal": "Produce the core research-document genres - the literature review, the research proposal and the report - so that each does the work its reader expects.",
+              "cognitiveDemand": "Application and analysis (structure, shape, distinguish, produce); recognising and correcting genre errors in worked examples, not only naming them.",
+              "taskComplexity": "Whole genres with several coordinated parts; conventions that must be held together, such as keeping results apart from discussion, or narrowing a topic to a researchable focus.",
+              "autonomy": "Moderate scaffolding; worked contrasts and checklists; the learner is expected to carry each convention into their own subject rather than be walked through it.",
+              "voiceBand": "Section 16 Advanced (bands 3-5, up-skew)",
+              "outcomeVerbs": [
+                "explain",
+                "structure",
+                "shape",
+                "distinguish",
+                "produce",
+                "apply",
+                "recognise",
+                "organise"
+              ]
+            },
+            "priorExperienceAnchor": "The learner already knows what research is and how a project is shaped (the introductory tier) and can read sources critically. They have met the literature review, the proposal and the report as genres that exist, but have not yet produced them to convention. Teach the genres as documents to make well, not as ideas to recognise.",
+            "subThemes": [
+              {
+                "id": "review-critiques-not-describes",
+                "label": "A literature review critiques the discourse; it is not a description of who said what, when"
+              },
+              {
+                "id": "review-moves",
+                "label": "Analysis, evaluation and synthesis as the moves that make a literature review a critique"
+              },
+              {
+                "id": "proposal-as-questions",
+                "label": "The research proposal as a carefully built framework of questions for the whole project"
+              },
+              {
+                "id": "general-to-specific",
+                "label": "Narrowing from a general topic to a specific, researchable focus"
+              },
+              {
+                "id": "freshness-not-originality",
+                "label": "Freshness of perspective rather than total originality as what a proposal must show"
+              },
+              {
+                "id": "report-core-elements",
+                "label": "The core elements of a report: introduction, methodology, results and discussion"
+              },
+              {
+                "id": "results-versus-discussion",
+                "label": "Keeping results (what was found) apart from discussion (what it means)"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 genre chunks tagged researching-research-methods",
+              "note": "literature-review, research-proposal and reports are the three in-scope research-document genres"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = researching-research-methods",
+              "note": "Layer-1 record: intermediate focus 'the research-document genres' and Advanced voice band (bands 3-5, up-skew)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "intermediate calibration: putting the skills into action"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T15:50:00.000Z",
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate crs-02_thematic-scope 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Explain how a literature review critiques the discourse rather than describing it."
+              },
+              {
+                "id": "co2",
+                "text": "Shape a research proposal as a framework of questions that makes a project's freshness clear."
+              },
+              {
+                "id": "co3",
+                "text": "Structure a research report so its core elements do their work for the reader."
+              },
+              {
+                "id": "co4",
+                "text": "Apply the literature review, the proposal and the report together as one connected research project."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, one per research-document genre in scope: the literature review, the research proposal and the report. The dissertation that frames and contains these genres is the introductory tier's concern (how a project is shaped), and running research with rigour and ethics is the advanced tier's; the intermediate course builds the genres themselves, so there is no integrative fourth outcome.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can explain how a literature review critiques the discourse rather than describing it.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can shape a research proposal as a framework of questions that makes a project's freshness clear.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can structure a research report so its core elements do their work for the reader.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can apply the literature review, the proposal and the report together as one connected research project.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 genre chunks tagged researching-research-methods",
+              "note": "co1 from literature-review, co2 from research-proposal, co3 from reports"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the intermediate apply/structure/produce end"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T15:52:00.000Z",
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate crs-03_course-outcomes 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "The literature review",
+                "topic": "what a literature review does and how it critiques the discourse",
+                "description": "The literature review: how it critiques the discourse rather than describing who said what.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/literature-review",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Literature review",
+                    "pages": "157-160"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain that a literature review critiques the discourse rather than describing who said what.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Recognise analysis, evaluation and synthesis at work in a worked literature review.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Identify a sentence that reviews the literature rather than merely listing it in {{context}}.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "The research proposal",
+                "topic": "shaping a proposal as a framework of questions",
+                "description": "The research proposal: a framework of questions that narrows a topic and shows its freshness.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/research-proposal",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Research proposal",
+                    "pages": "150-157"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Explain how a proposal's questions build a framework for the whole project.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Recognise how a worked proposal moves from a general topic to a specific, fresh focus.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Choose the question that sharpens a broad topic into a researchable one in {{context}}.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "The research report",
+                "topic": "structuring a report using its core elements",
+                "description": "The research report: using its core elements, and keeping results apart from discussion.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/reports",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Reports",
+                    "pages": "160-161"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Use the core elements of a report (introduction, methodology, results, discussion) for their proper purpose.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Tell results apart from discussion in a worked report.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Match a passage to the report section it belongs in, in {{context}}.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "The three genres as one project",
+                "topic": "the literature review, the proposal and the report as one connected project",
+                "description": "Bringing together the literature review, the research proposal and the report into one connected research project.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/literature-review",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Literature review",
+                    "pages": "157-160"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/research-proposal",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Research proposal",
+                    "pages": "150-157"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/reports",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Reports",
+                    "pages": "160-161"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Connect what a review, a proposal and a report each do into one research project.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Analyse how the three genres work as one project in a worked research example.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Apply the three genres together to shape a piece of research in {{context}}.",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "The three genres as one project"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 genre chunks in crs-02 scope",
+              "note": "each lesson bound to one genre section; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T15:54:00.000Z",
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate crs-04_lesson-map 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/researching-research-methods-intermediate/adp-course-design-specification_researching-research-methods-intermediate.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T15:56:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-intermediate-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "What a literature review does: critique, not description",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/ab-card: the four things a literature review establishes as parallel information cards (key works, themes and debates, what is studied now, the gaps).",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger version, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/literature-review (pp.157-160): a review critiques the discourse rather than describing who said what.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a literature review you have read or written in your subject. Did it critique the discourse, or did it mostly list sources one by one? What is one move you could make to turn a list into a review? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's genre move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/literature-review (pp.157-160): the literature review critiques the discourse (analyse, evaluate, synthesise), not a description of who said what"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-card"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape, kept as the second activity proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept at this tier; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-intermediate-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The research proposal: a framework of questions",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/accordion: the proposal's framework of questions revealed one at a time (what, why, what is known, how).",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger version, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/research-proposal (pp.150-157): a proposal is a framework of questions that narrows a topic and shows its freshness.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a topic you might research in your subject. What is one question that would narrow it from a broad area into a specific, researchable focus? What would make that focus fresh? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's genre move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/ab-card",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/research-proposal (pp.150-157): the proposal as a guided, structured series of questions; freshness of perspective rather than total originality"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/accordion"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/ab-card",
+              "whyNot": "same concept shape, kept as the second activity proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept at this tier; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:01:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "researching-research-methods-intermediate-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The research report: core elements and their order",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/gowTimeline (reveal on): the report's core sections stepped through in order (introduction, methodology, results, discussion, conclusion), with results and discussion highlighted.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger version, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/reports (pp.160-161): the report's core elements, and keeping results apart from discussion.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows its pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a report you have written or read in your subject. Was the line between results and discussion clear, or did interpretation creep into the results? What is one thing you could do to keep them apart? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's genre move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowTimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/reports (pp.160-161): the report structured along settled lines (introduction, methodology, results, discussion), per Table 9.2"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/gowTimeline"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape, kept as the second activity proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept at this tier; offered as the third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:02:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons, one per genre. First, the literature review: how it critiques the discourse rather than listing who said what. Second, the research proposal: how a framework of questions narrows a topic and shows its freshness. Third, the report: how its core elements are organised, and why results and discussion stay apart. Work through them in order.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This course is about the documents that carry research: the literature review, the research proposal and the report. Each is a genre with its own job and its own conventions, and the work here is producing them well. By the end you will be able to explain how a literature review critiques the discourse, shape a proposal as a framework of questions, and structure a report so its core elements do their work.</p><p>These genres are where a research project becomes visible to others. A marker, a supervisor or a funding panel reads your review, proposal or report and judges the work through it. Knowing what each genre is for, and writing to that purpose, is what turns sound research into work that is recognised and trusted.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: explain how a literature review critiques the discourse, shape a proposal as a framework of questions, structure a report so its core elements do their work.",
+            "practiceConnection": {
+              "academic": "<p>These genres are the working documents of research in every discipline. A literature review opens a dissertation or an article; a proposal wins approval or funding for a project; a report communicates what was done and what was found. Produce them well now and you are equipped for the research your degree, and much professional work, will ask of you.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:10:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Researching & Research Methods: Advanced"
+              ],
+              "horizontal": [
+                "Academic Writing",
+                "Criticality",
+                "Understanding Learning, Assessment & Feedback"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the advanced Researching and Research Methods course takes you into running research with rigour and ethics, from consent and data handling to the principles of research integrity. Going wider: Academic Writing and Criticality sharpen the writing and judgement that every one of these genres depends on.</p>",
+            "summary": "<p>You have reached the end of the course. The three documents that carry research are no longer just genres you read, but genres you can produce. You can write a literature review that critiques the discourse rather than listing sources. You can shape a proposal as a framework of questions that narrows a topic and shows its freshness. And you can structure a report so its core elements each do their work, with results and discussion kept apart. Look back at the confidence check to see how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, these genres are the working documents of your research. A dissertation opens with a literature review; a funded project begins as a proposal; findings are communicated as a report. Each time you write one to its purpose, rather than merely to its format, you are doing the work that research degrees and research careers are built on.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 150 to 161 of Chapter 9, 'Writing for Assessment', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-ch9",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:10:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the main job of a literature review?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which sentence belongs in a literature review rather than a simple list of sources?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A research proposal is best understood as..."
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What does 'freshness' mean in a research proposal?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which report section reports what was found, without interpreting it?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A sentence that interprets findings and notes their limits belongs in which section?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:10:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can explain how a literature review critiques the discourse rather than describing it."
+              },
+              {
+                "rates": "co2",
+                "text": "I can shape a research proposal as a framework of questions that makes a project's freshness clear."
+              },
+              {
+                "rates": "co3",
+                "text": "I can structure a research report so its core elements do their work for the reader."
+              },
+              {
+                "rates": "co4",
+                "text": "I can apply the literature review, the proposal and the report together as one connected research project."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:10:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "researching-research-methods-intermediate wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "The literature review",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "The research proposal",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "The research report",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowTimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "The three genres as one project",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "researching-research-methods-intermediate-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

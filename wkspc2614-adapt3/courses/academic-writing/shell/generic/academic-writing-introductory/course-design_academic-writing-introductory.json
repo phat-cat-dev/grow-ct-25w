@@ -1,0 +1,2126 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "academic-writing-introductory",
+  "slug": "academic-writing-introductory",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "academic-writing",
+    "tier": "introductory"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = academic-writing",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "academic-writing",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = academic-writing",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "introductory"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory tier (~ FHEQ L3-low L5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Academic Writing",
+            "tierName": "Introductory",
+            "slug": "academic-writing-introductory"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = academic-writing",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T14:11:00.784Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = academic-writing",
+              "note": "Layer-1 record: chapters 8-9, 20 primary + 5 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = academic-writing",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T12:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory crs-01_sources 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "9 (primary); genre-specific, source-integration and referencing chunks out of scope for introductory",
+            "sectionsInScope": [
+              "ch9/opening",
+              "ch9/learning-objectives-and-keywords",
+              "ch9/three-assumptions-about-academic-writing",
+              "ch9/the-writing-cycle",
+              "ch9/understanding-the-task",
+              "ch9/planning",
+              "ch9/creating-a-first-draft",
+              "ch9/four-pillars-of-effective-writing",
+              "ch9/developing-structure-and-organisation",
+              "ch9/expression-clarity-and-precision",
+              "ch9/editing-and-proofreading",
+              "ch9/common-errors-in-student-writing",
+              "ch9/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch9/the-essay, ch9/genres-of-writing-overview (writing in specific genres: INTERMEDIATE)",
+              "ch9/integrating-academic-sources, ch9/developing-a-critical-edge (writing with argument and sources: INTERMEDIATE)",
+              "ch9/writing-within-your-discipline, ch9/familiarising-yourself-with-discipline-writing, ch9/discipline-writing-examples (discipline-specific writing: ADVANCED)",
+              "ch9/reports, ch9/literature-review, ch9/research-proposal (shared with researching-research-methods; owned there)",
+              "ch9/reflective-writing (shared with reflective-practice; owned there)",
+              "ch10/quotation-and-paraphrase (shared with referencing; owned by that pathway)"
+            ],
+            "tierWindow": {
+              "goal": "Understand academic writing as a process you work through, and be able to get a draft down and get the basics right.",
+              "cognitiveDemand": "Recognition, recall, description and guided application (understand and identify).",
+              "taskComplexity": "Well-defined, one idea at a time; settled distinctions such as editing versus proofreading.",
+              "autonomy": "High scaffolding; worked examples; feedback confirms and explains; frequent low-stakes checks.",
+              "voiceBand": "Section 16 Beginner (bands 2-4)",
+              "outcomeVerbs": [
+                "define",
+                "describe",
+                "identify",
+                "recognise",
+                "explain",
+                "give an example of",
+                "use"
+              ]
+            },
+            "priorExperienceAnchor": "No prior experience of treating academic writing as a staged process is assumed. The learner is early in their studies and has written essays at school but tends to see writing as a single sitting that must come out right first time; teach the process and the basics from first principles.",
+            "subThemes": [
+              {
+                "id": "writing-as-process",
+                "label": "Academic writing as a process of distinct stages, not a single act of getting it right first time"
+              },
+              {
+                "id": "three-assumptions",
+                "label": "Three common (false) assumptions students make about academic writing"
+              },
+              {
+                "id": "the-writing-cycle",
+                "label": "The writing cycle: the stages a piece of writing moves through, with planning at its heart"
+              },
+              {
+                "id": "understanding-the-task",
+                "label": "Understanding the task: the steer and the keywords of a question"
+              },
+              {
+                "id": "planning-and-drafting",
+                "label": "Planning before drafting, and getting a first draft down rather than waiting for the perfect version"
+              },
+              {
+                "id": "four-pillars",
+                "label": "The four pillars of effective writing that recur across genres"
+              },
+              {
+                "id": "structure-and-clarity",
+                "label": "Getting the basics right: structure and organisation, and clarity and precision (the SVO sentence)"
+              },
+              {
+                "id": "editing-and-errors",
+                "label": "Editing versus proofreading, and the common errors in student writing"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9/* chunks tagged academic-writing",
+              "note": "primary teachable sections for getting a draft down and the basics right"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = academic-writing",
+              "note": "Layer-1 record: chapter 9; introductory focus 'getting a draft down, and getting the basics right' and Beginner voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "introductory calibration and Beginner voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T12:05:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory crs-02_thematic-scope 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Describe academic writing as a process of distinct stages."
+              },
+              {
+                "id": "co2",
+                "text": "Plan a piece of writing and get a first draft down."
+              },
+              {
+                "id": "co3",
+                "text": "Improve a draft by getting the basics of structure and clarity right."
+              },
+              {
+                "id": "co4",
+                "text": "Recognise how the stages of writing work together as one process you follow across your studies."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three introductory sub-themes of the writing cycle: understanding writing as a process (not a single act), getting started (understanding the task, planning and drafting), and getting the basics right (editing for structure and clarity). No integrative fourth outcome at introductory: writing with argument and sources, and writing within a discipline, are the intermediate and advanced concerns; the introductory course builds the process and the basics.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can describe academic writing as a process of distinct stages.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can plan a piece of writing and get a first draft down.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can improve a draft by getting the basics of structure and clarity right.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can recognise how the stages of writing work together as one process I follow across my studies.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9/* chunks tagged academic-writing",
+              "note": "co1 from the writing-cycle and assumptions chunks, co2 from understanding-the-task/planning/first-draft, co3 from structure/clarity/editing/errors"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the introductory understand/identify end"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T12:06:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory crs-03_course-outcomes 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "Writing is a process",
+                "topic": "academic writing as a process of distinct stages",
+                "description": "Writing is a process: academic writing as a process of distinct stages, not a single act.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/three-assumptions-about-academic-writing",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Writing in theory",
+                    "pages": "136-137"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/the-writing-cycle",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Writing in practice",
+                    "pages": "164-165"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Describe academic writing as a process made of distinct stages rather than a single act.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Recognise the writing process in a worked example of two students' approaches.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Identify why getting a draft down matters when you start writing in {{context}}.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Understanding the task and getting a draft down",
+                "topic": "understanding the task, planning, and creating a first draft",
+                "description": "Understanding the task and getting a draft down: reading the question, planning, and creating a first draft.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/understanding-the-task",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Understanding the task",
+                    "pages": "165-167"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/planning",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Planning",
+                    "pages": "167-169"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/creating-a-first-draft",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Creating a first draft",
+                    "pages": "169-170"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Identify the steer and the keywords in an assignment task.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Give an example of turning a plan into a first draft.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Choose a sensible first move when faced with a blank page in {{context}}.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Getting the basics right",
+                "topic": "editing a draft for structure and clarity",
+                "description": "Getting the basics right: editing a draft for structure, clarity and common errors.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/editing-and-proofreading",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Editing",
+                    "pages": "170-172"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/expression-clarity-and-precision",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Expression: improving clarity and precision",
+                    "pages": "174-177"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Use the basics of clear writing (structure, clarity and correcting common errors) to improve a draft.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Tell editing apart from proofreading.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Match a revision move in {{context}} to the problem it fixes.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Writing as one process",
+                "topic": "the three strands of writing as one process you work through every time you write",
+                "description": "Bringing together writing as a process, planning and drafting, and revising for the basics into one process you work through every time you write.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/three-assumptions-about-academic-writing",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Writing in theory",
+                    "pages": "136-137"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/the-writing-cycle",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Writing in practice",
+                    "pages": "164-165"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/understanding-the-task",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Understanding the task",
+                    "pages": "165-167"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/planning",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Planning",
+                    "pages": "167-169"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/creating-a-first-draft",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Creating a first draft",
+                    "pages": "169-170"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/editing-and-proofreading",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Editing",
+                    "pages": "170-172"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch9/expression-clarity-and-precision",
+                    "chapter": 9,
+                    "chapterTitle": "Writing for Assessment",
+                    "heading": "Expression: improving clarity and precision",
+                    "pages": "174-177"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Recognise how writing as a process, planning and drafting, and revising for the basics connect as one practice.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Show the whole writing process at work in a worked example of a student's approach to a piece.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Plan how you will work through the whole writing process on your next piece of {{context}} writing.",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Writing as one process you work through"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch9 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "seq": 1,
+          "timestamp": "2026-10-23T12:07:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory crs-04_lesson-map 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/academic-writing-introductory/adp-course-design-specification_academic-writing-introductory.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T12:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "academic-writing-introductory-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Writing as a process: distinct stages, not a single act",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/flipcard: a generic interactive exploration of 'writing is a process' across four facets, each revealed by turning a card. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a one-sitting writer and a staged writer, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/the-writing-cycle (pp.164-165): writing is a staged process and a rough draft beats nothing.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short private reflection relating the lesson to the learner's own writing. Not marked; there are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's writing move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9 (confirmed chunks): three-assumptions-about-academic-writing, the-writing-cycle (pp.136-137, 164-165)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/flipcard"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape as the confirmed lead, less of the chosen affordance; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the palette/text proposal"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "academic-writing-introductory-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Understanding the task, planning, and the first draft",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/accordion (chosen from the proposals): the four moves from task to draft as panels revealed on demand.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who ignores the steer and one who reads the task, plans and drafts, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169) and ch9/creating-a-first-draft (pp.169-170).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short private reflection relating the lesson to the learner's own writing. Not marked; there are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's writing move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/flipcard",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169) and ch9/creating-a-first-draft (pp.169-170)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/flipcard"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/flipcard",
+              "whyNot": "same concept shape as the confirmed lead, less of the chosen affordance; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the palette/text proposal"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:30:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "academic-writing-introductory-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Getting the basics right: editing for structure and clarity",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/tabs (chosen from the proposals): structure, clarity, editing and proofreading as parallel options, one per tab - fits the parallel-options shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a student who only proofreads and one who edits then proofreads, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch9/editing-and-proofreading (pp.170-172) and ch9/expression-clarity-and-precision (pp.174-177).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short private reflection relating the lesson to the learner's own writing. Not marked; there are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's writing move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/tabs",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/editing-and-proofreading (pp.170-172) and ch9/expression-clarity-and-precision (pp.174-177)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/flipcard"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape as the confirmed lead, less of the chosen affordance; kept as a proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an introductory interactive concept; offered as the palette/text proposal"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:35:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, writing as a process: why a good piece of work is made in stages, not in one sitting. Second, understanding the task and getting a draft down: reading the question, planning, and getting started. Third, getting the basics right: editing a draft for structure and clarity. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This short course is about academic writing: not a single talent some people have and others do not, but a process you can learn to work through. By the end you will be able to describe writing as a series of stages, plan a piece and get a first draft down, and improve that draft by getting the basics of structure and clarity right.</p><p>These are not abstract study skills. Writing is how most of your work is assessed, in every subject. Knowing the process, and having a few reliable habits, changes how you start, how you revise, and the marks your work earns.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: describe writing as a process, plan and draft, improve a draft by getting the basics right.",
+            "practiceConnection": {
+              "academic": "<p>Academic writing is the main way your learning is judged. Every essay, report and reflective piece you are set draws on the same underlying process: understand the task, plan, draft, and revise. Build the habit now and it carries into every module of your degree, and into the clear, organised writing that professional work later asks of you.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "states/rates/tests the three course outcomes (AL-4/AL-5/AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [
+                "Academic Writing: Intermediate",
+                "Academic Writing: Advanced"
+              ],
+              "horizontal": [
+                "Criticality",
+                "Referencing",
+                "Researching & Research Methods"
+              ]
+            },
+            "whereNextBody": "<p>Two directions build on this. Going deeper: the intermediate and advanced academic writing courses take the process into building an argument, using sources, and writing within your own discipline. Going wider: the same habits underpin Criticality, Referencing and Researching, where you put clear writing to work on real tasks.</p>",
+            "summary": "<p>You have reached the end of the course. Academic writing is no longer a single daunting act: it is a process you can work through. You can describe its stages, that is, understanding the task, planning, drafting and revising. You can read a task for its steer and keywords, plan, and get a first draft down rather than waiting for perfect sentences. And you can improve that draft by getting the basics right: a clear structure and clear sentences, editing before you proofread. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, this process is something you use in every module. Each essay you plan before you write, each rough draft you get down and then improve, each piece you edit for structure before proofreading, is the same process at work. It is also what professional life rewards: clear, organised writing produced to a deadline travels well beyond your degree.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 135 to 182 of Chapter 9, 'Writing for Assessment', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-ch9",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "states/rates/tests the three course outcomes (AL-4/AL-5/AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes academic writing, as this course presents it?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student opens a blank document and tries to write the finished essay perfectly from the first line. What is the main problem with this approach?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In an assignment task, what does the 'steer' refer to?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the main purpose of a first draft?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the difference between editing and proofreading?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A reliable way to make a sentence clearer is to put it in subject-verb-object order."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory wra-03_summative 2026-10-23"
+          }
+        },
+        {
+          "seq": 2,
+          "supersedes": 1,
+          "state": "closed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes academic writing, as this course presents it?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student opens a blank document and tries to write the finished essay perfectly from the first line. What is the main problem with this approach?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In an assignment task, what does the 'steer' refer to?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the main purpose of a first draft?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the difference between editing and proofreading?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A reliable way to make a sentence clearer is to put it in subject-verb-object order."
+              },
+              {
+                "tests": "co4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which of these best describes what this course has taught about academic writing?"
+              },
+              {
+                "tests": "co4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A student has a new essay to write. Which approach uses the whole writing process this course describes?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "reconstruction": {
+            "basis": "inferred",
+            "evidence": [
+              {
+                "store": "course-design",
+                "id": "crs-03_course-outcomes",
+                "note": "co4 was always planned with 3 mcqSets at crs-03, same as co1-co3; en/components.json already carries two of them authored as real SUMM-page items (\"Summative item 7 (tests co4)\", \"Summative item 8 (tests co4)\") but the wra-03_summative record was never updated to list them alongside the co1-co3 items"
+              }
+            ],
+            "note": "Backfill 2026-10-28: co4 items were authored into the shell but never recorded in this gate; AL-3b (manifest-completeness.js) flagged co4 at 0/2 summative items despite the real content already existing and passing its own checks. decidedValue.items here is the original six plus the two already-built co4 items, copied verbatim from en/components.json."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-28T17:56:52.266Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "academic-writing-introductory wra-03_summative co4 backfill 2026-10-28"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can describe academic writing as a process of distinct stages."
+              },
+              {
+                "rates": "co2",
+                "text": "I can plan a piece of writing and get a first draft down."
+              },
+              {
+                "rates": "co3",
+                "text": "I can improve a draft by getting the basics of structure and clarity right."
+              },
+              {
+                "rates": "co4",
+                "text": "I can recognise how the stages of writing work together as one process I follow across my studies."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T12:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "academic-writing-introductory wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "academic-writing-introductory-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "decidedValue": {
+            "conceptTitle": "Writing as one process you work through",
+            "interiorPattern": "activity-patterns/explore-model realised as palette/ab-hotgraphic: an interactive exploration of how writing as a process, planning/drafting and revising combine into one practice, each strand a selectable step of the model. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker, single-strand approach and a stronger, integrated approach, the weaker version first, using the character-token cast. Grounded in ch9/three-assumptions-about-academic-writing (pp.136-137), ch9/the-writing-cycle (pp.164-165), ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169), ch9/creating-a-first-draft (pp.169-170), ch9/editing-and-proofreading (pp.170-172), ch9/expression-clarity-and-precision (pp.174-177).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L04-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A short private reflection relating the lesson to the learner's own writing. Not marked; there are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's writing move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-hotgraphic",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/hotgraphic",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch9/three-assumptions-about-academic-writing (pp.136-137), ch9/the-writing-cycle (pp.164-165), ch9/understanding-the-task (pp.165-167), ch9/planning (pp.167-169), ch9/creating-a-first-draft (pp.169-170), ch9/editing-and-proofreading (pp.170-172), ch9/expression-clarity-and-precision (pp.174-177)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/explore-model",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-hotgraphic"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L04 outcomes (L04-o1..o3 serve co4) and bound sources"
+            }
+          ],
+          "reconstruction": {
+            "basis": "inferred",
+            "evidence": [
+              {
+                "store": "course-design",
+                "id": "crs-04_lesson-map",
+                "note": "the L04 lesson is confirmed in crs-04_lesson-map (outcomes L04-o1..o3, sourceSections) and this manifest's own instantiations[pageKey=L04] already names this gateId as decidedByGate for every slot; the built en/*.json content for L04 exists and passes every per-lesson lesson-check (OC-1, CK-1, RP-1 etc.) — the gate record itself was simply never written"
+              }
+            ],
+            "note": "Backfill 2026-10-28: L04 was fully authored (shell content, instantiations[] slotChoices, lesson-map outcomes) but this gate record was missing entirely, failing manifest-completeness.js clause 1. decidedValue reconstructed from the built artifact (en/blocks.json, en/components.json) and the already-closed crs-04_lesson-map record; the deciding session itself is not recoverable, so provenance is omitted per schema convention."
+          },
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-28T17:56:52.266Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "academic-writing-introductory L04-les-01 backfill 2026-10-28"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "Writing is a process",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Understanding the task and getting a draft down",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Getting the basics right",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/tabs",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Writing as one process",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "academic-writing-introductory-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

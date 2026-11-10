@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, much of your learning happens through doing: a task attempted, a piece of work handed in, a placement or project out in the field. Left to itself, reflection on that work often stops at 'it went badly' or 'it went fine'. A cycle such as Experience, Reflect, Act gives reflection a shape, so a session that fell flat or a deadline you missed becomes something you learn from on purpose, rather than something you simply put behind you.",
+    "worked-example": "Consider two students writing a short reflection after the same assignment came back with a middling mark.\n\n{{learner-a}} writes that the mark was disappointing and the work had felt rushed, and resolves to start earlier next time. This names an experience, but it does not work through it: there is no reflection on what actually cost the marks, and 'start earlier' is too loose to act on. {{learner-a}} has stopped at the experience and jumped to a vague resolution.\n\n{{learner-b}} begins from the same experience, then reflects: the feedback pointed to a thin argument and missing evidence, and the rush came from leaving the reading until the last week. From that, {{learner-b}} settles on a concrete action, to spend the first week of the next assignment building a reading list and an outline before writing a word. Experience, reflect, act: each stage taken in turn.\n\nBoth wrote a reflection. Only {{learner-b}} worked through the cycle, so only {{learner-b}} came away with something they can actually do.",
+    "summary": "Structured reflection means working through an experience in set stages rather than at random, and a cycle such as Experience, Reflect, Act gives you those stages. You can now explain why a structure helps, spot the stages at work in an example, and apply the cycle to one of your own experiences. The next lesson works on the stage that carries the most weight: reflecting on an experience, rather than only describing it."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s reflection a worked-through cycle rather than a stalled one?",
+      "items": [
+        {
+          "text": "{{learner-b}} reflected on what cost the marks, then set a concrete action from it.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} wrote more about the assignment than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} resolved to start earlier next time.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} was less disappointed by the mark than {{learner-a}} was.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That is the cycle worked through: reflecting on why it happened, then setting a concrete action.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} reflected on AND acted on, beyond the experience itself.",
+        "incorrectFinal": "{{learner-b}} worked through the cycle by reflecting on what cost the marks and setting a concrete action. Writing more, resolving vaguely or feeling calmer are not the same."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "Every subject uses the language of criticality with care. To analyse is to separate a claim from its method and its evidence; to evaluate is to weigh how well that evidence supports the claim; to synthesise is to draw several sources into a position of your own; to judge is to say, with reasons, what the evidence will bear. Assignment briefs across disciplines use these words as instructions, and knowing what each one asks is how you give a marker what they want.",
+    "worked-example": "Consider two students asked to write about the same study for a seminar.\n\n{{learner-a}} writes: the study found a large effect, and the authors concluded it was important. This is accurate, and it is a description: it reports what the study says but adds nothing of his own.\n\n{{learner-b}} writes: the study reports a large effect, but the sample was small and narrowly drawn, so its claim to importance is not yet secure. This is a judgement: it still reports the study, but it weighs the evidence and reaches a reasoned position.\n\nBoth students understood the study. Only {{learner-b}} moved from describing it to judging it, the step the language of criticality names.",
+    "summary": "The working vocabulary of criticality, analysis, evaluation, synthesis and judgement, names the moves of critical thinking. You can now use these words correctly, tell a judgement apart from a description, and name the move an assignment is asking for. With the mindset, the active habits and the language in place, you are ready to be critical on purpose."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s sentence a judgement rather than a description?",
+      "items": [
+        {
+          "text": "It weighed the evidence (a small, narrowly drawn sample) and reached a reasoned position.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "It reported the study's findings more accurately than {{learner-a}}'s.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It was longer than {{learner-a}}'s sentence.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It quoted the authors' own conclusion.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Weighing the evidence and taking a reasoned position is what makes it a judgement.",
+        "incorrectNotFinal": "Not quite. Look for what the sentence did beyond reporting: weighing and taking a position.",
+        "incorrectFinal": "{{learner-b}}'s sentence was a judgement because it weighed the sample and reached a reasoned position. Accurate reporting, length or a quotation are all still description."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

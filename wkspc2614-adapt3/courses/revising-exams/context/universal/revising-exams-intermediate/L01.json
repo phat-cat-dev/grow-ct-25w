@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, a revision strategy comes down to two things: how you spend your limited time, and how well you know where your gaps are. The topics you find hardest should claim more of the time than the ones you already have secure. Finding those gaps means testing yourself on each topic, so a vague worry about a weak area becomes a clear target you can plan around.",
+    "worked-example": "Consider two students with a month before the same exam and the same notes.\n\n{{learner-a}} writes a timetable that gives every topic an equal block of time and plans to re-read the notes for each one. It looks organised. But {{learner-a}} has not asked where his knowledge is weak, so the topics he already knows get as much time as the ones he dreads, and nothing checks whether the re-reading is working. This is a timetable, not a strategy.\n\n{{learner-b}} starts differently. She lists every topic the exam could cover, then does a quick test on each. The test shows which areas are shaky and which are secure. She gives the weak areas the most time, gives the secure ones a short check, and fills each slot with active work. A week in, she re-tests and shifts the plan to wherever the gaps remain. This is a strategy.\n\nBoth students planned their month. Only {{learner-b}} built the plan around time and gaps, which is what makes it a revision strategy.",
+    "summary": "A revision strategy is built on two things: how you use your time, and how well you can identify your gaps. Its stages map the topics, test for the gaps, budget time towards the weak areas, revise actively, then review and adjust. Holding to that under pressure is what keeps a plan working. You can now recognise a real strategy and plan one for any module. The next lesson is about revising actively rather than passively."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what turned {{learner-b}}'s plan into a real revision strategy?",
+      "items": [
+        {
+          "text": "She tested herself, found which areas were weak, and gave those the most time.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "She planned to re-read every topic for an equal block of time.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "She started revising earlier than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "She made a neater, more colourful timetable than {{learner-a}}.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. {{learner-b}} built the plan around her gaps and spent time where it was needed, which is a strategy.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} built the plan around, rather than how it looked or when it started.",
+        "incorrectFinal": "{{learner-b}}'s plan became a strategy because it was built around where her knowledge was weak and where time should go. A neat, equal, early timetable is not."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

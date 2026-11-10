@@ -1,0 +1,2867 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "referencing-v2-advanced",
+  "slug": "referencing-v2-advanced",
+  "status": "in-development",
+  "profile": "pathway-distillation",
+  "facetSet": {
+    "pathway": "referencing",
+    "tier": "advanced"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.9",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-01_theme-preset 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "referencing",
+            "themeSource": "preset"
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-02_course-theme 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "all",
+            "tiers": [
+              "introductory",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-03_pitch 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "All tiers",
+            "slug": "referencing-v2"
+          },
+          "grounding": [
+            {
+              "doc": "courses/v1/referencing-introductory/course-design_referencing-introductory.json",
+              "ref": "onb-04_naming record",
+              "note": "slug collision with the existing live-profile referencing-introductory course; referencing-v2 is the parallel pathway-distillation build, mirroring the presenting-v2 naming precedent"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 onb-04_naming 2026-11-07"
+          },
+          "seq": 1,
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing",
+            "tierName": "Advanced",
+            "slug": "referencing-v2"
+          },
+          "supersedes": 1,
+          "timestamp": "2026-11-07T17:20:57.242Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-11-07T09:27:29.665Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-06_pathway-statements",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Community of practice note on why sources are acknowledged"
+              },
+              {
+                "capabilityId": "referencing/c1",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Tracing the sources behind a community leaflet"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Annotated references list showing what each element does"
+              },
+              {
+                "capabilityId": "referencing/01",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Footnoted campaign briefing in an organisation's house style"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "conceptual",
+                "text": "Source log mapped to the SCONUL Manage pillar"
+              },
+              {
+                "capabilityId": "referencing/c2",
+                "tier": "introductory",
+                "kind": "applied",
+                "text": "Placement evidence log behind a component specification"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Patchwriting check and revision of a drafted paragraph"
+              },
+              {
+                "capabilityId": "referencing/02",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Ward newsletter summary with quotation and paraphrase marked"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Core elements breakdown of awkward source types"
+              },
+              {
+                "capabilityId": "referencing/d2",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Credits page and decision note for a live design brief"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "conceptual",
+                "text": "Citation map showing which conversations your essay joins"
+              },
+              {
+                "capabilityId": "referencing/c3",
+                "tier": "intermediate",
+                "kind": "applied",
+                "text": "Evidence-backed recommendation for a sports club"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Case analysis of an honesty decision in your own work"
+              },
+              {
+                "capabilityId": "referencing/03",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Correcting an overstated figure during an internship"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Group project conduct analysed against four integrity values"
+              },
+              {
+                "capabilityId": "referencing/04",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Raising a concern about an uncredited shared resource"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "conceptual",
+                "text": "Professional identity statement linking integrity to a code"
+              },
+              {
+                "capabilityId": "referencing/e3",
+                "tier": "advanced",
+                "kind": "applied",
+                "text": "Source-checking routine set up for a policy team"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].evidence[].title",
+              "note": "18 statements (9 capabilities x 2 evidence items), full file read (483 lines); capabilityId normalised referencing#d2/e3 -> referencing/d2, referencing/e3 per D4 ruling"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-06_pathway-statements 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "seq": 1,
+          "state": "skipped",
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/crs-02_thematic-scope",
+              "note": "crs-02_thematic-scope.profiles = [built-course-shape, single-course]; pathway-distillation is not in that list, so this gate is out of scope for a referencing-v2-* manifest."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-02_thematic-scope 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "skipped",
+          "grounding": [
+            {
+              "store": "design-kb",
+              "id": "gates/crs-03_course-outcomes",
+              "note": "crs-03_course-outcomes.profiles = [built-course-shape, single-course]; pathway-distillation is not in that list, so this gate is out of scope for a referencing-v2-* manifest."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-03_course-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "chunks[].pathwayTags[].pathway = referencing",
+              "note": "10 tagged chunks total (3 framing + 7 teaching-shape)"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2 crs-01_sources 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "chunks[].pathwayTags[].pathway = referencing",
+              "note": "10 tagged chunks total (3 framing + 7 teaching-shape)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-01_sources confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-07_tiered-outcomes",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can justify a course of action when a weak or disappointing result raises an ethical choice between honest reporting and presenting a stronger impression.",
+                "layer": 1,
+                "confidenceStatement": "I can justify my course of action when a weak result tempts me to present a stronger impression than the evidence supports."
+              },
+              {
+                "id": "o2",
+                "text": "The student can justify acting to correct an unsupported figure or claim in shared work, upholding honesty even where the error would otherwise go unnoticed.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/03"
+                },
+                "confidenceStatement": "I can justify acting to correct an unsupported figure or claim in shared work, even if the error would otherwise go unnoticed."
+              },
+              {
+                "id": "o3",
+                "text": "The student can justify a response to a fairness issue in shared work, weighing the discomfort of speaking up against the responsibility that courage requires.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can justify my response to a fairness issue in shared work, weighing discomfort against the responsibility to speak up."
+              },
+              {
+                "id": "o4",
+                "text": "The student can raise an unacknowledged contribution with those involved, treating them with respect, and help secure a fairer outcome even where the conversation is uncomfortable.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can raise an unacknowledged contribution with those involved, respectfully, even when the conversation is uncomfortable."
+              },
+              {
+                "id": "o5",
+                "text": "The student can critique their own habits of honesty and attribution against the ethical expectations of a profession, identifying where those expectations will tighten.",
+                "layer": 2,
+                "source": {
+                  "type": "named-theory-anchor",
+                  "ref": "L01"
+                },
+                "confidenceStatement": "I can critique my own habits of honesty and attribution against the ethical expectations of a profession."
+              },
+              {
+                "id": "o6",
+                "text": "The student can recognise and act on an ethical responsibility in a new professional role without being asked, and explain the habit to someone newer than themselves.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/e3"
+                },
+                "confidenceStatement": "I can recognise and act on an ethical responsibility in a new role without being asked, and explain the habit to someone newer than me."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/03, referencing/04, referencing/e3's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "1 Layer-1 book-section anchor (o1); referencing/04 and referencing/e3 have no book section (bookGrounding: null in catalogue/context/pathway/referencing.json), so o3-o4 and o6 are Layer-2 capability-evidence fills; o5 is the tier's one named-theory-anchor (Wenger 1998), anchored inside lesson L01, the same book-grounded lesson as o1"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-07_tiered-outcomes 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "outcomes": [
+              {
+                "id": "o1",
+                "text": "The student can justify a course of action when a weak or disappointing result raises an ethical choice between honest reporting and presenting a stronger impression.",
+                "layer": 1,
+                "confidenceStatement": "I can justify my course of action when a weak result tempts me to present a stronger impression than the evidence supports."
+              },
+              {
+                "id": "o2",
+                "text": "The student can justify acting to correct an unsupported figure or claim in shared work, upholding honesty even where the error would otherwise go unnoticed.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/03"
+                },
+                "confidenceStatement": "I can justify acting to correct an unsupported figure or claim in shared work, even if the error would otherwise go unnoticed."
+              },
+              {
+                "id": "o3",
+                "text": "The student can justify a response to a fairness issue in shared work, weighing the discomfort of speaking up against the responsibility that courage requires.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can justify my response to a fairness issue in shared work, weighing discomfort against the responsibility to speak up."
+              },
+              {
+                "id": "o4",
+                "text": "The student can raise an unacknowledged contribution with those involved, treating them with respect, and help secure a fairer outcome even where the conversation is uncomfortable.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/04"
+                },
+                "confidenceStatement": "I can raise an unacknowledged contribution with those involved, respectfully, even when the conversation is uncomfortable."
+              },
+              {
+                "id": "o5",
+                "text": "The student can critique their own habits of honesty and attribution against the ethical expectations of a profession, identifying where those expectations will tighten.",
+                "layer": 2,
+                "source": {
+                  "type": "named-theory-anchor",
+                  "ref": "L01"
+                },
+                "confidenceStatement": "I can critique my own habits of honesty and attribution against the ethical expectations of a profession."
+              },
+              {
+                "id": "o6",
+                "text": "The student can recognise and act on an ethical responsibility in a new professional role without being asked, and explain the habit to someone newer than themselves.",
+                "layer": 2,
+                "source": {
+                  "type": "capability-evidence",
+                  "ref": "referencing/e3"
+                },
+                "confidenceStatement": "I can recognise and act on an ethical responsibility in a new role without being asked, and explain the habit to someone newer than me."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathway-evidence/referencing.json",
+              "ref": "capabilities[].genericOutcomes[].learningOutcome",
+              "note": "outcome text copied verbatim from referencing/03, referencing/04, referencing/e3's genericOutcomes (both kinds each)"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "1 Layer-1 book-section anchor (o1); referencing/04 and referencing/e3 have no book section (bookGrounding: null in catalogue/context/pathway/referencing.json), so o3-o4 and o6 are Layer-2 capability-evidence fills; o5 is the tier's one named-theory-anchor (Wenger 1998), anchored inside lesson L01, the same book-grounded lesson as o1"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-07_tiered-outcomes confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "seq": 1,
+          "state": "proposed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "A weak result, an honest report",
+                "topic": "the ethical choice between honest reporting and a stronger impression",
+                "description": "A weak result, an honest report — the ethical choice between honest reporting and a stronger impression.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/defining-academic-integrity",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Defining academic integrity",
+                    "pages": "185-187"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Recognise an ethical choice raised by a weak result.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Classify a response to a weak result as honest or embellished.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Justify a course of action that reports a weak result honestly.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "Correcting an unsupported claim",
+                "topic": "upholding honesty when an error would otherwise go unnoticed",
+                "description": "Correcting an unsupported claim — upholding honesty when an error would otherwise go unnoticed.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Identify an unsupported figure in shared work.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Justify correcting an unsupported claim others would not notice.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Act to correct an unsupported figure in shared work.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "A fairness issue in shared work",
+                "topic": "weighing the discomfort of speaking up against staying silent",
+                "description": "A fairness issue in shared work — weighing the discomfort of speaking up against staying silent.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify a fairness issue in shared work.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Weigh the discomfort of speaking up against staying silent.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Justify a response to a fairness issue in shared work.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Raising an unacknowledged contribution",
+                "topic": "securing a fairer outcome in an uncomfortable conversation",
+                "description": "Raising an unacknowledged contribution — securing a fairer outcome in an uncomfortable conversation.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Raise an unacknowledged contribution with those involved.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Treat those involved with respect during an uncomfortable conversation.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Help secure a fairer outcome after raising a concern.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Your own habits, a profession's expectations",
+                "topic": "critiquing your attribution habits against a community of practice",
+                "description": "Your own habits, a profession's expectations — critiquing your attribution habits against a community of practice.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Critique a personal habit of attribution against professional expectations.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Identify where a profession's ethical expectations will tighten.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Apply a community-of-practice lens to a personal honesty habit.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "A new role, an unprompted responsibility",
+                "topic": "acting on an ethical responsibility before being asked",
+                "description": "A new role, an unprompted responsibility — acting on an ethical responsibility before being asked.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Recognise an ethical responsibility in a new professional role.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Act on an ethical responsibility without being asked.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Explain a professional habit to someone newer than yourself.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "sourceSections for L01 only (the tier's single Layer-1 anchor); L01 also carries the tier's one named-theory-anchor budget (Wenger 1998) that crs-07's o5 cites by lessonKey (source.ref = L01) - the theory is introduced in this book-grounded lesson, while o5 itself is taught and assessed separately in L05. L02-L06 serve the remaining Layer-2 capability-evidence/named-theory-anchor outcomes and carry no sourceSections"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-04_lesson-map 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        },
+        {
+          "seq": 2,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "o1",
+                "title": "A weak result, an honest report",
+                "topic": "the ethical choice between honest reporting and a stronger impression",
+                "description": "A weak result, an honest report — the ethical choice between honest reporting and a stronger impression.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/defining-academic-integrity",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Defining academic integrity",
+                    "pages": "185-187"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Recognise an ethical choice raised by a weak result.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Classify a response to a weak result as honest or embellished.",
+                    "serves": "o1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Justify a course of action that reports a weak result honestly.",
+                    "serves": "o1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "o2",
+                "title": "Correcting an unsupported claim",
+                "topic": "upholding honesty when an error would otherwise go unnoticed",
+                "description": "Correcting an unsupported claim — upholding honesty when an error would otherwise go unnoticed.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Identify an unsupported figure in shared work.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Justify correcting an unsupported claim others would not notice.",
+                    "serves": "o2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Act to correct an unsupported figure in shared work.",
+                    "serves": "o2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "o3",
+                "title": "A fairness issue in shared work",
+                "topic": "weighing the discomfort of speaking up against staying silent",
+                "description": "A fairness issue in shared work — weighing the discomfort of speaking up against staying silent.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Identify a fairness issue in shared work.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Weigh the discomfort of speaking up against staying silent.",
+                    "serves": "o3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Justify a response to a fairness issue in shared work.",
+                    "serves": "o3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "o4",
+                "title": "Raising an unacknowledged contribution",
+                "topic": "securing a fairer outcome in an uncomfortable conversation",
+                "description": "Raising an unacknowledged contribution — securing a fairer outcome in an uncomfortable conversation.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Raise an unacknowledged contribution with those involved.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Treat those involved with respect during an uncomfortable conversation.",
+                    "serves": "o4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Help secure a fairer outcome after raising a concern.",
+                    "serves": "o4"
+                  }
+                ]
+              },
+              {
+                "key": "L05",
+                "mainCourseOutcome": "o5",
+                "title": "Your own habits, a profession's expectations",
+                "topic": "critiquing your attribution habits against a community of practice",
+                "description": "Your own habits, a profession's expectations — critiquing your attribution habits against a community of practice.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L05-o1",
+                    "text": "Critique a personal habit of attribution against professional expectations.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o2",
+                    "text": "Identify where a profession's ethical expectations will tighten.",
+                    "serves": "o5"
+                  },
+                  {
+                    "id": "L05-o3",
+                    "text": "Apply a community-of-practice lens to a personal honesty habit.",
+                    "serves": "o5"
+                  }
+                ]
+              },
+              {
+                "key": "L06",
+                "mainCourseOutcome": "o6",
+                "title": "A new role, an unprompted responsibility",
+                "topic": "acting on an ethical responsibility before being asked",
+                "description": "A new role, an unprompted responsibility — acting on an ethical responsibility before being asked.",
+                "sourceSections": [],
+                "outcomes": [
+                  {
+                    "id": "L06-o1",
+                    "text": "Recognise an ethical responsibility in a new professional role.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o2",
+                    "text": "Act on an ethical responsibility without being asked.",
+                    "serves": "o6"
+                  },
+                  {
+                    "id": "L06-o3",
+                    "text": "Explain a professional habit to someone newer than yourself.",
+                    "serves": "o6"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "one lesson per crs-07 flat outcome (the pathway-distillation default, no crs-03 tier); mainCourseOutcome and every outcomes[].serves name a crs-07 outcome id, never a crs-03 one"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/defining-academic-integrity",
+              "note": "sourceSections for L01 only (the tier's single Layer-1 anchor); L01 also carries the tier's one named-theory-anchor budget (Wenger 1998) that crs-07's o5 cites by lessonKey (source.ref = L01) - the theory is introduced in this book-grounded lesson, while o5 itself is taught and assessed separately in L05. L02-L06 serve the remaining Layer-2 capability-evidence/named-theory-anchor outcomes and carry no sourceSections"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-04_lesson-map confirm 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-08_progression",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "tierSiblings": [
+              "referencing-v2-introductory",
+              "referencing-v2-intermediate"
+            ],
+            "signposts": {
+              "down": "Advanced assumes you can already reference accurately and judge a source list's scope; it does not re-teach citation mechanics."
+            },
+            "journey": {
+              "practice": "Reports a weak result honestly rather than overstating it, acts to correct an unsupported claim others would not notice, and raises an unacknowledged contribution even where the conversation is uncomfortable.",
+              "knowledge": "How honesty, fairness and courage show up as choices in shared work, and how a profession's expectations of attribution and integrity will tighten beyond a degree.",
+              "identity": "A practitioner whose conduct towards others expresses their own values, not only their compliance with a rule.",
+              "ladderRows": [
+                "e1",
+                "e2",
+                "e3"
+              ]
+            }
+          },
+          "grounding": [
+            {
+              "doc": "courses/v2/referencing-v2-advanced/course-design_referencing-v2-advanced.json",
+              "ref": "gates[].crs-07_tiered-outcomes.records[0].decidedValue.outcomes",
+              "note": "journey re-authored from this tier's own 6 flat LOs (o1-o6: the honest-reporting-vs-impression choice, correcting an unsupported claim, a fairness issue in shared work, raising an unacknowledged contribution, critiquing own habits against professional expectations, acting on responsibility in a new role)"
+            },
+            {
+              "doc": "catalogue/context/pathways/referencing.json",
+              "ref": "pathwayId=referencing",
+              "note": "tierSiblings resolved by directory-existence check against courses/, not by this file's own courseSlug field (null/planned for intermediate and advanced)"
+            },
+            {
+              "doc": "courses/v2/referencing-v2-introductory/course-design_referencing-v2-introductory.json, courses/v2/referencing-v2-intermediate/course-design_referencing-v2-intermediate.json",
+              "ref": "directory existence",
+              "note": "both sibling tier directories exist (advanced has no up-signpost: it is the pathway's top tier)"
+            },
+            {
+              "doc": "catalogue/context/pathway/referencing.json",
+              "ref": "tierProgression.ladderReadings[rowId=e1,e2,e3], masteryNote, tierStatements",
+              "note": "read upstream for the evolution narrative; journey prose re-authored fresh from this tier's own crs-07 LOs, not copied from ladderReadings' wording"
+            },
+            {
+              "doc": "catalogue/context/shared/cross-cutting.json",
+              "ref": "genericLadder.heads",
+              "note": "practice/knowledge/identity fields framed against the three head labels ('Practice (what one does)' / 'Knowledge (what one knows)' / 'Practitioner self-identity (who one is)'), wording not copied"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-v2-advanced crs-08_progression 2026-11-07"
+          },
+          "timestamp": "2026-11-07T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has six short lessons, each built around a situation you might actually face. First, a weak result and the choice between honest reporting and a stronger impression. Second, correcting an unsupported claim in shared work. Third, a fairness issue in shared work. Fourth, raising an unacknowledged contribution. Fifth, weighing your own habits against a profession's expectations. Sixth, acting on a new ethical responsibility without being asked. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the six lessons in order.",
+            "overview": "<p>This course assumes you can already reference accurately and consistently, and that you already understand why academic work does so. What it adds is judgement under pressure: the ethical choices that referencing and attribution raise once you are working independently, in shared work, or in a professional role where getting it wrong has consequences beyond a lost mark.</p><p>By the end you will be able to justify your own course of action when a weak result tempts you toward a stronger impression than the evidence supports, act to correct an unsupported claim in shared work, respond to a fairness issue around an unacknowledged contribution, critique your own habits against a profession's ethical expectations, and recognise and act on a new ethical responsibility without being asked.</p>",
+            "courseOutcomesFraming": "Six flat learning outcomes, read from crs-07_tiered-outcomes (pathway-distillation profile: crs-03 is not-applicable), framed up front: justifying honest reporting over a stronger impression, correcting an unsupported claim, responding to a fairness issue, raising an unacknowledged contribution, critiquing one's own habits against professional ethical expectations, and acting unprompted on a new ethical responsibility.",
+            "practiceConnection": {
+              "academic": "<p>These are not abstract ethical puzzles: they are the situations that come up in a dissertation, a group project, a placement or a first professional role, where a weak result, an unattributed contribution, or an unfamiliar source type lands on your desk with no one checking your working. The judgement this course builds sits alongside your critical and research practice, informing the same honesty that underpins every claim you make and every source you cite elsewhere.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-OPEN states the six crs-07 flat learning outcomes and why they matter (AL-5). wra-01's own dependsOn edges (design-kb.gates.json) name only crs-03_course-outcomes (not-applicable under the pathway-distillation profile) and crs-04_lesson-map; crs-07 is not named there. Interpretation taken here: crs-07 is this course's only outcomes source under this profile (as wra-03/wra-04 already name explicitly), so outcomes are read from it. The missing wra-01->crs-07 dependsOn edge is a design-kb gap, flagged for separate repair."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "Signpost content drawn from the six lessons' title/topic (L01-L06)."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Leave W-OPEN's outcomes unstated pending a corrected wra-01->crs-07 dependsOn edge. Rejected: under pathway-distillation crs-07 is the course's only outcomes source, and withholding it would leave W-OPEN with no outcomes at all; the interpretation is instead stated here and the missing edge flagged as a design-kb gap."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-01_wrapper-open 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "summary": "<p>You have reached the end of the course, and of this pathway. Referencing is no longer a mechanical or even a judgement skill: it is an ethical practice you can be trusted with. You can justify your own course of action when a weak result tempts you toward a stronger impression, act to correct an unsupported claim in shared work, respond to a fairness issue around an unacknowledged contribution, critique your own habits against a profession's ethical expectations, and recognise and act on a new ethical responsibility without being asked. Look back at the confidence check to see how far this has moved, and carry this judgement into whatever comes next in your own academic and professional practice.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, this is a habit you carry rather than a course you finish. Notice the moment a weak result tempts you toward a stronger impression, and choose honest reporting anyway. Notice an unsupported claim or an unacknowledged contribution in shared work, and act on it even when the conversation is uncomfortable. This same ethical attention underpins the arguments you build in your academic writing, the rigour you bring to researching and investigating, and the judgement you exercise whenever you read and evaluate critically: it is not a separate strand of your practice but the integrity running through all of them.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 185 to 187 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-ch10",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the C-POST confidence shift (AL-5). wra-02's own dependsOn edges name crs-07 explicitly for this course's profile (pathway-distillation). Advanced is a terminal tier, so the summary closes outward to the student's own practice rather than toward a next tier (byTier.advanced in skeletons/wrapper-close)."
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "No whereNext/whereNextBody fields authored: skeletons/wrapper-close's where-next block has byTier.advanced.applies=false (terminal tier; the outward move collapses into practice-connection instead). courseReferences aggregated from the sourceSections actually cited across L01 (185-187; L02-L06 carry no sourceSections). This is a seq-1 approximation ahead of the lessons landing; flagged for a seq-2 top-up once Phase B closes if any lesson's own sourceSections differ from this aggregation (the consistency rule)."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-02_wrapper-close 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "o1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Your results are weaker than expected. Reporting them honestly risks a less impressive outcome than quietly rounding the figures favourably. What justifies the honest choice?"
+              },
+              {
+                "tests": "o2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You notice an unsupported figure in a piece of shared work that no one else has spotted. What justifies correcting it rather than leaving it?"
+              },
+              {
+                "tests": "o3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Raising a fairness issue in shared work means an uncomfortable conversation with people you work closely with. What justifies speaking up anyway?"
+              },
+              {
+                "tests": "o4",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A contribution to shared work has gone unacknowledged. What does raising it with those involved, respectfully, aim to achieve?"
+              },
+              {
+                "tests": "o5",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You compare your own habits of honesty and attribution against a profession's ethical expectations. What should that critique help you identify?"
+              },
+              {
+                "tests": "o6",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In a new professional role, you notice an ethical responsibility that no one has asked you to take on. What does acting on it, and explaining it to someone newer, demonstrate?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "One summative item per flat LO (o1-o6), owner decision 2 Nov 2026 overriding the skeleton's default two-per-outcome, since pathway-distillation has no course-outcome tier. Each item's tests names the crs-07 outcome id (AL-6). Advanced tier: evaluation, judgement and transfer across the course's material (weighing competing considerations in a scenario), per skeletons/summative byTier.advanced."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "whyNot": "Two items per outcome (the skeleton's built-course-shape default). Rejected: wra-03's dependsOn edge states the pathway-distillation override explicitly as one-per-LO."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-03_summative 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "o1",
+                "text": "I can justify my course of action when a weak result tempts me to present a stronger impression than the evidence supports."
+              },
+              {
+                "rates": "o2",
+                "text": "I can justify acting to correct an unsupported figure or claim in shared work, even if the error would otherwise go unnoticed."
+              },
+              {
+                "rates": "o3",
+                "text": "I can justify my response to a fairness issue in shared work, weighing discomfort against the responsibility to speak up."
+              },
+              {
+                "rates": "o4",
+                "text": "I can raise an unacknowledged contribution with those involved, respectfully, even when the conversation is uncomfortable."
+              },
+              {
+                "rates": "o5",
+                "text": "I can critique my own habits of honesty and attribution against the ethical expectations of a profession."
+              },
+              {
+                "rates": "o6",
+                "text": "I can recognise and act on an ethical responsibility in a new role without being asked, and explain the habit to someone newer than me."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own practice."
+              }
+            },
+            "itemIds": [
+              "o1",
+              "o2",
+              "o3",
+              "o4",
+              "o5",
+              "o6"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-07_tiered-outcomes",
+              "note": "pathway-distillation override (per wra-04's dependsOn edge): one confidence statement per flat LO (o1-o6), text taken verbatim from crs-07.outcomes[].confidenceStatement, not re-worded. Same set fills C-PRE and C-POST (AL-4). itemIds covers all six rated outcomes, not a subset (precedent in academic-writing-advanced carries only 3 itemIds against 4 statements; that drift is not reproduced here). _forward._application re-worded 'your own work' -> 'your own practice' to match this tier's outward-facing, no-next-tier framing already established on W-CLOSE."
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced wra-04_confidence 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "A weak result, an honest report",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}}'s dissertation finds no significant relationship and the write-up describes it as a trend approaching significance, burying the null finding; {{learner-b}} faces the identical null result and reports it plainly, with the same discussion weight a positive result would receive. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time their own result was weaker than hoped and how they chose to describe it, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a piece of work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L01-o1/o2/o3) taken verbatim from crs-04's advanced L01 entry ('A weak result, an honest report'). This lesson carries a real sourceSections anchor (ch10/defining-academic-integrity, pages 185-187), unlike L02-L06 of this tier which are confirmed no-sourceSections Layer-2 outcomes; lesson-references (L01-c-80) carries a real citation, not a bare shell."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "resolve-agent-author.js run against this manifest for activity-1..4, worked-example, practical-guidance, concept-context, summary, check, reflective-prompt before drafting. Advanced tier's resolved content for ALL FOUR activity slots reads 'A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons' (not recognition/application as at introductory/intermediate). Content for activity-1/2 (matching, sortable) was written as genuine judgement classification/ranking tasks, not simple lookup, to honour this. activity-3/4 (flipcard, accordion) keep the course's established recall-reveal mechanic (consistent with all 12 already-landed lessons) but their content embeds the judgement/reasoning in the reveal text itself, since the mechanic has no scored-feedback channel. practical-guidance's resolved ASK default is 'heuristics... at advanced' rather than a numbered procedure; the checklist slot is kept (established palette/checklist precedent, tierCalibration 'possible' at advanced) but reframed as weighable heuristic self-checks rather than a sequential procedure, and labelled accordingly in its displayTitle."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify descriptions of a single weak result as honest or embellished - a judgement classification, not simple lookup)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank five descriptions of one weak result from most honest to most embellished - a weighing task on a single case per the agent-author ASK default)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); design-kb's own slotTypes field for this pattern lists concept-intro/worked-example, not activity-3/4 - the same soft mismatch already present in all 12 previously-landed lessons, not fixed here (out of scope for a per-lesson gate; flagged for separate design-kb repair)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default - items remain concrete yes/no self-checks per the pattern's own recognition rule, not evaluative, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "This pattern (palette/branching, 'make decision, see consequence') most directly matches advanced tier's judgement-task default for activity-1..4 and the lesson's ethical-dilemma subject matter, but design-kb.activity-patterns.json explicitly records it as 'recorded ahead of its first use; first homes are Presenting, Reflective Practice, and Work-Based Learning' - not yet a sanctioned referencing realisation. Rejected in favour of the already-proven matching/sortable/flipcard/accordion structure used across all 12 landed lessons, with judgement content folded into that structure instead of introducing a new, unprecedented component to this course."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L01-les-01 referencing-v2-advanced L01 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Correcting an unsupported claim",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices an untraceable 40% figure in a shared group report and leaves it uncorrected near the deadline; {{learner-b}} notices the same figure, asks the group where it came from, and the group rewords the claim to state only what the data support. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they noticed, or suspected, an unsupported figure in shared work and what tipped their decision to raise it or let it pass, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('shared work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L02-o1/o2/o3) taken verbatim from crs-04's advanced L02 entry ('Correcting an unsupported claim'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L02-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern from introductory/intermediate L02-L06 and from this tier's own established approach."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established and researched at L01 applies here (activity-1..4 resolve to 'A judgement task: weigh or arrange options where more than one is defensible, with feedback that reasons'; practical-guidance resolves to heuristics, not a numbered procedure). Content for activity-1/2 (matching, sortable) written as judgement classification/ranking on borderline cases, not simple lookup. activity-3/4 keep the established recall-reveal mechanic, with judgement/reasoning folded into the reveal text. practical-guidance kept as palette/checklist, reframed as weighable heuristic self-checks rather than a sequential procedure, consistent with the L01 precedent set this tier."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify report figures as supported or unsupported - the judgement lies in tracing each figure to a source/table/calculation, not in recognising a label)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four unsupported-figure scenarios by urgency of correction - a weighing task on relative risk, not a single fixed ordering of fact)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01 and all 12 prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with the L01 precedent - items remain concrete self-checks per the pattern's own recognition rule, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01: this pattern (palette/branching) best fits advanced tier's judgement-task default and this lesson's dilemma subject matter, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected again in favour of the proven matching/sortable/flipcard/accordion structure, now established as this tier's precedent at L01."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L02-les-01 referencing-v2-advanced L02 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "A fairness issue in shared work",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices an uneven contribution two days before submission and stays silent, reasoning there is no time for the conversation; {{learner-b}} notices the same imbalance, weighs the discomfort against the cost of silence, and raises it, leading the group to add a statement of individual contributions. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they noticed a fairness issue in group work, whether or not they raised it, and what they weighed at the time, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('shared work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L03-o1/o2/o3) taken verbatim from crs-04's advanced L03 entry ('A fairness issue in shared work'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L03-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01/L02 applies here. activity-1 (matching) written as classification requiring judgement about what counts as a fairness issue versus ordinary friction, not simple recall. activity-2 (sortable) written as a weighing task ranking issues by difficulty to raise, not a single fixed ordering of fact. activity-3/4 keep the established recall-reveal mechanic, with judgement/reasoning folded into the reveal text. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01/L02."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify group situations as a genuine fairness issue or ordinary friction - the judgement lies in whether credit/workload/outcome is actually affected)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four fairness issues from easiest to hardest to raise - a weighing task on relational and relationship stakes, not a fixed ordering of severity)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01/L02 and all prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01/L02 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01/L02: this pattern (palette/branching) best fits advanced tier's judgement-task default and this lesson's interpersonal-dilemma subject matter, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected again in favour of the proven matching/sortable/flipcard/accordion structure established across this tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L03-les-01 referencing-v2-advanced L03 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L04-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Raising an unacknowledged contribution",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} mentions a missed acknowledgement once, vaguely, and lets it drop when nobody responds directly; {{learner-b}} raises the same omission directly and privately, proposes a specific fix, agrees a date to confirm it, and follows up. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L04-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L04-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L04-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they raised, or wished they had raised, an unacknowledged contribution and how they balanced directness with respect, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('shared work for {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L04-o1/o2/o3) taken verbatim from crs-04's advanced L04 entry ('Raising an unacknowledged contribution'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L04-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern. This lesson is the explicit follow-through to L03's fairness-issue decision: L03 covers deciding whether to raise an issue, L04 covers the conversation itself and securing an actual outcome."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01-L03 applies here. activity-1 (matching) written as classification requiring judgement about tone (respectful vs accusatory), not simple recall. activity-2 (sortable) written as a weighing task ranking follow-up approaches by likely effectiveness, not a fixed ordering of fact. activity-3/4 keep the established recall-reveal mechanic. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01-L03."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify conversation openers as respectful or accusatory - the judgement lies in whether the line names outcome or assumes motive)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four follow-up approaches by likelihood of securing a fairer outcome - a weighing task on effectiveness, not a fixed ordering of severity)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01-L03 and all prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01-L03 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01-L03: this pattern (palette/branching) best fits advanced tier's judgement-task default and this lesson's conversation-management subject matter, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected again in favour of the proven matching/sortable/flipcard/accordion structure established across this tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L04-les-01 referencing-v2-advanced L04 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L05-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "Your own habits, a profession's expectations",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} assumes an informal habit of tracking contribution will carry over to professional practice without checking; {{learner-b}} checks the same habit against an actual professional code of conduct and finds it would need to become a documented written log. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L05-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L05-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L05-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to name a current habit of attribution/honesty and weigh how confident they are it would meet professional expectations, turned on their own practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a personal honesty habit relevant to {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L05-o1/o2/o3) taken verbatim from crs-04's advanced L05 entry ('Your own habits, a profession's expectations'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L05-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern. This is the first lesson in the tier to shift from a single-incident scenario to a self-critique of standing habits against an external, field-specific standard (community of practice), reflecting its outcome wording ('critique', 'apply a lens') rather than 'identify/act' on a single event."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01-L04 applies here. activity-1 (matching) written as classification of habits as 'still suffices' vs 'needs to tighten', requiring judgement about formality and documentation, not simple recall. activity-2 (sortable) written as a weighing task ranking habits by the size of their gap from professional expectation. activity-3/4 keep the established recall-reveal mechanic. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01-L04."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify habits as still-sufficient or needing to tighten under professional expectations)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four habits by the size of their gap with professional expectations - a weighing task on degree, not a fixed ordering of fact)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01-L04 and all prior lessons, not fixed here (out of scope for a per-lesson gate)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01-L04 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01-L04: this pattern (palette/branching) could fit a judgement-task default, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing, and this lesson's self-critique-against-a-standard shape (rather than a single-incident decision) fits matching/sortable classification better in any case. Rejected in favour of the proven structure established across this tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L05-les-01 referencing-v2-advanced L05 2026-11-07"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-v2-advanced-L06-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "confirmedAt": "gate",
+          "timestamp": "2026-11-07T00:00:00.000Z",
+          "decidedValue": {
+            "conceptTitle": "A new role, an unprompted responsibility",
+            "interiorPattern": "plain prose (no interior teaching pattern chosen; concept-definition and concept-context carry the concept directly)",
+            "workedExample": "Weaker/stronger contrast: {{learner-a}} notices an unchecked shared record in their first month and reasons that, since nobody assigned it to them, it is not their responsibility; {{learner-b}} notices the same gap, raises it with their supervisor, and later explains the habit directly to a newer colleague. Realised via palette/worked-example (structured-fields, character tokens), generic study situation per agent-author default.",
+            "pacing": "Single session, no trickle needed beyond the archetype's standard gates (after concept-context, after practical-guidance).",
+            "visualAssets": [],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L06-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L06-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L06-o3",
+                  "tokenMode": "cxp-fillable"
+                }
+              ]
+            },
+            "reflectivePrompt": "Two open questions (plus a no-right-answers framing line) inviting the student to recall a time they noticed something in a new role that nobody had explicitly asked them to deal with, and what shaped their decision to act or wait, turned on their own past practice per the agent-author ASK default.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "Check item 3 carries {{context}} in its stem ('a role relevant to {{context}}'); tokenMode cxp-fillable, floor 'your subject' until a context pack supplies context.label."
+            },
+            "activityProposals": [
+              {
+                "slot": "activity-1",
+                "component": "palette/matching",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-2",
+                "component": "palette/sortable",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-3",
+                "component": "palette/flipcard",
+                "status": "confirmed"
+              },
+              {
+                "slot": "activity-4",
+                "component": "palette/accordion",
+                "status": "confirmed"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-context",
+                "variationType": "whole-prose"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "summary",
+                "variationType": "structured-fields"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "conceptTitle and the three tested outcomes (L06-o1/o2/o3) taken verbatim from crs-04's advanced L06 entry ('A new role, an unprompted responsibility'). This lesson has no sourceSections (confirmed Layer-2 outcome per the crs-04 review); lesson-references (L06-c-80) is left as a bare empty shell, matching the established no-sourceSections pattern. This is the tier's final lesson; per the structural review already recorded at Phase A (W-CLOSE has no where-next component for advanced, a terminal tier), the course closes outward into the student's own practice rather than pointing to a next tier, and this lesson's o3 outcome (explaining a habit to someone newer) reinforces that outward, teach-forward framing directly in the lesson content."
+            },
+            {
+              "store": "design-kb",
+              "id": "design-kb.agent-author",
+              "note": "Same advanced-tier judgement-task default established at L01-L05 applies here. activity-1 (matching) written as classification of situations as formally assigned or falling to whoever notices, requiring judgement about implicit versus explicit responsibility. activity-2 (sortable) written as a weighing task ranking scenarios by initiative required, accounting for power gaps and ownership ambiguity, not a fixed severity ordering. activity-3/4 keep the established recall-reveal mechanic. practical-guidance kept as palette/checklist, reframed as weighable heuristics consistent with L01-L05."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/sort-into-groups",
+              "note": "activity-1 (matching, classify new-role situations as normally assigned or falling to whoever notices first)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/build-from-parts",
+              "note": "activity-2 (sortable, rank four situations by initiative required - a weighing task on ownership ambiguity and power gap, not a fixed ordering of fact)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "activity-3/4 (flipcard, accordion); same soft slotTypes mismatch already flagged at L01-L05 and all prior lessons across the course, not fixed here (out of scope for a per-lesson gate; now flagged across all 18 landed lessons for separate design-kb repair)."
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical-guidance (checklist, reframed as heuristics per the advanced-tier ASK default, consistent with L01-L05 - items remain concrete self-checks, but weighed rather than sequenced)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example; agent-author's resolved content for this tier is 'a nuanced case where the stronger version weighs trade-offs or defends a position; no single right answer', generic study situation per its ASK default."
+            },
+            {
+              "doc": "docs/authoring/worked-example-cue-convention.md",
+              "ref": "we-weaker/we-stronger paragraph classes, {{learner-a}}/{{learner-b}} character tokens",
+              "note": "Same design-kb marker-class gap flagged at every prior lesson, left unmarked. This is the eighteenth and final occurrence across the full referencing-v2 Phase B landing."
+            },
+            {
+              "doc": "docs/authoring/lesson-structure-template.md",
+              "ref": "8 Oct 2026 ACTIVITY-MODE QUESTION COMPONENTS note: matching/sortable in activity-1/2 run _attempts:-1, _feedback._incorrect.notFinal only, _feedback.correct reiterating the concept, _isPartOfAssessment:false."
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "activity-patterns/decision-scenario",
+              "whyNot": "Same reasoning as recorded at L01-L05: this pattern (palette/branching) could fit a judgement-task default, but design-kb.activity-patterns.json still records it as not yet sanctioned for Referencing. Rejected in favour of the proven matching/sortable/flipcard/accordion structure established and used consistently across the entire tier."
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code",
+            "description": "referencing-v2-advanced-L06-les-01 referencing-v2-advanced L06 2026-11-07"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 11,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 10,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "A weak result, an honest report",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Correcting an unsupported claim",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "A fairness issue in shared work",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Raising an unacknowledged contribution",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L05",
+      "pageType": "lesson",
+      "title": "Your own habits, a profession's expectations",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L05-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L06",
+      "pageType": "lesson",
+      "title": "A new role, an unprompted responsibility",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.4.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-1",
+          "component": "palette/matching",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-2",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/worked-example",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-3",
+          "component": "palette/flipcard",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "activity-4",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-v2-advanced-L06-les-01"
+        }
+      ]
+    }
+  ],
+  "sweepEvents": [
+    {
+      "eventId": "SW-1",
+      "timestamp": "2026-11-07T17:20:57.242Z",
+      "trigger": {
+        "gate": "onb-04_naming",
+        "changeKind": "amended",
+        "oldRecordSeq": 1,
+        "newRecordSeq": 2,
+        "note": "tierName was copied as 'All tiers' into all three per-tier course-design files when a single three-tier onboarding answer was split into three separate per-tier courses; corrected to this course's own tier, confirmed by the human."
+      },
+      "sweep": []
+    }
+  ]
+}

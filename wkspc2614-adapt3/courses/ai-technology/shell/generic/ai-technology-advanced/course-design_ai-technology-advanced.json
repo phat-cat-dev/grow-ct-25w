@@ -1,0 +1,1684 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "ai-technology-advanced",
+  "slug": "ai-technology-advanced",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "ai-technology",
+    "tier": "advanced"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = ai-technology",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "ai-technology",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = ai-technology",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "advanced"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced tier (~ FHEQ L6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "AI & Technology",
+            "tierName": "Advanced",
+            "slug": "ai-technology-advanced"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = ai-technology",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:09:18.058Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunk (ch10/opening)"
+              },
+              {
+                "ref": "design-kb/design-kb.pathways.json",
+                "kind": "pathway-record",
+                "role": "Track B authored pathway grounding (ai-technology)"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = ai-technology",
+              "note": "Layer-1 record: Track B authored pathway (chapters null); one shared book chunk ch10/opening; advanced focus 'evaluate, create with, and act ethically around AI'"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/opening tagged ai-technology",
+              "note": "the chapter-10 opening frames the generative-AI motivation: a sound understanding of academic integrity in the age of generative AI"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced crs-01_sources 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T13:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "authored",
+            "chapter": "Track B authored pathway (no book chapter); anchored by ch10/opening on academic integrity in the age of generative AI. Foundations and basic application held out of scope for the introductory and intermediate tiers.",
+            "sectionsInScope": [
+              "evaluating-ai-outputs",
+              "generative-ai-failure-modes",
+              "creating-with-ai-and-authorship",
+              "legitimate-assistance-vs-misrepresentation",
+              "academic-integrity-and-disclosure",
+              "bias-transparency-and-data-ethics",
+              "reasoning-about-ai-dilemmas"
+            ],
+            "sectionsOutOfScope": [
+              "what-ai-is-and-how-generative-models-work (AI literacy foundations: INTRODUCTORY)",
+              "recognising-ai-in-everyday-study (foundations: INTRODUCTORY)",
+              "basic-prompting-and-using-ai-as-a-study-aid (applying AI to study tasks: INTERMEDIATE)",
+              "checking-ai-output-for-a-single-task (first-pass use: INTERMEDIATE)"
+            ],
+            "tierWindow": {
+              "goal": "Prompt AI skilfully to learn: build strong prompts, deepen a dialogue with deliberate moves, and use techniques that make you do the thinking, as one deliberate, critical and honest practice.",
+              "cognitiveDemand": "Evaluation, creation, justification and ethical reasoning (evaluate, appraise, create, justify, critique).",
+              "taskComplexity": "Open, ill-defined situations with competing considerations; contested judgements such as how far to trust an output, where authorship lies, and whether and how to disclose AI use.",
+              "autonomy": "Low scaffolding; the learner exercises and defends their own judgement; feedback probes reasoning rather than confirming recall; stakes are realistic.",
+              "voiceBand": "Section 16 Advanced (bands 2-4)",
+              "outcomeVerbs": [
+                "construct",
+                "combine",
+                "design",
+                "sequence",
+                "justify",
+                "critique",
+                "integrate",
+                "decide"
+              ]
+            },
+            "priorExperienceAnchor": "The learner already understands what AI is (introductory) and has used it critically on study tasks (intermediate). This course does not re-teach the basics; it teaches skilled prompting - the framework, the moves and the techniques - and asks the learner to combine them into their own routine.",
+            "subThemes": [
+              {
+                "id": "the-prompt-framework",
+                "label": "Building a learning prompt from a role, a function and context"
+              },
+              {
+                "id": "prompt-habits",
+                "label": "The habits that make a tool think with you: method not answer, and invited nuance"
+              },
+              {
+                "id": "prompt-moves",
+                "label": "Deepening a dialogue with deliberate moves rather than restarting"
+              },
+              {
+                "id": "techniques-that-build-understanding",
+                "label": "Eight techniques that use AI to build your own understanding"
+              },
+              {
+                "id": "designing-a-routine",
+                "label": "Combining the framework, moves and techniques into one deliberate routine"
+              },
+              {
+                "id": "critical-and-honest-use",
+                "label": "Keeping prompting critical and honest, building on the earlier tiers"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = ai-technology (tiers.advanced)",
+              "note": "advanced focus 'evaluate, create with, and act ethically around AI' and Advanced voice band; introductory/intermediate foci held out of scope"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/opening tagged ai-technology",
+              "note": "academic integrity in the age of generative AI frames the ethics strand"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced calibration and Advanced voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced crs-02_thematic-scope 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T13:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Construct effective learning prompts using a role, a function and context."
+              },
+              {
+                "id": "co2",
+                "text": "Combine prompt moves to deepen an AI dialogue instead of starting over."
+              },
+              {
+                "id": "co3",
+                "text": "Design AI techniques that build your own understanding rather than replace it."
+              },
+              {
+                "id": "co4",
+                "text": "Combine the framework, the moves and the techniques into one deliberate, critical and honest prompting practice."
+              }
+            ],
+            "courseOutcomeCountReason": "Three strands of skilled prompting - the framework (co1), the moves (co2) and the techniques (co3) - plus a synthesis outcome (co4) that combines them into one deliberate, critical and honest routine. What AI is belongs to the introductory tier and critical first use to the intermediate tier, so this course assumes them.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can construct effective learning prompts using a role, a function and context.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can combine prompt moves to deepen an AI dialogue instead of starting over.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can design AI techniques that build my own understanding rather than replace it.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can combine the framework, the moves and the techniques into one deliberate, critical and honest prompting practice.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = ai-technology (tiers.advanced)",
+              "note": "co1 from evaluation, co2 from creation, co3 from acting ethically - the three verbs of the advanced focus"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and advanced tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the advanced evaluate/create/justify end"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced crs-03_course-outcomes 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T13:06:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "The prompt framework",
+                "topic": "building effective learning prompts with the role, function and context framework",
+                "description": "The prompt framework: building a learning prompt from a role, a function and context.",
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Construct a learning prompt from a role, a function and context.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Combine the prompt habits that make a tool think with you, not for you.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Construct a prompt for a task in {{context}} and justify why it will produce a useful answer.",
+                    "serves": "co1"
+                  }
+                ],
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Prompt moves",
+                "topic": "deepening an AI dialogue with prompt moves rather than restarting",
+                "description": "Prompt moves: deepening an AI dialogue with deliberate moves instead of starting over.",
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Combine prompt moves to enrich an answer without starting over.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Design a sequence of moves that deepens a dialogue rather than resets it.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Choose the prompt moves that will strengthen an answer for a task in {{context}}.",
+                    "serves": "co2"
+                  }
+                ],
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Techniques that build understanding",
+                "topic": "eight techniques that use AI to build your own understanding",
+                "description": "Techniques that build understanding: eight ways to use AI to learn rather than be told.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Match the eight techniques to the kind of understanding each one builds.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Combine techniques so you do the thinking and the tool supports it.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Design a short study routine in {{context}} using the techniques that fit.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Design your own AI learning routine",
+                "topic": "combining the framework, moves and techniques into one deliberate prompting routine",
+                "description": "Bringing the framework, the moves and the techniques together into one deliberate, critical and honest prompting routine.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "Combine the framework, the moves and the techniques into one deliberate prompting routine.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "Recognise a skilled, critical and honest AI learning routine at work.",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "Design your own AI learning routine for {{context}} study beyond this course.",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Design your own AI learning routine"
+              }
+            ],
+            "progression": "L01 builds the prompt framework; L02 adds the moves that deepen a dialogue; L03 adds the techniques that build understanding; L04 combines all three into one deliberate, critical and honest routine."
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = ai-technology (tiers.advanced)",
+              "note": "one lesson per advanced course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            },
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/opening (p.184) grounds the L03 ethics/integrity lesson; L01 and L02 are authored Track B content"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced crs-04_lesson-map 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T13:07:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map) for the AI and Technology advanced course. No new decisions; rendered to courses/ai-technology-advanced/adp-course-design-specification_ai-technology-advanced.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced crs-05_course-spec 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T13:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "ai-technology-advanced-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The prompt framework: role, function and context",
+            "interiorPattern": "activity-patterns/construct-artifact realised as palette/promptbuilder (growPromptBuilder): the learner builds a learning prompt from a role, a function and context using example chips, assembling a prompt they can copy and take to a real AI tool - the signature advanced activity.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in the advanced AI-evaluation strand: a tool predicts fluent text and does not check it against the world.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflection asking the learner to relate this lesson's judgement to their own recent AI use. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's AI judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/promptbuilder",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/opening (p.184) anchors the AI pathway; L01 is advanced authored content"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example (contrast shape)"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/gowTimeline"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 title/topic/outcomes (L01-o1..o3 serve co1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:21:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "ai-technology-advanced-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Prompt moves: deepening a dialogue",
+            "interiorPattern": "activity-patterns/survey-parallel realised as palette/ab-card: four parallel ways of creating with AI while keeping authorship, presented as cards, fitting the parallel-practices shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in the advanced creating-with-AI strand: authorship stays with the learner who brings the question and the judgement.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflection asking the learner to relate this lesson's judgement to their own recent AI use. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's AI judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/opening (p.184) anchors the AI pathway; L02 is advanced authored content"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example (contrast shape)"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-card"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 title/topic/outcomes (L02-o1..o3 serve co2)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:22:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "ai-technology-advanced-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Techniques that build understanding",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/accordion: four ethical considerations revealed on demand, fitting the grouped-detail shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a weaker and a stronger approach to the same task, the weaker version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch10/opening (p.184) on academic integrity in the age of generative AI, extended to bias, transparency and data.",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "A private, optional reflection asking the learner to relate this lesson's judgement to their own recent AI use. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's AI judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/accordion",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/opening (p.184) anchors the AI pathway; L03 is advanced authored content"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example (contrast shape)"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/accordion"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 title/topic/outcomes (L03-o1..o3 serve co3)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:23:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has four short lessons. First, the prompt framework: a role, a function and context. Second, prompt moves: deepening a dialogue instead of restarting. Third, techniques that build understanding. Fourth, designing your own routine that joins all three. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This course is about prompting AI to learn, at an advanced level. By the end you will be able to build strong prompts, deepen a dialogue with deliberate moves, and use techniques that make you do the thinking, all as one deliberate, critical and honest practice.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: build effective prompts, combine moves to deepen a dialogue, and design techniques that build your own understanding.",
+            "practiceConnection": {
+              "academic": "<p>Prompting well is becoming part of academic and professional work. The skill you build here carries into every module, and into work where driving these tools well, and staying the one who thinks, is already expected.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [],
+              "horizontal": [
+                "Criticality",
+                "Academic Writing",
+                "Referencing, Citation & Academic Integrity"
+              ]
+            },
+            "whereNextBody": "",
+            "whereNextOmitted": "Advanced is the top tier of this pathway, and resolve-agent-author omits the where-next slot at advanced; no where-next block is authored.",
+            "summary": "<p>You have reached the end of the course. You can build a prompt from a role, a function and context, deepen a dialogue with deliberate moves, and use techniques that make you do the thinking, joined into one routine that stays critical and honest. Look back at the confidence check to see how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, prompting to learn is something you practise in every module and beyond. It is also what professional life increasingly expects.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See page 184 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-ch10",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome (AL-5); where-next omitted at advanced"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which version of a learning prompt is most likely to get a useful answer?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A prompt asks the tool to write your essay on a given title. Why is this a weak learning prompt?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Your first answer from a tool is clear but too general. What is the best next move?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which sequence shows prompting used as a dialogue rather than one exchange?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which use of AI best builds your own understanding of a difficult idea?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "You want the tool to find the weak points in your argument. Which technique fits?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can construct effective learning prompts using a role, a function and context."
+              },
+              {
+                "rates": "co2",
+                "text": "I can combine prompt moves to deepen an AI dialogue instead of starting over."
+              },
+              {
+                "rates": "co3",
+                "text": "I can design AI techniques that build my own understanding rather than replace it."
+              },
+              {
+                "rates": "co4",
+                "text": "I can combine the framework, the moves and the techniques into one deliberate, critical and honest prompting practice."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T13:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "ai-technology-advanced wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "The prompt framework",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/promptbuilder",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Prompt moves",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Techniques that build understanding",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/accordion",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Design your own AI learning routine",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "ai-technology-advanced-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

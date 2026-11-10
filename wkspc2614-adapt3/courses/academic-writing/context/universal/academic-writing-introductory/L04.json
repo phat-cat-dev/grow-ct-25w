@@ -1,0 +1,63 @@
+{
+  "generatedProse": {
+    "concept-context": "<p>In practice, this means running the same process on every piece you write, in any subject. You read the task and plan, you get a rough draft down, and then you improve it, in that order. The piece that went through the whole process almost always beats the one written in a single sitting. Over a term, making this your normal way of working is what steadily raises the standard of your writing.</p>",
+    "worked-example": "<p>Two students are each set the same piece to write. {{learner-a}} writes it in one sitting, straight to the finished version, and hands it in without planning or revising. {{learner-b}} works through the whole process instead: reading the task and planning, getting a rough draft down, then editing for structure and clarity before proofreading. Both spent the same time, but {{learner-b}}'s piece is clearer and better organised, because it went through every stage.</p>",
+    "summary": "<p>Academic writing is most useful when you treat it as one process, not three separate skills. You run the same stages in order every time: understand the task, plan, draft, then revise for the basics. It is making this your normal way of working, piece after piece, that steadily improves your writing.</p>"
+  },
+  "generatedItems": {
+    "check": {
+      "body": "<p>A student reads a task closely and plans, writes a rough first draft, then edits it for structure and clarity before proofreading. What does this show?</p>",
+      "items": [
+        {
+          "text": "Their next round of learning and preparation, which is why the following essay improved.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Nothing; feedback comes at the end, so it cannot affect anything that follows.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Only the mark on the first essay, which cannot now change.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "The deadline for the next essay.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Using feedback to plan the next piece of work feeds it straight back into your learning, closing the loop and starting the next round stronger. That is the cycle working as it should.",
+        "incorrectNotFinal": "Not quite. Think about what the student did with the feedback, and what improved as a result.",
+        "incorrectFinal": "Acting on feedback feeds your next round of learning and preparation, which is why the following essay was stronger. The mark on the first essay cannot change, but the feedback still shapes what comes next."
+      },
+      "_items": [
+        {
+          "text": "That the student is using the whole writing process: each stage leads into the next, from task to finished piece.",
+          "_shouldBeSelected": true,
+          "feedback": "Yes. Every stage is there, in order, working as one process."
+        },
+        {
+          "text": "That the student is wasting time by doing more than one piece of writing needs.",
+          "_shouldBeSelected": false,
+          "feedback": "No. Each stage does a different job, and together they make the piece stronger."
+        },
+        {
+          "text": "That only the proofreading at the end really matters.",
+          "_shouldBeSelected": false,
+          "feedback": "Not so. The earlier stages did the real work, and proofreading only polishes the surface."
+        },
+        {
+          "text": "That planning and editing are the same stage.",
+          "_shouldBeSelected": false,
+          "feedback": "They are different stages: planning comes before the draft, and editing improves it afterwards."
+        }
+      ]
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

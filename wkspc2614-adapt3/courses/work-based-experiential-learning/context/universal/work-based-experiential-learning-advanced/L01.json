@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "Across disciplines, experiential learning runs through placements, fieldwork, projects and any task you learn by doing. The learning is not the activity itself but what you make of it afterwards. You might run a project, work in a placement, or take part in a practical, and the real work is treating each one as material to think about once it is over. A task that did not go to plan, or a result you did not expect, becomes something to understand once you take it through the cycle.",
+    "worked-example": "Consider two students who finish the same work placement and are asked what they learned from it.\n\n{{learner-a}} says the placement was useful, that the work was enjoyable, and that it was good experience. That is a report of the experience, not learning from it. {{learner-a}} has stopped at the experiencing mode: the placement happened, but it has not been reflected on, thought through, or turned into anything to carry forward. The experience sits as a memory, not as knowledge.\n\n{{learner-b}} says the placement showed that preparing before a task makes the work go better. One task that was rushed went badly, so {{learner-b}} noticed what happened, worked out why, linked it to advice read beforehand, and named what to do differently next time. {{learner-b}} has moved through the whole cycle, transforming the experience into knowledge.\n\nBoth students had the same placement. Only {{learner-b}} transformed it, which is what experiential learning means.",
+    "summary": "Experiential learning is the creation of knowledge through the transformation of experience: an activity alone is not the learning. Kolb's cycle names four modes, experiencing, reflecting, thinking and acting, and two dimensions beneath them, grasping and transforming experience. You can now explain the idea and describe the cycle. The next lesson uses it to structure a reflection on a real experience."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "Kolb's cycle names four modes. Which option lists them in the order this lesson gave?",
+      "items": [
+        {
+          "text": "Experiencing, reflecting, thinking, acting.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Thinking, experiencing, acting, reflecting.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Reflecting, acting, experiencing, thinking.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Planning, doing, checking, repeating.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. The four modes are experiencing, reflecting, thinking and acting.",
+        "incorrectNotFinal": "Not quite. Recall the mode the cycle starts from, the concrete experience itself.",
+        "incorrectFinal": "The four modes are experiencing, reflecting, thinking and acting. One option reorders them and one names a different model."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

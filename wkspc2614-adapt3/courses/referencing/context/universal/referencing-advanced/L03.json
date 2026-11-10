@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In most academic work you paraphrase far more often than you quote, because what usually matters is the idea and its implication, not an author's exact wording. That makes paraphrase the place where integrity is most often tested. A sound paraphrase of a source rebuilds the point in your own words and still cites where it came from. A paraphrase that keeps the original's distinctive phrasing, even with a citation, shows the words were moved rather than the idea understood.",
+    "worked-example": "Two students want to use the same sentence from a source in their essays.\n\n{{learner-a}} decides to paraphrase, but stays close to the original: a few words are swapped for synonyms while the sentence keeps its shape and its distinctive phrasing. A citation is added, so it feels above board. Yet the expression is still the source's, not {{learner-a}}'s. Cited or not, this patchwriting shows the words were moved, not the idea understood.\n\n{{learner-b}} judges that the source's exact wording is not what matters here, only its point, so paraphrase is the right move. {{learner-b}} sets the source aside, writes the idea from memory in their own words, then checks back to confirm the meaning holds and the wording is genuinely new. The source is cited. The paraphrase shows understanding, because it is rebuilt rather than relabelled.\n\nBoth cited the source. Only {{learner-b}} made a judgement about how to use it that kept the integrity intact.",
+    "summary": "Using a source well is a matter of judgement. You quote when the exact wording matters, and paraphrase, the more common move, when you want the idea in your own voice. A sound paraphrase rebuilds the idea in genuinely new words and still cites the source; one that only swaps a few words stays the source's expression and fails even when cited. You can now judge between quoting and paraphrasing, tell a sound paraphrase from one too close to the source, and decide how to handle a source so its integrity holds. With the values, the reasons and the judgement in place, referencing is something you can own and defend."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, why did {{learner-a}}'s paraphrase fail even though it was cited?",
+      "items": [
+        {
+          "text": "It kept the source's shape and phrasing with only a few words swapped, so the expression was still the source's.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "It paraphrased a point that should have been quoted directly instead.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It cited the wrong source for the sentence being used.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It was shorter than the original sentence from the source.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Patchwriting keeps the source's expression, and a citation does not make it your own work.",
+        "incorrectNotFinal": "Not quite. Think about whose words the paragraph really contained, citation aside.",
+        "incorrectFinal": "The paraphrase failed because it kept the source's shape and phrasing with only words swapped, so the expression was still the source's. A citation cannot make lifted expression your own work."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, this shows up in how the questions do their work. Across any subject, each question forces a broad area, say a general interest in a topic, into something specific and answerable: which population or material, which comparison, which measure, over what period. The test is freshness, not total originality. A familiar question asked of a new case, or with a better-designed method, is fresh enough to be worth doing.",
+    "worked-example": "Consider two students drafting a proposal from the same broad interest.\n\n{{learner-a}} writes that the project will study the chosen topic, because it is important and widely discussed, and that they will read around it before settling on a design. The area is named, but nothing is narrowed. It gives no specific question, no case, no measure and no design. A reader cannot tell what study {{learner-a}} would actually run, or why this one rather than any other.\n\n{{learner-b}} drives the same interest through questions. The broad area becomes one specific question, with a stated comparison and a measure to answer it. {{learner-b}} says why the comparison matters, summarises what is already known and what is not, and sets a workable design against it. The focus is not wholly new, but it is fresh: this question, asked in this way, has not been answered before.\n\nBoth began with the same interest. Only {{learner-b}} built a framework of questions that turned it into a study.",
+    "summary": "A research proposal is a framework of questions that narrows a broad area into a specific, answerable study and shows its freshness rather than claiming total originality. You can now explain how the questions build the framework, recognise the move from a general area to a specific design, and choose the question that sharpens a topic. The final lesson turns to the report that presents a completed study."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did {{learner-b}} do that turned a broad interest into a study?",
+      "items": [
+        {
+          "text": "{{learner-b}} drove the topic through questions into a specific, fresh focus with a workable design.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} promised to read around the topic before choosing a design.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} chose a question that was entirely original and had never been studied.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} named the broad area and explained that it was important.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. {{learner-b}} narrowed the interest through questions into a fresh, workable focus.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} DID to the topic, beyond naming it or promising to read.",
+        "incorrectFinal": "{{learner-b}} turned the interest into a study by driving it through questions into a specific, fresh focus with a design. Reading around it, claiming originality or calling it important do not make a study."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,1821 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "referencing-advanced",
+  "slug": "referencing-advanced",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "referencing",
+    "tier": "advanced"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "referencing",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "advanced"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced tier (~ FHEQ L5-high L6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Referencing, Citation & Academic Integrity",
+            "tierName": "Advanced",
+            "slug": "referencing-advanced"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:30:01.938Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "Layer-1 record: chapter 10, 6 primary + 4 shared tagged book chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = referencing",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced crs-01_sources 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "10 (primary); the referencing mechanics and citation-craft sections are held for the introductory and intermediate tiers",
+            "sectionsInScope": [
+              "ch10/opening",
+              "ch10/learning-objectives-and-keywords",
+              "ch10/defining-academic-integrity",
+              "ch10/why-references-matter",
+              "ch10/quotation-and-paraphrase",
+              "ch10/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch10/referencing-intro, ch10/referencing-styles, ch10/what-references-look-like, ch10/how-to-format-references (the mechanics of what a reference is and how to format it: INTRODUCTORY)",
+              "citing accurately while quoting and paraphrasing as a writing craft (putting referencing into action across your writing: INTERMEDIATE)",
+              "ch10/research-and-data-handling (research ethics and data handling: owned by the researching-research-methods pathway)"
+            ],
+            "tierWindow": {
+              "goal": "Articulate what academic integrity is and the values behind it, justify why referencing matters as scholarly practice rather than rule-following, and judge how to use sources with integrity.",
+              "cognitiveDemand": "Articulation, justification, evaluation and judgement (articulate, justify, appraise, judge); reasoning about principles, not reciting procedures.",
+              "taskComplexity": "Open, principled questions with defensible rather than single right answers; integrity judgements that weigh competing considerations.",
+              "autonomy": "Low scaffolding; the learner reasons and defends a position; feedback tests the quality of reasoning rather than confirming a lookup.",
+              "voiceBand": "Section 16 Advanced (bands 2-4)",
+              "outcomeVerbs": [
+                "articulate",
+                "justify",
+                "appraise",
+                "judge",
+                "defend",
+                "distinguish",
+                "decide"
+              ]
+            },
+            "priorExperienceAnchor": "The learner already knows the mechanics of referencing: what a reference is made of, the main styles, and how to cite accurately when quoting and paraphrasing (the introductory and intermediate tiers). This course assumes that fluency and goes to the why and the judgement: the values of academic integrity, the scholarly reasons references matter, and the integrity decisions involved in using sources.",
+            "subThemes": [
+              {
+                "id": "integrity-as-values",
+                "label": "Academic integrity as a set of shared scholarly values (honesty, trust, fairness, respect, responsibility, courage), not a list of rules"
+              },
+              {
+                "id": "integrity-in-practice",
+                "label": "How those values show up in everyday academic work, and what a breach really costs"
+              },
+              {
+                "id": "references-as-conversation",
+                "label": "References as the way you join, credit and are credited within a scholarly conversation"
+              },
+              {
+                "id": "references-signal-scholarship",
+                "label": "How references signal the scope and the critical edge of your research to a reader"
+              },
+              {
+                "id": "quote-or-paraphrase",
+                "label": "The judgement of when to quote and when to paraphrase, and why paraphrase demonstrates understanding"
+              },
+              {
+                "id": "the-line-into-breach",
+                "label": "Where sound source use tips into poor practice and a breach of integrity"
+              },
+              {
+                "id": "owning-integrity",
+                "label": "Owning academic integrity as a scholarly identity carried into professional life"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/* chunks tagged referencing",
+              "note": "the values, rationale and source-use sections that carry the integrity dimension"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = referencing",
+              "note": "Layer-1 record: chapter 10; advanced focus 'academic integrity' and Advanced voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced calibration and Advanced voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced crs-02_thematic-scope 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Articulate what academic integrity means and the values that underpin it."
+              },
+              {
+                "id": "co2",
+                "text": "Justify why referencing matters as scholarly practice, beyond avoiding plagiarism."
+              },
+              {
+                "id": "co3",
+                "text": "Judge when to quote and when to paraphrase, and use sources with integrity."
+              },
+              {
+                "id": "co4",
+                "text": "Bring together the values of academic integrity, the reasons referencing matters, and the judgement in using sources into one continuing scholarly practice across your studies."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three advanced sub-theme clusters: what academic integrity is and the values behind it; why referencing matters as scholarly practice; and the integrity judgement involved in using sources. No fourth outcome: the mechanics of referencing (what a reference is, how to format it) are the introductory tier's, and the writing craft of citing as you quote and paraphrase is the intermediate tier's; the advanced course articulates the values and the reasons and exercises the judgement.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can articulate what academic integrity means and the values that underpin it.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can justify why referencing matters as scholarly practice, beyond avoiding plagiarism.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can judge when to quote and when to paraphrase, and use sources with integrity.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can bring together the values of academic integrity, the reasons referencing matters, and the judgement in using sources into one continuing practice across my studies.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10/* chunks tagged referencing",
+              "note": "co1 from defining-academic-integrity, co2 from why-references-matter, co3 from quotation-and-paraphrase"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the advanced articulate/justify/judge end"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced crs-03_course-outcomes 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "Academic integrity and its values",
+                "topic": "what academic integrity means and the values behind it",
+                "description": "Academic integrity and its values - what academic integrity means and the values behind it.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/defining-academic-integrity",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Defining academic integrity",
+                    "pages": "185-187"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Articulate what academic integrity means as a set of shared scholarly values rather than a list of rules.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Explain how a value such as honesty, trust or responsibility shows up in everyday academic work.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Appraise a situation in {{context}} against the values of academic integrity.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Why referencing matters",
+                "topic": "the scholarly reasons referencing matters",
+                "description": "Why referencing matters - the scholarly reasons referencing matters, beyond avoiding plagiarism.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/why-references-matter",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Why are references so important?",
+                    "pages": "191-193"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Justify referencing as the way you join, credit and are credited within a scholarly conversation.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Explain how references signal the scope and the critical edge of your research to a reader.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Defend the value of referencing a source in {{context}} beyond avoiding plagiarism.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Using sources with integrity",
+                "topic": "the judgement of when to quote and when to paraphrase",
+                "description": "Using sources with integrity - the judgement of when to quote, when to paraphrase, and where use tips into a breach.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/quotation-and-paraphrase",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Quotation and paraphrase",
+                    "pages": "193-195"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Judge when to quote a source directly and when to paraphrase it.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Distinguish a sound paraphrase from one that stays too close to the source's words.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Decide how to handle a source in {{context}} so that its use keeps academic integrity.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Integrity as a scholarly practice",
+                "topic": "the values, the reasons and the judgement as one scholarly practice",
+                "description": "Bringing together the values of academic integrity, the reasons referencing matters, and the judgement in using sources into one scholarly practice.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/opening",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Chapter 10: Academic Integrity and Referencing",
+                    "pages": "184"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/defining-academic-integrity",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Defining academic integrity",
+                    "pages": "185-187"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/why-references-matter",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Why are references so important?",
+                    "pages": "191-193"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch10/quotation-and-paraphrase",
+                    "chapter": 10,
+                    "chapterTitle": "Academic Integrity and Referencing",
+                    "heading": "Quotation and paraphrase",
+                    "pages": "193-195"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "bring together the values of academic integrity, the reasons referencing matters, and the judgement in using sources into one practice",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "recognise academic integrity at work as one practice in how a student handles a source",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "plan how you will use sources with integrity in your {{context}} work beyond this course",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Integrity as a scholarly practice"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch10 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced crs-04_lesson-map 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map). No new decisions; rendered to courses/referencing-advanced/adp-course-design-specification_referencing-advanced.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T16:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-advanced-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Academic integrity and its values",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/ab-card: the six values of academic integrity as a set of parallel cards, so the learner reads the values the rules protect. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting an unattributed use of an idea (weaker, first) with an attributed, responsible use, using the character-token cast. Generic structured-fields frame; subject fields filled at CXP. Grounded in ch10/defining-academic-integrity (pp.185-187).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a time when acting with integrity in your work was not the easiest option. What value was at stake, and what did you do? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's integrity judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/defining-academic-integrity (pp.185-187)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced les-01_lesson-proposal L01 2026-10-23"
+          },
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same survey-alternatives shape but less card affordance; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept; offered as third proposal (palette/text)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-advanced-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Why referencing matters",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/gowTimeline with _reveal true: the reasons a reference matters revealed as a staged progression of depth, from avoiding plagiarism up to joining a scholarly conversation. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a stack of agreeing citations (weaker, first) with sources set against one another, using the character-token cast. Generic structured-fields frame; subject fields filled at CXP. Grounded in ch10/why-references-matter (pp.191-193).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Look back at a recent reference list of your own. What does it tell a reader about the scope and the critical edge of your reading? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's integrity judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowTimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/why-references-matter (pp.191-193)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:25:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced les-01_lesson-proposal L02 2026-10-23"
+          },
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "reveals detail but loses the sense of deepening stages a timeline gives; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept; offered as third proposal (palette/text)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gateId": "referencing-advanced-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Using sources with integrity",
+            "interiorPattern": "activity-patterns/classify-mark realised as palette/annotate (question mode): the learner marks up a cited paraphrase, telling the genuinely reworded part from the phrasing lifted too close to the source and the citation. The concept prose sits in the separate concept-definition and concept-context blocks.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example contrasting a patchwritten paraphrase (weaker, first) with a rebuilt one, using the character-token cast. Generic structured-fields frame; subject fields filled at CXP. Grounded in ch10/quotation-and-paraphrase (pp.193-195).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think about how you usually decide between quoting and paraphrasing. Is it a judgement about the source, or a habit? What might you change? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's integrity judgement to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/annotate",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/textTagging",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch10/quotation-and-paraphrase (pp.193-195)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:30:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced les-01_lesson-proposal L03 2026-10-23"
+          },
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/textTagging",
+              "whyNot": "classifies spans too, but annotate's mark-up affordance suits reading a paraphrase like an editor; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an interactive concept; offered as third proposal (palette/text)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, academic integrity and its values: what you are really being asked to hold. Second, why referencing matters: the scholarly work a reference does, beyond keeping you out of trouble. Third, using sources with integrity: the judgement involved in quoting and paraphrasing well. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This short course is about academic integrity: what it really is, why referencing matters so much to it, and how to use sources with the judgement that integrity asks for. It assumes you can already reference accurately, and steps back to the principles that referencing serves. By the end you will be able to articulate what academic integrity means, justify why referencing matters beyond avoiding plagiarism, and judge how to quote and paraphrase sources with integrity.</p><p>These are not box-ticking concerns. Integrity is what makes academic work trustworthy, and the ability to use sources with judgement is what separates confident scholarly writing from anxious rule-following. Owning it now carries into your dissertation, and into any professional work where your word has to be relied on.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: articulate academic integrity and its values, justify why referencing matters beyond avoiding plagiarism, judge how to use sources with integrity.",
+            "practiceConnection": {
+              "academic": "<p>Academic integrity is the ground every piece of academic work stands on. Each essay you reference with purpose, each source you weigh rather than stack, each judgement about quoting or paraphrasing, is integrity in practice. Build the habit of owning it now and it carries through your degree and into professional work, where being trusted with the truth is the whole point.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:35:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [],
+              "horizontal": [
+                "Academic Writing",
+                "Criticality",
+                "Researching & Research Methods"
+              ]
+            },
+            "whereNextOmitted": "Advanced is the top tier of this pathway; the where-next slot is omitted at advanced (resolve-agent-author), so W-CLOSE carries summary, practice-connection and course references only.",
+            "summary": "<p>You have reached the end of the course. Academic integrity is no longer a rulebook but a set of values you can name and defend: honesty, trust, fairness, respect, responsibility and courage. You can articulate what integrity means and how it shows up in practice. You can justify why referencing matters as scholarly work, crediting a conversation and signalling the scope and critical edge of your reading, not merely avoiding plagiarism. And you can judge when to quote and when to paraphrase, and tell sound source use from a breach. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, integrity is something you practise in every piece of work. Each source you reference with purpose, each judgement about quoting or paraphrasing, each difficult case you handle by the values, is integrity owned rather than obeyed. It is also what professional life depends on: being someone whose account of where knowledge came from can be trusted.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 184 to 199 of Chapter 10, 'Academic Integrity and Referencing', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-ch10",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:35:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which statement best describes academic integrity?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Why is it fair to call referencing an expression of academic integrity, rather than a separate rule?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Beyond avoiding plagiarism, what does a reference list tell a reader about your work?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "What is the fullest reason this course gives for referencing?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "When is paraphrasing the better choice than quoting?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "A paraphrase swaps a few words but keeps the source's sentence shape and phrasing, with a citation attached. How should this be judged?"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:35:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can articulate what academic integrity means and the values that underpin it."
+              },
+              {
+                "rates": "co2",
+                "text": "I can justify why referencing matters as scholarly practice, beyond avoiding plagiarism."
+              },
+              {
+                "rates": "co3",
+                "text": "I can judge when to quote and when to paraphrase, and use sources with integrity."
+              },
+              {
+                "rates": "co4",
+                "text": "I can bring together the values of academic integrity, the reasons referencing matters, and the judgement in using sources into one continuing practice across my studies."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T16:35:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "referencing-advanced wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "Academic integrity and its values",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Why referencing matters",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowTimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Using sources with integrity",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/annotate",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Integrity as a scholarly practice",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "referencing-advanced-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}

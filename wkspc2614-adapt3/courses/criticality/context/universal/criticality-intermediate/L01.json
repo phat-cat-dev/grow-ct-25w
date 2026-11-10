@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, analysis is the first thing you do with a source. You do not take its conclusion whole; you separate its parts. What exactly is being claimed? What evidence is offered, and how was it gathered? What reasoning connects that evidence to the claim, and what has been assumed along the way? Reading a source analytically means seeing this structure, not just its headline point.",
+    "worked-example": "Consider two students using the same source in an essay.\n\n{{learner-a}} reads the source and takes its conclusion as the point: the author argues that something is so, and {{learner-a}} notes it down and quotes it. The source has been read and used, but as one undivided statement. {{learner-a}} has not asked what the central claim really is, what evidence sits behind it, or how the author reasons from that evidence to the claim. This is reading without analysis.\n\n{{learner-b}} reads the same source and takes it apart. The central claim is this; the evidence is that study, with its particular method and sample; the reasoning runs from the result to the claim in steps, and one step, that the evidence supports so broad a conclusion, is assumed rather than shown. {{learner-b}} now sees the source as a structure of parts, not a single verdict. This is analysis.\n\nBoth students read the same source. Only {{learner-b}} separated its claim, evidence and reasoning, which is what makes a reading analytical.",
+    "summary": "Analysis means breaking a source into its parts, its claim, its evidence and the reasoning that links them, through close examination rather than summary. You can now explain what analysis is and recognise it in the way one student reads a source. The next lesson builds on it: once a source is taken apart, evaluation weighs how good its parts are against the alternatives."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s reading of the source analytical rather than passive?",
+      "items": [
+        {
+          "text": "{{learner-b}} separated the source into its claim, its evidence and the reasoning linking them.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} quoted the source's conclusion as evidence for the point.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} read the source more carefully than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} accepted the author's conclusion because it was published.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Taking the source apart into claim, evidence and reasoning is analysis.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} did with the source, beyond reading or quoting it.",
+        "incorrectFinal": "{{learner-b}} was analytical by separating the source's claim, its evidence and its reasoning. Quoting, re-reading or accepting the conclusion are not analysis."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, this means treating your own study as something you can watch and adjust, not just repeat. The self-regulating learner notices how a strategy is going and amends it when the results fall short, which is the monitoring loop at the centre of self-directed learning. Treating a stalled method as information, rather than a reason to work longer, is where creativity enters your own learning.",
+    "worked-example": "Consider two students who realise, partway through a demanding module, that their usual way of preparing is not working.\n\n{{learner-a}} notices the method is yielding little but keeps going, reasoning that more hours will fix it. The strategy is never questioned, only intensified. By the assessment, {{learner-a}} is exhausted and no further forward, having monitored the symptom without amending the cause. This is self-regulation that stops at noticing.\n\n{{learner-b}} treats the stall as information. The monitoring says the current method is not working, so {{learner-b}} asks what, specifically, it is failing to do, then devises a different approach aimed at that gap. The new strategy is given a fair trial and reviewed in turn. This is self-regulation that becomes creative at the point of amendment.\n\nBoth students saw the same warning sign. Only {{learner-b}} answered it by changing the strategy rather than merely repeating it.",
+    "summary": "Self-regulated learning becomes creative at the moment of amendment: when honest monitoring shows a method has stalled and you devise a better route rather than simply trying harder. You can now place strategy-switching in the learning cycle, appraise when a method is failing, and devise an alternative in your own study. The final lesson turns to creativity in scholarship itself."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "A study method you rely on has clearly stopped working. Which response best shows creative self-regulation?",
+      "items": [
+        {
+          "text": "Work out what the method is failing to do, then devise a different approach aimed at that gap.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Put in more hours on the same method until it pays off.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Switch to a task where the method is not needed.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Keep the method because it has worked before.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. You diagnose what the method is failing to do and devise a better route.",
+        "incorrectNotFinal": "Not quite. Look for the option that changes the strategy in response to the stall.",
+        "incorrectFinal": "Creative self-regulation diagnoses the gap and devises a different approach. More hours, avoidance or loyalty to the old method do not."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

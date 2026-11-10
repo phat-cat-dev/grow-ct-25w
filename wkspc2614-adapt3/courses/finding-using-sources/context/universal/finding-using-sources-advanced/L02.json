@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, a general library search is a convenient start but a poor finish. The specialist literature of a field is indexed in depth in subject databases that a broad search does not reach, each with its own vocabulary and filters. Extending a search means going there, and then following the citations that connect the work: backwards, through a study's reference list to what it builds on, and forwards, to the later work that cites it, including replications and challenges. That trail turns a flat list into a map of the field's conversation.",
+    "worked-example": "Consider two students searching for literature on the same question.\n\n{{learner-a}} runs one general search, skims the first couple of pages, saves a handful of results, and declares the search finished. The list looks reasonable, so the gaps stay invisible. {{learner-a}} has not noticed that the most influential work in the area never appeared, because it sits in a specialist database the general search indexes poorly.\n\n{{learner-b}} starts with the same general search, but treats it as the first stage only. {{learner-b}} moves into a subject database for depth, then takes the strongest paper found and searches its reference list backwards to the work it builds on, and a citation index forwards to the later studies that cite it. That citation trail surfaces two central works the first search missed, and shows which findings have since been questioned.\n\nBoth began with the same tool. Only {{learner-b}} extended the search far enough to be fair to the literature.",
+    "summary": "A general search is a starting point, not the whole library: it favours breadth, under-indexes specialist databases, and ranks results by rules you do not set. You can now explain why it leaves gaps, use a subject database to reach specialist coverage, and follow citations backwards and forwards to map a field's conversation, including replications and challenges. The next lesson sharpens the search itself."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did {{learner-b}} do to extend the search beyond the general search?",
+      "items": [
+        {
+          "text": "Searched a subject database for depth and followed a key study's citations backwards and forwards.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Ran the same general search again, more slowly.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Saved more results from the first couple of pages.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Chose the most readable study from the original list.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. A subject database and two-way citation searching reached what the first search missed.",
+        "incorrectNotFinal": "Not quite. Look for the moves that reached work the general search did not surface.",
+        "incorrectFinal": "{{learner-b}} extended the search by using a subject database and following a key study's citations backwards and forwards, not by repeating or re-reading the first search."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

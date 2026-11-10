@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, presentations come in several forms, and each is assessed for something different. A short individual talk rewards a clear line of argument and good timing; a poster rewards a sharp visual summary that invites questions; a group presentation rewards coordination across the team. Reading the brief and the marking criteria tells you which skills a given format is really testing, so you can prepare for that rather than for a presentation in general.",
+    "worked-example": "Consider two students set the same task: a ten-minute presentation, assessed against a marking brief.\n\n{{learner-a}} prepares the way they always do: a full set of slides, every point written out, and a plan to read through them. The content is sound, but {{learner-a}} has not checked what the brief rewards or how long the slot really is. On the day the talk overruns, the slides are dense, and the marker sees preparation but little judgement. This is a default approach applied to every format.\n\n{{learner-b}} starts with the brief and the criteria. The format is a short individual talk that rewards a clear argument and timing, so {{learner-b}} cuts to three points, builds slides that prompt rather than script, and rehearses to time. The content is no deeper, but it fits the format, and the delivery lands. This is adapting to the task.\n\nBoth students knew their material. Only {{learner-b}} read the format and the brief, and prepared for the presentation actually being asked for.",
+    "summary": "Delivering a presentation well begins before you speak, with reading the format and the brief. A talk, a poster and a group presentation reward different things, so the first move is to ask what this one is testing and prepare for that. You can now match a format to what its brief rewards and adapt your preparation to fit. The next lesson builds the structure and visual aids that carry a delivery."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did {{learner-b}} do that {{learner-a}} did not?",
+      "items": [
+        {
+          "text": "Read the brief and format, then adapted their preparation to fit them.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Prepared more slides and wrote out every point.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Chose a longer time slot for the talk.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Used the same approach they always use.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. {{learner-b}} read the brief and format and adapted their preparation to fit.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} did differently with the brief and the format.",
+        "incorrectFinal": "{{learner-b}} read the brief and format and adapted their preparation. More slides, a longer slot or a default approach are not what made the difference."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

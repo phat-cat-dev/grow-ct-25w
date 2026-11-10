@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, this shows up in how any piece of academic writing comes together. Across every subject, strong writing is planned, drafted and then revised, rather than produced perfectly in a single sitting. The first version gets your reading and your thinking onto the page; later passes sharpen it. Treating a piece as something that must come out right first time makes the work far harder than it needs to be.",
+    "worked-example": "Consider two students given the same piece to write.\n\n{{learner-a}} opens a blank document and tries to write the finished piece from the first sentence onwards, polishing each line before moving on. Hours pass, little is written, and what is there cannot be changed without starting again. {{learner-a}} is treating writing as a single performance that must be perfect first time. This is the harder way.\n\n{{learner-b}} starts by noting what the task is really asking, then jots a rough plan of the main points. From that plan, {{learner-b}} writes a quick first draft, not worrying yet about how it sounds. With a whole draft to work with, {{learner-b}} goes back and improves it: reordering points, sharpening sentences, fixing errors. This is the easier way, and the better piece.\n\nBoth students spent the same time. Only {{learner-b}} used it as a process, turning a blank page into a draft and a draft into a finished piece.",
+    "summary": "Academic writing is a process, not a single act of getting it right first time: you understand the task, plan, draft, and then revise. You can now describe those stages and recognise the process in how someone approaches a piece of writing. The next lesson turns the process into practice: understanding the task, planning, and getting a first draft down."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "You have a piece to write and limited time. Which approach is most likely to produce a strong piece of work?",
+      "items": [
+        {
+          "text": "Plan the main points, get a rough draft down, then improve it in later passes.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Write the opening line perfectly before moving on, so nothing needs changing later.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Write the whole piece in one sitting and submit it without rereading.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Wait until you can write faultless sentences before you begin.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Working in stages, planning, drafting, then revising, produces a stronger piece than trying to be perfect first time.",
+        "incorrectNotFinal": "Not quite. Look for the approach that works in stages, rather than demanding a perfect first attempt.",
+        "incorrectFinal": "The strong approach works in stages: plan, draft, then revise. Perfecting each line first, one unread sitting, or waiting for faultless sentences are not it."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

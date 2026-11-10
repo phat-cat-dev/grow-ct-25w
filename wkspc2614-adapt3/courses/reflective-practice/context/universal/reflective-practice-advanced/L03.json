@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, reflective writing is often set and marked: logs, portfolios, commentaries and reviews all call for it. Because it focuses on your own experience, it tempts the writer into mere narration. Critical reflective writing does more: it evaluates your own actions, weighs them against recognised standards, points to evidence from the episode, and ends in a justified plan for development. The gap between a pass and a strong piece is almost always the move from telling the story to judging it.",
+    "worked-example": "Consider two students writing a reflective entry about the same event: advice they gave that the other person did not act on.\n\n{{learner-a}} writes: I explained the recommended approach clearly and suggested it be tried. It was not taken up. I was disappointed, but I respected the choice and moved on. This is faithful narration. It reports the sequence and a feeling, but never asks whether the advice, or the way it was given, could have been better, and reaches no conclusion about {{learner-a}}'s own practice.\n\n{{learner-b}} writes: I recommended the approach, but on reflection I presented it as the obvious answer rather than exploring the other person's own priorities first, which may have felt directive. Good practice suggests starting from those priorities. Next time I will explore them before offering a recommendation. This evaluates {{learner-b}}'s own actions against a recognised standard and justifies a specific change.\n\nBoth described the event. Only {{learner-b}} produced critical reflective writing: evaluative, evidenced, and ending in a justified plan.",
+    "summary": "In any subject, critical reflective writing evaluates your own actions rather than narrating them: it weighs what you did against recognised standards, cites evidence from the episode, and justifies a plan for development. You can now write reflection that judges rather than tells, support your conclusions with evidence, and appraise a reflective piece against clear criteria. You now have the stance, the structure and the writing to sustain reflective practice beyond this course."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s conclusion justified rather than merely asserted?",
+      "items": [
+        {
+          "text": "{{learner-b}} weighed their own delivery against a recognised standard and pointed to evidence from the episode.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} stated the plan more confidently than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} described the other person's reaction in more detail.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} wrote the entry in the first person.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Weighing your actions against a recognised standard and citing evidence is what justifies the conclusion.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} offered in support of the conclusion.",
+        "incorrectFinal": "{{learner-b}}'s conclusion was justified because it weighed the delivery against a recognised standard and pointed to evidence, not because it was confident, detailed or first-person."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

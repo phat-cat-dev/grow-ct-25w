@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, this shows up in how a review handles its sources. Across any subject, a strong review does not take each study in turn and report what it found. It groups sources by theme, weighs which findings are better supported, and sets rival claims against each other. It then names the gap its own work will address. A review that reads as one source after another, however accurate, is a reading list rather than research.",
+    "worked-example": "Consider two students writing the opening of a literature review on the same topic, using the same handful of sources.\n\n{{learner-a}} writes a sentence per source: one author found this, another reported that, a third worked under different conditions. Each source is summarised accurately and in turn. But the paragraph only lists them. Nothing is weighed, nothing is connected, and a reader cannot tell what {{learner-a}} makes of the evidence or where new work would sit. This is description.\n\n{{learner-b}} groups the same sources by the conditions under which each finding holds, notes where the better-controlled studies agree, and weighs the methods each one used. {{learner-b}} then draws them together into a claim none of them made alone, and names the untested question that remains as the gap. This is a review: it analyses, evaluates and synthesises, and the gap it names is where new research begins.\n\nBoth students read the same sources. Only {{learner-b}} critiqued the discourse rather than reporting it.",
+    "summary": "A literature review critiques the discourse rather than describing it: it establishes the key works, weighs the evidence, and synthesises a gap that new research will address. You can now tell a review from a list of sources, recognise analysis, evaluation and synthesis in a worked example, and spot a sentence that reviews rather than reports. The next lesson turns to the proposal that such a review supports."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s paragraph a review rather than a description?",
+      "items": [
+        {
+          "text": "{{learner-b}} grouped and weighed the sources and synthesised them into a gap none of them named.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} summarised each source more accurately than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} discussed more sources than {{learner-a}}'s paragraph did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} quoted the authors' own words rather than paraphrasing them.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Grouping, weighing and synthesising the sources into a gap is reviewing, not describing.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} DID with the sources, beyond summarising them.",
+        "incorrectFinal": "{{learner-b}}'s paragraph was a review because they grouped and weighed the sources and synthesised a gap. Closer summary, more sources or direct quotation are still description."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

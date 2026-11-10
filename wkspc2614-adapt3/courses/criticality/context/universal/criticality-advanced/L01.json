@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, synthesis is what separates an argument from a reading list. A question worth asking is rarely settled by one source; several sources, from different angles, take different positions. Synthesising them means setting those positions in relation and arguing what their balance supports, rather than reporting each one in turn.",
+    "worked-example": "Consider two students writing about a question on which their sources partly disagree, drawing on three that point in different directions.\n\n{{learner-a}} takes each source in turn: the first argues one way, the second qualifies it, the third reaches a different conclusion. Each paragraph is accurate, and all three sources are present. But {{learner-a}} has set them side by side, leaving the reader to work out what they amount to. No position of {{learner-a}}'s own emerges. This is summary, not synthesis.\n\n{{learner-b}} sets the three against each other. Where do they agree, where do they conflict, and what does each one rest on? {{learner-b}} notes that the boldest claim came from the thinnest evidence, and builds a line of argument none of the sources stated alone. This is synthesis.\n\nBoth students read the same three sources. Only {{learner-b}} turned them into an argument rather than a list.",
+    "summary": "In any subject, synthesis draws several sources into an argument of your own, rather than summarising each in turn. You can now explain what synthesis adds, recognise it in a worked example, and construct a line of argument that sets sources in relation. The next lesson turns that argument into a reasoned judgement you can justify."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s paragraph a synthesis rather than a summary?",
+      "items": [
+        {
+          "text": "{{learner-b}} set the three sources against each other and built a position of their own.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} described each source accurately, one after another.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} reported only the source with the boldest claim.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} chose the source that best fit an opening claim.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Setting the sources in relation and building a position of your own is synthesis.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} did across the sources, beyond reporting them.",
+        "incorrectFinal": "{{learner-b}}'s paragraph was a synthesis because the sources were set against each other and a position of {{learner-b}}'s own was built. Describing each, reporting one, or picking a fitting source are not synthesis."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

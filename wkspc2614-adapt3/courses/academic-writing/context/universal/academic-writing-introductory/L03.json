@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, a first draft is raw material, and revision is what turns it into strong work. Editing does the heavy lifting: reordering points so an argument builds in sequence, and rewriting tangled sentences so it is clear who did what, often by using subject-verb-object order. Proofreading comes last, catching the typos once the writing itself is settled. Doing only the proofreading is why many drafts still read poorly.",
+    "worked-example": "Two students have each finished a first draft and have an hour left before the deadline.\n\n{{learner-a}} reads the draft through once, fixes a few spelling mistakes, and submits it. The typos are gone, but the points are still in a confusing order and several sentences are hard to follow on first reading. {{learner-a}} has proofread, but not edited, polishing the surface while leaving the real problems in place.\n\n{{learner-b}} edits first: moving one paragraph so the argument builds in order, splitting a long tangled sentence into two clear subject-verb-object sentences, and cutting a repeated point. Only then does {{learner-b}} proofread for typos. The draft now reads clearly and leads the reader through. This is getting the basics right.\n\nBoth students spent their hour. Only {{learner-b}} edited for structure and clarity before proofreading, which is what actually improved the writing.",
+    "summary": "Revising a draft has two jobs: editing, which improves structure and clarity by reordering, cutting, adding and rewriting, and proofreading, which polishes the surface at the end. Two basics do most of the work: a clear structure a reader can follow, and clear subject-verb-object sentences. You can now improve a draft, tell editing apart from proofreading, and match a revision move to the problem it fixes. With the process, a way to start, and the basics of revision in place, you are ready to write."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "You have finished a first draft and have an hour before the deadline. What will improve it most?",
+      "items": [
+        {
+          "text": "Edit first for structure and clarity, reordering and rewriting, then proofread for typos at the end.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Spend the whole hour checking your spelling.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Fix only the surface errors and leave the structure as it is.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Submit the draft without reading it again.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Editing for structure and clarity first, then proofreading, is what actually improves the writing.",
+        "incorrectNotFinal": "Not quite. Look for the option that sorts the bigger problems before the typos.",
+        "incorrectFinal": "The effective move is to edit for structure and clarity, then proofread. Extra spell-checking, surface-only fixes, or not revising at all are not it."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

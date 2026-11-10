@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, a judgement is a verdict on which evidence or explanation deserves more trust. Faced with two sources, or two explanations, academic work does not leave the weighing open: it asks which account the evidence supports, and why. Stating that verdict in a two-part form, with the reasons behind it, is the everyday work of critical writing.",
+    "worked-example": "Consider two students asked which of two sources better supports the same claim.\n\n{{learner-a}} writes that the first source reports a strong result and the second a weaker one, and that both were carefully produced. This is accurate, and it is a description: it reports what each source found but stops short of saying which carries more weight. The reader is left to judge.\n\n{{learner-b}} writes that the first source's claim is the more secure, because its evidence was broader and its method closed a gap the second source left open. This is a judgement: it states relative value and gives the reasons it rests on.\n\nBoth students understood the sources. Only {{learner-b}} reached a judgement, rather than leaving the weighing to the reader.",
+    "summary": "In any subject, a judgement is a reasoned verdict of relative value, stated in a two-part form with the reasons it rests on. You can now tell a judgement from a description, recognise a well-formed one, and reach a judgement by weighing the sources and making your grounds explicit. The last lesson gives you the language to articulate it precisely."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s verdict a well-formed judgement?",
+      "items": [
+        {
+          "text": "It claimed relative value and gave the reasons it rested on.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "It stated a firm opinion without qualification.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It summarised both sources even-handedly.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "It preferred the source {{learner-b}} had read first.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. A claim of relative value with its reasons is a well-formed judgement.",
+        "incorrectNotFinal": "Not quite. Look for the two-part form: a claim of value, and the reasons behind it.",
+        "incorrectFinal": "{{learner-b}}'s verdict was well formed because it claimed relative value and gave its reasons. An unqualified opinion, an even-handed summary, or a prior preference are not judgements."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

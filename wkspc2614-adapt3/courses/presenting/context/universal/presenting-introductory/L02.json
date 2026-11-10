@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, a good presentation is planned before any slide is made. You read the brief and the marking criteria, gather your material, and decide the one message you want the audience to leave with. Then you set a shape: an introduction that frames the question, a main body that works through the material in order, and a conclusion that states what it shows. This structure helps an audience follow an argument from start to finish.",
+    "worked-example": "Consider two students preparing the same ten-minute presentation on a topic.\n\n{{learner-a}} opens the slide software straight away and starts making slides. Points go in as they come to mind, with no clear order and no single message. The result is a set of slides that jump about, and a talk the audience cannot follow. {{learner-a}} skipped the planning, so the presentation has no shape.\n\n{{learner-b}} plans first. {{learner-b}} reads the brief, gathers the material, then decides on one main message and the order of the points. Only then do the slides get made. The talk opens with an introduction, develops the material in a main body, and ends with a conclusion, and one run-through checks the timing. The audience can follow it easily.\n\nBoth students had the same time to prepare. Only {{learner-b}} planned and structured the presentation before building the slides.",
+    "summary": "A presentation is put together in steps: understand the brief, research, plan, design the visual aids, and practise. Planning is where you set the structure, and most presentations share a three-part shape of introduction, main body and conclusion. You can now describe the steps in preparing a presentation, identify its three parts, and choose a sound planning move. The next lesson turns to the visual aids themselves, and the errors to avoid."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, how did {{learner-b}} give the talk a shape that {{learner-a}}'s lacked?",
+      "items": [
+        {
+          "text": "By opening with an introduction, developing the material in a main body, and ending with a conclusion.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "By using more slides than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "By speaking faster to fit everything in.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "By adding points in the order they came to mind.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. An introduction, a main body and a conclusion gave {{learner-b}}'s talk a shape {{learner-a}}'s lacked.",
+        "incorrectNotFinal": "Not quite. Think about the three-part shape {{learner-b}} planned before making slides.",
+        "incorrectFinal": "{{learner-b}} gave the talk an introduction, a main body and a conclusion. More slides, speaking faster or adding points at random do not give a talk its shape."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, feedback arrives in more forms than a single grade: a mark, comments in the margin, a completed rubric, a few spoken words after a seminar, even a comparison with a model answer. Whatever form it takes, the useful step is the same: work out what it is asking you to do differently next time, and treat that as the point of it rather than the verdict.",
+    "worked-example": "Two students get the same comment on a draft: You describe the debate well, but you do not take a position.\n\n{{learner-a}} reads the comment at face value, as a small complaint rather than an instruction, and misses the action it is asking for. Nothing changes in how {{learner-a}} works, so in the next assessment the same problem appears and the same comment comes back: the mistake has simply been repeated.\n\n{{learner-b}} works out the action behind the comment: it is asking for a judgement, not more description. {{learner-b}} takes strategic steps to address it, planning the next piece around a clear position and weighing the evidence toward it. The next assessment takes a position, and the comment does not return.\n\nBoth read the same words. Only {{learner-b}} read the action behind them and acted on it. That is what feedback is for: it tells you what to do differently, and acting on it strategically is how your work improves.",
+    "summary": "Feedback is the comments and insights that tell you how to improve, and it arrives in many forms, not just a mark. You can now recognise those forms, and, the skill that makes feedback worth having, work out the action a comment is really asking you to take. Reading the action behind the words, and acting on it, is what turns feedback into better work next time."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "A tutor writes on your work: 'This is mostly description; I would like to see more of your own analysis.' What is this comment asking you to do?",
+      "items": [
+        {
+          "text": "Break the material down and show what it means and how convincing it is, rather than just reporting it.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Write more words overall.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Add more description to be thorough.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Change the topic to something easier.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. A comment asking for more analysis is telling you to break the material down and show what it means and how convincing it is, rather than simply reporting it. It is not asking for more words or more description.",
+        "incorrectNotFinal": "Not quite. Think about what kind of thinking the comment is asking for, not how much you write.",
+        "incorrectFinal": "The comment asks you to analyse: to examine and interpret the material and show what it means, rather than just describe it. It is not about length, more description, or an easier topic."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

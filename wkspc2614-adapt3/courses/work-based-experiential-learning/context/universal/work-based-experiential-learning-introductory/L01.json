@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, learning by doing turns up across academic study: in placements, practical sessions, fieldwork and work-like projects set inside a course. Whatever the subject, you spend time carrying out real tasks under guidance, rather than only reading about how they are done. Learning the craft of a field by practising it, and not just studying it from the outside, is how this kind of learning works.",
+    "worked-example": "Consider two students, both told their course includes a placement in a real workplace.\n\n{{learner-a}} treats the placement as time away from real study. {{learner-a}} turns up, follows instructions, and waits to be told what to do, expecting the real learning to happen later, back in class. The weeks pass and the tasks get done, but {{learner-a}} never sees the placement itself as learning.\n\n{{learner-b}} treats the placement as the learning. {{learner-b}} takes on real tasks, watches how experienced people work, and notices what the setting teaches that a book cannot. The work is not a break from study; it is a different way of studying, through doing.\n\nBoth students did the same placement. Only {{learner-b}} recognised it as practice- and work-based learning: learning that comes from taking part in real work.",
+    "summary": "Practice- and work-based learning is learning by doing: taking part in real tasks in a placement, practical session or work-like project, rather than only studying them from the outside. You can now explain what it is and recognise it in a student's experience. The next lesson looks at the many forms it takes across different subjects."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what made {{learner-b}}'s placement practice- and work-based learning?",
+      "items": [
+        {
+          "text": "{{learner-b}} took part in real tasks and treated the experience itself as learning.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} waited until returning to class to do the real learning.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} spent longer on the placement than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} read more about the workplace before starting.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Taking part in real tasks and learning from the experience is what makes it practice- and work-based learning.",
+        "incorrectNotFinal": "Not quite. Look for what {{learner-b}} did, beyond turning up or reading.",
+        "incorrectFinal": "{{learner-b}}'s placement was practice- and work-based learning because {{learner-b}} took part in real tasks and learned from the experience itself."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

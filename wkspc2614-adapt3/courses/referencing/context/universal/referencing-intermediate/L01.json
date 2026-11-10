@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In any subject, almost everything you write builds on sources, so citing is a constant habit rather than an occasional one. Sometimes you quote a source word for word, where the exact phrasing matters; more often you paraphrase, putting the idea in your own words to show you have understood it. Either way, an in-text citation sits beside the borrowed idea and points the reader to the full reference.",
+    "worked-example": "Consider two students who want to use the same sentence from a source: 'A piece of work that is planned carefully is easier to follow than one written in a rush' (Author, 2021, p.44).\n\n{{learner-a}} writes: Author (2021) says that a piece of work planned carefully is easier to follow than one written in a rush. The wording is almost identical to the original, but there are no quotation marks. It reads as {{learner-a}}'s own phrasing of a borrowed sentence, so it is neither a clean paraphrase nor a quotation. The citation is there, but the move is muddled.\n\n{{learner-b}} writes: planning a piece of work carefully, rather than rushing it, makes the finished work easier to follow (Author, 2021). The idea is kept, the words are {{learner-b}}'s own, and the source is cited. Where the exact phrasing mattered, {{learner-b}} could instead quote it directly: 'a piece of work that is planned carefully is easier to follow than one written in a rush' (Author, 2021, p.44).\n\nBoth students used the source. Only {{learner-b}} made a clean choice between paraphrase and quotation, and cited it correctly.",
+    "summary": "Bringing a source into your writing means choosing between quotation and paraphrase, and citing it either way. Quote the exact words, in quotation marks and with a page number, when the precise wording matters. Paraphrase, in your own words, to show you have understood the idea, which is the move markers reward most. Place the citation next to the idea it supports. You can now make that choice with purpose, and the next lesson builds the full reference each citation points to."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, why did {{learner-b}} give a page number in one citation but not the other?",
+      "items": [
+        {
+          "text": "A page number goes with the direct quotation, while the paraphrase needs only the author and year.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Page numbers are optional and {{learner-b}} added one at random.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "The paraphrase needed a page number, but the quotation did not.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Neither citation really needed a page number.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. A direct quotation carries a page number; a paraphrase cites author and year.",
+        "incorrectNotFinal": "Not quite. Look at which version quoted the exact words, and which restated the idea.",
+        "incorrectFinal": "The direct quotation carries a page number so the reader can find the exact words; the paraphrase needs only author and year."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

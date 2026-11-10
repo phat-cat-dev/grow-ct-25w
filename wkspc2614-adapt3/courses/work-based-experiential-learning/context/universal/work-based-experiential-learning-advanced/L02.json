@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "Across disciplines, reflecting through the cycle is how a placement, a project or a practical becomes learning you can use. You take one episode, a task you completed, a session you ran, or a problem you worked on, and move it through the four modes rather than filing it as done. Many fields expect this kind of structured reflection, and Kolb's cycle gives you a way to produce it rather than leaving reflection to chance.",
+    "worked-example": "Consider two students who each have a task go badly, and each writes a reflection on it.\n\n{{learner-a}} writes that the task went poorly, that the feeling was one of frustration, and that it will go better next time. Every sentence is about how it felt, and the one lesson is vague. The reflection stops between experiencing and reflecting: there is no thinking that explains why it went badly, and 'do better' names no action. Nothing has been transformed.\n\n{{learner-b}} sets out what happened: a step was rushed and the result suffered. {{learner-b}} reflects on why, works it through against advice read earlier, and then acts, naming one specific thing to do differently next time. The reflection moves through all four modes, so the setback becomes a usable lesson.\n\nBoth students had the same difficult task. Only {{learner-b}} took it round the cycle, which is what turned it into learning.",
+    "summary": "Reflecting through the cycle means taking one real episode, a task, a session or a project, and moving it through all four modes: what happened, why, what it means against what you know, and what you will do differently. The order helps but is not a rule; what matters is that every mode is reached. You can now structure a reflection and see what each stage contributes. The last lesson turns it into an account that meets how this learning is assessed."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what did {{learner-b}} do that {{learner-a}} did not?",
+      "items": [
+        {
+          "text": "Thought the task through against what was known and named a specific action.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Described the task in more detail.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Admitted to feeling frustrated.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Wrote the reflection in the correct fixed order.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. {{learner-b}} reached the thinking and acting modes, which {{learner-a}} never did.",
+        "incorrectNotFinal": "Not quite. Look for the modes {{learner-a}}'s reflection never reached.",
+        "incorrectFinal": "{{learner-b}} thought the task through and named an action, reaching the thinking and acting modes. More detail, feelings, or a fixed order were not the difference."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

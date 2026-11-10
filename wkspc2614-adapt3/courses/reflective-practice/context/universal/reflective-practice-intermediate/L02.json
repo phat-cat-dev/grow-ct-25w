@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "Reflection is not the same as description. Describing an experience means setting out what happened: the steps, the order, how it felt. Reflecting means asking why it happened and what it means for next time. In any subject, a page that only describes can read as busy without being useful; the reflection that changes your next piece of work is the part that digs beneath the account of events.",
+    "worked-example": "Consider two students reflecting on the same feedback, which said their argument did not convince.\n\n{{learner-a}} retells the sequence: they chose the topic, found some sources, wrote the essay over a weekend, and the marker said the argument was weak. It is an accurate account, but it stays on the surface. Nothing is asked about why the argument did not convince, so nothing changes. {{learner-a}} has described, not reflected.\n\n{{learner-b}} records the same events briefly, then turns to why: the sources were mostly summaries rather than evidence for a claim, and the weekend left no time to test the argument against a counter-view. That why points somewhere. {{learner-b}} decides to open the next essay by stating a claim and listing the evidence that would support or challenge it. {{learner-b}} has moved from describing to reflecting, and the reflection has produced a change.\n\nBoth accounts are honest. Only the second asks why, and only the second is any use next time.",
+    "summary": "Describing sets out what happened; reflecting asks why it happened and what to do about it. You can now tell the two apart in a piece of writing, and push your own reflection past the account of events to the reasons behind them. The next lesson turns that why into the thing that completes a reflection: a concrete action for next time."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, what moved {{learner-b}} from describing to reflecting?",
+      "items": [
+        {
+          "text": "{{learner-b}} asked why the argument did not convince, then changed the next approach.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "{{learner-b}} gave a fuller account of what happened than {{learner-a}} did.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} described the feedback more accurately.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "{{learner-b}} wrote about their feelings as well as the events.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "Yes. Reflection asks why, and turns the answer into a change for next time.",
+        "incorrectNotFinal": "Not quite. Description sets out what happened; look for where {{learner-b}} asks why and acts on it.",
+        "incorrectFinal": "{{learner-b}} reflected by asking why the argument did not convince and changing the next approach. A fuller or more accurate account is still description."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

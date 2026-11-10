@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "In practice, you meet reflective models in many subjects, often on projects, placements and group tasks where you are asked to reflect on how the work went. A simple three-stage model gives that reflection a shape: describe what happened, reflect on why it went that way, and decide what to change. It keeps a reflective log, in any field, from becoming a mere diary of events.",
+    "worked-example": "Two students use the three-stage model to reflect on the same group task that did not go well.\n\n{{learner-a}} writes: 'Our presentation was rushed and we ran over time. It was stressful. I hope the next one goes better.' This describes the experience and names a feeling, but it stops there. It offers no real reflection on why it was rushed, and the 'hope' is not an action. Two of the three stages are missing.\n\n{{learner-b}} works through all three. Describe: 'We ran over and had to cut our closing point.' Reflect: 'We ran over because we never timed a practice run, and we had split the sections without agreeing who presented what, so we overlapped. Our opening was actually clear and strong.' Take action: 'Next time we will do one timed practice run and agree who speaks to each section.' This is the full model: a fair description, an honest look at good and bad, and a specific action.\n\nBoth reflected on the same task. Only {{learner-b}} moved through all three stages, so only {{learner-b}} came away with something to do differently.",
+    "summary": "A simple reflective model has three stages: describe what happened, reflect on why and what you make of it, and take action by deciding what to do differently. You can now describe the three stages, give an example of each, and recognise which stage a reflective statement belongs to. Keeping all three together, in any subject, is what turns looking back into moving forward. The next lesson looks at what keeps a reflection honest and balanced."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "In the worked example, which part of {{learner-b}}'s reflection is the 'take action' stage?",
+      "items": [
+        {
+          "text": "Deciding to do a timed practice run and agree who speaks to each section.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "Stating that the group ran over and cut its closing point.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Explaining that they overlapped because roles were not agreed.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "Noting that the opening was clear and strong.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Deciding what to do differently is the take action stage.",
+        "incorrectNotFinal": "Not quite. Which part says what {{learner-b}} will do differently next time?",
+        "incorrectFinal": "The take action stage is deciding on a timed practice run and agreed roles. Stating what happened is describe, and working out why is reflect."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "generatedProse": {
+    "concept-context": "Across disciplines, rigour is judged over the whole arc of a project, not at a single stage. A careful reader looks for a clear line from the research questions, through a method that was approved, to the analysis the final write-up reports. A dissertation or major project is where this coherence is tested most searchingly, because it draws design, ethics, data handling and reporting together on a larger scale than any earlier assignment.",
+    "worked-example": "Consider two students reaching the final weeks of the same dissertation.\n\n{{learner-a}} treated each stage as a separate box to tick. The proposal promised one method, the data was gathered through another, and the ethics approval no longer matches what happened. The write-up is polished, but the gaps between what was proposed, approved and done are visible to any careful reader.\n\n{{learner-b}} kept the thread intact. The questions set in the proposal, the method the committee approved, and the analysis reported in the dissertation all line up, and every departure is explained with reasons. The work can be defended at each step, because its integrity was sustained throughout rather than assembled at the end.\n\nBoth students submitted a dissertation. Only {{learner-b}} could show that rigour held from proposal to submission, which is what a final project, as the ultimate test of these competencies, is built to reveal.",
+    "summary": "Rigour is not a stage but a thread that runs from proposal to final submission. You can now articulate how integrity, transparency and accountability are sustained, evaluate whether a project holds together across its stages, and defend the decisions that keep research rigorous. A dissertation or major project is where that sustained integrity is finally tested."
+  },
+  "generatedItems": {
+    "check": {
+      "body": "What is the clearest sign that a project has upheld rigour from proposal to final submission?",
+      "items": [
+        {
+          "text": "The questions, methods and findings line up across the stages, and any departure from the plan is explained with reasons.",
+          "_shouldBeSelected": true
+        },
+        {
+          "text": "The final write-up is longer than the proposal required.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "The proposal and the final write-up describe completely different studies.",
+          "_shouldBeSelected": false
+        },
+        {
+          "text": "No one was able to question the methods used.",
+          "_shouldBeSelected": false
+        }
+      ],
+      "feedback": {
+        "correct": "That's right. Rigour shows as coherence across the stages, with any departure explained.",
+        "incorrectNotFinal": "Not quite. What links the proposal, the method and the findings?",
+        "incorrectFinal": "Rigour shows when the questions, methods and findings line up and changes are explained; length, divergence or avoiding scrutiny do not show it."
+      }
+    }
+  },
+  "_prompts": {
+    "concept-context": "What does this look like in practice within the given context? Write a short follow-on from the generic definition above, in the learner's own subject or discipline. Keep it to two or three sentences, mid-register, following straight on from the generic definition.",
+    "worked-example": "Give a subject-specific worked example of this lesson's concept: a weaker or less-developed version first, then a stronger version reached by better practice, using the context cast (character tokens) consistently. Keep the weaker-then-stronger shape and the two-part contrast; carry the cast only through the {{learner-a}} (weaker) and {{learner-b}} (stronger) tokens, never a literal name (the pack supplies the whole body, but not the names). Each example paragraph must begin with its token, weaker first - merge-context.js's wrapProse() only emits the we-weaker/we-stronger cue classes for a paragraph that leads with the token. The merge renders it as a block quote, so write it as continuous prose, not as a quoted comment plus commentary.",
+    "summary": "Recap what the learner can now do, in terms of their own subject or context. One short paragraph. Do not restate the learning outcomes verbatim.",
+    "check": "Write the subject's own version of this lesson's check question(s), testing the same outcome in the learner's own discipline. Keep the same number of items and the same correctness pattern as the generic version; reword the stem and items for the subject. Keep the component-level feedback (correct / notFinal / final) teaching, never a bare verdict."
+  }
+}

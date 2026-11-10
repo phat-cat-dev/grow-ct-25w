@@ -1,0 +1,1882 @@
+{
+  "schemaVersion": "0.1.0",
+  "courseId": "starting-progressing-succeeding-advanced",
+  "slug": "starting-progressing-succeeding-advanced",
+  "status": "in-development",
+  "facetSet": {
+    "pathway": "starting-progressing-succeeding",
+    "tier": "advanced"
+  },
+  "kbVersions": {
+    "design-kb": "0.10.0",
+    "source-kb": "0.1.0"
+  },
+  "gates": [
+    {
+      "gateId": "onb-01_theme-preset",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "preset": "academic-practice-pathways"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = starting-progressing-succeeding",
+              "note": "one of the 13 academic-practice pathways offered by the preset"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced onb-01_theme-preset 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-02_course-theme",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "theme": "starting-progressing-succeeding",
+            "themeSource": "preset"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = starting-progressing-succeeding",
+              "note": "pathway selected from the academic-practice-pathways preset dropdown"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced onb-02_course-theme 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-03_pitch",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pitch": "advanced"
+          },
+          "grounding": [
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced tier (~ FHEQ L6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced onb-03_pitch 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "onb-04_naming",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "pathwayName": "Starting, Progressing & Succeeding",
+            "tierName": "Advanced",
+            "slug": "starting-progressing-succeeding-advanced"
+          },
+          "grounding": [
+            {
+              "doc": "catalogue/context/pathways.json",
+              "ref": "pathways[].id = starting-progressing-succeeding",
+              "note": "pathway display name; slug by the <pathway-slug>-<tierId> convention"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced onb-04_naming 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-01_institutional-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-02_subject-context",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-03_qualifiers",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-04_referencing-style",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "referencingStyle": "Harvard (Cite Them Right)"
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-05_external-standards",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "cxs-06_resources",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "advisory-stated",
+          "grounding": [],
+          "decidedValue": {
+            "value": "none",
+            "reserved": true
+          },
+          "timestamp": "2026-10-23T18:45:57.499Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-01_sources",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sources": [
+              {
+                "ref": "reference/excelling-at-university.md",
+                "kind": "book",
+                "role": "primary"
+              },
+              {
+                "ref": "source-kb/source-maps/book-excelling-at-university-2026.json",
+                "kind": "source-map",
+                "role": "pathway-tagged book chunks"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = starting-progressing-succeeding",
+              "note": "Layer-1 record: chapters 2 and 14; 14 primary tagged book chunks plus shared chunks"
+            },
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "pathwayTags = starting-progressing-succeeding",
+              "note": "book chunks tagged to this pathway"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced crs-01_sources 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T20:05:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-02_thematic-scope",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "sourceType": "book-derived",
+            "chapter": "14 (Conclusion: Becoming a Graduate) and 2 (deeper success sections); the excelling foundations and the motivation/goal-setting action sections held for the introductory and intermediate tiers",
+            "sectionsInScope": [
+              "ch14/opening",
+              "ch14/self-regulated-learning-and-literacies",
+              "ch14/graduate-capital-framework",
+              "ch14/forms-of-graduate-capital",
+              "ch2/self-efficacy",
+              "ch2/defining-success",
+              "ch2/success-personal-development",
+              "ch2/summary"
+            ],
+            "sectionsOutOfScope": [
+              "ch2/opening, ch2/what-is-excelling, ch2/excelling-as-a-mindset (the excelling mindset taught from first principles: INTRODUCTORY)",
+              "ch2/understanding-your-motivation, ch2/creating-goals (putting motivation and goal-setting into action: INTERMEDIATE)",
+              "ch2/success-academic-performance (success as day-to-day steps towards mastery: INTERMEDIATE)",
+              "ch2/learning-objectives-and-keywords (chapter framing, not teachable shape)",
+              "ch4 shared chunks and the creativity-tagged sentence in ch2/success-personal-development (owned by reflective-practice and creativity)"
+            ],
+            "tierWindow": {
+              "goal": "Synthesise how you succeed at university as a self-regulating learner, evaluate the graduate capital you are building, and define success on your own terms as you become a graduate.",
+              "cognitiveDemand": "Synthesis, evaluation and self-directed articulation: relate frameworks to your own development and justify judgements about it.",
+              "taskComplexity": "Integrative and open, holding several ideas together at once, with your own degree and development as the case rather than a tidy single example.",
+              "autonomy": "Low scaffolding; you direct the application to your own situation; feedback extends and challenges rather than simply confirms.",
+              "voiceBand": "Section 16 Advanced (bands 2-4)",
+              "outcomeVerbs": [
+                "synthesise",
+                "evaluate",
+                "appraise",
+                "articulate",
+                "justify",
+                "integrate",
+                "distinguish"
+              ]
+            },
+            "priorExperienceAnchor": "The learner is well into their degree, often approaching graduation. They have met the excelling mindset and have put motivation and goal-setting into action; the task now is to own and articulate their development, naming the success and the graduate capital they can already evidence.",
+            "subThemes": [
+              {
+                "id": "self-regulated-learning-engine",
+                "label": "Self-regulated learning and academic literacies as the engine that sustains success"
+              },
+              {
+                "id": "self-efficacy-psychological",
+                "label": "Self-efficacy and the psychological resources that keep effort going"
+              },
+              {
+                "id": "graduate-capital-framework",
+                "label": "Tomlinson's graduate capital framework: success as more than marks"
+              },
+              {
+                "id": "forms-of-graduate-capital",
+                "label": "The five forms of graduate capital: human, social, cultural, identity and psychological"
+              },
+              {
+                "id": "defining-success-own-terms",
+                "label": "Defining success on your own terms: academic performance and personal development"
+              },
+              {
+                "id": "articulating-development",
+                "label": "Articulating the development you can evidence as you become a graduate"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch14/* and ch2/* chunks tagged starting-progressing-succeeding",
+              "note": "deeper own-development sections for the succeeding tier"
+            },
+            {
+              "doc": "design-kb/design-kb.pathways.json",
+              "ref": "pathways[].id = starting-progressing-succeeding",
+              "note": "Layer-1 record: chapters 2 and 14; advanced focus 'Succeeding' and Advanced voice band"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "advanced calibration and Advanced voice band"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced crs-02_thematic-scope 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T20:06:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-03_course-outcomes",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "courseOutcomes": [
+              {
+                "id": "co1",
+                "text": "Appraise how self-regulated learning and self-efficacy sustain success at university."
+              },
+              {
+                "id": "co2",
+                "text": "Evaluate the graduate capital you are building across its five forms."
+              },
+              {
+                "id": "co3",
+                "text": "Define and articulate success on your own terms as you become a graduate."
+              },
+              {
+                "id": "co4",
+                "text": "Bring together self-regulated learning, your graduate capital and your own definition of success into one practice you own as you become a graduate."
+              }
+            ],
+            "courseOutcomeCountReason": "Three, matching the three advanced sub-theme clusters: the engine of succeeding (self-regulated learning and self-efficacy), the framework that reframes success (graduate capital and its five forms), and owning the definition (defining and articulating your own success and development). The advanced tier does not re-teach the excelling mindset or goal-setting; it synthesises them into how a near-graduate succeeds and articulates it.",
+            "courseOutcomeBanks": [
+              {
+                "outcomeId": "co1",
+                "confidenceStatement": {
+                  "text": "I can appraise how self-regulated learning and self-efficacy sustain my success at university.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co2",
+                "confidenceStatement": {
+                  "text": "I can evaluate the graduate capital I am building across its five forms.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co3",
+                "confidenceStatement": {
+                  "text": "I can define and articulate success on my own terms as I become a graduate.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              },
+              {
+                "outcomeId": "co4",
+                "confidenceStatement": {
+                  "text": "I can bring together self-regulated learning, my graduate capital and my own definition of success into one practice I own as I become a graduate.",
+                  "status": "drafted"
+                },
+                "mcqSets": [
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  },
+                  {
+                    "coupling": "shell-coupled",
+                    "crossLessonApplication": true,
+                    "feedbackOnEveryAnswer": true,
+                    "status": "drafted"
+                  }
+                ]
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch14/* and ch2/* chunks tagged starting-progressing-succeeding",
+              "note": "co1 from self-regulated learning and self-efficacy, co2 from the graduate capital framework, co3 from defining success and becoming a graduate"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-02_thematic-scope",
+              "note": "outcomes sit inside the confirmed scope and advanced tier window (COE-1)"
+            },
+            {
+              "doc": "docs/curriculum/tier-specification.md",
+              "ref": "The three tiers across the defining dimensions",
+              "note": "verbs at the advanced synthesise/evaluate/articulate end"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced crs-03_course-outcomes 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T20:07:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-04_lesson-map",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "lessons": [
+              {
+                "key": "L01",
+                "mainCourseOutcome": "co1",
+                "title": "The engine of succeeding",
+                "topic": "self-regulated learning and self-efficacy as the engine of success",
+                "description": "The engine of succeeding: self-regulated learning and self-efficacy as what sustains success.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/self-regulated-learning-and-literacies",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Self-regulated learning",
+                    "pages": "246-247"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/self-efficacy",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Self-efficacy",
+                    "pages": "19-21"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L01-o1",
+                    "text": "Explain how self-regulated learning and academic literacies underpin success at this stage.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o2",
+                    "text": "Appraise the part self-efficacy plays in sustaining your effort through difficulty.",
+                    "serves": "co1"
+                  },
+                  {
+                    "id": "L01-o3",
+                    "text": "Judge whether a student in a worked example is regulating their own learning.",
+                    "serves": "co1"
+                  }
+                ]
+              },
+              {
+                "key": "L02",
+                "mainCourseOutcome": "co2",
+                "title": "Graduate capital",
+                "topic": "Tomlinson's graduate capital framework and its five forms",
+                "description": "Graduate capital: Tomlinson's framework and the five forms of capital a degree builds.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/graduate-capital-framework",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "graduate capital",
+                    "pages": "247-248"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/forms-of-graduate-capital",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Tomlinson's graduate capital framework",
+                    "pages": "248-251"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L02-o1",
+                    "text": "Explain what graduate capital is and how it reframes success beyond marks.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o2",
+                    "text": "Distinguish the five forms of graduate capital from one another.",
+                    "serves": "co2"
+                  },
+                  {
+                    "id": "L02-o3",
+                    "text": "Evaluate which forms of graduate capital you are building in {{context}}.",
+                    "serves": "co2"
+                  }
+                ]
+              },
+              {
+                "key": "L03",
+                "mainCourseOutcome": "co3",
+                "title": "Defining success, becoming a graduate",
+                "topic": "defining success on your own terms and articulating your development",
+                "description": "Defining success, becoming a graduate: defining success on your own terms and articulating what you can evidence.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/defining-success",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Defining success and the notion of 'excelling'",
+                    "pages": "10-11"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/success-personal-development",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Success: Personal development",
+                    "pages": "13-15"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/opening",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Chapter 14: Conclusion – Becoming a Graduate",
+                    "pages": "246"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L03-o1",
+                    "text": "Distinguish success as academic performance from success as personal development.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o2",
+                    "text": "Define success on your own terms, drawing on both kinds.",
+                    "serves": "co3"
+                  },
+                  {
+                    "id": "L03-o3",
+                    "text": "Articulate the development in {{context}} you can evidence as you become a graduate.",
+                    "serves": "co3"
+                  }
+                ]
+              },
+              {
+                "key": "L04",
+                "mainCourseOutcome": "co4",
+                "title": "Succeeding on your own terms",
+                "topic": "the engine, your graduate capital and your own definition of success as one practice",
+                "description": "Bringing together the engine of succeeding, your graduate capital and your own definition of success into one practice you own as you become a graduate.",
+                "sourceSections": [
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/self-regulated-learning-and-literacies",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Self-regulated learning",
+                    "pages": "246-247"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/self-efficacy",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Self-efficacy",
+                    "pages": "19-21"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/graduate-capital-framework",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "graduate capital",
+                    "pages": "247-248"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/forms-of-graduate-capital",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Tomlinson's graduate capital framework",
+                    "pages": "248-251"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/defining-success",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Defining success and the notion of 'excelling'",
+                    "pages": "10-11"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch2/success-personal-development",
+                    "chapter": 2,
+                    "chapterTitle": "Excelling at university: Mindset, motivation, and goals",
+                    "heading": "Success: Personal development",
+                    "pages": "13-15"
+                  },
+                  {
+                    "sourceId": "book/excelling-at-university-2026",
+                    "chunkId": "ch14/opening",
+                    "chapter": 14,
+                    "chapterTitle": "Conclusion: Becoming a Graduate",
+                    "heading": "Chapter 14: Conclusion – Becoming a Graduate",
+                    "pages": "246"
+                  }
+                ],
+                "outcomes": [
+                  {
+                    "id": "L04-o1",
+                    "text": "bring together the engine of succeeding, your graduate capital and your own definition of success into one practice",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o2",
+                    "text": "recognise that one practice at work in a near-graduate's ongoing study",
+                    "serves": "co4"
+                  },
+                  {
+                    "id": "L04-o3",
+                    "text": "plan how you will keep directing, building and articulating your success in {{context}} beyond this course",
+                    "serves": "co4"
+                  }
+                ],
+                "conceptTitle": "Succeeding on your own terms"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "doc": "source-kb/source-maps/book-excelling-at-university-2026.json",
+              "ref": "ch14 and ch2 chunks in crs-02 scope",
+              "note": "each lesson bound to its source sections; one lesson per course outcome"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each lesson's outcomes serve exactly one course outcome (AL-1)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced crs-04_lesson-map 2026-10-23"
+          },
+          "seq": 1,
+          "timestamp": "2026-10-23T20:08:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "crs-05_course-spec",
+      "records": [
+        {
+          "state": "closed",
+          "provenance": "ai-proposal-stood",
+          "decidedValue": {
+            "courseSpec": "Auto-stands rollup of the closed ONB + CXS + CRS records (identity, context shell, thematic scope, sub-themes, course outcomes, per-outcome banks, lesson map) for the advanced 'Succeeding' tier. No new decisions; rendered to courses/starting-progressing-succeeding-advanced/adp-course-design-specification_starting-progressing-succeeding-advanced.md."
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "rollup of all closed ONB+CXS+CRS records; no new decisions"
+            }
+          ],
+          "seq": 1,
+          "timestamp": "2026-10-23T20:09:00.000Z"
+        }
+      ]
+    },
+    {
+      "gateId": "starting-progressing-succeeding-advanced-L01-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "The engine of succeeding: self-regulated learning and self-efficacy",
+            "interiorPattern": "activity-patterns/recall-reveal realised as palette/keyTerm (chosen from the proposals): the single central concept, self-regulated learning, defined and extended with the term revealed on demand - fits a lesson built around one key concept.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example, the weaker (unregulated) version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch14/self-regulated-learning-and-literacies (pp.246-247) and ch2/self-efficacy (pp.19-21).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L01-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L01-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L01-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Think of a time your work was not going well. Did you keep doing the same thing, or did you monitor and change it? What small win would tell you a new strategy is working? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's advanced move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/keyTerm",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch14/self-regulated-learning-and-literacies (pp.246-247) and ch2/self-efficacy (pp.19-21)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/keyTerm"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L01 outcomes (L01-o1..o3 serve co1) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape with less distinct affordance; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an advanced interactive concept; offered as third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:20:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced les-01_lesson-proposal L01 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "starting-progressing-succeeding-advanced-L02-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Graduate capital and its five forms",
+            "interiorPattern": "activity-patterns/survey-alternatives realised as palette/ab-card (chosen from the proposals): the five forms of graduate capital as parallel cards, one per form - fits the parallel-options shape of the content.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example, the weaker (marks-only) version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch14/graduate-capital-framework (pp.247-248) and ch14/forms-of-graduate-capital (pp.248-251).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L02-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L02-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L02-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "Of the five forms of graduate capital, which have you built most strongly, and which have you neglected? What is one thing you could do before you graduate to strengthen the weakest? There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's advanced move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/ab-card",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch14/graduate-capital-framework (pp.247-248) and ch14/forms-of-graduate-capital (pp.248-251)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/ab-card"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L02 outcomes (L02-o1..o3 serve co2) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape with less distinct affordance; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an advanced interactive concept; offered as third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:21:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced les-01_lesson-proposal L02 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "starting-progressing-succeeding-advanced-L03-les-01",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "conceptTitle": "Defining success on your own terms, becoming a graduate",
+            "interiorPattern": "activity-patterns/sequence realised as palette/gowTimeline (chosen from the proposals): how success changes meaning across a degree, in four stages revealed on demand - fits a process that unfolds over time.",
+            "workedExample": "activity-patterns/evaluate-versions realised as palette/text (asset-free): a third-person worked example, the weaker (grade-only) version first, using the character-token cast. Authored as a generic structured-fields frame; subject fields filled at CXP. Grounded in ch2/defining-success (pp.10-11), ch2/success-personal-development (pp.13-15) and ch14/opening (p.246).",
+            "pacing": "Standard lesson trickle (v2): gateAfter on concept-context and practical-guidance; the activity's own gating follows the component's pacing; no gates across the opening concept prose or the end wind-down. Raise-only.",
+            "visualAssets": [
+              {
+                "placeholder": "Optional diagram supporting the concept - would upgrade the concept activity to palette/hotgraphic if supplied (raise-only; BK-5, not required)."
+              }
+            ],
+            "check": {
+              "items": [
+                {
+                  "coupling": "shell-coupled",
+                  "tests": "L03-o1"
+                },
+                {
+                  "coupling": "whole-prose",
+                  "tests": "L03-o2"
+                },
+                {
+                  "coupling": "token-substitution",
+                  "tests": "L03-o3",
+                  "tokenMode": "cxp-fillable",
+                  "component": "palette/mcq"
+                }
+              ]
+            },
+            "reflectivePrompt": "In a sentence, define what success in your degree has meant to you, across both your performance and how you have developed. Name one piece of evidence for it. There are no right answers.",
+            "generalMcqSet": {
+              "coupling": "shell-coupled",
+              "feedbackOnEveryAnswer": true,
+              "status": "confirmed"
+            },
+            "contextQuestionSlot": {
+              "specification": "A subject-specific question applying this lesson's advanced move to the learner's own discipline. Filled per subject at cxp-04; authored generically with the {{context}} token in the shell (CK-1)."
+            },
+            "activityProposals": [
+              {
+                "component": "palette/gowTimeline",
+                "status": "confirmed"
+              },
+              {
+                "component": "palette/accordion",
+                "status": "drafted"
+              },
+              {
+                "component": "palette/text",
+                "status": "drafted"
+              }
+            ],
+            "coupledSlots": [
+              {
+                "slot": "concept-intro",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "worked-example",
+                "variationType": "structured-fields"
+              },
+              {
+                "slot": "practical-guidance",
+                "variationType": "shell-coupled"
+              },
+              {
+                "slot": "check",
+                "variationType": "whole-prose"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "source-kb",
+              "id": "book/excelling-at-university-2026",
+              "note": "ch2/defining-success (pp.10-11), ch2/success-personal-development (pp.13-15) and ch14/opening (p.246)"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/recall-reveal",
+              "note": "concept activity"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/evaluate-versions",
+              "note": "worked example"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/action-checklist",
+              "note": "practical guidance"
+            },
+            {
+              "store": "design-kb",
+              "id": "activity-patterns/retrieval-practice",
+              "note": "check"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/gowTimeline"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/text"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/checklist"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/mcq"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/opentext"
+            },
+            {
+              "store": "design-kb",
+              "id": "palette/references"
+            },
+            {
+              "store": "course-design",
+              "id": "crs-04_lesson-map",
+              "note": "L03 outcomes (L03-o1..o3 serve co3) and bound sources"
+            }
+          ],
+          "alternativesConsidered": [
+            {
+              "pattern": "palette/accordion",
+              "whyNot": "same concept shape with less distinct affordance; kept as second proposal"
+            },
+            {
+              "whyNot": "plain prose weighed (RT-1); does not lead for an advanced interactive concept; offered as third proposal (palette/text)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:22:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced les-01_lesson-proposal L03 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-01_wrapper-open",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "signpostComponent": "palette/text",
+            "signpostBody": "<p>The course has three short lessons. First, the engine of succeeding: self-regulated learning and self-efficacy, the resources that keep you going. Second, graduate capital: the framework that reframes success and its five forms. Third, defining success and becoming a graduate: setting your own terms and articulating what you can evidence. Work through them in order; each builds on the one before.</p>",
+            "signpostInstruction": "Work through the three lessons in order.",
+            "overview": "<p>This course is about succeeding at university as you reach the end of your degree. Succeeding is more than good marks. It is learning to direct your own study, building the capital a graduate carries into work and life, and being able to say, with evidence, what you have become. By the end you will be able to appraise how self-regulated learning and self-efficacy sustain your success, evaluate the graduate capital you are building across its five forms, and define success on your own terms.</p><p>At this stage the question is no longer how to start. It is how to own and articulate what you are already doing. Employers, interview panels and your own plans all ask you to make your development explicit. This course helps you name it.</p>",
+            "courseOutcomesFraming": "Three course outcomes framed up front: appraise the engine of succeeding, evaluate your graduate capital, define and articulate your own success.",
+            "practiceConnection": {
+              "academic": "<p>Succeeding at university is the rehearsal for succeeding beyond it. The habits of a self-regulating learner, the capital you build, and the ability to articulate your development are exactly what graduate recruiters, professional bodies and research supervisors look for. The work you do here is the work of becoming a graduate, not a bolt-on to it.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            }
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-OPEN states the three course outcomes and why they matter (AL-5)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced wra-01_wrapper-open 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-02_wrapper-close",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "whereNext": {
+              "vertical": [],
+              "horizontal": [
+                "Reflective Practice",
+                "Work-Based & Experiential Learning",
+                "Researching & Research Methods"
+              ]
+            },
+            "whereNextBody": "",
+            "whereNextOmitted": "Advanced tier: the where-next block is omitted by resolve-agent-author (byTier.advanced applies:false). The scaffold does not render a where-next block for this course.",
+            "summary": "<p>You have reached the end of the course. Succeeding at university is no longer just a grade. You can appraise the engine behind it, self-regulated learning sustained by self-efficacy. You can evaluate the graduate capital your degree is building across its five forms. And you can define success on your own terms and articulate, with evidence, what you have become. Look back at the confidence check: comparing where you started with where you are now shows how far this has moved.</p>",
+            "practiceConnection": {
+              "academic": "<p>From here, these are not study ideas but working habits. Every application you write, every interview you sit, every supervision or appraisal you attend, asks you to regulate your own work, show the capital you bring, and articulate your development with evidence. The course has rehearsed exactly that. Succeeding at university and succeeding beyond it draw on the same moves.</p>",
+              "extent": "academic-primary",
+              "coupling": "whole-prose"
+            },
+            "courseReferences": [
+              {
+                "title": "See pages 9 to 26 of Chapter 2, 'Excelling at university: Mindset, motivation, and goals', and pages 246 to 251 of Chapter 14, 'Conclusion: Becoming a Graduate', of Excelling at University by Dennis and Abbott (2026).",
+                "href": "https://library.cardiffmet.ac.uk/function/redirect-excelling?ref=exc2026-book",
+                "type": "book",
+                "permalink": "",
+                "_hrefStatus": "confirmed"
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "W-CLOSE summary tells the student what they can now do, outcome by outcome, and refers to the confidence shift (AL-5); where-next omitted at advanced"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced wra-02_wrapper-close 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-03_summative",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "items": [
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which best describes what a self-regulated learner does that a merely hard-working student may not?"
+              },
+              {
+                "tests": "co1",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Self-efficacy most directly affects which part of succeeding?"
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "In Tomlinson's framework, graduate capital reframes success as..."
+              },
+              {
+                "tests": "co2",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Knowing how your professional field communicates and behaves is which form of graduate capital?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "Which is an example of success as personal development rather than academic performance?"
+              },
+              {
+                "tests": "co3",
+                "palette": "palette/mcq",
+                "coupling": "shell-coupled",
+                "stem": "As you become a graduate, articulating your success means being able to..."
+              }
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "exactly two summative items per course outcome (AL-3), each naming the outcome it tests (AL-6)"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced wra-03_summative 2026-10-23"
+          }
+        }
+      ]
+    },
+    {
+      "gateId": "wra-04_confidence",
+      "records": [
+        {
+          "seq": 1,
+          "state": "closed",
+          "provenance": "human-confirmed",
+          "decidedValue": {
+            "statements": [
+              {
+                "rates": "co1",
+                "text": "I can appraise how self-regulated learning and self-efficacy sustain my success at university."
+              },
+              {
+                "rates": "co2",
+                "text": "I can evaluate the graduate capital I am building across its five forms."
+              },
+              {
+                "rates": "co3",
+                "text": "I can define and articulate success on my own terms as I become a graduate."
+              },
+              {
+                "rates": "co4",
+                "text": "I can bring together self-regulated learning, my graduate capital and my own definition of success into one practice I own as I become a graduate."
+              }
+            ],
+            "postFeedback": {
+              "_patterns": {
+                "rose": "Your confidence in {{item}} has grown over the course.",
+                "stayedHigh": "You were confident about {{item}} and remain so.",
+                "stayedLow": "{{item}} still feels uncertain. It would be worth revisiting this before you move on.",
+                "noMovement": "Your confidence in {{item}} has not shifted much.",
+                "dropped": "Your confidence in {{item}} has fallen. This often reflects a more accurate view of what is involved rather than a step backwards, and noticing it is itself progress. It would be worth another look."
+              },
+              "_summary": {
+                "_predominantlyUp": "Your confidence grew across most of these.",
+                "_mixed": "Your confidence grew in some areas and settled lower in others. Both are useful to know.",
+                "_flatOrLow": "Several of these still feel unsettled, which is worth knowing now."
+              },
+              "_standalone": "Here is where your confidence sits on each statement.",
+              "_forward": {
+                "_summative": "The check ahead is where this confidence will be tested.",
+                "_application": "The real measure will be how this holds up when you next apply it in your own work."
+              }
+            },
+            "itemIds": [
+              "co1",
+              "co2",
+              "co3"
+            ]
+          },
+          "grounding": [
+            {
+              "store": "course-design",
+              "id": "crs-03_course-outcomes",
+              "note": "each confidence statement rates one course outcome (AL-4); same set fills C-PRE and C-POST"
+            }
+          ],
+          "confirmedAt": "gate",
+          "timestamp": "2026-10-23T20:45:00.000Z",
+          "sessionRef": {
+            "venue": "claude-code-plan",
+            "description": "starting-progressing-succeeding-advanced wra-04_confidence 2026-10-23"
+          }
+        }
+      ]
+    }
+  ],
+  "phases": [],
+  "instantiations": [
+    {
+      "pageKey": "L01",
+      "pageType": "lesson",
+      "title": "The engine of succeeding",
+      "order": 1,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/keyTerm",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L01-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L02",
+      "pageType": "lesson",
+      "title": "Graduate capital",
+      "order": 2,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/ab-card",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L02-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L03",
+      "pageType": "lesson",
+      "title": "Defining success, becoming a graduate",
+      "order": 3,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/gowTimeline",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L03-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "L04",
+      "pageType": "lesson",
+      "title": "Succeeding on your own terms",
+      "order": 4,
+      "archetype": {
+        "id": "skeletons/lesson",
+        "version": "0.2.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "concept-context",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "concept-intro",
+          "component": "palette/sortable",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "worked-example",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "practical-guidance",
+          "component": "palette/checklist",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "check",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "reflective-prompt",
+          "component": "palette/opentext",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "summary",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "structured-fields"
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        },
+        {
+          "slotKey": "lesson-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "starting-progressing-succeeding-advanced-L04-les-01"
+        }
+      ]
+    },
+    {
+      "pageKey": "W-OPEN",
+      "pageType": "wrapper-open",
+      "title": "Welcome and course overview",
+      "order": 5,
+      "archetype": {
+        "id": "skeletons/wrapper-open",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        },
+        {
+          "slotKey": "signpost",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-01_wrapper-open"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-PRE",
+      "pageType": "c-pre",
+      "title": "Confidence check",
+      "order": 6,
+      "archetype": {
+        "id": "skeletons/c-pre",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "SUMM",
+      "pageType": "summative",
+      "title": "Final course test",
+      "order": 7,
+      "archetype": {
+        "id": "skeletons/summative",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "assessment-items",
+          "component": "palette/mcq",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-03_summative"
+        }
+      ]
+    },
+    {
+      "pageKey": "C-POST",
+      "pageType": "c-post",
+      "title": "Confidence check",
+      "order": 8,
+      "archetype": {
+        "id": "skeletons/c-post",
+        "version": "0.1.0"
+      },
+      "slotChoices": []
+    },
+    {
+      "pageKey": "W-CLOSE",
+      "pageType": "wrapper-close",
+      "title": "Course summary and where next",
+      "order": 9,
+      "archetype": {
+        "id": "skeletons/wrapper-close",
+        "version": "0.1.0"
+      },
+      "slotChoices": [
+        {
+          "slotKey": "practice-connection",
+          "component": "palette/text",
+          "contextCoupling": {
+            "coupled": true,
+            "variationType": "whole-prose"
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        },
+        {
+          "slotKey": "course-references",
+          "component": "palette/references",
+          "contextCoupling": {
+            "coupled": false
+          },
+          "decidedByGate": "wra-02_wrapper-close"
+        }
+      ]
+    }
+  ]
+}
