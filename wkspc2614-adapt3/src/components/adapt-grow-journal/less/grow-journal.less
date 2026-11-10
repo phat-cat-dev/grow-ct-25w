@@ -1,0 +1,187 @@
+// grow-journal — a lined "notebook" text field for learner writing.
+//
+// Tokenised against the GROW theme: surfaces, ink, lines, accent and spacing
+// all come from runtime custom properties, so the journal repaints with the
+// active theme and spacing profile and has a dark mode for free.
+//
+// ONE block is deliberately NOT tokenised — the ruled line-height and the
+// repeating-linear-gradient "paper" lines. They are a coupled pair: the rule
+// spacing (--rule-gap) IS the textarea's line-height, so each line of writing
+// lands on a printed rule. Pulling them apart, or swapping the line-height for
+// a unitless theme value, would drift the text off the lines. They stay joined,
+// and the top padding is kept equal to the background offset for the same reason.
+// (Derived from the Abbott "studio journal" card; already GROW-tokenised there.)
+
+.grow-journal {
+  &__body {
+    margin-block-end: var(--space-sm, 1rem);
+  }
+
+  &__widget {
+    // Over-limit state cascades to the textarea border
+    &.is-over-limit .grow-journal__textarea {
+      border-color: var(--c-negative, #b42318);
+    }
+  }
+
+  &__textarea-container {
+    position: relative;
+    margin-block-end: calc(var(--space-sm, 1rem) / 2);
+  }
+
+  &__textarea {
+    width: 100%;
+    padding: 0.55rem 0.75rem; // top padding == background-position-y below (coupled)
+    font-family: var(--font-ui, inherit);
+    font-size: var(--fs-base, inherit);
+    color: var(--ink, #20272c);
+    border: 1px solid var(--line, #c7d5df);
+    border-radius: 8px;
+    resize: none; // auto-grow handles height
+    overflow-y: hidden; // set by JS based on content vs maxRows
+
+    // Ruled-paper tokens defined HERE, on the textarea itself. The component root
+    // is `grow-journal__inner` (not a bare `.grow-journal`), so scoping these to
+    // `.grow-journal` never reached this element and the lines vanished. Set where
+    // they're used — plus a fallback on each var() — they always resolve.
+    --rule-gap: 1.75rem;
+    --rule-color: color-mix(in srgb, var(--line, #c7d5df) 80%, transparent);
+
+    // ─── COUPLED PAIR — do not tokenise the line-height / ruled background ───
+    // The rule spacing is the line-height, so writing sits on the lines;
+    // background-attachment:local scrolls the rules with the text.
+    line-height: var(--rule-gap, 1.75rem);
+    background-color: var(--surface-1, #f8fafc);
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--rule-gap, 1.75rem) - 1px),
+      var(--rule-color, rgba(140, 160, 175, 0.4)) calc(var(--rule-gap, 1.75rem) - 1px),
+      var(--rule-color, rgba(140, 160, 175, 0.4)) var(--rule-gap, 1.75rem)
+    );
+    background-attachment: local;
+    background-position: 0 0.55rem; // == textarea top padding (coupled)
+    // ─────────────────────────────────────────────────────────────────────────
+
+    &:focus-visible {
+      outline: 2px solid var(--accent, #365f80);
+      outline-offset: 3px;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    &::placeholder {
+      color: var(--ink-soft, #5a6572);
+      font-style: italic;
+    }
+  }
+
+  // Manual expand/collapse corner control
+  &__expand-btn {
+    position: absolute;
+    inset-inline-end: 0.4rem;
+    inset-block-end: 0.4rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line, #c7d5df);
+    border-radius: 6px;
+    background: var(--surface-1, #fff);
+    color: var(--ink-soft, #5a6572);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+    .icon::before {
+      font-family: "Material Symbols Outlined";
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.1rem;
+      line-height: 1;
+      content: "\e5cf"; // expand_more
+      transition: transform 0.2s ease;
+    }
+
+    &.is-expanded .icon::before {
+      transform: rotate(180deg);
+    }
+
+    .no-touch &:hover,
+    &:focus-visible {
+      background: var(--accent, #365f80);
+      color: #fff;
+      border-color: var(--accent, #365f80);
+    }
+  }
+
+  &__counter {
+    font-size: 0.875em;
+    color: var(--ink-soft, #5a6572);
+    margin-block-end: calc(var(--space-sm, 1rem) / 2);
+    text-align: end;
+
+    &.is-over-limit {
+      color: var(--c-negative, #b42318);
+      font-weight: 700;
+    }
+  }
+
+  &__over-limit {
+    font-size: 0.875em;
+    color: var(--c-negative, #b42318);
+    margin-block-end: calc(var(--space-sm, 1rem) / 2);
+    padding: 0.4rem 0.6rem;
+    background-color: color-mix(in srgb, var(--c-negative, #b42318) 10%, transparent);
+    border-inline-start: 3px solid var(--c-negative, #b42318);
+  }
+
+  &__status {
+    font-size: 0.875em;
+    color: var(--ink-soft, #5a6572);
+    min-height: 1.5em;
+
+    &.is-failed {
+      color: var(--c-negative, #b42318);
+      font-weight: 700;
+    }
+  }
+
+  &__completion {
+    margin-block-start: var(--space-sm, 1rem);
+  }
+
+  &__completed-state {
+    // Neutral "done" pill using the theme accent — not a success colour, to
+    // avoid any assessment connotation on a reflective field.
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background-color: var(--accent, #365f80);
+    color: #fff;
+    border-radius: 0.4rem;
+    font-weight: 700;
+  }
+
+  &__live-region,
+  &__alert,
+  &__label--hidden {
+    // Visually hidden, available to screen readers
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // Variants differ by defaults and completion eligibility, not visual identity.
+  &.is-variant-reflection {}
+  &.is-variant-notes {}
+}

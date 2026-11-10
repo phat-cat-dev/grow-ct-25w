@@ -1,0 +1,21 @@
+{
+  "_type": "component",
+  "_component": "growPageNotes",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Page notes",
+  "displayTitle": "The tutor's notes",
+  "body": "Open the notes to watch an expert mark up the passage above, one move at a time.",
+  "instruction": "",
+  "ariaRegion": "Hand-drawn notes drawn over this section.",
+  "_launch": { "_icon": "edit_note", "text": "Show the tutor's notes" },
+  "_overlay": { "_reveal": "stepped", "_scrim": "faint" },
+  "_notes": [
+    { "_type": "mark", "_markId": "underline", "text": "the central claim", "_color": "accent", "x": 24, "y": 20, "step": 1 },
+    { "_type": "mark", "_markId": "circle", "text": "no source", "_color": "negative", "_repeats": 2, "_rotation": -3, "x": 70, "y": 30, "step": 2 },
+    { "_type": "mark", "_markId": "margin-note", "text": "evidence?", "_color": "pen", "_rotation": -4, "x": 86, "y": 34, "step": 2 },
+    { "_type": "chalk", "_pattern": "fork-connector", "_color": "neutral", "x": 40, "y": 64, "step": 3,
+      "data": { "source": { "label": "one study" }, "branch1": { "label": "measured output" }, "branch2": { "label": "self-report" } } },
+    { "_type": "mark", "_markId": "tick", "_color": "positive", "_scale": 1.2, "x": 18, "y": 82, "step": 4 }
+  ]
+}

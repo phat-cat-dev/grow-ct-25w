@@ -1,0 +1,45 @@
+{
+  "manifest": 1,
+  "id": "growOpentext",
+  "name": "adapt-grow-opentext",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-opentext.git",
+  "summary": "Reflective prompt — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-opentext.less",
+    "tokens": [
+      "--accent",
+      "--accent-ink",
+      "--c-negative",
+      "--ink-soft"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-opentext/blocks/block-opentext-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-opentext/exemplars/notes.json",
+        "adapt-grow-opentext/exemplars/reflection-completion.json",
+        "adapt-grow-opentext/exemplars/reflection.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-opentext.md"
+    },
+    "components": []
+  }
+}

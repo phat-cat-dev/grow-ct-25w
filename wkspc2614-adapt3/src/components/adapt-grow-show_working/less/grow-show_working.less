@@ -1,0 +1,152 @@
+// grow-show_working — a step-by-step worked solution. Lines are present and
+// readable at rest; .is-playing (added by the view when the component is seen,
+// and on Replay) runs the staggered reveal and draws the check-mark on.
+//
+// Tokenised against the GROW theme: surfaces, ink, lines, accent, the positive
+// semantic, the hand/mono fonts and spacing all come from runtime custom
+// properties, so it repaints with the active theme and has a dark mode.
+//
+// NOT tokenised — the animation machinery. The reveal is paced by the GROW
+// motion knob --flow-rate and staggered by each line's --d; the tick draws via a
+// stroke-dasharray/dashoffset pair that only works because the path is normalised
+// with pathLength="1" in the template. Those three — flow-rate, the dash pair and
+// pathLength — are a coupled mechanism and are kept exactly as in the source.
+
+.grow-show-working {
+
+  &__tag {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: var(--fs-3xs, 0.72rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft, #5a6572);
+    margin-block-end: 0.2rem;
+  }
+
+  &__stage {
+    background: var(--surface-2, #edf2f7);
+    border-radius: 10px;
+    padding: var(--space-sm, 1.25rem);
+    overflow: visible;
+  }
+
+  &__work {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  &__wline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__eq {
+    min-width: 7em;
+
+    // Highlight a substituted value: author wraps it in <mark> (e.g. the "4" in
+    // "2(<mark>4</mark>) + 6 = 14"). Underline band, not a block of colour.
+    mark {
+      --c: var(--accent, #365f80);
+      background: linear-gradient(to bottom, transparent 55%, color-mix(in srgb, var(--c) 38%, transparent) 55%);
+      color: inherit;
+      padding: 0 0.12em;
+      border-radius: 3px;
+    }
+  }
+
+  &__ann {
+    font-family: var(--font-hand, "Caveat", cursive);
+    font-size: 1.3rem;
+    color: var(--accent, #365f80);
+  }
+
+  &__tick {
+    width: 26px;
+    height: 26px;
+    color: var(--c-positive, #2f9e68);
+    overflow: visible;
+    flex: none;
+  }
+
+  // ─── COUPLED MECHANISM — do not tokenise the draw/offset pair ───
+  // Paired with pathLength="1" on the path in the template.
+  &__edge {
+    fill: none;
+    stroke: var(--c-positive, #2f9e68);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+
+  // ── reveal, paced by --flow-rate and staggered by --d ──
+  &__stage.is-playing &__wline {
+    animation: grow-show-working-rise calc(0.5s / var(--flow-rate, 1)) ease var(--d, 0s) both;
+  }
+
+  &__stage.is-playing &__edge {
+    animation: grow-show-working-draw calc(0.5s / var(--flow-rate, 1)) ease var(--d, 0s) both;
+  }
+
+  @keyframes grow-show-working-rise {
+    from { opacity: 0; transform: translateX(-14px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  @keyframes grow-show-working-draw {
+    from { stroke-dashoffset: 1; }
+    to   { stroke-dashoffset: 0; }
+  }
+  // ───────────────────────────────────────────────────────────────
+
+  &__replay {
+    margin-block-start: var(--space-sm, 1rem);
+    min-block-size: 2.75rem;
+    font: inherit;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--line, #c7d5df);
+    border-radius: 0.4rem;
+    background: var(--surface-1, #fff);
+    color: var(--ink, #20272c);
+    cursor: pointer;
+
+    .no-touch &:hover,
+    &:focus-visible {
+      border-color: var(--accent, #365f80);
+    }
+  }
+
+  &:focus-visible,
+  & :focus-visible {
+    outline: 2px solid var(--accent, #365f80);
+    outline-offset: 3px;
+  }
+
+  &__sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &__stage.is-playing &__wline,
+    &__stage.is-playing &__edge {
+      animation: none;
+    }
+  }
+}

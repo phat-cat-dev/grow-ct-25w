@@ -1,0 +1,25 @@
+{
+  "name": "adapt-grow-reflection-module",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/phat-cat-dev/adapt-grow-reflection-module",
+  "issues": "https://github.com/phat-cat-dev/adapt-grow-reflection-module/issues",
+  "bugs": "https://github.com/phat-cat-dev/adapt-grow-reflection-module/issues",
+  "description": "A composed reflection activity: a lined sketchbook journal paired with a 'change the lens' panel of reframing prompts. Writing persists to suspend_data; never scored.",
+  "main": "/js/adapt-grow-reflection-module.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component",
+    "grow",
+    "reflection",
+    "journal",
+    "sketchbook"
+  ],
+  "license": "GPL-3.0",
+  "component": "growReflectionModule",
+  "targetAttribute": "_growReflectionModule",
+  "displayName": "GROW Reflection module",
+  "extra": {
+    "info": "Two-column reflection activity — a ruled sketchbook journal (auto-grows, saves to suspend_data, screen-reader friendly) beside a reframing 'change the lens' prompt panel. Collapses to one column on narrow screens and repaints with the active GROW theme."
+  }
+}

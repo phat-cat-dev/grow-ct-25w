@@ -1,0 +1,251 @@
+/**
+ * branching.less
+ *
+ * Styles for the branching decision-scenario component.
+ *
+ * Design refs: BB-5 (less), accessibility requirements
+ *
+ * Four button states, each distinguished by more than colour:
+ * 1. Default: neutral background, standard weight
+ * 2. Hover/focus: darker background, visible focus ring
+ * 3. Selected (chosen): primary colour, bold weight, checkmark marker
+ * 4. Commit-locked (unchosen after commit): muted background, lighter weight
+ *
+ * Consequence region: visually connected to chosen option via shared border/background.
+ * Reveal transition with prefers-reduced-motion fallback.
+ */
+
+// Colour tokenised to the GROW theme (meaning-mapped); non-colour values kept.
+// The choice buttons are built from theme surfaces/ink/line; the selected and
+// continue/restart buttons take the brand --accent (white text is GROW's
+// on-accent convention, as in grow-journal); good/poor/neutral outcomes keep
+// their semantic hues (--c-positive / --c-negative / --ink-soft). The focus ring
+// is the accent at reduced opacity via color-mix (CSS, passes through LESS).
+//   was: a Bootstrap-derived grey palette + --ab-* tokens.
+@branching-choice-bg: var(--surface-2, #f5f5f5);
+@branching-choice-bg-hover: color-mix(in srgb, var(--ink, #212529) 8%, var(--surface-2, #e8e8e8));
+@branching-choice-bg-selected: var(--accent, #365f80);
+@branching-choice-bg-locked: var(--surface-2, #e9ecef);
+@branching-choice-text: var(--ink, #212529);
+@branching-choice-text-selected: #ffffff;
+@branching-choice-text-locked: var(--ink-soft, #6c757d);
+@branching-choice-border: var(--line, #dee2e6);
+@branching-choice-border-selected: var(--accent, #365f80);
+@branching-choice-focus-ring: var(--accent, #365f80);
+@branching-consequence-bg: color-mix(in srgb, var(--accent, #365f80) 6%, var(--surface-1, #f8f9fa));
+@branching-consequence-border: var(--line, #dee2e6);
+@branching-transition-duration: 0.2s;
+
+.grow-branching__inner {
+  // Component container
+}
+
+.grow-branching__widget {
+  // Widget wrapper
+}
+
+.grow-branching__instruction {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.grow-branching__choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.grow-branching__choice {
+  // Base button styles
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  background-color: @branching-choice-bg;
+  color: @branching-choice-text;
+  border: 2px solid @branching-choice-border;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color @branching-transition-duration ease,
+              border-color @branching-transition-duration ease,
+              color @branching-transition-duration ease;
+
+  // Hover state
+  &:hover:not([disabled]):not([aria-disabled="true"]) {
+    background-color: @branching-choice-bg-hover;
+  }
+
+  // Focus state — visible focus ring
+  &:focus {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+
+  // Selected state — primary colour, bold, marker
+  &.is-selected {
+    background-color: @branching-choice-bg-selected;
+    border-color: @branching-choice-border-selected;
+    color: @branching-choice-text-selected;
+    font-weight: 600;
+  }
+
+  // Commit-locked state (unchosen after commit)
+  // Uses aria-disabled, NOT disabled — stays in tab order
+  &.is-commit-locked {
+    background-color: @branching-choice-bg-locked;
+    color: @branching-choice-text-locked;
+    font-weight: 300;
+    cursor: not-allowed;
+
+    // Muted border (was darken() of the locked bg; color-mix can't be darkened
+    // by a LESS fn, so take the theme line colour)
+    border-color: var(--line, #ced4da);
+  }
+
+  // Disabled state (component disabled)
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.grow-branching__choice-text {
+  flex: 1;
+}
+
+.grow-branching__choice-marker {
+  // Checkmark for selected choice
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.grow-branching__consequence {
+  // Consequence region — visually connected to choice
+  padding: 1rem;
+  background-color: @branching-consequence-bg;
+  border: 1px solid @branching-consequence-border;
+  border-radius: 0.375rem;
+  margin-top: 0.5rem;
+
+  // Animation on reveal
+  animation: branching-reveal @branching-transition-duration ease-out;
+
+  // Focus styles for programmatic focus
+  &:focus {
+    outline: 2px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+.grow-branching__consequence-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.grow-branching__consequence-body {
+  font-size: 1rem;
+  line-height: 1.6;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Reveal animation
+@keyframes branching-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Reduced motion: instant reveal, no animation
+@media (prefers-reduced-motion: reduce) {
+  .grow-branching__choice {
+    transition: none;
+  }
+
+  .grow-branching__consequence {
+    animation: none;
+  }
+}
+
+// Scenario engine (multi-step): step counter, node body, continue/restart
+// buttons and good/poor/neutral outcome endings. Choices and the consequence
+// region reuse the rules above.
+.grow-branching__step-count {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: @branching-choice-text-locked;
+  margin: 0 0 0.5rem;
+}
+
+.grow-branching__node-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+
+  p:last-child { margin-bottom: 0; }
+}
+
+.grow-branching__chosen {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.grow-branching__continue,
+.grow-branching__restart {
+  margin-top: 1rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: @branching-choice-text-selected;
+  background-color: @branching-choice-bg-selected;
+  border: 2px solid @branching-choice-border-selected;
+  border-radius: 0.375rem;
+  cursor: pointer;
+
+  &:hover { filter: brightness(1.05); }
+
+  &:focus-visible {
+    outline: 3px solid @branching-choice-focus-ring;
+    outline-offset: 2px;
+  }
+}
+
+.grow-branching__outcome {
+  padding: 1.25rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid @branching-choice-border;
+  background-color: @branching-consequence-bg;
+
+  &:focus { outline: none; }
+
+  &--good { border-left-color: var(--c-positive, #2e7d32); }
+  &--poor { border-left-color: var(--c-negative, #c8102e); }
+  &--neutral { border-left-color: @branching-choice-text-locked; }
+}

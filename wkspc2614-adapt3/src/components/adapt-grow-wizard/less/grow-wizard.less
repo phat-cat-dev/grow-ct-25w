@@ -1,0 +1,161 @@
+// adapt-grow-wizard
+//
+// Step wizard: a progress bar whose fill width tracks --p, a row of step labels
+// with the current one highlighted, a content panel that fades in per step, and
+// Back/Next controls.
+//
+// Scoped under `.grow-wizard` (the template's inner widget class), NOT `.growWizard`:
+// Adapt lowercases `_component` (growWizard -> .growwizard), so a `.growWizard`
+// selector would miss. This mirrors adapt-grow-levels, which scopes under `.levels`.
+//
+// Tokens: the study CSS vars (--accent, --surface-1, --line, --ink, --ink-soft,
+// --fs-*, --font-mono) are mapped to the component's own custom properties with
+// grow/ab fallbacks, so there are no hardcoded brand colours. The progress-bar
+// and panel-fade transitions are disabled under reduced motion.
+
+.grow-wizard {
+  // ── component tokens: grow -> study -> safe neutral fallback ──────────────
+  --wiz-accent:     var(--grow-accent, var(--accent, #365f80));
+  --wiz-surface-1:  var(--grow-surface-1, var(--surface-1, #ffffff));
+  --wiz-line:       var(--grow-line, var(--line, #d5dde2));
+  --wiz-ink:        var(--grow-ink, var(--ink, #1a1a1a));
+  --wiz-ink-soft:   var(--grow-ink-soft, var(--ink-soft, #566));
+  --wiz-on-accent:  var(--grow-on-accent, var(--ab-base-on-accent, #ffffff));
+  --wiz-fs-sm:      var(--grow-fs-sm, var(--fs-sm, 0.95rem));
+  --wiz-fs-3xs:     var(--grow-fs-3xs, var(--fs-3xs, 0.72rem));
+  --wiz-font-mono:  var(--grow-font-mono, var(--font-mono, ui-monospace, Menlo, Consolas, monospace));
+
+  // motion dials (quiet under reduced motion, below)
+  --wiz-fade:  0.35s;
+  --wiz-slide: 0.4s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  // ── progress bar ──────────────────────────────────────────────────────────
+  &__bar {
+    position: relative;
+    height: 4px;
+    background: var(--wiz-line);
+    border-radius: 4px;
+  }
+
+  &__bar-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    display: block;
+    width: var(--p, 25%);
+    background: var(--wiz-accent);
+    border-radius: 4px;
+    transition: width var(--wiz-slide) ease;
+  }
+
+  // ── step labels ───────────────────────────────────────────────────────────
+  &__steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--wiz-fs-3xs);
+    font-family: var(--wiz-font-mono);
+    color: var(--wiz-ink-soft);
+  }
+
+  &__step {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+    font-weight: 400;
+
+    &.is-current {
+      color: var(--wiz-accent);
+      font-weight: 700;
+    }
+  }
+
+  &__step-label {
+    display: inline-block;
+  }
+
+  // ── panels ────────────────────────────────────────────────────────────────
+  &__panels {
+    position: relative;
+  }
+
+  &__panel {
+    background: var(--wiz-surface-1);
+    border: 1px solid var(--wiz-line);
+    border-radius: 10px;
+    padding: 0.9rem;
+    font-size: var(--wiz-fs-sm);
+    color: var(--wiz-ink);
+
+    &[hidden] {
+      display: none;
+    }
+
+    &.is-current {
+      animation: grow-wiz-fade var(--wiz-fade) ease;
+    }
+
+    > :first-child { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+  }
+
+  // ── controls ──────────────────────────────────────────────────────────────
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__btn {
+    font: inherit;
+    font-weight: 600;
+    font-size: var(--wiz-fs-sm);
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--wiz-accent);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, opacity 0.15s ease;
+
+    &--next {
+      background: var(--wiz-accent);
+      color: var(--wiz-on-accent);
+    }
+
+    &--back {
+      background: transparent;
+      color: var(--wiz-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--wiz-accent);
+      outline-offset: 2px;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  // ── polite live region (visually hidden, available to screen readers) ───────
+  &__live {
+    .visually-hidden();
+  }
+}
+
+@keyframes grow-wiz-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Quiet under reduced motion: no width transition, no panel fade.
+@media (prefers-reduced-motion: reduce) {
+  .grow-wizard__bar-fill { transition: none; }
+  .grow-wizard__panel.is-current { animation: none; }
+  .grow-wizard__btn { transition: none; }
+}

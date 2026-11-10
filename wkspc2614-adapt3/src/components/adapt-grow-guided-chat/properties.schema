@@ -1,0 +1,131 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["_chat"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_chat": {
+      "type": "object",
+      "required": true,
+      "title": "Guided chat",
+      "properties": {
+        "guideName": {
+          "type": "string",
+          "default": "Guide",
+          "title": "Default guide name",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Shown on guide messages that do not set their own name.",
+          "translatable": true
+        },
+        "learnerName": {
+          "type": "string",
+          "default": "You",
+          "title": "Default learner name",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Shown on learner messages that do not set their own name.",
+          "translatable": true
+        },
+        "_typeSpeed": {
+          "type": "number",
+          "default": 26,
+          "title": "Typing speed (ms per character)",
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "Lower is faster. The whole message appears at once for anyone who prefers reduced motion."
+        },
+        "_autoAdvance": {
+          "type": "boolean",
+          "default": false,
+          "title": "Auto-advance",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Play the next message automatically instead of waiting for the Next button."
+        },
+        "_labels": {
+          "type": "object",
+          "title": "Control labels",
+          "properties": {
+            "next": {
+              "type": "string",
+              "default": "Next message",
+              "title": "Next button",
+              "inputType": "Text",
+              "validators": [],
+              "translatable": true
+            },
+            "skip": {
+              "type": "string",
+              "default": "Show full message",
+              "title": "Show-full button",
+              "inputType": "Text",
+              "validators": [],
+              "translatable": true
+            },
+            "replay": {
+              "type": "string",
+              "default": "Replay conversation",
+              "title": "Replay button",
+              "inputType": "Text",
+              "validators": [],
+              "translatable": true
+            }
+          }
+        },
+        "_messages": {
+          "type": "array",
+          "title": "Messages",
+          "help": "The scripted conversation, in order. Each message is revealed one at a time.",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "_speaker": {
+                "type": "string",
+                "default": "guide",
+                "title": "Speaker",
+                "enum": ["guide", "learner"],
+                "inputType": { "type": "Select", "options": ["guide", "learner"] },
+                "validators": []
+              },
+              "name": {
+                "type": "string",
+                "default": "",
+                "title": "Name (optional)",
+                "inputType": "Text",
+                "validators": [],
+                "translatable": true
+              },
+              "text": {
+                "type": "string",
+                "default": "",
+                "title": "Text",
+                "inputType": "Text",
+                "validators": [],
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,219 @@
+// ============================================================================
+//  Expanding Links (GROW)
+//  Matured from the self-contained study (expanding-links.css +
+//  learning-sequence.css). The expanding-label technique is the grid trick:
+//  grid-template-columns transitions 0fr -> 1fr so the label grows from the
+//  icon with no fixed width.
+//
+//  Tokens: the study's own custom properties (--expand-accent / --expand-ink /
+//  --expand-duration) are KEPT as the component contract, mapped to the grow
+//  runtime tokens with literal fallbacks. No brand colours are hardcoded.
+// ============================================================================
+
+.grow-expanding-links {
+
+  &__inner {
+    // Component contract (study shape), mapped to grow tokens with fallbacks.
+    --expand-accent: var(--grow-accent, var(--accent, #365f80));
+    --expand-ink:    var(--grow-ink, var(--ink, #172e3a));
+    --expand-line:   var(--grow-line, var(--line, #afc0ca));
+    --expand-duration: 300ms;
+
+    color: var(--expand-ink);
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: var(--fs-base, 1rem);
+    line-height: 1.65;
+  }
+
+  &__widget {
+    // container only
+  }
+
+  // ── Nav: the expanding icon-links, reused as step buttons ─────────────────
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    // Longhand, not the `font` shorthand, to avoid LESS treating the
+    // font-size/line-height slash as division.
+    font-family: var(--font-ui, system-ui, sans-serif);
+    font-size: var(--fs-sm, 1rem);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__step-btn {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    max-inline-size: 100%;
+    padding: 0.65rem;
+    margin: 0;
+    color: var(--expand-ink);
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+
+    // :is() avoided on purpose (known LESS parsing gotcha in this repo).
+    &:hover,
+    &:focus-visible,
+    &[aria-current] {
+      color: var(--expand-accent);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--expand-accent);
+      outline-offset: 3px;
+      border-radius: 0.25rem;
+    }
+  }
+
+  // Icon at rest. Inline SVG uses the study's line-art styling (stroke follows
+  // the current colour). A Material Symbols span is sized to match.
+  &__icon {
+    display: block;
+    flex: none;
+    inline-size: 1.5rem;
+    block-size: 1.5rem;
+
+    svg {
+      display: block;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &.material-symbols-outlined {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
+
+  // Expanding label: 0fr -> 1fr grid transition.
+  &__label {
+    display: grid;
+    grid-template-columns: 0fr;
+    transition: grid-template-columns var(--expand-duration) ease;
+
+    > span {
+      overflow: hidden;
+      min-inline-size: 0;
+    }
+  }
+
+  &__label-text {
+    display: block;
+    padding-inline-start: 0.65rem;
+    white-space: nowrap;
+  }
+
+  // Expand for hover, keyboard focus and the current step; or always on request.
+  &__step-btn:hover &__label,
+  &__step-btn:focus-visible &__label,
+  &__step-btn[aria-current] &__label,
+  &__nav[data-labels="always"] &__label {
+    grid-template-columns: 1fr;
+  }
+
+  // Completion tick, shown only once the step is marked complete.
+  &__check {
+    display: none;
+    padding-inline-start: 0.35rem;
+    font-weight: 600;
+  }
+  &__step-btn[data-complete="true"] &__check {
+    display: inline;
+  }
+
+  // ── Status line (polite live region) ──────────────────────────────────────
+  &__status {
+    font-size: var(--fs-xs, 0.85rem);
+    color: var(--ink-soft, var(--expand-ink));
+    margin-block: 0.5rem 0;
+    min-block-size: 1.5em;
+  }
+
+  // ── Step panels ───────────────────────────────────────────────────────────
+  &__panels {
+    // container only
+  }
+
+  &__panel {
+    max-inline-size: 48rem;
+    margin-block: 2rem;
+
+    &[hidden] {
+      display: none !important;
+    }
+
+    &:focus {
+      outline: 3px solid var(--expand-accent);
+      outline-offset: 4px;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+    }
+  }
+
+  // ── Actions: Back / Mark complete / Next ──────────────────────────────────
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__btn {
+    font: inherit;
+    background: transparent;
+    color: var(--expand-accent);
+    border: 0;
+    padding: 0.65rem 0.25rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
+
+    &:focus-visible {
+      outline: 3px solid var(--expand-accent);
+      outline-offset: 4px;
+    }
+
+    &:disabled {
+      color: inherit;
+      opacity: 0.5;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+
+  // ── Touch / coarse pointer and narrow screens: always show labels ─────────
+  @media (hover: none), (pointer: coarse) {
+    &__label { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 30rem) {
+    &__label { grid-template-columns: 1fr; }
+  }
+
+  // ── Reduced motion: disable the label transition ──────────────────────────
+  @media (prefers-reduced-motion: reduce) {
+    &__label { transition: none; }
+  }
+
+  // Printing: reveal every step so nothing authored is lost on paper.
+  @media print {
+    &__panel[hidden] { display: block !important; }
+  }
+}
+
+// Host/system reduced-motion opt-out classes shared with the study.
+.no-motion .grow-expanding-links__label,
+[data-tm-no-motion="true"] .grow-expanding-links__label {
+  transition: none;
+}

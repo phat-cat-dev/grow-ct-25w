@@ -1,0 +1,706 @@
+{
+  "_comment": "Academic prompt bank for adapt-grow-promptbuilder. TWO parts: `formulas` (named prompt frameworks, each listing its ordered steps + an assembly template) and `banks` (reusable phrase libraries the steps draw on). A lesson picks a formula; each step's `bank` names the phrase library that fills its dropdown. The component is label-driven, so the same engine drives an academic prompt builder OR a phrase generator just by changing the data. Sheffield's Academic GenAI Prompt Bank categories are mapped pedagogically as the sub-categories (optgroup labels) in the `task` bank; prompts are reworded and extended. Fill-ins are in [square brackets]. No em-dashes (house rule). Attribution: University of Sheffield Academic Skills, Academic GenAI Prompt Bank.",
+  "formulas": {
+    "rtcf": {
+      "name": "RTCF",
+      "subtitle": "Role, Task, Context, Format",
+      "bestFor": "A reliable all-rounder for most study tasks.",
+      "template": "Act as {role}. {task} {context} {format}",
+      "steps": [
+        {
+          "key": "role",
+          "bank": "role",
+          "label": "Step 1: Role",
+          "help": "Who should the AI act as?",
+          "placeholder": "Act as..."
+        },
+        {
+          "key": "task",
+          "bank": "task",
+          "label": "Step 2: Task",
+          "help": "What should it actually do?",
+          "placeholder": "Ask it to..."
+        },
+        {
+          "key": "context",
+          "bank": "context",
+          "label": "Step 3: Context",
+          "help": "Tell it about you and your work.",
+          "placeholder": "I am..."
+        },
+        {
+          "key": "format",
+          "bank": "format",
+          "label": "Step 4: Format",
+          "help": "How should the answer be shaped?",
+          "placeholder": "Please..."
+        }
+      ]
+    },
+    "race": {
+      "name": "RACE",
+      "subtitle": "Role, Action, Context, Expectation",
+      "bestFor": "When you want a specific action and a clear expected outcome.",
+      "template": "Act as {role}. {action} {context} {expectation}",
+      "steps": [
+        {
+          "key": "role",
+          "bank": "role",
+          "label": "Role",
+          "help": "Who should it be?",
+          "placeholder": "Act as..."
+        },
+        {
+          "key": "action",
+          "bank": "task",
+          "label": "Action",
+          "help": "What should it do?",
+          "placeholder": "Ask it to..."
+        },
+        {
+          "key": "context",
+          "bank": "context",
+          "label": "Context",
+          "help": "About you and your work.",
+          "placeholder": "I am..."
+        },
+        {
+          "key": "expectation",
+          "bank": "format",
+          "label": "Expectation",
+          "help": "What should the result look like?",
+          "placeholder": "I expect..."
+        }
+      ]
+    },
+    "tag": {
+      "name": "TAG",
+      "subtitle": "Task, Action, Goal",
+      "bestFor": "Quick, focused requests.",
+      "template": "{task} {action} {goal}",
+      "steps": [
+        {
+          "key": "task",
+          "bank": "task",
+          "label": "Task",
+          "help": "The task.",
+          "placeholder": "I need to..."
+        },
+        {
+          "key": "action",
+          "bank": "steps",
+          "label": "Action",
+          "help": "How it should go about it.",
+          "placeholder": "Do this by..."
+        },
+        {
+          "key": "goal",
+          "bank": "goal",
+          "label": "Goal",
+          "help": "What you are trying to achieve.",
+          "placeholder": "so that..."
+        }
+      ]
+    },
+    "costar": {
+      "name": "CO-STAR",
+      "subtitle": "Context, Objective, Style, Tone, Audience, Response",
+      "bestFor": "Polished writing where voice and audience matter.",
+      "template": "{context} {objective} Write in a {style} style and a {tone} tone for {audience}. {response}",
+      "steps": [
+        {
+          "key": "context",
+          "bank": "context",
+          "label": "Context",
+          "help": "The background.",
+          "placeholder": "I am..."
+        },
+        {
+          "key": "objective",
+          "bank": "task",
+          "label": "Objective",
+          "help": "What you want done.",
+          "placeholder": "I want you to..."
+        },
+        {
+          "key": "style",
+          "bank": "style",
+          "label": "Style",
+          "help": "Writing style.",
+          "placeholder": "e.g. academic"
+        },
+        {
+          "key": "tone",
+          "bank": "tone",
+          "label": "Tone",
+          "help": "Tone of voice.",
+          "placeholder": "e.g. formal"
+        },
+        {
+          "key": "audience",
+          "bank": "audience",
+          "label": "Audience",
+          "help": "Who it is for.",
+          "placeholder": "for..."
+        },
+        {
+          "key": "response",
+          "bank": "format",
+          "label": "Response",
+          "help": "Output shape.",
+          "placeholder": "Please..."
+        }
+      ]
+    },
+    "risen": {
+      "name": "RISEN",
+      "subtitle": "Role, Instruction, Steps, End goal, Narrowing",
+      "bestFor": "Bigger tasks that need structure and constraints.",
+      "template": "Act as {role}. {instruction} {steps} {goal} {narrowing}",
+      "steps": [
+        {
+          "key": "role",
+          "bank": "role",
+          "label": "Role",
+          "help": "Who should it be?",
+          "placeholder": "Act as..."
+        },
+        {
+          "key": "instruction",
+          "bank": "task",
+          "label": "Instruction",
+          "help": "The main instruction.",
+          "placeholder": "Ask it to..."
+        },
+        {
+          "key": "steps",
+          "bank": "steps",
+          "label": "Steps",
+          "help": "How to approach it.",
+          "placeholder": "Work through..."
+        },
+        {
+          "key": "goal",
+          "bank": "goal",
+          "label": "End goal",
+          "help": "The outcome you want.",
+          "placeholder": "so that..."
+        },
+        {
+          "key": "narrowing",
+          "bank": "format",
+          "label": "Narrowing",
+          "help": "Constraints and limits.",
+          "placeholder": "Keep it..."
+        }
+      ]
+    }
+  },
+  "banks": {
+    "role": [
+      {
+        "label": "Expertise",
+        "items": [
+          "an expert in [subject]",
+          "an academic tutor on my [subject] course",
+          "a researcher who knows the literature on [topic]"
+        ]
+      },
+      {
+        "label": "Academic practice support",
+        "items": [
+          "an academic practice specialist who helps me develop how I study and write",
+          "an academic practice specialist in [academic practice, e.g. criticality]",
+          "an academic librarian who helps me find and evaluate sources",
+          "an academic librarian who helps me reference accurately"
+        ]
+      },
+      {
+        "label": "Support style",
+        "items": [
+          "a study-skills tutor who explains things simply",
+          "a critical friend who challenges my reasoning",
+          "an examiner marking against the grade criteria",
+          "an English-language tutor (English is my second language)"
+        ]
+      },
+      {
+        "label": "Audience voice",
+        "items": [
+          "writing for an academic audience",
+          "explaining to a non-specialist audience"
+        ]
+      }
+    ],
+    "task": [
+      {
+        "label": "Background research",
+        "items": [
+          "Trace how [concept] developed and why it matters today.",
+          "Compare and contrast [two theories] in [subject], with strengths and weaknesses.",
+          "Explore the impact of [innovation] on [field], short and long term.",
+          "Examine where [subject] and [another subject] intersect.",
+          "Outline the main debates in [topic] and what is at stake."
+        ],
+        "benchmarks": [
+          "research-and-enquiry-methods",
+          "theories",
+          "history",
+          "subject-knowledge-and-understanding"
+        ]
+      },
+      {
+        "label": "Be critical",
+        "items": [
+          "Give a range of critical perspectives on this claim: [claim].",
+          "Set out the weaknesses or limits of [theory] and the alternatives.",
+          "Give the strongest counter-arguments to [idea].",
+          "What controversies surround [topic], and why do they matter?",
+          "Whose perspectives are missing from this, and why?"
+        ],
+        "benchmarks": [
+          "critical-evaluation-of-evidence-and-arguments",
+          "analysis-and-problem-solving",
+          "theories"
+        ]
+      },
+      {
+        "label": "Understand a concept",
+        "items": [
+          "Explain [concept] in plain language for someone new to it.",
+          "Summarise [theory] as five key points I must know, and why.",
+          "Use an everyday analogy to explain [concept].",
+          "Give a step-by-step breakdown of [concept] for a beginner.",
+          "List common misconceptions about [concept] and correct them."
+        ],
+        "benchmarks": [
+          "subject-knowledge-and-understanding",
+          "theories",
+          "analysis-and-problem-solving"
+        ]
+      },
+      {
+        "label": "Feedback: structure",
+        "items": [
+          "Is the structure of this logical and coherent? [paste your draft]",
+          "How strong and clear are my introduction and thesis? [paste your draft]",
+          "Is my main argument supported all the way through? [paste your draft]",
+          "How effective is my conclusion at pulling the argument together? [paste your draft]"
+        ],
+        "benchmarks": [
+          "written-communication",
+          "analysis-and-problem-solving"
+        ]
+      },
+      {
+        "label": "Feedback: language",
+        "items": [
+          "Is my language clear and easy to follow? [paste your draft]",
+          "Comment on my academic style and tone, and suggest improvements. [paste your draft]",
+          "Check for grammar, punctuation and syntax issues. [paste your draft]"
+        ],
+        "benchmarks": [
+          "written-communication"
+        ]
+      },
+      {
+        "label": "Feedback: use of sources",
+        "items": [
+          "How well do I synthesise the literature here? [paste your draft]",
+          "Are my claims properly supported by evidence? [paste your draft]",
+          "Identify gaps or limits in my use of sources. [paste your draft]"
+        ],
+        "benchmarks": [
+          "information-and-sources",
+          "critical-evaluation-of-evidence-and-arguments",
+          "written-communication"
+        ]
+      },
+      {
+        "label": "Exam revision",
+        "items": [
+          "Ask me short-answer questions on [topic] one at a time, with feedback after each.",
+          "Make flashcards to test me on [topic].",
+          "Break [topic] into short, memorable key points.",
+          "What should I focus on revising for a [level] exam in [topic]?",
+          "Build a spaced-repetition revision timetable for my exam on [date]: [topics]."
+        ],
+        "benchmarks": [
+          "subject-knowledge-and-understanding",
+          "independent-and-self-directed-learning"
+        ]
+      },
+      {
+        "label": "Productivity",
+        "items": [
+          "Evaluate the tone of this email. [paste email]",
+          "List the actions arising from this email. [paste email]",
+          "Redraft this in a more formal tone. [paste text]",
+          "Plan intermediate deadlines for an essay due in [time].",
+          "Give me five concepts to prepare before a lecture on [topic]."
+        ],
+        "benchmarks": [
+          "professional-practice-and-employability",
+          "independent-and-self-directed-learning",
+          "reflection-and-personal-development"
+        ]
+      },
+      {
+        "label": "Follow-on (after a reply)",
+        "items": [
+          "Expand on point [number] in more detail.",
+          "Give case studies to illustrate these points.",
+          "Give counter-arguments to each of these points.",
+          "Where can I find more data on [topic]?",
+          "Which views are under-represented here, and why?"
+        ],
+        "benchmarks": [
+          "critical-evaluation-of-evidence-and-arguments",
+          "information-and-sources"
+        ]
+      }
+    ],
+    "context": [
+      {
+        "label": "Your level",
+        "items": [
+          "I am a first-year (Level 4) undergraduate.",
+          "I am a second-year (Level 5) undergraduate.",
+          "I am a final-year (Level 6) undergraduate.",
+          "I am a Master's (Level 7) student.",
+          "I am a PhD researcher."
+        ]
+      },
+      {
+        "label": "About you",
+        "items": [
+          "I am studying [module or topic].",
+          "My strengths are [x] and [x].",
+          "My challenges are [x] and [x].",
+          "English is my second language.",
+          "My work is influenced by the ideas of [x]."
+        ]
+      }
+    ],
+    "format": [
+      {
+        "label": "Length",
+        "items": [
+          "Keep it under 500 words.",
+          "Use no more than five paragraphs."
+        ]
+      },
+      {
+        "label": "Form",
+        "items": [
+          "Give a numbered list.",
+          "Write in prose, not bullet points.",
+          "Present it as questions and answers."
+        ]
+      },
+      {
+        "label": "Study integrity",
+        "items": [
+          "Explain it, do not write it for me.",
+          "Avoid the first person.",
+          "Show your reasoning so I can check it."
+        ]
+      }
+    ],
+    "audience": [
+      {
+        "label": "Audience",
+        "items": [
+          "a non-specialist reader",
+          "fellow students on my course",
+          "an academic marker",
+          "someone completely new to the topic"
+        ]
+      }
+    ],
+    "tone": [
+      {
+        "label": "Tone",
+        "items": [
+          "formal",
+          "objective and neutral",
+          "encouraging",
+          "direct and concise"
+        ]
+      }
+    ],
+    "style": [
+      {
+        "label": "Style",
+        "items": [
+          "academic",
+          "plain English",
+          "structured and signposted",
+          "critical and analytical"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "label": "Approach",
+        "items": [
+          "Work through it step by step.",
+          "Break it into numbered stages.",
+          "Show your reasoning as you go.",
+          "Ask me one question at a time and wait for my answer."
+        ]
+      }
+    ],
+    "goal": [
+      {
+        "label": "End goal",
+        "items": [
+          "so that I can revise it independently.",
+          "so that I understand the method, not just the answer.",
+          "so that I can improve my next draft.",
+          "so that I am ready for the assessment."
+        ]
+      }
+    ],
+    "benchmark": [
+      {
+        "label": "Knowledge",
+        "items": [
+          "so that I get better at building secure knowledge of my subject’s core content.",
+          "so that I get better at understanding the key theories, concepts and debates.",
+          "so that I get better at knowing how my field developed and where it stands now."
+        ]
+      },
+      {
+        "label": "Thinking",
+        "items": [
+          "so that I get better at breaking problems down and solving them with my subject’s methods.",
+          "so that I get better at weighing evidence and arguments to reach a reasoned judgement."
+        ]
+      },
+      {
+        "label": "Application",
+        "items": [
+          "so that I get better at applying what I know to real problems.",
+          "so that I get better at using the right research and enquiry methods.",
+          "so that I get better at finding and using information and sources well.",
+          "so that I get better at working with data, numbers and quantitative reasoning.",
+          "so that I get better at building my digital skills.",
+          "so that I get better at being more enterprising and creative."
+        ]
+      },
+      {
+        "label": "Communication",
+        "items": [
+          "so that I get better at communicating clearly to different audiences.",
+          "so that I get better at working well as part of a team.",
+          "so that I get better at writing clearly in the forms my subject needs."
+        ]
+      },
+      {
+        "label": "Autonomy & integrity",
+        "items": [
+          "so that I get better at working ethically and with integrity.",
+          "so that I get better at becoming a more independent, self-directed learner.",
+          "so that I get better at understanding sustainability in my field.",
+          "so that I get better at developing professional practice and employability.",
+          "so that I get better at reflecting on my learning and developing.",
+          "so that I get better at understanding equality, diversity and inclusion in my field."
+        ]
+      }
+    ]
+  },
+  "benchmarks": {
+    "_comment": "Universal graduate benchmarks (the shared core distilled from the 54 QAA subject benchmark statements), cross-referenced into this prompt bank so a student can think about which graduate skill / graduate attribute (academic practice) they are building. House term: use \"graduate skill\", \"graduate attribute\", \"graduate competency\" or \"academic practice\" - NOT \"academic skills\". `think` = the student-facing focus; the `benchmark` bank surfaces these as a pickable category; each task category lists the benchmark ids it most develops. Source of record: catalogue/context/subject/benchmarks/universal-reference.json.",
+    "terms": [
+      "graduate skill",
+      "graduate attribute",
+      "graduate competency",
+      "academic practice"
+    ],
+    "suggestedStepLabel": "Graduate skill",
+    "source": "catalogue/context/subject/benchmarks/universal-reference.json",
+    "items": [
+      {
+        "id": "subject-knowledge-and-understanding",
+        "strand": "knowledge",
+        "title": "Subject knowledge and understanding",
+        "student": "You know the core content of your subject well and can show it.",
+        "think": "building secure knowledge of my subject’s core content",
+        "core": true,
+        "sharedBy": "54/54"
+      },
+      {
+        "id": "analysis-and-problem-solving",
+        "strand": "thinking",
+        "title": "Analysis and problem-solving",
+        "student": "You break problems down and work out solutions using your subject's methods.",
+        "think": "breaking problems down and solving them with my subject’s methods",
+        "core": true,
+        "sharedBy": "50/54"
+      },
+      {
+        "id": "applying-knowledge-to-practice-or-problems",
+        "strand": "application",
+        "title": "Applying knowledge to practice or problems",
+        "student": "You can use what you know on real problems and in practical settings.",
+        "think": "applying what I know to real problems",
+        "core": true,
+        "sharedBy": "50/54"
+      },
+      {
+        "id": "critical-evaluation-of-evidence-and-arguments",
+        "strand": "thinking",
+        "title": "Critical evaluation of evidence and arguments",
+        "student": "You weigh up evidence and arguments critically and come to reasoned conclusions.",
+        "think": "weighing evidence and arguments to reach a reasoned judgement",
+        "core": true,
+        "sharedBy": "50/54"
+      },
+      {
+        "id": "oral-or-other-communication-to-audiences",
+        "strand": "communication",
+        "title": "Oral or other communication to audiences",
+        "student": "You can explain your subject clearly to different audiences, in more than one form.",
+        "think": "communicating clearly to different audiences",
+        "core": true,
+        "sharedBy": "50/54"
+      },
+      {
+        "id": "research-and-enquiry-methods",
+        "strand": "application",
+        "title": "Research and enquiry methods",
+        "student": "You know how research is done in your subject and can carry out an enquiry yourself.",
+        "think": "using the right research and enquiry methods",
+        "core": true,
+        "sharedBy": "50/54"
+      },
+      {
+        "id": "theories",
+        "strand": "knowledge",
+        "title": "Theories, concepts and debates",
+        "student": "You understand the main ideas and theories in your subject and where people disagree about them.",
+        "think": "understanding the key theories, concepts and debates",
+        "core": true,
+        "sharedBy": "48/54"
+      },
+      {
+        "id": "ethics",
+        "strand": "autonomy",
+        "title": "Ethics, integrity and values",
+        "student": "You recognise the ethical questions in your subject and act responsibly.",
+        "think": "working ethically and with integrity",
+        "core": true,
+        "sharedBy": "47/54"
+      },
+      {
+        "id": "history",
+        "strand": "knowledge",
+        "title": "History, context and currency of the field",
+        "student": "You know how your subject developed, the settings it works in and what is current in it.",
+        "think": "knowing how my field developed and where it stands now",
+        "core": true,
+        "sharedBy": "46/54"
+      },
+      {
+        "id": "teamwork-and-collaboration",
+        "strand": "communication",
+        "title": "Teamwork and collaboration",
+        "student": "You can work well with other people.",
+        "think": "working well as part of a team",
+        "core": true,
+        "sharedBy": "44/54"
+      },
+      {
+        "id": "independent-and-self-directed-learning",
+        "strand": "autonomy",
+        "title": "Independent and self-directed learning",
+        "student": "You can manage your own learning and work on your own.",
+        "think": "becoming a more independent, self-directed learner",
+        "core": true,
+        "sharedBy": "43/54"
+      },
+      {
+        "id": "information-and-sources",
+        "strand": "application",
+        "title": "Information and sources",
+        "student": "You can find, choose and use the right sources and information for your subject.",
+        "think": "finding and using information and sources well",
+        "core": true,
+        "sharedBy": "42/54"
+      },
+      {
+        "id": "data",
+        "strand": "application",
+        "title": "Data, numbers and quantitative reasoning",
+        "student": "You can work with data and numbers in the way your subject needs.",
+        "think": "working with data, numbers and quantitative reasoning",
+        "core": true,
+        "sharedBy": "42/54"
+      },
+      {
+        "id": "digital-skills",
+        "strand": "application",
+        "title": "Digital skills",
+        "student": "You can use the digital tools your subject depends on.",
+        "think": "building my digital skills",
+        "core": true,
+        "sharedBy": "41/54"
+      },
+      {
+        "id": "sustainability",
+        "strand": "autonomy",
+        "title": "Sustainability",
+        "student": "You understand how your subject affects sustainability and the environment.",
+        "think": "understanding sustainability in my field",
+        "core": true,
+        "sharedBy": "37/54"
+      },
+      {
+        "id": "professional-practice-and-employability",
+        "strand": "autonomy",
+        "title": "Professional practice and employability",
+        "student": "You understand how your subject is used at work and are ready for it.",
+        "think": "developing professional practice and employability",
+        "core": true,
+        "sharedBy": "35/54"
+      },
+      {
+        "id": "written-communication",
+        "strand": "communication",
+        "title": "Written communication",
+        "student": "You can write in the forms your subject needs.",
+        "think": "writing clearly in the forms my subject needs",
+        "core": true,
+        "sharedBy": "33/54"
+      },
+      {
+        "id": "reflection-and-personal-development",
+        "strand": "autonomy",
+        "title": "Reflection and personal development",
+        "student": "You can reflect on how you learn and work, and plan how to improve.",
+        "think": "reflecting on my learning and developing",
+        "core": true,
+        "sharedBy": "32/54"
+      },
+      {
+        "id": "equality",
+        "strand": "autonomy",
+        "title": "Equality, diversity and inclusion",
+        "student": "You understand how diversity and inclusion matter in your subject.",
+        "think": "understanding equality, diversity and inclusion in my field",
+        "core": true,
+        "sharedBy": "30/54"
+      },
+      {
+        "id": "enterprise-and-creativity",
+        "strand": "application",
+        "title": "Enterprise and creativity",
+        "student": "You can be creative and enterprising in how you use your subject.",
+        "think": "being more enterprising and creative",
+        "core": true,
+        "sharedBy": "23/54"
+      }
+    ]
+  }
+}

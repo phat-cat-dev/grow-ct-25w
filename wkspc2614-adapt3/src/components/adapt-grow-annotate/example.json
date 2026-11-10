@@ -1,0 +1,147 @@
+[
+  {
+    "__comment": "VARIANT A - free-hand highlighter, learner chooses the pen (reflective, not graded). The five fluoro marker colours each carry a meaning the author sets; the learner decides what to mark. This is the 'colours completed by the user' shape: no _answers, so nothing is right or wrong.",
+    "_id": "c-annotate-marker",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "growAnnotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Read like a critic",
+    "displayTitle": "Read like a critic",
+    "body": "Mark the paragraph with your highlighters the way you would a printed page.",
+    "instruction": "Pick a highlighter, then drag across any words to mark them. Click a mark to remove it.",
+    "_freeSelect": true,
+    "passage": "Good academic writing makes a claim, supports it with evidence, and stays honest about what it cannot show. As you read, notice the moves the writer makes and mark the ones that matter to you.",
+    "_tools": [
+      { "_id": "term", "label": "Key term", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "important", "label": "Important", "_mark": "highlight", "_color": "fluro-yellow" },
+      { "_id": "agree", "label": "I agree", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "question", "label": "I have a question", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "example", "label": "Good example", "_mark": "highlight", "_color": "fluro-purple" }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT B - graded free selection: the learner must select the correct text AND choose the correct pen. Author/AI sets the answer via _targets (phrase -> correct tool id); grading is the 'covers the word' rule. This is the 'colours auto-set by the activity' shape. Four pens over one passage: claim and evidence are the content moves; assertive and tentative are two stances toward certainty, not synonyms for hedging - the assertive phrase deliberately overstates what the evidence supports.",
+    "_id": "c-annotate-find",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "growAnnotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Find the four moves",
+    "displayTitle": "Find the four moves",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "Reading your work aloud helps you catch errors that silent reading skips. In one study, nine out of ten students found more mistakes this way. This proves that every writer should read aloud before submitting. In practice, the gain may be smaller for people who already proofread carefully.",
+    "_tools": [
+      { "_id": "claim", "label": "Claim", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "evidence", "label": "Evidence", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "assertive", "label": "Assertive", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "tentative", "label": "Tentative", "_mark": "highlight", "_color": "fluro-yellow" }
+    ],
+    "_targets": [
+      { "text": "Reading your work aloud helps you catch errors", "tool": "claim" },
+      { "text": "nine out of ten students found more mistakes", "tool": "evidence" },
+      { "text": "This proves that every writer should read aloud", "tool": "assertive" },
+      { "text": "may be smaller for people who already proofread carefully", "tool": "tentative" }
+    ],
+    "_feedback": {
+      "correct": "Spot on - claim, evidence, and the two stances toward certainty that frame them.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 4,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT C - author-pinned targets, graded: the author marks which words are selectable ([[word]]) and _answers gives the correct pen for each, in order. Uses the rectangle (box) and circle (oval) marks in fluoro so the semantic shapes show.",
+    "_id": "c-annotate-targets",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "growAnnotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Label the parts of the argument",
+    "displayTitle": "Label the parts of the argument",
+    "body": "",
+    "instruction": "Choose a pen, then click a highlighted word to mark it. Check your answer when you are done.",
+    "_isQuestion": true,
+    "passage": "A good paragraph opens with a [[topic sentence]], develops it with [[evidence]], and closes with a [[link]] back to the question.",
+    "_tools": [
+      { "_id": "claim", "label": "Claim", "_mark": "oval", "_color": "fluro-pink" },
+      { "_id": "support", "label": "Support", "_mark": "box", "_color": "fluro-green" },
+      { "_id": "link", "label": "Link", "_mark": "box", "_color": "fluro-blue" }
+    ],
+    "_answers": ["claim", "support", "link"],
+    "_feedback": {
+      "correct": "Yes - topic sentence, evidence, and the link that ties it together.",
+      "_incorrect": "Close - fix the words in red, then check again."
+    },
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT D - semantic shapes, reflective: a circle pen and a rectangle pen in fluoro, learner marks freely. Shows box/oval as standalone 'marking' tools rather than highlighter fills.",
+    "_id": "c-annotate-shapes",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "growAnnotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Circle and box",
+    "displayTitle": "Circle and box",
+    "body": "",
+    "instruction": "Circle the one idea the paragraph is really about; box the words that only support it.",
+    "_freeSelect": true,
+    "passage": "Most paragraphs carry one idea and a handful of supporting details. The skill is deciding which is which before you start to cut.",
+    "_tools": [
+      { "_id": "core", "label": "Core idea", "_mark": "oval", "_color": "fluro-pink" },
+      { "_id": "support", "label": "Support", "_mark": "box", "_color": "fluro-blue" }
+    ],
+    "_minAnnotations": 1,
+    "_showLabels": true,
+    "_allowReset": true
+  },
+  {
+    "__comment": "VARIANT E - graded free selection using the critical-vocabulary pen set (application, analysis, evaluation, synthesis) rather than Variant B's rhetorical-moves set - same shell, a second unrelated subject vocabulary, which is the proof that no _mode switch is needed. Pitch per docs/curriculum/tier-specification.md Section 5: application, analysis and evaluation sit at Intermediate, synthesis at Advanced. The passage is reflective writing on purpose: the same four moves, turned on the writer's own practice and landing on something to change, are what make writing reflective rather than merely descriptive.",
+    "_id": "c-annotate-vocab",
+    "_parentId": "b-10",
+    "_type": "component",
+    "_component": "growAnnotate",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Find the four moves in a reflection",
+    "displayTitle": "Find the four moves in a reflection",
+    "body": "",
+    "instruction": "Highlight each phrase with the pen that names what kind of thinking it is doing, then check your answer.",
+    "_freeSelect": true,
+    "_isQuestion": true,
+    "passage": "After the seminar I used Gibbs' cycle to structure my notes on the group task. Comparing my notes with the recording showed that I spoke twice and interrupted once, which explains why the group stalled. The model was useful for ordering what happened, but it did little to help me decide what mattered most. Next time I will combine Gibbs' stages with the feedback criteria from my tutor, so that my reflection points at something I can change.",
+    "_tools": [
+      { "_id": "application", "label": "Application", "_mark": "highlight", "_color": "fluro-pink" },
+      { "_id": "analysis", "label": "Analysis", "_mark": "highlight", "_color": "fluro-green" },
+      { "_id": "evaluation", "label": "Evaluation", "_mark": "highlight", "_color": "fluro-blue" },
+      { "_id": "synthesis", "label": "Synthesis", "_mark": "highlight", "_color": "fluro-purple" }
+    ],
+    "_targets": [
+      { "text": "used Gibbs' cycle to structure my notes", "tool": "application" },
+      { "text": "Comparing my notes with the recording showed that I spoke twice and interrupted once", "tool": "analysis" },
+      { "text": "it did little to help me decide what mattered most", "tool": "evaluation" },
+      { "text": "combine Gibbs' stages with the feedback criteria from my tutor", "tool": "synthesis" }
+    ],
+    "_feedback": {
+      "correct": "Spot on - applying the model, analysing what happened, evaluating it, and synthesising a next step.",
+      "_incorrect": "Not quite - re-read and recolour the phrases in red, then check again."
+    },
+    "_minAnnotations": 4,
+    "_showLabels": true,
+    "_allowReset": true
+  }
+]

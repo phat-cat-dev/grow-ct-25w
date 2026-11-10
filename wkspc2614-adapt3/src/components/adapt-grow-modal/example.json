@@ -1,0 +1,22 @@
+{
+  "_id": "c-15",
+  "_parentId": "b-15",
+  "_type": "component",
+  "_component": "growModal",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Modal",
+  "displayTitle": "A worked example, one click away",
+  "body": "Open the panel to see a paragraph marked up the way a tutor would.",
+  "_supportedLayout": "both",
+  "_completion": "trigger",
+  "_trigger": {
+    "text": "See the worked example",
+    "ariaLabel": "Open the worked example panel"
+  },
+  "_popup": {
+    "title": "Marking a paragraph",
+    "body": "<p>Read the claim first, then check the support behind it.</p><p><strong>Claim:</strong> renewable energy is the better choice. <strong>Support:</strong> one blog post. <strong>The problem:</strong> the claim reaches further than a single, unverifiable source can carry. Narrow the claim, or find stronger evidence.</p>",
+    "_isCancellable": true
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["_items"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Title",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Rendered as an h2. ~10 words or fewer.",
+      "translatable": true
+    },
+    "_direction": {
+      "type": "string",
+      "required": false,
+      "enum": ["ascending", "descending"],
+      "default": "ascending",
+      "title": "Display direction",
+      "inputType": { "type": "Select", "options": ["ascending", "descending"] },
+      "validators": [],
+      "help": "IMPORTANT: always author _items in ascending chronological order regardless of this setting - the view reverses the display order for 'descending', it does not change how you author the data."
+    },
+    "_reveal": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Reveal steps on click",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "When true, each event's description is collapsed and revealed by clicking its title (an independent toggle per step). When false, all descriptions show at once."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Events",
+      "minItems": 2,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": false,
+        "title": "Event",
+        "properties": {
+          "dateLabel": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Date label",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Free text, not a parsed date, e.g. \"1998\", \"March 2010\", \"1980s\", \"Present\". ~4 words or fewer.",
+            "translatable": true
+          },
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Event title",
+            "inputType": "Text",
+            "validators": [],
+            "help": "~12 words or fewer.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Body",
+            "inputType": "TextArea",
+            "validators": [],
+            "translatable": true
+          },
+          "_highlight": {
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "title": "Highlight this event",
+            "inputType": "Checkbox",
+            "validators": [],
+            "help": "Use sparingly - source guidance recommends at most 1-2 highlighted events per grow-timeline."
+          }
+        }
+      }
+    }
+  }
+}

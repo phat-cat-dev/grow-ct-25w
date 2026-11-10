@@ -1,0 +1,296 @@
+/**
+ * Flipcard component styles (FB-4)
+ *
+ * - CSS grid, auto-fit with min card width
+ * - 3D flip on inner wrapper
+ * - Reduced motion: instant swap, no rotation
+ * - Equal-height cards per row
+ */
+
+// Animation variables
+@flipcard-duration: 0.6s;
+@flipcard-easing: ease-in-out;
+@flipcard-min-width: 280px;
+@flipcard-gap: 1.5rem; // a touch more breathing room between cards (GROW, theming)
+@flipcard-perspective: 1000px;
+
+// grow-ct theming — colour drivers mapped to GROW theme tokens by meaning, so the
+// fronts follow the brand hue and the verdicts the semantic palette; dark mode is
+// handled by the theme. (Was: local hardcoded hsl() palette.)
+@flipcard-dark-blue: var(--accent-ink); // brand deep (front "flip me" card)
+@flipcard-green:     var(--c-positive); // verdict: positive
+@flipcard-red:       var(--c-negative); // verdict: negative
+
+.grow-flipcard {
+
+  &__inner {
+    // Inherits from component__inner
+  }
+
+  &__widget {
+    // Container for the card grid
+  }
+
+  &__cards {
+    display: grid;
+    // Pairs: a fixed two-column grid so four cards stack 2x2 (six -> 3x2),
+    // rather than auto-fit flowing them into an uneven row.
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: @flipcard-gap;
+
+    // Single column on narrow viewports
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card-container {
+    // Establishes 3D context for child transforms
+    perspective: @flipcard-perspective;
+
+    &.is-visited {
+      // Visual indicator that card has been flipped
+      .grow-flipcard__card {
+        box-shadow: 0 2px 8px var(--shadow);
+      }
+    }
+  }
+
+  &__card {
+    // The button element - full size of container
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+
+    &:focus {
+      outline: 2px solid var(--ab-base-accent);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__card-inner {
+    // Inner wrapper for the 3D transform; a single-cell grid so both faces stack
+    // in the same cell and the card sizes to the TALLER face (no overflow).
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr); // single full-width cell (so faces fill the card, not shrink to text width)
+    transform-style: preserve-3d;
+    transition: transform @flipcard-duration @flipcard-easing;
+
+    // Flipped state
+    .is-flipped & {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__face {
+    // Both faces share the same grid cell (row 1, col 1) so the card grows to the
+    // taller one; backface-visibility + the back's rotateY still handle the 3D flip.
+    // NB: use grid-row/grid-column, not `grid-area: 1 / 1` - Less evaluates the
+    // `1 / 1` as division (-> `grid-area: 1`), which drops the column line and lets
+    // the faces auto-place into two columns (front collapses to 0). FB-4.
+    grid-row: 1;
+    grid-column: 1;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // vertically centre the face content (front + back), GROW
+    padding: @item-padding;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &--front {
+      background: @flipcard-dark-blue; // grow-ct heading-bar blue (brand)
+      border: 1px solid @flipcard-dark-blue;
+    }
+
+    &--back {
+      background: var(--ab-base-surface-subtle);
+      border: 1px solid var(--ab-base-hairline);
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__graphic {
+    flex-shrink: 0;
+    margin-bottom: @item-margin / 2;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: @item-margin / 2;
+
+    &--front {
+      // Literal neutral swap (GROW, 10 Oct 2026: "keep the neutrals as the
+      // literal swap, not role-split") — var(--ab-dark-grey), matching
+      // vanilla-overrides.less's running-text bucket.
+      color: var(--ab-dark-grey);
+    }
+
+    &--back {
+      // Literal neutral swap (GROW, 10 Oct 2026: "keep the neutrals as the
+      // literal swap, not role-split") — var(--ab-dark-grey), matching
+      // vanilla-overrides.less's running-text bucket.
+      color: var(--ab-dark-grey);
+    }
+  }
+
+  &__body {
+    // Size to content and never shrink, so the face grows to fit and the text is
+    // flex-centred by the face's justify-content:center - no inner scrollbar.
+    // (Was flex-grow:0 + overflow-y:auto, which produced a useless scroll strip.)
+    flex: 0 0 auto;
+
+    &--front {
+      // Literal neutral swap (GROW, 10 Oct 2026: "keep the neutrals as the
+      // literal swap, not role-split") — var(--ab-dark-grey), matching
+      // vanilla-overrides.less's running-text bucket.
+      color: var(--ab-dark-grey);
+    }
+
+    &--back {
+      // Literal neutral swap (GROW, 10 Oct 2026: "keep the neutrals as the
+      // literal swap, not role-split") — var(--ab-dark-grey), matching
+      // vanilla-overrides.less's running-text bucket.
+      color: var(--ab-dark-grey);
+    }
+  }
+
+}
+
+// ── grow-ct theming: dark-blue fronts + green/red verdict on the back ──────────
+.grow-flipcard {
+  // Front: brand dark-blue card, white text - a uniform "flip me" invitation.
+  &__title--front,
+  &__body--front { color: #fff; }
+
+  // Back keeps the area title (dark ink on a light face) and reveals the verdict
+  // via a coloured left border, a faint tint and a tick / cross badge.
+  &__card-container--positive .grow-flipcard__face--back {
+    position: relative;
+    border-left: 5px solid @flipcard-green;
+    background: color-mix(in srgb, @flipcard-green 8%, var(--ab-base-surface-subtle));
+  }
+  &__card-container--negative .grow-flipcard__face--back {
+    position: relative;
+    border-left: 5px solid @flipcard-red;
+    background: color-mix(in srgb, @flipcard-red 8%, var(--ab-base-surface-subtle));
+  }
+  &__card-container--positive .grow-flipcard__face--back::after,
+  &__card-container--negative .grow-flipcard__face--back::after {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+  }
+  &__card-container--positive .grow-flipcard__face--back::after { content: "\2713"; background: @flipcard-green; } // tick
+  &__card-container--negative .grow-flipcard__face--back::after { content: "\2717"; background: @flipcard-red; }   // cross
+  // keep the back title clear of the badge
+  &__card-container--positive .grow-flipcard__title--back,
+  &__card-container--negative .grow-flipcard__title--back { padding-right: 2.2rem; }
+}
+
+// ── back face: separate the prompt example (the "answer") from the explanation ──
+// (FB-5, GROW 2026-10-27) The two "Spot the line" sets pair an example prompt
+// with a one-line explanation in the same back body. Mark them apart: the prompt
+// reads as a quoted example box (what you would type), carrying a small "Prompt"
+// eyebrow; the explanation sits as a separated note. Authored in back.body as
+// .grow-flipcard__prompt / .grow-flipcard__note (raw HTML, rendered via the template).
+.grow-flipcard__body--back {
+  .grow-flipcard__prompt {
+    display: block;
+    margin: 0.3em 0 0;
+    padding: 0.5em 0.7em;
+    background: color-mix(in srgb, var(--ab-dark-grey, #333) 6%, transparent);
+    border-left: 3px solid color-mix(in srgb, var(--ab-dark-grey, #333) 28%, transparent);
+    border-radius: 4px;
+    font-style: italic;
+  }
+  .grow-flipcard__prompt::before {
+    content: "Prompt";
+    display: block;
+    margin-bottom: 0.2em;
+    font-size: 0.7em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .grow-flipcard__note { display: block; }
+  // a clear gap between the two, whichever order they fall in
+  .grow-flipcard__note + .grow-flipcard__prompt,
+  .grow-flipcard__prompt + .grow-flipcard__note { margin-top: 0.6em; }
+}
+
+// Equal-height cards in a row
+// Grid handles this automatically with align-items: stretch (default)
+// The min-height on __card-inner ensures minimum size
+
+// Reduced motion: instant swap, no rotation
+@media (prefers-reduced-motion: reduce) {
+  .grow-flipcard__card-inner {
+    transition: none;
+  }
+
+  // Instead of rotation, use opacity swap
+  .grow-flipcard__face {
+    backface-visibility: visible;
+    transition: opacity 0.01s;
+
+    &--front {
+      transform: none;
+      opacity: 1;
+
+      .is-flipped & {
+        opacity: 0;
+      }
+    }
+
+    &--back {
+      transform: none;
+      opacity: 0;
+
+      .is-flipped & {
+        opacity: 1;
+      }
+    }
+  }
+
+  .is-flipped .grow-flipcard__card-inner {
+    transform: none;
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "_id": "c-15",
+  "_parentId": "b-15",
+  "_type": "component",
+  "_component": "growSortable",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Order the steps of checking an AI claim",
+  "displayTitle": "Order the steps of checking an AI claim",
+  "body": "<p>When an AI states something as fact, you check it. Put the steps in order.</p>",
+  "instruction": "Drag the steps into the right order, then select Submit.",
+  "_supportedLayout": "full-width",
+  "_attempts": 2,
+  "_canShowModelAnswer": true,
+  "_canShowFeedback": true,
+  "_canShowMarking": true,
+  "_items": [
+    {
+      "text": "Identify the exact claim the AI has made."
+    },
+    {
+      "text": "Check whether it gives a source you can follow."
+    },
+    {
+      "text": "Find an independent, trusted source on the same point."
+    },
+    {
+      "text": "Compare the two and note where they differ."
+    },
+    {
+      "text": "Decide whether to use, verify further, or reject the claim."
+    }
+  ],
+  "_feedback": {
+    "title": "Checking a claim",
+    "correct": "<p>That is the order. Name the claim, look for its source, find an independent one, compare, then decide.</p>",
+    "_incorrect": {
+      "final": "<p>Not quite. Start by naming the claim, then look for sources before you compare and decide.</p>",
+      "notFinal": "<p>Not quite. Think about what you need before you can compare anything, and try again.</p>"
+    }
+  }
+}

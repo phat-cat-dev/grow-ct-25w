@@ -1,0 +1,168 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Page feedback. Choose whether this page helped you, and optionally add a note.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "choicesGroupLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Was this page helpful?",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible group label for the pair of response buttons.",
+      "translatable": true
+    },
+    "notePlaceholder": {
+      "type": "string",
+      "required": true,
+      "default": "One specific suggestion is a good place to start.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Placeholder text for the optional note field.",
+      "translatable": true
+    },
+    "noteLabel": {
+      "type": "string",
+      "required": true,
+      "default": "What worked, or what could be clearer? (optional)",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "statusPrompt": {
+      "type": "string",
+      "required": true,
+      "default": "Choose a response to add an optional note.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown before a response has been chosen.",
+      "translatable": true
+    },
+    "statusChosen": {
+      "type": "string",
+      "required": true,
+      "default": "Response selected. Press Save response to keep it.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown after a choice is clicked but before Save is pressed.",
+      "translatable": true
+    },
+    "statusChooseFirst": {
+      "type": "string",
+      "required": true,
+      "default": "Choose a response before saving.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown if Save is pressed with no response chosen.",
+      "translatable": true
+    },
+    "statusSaved": {
+      "type": "string",
+      "required": true,
+      "default": "Saved.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown after a successful save.",
+      "translatable": true
+    },
+    "statusFailed": {
+      "type": "string",
+      "required": true,
+      "default": "This could not be saved. Please try again before you leave this page.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown when a save fails.",
+      "translatable": true
+    },
+    "statusCleared": {
+      "type": "string",
+      "required": true,
+      "default": "Response and note cleared.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "submitButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Save response",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "clearButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Clear response",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "completedState": {
+      "type": "string",
+      "required": true,
+      "default": "Thank you for your feedback.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Shown after a submitted response contributes to completion.",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "_variant": {
+      "type": "string",
+      "required": false,
+      "enum": ["conversation", "growth", "fieldnote"],
+      "default": "conversation",
+      "title": "Variant",
+      "inputType": { "type": "Select", "options": ["conversation", "growth", "fieldnote"] },
+      "validators": [],
+      "help": "Visual treatment only (illustration and accent) — does not change the data shape or behaviour. 'conversation' for general end-of-page use, 'growth' for lesson/teaching pages, 'fieldnote' for compact reference pages."
+    },
+    "_choicePositiveLabel": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Positive choice label",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the helpful response. If blank, uses the variant default (e.g. 'Yes, it helped').",
+      "translatable": true
+    },
+    "_choiceNegativeLabel": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Negative choice label",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the not-helpful response. If blank, uses the variant default (e.g. 'Not quite').",
+      "translatable": true
+    },
+    "_isCompletionBearing": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Is completion bearing",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "When true, saving a response (either choice) also contributes to lesson completion. Completion is sticky — it is never revoked by clearing a later response."
+    }
+  }
+}

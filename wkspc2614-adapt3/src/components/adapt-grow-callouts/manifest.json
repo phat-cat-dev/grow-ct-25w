@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growCallouts",
+  "name": "adapt-grow-callouts",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-callouts.git",
+  "summary": "Multi-item callout group — a responsive set of short, variant-coloured asides (tip / do / dont / note / warning / feedback …). Sibling of adapt-grow-callout.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-callouts.less",
+    "tokens": [
+      "--accent", "--c-positive", "--c-negative", "--c-neutral", "--c-comment",
+      "--ink", "--surface-1", "--line"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "This file is structure-only (group grid + spacing). The variant colours resolve through the shared .ab.callout token system, which the theme drives; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-callouts/blocks/block-callouts-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-callouts/exemplars/callouts-reading.json",
+        "adapt-grow-callouts/exemplars/callouts-referencing.json",
+        "adapt-grow-callouts/exemplars/callouts-feedback.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-callouts.md"
+    },
+    "components": ["growCallout"]
+  }
+}

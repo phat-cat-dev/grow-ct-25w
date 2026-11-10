@@ -1,0 +1,20 @@
+{{!--
+  BEM base classes (grow-quote-block, grow-quote-block__content, grow-quote-block__attribution)
+  follow congen11's intended naming convention. grow-quote-block__context is new in
+  this port - the source renderer never output the `context` field at all.
+--}}
+<div class="component__inner growQuoteBlock__inner">
+  <blockquote class="grow-quote-block" data-component="grow-quote-block">
+    {{#if context}}
+      <p class="grow-quote-block__context">{{context}}</p>
+    {{/if}}
+    <div class="grow-quote-block__content">
+      &ldquo;{{quote}}&rdquo;
+    </div>
+    <cite class="grow-quote-block__attribution">
+      <span class="grow-quote-block__attribution-name">{{_attribution.name}}</span>
+      {{#if _attribution.role}}<span class="grow-quote-block__attribution-role">, {{_attribution.role}}</span>{{/if}}
+      {{#if _attribution.source}}<span class="grow-quote-block__attribution-source">&mdash; {{_attribution.source}}</span>{{/if}}
+    </cite>
+  </blockquote>
+</div>

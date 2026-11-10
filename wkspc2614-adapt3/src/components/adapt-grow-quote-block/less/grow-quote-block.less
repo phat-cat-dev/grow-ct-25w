@@ -1,0 +1,50 @@
+// adapt-grow-quote-block
+// Tokenised to the GROW theme. Was a local hardcoded Cardiff-Met palette
+// (@grow-navy #1D2E4F, @grow-red #C8102E, @grow-dark-grey, @grow-white) ported
+// from themes/cardiff-met/scss/_components.scss. Each colour is now mapped to a
+// GROW token by meaning, so the card follows the theme hue and dark mode
+// automatically:
+//   card surface      → --surface-1
+//   brand accent bar  → --accent      (the house brand stripe, decorative)
+//   quote + name ink  → --ink         (the card's primary reading text)
+//   context/meta ink  → --ink-soft    (secondary text)
+//   card shadow       → --shadow
+
+.grow-quote-block {
+  background: var(--surface-1);
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+  padding: 1.5rem 1.75rem;
+  margin: 0 0 1.5rem;
+  box-shadow: 0 1px 3px var(--shadow, rgba(0, 0, 0, 0.08));
+
+  &__context {
+    font-size: 0.875rem;
+    color: var(--ink-soft);
+    margin: 0 0 0.75rem;
+  }
+
+  &__content {
+    font-size: 1.125rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 0.75rem;
+  }
+
+  &__attribution {
+    display: block;
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+  }
+
+  &__attribution-name {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  &__attribution-source {
+    margin-left: 0.375rem;
+  }
+}

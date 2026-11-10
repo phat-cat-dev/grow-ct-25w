@@ -1,0 +1,329 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Reflection. Develop your thought in the lined journal; use the prompts to change the lens.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "counterText": {
+      "type": "string",
+      "required": true,
+      "default": "{{count}} of {{max}} characters",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Character counter format. Placeholders: {{count}}, {{max}}.",
+      "translatable": true
+    },
+    "statusNormal": {
+      "type": "string",
+      "required": true,
+      "default": "Your writing saves automatically.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown during normal operation.",
+      "translatable": true
+    },
+    "statusFailed": {
+      "type": "string",
+      "required": true,
+      "default": "Your writing could not be saved. Please copy it somewhere safe before you leave this page.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Status line shown when a save fails.",
+      "translatable": true
+    },
+    "overLimitText": {
+      "type": "string",
+      "required": true,
+      "default": "You're {{over}} characters over the limit — please shorten your writing before continuing.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Warning shown when character limit exceeded. Placeholder: {{over}}.",
+      "translatable": true
+    },
+    "remainingAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "{{remaining}} characters remaining.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Screen reader announcement when approaching limit. Placeholder: {{remaining}}.",
+      "translatable": true
+    },
+    "counterTextWords": {
+      "type": "string",
+      "required": true,
+      "default": "{{count}} of {{max}} words",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Word counter format (used when _maxWords is set). Placeholders: {{count}}, {{max}}.",
+      "translatable": true
+    },
+    "overLimitTextWords": {
+      "type": "string",
+      "required": true,
+      "default": "You're {{over}} words over the limit. Please shorten your writing before continuing.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Warning shown when the word limit is exceeded. Placeholder: {{over}}.",
+      "translatable": true
+    },
+    "remainingAnnouncementWords": {
+      "type": "string",
+      "required": true,
+      "default": "{{remaining}} words remaining.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Screen reader announcement when approaching the word limit. Placeholder: {{remaining}}.",
+      "translatable": true
+    },
+    "completionButton": {
+      "type": "string",
+      "required": true,
+      "default": "Mark as complete",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the completion button (reflection variant only).",
+      "translatable": true
+    },
+    "completedState": {
+      "type": "string",
+      "required": true,
+      "default": "Completed",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Static text shown after marking complete.",
+      "translatable": true
+    },
+    "belowMinimumMessage": {
+      "type": "string",
+      "required": true,
+      "default": "Please write a little more before marking this complete.",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Message announced when pressing complete with insufficient text.",
+      "translatable": true
+    },
+    "expandButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Expand journal",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible label for the corner button that manually expands the journal.",
+      "translatable": true
+    },
+    "collapseButtonLabel": {
+      "type": "string",
+      "required": true,
+      "default": "Collapse journal",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Accessible label for the corner button when the journal is manually expanded.",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional guidance text displayed above the module.",
+      "translatable": true
+    },
+    "_kicker": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Kicker",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Small uppercase label above the sketchbook, e.g. 'Work in progress / no perfect answers'. Leave blank to hide.",
+      "translatable": true
+    },
+    "_caption": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Caption",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "Optional note shown below the journal. Leave blank to hide.",
+      "translatable": true
+    },
+    "_journal": {
+      "type": "object",
+      "required": false,
+      "title": "Journal",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "Develop your thought",
+          "title": "Journal card title",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "icon": {
+          "type": "string",
+          "required": false,
+          "default": "draw",
+          "title": "Journal icon (Material Symbol)",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Material Symbols Outlined ligature name, e.g. 'draw', 'edit_note'."
+        },
+        "label": {
+          "type": "string",
+          "required": false,
+          "default": "Private practice notes",
+          "title": "Journal field label",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Visible label and accessible name for the writing area.",
+          "translatable": true
+        }
+      }
+    },
+    "_lens": {
+      "type": "object",
+      "required": false,
+      "title": "Change the lens",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "Change the lens",
+          "title": "Lens card title",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "icon": {
+          "type": "string",
+          "required": false,
+          "default": "lightbulb",
+          "title": "Lens icon (Material Symbol)",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Material Symbols Outlined ligature name, e.g. 'lightbulb'."
+        },
+        "_prompts": {
+          "type": "array",
+          "required": false,
+          "title": "Reframing prompts",
+          "help": "Short prompts that push the learner to see the thought differently. Leave empty to hide the aside (the journal then spans full width).",
+          "items": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          }
+        }
+      }
+    },
+    "_variant": {
+      "type": "string",
+      "required": false,
+      "enum": ["reflection", "notes"],
+      "default": "reflection",
+      "title": "Variant",
+      "inputType": { "type": "Select", "options": ["reflection", "notes"] },
+      "validators": [],
+      "help": "Purpose of the writing area. 'reflection' may be completion-bearing; 'notes' is never completion-bearing."
+    },
+    "placeholder": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Placeholder text",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Empty-state text in the writing area. If blank, uses a variant default.",
+      "translatable": true
+    },
+    "_maxCharacters": {
+      "type": "number",
+      "required": false,
+      "default": 4000,
+      "title": "Maximum characters",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Soft character limit. Learner can type beyond this but cannot mark complete until under. Do not raise without checking suspend_data budget."
+    },
+    "_minCharacters": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Minimum characters",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Minimum characters required before the learner can mark as complete. Only applies when _isCompletionBearing is true."
+    },
+    "_maxWords": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Maximum words",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Optional word limit. When above 0, the counter and completion gate work in WORDS; _maxCharacters stays a silent suspend_data backstop. 0 = no word limit."
+    },
+    "_minWords": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Minimum words",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Minimum words required before marking complete (word mode). 0 = no word minimum."
+    },
+    "_isCompletionBearing": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Is completion bearing",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Reflection variant only. When true, shows a 'Mark as complete' button and contributes to lesson completion."
+    },
+    "_rows": {
+      "type": "number",
+      "required": false,
+      "default": 4,
+      "title": "Initial rows",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Initial height of the writing area in rows. It auto-grows as the learner types."
+    },
+    "_maxRows": {
+      "type": "number",
+      "required": false,
+      "default": 20,
+      "title": "Maximum rows",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "Maximum height before scrolling."
+    }
+  }
+}

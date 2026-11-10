@@ -1,0 +1,223 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Hand-drawn notes drawn over the content.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_targetId": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Target region id",
+      "inputType": "Text",
+      "validators": [],
+      "help": "The _id of the article / block / component the notes should be drawn over. Leave blank to use the component's own article."
+    },
+    "_launch": {
+      "type": "object",
+      "required": false,
+      "title": "Launch button",
+      "properties": {
+        "_icon": {
+          "type": "string",
+          "required": false,
+          "default": "edit_note",
+          "title": "Icon",
+          "inputType": "Text",
+          "validators": [],
+          "help": "A Material Symbols Outlined name shown on the button, e.g. 'edit_note', 'draw', 'sticky_note_2', 'gesture'."
+        },
+        "text": {
+          "type": "string",
+          "required": false,
+          "default": "Show the notes",
+          "title": "Button text",
+          "inputType": "Text",
+          "translatable": true,
+          "validators": [],
+          "help": "Visible label and accessible name for the launch button."
+        }
+      }
+    },
+    "_overlay": {
+      "type": "object",
+      "required": false,
+      "title": "Overlay",
+      "properties": {
+        "_reveal": {
+          "type": "string",
+          "required": false,
+          "enum": ["stepped", "all"],
+          "default": "stepped",
+          "title": "Reveal",
+          "inputType": { "type": "Select", "options": ["stepped", "all"] },
+          "validators": [],
+          "help": "'stepped' draws the notes on one step-group at a time with a Next control; 'all' draws them all on together."
+        },
+        "_scrim": {
+          "type": "string",
+          "required": false,
+          "enum": ["none", "faint"],
+          "default": "none",
+          "title": "Scrim",
+          "inputType": { "type": "Select", "options": ["none", "faint"] },
+          "validators": [],
+          "help": "'none' leaves the content fully visible; 'faint' lays a light wash over the region so the notes stand out."
+        }
+      }
+    },
+    "_notes": {
+      "type": "array",
+      "required": true,
+      "title": "Notes",
+      "items": {
+        "type": "object",
+        "required": ["_type"],
+        "properties": {
+          "_type": {
+            "type": "string",
+            "required": true,
+            "enum": ["mark", "chalk"],
+            "default": "mark",
+            "title": "Type",
+            "inputType": { "type": "Select", "options": ["mark", "chalk"] },
+            "validators": [],
+            "help": "'mark' is an ink mark from the animations catalogue; 'chalk' is a chalk-drawn diagram from chalk-patterns."
+          },
+          "_markId": {
+            "type": "string",
+            "required": false,
+            "default": "circle",
+            "title": "Mark id",
+            "inputType": "Text",
+            "validators": [],
+            "help": "For 'mark' notes: a catalogue id, e.g. underline, circle, box, tick, big-tick, arrow-right, margin-note. See adapt-grow-animations animations.json."
+          },
+          "_pattern": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Chalk pattern id",
+            "inputType": "Text",
+            "validators": [],
+            "help": "For 'chalk' notes: a chalk-patterns id, e.g. fork-connector, grouping-brace, curved-arrow, decision-diamond."
+          },
+          "text": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Text",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "For a 'mark' note: the word/phrase the mark wraps or the margin-note text. Ignored by standalone marks (tick, arrow)."
+          },
+          "over": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Replacement word",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "Only the 'correction' mark: the word written above the struck text."
+          },
+          "data": {
+            "type": "object",
+            "required": false,
+            "title": "Chalk label data",
+            "help": "For a 'chalk' note: the pattern's slot data, e.g. { \"source\": { \"label\": \"claim\" }, \"branch1\": { \"label\": \"for\" } }. Each slot takes label and optional detail.",
+            "properties": {}
+          },
+          "_color": {
+            "type": "string",
+            "required": false,
+            "enum": ["accent", "positive", "negative", "neutral", "comment", "pen", "ink"],
+            "default": "accent",
+            "title": "Colour role",
+            "inputType": { "type": "Select", "options": ["accent", "positive", "negative", "neutral", "comment", "pen", "ink"] },
+            "validators": [],
+            "help": "A theme role, never a fixed colour. Resolves to --accent / --c-positive / --c-negative / --c-neutral / --c-comment / --pen / --ink."
+          },
+          "x": {
+            "type": "number",
+            "required": false,
+            "default": 50,
+            "title": "X (0–100%)",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Horizontal centre of the note, as a percentage of the target region's width."
+          },
+          "y": {
+            "type": "number",
+            "required": false,
+            "default": 50,
+            "title": "Y (0–100%)",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Vertical centre of the note, as a percentage of the target region's height."
+          },
+          "_scale": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Size (0.3–3)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_rotation": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Rotation deg (-45–45)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_repeats": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Draw passes (1–10)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_jitter": {
+            "type": "number",
+            "required": false,
+            "default": 3,
+            "title": "Jitter deg (0–10)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_speed": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Speed (0.4–2.5)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "step": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Reveal step",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Notes with the same step draw on together; lower steps reveal first (when _reveal is 'stepped')."
+          }
+        }
+      }
+    }
+  }
+}

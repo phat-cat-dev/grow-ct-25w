@@ -1,0 +1,129 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://adaptlearning.org/schemas/plugins/components/branching.json",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Decision scenario. Read each situation and choose a response to see what happens next.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction shown above the scenario, prompting the learner to read and choose.",
+      "translatable": true
+    },
+    "_scenario": {
+      "type": "object",
+      "required": true,
+      "title": "Scenario",
+      "help": "A branching scenario: a set of nodes the learner walks one choice at a time. A node is either a DECISION (has choices, each pointing to the next node) or an OUTCOME (an ending). Keep the right and wrong routes non-obvious - let the consequence after a choice reveal whether it was a good move, rather than labelling the choices.",
+      "properties": {
+        "_start": {
+          "type": "string",
+          "required": true,
+          "default": "",
+          "title": "Start node id",
+          "inputType": "Text",
+          "validators": ["required"],
+          "help": "The id (a key in _nodes) the scenario begins at."
+        },
+        "_nodes": {
+          "type": "object",
+          "required": true,
+          "title": "Nodes",
+          "help": "A map of node id -> node. Each node has a body, and EITHER a _choices array (a decision) OR an _outcome string (an ending: 'good', 'poor' or 'neutral'). Each choice has text, a consequence shown before continuing, and a _goto giving the next node id.",
+          "patternProperties": {
+            "^.*$": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "string",
+                  "required": true,
+                  "default": "",
+                  "title": "Node body",
+                  "inputType": "TextArea",
+                  "validators": ["required"],
+                  "help": "The situation (for a decision) or the ending text (for an outcome).",
+                  "translatable": true
+                },
+                "_outcome": {
+                  "type": "string",
+                  "required": false,
+                  "enum": ["", "good", "poor", "neutral"],
+                  "default": "",
+                  "title": "Outcome",
+                  "inputType": {
+                    "type": "Select",
+                    "options": ["", "good", "poor", "neutral"]
+                  },
+                  "validators": [],
+                  "help": "Set this to make the node an ending. Leave blank for a decision node (which must have _choices instead)."
+                },
+                "_choices": {
+                  "type": "array",
+                  "required": false,
+                  "title": "Choices",
+                  "minItems": 2,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Choice text",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "The text on the choice button. Avoid signalling right/wrong in the wording.",
+                        "translatable": true
+                      },
+                      "consequence": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Consequence",
+                        "inputType": "TextArea",
+                        "validators": ["required"],
+                        "help": "Shown after this choice is picked, before the learner continues. Make it instructive - it is where the learner sees whether the move was sound.",
+                        "translatable": true
+                      },
+                      "_goto": {
+                        "type": "string",
+                        "required": true,
+                        "default": "",
+                        "title": "Next node id",
+                        "inputType": "Text",
+                        "validators": ["required"],
+                        "help": "The id of the node this choice leads to (another decision, or an outcome)."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

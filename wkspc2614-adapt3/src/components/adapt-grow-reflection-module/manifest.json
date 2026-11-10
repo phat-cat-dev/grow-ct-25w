@@ -1,0 +1,56 @@
+{
+  "manifest": 1,
+  "id": "growReflectionModule",
+  "name": "adapt-grow-reflection-module",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-reflection-module.git",
+  "summary": "Reflection — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-reflection-module.less",
+    "tokens": [
+      "--accent",
+      "--c-negative",
+      "--c-neutral",
+      "--fs-3xs",
+      "--fs-base",
+      "--fs-sm",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--shadow",
+      "--space-2xs",
+      "--space-md",
+      "--space-sm",
+      "--space-xs",
+      "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-reflection-module/blocks/block-reflection-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-reflection-module/exemplars/feedback.json",
+        "adapt-grow-reflection-module/exemplars/reading.json",
+        "adapt-grow-reflection-module/exemplars/seminar.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-reflection-module.md"
+    },
+    "components": []
+  }
+}

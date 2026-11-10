@@ -1,0 +1,45 @@
+{
+  "manifest": 1,
+  "id": "growPagefeedback",
+  "name": "adapt-grow-pagefeedback",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-pagefeedback.git",
+  "summary": "Was this page helpful? — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-pagefeedback.less",
+    "tokens": [
+      "--accent",
+      "--accent-ink",
+      "--ink-soft",
+      "--line"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-pagefeedback/blocks/block-pagefeedback-close.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-pagefeedback/exemplars/conversation-end-of-page.json",
+        "adapt-grow-pagefeedback/exemplars/fieldnote-reference-page.json",
+        "adapt-grow-pagefeedback/exemplars/growth-lesson-check.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-pagefeedback.md"
+    },
+    "components": []
+  }
+}

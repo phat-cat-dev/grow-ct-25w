@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growTutor",
+  "name": "adapt-grow-tutor",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-tutor.git",
+  "summary": "A course-tutor panel with a live section guide and a notification bar that speaks per-section hints as the learner scrolls. Tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-tutor.less",
+    "tokens": [
+      "--ink", "--ink-soft", "--line", "--surface-1", "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Panel, rail and notification bar already read GROW tokens (token first, literal fallback behind) — mapped from the retired --tm-* contract; dark mode handled by the theme."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-tutor/blocks/block-tutor-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-tutor/exemplars/lesson-guide.json",
+        "adapt-grow-tutor/exemplars/referencing-clinic.json",
+        "adapt-grow-tutor/exemplars/preview-with-sections.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-tutor.md"
+    },
+    "components": []
+  }
+}

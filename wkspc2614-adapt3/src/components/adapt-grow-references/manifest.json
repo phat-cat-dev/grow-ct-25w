@@ -1,0 +1,40 @@
+{
+  "manifest": 1,
+  "id": "growReferences",
+  "name": "adapt-grow-references",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-references.git",
+  "summary": "A list of lesson sources, each with a link, a confirmed/placeholder status and an optional library permalink; theme-styled.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-references.less",
+    "tokens": [],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme-styled: the local LESS is layout only (list reset, spacing) with no colour; text and link colour come from the theme. Dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-references/blocks/block-references-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-references/exemplars/mixed-sources.json",
+        "adapt-grow-references/exemplars/placeholder-sources.json",
+        "adapt-grow-references/exemplars/authored-no-source.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-references.md"
+    },
+    "components": []
+  }
+}

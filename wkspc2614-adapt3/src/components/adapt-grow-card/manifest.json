@@ -1,0 +1,40 @@
+{
+  "manifest": 1,
+  "id": "growCard",
+  "name": "adapt-grow-card",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-card.git",
+  "summary": "Paraphrasing: do and don't — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-card.less",
+    "tokens": [],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-card/blocks/block-card-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-card/exemplars/card-feedback-actions.json",
+        "adapt-grow-card/exemplars/card-note-taking-do-dont.json",
+        "adapt-grow-card/exemplars/card-single-keyidea.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-card.md"
+    },
+    "components": []
+  }
+}

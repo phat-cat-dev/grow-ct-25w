@@ -1,0 +1,71 @@
+{{!--
+  grow-key-term / grow-key-term__title / grow-key-term__definition are carried over from
+  congen11's renderers/elesson/components/grow-key-term.njk (where __title holds the
+  *term* text, not a generic component title - preserved as-is for consistency).
+  All other classes here (part-of-speech, pronunciation, extended-definition,
+  example, related-terms) are new: the source renderer never output those
+  fields even though the schema declared them.
+--}}
+<div class="component__inner growKeyTerm__inner">
+  <div class="grow-key-term{{#if _reveal}} grow-key-term--reveal{{/if}}" data-component="grow-key-term">
+    <h3 class="grow-key-term__title">
+      {{term}}
+      {{#if _partOfSpeech}}<span class="grow-key-term__part-of-speech">{{_partOfSpeech}}</span>{{/if}}
+    </h3>
+    {{#if pronunciation}}
+      <p class="grow-key-term__pronunciation">/{{pronunciation}}/</p>
+    {{/if}}
+    {{#if _reveal}}
+      <div class="grow-key-term__definition grow-key-term__reveal-section" aria-hidden="true" hidden>
+        <p>{{definition}}</p>
+        {{#if extendedDefinition}}
+          <div class="grow-key-term__extended-definition">{{{extendedDefinition}}}</div>
+        {{/if}}
+      </div>
+      {{#if example}}
+        <div class="grow-key-term__example grow-key-term__reveal-section" aria-hidden="true" hidden>
+          <h4 class="grow-key-term__example-title">Example</h4>
+          <p>{{example}}</p>
+        </div>
+      {{/if}}
+      {{#if _relatedTerms.length}}
+        <div class="grow-key-term__related-terms grow-key-term__reveal-section" aria-hidden="true" hidden>
+          <h4 class="grow-key-term__related-terms-title">Related terms</h4>
+          <ul class="grow-key-term__related-terms-list">
+            {{#each _relatedTerms}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+      <button type="button" class="grow-key-term__reveal-btn js-keyterm-reveal">
+        <span class="js-keyterm-reveal-label">Reveal definition</span>
+      </button>
+    {{else}}
+      <div class="grow-key-term__definition">
+        <p>{{definition}}</p>
+      </div>
+      {{#if extendedDefinition}}
+        <div class="grow-key-term__extended-definition">
+          {{{extendedDefinition}}}
+        </div>
+      {{/if}}
+      {{#if example}}
+        <div class="grow-key-term__example">
+          <h4 class="grow-key-term__example-title">Example</h4>
+          <p>{{example}}</p>
+        </div>
+      {{/if}}
+      {{#if _relatedTerms.length}}
+        <div class="grow-key-term__related-terms">
+          <h4 class="grow-key-term__related-terms-title">Related terms</h4>
+          <ul class="grow-key-term__related-terms-list">
+            {{#each _relatedTerms}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>

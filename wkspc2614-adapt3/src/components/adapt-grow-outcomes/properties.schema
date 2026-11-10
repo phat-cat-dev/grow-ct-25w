@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["_items"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional helper line, shown under the lead-in before the first reveal.",
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Lead-in",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "The sentence that introduces the list, e.g. \"By the end of this lesson, you will be able to:\". Rendered above the outcomes.",
+      "translatable": true
+    },
+    "_revealButtonText": {
+      "type": "string",
+      "required": false,
+      "default": "Reveal next outcome",
+      "title": "Reveal button text",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label on the button that reveals the next outcome.",
+      "translatable": true
+    },
+    "_continueButtonText": {
+      "type": "string",
+      "required": false,
+      "default": "Continue",
+      "title": "Continue button text",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label the reveal button takes once the last outcome is shown and it becomes the Continue button.",
+      "translatable": true
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Outcomes",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": false,
+        "title": "Outcome",
+        "properties": {
+          "text": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Outcome",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "A single learning outcome. ~25 words or fewer.",
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

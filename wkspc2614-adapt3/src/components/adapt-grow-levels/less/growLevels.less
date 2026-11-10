@@ -1,0 +1,210 @@
+// adapt-grow-levels
+//
+// A vertical stack of tiered levels. Each level carries a tone colour (restricted
+// = red, guarded = amber, open = green, neutral = brand blue) as a left bar, badge
+// and tint. Locked levels are dimmed until the one before is opened; the open level
+// expands to show its detail and an on-demand "In practice" advice pop-out.
+//
+// Scoped under `.grow-levels` (the template's inner wrapper), NOT the Adapt component
+// wrapper: Adapt lowercases `_component` (growLevels -> .growlevels), so a
+// `.growLevels` selector would miss. Colours use the live GROW scheme tokens.
+
+.grow-levels {
+  // Tone colour drivers mapped to GROW theme tokens by meaning; dark mode is
+  // handled by the theme. (Was: local hardcoded hsl() values.)
+  @tone-restricted: var(--c-negative); // red
+  @tone-guarded:    var(--c-neutral);  // amber
+  @tone-open:       var(--c-positive); // green
+  @tone-neutral:    var(--accent-ink); // brand deep
+
+  &__title {
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 0.4rem;
+  }
+
+  &__lead { margin: 0 0 0.4rem; }
+
+  &__instruction {
+    color: var(--ink-soft, #566);
+    font-size: 0.95em;
+    margin: 0 0 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: lvl;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__item {
+    counter-increment: lvl;
+    --tone: @tone-neutral;
+    --tone-icon: "info";
+    border: 1px solid var(--line, #d5dde2);
+    border-left: 6px solid var(--tone);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--tone) 6%, var(--surface-1, #fff));
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+
+    &--restricted { --tone: @tone-restricted; --tone-icon: "cancel"; }
+    &--guarded    { --tone: @tone-guarded;    --tone-icon: "visibility"; }
+    &--open       { --tone: @tone-open;       --tone-icon: "check_circle"; }
+    &--neutral    { --tone: @tone-neutral;    --tone-icon: "info"; }
+
+    &.is-locked { opacity: 0.5; }
+
+    &.is-open {
+      background: color-mix(in srgb, var(--tone) 12%, var(--surface-1, #fff));
+      box-shadow: 0 0.25rem 0.9rem var(--shadow);
+    }
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: var(--ink, #1a1a1a);
+
+    .is-locked &[aria-disabled="true"] { cursor: not-allowed; }
+  }
+
+  &__badge {
+    flex: 0 0 auto;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--tone);
+    color: #ffffff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before { content: counter(lvl); }
+  }
+
+  &__card-title {
+    flex: 1 1 auto;
+    font-weight: 700;
+  }
+
+  // Tone glyph, right-hand end of the card. Reinforces the tone colour with a
+  // shape, so a level's stance is not carried by colour alone. The glyph
+  // vocabulary is the semantic icon set in
+  // design-kb/section-schemas/semantics.json as rendered by the theme's
+  // grow-semantics.less: cancel (negative), check_circle (positive), info
+  // (neutral layer 1), visibility (neutral.observe). LESS cannot read that
+  // JSON, so the two are kept in step by convention - change one, change both.
+  // Decorative only: every level's title already names its meaning in words.
+  &__tone-icon {
+    flex: 0 0 auto;
+    font-family: 'Material Symbols Outlined'; // self-hosted by the GROW theme
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.25rem;
+    line-height: 1;
+    font-feature-settings: 'liga';
+    color: var(--tone);
+
+    &::before { content: var(--tone-icon); }
+  }
+
+  &__lock {
+    flex: 0 0 auto;
+    display: none;
+    font-size: 0.95rem;
+    line-height: 1;
+    .is-locked & { display: inline-block; }
+    &::before { content: "\1F512"; } // lock
+  }
+
+  &__chevron {
+    flex: 0 0 auto;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid var(--ink-soft, #667);
+    border-bottom: 2px solid var(--ink-soft, #667);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    margin-right: 0.2rem;
+    .is-open & { transform: rotate(-135deg); }
+    .is-locked & { display: none; }
+  }
+
+  &__detail {
+    display: none; // clean drop-down (instant show/hide, no height animation)
+    padding: 0 1rem;
+    .is-open & { display: block; padding-bottom: 1rem; }
+  }
+
+  &__body { margin: 0 0 0.6rem; color: var(--ink, #1a1a1a); }
+
+  // A clear, outlined button so it reads as "press me to reveal", not a label.
+  &__advice-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font: inherit;
+    font-weight: 600;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+    background: var(--surface-1, #fff);
+    color: color-mix(in srgb, var(--tone) 72%, var(--ink, #1a1a1a));
+    border: 2px solid var(--tone); // solid outline in the level's tone colour
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+
+    .no-touch &:hover {
+      background: color-mix(in srgb, var(--tone) 10%, var(--surface-1, #fff));
+      box-shadow: 0 1px 5px var(--shadow);
+    }
+    &:active { background: color-mix(in srgb, var(--tone) 18%, var(--surface-1, #fff)); }
+    html:not(.a11y-disable-focusoutline) &:focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--tone) 45%, transparent);
+      outline-offset: 2px;
+    }
+    // Open state: filled, so it's obvious the button is "on"
+    &[aria-expanded="true"] { background: color-mix(in srgb, var(--tone) 12%, var(--surface-1, #fff)); }
+
+    // Chevron affordance (CSS border triangle, like the card chevron - no icon
+    // font dependency): points down when closed, flips up when open.
+    &::after {
+      content: "";
+      flex: 0 0 auto;
+      width: 0.42rem;
+      height: 0.42rem;
+      margin: 0 0.05rem 0.18rem 0.2rem;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.2s ease;
+    }
+    &[aria-expanded="true"]::after { transform: rotate(-135deg); margin-bottom: 0.02rem; }
+    &.reduce-motion::after,
+    .reduce-motion &::after { transition: none; }
+  }
+
+  &__advice-icon::before { content: "\1F4A1"; } // lightbulb
+
+  &__advice {
+    display: none;
+    border-left: 3px solid var(--tone);
+    padding-left: 0.75rem;
+    color: var(--ink-soft, #455);
+
+    &[aria-hidden="false"] { display: block; margin-top: 0.6rem; }
+  }
+}

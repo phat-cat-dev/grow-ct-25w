@@ -1,0 +1,45 @@
+{
+  "manifest": 1,
+  "id": "growFlipcard",
+  "name": "adapt-grow-flipcard",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-flipcard.git",
+  "summary": "Rely on it, or check it? — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-flipcard.less",
+    "tokens": [
+      "--accent-ink",
+      "--c-negative",
+      "--c-positive",
+      "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-flipcard/blocks/block-flipcard-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-flipcard/exemplars/flipcard-rely-or-verify.json",
+        "adapt-grow-flipcard/exemplars/flipcard-research-terms.json",
+        "adapt-grow-flipcard/exemplars/flipcard-study-myths.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-flipcard.md"
+    },
+    "components": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "manifest": 1,
+  "id": "growHotgraphic",
+  "name": "adapt-grow-hotgraphic",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-hotgraphic.git",
+  "summary": "adapt-grow-hotgraphic — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-hotgraphic.less",
+    "tokens": [
+      "--accent",
+      "--ink",
+      "--line",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": []
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [],
+      "note": "needs-asset: authored course SVG before exemplars can render"
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-hotgraphic.md"
+    },
+    "components": []
+  }
+}

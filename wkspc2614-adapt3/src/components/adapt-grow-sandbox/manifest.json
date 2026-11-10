@@ -1,0 +1,44 @@
+{
+  "manifest": 1,
+  "id": "growSandbox",
+  "name": "adapt-grow-sandbox",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-sandbox.git",
+  "summary": "GROW Sandbox — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/sandbox.less",
+    "tokens": [
+      "--ink",
+      "--line",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-sandbox/blocks/block-sandbox-1up.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-sandbox/exemplars/half-width.json",
+        "adapt-grow-sandbox/exemplars/minimal.json",
+        "adapt-grow-sandbox/exemplars/with-instruction.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-sandbox.md"
+    },
+    "components": []
+  }
+}

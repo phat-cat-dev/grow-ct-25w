@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growMemory",
+  "name": "adapt-grow-memory",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-memory.git",
+  "summary": "Memory match: a grid of flip tiles built from pairs (icon, text or both). Face-down tiles carry the brand accent; turned up they show a light face; matched they settle to a positive tint.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-memory.less",
+    "tokens": [
+      "--accent", "--surface-1", "--line", "--ink", "--ink-soft",
+      "--c-positive", "--c-positive-weak", "--fs-lg", "--fs-xs"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Each tile colour is a local --memory-* custom property resolving through a grow -> GROW scheme -> --ab-* -> literal fallback chain, so tiles retint with the live hue and flip for dark mode. No hard-coded brand colours drive the component."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-memory/blocks/block-memory-50-50.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-memory/exemplars/study-icons.json",
+        "adapt-grow-memory/exemplars/term-and-meaning.json",
+        "adapt-grow-memory/exemplars/icon-and-label.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-memory.md"
+    },
+    "components": []
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "A worked solution, shown one step at a time.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "replayButton": {
+      "type": "string",
+      "required": true,
+      "default": "Replay",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Label for the button that replays the step-by-step reveal.",
+      "translatable": true
+    },
+    "checkedAnnouncement": {
+      "type": "string",
+      "required": true,
+      "default": "this checks out",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Visually-hidden phrase read after a check line, conveying the verification that the on-screen tick shows.",
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional guidance text displayed above the working.",
+      "translatable": true
+    },
+    "_kicker": {
+      "type": "string",
+      "required": false,
+      "default": "Show your working",
+      "title": "Kicker",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Small uppercase label above the title. Leave blank to hide.",
+      "translatable": true
+    },
+    "_working": {
+      "type": "object",
+      "required": true,
+      "title": "Working",
+      "properties": {
+        "_stagger": {
+          "type": "number",
+          "required": false,
+          "default": 0.3,
+          "title": "Stagger (seconds)",
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "Delay between each line arriving. The overall pace also follows the theme motion knob --flow-rate."
+        },
+        "_steps": {
+          "type": "array",
+          "required": true,
+          "title": "Steps",
+          "help": "The working, in order. One line per step.",
+          "items": {
+            "type": "object",
+            "required": true,
+            "properties": {
+              "eq": {
+                "type": "string",
+                "required": true,
+                "default": "",
+                "title": "Line",
+                "inputType": "Text",
+                "validators": [],
+                "help": "The expression for this line. Wrap a substituted value in <mark> to highlight it, e.g. '2(<mark>4</mark>) + 6 = 14'.",
+                "translatable": true
+              },
+              "ann": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Annotation",
+                "inputType": "Text",
+                "validators": [],
+                "help": "The move explained, in the hand-written margin style (e.g. '- 6 both sides'). Optional.",
+                "translatable": true
+              },
+              "_isCheck": {
+                "type": "boolean",
+                "required": false,
+                "default": false,
+                "title": "Is a check line",
+                "inputType": "Checkbox",
+                "validators": [],
+                "help": "Shows a tick that draws on, marking this line as the answer verified by substitution. Use on the last line."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

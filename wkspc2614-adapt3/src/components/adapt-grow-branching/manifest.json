@@ -1,0 +1,49 @@
+{
+  "manifest": 1,
+  "id": "growBranching",
+  "name": "adapt-grow-branching",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-branching.git",
+  "summary": "The night before the deadline — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-branching.less",
+    "tokens": [
+      "--accent",
+      "--c-negative",
+      "--c-positive",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--surface-1",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-branching/blocks/block-branching-1up.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-branching/exemplars/citing-a-source-you-skimmed.json",
+        "adapt-grow-branching/exemplars/paraphrase-or-copy.json",
+        "adapt-grow-branching/exemplars/using-ai-tools.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-branching.md"
+    },
+    "components": []
+  }
+}

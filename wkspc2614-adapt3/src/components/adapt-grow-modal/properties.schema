@@ -1,0 +1,109 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://adaptlearning.org/schemas/plugins/components/modal.json",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "Optional teaser shown on the page, above the trigger button.",
+      "translatable": true
+    },
+    "_completion": {
+      "type": "string",
+      "required": false,
+      "enum": ["trigger", "view", "none"],
+      "default": "trigger",
+      "title": "Completion",
+      "help": "When this component completes: 'trigger' (the learner opens the popup, default), 'view' (scrolls into view) or 'none'."
+    },
+    "_trigger": {
+      "type": "object",
+      "required": true,
+      "title": "Trigger button",
+      "properties": {
+        "text": {
+          "type": "string",
+          "required": true,
+          "default": "Open",
+          "title": "Button text",
+          "inputType": "Text",
+          "validators": ["required"],
+          "translatable": true
+        },
+        "ariaLabel": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Button aria-label",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Accessible label for the trigger. Falls back to the button text.",
+          "translatable": true
+        },
+        "_icon": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Trigger icon",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Optional cm icon name (e.g. 'learning', 'assessment') shown on the button."
+        }
+      }
+    },
+    "_popup": {
+      "type": "object",
+      "required": true,
+      "title": "Popup content",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Popup title",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        },
+        "body": {
+          "type": "string",
+          "required": true,
+          "default": "",
+          "title": "Popup body",
+          "inputType": "TextArea",
+          "validators": ["required"],
+          "help": "The foregrounded content (HTML allowed): the activity, worked example, definition or panel.",
+          "translatable": true
+        },
+        "_classes": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Popup classes",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Extra CSS classes on the popup (cm-notify cm-modal are always applied)."
+        },
+        "_isCancellable": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "title": "Cancellable",
+          "help": "Whether the learner can dismiss the popup with the close control / Esc."
+        }
+      }
+    }
+  }
+}

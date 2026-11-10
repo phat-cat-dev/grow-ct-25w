@@ -1,0 +1,21 @@
+{
+  "name": "adapt-grow-promptbuilder",
+  "description": "A prompt generator: the learner builds an effective learning prompt from a Role, a Function and some Context, using example chips, and sees the full prompt assemble live, with a copy button. Teaches the Role/Function/Context framework by doing. Completes once all three parts are filled.",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/phat-cat-dev/adapt-grow-promptbuilder",
+  "license": "GPL-3.0",
+  "keywords": [
+    "adapt-framework",
+    "adapt-component",
+    "grow"
+  ],
+  "main": "js/adapt-grow-promptbuilder.js",
+  "ignore": [],
+  "dependencies": {},
+  "pluginType": "component",
+  "displayName": "GROW Prompt Builder",
+  "component": "growPromptBuilder",
+  "properties": "properties.schema.json",
+  "targetAttribute": "_growPromptBuilder"
+}

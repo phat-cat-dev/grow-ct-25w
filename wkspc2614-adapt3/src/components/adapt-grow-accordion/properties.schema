@@ -1,0 +1,91 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Accordion. Select each heading to reveal its content.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+    "_isMultiSelect": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Allow multiple open",
+      "inputType": "Checkbox",
+      "help": "If true, several panels may be open at once. If false (default), opening one closes the others."
+    },
+    "_shouldExpandFirst": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Expand first panel",
+      "inputType": "Checkbox",
+      "help": "Open the first panel on load (and on revisit if reset)."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Panels",
+      "help": "Each panel has a heading and body content.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Item ID",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Stable identifier for this panel. Useful for analytics."
+          },
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Panel heading",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "The header button label (also the panel's accessible name).",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Panel body",
+            "inputType": "TextArea",
+            "validators": ["required"],
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

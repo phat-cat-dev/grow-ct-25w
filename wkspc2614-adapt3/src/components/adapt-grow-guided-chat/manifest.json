@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growGuidedChat",
+  "name": "adapt-grow-guided-chat",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-guided-chat.git",
+  "summary": "A scripted learning conversation between a guide and the learner that types itself out one message at a time, with Next / Show-full / Replay controls.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-guided-chat.less",
+    "tokens": [
+      "--surface-1", "--surface-2", "--line", "--accent", "--ink", "--ink-soft"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there. Already tokenised from the Abbott typing-chat (--texture-* mapped to GROW tokens)."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-guided-chat/blocks/block-guided-chat-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-guided-chat/exemplars/essay-planning.json",
+        "adapt-grow-guided-chat/exemplars/reading-feedback.json",
+        "adapt-grow-guided-chat/exemplars/exam-review.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-guided-chat.md"
+    },
+    "components": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growKeyTerm",
+  "name": "adapt-grow-key-term",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-key-term.git",
+  "summary": "A dictionary-style key-term card (term, pronunciation, definition, example, related terms) with an optional flashcard reveal. Tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-key-term.less",
+    "tokens": [
+      "--h1", "--surface-1", "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "The dark navy card is --h1 on --surface-1 text, with muted text via color-mix of --surface-1; it retints with the scheme hue and inverts for dark mode. Already tokenised; no colour change."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-key-term/blocks/block-key-term-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-key-term/exemplars/synthesis.json",
+        "adapt-grow-key-term/exemplars/paraphrase.json",
+        "adapt-grow-key-term/exemplars/thesis-statement.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-key-term.md"
+    },
+    "components": []
+  }
+}

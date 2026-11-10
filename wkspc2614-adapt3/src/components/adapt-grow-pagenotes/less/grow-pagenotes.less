@@ -1,0 +1,135 @@
+// grow-pagenotes — a launch icon-button and a transparent overlay of animated
+// notes drawn over a region. Colours are theme roles (--accent / --ink / …) with
+// literal fallbacks, so the component reskins with the GROW theme (dark mode too).
+// The ink-mark CSS (am-*) and the chalk CSS (edu-*/chalk-*) are injected at
+// runtime by js/overlay.js; this file styles only the button and the overlay box.
+
+// ── launch icon-button ──────────────────────────────────────────────────────
+// Adopts the icon-manager --ib-* contract so it inherits what that system would
+// impart (tone/surface/line/size/radius/border), with the trickle button's
+// outline → fill-on-hover accent treatment. The glyph is a Material Symbol set
+// per instance via --grow-pagenotes-icon.
+.grow-pagenotes__launch {
+  --_tone:    var(--ib-tone, var(--accent, #24508f));
+  --_surface: var(--ib-surface, var(--surface-1, #ffffff));
+  --_line:    var(--ib-line, var(--line, #8ea0ad));
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--_tone);
+  background: var(--_surface);
+  border: var(--ib-border-width, 1px) var(--ib-border-style, solid) var(--_tone);
+  border-radius: var(--ib-radius, 9px);
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.3s, border-color 0.15s, box-shadow 0.3s;
+
+  &::before {
+    content: var(--grow-pagenotes-icon, "edit_note");
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    font-size: 1.35em;
+  }
+
+  .no-touch &:hover,
+  &:focus-visible {
+    color: var(--ib-alt, #fff);
+    background: var(--_tone);
+    border-color: var(--_tone);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--_tone), transparent 55%);
+  }
+}
+
+// ── the overlay layer ───────────────────────────────────────────────────────
+// position:fixed, matched to the target region's box by js/overlay.js. Transparent
+// and click-through, so the real content stays visible and usable beneath it.
+.grow-pagenotes__overlay {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  color: var(--ink, #1f2a33);
+  overflow: visible;
+
+  &[data-scrim="faint"] {
+    background: color-mix(in srgb, var(--surface-1, #ffffff) 55%, transparent);
+    border-radius: 6px;
+  }
+}
+
+.grow-pagenotes__note {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  max-width: 60%;
+
+  // ink marks sit inline; give wrap/standalone marks room to draw
+  .am-item { display: inline-block; }
+}
+
+.grow-pagenotes__note--chalk {
+  width: clamp(120px, 24%, 220px);
+}
+
+.grow-pagenotes__chalk .edu-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+// ── controls (the only interactive part of the overlay) ─────────────────────
+.grow-pagenotes__controls {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  pointer-events: auto;
+}
+
+.grow-pagenotes__btn {
+  --_c: var(--accent, #24508f);
+  min-height: 2.5rem;
+  padding: 0.45rem 0.9rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--_c);
+  background: var(--surface-1, #ffffff);
+  border: 1px solid var(--_c);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--ink, #1f2a33), transparent 85%);
+  transition: color 0.15s, background-color 0.2s, box-shadow 0.2s;
+
+  .no-touch &:hover,
+  &:focus-visible { color: #fff; background: var(--_c); }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--_c), transparent 55%);
+  }
+
+  &--close { font-weight: 700; }
+}
+
+// ── reduced motion: the marks/chalk engines already hold the finished artwork;
+//    make sure the overlay itself is simply present, with nothing animating.
+@media (prefers-reduced-motion: reduce) {
+  .grow-pagenotes__btn { transition: none; }
+  .grow-pagenotes__launch { transition: none; }
+}

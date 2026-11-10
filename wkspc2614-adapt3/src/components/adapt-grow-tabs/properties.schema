@@ -1,0 +1,101 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://adaptlearning.org/schemas/plugins/components/tabs.json",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Tabbed content. Use arrow keys to navigate between tabs.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "The instruction text for the tabs component.",
+      "translatable": true
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Tabs",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "tabTitle": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Tab title",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Short label displayed on the tab button (keep concise: 1-3 words).",
+            "translatable": true
+          },
+          "title": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Panel title",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Optional heading displayed in the panel content.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Panel body",
+            "inputType": "TextArea",
+            "validators": ["required"],
+            "help": "The main content displayed in the panel when this tab is selected.",
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Graphic",
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Optional image displayed in the panel."
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Alt text for the image. Leave blank for decorative images.",
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "_id": "c-15",
+  "_parentId": "b-15",
+  "_type": "component",
+  "_component": "growFlipcard",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Rely on it, or check it?",
+  "displayTitle": "Rely on it, or check it?",
+  "body": "<p>For each thing you might get from an AI tool, predict whether you can rely on it or must always verify it. Turn the card to check.</p>",
+  "instruction": "Select each card to turn it over.",
+  "_supportedLayout": "full-width",
+  "_flipBehaviour": "independent",
+  "_isRandomised": false,
+  "_items": [
+    {
+      "_id": "rc-01",
+      "_variant": "positive",
+      "front": {
+        "title": "Rephrasing a passage you already have in plainer words"
+      },
+      "back": {
+        "title": "Fairly safe to rely on",
+        "body": "Rewording text you can see is low-risk. Still read the result against the original to be sure the meaning held."
+      }
+    },
+    {
+      "_id": "rc-02",
+      "_variant": "positive",
+      "front": {
+        "title": "Generating practice questions on a topic"
+      },
+      "back": {
+        "title": "Fairly safe to rely on",
+        "body": "Making practice questions is a good fit. Attempt them yourself, then check the answers against your materials."
+      }
+    },
+    {
+      "_id": "rc-03",
+      "_variant": "positive",
+      "front": {
+        "title": "Explaining a concept in several different ways"
+      },
+      "back": {
+        "title": "Fairly safe to rely on",
+        "body": "Different explanations suit a tool well. Afterwards, test your understanding with the tool closed."
+      }
+    },
+    {
+      "_id": "rc-04",
+      "_variant": "negative",
+      "front": {
+        "title": "An exact statistic or percentage it states"
+      },
+      "back": {
+        "title": "Always verify",
+        "body": "Tools fabricate precise figures with full confidence. Never quote a number you have not checked against a real source."
+      }
+    },
+    {
+      "_id": "rc-05",
+      "_variant": "negative",
+      "front": {
+        "title": "A reference or citation it gives you"
+      },
+      "back": {
+        "title": "Always verify",
+        "body": "Tools invent real-looking authors, titles and years. Look up every reference before you cite it."
+      }
+    },
+    {
+      "_id": "rc-06",
+      "_variant": "negative",
+      "front": {
+        "title": "A one-paragraph summary of a debated topic"
+      },
+      "back": {
+        "title": "Always verify",
+        "body": "Tools drop caveats and minority views. Ask what the summary leaves out before you rely on it."
+      }
+    }
+  ]
+}

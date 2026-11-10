@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growAnimations",
+  "name": "adapt-grow-animations",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-animations.git",
+  "summary": "Hand-drawn note-taking marks (underline, highlight, circle, tick, arrows, margin notes) that draw themselves on; each colour is a theme role, not a fixed hue.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-animations.less",
+    "tokens": [
+      "--accent", "--c-positive", "--c-negative", "--c-neutral", "--c-comment",
+      "--pen", "--ink", "--flow-rate"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there. The mark colours resolve through --am-c-* local drivers to GROW semantic/brand tokens."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-animations/blocks/block-animations-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-animations/exemplars/emphasis-marks-inline.json",
+        "adapt-grow-animations/exemplars/annotations-stack.json",
+        "adapt-grow-animations/exemplars/correction-and-checks.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-animations.md"
+    },
+    "components": []
+  }
+}

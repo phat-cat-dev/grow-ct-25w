@@ -1,0 +1,26 @@
+{
+  "name": "adapt-grow-journal",
+  "version": "1.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/phat-cat-dev/adapt-grow-journal",
+  "issues": "https://github.com/phat-cat-dev/adapt-grow-journal/issues",
+  "bugs": "https://github.com/phat-cat-dev/adapt-grow-journal/issues",
+  "description": "A lined notebook journal for learner-authored writing (reflections, notes) with no correct answer. Persists via suspend_data, not cmi.interactions. Not a question component.",
+  "main": "/js/adapt-grow-journal.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component",
+    "grow",
+    "journal",
+    "reflection",
+    "notes",
+    "open-text"
+  ],
+  "license": "GPL-3.0",
+  "component": "growJournal",
+  "targetAttribute": "_growJournal",
+  "displayName": "GROW Journal",
+  "extra": {
+    "info": "A ruled, paper-like textarea for reflective writing or note-taking. Auto-grows, saves to suspend_data, keeps the full text available to screen readers, and repaints with the active GROW theme."
+  }
+}

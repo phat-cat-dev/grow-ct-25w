@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growExpandingLinks",
+  "name": "adapt-grow-expanding-links",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-expanding-links.git",
+  "summary": "A guided step sequence of expanding icon-links. Each step opens a panel; optional completion when every step is marked done. Colours tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/expandingLinks.less",
+    "tokens": [
+      "--accent", "--ink", "--ink-soft", "--line"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Colours already route through the GROW tokens via the component's --expand-* contract (token first, literal fallback behind it); dark mode handled by the theme."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-expanding-links/blocks/block-expanding-links-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-expanding-links/exemplars/essay-process.json",
+        "adapt-grow-expanding-links/exemplars/critical-reading.json",
+        "adapt-grow-expanding-links/exemplars/exam-revision.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-expanding-links.md"
+    },
+    "components": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growWorkedExample",
+  "name": "adapt-grow-worked-example",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-worked-example.git",
+  "summary": "A collapsible worked example: a toggle title opens one prose body that walks through a weaker and a stronger attempt. Completes on first open.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-worked-example.less",
+    "tokens": [
+      "--line", "--surface-2", "--ink", "--accent", "--ab-body-font-size"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "The accordion shell uses GROW scheme tokens directly (--line, --surface-2, --ink, --accent); body type uses --ab-body-font-size, mapped to --fs-base by grow-ab-bridge.less. The we-weaker / we-stronger paragraph cue classes used in the body are themed separately in the GROW theme, not in this component."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-worked-example/blocks/block-worked-example.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-worked-example/exemplars/topic-sentence.json",
+        "adapt-grow-worked-example/exemplars/using-a-quote.json",
+        "adapt-grow-worked-example/exemplars/reading-the-question.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-worked-example.md"
+    },
+    "components": []
+  }
+}

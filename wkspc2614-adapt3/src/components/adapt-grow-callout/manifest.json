@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growCallout",
+  "name": "adapt-grow-callout",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-callout.git",
+  "summary": "Six-type callout (info / warning / tip / example / note / definition) tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-callout.less",
+    "tokens": [
+      "--accent", "--accent-ink", "--c-neutral", "--c-positive", "--c-comment",
+      "--ink", "--ink-soft", "--line", "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-callout/blocks/block-callout-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-callout/exemplars/tip.json",
+        "adapt-grow-callout/exemplars/warning.json",
+        "adapt-grow-callout/exemplars/note.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-callout.md"
+    },
+    "components": ["growCallouts"]
+  }
+}

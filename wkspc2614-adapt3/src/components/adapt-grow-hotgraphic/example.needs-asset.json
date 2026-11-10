@@ -1,0 +1,25 @@
+{
+  "_id": "c-15",
+  "_parentId": "b-15",
+  "_type": "component",
+  "_component": "growHotgraphic",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Hotgraphic",
+  "displayTitle": "Explore the reflective cycle",
+  "body": "Select each marked point on the diagram to learn what happens at that stage.",
+  "instruction": "Select each hotspot to show more information.",
+  "_supportedLayout": "full-width",
+  "_setCompletionOn": "allItems",
+  "_diagram": {
+    "src": "course/en/images/placeholder-reflective-cycle.svg",
+    "title": "The reflective learning cycle",
+    "_slug": "reflective-cycle"
+  },
+  "_items": [
+    { "_id": "hs-experience", "title": "Experience", "body": "Something happens — a seminar, a draft, a piece of feedback. This is the raw material you will reflect on.", "_hotspot": { "_id": "experience", "_action": "popup" } },
+    { "_id": "hs-reflect", "title": "Reflect", "body": "Look back: what happened, what you did, and how it went. Describe before you judge.", "_hotspot": { "_id": "reflect", "_action": "popup" } },
+    { "_id": "hs-learn", "title": "Make sense", "body": "Connect it to what you know — a model, feedback, a criterion — to work out why it went that way.", "_hotspot": { "_id": "learn", "_action": "inlineReveal" } },
+    { "_id": "hs-apply", "title": "Apply", "body": "Decide one thing to do differently next time, and name when you'll try it.", "_hotspot": { "_id": "apply", "_action": "inlineReveal" } }
+  ]
+}

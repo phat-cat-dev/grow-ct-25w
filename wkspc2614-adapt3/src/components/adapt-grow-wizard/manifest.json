@@ -1,0 +1,48 @@
+{
+  "manifest": 1,
+  "id": "growWizard",
+  "name": "adapt-grow-wizard",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-wizard.git",
+  "summary": "How to plan an essay — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-wizard.less",
+    "tokens": [
+      "--accent",
+      "--fs-3xs",
+      "--fs-sm",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-wizard/blocks/block-wizard-1up.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-wizard/exemplars/how-to-reference-a-book.json",
+        "adapt-grow-wizard/exemplars/reading-a-journal-article.json",
+        "adapt-grow-wizard/exemplars/wizard-essay-plan.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-wizard.md"
+    },
+    "components": []
+  }
+}

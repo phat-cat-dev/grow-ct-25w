@@ -1,0 +1,121 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Callouts.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+    "_variant": {
+      "type": "string",
+      "required": false,
+      "enum": ["neutral", "accent", "note", "tip", "info", "advice", "do", "dont", "warning", "caution", "action", "starting", "feedback-pos", "feedback-neg"],
+      "default": "neutral",
+      "title": "Callout variant",
+      "inputType": {
+        "type": "Select",
+        "options": ["neutral", "accent", "note", "tip", "info", "advice", "do", "dont", "warning", "caution", "action", "starting", "feedback-pos", "feedback-neg"]
+      },
+      "validators": [],
+      "help": "Default variant applied to every callout. A callout may override it with its own _variant."
+    },
+    "_isGroup": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Force callout group",
+      "inputType": "Checkbox",
+      "help": "Render as a responsive group even with a single callout."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Callouts",
+      "help": "Each callout. A callout should carry at least a title or text.",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Item ID",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Stable identifier for this callout. Useful for analytics."
+          },
+          "_variant": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Callout variant override",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Optional per-callout override of the component _variant."
+          },
+          "_withIcon": {
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "title": "With icon",
+            "inputType": "Checkbox",
+            "help": "Render a leading icon slot. The theme supplies a per-variant glyph, or set _icon for an explicit icon class."
+          },
+          "_icon": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Icon class",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Optional icon-font class (e.g. 'icon-comment'). Only used when With icon is on."
+          },
+          "title": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Callout title",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "text": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Callout text",
+            "inputType": "TextArea",
+            "validators": [],
+            "translatable": true
+          }
+        }
+      }
+    }
+  }
+}

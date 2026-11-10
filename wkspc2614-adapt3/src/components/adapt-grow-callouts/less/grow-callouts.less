@@ -1,0 +1,22 @@
+// adapt-grow-callouts
+//
+// Structure only. All callout visuals (background, border, accent, variants)
+// live in the .ab.callout system (ab-base-callout.less / the brand
+// grow-callouts.less, on --ab-callout-* tokens). This file lays out the group
+// wrapper and consumes --ab-* spacing tokens; it never defines colour.
+
+.grow-callouts {
+
+  &__group {
+    display: grid;
+    gap: var(--ab-space-100, 1rem);
+
+    // single column by default (mobile-first, callouts stacked); forced /
+    // multi-callout groups go to a responsive auto-fit grid where there is
+    // room, so paired callouts can sit side by side.
+    &.is-group {
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+  }
+
+}

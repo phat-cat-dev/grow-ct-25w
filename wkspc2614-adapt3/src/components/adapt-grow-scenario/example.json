@@ -1,0 +1,821 @@
+{
+  "_id": "c-05",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "growScenario",
+  "_classes": "",
+  "_layout": "full",
+  "title": "The article that agrees with you",
+  "displayTitle": "The article that agrees with you",
+  "body": "Practise deciding how far to trust a study that supports what you already think. There is no single script here. Each choice shows you what it leads to, and you can recover from a weak start.",
+  "instruction": "",
+  "_completionOn": "ending",
+  "_launch": {
+    "startText": "Start the scenario",
+    "resumeText": "Return to the scenario",
+    "reviewText": "Review the scenario"
+  },
+  "_scenario": {
+    "schema": "scenario-builder/1",
+    "scenario": {
+      "id": "criticality-intermediate",
+      "title": "The article that agrees with you",
+      "intro": "Practise deciding how far to trust a study that supports what you already think. There is no single script here. Each choice shows you what it leads to, and you can recover from a weak start.",
+      "goal": "Weigh two studies that disagree and commit to a judgement you can justify.",
+      "good_looks_like": [
+        {
+          "id": "criticality/d2",
+          "text": "You test an interpretation against the evidence and reasoning behind it, and say where it holds and where it does not."
+        },
+        {
+          "id": "criticality/d3",
+          "text": "You read an article's methodology to see how its authors gathered evidence, so you know how far its findings reach."
+        },
+        {
+          "id": "criticality/e1",
+          "text": "You say which factor matters more for your question and give a reason, so that your judgement can be checked."
+        }
+      ],
+      "audience": "Students writing an essay that draws on research articles",
+      "pathway": "Pathway 5, Criticality, intermediate",
+      "source": {
+        "pathway": "Criticality",
+        "tier": "intermediate",
+        "cards": [
+          "criticality/d2",
+          "criticality/d3",
+          "criticality/e1"
+        ],
+        "proposed_cards": [],
+        "review_notes": [
+          "criticality/e1 belongs to the Advanced tier and is a stretch card here, used for the closing decisions on weighing factors and committing to a judgement.",
+          "criticality/d3 is placed at Intermediate as strategic reading, choosing what to read closely. Check that reading the methodology before relying on an abstract fits that placement.",
+          "Both studies are generic and invented for the story. Check that a self-reported productivity measure, a different kind of workplace and a second study with a small difference are plausible, and that no real study is implied.",
+          "The idea that a marker looks for a justified judgement on a \"to what extent\" question is inferred from the evaluative steers topic and the judgement topic. Check it matches how your discipline marks.",
+          "The point that studies can disagree because of what they measure and where is general methodological reasoning, inferred and not taken from the card text.",
+          "The advice to rank factors with a reason, and to say what would change the view, is inferred from the book's definition of a judgement."
+        ]
+      },
+      "position": {
+        "mode": "guided-student",
+        "role": "You are writing the essay. What you rely on and what you conclude are your decisions.",
+        "adviser": {
+          "name": "Your academic adviser",
+          "voice": "Asks before telling. Explains why. Treats you as capable."
+        }
+      }
+    },
+    "settings": {
+      "shape": "three-lane-ladder",
+      "route_mode": "multi-ending",
+      "layers": 5,
+      "end_policy": "terminal",
+      "guidance": {
+        "mode": "on-request",
+        "escalate_on_retry": true
+      },
+      "retry": {
+        "mode": "restart",
+        "max_attempts": 0,
+        "carry_clues": true,
+        "label": "Try again"
+      },
+      "banners": {
+        "pass": "Well done!",
+        "fail": "Not passed yet. Try again."
+      },
+      "growth_messages": {
+        "first_attempt": "",
+        "improved": "Compared with your last attempt, that is {{growth.change}} strong decisions.",
+        "same": "You made the same number of strong decisions this time. Look at where your route changed.",
+        "lower": "This route went differently. Comparing the two is useful, so look at where they split."
+      }
+    },
+    "measures": [],
+    "clues": [
+      {
+        "id": "clue-retry",
+        "text": "Look again at what each study measured, and in what kind of setting, before you decide which result to trust.",
+        "applies_at": [
+          "start",
+          "L2-negative"
+        ]
+      }
+    ],
+    "start": "start",
+    "cards": [
+      {
+        "id": "start",
+        "template": "start-decision",
+        "layer": 1,
+        "title": "An article that agrees",
+        "scene": "Your essay question is \"To what extent does remote working improve productivity?\" You already think it does. A search turns up an article whose abstract says that it does, and you are about to draft the section that argues your view.",
+        "challenge": "The abstract says what you hoped to read. How much weight it can carry is the question, and finding out takes time you could spend writing.",
+        "stakes": "Your marker will look for a judgement you can support with evidence, and a claim resting on a summary is easy to spot.",
+        "prompt": "What do you do with this article first?",
+        "reflect": "How much of your pull towards this article comes from what it says, and how much from agreeing with you?",
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Read the methodology section before you use it",
+            "polarity": "positive",
+            "next": "L2-positive",
+            "benefit": "You find out what the finding actually rests on.",
+            "cost": "You may find it supports you less than the abstract suggests.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "02",
+            "label": "Read the introduction and conclusion, and skip the middle",
+            "polarity": "mixed",
+            "next": "L2-mixed",
+            "tempting_because": "Those sections give the argument quickly, and reading selectively is a sensible way to handle a long article.",
+            "benefit": "You grasp the authors' argument quickly.",
+            "cost": "The part showing how they reached it stays unread.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "03",
+            "label": "Quote the abstract's conclusion in your draft",
+            "polarity": "negative",
+            "next": "L2-negative",
+            "tempting_because": "The abstract is written to summarise the article, and it supports your point in one clean sentence.",
+            "benefit": "You have a supported claim in minutes.",
+            "cost": "You rely on the authors' own summary of their work.",
+            "criterion": "criticality/d3"
+          }
+        ]
+      },
+      {
+        "id": "L2-positive",
+        "template": "first-consequence",
+        "layer": 2,
+        "title": "Inside the methods",
+        "prompt": "What do you do with what the methods show?",
+        "lane": "positive",
+        "outcome": {
+          "positive": {
+            "what_happened": "The methodology says the data came from staff in one type of workplace, and that productivity was measured through what people reported about their own output. The finding holds for that group. How far it reaches beyond them is unclear.",
+            "impact": "You know what the finding rests on, which the abstract did not tell you.",
+            "benefit": "You can describe the evidence accurately.",
+            "cost": "The claim you can now make is narrower than the one you set out to make."
+          }
+        },
+        "guide": {
+          "coach": "A conclusion reaches only as far as the method behind it. Reading the methodology shows you how far a finding can travel.",
+          "nudge": "Which parts of your essay question does this method speak to, and which does it leave open?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Say in your draft what the method can and cannot show",
+            "polarity": "positive",
+            "next": "L3-positive",
+            "benefit": "Your reader can see how far to trust the claim.",
+            "cost": "Your paragraph becomes more qualified and less punchy.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "02",
+            "label": "Use the finding as strong evidence and add a short caveat",
+            "polarity": "mixed",
+            "next": "L3-mixed",
+            "tempting_because": "A caveat shows you know the limits, and it keeps your point firm.",
+            "benefit": "Your claim stays clear and direct.",
+            "cost": "The caveat sits beside the claim and does not change it.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "03",
+            "label": "Leave the method out, since your reader wants the result",
+            "polarity": "negative",
+            "next": "L3-negative",
+            "tempting_because": "Word counts are limited, and results can look more important than how they were gathered.",
+            "benefit": "You save words in a tight section.",
+            "cost": "Your reader cannot tell how far the finding applies.",
+            "criterion": "criticality/d3"
+          }
+        ]
+      },
+      {
+        "id": "L2-mixed",
+        "template": "first-consequence",
+        "layer": 2,
+        "title": "The middle of the article",
+        "prompt": "What do you do about the part you skipped?",
+        "lane": "mixed",
+        "outcome": {
+          "mixed": {
+            "what_happened": "The introduction and conclusion give you a clear argument. When you try to write a sentence about how the authors measured productivity, you cannot. That was the part you left unread.",
+            "impact": "You have the authors' reasoning but not what it is built on.",
+            "benefit": "You understood the argument quickly.",
+            "cost": "You cannot yet say how strong the evidence is."
+          }
+        },
+        "guide": {
+          "coach": "Reading selectively is a good strategy when you choose what to skip for a reason. The methods are where a study's reach is set, so they repay the time when you plan to rely on a claim.",
+          "nudge": "Which question about this study can only be answered from the part you skipped?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Go back and read the methodology section now",
+            "polarity": "positive",
+            "next": "L3-positive",
+            "benefit": "You can describe the evidence from your own reading.",
+            "cost": "You use time you had planned for drafting.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "02",
+            "label": "Search for a review that summarises the study's limits",
+            "polarity": "mixed",
+            "next": "L3-mixed",
+            "tempting_because": "Someone else may already have weighed it up, and it saves reading.",
+            "benefit": "You get a quick view of the weak points.",
+            "cost": "You get someone else's reading of the study, and not your own.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "03",
+            "label": "Guess the method from the conclusion and carry on",
+            "polarity": "negative",
+            "next": "L3-negative",
+            "tempting_because": "Conclusions often hint at how data were gathered, and you are close to finishing the section.",
+            "benefit": "You keep your momentum.",
+            "cost": "You may describe a method the study did not use.",
+            "criterion": "criticality/d3"
+          }
+        ]
+      },
+      {
+        "id": "L2-negative",
+        "template": "first-consequence",
+        "layer": 2,
+        "title": "The first draft",
+        "prompt": "Your coursemate's question is still open. What do you do?",
+        "lane": "negative",
+        "outcome": {
+          "negative": {
+            "what_happened": "Your paragraph is written, with the abstract's conclusion as its support. A coursemate reads it and asks how the study measured productivity. You realise you do not know.",
+            "impact": "Your claim is in the draft, and you cannot yet say what it rests on.",
+            "benefit": "You have a section drafted.",
+            "cost": "The paragraph rests on a question you cannot answer."
+          }
+        },
+        "guide": {
+          "coach": "An abstract summarises a study in the authors' own favour and leaves out detail. Your coursemate asked what a marker would ask.",
+          "nudge": "What would you need to read to answer that question yourself?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Read the methodology and rewrite the paragraph",
+            "polarity": "positive",
+            "next": "L3-positive",
+            "benefit": "Your claim is built on what the study actually did.",
+            "cost": "Your draft paragraph is lost.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "02",
+            "label": "Ask your coursemate what they would look for",
+            "polarity": "mixed",
+            "next": "L3-mixed",
+            "tempting_because": "A second view is quick, and they have already spotted the gap.",
+            "benefit": "You get a pointer on where to look.",
+            "cost": "You still have not read that part yourself.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "03",
+            "label": "Keep the paragraph and reply that it was published",
+            "polarity": "negative",
+            "next": "L3-negative",
+            "tempting_because": "Publication feels like a check that the study is sound, and you want to move on.",
+            "benefit": "Your draft stays as it is.",
+            "cost": "Publication does not tell you what the method can show.",
+            "criterion": "criticality/d3"
+          }
+        ]
+      },
+      {
+        "id": "L3-positive",
+        "template": "standard-decision",
+        "layer": 3,
+        "title": "Another study",
+        "prompt": "How do you treat the second study?",
+        "lane": "positive",
+        "outcome": {
+          "positive": {
+            "what_happened": "While checking references you find a second article. It reports little difference in productivity. It used a different measure, in a different kind of workplace. Your notes on the first study now cover its method, so you can see where the two part ways.",
+            "impact": "The disagreement has a shape: two studies, two ways of measuring.",
+            "benefit": "You can compare like with like.",
+            "cost": "Your starting view now faces a real challenge."
+          }
+        },
+        "guide": {
+          "coach": "Two studies can both be sound and still disagree when they measure different things in different places. Close reading let you see that.",
+          "nudge": "What would each study need to have measured for the two results to be directly comparable?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Read its methods and set the two side by side",
+            "polarity": "positive",
+            "next": "L4-positive",
+            "benefit": "You can explain why the results differ.",
+            "cost": "It is another round of close reading, and a comparison to write up.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "02",
+            "label": "Mention it as a view held by some researchers",
+            "polarity": "mixed",
+            "next": "L4-mixed",
+            "tempting_because": "It acknowledges the other side in a sentence, and the word count is tight.",
+            "benefit": "The other side appears in your essay.",
+            "cost": "The disagreement is shown and not tested.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "03",
+            "label": "Look for a third study to break the tie",
+            "polarity": "negative",
+            "next": "L4-negative",
+            "tempting_because": "More evidence feels like the way to settle it, and counting studies seems fair.",
+            "benefit": "The search feels productive and thorough.",
+            "cost": "More studies without comparing methods add more disagreement.",
+            "criterion": "criticality/d2"
+          }
+        ]
+      },
+      {
+        "id": "L3-mixed",
+        "template": "standard-decision",
+        "layer": 3,
+        "title": "Two results",
+        "prompt": "What do you do about the second result?",
+        "lane": "mixed",
+        "outcome": {
+          "mixed": {
+            "what_happened": "A second article reports little difference in productivity. Your notes on the first study have a caveat or a gap in them, and neither is enough to explain why the two results differ.",
+            "impact": "You hold two results without a reason for the gap between them.",
+            "benefit": "You meet the other result before you commit to a claim.",
+            "cost": "Without a closer look at methods you cannot explain the disagreement."
+          }
+        },
+        "guide": {
+          "coach": "Studies often disagree because of what they measured and where. That detail sits in the methods, which is where your notes are thinnest.",
+          "nudge": "What do you know about how each study measured productivity?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Return to the first study's methods and compare them",
+            "polarity": "positive",
+            "next": "L4-positive",
+            "benefit": "The disagreement starts to make sense.",
+            "cost": "Your earlier notes need revising.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "02",
+            "label": "Put both results in and say the evidence is mixed",
+            "polarity": "mixed",
+            "next": "L4-mixed",
+            "tempting_because": "It is honest about the disagreement, and quick.",
+            "benefit": "Both results are in the essay.",
+            "cost": "Your reader gets no explanation of the difference.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "03",
+            "label": "Keep the first study and treat the second as an outlier",
+            "polarity": "negative",
+            "next": "L4-negative",
+            "tempting_because": "The first fits your view, and the second is only one result.",
+            "benefit": "Your argument stays consistent.",
+            "cost": "Calling a study an outlier is a claim you have not tested.",
+            "criterion": "criticality/d2"
+          }
+        ]
+      },
+      {
+        "id": "L3-negative",
+        "template": "standard-decision",
+        "layer": 3,
+        "title": "A conflict in the evidence",
+        "prompt": "What do you do about the conflict?",
+        "lane": "negative",
+        "outcome": {
+          "negative": {
+            "what_happened": "A second article reports little difference in productivity. Your draft cites the first study's conclusion with confidence, and this article now sits against it. You cannot yet say how the two differ, because your notes give little on how the first study reached its result.",
+            "impact": "Your claim depends on a study you have only partly read, set against another.",
+            "benefit": "You found the challenge before submitting.",
+            "cost": "The draft may need to change, and your evidence for changing it is thin."
+          }
+        },
+        "guide": {
+          "coach": "A conflicting study shows you where your claim is weakest. Method is the place to start comparing.",
+          "nudge": "Which of your sentences would the second study make you reconsider?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Read both methods before you change the draft",
+            "polarity": "positive",
+            "next": "L4-positive",
+            "benefit": "You can change the draft for good reasons.",
+            "cost": "It delays your drafting and could change your argument.",
+            "criterion": "criticality/d3"
+          },
+          {
+            "id": "02",
+            "label": "Add a sentence saying some research finds otherwise",
+            "polarity": "mixed",
+            "next": "L4-mixed",
+            "tempting_because": "It acknowledges the second study without rewriting anything.",
+            "benefit": "Your draft shows you know about the other result.",
+            "cost": "The sentence does not explain the difference.",
+            "criterion": "criticality/d2"
+          },
+          {
+            "id": "03",
+            "label": "Ignore the second article and keep to your draft",
+            "polarity": "negative",
+            "next": "L4-negative",
+            "tempting_because": "Your draft is working, and the second article may be less relevant than it looks.",
+            "benefit": "You avoid reworking a section you like.",
+            "cost": "A marker may know the other result.",
+            "criterion": "criticality/d2"
+          }
+        ]
+      },
+      {
+        "id": "L4-positive",
+        "template": "standard-decision",
+        "layer": 4,
+        "title": "Weighing the differences",
+        "prompt": "How do you turn the differences into an answer?",
+        "lane": "positive",
+        "outcome": {
+          "positive": {
+            "what_happened": "Side by side, the studies differ in what they count as productivity and in the kind of work involved. Each difference is a reasonable choice for a study to make. Your question asks about productivity in general.",
+            "impact": "You now have factors to weigh, and not only two results.",
+            "benefit": "You can explain the disagreement.",
+            "cost": "The honest answer to \"to what extent\" is likely to be more qualified than a plain yes."
+          }
+        },
+        "guide": {
+          "coach": "\"To what extent\" asks for a degree. Listing differences is the first step, and deciding which matter more for your question is the next.",
+          "nudge": "Which difference matters most for the question you were set, and what makes you think so?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Decide which difference matters most and say why",
+            "polarity": "positive",
+            "next": "L5-positive",
+            "benefit": "You reach a view you can justify.",
+            "cost": "Your marker may challenge the view you commit to.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "Describe each difference and let the reader weigh them",
+            "polarity": "mixed",
+            "next": "L5-mixed",
+            "tempting_because": "Each description is accurate, and you avoid overreaching.",
+            "benefit": "Every description is accurate.",
+            "cost": "The question asks for your judgement, and it is left unanswered.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Pick the study that matches your original view",
+            "polarity": "negative",
+            "next": "L5-negative",
+            "tempting_because": "You started with this view, and one study supports it.",
+            "benefit": "You have a clear line to follow.",
+            "cost": "Your preference is doing the work that evidence should.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      },
+      {
+        "id": "L4-mixed",
+        "template": "standard-decision",
+        "layer": 4,
+        "title": "Reading the question again",
+        "prompt": "How far will you commit?",
+        "lane": "mixed",
+        "outcome": {
+          "mixed": {
+            "what_happened": "You have both results and a sense of why they might differ, though the reasons are only half written down. The question says \"to what extent\", and a plain yes or no will not fit it.",
+            "impact": "You can see the shape of an answer without the reasons to support it.",
+            "benefit": "You see that the question calls for a degree.",
+            "cost": "The reasons are not yet on the page."
+          }
+        },
+        "guide": {
+          "coach": "A degree can only be given by comparing how much each factor counts. That comparison needs reasons, and you can still build them.",
+          "nudge": "What would you need to know to say which factor counts for more?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Name the factors that differ and rank them with reasons",
+            "polarity": "positive",
+            "next": "L5-positive",
+            "benefit": "Your answer has a structure you can defend.",
+            "cost": "You must decide what matters, which is harder than describing.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "Conclude that it depends on the circumstances",
+            "polarity": "mixed",
+            "next": "L5-mixed",
+            "tempting_because": "It is true in a loose way, and it avoids overclaiming.",
+            "benefit": "You avoid claiming too much.",
+            "cost": "\"It depends\" is not yet a judgement until you say on what.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Count which side has more studies and go with that",
+            "polarity": "negative",
+            "next": "L5-negative",
+            "tempting_because": "Counting is quick, and it feels fair to both sides.",
+            "benefit": "The rule is simple and looks fair.",
+            "cost": "The number of studies says nothing about how strong each one is.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      },
+      {
+        "id": "L4-negative",
+        "template": "standard-decision",
+        "layer": 4,
+        "title": "Why this study?",
+        "prompt": "What do you do about your reason for trusting one study?",
+        "lane": "negative",
+        "outcome": {
+          "negative": {
+            "what_happened": "Reading your draft back, you see that you chose the first study because it agrees with you. The essay never says why it should be trusted more than the second.",
+            "impact": "Your position currently rests on preference.",
+            "benefit": "You noticed the gap while you can still fix it.",
+            "cost": "The essay needs a reason it does not yet have."
+          }
+        },
+        "guide": {
+          "coach": "Wanting an answer to be true is a normal pull, and noticing it is the useful step. A judgement needs a reason that someone who disagrees could follow.",
+          "nudge": "What reason could you give that a reader who disagreed with you would still accept?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Work out what each study can fairly show, then weigh them",
+            "polarity": "positive",
+            "next": "L5-positive",
+            "benefit": "Your preference is replaced by a reason.",
+            "cost": "You may have to rewrite parts you had finished.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "Soften the claim to \"some evidence suggests\"",
+            "polarity": "mixed",
+            "next": "L5-mixed",
+            "tempting_because": "It looks cautious, and it needs few changes.",
+            "benefit": "Your claim sounds more careful.",
+            "cost": "The wording changed and the weighing did not.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Add more support for your view and drop the second study",
+            "polarity": "negative",
+            "next": "L5-negative",
+            "tempting_because": "It strengthens your case, and the section is already long.",
+            "benefit": "Your case looks stronger and fits the word limit.",
+            "cost": "You remove the evidence that tests your view.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      },
+      {
+        "id": "L5-positive",
+        "template": "closing-decision",
+        "layer": 5,
+        "title": "Writing the conclusion",
+        "prompt": "How do you word your answer?",
+        "lane": "positive",
+        "outcome": {
+          "positive": {
+            "what_happened": "You have a view on which factor matters more, and a reason. Writing it down, you notice it sounds less certain than your first draft did.",
+            "impact": "Your conclusion gives a degree, and a reader can test it.",
+            "benefit": "Your judgement stands on evidence you can explain.",
+            "cost": "A qualified answer is less satisfying than a firm one."
+          }
+        },
+        "guide": {
+          "coach": "A judgement of the form \"this matters more than that, because...\" can be challenged and defended. That is what makes it a judgement.",
+          "nudge": "What would you say if a reader asked why you ranked the factors this way?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "State your judgement, with its reason and its limits",
+            "polarity": "positive",
+            "next": "pass-strong",
+            "benefit": "A reader sees the answer, the reason and where it stops.",
+            "cost": "A reader can test it and disagree.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "State the judgement once and leave the reasons earlier on",
+            "polarity": "mixed",
+            "next": "pass-costly",
+            "tempting_because": "The reasoning is already in the essay, and the conclusion has few words.",
+            "benefit": "The conclusion is short and clear.",
+            "cost": "A reader has to rebuild why you reached it.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Close on your first view, as the final line",
+            "polarity": "negative",
+            "next": "fail-late-slip",
+            "tempting_because": "Ending on your own conviction sounds sure of itself and finishes the essay neatly.",
+            "benefit": "The ending sounds confident and neat.",
+            "cost": "It overrides the weighing you have just done.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      },
+      {
+        "id": "L5-mixed",
+        "template": "closing-decision",
+        "layer": 5,
+        "title": "The empty paragraph",
+        "prompt": "What goes in your conclusion?",
+        "lane": "mixed",
+        "outcome": {
+          "mixed": {
+            "what_happened": "Your draft sets out the factors and where the studies differ, with some reasoning on each. The conclusion paragraph is still empty, and the question asks you to say how far.",
+            "impact": "Everything needed is on the page except the answer.",
+            "benefit": "The evidence is laid out for you to use.",
+            "cost": "The question remains unanswered until you answer it."
+          }
+        },
+        "guide": {
+          "coach": "Weighing is complete only when you commit to a conclusion and give the reason. One sentence can say which factor you think matters more.",
+          "nudge": "If you had to defend one sentence as your answer, what would it say?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Commit to an answer and give your main reason",
+            "polarity": "positive",
+            "next": "pass-recovered",
+            "benefit": "The essay finally answers its own question.",
+            "cost": "You commit to something a reader can challenge.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "Summarise both sides and finish on a balanced note",
+            "polarity": "mixed",
+            "next": "pass-costly",
+            "tempting_because": "It is fair to both studies and unlikely to be wrong.",
+            "benefit": "Both studies are treated fairly.",
+            "cost": "The question asked for your judgement, and the essay does not give it.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Say more research is needed and stop there",
+            "polarity": "negative",
+            "next": "fail-try-again",
+            "tempting_because": "Studies often end this way, and it is a safe-sounding place to stop.",
+            "benefit": "There is nothing in it for anyone to dispute.",
+            "cost": "\"To what extent\" is left unanswered.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      },
+      {
+        "id": "L5-negative",
+        "template": "closing-decision",
+        "layer": 5,
+        "title": "A late edit",
+        "prompt": "What do you change before submitting?",
+        "lane": "negative",
+        "outcome": {
+          "negative": {
+            "what_happened": "Your draft argues for your original view, with the first study as its main evidence and the second given a brief mention. There is a little room left to change something.",
+            "impact": "The essay's argument depends on a choice between studies that it never justifies.",
+            "benefit": "The argument is complete and consistent.",
+            "cost": "The choice between studies is still unexplained."
+          }
+        },
+        "guide": {
+          "coach": "A conclusion can be revised late, and a small change here carries back through the argument.",
+          "nudge": "Where in your essay would a reader first ask why you trust one study over the other?"
+        },
+        "decisions": [
+          {
+            "id": "01",
+            "label": "Add the reason you weigh one study above the other",
+            "polarity": "positive",
+            "next": "pass-recovered",
+            "benefit": "Your preference becomes a reasoned position.",
+            "cost": "You may have to cut other material to make room.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "02",
+            "label": "Add a line admitting the second study points the other way",
+            "polarity": "mixed",
+            "next": "pass-costly",
+            "tempting_because": "It is honest and quick.",
+            "benefit": "The essay is more open about the evidence.",
+            "cost": "The line admits the conflict and does not explain it.",
+            "criterion": "criticality/e1"
+          },
+          {
+            "id": "03",
+            "label": "Strengthen the opening claim and leave the rest",
+            "polarity": "negative",
+            "next": "fail-try-again",
+            "tempting_because": "A confident start can make the whole essay read as firm.",
+            "benefit": "A firm opening makes the essay read as decisive.",
+            "cost": "The claim goes further than the evidence supports.",
+            "criterion": "criticality/e1"
+          }
+        ]
+      }
+    ],
+    "endings": [
+      {
+        "id": "pass-strong",
+        "result": "pass",
+        "tier": "strong",
+        "title": "A judgement with reasons",
+        "story": "You hand in an essay that says how far remote working improves productivity, why you reach that view, and what the evidence cannot settle. The first article appears in it, described by what its method can show.",
+        "why": "You read the methodology before leaning on the abstract, tested what each study could show, and said which difference mattered more and why. Together these let a reader check your reasoning.",
+        "feed_forward": "The next time an abstract agrees with you, find the methods section and write one sentence on what was measured and whom it covers, before you write the claim.",
+        "transfer": "Think of a source you rely on in your current work. Do you know how its authors gathered their evidence?"
+      },
+      {
+        "id": "pass-recovered",
+        "result": "pass",
+        "tier": "recovered",
+        "title": "A change of direction",
+        "story": "The route had some uncertain stretches. By the end, the essay answers its question and gives a reason you can state.",
+        "why": "Your turning point was this decision: \"{{route.turning_point}}\". Moving from describing evidence to weighing it is what a judgement needs, and changing course part way through is part of working critically.",
+        "feed_forward": "Notice what made you turn. When a draft reads smoothly but you cannot say why you trust a source, that is a good moment to go back to its methods.",
+        "transfer": "What tells you, while you are writing, that you are leaning on a source because it agrees with you?"
+      },
+      {
+        "id": "pass-costly",
+        "result": "pass",
+        "tier": "costly",
+        "title": "An answer with a gap",
+        "story": "The essay is submitted with a clear structure and a conclusion. It names how the studies differ, and its answer to the question gives fewer reasons than it could.",
+        "why": "You engaged with the studies and their methods. Your closing choice left part of the weighing to the reader, so the judgement is only partly there.",
+        "feed_forward": "Before you finish a conclusion, write the one-sentence answer and the \"because\" that goes with it, then check that both appear on the page.",
+        "transfer": "In your current work, where have you described differences without saying which matters more?"
+      },
+      {
+        "id": "fail-late-slip",
+        "result": "fail",
+        "tier": "late",
+        "title": "A strong start, then a familiar ending",
+        "story": "The essay took the methods and the second study seriously, then closed on the view you began with. The conclusion does not show the weighing that came before it.",
+        "why": "Your route included real strengths, and it ended with this decision: \"{{route.last.label}}\". Returning to a view you already hold is common at the last moment, and here it left the judgement unmade.",
+        "feed_forward": "Try again and keep your close reading. Pay particular attention to your final decision, and ask whether it follows from the evidence you have just weighed.",
+        "transfer": "At what point in your writing do you tend to return to what you already think?",
+        "grants": [
+          "clue-retry"
+        ]
+      },
+      {
+        "id": "fail-try-again",
+        "result": "fail",
+        "tier": "early",
+        "title": "The question left open",
+        "story": "The essay is submitted. It reports what the studies found, and the question of how far remote working improves productivity is not answered in it.",
+        "why": "Your choices described and balanced the evidence more than they weighed it. That is an understandable response when sources disagree and the question asks you to commit.",
+        "feed_forward": "Try again and begin with what each study measured. The clue you now hold shows where to look.",
+        "transfer": "Have you ever left a \"how far\" question unanswered because the evidence was mixed? What would have helped?",
+        "grants": [
+          "clue-retry"
+        ]
+      }
+    ]
+  }
+}

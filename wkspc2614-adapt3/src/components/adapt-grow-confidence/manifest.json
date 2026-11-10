@@ -1,0 +1,50 @@
+{
+  "manifest": 1,
+  "id": "growConfidence",
+  "name": "adapt-grow-confidence",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-confidence.git",
+  "summary": "Confidence check — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-confidence.less",
+    "tokens": [
+      "--accent",
+      "--accent-ink",
+      "--c-negative",
+      "--c-neutral",
+      "--c-positive",
+      "--ink-soft",
+      "--line",
+      "--surface-1",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-confidence/blocks/block-confidence-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-confidence/exemplars/post-essay-writing.json",
+        "adapt-grow-confidence/exemplars/pre-essay-writing.json",
+        "adapt-grow-confidence/exemplars/pre-research-skills.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-confidence.md"
+    },
+    "components": []
+  }
+}

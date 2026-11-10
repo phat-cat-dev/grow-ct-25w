@@ -1,0 +1,85 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Course tutor. A guide to the sections of this lesson, with live hints.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_tutor": {
+      "type": "object",
+      "required": true,
+      "title": "Course tutor",
+      "properties": {
+        "name": {
+          "type": "string",
+          "required": false,
+          "default": "Course tutor",
+          "title": "Tutor name",
+          "inputType": "Text",
+          "translatable": true,
+          "validators": [],
+          "help": "Shown on the rail and as the source of each notification."
+        },
+        "intro": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Intro",
+          "inputType": "TextArea",
+          "translatable": true,
+          "validators": [],
+          "help": "A short line under the rail."
+        },
+        "greeting": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Greeting",
+          "inputType": "Text",
+          "translatable": true,
+          "validators": [],
+          "help": "Published to the notification bar when the component appears."
+        },
+        "_showGuide": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "title": "Show section guide",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "List the page's sections as navigation links that highlight as you scroll."
+        },
+        "_sections": {
+          "type": "array",
+          "required": false,
+          "title": "Sections (fallback)",
+          "help": "Only used when the page has no articles to read automatically (e.g. a preview).",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_id": { "type": "string", "required": true, "title": "Element id", "inputType": "Text", "validators": ["required"] },
+              "title": { "type": "string", "required": false, "title": "Title", "inputType": "Text", "translatable": true }
+            }
+          }
+        },
+        "_messages": {
+          "type": "object",
+          "required": false,
+          "title": "Per-section hints",
+          "inputType": "CodeEditor:json",
+          "validators": [],
+          "help": "A map of article id → message. The tutor speaks each one (once) to the notification bar as that section reaches the middle of the screen. Example: { \"a-05\": \"Take your time with this part.\" }"
+        }
+      }
+    }
+  }
+}

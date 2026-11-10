@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["body", "_calloutType"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Title",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional heading, only needed when it adds clarity beyond the callout type label.",
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "title": "Body",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "Main callout content. Keep to one clear point.",
+      "translatable": true
+    },
+    "_calloutType": {
+      "type": "string",
+      "required": true,
+      "enum": ["info", "warning", "tip", "example", "note", "definition"],
+      "default": "info",
+      "title": "Callout type",
+      "inputType": { "type": "Select", "options": ["info", "warning", "tip", "example", "note", "definition"] },
+      "validators": [],
+      "help": "Select the type that most accurately reflects the purpose of this callout. Use 'warning' only for genuine cautions."
+    }
+  }
+}

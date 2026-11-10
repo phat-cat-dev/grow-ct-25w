@@ -1,0 +1,96 @@
+/* chalk-theme.css - connects chalk pattern SVGs to the host theme's colours.
+
+   Load once on any page with inline chalk SVGs, including the original files in
+   this folder. It needs no markup changes. Each colour resolves in this order:
+   per-diagram override -> AB theme token -> older asset token -> fallback, so the
+   drawings follow theme switches and light/dark mode automatically.
+
+   Override on any ancestor or on the svg itself:
+     --chalk-color         strokes
+     --chalk-arrow-color   arrowheads (defaults to the stroke colour)
+     --chalk-label-color   label text
+     --chalk-label-bg      label chip fill
+     --chalk-label-border  label chip border
+     --chalk-label-font    label typeface
+     --chalk-stage-strength  how much of each accent stage colours keep (default 72%)
+
+   Attributes:
+     data-chalk-tone="accent|accent-2|accent-3|accent-4|ink|muted|positive|negative|neutral|info|comment"
+     data-chalk-palette="harmony"   gives each cycle stage its own theme accent
+     data-chalk-label-tone="match"  colours label text to match its stage or tone
+     data-chalk-label-style="chip"  gives HTML labels a visible box
+     data-chalk-font="hand"         uses a handwritten system font for labels
+
+   An SVG loaded through <img> cannot read the page's CSS variables, so it uses
+   the fallbacks below (which still follow the viewer's light/dark setting). */
+
+:where(svg.edu-svg, .chalk-stage) {
+  --chalk-fb-accent: #247c78;
+  --chalk-fb-accent-2: #8a5a13;
+  --chalk-fb-accent-3: #7a4aa8;
+  --chalk-fb-accent-4: #b0405f;
+  --chalk-fb-ink: #23353c;
+  --chalk-fb-muted: #52666d;
+  --chalk-fb-surface: #fff;
+  --chalk-fb-line: #bbd3cf;
+  --chalk-fb-positive: #2c7a54;
+  --chalk-fb-negative: #a8392c;
+  --chalk-fb-neutral: #8a5a13;
+  --chalk-fb-info: #2b6c96;
+  --chalk-fb-comment: #6a44a0;
+
+  --chalk-stroke: var(--chalk-color, var(--accent, var(--chalk-fb-accent)));
+  --chalk-arrow: var(--chalk-arrow-color, var(--chalk-stroke));
+  --chalk-ink: var(--chalk-label-color, var(--text, var(--ink, var(--chalk-fb-ink))));
+  --chalk-box-bg: var(--chalk-label-bg, var(--surface-1, var(--chalk-fb-surface)));
+  --chalk-box-border: var(--chalk-label-border, var(--border-strong, var(--line, var(--chalk-fb-line))));
+
+  /* Theme accents vary a lot in contrast, so stage colours lean towards the text
+     colour. That raises contrast in both light and dark. Set --chalk-stage-strength
+     to 100% to use the raw accents. */
+  --chalk-stage-1: color-mix(in srgb, var(--accent, var(--chalk-fb-accent)) var(--chalk-stage-strength, 72%), var(--chalk-ink));
+  --chalk-stage-2: color-mix(in srgb, var(--accent-2, var(--chalk-fb-accent-2)) var(--chalk-stage-strength, 72%), var(--chalk-ink));
+  --chalk-stage-3: color-mix(in srgb, var(--accent-3, var(--chalk-fb-accent-3)) var(--chalk-stage-strength, 72%), var(--chalk-ink));
+  --chalk-stage-4: color-mix(in srgb, var(--accent-4, var(--chalk-fb-accent-4)) var(--chalk-stage-strength, 72%), var(--chalk-ink));
+  --chalk-stage-5: color-mix(in srgb, var(--comment, var(--chalk-fb-comment)) var(--chalk-stage-strength, 72%), var(--chalk-ink));
+}
+@media (prefers-color-scheme: dark) {
+  :where(svg.edu-svg, .chalk-stage) {
+    --chalk-fb-accent: #8bddcf;
+    --chalk-fb-accent-2: #e5b567;
+    --chalk-fb-accent-3: #c5a3ea;
+    --chalk-fb-accent-4: #f0a0b8;
+    --chalk-fb-ink: #e3f0ee;
+    --chalk-fb-muted: #a9bdbb;
+    --chalk-fb-surface: #1d3034;
+    --chalk-fb-line: #496a6e;
+    --chalk-fb-positive: #7fd6a6;
+    --chalk-fb-negative: #f0a097;
+    --chalk-fb-neutral: #e5b567;
+    --chalk-fb-info: #8cc5ea;
+    --chalk-fb-comment: #c5a3ea;
+  }
+}
+
+/* The svg. prefix outranks the .edu-svg rule embedded in each SVG file. Strokes
+   paint in currentColor, so setting color also recolours the chalk drop shadow. */
+svg.edu-svg { color: var(--chalk-stroke); }
+svg.edu-svg :where(.edu-stroke.edu-arrow) { color: var(--chalk-arrow); }
+
+[data-chalk-tone="accent"]   { --chalk-color: var(--accent, var(--chalk-fb-accent)); }
+[data-chalk-tone="accent-2"] { --chalk-color: var(--accent-2, var(--chalk-fb-accent-2)); }
+[data-chalk-tone="accent-3"] { --chalk-color: var(--accent-3, var(--chalk-fb-accent-3)); }
+[data-chalk-tone="accent-4"] { --chalk-color: var(--accent-4, var(--chalk-fb-accent-4)); }
+[data-chalk-tone="ink"]      { --chalk-color: var(--text, var(--ink, var(--chalk-fb-ink))); }
+[data-chalk-tone="muted"]    { --chalk-color: var(--text-soft, var(--chalk-fb-muted)); }
+[data-chalk-tone="positive"] { --chalk-color: var(--positive, var(--chalk-fb-positive)); }
+[data-chalk-tone="negative"] { --chalk-color: var(--negative, var(--chalk-fb-negative)); }
+[data-chalk-tone="neutral"]  { --chalk-color: var(--neutral, var(--chalk-fb-neutral)); }
+[data-chalk-tone="info"]     { --chalk-color: var(--info, var(--chalk-fb-info)); }
+[data-chalk-tone="comment"]  { --chalk-color: var(--comment, var(--chalk-fb-comment)); }
+
+[data-chalk-palette="harmony"] .edu-stroke[data-chalk-stage="1"] { color: var(--chalk-stage-1); }
+[data-chalk-palette="harmony"] .edu-stroke[data-chalk-stage="2"] { color: var(--chalk-stage-2); }
+[data-chalk-palette="harmony"] .edu-stroke[data-chalk-stage="3"] { color: var(--chalk-stage-3); }
+[data-chalk-palette="harmony"] .edu-stroke[data-chalk-stage="4"] { color: var(--chalk-stage-4); }
+[data-chalk-palette="harmony"] .edu-stroke[data-chalk-stage="5"] { color: var(--chalk-stage-5); }
