@@ -55,6 +55,7 @@ Globals (`ariaRegion`, `ariaScaleName`, `ariaItemRated`) carry sensible defaults
 5. **Don't hand-set `_hasSummativeFollowing`.** It is set at assembly from whether the lesson shell contains a summative article (AR-5). Default `false` → the application/practice hand-off.
 6. **All-required if engaged; skippable as a whole.** The learner must rate *every* item before Submit enables (BS-4). The whole component is skippable at lesson level (it never blocks completion) — the freedom is in skipping, not half-finishing.
 7. **Placement (CC-1a/CC-1c).** PRE and POST do not sit inside a lesson, and are not embedded in W-OPEN/W-CLOSE (AR-6's lesson-level placement and WR-2b's wrapper-embedded placement are both superseded). They live on two dedicated pages: **C-PRE** — a single §15.4-style framing sentence plus the PRE component, nothing else — and **C-POST** — a framing sentence, the POST component (five-pattern comparison feedback, WR-2d), plus an OPTIONAL reflective bridge (an `adapt-abbott-opentext` reflection instance, revealed only after the POST reports complete, off by default and enabled per course via gate A6). Page sequence: W-OPEN → C-PRE → lessons → SUMM → C-POST → W-CLOSE.
+8. **Minimum six items.** Generating `_items` 1:1 against a lesson's headline outcomes can land as few as three — too thin a spread for the five-pattern feedback (guardrail 4) to say anything meaningful. Author a minimum of six items; where a lesson has fewer than six headline outcomes, draw the remainder from its additional/supporting outcomes rather than restating the headline ones. Added 8 November 2026 (Abbott: validation-needs review).
 
 ---
 
@@ -101,6 +102,7 @@ The component is **not graded**, so the Tier Spec's assessment dimension (§7) d
 - **Delta is computed fresh, never stored** (CD-4). Only the raw ratings persist (via `_userAnswer`/`trackable()`, serialised into suspend data). Cohort deltas are a subtraction done in the Moodle export, not a stored value.
 - **Live-validation still owed (BS-2a-iii):** confirm the `numeric` interactions render per-item in Moodle's report (mind the 1.2 dot→underscore id quirk), that the `wrong` result doesn't disrupt extraction, and that on revisit the post reads the pre's restored ratings in the right order (the one residual timing risk).
 - **No `example.json`** — this spec's worked example is the reference.
+- **FLAGGED (8 November 2026, open): 1-per-outcome generation undercounts.** Instances generated with one item per headline lesson outcome land below the six-item minimum (guardrail 8, e.g. this spec's own three-item worked example below). Existing generated instances need a review pass against the minimum.
 
 ---
 

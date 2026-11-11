@@ -117,6 +117,7 @@ The component structure, rendering, and behaviour do not change by tier.
 - **`type` is not an enum.** The schema accepts any string. Current values: `"book"`, `"external"`. Add new values when genuinely needed; don't pre-enumerate.
 - **`permalink` is independent.** When present, it renders alongside `href` as a separate link (e.g. "Library permalink"), not as a fallback. Don't use it as an alternative URL for the same target — use it for a catalogue entry.
 - **Completion is on inview.** The component completes when scrolled into view, regardless of whether any link is clicked. This is intentional — further reading is supplementary.
+- **Build lesson/course reference lists with `tools/compile-references.js`, not by hand.** It reads the lesson map gate's (`crs-04`) gate-confirmed `sourceSections[]` and writes real EBSCO eBook-reader deep links for *Excelling at University* (Dennis & Abbott) chapters into the matching `lesson-references` / `course-references` block, collapsing same-chapter sections into one entry and ordering ascending by chapter. Hand-typing risks exactly the fabricated/placeholder `#` hrefs guardrail 3 forbids. Added 8 November 2026 (Abbott: validation-needs review).
 
 ---
 

@@ -73,6 +73,7 @@ Global aria strings (`ariaRegion`) inherit from `course.json` `_globals`; leave 
 2. **Keep item bodies concise.** Accordion is for progressive disclosure, not hiding long prose. One or two short paragraphs per item; if you need more, reconsider the component choice.
 3. **Decide completion deliberately.** `_setCompletionOn: "allItems"` means the learner must open every item before the component completes; this interacts with trickle/PLP gating. Use it when you want guaranteed engagement with each point; switch to `"inview"` only if opening every item shouldn't be mandatory.
 4. **Set collapse behaviour for the teaching move.** `_shouldCollapseItems: true` (the default) keeps only one item open at a time — good for sequential steps where context builds. `false` lets multiple stay open — useful for reference lists the learner may want to compare.
+5. **Prefix checklist-style content with "Checklist:".** When accordion is reached for because the content is a stepped checklist (rather than the dedicated `checklist` component, e.g. where items need rich HTML/images the checklist schema can't carry), set `displayTitle` to `"Checklist: …"`, matching the dedicated `checklist` component's own naming convention (`checklist.md` §2). This keeps checklist-style content findable and visually consistent regardless of which component implements it. Added 8 November 2026 (Abbott: validation-needs review).
 
 ---
 

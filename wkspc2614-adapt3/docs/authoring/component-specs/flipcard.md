@@ -69,6 +69,8 @@ Globals (`ariaRegion`) carry sensible defaults; override only for wording.
 6. **Completion requires all cards flipped.** The learner must flip every card (to back) at least once; completion fires when the last card is visited. Cards can be re-flipped without penalty.
 
 7. **Index-keyed persistence (FC-1).** The base class stores visitation as an index-sorted boolean array. Reordering `_items` between sessions breaks restoration. If you must reorder, expect learners to see partial completion reset. The `_id` field is for analytics clarity, not persistence.
+8. **Centre the front-face title.** `front.title` renders centred on the card face — this is the card's primary scan point before the flip, and centring reads as a deliberate prompt rather than a left-aligned label. Added 8 November 2026 (Abbott: validation-needs review).
+9. **Tag cards with the grow theme's pedagogy-functional card classes where they fit.** Where a card's content matches one of the `.cm.card` system's pedagogy-functional categories (`do` / `advice` / `feedback-pos`, `dont` / `feedback-neg`, `starting`, `action` — see `card-system.md`), apply the matching class so the flipcard picks up the same colour-coding as the rest of the theme instead of rendering untagged. Added 8 November 2026 (Abbott: validation-needs review).
 
 ---
 

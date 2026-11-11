@@ -296,3 +296,15 @@ Key open items affecting W-OPEN:
   pathways may have a hotgraphic; evaluate per-pathway
 - **Confidence 5-option row overflow:** moved to the C-page templates (CRO-1
   fix landed; verify during CC-1e retrofit)
+- **LO block placement (flagged 8 November 2026, open — does NOT supersede the
+  14 August reorder above):** direction under discussion is to move Learning
+  outcomes to the END of the first article instead, with Continue leading to
+  C-PRE, conditional on a middle interactive block — a hotgraphic SVG that maps
+  the content ahead and doubles as a menu or interaction — sitting between
+  Overview and the close. Not to be built until the SVG/grow visual theme is
+  settled; recorded here as intent, not yet a decision.
+- **Visual overview as a stronger default (flagged 8 November 2026, open):**
+  beyond VO-1's per-pathway evaluation above, the ask is for every W-OPEN to
+  carry a hotgraphic / timeline / interactive SVG showing the content ahead or
+  the model at the heart of the learning, not just where one happens to suit
+  the pathway. Needs a design-palette decision, not a template edit.

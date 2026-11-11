@@ -303,3 +303,6 @@ Key open items affecting SUMM:
 - **Per-question breakdown in Results:** feature request, not yet designed —
   may change the structure of Block 11
 - **"Completed activity" chrome:** feature request for theme pass
+- **Header styling conformity (flagged 8 November 2026, open):** the SUMM page
+  header does not yet consistently match the rest of the grow theme. Needs a
+  pass once the theme audit reaches this page.

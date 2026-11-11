@@ -91,7 +91,9 @@ Identical model to checklist (`docs/authoring/component-specs/checklist.md` §6)
 - **`_component` is `"workedExample"`** (camelCase), not the plugin directory name (`adapt-abbott-worked-example`).
 - **Static template assignment is mandatory** — `WorkedExampleView.template = 'worked-example.jsx';` after the class definition, same lesson learned building checklist.
 - **No `_checkedMap`, no transient tick state at all.** If a future variant needs per-item ticks, that is a different component (checklist already exists for that); do not bolt ticking onto this one.
-- **The `we-weaker`/`we-stronger` classes are not this component's concern.** They arrive already baked into `body` from the merge step; this component only renders `body` as-is.
+- **The `we-weaker`/`we-stronger` classes are not this component's concern.** They arrive already baked into `body` from the merge step; this component only renders `body` as-is. This is the positive/negative colouring mechanism (red/green, per `card-system.md`'s "line up with the worked-example red/green scheme") — already live, no new rule needed.
+- **FLAGGED (8 November 2026, open): legacy worked examples built on `accordion`, not `workedExample`.** Some lessons may still carry worked-example content on the `accordion` component (which shows component title/body chrome) rather than the lean `workedExample` component (guardrail 1: no title/body treatment). Needs an audit before being called a defect — not yet confirmed which, if any, live instances this affects.
+- **FLAGGED (8 November 2026, open): reported `{{learner-a}}`/`{{learner-b}}` token wiring glitch.** A recurring miswiring has been reported in some instances; root cause not yet identified. Investigate against `merge-context.js`'s `wrapProse()` and `tools/worked-example-lint.js` assertions 1-3 (token presence, paragraph-leading order) before treating this as fixed or as a new guardrail.
 
 ---
 
