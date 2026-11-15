@@ -1,0 +1,50 @@
+{
+  "manifest": 1,
+  "id": "growTextTagging",
+  "name": "adapt-grow-text-tagging",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-text-tagging.git",
+  "summary": "Tag the argument — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-text-tagging.less",
+    "tokens": [
+      "--accent",
+      "--c-negative",
+      "--c-positive",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--shadow",
+      "--surface-1",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-text-tagging/blocks/block-text-tagging-1up.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-text-tagging/exemplars/claim-evidence.json",
+        "adapt-grow-text-tagging/exemplars/fact-opinion.json",
+        "adapt-grow-text-tagging/exemplars/method-result.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-text-tagging.md"
+    },
+    "components": []
+  }
+}

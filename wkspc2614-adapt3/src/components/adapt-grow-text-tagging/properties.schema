@@ -1,0 +1,472 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Text tagging. Choose a category, then select the matching text, and submit.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "required": ["instruction", "_tagCategories", "_passages"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Title",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Optional heading, rendered above body/instruction. ~10 words or fewer.",
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Body",
+      "inputType": "TextArea",
+      "validators": [],
+      "translatable": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "TextArea",
+      "validators": ["required"],
+      "help": "~60 words or fewer. Tell the learner what to do: choose a category, then select the matching text.",
+      "translatable": true
+    },
+    "ariaQuestion": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Aria question",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Read out by screen readers instead of the title/body/instruction when focusing the options.",
+      "translatable": true
+    },
+    "_tagMode": {
+      "type": "string",
+      "required": true,
+      "enum": ["single", "multi"],
+      "default": "multi",
+      "title": "Tag mode",
+      "inputType": { "type": "Select", "options": ["single", "multi"] },
+      "validators": [],
+      "help": "'single' requires at least one tag to submit; 'multi' requires every scorable span to be tagged."
+    },
+    "_tagCategories": {
+      "type": "array",
+      "required": true,
+      "title": "Tag categories",
+      "items": {
+        "type": "object",
+        "required": false,
+        "title": "Category",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Id",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Lowercase, may contain digits/hyphens/underscores after the first letter. Must match a _tagId used in _passages[]._taggableSpans."
+          },
+          "label": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Label",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Palette button text. ~5 words or fewer.",
+            "translatable": true
+          },
+          "description": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Description",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Shown as a tooltip. ~20 words or fewer.",
+            "translatable": true
+          }
+        }
+      }
+    },
+    "_passages": {
+      "type": "array",
+      "required": true,
+      "title": "Passages",
+      "items": {
+        "type": "object",
+        "required": false,
+        "title": "Passage",
+        "properties": {
+          "_passageId": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Passage id",
+            "inputType": "Text",
+            "validators": ["required"]
+          },
+          "label": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Label",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "text": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Passage text",
+            "inputType": "TextArea",
+            "validators": ["required"],
+            "help": "Plain text, no markup. ~200 words or fewer. Taggable span text is located by exact string match against this field.",
+            "translatable": true
+          },
+          "_taggableSpans": {
+            "type": "array",
+            "required": false,
+            "title": "Taggable spans",
+            "help": "Leave empty/omitted to render this passage as a read-only contrast passage (not interactive).",
+            "items": {
+              "type": "object",
+              "required": false,
+              "title": "Span",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "required": true,
+                  "default": "",
+                  "title": "Span text",
+                  "inputType": "Text",
+                  "validators": ["required"],
+                  "help": "Must appear verbatim, once, in the passage text above.",
+                  "translatable": true
+                },
+                "_tagId": {
+                  "type": "string",
+                  "required": true,
+                  "default": "",
+                  "title": "Correct tag id",
+                  "inputType": "Text",
+                  "validators": ["required"],
+                  "help": "Must match a _tagCategories[]._id."
+                },
+                "feedback": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Feedback",
+                  "inputType": "TextArea",
+                  "validators": [],
+                  "help": "Shown when marking this span. ~30 words or fewer.",
+                  "translatable": true
+                },
+                "feedbackIncorrect": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Incorrect feedback",
+                  "inputType": "TextArea",
+                  "validators": [],
+                  "help": "Shown when this span is tagged incorrectly or left untagged. ~30 words or fewer.",
+                  "translatable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "_attempts": {
+      "type": "number",
+      "required": true,
+      "default": 1,
+      "title": "Attempts",
+      "inputType": "Number",
+      "validators": ["required", "number"],
+      "help": "How many attempts the learner is allowed."
+    },
+    "_shouldDisplayAttempts": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "Display Attempts",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Display the number of attempts remaining?"
+    },
+    "_questionWeight": {
+      "type": "number",
+      "required": false,
+      "default": 1,
+      "title": "Question Weight",
+      "inputType": "Number",
+      "validators": ["number"],
+      "help": "How much this question is worth."
+    },
+    "_canShowModelAnswer": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "title": "Display Model Answer",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Allow the user to view the model answer if they answer the question incorrectly?"
+    },
+    "_canShowFeedback": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Display Feedback",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_canShowMarking": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Display Marking",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Show correct/incorrect span highlighting after submitting."
+    },
+    "_recordInteraction": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Record interaction",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "If disabled, recording the user's answer(s) to cmi.interactions on the LMS is disabled for this component only."
+    },
+    "_scoreLabel": {
+      "type": "string",
+      "required": false,
+      "default": "Tags identified",
+      "title": "Score label",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_showScore": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Show score",
+      "inputType": "Checkbox",
+      "validators": []
+    },
+    "_feedback": {
+      "type": "object",
+      "required": false,
+      "title": "Feedback",
+      "properties": {
+        "title": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Feedback Title",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Leave blank to have the component's title shown instead.",
+          "translatable": true
+        },
+        "correct": {
+          "type": "string",
+          "required": false,
+          "default": "Excellent! All tags correct.",
+          "title": "Correct",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "Correct answer feedback for this question.",
+          "translatable": true
+        },
+        "_incorrect": {
+          "type": "object",
+          "required": false,
+          "title": "Incorrect Feedback",
+          "properties": {
+            "final": {
+              "type": "string",
+              "required": false,
+              "default": "Keep trying.",
+              "title": "Incorrect Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Incorrect answer feedback for the final attempt.",
+              "translatable": true
+            },
+            "notFinal": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Incorrect Not Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Incorrect answer feedback for any attempt apart from the last attempt. If blank, 'Incorrect Final' is used instead.",
+              "translatable": true
+            }
+          }
+        },
+        "_partlyCorrect": {
+          "type": "object",
+          "required": false,
+          "title": "Partly Correct Feedback",
+          "properties": {
+            "final": {
+              "type": "string",
+              "required": false,
+              "default": "Good work, but not every tag is correct yet.",
+              "title": "Partly Correct Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Partly correct answer feedback for the final attempt. If blank, 'Incorrect Final' is used instead.",
+              "translatable": true
+            },
+            "notFinal": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "Partly Correct Not Final",
+              "inputType": "TextArea",
+              "validators": [],
+              "help": "Partly correct answer feedback for any attempt apart from the last attempt. If blank, 'Partly Correct Final' is used instead.",
+              "translatable": true
+            }
+          }
+        }
+      }
+    },
+    "_buttons": {
+      "type": "object",
+      "required": false,
+      "title": "Buttons",
+      "properties": {
+        "_submit": {
+          "type": "object",
+          "title": "Submit",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "Submit",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text for the submit button.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "Submit",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Aria label for the submit button.",
+              "translatable": true
+            }
+          }
+        },
+        "_reset": {
+          "type": "object",
+          "title": "Reset",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "Reset",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text for the reset button.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "Reset",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Aria label for the reset button.",
+              "translatable": true
+            }
+          }
+        },
+        "_showFeedback": {
+          "type": "object",
+          "title": "Show Feedback",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "Show feedback",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text to show feedback.",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "Show feedback",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Aria label for the show feedback button.",
+              "translatable": true
+            }
+          }
+        },
+        "remainingAttemptsText": {
+          "type": "string",
+          "required": false,
+          "default": "attempts remaining",
+          "title": "Attempts Remaining Text",
+          "inputType": "QuestionButton",
+          "validators": [],
+          "help": "Shown when there are multiple attempts left.",
+          "translatable": true
+        },
+        "remainingAttemptText": {
+          "type": "string",
+          "required": false,
+          "default": "final attempt",
+          "title": "Final Attempt Text",
+          "inputType": "QuestionButton",
+          "validators": [],
+          "help": "Shown when there is one attempt left.",
+          "translatable": true
+        }
+      }
+    }
+  }
+}

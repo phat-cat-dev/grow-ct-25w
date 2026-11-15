@@ -1,0 +1,49 @@
+{
+  "_id": "c-guided-chat",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "growGuidedChat",
+  "_classes": "",
+  "_layout": "full",
+  "title": "A guided reflection",
+  "displayTitle": "A guided reflection",
+  "body": "Walk through the question with your guide, one step at a time.",
+  "instruction": "Use Next to move through the conversation. You can replay it at any time.",
+  "_chat": {
+    "guideName": "Guide",
+    "learnerName": "You",
+    "_typeSpeed": 26,
+    "_autoAdvance": false,
+    "_labels": {
+      "next": "Next message",
+      "skip": "Show full message",
+      "replay": "Replay conversation"
+    },
+    "_messages": [
+      {
+        "_speaker": "guide",
+        "text": "Let's look back at the task you just finished. What was the first thing you tried?"
+      },
+      {
+        "_speaker": "learner",
+        "text": "I jumped straight to the calculation without checking the units."
+      },
+      {
+        "_speaker": "guide",
+        "text": "That's a really common move. What did that cost you later on?"
+      },
+      {
+        "_speaker": "learner",
+        "text": "I had to redo the last two steps once I spotted the mismatch."
+      },
+      {
+        "_speaker": "guide",
+        "text": "So where could a thirty-second check have saved you those two steps?"
+      },
+      {
+        "_speaker": "learner",
+        "text": "Right at the start — before I touched the numbers."
+      }
+    ]
+  }
+}

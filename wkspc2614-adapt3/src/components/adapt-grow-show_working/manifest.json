@@ -1,0 +1,50 @@
+{
+  "manifest": 1,
+  "id": "growShowWorking",
+  "name": "adapt-grow-show_working",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-show_working.git",
+  "summary": "Step-by-step, with annotations — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-show_working.less",
+    "tokens": [
+      "--accent",
+      "--c-positive",
+      "--fs-3xs",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--space-sm",
+      "--surface-1",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-show_working/blocks/block-show-working-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-show_working/exemplars/show-working-fraction-add.json",
+        "adapt-grow-show_working/exemplars/show-working-linear-equation.json",
+        "adapt-grow-show_working/exemplars/show-working-percentage-change.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-show_working.md"
+    },
+    "components": []
+  }
+}

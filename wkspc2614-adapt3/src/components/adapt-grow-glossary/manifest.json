@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growGlossary",
+  "name": "adapt-grow-glossary",
+  "type": "component",
+  "summary": "Glossary passage: a block of prose with inline marked terms; selecting a term reveals its definition in a brand-coloured region below. Completes when every term has been opened.",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-glossary.git",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-glossary.less",
+    "tokens": [
+      "--ab-base-accent", "--ab-body-font-size", "--h1", "--surface-1", "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "The marker uses --ab-base-accent (mapped to --accent by grow-ab-bridge.less); the definition region is painted with --h1 (deep brand navy) carrying --surface-1 text, so it inverts correctly in dark mode. Hover/focus tints use color-mix() at the call sites because darken()/fade() cannot take a var()."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-glossary/blocks/block-glossary.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-glossary/exemplars/critical-reading.json",
+        "adapt-grow-glossary/exemplars/referencing-terms.json",
+        "adapt-grow-glossary/exemplars/research-methods.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-glossary.md"
+    },
+    "components": []
+  }
+}

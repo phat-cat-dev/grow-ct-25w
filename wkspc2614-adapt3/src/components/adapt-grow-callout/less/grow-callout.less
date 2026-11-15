@@ -1,0 +1,44 @@
+// adapt-grow-callout
+// Tokenised to the GROW theme. Each callout_type sets one local driver,
+// --cal-accent, mapped to a GROW semantic/brand token; the tinted background is
+// derived from that driver with color-mix (CSS, passes through LESS untouched),
+// so every callout follows the theme hue and dark mode automatically.
+//
+//   info       → --accent       (brand)      warning    → --c-neutral  (amber)
+//   tip        → --c-positive   (green)      note       → --c-comment  (purple)
+//   example    → --accent-ink   (deep brand) definition → --ink-soft   (neutral)
+//
+// Was: a local hardcoded hex palette ported from congen11 cardiff-met SCSS.
+
+.grow-callout {
+  --cal-accent: var(--line);
+  --cal-tint: 10%;
+  border-radius: var(--radius-sm, 4px);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--cal-accent);
+  background: color-mix(in srgb, var(--cal-accent) var(--cal-tint), var(--surface-1));
+
+  &--info       { --cal-accent: var(--accent); }
+  &--warning    { --cal-accent: var(--c-neutral); }
+  &--tip        { --cal-accent: var(--c-positive); }
+  &--example    { --cal-accent: var(--accent-ink); }
+  &--note       { --cal-accent: var(--c-comment); }
+  &--definition { --cal-accent: var(--ink-soft); }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  &__body {
+    margin: 0;
+    color: var(--ink-soft);
+    line-height: 1.6;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

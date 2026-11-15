@@ -1,0 +1,44 @@
+{
+  "manifest": 1,
+  "id": "growCorkboard",
+  "name": "adapt-grow-corkboard",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-corkboard.git",
+  "summary": "Fill in the board — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-corkboard.less",
+    "tokens": [
+      "--space-md",
+      "--space-sm",
+      "--sticky"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-corkboard/blocks/block-corkboard-brainstorm.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-corkboard/exemplars/brainstorm-group-roles.json",
+        "adapt-grow-corkboard/exemplars/brainstorm-vocabulary.json",
+        "adapt-grow-corkboard/exemplars/display-study-takeaways.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-corkboard.md"
+    },
+    "components": []
+  }
+}

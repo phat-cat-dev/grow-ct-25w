@@ -1,0 +1,268 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["_parts"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "Build your prompt: pick or type a role, a task and some context.",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Lead-in",
+      "inputType": "TextArea",
+      "validators": [],
+      "help": "Optional introductory text shown above the prompt parts.",
+      "translatable": true
+    },
+    "_assembleTemplate": {
+      "type": "string",
+      "required": false,
+      "default": "Act as {role}. {function}. Context: {context}.",
+      "title": "Assembly template",
+      "inputType": "Text",
+      "validators": [],
+      "help": "How the parts combine. Use {key} placeholders matching each part's _key."
+    },
+    "_assembledLabel": {
+      "type": "string",
+      "required": false,
+      "default": "Your prompt",
+      "title": "Assembled-prompt label",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_copyText": {
+      "type": "string",
+      "required": false,
+      "default": "Copy prompt",
+      "title": "Copy button text",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_clearText": {
+      "type": "string",
+      "required": false,
+      "default": "Clear",
+      "title": "Clear button text",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "_whyText": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Why-this-works note",
+      "inputType": "TextArea",
+      "validators": [],
+      "translatable": true
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "enum": ["allFilled", "inview"],
+      "default": "allFilled",
+      "title": "Completion",
+      "inputType": { "type": "Select", "options": ["allFilled", "inview"] },
+      "validators": [],
+      "help": "When to mark the component complete: once all required parts are filled, or simply on view."
+    },
+    "_parts": {
+      "type": "array",
+      "required": true,
+      "title": "Prompt parts",
+      "help": "The parts the learner assembles into a prompt. At least one is required.",
+      "items": {
+        "type": "object",
+        "required": ["_key", "label"],
+        "properties": {
+          "_key": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Key (matches {key} in the template)",
+            "inputType": "Text",
+            "validators": ["required"]
+          },
+          "label": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Part label",
+            "inputType": "Text",
+            "validators": ["required"],
+            "translatable": true
+          },
+          "help": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Short help under the label",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "placeholder": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Input placeholder",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "_chips": {
+            "type": "array",
+            "required": false,
+            "title": "Example chips",
+            "default": [],
+            "items": {
+              "type": "string"
+            }
+          },
+          "_type": {
+            "type": "string",
+            "required": false,
+            "enum": ["text", "select"],
+            "default": "text",
+            "title": "Field type",
+            "inputType": { "type": "Select", "options": ["text", "select"] },
+            "validators": [],
+            "help": "\"text\" is an editable box (with optional chips). \"select\" is a dropdown driven by _options."
+          },
+          "_options": {
+            "type": "array",
+            "required": false,
+            "title": "Dropdown options",
+            "help": "Used when the field is a dropdown. Each option's text is also its value in the assembled prompt.",
+            "default": [],
+            "items": {
+              "type": "string"
+            }
+          },
+          "_startersPlaceholder": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Starters dropdown placeholder",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "_starters": {
+            "type": "array",
+            "required": false,
+            "title": "Starters (flat dropdown under the field)",
+            "help": "A dropdown of fuller prompt starters; choosing one fills the field. Use _starterGroups instead to group by level.",
+            "default": [],
+            "items": {
+              "type": "string"
+            }
+          },
+          "_starterGroups": {
+            "type": "array",
+            "required": false,
+            "title": "Starters grouped by level",
+            "help": "Groups shown as <optgroup>s, e.g. Level 4-7. Choosing an item fills the field.",
+            "default": [],
+            "items": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "required": false,
+                  "default": "",
+                  "title": "Group label (e.g. Level 4)",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "items": {
+                  "type": "array",
+                  "required": false,
+                  "title": "Starters in this group",
+                  "default": [],
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "_library": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Starter library id",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Pull starters from the course's _growPromptLibraries[<id>][stage]. Inline _starters/_starterGroups override this."
+          },
+          "_libraryStage": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Library stage key",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Which stage within the library to use. Defaults to this part's _key."
+          },
+          "_iconsFrom": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Icons library stage",
+            "inputType": "Text",
+            "validators": [],
+            "help": "A stage of this part's _library that maps each value to a sprite icon (\"sprite.svg#symbol\"); the icon for the current value shows beside the field."
+          },
+          "_filterBy": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Filter starters by part",
+            "inputType": "Text",
+            "validators": [],
+            "help": "The _key of another part (usually a select). Only starter groups whose `filter` matches that part's value are shown; groups without a filter always show."
+          },
+          "_optional": {
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "title": "Optional part",
+            "inputType": "Checkbox",
+            "validators": [],
+            "help": "Not required for completion. Use for slot parts such as {verb} or {topic} that only some starters reference."
+          },
+          "_libraryMerge": {
+            "type": "boolean",
+            "required": false,
+            "default": false,
+            "title": "Append library starters",
+            "inputType": "Checkbox",
+            "validators": [],
+            "help": "Append the library's groups after this part's inline _starterGroups instead of being overridden by them."
+          }
+        }
+      }
+    }
+  }
+}

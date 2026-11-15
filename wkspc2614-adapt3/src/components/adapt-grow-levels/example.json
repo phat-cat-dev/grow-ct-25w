@@ -1,0 +1,32 @@
+{
+  "_id": "c-levels-01",
+  "_parentId": "b-levels",
+  "_type": "component",
+  "_component": "growLevels",
+  "_classes": "",
+  "_layout": "full",
+  "displayTitle": "Access levels",
+  "body": "<p>Each level grants a little more freedom than the one before it.</p>",
+  "instruction": "Select a level to open it, then open the next.",
+  "_setCompletionOn": "allOpened",
+  "_items": [
+    {
+      "title": "Level 1 — Read only",
+      "body": "<p>You can view records and reports, but you cannot change anything.</p>",
+      "advice": "<p>Start here if you are new to the system and just need to find information.</p>",
+      "_tone": "restricted"
+    },
+    {
+      "title": "Level 2 — Contributor",
+      "body": "<p>You can create and edit your own entries, which a reviewer then approves.</p>",
+      "advice": "<p>Save often and add a clear note explaining what you changed and why.</p>",
+      "_tone": "guarded"
+    },
+    {
+      "title": "Level 3 — Administrator",
+      "body": "<p>You can manage other people's entries and change the settings for your team.</p>",
+      "advice": "<p>Use this access carefully — changes here affect everyone in your team at once.</p>",
+      "_tone": "open"
+    }
+  ]
+}

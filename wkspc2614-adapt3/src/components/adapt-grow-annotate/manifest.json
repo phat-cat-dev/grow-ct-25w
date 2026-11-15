@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growAnnotate",
+  "name": "adapt-grow-annotate",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-annotate.git",
+  "summary": "A passage the learner annotates with hand-drawn ink marks (highlight / box / oval) via the grow-marks engine; reflective or graded. Tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-annotate.less",
+    "tokens": [
+      "--accent", "--c-positive", "--c-negative", "--c-neutral", "--c-comment",
+      "--ink", "--ink-soft", "--line", "--surface-1", "--surface-2", "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there. The vendored grow-marks.less library (fluoro marker-pen colours) is intentionally left as fixed bright colours."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-annotate/blocks/block-annotate-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-annotate/exemplars/highlight-reflective.json",
+        "adapt-grow-annotate/exemplars/moves-graded.json",
+        "adapt-grow-annotate/exemplars/pinned-shapes.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-annotate.md"
+    }
+  }
+}

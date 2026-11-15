@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growScrollScenes",
+  "name": "adapt-grow-scroll-scenes",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-scroll-scenes.git",
+  "summary": "A scroll-linked sequence of full-bleed scenes with presets for scheme, background and motion. The default scene-colour palette is tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-scroll-scenes.less",
+    "tokens": [
+      "--accent", "--c-neutral", "--c-comment", "--c-positive", "--ink", "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Default slot palette tokenised by meaning (slot 1 accent, 2 neutral, 3 comment, 4 positive); base ink/paper/accent already read GROW tokens. The data-scheme night/warm/dusk palettes are left as explicit, author-chosen hex overrides (a deliberate alternative-mood feature)."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-scroll-scenes/blocks/block-scroll-scenes-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-scroll-scenes/exemplars/research-process.json",
+        "adapt-grow-scroll-scenes/exemplars/essay-structure.json",
+        "adapt-grow-scroll-scenes/exemplars/managing-deadlines.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-scroll-scenes.md"
+    },
+    "components": []
+  }
+}

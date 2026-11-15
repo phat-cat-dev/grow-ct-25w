@@ -1,0 +1,16 @@
+{
+  "name": "adapt-grow-scenario",
+  "version": "0.1.0",
+  "framework": ">=5.19.1",
+  "component": "growScenario",
+  "targetAttribute": "_growScenario",
+  "displayName": "Scenario (Grow)",
+  "description": "A branching scenario played card by card in a modal. Plays a scenario compiled by the scenario-builder toolchain. Independent of Trickle and Branching.",
+  "main": "/js/adapt-grow-scenario.js",
+  "keywords": ["adapt-plugin", "adapt-component"],
+  "license": "GPL-3.0",
+  "private": true,
+  "scripts": {
+    "postversion": "cp package.json bower.json"
+  }
+}

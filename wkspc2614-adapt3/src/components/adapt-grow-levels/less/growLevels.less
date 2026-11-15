@@ -5,15 +5,17 @@
 // and tint. Locked levels are dimmed until the one before is opened; the open level
 // expands to show its detail and an on-demand "In practice" advice pop-out.
 //
-// Scoped under `.levels` (the template's inner wrapper), NOT the Adapt component
+// Scoped under `.grow-levels` (the template's inner wrapper), NOT the Adapt component
 // wrapper: Adapt lowercases `_component` (growLevels -> .growlevels), so a
 // `.growLevels` selector would miss. Colours use the live GROW scheme tokens.
 
-.levels {
-  @tone-restricted: hsl(2, 65%, 46%);
-  @tone-guarded:    hsl(38, 90%, 44%);
-  @tone-open:       hsl(145, 63%, 32%);
-  @tone-neutral:    hsl(202, 72%, 14%);
+.grow-levels {
+  // Tone colour drivers mapped to GROW theme tokens by meaning; dark mode is
+  // handled by the theme. (Was: local hardcoded hsl() values.)
+  @tone-restricted: var(--c-negative); // red
+  @tone-guarded:    var(--c-neutral);  // amber
+  @tone-open:       var(--c-positive); // green
+  @tone-neutral:    var(--accent-ink); // brand deep
 
   &__title {
     font-weight: 700;
@@ -59,7 +61,7 @@
 
     &.is-open {
       background: color-mix(in srgb, var(--tone) 12%, var(--surface-1, #fff));
-      box-shadow: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0.25rem 0.9rem var(--shadow);
     }
   }
 
@@ -167,7 +169,7 @@
 
     .no-touch &:hover {
       background: color-mix(in srgb, var(--tone) 10%, var(--surface-1, #fff));
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.14);
+      box-shadow: 0 1px 5px var(--shadow);
     }
     &:active { background: color-mix(in srgb, var(--tone) 18%, var(--surface-1, #fff)); }
     html:not(.a11y-disable-focusoutline) &:focus-visible {

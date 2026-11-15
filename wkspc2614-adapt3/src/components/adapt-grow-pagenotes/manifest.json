@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growPageNotes",
+  "name": "adapt-grow-pagenotes",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-pagenotes.git",
+  "summary": "An overlay component: a launch button opens a transparent layer of hand-drawn ink marks and chalk diagrams drawn over a target region, revealed stepwise. Colour roles tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-pagenotes.less",
+    "tokens": [
+      "--accent", "--surface-1", "--line", "--ink",
+      "--c-positive", "--c-negative", "--c-neutral", "--c-comment"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Each note's _color is a theme role (accent / positive / negative / neutral / comment / pen / ink), never a fixed colour; the launch button and overlay already read GROW tokens (token first, literal fallback behind). Dark mode handled by the theme."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-pagenotes/blocks/block-pagenotes-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-pagenotes/exemplars/mark-up-paragraph.json",
+        "adapt-grow-pagenotes/exemplars/question-the-evidence.json",
+        "adapt-grow-pagenotes/exemplars/fix-the-citation.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-pagenotes.md"
+    },
+    "components": []
+  }
+}

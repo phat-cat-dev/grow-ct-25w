@@ -1,0 +1,15 @@
+// adapt-grow-hero
+//
+// Structure only. All hero visuals (fill, layout, media placement, entrance)
+// live in the .ab.hero system (ab-base-hero.less / the brand ab-hero.less, on
+// --ab-hero-* tokens). This file only wraps the widget; it never defines colour.
+
+.grow-hero {
+
+  &__widget {
+    // let the .ab.hero object own its own radius/overflow; the widget is a
+    // plain block wrapper so the component sits flush in the block grid.
+    display: block;
+  }
+
+}

@@ -1,0 +1,62 @@
+/* Scoped to .sb-player. Colours come from --sb-* tokens. In Adapt, point these at the
+   --grow-* theme tokens; the literal fallbacks serve the standalone preview. */
+.sb-player {
+  --sb-ink: var(--grow-scenario-ink, #1f2a33);
+  --sb-muted: var(--grow-scenario-muted, #4d5c68);
+  --sb-paper: var(--grow-scenario-paper, #ffffff);
+  --sb-tint: var(--grow-scenario-tint, #eef3f7);
+  --sb-line: var(--grow-scenario-line, #8ea0ad);
+  --sb-accent: var(--grow-scenario-accent, #24508f);
+  --sb-on-accent: var(--grow-scenario-on-accent, #ffffff);
+  --sb-pass: var(--grow-scenario-pass, #1f6b3a);
+  --sb-fail: var(--grow-scenario-fail, #8f3a1e);
+  color: var(--sb-ink);
+  background: var(--sb-paper);
+  font-size: 1rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.sb-player *, .sb-player *::before { box-sizing: border-box; }
+.sb-player p { margin: 0; }
+.sb-player .sb-card > * + * { margin-top: 1rem; }
+.sb-title { margin: 0; font-size: 1.45rem; line-height: 1.25; outline: none; }
+.sb-progress, .sb-label { color: var(--sb-muted); font-size: .85rem; font-weight: 600; }
+.sb-player .sb-label + p { margin-top: .15rem; }
+.sb-region--challenge { padding: .75rem 1rem; background: var(--sb-tint); border-inline-start: 4px solid var(--sb-accent); }
+.sb-region--position { color: var(--sb-muted); }
+.sb-region--next { padding: .75rem 1rem; background: var(--sb-tint); }
+.sb-prompt { font-weight: 700; font-size: 1.1rem; }
+.sb-aside { font-style: italic; }
+.sb-decisions { display: grid; gap: .6rem; }
+.sb-btn {
+  min-height: 2.75rem; padding: .6rem 1rem; color: var(--sb-accent); background: var(--sb-paper);
+  border: 2px solid var(--sb-accent); border-radius: .4rem; font: inherit; text-align: start; cursor: pointer;
+}
+.sb-btn:hover { background: var(--sb-tint); }
+.sb-btn:focus-visible, .sb-player summary:focus-visible, .sb-player textarea:focus-visible { outline: 3px solid var(--sb-accent); outline-offset: 2px; }
+.sb-btn--primary { color: var(--sb-on-accent); background: var(--sb-accent); }
+.sb-btn--primary:hover { color: var(--sb-on-accent); background: var(--sb-accent); text-decoration: underline; }
+.sb-btn:disabled { color: var(--sb-muted); border-color: var(--sb-line); border-style: dashed; cursor: not-allowed; }
+.sb-btn:disabled:hover { background: var(--sb-paper); }
+.sb-decision { width: 100%; }
+.sb-player .sb-hint { margin-top: .25rem; color: var(--sb-muted); font-size: .875rem; }
+.sb-guide, .sb-clues, .sb-review { padding: .6rem .9rem; background: var(--sb-tint); border-radius: .4rem; }
+.sb-player .sb-guide p, .sb-clues ul, .sb-review ol { margin-top: .4rem; }
+.sb-player summary { min-height: 1.75rem; color: var(--sb-accent); font-weight: 600; cursor: pointer; }
+.sb-clues ul, .sb-review ol { padding-inline-start: 1.25rem; }
+.sb-clues li + li, .sb-review li + li { margin-top: .5rem; }
+.sb-step-choice { font-weight: 600; }
+.sb-step { color: var(--sb-muted); font-size: .925rem; }
+.sb-reflect { display: block; font-size: .925rem; }
+.sb-reflect textarea { display: block; width: 100%; margin-top: .3rem; padding: .5rem; color: inherit; background: var(--sb-paper); border: 1px solid var(--sb-line); border-radius: .3rem; font: inherit; resize: vertical; }
+.sb-banner { display: inline-block; padding: .3rem .8rem; color: var(--sb-on-accent); border-radius: .3rem; font-weight: 700; }
+.sb-banner--pass { background: var(--sb-pass); }
+.sb-banner--fail { background: var(--sb-fail); }
+.sb-growth { font-weight: 600; }
+/* The "you recovered from a weaker decision" message is hidden: on a forced-hard
+   route it misreads. display:none removes it from the a11y tree too. */
+.sb-player .sb-recoveries { display: none; }
+.sb-measures { display: flex; flex-wrap: wrap; gap: .25rem .75rem; margin: 1rem 0 0; font-size: .9rem; }
+.sb-measures dt { color: var(--sb-muted); }
+.sb-measures dd { margin: 0 .5rem 0 0; font-weight: 700; }
+.sb-actions { display: flex; flex-wrap: wrap; gap: .6rem; }

@@ -1,0 +1,163 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Diagram with selectable hotspots. Select each hotspot to show more information.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Instruction text displayed below the component body.",
+      "translatable": true
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "default": "allItems",
+      "title": "Set completion on:",
+      "enum": ["inview", "allItems"],
+      "inputType": {
+        "type": "Select",
+        "options": ["inview", "allItems"]
+      },
+      "validators": [],
+      "help": "Whether completion requires every required (non-decorative) hotspot to be visited, or just the component to be scrolled into view."
+    },
+    "_diagram": {
+      "type": "object",
+      "required": true,
+      "title": "Diagram",
+      "help": "The authored SVG this component inlines. Must be a course asset at a relative path under \"course/\" - see docs/authoring/component-specs/grow-hotgraphic.md.",
+      "properties": {
+        "src": {
+          "type": "string",
+          "required": true,
+          "default": "",
+          "title": "SVG source",
+          "inputType": "Asset:image",
+          "validators": ["required"],
+          "help": "Relative path under \"course/\" to the SVG file, e.g. course/en/images/ulaf-cycle.svg."
+        },
+        "title": {
+          "type": "string",
+          "required": true,
+          "default": "",
+          "title": "Diagram title",
+          "inputType": "Text",
+          "validators": ["required"],
+          "help": "Used as the accessible label for the narrow-band fallback list of hotspots.",
+          "translatable": true
+        },
+        "_slug": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Diagram slug (advanced)",
+          "inputType": "Text",
+          "validators": [],
+          "help": "Overrides the generated class hook suffix (grow-hotgraphic--<slug>, grow-hotgraphic__svg--<slug>) that the theme paints. Defaults to the SVG filename without its extension."
+        }
+      }
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Hotspots",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Item ID",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Stable identifier for this hotspot. Useful for analytics."
+          },
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Title",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Used as the hotspot's accessible label and, for popup/inlineReveal actions, as the heading of its content.",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Body",
+            "inputType": "TextArea",
+            "validators": [],
+            "help": "Content shown for the popup or inlineReveal actions. Not read for action \"none\".",
+            "translatable": true
+          },
+          "_hotspot": {
+            "type": "object",
+            "required": true,
+            "title": "Hotspot binding",
+            "help": "Binds this item to a node in the inlined SVG - see docs/authoring/component-specs/grow-hotgraphic.md.",
+            "properties": {
+              "_id": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Hotspot ID",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Matches a \"data-ab-hotspot\" attribute or element id in the SVG. Used as the fallback resolution selector when _selector is blank, and as the generated \"is-hotspot-<id>\" class hook."
+              },
+              "_selector": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Hotspot selector (advanced)",
+                "inputType": "Text",
+                "validators": [],
+                "help": "An explicit CSS selector into the inlined SVG, tried before the _id-based fallbacks. Must match exactly one node."
+              },
+              "_action": {
+                "type": "string",
+                "required": true,
+                "default": "popup",
+                "title": "Action",
+                "enum": ["popup", "inlineReveal", "none"],
+                "inputType": {
+                  "type": "Select",
+                  "options": ["popup", "inlineReveal", "none"]
+                },
+                "validators": ["required"],
+                "help": "popup: opens title/body in a modal. inlineReveal: expands title/body in a panel beneath the diagram. none: a decorative hotspot - painted and visitable but not a keyboard control, and excluded from completion."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -61,6 +61,14 @@ Colours (`_color`) come in two families:
   the `highlight`/`box`/`oval` marks × five fluoro colours give the full
   marker-pen range.
 
+**Highlighter wobble.** Each `highlight` rides a little higher or lower on its
+word — a small random vertical offset (±6% of the line box by default) so a run
+of highlights reads as hand-drawn rather than a uniform band. It's on by default;
+the marks engine (`drawMark`) accepts `jitter: false` to pin it uniform or
+`jitterAmount: <percent>` to change the spread, and author-tagged passages can set
+`data-gm-jitter="off"` or `data-gm-jitter="10"`. The offset is purely positional
+(not animation), so it stands under reduced motion too.
+
 ## Activity types (one component, many shapes)
 
 The same component covers a spectrum, set by three independent switches:
@@ -223,4 +231,4 @@ marks without a build, open the grow-marks demo (`../grow-marks/demo/`).
 
 Copy the folder to `wkspc2614-adapt3/src/components/adapt-grow-annotate/`, add a
 component block (see `example.json`) to a block's `components.json`, then
-`npx grunt build`. Component type `annotate`, attribute `_annotate`.
+`npx grunt build`. Component type `growAnnotate`, attribute `_growAnnotate`.

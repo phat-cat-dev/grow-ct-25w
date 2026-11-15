@@ -1,0 +1,50 @@
+{
+  "manifest": 1,
+  "id": "growCloze",
+  "name": "adapt-grow-cloze",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-cloze.git",
+  "summary": "Fill the blanks — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-cloze.less",
+    "tokens": [
+      "--accent",
+      "--c-negative",
+      "--c-negative-weak",
+      "--c-positive",
+      "--c-positive-weak",
+      "--fs-sm",
+      "--ink",
+      "--line",
+      "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-cloze/blocks/block-cloze-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-cloze/exemplars/command-words.json",
+        "adapt-grow-cloze/exemplars/paragraph-structure.json",
+        "adapt-grow-cloze/exemplars/referencing.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-cloze.md"
+    },
+    "components": []
+  }
+}

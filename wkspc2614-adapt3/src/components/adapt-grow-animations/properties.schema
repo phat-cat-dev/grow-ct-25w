@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Decorative hand-drawn marks.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_markLayout": {
+      "type": "string",
+      "required": false,
+      "default": "inline",
+      "enum": ["inline", "stack"],
+      "title": "Mark layout",
+      "inputType": { "type": "Select", "options": ["inline", "stack"] },
+      "validators": [],
+      "help": "'inline' flows the marks together on one line; 'stack' puts each on its own row."
+    },
+    "_marks": {
+      "type": "array",
+      "required": true,
+      "title": "Marks",
+      "items": {
+        "type": "object",
+        "required": ["_id"],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "required": true,
+            "default": "underline",
+            "title": "Mark",
+            "inputType": "Text",
+            "validators": ["required"],
+            "help": "Catalogue id, e.g. underline, highlight, circle, tick, big-tick, arrow-right, oval, scribble, margin-note, sticky-note. See animations.json for all 58 ids."
+          },
+          "text": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Text",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "The word or phrase the mark wraps / highlights / annotates. Ignored by standalone marks (tick, arrow, star)."
+          },
+          "over": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Replacement word",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "Only the 'correction' mark: the word written above the struck-through text."
+          },
+          "_color": {
+            "type": "string",
+            "required": false,
+            "default": "accent",
+            "title": "Colour role",
+            "enum": ["accent", "positive", "negative", "neutral", "comment", "pen", "ink"],
+            "inputType": { "type": "Select", "options": ["accent", "positive", "negative", "neutral", "comment", "pen", "ink"] },
+            "validators": [],
+            "help": "A theme role, never a fixed colour. Resolves to --accent / --c-positive / --c-negative / --c-neutral / --c-comment / --pen / --ink."
+          },
+          "_speed": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Speed (0.4–2.5)",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Draw-on speed multiplier. Overrides the theme's --flow-rate for this mark."
+          },
+          "_scale": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Size (0.3–3)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_rotation": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Rotation deg (-45–45)",
+            "inputType": "Number",
+            "validators": ["number"]
+          },
+          "_repeats": {
+            "type": "number",
+            "required": false,
+            "default": 1,
+            "title": "Draw passes (1–10)",
+            "inputType": "Number",
+            "validators": ["number"],
+            "help": "Repeated draw passes with a little per-pass jitter, for a sketchier mark."
+          },
+          "_jitter": {
+            "type": "number",
+            "required": false,
+            "default": 3,
+            "title": "Jitter deg (0–10)",
+            "inputType": "Number",
+            "validators": ["number"]
+          }
+        }
+      }
+    }
+  }
+}

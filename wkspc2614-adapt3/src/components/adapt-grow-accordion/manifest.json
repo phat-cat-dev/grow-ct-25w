@@ -1,0 +1,43 @@
+{
+  "manifest": 1,
+  "id": "growAccordion",
+  "name": "adapt-grow-accordion",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-accordion.git",
+  "summary": "Accordion: a stack of header buttons that expand/collapse panels; single-open by default, optional multi-select and expand-first. Completes once every panel has been opened.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-accordion.less",
+    "tokens": [
+      "--ab-accent", "--ab-base-ink", "--ab-base-hairline", "--ab-base-surface-sunken",
+      "--ab-success", "--ab-danger", "--ab-warning", "--ab-info"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/grow-ab-bridge.less",
+      "note": "The LESS reads --ab-* role tokens; grow-ab-bridge.less maps those roles onto the GROW scheme tokens (--accent, --ink, --line, --surface-2), so the component follows the theme hue and dark mode. Base --ab-* tokens come from adapt-ab-base; the semantic variant tokens (--ab-success/danger/warning/info) fall back to literals if a scheme does not define them."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-accordion/blocks/block-accordion-intro.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-accordion/exemplars/faq-multi.json",
+        "adapt-grow-accordion/exemplars/essay-stages-single.json",
+        "adapt-grow-accordion/exemplars/note-taking-methods.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-accordion.md"
+    },
+    "components": []
+  }
+}

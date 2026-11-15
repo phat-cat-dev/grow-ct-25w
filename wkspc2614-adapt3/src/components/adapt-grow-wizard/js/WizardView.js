@@ -31,8 +31,8 @@ class WizardView extends ComponentView {
 
   events() {
     return {
-      'click .js-wizard-back': 'onBack',
-      'click .js-wizard-next': 'onNext'
+      'click .js-grow-wizard-back': 'onBack',
+      'click .js-grow-wizard-next': 'onNext'
     };
   }
 
@@ -70,13 +70,13 @@ class WizardView extends ComponentView {
   }
 
   postRender() {
-    this.$bar = this.$('.js-wizard-bar');
-    this.$fill = this.$('.js-wizard-fill');
-    this.$steps = this.$('.js-wizard-step');
-    this.$panels = this.$('.js-wizard-panel');
-    this.$back = this.$('.js-wizard-back');
-    this.$next = this.$('.js-wizard-next');
-    this.$live = this.$('.js-wizard-live');
+    this.$bar = this.$('.js-grow-wizard-bar');
+    this.$fill = this.$('.js-grow-wizard-fill');
+    this.$steps = this.$('.js-grow-wizard-step');
+    this.$panels = this.$('.js-grow-wizard-panel');
+    this.$back = this.$('.js-grow-wizard-back');
+    this.$next = this.$('.js-grow-wizard-next');
+    this.$live = this.$('.js-grow-wizard-live');
 
     this.stepCount = this.model.getStepCount();
     this.index = this.model.clampIndex(this.model.getStartIndex());
@@ -197,6 +197,6 @@ class WizardView extends ComponentView {
 
 }
 
-WizardView.template = 'wizard.jsx';
+WizardView.template = 'growWizard.jsx';
 
 export default WizardView;

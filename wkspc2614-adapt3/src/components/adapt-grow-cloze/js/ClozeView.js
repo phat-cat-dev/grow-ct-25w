@@ -25,8 +25,8 @@ class ClozeView extends ComponentView {
 
   events() {
     return {
-      'click .js-cloze-check': 'onCheck',
-      'change .cloze__select': 'onChange'
+      'click .js-grow-cloze-check': 'onCheck',
+      'change .grow-cloze__select': 'onChange'
     };
   }
 
@@ -59,8 +59,8 @@ class ClozeView extends ComponentView {
   }
 
   postRender() {
-    this.$selects = this.$('.cloze__select');
-    this.$feedback = this.$('.cloze__feedback');
+    this.$selects = this.$('.grow-cloze__select');
+    this.$feedback = this.$('.grow-cloze__feedback');
     this._hasChecked = false;
     this.setReadyStatus();
   }
@@ -71,10 +71,10 @@ class ClozeView extends ComponentView {
    */
   onChange(e) {
     const select = e.currentTarget;
-    const $blank = $(select).closest('.cloze__blank');
+    const $blank = $(select).closest('.grow-cloze__blank');
     $blank.removeClass('is-correct is-incorrect');
     select.removeAttribute('aria-invalid');
-    $blank.find('.cloze__blank-status').text('');
+    $blank.find('.grow-cloze__blank-status').text('');
   }
 
   /**
@@ -90,7 +90,7 @@ class ClozeView extends ComponentView {
       const index = parseInt(select.getAttribute('data-blank-index'), 10);
       const answer = this.model.getAnswer(index);
       const isCorrect = select.value !== '' && select.value === answer;
-      const $blank = $(select).closest('.cloze__blank');
+      const $blank = $(select).closest('.grow-cloze__blank');
 
       $blank.toggleClass('is-correct', isCorrect);
       $blank.toggleClass('is-incorrect', !isCorrect);
@@ -102,7 +102,7 @@ class ClozeView extends ComponentView {
       } else {
         select.setAttribute('aria-invalid', 'true');
       }
-      $blank.find('.cloze__blank-status').text(isCorrect ? globals.blankCorrect : globals.blankIncorrect);
+      $blank.find('.grow-cloze__blank-status').text(isCorrect ? globals.blankCorrect : globals.blankIncorrect);
 
       if (!isCorrect) allCorrect = false;
     });
@@ -122,6 +122,6 @@ class ClozeView extends ComponentView {
 
 }
 
-ClozeView.template = 'cloze.jsx';
+ClozeView.template = 'growCloze.jsx';
 
 export default ClozeView;

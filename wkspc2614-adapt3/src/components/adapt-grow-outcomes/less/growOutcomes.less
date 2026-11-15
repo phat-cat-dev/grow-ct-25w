@@ -6,31 +6,31 @@
 // revealed row swaps the dot for an accent check and fades its text in.
 // Colours come from the live GROW scheme tokens (--ink / --accent / --surface).
 //
-// Scoped under `.outcomes` (the template's inner wrapper), NOT the Adapt
+// Scoped under `.grow-outcomes` (the template's inner wrapper), NOT the Adapt
 // component wrapper: Adapt lowercases `_component` for that class
 // (growOutcomes -> .growoutcomes), so a `.growOutcomes` selector would miss.
 
-.outcomes {
+.grow-outcomes {
 
-  .outcomes__lead {
+  .grow-outcomes__lead {
     margin: 0 0 var(--space-xs, 0.5rem);
     font-weight: 600;
     color: var(--ink, #1a1a1a);
   }
 
-  .outcomes__instruction {
+  .grow-outcomes__instruction {
     margin: 0 0 var(--space-sm, 0.75rem);
     color: var(--ink-soft, #555);
     font-size: var(--fs-sm, 0.9rem);
   }
 
-  .outcomes__list {
+  .grow-outcomes__list {
     list-style: none;
     margin: 0 0 var(--space-md, 1.25rem);
     padding: 0;
   }
 
-  .outcomes__item {
+  .grow-outcomes__item {
     display: flex;
     align-items: flex-start;
     gap: 0.7rem;
@@ -38,7 +38,7 @@
   }
 
   // marker: a muted dot until revealed, an accent check once revealed
-  .outcomes__item-marker {
+  .grow-outcomes__item-marker {
     flex: 0 0 auto;
     width: 1.35rem;
     height: 1.35rem;
@@ -51,7 +51,7 @@
   }
 
   // text held invisible (but in-layout) until its row is revealed
-  .outcomes__item-text {
+  .grow-outcomes__item-text {
     color: var(--ink, #1a1a1a);
     visibility: hidden;
     opacity: 0;
@@ -59,8 +59,8 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .outcomes__item.is-revealed {
-    .outcomes__item-marker {
+  .grow-outcomes__item.is-revealed {
+    .grow-outcomes__item-marker {
       background: var(--accent, #1a66a3);
       border-color: var(--accent, #1a66a3);
 
@@ -77,7 +77,7 @@
       }
     }
 
-    .outcomes__item-text {
+    .grow-outcomes__item-text {
       visibility: visible;
       opacity: 1;
       transform: none;
@@ -85,7 +85,7 @@
   }
 
   // ── controls ────────────────────────────────────────────────────────────
-  .outcomes__controls {
+  .grow-outcomes__controls {
     margin-top: var(--space-xs, 0.5rem);
   }
 
@@ -93,7 +93,7 @@
   // min-width + centred content means it does NOT resize when the label swaps to
   // "Continue" or the counter clears. Styled to the deep brand blue (#0a2a3d at
   // the navy hue), derived from the hue tokens so it still retints.
-  .outcomes__reveal {
+  .grow-outcomes__reveal {
     --oc-brand: hsl(var(--h, 202) var(--s, 72%) 14%);
     --oc-brand-hover: hsl(var(--h, 202) var(--s, 72%) 22%);
     display: inline-flex;
@@ -118,20 +118,20 @@
     }
 
     html:not(.a11y-disable-focusoutline) &:focus-visible {
-      outline: 3px solid var(--ab-base-accent-ring, rgba(0, 0, 0, 0.4));
+      outline: 3px solid var(--accent); // GROW accent as focus ring (was --ab-base-accent-ring)
       outline-offset: 2px;
     }
 
     &[hidden] { display: none; }
   }
 
-  .outcomes__counter {
+  .grow-outcomes__counter {
     font-weight: 400;
     font-size: 0.85em;
     opacity: 0.85;
   }
   // when the counter is cleared (the Continue state) drop it entirely so the
   // flex gap doesn't throw the centred label off-centre
-  .outcomes__counter:empty { display: none; }
+  .grow-outcomes__counter:empty { display: none; }
 
 }

@@ -20,10 +20,10 @@ class AnnotateView extends ComponentView {
 
   events() {
     return {
-      'click .annotate__tool': 'onToolClick',
-      'click .annotate__target': 'onTargetClick',
-      'click .annotate__reset': 'onReset',
-      'click .annotate__submit': 'onSubmit'
+      'click .grow-annotate__tool': 'onToolClick',
+      'click .grow-annotate__target': 'onTargetClick',
+      'click .grow-annotate__reset': 'onReset',
+      'click .grow-annotate__submit': 'onSubmit'
     };
   }
 
@@ -35,10 +35,10 @@ class AnnotateView extends ComponentView {
 
     // Draw each tool's own mark onto its palette label, so the palette previews
     // the annotation. (autoplay:false — shown complete, no animation.)
-    this.$('.annotate__tool').each((index, button) => {
+    this.$('.grow-annotate__tool').each((index, button) => {
       const id = button.getAttribute('data-tool');
       const tool = this.model.getTool(id);
-      const label = button.querySelector('.annotate__tool-label');
+      const label = button.querySelector('.grow-annotate__tool-label');
       if (tool && label) {
         try { drawMark(label, { mark: tool._mark, color: tool._color, autoplay: false }); } catch (e) { /* unknown mark: leave the label plain */ }
       }
@@ -71,7 +71,7 @@ class AnnotateView extends ComponentView {
     if (this.model.get('_isSubmitted')) return;
     const id = event.currentTarget.getAttribute('data-tool');
     this._activeTool = id;
-    this.$('.annotate__tool').each((index, button) => {
+    this.$('.grow-annotate__tool').each((index, button) => {
       button.setAttribute('aria-pressed', String(button.getAttribute('data-tool') === id));
     });
   }
@@ -85,7 +85,7 @@ class AnnotateView extends ComponentView {
     this._renderMark(key, applied, true);
     // If this target was graded on a previous attempt, drop its stale red/green
     // now the learner is changing it; the feedback panel stays until they recheck.
-    button.classList.remove('annotate__target--correct', 'annotate__target--incorrect');
+    button.classList.remove('grow-annotate__target--correct', 'grow-annotate__target--incorrect');
     this._announce(button, applied);
   }
 
@@ -99,7 +99,7 @@ class AnnotateView extends ComponentView {
     if (this.model.get('_isQuestion')) {
       keys.forEach(key => {
         const el = this._targetEl(key);
-        if (el) el.classList.remove('annotate__target--correct', 'annotate__target--incorrect');
+        if (el) el.classList.remove('grow-annotate__target--correct', 'grow-annotate__target--incorrect');
       });
       this._resetQuestionUi();
     }
@@ -120,8 +120,8 @@ class AnnotateView extends ComponentView {
       if (!mark.isScored) return;
       const el = this._targetEl(mark.key);
       if (!el) return;
-      el.classList.remove('annotate__target--correct', 'annotate__target--incorrect');
-      el.classList.add(mark.isCorrect ? 'annotate__target--correct' : 'annotate__target--incorrect');
+      el.classList.remove('grow-annotate__target--correct', 'grow-annotate__target--incorrect');
+      el.classList.add(mark.isCorrect ? 'grow-annotate__target--correct' : 'grow-annotate__target--incorrect');
     });
 
     const feedback = this.model.get('_feedback') || {};
@@ -154,17 +154,17 @@ class AnnotateView extends ComponentView {
   // Render the summary line + per-target notes into the feedback panel.
   _showFeedback(summary, notes, allCorrect) {
     const items = [summary, ...notes].map(note => `<li>${note}</li>`).join('');
-    this.$('.js-annotate-feedback')
-      .removeClass('annotate__feedback--correct annotate__feedback--incorrect')
-      .addClass(allCorrect ? 'annotate__feedback--correct' : 'annotate__feedback--incorrect')
+    this.$('.js-grow-annotate-feedback')
+      .removeClass('grow-annotate__feedback--correct grow-annotate__feedback--incorrect')
+      .addClass(allCorrect ? 'grow-annotate__feedback--correct' : 'grow-annotate__feedback--incorrect')
       .html(items).removeAttr('hidden');
   }
 
   // All correct: freeze the activity in its solved state.
   _lock() {
     this.model.set('_isSubmitted', true);
-    this.$('.annotate__tool').attr('disabled', true);
-    this.$('.annotate__submit').attr('disabled', true).text('Submit');
+    this.$('.grow-annotate__tool').attr('disabled', true);
+    this.$('.grow-annotate__submit').attr('disabled', true).text('Submit');
     this.$el.addClass('is-submitted');
   }
 
@@ -172,24 +172,24 @@ class AnnotateView extends ComponentView {
   // rechecks instead of starting over. The marks and feedback stay in place.
   _awaitRetry() {
     this.model.set('_isSubmitted', false);
-    this.$('.annotate__tool').removeAttr('disabled');
-    this.$('.annotate__submit').removeAttr('disabled').text('Check again');
+    this.$('.grow-annotate__tool').removeAttr('disabled');
+    this.$('.grow-annotate__submit').removeAttr('disabled').text('Check again');
     this.$el.removeClass('is-submitted');
   }
 
   // Return the activity to a fresh, re-answerable state (used after a clear).
   _resetQuestionUi() {
     this.model.set('_isSubmitted', false);
-    this.$('.annotate__tool').removeAttr('disabled');
-    this.$('.annotate__submit').removeAttr('disabled').text('Submit');
+    this.$('.grow-annotate__tool').removeAttr('disabled');
+    this.$('.grow-annotate__submit').removeAttr('disabled').text('Submit');
     this.$el.removeClass('is-submitted');
-    this.$('.js-annotate-feedback')
-      .removeClass('annotate__feedback--correct annotate__feedback--incorrect')
+    this.$('.js-grow-annotate-feedback')
+      .removeClass('grow-annotate__feedback--correct grow-annotate__feedback--incorrect')
       .empty().attr('hidden', '');
   }
 
   _targetEl(key) {
-    return this.$(`.annotate__target[data-key="${key}"]`)[0];
+    return this.$(`.grow-annotate__target[data-key="${key}"]`)[0];
   }
 
   // The target's own word text only - excludes the label chip and SVG the view
@@ -224,7 +224,7 @@ class AnnotateView extends ComponentView {
 
     if (this.model.get('_showLabels') !== false && tool.label) {
       const chip = document.createElement('span');
-      chip.className = 'annotate__tag' + (tool._color ? ` annotate__tag--${tool._color}` : '');
+      chip.className = 'grow-annotate__tag' + (tool._color ? ` grow-annotate__tag--${tool._color}` : '');
       chip.setAttribute('aria-hidden', 'true');
       chip.textContent = tool.label;
       // Sit the chip inside the target so it can float above the word, on top of
@@ -241,18 +241,18 @@ class AnnotateView extends ComponentView {
   }
 
   _setStatus(text) {
-    const status = this.$('.annotate__status')[0];
+    const status = this.$('.grow-annotate__status')[0];
     if (status) status.textContent = text;
   }
 
   // ---- free-selection mode --------------------------------------------------
   _wireFreeSelect() {
-    const passage = this.$('.annotate__passage--free')[0];
+    const passage = this.$('.grow-annotate__passage--free')[0];
     if (!passage) return;
     this._passageEl = passage;
     this._onSelectBound = () => this._onSelect();
     this._onMarkClickBound = (e) => {
-      const span = e.target.closest && e.target.closest('.annotate__mark-span');
+      const span = e.target.closest && e.target.closest('.grow-annotate__mark-span');
       if (span && passage.contains(span)) { e.preventDefault(); this._removeFree(span.getAttribute('data-id')); }
     };
     passage.addEventListener('mouseup', this._onSelectBound);
@@ -261,7 +261,7 @@ class AnnotateView extends ComponentView {
   }
 
   _wordEl(i) {
-    return this._passageEl ? this._passageEl.querySelector(`.annotate__word[data-w="${i}"]`) : null;
+    return this._passageEl ? this._passageEl.querySelector(`.grow-annotate__word[data-w="${i}"]`) : null;
   }
 
   _onSelect() {
@@ -270,14 +270,14 @@ class AnnotateView extends ComponentView {
     if (!sel || sel.rangeCount === 0 || sel.isCollapsed) return;
     const range = sel.getRangeAt(0);
     const words = Array.prototype.filter.call(
-      this._passageEl.querySelectorAll('.annotate__word'), w => range.intersectsNode(w));
+      this._passageEl.querySelectorAll('.grow-annotate__word'), w => range.intersectsNode(w));
     sel.removeAllRanges();
     if (!words.length) return;
     const idxs = words.map(w => Number(w.getAttribute('data-w')));
     const a = Math.min(...idxs), b = Math.max(...idxs);
     for (let i = a; i <= b; i++) {
       const w = this._wordEl(i);
-      if (w && w.closest('.annotate__mark-span')) { this._setStatus('That overlaps a mark you have already made.'); return; }
+      if (w && w.closest('.grow-annotate__mark-span')) { this._setStatus('That overlaps a mark you have already made.'); return; }
     }
     const id = this.model.addFree({ a, b, tool: this._activeTool });
     this._drawFree({ id, a, b, tool: this._activeTool }, true);
@@ -293,7 +293,7 @@ class AnnotateView extends ComponentView {
     range.setStartBefore(wa);
     range.setEndAfter(wb);
     const wrapper = document.createElement('span');
-    wrapper.className = 'annotate__mark-span';
+    wrapper.className = 'grow-annotate__mark-span';
     wrapper.setAttribute('data-id', ann.id);
     wrapper.setAttribute('data-tool', ann.tool);
     try { range.surroundContents(wrapper); } catch (e) { return; }
@@ -306,7 +306,7 @@ class AnnotateView extends ComponentView {
   _unwrap(id) {
     const handle = this._freeMarks[id];
     if (handle) { handle.remove(); delete this._freeMarks[id]; }
-    const wrapper = this._passageEl && this._passageEl.querySelector(`.annotate__mark-span[data-id="${id}"]`);
+    const wrapper = this._passageEl && this._passageEl.querySelector(`.grow-annotate__mark-span[data-id="${id}"]`);
     if (wrapper) {
       const parent = wrapper.parentNode;
       while (wrapper.firstChild) parent.insertBefore(wrapper.firstChild, wrapper);
@@ -330,10 +330,10 @@ class AnnotateView extends ComponentView {
 
   _submitFree(result) {
     // Clear outcome colouring from any earlier attempt before re-grading.
-    this.$('.annotate__mark-span').removeClass('annotate__mark-span--correct annotate__mark-span--incorrect');
+    this.$('.grow-annotate__mark-span').removeClass('grow-annotate__mark-span--correct grow-annotate__mark-span--incorrect');
     result.annotations.forEach(an => {
-      const wrapper = this._passageEl && this._passageEl.querySelector(`.annotate__mark-span[data-id="${an.id}"]`);
-      if (wrapper) wrapper.classList.add(an.isCorrect ? 'annotate__mark-span--correct' : 'annotate__mark-span--incorrect');
+      const wrapper = this._passageEl && this._passageEl.querySelector(`.grow-annotate__mark-span[data-id="${an.id}"]`);
+      if (wrapper) wrapper.classList.add(an.isCorrect ? 'grow-annotate__mark-span--correct' : 'grow-annotate__mark-span--incorrect');
     });
     const feedback = this.model.get('_feedback') || {};
     const notes = [];
@@ -368,6 +368,6 @@ class AnnotateView extends ComponentView {
 
 }
 
-AnnotateView.template = 'annotate.jsx';
+AnnotateView.template = 'growAnnotate.jsx';
 
 export default AnnotateView;

@@ -1,0 +1,92 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "required": ["_items"],
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "Select a level to open it, then open the next.",
+      "title": "Instruction",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "body": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Lead-in",
+      "inputType": "TextArea",
+      "validators": [],
+      "translatable": true
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "enum": ["allOpened", "inview"],
+      "default": "allOpened",
+      "title": "Completion",
+      "inputType": { "type": "Select", "options": ["allOpened", "inview"] },
+      "validators": []
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Levels",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": false,
+        "title": "Level",
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "title": "Level title",
+            "inputType": "Text",
+            "validators": [],
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "What it is / what it allows",
+            "inputType": "TextArea",
+            "validators": [],
+            "translatable": true
+          },
+          "advice": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "In-practice advice (student-directed)",
+            "inputType": "TextArea",
+            "validators": [],
+            "translatable": true
+          },
+          "_tone": {
+            "type": "string",
+            "required": false,
+            "enum": ["restricted", "guarded", "open", "neutral"],
+            "default": "guarded",
+            "title": "Tone colour",
+            "inputType": { "type": "Select", "options": ["restricted", "guarded", "open", "neutral"] },
+            "validators": []
+          }
+        }
+      }
+    }
+  }
+}

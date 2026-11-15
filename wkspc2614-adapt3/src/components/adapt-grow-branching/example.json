@@ -1,0 +1,38 @@
+{
+  "_id": "c-15",
+  "_parentId": "b-15",
+  "_type": "component",
+  "_component": "growBranching",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Decision scenario",
+  "displayTitle": "The night before the deadline",
+  "body": "Read the situation and choose. Each choice plays out before you move on.",
+  "instruction": "Work through the scenario one decision at a time.",
+  "_supportedLayout": "full-width",
+  "_scenario": {
+    "_start": "start",
+    "_nodes": {
+      "start": {
+        "body": "It is late the night before an assignment is due. A coursemate messages you: they are stuck and ask if you will send them your finished work \"just to look at\".",
+        "_choices": [
+          { "text": "Send them your assignment", "consequence": "They submit something very close to yours. The marker runs a similarity check, and you are both called in to explain. Your own mark is now at risk for work you did properly.", "_goto": "collusion" },
+          { "text": "Say you can't share it, but offer to talk the question through", "consequence": "You spend fifteen minutes explaining how you approached the question. They write their own answer from there, and you have helped without putting your own work in danger.", "_goto": "supported" },
+          { "text": "Leave the message unanswered", "consequence": "You avoid the risk, but your coursemate is left stuck and a little hurt, and you never find out whether a quick pointer would have been enough.", "_goto": "avoided" }
+        ]
+      },
+      "collusion": {
+        "body": "Sharing finished work, even 'just to look at', is collusion once it shapes someone else's submission. The safest help is explaining your thinking, never handing over the artefact.",
+        "_outcome": "poor"
+      },
+      "supported": {
+        "body": "You helped in the one way that carries no risk to either of you: you shared your reasoning, not your answer. That is exactly where the line sits.",
+        "_outcome": "good"
+      },
+      "avoided": {
+        "body": "You stayed safe, which matters. Next time, notice there was a middle option: you could have offered to talk the problem through without sharing anything.",
+        "_outcome": "neutral"
+      }
+    }
+  }
+}

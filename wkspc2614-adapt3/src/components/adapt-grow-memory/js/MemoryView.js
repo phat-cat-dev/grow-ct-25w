@@ -54,7 +54,7 @@ class MemoryView extends ComponentView {
 
   events() {
     return {
-      'click .js-memory-tile': 'onTileClick'
+      'click .js-grow-memory-tile': 'onTileClick'
     };
   }
 
@@ -80,10 +80,10 @@ class MemoryView extends ComponentView {
   postRender() {
     this.globals = this._getGlobals();
 
-    this.$board = this.$('.js-memory-board');
-    this.$tiles = this.$('.js-memory-tile');
-    this.$feedback = this.$('.js-memory-feedback');
-    this.$live = this.$('.js-memory-live');
+    this.$board = this.$('.js-grow-memory-board');
+    this.$tiles = this.$('.js-grow-memory-tile');
+    this.$feedback = this.$('.js-grow-memory-feedback');
+    this.$live = this.$('.js-grow-memory-live');
 
     this.openTiles = [];
     this.lock = false;
@@ -272,6 +272,6 @@ class MemoryView extends ComponentView {
 
 }
 
-MemoryView.template = 'memory.jsx';
+MemoryView.template = 'growMemory.jsx';
 
 export default MemoryView;

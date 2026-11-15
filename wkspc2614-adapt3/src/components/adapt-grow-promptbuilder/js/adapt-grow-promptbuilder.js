@@ -12,6 +12,7 @@
  * Like the other GROW components, the view calls setReadyStatus() itself (core
  * ComponentView.postRender is a no-op), or the loading curtain never lifts.
  */
+import components from 'core/js/components';
 import Adapt from 'core/js/adapt';
 import ComponentView from 'core/js/views/componentView';
 import ComponentModel from 'core/js/models/componentModel';
@@ -85,11 +86,11 @@ class PromptBuilderView extends ComponentView {
     (this.model.get('_parts') || []).forEach(p => {
       if (!p._icons) return;
       const input = this.$(`.js-pb-input[data-key="${p._key}"]`)[0];
-      if (!input || input.parentNode.classList.contains('prompt-builder__icon-row')) return;
+      if (!input || input.parentNode.classList.contains('grow-promptbuilder__icon-row')) return;
       const row = document.createElement('div');
-      row.className = 'prompt-builder__icon-row';
+      row.className = 'grow-promptbuilder__icon-row';
       const icon = document.createElementNS(ns, 'svg');
-      icon.setAttribute('class', 'prompt-builder__part-icon js-pb-icon');
+      icon.setAttribute('class', 'grow-promptbuilder__part-icon js-pb-icon');
       icon.setAttribute('data-key', p._key);
       icon.setAttribute('aria-hidden', 'true');
       icon.setAttribute('focusable', 'false');
@@ -154,7 +155,7 @@ class PromptBuilderView extends ComponentView {
     if (this.$out.length) this.$out.text(out);
     const allFilled = this.$inputs.length > 0 &&
       Object.keys(v).every(k => optional.has(k) || v[k].length > 0);
-    this.$('.prompt-builder').toggleClass('is-ready', allFilled);
+    this.$('.grow-promptbuilder').toggleClass('is-ready', allFilled);
     if (this.$copy.length) this.$copy.prop('disabled', !allFilled);
     if (allFilled && this.model.get('_setCompletionOn') !== 'inview' && !this.model.get('_isComplete')) {
       this.setCompletionStatus();
@@ -227,7 +228,9 @@ class PromptBuilderView extends ComponentView {
 
 }
 
-export default Adapt.register('growPromptBuilder', {
+PromptBuilderView.template = 'growPromptBuilder.jsx';
+
+export default components.register('growPromptBuilder', {
   view: PromptBuilderView,
   model: ComponentModel
 });

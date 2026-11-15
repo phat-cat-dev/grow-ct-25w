@@ -12,7 +12,7 @@
  * contentObjectView:ready and the loading screen never lifts. It must NOT use
  * setupInviewCompletion — completion here is the reveal interaction.
  */
-import Adapt from 'core/js/adapt';
+import components from 'core/js/components';
 import ComponentView from 'core/js/views/componentView';
 import ComponentModel from 'core/js/models/componentModel';
 
@@ -20,16 +20,16 @@ class OutcomesView extends ComponentView {
 
   events() {
     return {
-      'click .js-outcomes-reveal': 'onButton'
+      'click .js-grow-outcomes-reveal': 'onButton'
     };
   }
 
   postRender() {
     this.total = (this.model.get('_items') || []).length;
-    this.$itemEls = this.$('.outcomes__item');
-    this.$button = this.$('.js-outcomes-reveal');
-    this.$label = this.$('.outcomes__reveal-label');
-    this.$counter = this.$('.js-outcomes-counter');
+    this.$itemEls = this.$('.grow-outcomes__item');
+    this.$button = this.$('.js-grow-outcomes-reveal');
+    this.$label = this.$('.grow-outcomes__reveal-label');
+    this.$counter = this.$('.js-grow-outcomes-counter');
     this.isContinue = false;
 
     if (this.model.get('_isComplete')) {
@@ -66,7 +66,7 @@ class OutcomesView extends ComponentView {
   // the component complete so the trickle step readies its (hidden) button.
   becomeContinue() {
     this.isContinue = true;
-    this.$('.outcomes').addClass('is-complete');
+    this.$('.grow-outcomes').addClass('is-complete');
     this.$button.addClass('is-continue');
     this.$label.text(this.model.get('_continueButtonText') || 'Continue');
     if (this.$counter.length) this.$counter.text('');
@@ -87,7 +87,9 @@ class OutcomesView extends ComponentView {
 
 }
 
-export default Adapt.register('growOutcomes', {
+OutcomesView.template = 'growOutcomes.jsx';
+
+export default components.register('growOutcomes', {
   view: OutcomesView,
   model: ComponentModel
 });

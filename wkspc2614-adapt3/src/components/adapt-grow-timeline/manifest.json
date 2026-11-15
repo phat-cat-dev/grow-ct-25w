@@ -1,0 +1,47 @@
+{
+  "manifest": 1,
+  "id": "growTimeline",
+  "name": "adapt-grow-timeline",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-timeline.git",
+  "summary": "A short history of the organisation — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-timeline.less",
+    "tokens": [
+      "--accent",
+      "--accent-ink",
+      "--ink-soft",
+      "--line",
+      "--shadow",
+      "--surface-1"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-timeline/blocks/block-timeline-intro.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-timeline/exemplars/essay-process.json",
+        "adapt-grow-timeline/exemplars/exam-revision-countdown.json",
+        "adapt-grow-timeline/exemplars/research-methods-history.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-timeline.md"
+    },
+    "components": []
+  }
+}

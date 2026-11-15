@@ -60,7 +60,7 @@ function pathwayFromSlug(slug) {
 function contextPackDir(context, baseCourseSlug) {
   const relocated = RELOCATED_CONTEXT_PACKS[context];
   if (relocated) {
-    return path.join(__dirname, 'courses', 'v1', pathwayFromSlug(baseCourseSlug), relocated, baseCourseSlug);
+    return path.join(__dirname, 'courses', pathwayFromSlug(baseCourseSlug), relocated, baseCourseSlug);
   }
   return path.join(CONTEXT_PACKS_ROOT, context, baseCourseSlug);
 }
@@ -968,4 +968,4 @@ if (require.main === module) {
 // course-script-import.js's --script mode can route an edited chunk to the
 // same pack file/key this module would read at merge time, without
 // duplicating that logic. Requiring this module does not run main.
-module.exports = { requireCouplingPlan, parseSlotMarker, packKeyFor, loadMarkerPageToPageKey, CONTEXT_PACKS_ROOT };
+module.exports = { requireCouplingPlan, parseSlotMarker, packKeyFor, loadMarkerPageToPageKey, CONTEXT_PACKS_ROOT, RELOCATED_CONTEXT_PACKS, contextPackDir, pathwayFromSlug };

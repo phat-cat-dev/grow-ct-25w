@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growQuoteBlock",
+  "name": "adapt-grow-quote-block",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-quote-block.git",
+  "summary": "Static quotation card: an optional context line, the quote in italic, and an attribution (name, role, source), with a brand accent bar down the left edge.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-quote-block.less",
+    "tokens": [
+      "--surface-1", "--accent", "--ink", "--ink-soft", "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Tokenised in this batch from a hardcoded Cardiff-Met palette. Mapping by meaning: card surface -> --surface-1, quote and name ink -> --ink, context/attribution meta -> --ink-soft, card shadow -> --shadow, and the brand red accent bar (@grow-red #C8102E) -> --accent as the house brand stripe. Theme supplies the :root token values and dark mode."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-quote-block/blocks/block-quote-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-quote-block/exemplars/quote-with-context.json",
+        "adapt-grow-quote-block/exemplars/quote-scholar.json",
+        "adapt-grow-quote-block/exemplars/quote-minimal.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-quote-block.md"
+    },
+    "components": []
+  }
+}

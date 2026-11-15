@@ -1,0 +1,21 @@
+{
+  "_id": "c-show-working",
+  "_parentId": "b-05",
+  "_type": "component",
+  "_component": "growShowWorking",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Show your working",
+  "displayTitle": "Step-by-step, with annotations",
+  "body": "Each line arrives in turn with the move explained, then the answer is checked by substitution.",
+  "_kicker": "Show your working",
+  "_working": {
+    "_stagger": 0.3,
+    "_steps": [
+      { "eq": "2x + 6 = 14" },
+      { "eq": "2x = 8", "ann": "− 6 both sides" },
+      { "eq": "x = 4", "ann": "÷ 2 both sides" },
+      { "eq": "2(<mark>4</mark>) + 6 = 14", "ann": "check: sub x = 4", "_isCheck": true }
+    ]
+  }
+}

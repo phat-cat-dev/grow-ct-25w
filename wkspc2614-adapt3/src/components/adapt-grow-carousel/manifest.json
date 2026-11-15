@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growCarousel",
+  "name": "adapt-grow-carousel",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-carousel.git",
+  "summary": "Carousel: one slide visible at a time, each with an optional image, title and caption; previous/next controls and indicator dots. Optional cycle and auto-scroll.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-carousel.less",
+    "tokens": [
+      "--ab-accent", "--ab-on-accent", "--ab-base-ink", "--ab-base-hairline"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/grow-ab-bridge.less",
+      "note": "The LESS reads --ab-* role tokens; grow-ab-bridge.less maps those onto the GROW scheme tokens, so controls and indicators follow the theme and dark mode. Note: the caption-overlay variant uses a deliberate black scrim gradient and #fff caption text (overlaid on photographs), which are intentionally fixed rather than theme-driven."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-carousel/blocks/block-carousel.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-carousel/exemplars/revision-plan.json",
+        "adapt-grow-carousel/exemplars/feedback-loop.json",
+        "adapt-grow-carousel/exemplars/argument-anatomy.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-carousel.md"
+    },
+    "components": []
+  }
+}

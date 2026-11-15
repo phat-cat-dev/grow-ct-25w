@@ -100,13 +100,15 @@
   --gm-hl-c: var(--accent, #2b76b9);
   --gm-hl-top: 52%;
   --gm-hl-h: 42%;
+  --gm-hl-shift: 0%;  /* per-mark vertical wobble (set randomly by the engine) so
+                         highlights don't all sit at the same band; 0 = uniform */
   --gm-hl-pad: .14em;
   --gm-hl-mix: 40%;
   background-image: linear-gradient(to bottom,
-    transparent var(--gm-hl-top),
-    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) var(--gm-hl-top),
-    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) calc(var(--gm-hl-top) + var(--gm-hl-h)),
-    transparent calc(var(--gm-hl-top) + var(--gm-hl-h)));
+    transparent calc(var(--gm-hl-top) + var(--gm-hl-shift)),
+    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) calc(var(--gm-hl-top) + var(--gm-hl-shift)),
+    color-mix(in srgb, var(--gm-hl-c) var(--gm-hl-mix), transparent) calc(var(--gm-hl-top) + var(--gm-hl-shift) + var(--gm-hl-h)),
+    transparent calc(var(--gm-hl-top) + var(--gm-hl-shift) + var(--gm-hl-h)));
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 100% 100%;

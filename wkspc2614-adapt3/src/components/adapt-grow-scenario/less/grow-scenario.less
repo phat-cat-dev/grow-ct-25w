@@ -1,0 +1,53 @@
+// ============================================================================
+//  grow-scenario.less — THEME TOKEN MAPPING  (hand-edited; safe to edit)
+//  ----------------------------------------------------------------------------
+//  The player (grow-scenario-player.less — GENERATED, do NOT edit) reads nine
+//  --grow-scenario-* custom properties and ships literal fallbacks, so it is
+//  legible with no theme. This file MAPS those nine onto the Grow theme's design
+//  tokens — the same --h-driven engine as adapt-grow / adapt-abbott's
+//  00-foundation — so the scenario inherits the course's hue, surfaces and
+//  semantic colours live (dark mode included), with the original literals kept
+//  as fallbacks for a standalone / no-theme build.
+//
+//  SCOPE: the player renders inside the notify popup `.grow-scenario__popup`
+//  (ScenarioPopupView) → `.sb-player`, which is NOT a descendant of the in-page
+//  `.grow-scenario` component. So the tokens are set on the popup as well — set
+//  them only on `.grow-scenario` and the player would never inherit them.
+//
+//  MAPPING  (scenario role  ←  Grow token  ·  original literal fallback):
+//    ink        ← --ink          #1f2a33   body text
+//    muted      ← --ink-soft     #4d5c68   labels / meta
+//    paper      ← --surface-1    #ffffff   card surface
+//    tint       ← --surface-2    #eef3f7   region tint (challenge / next)
+//    line       ← --line         #8ea0ad   borders / disabled rules
+//    accent     ← --accent       #24508f   accent · buttons · focus ring
+//    on-accent  ← --surface-1    #ffffff   text on accent + banners (flips w/ mode)
+//    pass       ← --c-positive   #1f6b3a   pass banner
+//    fail       ← --c-negative   #8f3a1e   fail banner
+//
+//  on-accent maps to --surface-1 (not a frozen #fff) on purpose: accent and
+//  surface flip together between light and dark, so text on the accent/banners
+//  keeps its contrast in both modes.
+// ============================================================================
+
+.grow-scenario,
+.grow-scenario__popup {
+  --grow-scenario-ink:       var(--ink,        #1f2a33);
+  --grow-scenario-muted:     var(--ink-soft,   #4d5c68);
+  --grow-scenario-paper:     var(--surface-1,  #ffffff);
+  --grow-scenario-tint:      var(--surface-2,  #eef3f7);
+  --grow-scenario-line:      var(--line,       #8ea0ad);
+  --grow-scenario-accent:    var(--accent,     #24508f);
+  --grow-scenario-on-accent: var(--surface-1,  #ffffff);
+  --grow-scenario-pass:      var(--c-positive, #1f6b3a);
+  --grow-scenario-fail:      var(--c-negative, #8f3a1e);
+}
+
+// ── structural bits ─────────────────────────────────────────────────────────
+.grow-scenario__launch {
+  min-height: 2.75rem;
+}
+
+.grow-scenario__popup {
+  padding: 1rem 1.25rem 1.5rem;
+}

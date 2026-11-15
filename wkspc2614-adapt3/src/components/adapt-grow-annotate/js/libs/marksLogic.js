@@ -94,5 +94,11 @@ export function markFromDataset(dataset = {}) {
   if (dataset.gmVariant) out.variant = dataset.gmVariant;
   if (dataset.gmSpeed != null && dataset.gmSpeed !== '') out.speed = clampSpeed(dataset.gmSpeed);
   if (dataset.gmHold != null) out.hold = dataset.gmHold !== 'false';
+  // Highlight vertical wobble: data-gm-jitter="off"|"false" pins it uniform; a
+  // number sets the ± amount (% of the line box). Omitted = engine default (on).
+  if (dataset.gmJitter != null && dataset.gmJitter !== '') {
+    if (dataset.gmJitter === 'off' || dataset.gmJitter === 'false') out.jitter = false;
+    else { const n = Number(dataset.gmJitter); if (isFinite(n)) { out.jitter = true; out.jitterAmount = n; } }
+  }
   return out;
 }

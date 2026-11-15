@@ -87,19 +87,31 @@ function makeHandle({ host, svg, speed, hold, cleanup, autoplay }) {
   return handle;
 }
 
-function drawHighlight(el, { color, variant, speed, hold, autoplay }) {
+function drawHighlight(el, { color, variant, speed, hold, autoplay, jitter, jitterAmount }) {
   const added = ['gm-hl'];
   const cc = HIGHLIGHT_COLOR_CLASS[color];
   if (cc) added.push(cc);
   if (variant) added.push(`gm-hl-${variant}`);
   added.forEach(c => el.classList.add(c));
+
+  // Random vertical wobble so highlights don't all sit at the same band — a
+  // hand-drawn highlighter rides a little higher or lower on each word. On by
+  // default; pass jitter:false (or data-gm-jitter="off") to pin it uniform.
+  let wobbled = false;
+  if (jitter !== false) {
+    const amt = Number.isFinite(jitterAmount) ? Math.abs(jitterAmount) : 6; // ± % of the line box
+    const shift = (Math.random() * 2 - 1) * amt;
+    el.style.setProperty('--gm-hl-shift', `${shift.toFixed(1)}%`);
+    wobbled = true;
+  }
+
   return makeHandle({
     host: el,
     svg: null,
     speed,
     hold,
     autoplay,
-    cleanup: () => added.forEach(c => el.classList.remove(c))
+    cleanup: () => { added.forEach(c => el.classList.remove(c)); if (wobbled) el.style.removeProperty('--gm-hl-shift'); }
   });
 }
 
@@ -121,7 +133,7 @@ export function drawMark(target, options = {}) {
   const autoplay = options.autoplay !== false;
 
   if (def.kind === 'highlight') {
-    return drawHighlight(el, { color, variant: options.variant, speed, hold, autoplay });
+    return drawHighlight(el, { color, variant: options.variant, speed, hold, autoplay, jitter: options.jitter, jitterAmount: options.jitterAmount });
   }
 
   const cc = colorClass(color);

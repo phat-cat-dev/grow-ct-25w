@@ -1,0 +1,40 @@
+{
+  "manifest": 1,
+  "id": "growModal",
+  "name": "adapt-grow-modal",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-modal.git",
+  "summary": "An on-page trigger button that opens a foregrounded popup (worked example, definition or reflection); the popup itself is theme-styled.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-modal.less",
+    "tokens": [],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme-styled: the local LESS is layout only (no colour), and the popup chrome is painted by the theme's cm-notify tokens. Dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-modal/blocks/block-modal-66-33.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-modal/exemplars/worked-example.json",
+        "adapt-grow-modal/exemplars/key-definition.json",
+        "adapt-grow-modal/exemplars/reflection-panel.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-modal.md"
+    },
+    "components": []
+  }
+}

@@ -30,18 +30,14 @@
  * broken tools once.
  *
  * Named roots and what each means:
- *   'courses'                 -> <repo>/courses/<slug>, or (v1/v2 split,
- *                                8 Nov 2026) <repo>/courses/v1/<slug> or
- *                                <repo>/courses/v2/<slug> - tried in that
- *                                order, first match wins. One named root,
- *                                several candidate locations: a caller still
- *                                says just 'courses' and does not need to
- *                                know which vintage a given slug landed in.
- *                                Also tried last (8 Nov 2026, pathway/shell
- *                                reorg): <repo>/courses/v1/<pathway>/shell/
- *                                generic/<slug>, where <pathway> is <slug>
- *                                with its trailing tier stripped - the
- *                                location all 13 v1 pathways now use.
+ *   'courses'                 -> <repo>/courses/<slug>, or (pathway/shell
+ *                                reorg, 10 Nov 2026) <repo>/courses/
+ *                                <pathway>/shell/generic/<slug>, where
+ *                                <pathway> is <slug> with its trailing tier
+ *                                stripped - the location every pathway now
+ *                                uses. Tried in that order, first match
+ *                                wins; a caller still says just 'courses'
+ *                                and does not need to know the pathway.
  *   'courses/_generated'      -> <repo>/courses/_generated/<slug>
  *
  * No archive root. RBD-1 AMENDMENT: no tool reads from the archive; there is
@@ -63,18 +59,16 @@ function pathwayFromSlug(slug) {
 }
 
 // Each root maps to an ORDERED array of candidate-directory functions (not
-// static base dirs any more, now that one candidate - the v1 pathway/shell
+// static base dirs any more, now that one candidate - the pathway/shell
 // nesting - depends on the slug being resolved, not just the root). Order
-// matters: flat legacy / v1 / v2 are tried first so any course not yet
-// moved into the nested shape still resolves there; the nested v1 shape is
-// tried last. resolveCourse tries every candidate of a root before moving
-// to the next root in the caller's list.
+// matters: flat is tried first so any course not yet moved into the nested
+// shape still resolves there; the nested pathway shape is tried last.
+// resolveCourse tries every candidate of a root before moving to the next
+// root in the caller's list.
 const ROOT_PATHS = {
   'courses': [
     slug => path.join(ROOT, 'courses', slug),
-    slug => path.join(ROOT, 'courses', 'v1', slug),
-    slug => path.join(ROOT, 'courses', 'v2', slug),
-    slug => path.join(ROOT, 'courses', 'v1', pathwayFromSlug(slug), 'shell', 'generic', slug)
+    slug => path.join(ROOT, 'courses', pathwayFromSlug(slug), 'shell', 'generic', slug)
   ],
   'courses/_generated': [slug => path.join(ROOT, 'courses', '_generated', slug)]
 };

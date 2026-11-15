@@ -1,0 +1,31 @@
+{{!--
+  congen11's renderers/elesson/components/grow-stat-block.njk modelled a single
+  stat at the component root (plus a `trend` field absent from the schema) and
+  was structurally incompatible with the schema's titled-collection shape
+  (`title` + `items[]`, 2-6). This template is rebuilt from the schema:
+  grow-stat-block__value/__label/__context are kept from the source renderer,
+  nested inside new grow-stat-block__items/__item wrappers; grow-stat-block__title and
+  grow-stat-block__source are new (never rendered by the source); `trend` is
+  dropped entirely (not part of the schema).
+--}}
+<div class="component__inner growStatBlock__inner">
+  <div class="grow-stat-block" data-component="grow-stat-block">
+    {{#if title}}
+      <h2 class="grow-stat-block__title">{{title}}</h2>
+    {{/if}}
+    <div class="grow-stat-block__items">
+      {{#each _items}}
+        <div class="grow-stat-block__item">
+          <div class="grow-stat-block__value">{{value}}</div>
+          <div class="grow-stat-block__label">{{label}}</div>
+          {{#if context}}
+            <div class="grow-stat-block__context">{{context}}</div>
+          {{/if}}
+          {{#if source}}
+            <div class="grow-stat-block__source">{{source}}</div>
+          {{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

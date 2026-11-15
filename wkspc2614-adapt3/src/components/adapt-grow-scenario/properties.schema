@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "Branching scenario. Use the button to start it in a dialog.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_completionOn": {
+      "type": "string",
+      "required": false,
+      "default": "ending",
+      "enum": ["ending", "pass"],
+      "title": "Complete when the student reaches",
+      "inputType": { "type": "Select", "options": ["ending", "pass"] },
+      "validators": [],
+      "help": "'ending' completes on any ending. 'pass' requires a pass ending, so a student who cannot pass stays incomplete."
+    },
+    "_launch": {
+      "type": "object",
+      "required": false,
+      "title": "Launch button",
+      "properties": {
+        "startText": { "type": "string", "default": "Start the scenario", "inputType": "Text", "translatable": true },
+        "resumeText": { "type": "string", "default": "Return to the scenario", "inputType": "Text", "translatable": true },
+        "reviewText": { "type": "string", "default": "Review the scenario", "inputType": "Text", "translatable": true }
+      }
+    },
+    "_scenario": {
+      "type": "object",
+      "required": true,
+      "title": "Scenario data",
+      "inputType": "Text",
+      "help": "Compiled by the scenario-builder toolchain. Author and validate the scenario there rather than editing it here.",
+      "validators": []
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "manifest": 1,
+  "id": "growSortable",
+  "name": "adapt-grow-sortable",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-sortable.git",
+  "summary": "Accessible sorting/sequencing question: items authored in the correct order, shuffled for display, reordered by drag or move buttons, then marked with feedback.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-sortable.less",
+    "tokens": [
+      "--ab-base-accent", "--ab-base-accent-hover", "--ab-base-accent-deep",
+      "--ab-base-accent-tint", "--ab-base-on-accent", "--ab-base-ink",
+      "--ab-success", "--ab-danger"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/grow-ab-bridge.less",
+      "note": "The LESS reads --ab-base-* role tokens; grow-ab-bridge.less maps those onto the GROW scheme accent family, so items follow the theme and dark mode. KNOWN (pre-existing, behaviour preserved): the .is-correct / .is-incorrect marked states keep white text (--ab-base-on-accent) over a light success/danger tint, which is low-contrast; the source comments flag switching to --ab-base-ink if dark text was intended (awaiting Abbott). Not changed in this batch."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-sortable/blocks/block-sortable-50-50.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-sortable/exemplars/essay-structure.json",
+        "adapt-grow-sortable/exemplars/research-process.json",
+        "adapt-grow-sortable/exemplars/paragraph-build.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-sortable.md"
+    },
+    "components": []
+  }
+}

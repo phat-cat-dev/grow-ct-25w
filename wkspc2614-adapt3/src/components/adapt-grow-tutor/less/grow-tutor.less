@@ -1,0 +1,81 @@
+// grow-tutor — the course-tutor panel + its notification bar, tokenised to GROW.
+// Panel from course-agent.css; bar from notifications/notification-bar.css.
+//   --tm-ink->--ink  --tm-line->--line  --tm-surface->--surface-1  --tm-raised/-source->--surface-2
+// Source of record: adapt-docs/.../adapt-grow-tutor/source/
+
+/* ---- tutor panel (from course-agent.css) ---- */
+.grow-tutor { padding: 1rem; color: var(--ink, #18313b); }
+.grow-tutor h2 { margin-block: 0 .5rem; }
+.grow-tutor p { max-width: 65ch; }
+.grow-tutor__location { font-weight: 600; }
+.grow-tutor nav { display: grid; gap: .5rem; }
+.grow-tutor a { display: block; padding: .7rem 1rem; border: 1px solid var(--line, #d5dfdd); border-radius: .5rem; color: inherit; text-decoration: none; }
+.grow-tutor a[aria-current] { background: var(--surface-2, #e9efed); font-weight: 700; }
+
+/* ---- notification bar (from notifications/notification-bar.css) ---- */
+.notification-bar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .5rem;
+  padding: 1rem;
+  border: 1px solid var(--line, #595959);
+  border-radius: 1rem;
+  background: var(--surface-1, #fff);
+  color: var(--ink, #000);
+  font: .85rem/1.5 system-ui, sans-serif;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s ease, visibility .2s;
+}
+.notification-bar[data-visible="true"] { opacity: 1; visibility: visible; }
+@media (prefers-reduced-motion: reduce) {
+  .notification-bar { transition: none; }
+}
+.notification-bar__content {
+  align-content: center;
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  height: 2.75rem;
+  box-sizing: border-box;
+  padding: .6rem .8rem;
+  border: 1px solid var(--line, #595959);
+  border-radius: .6rem;
+  background: var(--surface-2, var(--surface-2, #f2f2f2));
+  color: var(--ink, var(--ink, #000));
+  text-align: left;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+.notification-bar__navigation { flex-shrink: 0; }
+.notification-bar[data-level="error"] { border-style: dashed; font-weight: 600; }
+.notification-bar__content:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
+
+/* ---- component wrapper (layout + the rail the bar sizes to) ---- */
+.grow-tutor__widget { display: grid; gap: .6rem; }
+.grow-tutor__rail {
+  display: flex; align-items: center; gap: .5rem;
+  min-height: 3.25rem; padding: .4rem .75rem;
+  background: var(--surface-2, #edf2f7); border: 1px solid var(--line, #d5dfdd);
+  border-radius: .6rem; font-weight: 700; color: var(--ink, #18313b);
+}
+.grow-tutor__intro { margin: 0; color: var(--ink-soft, #4d5c68); max-width: 65ch; }
+.grow-tutor__guide { display: grid; gap: .5rem; }
+.grow-tutor__link {
+  display: block; padding: .7rem 1rem; border: 1px solid var(--line, #d5dfdd);
+  border-radius: .5rem; color: inherit; text-decoration: none;
+}
+.grow-tutor__link[aria-current] { background: var(--surface-2, #e9efed); font-weight: 700; }
+/* the bar's nav buttons use Material Symbols ligatures; give them a sane shape even
+   when the symbol font is absent (the ligature text then shows as a short label). */
+.grow-tutor .tm-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 2.4rem; min-height: 2.4rem; padding: .3rem;
+  border: 1px solid var(--line, #d5dfdd); border-radius: .4rem;
+  background: var(--surface-1, #fff); color: var(--ink, #000); cursor: pointer; font-size: .7rem;
+}
+.grow-tutor .tm-icon:disabled { opacity: .45; cursor: default; }
+.grow-tutor .tm-symbol { font-family: "Material Symbols Outlined", inherit; line-height: 1; }

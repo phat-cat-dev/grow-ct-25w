@@ -9,7 +9,7 @@
  * view calls setReadyStatus() itself, or the page never fires
  * contentObjectView:ready and the loading curtain never lifts.
  */
-import Adapt from 'core/js/adapt';
+import components from 'core/js/components';
 import ComponentView from 'core/js/views/componentView';
 import ComponentModel from 'core/js/models/componentModel';
 
@@ -17,13 +17,13 @@ class LevelsView extends ComponentView {
 
   events() {
     return {
-      'click .js-levels-card': 'onCard',
-      'click .js-levels-advice': 'onAdvice'
+      'click .js-grow-levels-card': 'onCard',
+      'click .js-grow-levels-advice': 'onAdvice'
     };
   }
 
   postRender() {
-    this.$items = this.$('.levels__item');
+    this.$items = this.$('.grow-levels__item');
     this.total = this.$items.length;
     // Independent drop-downs: a set of open indices (not one active panel), and
     // nothing is locked - every panel is available from the start.
@@ -43,12 +43,12 @@ class LevelsView extends ComponentView {
       el.classList.remove('is-locked'); // no gating - independent drop-downs
       el.classList.toggle('is-open', isOpen);
       el.classList.toggle('is-viewed', !!this.viewed[i]);
-      const card = el.querySelector('.js-levels-card');
+      const card = el.querySelector('.js-grow-levels-card');
       if (card) {
         card.setAttribute('aria-expanded', String(isOpen));
         card.removeAttribute('aria-disabled');
       }
-      const detail = el.querySelector('.levels__detail');
+      const detail = el.querySelector('.grow-levels__detail');
       if (detail) detail.setAttribute('aria-hidden', String(!isOpen));
     });
   }
@@ -68,7 +68,7 @@ class LevelsView extends ComponentView {
   }
 
   onCard(e) {
-    const li = e.currentTarget.closest('.levels__item');
+    const li = e.currentTarget.closest('.grow-levels__item');
     const i = this.$items.index(li);
     this.toggle(i);
   }
@@ -76,8 +76,8 @@ class LevelsView extends ComponentView {
   onAdvice(e) {
     e.stopPropagation();
     const btn = e.currentTarget;
-    const wrap = btn.closest('.levels__detail');
-    const adv = wrap && wrap.querySelector('.levels__advice');
+    const wrap = btn.closest('.grow-levels__detail');
+    const adv = wrap && wrap.querySelector('.grow-levels__advice');
     const open = btn.getAttribute('aria-expanded') === 'true';
     btn.setAttribute('aria-expanded', String(!open));
     if (adv) adv.setAttribute('aria-hidden', String(open));
@@ -85,7 +85,9 @@ class LevelsView extends ComponentView {
 
 }
 
-export default Adapt.register('growLevels', {
+LevelsView.template = 'growLevels.jsx';
+
+export default components.register('growLevels', {
   view: LevelsView,
   model: ComponentModel
 });

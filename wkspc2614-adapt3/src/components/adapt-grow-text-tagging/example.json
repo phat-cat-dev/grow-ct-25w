@@ -1,0 +1,84 @@
+{
+  "_id": "c-text-tagging-01",
+  "_parentId": "b-text-tagging",
+  "_type": "component",
+  "_component": "growTextTagging",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Tag the argument",
+  "body": "<p>Academic arguments mix claims with the evidence that supports them. Being able to tell them apart is the first step to evaluating a source.</p>",
+  "instruction": "Choose a category from the palette, then select the matching piece of text. Tag every highlighted span, then press Submit.",
+  "_tagMode": "multi",
+  "_attempts": 3,
+  "_questionWeight": 1,
+  "_canShowModelAnswer": false,
+  "_canShowFeedback": true,
+  "_canShowMarking": true,
+  "_shouldDisplayAttempts": true,
+  "_recordInteraction": true,
+  "_scoreLabel": "Tags identified",
+  "_showScore": true,
+  "_tagCategories": [
+    {
+      "_id": "claim",
+      "label": "Claim",
+      "description": "A statement the author asserts to be true."
+    },
+    {
+      "_id": "evidence",
+      "label": "Evidence",
+      "description": "Data or a source offered to support a claim."
+    }
+  ],
+  "_passages": [
+    {
+      "_passageId": "passage-1",
+      "label": "Extract from a policy review",
+      "text": "The new recycling scheme has been a clear success. Household waste fell by 18% in its first year. Residents also report that it is easy to use.",
+      "_taggableSpans": [
+        {
+          "text": "The new recycling scheme has been a clear success",
+          "_tagId": "claim",
+          "feedback": "Correct - this is the author's overall assertion.",
+          "feedbackIncorrect": "This is the author's headline assertion, so it is a claim rather than evidence."
+        },
+        {
+          "text": "Household waste fell by 18% in its first year",
+          "_tagId": "evidence",
+          "feedback": "Correct - a measured figure offered in support.",
+          "feedbackIncorrect": "A specific measured figure like this is evidence, not a claim."
+        },
+        {
+          "text": "Residents also report that it is easy to use",
+          "_tagId": "evidence",
+          "feedback": "Correct - reported experience used as support.",
+          "feedbackIncorrect": "Reported experience offered in support counts as evidence here."
+        }
+      ]
+    },
+    {
+      "_passageId": "passage-2",
+      "label": "For comparison (no tagging needed)",
+      "text": "Compare the extract above with a neutral description of the same scheme to see how framing changes the reading."
+    }
+  ],
+  "_feedback": {
+    "title": "",
+    "correct": "Excellent! All tags correct.",
+    "_incorrect": {
+      "final": "Keep trying - check which spans are claims and which are evidence.",
+      "notFinal": "Not quite. Review your tags and try again."
+    },
+    "_partlyCorrect": {
+      "final": "Good work, but not every tag is correct yet.",
+      "notFinal": "You are on the right track - some tags still need changing."
+    }
+  },
+  "_buttons": {
+    "_submit": { "buttonText": "Submit", "ariaLabel": "Submit" },
+    "_reset": { "buttonText": "Reset", "ariaLabel": "Reset" },
+    "_showFeedback": { "buttonText": "Show feedback", "ariaLabel": "Show feedback" },
+    "remainingAttemptsText": "attempts remaining",
+    "remainingAttemptText": "final attempt"
+  }
+}

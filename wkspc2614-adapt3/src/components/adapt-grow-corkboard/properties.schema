@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "A cork-board of pinned notes.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_mode": {
+      "type": "string",
+      "required": false,
+      "default": "display",
+      "title": "Board type",
+      "enum": ["display", "brainstorm"],
+      "inputType": { "type": "Select", "options": ["display", "brainstorm"] },
+      "validators": [],
+      "help": "'display' = static notes you author (text). 'brainstorm' = each note shows a title you set and the learner types their own answer (vocabulary, terminology, a question) into it; entries are saved and the component completes once enough notes are filled."
+    },
+    "_count": {
+      "type": "number",
+      "required": false,
+      "default": 4,
+      "title": "Number of notes",
+      "enum": [1, 2, 3, 4, 6, 8],
+      "inputType": { "type": "Select", "options": [1, 2, 3, 4, 6, 8] },
+      "validators": [],
+      "help": "How many notes to show, laid out as a balanced, centred grid (4 = 2×2, 6 = 3×2, 8 = 4×2). The first N notes from the list below are used."
+    },
+    "_minComplete": {
+      "type": "number",
+      "required": false,
+      "default": 0,
+      "title": "Notes to complete (brainstorm)",
+      "inputType": "Number",
+      "validators": [],
+      "help": "Brainstorm mode only: how many notes the learner must fill before the component counts as complete. 0 = all shown notes."
+    },
+    "_notes": {
+      "type": "array",
+      "required": true,
+      "title": "Notes",
+      "items": {
+        "type": "object",
+        "required": [],
+        "properties": {
+          "text": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Note text (display mode)",
+            "inputType": "TextArea",
+            "translatable": true,
+            "validators": [],
+            "help": "Display mode: the note itself — short, one idea, simple inline HTML (e.g. <strong>) allowed."
+          },
+          "title": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Note title (brainstorm mode)",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "Brainstorm mode: the heading the learner answers under, e.g. a key term, a prompt, or a question to answer."
+          },
+          "_placeholder": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Input placeholder (brainstorm mode)",
+            "inputType": "Text",
+            "translatable": true,
+            "validators": [],
+            "help": "Faint hint text shown in the empty input, e.g. 'Write a definition…'."
+          },
+          "_color": {
+            "type": "string",
+            "required": false,
+            "default": "default",
+            "title": "Colour",
+            "enum": ["default", "pink", "blue", "green", "amber", "brand"],
+            "inputType": { "type": "Select", "options": ["default", "pink", "blue", "green", "amber", "brand"] },
+            "validators": [],
+            "help": "A role, not decoration. Suggested: default = a thought, pink = a question, blue = a next step, green = done / agreed, amber = caution, brand = emphasis (soft purple)."
+          },
+          "_rotation": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Rotation (deg)",
+            "inputType": "Number",
+            "validators": [],
+            "help": "A gentle tilt (roughly -3 to 3) reads as pinned by hand. Leave blank for an automatic small jitter."
+          }
+        }
+      }
+    }
+  }
+}

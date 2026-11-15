@@ -1,0 +1,42 @@
+{
+  "manifest": 1,
+  "id": "growStatBlock",
+  "name": "adapt-grow-stat-block",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-stat-block.git",
+  "summary": "A card holding a responsive grid of 2-6 statistics (value, label, optional context and source); tokenised to the GROW theme.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-stat-block.less",
+    "tokens": [
+      "--ink", "--ink-soft", "--accent", "--surface-1", "--shadow"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there. The former hardcoded Cardiff Met palette (navy/red/grey/white) mapped by meaning: navy to --ink, red to --accent, grey to --ink-soft, white to --surface-1."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-stat-block/blocks/block-stat-block-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-stat-block/exemplars/reading-early.json",
+        "adapt-grow-stat-block/exemplars/attendance.json",
+        "adapt-grow-stat-block/exemplars/asking-for-help.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-stat-block.md"
+    },
+    "components": []
+  }
+}

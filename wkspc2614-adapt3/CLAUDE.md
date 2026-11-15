@@ -49,8 +49,8 @@ reapplied after every install until upstream ships the fix.)
 ## Adapt content model
 
 Course > Content Object (page/menu) > Article > Block > Component. Authored as
-JSON under `courses/v1/<slug>/en/` or `courses/v2/<slug>/en/` (see
-`courses/README.md` for the v1/v2 split): config.json, course.json,
+JSON under `courses/<pathway>/shell/generic/<slug>/en/` (see
+`courses/README.md` for the pathway/shell layout): config.json, course.json,
 contentObjects.json, articles.json, blocks.json, components.json. Every
 element needs a unique `_id` and a correct `_parentId`. Keep referential
 integrity intact; the build and `tools/verify-course.js` validate it.
@@ -97,7 +97,7 @@ The authoritative routing is in `design-kb/design-kb.activity-patterns.json` and
 ## Build & package
 
 See `docs/RUNBOOK.md`. In brief: `grunt build` compiles `src/course` (a symlink
-to a `courses/v1/<slug>/` or `courses/v2/<slug>/`) into `build/`;
+to a `courses/<pathway>/shell/generic/<slug>/`) into `build/`;
 `package-scorm.js` zips it. Package the contents of `build/` so
 `imsmanifest.xml` sits at the top level of the zip.
 

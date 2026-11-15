@@ -30,7 +30,7 @@ class ScrollScenesView extends ComponentView {
       } catch (error) {
         // The scenes still read and scroll natively without the engine, so a
         // mount failure degrades rather than blanking the component.
-        console.warn(`[scrollScenes] ${this.model.get('_id')}: engine did not mount (${error.message}). Native scrolling still works.`);
+        console.warn(`[growScrollScenes] ${this.model.get('_id')}: engine did not mount (${error.message}). Native scrolling still works.`);
       }
     }
 
@@ -49,6 +49,6 @@ class ScrollScenesView extends ComponentView {
 
 }
 
-ScrollScenesView.template = 'scrollScenes.jsx';
+ScrollScenesView.template = 'growScrollScenes.jsx';
 
 export default ScrollScenesView;

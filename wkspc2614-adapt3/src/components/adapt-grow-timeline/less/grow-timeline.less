@@ -1,0 +1,141 @@
+// adapt-grow-timeline
+// Tokenised to the GROW theme. The original was fully hardcoded — a local
+// @grow-navy / @grow-red / @grow-grey palette ported from the congen11 $cm-*
+// colours (no SCSS existed; the track was emitted unstyled). Every colour now
+// maps, by meaning, onto a GROW runtime token, so the timeline repaints with the
+// active theme hue and gets dark mode for free. Non-colour values are unchanged.
+//
+//   COLOUR MAPPING  (role  ←  GROW token  ·  was):
+//     card surface      ← --surface-1   #FFFFFF   board background
+//     track rule / line ← --line        #D0D0D0   the vertical track + default border
+//     title / dot       ← --accent-ink  #1D2E4F   deep brand (navy): titles + default marker
+//     emphasis / date   ← --accent      #C8102E   brand accent: dates, highlighted event, toggle +/−
+//     body text         ← --ink-soft    #4A4A4A   event descriptions
+//     card shadow       ← --shadow      rgba(0,0,0,.08)
+//
+//   The navy→--accent-ink / red→--accent split keeps a visible highlight contrast
+//   (accent is brighter than accent-ink) while both track the theme hue. The red
+//   was an EMPHASIS/attention colour here (dates, highlight, toggle), not an error
+//   state, so it maps to the brand --accent rather than --c-negative.
+
+.grow-timeline {
+  background: var(--surface-1, #ffffff);
+  border-radius: 6px;
+  padding: 1.5rem 1.75rem;
+  margin: 0 0 1.5rem;
+  box-shadow: 0 1px 3px var(--shadow, rgba(0, 0, 0, 0.08));
+
+  &__title {
+    color: var(--accent-ink, #1d2e4f);
+    font-weight: 700;
+    margin: 0 0 1.25rem;
+  }
+
+  &__track {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--line, #d0d0d0);
+  }
+
+  &__event {
+    position: relative;
+    padding-bottom: 1.5rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &--highlight {
+      .grow-timeline__marker {
+        background: var(--accent, #c8102e);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent, #c8102e) 20%, transparent);
+      }
+
+      .grow-timeline__event-title {
+        color: var(--accent, #c8102e);
+      }
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: -1.75rem;
+    top: 0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: var(--accent-ink, #1d2e4f);
+  }
+
+  &__date {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--accent, #c8102e);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+  }
+
+  &__event-title {
+    color: var(--accent-ink, #1d2e4f);
+    margin: 0.125rem 0 0.375rem;
+  }
+
+  &__description {
+    color: var(--ink-soft, #4a4a4a);
+    line-height: 1.6;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Reveal mode (_reveal: true): each event's description is collapsed behind a
+// clickable title; TimelineView.onToggle adds/removes .is-revealed.
+.grow-timeline {
+  &__event-toggle {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+  }
+
+  &__event-toggle .grow-timeline__event-title {
+    margin: 0.125rem 0;
+  }
+
+  &__toggle-icon {
+    margin-left: auto;
+    color: var(--accent, #c8102e);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1;
+
+    &::after {
+      content: "+";
+    }
+  }
+
+  &__event--revealable {
+    .grow-timeline__description {
+      display: none;
+    }
+
+    &.is-revealed {
+      .grow-timeline__description {
+        display: block;
+      }
+
+      .grow-timeline__toggle-icon::after {
+        content: "\2212";
+      }
+    }
+  }
+}

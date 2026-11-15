@@ -1,0 +1,219 @@
+/**
+ * tabs.less
+ *
+ * Styles for the tabs component.
+ *
+ * Design refs: TC-5 (responsive layout)
+ * - Horizontal tablist at wide viewports (default)
+ * - Vertical stacked layout below @device-width-medium (60rem / 960px)
+ */
+
+// =============================================================================
+// Inner container
+// =============================================================================
+
+.grow-tabs__inner {
+  // Inherit standard component inner styles
+}
+
+.grow-tabs__widget {
+  // Container for tablist + panels
+}
+
+// =============================================================================
+// Tab list (horizontal by default)
+// =============================================================================
+
+.grow-tabs__tablist {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--ab-base-accent);
+
+  // Vertical at narrow viewports
+  @media (max-width: @device-width-medium) {
+    flex-direction: column;
+    border-bottom: none;
+    border-inline-end: 1px solid var(--ab-base-accent);
+  }
+}
+
+// =============================================================================
+// Individual tab button
+// =============================================================================
+
+.grow-tabs__tab {
+  // Reset button styles
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  // Sizing and spacing
+  padding: @item-padding;
+  padding-bottom: calc(@item-padding + 2px); // Compensate for bottom border indicator
+
+  // Typography
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  text-align: start;
+  // Literal neutral swap (Abbott, 10 Oct 2026: "keep the neutrals as the
+  // literal swap, not role-split") — var(--ab-dark-grey), matching
+  // vanilla-overrides.less's running-text bucket.
+  color: var(--ab-dark-grey);
+
+  // Position for indicator
+  position: relative;
+
+  // Transitions
+  transition: background-color 0.2s ease, color 0.2s ease; // was @duration (undefined var — never compiled); 0.2s matches sibling components
+
+  // Hover state
+  &:hover:not(:disabled) {
+    background-color: var(--ab-base-accent-hover);
+  }
+
+  // Focus state - use browser outline
+  &:focus {
+    outline-offset: -2px;
+  }
+
+  // Disabled state
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  // Active tab indicator (bottom border for horizontal)
+  &.is-active {
+    color: var(--ab-base-accent-deep);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: var(--ab-base-accent-deep);
+    }
+  }
+
+  // Visited indicator (subtle dot)
+  &.is-visited:not(.is-active) {
+    // Optional: show visited state
+    // Could add a small indicator if needed
+  }
+
+  // Vertical layout adjustments
+  @media (max-width: @device-width-medium) {
+    padding-bottom: @item-padding;
+    padding-inline-end: calc(@item-padding + 2px); // Compensate for side border indicator
+
+    &.is-active::after {
+      // Move indicator to right edge (or inline-end)
+      bottom: 0;
+      top: 0;
+      left: auto;
+      right: -1px;
+      width: 3px;
+      height: auto;
+    }
+  }
+}
+
+// =============================================================================
+// Tab panels container
+// =============================================================================
+
+.grow-tabs__panels {
+  // Panel container
+  margin-top: @item-margin;
+
+  @media (max-width: @device-width-medium) {
+    margin-top: 0;
+    margin-inline-start: @item-margin;
+  }
+}
+
+// =============================================================================
+// Individual tab panel
+// =============================================================================
+
+.grow-tabs__panel {
+  // Hidden by default
+  display: none;
+
+  // Active panel is visible
+  &.is-active {
+    display: block;
+  }
+
+  // Allow focus for keyboard navigation
+  &:focus {
+    outline: none; // Panel content is what matters
+  }
+}
+
+.grow-tabs__panel-content {
+  padding: @item-padding;
+}
+
+// =============================================================================
+// Panel content elements
+// =============================================================================
+
+.grow-tabs__graphic {
+  margin-bottom: @item-margin;
+}
+
+.grow-tabs__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grow-tabs__panel-title {
+  font-weight: 600;
+  margin-bottom: @item-margin;
+}
+
+.grow-tabs__panel-body {
+  // Standard body text styling
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// =============================================================================
+// Responsive layout: stacked at narrow viewports
+// =============================================================================
+
+@media (max-width: @device-width-medium) {
+  .grow-tabs__widget {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .grow-tabs__tablist {
+    flex-shrink: 0;
+  }
+
+  .grow-tabs__panels {
+    flex-grow: 1;
+    min-width: 0; // Prevent overflow
+  }
+}
+
+// =============================================================================
+// Reduced motion
+// =============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  .grow-tabs__tab {
+    transition: none;
+  }
+}

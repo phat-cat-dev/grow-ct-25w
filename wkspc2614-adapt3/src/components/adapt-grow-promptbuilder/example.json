@@ -1,0 +1,93 @@
+{
+  "_id": "c-promptbuilder-01",
+  "_parentId": "b-promptbuilder",
+  "_type": "component",
+  "_component": "growPromptBuilder",
+  "_classes": "",
+  "_layout": "full",
+  "title": "Prompt Builder",
+  "displayTitle": "Build a learning prompt",
+  "body": "<p>A good prompt has three parts: a <strong>role</strong> for the AI, a clear <strong>task</strong>, and some <strong>context</strong> about you and your work. Build one below and watch it assemble live.</p>",
+  "instruction": "Pick or type a role, a task and some context. Your finished prompt appears at the bottom, ready to copy.",
+  "_assembleTemplate": "Act as {role}. {function} Context: {context}.",
+  "_assembledLabel": "Your prompt",
+  "_copyText": "Copy prompt",
+  "_clearText": "Clear",
+  "_whyText": "<p>Naming a role, a task and your context gives the AI enough to answer usefully — vague prompts get vague replies.</p>",
+  "_setCompletionOn": "allFilled",
+  "_parts": [
+    {
+      "_key": "role",
+      "label": "Role",
+      "help": "Who should the AI act as?",
+      "placeholder": "Act as...",
+      "_chips": [
+        "an expert tutor",
+        "a critical friend",
+        "an examiner"
+      ],
+      "_startersPlaceholder": "Insert a role by level…",
+      "_starterGroups": [
+        {
+          "label": "Level 4 (first year)",
+          "items": [
+            "a patient tutor who explains things in plain language",
+            "a study-skills coach helping me get started"
+          ]
+        },
+        {
+          "label": "Level 5–6 (later years)",
+          "items": [
+            "an academic in [subject] who knows the current debates",
+            "a critical friend who challenges my reasoning"
+          ]
+        }
+      ]
+    },
+    {
+      "_key": "function",
+      "label": "Task",
+      "help": "What should it actually do?",
+      "placeholder": "Ask it to...",
+      "_chips": [
+        "Explain [concept] simply.",
+        "Give me feedback on my draft.",
+        "Quiz me on [topic]."
+      ],
+      "_startersPlaceholder": "Insert a task by level…",
+      "_starterGroups": [
+        {
+          "label": "Understand",
+          "items": [
+            "Explain [concept] in plain language for someone new to it.",
+            "Use an everyday analogy to explain [concept]."
+          ]
+        },
+        {
+          "label": "Be critical",
+          "items": [
+            "Give the strongest counter-arguments to [idea].",
+            "Set out the limits of [theory] and the alternatives."
+          ]
+        }
+      ]
+    },
+    {
+      "_key": "context",
+      "label": "Context",
+      "help": "Tell it about you and your work.",
+      "placeholder": "I am...",
+      "_chips": [
+        "I am a first-year undergraduate.",
+        "English is my second language."
+      ],
+      "_startersPlaceholder": "Insert context…",
+      "_starters": [
+        "I am studying [module or topic].",
+        "I am a final-year (Level 6) undergraduate.",
+        "I am a Master's (Level 7) student.",
+        "My challenge is [x]."
+      ]
+    }
+  ]
+}

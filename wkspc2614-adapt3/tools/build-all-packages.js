@@ -91,21 +91,18 @@ process.on('uncaughtException', (err) => {
 function getKnownTiers() {
   // Tiers are directories that have en/course.json (i.e., built shells).
   //
-  // Pathway/shell reorg (8 Nov 2026): real per-tier course dirs no longer
-  // live directly under courses/ - they're under courses/v1/<slug>/ or
-  // courses/v2/<slug>/ (flat), or nested under
-  // courses/v1/<pathway>/shell/generic/<slug>/ (pathway wrappers, which have
-  // no en/ of their own). Walk v1/ and v2/ themselves, recursing into
+  // Pathway/shell reorg (10 Nov 2026): real per-tier course dirs no longer
+  // live directly under courses/ - they're nested under
+  // courses/<pathway>/shell/generic/<slug>/ (pathway wrappers, which have
+  // no en/ of their own). Walk courses/ itself, recursing into
   // shell/generic/ one level when a directory isn't a course itself - same
   // discovery shape already applied to verify-all-courses.js,
   // mcq-heading-lint.js and course-export.js for this same reorg.
   const tiers = [];
-  for (const version of ['v1', 'v2']) {
-    const versionDir = path.join(COURSES_ROOT, version);
-    if (!fs.existsSync(versionDir)) continue;
-    for (const d of fs.readdirSync(versionDir, { withFileTypes: true })) {
-      if (!d.isDirectory()) continue;
-      const entryDir = path.join(versionDir, d.name);
+  if (fs.existsSync(COURSES_ROOT)) {
+    for (const d of fs.readdirSync(COURSES_ROOT, { withFileTypes: true })) {
+      if (!d.isDirectory() || d.name.startsWith('_')) continue;
+      const entryDir = path.join(COURSES_ROOT, d.name);
       if (fs.existsSync(path.join(entryDir, 'en', 'course.json'))) {
         tiers.push(d.name);
         continue;

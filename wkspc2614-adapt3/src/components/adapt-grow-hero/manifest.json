@@ -1,0 +1,40 @@
+{
+  "manifest": 1,
+  "id": "growHero",
+  "name": "adapt-grow-hero",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-hero.git",
+  "summary": "Hero banner — GROW component.",
+  "theme": {
+    "styling": "theme-styled",
+    "less": "less/grow-hero.less",
+    "tokens": [],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": [
+        "adapt-grow-hero/blocks/block-hero-full.json"
+      ]
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [
+        "adapt-grow-hero/exemplars/accent-cta.json",
+        "adapt-grow-hero/exemplars/neutral-left.json",
+        "adapt-grow-hero/exemplars/tinted-single-cta.json"
+      ]
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-hero.md"
+    },
+    "components": []
+  }
+}

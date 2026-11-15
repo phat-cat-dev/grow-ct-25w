@@ -1,0 +1,53 @@
+{
+  "manifest": 1,
+  "id": "growScenario",
+  "name": "adapt-grow-scenario",
+  "type": "component",
+  "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-grow-scenario.git",
+  "summary": "The article that agrees with you — GROW component.",
+  "theme": {
+    "styling": "tokenised",
+    "less": "less/grow-scenario-player.less",
+    "tokens": [
+      "--accent",
+      "--c-negative",
+      "--c-positive",
+      "--ink",
+      "--ink-soft",
+      "--line",
+      "--sb-accent",
+      "--sb-fail",
+      "--sb-ink",
+      "--sb-line",
+      "--sb-muted",
+      "--sb-on-accent",
+      "--sb-paper",
+      "--sb-pass",
+      "--sb-tint",
+      "--surface-1",
+      "--surface-2"
+    ],
+    "fill": {
+      "repo": "local:adapt-plugins/themes/adapt-grow-theme",
+      "path": "less/_defaults/_grow-tokens.less",
+      "note": "Theme supplies the :root token values; dark mode handled there."
+    }
+  },
+  "related": {
+    "templates": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "paths": []
+    },
+    "exemplars": {
+      "repo": "ssh://git@ssh.srvr.abbdev.uk/forge-abbdev-uk/adapt-content-templates.git",
+      "minimum": 3,
+      "paths": [],
+      "note": "needs-toolchain: exemplars are authored as scenario-builder/1 specs via the scenario-builder toolchain, not hand-written"
+    },
+    "docs": {
+      "repo": "local:adapt-docs/adapt_abbdev",
+      "path": "components/adapt-grow-scenario.md"
+    },
+    "components": []
+  }
+}
